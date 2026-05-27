@@ -91,86 +91,96 @@ async function fetchLinks(jsessionId: string): Promise<StoreLink[]> {
     console.log('✅ 認証成功:', page.url());
 
     // 広告リンク作成ページへのリンクからprogramIdを収集
-    const programs = await page.evaluate(() => {
-      const items: { programId: string; name: string }[] = [];
+    const programIds = await page.evaluate(() => {
+      const ids: string[] = [];
       document.querySelectorAll('a[href*="create-link"]').forEach((el) => {
         const href = (el as HTMLAnchorElement).href;
         const m = href.match(/programId=([^&\s]+)/);
-        if (!m) return;
-        const programId = m[1];
-        // 最も近い親要素のテキストをプログラム名として使用
-        let el2: Element | null = el;
-        let name = '';
-        for (let i = 0; i < 8; i++) {
-          el2 = el2?.parentElement ?? null;
-          if (!el2) break;
-          const t = el2.textContent?.replace(/\s+/g, ' ').trim() ?? '';
-          if (t.length > 5 && t.length < 200) { name = t; break; }
-        }
-        if (!items.find((x) => x.programId === programId)) {
-          items.push({ programId, name: name.slice(0, 60) });
-        }
+        if (m && !ids.includes(m[1])) ids.push(m[1]);
       });
-      return items;
+      return ids;
     });
 
-    console.log(`${programs.length}件のプログラムを検出`);
-    programs.forEach((p) => console.log(`  - [${p.programId}] ${p.name.slice(0, 40)}`));
+    console.log(`${programIds.length}件のプログラムを検出`);
 
-    // 各プログラムのリンクを取得
-    for (const prog of programs) {
-      let matchedStoreId: string | null = null;
-      let matchedKeyword = '';
-      const lowerName = prog.name.toLowerCase();
-
-      for (const [keyword, storeId] of Object.entries(PROGRAM_MAP)) {
-        if (lowerName.includes(keyword.toLowerCase())) {
-          matchedStoreId = storeId;
-          matchedKeyword = keyword;
-          break;
-        }
-      }
-      if (!matchedStoreId) continue;
-      if (results.find((r) => r.storeId === matchedStoreId)) continue;
-
-      console.log(`\n→ ${matchedKeyword} (${matchedStoreId}) のリンクを取得中...`);
-
+    // 各create-linkページにアクセスして、プログラム名とリンクを両方取得
+    for (const programId of programIds) {
       const linkPage = await context.newPage();
       try {
         await linkPage.goto(
-          `https://media-console.a8.net/program/create-link?programId=${prog.programId}`,
+          `https://media-console.a8.net/program/create-link?programId=${programId}`,
           { waitUntil: 'networkidle', timeout: 20000 }
         );
 
-        // px.a8.netのURLを抽出
-        const a8Url = await linkPage.evaluate((): string | null => {
-          // <a href="https://px.a8.net/...">
+        // ページからプログラム名とpx.a8.net URLを同時に取得
+        const { programName, a8Url } = await linkPage.evaluate((): { programName: string; a8Url: string | null } => {
+          // プログラム名を取得（ページタイトルやh1/h2から）
+          const titleEl = document.querySelector('h1, h2, [class*="title"], [class*="program-name"], [class*="merchant"]');
+          const programName = titleEl?.textContent?.trim()
+            ?? document.title.replace(/広告リンク作成.*/, '').trim()
+            ?? '';
+
+          // px.a8.net URLを取得
+          let a8Url: string | null = null;
           for (const a of Array.from(document.querySelectorAll('a[href*="px.a8.net"]'))) {
-            return (a as HTMLAnchorElement).href;
+            a8Url = (a as HTMLAnchorElement).href; break;
           }
-          // テキストフィールド内
-          for (const el of Array.from(document.querySelectorAll('input, textarea'))) {
-            const val = (el as HTMLInputElement).value || '';
-            const m = val.match(/(https:\/\/px\.a8\.net[^\s"'<>\n]+)/);
-            if (m) return m[1];
+          if (!a8Url) {
+            for (const el of Array.from(document.querySelectorAll('input, textarea'))) {
+              const val = (el as HTMLInputElement).value || '';
+              const m = val.match(/(https:\/\/px\.a8\.net[^\s"'<>\n]+)/);
+              if (m) { a8Url = m[1]; break; }
+            }
           }
-          // ページテキスト全体
-          const m = document.body.innerText.match(/(https:\/\/px\.a8\.net[^\s"'<>\n]+)/);
-          return m ? m[1] : null;
+          if (!a8Url) {
+            const m = document.body.innerText.match(/(https:\/\/px\.a8\.net[^\s"'<>\n]+)/);
+            if (m) a8Url = m[1];
+          }
+          return { programName, a8Url };
         });
 
-        if (a8Url) {
+        // a8ejpredirectの遷移先URLからショップを特定
+        let matchedStoreId: string | null = null;
+        let matchedKeyword = '';
+
+        // 1. プログラム名でマッチング
+        const lowerName = programName.toLowerCase();
+        for (const [keyword, storeId] of Object.entries(PROGRAM_MAP)) {
+          if (lowerName.includes(keyword.toLowerCase())) {
+            matchedStoreId = storeId;
+            matchedKeyword = keyword;
+            break;
+          }
+        }
+
+        // 2. リダイレクト先URLでマッチング
+        if (!matchedStoreId && a8Url) {
+          const redirectUrl = decodeURIComponent(a8Url).toLowerCase();
+          const urlMap: Record<string, string> = {
+            'smilecl.jp': 'smile', 'smile': 'smile',
+            'eyecity.jp': 'eyecity',
+            'lensupclub.com': 'lensclub', 'lensup': 'lensclub',
+            'lensquick': 'lensquick',
+            'primecontact': 'prime',
+          };
+          for (const [urlKey, storeId] of Object.entries(urlMap)) {
+            if (redirectUrl.includes(urlKey)) {
+              matchedStoreId = storeId;
+              matchedKeyword = urlKey;
+              break;
+            }
+          }
+        }
+
+        console.log(`  [${programId}] "${programName.slice(0, 30)}" → ${matchedStoreId ?? '未マッチ'}`);
+
+        if (matchedStoreId && a8Url && !results.find((r) => r.storeId === matchedStoreId)) {
           const baseUrl = a8Url.split('&a8ejpredirect')[0];
-          results.push({ storeId: matchedStoreId, programName: matchedKeyword, programId: prog.programId, affiliateUrl: baseUrl });
-          console.log(`  ✅ 取得: ${baseUrl.slice(0, 70)}`);
-        } else {
-          console.warn(`  ⚠️  URLが見つかりませんでした`);
-          // ページのテキストをデバッグ出力
-          const pageText = await linkPage.evaluate(() => document.body.innerText.slice(0, 500));
-          console.log('  ページ内容:', pageText.replace(/\n/g, ' '));
+          results.push({ storeId: matchedStoreId, programName: matchedKeyword, programId, affiliateUrl: baseUrl });
+          console.log(`    ✅ 取得: ${baseUrl.slice(0, 70)}`);
         }
       } catch (e) {
-        console.warn(`  ⚠️  エラー: ${e}`);
+        console.warn(`  [${programId}] ⚠️ エラー: ${e}`);
       } finally {
         await linkPage.close();
       }
