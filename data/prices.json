@@ -1,0 +1,170 @@
+{
+  "updatedAt": "2026-05-27T00:00:00Z",
+  "prices": [
+    {
+      "productId": "acuvue-oasys-1day",
+      "storeId": "smile",
+      "price": 3280,
+      "pricePerBox": 3280,
+      "boxes": 1,
+      "lensCount": 30,
+      "url": "https://www.smilecl.jp/products/acuvue-oasys-1day",
+      "inStock": true,
+      "lastUpdated": "2026-05-27T00:00:00Z"
+    },
+    {
+      "productId": "acuvue-oasys-1day",
+      "storeId": "eyecity",
+      "price": 3380,
+      "pricePerBox": 3380,
+      "boxes": 1,
+      "lensCount": 30,
+      "url": "https://www.eyecity.jp/products/acuvue-oasys-1day",
+      "inStock": true,
+      "lastUpdated": "2026-05-27T00:00:00Z"
+    },
+    {
+      "productId": "acuvue-oasys-1day",
+      "storeId": "lensclub",
+      "price": 3180,
+      "pricePerBox": 3180,
+      "boxes": 1,
+      "lensCount": 30,
+      "url": "https://www.lensupclub.com/products/acuvue-oasys-1day",
+      "inStock": true,
+      "lastUpdated": "2026-05-27T00:00:00Z"
+    },
+    {
+      "productId": "acuvue-moist-1day",
+      "storeId": "smile",
+      "price": 2480,
+      "pricePerBox": 2480,
+      "boxes": 1,
+      "lensCount": 30,
+      "url": "https://www.smilecl.jp/products/acuvue-moist",
+      "inStock": true,
+      "lastUpdated": "2026-05-27T00:00:00Z"
+    },
+    {
+      "productId": "acuvue-moist-1day",
+      "storeId": "eyecity",
+      "price": 2580,
+      "pricePerBox": 2580,
+      "boxes": 1,
+      "lensCount": 30,
+      "url": "https://www.eyecity.jp/products/acuvue-moist",
+      "inStock": true,
+      "lastUpdated": "2026-05-27T00:00:00Z"
+    },
+    {
+      "productId": "acuvue-moist-1day",
+      "storeId": "lensclub",
+      "price": 2380,
+      "pricePerBox": 2380,
+      "boxes": 1,
+      "lensCount": 30,
+      "url": "https://www.lensupclub.com/products/acuvue-moist",
+      "inStock": true,
+      "lastUpdated": "2026-05-27T00:00:00Z"
+    },
+    {
+      "productId": "dailies-total1",
+      "storeId": "smile",
+      "price": 3680,
+      "pricePerBox": 3680,
+      "boxes": 1,
+      "lensCount": 30,
+      "url": "https://www.smilecl.jp/products/dailies-total1",
+      "inStock": true,
+      "lastUpdated": "2026-05-27T00:00:00Z"
+    },
+    {
+      "productId": "dailies-total1",
+      "storeId": "prime",
+      "price": 3580,
+      "pricePerBox": 3580,
+      "boxes": 1,
+      "lensCount": 30,
+      "url": "https://www.primecontact.jp/products/dailies-total1",
+      "inStock": true,
+      "lastUpdated": "2026-05-27T00:00:00Z"
+    },
+    {
+      "productId": "seed-1day-pure",
+      "storeId": "smile",
+      "price": 1680,
+      "pricePerBox": 1680,
+      "boxes": 1,
+      "lensCount": 32,
+      "url": "https://www.smilecl.jp/products/seed-1day-pure",
+      "inStock": true,
+      "lastUpdated": "2026-05-27T00:00:00Z"
+    },
+    {
+      "productId": "seed-1day-pure",
+      "storeId": "yodobashi",
+      "price": 1780,
+      "pricePerBox": 1780,
+      "boxes": 1,
+      "lensCount": 32,
+      "url": "https://www.yodobashi.com/product/seed-1day-pure",
+      "inStock": true,
+      "lastUpdated": "2026-05-27T00:00:00Z"
+    },
+    {
+      "productId": "acuvue-oasys-2week",
+      "storeId": "smile",
+      "price": 2980,
+      "pricePerBox": 2980,
+      "boxes": 1,
+      "lensCount": 6,
+      "url": "https://www.smilecl.jp/products/acuvue-oasys-2week",
+      "inStock": true,
+      "lastUpdated": "2026-05-27T00:00:00Z"
+    },
+    {
+      "productId": "acuvue-oasys-2week",
+      "storeId": "lensclub",
+      "price": 2780,
+      "pricePerBox": 2780,
+      "boxes": 1,
+      "lensCount": 6,
+      "url": "https://www.lensupclub.com/products/acuvue-oasys-2week",
+      "inStock": true,
+      "lastUpdated": "2026-05-27T00:00:00Z"
+    },
+    {
+      "productId": "biofinity",
+      "storeId": "smile",
+      "price": 3280,
+      "pricePerBox": 3280,
+      "boxes": 1,
+      "lensCount": 6,
+      "url": "https://www.smilecl.jp/products/biofinity",
+      "inStock": true,
+      "lastUpdated": "2026-05-27T00:00:00Z"
+    },
+    {
+      "productId": "geo-angel-color",
+      "storeId": "smile",
+      "price": 1980,
+      "pricePerBox": 1980,
+      "boxes": 1,
+      "lensCount": 10,
+      "url": "https://www.smilecl.jp/products/geo-angel",
+      "inStock": true,
+      "lastUpdated": "2026-05-27T00:00:00Z"
+    },
+    {
+      "productId": "menicon-1day",
+      "storeId": "smile",
+      "price": 1880,
+      "pricePerBox": 1880,
+      "boxes": 1,
+      "lensCount": 30,
+      "url": "https://www.smilecl.jp/products/menicon-1day",
+      "inStock": true,
+      "lastUpdated": "2026-05-27T00:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+name: 毎日価格データ自動更新
+
+on:
+  schedule:
+    # 毎朝6時（JST）= UTC 21:00 前日
+    - cron: '0 21 * * *'
+  workflow_dispatch: # 手動実行も可能
+
+jobs:
+  update-prices:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Node.js セットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: 依存関係インストール
+        run: npm ci
+
+      - name: 価格データ更新スクリプト実行
+        run: npx ts-node scripts/update-prices.ts
+        env:
+          NODE_ENV: production
+
+      - name: 変更をコミット・プッシュ
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/prices.json
+          git diff --staged --quiet || git commit -m "chore: 価格データ自動更新 $(date '+%Y-%m-%d')"
+          git push
