@@ -1,4 +1,4 @@
-name: 毎日価格データ自動更新
+name: 毎日価格データ・アフィリエイトリンク自動更新
 
 on:
   schedule:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch: # 手動実行も可能
 
 jobs:
-  update-prices:
+  update-data:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -25,6 +25,17 @@ jobs:
       - name: 依存関係インストール
         run: npm ci
 
+      - name: Playwright ブラウザをインストール
+        run: npx playwright install chromium --with-deps
+
+      - name: A8.net アフィリエイトリンク自動取得
+        run: npx ts-node scripts/fetch-a8-links.ts
+        env:
+          A8_EMAIL: ${{ secrets.A8_EMAIL }}
+          A8_PASSWORD: ${{ secrets.A8_PASSWORD }}
+        # リンク取得に失敗してもワークフロー全体は止めない
+        continue-on-error: true
+
       - name: 価格データ更新スクリプト実行
         run: npx ts-node scripts/update-prices.ts
         env:
@@ -34,6 +45,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Actions Bot"
-          git add data/prices.json
-          git diff --staged --quiet || git commit -m "chore: 価格データ自動更新 $(date '+%Y-%m-%d')"
+          git add data/prices.json data/products.json
+          git diff --staged --quiet || git commit -m "chore: 価格・アフィリエイトリンク自動更新 $(date '+%Y-%m-%d')"
           git push
