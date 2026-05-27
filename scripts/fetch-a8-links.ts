@@ -1,12 +1,15 @@
 /**
- * A8.net アフィリエイトリンク自動取得スクリプト
- * media-console.a8.net 対応版
+ * A8.net アフィリエイトリンク自動取得スクリプト（クッキー認証版）
  *
- * 環境変数: A8_EMAIL, A8_PASSWORD
+ * GitHub Actionsから実行。
+ * 環境変数: A8_JSESSIONID
+ *
+ * JSESSIONIDはA8.netのmedia-consoleにログイン後、
+ * 開発者ツール → Application → Cookies から取得。
  */
 
 import { chromium } from 'playwright';
-import type { Page, BrowserContext } from 'playwright';
+import type { Page } from 'playwright';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -19,12 +22,17 @@ const PROGRAM_MAP: Record<string, string> = {
   'スマイルコンタクト': 'smile',
   'smilecl':            'smile',
   'smile contact':      'smile',
+  'スマイル':           'smile',
   'アイシティ':          'eyecity',
   'eyecity':            'eyecity',
   'レンズアップ':        'lensclub',
   'lensup':             'lensclub',
   'プライムコンタクト':  'prime',
   'prime contact':      'prime',
+  'チャームコンタクト':  'charm',
+  'charm':              'charm',
+  'コンタクトレンズ21': 'cl21',
+  'コンタクト通販':     'lensquick',
 };
 
 interface StoreLink {
@@ -34,139 +42,149 @@ interface StoreLink {
   affiliateUrl: string;
 }
 
-// ── ログイン ──────────────────────────────────────────────
-async function login(page: Page, email: string, password: string): Promise<boolean> {
-  console.log('A8.net にログイン中...');
-  await page.goto('https://www.a8.net/a8v2/login.f8', { waitUntil: 'networkidle', timeout: 20000 });
+// ── クッキーを使ってページを認証 ─────────────────────────
+async function getAuthenticatedPage(jsessionId: string) {
+  const browser = await chromium.launch({ headless: true });
+  const context = await browser.newContext({
+    userAgent:
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 ' +
+      '(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+    locale: 'ja-JP',
+  });
 
-  // ログイン済みならスキップ
-  if (page.url().includes('media-console.a8.net') || page.url().includes('mypage')) {
-    console.log('✅ 既にログイン済み');
-    return true;
-  }
-
-  await page.fill('input[name="login_id"], input[type="email"], #login_id, input[id*="mail"]', email);
-  await page.fill('input[name="password"], input[type="password"]', password);
-  await Promise.all([
-    page.waitForNavigation({ waitUntil: 'networkidle', timeout: 20000 }),
-    page.click('input[type="submit"], button[type="submit"], button:has-text("ログイン")'),
+  // JSESSIONIDをセット
+  await context.addCookies([
+    {
+      name: 'JSESSIONID',
+      value: jsessionId,
+      domain: 'media-console.a8.net',
+      path: '/',
+      httpOnly: true,
+      secure: true,
+    },
   ]);
 
-  if (page.url().includes('login')) {
-    console.error('❌ ログイン失敗');
-    return false;
-  }
-  console.log('✅ ログイン成功:', page.url());
-  return true;
+  return { browser, context };
 }
 
 // ── 参加中プログラム一覧からリンクを取得 ─────────────────
-async function fetchLinks(context: BrowserContext): Promise<StoreLink[]> {
-  const page = await context.newPage();
+async function fetchLinks(jsessionId: string): Promise<StoreLink[]> {
+  const { browser, context } = await getAuthenticatedPage(jsessionId);
   const results: StoreLink[] = [];
 
-  // 参加中プログラム一覧（新コンソール）
-  console.log('\n参加中プログラムを取得中...');
-  await page.goto(
-    'https://media-console.a8.net/program/list/partnered?pageNo=1&pageSize=50&sortKey=APPROVED_DATE&sortOrder=DESC',
-    { waitUntil: 'networkidle', timeout: 20000 }
-  );
+  try {
+    const page = await context.newPage();
 
-  // 全プログラムのIDとプログラム名を取得
-  const programs = await page.evaluate(() => {
-    const items: { programId: string; name: string }[] = [];
+    console.log('参加中プログラム一覧を取得中...');
+    await page.goto(
+      'https://media-console.a8.net/program/list/partnered?pageNo=1&pageSize=50&sortKey=APPROVED_DATE&sortOrder=DESC',
+      { waitUntil: 'networkidle', timeout: 30000 }
+    );
 
-    // 「広告リンク作成」ボタンのhref からprogramIdを取得
-    document.querySelectorAll('a[href*="create-link"]').forEach((el) => {
-      const href = (el as HTMLAnchorElement).href;
-      const m = href.match(/programId=([^&]+)/);
-      if (!m) return;
-      const programId = m[1];
-
-      // 同じカード内のプログラム名を探す
-      const card = el.closest('[class*="program"], [class*="card"], tr, li, article, section')
-                   || el.parentElement?.parentElement;
-      const name = card?.textContent?.trim().slice(0, 50) || '';
-      items.push({ programId, name });
-    });
-    return items;
-  });
-
-  console.log(`  ${programs.length}件のプログラムを検出`);
-
-  for (const prog of programs) {
-    // プログラム名からストアIDを判定
-    let matchedStoreId: string | null = null;
-    let matchedKeyword = '';
-    const lowerName = prog.name.toLowerCase();
-
-    for (const [keyword, storeId] of Object.entries(PROGRAM_MAP)) {
-      if (lowerName.includes(keyword.toLowerCase())) {
-        matchedStoreId = storeId;
-        matchedKeyword = keyword;
-        break;
-      }
+    // ログインページにリダイレクトされたら認証失敗
+    if (page.url().includes('login') || page.url().includes('signin')) {
+      console.error('❌ 認証失敗: JSESSIONIDが無効または期限切れです');
+      console.error('   A8.netに再ログインして新しいJSESSIONIDをGitHub Secretsに設定してください');
+      process.exit(1);
     }
-    if (!matchedStoreId) continue;
 
-    // 既に取得済みならスキップ
-    if (results.find((r) => r.storeId === matchedStoreId)) continue;
+    console.log('✅ 認証成功:', page.url());
 
-    console.log(`  → ${matchedKeyword} (${matchedStoreId}) のリンクを取得中...`);
-
-    // 広告リンク作成ページへ
-    const linkPage = await context.newPage();
-    try {
-      await linkPage.goto(
-        `https://media-console.a8.net/program/create-link?programId=${prog.programId}`,
-        { waitUntil: 'networkidle', timeout: 15000 }
-      );
-
-      // px.a8.netのURLを抽出
-      const a8Url = await linkPage.evaluate((): string | null => {
-        // リンクのhref
-        for (const a of Array.from(document.querySelectorAll('a[href*="px.a8.net"]'))) {
-          return (a as HTMLAnchorElement).href;
+    // 広告リンク作成ページへのリンクからprogramIdを収集
+    const programs = await page.evaluate(() => {
+      const items: { programId: string; name: string }[] = [];
+      document.querySelectorAll('a[href*="create-link"]').forEach((el) => {
+        const href = (el as HTMLAnchorElement).href;
+        const m = href.match(/programId=([^&\s]+)/);
+        if (!m) return;
+        const programId = m[1];
+        // 最も近い親要素のテキストをプログラム名として使用
+        let el2: Element | null = el;
+        let name = '';
+        for (let i = 0; i < 8; i++) {
+          el2 = el2?.parentElement ?? null;
+          if (!el2) break;
+          const t = el2.textContent?.replace(/\s+/g, ' ').trim() ?? '';
+          if (t.length > 5 && t.length < 200) { name = t; break; }
         }
-        // テキストフィールドやコード表示内
-        const texts = [
-          ...Array.from(document.querySelectorAll('input, textarea, [class*="code"], [class*="link-url"]')),
-        ];
-        for (const el of texts) {
-          const val = (el as HTMLInputElement).value || el.textContent || '';
-          const m = val.match(/(https:\/\/px\.a8\.net[^\s"'<>\n]+)/);
-          if (m) return m[1];
+        if (!items.find((x) => x.programId === programId)) {
+          items.push({ programId, name: name.slice(0, 60) });
         }
-        // ページ全体のテキストから正規表現で探す
-        const m = document.body.innerText.match(/(https:\/\/px\.a8\.net[^\s"'<>\n]+)/);
-        return m ? m[1] : null;
       });
+      return items;
+    });
 
-      if (a8Url) {
-        // a8ejpredirect より前の部分だけ保持
-        const baseUrl = a8Url.split('&a8ejpredirect')[0];
-        results.push({
-          storeId: matchedStoreId,
-          programName: matchedKeyword,
-          programId: prog.programId,
-          affiliateUrl: baseUrl,
-        });
-        console.log(`  ✅ 取得: ${baseUrl.slice(0, 70)}...`);
-      } else {
-        console.warn(`  ⚠️  URLが見つかりませんでした（${matchedKeyword}）`);
+    console.log(`${programs.length}件のプログラムを検出`);
+    programs.forEach((p) => console.log(`  - [${p.programId}] ${p.name.slice(0, 40)}`));
+
+    // 各プログラムのリンクを取得
+    for (const prog of programs) {
+      let matchedStoreId: string | null = null;
+      let matchedKeyword = '';
+      const lowerName = prog.name.toLowerCase();
+
+      for (const [keyword, storeId] of Object.entries(PROGRAM_MAP)) {
+        if (lowerName.includes(keyword.toLowerCase())) {
+          matchedStoreId = storeId;
+          matchedKeyword = keyword;
+          break;
+        }
       }
-    } catch (e) {
-      console.warn(`  ⚠️  エラー: ${e}`);
-    } finally {
-      await linkPage.close();
+      if (!matchedStoreId) continue;
+      if (results.find((r) => r.storeId === matchedStoreId)) continue;
+
+      console.log(`\n→ ${matchedKeyword} (${matchedStoreId}) のリンクを取得中...`);
+
+      const linkPage = await context.newPage();
+      try {
+        await linkPage.goto(
+          `https://media-console.a8.net/program/create-link?programId=${prog.programId}`,
+          { waitUntil: 'networkidle', timeout: 20000 }
+        );
+
+        // px.a8.netのURLを抽出
+        const a8Url = await linkPage.evaluate((): string | null => {
+          // <a href="https://px.a8.net/...">
+          for (const a of Array.from(document.querySelectorAll('a[href*="px.a8.net"]'))) {
+            return (a as HTMLAnchorElement).href;
+          }
+          // テキストフィールド内
+          for (const el of Array.from(document.querySelectorAll('input, textarea'))) {
+            const val = (el as HTMLInputElement).value || '';
+            const m = val.match(/(https:\/\/px\.a8\.net[^\s"'<>\n]+)/);
+            if (m) return m[1];
+          }
+          // ページテキスト全体
+          const m = document.body.innerText.match(/(https:\/\/px\.a8\.net[^\s"'<>\n]+)/);
+          return m ? m[1] : null;
+        });
+
+        if (a8Url) {
+          const baseUrl = a8Url.split('&a8ejpredirect')[0];
+          results.push({ storeId: matchedStoreId, programName: matchedKeyword, programId: prog.programId, affiliateUrl: baseUrl });
+          console.log(`  ✅ 取得: ${baseUrl.slice(0, 70)}`);
+        } else {
+          console.warn(`  ⚠️  URLが見つかりませんでした`);
+          // ページのテキストをデバッグ出力
+          const pageText = await linkPage.evaluate(() => document.body.innerText.slice(0, 500));
+          console.log('  ページ内容:', pageText.replace(/\n/g, ' '));
+        }
+      } catch (e) {
+        console.warn(`  ⚠️  エラー: ${e}`);
+      } finally {
+        await linkPage.close();
+      }
     }
+
+    await page.close();
+  } finally {
+    await browser.close();
   }
 
-  await page.close();
   return results;
 }
 
-// ── products.json を更新 ───────────────────────────────────
+// ── products.json 更新 ────────────────────────────────────
 function updateProductsJson(links: StoreLink[]): void {
   if (links.length === 0) return;
   const filePath = path.join(process.cwd(), 'data', 'products.json');
@@ -178,15 +196,14 @@ function updateProductsJson(links: StoreLink[]): void {
       store.url = found.affiliateUrl;
       store.affiliateParam = '';
       store.affiliateUpdatedAt = new Date().toISOString();
-      console.log(`  stores[${store.id}].url → ${found.affiliateUrl.slice(0, 60)}...`);
+      console.log(`  stores[${store.id}] 更新: ${found.affiliateUrl.slice(0, 60)}`);
     }
   }
-
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
   console.log('✅ data/products.json 更新完了');
 }
 
-// ── prices.json を更新 ────────────────────────────────────
+// ── prices.json 更新 ──────────────────────────────────────
 function updatePricesJson(links: StoreLink[]): void {
   if (links.length === 0) return;
   const filePath = path.join(process.cwd(), 'data', 'prices.json');
@@ -200,44 +217,27 @@ function updatePricesJson(links: StoreLink[]): void {
       updated++;
     }
   }
-
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
   console.log(`✅ data/prices.json 更新完了（${updated}件）`);
 }
 
 // ── メイン ────────────────────────────────────────────────
 (async () => {
-  const email    = process.env.A8_EMAIL;
-  const password = process.env.A8_PASSWORD;
-  if (!email || !password) {
-    throw new Error('環境変数 A8_EMAIL と A8_PASSWORD が必要です');
+  const jsessionId = process.env.A8_JSESSIONID;
+  if (!jsessionId) {
+    console.error('環境変数 A8_JSESSIONID が必要です');
+    process.exit(1);
   }
 
-  const browser = await chromium.launch({ headless: true });
-  const context = await browser.newContext({
-    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-    locale: 'ja-JP',
-  });
+  console.log('=== A8.net アフィリエイトリンク自動取得（クッキー認証版） ===\n');
+  const links = await fetchLinks(jsessionId);
+  console.log(`\n取得結果: ${links.length}件`);
 
-  try {
-    const page = await context.newPage();
-    const ok = await login(page, email, password);
-    await page.close();
-    if (!ok) process.exit(1);
-
-    console.log('\n=== アフィリエイトリンク取得開始 ===');
-    const links = await fetchLinks(context);
-    console.log(`\n取得結果: ${links.length}件`);
-    links.forEach((l) => console.log(`  ${l.storeId}: ${l.affiliateUrl.slice(0, 60)}...`));
-
-    if (links.length > 0) {
-      console.log('\n=== データ更新 ===');
-      updateProductsJson(links);
-      updatePricesJson(links);
-    }
-
-    console.log('\n=== 完了 ===');
-  } finally {
-    await browser.close();
+  if (links.length > 0) {
+    console.log('\n=== データ更新 ===');
+    updateProductsJson(links);
+    updatePricesJson(links);
   }
+
+  console.log('\n=== 完了 ===');
 })().catch((e) => { console.error(e); process.exit(1); });

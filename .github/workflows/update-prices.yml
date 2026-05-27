@@ -31,8 +31,7 @@ jobs:
       - name: A8.net アフィリエイトリンク自動取得
         run: npx ts-node scripts/fetch-a8-links.ts
         env:
-          A8_EMAIL: ${{ secrets.A8_EMAIL }}
-          A8_PASSWORD: ${{ secrets.A8_PASSWORD }}
+          A8_JSESSIONID: ${{ secrets.A8_JSESSIONID }}
         # リンク取得に失敗してもワークフロー全体は止めない
         continue-on-error: true
 
