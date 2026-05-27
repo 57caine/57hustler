@@ -5,7 +5,8 @@
  * 環境変数: A8_EMAIL, A8_PASSWORD
  */
 
-import { chromium, Page, BrowserContext } from 'playwright';
+import { chromium } from 'playwright';
+import type { Page, BrowserContext } from 'playwright';
 import * as fs from 'fs';
 import * as path from 'path';
 
