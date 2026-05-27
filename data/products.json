@@ -152,6 +152,7 @@
     { "slug": "color", "name": "カラーコンタクト", "nameEn": "Color Contacts", "description": "おしゃれな瞳に。度あり・度なし両方あり。" }
   ],
   "stores": [
+    { "id": "lensquick", "name": "レンズクイック", "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6GSIB6+20YY+ZTFR6", "affiliateParam": "" },
     { "id": "smile", "name": "スマイルコンタクト", "url": "https://www.smilecl.jp", "affiliateParam": "?utm_source=57hustler" },
     { "id": "eyecity", "name": "アイシティ", "url": "https://www.eyecity.jp", "affiliateParam": "?utm_source=57hustler" },
     { "id": "lensclub", "name": "レンズアップクラブ", "url": "https://www.lensupclub.com", "affiliateParam": "?utm_source=57hustler" },

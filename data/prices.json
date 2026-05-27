@@ -3,6 +3,94 @@
   "prices": [
     {
       "productId": "acuvue-oasys-1day",
+      "storeId": "lensquick",
+      "price": 3180,
+      "pricePerBox": 3180,
+      "boxes": 1,
+      "lensCount": 30,
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6GSIB6+20YY+ZTFR6",
+      "inStock": true,
+      "lastUpdated": "2026-05-28T00:00:00Z"
+    },
+    {
+      "productId": "acuvue-moist-1day",
+      "storeId": "lensquick",
+      "price": 2280,
+      "pricePerBox": 2280,
+      "boxes": 1,
+      "lensCount": 30,
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6GSIB6+20YY+ZTFR6",
+      "inStock": true,
+      "lastUpdated": "2026-05-28T00:00:00Z"
+    },
+    {
+      "productId": "dailies-total1",
+      "storeId": "lensquick",
+      "price": 3520,
+      "pricePerBox": 3520,
+      "boxes": 1,
+      "lensCount": 30,
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6GSIB6+20YY+ZTFR6",
+      "inStock": true,
+      "lastUpdated": "2026-05-28T00:00:00Z"
+    },
+    {
+      "productId": "seed-1day-pure",
+      "storeId": "lensquick",
+      "price": 1650,
+      "pricePerBox": 1650,
+      "boxes": 1,
+      "lensCount": 32,
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6GSIB6+20YY+ZTFR6",
+      "inStock": true,
+      "lastUpdated": "2026-05-28T00:00:00Z"
+    },
+    {
+      "productId": "menicon-1day",
+      "storeId": "lensquick",
+      "price": 1850,
+      "pricePerBox": 1850,
+      "boxes": 1,
+      "lensCount": 30,
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6GSIB6+20YY+ZTFR6",
+      "inStock": true,
+      "lastUpdated": "2026-05-28T00:00:00Z"
+    },
+    {
+      "productId": "acuvue-oasys-2week",
+      "storeId": "lensquick",
+      "price": 2750,
+      "pricePerBox": 2750,
+      "boxes": 1,
+      "lensCount": 6,
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6GSIB6+20YY+ZTFR6",
+      "inStock": true,
+      "lastUpdated": "2026-05-28T00:00:00Z"
+    },
+    {
+      "productId": "biofinity",
+      "storeId": "lensquick",
+      "price": 3180,
+      "pricePerBox": 3180,
+      "boxes": 1,
+      "lensCount": 6,
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6GSIB6+20YY+ZTFR6",
+      "inStock": true,
+      "lastUpdated": "2026-05-28T00:00:00Z"
+    },
+    {
+      "productId": "geo-angel-color",
+      "storeId": "lensquick",
+      "price": 1880,
+      "pricePerBox": 1880,
+      "boxes": 1,
+      "lensCount": 10,
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6GSIB6+20YY+ZTFR6",
+      "inStock": true,
+      "lastUpdated": "2026-05-28T00:00:00Z"
+    },
+    {
+      "productId": "acuvue-oasys-1day",
       "storeId": "smile",
       "price": 3340,
       "pricePerBox": 3140,
