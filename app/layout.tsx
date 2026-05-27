@@ -11,7 +11,10 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://contact-saitei.com'),
+  metadataBase: new URL('https://57hustler-1vt8.vercel.app'),
+  verification: {
+    google: 'ms0YnowygFYwPKk3oWjnPGoyx0Jpox_yJAzBU8mVaA8',
+  },
   title: {
     default: 'コンタクトレンズ最安値比較 | コンタクト最安値.com',
     template: '%s | コンタクト最安値.com',
