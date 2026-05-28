@@ -32,9 +32,38 @@ export default async function ProductPage({ params }: Props) {
     'color': 'カラコン',
   };
   const label = categoryLabel[product.category] ?? product.category;
+  const BASE = 'https://57hustler-1vt8.vercel.app';
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Product',
+        name: product.name,
+        description: product.description,
+        brand: { '@type': 'Brand', name: product.brandName },
+        offers: product.lowestPrice != null ? {
+          '@type': 'AggregateOffer',
+          lowPrice: product.lowestPrice,
+          priceCurrency: 'JPY',
+          offerCount: product.prices.length,
+          availability: 'https://schema.org/InStock',
+        } : undefined,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'ホーム', item: BASE },
+          { '@type': 'ListItem', position: 2, name: label, item: `${BASE}/category/${product.category}` },
+          { '@type': 'ListItem', position: 3, name: product.name, item: `${BASE}/product/${product.slug}` },
+        ],
+      },
+    ],
+  };
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Breadcrumb */}
       <nav className="text-sm text-gray-500 mb-6">
         <Link href="/" className="hover:text-blue-600">ホーム</Link>

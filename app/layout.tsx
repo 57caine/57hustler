@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Noto_Sans_JP } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -37,9 +38,56 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': 'https://57hustler-1vt8.vercel.app/#website',
+        url: 'https://57hustler-1vt8.vercel.app',
+        name: 'コンタクト最安値.com',
+        description: 'コンタクトレンズの最安値を比較するサイト',
+        inLanguage: 'ja',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: 'https://57hustler-1vt8.vercel.app/ranking',
+          'query-input': 'required name=search_term_string',
+        },
+      },
+      {
+        '@type': 'Organization',
+        '@id': 'https://57hustler-1vt8.vercel.app/#organization',
+        name: 'コンタクト最安値.com',
+        url: 'https://57hustler-1vt8.vercel.app',
+        description: 'コンタクトレンズの最安値比較サイト。アキュビュー・デイリーズ・シードなど人気商品を24店舗で比較。',
+      },
+    ],
+  };
+
   return (
     <html lang="ja">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${notoSansJP.className} bg-gray-50 text-gray-900`}>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-HQG2DVFTZG"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HQG2DVFTZG', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
         <Header />
         <main className="min-h-screen">
           {children}

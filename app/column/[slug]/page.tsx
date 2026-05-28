@@ -34,9 +34,34 @@ export default async function ColumnPage({ params }: Props) {
   if (!content) notFound();
 
   const otherColumns = columns.filter((c) => c.slug !== slug).slice(0, 3);
+  const BASE = 'https://57hustler-1vt8.vercel.app';
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: column.title,
+        description: column.description,
+        datePublished: column.publishedAt,
+        dateModified: column.updatedAt,
+        publisher: { '@type': 'Organization', name: 'コンタクト最安値.com', url: BASE },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE}/column/${column.slug}` },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'ホーム', item: BASE },
+          { '@type': 'ListItem', position: 2, name: 'コラム', item: `${BASE}/column` },
+          { '@type': 'ListItem', position: 3, name: column.title, item: `${BASE}/column/${column.slug}` },
+        ],
+      },
+    ],
+  };
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <nav className="text-sm text-gray-500 mb-6">
         <Link href="/" className="hover:text-blue-600">ホーム</Link>
         <span className="mx-2">/</span>
