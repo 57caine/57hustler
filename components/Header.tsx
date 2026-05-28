@@ -25,6 +25,9 @@ export default function Header() {
             <Link href="/category/color" className="text-gray-600 hover:text-blue-600 transition-colors">
               カラコン
             </Link>
+            <Link href="/column" className="text-gray-600 hover:text-blue-600 transition-colors">
+              コラム
+            </Link>
             <Link href="/ranking" className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors">
               人気ランキング
             </Link>
@@ -36,6 +39,7 @@ export default function Header() {
           <Link href="/category/2week" className="whitespace-nowrap bg-gray-100 px-3 py-1 rounded-full text-gray-700">ツーウィーク</Link>
           <Link href="/category/monthly" className="whitespace-nowrap bg-gray-100 px-3 py-1 rounded-full text-gray-700">マンスリー</Link>
           <Link href="/category/color" className="whitespace-nowrap bg-gray-100 px-3 py-1 rounded-full text-gray-700">カラコン</Link>
+          <Link href="/column" className="whitespace-nowrap bg-gray-100 px-3 py-1 rounded-full text-gray-700">コラム</Link>
           <Link href="/ranking" className="whitespace-nowrap bg-blue-600 text-white px-3 py-1 rounded-full">ランキング</Link>
         </nav>
       </div>

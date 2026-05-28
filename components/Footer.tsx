@@ -24,10 +24,12 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="font-bold text-white mb-3">おすすめ</h3>
+            <h3 className="font-bold text-white mb-3">コラム</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/ranking" className="hover:text-white transition-colors">人気ランキング</Link></li>
-              <li><Link href="/category/1day" className="hover:text-white transition-colors">初めての方へ</Link></li>
+              <li><Link href="/column/dosu-mikata" className="hover:text-white transition-colors">度数の見方・読み方</Link></li>
+              <li><Link href="/column/shohosen-nashi-tsuuhan" className="hover:text-white transition-colors">処方箋なしで通販購入</Link></li>
+              <li><Link href="/column/hajimete-erabikata" className="hover:text-white transition-colors">初めての選び方</Link></li>
+              <li><Link href="/column/kanso-shinikui-contact" className="hover:text-white transition-colors">乾きにくいコンタクト</Link></li>
             </ul>
           </div>
           <div>

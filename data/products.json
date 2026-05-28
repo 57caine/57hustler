@@ -35,6 +35,40 @@
       "popularity": 98
     },
     {
+      "id": "acuvue-moist-1day-astig",
+      "name": "1デイ アキュビュー モイスト 乱視用",
+      "brand": "acuvue",
+      "brandName": "アキュビュー",
+      "manufacturer": "ジョンソン・エンド・ジョンソン",
+      "category": "1day",
+      "subcategory": "astig",
+      "description": "LACREON®テクノロジーで乾きを防ぎながら乱視を矯正。乱視用1日使い捨てコンタクトの定番。",
+      "features": ["LACREON技術", "UV保護", "乱視矯正"],
+      "bc": "8.5",
+      "dia": "14.5",
+      "waterContent": "58%",
+      "image": "/images/acuvue-moist-astig.jpg",
+      "slug": "acuvue-moist-1day-astig",
+      "popularity": 88
+    },
+    {
+      "id": "acuvue-oasys-1day-astig",
+      "name": "アキュビュー オアシス ワンデー 乱視用",
+      "brand": "acuvue",
+      "brandName": "アキュビュー",
+      "manufacturer": "ジョンソン・エンド・ジョンソン",
+      "category": "1day",
+      "subcategory": "astig",
+      "description": "HydraLuxe™テクノロジーで乾きに強い乱視用ワンデー。激しい動きでもレンズが安定。",
+      "features": ["HydraLuxe技術", "UV保護", "安定した乱視矯正"],
+      "bc": "8.5",
+      "dia": "14.3",
+      "waterContent": "38%",
+      "image": "/images/acuvue-oasys-1day-astig.jpg",
+      "slug": "acuvue-oasys-1day-astig",
+      "popularity": 82
+    },
+    {
       "id": "dailies-total1",
       "name": "デイリーズ トータルワン",
       "brand": "alcon",
@@ -50,6 +84,40 @@
       "image": "/images/dailies-total1.jpg",
       "slug": "dailies-total1",
       "popularity": 90
+    },
+    {
+      "id": "dailies-aqua-comfort-plus",
+      "name": "デイリーズ アクア コンフォートプラス",
+      "brand": "alcon",
+      "brandName": "アルコン",
+      "manufacturer": "アルコン",
+      "category": "1day",
+      "subcategory": "clear",
+      "description": "3種類のうるおい成分配合。まばたきのたびにうるおいが広がるコスパ優秀なワンデー。",
+      "features": ["3種うるおい成分", "まばたき保湿", "コスパ優秀"],
+      "bc": "8.7",
+      "dia": "14.0",
+      "waterContent": "69%",
+      "image": "/images/dailies-aqua.jpg",
+      "slug": "dailies-aqua-comfort-plus",
+      "popularity": 83
+    },
+    {
+      "id": "biotrue-oneday",
+      "name": "バイオトゥルーワンデー",
+      "brand": "bausch",
+      "brandName": "ボシュロム",
+      "manufacturer": "ボシュロム",
+      "category": "1day",
+      "subcategory": "clear",
+      "description": "生体模倣技術で角膜と同じ含水率78%を実現。長時間装用でも目に優しいワンデー。",
+      "features": ["含水率78%", "生体模倣技術", "高い酸素透過率"],
+      "bc": "8.6",
+      "dia": "14.2",
+      "waterContent": "78%",
+      "image": "/images/biotrue-oneday.jpg",
+      "slug": "biotrue-oneday",
+      "popularity": 79
     },
     {
       "id": "seed-1day-pure",
@@ -69,6 +137,23 @@
       "popularity": 85
     },
     {
+      "id": "neo-sight-1day",
+      "name": "ネオサイト ワンデー シリコーン UV",
+      "brand": "seed",
+      "brandName": "シード",
+      "manufacturer": "シード",
+      "category": "1day",
+      "subcategory": "clear",
+      "description": "国産シリコーンハイドロゲルワンデー。高い酸素透過率で夜遅くまで快適。",
+      "features": ["シリコーンハイドロゲル", "高酸素透過率", "UVカット"],
+      "bc": "8.8",
+      "dia": "14.2",
+      "waterContent": "33%",
+      "image": "/images/neo-sight.jpg",
+      "slug": "neo-sight-1day",
+      "popularity": 77
+    },
+    {
       "id": "menicon-1day",
       "name": "メニコン ワンデー",
       "brand": "menicon",
@@ -84,6 +169,23 @@
       "image": "/images/menicon-1day.jpg",
       "slug": "menicon-1day",
       "popularity": 80
+    },
+    {
+      "id": "clariti-1day",
+      "name": "クラリティ ワンデー",
+      "brand": "coopervision",
+      "brandName": "クーパービジョン",
+      "manufacturer": "クーパービジョン",
+      "category": "1day",
+      "subcategory": "clear",
+      "description": "シリコーンハイドロゲル素材のワンデーコンタクト。高い酸素透過率で目の健康を守る。",
+      "features": ["シリコーンハイドロゲル", "高酸素透過率", "UVカット"],
+      "bc": "8.6",
+      "dia": "14.1",
+      "waterContent": "56%",
+      "image": "/images/clariti-1day.jpg",
+      "slug": "clariti-1day",
+      "popularity": 72
     },
     {
       "id": "acuvue-oasys-2week",
@@ -103,6 +205,40 @@
       "popularity": 92
     },
     {
+      "id": "seed-2week-pure",
+      "name": "シード ツーウィークピュア",
+      "brand": "seed",
+      "brandName": "シード",
+      "manufacturer": "シード",
+      "category": "2week",
+      "subcategory": "clear",
+      "description": "国産品質の2週間交換タイプ。高含水率57%で長時間快適に装用できる。",
+      "features": ["含水率57%", "国産品質", "UVカット"],
+      "bc": "8.8",
+      "dia": "14.2",
+      "waterContent": "57%",
+      "image": "/images/seed-2week.jpg",
+      "slug": "seed-2week-pure",
+      "popularity": 74
+    },
+    {
+      "id": "menicon-2week",
+      "name": "メニコン 2ウィーク プレミオ",
+      "brand": "menicon",
+      "brandName": "メニコン",
+      "manufacturer": "メニコン",
+      "category": "2week",
+      "subcategory": "clear",
+      "description": "高い酸素透過率のシリコーンハイドロゲル素材。2週間清潔に使えるプレミアムレンズ。",
+      "features": ["高酸素透過率", "シリコーンハイドロゲル", "連続装用対応"],
+      "bc": "8.6",
+      "dia": "14.0",
+      "waterContent": "40%",
+      "image": "/images/menicon-2week.jpg",
+      "slug": "menicon-2week",
+      "popularity": 71
+    },
+    {
       "id": "biofinity",
       "name": "バイオフィニティ",
       "brand": "coopervision",
@@ -120,6 +256,23 @@
       "popularity": 75
     },
     {
+      "id": "air-optix-hydraglyde",
+      "name": "エアオプティクス ハイドラグライド",
+      "brand": "alcon",
+      "brandName": "アルコン",
+      "manufacturer": "アルコン",
+      "category": "monthly",
+      "subcategory": "clear",
+      "description": "HYDRAGLYDE®モイスチャーマトリックスで1ヶ月間うるおいが続くマンスリーコンタクト。",
+      "features": ["HYDRAGLYDE技術", "持続保湿", "シリコーンハイドロゲル"],
+      "bc": "8.6",
+      "dia": "14.2",
+      "waterContent": "33%",
+      "image": "/images/air-optix.jpg",
+      "slug": "air-optix-hydraglyde",
+      "popularity": 73
+    },
+    {
       "id": "geo-angel-color",
       "name": "ジオ エンジェルカラー",
       "brand": "geo",
@@ -135,6 +288,23 @@
       "image": "/images/geo-angel.jpg",
       "slug": "geo-angel-color",
       "popularity": 70
+    },
+    {
+      "id": "freshkon-colorblends",
+      "name": "フレッシュコン カラーブレンズ",
+      "brand": "coopervision",
+      "brandName": "クーパービジョン",
+      "manufacturer": "クーパービジョン",
+      "category": "color",
+      "subcategory": "color",
+      "description": "3色ブレンドで自然な立体感を演出するカラコン。瞳に奥行きをプラス。",
+      "features": ["3色ブレンド", "自然な発色", "高含水率"],
+      "bc": "8.6",
+      "dia": "14.5",
+      "waterContent": "55%",
+      "image": "/images/freshkon.jpg",
+      "slug": "freshkon-colorblends",
+      "popularity": 65
     }
   ],
   "brands": [
@@ -143,6 +313,7 @@
     { "slug": "seed", "name": "シード", "nameEn": "Seed", "manufacturer": "シード", "country": "日本" },
     { "slug": "menicon", "name": "メニコン", "nameEn": "Menicon", "manufacturer": "メニコン", "country": "日本" },
     { "slug": "coopervision", "name": "クーパービジョン", "nameEn": "CooperVision", "manufacturer": "クーパービジョン", "country": "アメリカ" },
+    { "slug": "bausch", "name": "ボシュロム", "nameEn": "Bausch + Lomb", "manufacturer": "ボシュロム", "country": "アメリカ" },
     { "slug": "geo", "name": "GEO", "nameEn": "GEO", "manufacturer": "GEO Medical", "country": "韓国" }
   ],
   "categories": [
