@@ -8,8 +8,8 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl">👁️</span>
             <div>
-              <span className="text-xl font-bold text-blue-600">コンタクト最安値.com</span>
-              <p className="text-xs text-gray-500">コンタクトレンズ価格比較サイト</p>
+              <span className="text-xl font-bold text-blue-600">レンズナビ</span>
+              <p className="text-xs text-gray-500">コンタクトレンズ最安値比較</p>
             </div>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">

@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllProducts, getAllCategories, getAllBrands } from '@/lib/products';
 import { columns } from '@/lib/columns';
 
-const BASE_URL = 'https://contact-saitei.com';
+const BASE_URL = 'https://lens-navi.jp';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const products = getAllProducts();

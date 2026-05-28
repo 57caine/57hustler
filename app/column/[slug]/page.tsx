@@ -34,7 +34,7 @@ export default async function ColumnPage({ params }: Props) {
   if (!content) notFound();
 
   const otherColumns = columns.filter((c) => c.slug !== slug).slice(0, 3);
-  const BASE = 'https://57hustler-1vt8.vercel.app';
+  const BASE = 'https://lens-navi.jp';
 
   const jsonLd = {
     '@context': 'https://schema.org',

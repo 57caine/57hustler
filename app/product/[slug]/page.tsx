@@ -32,7 +32,7 @@ export default async function ProductPage({ params }: Props) {
     'color': 'カラコン',
   };
   const label = categoryLabel[product.category] ?? product.category;
-  const BASE = 'https://57hustler-1vt8.vercel.app';
+  const BASE = 'https://lens-navi.jp';
 
   const jsonLd = {
     '@context': 'https://schema.org',

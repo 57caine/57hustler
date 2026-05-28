@@ -12,20 +12,20 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://57hustler-1vt8.vercel.app'),
+  metadataBase: new URL('https://lens-navi.jp'),
   verification: {
     google: 'ms0YnowygFYwPKk3oWjnPGoyx0Jpox_yJAzBU8mVaA8',
   },
   title: {
-    default: 'コンタクトレンズ最安値比較 | コンタクト最安値.com',
-    template: '%s | コンタクト最安値.com',
+    default: 'コンタクトレンズ最安値比較 | レンズナビ',
+    template: '%s | レンズナビ',
   },
   description: 'アキュビュー、デイリーズ、シードなど人気コンタクトレンズの最安値を比較。スマイルコンタクト、アイシティなど主要ショップの価格を毎日自動更新。',
   keywords: ['コンタクトレンズ', '最安値', '価格比較', 'アキュビュー', 'ワンデー', 'カラコン', '通販'],
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
-    siteName: 'コンタクト最安値.com',
+    siteName: 'レンズナビ',
   },
   robots: {
     index: true,
@@ -43,22 +43,22 @@ export default function RootLayout({
     '@graph': [
       {
         '@type': 'WebSite',
-        '@id': 'https://57hustler-1vt8.vercel.app/#website',
-        url: 'https://57hustler-1vt8.vercel.app',
-        name: 'コンタクト最安値.com',
+        '@id': 'https://lens-navi.jp/#website',
+        url: 'https://lens-navi.jp',
+        name: 'レンズナビ',
         description: 'コンタクトレンズの最安値を比較するサイト',
         inLanguage: 'ja',
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://57hustler-1vt8.vercel.app/ranking',
+          target: 'https://lens-navi.jp/ranking',
           'query-input': 'required name=search_term_string',
         },
       },
       {
         '@type': 'Organization',
-        '@id': 'https://57hustler-1vt8.vercel.app/#organization',
-        name: 'コンタクト最安値.com',
-        url: 'https://57hustler-1vt8.vercel.app',
+        '@id': 'https://lens-navi.jp/#organization',
+        name: 'レンズナビ',
+        url: 'https://lens-navi.jp',
         description: 'コンタクトレンズの最安値比較サイト。アキュビュー・デイリーズ・シードなど人気商品を24店舗で比較。',
       },
     ],
