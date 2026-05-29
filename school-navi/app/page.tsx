@@ -1,7 +1,13 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { schools, getHighlightedSchools, formatPrice, getAllCategories } from '@/lib/schools';
 import { columns } from '@/lib/columns';
 import SchoolCard from '@/components/SchoolCard';
+
+export const metadata: Metadata = {
+  title: 'プログラミングスクール比較ランキング2025年版｜おすすめ12校を徹底比較',
+  description: 'TECH CAMP・DMM WEBCAMP・侍エンジニア塾など人気プログラミングスクール12校を料金・転職実績・給付金対応で徹底比較。未経験からIT転職・副業・フリーランスを目指す方向け完全ガイド。',
+};
 
 export default function HomePage() {
   const highlighted = getHighlightedSchools();
@@ -38,7 +44,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto flex flex-wrap gap-6 text-sm">
           <span><strong className="text-white">{schools.length}校</strong> を掲載</span>
           <span><strong className="text-white">{subsidySchools.length}校</strong> が給付金対象</span>
-          <span>最終更新: <strong className="text-white">2025年6月</strong></span>
+          <span>最終更新: <strong className="text-white">2026年5月</strong></span>
         </div>
       </section>
 
