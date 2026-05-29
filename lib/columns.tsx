@@ -173,6 +173,24 @@ export const columns: ColumnMeta[] = [
     updatedAt: '2026-05-29',
     readingTime: 7,
   },
+  {
+    slug: 'ranshi-contact-ranking-2025',
+    title: '乱視用コンタクトレンズ おすすめランキング2025【ワンデー・2week・マンスリー別】',
+    description: '乱視（CYL・AXIS）に対応したトーリックコンタクトのおすすめを種類別にランキング。アキュビュー オアシス乱視用・デイリーズ トータルワン乱視用など人気商品を比較。',
+    category: '商品比較',
+    publishedAt: '2026-05-29',
+    updatedAt: '2026-05-29',
+    readingTime: 8,
+  },
+  {
+    slug: 'contact-chouji-so',
+    title: '長時間装用向けコンタクトレンズ おすすめ5選【PC作業・残業が多い方へ】',
+    description: '1日10時間以上コンタクトを使う方向けに、乾きにくく酸素透過率が高いコンタクトを厳選。シリコーンハイドロゲル素材の選び方と長時間装用のコツも解説。',
+    category: '商品比較',
+    publishedAt: '2026-05-29',
+    updatedAt: '2026-05-29',
+    readingTime: 6,
+  },
 ];
 
 export function getColumnBySlug(slug: string): ColumnMeta | undefined {
@@ -2038,6 +2056,345 @@ export const columnContent: Record<string, React.ReactNode> = {
             ))}
           </ul>
         </div>
+      </section>
+    </div>
+  ),
+
+  'ranshi-contact-ranking-2025': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">乱視用コンタクト（トーリックレンズ）とは</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          乱視は角膜が楕円形に歪んでいることで、物がぼやけたり二重に見える状態です。通常のコンタクトでは矯正できず、<strong>トーリックレンズ（乱視用）</strong>が必要です。処方箋に「CYL（乱視度数）」と「AXIS（軸）」の値がある方が対象です。
+        </p>
+        <div className="bg-slate-50 rounded-xl p-4 mb-4">
+          <p className="text-xs font-semibold text-gray-700 mb-2">処方箋の見方</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="border-b border-gray-200">
+                  <th className="text-left py-2 pr-4 text-gray-600 font-semibold">項目</th>
+                  <th className="text-left py-2 pr-4 text-gray-600 font-semibold">意味</th>
+                  <th className="text-left py-2 text-gray-600 font-semibold">例</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['PWR / SPH', '球面度数（近視・遠視）', '-3.00'],
+                  ['CYL', '乱視度数', '-0.75'],
+                  ['AXIS', '乱視の軸方向（0〜180度）', '180'],
+                  ['BC', 'ベースカーブ（カーブ半径）', '8.6'],
+                ].map(([item, meaning, example]) => (
+                  <tr key={item} className="border-b border-gray-100">
+                    <td className="py-2 pr-4 font-medium text-gray-800">{item}</td>
+                    <td className="py-2 pr-4 text-gray-600">{meaning}</td>
+                    <td className="py-2 text-gray-600">{example}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p className="text-sm text-gray-700 leading-relaxed">
+          乱視用レンズは回転しないよう設計されており（プリズムバラスト方式など）、装用後に見え方が安定するまで数秒〜数十秒かかることがあります。これは仕様で、異常ではありません。
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ワンデー乱視用コンタクト おすすめランキング</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          1日使い捨てタイプ。ケア不要で衛生的。外出時・旅行中・スポーツ時の使用に便利です。
+        </p>
+        <div className="space-y-4">
+          {[
+            {
+              rank: 1,
+              name: 'デイリーズ トータルワン 乱視用',
+              maker: 'アルコン',
+              feature: '水分保持96%・シリコーンHG素材。1日中快適な装用感でドライアイ傾向の方にも適合。',
+              bc: '8.6',
+              cyl: '-0.75 / -1.25 / -1.75 / -2.25',
+            },
+            {
+              rank: 2,
+              name: 'ワンデーアキュビュー モイスト 乱視用',
+              maker: 'ジョンソン&ジョンソン',
+              feature: 'うるおい成分LACREON配合。日本人の目に合わせた豊富なAXIS設定（10度刻み）で細かい乱視矯正が可能。',
+              bc: '8.5',
+              cyl: '-0.75 / -1.25 / -1.75 / -2.25',
+            },
+            {
+              rank: 3,
+              name: 'バイオフィニティ トーリック（1day換算）',
+              maker: 'クーパービジョン',
+              feature: 'Aquaform技術で自然なうるおい。BC8.7と8.5の2種類があり、目の形に合わせて選べる。',
+              bc: '8.5 / 8.7',
+              cyl: '-0.75 / -1.25 / -1.75',
+            },
+          ].map(({ rank, name, maker, feature, bc, cyl }) => (
+            <div key={name} className="bg-white border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-3">
+                <span className="bg-slate-800 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">{rank}</span>
+                <div className="flex-1">
+                  <p className="font-bold text-gray-900 mb-0.5">{name}</p>
+                  <p className="text-xs text-gray-500 mb-2">{maker}</p>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-3">{feature}</p>
+                  <div className="flex flex-wrap gap-3 text-xs text-gray-600">
+                    <span className="bg-slate-50 rounded px-2 py-1">BC: {bc}</span>
+                    <span className="bg-slate-50 rounded px-2 py-1">CYL: {cyl}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">2week乱視用コンタクト おすすめランキング</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          2週間交換タイプ。1日使い捨てよりコストを抑えられます。毎日のケアが必要ですが、ランニングコストは最も低い部類です。
+        </p>
+        <div className="space-y-4">
+          {[
+            {
+              rank: 1,
+              name: 'アキュビュー オアシス 乱視用',
+              maker: 'ジョンソン&ジョンソン',
+              feature: 'HYDRACLEAR PLUSテクノロジーで涙液の安定膜を形成。2weekタイプで最も乾きにくいとされ、長時間装用でも快適。',
+              bc: '8.6',
+              cyl: '-0.75 / -1.25 / -1.75 / -2.25',
+            },
+            {
+              rank: 2,
+              name: 'メダリスト フレッシュフィット コンフォートモイスト 乱視用',
+              maker: 'アルコン（ノバルティス）',
+              feature: 'フォーカスライン設計でレンズの安定性が高い。豊富な度数展開で強度乱視（CYL-2.25）にも対応。',
+              bc: '8.7',
+              cyl: '-0.75 / -1.25 / -1.75 / -2.25',
+            },
+            {
+              rank: 3,
+              name: 'プロクリア 乱視用（2week）',
+              maker: 'クーパービジョン',
+              feature: 'PC技術で表面に水分を引きつけ、乾燥を防ぐ。目が敏感・ドライアイ傾向の方に適合。',
+              bc: '8.7',
+              cyl: '-0.75 / -1.25 / -1.75',
+            },
+          ].map(({ rank, name, maker, feature, bc, cyl }) => (
+            <div key={name} className="bg-white border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-3">
+                <span className="bg-slate-800 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">{rank}</span>
+                <div className="flex-1">
+                  <p className="font-bold text-gray-900 mb-0.5">{name}</p>
+                  <p className="text-xs text-gray-500 mb-2">{maker}</p>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-3">{feature}</p>
+                  <div className="flex flex-wrap gap-3 text-xs text-gray-600">
+                    <span className="bg-slate-50 rounded px-2 py-1">BC: {bc}</span>
+                    <span className="bg-slate-50 rounded px-2 py-1">CYL: {cyl}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">マンスリー乱視用コンタクト おすすめ</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          1ヶ月交換タイプ。最もコストが低く、毎日使用する方に経済的です。しっかりしたケアが必要です。
+        </p>
+        <div className="space-y-4">
+          {[
+            {
+              rank: 1,
+              name: 'バイオフィニティ トーリック',
+              maker: 'クーパービジョン',
+              feature: 'Aquaform技術でレンズ自体が水分を保持。シリコーンHG素材で酸素透過率が高く、長時間装用にも対応。乱視度数が強い方（CYL-2.25まで）にも豊富な選択肢。',
+              bc: '8.5 / 8.7',
+              cyl: '-0.75〜-2.25',
+            },
+            {
+              rank: 2,
+              name: 'エアオプティクス プラス HG トーリック',
+              maker: 'アルコン',
+              feature: 'Smart Surfaceテクノロジーでレンズ表面に水分層を形成。プラチナサーフェスで汚れが付きにくく、マンスリーでも清潔な装用感が続く。',
+              bc: '8.6',
+              cyl: '-0.75 / -1.25 / -1.75',
+            },
+          ].map(({ rank, name, maker, feature, bc, cyl }) => (
+            <div key={name} className="bg-white border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-3">
+                <span className="bg-slate-700 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">{rank}</span>
+                <div className="flex-1">
+                  <p className="font-bold text-gray-900 mb-0.5">{name}</p>
+                  <p className="text-xs text-gray-500 mb-2">{maker}</p>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-3">{feature}</p>
+                  <div className="flex flex-wrap gap-3 text-xs text-gray-600">
+                    <span className="bg-slate-50 rounded px-2 py-1">BC: {bc}</span>
+                    <span className="bg-slate-50 rounded px-2 py-1">CYL: {cyl}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">CYL・AXISの選び方と注意点</h2>
+        <div className="space-y-3">
+          {[
+            { title: '必ず眼科処方箋を取得する', body: '乱視用コンタクトはCYL値・AXIS値・BC値の3つが合わないと視力矯正が不十分になります。ネット購入でも処方箋が必要で、自己判断でのCYL・AXIS変更は視力低下・眼精疲労の原因になります。' },
+            { title: 'AXIS（軸）は厳密に合わせる', body: 'AXISが10度ずれると視力矯正効果が落ちます。処方箋のAXIS値と商品ラインナップが合わない場合は、最も近い値を眼科医に相談して選んでください。10度刻みの製品（アキュビューシリーズ等）はフィット率が高い傾向があります。' },
+            { title: '初回は眼科でフィッティング確認を', body: '乱視用レンズは装用後の安定に時間がかかります（数秒〜30秒）。初めて使う場合は眼科でレンズの安定性・見え方を確認してからリピート購入することを推奨します。' },
+            { title: '強度乱視（CYL -2.00以上）は選択肢が限られる', body: 'CYL -2.00以上の強度乱視の場合、対応している製品が限られます。バイオフィニティ トーリックやアキュビュー系が対応していることが多いですが、眼科に相談してください。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
+          ※ 掲載している製品情報・BC値・CYL設定は参考値です。実際のご購入前に必ず眼科で処方箋を取得し、最新の製品仕様を販売店でご確認ください。
+        </p>
+      </section>
+    </div>
+  ),
+
+  'contact-chouji-so': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">長時間装用で大切なのは「素材」</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          1日10時間以上のコンタクト装用は、角膜への酸素供給不足・乾燥による不快感・充血などのリスクが高まります。長時間装用に適したレンズを選ぶ際の最重要ポイントは<strong>シリコーンハイドロゲル（SiHy）素材</strong>かどうかです。
+        </p>
+        <div className="overflow-x-auto bg-slate-50 rounded-xl p-4 mb-4">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="border-b border-gray-200">
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">素材</th>
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">酸素透過率</th>
+                <th className="text-left py-2 text-gray-600 font-semibold">長時間装用</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['ハイドロゲル（旧来型）', '低〜中', '非推奨（目が疲れやすい）'],
+                ['シリコーンハイドロゲル', '非常に高い', '推奨（酸素が豊富に通る）'],
+              ].map(([material, o2, long]) => (
+                <tr key={material} className="border-b border-gray-100">
+                  <td className="py-2 pr-4 font-medium text-gray-800">{material}</td>
+                  <td className="py-2 pr-4 text-gray-600">{o2}</td>
+                  <td className="py-2 text-gray-600">{long}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm text-gray-700 leading-relaxed">
+          PC作業・残業・運転など目を酷使する方は、必ずシリコーンハイドロゲル素材のレンズを選んでください。旧来のハイドロゲルより価格はやや高めですが、眼の健康維持への投資として重要です。
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">長時間装用向けおすすめコンタクト5選</h2>
+        <div className="space-y-4">
+          {[
+            {
+              rank: 1,
+              name: 'デイリーズ トータルワン',
+              type: 'ワンデー',
+              maker: 'アルコン',
+              material: 'シリコーンHG（Dk/t:156）',
+              moisture: '水分保持96%（レンズ表面）',
+              comment: '現存する1dayコンタクトの中でトップクラスの酸素透過率と水分保持力。目の表面に水の膜を作る「ウォーターグラジェント技術」により、1日中乾燥感が少ない。長時間のPC作業・運転に最も適した製品の一つ。',
+            },
+            {
+              rank: 2,
+              name: 'アキュビュー オアシス（1day）',
+              type: 'ワンデー',
+              maker: 'ジョンソン&ジョンソン',
+              material: 'シリコーンHG（Dk/t:121）',
+              moisture: 'HYDRALUXE技術',
+              comment: 'HYDRALUXE技術で涙液とレンズが一体化。まばたきのたびにレンズ表面が潤う設計で、ドライアイ傾向の長時間装用者に高く評価されている。UVブロック機能も付属。',
+            },
+            {
+              rank: 3,
+              name: 'バイオフィニティ（2week）',
+              type: '2week',
+              maker: 'クーパービジョン',
+              material: 'シリコーンHG（Dk/t:160）',
+              moisture: 'Aquaform技術（内部保水）',
+              comment: '2weekでありながら非常に高い酸素透過率。Aquaform技術でレンズ内部に水分を保持するため、表面処理なしで自然なうるおいが続く。コスパを重視しながらも快適な長時間装用を実現したい方向け。',
+            },
+            {
+              rank: 4,
+              name: 'アキュビュー オアシス（2week）',
+              type: '2week',
+              maker: 'ジョンソン&ジョンソン',
+              material: 'シリコーンHG（Dk/t:147）',
+              moisture: 'HYDRACLEAR PLUS技術',
+              comment: '2週間交換タイプの定番中の定番。HYDRACLEAR PLUSで涙液の安定膜を形成し、長時間のデスクワーク・学習でも快適。2weekシリーズの中で最も人気が高く、眼科処方でも頻繁に推薦される製品。',
+            },
+            {
+              rank: 5,
+              name: 'エアオプティクス プラス HG（マンスリー）',
+              type: 'マンスリー',
+              maker: 'アルコン',
+              material: 'シリコーンHG（Dk/t:138）',
+              moisture: 'Smart Surface技術',
+              comment: '月々のコストを抑えながら高い酸素透過率を確保。Smart Surfaceテクノロジーでレンズ表面の汚れ付着を抑制。経済的に長時間装用対応レンズを使い続けたい方に適合。',
+            },
+          ].map(({ rank, name, type, maker, material, moisture, comment }) => (
+            <div key={name} className="bg-white border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-3">
+                <span className="bg-slate-800 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">{rank}</span>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <p className="font-bold text-gray-900">{name}</p>
+                    <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full">{type}</span>
+                  </div>
+                  <p className="text-xs text-gray-500 mb-2">{maker}</p>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <span className="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full">{material}</span>
+                    <span className="text-xs bg-slate-50 text-slate-700 px-2 py-0.5 rounded-full">{moisture}</span>
+                  </div>
+                  <p className="text-sm text-gray-700 leading-relaxed">{comment}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">長時間装用のケアポイント</h2>
+        <div className="space-y-3">
+          {[
+            { title: '装用時間は最大12〜14時間を目安に', body: 'シリコーンHGでも1日の装用上限は12〜14時間が推奨上限です。それ以上の連続装用は角膜への負担が増します。仕事の都合で16時間以上になる場合は、眼科医に相談してください。' },
+            { title: '20-20-20ルールを守る', body: 'PC作業では20分ごとに20フィート（約6m）先を20秒間見る「20-20-20ルール」が有効です。ピント調節筋の疲労を防ぎ、乾燥感・眼精疲労を軽減します。' },
+            { title: '目薬（点眼液）を活用する', body: 'コンタクト装用中でも使える「コンタクト対応」の人工涙液・目薬を使用することで乾燥感を軽減できます。市販品ではソフトサンティアやロートコンタクトシリーズが代表的です。防腐剤フリーのものを選ぶと目への負担が少ない。' },
+            { title: 'MGD（マイボーム腺機能不全）に注意', body: '長時間のスクリーン作業では瞬きの回数が減り、涙の質が低下します。定期的に目を閉じてゆっくり瞬きし、マイボーム腺（まぶたの脂腺）の機能を維持することが重要です。' },
+            { title: '定期的な眼科検診を怠らない', body: 'シリコーンHGでも長期間・長時間の装用は角膜への影響があります。年1〜2回の眼科検診で角膜の状態を確認し、適切なレンズ選択を続けてください。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
+          ※ 掲載している製品情報・酸素透過率（Dk/t値）は参考値です。長時間装用については必ず眼科医に相談し、処方に従ってください。最新の製品仕様は各メーカー公式サイトでご確認ください。
+        </p>
       </section>
     </div>
   ),
