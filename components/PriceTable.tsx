@@ -44,7 +44,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
             const rowClass = [
               'border-b border-gray-100 transition-colors',
               !item.inStock ? 'opacity-50 bg-gray-50' : '',
-              isCheapest ? 'bg-amber-50 hover:bg-amber-100' : 'hover:bg-blue-50',
+              isCheapest ? 'bg-amber-50 hover:bg-amber-100' : 'hover:bg-slate-50',
             ]
               .filter(Boolean)
               .join(' ');

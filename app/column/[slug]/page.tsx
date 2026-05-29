@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const categoryColors: Record<string, string> = {
   '度数・処方箋': 'bg-purple-100 text-purple-700',
-  '購入ガイド': 'bg-green-100 text-green-700',
-  '商品比較': 'bg-blue-100 text-blue-700',
+  '購入ガイド': 'bg-emerald-100 text-emerald-700',
+  '商品比較': 'bg-slate-100 text-slate-700',
 };
 
 export default async function ColumnPage({ params }: Props) {
@@ -103,7 +103,7 @@ export default async function ColumnPage({ params }: Props) {
           <h2 className="text-lg font-bold text-gray-800 mb-4">関連コラム</h2>
           <div className="space-y-3">
             {otherColumns.map((c) => (
-              <Link key={c.slug} href={`/column/${c.slug}`} className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-blue-200 transition-all">
+              <Link key={c.slug} href={`/column/${c.slug}`} className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-slate-300 transition-all">
                 <div className="flex items-center gap-2 mb-1">
                   <span className={`text-xs px-2 py-0.5 rounded-full ${categoryColors[c.category] ?? 'bg-gray-100 text-gray-600'}`}>
                     {c.category}

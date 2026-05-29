@@ -8,11 +8,11 @@ export const metadata: Metadata = {
 };
 
 const categoryColors: Record<string, string> = {
-  '転職特化': 'bg-blue-50 text-blue-700',
+  '転職特化': 'bg-slate-100 text-slate-700',
   'スキルアップ': 'bg-emerald-50 text-emerald-700',
   'フリーランス特化': 'bg-amber-50 text-amber-700',
   'AI特化': 'bg-violet-50 text-violet-700',
-  '独学支援': 'bg-slate-50 text-slate-600',
+  '独学支援': 'bg-gray-50 text-gray-600',
 };
 
 export default function ComparePage() {
@@ -47,7 +47,7 @@ export default function ComparePage() {
             {schools.map((school, i) => (
               <tr
                 key={school.slug}
-                className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'} hover:bg-blue-50/30 transition-colors`}
+                className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'} hover:bg-slate-50 transition-colors`}
               >
                 <td className="px-4 py-3">
                   <Link href={`/schools/${school.slug}`} className="font-medium text-gray-900 hover:text-slate-600 hover:underline">

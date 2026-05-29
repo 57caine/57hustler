@@ -128,6 +128,24 @@ export const columns: Column[] = [
     updatedAt: '2025-06-15',
     readingTime: 8,
   },
+  {
+    slug: 'tensyoku-hosho-school',
+    title: '転職保証付きプログラミングスクール比較【2025年版・返金条件も徹底解説】',
+    description: '転職できなければ全額返金・一部返金の転職保証があるプログラミングスクールを比較。保証の条件・対象コース・実績を詳しく解説。未経験転職を確実にしたい方向け。',
+    category: '転職・就職',
+    publishedAt: '2026-05-25',
+    updatedAt: '2026-05-29',
+    readingTime: 8,
+  },
+  {
+    slug: 'programming-school-30dai',
+    title: '30代からのプログラミングスクール選び方【未経験・転職成功のポイント解説】',
+    description: '30代でプログラミングを学ぶメリット・デメリットと、30代未経験からIT転職に成功するためのスクール選び方を解説。年収・就職先・現実的な転職ルートも紹介。',
+    category: '年代別おすすめ',
+    publishedAt: '2026-05-26',
+    updatedAt: '2026-05-29',
+    readingTime: 9,
+  },
 ];
 
 export function getColumnBySlug(slug: string): Column | undefined {
@@ -1016,6 +1034,209 @@ export const columnContent: Record<string, React.ReactNode> = {
             <li>5. 初月1〜3万円、3ヶ月後に月5〜10万円が目安</li>
           </ol>
         </div>
+      </section>
+    </div>
+  ),
+  'tensyoku-hosho-school': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">転職保証とは？仕組みと注意点</h2>
+        <p className="text-gray-700 mb-4">
+          転職保証とは、スクールが定める条件を満たして就活活動を行ったにもかかわらず転職できなかった場合に、受講料の全額または一部を返金する制度です。保証があることで安心して学習に臨めますが、<strong>保証の条件は各スクールで大きく異なります</strong>。
+        </p>
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-4">
+          <p className="font-semibold text-amber-800 mb-2 text-sm">転職保証で注意すべきポイント</p>
+          <ul className="text-sm text-amber-900 space-y-1">
+            {[
+              '「転職できなければ返金」の条件（年齢・学習時間・求人応募数など）を事前に確認する',
+              '「IT系ならどこでも可」など就職先の条件が緩い保証は実質的に機能しない場合がある',
+              '保証対象の職種・年収帯・勤務地を必ず確認する',
+              '保証期間（卒業後何ヶ月以内か）を確認する。短いと現実的に難しいケースも',
+            ].map((item) => <li key={item} className="flex gap-2"><span className="shrink-0">△</span>{item}</li>)}
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">転職保証付きスクール 比較</h2>
+        <div className="space-y-4">
+          {[
+            {
+              name: 'TECH CAMP（テックキャンプ）',
+              slug: 'techcamp',
+              guarantee: '転職できなければ受講料全額返金',
+              conditions: '卒業後90日以内・企業10社以上への応募・紹介企業への応募が条件',
+              price: '327,800円〜（給付金適用で実質約10万円）',
+              badge: '最大手・実績最多',
+              note: '国内最大級の転職実績を誇る。給付金対象で実質コストを大幅削減できる。転職後の平均年収は400〜550万円台。',
+            },
+            {
+              name: 'DMM WEBCAMP',
+              slug: 'dmm-webcamp',
+              guarantee: '転職できなければ受講料全額返金',
+              conditions: '全カリキュラム修了・10社以上への応募・紹介企業への応募が条件',
+              price: '329,780円〜（給付金適用で実質約10万円）',
+              badge: '転職保証・給付金両対応',
+              note: 'DMM運営の信頼感。転職成功率98%を掲げる。Webエンジニア・バックエンドの求人に強い。',
+            },
+            {
+              name: 'GEEK JOB（ギークジョブ）',
+              slug: 'geek-job',
+              guarantee: '転職できなければ受講料全額返金',
+              conditions: '卒業後30日以内・紹介企業への応募が条件。年齢制限あり（35歳以下推奨）',
+              price: '337,000円〜',
+              badge: '20代に特化',
+              note: '20代・未経験者に特化したスクール。短期間（最短2ヶ月）でのエンジニア転職を目指す。',
+            },
+          ].map(({ name, slug: schoolSlug, guarantee, conditions, price, badge, note }) => (
+            <div key={schoolSlug} className="border border-gray-200 rounded-xl p-5">
+              <div className="flex items-center gap-2 mb-3 flex-wrap">
+                <h3 className="font-bold text-gray-900">{name}</h3>
+                <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded">{badge}</span>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-2 text-xs mb-3">
+                <div className="bg-gray-50 rounded-lg p-2">
+                  <p className="text-gray-500 mb-0.5">保証内容</p>
+                  <p className="text-gray-800 font-medium">{guarantee}</p>
+                </div>
+                <div className="bg-gray-50 rounded-lg p-2">
+                  <p className="text-gray-500 mb-0.5">受講料目安</p>
+                  <p className="text-gray-800 font-medium">{price}</p>
+                </div>
+              </div>
+              <p className="text-xs text-amber-700 mb-2"><strong>保証条件：</strong>{conditions}</p>
+              <p className="text-sm text-gray-600 mb-3">{note}</p>
+              <a href={`/schools/${schoolSlug}`} className="text-sm text-slate-700 font-medium hover:underline">詳細を見る →</a>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">転職保証を最大限活かすための学習戦略</h2>
+        <ul className="space-y-3">
+          {[
+            '保証条件の「応募社数」「学習時間の記録」などは入学前から意識して管理する。卒業後に証明できないと保証が適用されないケースがある',
+            'スクールの紹介求人だけでなく、自分でも転職サイト（Leverages Career・paiza転職など）を並行して使う',
+            '転職保証を「保険」として活用しつつ、学習期間中に実績（ポートフォリオ・GitHubの草）を積むことが転職成功率を上げる',
+            '保証があっても「転職できさえすればよい」という思考は危険。年収・職種・勤務地の希望条件は明確に持っておく',
+          ].map((item) => (
+            <li key={item} className="flex gap-2 text-sm text-gray-700">
+              <span className="text-slate-400 shrink-0 mt-0.5">▸</span>{item}
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">転職保証なしでも検討すべき優良スクール</h2>
+        <p className="text-gray-600 text-sm mb-3">
+          転職保証がなくても、高い転職実績・充実したサポートで成功率が高いスクールもあります。
+        </p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {[
+            { name: '侍エンジニア塾', slug: 'samurai-engineer', point: '専属メンターとの1対1サポートで挫折率が低い。転職成功率は93.4%（自社調べ）。' },
+            { name: 'TechAcademy', slug: 'techacademy', point: '現役エンジニアのコードレビュー。週2回のメンタリングで質問し放題。副業・転職両対応。' },
+          ].map(({ name, slug: ss, point }) => (
+            <div key={ss} className="border border-gray-200 rounded-xl p-4">
+              <p className="font-semibold text-gray-900 text-sm mb-1"><a href={`/schools/${ss}`} className="hover:underline text-slate-800">{name}</a></p>
+              <p className="text-xs text-gray-600">{point}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'programming-school-30dai': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">30代でのエンジニア転職は現実的か？</h2>
+        <p className="text-gray-700 mb-4">
+          結論から言うと、<strong>30代前半（30〜34歳）のエンジニア転職は十分現実的</strong>です。IT人材不足が深刻な現在、スキルがあれば年齢よりも即戦力性・学習意欲が評価されます。ただし、20代と同じ戦略では通用しないため、30代に合った転職戦略が必要です。
+        </p>
+        <div className="grid sm:grid-cols-2 gap-4 mb-4">
+          <div className="bg-emerald-50 rounded-xl p-4">
+            <p className="font-semibold text-emerald-800 mb-2 text-sm">30代の強み</p>
+            <ul className="text-sm text-emerald-900 space-y-1">
+              {['社会人経験・コミュニケーション能力', '業界知識（前職スキルの活用）', '責任感・マネジメント適性', '目的意識が明確で学習の継続率が高い'].map(s => <li key={s} className="flex gap-1"><span>◎</span>{s}</li>)}
+            </ul>
+          </div>
+          <div className="bg-amber-50 rounded-xl p-4">
+            <p className="font-semibold text-amber-800 mb-2 text-sm">30代の注意点</p>
+            <ul className="text-sm text-amber-900 space-y-1">
+              {['未経験だと20代より書類落ちリスクが高い', '年収期待値と現実のギャップが生じやすい', 'ベンチャー・スタートアップへの挑戦が有効', '転職先の選定に慎重さが必要'].map(s => <li key={s} className="flex gap-1"><span>△</span>{s}</li>)}
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">30代にお勧めのプログラミングスクール</h2>
+        <div className="space-y-4">
+          {[
+            {
+              name: 'TECH CAMP（テックキャンプ）',
+              slug: 'techcamp',
+              badge: '30代実績あり',
+              reason: '30代の転職実績が業界最多クラス。社会人経験を活かしたIT転職に強く、前職の業界知識（営業・企画・経理など）を活かせる求人を多数保有。給付金活用で費用も抑えられる。',
+              age_fit: '業界経験を活かしてIT×○○の専門家を目指したい人に特に向く',
+            },
+            {
+              name: '侍エンジニア塾',
+              slug: 'samurai-engineer',
+              badge: '挫折しない1対1',
+              reason: '専属メンターとの1対1指導は、仕事と学習を並行する社会人に最適。30代の「限られた時間で確実に学ぶ」ニーズに合った学習設計。オーダーメイドカリキュラムで前職スキルを活かした開発も可能。',
+              age_fit: '本業との両立・確実なスキル習得を重視する人向け',
+            },
+            {
+              name: 'DMM WEBCAMP',
+              slug: 'dmm-webcamp',
+              badge: '転職保証・給付金',
+              reason: '「転職保証＋給付金」の組み合わせで、30代の転職リスクを最小化できる。バックエンド・インフラ系など実務的な技術を学べるカリキュラムが30代転職希望者に評価される。',
+              age_fit: '転職成功率と費用対効果を重視する人向け',
+            },
+          ].map(({ name, slug: ss, badge, reason, age_fit }) => (
+            <div key={ss} className="border border-gray-200 rounded-xl p-5">
+              <div className="flex items-center gap-2 mb-2 flex-wrap">
+                <h3 className="font-bold text-gray-900">{name}</h3>
+                <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded">{badge}</span>
+              </div>
+              <p className="text-sm text-gray-600 mb-2">{reason}</p>
+              <p className="text-xs text-slate-600 font-medium mb-3">{age_fit}</p>
+              <a href={`/schools/${ss}`} className="text-sm text-slate-700 font-medium hover:underline">詳細・料金を見る →</a>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">30代エンジニア転職のリアルなタイムライン</h2>
+        <div className="space-y-2">
+          {[
+            { month: '1〜2ヶ月目', label: 'プログラミング基礎学習', body: 'HTML/CSS/JavaScriptまたはPython/Javaを選択。スクールのカリキュラムに沿って基礎を固める。仕事しながらの場合は週15〜20時間の確保を目標に。' },
+            { month: '3〜4ヶ月目', label: 'アプリ開発・ポートフォリオ制作', body: 'オリジナルWebアプリやAPIを使ったサービスを制作。GitHubに継続してコミットし、実績として残す。前職の業界知識を活かしたサービス設計が好印象。' },
+            { month: '5〜6ヶ月目', label: '転職活動開始', body: 'エージェント（Leverages・マイナビIT・paiza転職など）に登録し、求人票の精読を開始。30代は自分の強みを「即戦力」としてアピールする職務経歴書が重要。' },
+            { month: '6〜8ヶ月目', label: '内定・入社', body: '業界にもよるが、30代未経験の場合は平均6〜10社の面接を経て内定が出るケースが多い。最初の転職先で2〜3年経験を積み、その後年収アップ転職が現実的なルート。' },
+          ].map(({ month, label, body }) => (
+            <div key={month} className="flex gap-4 border-l-2 border-slate-300 pl-4">
+              <div className="shrink-0 text-xs text-slate-500 w-20 pt-0.5">{month}</div>
+              <div>
+                <p className="font-semibold text-gray-900 text-sm mb-1">{label}</p>
+                <p className="text-sm text-gray-600">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">30代でエンジニアを目指す前に確認すること</h2>
+        <ul className="space-y-3">
+          {[
+            '現在の年収と転職後の年収ギャップを把握する。未経験入社後の初年度は現職より低くなる場合が多い（300〜380万円台が多い）',
+            '家族・生活費などを考慮した「学習・転職活動費用の確保」。給付金や教育ローンも活用を検討する',
+            '「Webエンジニア」「インフラエンジニア」など方向性を絞ること。分野が多すぎると学習が散漫になる',
+            '30代後半（35〜39歳）でも転職実績はあるが、難易度は上がる。早めの行動が重要',
+          ].map((item) => (
+            <li key={item} className="flex gap-2 text-sm text-gray-700">
+              <span className="text-slate-400 shrink-0 mt-0.5">▸</span>{item}
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   ),

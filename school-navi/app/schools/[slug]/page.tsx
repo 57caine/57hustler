@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const BASE = 'https://nsplot.com';
 
 const categoryColors: Record<string, string> = {
-  '転職特化': 'bg-blue-50 text-blue-700 border-blue-200',
+  '転職特化': 'bg-slate-50 text-slate-700 border-slate-200',
   'スキルアップ': 'bg-emerald-50 text-emerald-700 border-emerald-200',
   'フリーランス特化': 'bg-amber-50 text-amber-700 border-amber-200',
   'AI特化': 'bg-violet-50 text-violet-700 border-violet-200',

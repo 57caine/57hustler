@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const categoryConfig = {
-  '1day':    { label: '1day',    bg: 'bg-blue-50',   border: 'border-blue-200',   text: 'text-blue-700'   },
+  '1day':    { label: '1day',    bg: 'bg-slate-50',   border: 'border-slate-200',   text: 'text-slate-700'   },
   '2week':   { label: '2week',   bg: 'bg-teal-50',   border: 'border-teal-200',   text: 'text-teal-700'   },
   'monthly': { label: 'monthly', bg: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-700' },
   'color':   { label: 'color',   bg: 'bg-pink-50',   border: 'border-pink-200',   text: 'text-pink-700'   },
@@ -19,7 +19,7 @@ const categoryConfig = {
 const columnCategoryColors: Record<string, string> = {
   '度数・処方箋': 'bg-slate-100 text-slate-700',
   '購入ガイド': 'bg-emerald-50 text-emerald-700',
-  '商品比較': 'bg-blue-50 text-blue-700',
+  '商品比較': 'bg-slate-100 text-slate-700',
 };
 
 export default function HomePage() {

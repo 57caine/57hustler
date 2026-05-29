@@ -192,18 +192,18 @@ export const columnContent: Record<string, React.ReactNode> = {
         <strong>PWR（Power）</strong>は、コンタクトレンズの度数を表します。「SPH（Sphere）」と書かれることもあります。
         近視の方はマイナス（－）、遠視の方はプラス（＋）の数値になります。
       </p>
-      <div className="bg-blue-50 rounded-xl p-4 mb-6">
+      <div className="bg-slate-50 rounded-xl p-4 mb-6">
         <table className="w-full text-sm">
           <thead>
-            <tr className="bg-blue-100">
+            <tr className="bg-slate-100">
               <th className="text-left p-2 rounded">PWR値</th>
               <th className="text-left p-2">度数の目安</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-blue-100"><td className="p-2">-0.25 〜 -1.00</td><td className="p-2">軽度の近視</td></tr>
-            <tr className="border-b border-blue-100"><td className="p-2">-1.25 〜 -3.00</td><td className="p-2">中程度の近視（最も多い）</td></tr>
-            <tr className="border-b border-blue-100"><td className="p-2">-3.25 〜 -6.00</td><td className="p-2">強度の近視</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2">-0.25 〜 -1.00</td><td className="p-2">軽度の近視</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2">-1.25 〜 -3.00</td><td className="p-2">中程度の近視（最も多い）</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2">-3.25 〜 -6.00</td><td className="p-2">強度の近視</td></tr>
             <tr><td className="p-2">-6.25以上</td><td className="p-2">超強度の近視</td></tr>
           </tbody>
         </table>
@@ -377,15 +377,15 @@ export const columnContent: Record<string, React.ReactNode> = {
 
       <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">種類の違いを知ろう</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <div className="bg-blue-50 rounded-xl p-4">
-          <h3 className="font-bold text-blue-800 mb-2">ワンデー（1日使い捨て）</h3>
+        <div className="bg-slate-50 rounded-xl p-4">
+          <h3 className="font-bold text-slate-800 mb-2">ワンデー（1日使い捨て）</h3>
           <p className="text-sm text-gray-700 mb-2">毎日新しいレンズを使う。衛生的で手入れ不要。</p>
           <ul className="text-xs text-gray-600 space-y-1">
             <li>✓ ケア用品が不要</li>
             <li>✓ 旅行・スポーツに便利</li>
             <li>✗ 1日あたりのコスト高め</li>
           </ul>
-          <p className="text-sm font-bold text-blue-700 mt-2">月コスト目安：3,000〜8,000円</p>
+          <p className="text-sm font-bold text-slate-700 mt-2">月コスト目安：3,000〜8,000円</p>
         </div>
         <div className="bg-green-50 rounded-xl p-4">
           <h3 className="font-bold text-green-800 mb-2">2ウィーク（2週間交換）</h3>
@@ -432,7 +432,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
         <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
           <div className="flex items-center gap-2 mb-2">
-            <span className="bg-blue-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">コスパ最強</span>
+            <span className="bg-slate-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">コスパ最強</span>
             <span className="text-xs text-gray-500">シード</span>
           </div>
           <h3 className="font-bold text-gray-800 mb-1">ワンデーピュア うるおいプラス</h3>
@@ -497,7 +497,7 @@ export const columnContent: Record<string, React.ReactNode> = {
               <th className="text-left p-3 border border-gray-200">ショップ</th>
               <th className="text-right p-3 border border-gray-200">商品価格</th>
               <th className="text-right p-3 border border-gray-200">送料</th>
-              <th className="text-right p-3 border border-gray-200 font-bold text-blue-700">合計</th>
+              <th className="text-right p-3 border border-gray-200 font-bold text-slate-700">合計</th>
             </tr>
           </thead>
           <tbody>
@@ -522,7 +522,7 @@ export const columnContent: Record<string, React.ReactNode> = {
           </tbody>
         </table>
       </div>
-      <p className="text-sm text-gray-600 mb-6 bg-blue-50 rounded-lg p-3">
+      <p className="text-sm text-gray-600 mb-6 bg-slate-50 rounded-lg p-3">
         この例では商品価格が最も安いC店（¥2,870）より、送料無料のB店（¥3,100）の方が送料込みでは安くなります。当サイトの価格表では<strong>送料込みの合計金額</strong>を表示しているので、すぐに最安ショップがわかります。
       </p>
 
@@ -633,7 +633,7 @@ export const columnContent: Record<string, React.ReactNode> = {
             </div>
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">
-                <span className="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded-full">{item.badge}</span>
+                <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded-full">{item.badge}</span>
                 <span className="text-xs text-gray-500">{item.brand}</span>
               </div>
               <h3 className="font-bold text-gray-800 mb-1">{item.name}</h3>
@@ -730,7 +730,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       <div className="space-y-4 mb-6">
         <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
           <div className="flex items-center gap-2 mb-2">
-            <span className="bg-blue-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">安定性No.1</span>
+            <span className="bg-slate-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">安定性No.1</span>
             <span className="text-xs text-gray-500">2ウィーク乱視用</span>
           </div>
           <h4 className="font-bold text-gray-800 mb-1">アキュビュー オアシス 乱視用</h4>
@@ -780,20 +780,20 @@ export const columnContent: Record<string, React.ReactNode> = {
 
       <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">コンタクト通販サイトを選ぶポイント</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        <div className="bg-blue-50 rounded-xl p-4">
-          <h3 className="font-bold text-blue-800 mb-2">① 送料込みの価格で比較する</h3>
+        <div className="bg-slate-50 rounded-xl p-4">
+          <h3 className="font-bold text-slate-800 mb-2">① 送料込みの価格で比較する</h3>
           <p className="text-sm text-gray-700">商品価格が安くても送料が高ければ意味がありません。必ず「送料込み最終価格」で比較しましょう。</p>
         </div>
-        <div className="bg-blue-50 rounded-xl p-4">
-          <h3 className="font-bold text-blue-800 mb-2">② まとめ買い割引を活用する</h3>
+        <div className="bg-slate-50 rounded-xl p-4">
+          <h3 className="font-bold text-slate-800 mb-2">② まとめ買い割引を活用する</h3>
           <p className="text-sm text-gray-700">多くのショップで6箱・8箱まとめ買いで割引があります。3〜6ヶ月分まとめて買うとお得です。</p>
         </div>
-        <div className="bg-blue-50 rounded-xl p-4">
-          <h3 className="font-bold text-blue-800 mb-2">③ 初回割引・クーポンを使う</h3>
+        <div className="bg-slate-50 rounded-xl p-4">
+          <h3 className="font-bold text-slate-800 mb-2">③ 初回割引・クーポンを使う</h3>
           <p className="text-sm text-gray-700">多くのショップで初回購入割引（10〜20%オフ）があります。新規登録時のクーポンも活用しましょう。</p>
         </div>
-        <div className="bg-blue-50 rounded-xl p-4">
-          <h3 className="font-bold text-blue-800 mb-2">④ 正規品かどうか確認する</h3>
+        <div className="bg-slate-50 rounded-xl p-4">
+          <h3 className="font-bold text-slate-800 mb-2">④ 正規品かどうか確認する</h3>
           <p className="text-sm text-gray-700">高度管理医療機器販売許可を取得した正規ショップで購入することが安全です。</p>
         </div>
       </div>
@@ -802,7 +802,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       <div className="overflow-x-auto mb-6">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-blue-100">
+            <tr className="bg-slate-100">
               <th className="text-left p-3 border border-slate-200">ショップ名</th>
               <th className="text-left p-3 border border-slate-200">特徴</th>
               <th className="text-left p-3 border border-slate-200">送料無料条件</th>
@@ -906,7 +906,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       <div className="overflow-x-auto mb-6">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-blue-100">
+            <tr className="bg-slate-100">
               <th className="text-left p-3 border border-slate-200">商品名</th>
               <th className="text-left p-3 border border-slate-200">タイプ</th>
               <th className="text-left p-3 border border-slate-200">素材</th>
@@ -970,8 +970,8 @@ export const columnContent: Record<string, React.ReactNode> = {
 
       <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">目的別・おすすめアキュビューはこれ</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        <div className="bg-blue-50 rounded-xl p-4">
-          <h3 className="font-bold text-blue-800 mb-2">目の乾きが気になる → オアシス</h3>
+        <div className="bg-slate-50 rounded-xl p-4">
+          <h3 className="font-bold text-slate-800 mb-2">目の乾きが気になる → オアシス</h3>
           <p className="text-sm text-gray-700 mb-2">シリコーンHG素材でHydraLuxe™技術搭載。長時間PCやスマホを使う人に最適。</p>
           <Link href="/product/acuvue-oasys-1day" className="text-slate-700 text-sm font-medium hover:underline">オアシス ワンデーの価格を見る →</Link>
         </div>
@@ -995,8 +995,8 @@ export const columnContent: Record<string, React.ReactNode> = {
       <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">オアシスとモイストの違い</h2>
       <p className="mb-4">最も比較されるのがオアシスとモイストの違いです：</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        <div className="bg-blue-50 rounded-xl p-4">
-          <h3 className="font-bold text-blue-800 mb-3">オアシス ワンデー</h3>
+        <div className="bg-slate-50 rounded-xl p-4">
+          <h3 className="font-bold text-slate-800 mb-3">オアシス ワンデー</h3>
           <ul className="text-sm space-y-1 text-gray-700">
             <li>✓ シリコーンハイドロゲル素材</li>
             <li>✓ HydraLuxe™技術（涙液との親和性）</li>
@@ -1046,8 +1046,8 @@ export const columnContent: Record<string, React.ReactNode> = {
 
       <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">度あり vs 度なしカラコンの違い</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        <div className="bg-blue-50 rounded-xl p-4">
-          <h3 className="font-bold text-blue-800 mb-2">度ありカラコン</h3>
+        <div className="bg-slate-50 rounded-xl p-4">
+          <h3 className="font-bold text-slate-800 mb-2">度ありカラコン</h3>
           <p className="text-sm text-gray-700 mb-3">視力矯正＋瞳の色変えを同時にできる。近視の方は度ありを選ぶ。</p>
           <ul className="text-xs text-gray-600 space-y-1">
             <li>✓ コンタクト1枚で視力矯正できる</li>
@@ -1102,7 +1102,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
         <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
           <div className="flex items-center gap-2 mb-2">
-            <span className="bg-blue-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">アキュビュー品質</span>
+            <span className="bg-slate-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">アキュビュー品質</span>
             <span className="text-xs text-gray-500">アキュビュー</span>
           </div>
           <h3 className="font-bold text-gray-800 mb-1">ワンデー アキュビュー ディファイン</h3>
@@ -1150,7 +1150,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       <div className="overflow-x-auto mb-6">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-blue-100">
+            <tr className="bg-slate-100">
               <th className="text-left p-3 border border-slate-200">ブランド</th>
               <th className="text-left p-3 border border-slate-200">製造国</th>
               <th className="text-left p-3 border border-slate-200">代表商品</th>
@@ -1239,7 +1239,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </div>
 
       <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">結論：どちらを選ぶべき？</h2>
-      <div className="bg-blue-50 rounded-xl p-4 mb-6">
+      <div className="bg-slate-50 rounded-xl p-4 mb-6">
         <ul className="space-y-3 text-sm text-gray-700">
           <li><strong>コスパ重視 →</strong> シード（ワンデーピュア）がおすすめ。国産品質で価格は最安レベル。</li>
           <li><strong>乾きが気になる →</strong> アキュビュー オアシスかデイリーズ トータルワン。最先端の保湿技術は海外勢が強い。</li>
@@ -1317,10 +1317,10 @@ export const columnContent: Record<string, React.ReactNode> = {
 
       <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">洗浄液の種類と選び方</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        <div className="bg-blue-50 rounded-xl p-4">
-          <h3 className="font-bold text-blue-800 mb-2">MPS（マルチパーパスソリューション）</h3>
+        <div className="bg-slate-50 rounded-xl p-4">
+          <h3 className="font-bold text-slate-800 mb-2">MPS（マルチパーパスソリューション）</h3>
           <p className="text-sm text-gray-700">洗浄・すすぎ・消毒・保存が1本でできるオールインワン洗浄液。最もよく使われる。</p>
-          <p className="text-sm font-medium text-blue-700 mt-2">代表例：レニュー、バイオクレン、AOセプト</p>
+          <p className="text-sm font-medium text-slate-700 mt-2">代表例：レニュー、バイオクレン、AOセプト</p>
         </div>
         <div className="bg-green-50 rounded-xl p-4">
           <h3 className="font-bold text-green-800 mb-2">過酸化水素系消毒液</h3>
@@ -1367,23 +1367,23 @@ export const columnContent: Record<string, React.ReactNode> = {
         シリコーンハイドロゲルは、従来の<strong>ヒドロゲル素材</strong>にシリコーンを組み合わせた、
         コンタクトレンズの高機能素材です。シリコーンを加えることで、酸素の透過率が劇的に向上します。
       </p>
-      <div className="bg-blue-50 rounded-xl p-4 mb-6">
-        <h3 className="font-bold text-blue-800 mb-2">酸素透過率（Dk/t値）の比較</h3>
+      <div className="bg-slate-50 rounded-xl p-4 mb-6">
+        <h3 className="font-bold text-slate-800 mb-2">酸素透過率（Dk/t値）の比較</h3>
         <table className="w-full text-sm mt-2">
           <thead>
-            <tr className="bg-blue-100">
+            <tr className="bg-slate-100">
               <th className="text-left p-2">素材</th>
               <th className="text-left p-2">Dk/t値の目安</th>
               <th className="text-left p-2">代表商品</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-blue-100">
+            <tr className="border-b border-gray-100">
               <td className="p-2">ヒドロゲル（従来素材）</td>
               <td className="p-2">20〜35</td>
               <td className="p-2">アキュビュー モイスト</td>
             </tr>
-            <tr className="border-b border-blue-100">
+            <tr className="border-b border-gray-100">
               <td className="p-2">シリコーンハイドロゲル</td>
               <td className="p-2">60〜170</td>
               <td className="p-2">アキュビュー オアシス</td>
@@ -1444,7 +1444,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         ].map(item => (
           <div key={item.slug} className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
             <div className="flex items-center gap-2 mb-1">
-              <span className="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded-full">シリコーンHG</span>
+              <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded-full">シリコーンHG</span>
               <span className="text-xs text-gray-500">{item.brand}</span>
             </div>
             <h3 className="font-bold text-gray-800 mb-1">{item.name}</h3>
@@ -1487,7 +1487,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       <div className="overflow-x-auto mb-6">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-blue-100">
+            <tr className="bg-slate-100">
               <th className="text-left p-3 border border-slate-200">タイプ</th>
               <th className="text-left p-3 border border-slate-200">レンズ代/年</th>
               <th className="text-left p-3 border border-slate-200">ケア用品/年</th>
@@ -1497,14 +1497,14 @@ export const columnContent: Record<string, React.ReactNode> = {
           </thead>
           <tbody>
             <tr className="border-b border-gray-200 hover:bg-gray-50">
-              <td className="p-3 border border-gray-200 font-bold text-blue-700">1day（普及タイプ）</td>
+              <td className="p-3 border border-gray-200 font-bold text-slate-700">1day（普及タイプ）</td>
               <td className="p-3 border border-gray-200">約30,000〜40,000円</td>
               <td className="p-3 border border-gray-200">不要</td>
               <td className="p-3 border border-gray-200 font-bold">約30,000〜40,000円</td>
               <td className="p-3 border border-gray-200">2,500〜3,300円</td>
             </tr>
             <tr className="border-b border-gray-200 hover:bg-gray-50">
-              <td className="p-3 border border-gray-200 font-bold text-blue-700">1day（プレミアム）</td>
+              <td className="p-3 border border-gray-200 font-bold text-slate-700">1day（プレミアム）</td>
               <td className="p-3 border border-gray-200">約50,000〜70,000円</td>
               <td className="p-3 border border-gray-200">不要</td>
               <td className="p-3 border border-gray-200 font-bold">約50,000〜70,000円</td>
@@ -1531,8 +1531,8 @@ export const columnContent: Record<string, React.ReactNode> = {
 
       <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">生活スタイル別おすすめ</h2>
       <div className="space-y-4 mb-6">
-        <div className="bg-blue-50 rounded-xl p-4">
-          <h3 className="font-bold text-blue-800 mb-2">週3〜4日のみ装用する方 → ワンデーが最安</h3>
+        <div className="bg-slate-50 rounded-xl p-4">
+          <h3 className="font-bold text-slate-800 mb-2">週3〜4日のみ装用する方 → ワンデーが最安</h3>
           <p className="text-sm text-gray-700">使う日だけレンズを使い、ケア用品が不要なワンデーが有利になります。月10〜15枚ならワンデーが最もコスパ良好です。</p>
           <Link href="/product/seed-1day-pure" className="text-slate-700 text-sm font-medium hover:underline mt-2 inline-block">コスパ最強ワンデーを見る →</Link>
         </div>
