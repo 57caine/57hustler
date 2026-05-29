@@ -20,10 +20,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const categoryColors: Record<string, string> = {
-  'スクール比較': 'bg-indigo-100 text-indigo-700',
-  '費用・給付金': 'bg-green-100 text-green-700',
-  '転職・キャリア': 'bg-blue-100 text-blue-700',
-  'AI・最新技術': 'bg-red-100 text-red-700',
+  'スクール比較': 'bg-slate-100 text-slate-700',
+  '費用・給付金': 'bg-emerald-50 text-emerald-700',
+  '転職・キャリア': 'bg-blue-50 text-blue-700',
+  'AI・最新技術': 'bg-violet-50 text-violet-700',
 };
 
 const BASE = 'https://nsplot.com';
@@ -66,9 +66,9 @@ export default async function ColumnArticlePage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <nav className="text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:text-indigo-600">ホーム</Link>
+        <Link href="/" className="hover:text-slate-700">ホーム</Link>
         <span className="mx-2">/</span>
-        <Link href="/column" className="hover:text-indigo-600">コラム</Link>
+        <Link href="/column" className="hover:text-slate-700">コラム</Link>
         <span className="mx-2">/</span>
         <span className="text-gray-800 line-clamp-1">{column.title}</span>
       </nav>
@@ -102,11 +102,11 @@ export default async function ColumnArticlePage({ params }: Props) {
           <h2 className="text-lg font-bold text-gray-800 mb-4">関連コラム</h2>
           <div className="space-y-3">
             {otherColumns.map((c) => (
-              <Link key={c.slug} href={`/column/${c.slug}`} className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-indigo-200 transition-all">
+              <Link key={c.slug} href={`/column/${c.slug}`} className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-gray-300 transition-all">
                 <div className="flex items-center gap-2 mb-1">
                   <span className={`text-xs px-2 py-0.5 rounded-full ${categoryColors[c.category] ?? 'bg-gray-100 text-gray-600'}`}>{c.category}</span>
                 </div>
-                <p className="font-medium text-gray-800 text-sm hover:text-indigo-600">{c.title}</p>
+                <p className="font-medium text-gray-800 text-sm hover:text-slate-700">{c.title}</p>
               </Link>
             ))}
           </div>

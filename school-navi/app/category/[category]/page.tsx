@@ -28,9 +28,9 @@ export default async function CategoryPage({ params }: Props) {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <nav className="text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:text-indigo-600">ホーム</Link>
+        <Link href="/" className="hover:text-slate-700">ホーム</Link>
         <span className="mx-2">/</span>
-        <Link href="/schools" className="hover:text-indigo-600">スクール一覧</Link>
+        <Link href="/schools" className="hover:text-slate-700">スクール一覧</Link>
         <span className="mx-2">/</span>
         <span className="text-gray-800">{decoded}</span>
       </nav>
@@ -48,7 +48,7 @@ export default async function CategoryPage({ params }: Props) {
         <h2 className="text-lg font-bold text-gray-800 mb-4">他のカテゴリを見る</h2>
         <div className="flex flex-wrap gap-3">
           {getAllCategories().filter((c) => c !== decoded).map((c) => (
-            <Link key={c} href={`/category/${encodeURIComponent(c)}`} className="bg-white border border-gray-200 px-4 py-2 rounded-full text-sm hover:border-indigo-300 hover:text-indigo-600 transition-colors">
+            <Link key={c} href={`/category/${encodeURIComponent(c)}`} className="bg-white border border-gray-200 px-4 py-2 rounded-full text-sm hover:border-slate-300 hover:text-slate-700 transition-colors">
               {c}
             </Link>
           ))}

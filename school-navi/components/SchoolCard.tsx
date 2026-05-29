@@ -31,7 +31,7 @@ export default function SchoolCard({ school, rank }: Props) {
           </div>
           <div className="text-right shrink-0">
             <p className="text-xs text-gray-400">受講料</p>
-            <p className="font-bold text-gray-800 text-sm">{formatPrice(school.price)}〜</p>
+            <p className="font-bold text-gray-800 text-sm">{school.price === 0 ? '無料' : `${formatPrice(school.price)}〜`}</p>
           </div>
         </div>
 

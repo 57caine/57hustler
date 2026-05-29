@@ -4,8 +4,8 @@ import SchoolCard from '@/components/SchoolCard';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'プログラミングスクール一覧',
-  description: '人気プログラミングスクール8校を一覧で比較。転職特化・スキルアップ・フリーランス特化・AI特化など目的別に検索できます。',
+  title: 'プログラミングスクール一覧【2025年版・全12校】',
+  description: 'プログラミングスクール12校を一覧で比較。転職特化・スキルアップ・フリーランス特化・AI特化など目的別に検索できます。料金・期間・給付金対応を掲載。',
 };
 
 export default function SchoolsPage() {
@@ -14,7 +14,7 @@ export default function SchoolsPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <nav className="text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:text-indigo-600">ホーム</Link>
+        <Link href="/" className="hover:text-slate-700">ホーム</Link>
         <span className="mx-2">/</span>
         <span className="text-gray-800">スクール一覧</span>
       </nav>

@@ -8,17 +8,17 @@ export const metadata: Metadata = {
 };
 
 const categoryColors: Record<string, string> = {
-  'スクール比較': 'bg-indigo-100 text-indigo-700',
-  '費用・給付金': 'bg-green-100 text-green-700',
-  '転職・キャリア': 'bg-blue-100 text-blue-700',
-  'AI・最新技術': 'bg-red-100 text-red-700',
+  'スクール比較': 'bg-slate-100 text-slate-700',
+  '費用・給付金': 'bg-emerald-50 text-emerald-700',
+  '転職・キャリア': 'bg-blue-50 text-blue-700',
+  'AI・最新技術': 'bg-violet-50 text-violet-700',
 };
 
 export default function ColumnPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <nav className="text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:text-indigo-600">ホーム</Link>
+        <Link href="/" className="hover:text-slate-700">ホーム</Link>
         <span className="mx-2">/</span>
         <span className="text-gray-800">コラム</span>
       </nav>
@@ -31,7 +31,7 @@ export default function ColumnPage() {
           <Link
             key={col.slug}
             href={`/column/${col.slug}`}
-            className="block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-indigo-200 transition-all"
+            className="block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-gray-300 transition-all"
           >
             <div className="flex items-center gap-2 mb-2">
               <span className={`text-xs px-2 py-0.5 rounded-full ${categoryColors[col.category] ?? 'bg-gray-100 text-gray-600'}`}>
@@ -39,7 +39,7 @@ export default function ColumnPage() {
               </span>
               <span className="text-xs text-gray-400">{col.readingTime}分で読める</span>
             </div>
-            <h2 className="font-bold text-gray-800 mb-1 hover:text-indigo-600">{col.title}</h2>
+            <h2 className="font-bold text-gray-800 mb-1 hover:text-slate-700">{col.title}</h2>
             <p className="text-sm text-gray-500 line-clamp-2">{col.description}</p>
             <p className="text-xs text-gray-400 mt-2">更新: {col.updatedAt}</p>
           </Link>
