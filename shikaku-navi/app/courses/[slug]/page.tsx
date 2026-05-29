@@ -102,14 +102,20 @@ export default async function CoursePage({ params }: Props) {
         </div>
 
         <div className="mt-5 flex gap-3">
-          <a
-            href={course.affiliate_url}
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            className="flex-1 text-center bg-slate-800 text-white py-3 rounded-xl font-bold hover:bg-slate-700 transition-colors"
-          >
-            公式サイトで詳細を確認する →
-          </a>
+          {course.affiliate_url === '#' ? (
+            <span className="flex-1 text-center border border-gray-200 text-gray-400 py-3 rounded-xl text-sm">
+              近日追加予定
+            </span>
+          ) : (
+            <a
+              href={course.affiliate_url}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="flex-1 text-center bg-slate-800 text-white py-3 rounded-xl font-bold hover:bg-slate-700 transition-colors"
+            >
+              公式サイトで詳細を確認する →
+            </a>
+          )}
         </div>
       </div>
 
@@ -156,14 +162,20 @@ export default async function CoursePage({ params }: Props) {
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8 text-center">
         <p className="font-bold text-gray-900 mb-2">{course.name}の詳細・無料資料請求はこちら</p>
         <p className="text-sm text-gray-600 mb-4">まずは公式サイトで最新の料金・コース内容をご確認ください。</p>
-        <a
-          href={course.affiliate_url}
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-          className="inline-block bg-slate-800 text-white px-8 py-3 rounded-full font-bold hover:bg-slate-700 transition-colors"
-        >
-          公式サイトを見る
-        </a>
+        {course.affiliate_url === '#' ? (
+          <span className="inline-block border border-gray-200 text-gray-400 px-8 py-3 rounded-full text-sm">
+            近日追加予定
+          </span>
+        ) : (
+          <a
+            href={course.affiliate_url}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="inline-block bg-slate-800 text-white px-8 py-3 rounded-full font-bold hover:bg-slate-700 transition-colors"
+          >
+            公式サイトを見る
+          </a>
+        )}
       </div>
 
       <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3 mb-8">

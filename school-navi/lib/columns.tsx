@@ -129,28 +129,28 @@ export const columnContent: Record<string, React.ReactNode> = {
         <div className="bg-blue-50 rounded-xl p-5 mb-4">
           <h3 className="font-bold text-blue-800 mb-2">1位：TECH CAMP（テックキャンプ）</h3>
           <ul className="text-sm space-y-1 text-gray-700">
-            <li>✅ 転職成功率99%（自社調べ）</li>
-            <li>✅ 業界最大規模・卒業生5万人以上</li>
-            <li>✅ 転職できなければ全額返金保証</li>
-            <li>💰 料金：748,000円〜（夜間・休日10週間コース）</li>
+            <li>転職成功率99%（自社調べ）</li>
+            <li>業界最大規模・卒業生5万人以上</li>
+            <li>転職できなければ全額返金保証</li>
+            <li>料金：748,000円〜（夜間・休日10週間コース）</li>
           </ul>
         </div>
         <div className="bg-green-50 rounded-xl p-5 mb-4">
           <h3 className="font-bold text-green-800 mb-2">2位：DMM WEBCAMP（ディーエムエム ウェブキャンプ）</h3>
           <ul className="text-sm space-y-1 text-gray-700">
-            <li>✅ 受講者数9万人突破</li>
-            <li>✅ 最大70%給付金対象</li>
-            <li>✅ 転職成功率98%</li>
-            <li>💰 料金：437,800円〜（給付金適用後130,000円程度）</li>
+            <li>受講者数9万人突破</li>
+            <li>最大70%給付金対象</li>
+            <li>転職成功率98%</li>
+            <li>料金：437,800円〜（給付金適用後130,000円程度）</li>
           </ul>
         </div>
         <div className="bg-purple-50 rounded-xl p-5">
           <h3 className="font-bold text-purple-800 mb-2">3位：RUNTEQ（ランテック）</h3>
           <ul className="text-sm space-y-1 text-gray-700">
-            <li>✅ 実務レベルのスキルが身につく</li>
-            <li>✅ 卒業生の評価が業界最高水準</li>
-            <li>✅ 9ヶ月間の充実したカリキュラム</li>
-            <li>💰 料金：550,000円（Webエンジニア転職コース）</li>
+            <li>実務レベルのスキルが身につく</li>
+            <li>卒業生の評価が業界最高水準</li>
+            <li>9ヶ月間の充実したカリキュラム</li>
+            <li>料金：550,000円（Webエンジニア転職コース）</li>
           </ul>
         </div>
       </section>
@@ -189,7 +189,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">まとめ：目的別おすすめスクール</h2>
         <ul className="space-y-2 text-sm">
-          <li className="flex gap-2"><span className="font-bold text-blue-600 shrink-0">転職希望：</span><span>TECH CAMP または DMM WEBCAMP（転職保証・給付金あり）</span></li>
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">転職希望：</span><span>TECH CAMP または DMM WEBCAMP（転職保証・給付金あり）</span></li>
           <li className="flex gap-2"><span className="font-bold text-green-600 shrink-0">本格スキル習得：</span><span>RUNTEQ（9ヶ月間・実務レベル）</span></li>
           <li className="flex gap-2"><span className="font-bold text-purple-600 shrink-0">副業・学習：</span><span>TechAcademy または Progate（コスパ重視）</span></li>
           <li className="flex gap-2"><span className="font-bold text-orange-600 shrink-0">フリーランス：</span><span>CoachTech（案件紹介まで対応）</span></li>
@@ -204,7 +204,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <h2 className="text-xl font-bold text-gray-900 mb-4">教育訓練給付金とは？</h2>
         <p className="mb-4">教育訓練給付金は、厚生労働省が運営するスキルアップ支援制度です。雇用保険に一定期間加入していれば、指定されたプログラミングスクールの受講料を最大70%補助してもらえます。</p>
         <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
-          <p className="font-bold text-yellow-800 mb-2">💡 受給条件（一般的）</p>
+          <p className="font-bold text-yellow-800 mb-2">受給条件（一般的）</p>
           <ul className="text-sm space-y-1 text-gray-700">
             <li>・雇用保険に1年以上加入（初回は1年、2回目以降は3年）</li>
             <li>・受講開始日時点で在職中または離職後1年以内</li>
@@ -244,11 +244,11 @@ export const columnContent: Record<string, React.ReactNode> = {
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">給付金申請の流れ</h2>
         <ol className="space-y-3 text-sm">
-          <li className="flex gap-3"><span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">1</span><span>ハローワークで訓練前キャリアコンサルティングを受ける</span></li>
-          <li className="flex gap-3"><span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">2</span><span>給付金支給申請書を入手する</span></li>
-          <li className="flex gap-3"><span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">3</span><span>スクールに入学・受講開始</span></li>
-          <li className="flex gap-3"><span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">4</span><span>受講修了後1ヶ月以内にハローワークへ支給申請</span></li>
-          <li className="flex gap-3"><span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">5</span><span>審査後、給付金が振込まれる</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">1</span><span>ハローワークで訓練前キャリアコンサルティングを受ける</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">2</span><span>給付金支給申請書を入手する</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">3</span><span>スクールに入学・受講開始</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">4</span><span>受講修了後1ヶ月以内にハローワークへ支給申請</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">5</span><span>審査後、給付金が振込まれる</span></li>
         </ol>
       </section>
     </div>
@@ -259,7 +259,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <h2 className="text-xl font-bold text-gray-900 mb-4">未経験からエンジニア転職できる？現実を解説</h2>
         <p className="mb-4">結論から言うと、未経験からのエンジニア転職は十分可能です。ただし、独学だけでは難しく、適切なスクールとサポートが成功の鍵を握ります。</p>
         <div className="bg-blue-50 rounded-xl p-4 mb-4">
-          <p className="font-bold text-blue-800 mb-2">📊 未経験エンジニア転職の現状</p>
+          <p className="font-bold text-blue-800 mb-2">未経験エンジニア転職の現状（2025年）</p>
           <ul className="text-sm space-y-1 text-gray-700">
             <li>・IT人材不足：2030年に79万人不足の見込み（経済産業省試算）</li>
             <li>・20代〜30代前半は未経験採用が活発</li>
@@ -387,10 +387,10 @@ export const columnContent: Record<string, React.ReactNode> = {
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">フリーランスになるまでのロードマップ</h2>
         <ol className="space-y-3 text-sm">
-          <li className="flex gap-3"><span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">1</span><span>スクールでWebアプリ開発の基礎を習得（3〜6ヶ月）</span></li>
-          <li className="flex gap-3"><span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">2</span><span>副業で小規模案件を受注・実績を積む（3〜6ヶ月）</span></li>
-          <li className="flex gap-3"><span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">3</span><span>月30万円以上の安定収入が見込めたら独立</span></li>
-          <li className="flex gap-3"><span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">4</span><span>エージェント（レバテックフリーランス等）で高単価案件へ</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">1</span><span>スクールでWebアプリ開発の基礎を習得（3〜6ヶ月）</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">2</span><span>副業で小規模案件を受注・実績を積む（3〜6ヶ月）</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">3</span><span>月30万円以上の安定収入が見込めたら独立</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">4</span><span>エージェント（レバテックフリーランス等）で高単価案件へ</span></li>
         </ol>
       </section>
     </div>
@@ -401,7 +401,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <h2 className="text-xl font-bold text-gray-900 mb-4">AIエンジニアとは？2025年の需要</h2>
         <p className="mb-4">AIエンジニアとは、機械学習・深層学習・ChatGPT APIなどのAI技術を使ってシステムを開発する職種です。ChatGPT登場以降、企業のAI活用ニーズが爆発的に高まっており、AIエンジニアの需要は今後も右肩上がりが見込まれます。</p>
         <div className="bg-red-50 border border-red-100 rounded-xl p-4">
-          <p className="font-bold text-red-800 mb-2">🔥 AIエンジニアの市場価値</p>
+          <p className="font-bold text-red-800 mb-2">AIエンジニアの市場価値（2025年）</p>
           <ul className="text-sm space-y-1 text-gray-700">
             <li>・平均年収：800万〜1,500万円（上位層）</li>
             <li>・求人数：2023年比で約3倍に増加</li>
@@ -516,7 +516,7 @@ export const columnContent: Record<string, React.ReactNode> = {
           <div className="bg-blue-50 rounded-xl p-4">
             <h3 className="font-bold text-blue-800 mb-2">1. TECH CAMP 夜間・休日コース</h3>
             <p className="text-sm text-gray-700 mb-2">社会人向けの夜間・休日専用コースを設けており、平日夜と土日で10週間学習するスタイルです。転職成功率99%（自社調べ）・転職保証付きと実績も十分。毎日メンターに質問できるサポート体制が心強いです。</p>
-            <p className="text-xs text-gray-500">詳細は<a href="/schools/techcamp" className="text-blue-600 underline">TECH CAMPの詳細ページ</a>をご覧ください。</p>
+            <p className="text-xs text-gray-500">詳細は<a href="/schools/techcamp" className="text-slate-700 underline">TECH CAMPの詳細ページ</a>をご覧ください。</p>
           </div>
           <div className="bg-green-50 rounded-xl p-4">
             <h3 className="font-bold text-green-800 mb-2">2. DMM WEBCAMP</h3>
@@ -586,7 +586,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="mb-4">育児中や離職期間がある女性でも、オンラインのプログラミングスクールであれば自分のペースで学習を進められます。特にTechAcademyは学習期間を自由に設定できるため、子育てと並行して学びたい方に人気です。</p>
         <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
           <p className="font-bold text-yellow-800 mb-2">ポイント：給付金は育児中でも使える？</p>
-          <p className="text-sm text-gray-700">育児休業中であっても、雇用保険加入期間の条件を満たせば教育訓練給付金を利用できる場合があります。詳しくはハローワークに相談しましょう。<a href="/columns/teiten-hojo-programming-school" className="text-blue-600 underline ml-1">給付金の詳細はこちら</a></p>
+          <p className="text-sm text-gray-700">育児休業中であっても、雇用保険加入期間の条件を満たせば教育訓練給付金を利用できる場合があります。詳しくはハローワークに相談しましょう。<a href="/columns/teiten-hojo-programming-school" className="text-slate-700 underline ml-1">給付金の詳細はこちら</a></p>
         </div>
       </section>
       <section>
@@ -630,7 +630,7 @@ export const columnContent: Record<string, React.ReactNode> = {
           </div>
           <div className="border-l-4 border-green-400 pl-4">
             <h3 className="font-bold text-gray-900 mb-1">副業・フリーランスを目指す場合</h3>
-            <p className="text-sm text-gray-700">業務委託・フリーランスとして特定ジャンルに特化した仕事を受注するルートは、年齢より実力が問われるため比較的有利です。<a href="/schools/techcamp" className="text-blue-600 underline">TECH CAMP</a>や<a href="/schools/dmm-webcamp" className="text-blue-600 underline">DMM WEBCAMP</a>のキャリアカウンセリングで個別の状況を相談することをおすすめします。</p>
+            <p className="text-sm text-gray-700">業務委託・フリーランスとして特定ジャンルに特化した仕事を受注するルートは、年齢より実力が問われるため比較的有利です。<a href="/schools/techcamp" className="text-slate-700 underline">TECH CAMP</a>や<a href="/schools/dmm-webcamp" className="text-slate-700 underline">DMM WEBCAMP</a>のキャリアカウンセリングで個別の状況を相談することをおすすめします。</p>
           </div>
           <div className="border-l-4 border-purple-400 pl-4">
             <h3 className="font-bold text-gray-900 mb-1">スキルアップ・DX推進を目指す場合</h3>
@@ -741,7 +741,7 @@ export const columnContent: Record<string, React.ReactNode> = {
             <li>・回収期間：約1〜2ヶ月</li>
           </ul>
         </div>
-        <p className="text-sm text-gray-600 mt-3">転職目的であれば、<a href="/schools/dmm-webcamp" className="text-blue-600 underline">DMM WEBCAMP</a>や<a href="/schools/techcamp" className="text-blue-600 underline">TECH CAMP</a>のような転職保証・給付金対応スクールの活用を強くおすすめします。</p>
+        <p className="text-sm text-gray-600 mt-3">転職目的であれば、<a href="/schools/dmm-webcamp" className="text-slate-700 underline">DMM WEBCAMP</a>や<a href="/schools/techcamp" className="text-slate-700 underline">TECH CAMP</a>のような転職保証・給付金対応スクールの活用を強くおすすめします。</p>
       </section>
       <section>
         <p className="text-sm text-gray-700">独学かスクールかという二択ではなく、「まずProgateで独学を試してから、本気になったらスクールに切り替える」というハイブリッドアプローチも有効です。最終的には自分の目標と状況に合わせて判断することが大切です。</p>
@@ -828,7 +828,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-xs text-gray-400 mt-2">※転職成功率は各社自社調べ。条件・定義は各スクールにより異なります。</p>
       </section>
       <section>
-        <p className="text-sm text-gray-700">未経験からエンジニア転職を目指すなら、「何ヶ月で転職できるか」より「どのスキルレベルに達するか」を重視することが重要です。転職保証のあるスクールを選べば、目標達成まで手厚いサポートを受けながら学習を進められます。まずは<a href="/schools/techcamp" className="text-blue-600 underline">TECH CAMP</a>や<a href="/schools/dmm-webcamp" className="text-blue-600 underline">DMM WEBCAMP</a>の無料カウンセリングで、自分の状況に合ったプランを相談してみましょう。</p>
+        <p className="text-sm text-gray-700">未経験からエンジニア転職を目指すなら、「何ヶ月で転職できるか」より「どのスキルレベルに達するか」を重視することが重要です。転職保証のあるスクールを選べば、目標達成まで手厚いサポートを受けながら学習を進められます。まずは<a href="/schools/techcamp" className="text-slate-700 underline">TECH CAMP</a>や<a href="/schools/dmm-webcamp" className="text-slate-700 underline">DMM WEBCAMP</a>の無料カウンセリングで、自分の状況に合ったプランを相談してみましょう。</p>
       </section>
     </div>
   ),

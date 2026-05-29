@@ -1,7 +1,13 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { courses, getHighlightedCourses, formatPrice, getSubsidyCourses } from '@/lib/courses';
 import { columns } from '@/lib/columns';
 import CourseCard from '@/components/CourseCard';
+
+export const metadata: Metadata = {
+  title: '資格通信講座 比較ランキング2025年版｜おすすめ10社を徹底比較',
+  description: 'スタディング、ユーキャン、フォーサイトなど人気資格通信講座10社を徹底比較。料金・合格率・教材の質を一覧で確認。宅建・簿記・FP・行政書士など人気資格対応。',
+};
 
 export default function HomePage() {
   const highlighted = getHighlightedCourses();
