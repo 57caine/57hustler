@@ -44,7 +44,7 @@ export default async function BrandPage({ params }: Props) {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <nav className="text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:text-blue-600">ホーム</Link>
+        <Link href="/" className="hover:text-slate-700">ホーム</Link>
         <span className="mx-2">/</span>
         <span className="text-gray-800">{brand.name}</span>
       </nav>

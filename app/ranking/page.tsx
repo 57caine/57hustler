@@ -15,13 +15,13 @@ export default function RankingPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <nav className="text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:text-blue-600">ホーム</Link>
+        <Link href="/" className="hover:text-slate-700">ホーム</Link>
         <span className="mx-2">/</span>
         <span className="text-gray-800">人気ランキング</span>
       </nav>
 
       <h1 className="text-2xl font-bold text-gray-900 mb-2">
-        🏆 コンタクトレンズ 人気ランキング
+        コンタクトレンズ 人気ランキング
       </h1>
       <p className="text-gray-600 mb-8">
         当サイトで最も閲覧されているコンタクトレンズのランキングです。

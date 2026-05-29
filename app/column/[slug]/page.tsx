@@ -63,9 +63,9 @@ export default async function ColumnPage({ params }: Props) {
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <nav className="text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:text-blue-600">ホーム</Link>
+        <Link href="/" className="hover:text-slate-700">ホーム</Link>
         <span className="mx-2">/</span>
-        <Link href="/column" className="hover:text-blue-600">コラム</Link>
+        <Link href="/column" className="hover:text-slate-700">コラム</Link>
         <span className="mx-2">/</span>
         <span className="text-gray-800 line-clamp-1">{column.title}</span>
       </nav>
@@ -109,7 +109,7 @@ export default async function ColumnPage({ params }: Props) {
                     {c.category}
                   </span>
                 </div>
-                <p className="font-medium text-gray-800 text-sm hover:text-blue-600">{c.title}</p>
+                <p className="font-medium text-gray-800 text-sm hover:text-slate-700">{c.title}</p>
               </Link>
             ))}
           </div>

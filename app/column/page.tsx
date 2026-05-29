@@ -17,7 +17,7 @@ export default function ColumnListPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <nav className="text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:text-blue-600">ホーム</Link>
+        <Link href="/" className="hover:text-slate-700">ホーム</Link>
         <span className="mx-2">/</span>
         <span className="text-gray-800">コラム</span>
       </nav>
@@ -37,7 +37,7 @@ export default function ColumnListPage() {
                 </span>
                 <span className="text-xs text-gray-400">{column.readingTime}分で読める</span>
               </div>
-              <h2 className="font-bold text-gray-900 text-lg leading-snug mb-3 group-hover:text-blue-600 transition-colors">
+              <h2 className="font-bold text-gray-900 text-lg leading-snug mb-3 group-hover:text-slate-700 transition-colors">
                 {column.title}
               </h2>
               <p className="text-sm text-gray-600 leading-relaxed mb-4">{column.description}</p>

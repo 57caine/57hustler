@@ -66,9 +66,9 @@ export default async function ProductPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Breadcrumb */}
       <nav className="text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:text-blue-600">ホーム</Link>
+        <Link href="/" className="hover:text-slate-700">ホーム</Link>
         <span className="mx-2">/</span>
-        <Link href={`/category/${product.category}`} className="hover:text-blue-600">{label}</Link>
+        <Link href={`/category/${product.category}`} className="hover:text-slate-700">{label}</Link>
         <span className="mx-2">/</span>
         <span className="text-gray-800">{product.name}</span>
       </nav>
@@ -119,7 +119,7 @@ export default async function ProductPage({ params }: Props) {
       {/* Price Table */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-8">
         <div className="px-6 py-4 border-b border-gray-100">
-          <h2 className="text-lg font-bold text-gray-800">📊 ショップ別価格比較</h2>
+          <h2 className="text-lg font-bold text-gray-800">ショップ別価格比較</h2>
         </div>
         <PriceTable prices={product.prices} productName={product.name} />
       </div>
