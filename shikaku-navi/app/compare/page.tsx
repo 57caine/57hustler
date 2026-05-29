@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { courses, formatPrice } from '@/lib/courses';
 
 export const metadata: Metadata = {
-  title: '資格通信講座 比較表',
-  description: '主要資格通信講座10社を費用・合格率・学習形式・給付金対応で一覧比較。宅建・簿記・FPなど国家資格の講座選びの参考にどうぞ。',
+  title: '資格通信講座 比較表【2025年版・16社一覧】',
+  description: '主要資格通信講座16社を費用・合格率・学習形式・給付金対応で一覧比較。スタディング・フォーサイト・ユーキャン・資格の大原など人気講座を徹底比較。',
 };
 
 export default function ComparePage() {

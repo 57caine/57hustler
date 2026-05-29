@@ -3,13 +3,13 @@ import Link from 'next/link';
 import { columns } from '@/lib/columns';
 
 export const metadata: Metadata = {
-  title: 'コンタクトレンズ コラム・お役立ち情報',
-  description: 'コンタクトレンズの度数の見方、初めての選び方、乾きにくいコンタクトの選び方など、購入前に知っておきたい情報を解説。',
+  title: 'コンタクトレンズ コラム・ガイド【全18記事】| レンズナビ',
+  description: 'コンタクトレンズの度数の見方、初めての選び方、乾きにくい・乱視用・カラコン・2week・マンスリーの選び方まで、購入前に知っておきたい情報を全18記事で解説。',
 };
 
 const categoryColors: Record<string, string> = {
   '度数・処方箋': 'bg-purple-100 text-purple-700',
-  '購入ガイド': 'bg-green-100 text-green-700',
+  '購入ガイド': 'bg-emerald-100 text-emerald-700',
   '商品比較': 'bg-slate-100 text-slate-700',
 };
 
@@ -22,9 +22,10 @@ export default function ColumnListPage() {
         <span className="text-gray-800">コラム</span>
       </nav>
 
-      <h1 className="text-2xl font-bold text-gray-900 mb-2">コンタクトレンズ コラム</h1>
+      <h1 className="text-2xl font-bold text-gray-900 mb-2">コンタクトレンズ コラム・ガイド</h1>
+      <p className="text-gray-500 text-sm mb-1">全{columns.length}記事</p>
       <p className="text-gray-600 mb-8">
-        度数の読み方、初めての選び方など、コンタクトレンズに関するお役立ち情報を掲載しています。
+        度数の見方、種類の選び方、通販おすすめショップなど、コンタクトレンズに関するお役立ち情報を掲載しています。
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

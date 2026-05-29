@@ -5,8 +5,8 @@ import { columns } from '@/lib/columns';
 import ProductCard from '@/components/ProductCard';
 
 export const metadata: Metadata = {
-  title: 'コンタクトレンズ最安値比較【2025年版・28商品対応】| レンズナビ',
-  description: '人気コンタクトレンズ28商品の最安値を一括比較。アキュビュー、デイリーズ、シードなど主要ブランドの価格を毎日自動更新。送料込み最安値をすぐ確認。',
+  title: 'コンタクトレンズ最安値比較【2025年版・45商品対応】| レンズナビ',
+  description: '人気コンタクトレンズ45商品の最安値を一括比較。アキュビュー、デイリーズ、シードなど主要ブランドの価格を毎日更新。送料込み最安値をすぐ確認。乱視・カラコン・遠近両用も対応。',
 };
 
 const categoryConfig = {
@@ -89,10 +89,10 @@ export default function HomePage() {
       <section className="mb-12">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-bold text-gray-800">コンタクト購入ガイド</h2>
-          <Link href="/column" className="text-slate-600 text-sm hover:underline">すべて見る →</Link>
+          <Link href="/column" className="text-slate-600 text-sm hover:underline">全{columns.length}記事を見る →</Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {columns.map((column) => (
+          {columns.slice(0, 6).map((column) => (
             <Link key={column.slug} href={`/column/${column.slug}`} className="group block">
               <div className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm hover:border-gray-300 transition-all h-full">
                 <div className="flex items-center gap-2 mb-2">
@@ -108,6 +108,11 @@ export default function HomePage() {
               </div>
             </Link>
           ))}
+        </div>
+        <div className="text-center mt-4">
+          <Link href="/column" className="inline-block text-sm text-slate-700 border border-slate-300 px-5 py-2 rounded-xl hover:bg-slate-50 transition-colors">
+            全{columns.length}記事を見る
+          </Link>
         </div>
       </section>
 
