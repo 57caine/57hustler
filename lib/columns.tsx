@@ -160,7 +160,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         この記事では、コンタクトレンズの度数パラメータの見方を、初めての方にもわかりやすく解説します。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">PWR（度数）とは？</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">PWR（度数）とは？</h2>
       <p className="mb-4">
         <strong>PWR（Power）</strong>は、コンタクトレンズの度数を表します。「SPH（Sphere）」と書かれることもあります。
         近視の方はマイナス（－）、遠視の方はプラス（＋）の数値になります。
@@ -185,7 +185,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <strong>注意：</strong>眼鏡の度数とコンタクトの度数は異なります。眼鏡の度数をそのままコンタクトに使わず、必ず眼科で処方を受けてください。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">BC（ベースカーブ）とは？</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">BC（ベースカーブ）とは？</h2>
       <p className="mb-4">
         <strong>BC（Base Curve）</strong>は、レンズの曲率（カーブの大きさ）を表します。単位はmmで、数値が小さいほどカーブがきつく、大きいほど緩やかです。
       </p>
@@ -203,7 +203,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ul>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">DIA（直径）とは？</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">DIA（直径）とは？</h2>
       <p className="mb-4">
         <strong>DIA（Diameter）</strong>はレンズの直径を表します。通常の透明コンタクトは<strong>13.8〜14.5mm</strong>が一般的です。
         カラーコンタクトには14.5mm以上の大きめサイズもあります（デカ目効果）。
@@ -213,7 +213,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         ただし、前回と異なるDIAの商品に変更する場合は眼科での確認を推奨します。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">乱視用のパラメータ（CYL・AXIS）</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">乱視用のパラメータ（CYL・AXIS）</h2>
       <p className="mb-4">
         乱視がある方のコンタクトレンズには、通常の度数に加えて以下のパラメータがあります。
       </p>
@@ -228,7 +228,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">処方箋の右目・左目の見分け方</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">処方箋の右目・左目の見分け方</h2>
       <p className="mb-4">
         処方箋では右目と左目を以下の略語で区別します：
       </p>
@@ -241,10 +241,10 @@ export const columnContent: Record<string, React.ReactNode> = {
         度数が違う場合は特に重要です。
       </p>
 
-      <div className="bg-blue-600 text-white rounded-2xl p-6 mt-8">
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
         <h3 className="text-xl font-bold mb-2">処方された商品を最安値で購入する</h3>
-        <p className="text-blue-100 mb-4">度数がわかったら、当サイトで最安値ショップを比較しましょう。</p>
-        <Link href="/ranking" className="inline-block bg-white text-blue-600 font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors">
+        <p className="text-slate-300 mb-4">度数がわかったら、当サイトで最安値ショップを比較しましょう。</p>
+        <Link href="/ranking" className="inline-block bg-white text-slate-800 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 transition-colors">
           人気商品の価格を比較する →
         </Link>
       </div>
@@ -258,7 +258,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         結論から言うと、<strong>薬機法上はコンタクトレンズの購入に処方箋の提示義務はありません</strong>が、眼科での検査を強く推奨します。この記事で詳しく解説します。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">コンタクトレンズは「高度管理医療機器」</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">コンタクトレンズは「高度管理医療機器」</h2>
       <p className="mb-4">
         コンタクトレンズは<strong>高度管理医療機器（クラスIII）</strong>に分類されており、目に直接触れる医療器具です。
         眼科での処方・定期検査が推奨されていますが、法律上は処方箋の提示なしに購入できます。
@@ -268,7 +268,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-sm mt-1">初めてコンタクトを使う場合や、度数を変更する場合は、必ず眼科を受診してください。目に合わない度数のコンタクトを使い続けると、視力低下や目のトラブルを引き起こす可能性があります。</p>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">通販で安全に購入するための3条件</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">通販で安全に購入するための3条件</h2>
       <div className="space-y-4 mb-6">
         <div className="flex gap-4 bg-green-50 rounded-xl p-4">
           <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">1</div>
@@ -293,7 +293,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">通販ショップの選び方</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">通販ショップの選び方</h2>
       <p className="mb-4">通販でコンタクトを買う場合は、以下のポイントを確認しましょう。</p>
       <ul className="list-disc list-inside mb-4 space-y-2 text-gray-700">
         <li><strong>高度管理医療機器販売許可を取得しているか</strong>（正規ショップの証）</li>
@@ -302,19 +302,19 @@ export const columnContent: Record<string, React.ReactNode> = {
         <li><strong>まとめ買い割引があるか</strong>（6箱・8箱セットが安い場合が多い）</li>
       </ul>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">おすすめ通販ショップの比較</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">おすすめ通販ショップの比較</h2>
       <p className="mb-4">
         当サイトでは24店舗のコンタクト通販ショップの価格を毎日比較しています。
         商品によって最安値ショップが異なるため、購入前に必ず比較することをおすすめします。
       </p>
-      <div className="bg-blue-600 text-white rounded-2xl p-6 mt-6">
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-6">
         <h3 className="text-xl font-bold mb-2">今すぐ最安値を比較する</h3>
-        <p className="text-blue-100 mb-4">アキュビュー、デイリーズ、シードなど人気商品の価格を一括比較。</p>
+        <p className="text-slate-300 mb-4">アキュビュー、デイリーズ、シードなど人気商品の価格を一括比較。</p>
         <div className="flex flex-wrap gap-3">
-          <Link href="/category/1day" className="inline-block bg-white text-blue-600 font-bold px-4 py-2 rounded-xl hover:bg-blue-50 transition-colors text-sm">
+          <Link href="/category/1day" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">
             ワンデーを比較
           </Link>
-          <Link href="/category/2week" className="inline-block bg-white text-blue-600 font-bold px-4 py-2 rounded-xl hover:bg-blue-50 transition-colors text-sm">
+          <Link href="/category/2week" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">
             2週間を比較
           </Link>
           <Link href="/ranking" className="inline-block bg-yellow-400 text-gray-900 font-bold px-4 py-2 rounded-xl hover:bg-yellow-300 transition-colors text-sm">
@@ -332,7 +332,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         ワンデー・2週間・マンスリーの違いから、価格の目安、購入手順まで詳しく解説します。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">まず眼科へ行こう</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">まず眼科へ行こう</h2>
       <p className="mb-4">
         コンタクトレンズを初めて使う場合は、必ず<strong>眼科を受診</strong>してください。
         眼科では以下の検査・処方を受けられます：
@@ -348,7 +348,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         初診料・検査料は病院により異なりますが、3,000〜5,000円程度が目安です。健康保険が適用されます。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">種類の違いを知ろう</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">種類の違いを知ろう</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <div className="bg-blue-50 rounded-xl p-4">
           <h3 className="font-bold text-blue-800 mb-2">ワンデー（1日使い捨て）</h3>
@@ -382,7 +382,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">初心者にはワンデーがおすすめ</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">初心者にはワンデーがおすすめ</h2>
       <p className="mb-4">
         初めてコンタクトを使う方には<strong>ワンデー（1日使い捨て）</strong>を強くおすすめします。理由は3つ：
       </p>
@@ -392,7 +392,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <li>万が一合わなくても<strong>翌日からやめられる</strong>リスクが低い</li>
       </ol>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">初心者におすすめのワンデーコンタクト</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">初心者におすすめのワンデーコンタクト</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
           <div className="flex items-center gap-2 mb-2">
@@ -401,7 +401,7 @@ export const columnContent: Record<string, React.ReactNode> = {
           </div>
           <h3 className="font-bold text-gray-800 mb-1">1デイ アキュビュー モイスト</h3>
           <p className="text-xs text-gray-600 mb-2">LACREON技術で乾きを防ぐ。初心者に最も人気。</p>
-          <Link href="/product/acuvue-moist-1day" className="text-blue-600 text-sm font-medium hover:underline">最安値を見る →</Link>
+          <Link href="/product/acuvue-moist-1day" className="text-slate-700 text-sm font-medium hover:underline">最安値を見る →</Link>
         </div>
         <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
           <div className="flex items-center gap-2 mb-2">
@@ -410,11 +410,11 @@ export const columnContent: Record<string, React.ReactNode> = {
           </div>
           <h3 className="font-bold text-gray-800 mb-1">ワンデーピュア うるおいプラス</h3>
           <p className="text-xs text-gray-600 mb-2">国産品質でリーズナブル。コスパを重視する方に。</p>
-          <Link href="/product/seed-1day-pure" className="text-blue-600 text-sm font-medium hover:underline">最安値を見る →</Link>
+          <Link href="/product/seed-1day-pure" className="text-slate-700 text-sm font-medium hover:underline">最安値を見る →</Link>
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">ネット通販での購入の流れ（6ステップ）</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">ネット通販での購入の流れ（6ステップ）</h2>
       <div className="space-y-4 mb-6">
         {[
           { step: 1, title: '度数・BCを確認する', desc: '手元の処方箋、または既存のコンタクトケース・箱に記載された度数（PWR）・BC・DIAを確認します。初めての方は必ず眼科を受診して正確なパラメータを取得してください。' },
@@ -425,7 +425,7 @@ export const columnContent: Record<string, React.ReactNode> = {
           { step: 6, title: '継続購入する', desc: '同じ商品・同じ度数であれば継続して通販購入できます。眼科での定期検査（年1〜2回推奨）を忘れずに。度数が変わった場合は必ず眼科で再処方を受けてください。' },
         ].map((item) => (
           <div key={item.step} className="flex gap-4 bg-gray-50 rounded-xl p-4">
-            <div className="bg-blue-600 text-white rounded-full w-9 h-9 flex items-center justify-center font-bold flex-shrink-0 text-sm">
+            <div className="bg-slate-800 text-white rounded-full w-9 h-9 flex items-center justify-center font-bold flex-shrink-0 text-sm">
               {item.step}
             </div>
             <div>
@@ -436,7 +436,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         ))}
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">処方箋について知っておこう</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">処方箋について知っておこう</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
           <h3 className="font-bold text-amber-800 mb-2">処方箋が必要なケース</h3>
@@ -461,7 +461,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-sm text-gray-700 mt-1">薬機法上、コンタクトレンズの購入に処方箋の提示義務はありませんが、目の健康のために定期的な眼科検査を強く推奨します。特に初めての方や度数が変わった方は必ず眼科を受診してください。</p>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">送料を含めた実際のコスト計算例</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">送料を含めた実際のコスト計算例</h2>
       <p className="mb-4 text-gray-700">ショップを比較するときは<strong>送料込みの合計金額</strong>で比較することが重要です。以下の例を参考にしてください。</p>
       <div className="overflow-x-auto mb-6">
         <table className="w-full text-sm border-collapse">
@@ -499,7 +499,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         この例では商品価格が最も安いC店（¥2,870）より、送料無料のB店（¥3,100）の方が送料込みでは安くなります。当サイトの価格表では<strong>送料込みの合計金額</strong>を表示しているので、すぐに最安ショップがわかります。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">よくある質問（Q&amp;A）</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">よくある質問（Q&amp;A）</h2>
       <div className="space-y-4 mb-6">
         {[
           {
@@ -525,7 +525,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         ].map((item, i) => (
           <details key={i} className="border border-gray-200 rounded-xl overflow-hidden">
             <summary className="bg-gray-50 px-4 py-3 cursor-pointer font-medium text-gray-800 flex items-center gap-2 hover:bg-gray-100 transition-colors">
-              <span className="text-blue-600 font-bold text-sm">Q.</span>
+              <span className="text-slate-800 font-bold text-sm">Q.</span>
               {item.q}
             </summary>
             <div className="px-4 py-3 text-sm text-gray-700 bg-white">
@@ -535,10 +535,10 @@ export const columnContent: Record<string, React.ReactNode> = {
         ))}
       </div>
 
-      <div className="bg-blue-600 text-white rounded-2xl p-6 mt-8">
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
         <h3 className="text-xl font-bold mb-2">人気ワンデーコンタクトを比較する</h3>
-        <p className="text-blue-100 mb-4">初心者におすすめの商品一覧。送料込み最安値ショップがすぐわかります。</p>
-        <Link href="/category/1day" className="inline-block bg-white text-blue-600 font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors">
+        <p className="text-slate-300 mb-4">初心者におすすめの商品一覧。送料込み最安値ショップがすぐわかります。</p>
+        <Link href="/category/1day" className="inline-block bg-white text-slate-800 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 transition-colors">
           ワンデー全商品を見る →
         </Link>
       </div>
@@ -552,7 +552,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         この記事では、目が乾きにくいコンタクトレンズの選び方と、おすすめ商品を詳しく紹介します。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">コンタクトで目が乾く原因</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">コンタクトで目が乾く原因</h2>
       <p className="mb-4">コンタクトレンズで目が乾く主な原因は以下の3つです：</p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <div className="bg-red-50 rounded-xl p-4 text-center">
@@ -572,7 +572,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">乾きにくいレンズの選び方</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">乾きにくいレンズの選び方</h2>
       <h3 className="text-xl font-bold text-gray-800 mb-3">① 素材で選ぶ</h3>
       <p className="mb-4">
         <strong>シリコーンハイドロゲル</strong>素材は酸素透過率が高く、目への負担が少なくなります。
@@ -589,7 +589,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <li><strong>生体模倣技術（バイオトゥルー）</strong>：角膜と同じ含水率78%</li>
       </ul>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">乾きにくいコンタクトおすすめ7選</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">乾きにくいコンタクトおすすめ7選</h2>
       <div className="space-y-4 mb-8">
         {[
           { rank: 1, slug: 'dailies-total1', name: 'デイリーズ トータルワン', brand: 'アルコン', point: '表面含水率約99%の水勾配テクノロジー。乾燥感ゼロに近い究極のうるおい。', badge: '最強うるおい' },
@@ -611,13 +611,13 @@ export const columnContent: Record<string, React.ReactNode> = {
               </div>
               <h3 className="font-bold text-gray-800 mb-1">{item.name}</h3>
               <p className="text-sm text-gray-600 mb-2">{item.point}</p>
-              <Link href={`/product/${item.slug}`} className="text-blue-600 text-sm font-medium hover:underline">最安値を確認 →</Link>
+              <Link href={`/product/${item.slug}`} className="text-slate-700 text-sm font-medium hover:underline">最安値を確認 →</Link>
             </div>
           </div>
         ))}
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">乾燥対策のその他のポイント</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">乾燥対策のその他のポイント</h2>
       <ul className="list-disc list-inside mb-6 space-y-2 text-gray-700">
         <li>意識的にまばたきを増やす（特にPC・スマホ使用中）</li>
         <li>コンタクト用目薬（人工涙液）を活用する</li>
@@ -625,10 +625,10 @@ export const columnContent: Record<string, React.ReactNode> = {
         <li>室内の加湿（湿度40〜60%が理想）</li>
       </ul>
 
-      <div className="bg-blue-600 text-white rounded-2xl p-6 mt-8">
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
         <h3 className="text-xl font-bold mb-2">乾きにくいコンタクトを最安値で購入する</h3>
-        <p className="text-blue-100 mb-4">気になった商品の最安値ショップを今すぐ比較できます。</p>
-        <Link href="/ranking" className="inline-block bg-white text-blue-600 font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors">
+        <p className="text-slate-300 mb-4">気になった商品の最安値ショップを今すぐ比較できます。</p>
+        <Link href="/ranking" className="inline-block bg-white text-slate-800 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 transition-colors">
           全商品の価格を比較する →
         </Link>
       </div>
@@ -642,7 +642,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         乱視用コンタクトレンズの選び方を、軽度・中等度別に詳しく解説します。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">乱視とは？CYL・AXISの意味</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">乱視とは？CYL・AXISの意味</h2>
       <p className="mb-4">
         乱視とは、角膜や水晶体の形が球面ではなく楕円形に歪んでいるために、焦点が一点に集まらず像がぼやけたり二重に見える状態です。
         乱視用コンタクトの処方箋には、通常の度数（PWR）に加えて以下のパラメータが記載されます。
@@ -664,7 +664,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-sm mt-1">CYL（乱視度数）が-0.75以上ある場合は、乱視用コンタクトの使用を検討してください。-0.50以下の軽度乱視は、普通の球面コンタクトで十分なことも多いです。</p>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">乱視用コンタクトの仕組み</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">乱視用コンタクトの仕組み</h2>
       <p className="mb-4">
         乱視用コンタクトは「トーリックレンズ」とも呼ばれ、レンズに方向性を持たせることで乱視を矯正します。
         通常のコンタクトと異なり、<strong>レンズが目の上で回転しない</strong>ように設計されています。
@@ -676,7 +676,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <li><strong>Eyelid Stabilization方式（アキュビュー）：</strong>まぶたの動きを利用して安定化</li>
       </ul>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">軽度・中等度別おすすめ乱視用コンタクト</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">軽度・中等度別おすすめ乱視用コンタクト</h2>
       <h3 className="text-xl font-bold text-gray-800 mb-3">軽度乱視（CYL -0.75〜-1.25）向け</h3>
       <div className="space-y-4 mb-6">
         <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
@@ -686,7 +686,7 @@ export const columnContent: Record<string, React.ReactNode> = {
           </div>
           <h4 className="font-bold text-gray-800 mb-1">1デイ アキュビュー モイスト 乱視用</h4>
           <p className="text-xs text-gray-600 mb-2">LACREON技術で乾きにくく、乱視もしっかり矯正。軽度〜中等度乱視の方に人気No.1のワンデー。</p>
-          <Link href="/product/acuvue-moist-1day-astig" className="text-blue-600 text-sm font-medium hover:underline">最安値を確認 →</Link>
+          <Link href="/product/acuvue-moist-1day-astig" className="text-slate-700 text-sm font-medium hover:underline">最安値を確認 →</Link>
         </div>
         <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
           <div className="flex items-center gap-2 mb-2">
@@ -695,7 +695,7 @@ export const columnContent: Record<string, React.ReactNode> = {
           </div>
           <h4 className="font-bold text-gray-800 mb-1">ワンデーピュア うるおいプラス 乱視用</h4>
           <p className="text-xs text-gray-600 mb-2">国産品質で価格が安い。コスパ重視の方に最適な乱視用ワンデー。</p>
-          <Link href="/product/seed-1day-pure-astig" className="text-blue-600 text-sm font-medium hover:underline">最安値を確認 →</Link>
+          <Link href="/product/seed-1day-pure-astig" className="text-slate-700 text-sm font-medium hover:underline">最安値を確認 →</Link>
         </div>
       </div>
 
@@ -708,7 +708,7 @@ export const columnContent: Record<string, React.ReactNode> = {
           </div>
           <h4 className="font-bold text-gray-800 mb-1">アキュビュー オアシス 乱視用</h4>
           <p className="text-xs text-gray-600 mb-2">HYDRACLEAR PLUS技術で乾燥に強く、乱視の安定矯正力も抜群。中等度乱視の方に強くおすすめ。</p>
-          <Link href="/product/acuvue-oasys-2week-astig" className="text-blue-600 text-sm font-medium hover:underline">最安値を確認 →</Link>
+          <Link href="/product/acuvue-oasys-2week-astig" className="text-slate-700 text-sm font-medium hover:underline">最安値を確認 →</Link>
         </div>
         <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
           <div className="flex items-center gap-2 mb-2">
@@ -717,11 +717,11 @@ export const columnContent: Record<string, React.ReactNode> = {
           </div>
           <h4 className="font-bold text-gray-800 mb-1">バイオフィニティ トーリック</h4>
           <p className="text-xs text-gray-600 mb-2">Aquaform技術搭載。コスパ重視でマンスリー乱視用を探している方に最適。</p>
-          <Link href="/product/biofinity-toric" className="text-blue-600 text-sm font-medium hover:underline">最安値を確認 →</Link>
+          <Link href="/product/biofinity-toric" className="text-slate-700 text-sm font-medium hover:underline">最安値を確認 →</Link>
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">乱視用コンタクトを選ぶ際の注意点</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">乱視用コンタクトを選ぶ際の注意点</h2>
       <ul className="list-disc list-inside mb-6 space-y-2 text-gray-700">
         <li>必ず眼科でCYL・AXIS・BCを正確に処方してもらう</li>
         <li>通販購入時はCYLとAXISの入力ミスに注意（左右間違えやすい）</li>
@@ -729,11 +729,11 @@ export const columnContent: Record<string, React.ReactNode> = {
         <li>乱視用は普通のコンタクトより割高だが眼の健康のために適切なものを選ぶ</li>
       </ul>
 
-      <div className="bg-blue-600 text-white rounded-2xl p-6 mt-8">
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
         <h3 className="text-xl font-bold mb-2">乱視用コンタクトの最安値を比較する</h3>
-        <p className="text-blue-100 mb-4">アキュビュー・シード・クーパービジョンなど主要ブランドの乱視用コンタクトを一括比較。</p>
+        <p className="text-slate-300 mb-4">アキュビュー・シード・クーパービジョンなど主要ブランドの乱視用コンタクトを一括比較。</p>
         <div className="flex flex-wrap gap-3">
-          <Link href="/category/1day" className="inline-block bg-white text-blue-600 font-bold px-4 py-2 rounded-xl hover:bg-blue-50 transition-colors text-sm">
+          <Link href="/category/1day" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">
             ワンデー乱視用を見る
           </Link>
           <Link href="/ranking" className="inline-block bg-yellow-400 text-gray-900 font-bold px-4 py-2 rounded-xl hover:bg-yellow-300 transition-colors text-sm">
@@ -751,7 +751,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         この記事では2026年時点での主要ショップの特徴・価格帯・送料を比較し、賢い購入方法を解説します。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">コンタクト通販サイトを選ぶポイント</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">コンタクト通販サイトを選ぶポイント</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div className="bg-blue-50 rounded-xl p-4">
           <h3 className="font-bold text-blue-800 mb-2">① 送料込みの価格で比較する</h3>
@@ -771,15 +771,15 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">主要通販ショップの特徴比較</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">主要通販ショップの特徴比較</h2>
       <div className="overflow-x-auto mb-6">
         <table className="w-full text-sm border-collapse">
           <thead>
             <tr className="bg-blue-100">
-              <th className="text-left p-3 border border-blue-200">ショップ名</th>
-              <th className="text-left p-3 border border-blue-200">特徴</th>
-              <th className="text-left p-3 border border-blue-200">送料無料条件</th>
-              <th className="text-left p-3 border border-blue-200">強み</th>
+              <th className="text-left p-3 border border-slate-200">ショップ名</th>
+              <th className="text-left p-3 border border-slate-200">特徴</th>
+              <th className="text-left p-3 border border-slate-200">送料無料条件</th>
+              <th className="text-left p-3 border border-slate-200">強み</th>
             </tr>
           </thead>
           <tbody>
@@ -823,7 +823,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </table>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">商品別最安値を比較する</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">商品別最安値を比較する</h2>
       <p className="mb-4">同じ商品でもショップによって価格差が大きく出ます。例えば人気のアキュビュー オアシス ワンデー（30枚入り）は：</p>
       <div className="bg-gray-50 rounded-xl p-4 mb-6 text-sm">
         <p className="font-bold mb-2 text-gray-800">アキュビュー オアシス ワンデー 30枚（1箱）の価格帯（送料別）</p>
@@ -843,12 +843,12 @@ export const columnContent: Record<string, React.ReactNode> = {
         ].map(p => (
           <div key={p.slug} className="flex items-center justify-between border border-gray-200 rounded-xl p-3 hover:shadow-md transition-shadow">
             <span className="font-medium text-gray-800 text-sm">{p.name}</span>
-            <Link href={`/product/${p.slug}`} className="text-blue-600 text-sm font-medium hover:underline">最安値を見る →</Link>
+            <Link href={`/product/${p.slug}`} className="text-slate-700 text-sm font-medium hover:underline">最安値を見る →</Link>
           </div>
         ))}
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">賢い節約術まとめ</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">賢い節約術まとめ</h2>
       <ul className="list-disc list-inside mb-6 space-y-2 text-gray-700">
         <li><strong>まとめ買い：</strong>6箱・8箱セット購入で1箱あたりの価格を下げる</li>
         <li><strong>定期購入：</strong>定期便サービスを使うと5〜10%割引になるショップが多い</li>
@@ -857,10 +857,10 @@ export const columnContent: Record<string, React.ReactNode> = {
         <li><strong>価格比較：</strong>当サイトで複数ショップの価格を一括比較する</li>
       </ul>
 
-      <div className="bg-blue-600 text-white rounded-2xl p-6 mt-8">
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
         <h3 className="text-xl font-bold mb-2">今すぐ最安値ショップを比較する</h3>
-        <p className="text-blue-100 mb-4">24ショップの価格を一括比較。送料込みの最終価格がすぐわかります。</p>
-        <Link href="/ranking" className="inline-block bg-white text-blue-600 font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors">
+        <p className="text-slate-300 mb-4">24ショップの価格を一括比較。送料込みの最終価格がすぐわかります。</p>
+        <Link href="/ranking" className="inline-block bg-white text-slate-800 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 transition-colors">
           人気商品の価格比較ランキングを見る →
         </Link>
       </div>
@@ -875,16 +875,16 @@ export const columnContent: Record<string, React.ReactNode> = {
         この記事では全ラインナップを比較し、自分に合った商品の選び方を解説します。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">アキュビューのラインナップ一覧</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">アキュビューのラインナップ一覧</h2>
       <div className="overflow-x-auto mb-6">
         <table className="w-full text-sm border-collapse">
           <thead>
             <tr className="bg-blue-100">
-              <th className="text-left p-3 border border-blue-200">商品名</th>
-              <th className="text-left p-3 border border-blue-200">タイプ</th>
-              <th className="text-left p-3 border border-blue-200">素材</th>
-              <th className="text-left p-3 border border-blue-200">含水率</th>
-              <th className="text-left p-3 border border-blue-200">特徴</th>
+              <th className="text-left p-3 border border-slate-200">商品名</th>
+              <th className="text-left p-3 border border-slate-200">タイプ</th>
+              <th className="text-left p-3 border border-slate-200">素材</th>
+              <th className="text-left p-3 border border-slate-200">含水率</th>
+              <th className="text-left p-3 border border-slate-200">特徴</th>
             </tr>
           </thead>
           <tbody>
@@ -941,12 +941,12 @@ export const columnContent: Record<string, React.ReactNode> = {
         </table>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">目的別・おすすめアキュビューはこれ</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">目的別・おすすめアキュビューはこれ</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div className="bg-blue-50 rounded-xl p-4">
           <h3 className="font-bold text-blue-800 mb-2">目の乾きが気になる → オアシス</h3>
           <p className="text-sm text-gray-700 mb-2">シリコーンHG素材でHydraLuxe™技術搭載。長時間PCやスマホを使う人に最適。</p>
-          <Link href="/product/acuvue-oasys-1day" className="text-blue-600 text-sm font-medium hover:underline">オアシス ワンデーの価格を見る →</Link>
+          <Link href="/product/acuvue-oasys-1day" className="text-slate-700 text-sm font-medium hover:underline">オアシス ワンデーの価格を見る →</Link>
         </div>
         <div className="bg-green-50 rounded-xl p-4">
           <h3 className="font-bold text-green-800 mb-2">コスパ重視 → モイスト</h3>
@@ -965,7 +965,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">オアシスとモイストの違い</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">オアシスとモイストの違い</h2>
       <p className="mb-4">最も比較されるのがオアシスとモイストの違いです：</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div className="bg-blue-50 rounded-xl p-4">
@@ -990,10 +990,10 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <div className="bg-blue-600 text-white rounded-2xl p-6 mt-8">
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
         <h3 className="text-xl font-bold mb-2">アキュビュー全商品の最安値を比較する</h3>
-        <p className="text-blue-100 mb-4">オアシス・モイスト・乱視用など、アキュビュー全商品の通販最安値を一括比較。</p>
-        <Link href="/ranking" className="inline-block bg-white text-blue-600 font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors">
+        <p className="text-slate-300 mb-4">オアシス・モイスト・乱視用など、アキュビュー全商品の通販最安値を一括比較。</p>
+        <Link href="/ranking" className="inline-block bg-white text-slate-800 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 transition-colors">
           アキュビューの価格を比較する →
         </Link>
       </div>
@@ -1007,7 +1007,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         カラコン初心者向けの選び方ガイドをまとめました。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">カラコンとは？基本知識</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">カラコンとは？基本知識</h2>
       <p className="mb-4">
         カラーコンタクトレンズ（カラコン）は、通常のコンタクトレンズに色素を加え、瞳の色や大きさを変えられるレンズです。
         日本では<strong>高度管理医療機器</strong>として規制されており、医師の処方に基づいた適切な使用が推奨されます。
@@ -1017,7 +1017,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-sm mt-1">カラコンも一般コンタクトと同様、初回は眼科で処方を受けてください。度なしカラコンも、自分の目に合ったBCと直径のものを選ぶことが重要です。</p>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">度あり vs 度なしカラコンの違い</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">度あり vs 度なしカラコンの違い</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div className="bg-blue-50 rounded-xl p-4">
           <h3 className="font-bold text-blue-800 mb-2">度ありカラコン</h3>
@@ -1039,7 +1039,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">自然に見えるカラコンの選び方</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">自然に見えるカラコンの選び方</h2>
       <h3 className="text-xl font-bold text-gray-800 mb-3">① 直径（DIA）で選ぶ</h3>
       <p className="mb-4">
         カラコンの直径（着色直径）が大きいほどデカ目効果が出ます。
@@ -1062,7 +1062,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <li><strong>ヘーゼル：</strong>グリーン混じり、オシャレな印象</li>
       </ul>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">初心者におすすめのカラコン</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">初心者におすすめのカラコン</h2>
       <div className="space-y-4 mb-6">
         <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
           <div className="flex items-center gap-2 mb-2">
@@ -1071,7 +1071,7 @@ export const columnContent: Record<string, React.ReactNode> = {
           </div>
           <h3 className="font-bold text-gray-800 mb-1">シードアイコフレ ワンデー UV</h3>
           <p className="text-xs text-gray-600 mb-2">国産カラコンで安心・安全。自然な発色で初心者に最適。</p>
-          <Link href="/product/seed-eye-coffret-1day" className="text-blue-600 text-sm font-medium hover:underline">最安値を見る →</Link>
+          <Link href="/product/seed-eye-coffret-1day" className="text-slate-700 text-sm font-medium hover:underline">最安値を見る →</Link>
         </div>
         <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
           <div className="flex items-center gap-2 mb-2">
@@ -1080,7 +1080,7 @@ export const columnContent: Record<string, React.ReactNode> = {
           </div>
           <h3 className="font-bold text-gray-800 mb-1">ワンデー アキュビュー ディファイン</h3>
           <p className="text-xs text-gray-600 mb-2">Limbal Ringデザインで自然に目を大きく見せる。LACREON技術で快適。</p>
-          <Link href="/product/acuvue-define-1day" className="text-blue-600 text-sm font-medium hover:underline">最安値を見る →</Link>
+          <Link href="/product/acuvue-define-1day" className="text-slate-700 text-sm font-medium hover:underline">最安値を見る →</Link>
         </div>
         <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
           <div className="flex items-center gap-2 mb-2">
@@ -1089,11 +1089,11 @@ export const columnContent: Record<string, React.ReactNode> = {
           </div>
           <h3 className="font-bold text-gray-800 mb-1">GEO ヌーディーシリーズ</h3>
           <p className="text-xs text-gray-600 mb-2">ナチュラルブラウン・グレーで自然な盛れ感。コスパも良好。</p>
-          <Link href="/product/geo-nudy-color" className="text-blue-600 text-sm font-medium hover:underline">最安値を見る →</Link>
+          <Link href="/product/geo-nudy-color" className="text-slate-700 text-sm font-medium hover:underline">最安値を見る →</Link>
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">安全な使い方のポイント</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">安全な使い方のポイント</h2>
       <ul className="list-disc list-inside mb-6 space-y-2 text-gray-700">
         <li>使用期間を守る（ワンデーは1日、マンスリーは1ヶ月まで）</li>
         <li>就寝時は必ず外す（連続装用禁止）</li>
@@ -1102,10 +1102,10 @@ export const columnContent: Record<string, React.ReactNode> = {
         <li>定期的に眼科で検査を受ける</li>
       </ul>
 
-      <div className="bg-blue-600 text-white rounded-2xl p-6 mt-8">
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
         <h3 className="text-xl font-bold mb-2">カラコンの最安値を比較する</h3>
-        <p className="text-blue-100 mb-4">人気カラコンの通販最安値を一括比較。送料込みで最もお得なショップがすぐわかります。</p>
-        <Link href="/category/color" className="inline-block bg-white text-blue-600 font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors">
+        <p className="text-slate-300 mb-4">人気カラコンの通販最安値を一括比較。送料込みで最もお得なショップがすぐわかります。</p>
+        <Link href="/category/color" className="inline-block bg-white text-slate-800 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 transition-colors">
           カラコン全商品を見る →
         </Link>
       </div>
@@ -1119,15 +1119,15 @@ export const columnContent: Record<string, React.ReactNode> = {
         「どちらを選べばいいの？」という疑問を、品質・価格・入手しやすさの観点から徹底比較します。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">日本の主要コンタクトブランドまとめ</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">日本の主要コンタクトブランドまとめ</h2>
       <div className="overflow-x-auto mb-6">
         <table className="w-full text-sm border-collapse">
           <thead>
             <tr className="bg-blue-100">
-              <th className="text-left p-3 border border-blue-200">ブランド</th>
-              <th className="text-left p-3 border border-blue-200">製造国</th>
-              <th className="text-left p-3 border border-blue-200">代表商品</th>
-              <th className="text-left p-3 border border-blue-200">価格帯</th>
+              <th className="text-left p-3 border border-slate-200">ブランド</th>
+              <th className="text-left p-3 border border-slate-200">製造国</th>
+              <th className="text-left p-3 border border-slate-200">代表商品</th>
+              <th className="text-left p-3 border border-slate-200">価格帯</th>
             </tr>
           </thead>
           <tbody>
@@ -1171,7 +1171,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </table>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">国産コンタクトのメリット・デメリット</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">国産コンタクトのメリット・デメリット</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div className="bg-green-50 rounded-xl p-4">
           <h3 className="font-bold text-green-800 mb-3">メリット</h3>
@@ -1192,7 +1192,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">海外製コンタクトのメリット・デメリット</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">海外製コンタクトのメリット・デメリット</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div className="bg-green-50 rounded-xl p-4">
           <h3 className="font-bold text-green-800 mb-3">メリット</h3>
@@ -1211,7 +1211,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">結論：どちらを選ぶべき？</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">結論：どちらを選ぶべき？</h2>
       <div className="bg-blue-50 rounded-xl p-4 mb-6">
         <ul className="space-y-3 text-sm text-gray-700">
           <li><strong>コスパ重視 →</strong> シード（ワンデーピュア）がおすすめ。国産品質で価格は最安レベル。</li>
@@ -1221,11 +1221,11 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ul>
       </div>
 
-      <div className="bg-blue-600 text-white rounded-2xl p-6 mt-8">
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
         <h3 className="text-xl font-bold mb-2">国産・海外製の人気商品を一括比較</h3>
-        <p className="text-blue-100 mb-4">シード・メニコンから、アキュビュー・アルコンまで、全商品の最安値を比較。</p>
+        <p className="text-slate-300 mb-4">シード・メニコンから、アキュビュー・アルコンまで、全商品の最安値を比較。</p>
         <div className="flex flex-wrap gap-3">
-          <Link href="/category/1day" className="inline-block bg-white text-blue-600 font-bold px-4 py-2 rounded-xl hover:bg-blue-50 transition-colors text-sm">
+          <Link href="/category/1day" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">
             ワンデーを比較
           </Link>
           <Link href="/ranking" className="inline-block bg-yellow-400 text-gray-900 font-bold px-4 py-2 rounded-xl hover:bg-yellow-300 transition-colors text-sm">
@@ -1243,7 +1243,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         毎日のケアをサボると目のトラブルにつながります。この記事で正しい洗い方・保存方法を覚えましょう。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">なぜケアが必要？</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">なぜケアが必要？</h2>
       <p className="mb-4">
         コンタクトレンズには使用中に<strong>タンパク質・脂質・細菌</strong>などが付着します。
         これを毎日洗浄・消毒しないと、目のトラブルの原因になります。
@@ -1266,7 +1266,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">正しいケアの手順</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">正しいケアの手順</h2>
       <div className="space-y-4 mb-6">
         {[
           { step: 1, title: '手を洗う', detail: '石鹸でしっかり手を洗い、清潔なタオルで水気を取る。ハンドクリームを使った後はよく洗い流す。' },
@@ -1277,7 +1277,7 @@ export const columnContent: Record<string, React.ReactNode> = {
           { step: 6, title: 'レンズケースのケア', detail: '毎日洗浄液で洗い、自然乾燥させる。ケースは1〜3ヶ月で交換する。' },
         ].map(item => (
           <div key={item.step} className="flex gap-4 bg-gray-50 rounded-xl p-4">
-            <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 text-sm">
+            <div className="bg-slate-800 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 text-sm">
               {item.step}
             </div>
             <div>
@@ -1288,7 +1288,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         ))}
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">洗浄液の種類と選び方</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">洗浄液の種類と選び方</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div className="bg-blue-50 rounded-xl p-4">
           <h3 className="font-bold text-blue-800 mb-2">MPS（マルチパーパスソリューション）</h3>
@@ -1302,7 +1302,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">絶対にやってはいけないNG行為</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">絶対にやってはいけないNG行為</h2>
       <div className="bg-red-50 rounded-xl p-4 mb-6">
         <ul className="space-y-2 text-sm text-gray-700">
           <li className="flex gap-2"><span className="text-red-500 font-bold">✗</span><span><strong>水道水でのすすぎ・保存</strong>：アカントアメーバに感染するリスクがある</span></li>
@@ -1313,14 +1313,14 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ul>
       </div>
 
-      <div className="bg-blue-600 text-white rounded-2xl p-6 mt-8">
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
         <h3 className="text-xl font-bold mb-2">2ウィーク・マンスリーコンタクトの最安値を比較する</h3>
-        <p className="text-blue-100 mb-4">アキュビュー オアシス、バイオフィニティなど2week・マンスリーの価格を一括比較。</p>
+        <p className="text-slate-300 mb-4">アキュビュー オアシス、バイオフィニティなど2week・マンスリーの価格を一括比較。</p>
         <div className="flex flex-wrap gap-3">
-          <Link href="/category/2week" className="inline-block bg-white text-blue-600 font-bold px-4 py-2 rounded-xl hover:bg-blue-50 transition-colors text-sm">
+          <Link href="/category/2week" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">
             2ウィークを比較
           </Link>
-          <Link href="/category/monthly" className="inline-block bg-white text-blue-600 font-bold px-4 py-2 rounded-xl hover:bg-blue-50 transition-colors text-sm">
+          <Link href="/category/monthly" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">
             マンスリーを比較
           </Link>
         </div>
@@ -1335,7 +1335,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         通常の素材と何が違うのか、どんな人に向いているのか、メリット・デメリットをわかりやすく解説します。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">シリコーンハイドロゲルとは？</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">シリコーンハイドロゲルとは？</h2>
       <p className="mb-4">
         シリコーンハイドロゲルは、従来の<strong>ヒドロゲル素材</strong>にシリコーンを組み合わせた、
         コンタクトレンズの高機能素材です。シリコーンを加えることで、酸素の透過率が劇的に向上します。
@@ -1366,7 +1366,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-xs text-gray-500 mt-2">※Dk/t値が高いほど酸素が目に届きやすい</p>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">シリコーンハイドロゲルのメリット</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">シリコーンハイドロゲルのメリット</h2>
       <div className="space-y-4 mb-6">
         <div className="flex gap-4 bg-green-50 rounded-xl p-4">
           <div className="text-2xl flex-shrink-0">🫁</div>
@@ -1398,7 +1398,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">シリコーンハイドロゲルのデメリット</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">シリコーンハイドロゲルのデメリット</h2>
       <div className="bg-orange-50 rounded-xl p-4 mb-6">
         <ul className="space-y-2 text-sm text-gray-700">
           <li>✗ <strong>価格が高め：</strong>従来素材より1〜2割ほど割高になることが多い</li>
@@ -1407,7 +1407,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ul>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">おすすめのシリコーンHGコンタクト</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">おすすめのシリコーンHGコンタクト</h2>
       <div className="space-y-3 mb-6">
         {[
           { slug: 'acuvue-oasys-1day', name: 'アキュビュー オアシス ワンデー', brand: 'アキュビュー', feature: 'HydraLuxe™技術でシリコーン素材特有の乾きを解消。ワンデーで最高の快適性。' },
@@ -1422,15 +1422,15 @@ export const columnContent: Record<string, React.ReactNode> = {
             </div>
             <h3 className="font-bold text-gray-800 mb-1">{item.name}</h3>
             <p className="text-sm text-gray-600 mb-2">{item.feature}</p>
-            <Link href={`/product/${item.slug}`} className="text-blue-600 text-sm font-medium hover:underline">最安値を確認 →</Link>
+            <Link href={`/product/${item.slug}`} className="text-slate-700 text-sm font-medium hover:underline">最安値を確認 →</Link>
           </div>
         ))}
       </div>
 
-      <div className="bg-blue-600 text-white rounded-2xl p-6 mt-8">
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
         <h3 className="text-xl font-bold mb-2">シリコーンハイドロゲルコンタクトを比較する</h3>
-        <p className="text-blue-100 mb-4">アキュビュー オアシス、クラリティなどシリコーンHG素材の価格を一括比較。</p>
-        <Link href="/ranking" className="inline-block bg-white text-blue-600 font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors">
+        <p className="text-slate-300 mb-4">アキュビュー オアシス、クラリティなどシリコーンHG素材の価格を一括比較。</p>
+        <Link href="/ranking" className="inline-block bg-white text-slate-800 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 transition-colors">
           全商品の価格を比較する →
         </Link>
       </div>
@@ -1445,7 +1445,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         生活スタイル別に最適な選択肢を提案します。
       </p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">年間コスト比較の前提条件</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">年間コスト比較の前提条件</h2>
       <div className="bg-gray-50 rounded-xl p-4 mb-6 text-sm text-gray-700">
         <ul className="space-y-1">
           <li>・毎日装用（年間365日）として計算</li>
@@ -1456,16 +1456,16 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ul>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">タイプ別年間コスト比較</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">タイプ別年間コスト比較</h2>
       <div className="overflow-x-auto mb-6">
         <table className="w-full text-sm border-collapse">
           <thead>
             <tr className="bg-blue-100">
-              <th className="text-left p-3 border border-blue-200">タイプ</th>
-              <th className="text-left p-3 border border-blue-200">レンズ代/年</th>
-              <th className="text-left p-3 border border-blue-200">ケア用品/年</th>
-              <th className="text-left p-3 border border-blue-200">合計/年</th>
-              <th className="text-left p-3 border border-blue-200">月換算</th>
+              <th className="text-left p-3 border border-slate-200">タイプ</th>
+              <th className="text-left p-3 border border-slate-200">レンズ代/年</th>
+              <th className="text-left p-3 border border-slate-200">ケア用品/年</th>
+              <th className="text-left p-3 border border-slate-200">合計/年</th>
+              <th className="text-left p-3 border border-slate-200">月換算</th>
             </tr>
           </thead>
           <tbody>
@@ -1502,12 +1502,12 @@ export const columnContent: Record<string, React.ReactNode> = {
       </div>
       <p className="text-xs text-gray-500 mb-6">※両目使用・365日装用の概算です。商品・購入先により大きく異なります。</p>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">生活スタイル別おすすめ</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">生活スタイル別おすすめ</h2>
       <div className="space-y-4 mb-6">
         <div className="bg-blue-50 rounded-xl p-4">
           <h3 className="font-bold text-blue-800 mb-2">週3〜4日のみ装用する方 → ワンデーが最安</h3>
           <p className="text-sm text-gray-700">使う日だけレンズを使い、ケア用品が不要なワンデーが有利になります。月10〜15枚ならワンデーが最もコスパ良好です。</p>
-          <Link href="/product/seed-1day-pure" className="text-blue-600 text-sm font-medium hover:underline mt-2 inline-block">コスパ最強ワンデーを見る →</Link>
+          <Link href="/product/seed-1day-pure" className="text-slate-700 text-sm font-medium hover:underline mt-2 inline-block">コスパ最強ワンデーを見る →</Link>
         </div>
         <div className="bg-green-50 rounded-xl p-4">
           <h3 className="font-bold text-green-800 mb-2">毎日装用・利便性重視 → ワンデー（普及タイプ）</h3>
@@ -1526,7 +1526,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">コスト削減のコツ</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">コスト削減のコツ</h2>
       <ul className="list-disc list-inside mb-6 space-y-2 text-gray-700">
         <li><strong>まとめ買い：</strong>6箱・8箱まとめ買いで1箱あたりの価格が下がる</li>
         <li><strong>価格比較サイト活用：</strong>同じ商品でもショップにより1,000円以上差が出ることも</li>
