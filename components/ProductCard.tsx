@@ -34,16 +34,16 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
               <span className="text-xs text-gray-500">{product.brandName}</span>
             </div>
             <h3 className="font-bold text-gray-900 text-sm leading-tight mb-2">{product.name}</h3>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-100">
               {product.lowestPrice != null ? (
                 <div>
-                  <span className="text-xs text-gray-500">最安値</span>
+                  <span className="text-xs text-gray-400">送料別・最安</span>
                   <p className="text-lg font-bold text-slate-800">¥{product.lowestPrice.toLocaleString()}</p>
                 </div>
               ) : (
                 <p className="text-gray-400 text-sm">価格情報なし</p>
               )}
-              <span className="text-slate-500 text-xs font-medium">比較する →</span>
+              <span className="text-xs bg-slate-800 text-white px-3 py-1.5 rounded-lg font-medium">ショップ比較 →</span>
             </div>
           </div>
         </div>

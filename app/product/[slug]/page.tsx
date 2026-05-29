@@ -84,7 +84,7 @@ export default async function ProductPage({ params }: Props) {
         <div className="flex items-start gap-4 flex-wrap">
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-2">
-              <span className="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded-full">{label}</span>
+              <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded">{label}</span>
               <span className="text-gray-500 text-sm">{product.brandName} / {product.manufacturer}</span>
             </div>
             <h1 className="text-2xl font-bold text-gray-900 mb-3">{product.name}</h1>
@@ -123,25 +123,25 @@ export default async function ProductPage({ params }: Props) {
       </div>
 
       {/* Guide for first-time online buyers */}
-      <div className="bg-blue-50 rounded-xl border border-blue-100 p-6 mb-6">
-        <h2 className="text-base font-bold text-blue-800 mb-4">初めてネット購入の方へ</h2>
+      <div className="bg-slate-50 rounded-xl border border-slate-200 p-6 mb-6">
+        <h2 className="text-base font-bold text-slate-800 mb-4">初めてネット購入の方へ</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
           <div className="flex items-start gap-3">
-            <div className="bg-blue-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
+            <div className="bg-slate-800 text-white rounded w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
             <div>
               <p className="font-semibold text-gray-800 text-sm">処方箋を手元に用意</p>
               <p className="text-xs text-gray-600 mt-0.5">BC・度数（PWR）・DIAを確認</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <div className="bg-blue-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
+            <div className="bg-slate-800 text-white rounded w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
             <div>
               <p className="font-semibold text-gray-800 text-sm">ショップで購入</p>
               <p className="text-xs text-gray-600 mt-0.5">下の表で送料込み最安値を比較</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <div className="bg-blue-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
+            <div className="bg-slate-800 text-white rounded w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
             <div>
               <p className="font-semibold text-gray-800 text-sm">商品到着</p>
               <p className="text-xs text-gray-600 mt-0.5">最短翌日〜2日で自宅に届く</p>
@@ -171,14 +171,14 @@ export default async function ProductPage({ params }: Props) {
               <Link
                 key={related.slug}
                 href={`/product/${related.slug}`}
-                className="block border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-blue-200 transition-all"
+                className="block border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-gray-300 transition-all"
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded-full">{label}</span>
+                  <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded">{label}</span>
                   <span className="text-xs text-gray-500">{related.brandName}</span>
                 </div>
                 <h3 className="font-bold text-gray-800 text-sm mb-1 line-clamp-2">{related.name}</h3>
-                <p className="text-xs text-blue-600 font-medium mt-2">最安値を見る →</p>
+                <p className="text-xs text-slate-600 font-medium mt-2">最安値を見る →</p>
               </Link>
             ))}
           </div>

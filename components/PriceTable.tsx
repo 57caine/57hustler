@@ -99,8 +99,14 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                   )}
                 </td>
                 <td className="px-4 py-3 text-center">
-                  {item.inStock ? (
-                    <Link
+                  {!item.inStock ? (
+                    <span className="text-gray-400 text-xs">在庫なし</span>
+                  ) : item.url.startsWith('#') ? (
+                    <span className="inline-block px-3 py-2 rounded-lg text-xs text-gray-400 border border-gray-200 whitespace-nowrap">
+                      近日追加予定
+                    </span>
+                  ) : (
+                    <a
                       href={item.url + item.store.affiliateParam}
                       target="_blank"
                       rel="noopener noreferrer sponsored"
@@ -111,9 +117,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                       }`}
                     >
                       {isCheapest ? '最安値で買う' : '購入する'}
-                    </Link>
-                  ) : (
-                    <span className="text-gray-400 text-xs">在庫なし</span>
+                    </a>
                   )}
                 </td>
               </tr>
