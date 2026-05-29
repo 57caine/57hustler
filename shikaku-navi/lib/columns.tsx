@@ -92,6 +92,24 @@ export const columns: Column[] = [
     updatedAt: '2025-06-10',
     readingTime: 9,
   },
+  {
+    slug: 'shakushi-tsushin-osusume',
+    title: '社労士 通信講座 おすすめ5選【2025年版・合格率・費用を比較】',
+    description: '社会保険労務士（社労士）試験に強い通信講座を徹底比較。アガルート・フォーサイト・スタディング・クレアールの費用・合格率・サポート体制を一覧で確認。',
+    category: '国家資格',
+    publishedAt: '2025-06-15',
+    updatedAt: '2025-06-15',
+    readingTime: 9,
+  },
+  {
+    slug: 'chusho-shindan-shi',
+    title: '中小企業診断士 通信講座 おすすめ3選【難関国家資格を最短取得】',
+    description: '中小企業診断士試験に強い通信講座を比較。スタディング・クレアール・TACの費用・サポート・学習スタイルで選べる。1次から2次まで一貫対応の講座を紹介。',
+    category: '国家資格',
+    publishedAt: '2025-06-15',
+    updatedAt: '2025-06-15',
+    readingTime: 8,
+  },
 ];
 
 export function getColumnBySlug(slug: string): Column | undefined {
@@ -703,6 +721,154 @@ export const columnContent: Record<string, React.ReactNode> = {
             <p className="text-sm text-gray-700">モチベーションが下がった時は、同じ状況（社会人・仕事しながら）で合格した人の体験記を読むことが効果的です。</p>
           </div>
         </div>
+      </section>
+    </div>
+  ),
+  'shakushi-tsushin-osusume': (
+    <div className="space-y-8">
+      <section>
+        <p className="text-gray-700 mb-4 leading-relaxed">社会保険労務士（社労士）は、企業の人事・労務・社会保険手続きを代行できる国家資格です。合格率は6〜7%と難関ですが、取得後の活躍フィールドは広く、士業として独立開業も可能です。本記事では、社労士試験に強い通信講座を徹底比較します。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">社労士試験の基本情報</h2>
+        <div className="overflow-x-auto mb-6">
+          <table className="w-full text-sm border-collapse">
+            <tbody>
+              <tr className="border-b border-gray-100"><td className="py-2 px-3 text-gray-500 w-1/3">試験形式</td><td className="py-2 px-3">択一式（70問）＋選択式（40問）</td></tr>
+              <tr className="border-b border-gray-100 bg-gray-50"><td className="py-2 px-3 text-gray-500">試験日</td><td className="py-2 px-3">毎年8月第4日曜日</td></tr>
+              <tr className="border-b border-gray-100"><td className="py-2 px-3 text-gray-500">合格率</td><td className="py-2 px-3">6〜7%（2024年：6.9%）</td></tr>
+              <tr className="border-b border-gray-100 bg-gray-50"><td className="py-2 px-3 text-gray-500">標準学習期間</td><td className="py-2 px-3">800〜1,000時間（約1〜2年）</td></tr>
+              <tr className="bg-gray-50"><td className="py-2 px-3 text-gray-500">受験資格</td><td className="py-2 px-3">大卒・短大卒・3年以上の実務経験など</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">社労士通信講座 比較表</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-50">
+                <th className="border border-gray-200 px-3 py-2 text-left">講座名</th>
+                <th className="border border-gray-200 px-3 py-2 text-right">受講料</th>
+                <th className="border border-gray-200 px-3 py-2 text-center">合格実績</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">特徴</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-200 px-3 py-2 font-medium">アガルート</td>
+                <td className="border border-gray-200 px-3 py-2 text-right">142,780円〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-center">合格率22.2%</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">合格特典・返金制度あり</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-200 px-3 py-2 font-medium">フォーサイト</td>
+                <td className="border border-gray-200 px-3 py-2 text-right">79,800円〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-center">合格率38.8%</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">e-ラーニング充実・スマホ学習可</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-200 px-3 py-2 font-medium">スタディング</td>
+                <td className="border border-gray-200 px-3 py-2 text-right">49,500円〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-center">非公開</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">業界最安水準・スキマ学習重視</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-200 px-3 py-2 font-medium">クレアール</td>
+                <td className="border border-gray-200 px-3 py-2 text-right">88,000円〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-center">非公開</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">非常識合格法・質問無制限</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-200 px-3 py-2 font-medium">LEC</td>
+                <td className="border border-gray-200 px-3 py-2 text-right">148,000円〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-center">非公開</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">大手資格スクール・通学も可</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-gray-400 mt-2">※ 合格率は各社公表値。受講コース・時期により異なります。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">社労士資格の活かし方</h2>
+        <div className="grid sm:grid-cols-3 gap-4">
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 className="font-bold text-slate-800 text-sm mb-2">独立開業</h3>
+            <p className="text-xs text-gray-700">事務所を開設し、企業の人事労務コンサルや社会保険手続き代行で収入を得る。年収500〜1,000万円も可能。</p>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 className="font-bold text-slate-800 text-sm mb-2">企業内社労士</h3>
+            <p className="text-xs text-gray-700">人事・総務部門でのキャリアアップに。資格手当が付く企業も多く、転職市場での評価も高い。</p>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 className="font-bold text-slate-800 text-sm mb-2">コンサルティング</h3>
+            <p className="text-xs text-gray-700">中小企業向けに助成金申請支援・労務管理相談を行うコンサルタントとして活躍できる。</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  ),
+  'chusho-shindan-shi': (
+    <div className="space-y-8">
+      <section>
+        <p className="text-gray-700 mb-4 leading-relaxed">中小企業診断士は、経営コンサルタントとして唯一の国家資格です。企業の経営診断・助言を行う専門家として認定されます。合格率は一次4〜17%・二次18〜19%と難関ながら、取得後のキャリアアップ・転職・独立に非常に有効です。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">中小企業診断士試験の概要</h2>
+        <div className="overflow-x-auto mb-6">
+          <table className="w-full text-sm border-collapse">
+            <tbody>
+              <tr className="border-b border-gray-100"><td className="py-2 px-3 text-gray-500 w-1/3">試験構成</td><td className="py-2 px-3">一次試験（7科目）＋二次試験（記述式4科目）</td></tr>
+              <tr className="border-b border-gray-100 bg-gray-50"><td className="py-2 px-3 text-gray-500">一次合格率</td><td className="py-2 px-3">4〜17%（年により変動が大きい）</td></tr>
+              <tr className="border-b border-gray-100"><td className="py-2 px-3 text-gray-500">二次合格率</td><td className="py-2 px-3">18〜19%</td></tr>
+              <tr className="border-b border-gray-100 bg-gray-50"><td className="py-2 px-3 text-gray-500">標準学習期間</td><td className="py-2 px-3">1,000〜1,500時間（1〜3年）</td></tr>
+              <tr className="bg-gray-50"><td className="py-2 px-3 text-gray-500">試験日</td><td className="py-2 px-3">一次：8月、二次：10月</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">中小企業診断士に強い通信講座</h2>
+        <div className="space-y-4">
+          <div className="border border-gray-200 rounded-xl p-4">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="font-bold text-gray-900">スタディング</h3>
+              <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded">コスパ最強</span>
+            </div>
+            <p className="text-sm text-gray-600 mb-1">受講料：49,500円〜と業界最安水準。スマホで動画・問題演習・過去問が完結できるため忙しい社会人に人気。</p>
+          </div>
+          <div className="border border-gray-200 rounded-xl p-4">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="font-bold text-gray-900">クレアール</h3>
+              <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded">サポート充実</span>
+            </div>
+            <p className="text-sm text-gray-600 mb-1">受講料：128,000円〜。質問回数無制限で受験期間を延長できる「セーフティコース」が人気。不合格時の延長制度が安心。</p>
+          </div>
+          <div className="border border-gray-200 rounded-xl p-4">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="font-bold text-gray-900">TAC</h3>
+              <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded">実績最高</span>
+            </div>
+            <p className="text-sm text-gray-600 mb-1">受講料：198,000円〜。大手資格スクールとして高い合格実績。通学・通信両対応で2次試験の記述対策が充実。</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">なぜ中小企業診断士はキャリアアップに強いのか</h2>
+        <ul className="space-y-2">
+          {[
+            '経営・財務・マーケティング・IT・法務など多分野の知識が身につき、ビジネス全般の視野が広がる',
+            '経営企画・コンサル・金融機関・商社など多業界で評価される汎用性の高い資格',
+            '独立して企業診断・助成金コンサルタントとして活躍できる副業・開業のルートがある',
+            '合格後の研究会・プロコン活動を通じて人脈が広がり、案件紹介につながることも多い',
+          ].map((item) => (
+            <li key={item} className="flex gap-2 text-sm text-gray-700">
+              <span className="text-slate-400 shrink-0 mt-0.5">▸</span>{item}
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   ),

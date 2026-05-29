@@ -110,6 +110,24 @@ export const columns: Column[] = [
     updatedAt: '2025-06-01',
     readingTime: 8,
   },
+  {
+    slug: 'python-programming-school',
+    title: 'Pythonが学べるプログラミングスクール おすすめ5選【2025年版・AI・データサイエンス対応】',
+    description: 'Python・機械学習・データサイエンスが学べるプログラミングスクールを徹底比較。AI・バックエンド・副業など目的別のおすすめスクールを料金・カリキュラムで選べます。',
+    category: 'AI・最新技術',
+    publishedAt: '2025-06-15',
+    updatedAt: '2025-06-15',
+    readingTime: 9,
+  },
+  {
+    slug: 'web-seisaku-school',
+    title: 'Web制作が学べるプログラミングスクール おすすめ5選【HTML/CSS/JavaScript対応】',
+    description: 'HTMLコーダー・Webデザイナー・フロントエンドエンジニアを目指す方向けのスクールを比較。未経験から副業・転職まで対応したWeb制作特化スクールを紹介。',
+    category: 'スクール比較',
+    publishedAt: '2025-06-15',
+    updatedAt: '2025-06-15',
+    readingTime: 8,
+  },
 ];
 
 export function getColumnBySlug(slug: string): Column | undefined {
@@ -829,6 +847,175 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
       <section>
         <p className="text-sm text-gray-700">未経験からエンジニア転職を目指すなら、「何ヶ月で転職できるか」より「どのスキルレベルに達するか」を重視することが重要です。転職保証のあるスクールを選べば、目標達成まで手厚いサポートを受けながら学習を進められます。まずは<a href="/schools/techcamp" className="text-slate-700 underline">TECH CAMP</a>や<a href="/schools/dmm-webcamp" className="text-slate-700 underline">DMM WEBCAMP</a>の無料カウンセリングで、自分の状況に合ったプランを相談してみましょう。</p>
+      </section>
+    </div>
+  ),
+  'python-programming-school': (
+    <div className="space-y-8">
+      <section>
+        <p className="text-gray-700 mb-4 leading-relaxed">Pythonは現在最も需要が高いプログラミング言語のひとつです。AI・機械学習・データサイエンス・バックエンド開発・自動化ツール作成など、活用範囲が非常に広く、転職・副業どちらの目的でも学ぶ価値があります。本記事ではPythonに特化したプログラミングスクールを比較します。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">Pythonで目指せるキャリア</h2>
+        <div className="grid sm:grid-cols-2 gap-4 mb-6">
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 className="font-bold text-slate-800 text-sm mb-2">AIエンジニア・機械学習エンジニア</h3>
+            <p className="text-xs text-gray-700">平均年収800〜1,500万円。PyTorch・TensorFlow・ChatGPT APIを使ったシステム開発が中心。</p>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 className="font-bold text-slate-800 text-sm mb-2">データサイエンティスト</h3>
+            <p className="text-xs text-gray-700">平均年収600〜1,000万円。pandas・NumPy・scikit-learnを使ったデータ分析・可視化が主な業務。</p>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 className="font-bold text-slate-800 text-sm mb-2">バックエンドエンジニア（Django/Flask）</h3>
+            <p className="text-xs text-gray-700">平均年収500〜800万円。WebアプリのサーバーサイドをPythonで開発。転職需要が安定して高い。</p>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 className="font-bold text-slate-800 text-sm mb-2">業務自動化エンジニア（副業）</h3>
+            <p className="text-xs text-gray-700">ExcelをPythonで自動化・スクレイピングツール作成など、副業案件も豊富。単価1〜5万円/件。</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">Pythonが学べるスクール比較</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-50">
+                <th className="border border-gray-200 px-3 py-2 text-left">スクール名</th>
+                <th className="border border-gray-200 px-3 py-2 text-right">料金</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">Python活用内容</th>
+                <th className="border border-gray-200 px-3 py-2 text-center">転職保証</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-200 px-3 py-2 font-medium"><a href="/schools/zero-plus" className="text-slate-700 underline">ゼロプラス</a></td>
+                <td className="border border-gray-200 px-3 py-2 text-right">498,000円〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">AI・機械学習・ChatGPT API特化</td>
+                <td className="border border-gray-200 px-3 py-2 text-center text-emerald-600">あり</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-200 px-3 py-2 font-medium"><a href="/schools/techcamp" className="text-slate-700 underline">TECH CAMP</a></td>
+                <td className="border border-gray-200 px-3 py-2 text-right">748,000円〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">Python基礎からWebアプリ開発まで</td>
+                <td className="border border-gray-200 px-3 py-2 text-center text-emerald-600">あり</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-200 px-3 py-2 font-medium"><a href="/schools/techacademy" className="text-slate-700 underline">TechAcademy</a></td>
+                <td className="border border-gray-200 px-3 py-2 text-right">174,900円〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">Webアプリ開発・機械学習コース有</td>
+                <td className="border border-gray-200 px-3 py-2 text-center text-gray-400">なし</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-200 px-3 py-2 font-medium"><a href="/schools/dmm-webcamp" className="text-slate-700 underline">DMM WEBCAMP</a></td>
+                <td className="border border-gray-200 px-3 py-2 text-right">437,800円〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">PythonでWebアプリ・給付金対象</td>
+                <td className="border border-gray-200 px-3 py-2 text-center text-emerald-600">あり</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">Python学習のロードマップ</h2>
+        <ol className="space-y-3 text-sm">
+          <li className="flex gap-3">
+            <span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">1</span>
+            <div><p className="font-semibold text-gray-900">Python基礎文法（1〜2ヶ月）</p><p className="text-gray-600 mt-0.5">変数・制御構文・関数・クラスを習得。paizaやProgateで入門も可能。</p></div>
+          </li>
+          <li className="flex gap-3">
+            <span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">2</span>
+            <div><p className="font-semibold text-gray-900">ライブラリ習得（2〜3ヶ月）</p><p className="text-gray-600 mt-0.5">目的に応じてpandas/NumPy（データ分析）またはDjango/Flask（Web開発）を選択。</p></div>
+          </li>
+          <li className="flex gap-3">
+            <span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">3</span>
+            <div><p className="font-semibold text-gray-900">ポートフォリオ制作（1〜2ヶ月）</p><p className="text-gray-600 mt-0.5">GitHubにリポジトリを公開。転職・副業どちらでも必須の実績作り。</p></div>
+          </li>
+          <li className="flex gap-3">
+            <span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">4</span>
+            <div><p className="font-semibold text-gray-900">転職活動または副業開始</p><p className="text-gray-600 mt-0.5">転職エージェント・クラウドソーシングで案件応募開始。スクールのキャリアサポートを活用。</p></div>
+          </li>
+        </ol>
+      </section>
+    </div>
+  ),
+  'web-seisaku-school': (
+    <div className="space-y-8">
+      <section>
+        <p className="text-gray-700 mb-4 leading-relaxed">Web制作（HTML・CSS・JavaScript）はプログラミング初心者が最初に学ぶことが多い分野です。難易度が比較的低く、副業・転職ともに活用できる実践的なスキルです。本記事では、Web制作に特化したプログラミングスクールを目的別に比較します。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">Web制作で目指せるキャリア</h2>
+        <div className="grid sm:grid-cols-3 gap-4 mb-6">
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 className="font-bold text-slate-800 text-sm mb-2">Webコーダー（副業）</h3>
+            <p className="text-xs text-gray-700">クラウドソーシングでHTML/CSSのコーディング案件受注。月3〜10万円が現実的。</p>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 className="font-bold text-slate-800 text-sm mb-2">Webデザイナー</h3>
+            <p className="text-xs text-gray-700">Figma・PhotoshopでデザインしHTML/CSSで実装。年収350〜600万円が目安。</p>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 className="font-bold text-slate-800 text-sm mb-2">フロントエンドエンジニア</h3>
+            <p className="text-xs text-gray-700">JavaScript・React・Vue.jsまで習得してWebアプリを開発。年収500〜900万円。</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">Web制作スクール 比較表</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-50">
+                <th className="border border-gray-200 px-3 py-2 text-left">スクール</th>
+                <th className="border border-gray-200 px-3 py-2 text-right">料金</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">カリキュラム</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">こんな人向け</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-200 px-3 py-2 font-medium"><a href="/schools/progate" className="text-slate-700 underline">Progate</a></td>
+                <td className="border border-gray-200 px-3 py-2 text-right">月990円〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">HTML/CSS/JS/Python入門</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">コードを試してみたい入門者</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-200 px-3 py-2 font-medium"><a href="/schools/codecamp" className="text-slate-700 underline">CodeCamp</a></td>
+                <td className="border border-gray-200 px-3 py-2 text-right">129,800円〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">HTML/CSS/JS/WordPressまで</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">Webデザイン・副業を目指す方</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-200 px-3 py-2 font-medium"><a href="/schools/techacademy" className="text-slate-700 underline">TechAcademy</a></td>
+                <td className="border border-gray-200 px-3 py-2 text-right">174,900円〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">HTML/CSS/JS/React/副業支援</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">副業で月5万円を目指す方</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-200 px-3 py-2 font-medium"><a href="/schools/coachtech" className="text-slate-700 underline">CoachTech</a></td>
+                <td className="border border-gray-200 px-3 py-2 text-right">456,500円〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">React/Vue.js/案件紹介まで</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">フリーランスを本気で目指す方</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">副業を目指すなら何ヶ月で稼げる？</h2>
+        <p className="text-gray-700 mb-4">Web制作は、正しく学習すれば3〜6ヶ月で副業受注が可能です。ただし、ポートフォリオ（制作実績）なしでの案件獲得は難しいため、学習期間中にサンプルサイトを複数作成することが重要です。</p>
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+          <p className="font-semibold text-slate-800 mb-2 text-sm">副業受注までのステップ</p>
+          <ol className="text-sm space-y-1 text-gray-700">
+            <li>1. HTML/CSS/JavaScriptの基礎習得（1〜2ヶ月）</li>
+            <li>2. WordPressカスタマイズ・LP制作の練習（1〜2ヶ月）</li>
+            <li>3. ポートフォリオサイト3〜5件制作</li>
+            <li>4. クラウドワークス・ランサーズで案件応募開始</li>
+            <li>5. 初月1〜3万円、3ヶ月後に月5〜10万円が目安</li>
+          </ol>
+        </div>
       </section>
     </div>
   ),
