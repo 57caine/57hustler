@@ -387,17 +387,130 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">通販での購入手順</h2>
-      <ol className="list-decimal list-inside mb-6 space-y-3 text-gray-700">
-        <li><strong>眼科で処方箋（度数・BCなど）を確認</strong></li>
-        <li><strong>当サイトで最安値ショップを比較</strong>（商品ページで全店舗の価格一覧）</li>
-        <li><strong>最安値ショップで注文</strong>（度数・BC・DIAを正確に入力）</li>
-        <li><strong>最短翌日〜2日で自宅に届く</strong></li>
-      </ol>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">ネット通販での購入の流れ（6ステップ）</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          { step: 1, title: '度数・BCを確認する', desc: '手元の処方箋、または既存のコンタクトケース・箱に記載された度数（PWR）・BC・DIAを確認します。初めての方は必ず眼科を受診して正確なパラメータを取得してください。' },
+          { step: 2, title: '商品を選ぶ', desc: '当サイトのカテゴリ別ページやランキングから商品を探します。乾きが気になる方にはシリコーン素材、コスパ重視の方には国産ブランドがおすすめです。' },
+          { step: 3, title: 'ショップを比較する', desc: '同じ商品でも通販ショップによって価格が数百円〜1,000円以上異なることがあります。必ず送料込みの合計金額で比較しましょう。当サイトの商品ページで一括比較できます。' },
+          { step: 4, title: '注文する', desc: '選んだショップで度数・BC・DIA・右目左目を正確に入力して注文します。入力ミスが最も多いのは左右の入れ間違いです。注文確認画面で必ず確認してください。' },
+          { step: 5, title: '商品が到着する', desc: '多くのショップでは最短翌日〜2日で届きます。届いたらパッケージに記載のパラメータが注文通りか確認してから装用してください。' },
+          { step: 6, title: '継続購入する', desc: '同じ商品・同じ度数であれば継続して通販購入できます。眼科での定期検査（年1〜2回推奨）を忘れずに。度数が変わった場合は必ず眼科で再処方を受けてください。' },
+        ].map((item) => (
+          <div key={item.step} className="flex gap-4 bg-gray-50 rounded-xl p-4">
+            <div className="bg-blue-600 text-white rounded-full w-9 h-9 flex items-center justify-center font-bold flex-shrink-0 text-sm">
+              {item.step}
+            </div>
+            <div>
+              <h3 className="font-bold text-gray-800 mb-1">{item.title}</h3>
+              <p className="text-sm text-gray-600">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">処方箋について知っておこう</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+          <h3 className="font-bold text-amber-800 mb-2">処方箋が必要なケース</h3>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>• 初めてコンタクトを使う場合</li>
+            <li>• 度数を変更する場合</li>
+            <li>• 目に異常・不調がある場合</li>
+            <li>• 新しい商品（BC/DIAが変わる）に切り替える場合</li>
+          </ul>
+        </div>
+        <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+          <h3 className="font-bold text-green-800 mb-2">処方箋が不要なケース（多くのショップ）</h3>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>• 既に使っている同一商品・同一度数を継続購入する場合</li>
+            <li>• 以前に眼科で処方されたパラメータがわかっている場合</li>
+          </ul>
+          <p className="text-xs text-gray-500 mt-2">※ショップによって異なります。購入前にショップの規約をご確認ください。</p>
+        </div>
+      </div>
+      <div className="bg-yellow-50 border-l-4 border-yellow-400 pl-4 py-3 mb-6">
+        <p className="font-bold text-yellow-800 text-sm">重要</p>
+        <p className="text-sm text-gray-700 mt-1">薬機法上、コンタクトレンズの購入に処方箋の提示義務はありませんが、目の健康のために定期的な眼科検査を強く推奨します。特に初めての方や度数が変わった方は必ず眼科を受診してください。</p>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">送料を含めた実際のコスト計算例</h2>
+      <p className="mb-4 text-gray-700">ショップを比較するときは<strong>送料込みの合計金額</strong>で比較することが重要です。以下の例を参考にしてください。</p>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-100">
+              <th className="text-left p-3 border border-gray-200">ショップ</th>
+              <th className="text-right p-3 border border-gray-200">商品価格</th>
+              <th className="text-right p-3 border border-gray-200">送料</th>
+              <th className="text-right p-3 border border-gray-200 font-bold text-blue-700">合計</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="bg-amber-50 border-b border-gray-200">
+              <td className="p-3 border border-gray-200 font-medium">A店（送料330円・3,300円以上無料）</td>
+              <td className="p-3 border border-gray-200 text-right">¥2,980</td>
+              <td className="p-3 border border-gray-200 text-right">¥330</td>
+              <td className="p-3 border border-gray-200 text-right font-bold text-amber-700">¥3,310</td>
+            </tr>
+            <tr className="bg-green-50 border-b border-gray-200">
+              <td className="p-3 border border-gray-200 font-medium">B店（送料330円・2,000円以上無料）</td>
+              <td className="p-3 border border-gray-200 text-right">¥3,100</td>
+              <td className="p-3 border border-gray-200 text-right text-green-600">送料無料</td>
+              <td className="p-3 border border-gray-200 text-right font-bold text-green-700">¥3,100 ✓ 最安</td>
+            </tr>
+            <tr className="border-b border-gray-200">
+              <td className="p-3 border border-gray-200 font-medium">C店（送料440円・5,500円以上無料）</td>
+              <td className="p-3 border border-gray-200 text-right">¥2,870</td>
+              <td className="p-3 border border-gray-200 text-right">¥440</td>
+              <td className="p-3 border border-gray-200 text-right font-bold">¥3,310</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p className="text-sm text-gray-600 mb-6 bg-blue-50 rounded-lg p-3">
+        この例では商品価格が最も安いC店（¥2,870）より、送料無料のB店（¥3,100）の方が送料込みでは安くなります。当サイトの価格表では<strong>送料込みの合計金額</strong>を表示しているので、すぐに最安ショップがわかります。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-blue-200">よくある質問（Q&amp;A）</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          {
+            q: '初めてコンタクトを使いたい。どこに行けばいい？',
+            a: 'まず眼科を受診してください。「コンタクトレンズを使いたい」と伝えれば、視力検査・BC測定・トライアルレンズの装用体験・付け外し指導まで行ってもらえます。初診料込みで3,000〜5,000円程度が目安です（健康保険適用）。',
+          },
+          {
+            q: '処方箋はいつまで有効？',
+            a: '眼科によって異なりますが、一般的には発行から1年以内とされています。ただし、コンタクトの通販購入では処方箋の提示義務がないため、以前の処方内容を確認して同一商品を購入することが多いです。',
+          },
+          {
+            q: '眼鏡の度数とコンタクトの度数は同じ？',
+            a: '異なります。眼鏡は目から少し離れた位置に置かれるため、同じ視力を矯正するのに必要な度数がコンタクトと異なります。必ず眼科でコンタクト用の度数を処方してもらってください。',
+          },
+          {
+            q: '左右で度数が違う場合はどうすればいい？',
+            a: '左右それぞれの度数（PWR）でコンタクトを注文します。ほとんどの通販ショップでは左右別々の度数を設定して1回で注文できます。注文時の入力ミス（左右の入れ間違い）に注意してください。',
+          },
+          {
+            q: 'まとめ買いとその都度購入、どちらがお得？',
+            a: '一般的にまとめ買い（6箱・8箱セット）の方が1箱あたりの価格が安くなります。また、送料無料条件を満たしやすくなるため、送料面でもお得です。ただし、度数が合わなくなるリスクを考えて、無理に大量購入する必要はありません。',
+          },
+        ].map((item, i) => (
+          <details key={i} className="border border-gray-200 rounded-xl overflow-hidden">
+            <summary className="bg-gray-50 px-4 py-3 cursor-pointer font-medium text-gray-800 flex items-center gap-2 hover:bg-gray-100 transition-colors">
+              <span className="text-blue-600 font-bold text-sm">Q.</span>
+              {item.q}
+            </summary>
+            <div className="px-4 py-3 text-sm text-gray-700 bg-white">
+              <span className="text-green-600 font-bold text-sm">A. </span>{item.a}
+            </div>
+          </details>
+        ))}
+      </div>
 
       <div className="bg-blue-600 text-white rounded-2xl p-6 mt-8">
         <h3 className="text-xl font-bold mb-2">人気ワンデーコンタクトを比較する</h3>
-        <p className="text-blue-100 mb-4">初心者におすすめの商品一覧。最安値ショップがすぐわかります。</p>
+        <p className="text-blue-100 mb-4">初心者におすすめの商品一覧。送料込み最安値ショップがすぐわかります。</p>
         <Link href="/category/1day" className="inline-block bg-white text-blue-600 font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors">
           ワンデー全商品を見る →
         </Link>
