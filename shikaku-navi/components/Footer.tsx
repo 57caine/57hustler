@@ -20,10 +20,10 @@ export default function Footer() {
           <div>
             <h3 className="font-medium text-slate-300 mb-3 text-sm">カテゴリ</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/courses" className="hover:text-white transition-colors">国家資格</Link></li>
-              <li><Link href="/courses" className="hover:text-white transition-colors">転職・就職向け</Link></li>
-              <li><Link href="/courses" className="hover:text-white transition-colors">IT資格</Link></li>
-              <li><Link href="/courses" className="hover:text-white transition-colors">副業・スキルアップ</Link></li>
+              <li><Link href="/category/kokukaShikaku" className="hover:text-white transition-colors">国家資格</Link></li>
+              <li><Link href="/category/tensyoku" className="hover:text-white transition-colors">転職・就職向け</Link></li>
+              <li><Link href="/category/it" className="hover:text-white transition-colors">IT資格</Link></li>
+              <li><Link href="/category/fukugyou" className="hover:text-white transition-colors">副業・スキルアップ</Link></li>
             </ul>
           </div>
           <div>

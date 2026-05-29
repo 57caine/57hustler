@@ -4,8 +4,15 @@ import CourseCard from '@/components/CourseCard';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: '資格通信講座 一覧',
-  description: '人気資格通信講座10社を一覧で比較。宅建・簿記・FP・社労士・行政書士など国家資格別に検索できます。',
+  title: '資格通信講座 一覧【全10社比較】',
+  description: '人気資格通信講座10社を一覧で比較。宅建・簿記・FP・社労士・行政書士など国家資格別に検索できます。費用・合格率・学習スタイルで選べます。',
+};
+
+const categorySlugMap: Record<string, string> = {
+  '国家資格': 'kokukaShikaku',
+  '転職・就職向け': 'tensyoku',
+  '副業・スキルアップ': 'fukugyou',
+  'IT資格': 'it',
 };
 
 export default function CoursesPage() {
@@ -20,13 +27,34 @@ export default function CoursesPage() {
       </nav>
 
       <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">資格通信講座 一覧</h1>
-      <p className="text-gray-600 mb-8">全{courses.length}講座を掲載。費用・合格率・学習スタイルで比較できます。</p>
+      <p className="text-gray-600 mb-6">全{courses.length}講座を掲載。費用・合格率・学習スタイルで比較できます。</p>
+
+      <div className="flex flex-wrap gap-2 mb-8">
+        {categories.map((cat) => (
+          <Link
+            key={cat}
+            href={`/category/${categorySlugMap[cat] ?? encodeURIComponent(cat)}`}
+            className="text-sm bg-white border border-gray-200 text-gray-700 px-3 py-1 rounded-full hover:border-slate-400 hover:bg-slate-50 transition-colors"
+          >
+            {cat}
+          </Link>
+        ))}
+      </div>
 
       {categories.map((category) => {
         const catCourses = courses.filter((c) => c.category === category);
+        const slug = categorySlugMap[category] ?? encodeURIComponent(category);
         return (
           <section key={category} className="mb-12">
-            <h2 className="text-xl font-bold text-gray-800 mb-4 pb-2 border-b border-gray-200">{category}</h2>
+            <div className="flex items-center justify-between mb-4 pb-2 border-b border-gray-200">
+              <h2 className="text-xl font-bold text-gray-800">{category}</h2>
+              <Link
+                href={`/category/${slug}`}
+                className="text-sm text-slate-600 hover:text-slate-800 font-medium"
+              >
+                {category}をすべて見る →
+              </Link>
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {catCourses.map((course) => (
                 <CourseCard key={course.slug} course={course} />

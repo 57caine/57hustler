@@ -189,11 +189,11 @@ export const columnContent: Record<string, React.ReactNode> = {
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">まとめ：目的別おすすめスクール</h2>
         <ul className="space-y-2 text-sm">
-          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">転職希望：</span><span>TECH CAMP または DMM WEBCAMP（転職保証・給付金あり）</span></li>
-          <li className="flex gap-2"><span className="font-bold text-green-600 shrink-0">本格スキル習得：</span><span>RUNTEQ（9ヶ月間・実務レベル）</span></li>
-          <li className="flex gap-2"><span className="font-bold text-purple-600 shrink-0">副業・学習：</span><span>TechAcademy または Progate（コスパ重視）</span></li>
-          <li className="flex gap-2"><span className="font-bold text-orange-600 shrink-0">フリーランス：</span><span>CoachTech（案件紹介まで対応）</span></li>
-          <li className="flex gap-2"><span className="font-bold text-red-600 shrink-0">AI特化：</span><span>ゼロプラス（Python・ChatGPT API）</span></li>
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">転職希望：</span><span><a href="/schools/techcamp" className="text-slate-700 underline">TECH CAMP</a> または <a href="/schools/dmm-webcamp" className="text-slate-700 underline">DMM WEBCAMP</a>（転職保証・給付金あり）</span></li>
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">本格スキル習得：</span><span><a href="/schools/runteq" className="text-slate-700 underline">RUNTEQ</a>（9ヶ月間・実務レベル）</span></li>
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">副業・学習：</span><span><a href="/schools/techacademy" className="text-slate-700 underline">TechAcademy</a> または <a href="/schools/progate" className="text-slate-700 underline">Progate</a>（コスパ重視）</span></li>
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">フリーランス：</span><span><a href="/schools/coachtech" className="text-slate-700 underline">CoachTech</a>（案件紹介まで対応）</span></li>
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">AI特化：</span><span><a href="/schools/zero-plus" className="text-slate-700 underline">ゼロプラス</a>（Python・ChatGPT API）</span></li>
         </ul>
       </section>
     </div>
@@ -294,9 +294,9 @@ export const columnContent: Record<string, React.ReactNode> = {
         <h2 className="text-xl font-bold text-gray-900 mb-4">転職保証とは？条件を確認しよう</h2>
         <p className="mb-3">転職保証とは「卒業後一定期間内に転職できなければ受講料を返金する」制度です。ただし以下の条件があります。</p>
         <ul className="text-sm space-y-2">
-          <li className="flex gap-2"><span className="text-red-500">⚠️</span><span>一定数以上の求人応募実績が必要</span></li>
-          <li className="flex gap-2"><span className="text-red-500">⚠️</span><span>提示された求人を断った場合は対象外</span></li>
-          <li className="flex gap-2"><span className="text-red-500">⚠️</span><span>卒業後6ヶ月〜1年以内という期間制限あり</span></li>
+          <li className="flex gap-2"><span className="text-red-500">△</span><span>一定数以上の求人応募実績が必要</span></li>
+          <li className="flex gap-2"><span className="text-red-500">△</span><span>提示された求人を断った場合は対象外</span></li>
+          <li className="flex gap-2"><span className="text-red-500">△</span><span>卒業後6ヶ月〜1年以内という期間制限あり</span></li>
         </ul>
       </section>
     </div>
@@ -372,14 +372,14 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">フリーランス特化スクール：CoachTech</h2>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">フリーランス特化スクール：<a href="/schools/coachtech" className="text-slate-700 underline">CoachTech</a></h2>
         <div className="border border-gray-200 rounded-xl p-5">
           <h3 className="font-bold text-gray-900 mb-3">CoachTech（コーチテック）の特徴</h3>
           <ul className="text-sm space-y-2">
-            <li className="flex gap-2"><span className="text-green-500">✅</span><span>卒業後の案件紹介まで一貫サポート</span></li>
-            <li className="flex gap-2"><span className="text-green-500">✅</span><span>チーム開発でポートフォリオが作れる</span></li>
-            <li className="flex gap-2"><span className="text-green-500">✅</span><span>PHP/Laravel・Vue.jsなど案件需要が高い言語</span></li>
-            <li className="flex gap-2"><span className="text-red-400">⚠️</span><span>転職サポートはやや弱め</span></li>
+            <li className="flex gap-2"><span className="text-emerald-500 shrink-0">◎</span><span>卒業後の案件紹介まで一貫サポート</span></li>
+            <li className="flex gap-2"><span className="text-emerald-500 shrink-0">◎</span><span>チーム開発でポートフォリオが作れる</span></li>
+            <li className="flex gap-2"><span className="text-emerald-500 shrink-0">◎</span><span>PHP/Laravel・Vue.jsなど案件需要が高い言語</span></li>
+            <li className="flex gap-2"><span className="text-amber-400 shrink-0">△</span><span>転職サポートはやや弱め</span></li>
           </ul>
           <p className="text-sm text-gray-600 mt-3">料金：456,500円（6ヶ月フリーランスコース）</p>
         </div>
@@ -471,10 +471,10 @@ export const columnContent: Record<string, React.ReactNode> = {
         <div className="bg-blue-50 rounded-xl p-5 mb-4">
           <h3 className="font-bold text-blue-800 mb-3">チェックリスト：社会人向けスクールの見極め方</h3>
           <ul className="text-sm space-y-2 text-gray-700">
-            <li className="flex gap-2"><span className="text-blue-500 font-bold">✓</span><span>オンライン完結で受講できるか</span></li>
-            <li className="flex gap-2"><span className="text-blue-500 font-bold">✓</span><span>夜間・週末にメンター質問が可能か</span></li>
-            <li className="flex gap-2"><span className="text-blue-500 font-bold">✓</span><span>受講期間の延長制度はあるか</span></li>
-            <li className="flex gap-2"><span className="text-blue-500 font-bold">✓</span><span>転職活動中もサポートが続くか</span></li>
+            <li className="flex gap-2"><span className="text-blue-500 font-bold">◎</span><span>オンライン完結で受講できるか</span></li>
+            <li className="flex gap-2"><span className="text-blue-500 font-bold">◎</span><span>夜間・週末にメンター質問が可能か</span></li>
+            <li className="flex gap-2"><span className="text-blue-500 font-bold">◎</span><span>受講期間の延長制度はあるか</span></li>
+            <li className="flex gap-2"><span className="text-blue-500 font-bold">◎</span><span>転職活動中もサポートが続くか</span></li>
           </ul>
         </div>
       </section>
@@ -521,12 +521,12 @@ export const columnContent: Record<string, React.ReactNode> = {
           <div className="bg-green-50 rounded-xl p-4">
             <h3 className="font-bold text-green-800 mb-2">2. DMM WEBCAMP</h3>
             <p className="text-sm text-gray-700 mb-2">完全オンラインで、自分のペースに合わせた学習が可能です。教育訓練給付金の対象で最大70%OFFになるため、コスト面での負担が少ない点も社会人に嬉しいポイントです。</p>
-            <p className="text-xs text-gray-500">詳細は<a href="/schools/dmm-webcamp" className="text-green-600 underline">DMM WEBCAMPの詳細ページ</a>をご覧ください。</p>
+            <p className="text-xs text-gray-500">詳細は<a href="/schools/dmm-webcamp" className="text-slate-700 underline">DMM WEBCAMPの詳細ページ</a>をご覧ください。</p>
           </div>
           <div className="bg-purple-50 rounded-xl p-4">
             <h3 className="font-bold text-purple-800 mb-2">3. RUNTEQ</h3>
             <p className="text-sm text-gray-700 mb-2">9ヶ月の長期コースながら完全オンライン対応。社会人でも無理なく続けられる設計になっており、実務レベルのスキルを身につけたい方に向いています。</p>
-            <p className="text-xs text-gray-500">詳細は<a href="/schools/runteq" className="text-purple-600 underline">RUNTEQの詳細ページ</a>をご覧ください。</p>
+            <p className="text-xs text-gray-500">詳細は<a href="/schools/runteq" className="text-slate-700 underline">RUNTEQの詳細ページ</a>をご覧ください。</p>
           </div>
         </div>
       </section>
@@ -546,9 +546,9 @@ export const columnContent: Record<string, React.ReactNode> = {
         <div className="bg-pink-50 border border-pink-100 rounded-xl p-4">
           <p className="font-bold text-pink-800 mb-2">女性エンジニアの働き方メリット</p>
           <ul className="text-sm space-y-1 text-gray-700">
-            <li className="flex gap-2"><span className="text-pink-500">✓</span><span>フルリモート求人が多く、育児と両立しやすい</span></li>
-            <li className="flex gap-2"><span className="text-pink-500">✓</span><span>スキルが評価される実力主義の職場が多い</span></li>
-            <li className="flex gap-2"><span className="text-pink-500">✓</span><span>フリーランスとして時短・時間帯を選べる</span></li>
+            <li className="flex gap-2"><span className="text-pink-500">◎</span><span>フルリモート求人が多く、育児と両立しやすい</span></li>
+            <li className="flex gap-2"><span className="text-pink-500">◎</span><span>スキルが評価される実力主義の職場が多い</span></li>
+            <li className="flex gap-2"><span className="text-pink-500">◎</span><span>フリーランスとして時短・時間帯を選べる</span></li>
           </ul>
         </div>
       </section>
@@ -713,19 +713,19 @@ export const columnContent: Record<string, React.ReactNode> = {
           <div className="bg-gray-50 rounded-xl p-4">
             <h3 className="font-bold text-gray-800 mb-3">独学が向いている人</h3>
             <ul className="text-sm space-y-2 text-gray-700">
-              <li className="flex gap-2"><span className="text-gray-500">✓</span><span>自走力があり、問題を自力で調べられる</span></li>
-              <li className="flex gap-2"><span className="text-gray-500">✓</span><span>転職よりスキルアップ・趣味が目的</span></li>
-              <li className="flex gap-2"><span className="text-gray-500">✓</span><span>費用をできる限り抑えたい</span></li>
-              <li className="flex gap-2"><span className="text-gray-500">✓</span><span>すでにある程度の技術的基礎がある</span></li>
+              <li className="flex gap-2"><span className="text-gray-500">◎</span><span>自走力があり、問題を自力で調べられる</span></li>
+              <li className="flex gap-2"><span className="text-gray-500">◎</span><span>転職よりスキルアップ・趣味が目的</span></li>
+              <li className="flex gap-2"><span className="text-gray-500">◎</span><span>費用をできる限り抑えたい</span></li>
+              <li className="flex gap-2"><span className="text-gray-500">◎</span><span>すでにある程度の技術的基礎がある</span></li>
             </ul>
           </div>
           <div className="bg-blue-50 rounded-xl p-4">
             <h3 className="font-bold text-blue-800 mb-3">スクールが向いている人</h3>
             <ul className="text-sm space-y-2 text-gray-700">
-              <li className="flex gap-2"><span className="text-blue-500">✓</span><span>エンジニア転職を明確な目標としている</span></li>
-              <li className="flex gap-2"><span className="text-blue-500">✓</span><span>短期間で確実にスキルを習得したい</span></li>
-              <li className="flex gap-2"><span className="text-blue-500">✓</span><span>挫折経験があり、サポートが必要</span></li>
-              <li className="flex gap-2"><span className="text-blue-500">✓</span><span>転職後の年収アップを期待している</span></li>
+              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>エンジニア転職を明確な目標としている</span></li>
+              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>短期間で確実にスキルを習得したい</span></li>
+              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>挫折経験があり、サポートが必要</span></li>
+              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>転職後の年収アップを期待している</span></li>
             </ul>
           </div>
         </div>
@@ -791,19 +791,19 @@ export const columnContent: Record<string, React.ReactNode> = {
           <div className="bg-blue-50 rounded-xl p-4">
             <h3 className="font-bold text-blue-800 mb-2">最低限必要なスキルセット（フロントエンド）</h3>
             <ul className="text-sm space-y-1 text-gray-700">
-              <li className="flex gap-2"><span className="text-blue-500">✓</span><span>HTML / CSS / JavaScript（ES6+）</span></li>
-              <li className="flex gap-2"><span className="text-blue-500">✓</span><span>ReactまたはVue.jsの基礎</span></li>
-              <li className="flex gap-2"><span className="text-blue-500">✓</span><span>GitHubでのバージョン管理</span></li>
-              <li className="flex gap-2"><span className="text-blue-500">✓</span><span>オリジナルWebアプリ1〜2本（ポートフォリオ）</span></li>
+              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>HTML / CSS / JavaScript（ES6+）</span></li>
+              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>ReactまたはVue.jsの基礎</span></li>
+              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>GitHubでのバージョン管理</span></li>
+              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>オリジナルWebアプリ1〜2本（ポートフォリオ）</span></li>
             </ul>
           </div>
           <div className="bg-green-50 rounded-xl p-4">
             <h3 className="font-bold text-green-800 mb-2">最低限必要なスキルセット（バックエンド・Rails系）</h3>
             <ul className="text-sm space-y-1 text-gray-700">
-              <li className="flex gap-2"><span className="text-green-500">✓</span><span>Ruby on Rails または Laravel の基礎</span></li>
-              <li className="flex gap-2"><span className="text-green-500">✓</span><span>データベース（SQL）の基礎</span></li>
-              <li className="flex gap-2"><span className="text-green-500">✓</span><span>REST APIの設計・実装</span></li>
-              <li className="flex gap-2"><span className="text-green-500">✓</span><span>Heroku / Renderなどへのデプロイ経験</span></li>
+              <li className="flex gap-2"><span className="text-green-500">◎</span><span>Ruby on Rails または Laravel の基礎</span></li>
+              <li className="flex gap-2"><span className="text-green-500">◎</span><span>データベース（SQL）の基礎</span></li>
+              <li className="flex gap-2"><span className="text-green-500">◎</span><span>REST APIの設計・実装</span></li>
+              <li className="flex gap-2"><span className="text-green-500">◎</span><span>Heroku / Renderなどへのデプロイ経験</span></li>
             </ul>
           </div>
         </div>
