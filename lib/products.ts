@@ -39,6 +39,9 @@ export type Store = {
   name: string;
   url: string;
   affiliateParam: string;
+  shipping: number;
+  freeShippingMin: number;
+  prescriptionFree: boolean;
 };
 
 export type Price = {
@@ -132,4 +135,8 @@ export function getAllProductsWithPrices(): ProductWithPrices[] {
 
 export function getPricesUpdatedAt(): string {
   return pricesData.updatedAt;
+}
+
+export function calcTotalPrice(price: number, store: Store): number {
+  return price >= store.freeShippingMin ? price : price + store.shipping;
 }

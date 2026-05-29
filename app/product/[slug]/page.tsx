@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getAllProducts, getProductWithPrices } from '@/lib/products';
+import { getAllProducts, getProductWithPrices, getProductsByCategory } from '@/lib/products';
 import PriceTable from '@/components/PriceTable';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -33,6 +33,12 @@ export default async function ProductPage({ params }: Props) {
   };
   const label = categoryLabel[product.category] ?? product.category;
   const BASE = 'https://lens-navi.jp';
+
+  // Related products (same category, excluding current, top 3 by popularity)
+  const relatedProducts = getProductsByCategory(product.category)
+    .filter((p) => p.slug !== product.slug)
+    .sort((a, b) => b.popularity - a.popularity)
+    .slice(0, 3);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -109,20 +115,75 @@ export default async function ProductPage({ params }: Props) {
           {product.lowestPrice != null && (
             <div className="text-right flex-shrink-0">
               <p className="text-xs text-gray-500 mb-1">最安値</p>
-              <p className="text-3xl font-bold text-red-600">¥{product.lowestPrice.toLocaleString()}</p>
+              <p className="text-3xl font-bold text-slate-800">¥{product.lowestPrice.toLocaleString()}</p>
               <p className="text-xs text-gray-400">（税込）</p>
             </div>
           )}
         </div>
       </div>
 
+      {/* Guide for first-time online buyers */}
+      <div className="bg-blue-50 rounded-xl border border-blue-100 p-6 mb-6">
+        <h2 className="text-base font-bold text-blue-800 mb-4">初めてネット購入の方へ</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+          <div className="flex items-start gap-3">
+            <div className="bg-blue-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
+            <div>
+              <p className="font-semibold text-gray-800 text-sm">処方箋を手元に用意</p>
+              <p className="text-xs text-gray-600 mt-0.5">BC・度数（PWR）・DIAを確認</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="bg-blue-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
+            <div>
+              <p className="font-semibold text-gray-800 text-sm">ショップで購入</p>
+              <p className="text-xs text-gray-600 mt-0.5">下の表で送料込み最安値を比較</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="bg-blue-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
+            <div>
+              <p className="font-semibold text-gray-800 text-sm">商品到着</p>
+              <p className="text-xs text-gray-600 mt-0.5">最短翌日〜2日で自宅に届く</p>
+            </div>
+          </div>
+        </div>
+        <div className="bg-white rounded-lg p-3 text-xs text-gray-700 space-y-1">
+          <p className="text-amber-700 font-medium">⚠ 処方箋について</p>
+          <p>処方箋がない場合は眼科で発行してもらう必要があります。ただし、<strong>既に同じ商品を使用中の方は処方箋不要で購入できるショップが多く</strong>、下表で「処方箋不要」と表示されているショップがその対象です。</p>
+        </div>
+      </div>
+
       {/* Price Table */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-8">
         <div className="px-6 py-4 border-b border-gray-100">
-          <h2 className="text-lg font-bold text-gray-800">ショップ別価格比較</h2>
+          <h2 className="text-lg font-bold text-gray-800">ショップ別価格比較（送料込み）</h2>
         </div>
         <PriceTable prices={product.prices} productName={product.name} />
       </div>
+
+      {/* Related Products */}
+      {relatedProducts.length > 0 && (
+        <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
+          <h2 className="text-lg font-bold text-gray-800 mb-4">同カテゴリの人気商品</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {relatedProducts.map((related) => (
+              <Link
+                key={related.slug}
+                href={`/product/${related.slug}`}
+                className="block border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-blue-200 transition-all"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded-full">{label}</span>
+                  <span className="text-xs text-gray-500">{related.brandName}</span>
+                </div>
+                <h3 className="font-bold text-gray-800 text-sm mb-1 line-clamp-2">{related.name}</h3>
+                <p className="text-xs text-blue-600 font-medium mt-2">最安値を見る →</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Affiliate disclosure */}
       <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
