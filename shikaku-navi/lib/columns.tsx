@@ -128,6 +128,33 @@ export const columns: Column[] = [
     updatedAt: '2026-05-29',
     readingTime: 9,
   },
+  {
+    slug: 'iryo-jimu-shikaku-osusume',
+    title: '医療事務 資格 通信講座 おすすめ5選【2025年版・費用・難易度比較】',
+    description: '医療事務資格（医療事務技能審査試験・医療事務管理士）の取得に強い通信講座を比較。ユーキャン・ニチイ学館・キャリアカレッジの費用・カリキュラム・就職サポートを解説。',
+    category: '国家資格',
+    publishedAt: '2026-05-29',
+    updatedAt: '2026-05-29',
+    readingTime: 9,
+  },
+  {
+    slug: 'shikaku-nanido-ranking',
+    title: '社会人が取りやすい資格ランキング2025【難易度・合格率・勉強時間で比較】',
+    description: '働きながら取得しやすい国家資格・民間資格をランキング形式で紹介。FP・ITパスポート・宅建など難易度・必要勉強時間・合格率を一覧で比較して最適な資格選びをサポート。',
+    category: '勉強法・対策',
+    publishedAt: '2026-05-29',
+    updatedAt: '2026-05-29',
+    readingTime: 8,
+  },
+  {
+    slug: 'gyousei-vs-shakushi',
+    title: '行政書士 vs 社労士 どっちを取るべき？難易度・年収・将来性を徹底比較',
+    description: '行政書士と社労士の難易度・合格率・必要勉強時間・年収・独立開業のしやすさを詳しく比較。どちらを先に取るべきか迷っている社会人向けに選択基準を解説します。',
+    category: '国家資格',
+    publishedAt: '2026-05-29',
+    updatedAt: '2026-05-29',
+    readingTime: 10,
+  },
 ];
 
 export function getColumnBySlug(slug: string): Column | undefined {
@@ -1068,6 +1095,375 @@ export const columnContent: Record<string, React.ReactNode> = {
             </li>
           ))}
         </ul>
+      </section>
+    </div>
+  ),
+
+  'iryo-jimu-shikaku-osusume': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">医療事務資格とは？種類と特徴</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          医療事務は、病院・クリニック・調剤薬局の受付・会計・レセプト（診療報酬明細書）作成を担う仕事です。就職に有利な民間資格が複数あり、通信講座で数ヶ月から取得できます。
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs border-collapse">
+            <thead>
+              <tr className="bg-slate-50">
+                <th className="border border-gray-200 px-3 py-2 text-left text-gray-700">資格名</th>
+                <th className="border border-gray-200 px-3 py-2 text-left text-gray-700">主催団体</th>
+                <th className="border border-gray-200 px-3 py-2 text-left text-gray-700">難易度</th>
+                <th className="border border-gray-200 px-3 py-2 text-left text-gray-700">合格率</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['医療事務技能審査試験（メディカルクラーク）', '日本医療教育財団', '普通', '60〜70%'],
+                ['医療事務管理士技能認定試験', '技能認定振興協会', '普通', '50〜60%'],
+                ['診療報酬請求事務能力認定試験', '日本医療保険事務協会', '難しい', '30〜40%'],
+                ['医療秘書技能検定', '日本医療秘書学会', '普通', '50〜65%'],
+              ].map(([name, org, difficulty, rate]) => (
+                <tr key={name} className="border-b border-gray-100">
+                  <td className="border border-gray-200 px-3 py-2 font-medium text-gray-800">{name}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-gray-600">{org}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-gray-600">{difficulty}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-gray-600">{rate}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">医療事務 通信講座 おすすめランキング</h2>
+        <div className="space-y-4">
+          {[
+            {
+              rank: 1,
+              name: 'ユーキャン 医療事務講座',
+              price: '49,000円',
+              period: '約4ヶ月',
+              support: '添削6回・質問サービス',
+              target: '医療事務技能審査試験（メディカルクラーク）',
+              points: ['合格実績多数・知名度が高く就職活動でも評価される', '教材がわかりやすく独学経験なしでも取り組みやすい', '添削指導と質問サポートで挫折しにくい'],
+            },
+            {
+              rank: 2,
+              name: 'ニチイ学館 医療事務（医科）',
+              price: '44,000円〜',
+              period: '約4ヶ月',
+              support: '通学・通信選択可・就職サポート',
+              target: 'メディカルクラーク・実務直結',
+              points: ['全国の病院・医療機関への就職支援が充実', '通学クラスもあり対面で質問できる', '病院での就業経験者が多い実績'],
+            },
+            {
+              rank: 3,
+              name: 'キャリアカレッジ 医療事務+調剤薬局事務W資格取得講座',
+              price: '39,800円',
+              period: '約3〜4ヶ月',
+              support: '質問無制限・W資格取得',
+              target: 'メディカルクラーク＋調剤薬局事務管理士',
+              points: ['1つの講座で2つの資格を同時取得できる', '調剤薬局への就職も視野に入れられる', '質問無制限で学習中の疑問をすぐ解消'],
+            },
+            {
+              rank: 4,
+              name: 'スタディング 医療事務講座',
+              price: '19,800円',
+              period: '約3ヶ月',
+              support: 'スマホ完結・AI問題演習',
+              target: '医療事務管理士',
+              points: ['業界最安水準の価格でスマートフォン完結', 'スキマ時間に学習できる動画中心のカリキュラム', 'AI問題演習で弱点を効率的に克服'],
+            },
+            {
+              rank: 5,
+              name: 'フォーサイト 医療事務講座',
+              price: '29,800円',
+              period: '約3〜4ヶ月',
+              support: 'eラーニング・合格保証なし',
+              target: '診療報酬請求事務能力認定試験',
+              points: ['比較的難易度の高い「診療報酬請求事務能力認定試験」に対応', '学習効率を重視したフルカラーテキスト', 'デジタル教材でタブレット学習が快適'],
+            },
+          ].map(({ rank, name, price, period, support, target, points }) => (
+            <div key={name} className="bg-white border border-gray-200 rounded-xl p-5">
+              <div className="flex items-start gap-3 mb-3">
+                <span className="bg-slate-800 text-white text-sm font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0">{rank}</span>
+                <div>
+                  <p className="font-bold text-gray-900 text-base">{name}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">対象資格: {target}</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-3">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full">受講料: {price}</span>
+                <span className="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full">学習期間: {period}</span>
+                <span className="text-xs bg-slate-50 text-slate-600 px-2 py-0.5 rounded-full">{support}</span>
+              </div>
+              <ul className="space-y-1">
+                {points.map((p) => (
+                  <li key={p} className="flex gap-2 text-sm text-gray-700">
+                    <span className="text-slate-400 shrink-0 mt-0.5">▸</span>{p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">医療事務の仕事と就職先</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          医療事務は全国どこでも求人がある安定職種です。主な就職先と仕事内容を確認しましょう。
+        </p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {[
+            { place: '総合病院・クリニック', work: '受付・会計・レセプト作成。患者対応が中心。' },
+            { place: '調剤薬局', work: '処方箋の受付・会計・薬歴管理。医療事務＋調剤薬局事務の知識が有利。' },
+            { place: '歯科医院', work: '歯科レセプト・受付。歯科医療事務の知識が求められる。' },
+            { place: '健診センター・検診機関', work: '健康診断の受付・結果管理。病院勤務よりも落ち着いた環境が多い。' },
+          ].map(({ place, work }) => (
+            <div key={place} className="bg-slate-50 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{place}</p>
+              <p className="text-xs text-gray-600">{work}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">医療事務資格 選び方のポイント</h2>
+        <div className="space-y-3">
+          {[
+            { title: '就職目的ならユーキャン・ニチイが有利', body: '病院・クリニックへの就職を目指す場合、知名度の高いユーキャンや就職支援が充実しているニチイ学館が有利です。採用担当者が資格名を知っている確率が高く、選考でのアピール力があります。' },
+            { title: 'W資格を効率よく取るならキャリアカレッジ', body: '医療事務と調剤薬局事務の両方を取得することで、就職先の選択肢が広がります。キャリアカレッジのW資格講座は1つの受講費用でダブル取得が可能でコスパ優秀です。' },
+            { title: '費用を抑えたいならスタディング', body: '2万円以下でスマートフォン完結学習できるスタディングは、費用重視の方に最適。ただし就職サポートは限定的なため、自力で就職活動が進められる方向けです。' },
+            { title: '難関資格を目指すならフォーサイト', body: '「診療報酬請求事務能力認定試験」は医療事務資格の中で最も難しく、取得すれば就職・給与面で有利になります。フォーサイトはこの試験に特化したカリキュラムが充実しています。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-white border border-gray-200 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'shikaku-nanido-ranking': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">資格難易度の見方と選び方</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          「取りやすい資格」を選ぶ際は、合格率だけでなく<strong>必要勉強時間・試験頻度・受験資格の有無</strong>を総合的に判断することが重要です。以下のランキングは、社会人が働きながら取得することを前提に評価しています。
+        </p>
+        <div className="bg-slate-50 rounded-xl p-4 mb-4">
+          <p className="text-xs font-semibold text-gray-700 mb-2">評価基準</p>
+          <ul className="space-y-1">
+            {[
+              '合格率（高いほど取得しやすい）',
+              '必要勉強時間の目安（短いほど社会人向き）',
+              '試験実施頻度（多いほどリトライしやすい）',
+              '受験資格の制限（なし・少ないほど誰でも受けやすい）',
+            ].map((item) => (
+              <li key={item} className="flex gap-2 text-xs text-gray-700">
+                <span className="text-slate-400 shrink-0">▸</span>{item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">取得しやすい資格ランキングTOP10</h2>
+        <div className="space-y-3">
+          {[
+            { rank: 1, name: 'ITパスポート', time: '約100〜200時間', rate: '50〜55%', freq: 'ほぼ毎日（CBT）', level: '易しい', note: 'コンピュータ・ビジネス基礎知識。受験資格なし。社会人の必須スキルとしてIT業界以外でも評価が高まっている。' },
+            { rank: 2, name: 'FP3級', time: '約100〜150時間', rate: '70〜85%', freq: '年3回（1・5・9月）', level: '易しい', note: 'お金の基礎知識（税・保険・年金）。受験資格なし。FP2級へのステップとして取得する方が多い。' },
+            { rank: 3, name: '日商簿記3級', time: '約100〜200時間', rate: '40〜60%', freq: '年3回（2・6・11月）', level: '普通', note: '会計・経理の基礎。受験資格なし。3級は入門で、転職・就職では2級以上が有利。' },
+            { rank: 4, name: 'MOS（マイクロソフト オフィス スペシャリスト）', time: '約50〜100時間', rate: '70〜80%', freq: '毎月（CBT）', level: '易しい', note: 'WordやExcelの実務スキル。PC操作の証明として就職・転職時に評価される。' },
+            { rank: 5, name: '宅地建物取引士（宅建）', time: '約300〜400時間', rate: '15〜17%', freq: '年1回（10月）', level: '難しい', note: '不動産業界では必須。難しいが取得後の市場価値が高く、年収への影響が大きい国家資格。' },
+            { rank: 6, name: 'FP2級', time: '約150〜300時間', rate: '35〜60%', freq: '年3回（1・5・9月）', level: '普通', note: '実務レベルの金融・保険知識。転職での評価が高く、FP3級から続けて取得する人が多い。' },
+            { rank: 7, name: '日商簿記2級', time: '約300〜500時間', rate: '15〜30%', freq: '年3回（2・6・11月）', level: '難しい', note: '経理・会計職での転職に強い。3級より大幅に難しいが取得価値は高い。' },
+            { rank: 8, name: '行政書士', time: '約500〜1000時間', rate: '10〜13%', freq: '年1回（11月）', level: 'かなり難しい', note: '独立開業できる法律系国家資格。合格率は低いが通信講座を活用すると合格率が大幅に向上。' },
+            { rank: 9, name: '社会保険労務士（社労士）', time: '約700〜1000時間', rate: '6〜7%', freq: '年1回（8月）', level: 'かなり難しい', note: '人事・労務分野の最高峰資格。独立開業・企業内キャリアアップ両方に活かせる。' },
+            { rank: 10, name: '中小企業診断士', time: '約700〜1200時間', rate: '一次20%・二次18%', freq: '年1回（一次7月・二次10月）', level: 'かなり難しい', note: '経営全般を扱う唯一のコンサルタント国家資格。2次試験まであり難度が高い。' },
+          ].map(({ rank, name, time, rate, freq, level, note }) => (
+            <div key={name} className="bg-white border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-3 mb-2">
+                <span className={`text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${rank <= 3 ? 'bg-slate-800' : 'bg-slate-400'}`}>{rank}</span>
+                <p className="font-bold text-gray-900">{name}</p>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full">勉強時間: {time}</span>
+                <span className="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full">合格率: {rate}</span>
+                <span className="text-xs bg-slate-50 text-slate-600 px-2 py-0.5 rounded-full">試験: {freq}</span>
+                <span className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">{level}</span>
+              </div>
+              <p className="text-sm text-gray-600 leading-relaxed">{note}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">目的別おすすめ資格の選び方</h2>
+        <div className="space-y-3">
+          {[
+            { goal: '転職・就職を有利にしたい', recs: 'FP2級・宅建・簿記2級・社労士のいずれかを目標にする。業界に合わせて選ぶ（不動産→宅建、金融→FP、経理→簿記、人事→社労士）。' },
+            { goal: '副業収入を増やしたい', recs: 'FP3級・2級はお金の相談業務に活かせる。簿記は確定申告サポート・経理代行に活用可能。ITパスポートはWeb系副業の入口になる。' },
+            { goal: '3ヶ月以内に資格を取りたい', recs: 'ITパスポート・FP3級・MOS。いずれも100〜200時間程度の学習で合格が狙える。通信講座を活用すると効率がさらに上がる。' },
+            { goal: '独立・開業を目指したい', recs: '行政書士・社労士・中小企業診断士は独立開業が可能な国家資格。難易度は高いが長期的な収入安定につながる。' },
+          ].map(({ goal, recs }) => (
+            <div key={goal} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">目標：{goal}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{recs}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">短期合格に役立つ通信講座の特徴</h2>
+        <ul className="space-y-2">
+          {[
+            'スキマ時間学習型（スマートフォン対応・動画中心）: スタディング・フォーサイトが代表格',
+            '合格実績が高い講座を選ぶ: 合格率を公表している講座は信頼性の目安になる',
+            '教育訓練給付金対象講座を活用: 受講料の20〜70%が還付されコスト負担を大幅軽減',
+            '試験1〜2ヶ月前からの直前対策講座もある: 模擬試験・直前ヤマ当て講義で最終調整',
+          ].map((item) => (
+            <li key={item} className="flex gap-2 text-sm text-gray-700">
+              <span className="text-slate-400 shrink-0 mt-0.5">▸</span>{item}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  ),
+
+  'gyousei-vs-shakushi': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">行政書士 vs 社労士 基本比較</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          行政書士と社労士は、どちらも独立開業できる人気の国家資格です。扱う業務領域が異なり、目指すキャリアによって適した資格が変わります。まず基本スペックを確認しましょう。
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs border-collapse">
+            <thead>
+              <tr className="bg-slate-50">
+                <th className="border border-gray-200 px-3 py-2 text-left text-gray-700">比較項目</th>
+                <th className="border border-gray-200 px-3 py-2 text-left text-gray-700">行政書士</th>
+                <th className="border border-gray-200 px-3 py-2 text-left text-gray-700">社労士</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['試験月', '11月（年1回）', '8月（年1回）'],
+                ['合格率', '10〜13%', '6〜7%'],
+                ['必要勉強時間', '500〜800時間', '700〜1000時間'],
+                ['受験資格', 'なし（誰でも受験可）', '学歴・実務経験あり'],
+                ['主な業務', '許認可申請・契約書作成', '労働・社会保険手続き'],
+                ['独立開業', 'しやすい', 'しやすい'],
+                ['企業内資格価値', '中程度', '高い（人事・総務部門）'],
+                ['平均年収（独立）', '300〜600万円', '400〜700万円'],
+              ].map(([item, gyousei, shakushi]) => (
+                <tr key={item} className="border-b border-gray-100">
+                  <td className="border border-gray-200 px-3 py-2 font-medium text-gray-700">{item}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-gray-800">{gyousei}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-gray-800">{shakushi}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">業務内容の違い</h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="bg-slate-50 rounded-xl p-5">
+            <p className="font-bold text-gray-800 mb-3">行政書士の主な仕事</p>
+            <ul className="space-y-2">
+              {[
+                '建設業許可・風俗営業許可などの許認可申請',
+                '会社設立・定款作成の手続き',
+                '在留資格（ビザ）申請の代行',
+                '遺言書・相続関連の書類作成',
+                '農地転用許可・産廃業許可など行政手続き',
+              ].map((item) => (
+                <li key={item} className="flex gap-2 text-sm text-gray-700">
+                  <span className="text-slate-400 shrink-0">▸</span>{item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-5">
+            <p className="font-bold text-gray-800 mb-3">社労士の主な仕事</p>
+            <ul className="space-y-2">
+              {[
+                '労働保険・社会保険の手続き代行',
+                '就業規則・賃金規程の作成・改定',
+                '助成金申請サポート',
+                '労働相談・人事コンサルティング',
+                '年金・健康保険の相談・手続き',
+              ].map((item) => (
+                <li key={item} className="flex gap-2 text-sm text-gray-700">
+                  <span className="text-slate-400 shrink-0">▸</span>{item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">どちらを先に取るべき？目的別の選び方</h2>
+        <div className="space-y-3">
+          {[
+            { title: '企業に勤めながら資格を活かしたい → 社労士が有利', body: '社労士は人事・総務・労務管理部門での評価が高く、昇進・昇給・転職に直結します。企業内での活躍を目指す場合は社労士を優先しましょう。企業での実務経験を積みながら独立開業の準備もできます。' },
+            { title: '独立・開業を早く実現したい → 行政書士から始める', body: '受験資格がなく（社労士は学歴・実務経験が要る）、比較的難易度がやや低めの行政書士から先に取得するのが現実的です。開業後に社労士も取得すると業務の幅が大きく広がります。' },
+            { title: '両方取りたい場合は行政書士→社労士の順番', body: '行政書士と社労士はダブルライセンスで相乗効果が高く（会社設立＋就業規則整備など）、行政書士の知識が社労士試験の社会保険科目の理解を助けます。行政書士→社労士の順が一般的です。' },
+            { title: '勉強時間が少ない方は行政書士から', body: '合格率・必要勉強時間ともに行政書士の方が取り組みやすく、社労士は受験資格の縛りもあります。まず行政書士で国家試験合格の経験を積むことが、社労士へのステップになります。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-white border border-gray-200 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">行政書士・社労士の通信講座比較</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs border-collapse">
+            <thead>
+              <tr className="bg-slate-50">
+                <th className="border border-gray-200 px-3 py-2 text-left text-gray-700">講座名</th>
+                <th className="border border-gray-200 px-3 py-2 text-left text-gray-700">行政書士</th>
+                <th className="border border-gray-200 px-3 py-2 text-left text-gray-700">社労士</th>
+                <th className="border border-gray-200 px-3 py-2 text-left text-gray-700">特徴</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['スタディング', '49,500円〜', '74,800円〜', 'スマホ完結・コスパ最良'],
+                ['フォーサイト', '54,800円〜', '78,800円〜', '合格率が業界平均の3〜5倍'],
+                ['アガルート', '80,000円〜', '107,800円〜', '合格特典・充実サポート'],
+                ['クレアール', '59,000円〜', '87,000円〜', '非常識合格法・効率学習'],
+                ['LEC', '88,000円〜', '120,000円〜', '老舗・教室通学も選べる'],
+              ].map(([name, gyousei, shakushi, feature]) => (
+                <tr key={name} className="border-b border-gray-100">
+                  <td className="border border-gray-200 px-3 py-2 font-medium text-gray-800">{name}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-gray-600">{gyousei}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-gray-600">{shakushi}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-gray-600">{feature}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-gray-500 mt-2">※ 料金は最安コースの参考価格です。最新情報は各公式サイトでご確認ください。</p>
       </section>
     </div>
   ),
