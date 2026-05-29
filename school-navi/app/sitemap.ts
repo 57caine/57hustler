@@ -2,8 +2,6 @@ import { MetadataRoute } from 'next';
 import { schools, getAllCategories } from '@/lib/schools';
 import { columns } from '@/lib/columns';
 
-export const dynamic = 'force-static';
-
 const BASE_URL = 'https://nsplot.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
