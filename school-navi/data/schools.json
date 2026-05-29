@@ -8,17 +8,35 @@
     "price": 748000,
     "priceNote": "夜間・休日コース（10週間）",
     "period": "10週間〜",
-    "format": ["オンライン", "通学"],
-    "features": ["転職保証", "マンツーマンメンター", "無制限サポート"],
-    "languages": ["Ruby", "JavaScript", "HTML/CSS"],
+    "format": [
+      "オンライン",
+      "通学"
+    ],
+    "features": [
+      "転職保証",
+      "マンツーマンメンター",
+      "無制限サポート"
+    ],
+    "languages": [
+      "Ruby",
+      "JavaScript",
+      "HTML/CSS"
+    ],
     "targetAudience": "転職希望者",
     "rating": 4.3,
     "reviewCount": 1240,
     "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=techcamp_placeholder",
     "highlight": true,
     "description": "業界最大規模のプログラミングスクール。専属メンターによる充実したサポートで、未経験から最短10週間でエンジニア転職を実現。転職できなければ全額返金の保証あり。",
-    "pros": ["業界最大規模の実績", "転職保証・返金制度あり", "24時間質問対応"],
-    "cons": ["価格が高め", "カリキュラムの柔軟性が低い"]
+    "pros": [
+      "業界最大規模の実績",
+      "転職保証・返金制度あり",
+      "24時間質問対応"
+    ],
+    "cons": [
+      "価格が高め",
+      "カリキュラムの柔軟性が低い"
+    ]
   },
   {
     "id": "dmm-webcamp",
@@ -29,17 +47,34 @@
     "price": 437800,
     "priceNote": "就職転職コース（3ヶ月）",
     "period": "3ヶ月〜",
-    "format": ["オンライン"],
-    "features": ["転職保証", "給付金対象", "キャリアアドバイザー"],
-    "languages": ["Ruby on Rails", "JavaScript", "Python"],
+    "format": [
+      "オンライン"
+    ],
+    "features": [
+      "転職保証",
+      "給付金対象",
+      "キャリアアドバイザー"
+    ],
+    "languages": [
+      "Ruby on Rails",
+      "JavaScript",
+      "Python"
+    ],
     "targetAudience": "転職希望者",
     "rating": 4.2,
     "reviewCount": 890,
     "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=dmmwebcamp_placeholder",
     "highlight": true,
     "description": "DMMグループ運営の転職特化スクール。最大70%の給付金制度あり。転職できなければ全額返金保証。9万人以上の卒業生ネットワークを持つ。",
-    "pros": ["給付金で実質負担が少ない", "DMMブランドの安心感", "転職サポートが手厚い"],
-    "cons": ["カリキュラムがやや固定的", "自習時間が多め"]
+    "pros": [
+      "給付金で実質負担が少ない",
+      "DMMブランドの安心感",
+      "転職サポートが手厚い"
+    ],
+    "cons": [
+      "カリキュラムがやや固定的",
+      "自習時間が多め"
+    ]
   },
   {
     "id": "progate",
@@ -50,17 +85,36 @@
     "price": 990,
     "priceNote": "月額プラン（税込）",
     "period": "自分のペースで",
-    "format": ["オンライン"],
-    "features": ["月額課金", "ビジュアル学習", "スライド形式"],
-    "languages": ["Python", "JavaScript", "Ruby", "HTML/CSS", "SQL"],
+    "format": [
+      "オンライン"
+    ],
+    "features": [
+      "月額課金",
+      "ビジュアル学習",
+      "スライド形式"
+    ],
+    "languages": [
+      "Python",
+      "JavaScript",
+      "Ruby",
+      "HTML/CSS",
+      "SQL"
+    ],
     "targetAudience": "プログラミング入門者",
     "rating": 4.4,
     "reviewCount": 3200,
     "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=progate_placeholder",
     "highlight": false,
     "description": "初心者向けオンライン学習サービス。スライドとハンズオン形式で直感的に学べる。無料コースも充実しており、まずは気軽に試せる。",
-    "pros": ["低コストで始められる", "直感的なUI", "無料コースあり"],
-    "cons": ["実践的なアプリ開発には不向き", "転職サポートなし"]
+    "pros": [
+      "低コストで始められる",
+      "直感的なUI",
+      "無料コースあり"
+    ],
+    "cons": [
+      "実践的なアプリ開発には不向き",
+      "転職サポートなし"
+    ]
   },
   {
     "id": "techacademy",
@@ -71,17 +125,36 @@
     "price": 174900,
     "priceNote": "Webアプリケーションコース（4週間）",
     "period": "4週間〜",
-    "format": ["オンライン"],
-    "features": ["現役エンジニアメンター", "週2回メンタリング", "副業支援"],
-    "languages": ["Ruby on Rails", "PHP", "Python", "Swift", "Kotlin"],
+    "format": [
+      "オンライン"
+    ],
+    "features": [
+      "現役エンジニアメンター",
+      "週2回メンタリング",
+      "副業支援"
+    ],
+    "languages": [
+      "Ruby on Rails",
+      "PHP",
+      "Python",
+      "Swift",
+      "Kotlin"
+    ],
     "targetAudience": "副業・スキルアップ希望者",
     "rating": 4.1,
     "reviewCount": 670,
     "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=techacademy_placeholder",
     "highlight": false,
     "description": "オンライン完結のプログラミングスクール。副業エンジニアを目指す人向けのコースが充実。現役エンジニアが週2回メンタリングを実施。",
-    "pros": ["オンライン完結", "副業支援が充実", "コース数が多い"],
-    "cons": ["就職・転職サポートはやや弱い", "自己管理能力が必要"]
+    "pros": [
+      "オンライン完結",
+      "副業支援が充実",
+      "コース数が多い"
+    ],
+    "cons": [
+      "就職・転職サポートはやや弱い",
+      "自己管理能力が必要"
+    ]
   },
   {
     "id": "runteq",
@@ -92,17 +165,34 @@
     "price": 550000,
     "priceNote": "Webエンジニア転職コース（9ヶ月）",
     "period": "9ヶ月",
-    "format": ["オンライン"],
-    "features": ["実践的カリキュラム", "就職支援", "コミュニティ"],
-    "languages": ["Ruby on Rails", "JavaScript", "Git"],
+    "format": [
+      "オンライン"
+    ],
+    "features": [
+      "実践的カリキュラム",
+      "就職支援",
+      "コミュニティ"
+    ],
+    "languages": [
+      "Ruby on Rails",
+      "JavaScript",
+      "Git"
+    ],
     "targetAudience": "本格的な転職希望者",
     "rating": 4.5,
     "reviewCount": 420,
     "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=runteq_placeholder",
     "highlight": false,
     "description": "実務レベルのエンジニアを育てることにこだわったスクール。9ヶ月間の長期カリキュラムで実践力を徹底的に鍛える。卒業生の評価が非常に高い。",
-    "pros": ["実務レベルのスキルが身につく", "卒業生の評判が高い", "コミュニティが活発"],
-    "cons": ["期間が長い", "価格が高め"]
+    "pros": [
+      "実務レベルのスキルが身につく",
+      "卒業生の評判が高い",
+      "コミュニティが活発"
+    ],
+    "cons": [
+      "期間が長い",
+      "価格が高め"
+    ]
   },
   {
     "id": "codecamp",
@@ -113,17 +203,35 @@
     "price": 129800,
     "priceNote": "Webデザインコース（2ヶ月）",
     "period": "2ヶ月〜",
-    "format": ["オンライン"],
-    "features": ["マンツーマン", "日英バイリンガル", "法人研修実績"],
-    "languages": ["HTML/CSS", "JavaScript", "PHP", "WordPress"],
+    "format": [
+      "オンライン"
+    ],
+    "features": [
+      "マンツーマン",
+      "日英バイリンガル",
+      "法人研修実績"
+    ],
+    "languages": [
+      "HTML/CSS",
+      "JavaScript",
+      "PHP",
+      "WordPress"
+    ],
     "targetAudience": "個別指導希望者",
     "rating": 4.0,
     "reviewCount": 310,
     "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=codecamp_placeholder",
     "highlight": false,
     "description": "完全マンツーマン指導のオンラインプログラミングスクール。英語対応も可能で外資系への転職希望者にも人気。法人研修実績も豊富。",
-    "pros": ["完全マンツーマン", "英語対応可能", "法人実績あり"],
-    "cons": ["グループ学習なし", "コミュニティが弱い"]
+    "pros": [
+      "完全マンツーマン",
+      "英語対応可能",
+      "法人実績あり"
+    ],
+    "cons": [
+      "グループ学習なし",
+      "コミュニティが弱い"
+    ]
   },
   {
     "id": "coachtech",
@@ -134,17 +242,34 @@
     "price": 456500,
     "priceNote": "フリーランスコース（6ヶ月）",
     "period": "6ヶ月",
-    "format": ["オンライン"],
-    "features": ["フリーランス支援", "案件紹介", "チーム開発"],
-    "languages": ["PHP/Laravel", "JavaScript/Vue.js", "AWS"],
+    "format": [
+      "オンライン"
+    ],
+    "features": [
+      "フリーランス支援",
+      "案件紹介",
+      "チーム開発"
+    ],
+    "languages": [
+      "PHP/Laravel",
+      "JavaScript/Vue.js",
+      "AWS"
+    ],
     "targetAudience": "フリーランス志望者",
     "rating": 4.2,
     "reviewCount": 280,
     "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=coachtech_placeholder",
     "highlight": false,
     "description": "フリーランスエンジニアを目指す人に特化したスクール。卒業後の案件紹介まで一貫してサポート。チーム開発経験も積める実践的なカリキュラム。",
-    "pros": ["フリーランス支援が充実", "チーム開発経験ができる", "案件紹介あり"],
-    "cons": ["転職サポートは弱め", "フリーランス前提の内容"]
+    "pros": [
+      "フリーランス支援が充実",
+      "チーム開発経験ができる",
+      "案件紹介あり"
+    ],
+    "cons": [
+      "転職サポートは弱め",
+      "フリーランス前提の内容"
+    ]
   },
   {
     "id": "zero-plus",
@@ -155,16 +280,190 @@
     "price": 498000,
     "priceNote": "AIエンジニアコース（6ヶ月）",
     "period": "6ヶ月",
-    "format": ["オンライン"],
-    "features": ["給付金対象", "AI/機械学習", "転職保証"],
-    "languages": ["Python", "機械学習", "Deep Learning", "ChatGPT API"],
+    "format": [
+      "オンライン"
+    ],
+    "features": [
+      "給付金対象",
+      "AI/機械学習",
+      "転職保証"
+    ],
+    "languages": [
+      "Python",
+      "機械学習",
+      "Deep Learning",
+      "ChatGPT API"
+    ],
     "targetAudience": "AI・データサイエンス志望者",
     "rating": 4.1,
     "reviewCount": 190,
     "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=zeroplus_placeholder",
     "highlight": true,
     "description": "AIエンジニアを目指す人に特化した新世代スクール。給付金制度を活用すれば実質負担を大幅削減。ChatGPT APIなど最新AI技術まで学べる。",
-    "pros": ["AI特化で需要が高い", "給付金で実質負担減", "最新技術を学べる"],
-    "cons": ["比較的新しいスクール", "卒業生レビューが少ない"]
+    "pros": [
+      "AI特化で需要が高い",
+      "給付金で実質負担減",
+      "最新技術を学べる"
+    ],
+    "cons": [
+      "比較的新しいスクール",
+      "卒業生レビューが少ない"
+    ]
+  },
+  {
+    "id": "samurai-engineer",
+    "slug": "samurai-engineer",
+    "name": "侍エンジニア塾",
+    "tagline": "完全オーダーメイドのマンツーマン指導で挫折しない",
+    "category": "転職特化",
+    "price": 594000,
+    "priceNote": "Basicコース（3ヶ月）",
+    "period": "3〜6ヶ月",
+    "format": [
+      "オンライン"
+    ],
+    "features": [
+      "マンツーマン指導",
+      "転職サポート",
+      "給付金対象"
+    ],
+    "languages": [
+      "PHP",
+      "JavaScript",
+      "Python",
+      "HTML/CSS"
+    ],
+    "targetAudience": "転職希望者・副業希望者",
+    "rating": 4.1,
+    "reviewCount": 3200,
+    "affiliate_url": "#",
+    "highlight": false,
+    "description": "受講生一人ひとりに合わせたオーダーメイドのカリキュラムが特徴。完全マンツーマン指導で、自分のペースで学べる。給付金対象コースあり。",
+    "pros": [
+      "完全マンツーマン指導",
+      "個人に合わせたカリキュラム",
+      "給付金対象コースあり"
+    ],
+    "cons": [
+      "費用が高め",
+      "グループ学習ができない"
+    ]
+  },
+  {
+    "id": "techbooth",
+    "slug": "techbooth",
+    "name": "TechBooth",
+    "tagline": "フリーランスエンジニアに特化した実践型スクール",
+    "category": "フリーランス特化",
+    "price": 198000,
+    "priceNote": "Webエンジニアコース（3ヶ月）",
+    "period": "3ヶ月",
+    "format": [
+      "オンライン"
+    ],
+    "features": [
+      "案件紹介",
+      "フリーランス特化",
+      "ポートフォリオ制作"
+    ],
+    "languages": [
+      "PHP",
+      "Laravel",
+      "JavaScript",
+      "HTML/CSS"
+    ],
+    "targetAudience": "フリーランス志望者",
+    "rating": 4.0,
+    "reviewCount": 420,
+    "affiliate_url": "#",
+    "highlight": false,
+    "description": "フリーランスとして独立・副業を目指す人向けのスクール。実際の案件を意識した実践的なカリキュラムと、卒業後の案件紹介サポートが充実。",
+    "pros": [
+      "フリーランス向け実践カリキュラム",
+      "案件紹介サポートあり",
+      "比較的低価格"
+    ],
+    "cons": [
+      "転職サポートは弱め",
+      "受講生数が少ない"
+    ]
+  },
+  {
+    "id": "geekjob",
+    "slug": "geekjob",
+    "name": "GEEK JOB",
+    "tagline": "最短22日で転職できる超短期プログラミングスクール",
+    "category": "転職特化",
+    "price": 0,
+    "priceNote": "完全無料（転職支援型）",
+    "period": "22日〜",
+    "format": [
+      "オンライン",
+      "通学"
+    ],
+    "features": [
+      "完全無料",
+      "転職保証",
+      "短期集中"
+    ],
+    "languages": [
+      "Python",
+      "HTML/CSS",
+      "JavaScript"
+    ],
+    "targetAudience": "転職希望者（未経験）",
+    "rating": 3.9,
+    "reviewCount": 860,
+    "affiliate_url": "#",
+    "highlight": false,
+    "description": "完全無料で受講できる転職特化型スクール。最短22日という超短期カリキュラムが特徴。転職先企業から紹介料をもらう仕組みのため受講料は無料。",
+    "pros": [
+      "完全無料で受講できる",
+      "短期間で学べる",
+      "転職サポートが手厚い"
+    ],
+    "cons": [
+      "カリキュラムが浅い",
+      "転職先が限定される場合がある"
+    ]
+  },
+  {
+    "id": "dive-into-code",
+    "slug": "dive-into-code",
+    "name": "DIVE INTO CODE",
+    "tagline": "エンジニアとしての本質的なスキルを9週間で身につける",
+    "category": "スキルアップ",
+    "price": 448000,
+    "priceNote": "Webエンジニアコース（9週間）",
+    "period": "9週間",
+    "format": [
+      "オンライン"
+    ],
+    "features": [
+      "就職・転職サポート",
+      "給付金対象",
+      "コミュニティ"
+    ],
+    "languages": [
+      "Ruby",
+      "Rails",
+      "JavaScript",
+      "HTML/CSS"
+    ],
+    "targetAudience": "転職希望者・スキルアップ希望者",
+    "rating": 4.1,
+    "reviewCount": 680,
+    "affiliate_url": "#",
+    "highlight": false,
+    "description": "エンジニアとして長期的に活躍するための本質的なスキルを習得できるスクール。実際のプロダクト開発に近い学習体験を提供。給付金対象コースあり。",
+    "pros": [
+      "実践的なカリキュラム",
+      "給付金対象コースあり",
+      "活発なコミュニティ"
+    ],
+    "cons": [
+      "完全オンラインのみ",
+      "費用がやや高め"
+    ]
   }
 ]

@@ -1,83 +1,80 @@
 import Link from 'next/link';
-import { schools, getHighlightedSchools, formatPrice } from '@/lib/schools';
+import { schools, getHighlightedSchools, formatPrice, getAllCategories } from '@/lib/schools';
 import { columns } from '@/lib/columns';
 import SchoolCard from '@/components/SchoolCard';
 
 export default function HomePage() {
   const highlighted = getHighlightedSchools();
   const topColumns = columns.slice(0, 3);
+  const subsidySchools = schools.filter((s) => s.features.includes('給付金対象'));
 
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-indigo-600 to-indigo-800 text-white py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-indigo-200 text-sm font-medium mb-3">プログラミングスクール比較サイト</p>
-          <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
-            未経験からエンジニア転職<br className="md:hidden" />を目指す人のための<br />
-            スクール比較サイト
+      <section className="bg-slate-900 text-white py-14 px-4">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-slate-400 text-xs font-medium mb-3 uppercase tracking-widest">Programming School Navigator</p>
+          <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-white">
+            プログラミングスクール<br />
+            <span className="text-slate-300">徹底比較ガイド 2025年版</span>
           </h1>
-          <p className="text-indigo-100 mb-8 max-w-xl mx-auto">
-            TECH CAMP・DMM WEBCAMPなど<strong>人気8校</strong>を料金・転職成功率・給付金対応で徹底比較。あなたに最適なスクールが見つかります。
+          <p className="text-slate-400 mb-8 max-w-xl text-sm leading-relaxed">
+            TECH CAMP・DMM WEBCAMP など{schools.length}校を料金・転職実績・給付金対応で客観的に比較。
+            編集部が実際の情報を調査・検証して掲載しています。
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link href="/schools" className="bg-white text-indigo-700 font-bold px-8 py-3 rounded-full hover:bg-indigo-50 transition-colors">
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link href="/schools" className="inline-block bg-white text-slate-900 font-bold px-7 py-3 rounded-lg hover:bg-slate-100 transition-colors text-sm text-center">
               スクール一覧を見る
             </Link>
-            <Link href="/compare" className="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-indigo-700 transition-colors">
-              スクールを比較する
+            <Link href="/compare" className="inline-block border border-slate-600 text-slate-300 font-medium px-7 py-3 rounded-lg hover:border-slate-400 hover:text-white transition-colors text-sm text-center">
+              比較表で見る
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-white border-b border-gray-100 py-6 px-4">
-        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-4 text-center">
-          {[
-            { value: `${schools.length}校`, label: '掲載スクール数' },
-            { value: '最大70%', label: '給付金割引' },
-            { value: '無料', label: '掲載情報すべて' },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <p className="text-2xl font-bold text-indigo-600">{stat.value}</p>
-              <p className="text-xs text-gray-500">{stat.label}</p>
-            </div>
-          ))}
+      {/* Stats bar */}
+      <section className="bg-slate-800 text-slate-300 py-4 px-4">
+        <div className="max-w-4xl mx-auto flex flex-wrap gap-6 text-sm">
+          <span><strong className="text-white">{schools.length}校</strong> を掲載</span>
+          <span><strong className="text-white">{subsidySchools.length}校</strong> が給付金対象</span>
+          <span>最終更新: <strong className="text-white">2025年6月</strong></span>
         </div>
       </section>
 
-      {/* Featured Schools */}
+      {/* Pickup Schools */}
       <section className="max-w-6xl mx-auto px-4 py-12">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-gray-900">⭐ おすすめスクール</h2>
-          <Link href="/schools" className="text-sm text-indigo-600 hover:underline">すべて見る →</Link>
+        <div className="flex items-baseline justify-between mb-6">
+          <div>
+            <h2 className="text-xl font-bold text-gray-900">編集部ピックアップ</h2>
+            <p className="text-sm text-gray-500 mt-1">転職実績・料金・サポート体制を総合的に評価</p>
+          </div>
+          <Link href="/schools" className="text-sm text-slate-600 hover:text-slate-900 hover:underline">全{schools.length}校を見る</Link>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-5">
           {highlighted.map((school, i) => (
             <SchoolCard key={school.slug} school={school} rank={i + 1} />
           ))}
         </div>
       </section>
 
-      {/* Category Cards */}
-      <section className="bg-white py-12 px-4">
+      {/* Category navigation */}
+      <section className="bg-gray-50 border-y border-gray-200 py-10 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">目的から探す</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <h2 className="text-lg font-bold text-gray-900 mb-5">目的から探す</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { label: '転職・就職', icon: '🏢', href: '/category/%E8%BB%A2%E8%81%B7%E7%89%B9%E5%8C%96', desc: '転職保証あり' },
-              { label: 'スキルアップ', icon: '📈', href: '/category/%E3%82%B9%E3%82%AD%E3%83%AB%E3%82%A2%E3%83%83%E3%83%97', desc: '副業・学習' },
-              { label: 'フリーランス', icon: '🖥️', href: '/category/%E3%83%95%E3%83%AA%E3%83%BC%E3%83%A9%E3%83%B3%E3%82%B9%E7%89%B9%E5%8C%96', desc: '案件獲得まで' },
-              { label: 'AI・機械学習', icon: '🤖', href: '/category/AI%E7%89%B9%E5%8C%96', desc: 'ChatGPT活用' },
+              { label: '転職・就職を目指す', href: '/category/%E8%BB%A2%E8%81%B7%E7%89%B9%E5%8C%96', desc: '転職保証・内定サポートあり' },
+              { label: 'スキルアップ', href: '/category/%E3%82%B9%E3%82%AD%E3%83%AB%E3%82%A2%E3%83%83%E3%83%97', desc: '副業・現職スキル強化' },
+              { label: 'フリーランス独立', href: '/category/%E3%83%95%E3%83%AA%E3%83%BC%E3%83%A9%E3%83%B3%E3%82%B9%E7%89%B9%E5%8C%96', desc: '案件獲得サポートあり' },
+              { label: 'AI・機械学習', href: '/category/AI%E7%89%B9%E5%8C%96', desc: 'ChatGPT・DX人材育成' },
             ].map((cat) => (
               <Link
                 key={cat.label}
                 href={cat.href}
-                className="bg-gray-50 border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-indigo-200 transition-all text-center"
+                className="bg-white border border-gray-200 rounded-xl p-4 hover:border-gray-400 hover:shadow-sm transition-all"
               >
-                <span className="text-3xl block mb-2">{cat.icon}</span>
-                <p className="font-bold text-gray-800 text-sm">{cat.label}</p>
+                <p className="font-semibold text-gray-800 text-sm mb-1">{cat.label}</p>
                 <p className="text-xs text-gray-500">{cat.desc}</p>
               </Link>
             ))}
@@ -85,49 +82,68 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Price Comparison Banner */}
+      {/* Subsidy info */}
       <section className="max-w-6xl mx-auto px-4 py-12">
-        <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-6 md:p-8">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">💰 給付金を使えば最大70%OFF</h2>
-          <p className="text-gray-600 mb-5 text-sm">教育訓練給付金制度を活用すれば、受講料の最大70%が国から支給されます。条件を満たせばほぼ誰でも利用できます。</p>
-          <div className="grid sm:grid-cols-2 gap-4 mb-5">
-            {schools.filter((s) => s.features.includes('給付金対象')).map((s) => (
-              <div key={s.slug} className="bg-white rounded-xl p-4 flex items-center justify-between">
+        <div className="border border-gray-200 rounded-xl p-6 md:p-8">
+          <div className="flex items-start gap-3 mb-4">
+            <div className="bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded shrink-0">制度解説</div>
+            <h2 className="text-lg font-bold text-gray-900">教育訓練給付金で受講料が最大70%戻る</h2>
+          </div>
+          <p className="text-gray-600 mb-5 text-sm leading-relaxed">
+            雇用保険に一定期間加入していれば、厚生労働大臣が指定した講座を修了することで受講料の20〜70%が支給されます。
+            条件を満たす方が対象で、申請は受講前のハローワーク手続きが必要です。
+          </p>
+          <div className="grid sm:grid-cols-2 gap-3 mb-5">
+            {subsidySchools.map((s) => (
+              <Link key={s.slug} href={`/schools/${s.slug}`} className="bg-gray-50 border border-gray-200 rounded-lg p-3 flex items-center justify-between hover:border-gray-400 transition-colors">
                 <div>
-                  <p className="font-bold text-gray-900">{s.name}</p>
+                  <p className="font-medium text-gray-900 text-sm">{s.name}</p>
                   <p className="text-xs text-gray-500">{formatPrice(s.price)}〜</p>
                 </div>
-                <span className="bg-red-100 text-red-700 text-xs px-2 py-1 rounded-full font-medium">給付金対象</span>
-              </div>
+                <span className="text-xs border border-slate-300 text-slate-600 px-2 py-0.5 rounded">給付金対象</span>
+              </Link>
             ))}
           </div>
-          <Link href="/column/teiten-hojo-programming-school" className="inline-block bg-indigo-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-indigo-700 transition-colors">
-            給付金の詳細を見る →
+          <Link href="/column/teiten-hojo-programming-school" className="text-sm text-slate-700 hover:underline font-medium">
+            給付金制度の詳しい解説を読む →
           </Link>
         </div>
       </section>
 
       {/* Columns */}
-      <section className="bg-white py-12 px-4">
+      <section className="bg-gray-50 border-t border-gray-200 py-12 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-gray-900">📚 スクール選びに役立つコラム</h2>
-            <Link href="/column" className="text-sm text-indigo-600 hover:underline">すべて見る →</Link>
+          <div className="flex items-baseline justify-between mb-6">
+            <h2 className="text-xl font-bold text-gray-900">スクール選びに役立つ記事</h2>
+            <Link href="/column" className="text-sm text-slate-600 hover:underline">すべての記事</Link>
           </div>
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-3 gap-4">
             {topColumns.map((col) => (
-              <Link key={col.slug} href={`/column/${col.slug}`} className="border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-indigo-200 transition-all">
-                <span className="text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full mb-3 inline-block">{col.category}</span>
-                <h3 className="font-bold text-gray-800 text-sm leading-snug mb-2 line-clamp-2">{col.title}</h3>
+              <Link key={col.slug} href={`/column/${col.slug}`} className="bg-white border border-gray-200 rounded-xl p-5 hover:border-gray-300 hover:shadow-sm transition-all">
+                <span className="text-xs border border-gray-200 text-gray-500 px-2 py-0.5 rounded mb-3 inline-block">{col.category}</span>
+                <h3 className="font-semibold text-gray-800 text-sm leading-snug mb-2 line-clamp-2">{col.title}</h3>
                 <p className="text-xs text-gray-500 line-clamp-2">{col.description}</p>
+                <p className="text-xs text-gray-400 mt-3">更新: {col.updatedAt}</p>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Editorial policy */}
+      <section className="max-w-6xl mx-auto px-4 py-10">
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-sm font-bold text-slate-700 mb-3">掲載基準・編集ポリシー</h2>
+          <p className="text-xs text-slate-600 leading-relaxed">
+            スクールナビは、各スクールの公式情報・利用者の声・編集部の独自調査をもとに掲載内容を作成しています。
+            掲載順位は広告費用に左右されず、料金・転職実績・カリキュラム内容・サポート体制を総合的に評価して決定しています。
+            情報は定期的に更新していますが、最新の料金・内容は各スクール公式サイトでご確認ください。
+          </p>
+        </div>
+      </section>
+
       <div className="max-w-6xl mx-auto px-4 pb-8">
-        <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
+        <p className="text-xs text-gray-400 border-t border-gray-100 pt-4">
           ※ 当サイトはアフィリエイト広告を掲載しています。スクールリンクから申し込まれた場合、当サイトに手数料が発生することがあります。掲載情報は参考値であり、最新の料金・内容は各スクール公式サイトでご確認ください。
         </p>
       </div>

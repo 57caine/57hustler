@@ -8,63 +8,53 @@ type Props = {
 };
 
 const categoryColors: Record<string, string> = {
-  '転職特化': 'bg-blue-100 text-blue-700',
-  'スキルアップ': 'bg-green-100 text-green-700',
-  'フリーランス特化': 'bg-orange-100 text-orange-700',
-  'AI特化': 'bg-red-100 text-red-700',
-  '独学支援': 'bg-purple-100 text-purple-700',
+  '転職特化': 'bg-blue-50 text-blue-700 border-blue-200',
+  'スキルアップ': 'bg-emerald-50 text-emerald-700 border-emerald-200',
+  'フリーランス特化': 'bg-amber-50 text-amber-700 border-amber-200',
+  'AI特化': 'bg-violet-50 text-violet-700 border-violet-200',
+  '独学支援': 'bg-slate-50 text-slate-600 border-slate-200',
 };
 
 export default function SchoolCard({ school, rank }: Props) {
   return (
-    <div className={`bg-white border rounded-xl overflow-hidden hover:shadow-md transition-all ${school.highlight ? 'border-indigo-300 ring-1 ring-indigo-200' : 'border-gray-200'}`}>
-      {school.highlight && (
-        <div className="bg-indigo-600 text-white text-xs text-center py-1 font-medium">
-          ⭐ おすすめ
-        </div>
-      )}
+    <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-sm hover:border-gray-300 transition-all">
       <div className="p-5">
         <div className="flex items-start justify-between gap-3 mb-3">
-          <div className="flex items-center gap-2">
+          <div>
             {rank && (
-              <span className="bg-gray-100 text-gray-600 rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold shrink-0">
-                {rank}
-              </span>
+              <p className="text-xs text-gray-400 mb-1">#{rank}</p>
             )}
-            <div>
-              <h3 className="font-bold text-gray-900 text-lg leading-tight">{school.name}</h3>
-              <span className={`text-xs px-2 py-0.5 rounded-full ${categoryColors[school.category] ?? 'bg-gray-100 text-gray-600'}`}>
-                {school.category}
-              </span>
-            </div>
+            <h3 className="font-bold text-gray-900 text-base leading-tight">{school.name}</h3>
+            <span className={`text-xs px-2 py-0.5 rounded border font-medium mt-1 inline-block ${categoryColors[school.category] ?? 'bg-gray-50 text-gray-600 border-gray-200'}`}>
+              {school.category}
+            </span>
           </div>
           <div className="text-right shrink-0">
-            <p className="text-xs text-gray-400">料金</p>
-            <p className="font-bold text-gray-800">{formatPrice(school.price)}〜</p>
+            <p className="text-xs text-gray-400">受講料</p>
+            <p className="font-bold text-gray-800 text-sm">{formatPrice(school.price)}〜</p>
           </div>
         </div>
 
-        <p className="text-sm text-gray-600 mb-3 line-clamp-2">{school.tagline}</p>
+        <p className="text-sm text-gray-600 mb-3 leading-relaxed">{school.tagline}</p>
 
-        <div className="flex flex-wrap gap-1 mb-3">
+        <div className="flex flex-wrap gap-1 mb-4">
           {school.features.slice(0, 3).map((f) => (
-            <span key={f} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">{f}</span>
+            <span key={f} className="text-xs bg-gray-50 text-gray-500 border border-gray-200 px-2 py-0.5 rounded">
+              {f}
+            </span>
           ))}
         </div>
 
-        <div className="flex items-center gap-3 mb-4 text-sm text-gray-500">
-          <span>⏱ {school.period}</span>
-          <span>📅 {school.format.join('・')}</span>
-          <span className="ml-auto flex items-center gap-1">
-            ⭐ <span className="font-bold text-gray-700">{school.rating}</span>
-            <span className="text-xs">({school.reviewCount}件)</span>
-          </span>
+        <div className="flex items-center gap-3 mb-4 text-xs text-gray-500 border-t border-gray-100 pt-3">
+          <span>期間: {school.period}</span>
+          <span className="text-gray-300">|</span>
+          <span>{school.format.join(' / ')}</span>
         </div>
 
         <div className="flex gap-2">
           <Link
             href={`/schools/${school.slug}`}
-            className="flex-1 text-center border border-indigo-600 text-indigo-600 py-2 rounded-lg text-sm font-medium hover:bg-indigo-50 transition-colors"
+            className="flex-1 text-center border border-gray-300 text-gray-600 py-2 rounded-lg text-sm hover:bg-gray-50 hover:border-gray-400 transition-colors"
           >
             詳細を見る
           </Link>
@@ -72,9 +62,9 @@ export default function SchoolCard({ school, rank }: Props) {
             href={school.affiliate_url}
             target="_blank"
             rel="noopener noreferrer nofollow"
-            className="flex-1 text-center bg-indigo-600 text-white py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
+            className="flex-1 text-center bg-slate-800 text-white py-2 rounded-lg text-sm hover:bg-slate-700 transition-colors"
           >
-            公式サイトへ
+            公式サイト
           </a>
         </div>
       </div>
