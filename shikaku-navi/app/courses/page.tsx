@@ -4,8 +4,8 @@ import CourseCard from '@/components/CourseCard';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: '資格通信講座 一覧【全10社比較】',
-  description: '人気資格通信講座10社を一覧で比較。宅建・簿記・FP・社労士・行政書士など国家資格別に検索できます。費用・合格率・学習スタイルで選べます。',
+  title: '資格通信講座 一覧【全16社比較・2025年版】',
+  description: '人気資格通信講座16社を一覧で比較。宅建・簿記・FP・社労士・IT資格・副業資格など国家資格から民間資格まで対応。費用・合格率・学習スタイルで選べます。',
 };
 
 const categorySlugMap: Record<string, string> = {

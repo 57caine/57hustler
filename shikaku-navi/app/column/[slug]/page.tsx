@@ -22,7 +22,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const categoryColors: Record<string, string> = {
   '資格比較': 'bg-slate-100 text-slate-700',
   '勉強法・対策': 'bg-emerald-100 text-emerald-700',
-  '転職・キャリア': 'bg-blue-100 text-blue-700',
+  '転職・キャリア': 'bg-slate-100 text-slate-700',
+  '費用・給付金': 'bg-emerald-50 text-emerald-700',
+  '国家資格': 'bg-purple-50 text-purple-700',
+  'IT資格': 'bg-violet-50 text-violet-700',
+  '副業・スキルアップ': 'bg-amber-50 text-amber-700',
 };
 
 const BASE = 'https://shikaku-navi.jp';
