@@ -110,6 +110,24 @@ export const columns: Column[] = [
     updatedAt: '2025-06-15',
     readingTime: 8,
   },
+  {
+    slug: 'it-passport-tsushin-hikaku',
+    title: 'ITパスポート通信講座おすすめ比較【2025年版・最短合格を狙う】',
+    description: 'ITパスポート試験に対応したおすすめ通信講座を徹底比較。費用・学習時間・合格率・スマホ対応度をランキング形式で紹介。CBT試験対策のポイントも解説。',
+    category: 'IT資格',
+    publishedAt: '2026-05-20',
+    updatedAt: '2026-05-29',
+    readingTime: 8,
+  },
+  {
+    slug: 'fukugyou-shikaku-osusume',
+    title: '副業で稼げる資格おすすめ10選【2025年版・収入アップに直結】',
+    description: '副業に活かせる人気資格をランキング形式で紹介。FP・簿記・宅建・医療事務・ITパスポートなど収入アップに直結する資格の特徴・取得難易度・稼ぎ方を徹底解説。',
+    category: '副業・スキルアップ',
+    publishedAt: '2026-05-22',
+    updatedAt: '2026-05-29',
+    readingTime: 9,
+  },
 ];
 
 export function getColumnBySlug(slug: string): Column | undefined {
@@ -863,6 +881,187 @@ export const columnContent: Record<string, React.ReactNode> = {
             '経営企画・コンサル・金融機関・商社など多業界で評価される汎用性の高い資格',
             '独立して企業診断・助成金コンサルタントとして活躍できる副業・開業のルートがある',
             '合格後の研究会・プロコン活動を通じて人脈が広がり、案件紹介につながることも多い',
+          ].map((item) => (
+            <li key={item} className="flex gap-2 text-sm text-gray-700">
+              <span className="text-slate-400 shrink-0 mt-0.5">▸</span>{item}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  ),
+  'it-passport-tsushin-hikaku': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ITパスポートとは？合格すると何が変わるか</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          ITパスポート（iパス）は経済産業省所管のIPA（情報処理推進機構）が実施するIT国家資格の入門レベルです。ITの基礎知識・セキュリティ・経営戦略・プロジェクト管理など幅広い分野を問う試験で、IT職種以外の社会人・学生にも広く取得が推奨されています。
+        </p>
+        <div className="bg-slate-50 rounded-xl p-4 mb-4">
+          <p className="text-xs font-semibold text-gray-500 mb-2">試験概要</p>
+          <table className="w-full text-sm">
+            <tbody>
+              <tr className="border-b border-gray-100"><td className="py-1.5 text-gray-500 w-28">受験資格</td><td className="py-1.5">なし（誰でも受験可）</td></tr>
+              <tr className="border-b border-gray-100"><td className="py-1.5 text-gray-500">試験形式</td><td className="py-1.5">CBT（随時・全国会場）</td></tr>
+              <tr className="border-b border-gray-100"><td className="py-1.5 text-gray-500">問題数</td><td className="py-1.5">100問（四択）</td></tr>
+              <tr className="border-b border-gray-100"><td className="py-1.5 text-gray-500">合格基準</td><td className="py-1.5">総合600点以上（1,000点満点）</td></tr>
+              <tr className="border-b border-gray-100"><td className="py-1.5 text-gray-500">合格率</td><td className="py-1.5">約50〜55%（例年）</td></tr>
+              <tr><td className="py-1.5 text-gray-500">標準学習期間</td><td className="py-1.5">1〜3ヶ月（50〜100時間程度）</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm text-gray-700 leading-relaxed">
+          CBT方式のため試験日は自分で選択でき、年間を通じていつでも受験できます。合格率は約50%と国家資格の中では取りやすい部類に入りますが、IT知識ゼロから始める場合は通信講座でポイントを押さえて学習することで合格率が大幅に上がります。
+        </p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ITパスポート通信講座 比較ランキング</h2>
+        <div className="space-y-4">
+          <div className="border-2 border-slate-800 rounded-xl p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="bg-slate-800 text-white text-xs px-2 py-0.5 rounded font-bold">1位</span>
+              <h3 className="font-bold text-gray-900">スタディング ITパスポートコース</h3>
+              <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded ml-auto">コスパ最強</span>
+            </div>
+            <div className="grid grid-cols-2 gap-2 text-xs text-gray-600 mb-2">
+              <span>受講料：4,950円〜</span>
+              <span>学習形式：スマホ完結</span>
+            </div>
+            <p className="text-sm text-gray-700 mb-2">最安クラスの受講料でAI問題演習・動画講義・過去問演習が揃う。通勤・昼休みのスキマ時間だけで合格を狙える設計が特徴。IT職種以外のビジネスパーソンの取得率も高い。</p>
+            <div className="text-xs text-gray-500">◎ スキマ時間学習 ◎ 低価格 △ 紙テキストなし</div>
+          </div>
+          <div className="border border-gray-200 rounded-xl p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded font-bold">2位</span>
+              <h3 className="font-bold text-gray-900">フォーサイト ITパスポートコース</h3>
+              <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded ml-auto">テキスト品質</span>
+            </div>
+            <div className="grid grid-cols-2 gap-2 text-xs text-gray-600 mb-2">
+              <span>受講料：20,800円〜</span>
+              <span>学習形式：テキスト＋eラーニング</span>
+            </div>
+            <p className="text-sm text-gray-700 mb-2">フルカラーで見やすいテキストと充実した問題演習が特徴。宅建・FPでも高い合格率を誇るフォーサイトのノウハウをITパスポートにも展開。教育訓練給付金対象コースあり。</p>
+            <div className="text-xs text-gray-500">◎ テキスト品質 ◎ 給付金対象 △ 価格がやや高め</div>
+          </div>
+          <div className="border border-gray-200 rounded-xl p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded font-bold">3位</span>
+              <h3 className="font-bold text-gray-900">ユーキャン ITパスポートコース</h3>
+              <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded ml-auto">添削指導あり</span>
+            </div>
+            <div className="grid grid-cols-2 gap-2 text-xs text-gray-600 mb-2">
+              <span>受講料：31,900円〜</span>
+              <span>学習形式：テキスト＋添削</span>
+            </div>
+            <p className="text-sm text-gray-700 mb-2">国内最大規模の通信教育会社の安心感。添削指導と充実した紙テキストで、デジタルより紙で学びたい方に向く。サポート期間が8ヶ月と余裕を持って学習できる。</p>
+            <div className="text-xs text-gray-500">◎ 添削指導 ◎ 紙テキスト充実 △ 価格が高め</div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ITパスポート 独学 vs 通信講座</h2>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {[
+            { label: '独学が向いている人', points: ['IT・PC操作の基礎知識がある', '3ヶ月以上の余裕がある', '参考書・問題集を自分で進められる'] },
+            { label: '通信講座が向いている人', points: ['IT知識が少ない・ゼロから始める', '2ヶ月以内で合格したい', 'スキマ時間を効率よく使いたい'] },
+          ].map(({ label, points }) => (
+            <div key={label} className="bg-gray-50 rounded-xl p-4">
+              <p className="text-xs font-semibold text-gray-700 mb-2">{label}</p>
+              <ul className="space-y-1">
+                {points.map((p) => (
+                  <li key={p} className="flex gap-2 text-xs text-gray-600">
+                    <span className="text-slate-400 shrink-0">▸</span>{p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ITパスポート合格後のステップ</h2>
+        <ul className="space-y-2">
+          {[
+            'ITパスポート取得後は「基本情報技術者試験」へのステップアップが一般的。IT職への転職・昇進で大きく評価される。',
+            '非IT職でも「DX推進担当」「情報セキュリティリーダー」などの役割でIT資格が評価される企業が増えている。',
+            '基本情報→応用情報→高度試験と段階的にキャリアを積む国家試験ルートが整備されており、IT専門職を目指す人は連続した取得計画が有効。',
+            'G検定（AI）・情報セキュリティマネジメントなど横展開することでDX・セキュリティ両面でのスキルをアピールできる。',
+          ].map((item) => (
+            <li key={item} className="flex gap-2 text-sm text-gray-700">
+              <span className="text-slate-400 shrink-0 mt-0.5">▸</span>{item}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  ),
+  'fukugyou-shikaku-osusume': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">副業に資格は必要か？資格が有利になる副業タイプ</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          副業すべてに資格が必要なわけではありませんが、「資格がある＝専門性・信頼性の証明」になる副業では資格取得が収入アップに直結します。特に対人サービス・相談業・独立開業系の副業では資格保有者と非保有者で単価が大きく変わります。
+        </p>
+        <div className="grid sm:grid-cols-3 gap-3">
+          {[
+            { label: '資格が直結する副業', examples: ['FP（資産運用相談）', '簿記（記帳代行）', '宅建（不動産副業）'] },
+            { label: '資格で単価が上がる副業', examples: ['医療事務（パート単価）', 'プログラミング（基本情報）', 'ライター（専門分野資格）'] },
+            { label: '資格で信頼が上がる副業', examples: ['コンサルティング', 'オンライン家庭教師', 'Webデザイン（色彩検定）'] },
+          ].map(({ label, examples }) => (
+            <div key={label} className="bg-gray-50 rounded-xl p-3">
+              <p className="text-xs font-semibold text-gray-700 mb-2">{label}</p>
+              <ul className="space-y-1">
+                {examples.map((e) => (
+                  <li key={e} className="text-xs text-gray-600">▸ {e}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">副業で稼げる資格 おすすめ10選</h2>
+        <div className="space-y-3">
+          {[
+            { rank: 1, name: 'FP（ファイナンシャルプランナー）2級', level: '普通', period: '3〜6ヶ月', income: '月3〜10万円', note: '保険・税金・投資の相談業が可能に。副業FPとしてブログ・YouTube・個別相談で収入を得られる。2級は独立・副業での活躍に十分な知識が身につく。' },
+            { rank: 2, name: '日商簿記2級', level: '普通', period: '3〜6ヶ月', income: '月2〜8万円', note: '記帳代行・確定申告サポートなど会計系副業に直結。フリーランサー向け経理代行需要が高い。クラウド会計普及で個人向けサポート案件も増加。' },
+            { rank: 3, name: '宅地建物取引士（宅建）', level: '難しい', period: '6〜12ヶ月', income: '月5〜15万円', note: '不動産会社でのパート・副業に有利。宅建士証があれば独立開業も可能で収入の天井が高い。難易度は高いが取得後の副業・転職価値が非常に高い。' },
+            { rank: 4, name: 'ITパスポート', level: '易しい', period: '1〜2ヶ月', income: '月1〜5万円', note: 'IT系副業（データ入力・IT補助業務）で有利。社内評価・昇給にもつながる。合格率50%と取りやすい入門IT国家資格。' },
+            { rank: 5, name: '医療事務（メディカルクラーク）', level: '普通', period: '3〜4ヶ月', income: '月2〜6万円', note: 'クリニック・病院でのパート需要が全国的に高い。資格保有者は採用優遇・時給アップが期待できる。' },
+            { rank: 6, name: '行政書士', level: 'かなり難しい', period: '6〜18ヶ月', income: '月5〜30万円', note: '許認可申請・会社設立・相続など幅広い法務業務を副業・独立で受注できる。難易度は高いが単価が高い。' },
+            { rank: 7, name: '色彩検定2級', level: '普通', period: '2〜4ヶ月', income: '月1〜5万円', note: 'Webデザイン・インテリア・ファッション分野の副業に活かせる。デザイン副業の単価アップに直結。' },
+            { rank: 8, name: '介護職員初任者研修', level: '易しい', period: '1〜3ヶ月', income: '月3〜8万円', note: '介護ヘルパーとして週末・夜間の副業が可能。全国的に人手不足のため求人が多く、すぐに案件を見つけやすい。' },
+            { rank: 9, name: 'G検定（JDLA ジェネラリスト検定）', level: '普通', period: '2〜3ヶ月', income: '月2〜10万円', note: 'AI・DX推進コンサルタントとしての副業に活かせる。DX支援・社員教育コンテンツ制作などの副業案件が増加中。' },
+            { rank: 10, name: '食育インストラクター（民間）', level: '易しい', period: '2〜4ヶ月', income: '月1〜5万円', note: '料理教室・食育ブログ・SNS発信など副業の幅が広い。取りやすく食に関心が高い方に人気の資格。' },
+          ].map(({ rank, name, level, period, income, note }) => (
+            <div key={rank} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-3">
+                <span className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold ${rank <= 3 ? 'bg-slate-800 text-white' : 'bg-gray-100 text-gray-600'}`}>{rank}</span>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1 flex-wrap">
+                    <h3 className="font-bold text-gray-900 text-sm">{name}</h3>
+                    <span className="text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded">難易度: {level}</span>
+                  </div>
+                  <div className="flex gap-3 text-xs text-gray-500 mb-2">
+                    <span>学習期間: {period}</span>
+                    <span>副業収入目安: {income}</span>
+                  </div>
+                  <p className="text-xs text-gray-600">{note}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">副業資格取得を通信講座でスムーズに進めるコツ</h2>
+        <ul className="space-y-2">
+          {[
+            '目標の副業から逆算して資格を選ぶ。資格を先に選ぶと活用できない資格を取るリスクがある',
+            '副業開始まで3〜6ヶ月が現実的なスケジュール。資格取得後すぐに収入が発生するとは限らない',
+            '教育訓練給付金（最大20〜70%還付）対象講座を選ぶと実質負担を大幅に減らせる',
+            '通信講座は「スキマ時間学習型」を選ぶと本業との両立がしやすい',
+            'FP・簿記・ITパスポートは比較的短期間・低価格で取得でき副業参入への障壁が低い',
           ].map((item) => (
             <li key={item} className="flex gap-2 text-sm text-gray-700">
               <span className="text-slate-400 shrink-0 mt-0.5">▸</span>{item}

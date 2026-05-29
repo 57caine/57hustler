@@ -146,6 +146,33 @@ export const columns: ColumnMeta[] = [
     updatedAt: '2026-05-29',
     readingTime: 8,
   },
+  {
+    slug: '2week-contact-osusume',
+    title: '2ウィークコンタクトおすすめ5選【2025年版・コスパ最強を徹底比較】',
+    description: 'アキュビューオアシス・バイオフィニティ・プロクリアなど人気2weekコンタクトを徹底比較。価格・酸素透過率・乾燥感を基準にコスパ最強を選ぶ方法を解説。',
+    category: '商品比較',
+    publishedAt: '2026-05-29',
+    updatedAt: '2026-05-29',
+    readingTime: 7,
+  },
+  {
+    slug: 'monthly-contact-hikaku',
+    title: 'マンスリーコンタクトレンズ比較【2025年版・1枚あたりの最安値ランキング】',
+    description: 'バイオフィニティ・エアオプティクス・クラリティなどマンスリーコンタクト人気商品の価格・酸素透過率・うるおいを比較。1ヶ月使い捨てのメリットと選び方も解説。',
+    category: '商品比較',
+    publishedAt: '2026-05-29',
+    updatedAt: '2026-05-29',
+    readingTime: 6,
+  },
+  {
+    slug: 'colorcon-ranking-2025',
+    title: 'カラコン人気ランキング2025【ナチュラル系・盛り系・度あり別おすすめ】',
+    description: '2025年おすすめカラコンをナチュラル・盛り系・度ありで分けてランキング。GEOベラ・アキュビュー ディファイン・フレッシュルックなど人気商品を徹底比較。',
+    category: '商品比較',
+    publishedAt: '2026-05-29',
+    updatedAt: '2026-05-29',
+    readingTime: 7,
+  },
 ];
 
 export function getColumnBySlug(slug: string): ColumnMeta | undefined {
@@ -1768,6 +1795,249 @@ export const columnContent: Record<string, React.ReactNode> = {
             </li>
           ))}
         </ul>
+      </section>
+    </div>
+  ),
+  '2week-contact-osusume': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">2ウィークコンタクトが選ばれる理由</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          2週間使い捨てのコンタクトレンズは、1dayと比べてコストを抑えつつ、マンスリーより頻繁に交換できる「コスパと清潔感のバランス型」として人気です。通勤・通学・長時間装用が多い社会人に特に選ばれています。
+        </p>
+        <div className="grid sm:grid-cols-3 gap-3 mb-4">
+          {[
+            { label: '1dayとの違い', text: '1枚あたりの価格が1dayの約1/3〜1/5。ただし毎日のケアが必要。' },
+            { label: 'マンスリーとの違い', text: '2週間で交換のため衛生面で優れる。マンスリーより目への負担が少ない。' },
+            { label: '価格の目安', text: '1箱（6枚入）2,000〜4,000円。両眼で月あたり約2,000〜5,000円程度。' },
+          ].map(({ label, text }) => (
+            <div key={label} className="bg-gray-50 rounded-xl p-3">
+              <p className="text-xs font-semibold text-gray-700 mb-1">{label}</p>
+              <p className="text-xs text-gray-600">{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">2ウィークコンタクト おすすめ5選</h2>
+        <div className="space-y-4">
+          {[
+            {
+              rank: 1, name: 'アキュビュー オアシス（2week）', brand: 'ジョンソン・エンド・ジョンソン',
+              slug: 'acuvue-oasys-2week', badge: '総合1位',
+              feature: 'HydraLuxe™テクノロジー搭載のシリコーンハイドロゲル素材。乾燥感が気になる方に最も支持される2weekコンタクト。Dk/t 147と高い酸素透過率で長時間装用も快適。',
+              specs: [['素材', 'シリコーンハイドロゲル'], ['含水率', '38%'], ['Dk/t', '147'], ['UV保護', 'あり（クラスI）']],
+            },
+            {
+              rank: 2, name: 'バイオフィニティ', brand: 'クーパービジョン',
+              slug: 'biofinity', badge: '酸素透過率No.1',
+              feature: 'Aquaformテクノロジーで含水率48%、Dk/t 160と業界最高水準の酸素透過率。シリコーンハイドロゲル素材で長時間装用・PC作業が多い方におすすめ。',
+              specs: [['素材', 'シリコーンハイドロゲル'], ['含水率', '48%'], ['Dk/t', '160'], ['UV保護', 'なし']],
+            },
+            {
+              rank: 3, name: 'プロクリア ワン', brand: 'クーパービジョン',
+              slug: 'proclear-1day', badge: 'うるおい長持ち',
+              feature: '含水率57%でPC・ソフトレンズ素材の中でも高い水分保持力。目の乾燥感が気になる方・ドライアイ傾向の方に特に選ばれている。',
+              specs: [['素材', 'ハイドロゲル'], ['含水率', '57%'], ['Dk/t', '27.6'], ['UV保護', 'なし']],
+            },
+            {
+              rank: 4, name: 'エア オプティクス ハイドラグライド（2week）', brand: 'アルコン',
+              slug: 'air-optix-hydraglyde-2week', badge: 'コスパ優秀',
+              feature: 'HydraGlyde保湿マトリクスで終日潤いをキープ。シリコーンハイドロゲル素材で酸素透過率も高く、価格帯はオアシスより抑えめで選びやすい。',
+              specs: [['素材', 'シリコーンハイドロゲル'], ['含水率', '33%'], ['Dk/t', '138'], ['UV保護', 'なし']],
+            },
+            {
+              rank: 5, name: 'ネオサイト 2ウィーク シリコーン UV', brand: 'シード',
+              slug: 'neo-sight-2week-si', badge: '国産・コスパ',
+              feature: '国内メーカー（シード）製のシリコーンハイドロゲル2weekレンズ。UV保護機能付きで日常使いに最適。価格がやや抑えめで長期コストを抑えたい方に。',
+              specs: [['素材', 'シリコーンハイドロゲル'], ['含水率', '35%'], ['Dk/t', '129'], ['UV保護', 'あり']],
+            },
+          ].map(({ rank, name, brand, slug: productSlug, badge, feature, specs }) => (
+            <div key={rank} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-2 flex-wrap">
+                <span className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${rank <= 2 ? 'bg-slate-800 text-white' : 'bg-gray-100 text-gray-700'}`}>{rank}</span>
+                <h3 className="font-bold text-gray-900 text-sm">{name}</h3>
+                <span className="text-xs text-gray-500">{brand}</span>
+                <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded ml-auto">{badge}</span>
+              </div>
+              <p className="text-sm text-gray-600 mb-3">{feature}</p>
+              <div className="grid grid-cols-4 gap-1 mb-3">
+                {specs.map(([k, v]) => (
+                  <div key={k} className="bg-gray-50 rounded p-2 text-center">
+                    <div className="text-xs text-gray-400 mb-0.5">{k}</div>
+                    <div className="text-xs font-semibold text-gray-700">{v}</div>
+                  </div>
+                ))}
+              </div>
+              <Link href={`/product/${productSlug}`} className="text-slate-700 text-sm font-medium hover:underline">最安値を比較する →</Link>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">2ウィークコンタクトを選ぶ際のチェックポイント</h2>
+        <ul className="space-y-2">
+          {[
+            'シリコーンハイドロゲル素材は酸素透過率が高くPC作業・長時間装用に向く。ハイドロゲルより目への負担が少ない。',
+            '含水率が高いほど初期のうるおいが強いが、乾燥すると水分を目から奪うため、乾燥感に悩む方はシリコーン素材を選ぶのが一般的。',
+            'UV保護機能付きは紫外線から目を守るが、眼科医のUVカット眼鏡に比べると保護範囲が限定的。日差しが強い日は眼鏡・帽子との併用を推奨。',
+            '乱視がある方（CYL値がある）は通常の球面レンズではなくトーリックレンズ（乱視用）を使用すること。処方箋で確認を。',
+          ].map((item) => (
+            <li key={item} className="flex gap-2 text-sm text-gray-700">
+              <span className="text-slate-400 shrink-0 mt-0.5">▸</span>{item}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  ),
+  'monthly-contact-hikaku': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">マンスリーコンタクトのメリットとデメリット</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          1ヶ月使い捨てコンタクトレンズ（マンスリー）は、1枚あたりのコストが最も安い交換サイクルです。ただし毎日のレンズケア（洗浄・保存）が欠かせず、清潔に管理できる方向けです。
+        </p>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="bg-gray-50 rounded-xl p-4">
+            <p className="text-sm font-semibold text-gray-700 mb-2">マンスリーのメリット</p>
+            <ul className="space-y-1 text-sm text-gray-600">
+              {['1枚あたりの単価が最安。両眼で月1,000〜2,000円が目安', 'ゴミが少なくSDGs・環境面でのメリットもある', '長期利用で1dayより大幅にコストを抑えられる'].map(m => (
+                <li key={m} className="flex gap-2"><span className="text-slate-400 shrink-0">▸</span>{m}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-gray-50 rounded-xl p-4">
+            <p className="text-sm font-semibold text-gray-700 mb-2">マンスリーのデメリット</p>
+            <ul className="space-y-1 text-sm text-gray-600">
+              {['毎日の洗浄液・保存ケアが必要（コストと手間）', '管理ミスによる目のトラブルリスクが1dayより高い', '旅行・外泊時はケア用品持参が必要'].map(m => (
+                <li key={m} className="flex gap-2"><span className="text-slate-400 shrink-0">▸</span>{m}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">マンスリーコンタクト 価格・スペック比較</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs border-collapse min-w-[600px]">
+            <thead>
+              <tr className="bg-slate-800 text-white">
+                <th className="text-left p-2 font-medium">商品名</th>
+                <th className="p-2 font-medium">素材</th>
+                <th className="p-2 font-medium">含水率</th>
+                <th className="p-2 font-medium">Dk/t</th>
+                <th className="p-2 font-medium">最安値目安</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { name: 'バイオフィニティ', slug: 'biofinity', material: 'SiHy', water: '48%', dkt: '160', price: '1,800円/箱' },
+                { name: 'エア オプティクス ハイドラグライド', slug: 'air-optix-hydraglyde', material: 'SiHy', water: '33%', dkt: '138', price: '1,700円/箱' },
+                { name: 'クラリティ アドバンス', slug: 'clariti-monthly', material: 'SiHy', water: '56%', dkt: '86', price: '1,500円/箱' },
+                { name: '2ウィーク ピュア', slug: 'seed-2week-pure', material: 'Hydrogel', water: '38%', dkt: '26', price: '900円/箱' },
+                { name: 'バイオトゥルー マンスリー', slug: 'biotrue-monthly', material: 'Hydrogel', water: '78%', dkt: '42', price: '1,200円/箱' },
+              ].map(({ name, slug: ps, material, water, dkt, price }, i) => (
+                <tr key={ps} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="p-2">
+                    <Link href={`/product/${ps}`} className="text-slate-700 hover:underline font-medium">{name}</Link>
+                  </td>
+                  <td className="p-2 text-center text-gray-600">{material}</td>
+                  <td className="p-2 text-center text-gray-600">{water}</td>
+                  <td className="p-2 text-center text-gray-600">{dkt}</td>
+                  <td className="p-2 text-center text-gray-800 font-medium">{price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-gray-400 mt-2">※ SiHy=シリコーンハイドロゲル。価格は6枚入り1箱の目安（税込・送料別）。最新価格は商品ページで確認してください。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">マンスリーケア用品のコストも考慮しよう</h2>
+        <p className="text-sm text-gray-700 leading-relaxed">
+          マンスリーコンタクトの真のコストは、レンズ代＋ケア用品（洗浄液・保存液・レンズケース）の合計です。洗浄液は月あたり500〜1,500円程度。1dayと比較する際は必ずケア用品代も含めた試算を行いましょう。それでもマンスリーが低コストになることが多いです。
+        </p>
+      </section>
+    </div>
+  ),
+  'colorcon-ranking-2025': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">カラコン選びの基本：安全に使うための3つのポイント</h2>
+        <div className="space-y-3">
+          {[
+            { title: '眼科処方を受ける', body: '度あり・度なし問わずカラコンは医療機器です。初めて使う場合は必ず眼科でフィッティング検査と処方を受けてください。目の形・サイズに合わないレンズは角膜トラブルの原因になります。' },
+            { title: 'JIS規格・薬事法認可品を選ぶ', body: '日本国内で販売される正規品は薬事法認可（クラスIII医療機器）を受けています。格安の並行輸入品・未認可品は素材・染料の安全性が保証されないため、国内正規流通品を選びましょう。' },
+            { title: '装用時間・交換サイクルを守る', body: '1day・2week・マンスリーの交換サイクルを必ず守ること。また1日の装用時間は10〜12時間が目安で、それ以上の長時間装用は目への負担が大きくなります。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="flex gap-3">
+              <span className="shrink-0 text-slate-400 mt-1">▸</span>
+              <div>
+                <p className="text-sm font-semibold text-gray-800 mb-1">{title}</p>
+                <p className="text-sm text-gray-600">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">カラコン人気ランキング2025【ナチュラル系】</h2>
+        <p className="text-sm text-gray-500 mb-3">日常使いに自然に馴染むナチュラル系カラコンのランキングです。</p>
+        <div className="space-y-3">
+          {[
+            {
+              rank: 1, name: 'アキュビュー ディファイン モイスト ワンデー', brand: 'ジョンソン・エンド・ジョンソン',
+              slug: 'acuvue-define-moist-1day',
+              detail: '瞳のフチを自然に強調するナチュラルエンハンス系。LACREON®保湿技術で1日中うるおいが続く。国内大手ブランドで安心感があり、ナチュラル系No.1の人気。',
+              badge: 'ナチュラル1位',
+            },
+            {
+              rank: 2, name: 'フレッシュルック イルミネート', brand: 'アルコン',
+              slug: 'freshlook-illuminate',
+              detail: '透明感のある瞳に仕上げるナチュラル系。3つのトーンで立体的に瞳を演出しながら自然な印象を維持。オフィスにも使いやすい。',
+              badge: '透明感',
+            },
+            {
+              rank: 3, name: 'GEO ベラ カラー', brand: 'GEO Medical（韓国）',
+              slug: 'geo-bella-color',
+              detail: '韓国発の人気カラコン。60カ国以上に展開する信頼ブランドで、ナチュラルからデイリーカラーまで豊富なラインナップ。コスパも優秀。',
+              badge: 'コスパ優秀',
+            },
+          ].map(({ rank, name, brand, slug: ps, detail, badge }) => (
+            <div key={rank} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-2 flex-wrap">
+                <span className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${rank === 1 ? 'bg-slate-800 text-white' : 'bg-gray-100 text-gray-700'}`}>{rank}</span>
+                <h3 className="font-bold text-gray-900 text-sm">{name}</h3>
+                <span className="text-xs text-gray-500">{brand}</span>
+                <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded ml-auto">{badge}</span>
+              </div>
+              <p className="text-sm text-gray-600 mb-2">{detail}</p>
+              <Link href={`/product/${ps}`} className="text-slate-700 text-sm font-medium hover:underline">最安値を見る →</Link>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">カラコン人気ランキング2025【度あり・度数選び方】</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          度ありカラコンは、近視矯正とカラーレンズを兼ねた製品です。対応度数の範囲が通常のコンタクトより狭い場合があるため、購入前に処方箋のPWR値と照合してください。
+        </p>
+        <div className="bg-slate-50 rounded-xl p-4">
+          <p className="text-xs font-semibold text-gray-600 mb-2">度ありカラコン 選び方チェックリスト</p>
+          <ul className="space-y-1.5">
+            {[
+              '眼科で最新の処方箋を取得する（特にBC値をカラコンの規格と合わせること）',
+              'PWRが-6.00以下の強度近視の場合、対応商品が限られる。商品詳細ページで対応度数を確認する',
+              '乱視（CYL値あり）の方は乱視用カラコン（トーリックカラコン）が必要だが、種類は少ない',
+              '初めてのカラコンは透明な通常コンタクトでフィッティングに慣れてから移行するのが安全',
+            ].map((item) => (
+              <li key={item} className="flex gap-2 text-xs text-gray-700">
+                <span className="text-slate-400 shrink-0">▸</span>{item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
     </div>
   ),
