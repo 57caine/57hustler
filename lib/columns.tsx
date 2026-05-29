@@ -119,6 +119,33 @@ export const columns: ColumnMeta[] = [
     updatedAt: '2026-05-28',
     readingTime: 5,
   },
+  {
+    slug: 'contact-tsuuhan-osusume-shop',
+    title: 'コンタクトレンズ通販おすすめショップ10選【送料・価格・処方箋不要条件で比較】',
+    description: 'アットレンズ・レンズゼロ・レンズクイックなど人気10ショップを送料・最安値・処方箋不要条件で徹底比較。初めての通販でも安心して選べる。',
+    category: '購入ガイド',
+    publishedAt: '2026-05-29',
+    updatedAt: '2026-05-29',
+    readingTime: 8,
+  },
+  {
+    slug: 'acuvue-oasys-1day-review',
+    title: 'ワンデーアキュビューオアシス 評判・最安値【乾きにくさNo.1の実力を検証】',
+    description: 'ワンデーアキュビューオアシスの特徴・使い心地・実際の口コミを徹底検証。最安値ショップと処方箋不要で買える店もあわせて紹介。',
+    category: '商品比較',
+    publishedAt: '2026-05-29',
+    updatedAt: '2026-05-29',
+    readingTime: 7,
+  },
+  {
+    slug: 'bifocal-multifocal-contact',
+    title: '遠近両用コンタクトレンズ 選び方ガイド【老眼・40代・老視の方へ】',
+    description: '老眼鏡なしで近くも遠くも見える遠近両用コンタクト。種類の違い・装用感・おすすめ商品を解説。初めて遠近両用を使う方向け完全ガイド。',
+    category: '商品比較',
+    publishedAt: '2026-05-29',
+    updatedAt: '2026-05-29',
+    readingTime: 8,
+  },
 ];
 
 export function getColumnBySlug(slug: string): ColumnMeta | undefined {
@@ -1507,21 +1534,241 @@ export const columnContent: Record<string, React.ReactNode> = {
         <li><strong>定期便：</strong>定期購入サービスで5〜10%の割引を受ける</li>
       </ul>
 
-      <div className="bg-blue-600 text-white rounded-2xl p-6 mt-8">
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
         <h3 className="text-xl font-bold mb-2">今すぐコスト比較を始める</h3>
-        <p className="text-blue-100 mb-4">1day・2week・マンスリーの人気商品を一括比較。最安値がすぐわかります。</p>
+        <p className="text-slate-300 mb-4">1day・2week・マンスリーの人気商品を一括比較。最安値がすぐわかります。</p>
         <div className="flex flex-wrap gap-3">
-          <Link href="/category/1day" className="inline-block bg-white text-blue-600 font-bold px-4 py-2 rounded-xl hover:bg-blue-50 transition-colors text-sm">
+          <Link href="/category/1day" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-gray-100 transition-colors text-sm">
             ワンデーを比較
           </Link>
-          <Link href="/category/2week" className="inline-block bg-white text-blue-600 font-bold px-4 py-2 rounded-xl hover:bg-blue-50 transition-colors text-sm">
+          <Link href="/category/2week" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-gray-100 transition-colors text-sm">
             2ウィークを比較
           </Link>
-          <Link href="/category/monthly" className="inline-block bg-white text-blue-600 font-bold px-4 py-2 rounded-xl hover:bg-blue-50 transition-colors text-sm">
+          <Link href="/category/monthly" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-gray-100 transition-colors text-sm">
             マンスリーを比較
           </Link>
         </div>
       </div>
+    </div>
+  ),
+  'contact-tsuuhan-osusume-shop': (
+    <div className="space-y-8">
+      <section>
+        <p className="text-gray-700 mb-4 leading-relaxed">コンタクトレンズの通販ショップは国内に50社以上あり、同じ商品でも価格差が1,000円以上になることもあります。本記事では、実際の価格・送料・処方箋不要条件を調査し、信頼できる10ショップを厳選して紹介します。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ショップを選ぶ3つのポイント</h2>
+        <div className="grid sm:grid-cols-3 gap-4 mb-6">
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <p className="font-bold text-slate-800 text-sm mb-1">1. 送料込み最安値</p>
+            <p className="text-xs text-gray-600">商品価格が安くても送料が高ければ意味なし。合計額で比較を</p>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <p className="font-bold text-slate-800 text-sm mb-1">2. 処方箋不要かどうか</p>
+            <p className="text-xs text-gray-600">既使用の商品なら不要なショップも多い。確認して購入時間を節約</p>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <p className="font-bold text-slate-800 text-sm mb-1">3. 在庫・配送速度</p>
+            <p className="text-xs text-gray-600">最短翌日着が多い。ブランドや度数によっては取り寄せになる場合も</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">おすすめ通販ショップ一覧</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-50">
+                <th className="border border-gray-200 px-3 py-2 text-left">ショップ名</th>
+                <th className="border border-gray-200 px-3 py-2 text-right">送料</th>
+                <th className="border border-gray-200 px-3 py-2 text-right">送料無料条件</th>
+                <th className="border border-gray-200 px-3 py-2 text-center">処方箋不要</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">特徴</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-200 px-3 py-2 font-medium">アットレンズ</td>
+                <td className="border border-gray-200 px-3 py-2 text-right">¥330</td>
+                <td className="border border-gray-200 px-3 py-2 text-right">¥3,980〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-center text-green-600">◎</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">A8.net経由で割引あり。品揃え豊富</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-200 px-3 py-2 font-medium">レンズゼロ</td>
+                <td className="border border-gray-200 px-3 py-2 text-right">¥440</td>
+                <td className="border border-gray-200 px-3 py-2 text-right">¥5,000〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-center text-green-600">◎</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">価格最安水準。まとめ買い割引あり</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-200 px-3 py-2 font-medium">レンズクイック</td>
+                <td className="border border-gray-200 px-3 py-2 text-right">¥385</td>
+                <td className="border border-gray-200 px-3 py-2 text-right">¥4,000〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-center text-green-600">◎</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">最短翌日着。在庫豊富</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-200 px-3 py-2 font-medium">24レンズ</td>
+                <td className="border border-gray-200 px-3 py-2 text-right">¥330</td>
+                <td className="border border-gray-200 px-3 py-2 text-right">¥3,300〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-center text-gray-400">要確認</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">楽天ショップ。ポイント還元高め</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-200 px-3 py-2 font-medium">レンズアップ</td>
+                <td className="border border-gray-200 px-3 py-2 text-right">¥330</td>
+                <td className="border border-gray-200 px-3 py-2 text-right">¥3,500〜</td>
+                <td className="border border-gray-200 px-3 py-2 text-center text-green-600">◎</td>
+                <td className="border border-gray-200 px-3 py-2 text-gray-600">ポイント制あり。定期便で5%OFF</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">処方箋不要で購入できる条件</h2>
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-4">
+          <p className="font-semibold text-amber-800 mb-2">処方箋不要で買えるケース</p>
+          <ul className="text-sm space-y-1 text-gray-700">
+            <li>・現在使用中の同じ商品を継続購入する場合</li>
+            <li>・度数・BC・DIAが同一のリピート購入</li>
+            <li>・眼科で処方された記録がある場合（ショップにより確認あり）</li>
+          </ul>
+        </div>
+        <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+          <p className="font-semibold text-red-800 mb-2">処方箋が必要なケース</p>
+          <ul className="text-sm space-y-1 text-gray-700">
+            <li>・初めてコンタクトを使う方</li>
+            <li>・度数・商品を変更する場合</li>
+            <li>・眼科での定期検査を長期間受けていない場合</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">価格比較の方法</h2>
+        <p className="text-gray-700 mb-4">同じ商品でも、ショップによって1箱あたり500〜1,500円の差が出ることがあります。特に送料を含めた合計額で比較することが重要です。当サイトでは全商品の価格を送料込みで一覧表示しています。</p>
+        <Link href="/" className="inline-block bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-700 transition-colors text-sm">
+          商品別最安値を比較する →
+        </Link>
+      </section>
+    </div>
+  ),
+  'acuvue-oasys-1day-review': (
+    <div className="space-y-8">
+      <section>
+        <p className="text-gray-700 mb-4 leading-relaxed">ワンデーアキュビューオアシスは、ジョンソン・エンド・ジョンソンが販売する1日使い捨てコンタクトレンズのプレミアムライン。「乾きにくい」「長時間快適」という口コミが多く、ワンデーの中でも人気の高い商品です。本記事では特徴・使い心地・価格の順に解説します。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ワンデーアキュビューオアシスの特徴</h2>
+        <div className="grid sm:grid-cols-2 gap-4 mb-6">
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 className="font-bold text-slate-800 mb-2 text-sm">HYDRALUXE テクノロジー</h3>
+            <p className="text-xs text-gray-700">涙液に似た成分を配合したレンズ素材で、目の表面の水分を長時間保持。長時間のPC作業やドライアイ気味の方に特に向いている。</p>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 className="font-bold text-slate-800 mb-2 text-sm">シリコーンハイドロゲル素材</h3>
+            <p className="text-xs text-gray-700">酸素透過率（Dk/t）121と高く、長時間装用でも目への酸素供給を確保。通常のヒドロゲル素材に比べて目の充血が起きにくい。</p>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 className="font-bold text-slate-800 mb-2 text-sm">UV保護機能</h3>
+            <p className="text-xs text-gray-700">紫外線（UV-A/UV-B）をカット。屋外での活動が多い方にも安心。ただしサングラスの代替にはならない。</p>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 className="font-bold text-slate-800 mb-2 text-sm">使い捨てで衛生的</h3>
+            <p className="text-xs text-gray-700">1日使い捨てなのでケア用品不要。花粉・ハウスダスト・汚れを毎日リセット。アレルギー体質の方にも選ばれやすい。</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">スペック一覧</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <tbody>
+              <tr className="border-b border-gray-100"><td className="py-2 px-3 text-gray-500 w-1/3">素材</td><td className="py-2 px-3 font-medium">シリコーンハイドロゲル（セノフィルコンA）</td></tr>
+              <tr className="border-b border-gray-100 bg-gray-50"><td className="py-2 px-3 text-gray-500">含水率</td><td className="py-2 px-3 font-medium">38%</td></tr>
+              <tr className="border-b border-gray-100"><td className="py-2 px-3 text-gray-500">酸素透過率（Dk/t）</td><td className="py-2 px-3 font-medium">121（業界最高水準）</td></tr>
+              <tr className="border-b border-gray-100 bg-gray-50"><td className="py-2 px-3 text-gray-500">BC（ベースカーブ）</td><td className="py-2 px-3 font-medium">8.5mm</td></tr>
+              <tr className="border-b border-gray-100"><td className="py-2 px-3 text-gray-500">DIA（直径）</td><td className="py-2 px-3 font-medium">14.3mm</td></tr>
+              <tr className="bg-gray-50"><td className="py-2 px-3 text-gray-500">度数範囲（PWR）</td><td className="py-2 px-3 font-medium">-0.50〜-12.00 / +0.50〜+8.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">こんな人におすすめ</h2>
+        <ul className="space-y-2">
+          {[
+            '目が乾きやすい・ドライアイ気味の方',
+            '1日10時間以上のPC・スマートフォン利用がある方',
+            'コンタクトの不快感（ゴロゴロ感・乾燥）が気になっていた方',
+            '花粉症・アレルギーで目が敏感な方',
+          ].map((item) => (
+            <li key={item} className="flex gap-2 text-sm text-gray-700">
+              <span className="text-slate-500 shrink-0">▸</span>{item}
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">最安値で購入する</h2>
+        <p className="text-gray-700 mb-4">ワンデーアキュビューオアシスは通販各社で価格差があります。送料込みの最安値は当サイトの比較ページでご確認ください。</p>
+        <Link href="/product/acuvue-oasys-1day" className="inline-block bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-700 transition-colors text-sm">
+          ワンデーアキュビューオアシスの最安値を見る →
+        </Link>
+      </section>
+    </div>
+  ),
+  'bifocal-multifocal-contact': (
+    <div className="space-y-8">
+      <section>
+        <p className="text-gray-700 mb-4 leading-relaxed">40代を過ぎると老眼（老視）が始まり、近くのものが見えにくくなります。遠近両用コンタクトレンズは、1枚のレンズで遠くも近くも見えるよう設計された製品で、老眼鏡との併用が不要になる場合があります。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">遠近両用コンタクトの仕組み</h2>
+        <div className="bg-slate-50 rounded-xl p-5 mb-4 border border-slate-200">
+          <h3 className="font-bold text-slate-800 mb-2">同時視（マルチフォーカル）設計</h3>
+          <p className="text-sm text-gray-700 mb-3">レンズの中心部と周辺部に異なる度数を設計し、脳が自動的に必要な焦点を選択する方式。慣れるまで1〜2週間かかることがある。</p>
+          <h3 className="font-bold text-slate-800 mb-2">交互視（モノビジョン）との違い</h3>
+          <p className="text-sm text-gray-700">片目を遠用、もう片目を近用に設定するモノビジョン法もある。眼科医と相談して自分に合った方法を選ぶことが重要。</p>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">おすすめ遠近両用コンタクト</h2>
+        <div className="space-y-4">
+          <div className="border border-gray-200 rounded-xl p-4">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="font-bold text-gray-900">デイリーズ アクア コンフォートプラス マルチフォーカル</h3>
+              <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded">ワンデー</span>
+            </div>
+            <p className="text-sm text-gray-600 mb-2">アルコン製のワンデー遠近両用。PRECISION PROFILE設計で自然な視野を実現。</p>
+            <Link href="/product/dailies-aqua-multifocal" className="text-slate-700 text-sm font-medium hover:underline">最安値を見る →</Link>
+          </div>
+          <div className="border border-gray-200 rounded-xl p-4">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="font-bold text-gray-900">バイオフィニティ マルチフォーカル</h3>
+              <span className="bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded">マンスリー</span>
+            </div>
+            <p className="text-sm text-gray-600 mb-2">クーパービジョン製のマンスリー遠近両用。シリコーンハイドロゲル素材で長時間装用向き。コスト重視の方に。</p>
+            <Link href="/product/biofinity-multifocal" className="text-slate-700 text-sm font-medium hover:underline">最安値を見る →</Link>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">遠近両用を始める前に知っておくこと</h2>
+        <ul className="space-y-3">
+          {[
+            '必ず眼科で処方を受けること。老視の度数（ADD）の測定が必要',
+            '慣れるまでに時間がかかる場合がある。最初の1〜2週間は違和感を感じやすい',
+            '夜間の運転や細かい作業では見え方に制限を感じることもある',
+            'マルチフォーカルが合わない場合はモノビジョン法や老眼鏡との併用も検討',
+          ].map((item) => (
+            <li key={item} className="flex gap-2 text-sm text-gray-700">
+              <span className="text-slate-400 shrink-0 mt-0.5">▸</span>{item}
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   ),
 };
