@@ -289,6 +289,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">AI特化：</span><span><a href="/schools/zero-plus" className="text-slate-700 underline">ゼロプラス</a>（Python・ChatGPT API）</span></li>
         </ul>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'プログラミングスクールに通う前に独学を試すべきですか？', a: '独学で1〜2ヶ月試してから判断するのが理想的です。Progate・ドットインストール等の無料ツールで「続けられるか」「楽しいと感じるか」を確認しましょう。ただし転職を目指すなら、独学だけでは採用実績・転職支援が受けられません。転職成功率の高いスクールに入った方が、結果的に最短で目標達成できる場合が多いです。' },
+            { q: '給付金は誰でも受け取れますか？', a: '「特定一般教育訓練給付金（受講費の40%還付、上限20万円）」「専門実践教育訓練給付金（同70%、最大56万円）」の2種類があります。条件は在職者・離職者で異なりますが、雇用保険に1年以上加入（在職者）または通算2年以上加入（離職者）が基本要件。受講前にハローワークでの事前手続きが必要です。' },
+            { q: '転職保証（返金保証）は本当に信頼できますか？', a: '条件を確認することが重要です。多くのスクールは「卒業後〇ヶ月以内に就職できなかった場合」「提出課題を全て完了している場合」など条件付き。実績の高いスクール（TECH CAMP・DMM WEBCAMP等）は返金実績も公開しており、信頼性は高いと評価されています。保証内容の細則を入学前に必ず確認してください。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'teiten-hojo-programming-school': (
@@ -344,6 +362,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">5</span><span>審査後、給付金が振込まれる</span></li>
         </ol>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '教育訓練給付金を申請する際の注意点は何ですか？', a: '最大のポイントは「受講開始前にハローワークで手続きが必要」な点です。受講を開始してから申請しても給付を受けられません。また、給付金対象の講座かどうかをスクールのページまたは厚労省の検索システムで必ず確認してください。条件（雇用保険加入期間等）を満たしているかの事前確認もハローワークで行えます。' },
+            { q: '給付金対応スクールは授業の質が低いですか？', a: 'そんなことはありません。DMM WEBCAMP・TECH CAMP・ヒューマンアカデミーなど、業界大手の多くが給付金対象です。給付金対象になるためには厚労省の審査をクリアする必要があり、カリキュラムの質・修了率なども審査されます。むしろ給付金対応スクールのほうが体系的に整備されている傾向があります。' },
+            { q: '給付金は転職後にも受け取れますか？', a: '「専門実践教育訓練給付金」は、受講修了後1年以内に転職（就職）に成功した場合、追加で受講費の20%が給付される「追加給付」があります（合計最大70%）。ただし、条件として雇用保険加入者であること等が必要。給付を最大化するなら、スクール選びと転職活動の両方を計画的に進めることが重要です。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'mikeiken-engineer-tenshi': (
@@ -391,6 +427,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           <li className="flex gap-2"><span className="text-red-500">△</span><span>提示された求人を断った場合は対象外</span></li>
           <li className="flex gap-2"><span className="text-red-500">△</span><span>卒業後6ヶ月〜1年以内という期間制限あり</span></li>
         </ul>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '未経験からエンジニアに転職するのに何ヶ月かかりますか？', a: '平均的には学習開始から転職成功まで3〜6ヶ月が目安です。スクール在籍中（3ヶ月）に転職活動を並行し、卒業後1〜2ヶ月で内定を取るパターンが多いです。ただし学習量・スクール選択・転職市場の状況によって大きく変わります。転職保証付きスクールを選ぶと最長期間のサポートが受けられます。' },
+            { q: '未経験エンジニアの初任給はどのくらいですか？', a: '20代前半の未経験転職では月給22〜30万円程度が相場です（年収300〜420万円）。スクール卒業者の初任給中央値は年収350〜380万円程度との調査も。経験を積めば1〜3年で年収500〜600万円以上を目指すことができます。Web系よりSIer（受託開発）の方が初任給が高い傾向がありますが、その後のキャリアパスは異なります。' },
+            { q: '転職先の企業はどう選べばいいですか？', a: '未経験転職では「研修制度・メンター制度が整っているか」「エンジニアの比率が高いか」「モダンな技術スタックを使っているか」が重要な判断基準です。SESや客先常駐専門の企業は技術スキルが伸びにくい場合も。スクールの転職支援で紹介される企業の質も、スクール選びの重要なポイントになります。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
@@ -445,6 +499,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           <li className="flex gap-2"><span className="text-purple-500 font-bold">○</span><span><strong>TechAcademy</strong>：副業月5万円を目指すなら17万円投資は元が取れる</span></li>
         </ul>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'プログラミングスクールの料金が高い理由は何ですか？', a: '主に人件費（メンター・チューター・カウンセラー）と転職支援コスト（求人開拓・面接対策・企業とのマッチング）が占めます。また、少人数制・個別指導のスクールほど料金が高くなります。料金の高さと転職成功率は必ずしも比例しませんが、転職保証付きのスクールは失敗リスクが低くコスパが良いと評価されています。' },
+            { q: '分割払いやローンを利用する場合の注意点は？', a: '金利0%キャンペーン（スクール提携のローン）を利用すれば実質無利子で分割払いが可能なスクールもあります。金融機関のカードローンは金利が高いため避けましょう。また、給付金は受講費の40〜70%が戻る制度のため、先に全額支払って給付を受けてから実質負担額を計算すると、分割払いのメリットが見えやすくなります。' },
+            { q: '最も安いプログラミングスクールを教えてください', a: '月額制のProgateやドットインストール（月990〜1,000円程度）が最安値ですが、転職支援は含まれません。転職支援付きで最安値クラスはTechAcademy（4週間コース174,900円〜）、CodeCamp（129,800円〜）など。給付金対応スクールでは給付後の実質負担が130,000円程度になる場合もあります。目的に合わせて選びましょう。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'freelance-engineer-school': (
@@ -485,6 +557,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">3</span><span>月30万円以上の安定収入が見込めたら独立</span></li>
           <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">4</span><span>エージェント（レバテックフリーランス等）で高単価案件へ</span></li>
         </ol>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'フリーランスエンジニアは会社員より収入が高いですか？', a: '平均的にはYes。フリーランスエンジニアの平均年収は700〜900万円程度（会社員の1.5〜2倍）という調査があります。ただし、会社員と違い社会保険料を自分で払う・確定申告が必要・案件が途切れるリスクがある等のデメリットも考慮する必要があります。副業からフリーランスへの段階的移行が現実的です。' },
+            { q: 'フリーランスエンジニアになるまでに最低どのくらいのスキルが必要ですか？', a: '最低でも「1つの言語でWebアプリを単独で作れる」レベルが必要です。具体的にはGitHub管理・データベース設計・API連携を含む実装経験が望ましい。CoachTechなどフリーランス特化スクールでは、案件獲得の実績作りまで支援してくれます。未経験から直接フリーランスは非常に困難で、まず会社員エンジニアとして2〜3年経験を積むのが現実的なルートです。' },
+            { q: 'フリーランスになるのに法人化（会社設立）は必要ですか？', a: '最初は個人事業主として始めるのが一般的です。年収が500万円を超えてくると法人化（合同会社や株式会社）を検討するケースが多いです。法人化すると税制上のメリット（役員報酬の経費化等）がある反面、手続きコスト・社会保険料の会社負担が発生します。スタートは個人事業主で問題ありません。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
@@ -549,6 +639,24 @@ export const columnContent: Record<string, React.ReactNode> = {
               ))}
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'AIエンジニアになるためにはどのくらいの期間が必要ですか？', a: '基礎的なAI・機械学習を扱えるレベルまでは3〜6ヶ月が目安。ただし実業務レベルで活躍するには1〜2年の実践経験が必要です。Python・統計・数学の基礎知識がある方は習得が早く、完全未経験の場合は6ヶ月〜1年のスクール受講が推奨されます。AIエンジニアの市場価値は高く、学習投資に見合うリターンが期待できます。' },
+            { q: 'AIエンジニアと機械学習エンジニア・データサイエンティストの違いは？', a: 'AIエンジニアは広義で「AIを活用したシステム開発全般」を担当。機械学習エンジニアはMLモデルの開発・チューニング特化、データサイエンティストはデータ分析・統計モデリング特化です。現場では役割が混在することが多く、Pythonを軸にした基礎スキルは共通。スクール選びでは「モデル開発まで学ぶか」「APIを使ったアプリ開発か」で方向性を決めましょう。' },
+            { q: 'ChatGPT APIを使うだけでAIエンジニアになれますか？', a: 'ChatGPT等の既製AIをAPIで組み込む「AIアプリ開発」は習得しやすく需要も高いですが、「AIエンジニア」のフルスタックには及びません。LangChain・RAG・プロンプトエンジニアリングを習得すれば、AI活用エンジニアとして転職・副業が可能です。モデルのゼロからの開発（機械学習）まで学ぶかは、目指すキャリアによって判断してください。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
         </div>
       </section>
     </div>
@@ -626,6 +734,24 @@ export const columnContent: Record<string, React.ReactNode> = {
       <section>
         <p className="text-sm text-gray-700">社会人がプログラミングを学ぶ最大の壁は「時間の確保」です。1日1〜2時間でも継続できるスクールを選ぶことが、挫折しないための最大のポイントです。まずは無料カウンセリングを活用して、自分に合った学習ペースを相談してみましょう。</p>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '社会人がプログラミングスクールに通いながら仕事を続けられますか？', a: '多くのスクールがオンライン・夜間・週末対応のコースを設けており、仕事を続けながら受講できます。TECH CAMP夜間・休日コース（10週間）やDMM WEBCAMPの自習型コースが人気です。週20〜30時間の学習時間を確保できるかが成功の鍵。「転職を急がない」方はゆっくり学べるが、転職保証の期限には注意が必要です。' },
+            { q: '社会人が転職するのに有利な年齢・時期はありますか？', a: '一般的にエンジニア転職は25〜28歳が最も転職しやすい年齢層です。30代でも未経験転職は可能ですが、スキルレベルと即戦力性への期待が高まります。35歳以上は難易度が上がりますが、前職の業界知識（金融・医療・製造等）と組み合わせると差別化できます。40代以上は「業界特化型エンジニア」を目指す方向性が現実的です。' },
+            { q: 'スクールに通わずに社会人がエンジニア転職できますか？', a: '独学での転職成功者もいますが、時間が2〜3倍かかることが多く、ポートフォリオのクオリティ・転職先の質にも差が出やすいです。転職支援・面接対策・企業紹介のネットワークはスクールが大きなアドバンテージを持っています。時間効率と転職成功確率を考えると、スクール活用が合理的な選択です。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'programming-school-josei-osusume': (
@@ -684,6 +810,24 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
       <section>
         <p className="text-sm text-gray-700">女性がプログラミングスクールを選ぶ際は、「卒業後に女性エンジニアとして働いている先輩の声」を参考にするのが最も参考になります。各スクールの無料カウンセリングでは、女性向けのサポート内容を具体的に確認してみましょう。</p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '女性のエンジニア転職は不利ですか？', a: 'むしろ現在は女性エンジニアの採用に積極的な企業が増えています。IT業界全体の女性比率が低いため、女性エンジニアは希少価値が高く評価される傾向があります。育児や時短勤務への理解があるIT企業も増えており、ライフワークバランスを重視した働き方がしやすい職種でもあります。' },
+            { q: '育児中でもプログラミングスクールに通えますか？', a: 'オンライン・自分のペースで学べるスクールなら育児中でも受講可能です。コエテコキャンパス・TechAcademy・DMM WEBCAMPなどはオンライン完結型で時間の融通が利きます。子供の寝た夜間に学習するスタイルで受講する方も多いです。スクールによっては育児中の方向けの柔軟なスケジュール調整にも対応しています。' },
+            { q: 'Webデザインとプログラミング、どちらを学ぶべきですか？', a: '両方スキルがあると差別化できますが、収入面ではプログラミング（エンジニア）のほうが高い傾向があります。Webデザイナーの平均年収は300〜400万円、Webエンジニアは400〜600万円。HTML/CSS（デザイン寄り）から始めてJavaScriptを学び、フロントエンドエンジニアを目指すルートが、女性に選ばれるパスの一つです。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
@@ -760,6 +904,24 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
       <section>
         <p className="text-sm text-gray-700">40代・50代からのプログラミング学習は「遅すぎる」ことはありません。ただし、目標を現実的に設定し、自分の強みと組み合わせる戦略が成功のカギです。まずは無料カウンセリングを活用して、キャリアアドバイザーに相談することをおすすめします。</p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '40代・50代でのエンジニア転職は現実的ですか？', a: '40代の未経験転職は難易度が高く、求人数が限られます。ただし、「ITコンサル・社内SE・PM（プロジェクトマネージャー）」への転職なら前職の業界経験を活かせます。完全未経験のWebエンジニア転職は厳しいですが、副業・フリーランス（特定クライアント向け）や自社サービス企業の社内SEとして活躍している40代エンジニアも増えています。' },
+            { q: '40代がプログラミングスクールを選ぶ際のポイントは何ですか？', a: '①転職支援の対象年齢制限がないか（一部スクールは35歳以下限定）、②実績として40代の転職事例を公開しているか、③副業・フリーランス支援に力を入れているか、の3点が重要です。転職保証は年齢制限があるケースが多いため、「卒業後の転職状況」や「サポート期間」を具体的に確認してください。' },
+            { q: '40代のプログラミング学習にはどのくらいの時間がかかりますか？', a: '個人差はありますが、IT知識がゼロの場合、Webアプリを作れるレベルまで300〜500時間程度が目安です（3〜6ヶ月週20時間学習で達成可能）。40代は記憶力より論理的思考力・業務経験で補える部分もあり、学習速度が極端に遅くなるわけではありません。「自分のペースで着実に進む」という姿勢が長続きのコツです。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
@@ -838,6 +1000,24 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
       <section>
         <p className="text-sm text-gray-700">独学かスクールかという二択ではなく、「まずProgateで独学を試してから、本気になったらスクールに切り替える」というハイブリッドアプローチも有効です。最終的には自分の目標と状況に合わせて判断することが大切です。</p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '独学とスクール、どちらを選ぶべきか判断するポイントは？', a: '「転職を目指しているか」が最大の判断基準です。転職なら転職支援・企業ネットワーク・ポートフォリオ支援があるスクールが有利。副業・スキルアップ目的なら独学で十分な場合も多い。また「学習継続に自信がない」「一人では挫折しそう」という方はスクールのメンタリング環境が重要な価値になります。独学挫折率は90%以上という調査もあります。' },
+            { q: 'スクールに通えば誰でもエンジニアになれますか？', a: '残念ながら全員ではありません。スクール卒業者の転職成功率は高いスクールで95〜99%と公表されていますが、「課題を全て提出した人」という条件付きが多い。学習時間を確保できない・カリキュラムについていけない方は途中離脱するケースも。入学前のカウンセリングで自分の目標と学習環境を正直に相談し、合うスクールを選ぶことが重要です。' },
+            { q: '独学の場合、どのくらいの期間で転職できますか？', a: '独学での転職成功例はありますが、平均的には1〜2年かかることが多く、ポートフォリオのクオリティ確保が課題です。スクール卒業生と競う就職活動では、カリキュラム修了証・転職支援実績・企業とのコネクションがない分、不利になります。時間が2〜3倍かかるリスクを考えると、転職目的ならスクール投資のコスパが高い場合が多いです。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
@@ -922,6 +1102,24 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
       <section>
         <p className="text-sm text-gray-700">未経験からエンジニア転職を目指すなら、「何ヶ月で転職できるか」より「どのスキルレベルに達するか」を重視することが重要です。転職保証のあるスクールを選べば、目標達成まで手厚いサポートを受けながら学習を進められます。まずは<a href="/schools/techcamp" className="text-slate-700 underline">TECH CAMP</a>や<a href="/schools/dmm-webcamp" className="text-slate-700 underline">DMM WEBCAMP</a>の無料カウンセリングで、自分の状況に合ったプランを相談してみましょう。</p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'プログラミングスクールを卒業してから内定まで何ヶ月かかりますか？', a: '転職活動開始から内定まで平均1〜3ヶ月です。スクール在籍中に転職活動を並行する方が多く、カリキュラム終了直前〜修了直後に内定を取るパターンが多いです。書類選考・面接・コーディングテスト対策が並行して必要で、準備が整っているほど短期間で内定が出ます。スクールの転職支援を最大限活用しましょう。' },
+            { q: '転職成功に必要な最低限のポートフォリオとはどのようなものですか？', a: '最低1〜2つの「実際に動くWebアプリ」が必要です。ただし「チュートリアルのコピー」ではなく、自分で設計・機能追加したオリジナル要素が求められます。GitHubでソースコードを公開し、READMEに開発意図・使用技術・工夫点を丁寧に書くことが重要。API連携・ユーザー認証・DBを含む機能があるとより評価されます。' },
+            { q: 'エンジニア転職で年齢制限はありますか？', a: '法律上の年齢制限はありませんが、実態として25〜30歳が最も内定を取りやすい年齢層です。30代でも未経験転職の成功例は多数ありますが、求人数は絞られます。40代以上は前職の業界特化（医療・金融・製造×IT）という武器がないと難しい。スクール選びでも「何歳まで転職支援対象か」を確認することが重要です。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
@@ -1013,6 +1211,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           </li>
         </ol>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'PythonはAIの学習にしか使えませんか？', a: 'Pythonは汎用プログラミング言語で、Webバックエンド（Django/Flask）・データ分析・機械学習・スクレイピング・自動化スクリプト等、幅広い用途があります。特にAI・データ系の需要が高く、Python人材の市場価値は高い状態が続いています。Webエンジニアを目指す場合もバックエンドにPythonを使う企業は多いです。' },
+            { q: 'Python未経験でも3ヶ月でエンジニア転職できますか？', a: '3ヶ月で基礎学習は可能ですが、転職成功には5〜6ヶ月の学習期間が現実的です。スクールのカリキュラムが整備されていれば3ヶ月で転職活動開始できますが、ポートフォリオ作成・面接練習・求人応募の期間も必要です。「3ヶ月で内定」と謳うスクールもありますが、個人の学習速度・経験によって大きく差があります。' },
+            { q: 'Pythonスクールを選ぶ際に確認すべき点は何ですか？', a: '①Python専門かつ現役エンジニアが指導しているか、②カリキュラムにWebフレームワーク（Django/FastAPI）や機械学習（Scikit-learn/PyTorch）が含まれているか、③転職支援で実際にPythonを使う求人が紹介されるか、の3点が重要です。Python名目でも実際はJavaScriptやHTMLが中心のスクールもあるため、カリキュラム詳細を必ず確認してください。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'web-seisaku-school': (
@@ -1090,6 +1306,24 @@ export const columnContent: Record<string, React.ReactNode> = {
             <li>4. クラウドワークス・ランサーズで案件応募開始</li>
             <li>5. 初月1〜3万円、3ヶ月後に月5〜10万円が目安</li>
           </ol>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'Web制作の副業で月いくら稼げますか？', a: '副業初期（スクール卒業後半年）では月3〜5万円が現実的な目標です。1〜2年経験を積むと月10〜30万円以上を目指せます。案件単価は名刺サイト（3〜5万円）・コーポレートサイト（10〜30万円）・ECサイト（30〜100万円）と幅広く、スキルアップとともに単価が上がります。クラウドワークス・ランサーズ・知人紹介が主な案件獲得経路です。' },
+            { q: 'Web制作はAIに仕事を奪われませんか？', a: 'Webデザインの単純作業はAIで代替が進んでいますが、「クライアントとの要件定義・コミュニケーション・オリジナルデザイン・WordPressカスタマイズ」などの高付加価値業務は当面AIで完全代替できません。むしろAI（Figma AI・GitHub Copilot等）を使いこなすWeb制作者が競争力を高めています。「AIを使える制作者」になることが重要です。' },
+            { q: 'WebデザインとWebコーディング、どちらから学ぶべきですか？', a: '副業・フリーランスを目指すなら「HTMLコーディング→CSSデザイン→JavaScript→WordPressカスタマイズ」の順序が効率的です。デザインセンスがなくてもコーディングはできます。デザインにも興味がある方はFigmaで基礎を学んでからコーディングへ進む方法もあります。まずはコーディングで「動くものを作る」体験をするのが挫折を防ぐコツです。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
         </div>
       </section>
     </div>
@@ -1199,6 +1433,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           ))}
         </div>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '転職保証は本当に全額返金されますか？', a: '返金されるケースはありますが、条件を満たさないと受けられません。「コースの全課題を提出する」「転職活動中に紹介された企業へ必ず応募する」「卒業後〇ヶ月以内に申告する」等、細かい条件が設定されています。全員が活用できる制度ではなく、「積極的に取り組んで転職できなかった場合の保険」と考えるのが正確です。入学前に規約を必ず読んでください。' },
+            { q: '転職保証なしのスクールは質が低いですか？', a: 'そんなことはありません。RUNTEQ・コードクリサリスなど、転職保証はないが卒業生の転職成功率が高く評価されているスクールも多いです。転職保証付きは「安心感」の担保ですが、保証費用がコストに上乗せされているケースもあります。卒業生の転職先企業・平均年収・満足度などを比較した上でスクールを選ぶことを推奨します。' },
+            { q: '転職保証と給付金は同時に活用できますか？', a: '同時活用可能なスクールもあります。DMM WEBCAMPは給付金対応かつ転職保証付きのコースがあり、実質負担を抑えつつリスクも低減できます。ただし、給付金対象コースと転職保証付きコースが異なる場合もあるため、入学前にどちらの条件が適用されるかを明確にスクールに確認してください。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'programming-school-30dai': (
@@ -1294,6 +1546,24 @@ export const columnContent: Record<string, React.ReactNode> = {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '30代のエンジニア転職で前職の経験は活かせますか？', a: '大いに活かせます。金融・医療・製造・物流など特定業界でのSE・社内SEポジションでは、その業界知識と技術スキルの両方を持つ30代エンジニアの需要が高いです。「業界経験×プログラミング」という差別化ができれば、純粋な未経験よりも有利に転職活動を進められます。スクール選びでは「業界別の転職支援実績」も確認しましょう。' },
+            { q: '30代でプログラミングスクールに入学した人の転職成功例を教えてください', a: '実際の事例として、30代前半の営業職からWebエンジニアへの転職（年収350→450万円）、30代後半のマーケターからデータエンジニアへの転職（年収500→650万円）などの例があります。前職経験・学習量・スクールの質によって結果は大きく異なりますが、「無理」ではないことは多くのスクールの卒業生実績が示しています。' },
+            { q: '30代でエンジニア転職する前に確認すべきことは何ですか？', a: '①現在の仕事を辞めてから学習するか・働きながらか（貯金と生活費の確認）、②家族の理解・同意があるか（特に既婚者・子育て中の方）、③転職後の年収低下を許容できるか（未経験転職は最初の1〜2年は現職より低くなる可能性が高い）、の3点を事前にクリアにしておくことで、学習中のメンタルが安定します。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
@@ -1440,6 +1710,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           ))}
         </div>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'JavaScriptだけ学べばフロントエンドエンジニアになれますか？', a: 'JavaScriptの基礎の上にReact（またはVue.js）を学ぶことが現在の市場では必須です。HTML/CSS→JavaScript→React（またはNext.js）の順が一般的なフロントエンドスクールのカリキュラム。TypeScriptも近年採用が急増しており、習得すると市場価値がさらに高まります。' },
+            { q: 'ReactとVue.js、どちらを学ぶべきですか？', a: '国内外ともにReactの求人数が多く、学習リソースも豊富なためReactを推奨します。Vue.jsは日本のSIer・中小企業での採用が多く、特定の環境では有利。Next.js（Reactベースのフレームワーク）はフルスタック開発に対応しており、フロントエンドとバックエンドの両方を学びたい方に人気です。スクール選びでも「どのフレームワークを教えるか」を確認してください。' },
+            { q: 'フロントエンドエンジニアの将来性はどうですか？', a: 'Webの重要性が増す中でフロントエンド需要は引き続き高い状態が続いています。AIツール（GitHub Copilot・Vercel AI SDK等）との組み合わせにより生産性は向上しており、AIを使いこなすフロントエンドエンジニアの価値が高まっています。バックエンド（Node.js・GraphQL）まで扱えるフルスタック方向へのスキル拡張も需要が高いです。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -1550,6 +1838,24 @@ export const columnContent: Record<string, React.ReactNode> = {
             <Link key={slug} href={`/schools/${slug}`} className="text-sm border border-slate-300 bg-white text-slate-700 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors">
               {name}の詳細を見る →
             </Link>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'プログラミングスクールで後悔した人が再転職する場合、何をすればいいですか？', a: '転職先がエンジニア職でない場合は再度スクール入学よりも「現職でのスキルアップ機会」の確認が先です。エンジニアとして入社できたが環境が合わない場合は、1〜2年の経験を積んでから転職活動（経験者採用）が最も現実的。スクールへの再投資より、現在の環境を最大限活用して実績を作ることが優先です。' },
+            { q: '入学前の無料カウンセリングでは何を聞けばいいですか？', a: '①転職支援の具体的なサポート内容（求人数・企業の質・面接対策の回数）、②実際の卒業生の転職先企業名・年収（可能な範囲で）、③カリキュラムの進め方（自習型か講義型か）、④途中でやめた場合の返金規定、⑤転職保証・給付金の適用条件の細則、を具体的に質問してください。抽象的な回答が多いスクールは要注意です。' },
+            { q: 'プログラミングスクールの口コミ・評判はどこで調べれば信頼できますか？', a: '信頼性が高い順に：①実際に通った知人・SNS（X・LinkedIn）での体験談、②課金なしのGoogle口コミ・転職口コミサイト（転職会議・OpenWork等のIT版）、③第三者のブログ・YouTube比較動画（広告なしのもの）。スクール公式サイトの「卒業生の声」は選ばれた好評例のため参考程度に。実際のカリキュラムを体験できる「無料体験入学」に必ず参加することをおすすめします。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
           ))}
         </div>
       </section>
@@ -1672,6 +1978,24 @@ export const columnContent: Record<string, React.ReactNode> = {
             <Link key={slug} href={`/schools/${slug}`} className="text-sm border border-slate-300 bg-white text-slate-700 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors">
               {name}の詳細 →
             </Link>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '20代でプログラミングスクールに通うメリットは何ですか？', a: '最大のメリットは「若さ」という採用側から見た伸びしろです。20代は未経験転職でも採用されやすく、スクールのカリキュラムを全力で消化できる時間・体力もあります。転職後の給与成長率も高く、25歳でエンジニア転職→30歳で年収600万円以上というキャリアパスが現実的です。投資回収の観点でも若いほど有利です。' },
+            { q: '新卒でエンジニア採用と、スクール経由転職はどちらが有利ですか？', a: '新卒採用のほうが給与・研修制度・配属先の選択肢で有利なケースが多いです。ただしエンジニア職以外で新卒入社して20代後半で転職する場合、スクール経由でも十分に高い給与水準で転職できます。「エンジニアになりたい」という意志があるなら、どのルートでも可能ですが、自分の状況（在学中か社会人か）に合った選択をしましょう。' },
+            { q: '20代でプログラミングスクールに入るのに最適な時期はいつですか？', a: '「思い立った今」が最善です。エンジニア転職は年齢が低いほど有利で、1年待つと1年分の採用優位性が失われます。学生なら卒業前（インターン・就活時期を活用）、社会人なら早期に転職活動の準備を始めることが重要。迷っている時間が最大のコストです。無料カウンセリングを複数スクールで受けてから判断することをおすすめします。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
           ))}
         </div>
       </section>
@@ -1804,6 +2128,24 @@ export const columnContent: Record<string, React.ReactNode> = {
             <Link key={slug} href={`/schools/${slug}`} className="text-sm border border-slate-300 bg-white text-slate-700 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors">
               {name}の詳細 →
             </Link>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'Webフロントエンドエンジニアとバックエンドエンジニア、年収差はありますか？', a: '一般的にバックエンド・フルスタックエンジニアのほうが年収が高い傾向があります（平均50〜100万円程度）。ただしフロントエンド専門でも大手企業・スタートアップでは年収700〜1,000万円以上の求人も存在します。フロントエンドからバックエンドへスキルを広げる（フルスタック化）ことで年収上昇を狙う方も多いです。' },
+            { q: 'フロントエンドスクールでTypeScriptは教えてもらえますか？', a: '最近のフロントエンドスクールはTypeScriptをカリキュラムに含めているところが増えています。TypeScript習得は就職後の実務で必須になるケースが多く、スクール選びでは「TypeScript・Next.js・テストコードまで学べるか」を確認してください。ReactのみでTypeScriptを教えないスクールは時代遅れになりつつあります。' },
+            { q: 'フロントエンドエンジニアはリモートワークしやすいですか？', a: 'IT職種の中でもフロントエンドエンジニアはリモートワーク対応率が高い職種の一つです。GitHub・Slack・Figmaなどのツールでチームコラボレーションが完結するため、フルリモートOKの求人が多いです。スクールの転職支援で「リモートワーク可」の求人を絞り込める場合も多く、働き方の柔軟性を求める方にも向いています。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
           ))}
         </div>
       </section>

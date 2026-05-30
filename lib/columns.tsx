@@ -374,6 +374,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           人気商品の価格を比較する →
         </Link>
       </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'コンタクトの度数と眼鏡の度数は同じですか？', a: '異なります。眼鏡は目から約12mm離れたレンズで矯正するのに対し、コンタクトは目に直接装用するため、屈折距離が違います。近視の場合、眼鏡よりコンタクトの度数がやや弱くなるのが一般的。自己判断で眼鏡の度数をそのままコンタクトに流用せず、眼科での処方を受けてください。' },
+            { q: 'BC（ベースカーブ）が合っていないとどうなりますか？', a: 'BCが小さすぎる（きつすぎる）と角膜を締め付けて酸素不足・充血・痛みが生じます。BCが大きすぎる（ゆるすぎる）とレンズがずれやすく、ゴロゴロ感・視力の不安定さが起きます。BCは眼科でのフィッティング検査が必要。通販で自己判断するのはNGです。' },
+            { q: '度数を自己判断で変えてもいいですか？', a: '絶対にNGです。度数が合っていないコンタクトを使い続けると、視力低下・眼精疲労・頭痛の原因になるだけでなく、眼の病気を見落とすリスクもあります。「なんとなく見えにくくなった」と感じたら、まず眼科を受診してください。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -448,6 +466,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           </Link>
         </div>
       </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '初めてコンタクトを使う場合も処方箋なしで通販購入できますか？', a: '初めての方は必ず眼科を受診してください。BC（ベースカーブ）・度数・DIA（直径）は人によって異なり、目に合わないレンズを使い続けると角膜障害などのリスクがあります。処方箋なし通販は「すでに使用中の同じ商品を継続購入する方」が前提です。' },
+            { q: '処方箋の有効期限はどれくらいですか？', a: '一般的に処方箋の有効期限は発行から1年以内とされています（法律で定められているわけではありませんが、多くの眼科・ショップがこの基準を採用）。視力・角膜の状態は変化するため、1年ごとの定期検査と処方箋更新を推奨します。' },
+            { q: '並行輸入品（海外品）と国内正規品の違いは何ですか？', a: '国内正規品は日本の薬機法基準をクリアし、品質・情報表示（日本語添付文書）が保証されています。並行輸入品は価格が安いケースもありますが、品質管理や適切な情報が保証されません。万が一トラブルがあった際のサポートも受けにくいため、信頼できる国内正規代理店のショップで購入することを強くおすすめします。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -927,6 +963,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           </Link>
         </div>
       </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '乱視用コンタクトのパラメータにはどんな数字がありますか？', a: '通常の球面レンズの度数（PWR）に加え、CYL（円柱度数：-0.75、-1.25、-1.75など）とAXIS（乱視軸：0〜180度）が追加されます。自分の乱視の種類・軸・度数は眼科で検査してもらう必要があります。ショッピングサイトでは商品ページで選択できる項目として表示されます。' },
+            { q: '乱視が軽い場合、普通の球面レンズでもいいですか？', a: '乱視が軽微（0.50D以下）の場合、球面レンズでもそれほど不自由を感じない方もいます。ただし、夜間の光がにじむ・長時間使用で目が疲れやすいなどの症状がある場合は乱視用を試してみる価値があります。眼科でどちらが合うかフィッティングしてもらうのが最善です。' },
+            { q: '乱視用コンタクトは値段が高いですか？', a: '球面レンズに比べて1箱あたり500〜1,500円程度高いのが一般的です。ただし通販での最安値を比較すると、眼科処方価格より30〜50%程度安く購入できることが多いです。乱視があるのに球面レンズを使い続けて目を酷使するより、正確に矯正するほうが長期的に目の健康を守れます。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -1050,6 +1104,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           人気商品の価格比較ランキングを見る →
         </Link>
       </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'コンタクトレンズの価格が上がっている理由は何ですか？', a: '円安による輸入コストの上昇、原材料・物流費の高騰、エネルギー費の上昇が主な要因です。主要メーカー（アキュビュー・アルコン等）の多くが2022〜2024年に値上げを実施しました。ただし、通販では競合ショップ間の価格競争により、メーカー希望小売価格より30〜50%安く購入できるケースが多いです。' },
+            { q: 'コンタクトレンズの期限（使用期限）を過ぎたものを使っても大丈夫ですか？', a: '絶対にNGです。未開封でも保存液の品質が変化しており、レンズの素材も劣化している可能性があります。期限切れレンズの装用は感染・炎症リスクがあります。未開封で期限が切れてしまった場合は廃棄してください。通販での大量購入は使用期限（通常2〜5年）を確認してから行いましょう。' },
+            { q: '眼科で買うコンタクトと通販で買うコンタクトは同じ商品ですか？', a: 'はい、同じ商品です。商品名・度数・BC・DIAが同一であれば、眼科院内販売も通販も同一製品です。違いは価格で、眼科院内は定価に近い価格、通販は送料込みで20〜50%程度安いケースが一般的。処方・定期検査は眼科で受け、購入は通販でというスタイルが経済的に最適です。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -1183,6 +1255,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           アキュビューの価格を比較する →
         </Link>
       </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'アキュビューモイストとオアシスの一番の違いは何ですか？', a: '素材と乾燥感です。モイストはヒドロゲル素材（Dk/t 28）、オアシスはシリコーンハイドロゲル素材（1day版：Dk/t 121）。酸素透過率に大きな差があり、オアシスのほうが長時間装用・ドライアイ傾向の方に向いています。価格はオアシスが1箱1,000〜2,000円高め。乾燥が気になるならオアシス、コスト優先ならモイストが選ばれます。' },
+            { q: 'アキュビューオアシス1dayと2week版、乾きにくさはどちらが上ですか？', a: 'ほぼ同等と評価されていますが、多くのユーザーが1day版（ワンデーアキュビューオアシス）をわずかに上と評価する傾向があります。1day版はHydraLuxe™テクノロジー、2week版はHYDRACLEAR Plus™と、どちらも独自技術を搭載。1dayは交換の手間がなく清潔で、2weekはコスパが良い。ライフスタイルで選んで問題ありません。' },
+            { q: 'アキュビュー製品はどこで一番安く買えますか？', a: 'コンタクトレンズの通販ショップ間で価格競争があり、同じ商品でも1箱あたり数百〜1,500円程度の差があります。眼科での処方購入より通販のほうが20〜50%安いケースが多いです。当サイトでは主要ショップの送料込み最安値を比較できます。まとめ買いとクーポンを組み合わせると年間で1〜3万円節約できることも。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -1295,6 +1385,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           カラコン全商品を見る →
         </Link>
       </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'カラコンは初めてコンタクトを使う方でも使えますか？', a: '使えますが、初めての方は必ず眼科でBC・度数・DIAを処方してもらってください。カラコンも通常のコンタクト同様に「高度管理医療機器」で医療機器です。自己判断でサイズ・度数を決めると角膜障害のリスクがあります。眼科受診後に処方内容に合ったカラコンを選びましょう。' },
+            { q: '度なしカラコンでも眼科受診は必要ですか？', a: 'はい、必要です。度なしカラコンも医療機器のため、初回は眼科でBC（ベースカーブ）を確認することが推奨されています。BC8.6が標準ですが、8.5や8.8が合う方もいます。合わないBCのレンズを使い続けると角膜を傷つける危険性があります。' },
+            { q: 'カラコンはどれくらい色が変わりますか？', a: '瞳の元の色・明るさによって発色が異なります。元の瞳が黒・濃い茶色の場合、はっきりした発色のカラコンでも薄付きに見えることがあります。ライトブラウン・ブルーグレー系は暗い瞳でも自然に発色しやすい。ビビッドカラー（緑・ブルー）はコスプレ向けで日常使いには不自然に見える場合も。選ぶ前にブランド公式サイトの装着イメージ画像を必ず確認しましょう。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -1419,6 +1527,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           </Link>
         </div>
       </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '海外通販でコンタクトレンズを買う際のリスクは何ですか？', a: '主なリスクは①品質保証なし（検品・保管状態が不明）、②日本向けの正規品ではないため薬機法基準外の可能性、③万が一の問題時にサポートが受けにくい、④個人輸入の税関トラブル、の4点。特にカラコンや処方の難しい度数では品質の差が目に直接影響します。' },
+            { q: '海外製コンタクトレンズは国内品より本当に安いですか？', a: 'カタログ価格は安い場合もありますが、送料・関税・支払い手数料を含めると大差ないケースも。また国内通販ショップでも眼科定価の30〜50%安で購入できるため、リスクを取って海外通販を使うメリットは薄れています。国内最安値を通販比較サイトで確認してから判断することをおすすめします。' },
+            { q: 'コンタクトレンズの個人輸入は違法ですか？', a: '個人使用の範囲内であれば違法ではありませんが、薬機法上グレーゾーンです。販売（転売）は違法。品質基準が日本と異なる製品を自己責任で使用することになります。目の健康リスクを考えると、国内の正規ショップで購入することを強くおすすめします。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -1511,6 +1637,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           </Link>
         </div>
       </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'MPS（マルチパーパスソリューション）とポビドンヨード消毒の違いは？', a: 'MPSは洗浄・すすぎ・消毒・保存が1本でできる便利なケア用品で最も普及しています。ポビドンヨード系（アイミー プラチナム等）は殺菌力が高く、アカントアメーバなど強力な微生物にも有効。ただし使用手順が複雑です。レンズの種類・ライフスタイルに合わせて選びましょう。' },
+            { q: 'コンタクトのケアをさぼると目にどんな影響がありますか？', a: '洗浄不足でタンパク質・脂質・花粉などの汚れがレンズに蓄積し、角膜炎・結膜炎・巨大乳頭結膜炎（GPC）などのリスクが高まります。汚れたレンズは装用感が悪化するだけでなく、視力低下や重篤な目のトラブルの原因になることも。「面倒くさい」という理由でケアを省略する場合はワンデー（1日使い捨て）への切り替えをおすすめします。' },
+            { q: 'ケア用品の種類はどうやって選べばいいですか？', a: 'まず使用しているレンズがMPS対応かを確認（シリコーンハイドロゲルレンズに非対応のMPSも存在）。次に使いやすさ重視ならMPS、殺菌力重視なら過酸化水素系（ボシュロム クリアケア等）を選ぶとよいでしょう。眼科でのアドバイスも参考にしてください。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -1620,6 +1764,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           全商品の価格を比較する →
         </Link>
       </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'シリコーンハイドロゲルは目に悪影響がありますか？', a: '適切に使用すれば悪影響はありません。むしろ従来のヒドロゲル素材より酸素透過率が高く、角膜への酸素供給量が増えて目の健康に有利です。ただし、シリコーンの疎水性によって汚れが付きやすい側面もあるため、適切なレンズケアが重要です。長期使用・長時間装用の方に特におすすめの素材です。' },
+            { q: 'ヒドロゲルとシリコーンハイドロゲル、どちらを選ぶべきですか？', a: '長時間装用（8時間以上）・PC作業が多い・ドライアイ気味の方にはシリコーンハイドロゲルがおすすめ。短時間の装用・コストを最優先したい方にはヒドロゲルでも十分。価格差は1箱あたり500〜1,500円程度で、シリコーンハイドロゲルのほうが高め。快適性を重視するなら差額を払う価値があります。' },
+            { q: 'Dk/t値（酸素透過率）が高ければ高いほど良いですか？', a: 'Dk/t値は高いほど角膜への酸素供給量が多く、理論上は目に有利です。ただし、Dk/t 87以上であれば「十分な酸素透過率」とされており、それ以上の差は実際の装用感で体感しにくい面もあります。バイオフィニティのDk/t 160とアキュビューモイストのDk/t 28は大きな差があり、長時間装用での快適性に明確な違いが出ます。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -1735,6 +1897,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           </Link>
         </div>
       </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'ワンデーと2ウィーク、年間コストで安いのはどちらですか？', a: '2ウィークのほうが安い場合がほとんどです。ワンデーは年間レンズ代が両眼で40,000〜70,000円程度。2ウィーク+ケア用品で20,000〜35,000円程度。差額は年間で2〜4万円になることも。ただし、ワンデーはケア不要で衛生的という利点があり、快適性やライフスタイルを含めてトータルで判断してください。' },
+            { q: 'コンタクトの年間コストを節約するコツを教えてください', a: '①通販最安値を毎回比較する（眼科院内処方の30〜50%安いケースも）、②まとめ買い割引を利用する、③クーポン・セールを活用する、④2ウィークを2枚で管理して片目ずつ開封するなど工夫する人もいます。ただし④は公式の使用方法ではないため、衛生リスクがあります。最も安全に節約するなら①〜③の組み合わせがベストです。' },
+            { q: '眼科の定期検査代も含めた年間コストはどれくらいですか？', a: '眼科の定期検査（コンタクト検査）は自由診療で1回2,000〜5,000円程度。年2回受診すると4,000〜10,000円が追加でかかります。これを含めたワンデーの年間総コストは50,000〜80,000円、2ウィークは30,000〜45,000円程度が目安。眼科費用を「節約」して受診を省略すると、目のトラブルで後からより多くの費用がかかるリスクがあります。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'contact-tsuuhan-osusume-shop': (
@@ -1838,6 +2018,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           商品別最安値を比較する →
         </Link>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '処方箋なしでコンタクトを通販購入するのは違法ですか？', a: '違法ではありません。薬機法上、コンタクトレンズ購入に処方箋の提示義務はありません。ただし、高度管理医療機器として眼科での定期検査を推奨しています。特に初めてコンタクトを使う方・度数や商品を変更する場合は必ず眼科を受診してください。' },
+            { q: '定期購入サービスとその都度購入、どちらがお得ですか？', a: '定期購入は毎回の注文手間がなく、追加割引（5〜15%オフ）が設定されているショップが多いため、毎月使用する方にはお得。デメリットはキャンセル手続きが必要な場合があること。その都度購入は自由度が高く、セール時にまとめ買いするなど柔軟に対応できます。' },
+            { q: '海外通販でコンタクトを買うのはどうですか？', a: '個人輸入は薬機法上グレーゾーンで、品質保証がありません。海外製品は日本の規格と異なる場合があり、万が一トラブルが起きた際のサポートも受けられません。コストを抑えたい場合は国内通販のまとめ買り・クーポン活用をおすすめします。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'acuvue-oasys-1day-review': (
@@ -1903,6 +2101,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           ワンデーアキュビューオアシスの最安値を見る →
         </Link>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'ワンデーアキュビューオアシスは普通のアキュビューモイストと何が違いますか？', a: '素材が違います。オアシスはシリコーンハイドロゲル（Dk/t 121）、モイストはヒドロゲル（Dk/t 28）。酸素透過率がオアシスのほうが圧倒的に高く、長時間装用・ドライアイ傾向の方に向いています。価格はオアシスが1日あたり約30〜50円高めですが、乾燥感が大幅に軽減される方も多いです。' },
+            { q: '乱視があってもワンデーアキュビューオアシスを使えますか？', a: '乱視用は「ワンデーアキュビューオアシス トーリック」をお選びください。乱視の軸・円柱度数に対応した専用設計で、視力が安定しやすいです。まず眼科で正確な乱視度数を測定してもらう必要があります。乱視が軽微（0.75D以下）の場合は通常の球面レンズで対応できることもあります。' },
+            { q: 'ワンデーアキュビューオアシスの価格が高いですか？安く買う方法はありますか？', a: '1箱（30枚入）で2,800〜4,500円程度が相場で、確かに高めのレンズです。通販での送料込み最安値を比較すること、まとめ買い（6箱・8箱）での割引を活用すること、クーポン利用でコストを抑えられます。当サイトで価格を一括比較すると最安値を見つけやすいです。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'bifocal-multifocal-contact': (
@@ -1954,6 +2170,24 @@ export const columnContent: Record<string, React.ReactNode> = {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '遠近両用コンタクトは何歳から使えますか？', a: '老視（老眼）が始まる40代から使用が増えますが、年齢より症状が基準です。近くが見えにくい・腕を伸ばしてスマホを見るようになってきた方は眼科での相談をおすすめします。自己判断でADD（加入度数）を選ぶのは危険で、必ず処方を受けてください。' },
+            { q: '遠近両用コンタクトと老眼鏡、どちらが良いですか？', a: 'コンタクトに慣れている方・見た目を気にしない方・外出が多い方には遠近両用コンタクトが便利です。一方、コンタクトをしていない時間が長い方・手元作業が多い方は老眼鏡+通常コンタクトの組み合わせも有効。どちらが合うか眼科医と相談するのが最善です。' },
+            { q: '遠近両用コンタクトに慣れるまでどれくらいかかりますか？', a: '個人差はありますが、一般的に1〜2週間で慣れる方が多いです。最初は遠くも近くもぼんやり感じたり、コントラストが低下したように感じる場合があります。夜間運転の際は特に違和感を覚えやすいため、まず昼間から慣らしていくことを推奨します。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
@@ -2047,6 +2281,24 @@ export const columnContent: Record<string, React.ReactNode> = {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '2ウィークコンタクトのケア用品代はいくらかかりますか？', a: 'MPS（マルチパーパスソリューション）の場合、1本（360ml）で1,200〜2,000円程度。2週間に1本消費するとすると、月額600〜1,000円程度のケア用品代がかかります。年間7,000〜12,000円程度。ケア用品代を含めても、ワンデーより年間コストが安くなるケースがほとんどです。' },
+            { q: 'アキュビューオアシス2weekとバイオフィニティ、どちらが乾きにくいですか？', a: '乾燥感の点では多くのユーザーがアキュビューオアシスをやや上と評価します。HYDRACLEAR Plusという独自の保湿技術が特徴で、終日の装用快適性が高評価。バイオフィニティはAquaformテクノロジーで高い酸素透過率（Dk/t 160）が売りで、長時間装用での目への負担軽減が強み。乾燥感重視ならオアシス、酸素透過率重視ならバイオフィニティという選び方が目安です。' },
+            { q: '2ウィークコンタクトを期限（14日）過ぎて使い続けるのは危険ですか？', a: 'はい、危険です。14日を超えるとタンパク質・脂質汚れが蓄積し、レンズが劣化して酸素透過率が下がります。眼科での角膜潰瘍・感染症リスクが高まり、最悪の場合は視力障害につながることも。「まだ汚れてない」と感じても、必ず14日で交換してください。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
@@ -3183,6 +3435,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           ※ 当サイトはアフィリエイト広告を掲載しています。掲載情報は参考値であり、最新の価格・条件は各ショップ公式サイトでご確認ください。コンタクトレンズは医療機器です。初めてご使用の方は必ず眼科を受診してください。
         </p>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'コンタクトレンズの通販は安全ですか？', a: '高度管理医療機器販売許可を取得している正規ショップで購入すれば安全です。日本の正規品を販売しており、届いたレンズのロット番号での品質確認も可能。並行輸入品や怪しいショップからの購入は避けましょう。なお、コンタクトは医療機器のため、初回購入前に必ず眼科を受診してください。' },
+            { q: '楽天市場やAmazonでコンタクトを買うメリット・デメリットは？', a: 'ポイント還元（楽天SPU・Amazonポイント）がメリット。セール時（お買い物マラソン・プライムデー）は特にお得になります。デメリットは出品者が多くて品質の見極めが必要な点。正規販売店バッジや取扱店認定の表示を必ず確認しましょう。' },
+            { q: 'まとめ買いと毎月購入、どちらがお得ですか？', a: '年間コストではまとめ買いが有利。多くのショップが6箱・8箱セットで追加割引を設定しており、1箱あたりの価格が下がります。ただし、在庫を持ちすぎると使用期限内に使いきれない場合もあるため、半年分（6箱）程度のまとめ買いが現実的です。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -3494,6 +3764,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           ※ 掲載しているスペック・価格は参考値です。最新の製品情報は各メーカー公式サイトでご確認ください。コンタクトレンズは医療機器のため、初めてご使用の方は必ず眼科を受診してください。
         </p>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'アキュビューオアシス2weekに乱視用・遠近両用はありますか？', a: 'あります。乱視用は「アキュビューオアシス トーリック（2week）」、遠近両用は「アキュビューオアシス マルチフォーカル（2week）」があります。いずれも同じシリコーンハイドロゲル素材・HYDRACLEAR Plus技術を採用。乱視や老視がある方でも乾きにくいオアシスシリーズを選べます。' },
+            { q: 'コンタクトのケアにミネラルウォーターを使っても大丈夫ですか？', a: '絶対に使用しないでください。ミネラルウォーターや水道水には「アカントアメーバ」などの微生物が含まれており、コンタクトを介して目に感染すると重篤な角膜炎を引き起こすことがあります。視力を失う恐れもある非常に危険な感染症です。ケアは必ず専用のMPS・ケア液のみを使用してください。' },
+            { q: '2weekコンタクトをワンデーとして使い捨てにしてもいいですか？', a: '2weekレンズをワンデーとして使い捨てること自体は物理的には可能ですが、コストが高くなるだけです。また2weekレンズはワンデーと素材設計が異なり、1日使用後は適切なケアを前提に設計されています。「コスト節約のためにワンデーを2日以上使い回す」のは逆方向で絶対NG。指定の交換サイクルを守ることが目の健康を守る基本です。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -3572,6 +3860,24 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
           ※ 掲載しているスペック・価格は参考値です。最新の製品情報はメニコン公式サイトでご確認ください。コンタクトレンズは医療機器のため、初めてご使用の方は必ず眼科を受診してください。
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'メニコンのコンタクトは他のブランドと比べて価格はどうですか？', a: '価格帯はミドルレンジで、アキュビューやデイリーズと同等かやや安め。マンスリータイプの「1month Menicon」はランニングコストが低く、ケア用品と合わせても年間コストを抑えやすいです。ワンデーのメニコンは大手に比べてやや手ごろな価格帯です。' },
+            { q: 'メニコンスクエア（定額サービス）とは何ですか？', a: 'メニコンの独自サービスで、月額固定料金でレンズ（ハードレンズ）とケア用品・眼科検診がセットになるプランです。ソフトレンズとは別のサービスで、ハードコンタクトの長期ユーザーに特に人気があります。ソフトレンズは通常の通販購入が一般的です。' },
+            { q: 'メニコンのハードコンタクトとソフトコンタクト、どちらを選べばいいですか？', a: 'ハードは矯正力が高く（特に乱視・高度近視）、長期コストが安い（1枚で数年使用）反面、装用感の慣れが必要で落下・破損リスクがあります。ソフトは装用感が快適で扱いやすく、日常使いに向いています。初めての方・スポーツをする方・短期利用の方はソフトが向いています。眼科医に相談した上で選びましょう。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),

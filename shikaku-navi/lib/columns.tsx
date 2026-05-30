@@ -291,6 +291,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">長期学習：</span><span>クレアール（セーフティコースで翌年まで延長可能）</span></li>
         </ul>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '通信講座と通学スクール、どちらがいいですか？', a: '社会人が働きながら資格を取るなら通信講座が圧倒的に有利です。通学スクールは週1〜2回の通学時間が必要で、場所・時間が固定されます。通信講座はスマホ1台でスキマ時間に学習でき、ペースも自分で調整できます。合格率は通信講座と通学スクールで大きな差はなく、コストも通信講座のほうが安い場合が多いです。' },
+            { q: '資格の通信講座に給付金は使えますか？', a: '多くの資格通信講座が「特定一般教育訓練給付金（受講費の40%還付、上限20万円）」または「専門実践教育訓練給付金（最大70%還付）」の対象です。スタディング・フォーサイト・アガルートも対象講座があります。受講開始前にハローワークでの手続きが必要なため、まず受講したい講座の給付金適用可否を確認し、条件を満たしているか事前相談してください。' },
+            { q: '資格を取っても就職・転職に役立ちますか？', a: '資格が直結するキャリアアップの効果は資格による差が大きいです。宅建・FP・行政書士・社労士・中小企業診断士は転職市場での評価が高く、年収アップにつながるケースが多い。一方、名称独占・業務独占の区別・独立開業の可否も重要なポイントです。資格取得前に「この資格を持って何をしたいか」を明確にすることが大切です。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'takken-tsushin-osusume': (
@@ -366,6 +384,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">4</span><span>9〜10月：模試・直前対策</span></li>
         </ol>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '宅建の合格率はどのくらいですか？', a: '宅建（宅地建物取引士）の合格率は例年15〜18%程度で推移しています。毎年20万人以上が受験する人気資格ですが、難易度は中程度で、適切な学習（300〜500時間）で未経験でも合格できます。通信講座を活用した場合の合格率はスクールによって異なり、フォーサイトは独自調査で合格率が全国平均の約2〜4倍と公表しています。' },
+            { q: '宅建と管理業務主任者、どちらを先に取るべきですか？', a: '不動産会社に就職・転職を目指すなら宅建が優先です。宅建は不動産取引で「5人に1人の設置義務」がある必須資格で、転職市場での需要が高い。管理業務主任者はマンション管理会社に特化した資格で、宅建とのダブルライセンスで市場価値が上がります。まず宅建→翌年管理業務主任者のルートが一般的です。' },
+            { q: '宅建の勉強を独学で進める場合、どのくらいの期間が必要ですか？', a: '独学では平均300〜500時間の勉強時間が必要で、6〜12ヶ月が目安です。通信講座では200〜350時間程度に短縮できるケースがあります（効率的な学習順・過去問重点学習のため）。試験は毎年10月の第3日曜日に実施されるため、受験希望の前年10〜12月から学習開始するのが理想的です。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'bookkeeping-school-hikaku': (
@@ -431,6 +467,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           </ul>
         </div>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '簿記3級と2級、どちらを最初に取るべきですか？', a: '経理・財務への転職を目指す方は2級取得が目標になりますが、まず3級から始めることを推奨します。3級は2級の基礎となる知識を習得でき、独学でも合格しやすい（合格率40〜50%）。2級の合格率は約20〜30%で難易度が上がります。通信講座でセット受講（3級+2級）すると割引になるケースが多く、1年で両方取得を目指す計画が効率的です。' },
+            { q: '日商簿記とその他の簿記検定の違いは何ですか？', a: '日商簿記（日本商工会議所主催）が最も認知度が高く、転職・就職で評価されます。全経簿記（全国経理教育協会）・建設業経理士・農業簿記等も存在しますが、汎用性は日商簿記が最高。「簿記2級」という場合、ほぼ日商簿記2級のことを指します。就職・転職を目的とするなら日商簿記を選びましょう。' },
+            { q: '簿記の資格を取ったら年収はどのくらい上がりますか？', a: '簿記2級取得後、経理・財務職への転職では20〜50万円程度の年収アップが期待できるケースがあります。ただし資格単体での年収アップより、「実務経験+資格」の組み合わせのほうが評価されます。中小企業の経理担当は300〜400万円、上場企業の財務部門は500〜700万円以上と幅があります。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'shikaku-career-up': (
@@ -481,6 +535,24 @@ export const columnContent: Record<string, React.ReactNode> = {
             <li>年収アップ幅（金融業界転職時）：年50〜100万円増も可能</li>
             <li>回収期間：数ヶ月〜1年程度</li>
           </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '転職せずに現職の年収を上げるために資格は有効ですか？', a: '資格が現職での昇給に直結するかは会社によります。資格取得手当が設定されている職場（医療・金融・建設等）では即時効果があります。一般的なオフィスワーカーの場合、資格取得が直接昇給につながらないケースも多いです。転職市場での価値を高める「副次的な効果」として資格を活用するのが現実的です。' },
+            { q: '士業（弁護士・税理士・司法書士）は本当に高収入ですか？', a: '難易度の高い士業資格は独立開業後に高収入が期待できますが、勤務の場合は年収400〜700万円程度が相場（弁護士・税理士も含む）。独立開業で成功すれば年収1,000万円以上も可能ですが、個人差が大きく、集客・営業力が重要です。難関資格の学習コスト（時間・費用）を考慮した上で、費用対効果を慎重に判断してください。' },
+            { q: '複数の資格を持つのと1つを深掘りするのは、どちらが有利ですか？', a: 'キャリアアップの目的次第です。専門性の高い職種（税理士・弁護士・医師等）は1資格を深掘り。一方、コンサル・営業・管理職方向はFP+宅建+ITパスポートなど複数資格のポートフォリオが有利な場合もあります。「資格コレクター」にならないよう、資格取得の目的と活用シーンを先に考えてから計画を立てることが重要です。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
         </div>
       </section>
     </div>
@@ -553,6 +625,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           </div>
         </div>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'FP3級を独学で取ると、FP2級の難易度は大きく上がりますか？', a: 'FP3級から2級への難易度の上昇は「約2倍」と言われます。3級は暗記中心で独学可能（合格率80%前後）ですが、2級は計算問題が増え・出題範囲が広くなります（合格率40〜50%）。3級取得後すぐに2級の学習を継続するのが最も効率的。通信講座で3級+2級セットを受講すると割引になりますし、知識の連続性があるため習得が効率的です。' },
+            { q: 'FP資格は独立開業できますか？', a: 'FP資格単体で独立開業は難しいですが、FP2〜1級＋実務経験があれば「独立系FP」として相談業務が可能です。日本FP協会のAFP・CFP認定を取得するとより信頼性が上がります。実際は保険代理店・不動産会社・証券会社での勤務FPが多く、独立開業には集客力・顧客管理スキルが重要です。まずは資格取得→実務経験→独立というルートが一般的です。' },
+            { q: 'FP試験は何月に受験できますか？', a: '3・4・5月・8・9月・10月・1・2月の年6回（学科・実技それぞれ）実施されています（2023年以降のCBT方式導入後）。年複数回受験できるようになり、合格しやすくなっています。まず3級→合格後すぐに2級の学習開始→次の試験で2級受験、というスケジュールが効率的です。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'gyousei-tsushin-hikaku': (
@@ -611,6 +701,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">3</span><span>7〜9月：過去問演習・弱点補強</span></li>
           <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">4</span><span>10〜11月：記述式対策・直前模試</span></li>
         </ol>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '行政書士の合格率はどのくらいですか？', a: '例年10〜13%程度と難関資格です。毎年40,000〜50,000人が受験し、合格者は5,000〜6,000人程度。基準点主義（総合180点以上＋各科目で足切りあり）のため、バランスのとれた学習が必要です。独学では合格まで2〜3年かかることが多く、通信講座を活用すると1〜1.5年での合格を目指しやすくなります。' },
+            { q: '行政書士と司法書士の違いは何ですか？どちらを目指すべきですか？', a: '行政書士は行政手続（許認可・在留資格等）の書類作成代理が主業務。司法書士は登記・裁判所手続が主業務で、難易度は司法書士のほうがかなり高い（合格率約5%）。独立開業後の業務範囲は司法書士のほうが広い。費用・時間・難易度を考えると「まず行政書士→独立後に司法書士」または「司法書士一本に絞る」の選択が現実的です。' },
+            { q: '行政書士は就職・転職で有利ですか？', a: '行政書士資格は独立開業型の資格で、企業就職での直接的な評価は税理士・社労士より低い場合があります。ただし、建設業・不動産業・入管業務を扱う企業では有資格者を積極採用しているケースも。キャリアアップ目的なら「行政書士+業界経験」の組み合わせで独立開業を目指す方向性が最もリターンが大きいです。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
@@ -684,6 +792,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           ))}
         </div>
         <p className="text-xs text-gray-400 mt-2">※対象講座・給付率は変更される場合があります。最新情報はハローワークまたは各社公式サイトでご確認ください。</p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '給付金の申請はいつでもできますか？', a: '受講開始前に手続きが必要です。「受講開始日の1ヶ月前まで」にハローワークで支給要件照会を行い、利用登録をする必要があります。受講後に「こんな制度があったのか」と気づいても給付を受けられません。まずハローワークに相談し、受給資格があるか確認してから受講先を決定することをお勧めします。' },
+            { q: '専門実践教育訓練給付金（70%給付）の対象になる通信講座はありますか？', a: '社会保険労務士・税理士・弁護士・医療系国家資格等の難関資格を目指す一部の通信講座が対象です。宅建・FP等の比較的難易度の低い資格は「特定一般教育訓練（40%給付）」が多い。厚生労働省の「教育訓練給付制度 検索システム」でご自身の受講希望講座が対象かを確認できます。' },
+            { q: '給付金対象の通信講座と非対象の通信講座、質の差はありますか？', a: '給付金対象には厚生労働省の審査基準（修了率・就職率・カリキュラム等）をクリアする必要があるため、一定の質が担保されています。ただし対象外でも質が高い通信講座は存在し、スタディングなどはコスパが高いと評価されています。給付金対象かどうかより、「合格率・講師の質・サポート体制」で選ぶことを推奨します。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
@@ -760,6 +886,24 @@ export const columnContent: Record<string, React.ReactNode> = {
         <h2 className="text-xl font-bold text-gray-900 mb-4">結論：コスパを考えると通信講座が有利な場合が多い</h2>
         <p className="text-sm text-gray-700">独学で1〜2年かけて合格を目指すより、通信講座で6〜12ヶ月で合格する方が、仕事への復帰・キャリアアップの時間を考えると費用対効果が高いことがあります。特に難関資格では、通信講座の合格率が独学の2〜3倍になるケースも。教育訓練給付金を活用すれば実質負担も大きく下がります。</p>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '独学で一発合格できる資格と通信講座が必要な資格の違いは何ですか？', a: '合格率が40%以上の資格（FP3級・ITパスポート・簿記3級等）は独学でも合格しやすい。合格率が15%以下の資格（宅建・行政書士・社労士等）は通信講座の活用が効率的です。また、範囲が広くて出題傾向の分析が重要な試験は通信講座のほうが「やるべき勉強」を絞り込んでくれるため、時間節約になります。' },
+            { q: '独学のデメリットを補う方法はありますか？', a: '独学最大のデメリットは「どこで躓いているか気づきにくい」「モチベーション維持が難しい」の2点。補う方法として①学習コミュニティへの参加（Twitterのハッシュタグ・資格取得者のSNSフォロー）、②無料の質問機能が使えるアプリ（スタディングの一部機能等）の活用、③友人・同僚と勉強仲間を作る、などが有効です。' },
+            { q: '社会人が独学で難関資格に合格した事例はありますか？', a: 'あります。ただし合格者の学習時間・学習法を詳細に調べると、市販テキスト以外に「過去問解析・弱点特化学習・模試受験」等を徹底的に行っていることが多いです。独学成功者は独学とはいえど非常に体系的に勉強しており、結果として通信講座と変わらないメソッドを使っていることがほとんど。コストを抑えたいなら、コスパの高い通信講座（スタディング等）が現実的な妥協点です。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'shakaijin-shikaku-study': (
@@ -823,6 +967,24 @@ export const columnContent: Record<string, React.ReactNode> = {
             <h3 className="font-bold text-gray-900 mb-1">合格体験記を定期的に読む</h3>
             <p className="text-sm text-gray-700">モチベーションが下がった時は、同じ状況（社会人・仕事しながら）で合格した人の体験記を読むことが効果的です。</p>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '社会人が1日何時間の学習を続ければ資格取得できますか？', a: '資格の難易度によります。FP3級なら1日1時間×2〜3ヶ月（約60〜90時間）、宅建なら1日1.5時間×8〜10ヶ月（約350〜450時間）、社労士なら1日2時間×12〜18ヶ月（700〜1,000時間）が目安です。週末に集中して週20時間確保できる方は期間を短縮できます。スキマ時間（通勤・休憩・就寝前）を活用するとペースが維持しやすいです。' },
+            { q: '学習習慣がない社会人が勉強を続けるコツは何ですか？', a: '①「朝の30分」等の固定時間を確保する（意志力ではなく習慣化）、②学習ハードルを下げる（「完璧に理解しなくていい、まずページを開くだけ」）、③スマホアプリで通勤中に学習する（スタディングのスマホ対応は特に優秀）、④勉強した記録をSNSやノートに記録する（達成感がモチベーションを維持）、の4点が効果的です。' },
+            { q: '育児・家事・仕事を抱える主婦でも資格取得できますか？', a: 'できます。時間の確保が難しい中でも「子供の昼寝中」「家事の合間の5〜10分」「通院の待ち時間」等のスキマ学習を積み重ねることで合格した事例は多数あります。スマホアプリ対応の通信講座（スタディング等）はこのような環境に特に適しています。FP・宅建・医療事務・社会保険労務士は育児後の再就職・パートで活かせる人気資格です。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
         </div>
       </section>
     </div>
@@ -911,6 +1073,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           </div>
         </div>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '社労士試験の難易度はどのくらいですか？', a: '合格率6〜7%程度の難関国家資格です。法律改正が多い（毎年の保険法改正等）ため、最新テキストでの学習が重要。学習時間は800〜1,000時間が必要とされ、通信講座の場合1〜1.5年が目安です。科目ごとの「足切り（基準点）」があるためバランスのよい学習が必須。独学より通信講座・予備校の活用が合格率を高めやすいです。' },
+            { q: '社労士の仕事内容と稼げる金額を教えてください', a: '主な業務は①社会保険・労働保険の手続代行、②就業規則・労働契約書の作成、③給与計算アウトソーシング、④助成金申請コンサルティング、⑤労務相談顧問業務です。勤務社労士の年収は300〜500万円程度。独立開業後は顧問先を増やすことで年収500〜1,000万円以上を目指すことができます。人事・労務担当者としての転職にも有利です。' },
+            { q: '社労士と行政書士、どちらを先に取るべきですか？', a: '目指すキャリアによります。人事・労務・助成金系に興味があれば社労士が先。許認可・在留資格・遺産手続き方向なら行政書士が先。ダブルライセンスで活躍している士業も多く、最終的にはどちらも取得すると業務の幅が広がります。難易度は社労士のほうがやや高く（合格率7% vs 行政書士12%）、学習時間も多く必要です。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'chusho-shindan-shi': (
@@ -972,6 +1152,24 @@ export const columnContent: Record<string, React.ReactNode> = {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '中小企業診断士の難易度と勉強時間はどのくらいですか？', a: '1次試験・2次試験の2段階で構成され、合格率は1次試験25〜30%・2次試験18〜20%・最終合格率は約5〜8%程度です。必要学習時間は1,000〜1,500時間が目安で、通信講座を活用した場合1〜2年が現実的な学習期間です。経営学・財務・法律・情報など7科目の幅広い知識が求められますが、MBAに近い実践的な学習内容です。' },
+            { q: '中小企業診断士はどのような職種に就ける人に有利ですか？', a: '経営コンサルタント・企業内診断士（経営企画・事業開発）・銀行員・商工会議所職員・中小企業向け金融機関に特に有利です。独立開業型の資格ですが、大企業のMBA取得と同等の評価を受けるケースもあり、社内でのキャリアアップにも有効。資格取得後の「診断士の会」へのネットワーク参加も活躍の場を広げる機会になります。' },
+            { q: '中小企業診断士を通信講座で取得する場合、どのくらい費用がかかりますか？', a: 'スタディング（89,100円〜）・アガルート（138,000円〜）・TAC（240,000円〜）と幅があります。スタディングはコスパが最高水準で、動画講義とスマホ学習に優れています。費用対効果を考えると、1〜1.5年で合格できれば取得後の収入増加（コンサル転職・顧問料）で十分に回収できます。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
@@ -1078,6 +1276,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           ))}
         </ul>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'ITパスポートは難しいですか？独学で合格できますか？', a: 'ITパスポートの合格率は50〜60%程度で、国家資格の中では比較的取りやすい部類です。学習時間の目安は100〜150時間（2〜3ヶ月）。独学でも市販テキスト+過去問で合格可能です。通信講座を使う場合は学習を効率化できますが、費用をかけなくてもITパスポートは独学で対応できます。次のステップとして基本情報技術者試験（合格率40%程度）も視野に入れましょう。' },
+            { q: 'ITパスポートを持っていると就職・転職に有利ですか？', a: 'ITパスポートは「IT基礎知識の証明」として、IT非専門職の就活・転職に加点評価される資格です。ただし、IT専門職（エンジニア・SE等）への転職では基本情報技術者試験以上が期待されます。文系・事務職・営業職など「IT素養をアピールしたい非IT職」の人に最適な資格です。取得後のステップとして「基本情報技術者試験→応用情報技術者試験」を目指しましょう。' },
+            { q: 'ITパスポートとG検定（AI）、どちらを先に取るべきですか？', a: 'IT基礎知識がない方はITパスポートが先。AIに特化した学習・キャリアを目指す方はG検定（深層学習・AI理論）が有効です。両方取得するとITとAIの素養を証明でき、DX推進・AIプロジェクト関連業務での差別化が可能。費用もITパスポート（7,500円）・G検定（年4〜5回実施、12,000円程度）と比較的低コストで取得できます。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
   'fukugyou-shikaku-osusume': (
@@ -1153,6 +1369,24 @@ export const columnContent: Record<string, React.ReactNode> = {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '副業で資格を活かすまでにはどのくらいの準備期間が必要ですか？', a: '資格取得後すぐに副業収入が得られるわけではありません。資格取得→実績作り（低単価案件・知人案件）→SNS・プラットフォームでの集客まで、副業として安定収入になるまで3〜12ヶ月かかることが多いです。FPはSNS発信→相談料収入、Webライターは文字単価UP→継続案件という段階的な成長が一般的です。' },
+            { q: '副業で稼げる金額の現実的な目安を教えてください', a: '資格+副業の組み合わせで、月3〜10万円が現実的な初期目標です。FP（相談料5,000〜30,000円/時）・宅建（不動産会社の副業仲介）・社労士（顧問料月3〜5万円/社）などは軌道に乗れば月10万円以上も可能。ただし「資格を取れば稼げる」わけではなく、集客・営業力・継続力がより重要です。' },
+            { q: '副業解禁していない会社員が資格を使って副業するのは問題ありますか？', a: '就業規則で副業禁止の場合、資格を使った副業も原則NGです。ただし確定申告の義務（副業所得年20万円超）が発生しても会社に自動通知はされません（住民税の特別徴収変更を避ければ）。近年は政府の副業推進もあり副業解禁企業が増えていますが、まず就業規則を確認・必要なら会社への申請をしてください。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
@@ -1320,6 +1554,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           ))}
         </div>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '医療事務の資格は何種類あり、どれが一番評価されますか？', a: '医療事務の主な資格は「診療報酬請求事務能力認定試験（最難関・最高評価）」「医療事務技能審査試験（メディカルクラーク）」「医療事務管理士技能認定試験」等があります。就職市場で最も評価されるのは「診療報酬請求事務能力認定試験」で合格率30〜40%と難しいが、持っていると採用で大きなアドバンテージになります。' },
+            { q: '医療事務はAIに仕事を奪われませんか？', a: 'レセプト（診療報酬明細書）の入力・チェックはAI自動化が進んでいますが、患者対応・医師・看護師とのコミュニケーション・複雑なケースの対応はまだ人間が担います。電子カルテ・医事コンピュータを使いこなす「デジタルスキルのある医療事務」の需要は引き続き高い状態です。AI時代でも医療機関の受付・患者対応は人手が必要な領域です。' },
+            { q: '医療事務の資格を持っていると転職しやすいですか？', a: '医療機関（病院・クリニック・歯科医院・調剤薬局）への就職・転職で有利になります。特に未経験者の採用では「資格あり」と「なし」で優先度が変わるケースが多いです。また、ブランクがある主婦の再就職でも、医療事務資格があると採用されやすいです。病院の規模・科によって給与は異なりますが、医療業界は景気の影響を受けにくく安定した雇用環境です。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -1410,6 +1662,24 @@ export const columnContent: Record<string, React.ReactNode> = {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '難易度が低くて転職に有利な資格を教えてください', a: '難易度が中程度（合格率30〜50%）で転職評価が高い資格として、FP2級・ITパスポート・日商簿記2級・MOSスペシャリストがあります。宅建（合格率15〜18%）は難易度がやや高いですが、取得後の転職評価は非常に高い。目標の職種に合わせた資格選びが最も重要で、「難関資格を取ること」自体が目的にならないようにしましょう。' },
+            { q: '資格の取得に失敗（不合格）した場合、どうすればいいですか？', a: '不合格でも得た知識は残ります。まず「弱かった分野・科目」を分析し、次回試験（多くの資格は年1〜2回）に向けて補強学習を行いましょう。通信講座は多くが「不合格の場合の保証（受講期間延長・返金）」を提供しています。1〜2回の不合格は珍しくなく、むしろ不合格後の改善学習で合格する方が知識が定着しています。' },
+            { q: '複数の資格を短期間で取る「資格ラッシュ」は意味がありますか？', a: '転職目的で短期間に複数資格を取ることは、「資格のコレクター」として見られるリスクがあります。採用担当者は資格の数より「その資格を使って何をしたいか」を評価します。資格ラッシュより「1〜2つの核となる資格を深掘りし、実務経験を積む」ほうがキャリアアップには有効です。ただし、ダブルライセンスで業務の幅が広がる組み合わせ（社労士+中小企業診断士等）は戦略的に有効です。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
@@ -1556,6 +1826,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           ))}
         </div>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '行政書士と社労士はどちらが独立開業に向いていますか？', a: 'どちらも独立型の資格ですが、業務の特性が異なります。行政書士は許認可（建設業・飲食店・在留資格等）の書類作成が主で、新規開業・外国人雇用が増える分野で需要があります。社労士は人事・労務・助成金で、中小企業を顧問先として持つスタイルが主流。顧問先数を増やすことで安定収入が見込める社労士のほうが、開業後の収入安定化がしやすいという意見もあります。' },
+            { q: '行政書士と社労士のダブルライセンスのメリットは何ですか？', a: '行政書士は会社設立・建設業許可等の行政手続、社労士は就業規則・社会保険手続と業務が補完的で、一つの会社の設立から経営サポートまでワンストップで対応できます。顧問先からの信頼度が上がり、単価アップにつながるケースが多い。ただし両方の取得は合計学習時間1,500〜2,000時間以上が必要で、年単位の計画が必要です。' },
+            { q: '行政書士・社労士とも通信講座でゼロから合格できますか？', a: 'できます。特に社労士はスタディング・アガルート・フォーサイトで合格者を多数輩出しています。行政書士もアガルート・スタディングが合格実績を公表。両資格とも合格率10%前後と難関ですが、通信講座の効率的なカリキュラムで独学より短期合格を目指しやすくなっています。まずは無料体験を利用して学習スタイルが自分に合うか確認しましょう。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -1689,6 +1977,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           ※ 掲載している合格率・費用は参考値です。最新情報は各講座公式サイトでご確認ください。給付金の適用条件はハローワークでご確認ください。
         </p>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '宅建を独学で合格するのに何年かかりますか？', a: '初学者の場合、独学では1〜2年かかるケースが多いです（合格率15〜18%の難関資格のため）。通信講座を活用すると約6〜10ヶ月での合格を目指しやすくなります。独学での不合格率が高い理由として「法改正への対応が遅れる」「どこに注力すべきか分からない」の2点が挙げられます。通信講座では最新の法改正対応・過去問分析が反映されたカリキュラムを使えます。' },
+            { q: '宅建の過去問は何年分解けばいいですか？', a: '少なくとも10年分（計4肢択一×50問×10年＝500問）を繰り返し解くことが推奨されています。宅建の合格ラインは総得点の約70〜75%（35〜38点/50点）で、過去問の繰り返しで解法パターンが身につきます。通信講座では過去問データベースと正答率分析機能があり、弱点分野への集中学習が可能です。' },
+            { q: '宅建の通信講座費用で最もコスパが良いのはどこですか？', a: 'スタディング（39,600円〜）が最安値クラスで、スマホ完結型の学習UIが高評価です。合格率も全国平均を上回るデータが公表されています。フォーサイト（62,800円〜）は合格率が業界最高水準と公表しており、確実に合格したい方に人気。給付金対応講座を選べば実質負担を大幅に減らせます。まずは各社の無料体験・資料請求で比較してみてください。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -1815,6 +2121,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           ※ 掲載している合格率・試験情報は参考値です。最新の試験日程・受験料は日本FP協会・きんざいの公式サイトでご確認ください。
         </p>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'FP3級から2級へのステップアップは何ヶ月必要ですか？', a: '3級合格直後から学習を継続した場合、2〜4ヶ月で2級受験準備が整うケースが多いです。3級の基礎知識があるため積み上げ学習が可能。通信講座の3級+2級セットなら、効率的なカリキュラムで合計5〜7ヶ月での両方合格を目指せます。3級と2級の試験は同日に開催されることはないため、スケジュール管理が重要です。' },
+            { q: 'FP2級を持っていると就職・転職でどんな評価を得られますか？', a: '金融（銀行・証券・保険）・不動産・FPコンサルタント職では採用で高く評価されます。また、一般企業の経理・財務・人事部門でも「金融知識がある人材」として差別化できます。FP2級以上は履歴書の資格欄で「金融知識の証明」として機能し、FP1級・CFPは独立開業・相談業務の信頼性向上に有効です。' },
+            { q: 'FP試験はCBT（コンピュータ試験）になりましたか？', a: '2023年度よりFP3級・2級の学科・実技試験が一部CBT方式で実施されています（日本FP協会・きんざいどちらも）。年複数回受験可能になり、試験の自由度が上がっています。通信講座のカリキュラムもCBT方式に対応したものを選ぶとスムーズです。試験日程・会場はFP協会公式サイトでご確認ください。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -1929,6 +2253,24 @@ export const columnContent: Record<string, React.ReactNode> = {
           ※ 掲載している合格率・費用は参考値です。最新の試験情報は中小企業診断協会の公式サイトでご確認ください。
         </p>
       </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '中小企業診断士の通信講座と大手資格予備校（TACやLEC）の違いは何ですか？', a: '大手予備校（TAC・LEC）は対面授業・質問対応・答練（模擬試験）が充実していますが、費用が20〜30万円程度と高め。通信講座（スタディング・アガルート）はスマホ完結で費用が6〜15万円程度と安く、スキマ時間学習に優れています。「独学より効率的に、予備校より安く」という方には通信講座が最適な選択肢です。' },
+            { q: '中小企業診断士の2次試験は記述式ですが、通信講座でも対策できますか？', a: '対応しています。アガルートやTACの通信講座では2次試験の事例問題（4事例）の解き方・答案作成のフレームワークを動画で学べます。また模範答案の添削サービス付き講座もあります。スタディングはコスパが高い反面、2次試験の添削対応が限定的なため、2次試験対策は他社の答練と組み合わせる方法も有効です。' },
+            { q: '中小企業診断士は合格後に実務補習が必要ですか？', a: 'はい、試験合格後に15日間の「実務補習」（または実務従事）が必要です。実務補習は中小企業診断協会が実施する中小企業へのコンサルティング実習で、費用は約50,000円程度。実務補習を修了すると「中小企業診断士」として正式登録されます。試験合格だけでは「診断士」を名乗れない点は入学前に把握しておきましょう。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -2037,6 +2379,24 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
           ※ 掲載している費用・合格率は参考値です。最新の試験情報・受験要件は社会福祉振興・試験センター等の公式サイトでご確認ください。
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '介護福祉士と社会福祉士の違いは何ですか？', a: '介護福祉士は「介護の実践者」で、高齢者・障害者の身体介護・生活支援が主な業務。社会福祉士は「福祉の相談援助専門職」で、福祉施設・病院の相談員・ケースワーカーとして支援計画の立案・調整を担います。どちらも国家資格。介護福祉士は実務経験（3年）+研修後に試験受験、社会福祉士は大学の指定科目修了または通信教育での受験資格取得が一般的です。' },
+            { q: '介護・福祉系の資格は通信講座だけで取れますか？', a: '取れる資格と取れない資格があります。社会福祉士・精神保健福祉士は通信制大学+通信講座の組み合わせで受験資格を取得できます。介護福祉士は実務経験3年が必須条件で、通信講座だけでは取れません。ホームヘルパー（訪問介護員）養成研修は通信+実技研修の組み合わせで取得可能です。まず目指す資格の受験資格を確認してください。' },
+            { q: '介護・福祉系の資格を取ると年収はどのくらいになりますか？', a: '介護職員（介護福祉士取得後）の平均年収は320〜380万円程度。社会福祉士（相談援助職）は300〜450万円。ケアマネジャー（ケアマネ）は350〜450万円程度です。管理職・施設長になると500万円以上も可能です。給与水準は施設種別（特別養護老人ホーム・グループホーム・障害者施設）によっても差があります。処遇改善加算制度により介護職の給与は年々上昇傾向にあります。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
