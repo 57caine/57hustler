@@ -148,6 +148,24 @@ export const columns: Column[] = [
     readingTime: 8,
   },
   {
+    slug: 'takken-dokusha-vs-tsushin',
+    title: '宅建は独学と通信講座どっちがいい？費用・合格率・期間を徹底比較',
+    description: '宅建（宅地建物取引士）の独学と通信講座を費用・合格率・学習期間・サポートで比較。初受験・再受験・働きながら合格を目指す方それぞれにおすすめの方法を解説します。',
+    category: '資格比較',
+    publishedAt: '2026-05-30',
+    updatedAt: '2026-05-30',
+    readingTime: 9,
+  },
+  {
+    slug: 'fp-2kyu-3kyu-chigai',
+    title: 'FP2級と3級の違いは？どちらから取るべきか受験戦略を解説',
+    description: 'FP（ファイナンシャルプランナー）2級と3級の試験内容・難易度・費用・就職への影響を比較。初めてFPを取得する方がどちらから始めるべきかを具体的に解説します。',
+    category: '勉強法・対策',
+    publishedAt: '2026-05-30',
+    updatedAt: '2026-05-30',
+    readingTime: 8,
+  },
+  {
     slug: 'gyousei-vs-shakushi',
     title: '行政書士 vs 社労士 どっちを取るべき？難易度・年収・将来性を徹底比較',
     description: '行政書士と社労士の難易度・合格率・必要勉強時間・年収・独立開業のしやすさを詳しく比較。どちらを先に取るべきか迷っている社会人向けに選択基準を解説します。',
@@ -1498,6 +1516,265 @@ export const columnContent: Record<string, React.ReactNode> = {
             </Link>
           ))}
         </div>
+      </section>
+    </div>
+  ),
+
+  'takken-dokusha-vs-tsushin': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">宅建試験の概要と独学・通信講座それぞれの特徴</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          宅地建物取引士（宅建）は不動産業界で唯一の国家資格で、合格率は例年15〜17%程度。
+          独学でも合格できる試験ですが、学習時間は200〜400時間が目安とされています。
+          独学か通信講座かを選ぶ際は、自分の「自己管理力」「予算」「残り時間」で判断しましょう。
+        </p>
+        <div className="overflow-x-auto bg-slate-50 rounded-xl p-4 mb-4">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="border-b border-gray-200">
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">比較項目</th>
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">独学</th>
+                <th className="text-left py-2 text-gray-600 font-semibold">通信講座</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['費用', '1〜3万円（テキスト代のみ）', '2〜15万円（給付金活用で実質負担軽減）'],
+                ['合格率（目安）', '10〜13%前後', '20〜30%前後（講座による）'],
+                ['学習期間', '6〜12ヶ月（自己管理次第）', '3〜6ヶ月（カリキュラム通りに進める）'],
+                ['サポート', 'なし', '質問対応・添削・模試など'],
+                ['挫折リスク', '高い（自己管理が必要）', '低い（ペース配分をサポート）'],
+                ['向いている人', '自己管理が得意・費用を最小化したい', '短期合格・初受験・再受験の方'],
+              ].map(([item, dokugaku, tsushin]) => (
+                <tr key={item} className="border-b border-gray-100">
+                  <td className="py-2 pr-4 font-semibold text-gray-700">{item}</td>
+                  <td className="py-2 pr-4 text-gray-600">{dokugaku}</td>
+                  <td className="py-2 text-gray-600">{tsushin}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">独学をおすすめできる人・できない人</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="bg-white border-2 border-slate-800 rounded-xl p-5">
+            <p className="font-bold text-slate-800 mb-3 text-sm">独学が向いている人</p>
+            <ul className="space-y-2 text-sm text-gray-700">
+              {[
+                '試験まで6ヶ月以上の時間がある',
+                '毎日2〜3時間の学習時間を確保できる',
+                '費用を1〜3万円程度に抑えたい',
+                '過去に資格試験の独学経験がある',
+                '宅建業法や法律系の知識がある程度ある',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="text-slate-500 mt-0.5 shrink-0">-</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-white border-2 border-gray-200 rounded-xl p-5">
+            <p className="font-bold text-gray-800 mb-3 text-sm">通信講座が向いている人</p>
+            <ul className="space-y-2 text-sm text-gray-700">
+              {[
+                '初めて宅建を受験する（法律知識がない）',
+                '仕事が忙しく学習時間が不規則',
+                '前回不合格で今度こそ確実に受かりたい',
+                '給付金を使って費用を抑えたい',
+                '質問できる環境・添削サービスが欲しい',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="text-gray-400 mt-0.5 shrink-0">-</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">宅建通信講座おすすめ3選</h2>
+        <div className="space-y-4">
+          {[
+            {
+              name: 'フォーサイト',
+              slug: 'foresight',
+              price: '28,600円〜（宅建合格対策講座）',
+              pass: '全国平均の3.3倍（2024年度）',
+              feature: '合格率重視',
+              point: '合格率実績が業界トップクラス。フルカラーテキスト・動画・問題演習・バジェット式スケジュール管理で短期合格をサポート。教育訓練給付金（一般）対象。',
+            },
+            {
+              name: 'スタディング',
+              slug: 'studying',
+              price: '10,780円〜（宅建合格コース）',
+              pass: '合格者多数輩出（合格率非公開）',
+              feature: '最安値クラス',
+              point: 'スマホだけで完結する最安値クラスの通信講座。動画・問題演習・AI復習機能をアプリで一括管理。時間がない社会人・コスト重視の方に最適。',
+            },
+            {
+              name: 'LEC東京リーガルマインド',
+              slug: 'lec',
+              price: '60,000円〜',
+              pass: '高い（詳細は公式サイト参照）',
+              feature: '質問・サポート充実',
+              point: '司法試験・行政書士など法律系資格のプロ講師陣による宅建講座。質問し放題・模試多数・過去問解説が充実。難関試験対策としての品質が高い。',
+            },
+          ].map(({ name, slug, price, pass, feature, point }) => (
+            <div key={slug} className="bg-white border border-gray-200 rounded-xl p-5">
+              <div className="flex items-start justify-between gap-3 mb-2">
+                <p className="font-bold text-gray-900">{name}</p>
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{feature}</span>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-2 text-xs mb-3">
+                <div><span className="text-gray-500">費用: </span><span className="font-medium text-gray-800">{price}</span></div>
+                <div><span className="text-gray-500">合格率: </span><span className="font-medium text-gray-800">{pass}</span></div>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed mb-3">{point}</p>
+              <Link href={`/courses/${slug}`} className="inline-block text-sm border border-slate-300 bg-white text-slate-700 px-4 py-1.5 rounded-lg hover:bg-slate-50 transition-colors">
+                {name}の詳細を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
+          ※ 掲載している合格率・費用は参考値です。最新情報は各講座公式サイトでご確認ください。給付金の適用条件はハローワークでご確認ください。
+        </p>
+      </section>
+    </div>
+  ),
+
+  'fp-2kyu-3kyu-chigai': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">FP2級と3級の違いを一覧で比較</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          FP（ファイナンシャルプランナー）技能士は3・2・1級の3段階があります。
+          就職・転職・副業で活かすなら2級以上が実用的とされますが、初学者は3級から始めるのが一般的です。
+          2級と3級の主な違いを以下にまとめます。
+        </p>
+        <div className="overflow-x-auto bg-slate-50 rounded-xl p-4 mb-4">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="border-b border-gray-200">
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">比較項目</th>
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">FP3級</th>
+                <th className="text-left py-2 text-gray-600 font-semibold">FP2級</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['試験実施機関', '日本FP協会 / きんざい', '日本FP協会 / きんざい'],
+                ['受験資格', '誰でも受験可能', 'FP3級合格 or 実務経験2年以上'],
+                ['合格率', '80〜90%前後', '40〜60%前後'],
+                ['学習時間（目安）', '100〜150時間', '200〜300時間'],
+                ['試験料', '4,000〜6,000円', '8,000〜11,700円'],
+                ['就職・転職での評価', '入門資格（実務では低い）', '実務で評価される最低ライン'],
+                ['副業・独立', 'FP相談業務はできない', '法人・個人向けFP業務が可能'],
+              ].map(([item, fp3, fp2]) => (
+                <tr key={item} className="border-b border-gray-100">
+                  <td className="py-2 pr-4 font-semibold text-gray-700">{item}</td>
+                  <td className="py-2 pr-4 text-gray-600">{fp3}</td>
+                  <td className="py-2 text-gray-600">{fp2}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">あなたに向いているのはどっち？</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="bg-white border-2 border-slate-800 rounded-xl p-5">
+            <p className="font-bold text-slate-800 mb-3 text-sm">FP3級から始める方が良い人</p>
+            <ul className="space-y-2 text-sm text-gray-700">
+              {[
+                'FPを初めて学ぶ完全初心者',
+                '家計・税金・保険の基礎知識を身につけたい',
+                '2級受験のための基礎固めをしたい',
+                '試験まで3ヶ月程度しかない',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="text-slate-500 mt-0.5 shrink-0">-</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-white border-2 border-gray-200 rounded-xl p-5">
+            <p className="font-bold text-gray-800 mb-3 text-sm">FP2級から始めても良い人</p>
+            <ul className="space-y-2 text-sm text-gray-700">
+              {[
+                '金融・保険業界などで実務経験がある',
+                '転職・就職活動でFP2級が必要とされている',
+                'FP3級を既に取得済み',
+                '短期間で2級まで一気に合格したい',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="text-gray-400 mt-0.5 shrink-0">-</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">FP2・3級の通信講座おすすめ比較</h2>
+        <div className="space-y-4">
+          {[
+            {
+              name: 'スタディング',
+              slug: 'studying',
+              price: 'FP3級: 3,850円〜 / FP2級: 6,050円〜',
+              pass: '合格者多数（合格率非公開）',
+              point: '最安値クラスで3・2級セットコースも充実。スマホ完結型で隙間時間に学習可能。通勤・昼休みに動画講義と問題演習を組み合わせて学べる。',
+            },
+            {
+              name: 'フォーサイト',
+              slug: 'foresight',
+              price: 'FP2・3級セット: 38,800円〜',
+              pass: '全国平均の1.5〜2倍前後',
+              point: 'バジェット式カリキュラムで合格に必要なポイントに絞った学習。フルカラーテキスト・動画・模試がセットになったコスパの良いパックが充実。',
+            },
+            {
+              name: 'アガルート',
+              slug: 'agaroot',
+              price: 'FP2級: 16,280円〜',
+              pass: '高い（詳細は公式サイト参照）',
+              point: '動画講義の質が高く合格率実績も堅調。FP2級に集中した効率的な学習が可能。無料体験授業・全額返金合格保証あり。',
+            },
+          ].map(({ name, slug, price, pass, point }) => (
+            <div key={slug} className="bg-white border border-gray-200 rounded-xl p-5">
+              <p className="font-bold text-gray-900 mb-2">{name}</p>
+              <div className="grid sm:grid-cols-2 gap-2 text-xs mb-3">
+                <div><span className="text-gray-500">費用: </span><span className="font-medium text-gray-800">{price}</span></div>
+                <div><span className="text-gray-500">合格率: </span><span className="font-medium text-gray-800">{pass}</span></div>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed mb-3">{point}</p>
+              <Link href={`/courses/${slug}`} className="inline-block text-sm border border-slate-300 bg-white text-slate-700 px-4 py-1.5 rounded-lg hover:bg-slate-50 transition-colors">
+                {name}の詳細を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
+          ※ 掲載している合格率・試験情報は参考値です。最新の試験日程・受験料は日本FP協会・きんざいの公式サイトでご確認ください。
+        </p>
       </section>
     </div>
   ),

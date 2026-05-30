@@ -157,6 +157,24 @@ export const columns: Column[] = [
     readingTime: 8,
   },
   {
+    slug: 'programming-school-20dai-osusume',
+    title: '20代・大学生・新卒向けプログラミングスクールおすすめ3選【2026年版】',
+    description: '20代や大学生・新卒の方向けにコスパと転職サポートを重視したプログラミングスクールを厳選。給付金活用・就職実績・無料体験の観点から3校を徹底比較します。',
+    category: '年代別おすすめ',
+    publishedAt: '2026-05-30',
+    updatedAt: '2026-05-30',
+    readingTime: 8,
+  },
+  {
+    slug: 'web-frontend-school',
+    title: 'Webフロントエンドエンジニアを目指せるスクール比較【HTML/CSS/JavaScript対応】',
+    description: 'HTML・CSS・JavaScript・Reactを学べるWebフロントエンド特化スクールを比較。転職に必要なスキルセットと各スクールのカリキュラムの違いを解説します。',
+    category: 'スクール比較',
+    publishedAt: '2026-05-30',
+    updatedAt: '2026-05-30',
+    readingTime: 9,
+  },
+  {
     slug: 'school-koukai-shinai-erabi',
     title: 'プログラミングスクールで後悔しないための選び方【失敗例と回避策】',
     description: 'プログラミングスクールで後悔した人の失敗パターンを分析。「高い受講料が無駄だった」「就職できなかった」などの失敗を避けるための選び方・確認事項を詳しく解説。',
@@ -1511,6 +1529,260 @@ export const columnContent: Record<string, React.ReactNode> = {
           ].map(({ name, slug }) => (
             <Link key={slug} href={`/schools/${slug}`} className="text-sm border border-slate-300 bg-white text-slate-700 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors">
               {name}の詳細を見る →
+            </Link>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'programming-school-20dai-osusume': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">20代がプログラミングスクールを選ぶポイント</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          20代・大学生・新卒の方がスクールを選ぶ際は、転職サポートの充実度・費用と給付金の活用・就職後のキャリアパスの3点が重要です。
+          30代以降と比べて「若さ」という武器があるため、スキルと意欲さえあれば未経験からでも大手IT企業への就職も十分に狙えます。
+        </p>
+        <div className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+          <p className="font-semibold text-gray-800 mb-3 text-sm">20代がスクール選びで重視すべきポイント</p>
+          <ul className="space-y-2 text-sm text-gray-700">
+            {[
+              '転職・就職支援の実績と内定先企業の質（大手・成長企業への実績があるか）',
+              '給付金対象講座かどうか（雇用保険加入者なら最大70%還付）',
+              '無料体験・トライアルで事前に雰囲気を確認できるか',
+              '学習コミュニティが活発で仲間と切磋琢磨できる環境か',
+              '受講後のフォロー・キャリアチェンジの相談ができるか',
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <span className="text-slate-500 mt-0.5 shrink-0">-</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">20代・新卒向けスクールおすすめ3選</h2>
+        <div className="space-y-5">
+          {[
+            {
+              rank: 1,
+              name: 'TECH CAMP（テックキャンプ）',
+              slug: 'techcamp',
+              badge: '転職保証あり',
+              price: '437,800円〜（給付金適用後 約131,340円〜）',
+              period: '10週間〜3ヶ月',
+              point: '転職成功率98.9%（自社調べ）、専属メンターによる学習サポート、転職できなければ全額返金の転職保証付き。20代・未経験向けの転職支援実績が業界最多クラス。',
+              features: ['転職保証あり', '給付金対象', '未経験歓迎'],
+            },
+            {
+              rank: 2,
+              name: 'DMM WEBCAMP',
+              slug: 'dmm-webcamp',
+              badge: '転職特化',
+              price: '415,800円〜（給付金適用後 約124,740円〜）',
+              period: '3ヶ月',
+              point: '業界最大規模の転職支援チーム。専属キャリアアドバイザーが就職活動をサポート。大学生・新卒向けのコースは就職活動スケジュールに合わせた柔軟な学習が可能。',
+              features: ['転職保証あり', '給付金対象', '就活サポート'],
+            },
+            {
+              rank: 3,
+              name: 'GEEK JOB（ギークジョブ）',
+              slug: 'geek-job',
+              badge: '最短2ヶ月',
+              price: '無料コースあり（転職成功で受講料0円）',
+              period: '最短2ヶ月',
+              point: '20代の転職に特化した完全無料（転職成功報酬型）モデルも持つ。短期集中コースで最短2ヶ月でエンジニア転職を目指せる。大学生・フリーター・第二新卒に強い。',
+              features: ['無料コースあり', '20代特化', '短期集中'],
+            },
+          ].map(({ rank, name, slug, badge, price, period, point, features }) => (
+            <div key={slug} className="bg-white border border-gray-200 rounded-xl p-5">
+              <div className="flex items-start justify-between gap-3 mb-3">
+                <div className="flex items-center gap-2">
+                  <span className="bg-slate-800 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0">{rank}</span>
+                  <p className="font-bold text-gray-900">{name}</p>
+                </div>
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+              </div>
+              <div className="flex flex-wrap gap-1 mb-3">
+                {features.map((f) => (
+                  <span key={f} className="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full">{f}</span>
+                ))}
+              </div>
+              <div className="grid sm:grid-cols-2 gap-2 text-xs mb-3">
+                <div><span className="text-gray-500">費用: </span><span className="font-medium text-gray-800">{price}</span></div>
+                <div><span className="text-gray-500">期間: </span><span className="font-medium text-gray-800">{period}</span></div>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed mb-3">{point}</p>
+              <Link href={`/schools/${slug}`} className="inline-block text-sm border border-slate-300 bg-white text-slate-700 px-4 py-1.5 rounded-lg hover:bg-slate-50 transition-colors">
+                {name}の詳細を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">20代でエンジニアになるメリット</h2>
+        <div className="space-y-3">
+          {[
+            { title: '年収の伸びしろが大きい', body: '20代でエンジニアになれば30〜40代にかけてのキャリア設計の自由度が高くなります。スタートアップでのストックオプション・大手IT企業への転職・フリーランス独立など、選択肢が豊富です。' },
+            { title: '第二新卒・未経験採用の枠がある', body: 'IT業界は慢性的な人材不足のため、20代未経験の採用に積極的な企業が多い。ポテンシャル重視の採用が行われており、スクールで学んだスキルと意欲があれば十分に転職できます。' },
+            { title: '給付金で費用の負担を大きく軽減できる', body: '雇用保険に1年以上加入していれば教育訓練給付金を活用でき、受講料の20〜70%が還付されます。例えば40万円のスクールが実質12万円前後になることも。在職中に申請を済ませておくのがポイントです。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-slate-50 border border-slate-200 rounded-xl p-5">
+        <p className="font-semibold text-gray-800 mb-3">20代向けスクールをさらに比較する</p>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { name: 'TECH CAMP', slug: 'techcamp' },
+            { name: 'DMM WEBCAMP', slug: 'dmm-webcamp' },
+            { name: 'GEEK JOB', slug: 'geek-job' },
+            { name: '侍エンジニア塾', slug: 'samurai-engineer' },
+          ].map(({ name, slug }) => (
+            <Link key={slug} href={`/schools/${slug}`} className="text-sm border border-slate-300 bg-white text-slate-700 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors">
+              {name}の詳細 →
+            </Link>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'web-frontend-school': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">Webフロントエンドエンジニアに必要なスキルとは</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          Webフロントエンドエンジニアは、ユーザーが実際に見て操作するWebサイト・Webアプリの表示部分（UI）を構築するエンジニアです。
+          2026年現在、求人市場では以下のスキルセットが求められています。
+        </p>
+        <div className="overflow-x-auto bg-slate-50 rounded-xl p-4 mb-4">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="border-b border-gray-200">
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">スキル</th>
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">重要度</th>
+                <th className="text-left py-2 text-gray-600 font-semibold">備考</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['HTML / CSS', '必須', 'レイアウト・スタイリングの基礎'],
+                ['JavaScript（ES6+）', '必須', 'フロントエンドの中核言語'],
+                ['React / Vue.js', '重要', 'モダンUI構築のフレームワーク'],
+                ['TypeScript', '推奨', '型安全な開発で採用増加中'],
+                ['Git / GitHub', '必須', 'バージョン管理・チーム開発'],
+                ['レスポンシブデザイン', '必須', 'スマートフォン対応'],
+                ['APIとの連携（REST / GraphQL）', '推奨', 'バックエンドとの接続'],
+              ].map(([skill, importance, note]) => (
+                <tr key={skill} className="border-b border-gray-100">
+                  <td className="py-2 pr-4 font-semibold text-gray-700">{skill}</td>
+                  <td className="py-2 pr-4"><span className={`text-xs px-2 py-0.5 rounded-full ${importance === '必須' ? 'bg-slate-800 text-white' : importance === '重要' ? 'bg-slate-100 text-slate-700' : 'bg-gray-100 text-gray-600'}`}>{importance}</span></td>
+                  <td className="py-2 text-gray-600">{note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">Webフロントエンド対応スクール比較</h2>
+        <div className="space-y-4">
+          {[
+            {
+              name: 'RUNTEQ（ランテック）',
+              slug: 'runteq',
+              focus: 'Webエンジニア特化',
+              langs: 'Ruby on Rails / JavaScript / React',
+              period: '5〜9ヶ月',
+              price: '437,800円〜',
+              point: 'Webエンジニア転職に特化した実践型スクール。React・JavaScriptを含む実務に近いカリキュラムで、転職後のミスマッチが少ない。即戦力育成に定評あり。',
+            },
+            {
+              name: 'TechAcademy（テックアカデミー）',
+              slug: 'techacademy',
+              focus: 'フロントエンド特化コース',
+              langs: 'HTML / CSS / JavaScript / jQuery',
+              period: '4〜16週間',
+              price: '174,900円〜',
+              point: 'フロントエンドコースを単独で受講可能。現役エンジニアによる週2回のメンタリング・コードレビューで確実にスキルが身につく。短期集中型で副業・転職に対応。',
+            },
+            {
+              name: 'TECH CAMP（テックキャンプ）',
+              slug: 'techcamp',
+              focus: '総合エンジニア転職',
+              langs: 'Ruby on Rails / JavaScript / React',
+              period: '10週間〜3ヶ月',
+              price: '437,800円〜',
+              point: '転職保証付きで業界最大規模の転職支援。フロントエンドだけでなくバックエンド・インフラまで幅広く学び、フルスタックとして転職市場での価値を高める。',
+            },
+            {
+              name: '侍エンジニア塾',
+              slug: 'samurai-engineer',
+              focus: 'マンツーマン指導',
+              langs: 'HTML / CSS / JavaScript / Vue.js / React',
+              period: '3〜12ヶ月',
+              price: '220,000円〜',
+              point: '専属インストラクターとの1対1のマンツーマン指導。フロントエンドの特定フレームワーク（Reactなど）を重点的に学ぶカスタマイズも可能。',
+            },
+          ].map(({ name, slug, focus, langs, period, price, point }) => (
+            <div key={slug} className="bg-white border border-gray-200 rounded-xl p-5">
+              <div className="flex items-start justify-between gap-3 mb-2">
+                <p className="font-bold text-gray-900">{name}</p>
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{focus}</span>
+              </div>
+              <div className="grid sm:grid-cols-3 gap-2 text-xs mb-3">
+                <div><span className="text-gray-500">学習技術: </span><span className="font-medium text-gray-800">{langs}</span></div>
+                <div><span className="text-gray-500">期間: </span><span className="font-medium text-gray-800">{period}</span></div>
+                <div><span className="text-gray-500">費用: </span><span className="font-medium text-gray-800">{price}</span></div>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed mb-3">{point}</p>
+              <Link href={`/schools/${slug}`} className="inline-block text-sm border border-slate-300 bg-white text-slate-700 px-4 py-1.5 rounded-lg hover:bg-slate-50 transition-colors">
+                {name}の詳細を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">フロントエンドエンジニアの就職・転職先</h2>
+        <div className="space-y-3">
+          {[
+            { title: 'Web制作会社・システム開発会社', body: 'Webサイト・Webアプリの制作を請け負うSIer・Web制作会社は未経験・第二新卒の採用も多い。フロントエンドのポートフォリオを作成して実力をアピールすることが重要。' },
+            { title: '自社開発スタートアップ', body: 'スタートアップはポテンシャル採用が多く、若手エンジニアが活躍できる環境。ReactやTypeScriptを使った実務経験が積みやすく、成長スピードが速い。株式報酬（ストックオプション）も期待できる。' },
+            { title: '大手IT企業のフロントエンド部門', body: 'Yahoo!・メルカリ・サイバーエージェントなど大手IT企業はフロントエンドの専門職採用が活発。中途採用でもフロントエンドの実務経験2〜3年あれば応募できる求人が多い。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-slate-50 border border-slate-200 rounded-xl p-5">
+        <p className="font-semibold text-gray-800 mb-3">フロントエンドが学べるスクールを比較する</p>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { name: 'RUNTEQ', slug: 'runteq' },
+            { name: 'TechAcademy', slug: 'techacademy' },
+            { name: 'TECH CAMP', slug: 'techcamp' },
+            { name: '侍エンジニア塾', slug: 'samurai-engineer' },
+          ].map(({ name, slug }) => (
+            <Link key={slug} href={`/schools/${slug}`} className="text-sm border border-slate-300 bg-white text-slate-700 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors">
+              {name}の詳細 →
             </Link>
           ))}
         </div>
