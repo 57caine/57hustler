@@ -9,6 +9,7 @@ export type Column = {
   publishedAt: string;
   updatedAt: string;
   readingTime: number;
+  headings?: string[];
 };
 
 export const columns: Column[] = [
@@ -20,6 +21,7 @@ export const columns: Column[] = [
     publishedAt: '2025-04-01',
     updatedAt: '2025-06-01',
     readingTime: 12,
+    headings: ['プログラミングスクール選びの3つのポイント', '転職特化型スクール比較', 'スキルアップ・副業向けスクール比較', 'まとめ：目的別おすすめスクール'],
   },
   {
     slug: 'teiten-hojo-programming-school',
@@ -29,6 +31,7 @@ export const columns: Column[] = [
     publishedAt: '2025-03-15',
     updatedAt: '2025-06-01',
     readingTime: 8,
+    headings: ['教育訓練給付金とは？', '給付金対応プログラミングスクール一覧', '給付金申請の流れ'],
   },
   {
     slug: 'mikeiken-engineer-tenshi',
@@ -38,6 +41,7 @@ export const columns: Column[] = [
     publishedAt: '2025-03-01',
     updatedAt: '2025-05-15',
     readingTime: 10,
+    headings: ['未経験からエンジニア転職できる？現実を解説', '転職成功率が高いスクール3選', '転職保証とは？条件を確認しよう'],
   },
   {
     slug: 'programming-school-ryokin-hikaku',
@@ -47,6 +51,7 @@ export const columns: Column[] = [
     publishedAt: '2025-02-15',
     updatedAt: '2025-06-01',
     readingTime: 7,
+    headings: ['プログラミングスクール料金比較一覧（安い順）', '分割払い・ローンの活用', 'コスパ最強スクールはどこ？'],
   },
   {
     slug: 'freelance-engineer-school',
@@ -56,6 +61,7 @@ export const columns: Column[] = [
     publishedAt: '2025-02-01',
     updatedAt: '2025-05-01',
     readingTime: 9,
+    headings: ['フリーランスエンジニアの現実：需要と収入', 'フリーランス特化スクール：CoachTech', 'フリーランスになるまでのロードマップ'],
   },
   {
     slug: 'ai-engineer-school-guide',
@@ -65,6 +71,7 @@ export const columns: Column[] = [
     publishedAt: '2025-01-15',
     updatedAt: '2025-06-01',
     readingTime: 8,
+    headings: ['AIエンジニアとは？2025年の需要', 'AIエンジニアを目指せるスクール', '独学でAIを学ぶ場合との比較'],
   },
   {
     slug: 'programming-school-shakaijin-osusume',
@@ -74,6 +81,7 @@ export const columns: Column[] = [
     publishedAt: '2025-06-01',
     updatedAt: '2025-06-01',
     readingTime: 8,
+    headings: ['社会人がスクール選びで重視すべき3つのポイント', '社会人おすすめスクール5選：比較表', '各スクールの特徴と社会人向けポイント'],
   },
   {
     slug: 'programming-school-josei-osusume',
@@ -83,6 +91,7 @@ export const columns: Column[] = [
     publishedAt: '2025-06-01',
     updatedAt: '2025-06-01',
     readingTime: 7,
+    headings: ['女性がプログラミングを学ぶ背景', '女性におすすめスクール5選：比較表', '育児中・ブランク明けの女性でも学べる？'],
   },
   {
     slug: 'programming-school-40dai-osusume',
@@ -92,6 +101,7 @@ export const columns: Column[] = [
     publishedAt: '2025-06-01',
     updatedAt: '2025-06-01',
     readingTime: 7,
+    headings: ['40代・50代のプログラミング学習：現実と可能性', '40代・50代にとっての現実的な目標設定', '40代・50代におすすめのスクール選び方'],
   },
   {
     slug: 'dokugaku-vs-school',
@@ -101,6 +111,7 @@ export const columns: Column[] = [
     publishedAt: '2025-06-01',
     updatedAt: '2025-06-01',
     readingTime: 8,
+    headings: ['独学 vs スクール：数字で比較', '独学が向いている人・スクールが向いている人', 'スクール受講の費用対効果を試算する'],
   },
   {
     slug: 'engineer-tensyoku-kikan',
@@ -110,6 +121,7 @@ export const columns: Column[] = [
     publishedAt: '2025-06-01',
     updatedAt: '2025-06-01',
     readingTime: 8,
+    headings: ['未経験エンジニア転職までの平均期間', '転職成功に必要なスキルレベルとは', 'スクール別の転職実績比較'],
   },
   {
     slug: 'python-programming-school',
@@ -119,6 +131,7 @@ export const columns: Column[] = [
     publishedAt: '2025-06-15',
     updatedAt: '2025-06-15',
     readingTime: 9,
+    headings: ['Pythonで目指せるキャリア', 'Pythonが学べるスクール比較', 'Python学習のロードマップ'],
   },
   {
     slug: 'web-seisaku-school',
@@ -128,6 +141,7 @@ export const columns: Column[] = [
     publishedAt: '2025-06-15',
     updatedAt: '2025-06-15',
     readingTime: 8,
+    headings: ['Web制作で目指せるキャリア', 'Web制作スクール 比較表', '副業を目指すなら何ヶ月で稼げる？'],
   },
   {
     slug: 'tensyoku-hosho-school',
@@ -137,6 +151,7 @@ export const columns: Column[] = [
     publishedAt: '2026-05-25',
     updatedAt: '2026-05-29',
     readingTime: 8,
+    headings: ['転職保証とは？仕組みと注意点', '転職保証付きスクール 比較', '転職保証を最大限活かすための学習戦略', '転職保証なしでも検討すべき優良スクール'],
   },
   {
     slug: 'programming-school-30dai',
@@ -146,6 +161,7 @@ export const columns: Column[] = [
     publishedAt: '2026-05-26',
     updatedAt: '2026-05-29',
     readingTime: 9,
+    headings: ['30代でのエンジニア転職は現実的か？', '30代にお勧めのプログラミングスクール', '30代エンジニア転職のリアルなタイムライン', '30代でエンジニアを目指す前に確認すること'],
   },
   {
     slug: 'javascript-react-school',
@@ -155,6 +171,7 @@ export const columns: Column[] = [
     publishedAt: '2026-05-29',
     updatedAt: '2026-05-29',
     readingTime: 8,
+    headings: ['なぜJavaScript・Reactを選ぶのか', 'JavaScript・React特化スクール おすすめランキング', 'JavaScript学習ロードマップ'],
   },
   {
     slug: 'programming-school-20dai-osusume',
@@ -164,6 +181,7 @@ export const columns: Column[] = [
     publishedAt: '2026-05-30',
     updatedAt: '2026-05-30',
     readingTime: 8,
+    headings: ['20代がプログラミングスクールを選ぶポイント', '20代・新卒向けスクールおすすめ3選', '20代でエンジニアになるメリット'],
   },
   {
     slug: 'web-frontend-school',
@@ -173,6 +191,7 @@ export const columns: Column[] = [
     publishedAt: '2026-05-30',
     updatedAt: '2026-05-30',
     readingTime: 9,
+    headings: ['Webフロントエンドエンジニアに必要なスキルとは', 'Webフロントエンド対応スクール比較', 'フロントエンドエンジニアの就職・転職先'],
   },
   {
     slug: 'school-koukai-shinai-erabi',
@@ -182,6 +201,7 @@ export const columns: Column[] = [
     publishedAt: '2026-05-29',
     updatedAt: '2026-05-29',
     readingTime: 9,
+    headings: ['プログラミングスクールで後悔する人の共通パターン', '入学前に必ず確認すべき7つのポイント', '後悔しにくいスクールの特徴まとめ'],
   },
 ];
 

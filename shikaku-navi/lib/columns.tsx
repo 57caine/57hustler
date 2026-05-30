@@ -9,6 +9,7 @@ export type Column = {
   publishedAt: string;
   updatedAt: string;
   readingTime: number;
+  headings?: string[];
 };
 
 export const columns: Column[] = [
@@ -20,6 +21,7 @@ export const columns: Column[] = [
     publishedAt: '2025-04-01',
     updatedAt: '2025-06-01',
     readingTime: 12,
+    headings: ['通信講座選びの3つのポイント', '通信講座5社の比較表', 'スタディング：コスパ最重視ならこれ', 'フォーサイト：合格率重視ならこれ', 'まとめ：目的別おすすめ通信講座'],
   },
   {
     slug: 'takken-tsushin-osusume',
@@ -29,6 +31,7 @@ export const columns: Column[] = [
     publishedAt: '2025-04-15',
     updatedAt: '2025-06-01',
     readingTime: 10,
+    headings: ['宅建試験の概要と難易度', '宅建通信講座5社の比較', '宅建通信講座の選び方', '宅建の学習スケジュール例'],
   },
   {
     slug: 'bookkeeping-school-hikaku',
@@ -38,6 +41,7 @@ export const columns: Column[] = [
     publishedAt: '2025-05-01',
     updatedAt: '2025-06-01',
     readingTime: 10,
+    headings: ['簿記2・3級の難易度と取得メリット', '3社の比較：スタディング vs フォーサイト vs ユーキャン', '教育訓練給付金で費用を削減'],
   },
   {
     slug: 'shikaku-career-up',
@@ -47,6 +51,7 @@ export const columns: Column[] = [
     publishedAt: '2025-05-15',
     updatedAt: '2025-06-01',
     readingTime: 11,
+    headings: ['転職・年収アップに直結する資格とは', '転職に有利な資格10選', '資格取得の費用対効果を考える'],
   },
   {
     slug: 'fp-tsushin-osusume',
@@ -56,6 +61,7 @@ export const columns: Column[] = [
     publishedAt: '2025-05-20',
     updatedAt: '2025-06-01',
     readingTime: 9,
+    headings: ['FP試験の基本情報', 'FP通信講座4社の比較', '状況別・おすすめFP通信講座'],
   },
   {
     slug: 'gyousei-tsushin-hikaku',
@@ -65,6 +71,7 @@ export const columns: Column[] = [
     publishedAt: '2025-05-25',
     updatedAt: '2025-06-01',
     readingTime: 10,
+    headings: ['行政書士試験の基本情報', '行政書士通信講座4社の比較', '行政書士の学習スケジュール例（1年間）'],
   },
   {
     slug: 'kyouiku-kunren-kyuufu',
@@ -74,6 +81,7 @@ export const columns: Column[] = [
     publishedAt: '2025-06-01',
     updatedAt: '2025-06-01',
     readingTime: 8,
+    headings: ['教育訓練給付金の3種類', '申請手順（受講前が重要）', '給付金対象の資格通信講座例'],
   },
   {
     slug: 'shikaku-dokugaku-vs-tsushin',
@@ -83,6 +91,7 @@ export const columns: Column[] = [
     publishedAt: '2025-06-05',
     updatedAt: '2025-06-05',
     readingTime: 8,
+    headings: ['独学 vs 通信講座：メリット・デメリット比較', '資格別：独学 vs 通信講座 どちらがおすすめ？', '結論：コスパを考えると通信講座が有利な場合が多い'],
   },
   {
     slug: 'shakaijin-shikaku-study',
@@ -92,6 +101,7 @@ export const columns: Column[] = [
     publishedAt: '2025-06-10',
     updatedAt: '2025-06-10',
     readingTime: 9,
+    headings: ['社会人の1日の学習時間の目安', 'スキマ時間を活用する5つのテクニック', '挫折しないための学習管理法'],
   },
   {
     slug: 'shakushi-tsushin-osusume',
@@ -101,6 +111,7 @@ export const columns: Column[] = [
     publishedAt: '2025-06-15',
     updatedAt: '2025-06-15',
     readingTime: 9,
+    headings: ['社労士試験の基本情報', '社労士通信講座 比較表', '社労士資格の活かし方'],
   },
   {
     slug: 'chusho-shindan-shi',
@@ -110,6 +121,7 @@ export const columns: Column[] = [
     publishedAt: '2025-06-15',
     updatedAt: '2025-06-15',
     readingTime: 8,
+    headings: ['中小企業診断士試験の概要', '中小企業診断士に強い通信講座', 'なぜ中小企業診断士はキャリアアップに強いのか'],
   },
   {
     slug: 'it-passport-tsushin-hikaku',
@@ -119,6 +131,7 @@ export const columns: Column[] = [
     publishedAt: '2026-05-20',
     updatedAt: '2026-05-29',
     readingTime: 8,
+    headings: ['ITパスポートとは？合格すると何が変わるか', 'ITパスポート通信講座 比較ランキング', 'ITパスポート 独学 vs 通信講座', 'ITパスポート合格後のステップ'],
   },
   {
     slug: 'fukugyou-shikaku-osusume',
@@ -128,6 +141,7 @@ export const columns: Column[] = [
     publishedAt: '2026-05-22',
     updatedAt: '2026-05-29',
     readingTime: 9,
+    headings: ['副業に資格は必要か？資格が有利になる副業タイプ', '副業で稼げる資格 おすすめ10選', '副業資格取得を通信講座でスムーズに進めるコツ'],
   },
   {
     slug: 'iryo-jimu-shikaku-osusume',
@@ -137,6 +151,7 @@ export const columns: Column[] = [
     publishedAt: '2026-05-29',
     updatedAt: '2026-05-29',
     readingTime: 9,
+    headings: ['医療事務資格とは？種類と特徴', '医療事務 通信講座 おすすめランキング', '医療事務の仕事と就職先', '医療事務資格 選び方のポイント'],
   },
   {
     slug: 'shikaku-nanido-ranking',
@@ -146,6 +161,7 @@ export const columns: Column[] = [
     publishedAt: '2026-05-29',
     updatedAt: '2026-05-29',
     readingTime: 8,
+    headings: ['資格難易度の見方と選び方', '取得しやすい資格ランキングTOP10', '目的別おすすめ資格の選び方', '短期合格に役立つ通信講座の特徴'],
   },
   {
     slug: 'takken-dokusha-vs-tsushin',
@@ -155,6 +171,7 @@ export const columns: Column[] = [
     publishedAt: '2026-05-30',
     updatedAt: '2026-05-30',
     readingTime: 9,
+    headings: ['宅建試験の概要と独学・通信講座それぞれの特徴', '独学をおすすめできる人・できない人', '宅建通信講座おすすめ3選'],
   },
   {
     slug: 'fp-2kyu-3kyu-chigai',
@@ -164,6 +181,7 @@ export const columns: Column[] = [
     publishedAt: '2026-05-30',
     updatedAt: '2026-05-30',
     readingTime: 8,
+    headings: ['FP2級と3級の違いを一覧で比較', 'あなたに向いているのはどっち？', 'FP2・3級の通信講座おすすめ比較'],
   },
   {
     slug: 'chuusho-shindan-shi-tsushin-hikaku',
@@ -173,6 +191,7 @@ export const columns: Column[] = [
     publishedAt: '2026-05-30',
     updatedAt: '2026-05-30',
     readingTime: 10,
+    headings: ['中小企業診断士の試験概要', '中小企業診断士 通信講座 比較', '中小企業診断士の取得メリット'],
   },
   {
     slug: 'kango-fukushi-shikaku-tsushin',
@@ -182,6 +201,7 @@ export const columns: Column[] = [
     publishedAt: '2026-05-30',
     updatedAt: '2026-05-30',
     readingTime: 9,
+    headings: ['介護・福祉系の国家資格一覧', '介護・福祉系資格の通信講座おすすめ', '介護・福祉系資格の取得メリット'],
   },
   {
     slug: 'gyousei-vs-shakushi',
@@ -191,6 +211,7 @@ export const columns: Column[] = [
     publishedAt: '2026-05-29',
     updatedAt: '2026-05-29',
     readingTime: 10,
+    headings: ['行政書士 vs 社労士 基本比較', '業務内容の違い', 'どちらを先に取るべき？目的別の選び方', '行政書士・社労士の通信講座比較'],
   },
 ];
 
