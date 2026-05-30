@@ -7,15 +7,23 @@ import SchoolCard from '@/components/SchoolCard';
 
 type Props = { params: Promise<{ category: string }> };
 
+const BASE = 'https://nsplot.com';
+
 const categoryGuide: Record<string, {
   heading: string;
   intro: string;
   points: string[];
   relatedColumns: string[];
+  faqs: { q: string; a: string }[];
 }> = {
   '転職特化': {
     heading: '転職特化スクールを選ぶポイント',
     intro: '未経験からIT転職を目指す方向けに、転職支援・求人紹介・転職保証まで総合的にサポートするスクールを掲載しています。',
+    faqs: [
+      { q: '転職保証があるプログラミングスクールはどこですか？', a: 'TECH CAMP・DMM WEBCAMP・侍エンジニア塾・GEEK JOBなどが転職保証（転職できなければ返金）を提供しています。各スクールで条件（応募社数・期限など）が異なるため、事前に確認してください。' },
+      { q: '未経験からIT転職するのにどれくらいかかりますか？', a: '一般的に学習開始〜内定まで6〜12ヶ月が目安です。スクール受講が3〜6ヶ月、転職活動が2〜4ヶ月の流れが多いです。転職特化スクールは転職活動のサポートが充実しており短期内定取得を目指せます。' },
+      { q: '転職特化スクールで給付金は使えますか？', a: 'TECH CAMP・DMM WEBCAMP・TechAcademy・侍エンジニア塾などが教育訓練給付金（専門実践教育訓練）の指定講座を提供しています。雇用保険の加入期間（2〜3年以上）など条件があり、受講前のハローワーク申請が必要です。' },
+    ],
     points: [
       '転職成功率・実績数を公開しているスクールを優先する。「転職率98%」など具体的な数字に注目。',
       '転職保証（転職できなければ返金）の有無と条件を事前に確認する。応募社数・期限などの条件が現実的かをチェック。',
@@ -27,6 +35,11 @@ const categoryGuide: Record<string, {
   'スキルアップ': {
     heading: 'スキルアップ向けスクールを選ぶポイント',
     intro: '転職以外の目的（副業・社内昇進・個人開発）でプログラミングを学びたい方向けのスクールです。',
+    faqs: [
+      { q: '副業でプログラミングを活かすには何を学べばいいですか？', a: 'Web制作・Webデザイン・WordPressが副業向けスキルの定番です。HTML/CSS/JavaScriptを習得するとクラウドソーシングで案件を取得しやすくなります。フロントエンド・Pythonもデータ分析副業として需要があります。' },
+      { q: 'プログラミングスクールは働きながら通えますか？', a: 'オンライン受講・動画学習・週末集中型など、働きながら学べるコースを提供するスクールがほとんどです。TechAcademy・侍エンジニア塾などは完全オンラインで自分のペースで学べます。' },
+      { q: '社内でのキャリアアップにプログラミングは役立ちますか？', a: 'はい。DX推進・データ分析・業務自動化（Python/VBA）などで活用できます。特にIT部門への異動や社内SE・データサイエンティストを目指す方には直接的なスキルになります。' },
+    ],
     points: [
       '「何を作りたいか」「どのスキルが必要か」を明確にしてからスクールを選ぶ。目的なしに入学すると学習が続かない。',
       '副業を目指す場合は、ポートフォリオ制作サポートや案件獲得支援があるスクールが有利。',
@@ -38,6 +51,11 @@ const categoryGuide: Record<string, {
   'フリーランス特化': {
     heading: 'フリーランス特化スクールを選ぶポイント',
     intro: 'フリーランスエンジニア・フリーランスWebデザイナーとして独立・案件獲得を目指す方向けのスクールです。',
+    faqs: [
+      { q: 'フリーランスエンジニアになるまでにどれくらいかかりますか？', a: 'スクール受講（3〜6ヶ月）＋ポートフォリオ制作・案件獲得準備（1〜2ヶ月）で、合計4〜8ヶ月が目安です。フリーランス特化スクール（RaiseTech・CoachTechなど）は案件獲得まで一貫サポートするため、独立までの期間を短縮できます。' },
+      { q: 'フリーランスエンジニアの月収はどのくらいですか？', a: '経験・スキル・案件の種類によって大きく異なります。未経験〜1年目は月30〜50万円、2〜3年の経験があれば60〜100万円以上も狙えます。高単価案件を取るにはAWS・React・TypeScriptなどの需要の高いスキルが重要です。' },
+      { q: 'フリーランス特化スクールとは何が違いますか？', a: 'フリーランス特化スクールは、技術習得に加えて「案件獲得」「単価交渉」「契約書の扱い方」「エージェントの使い方」など独立後のビジネス面のサポートが充実しています。通常の転職スクールとは出口（就職先）が異なります。' },
+    ],
     points: [
       '案件紹介・案件保証があるスクールを選ぶ。卒業後すぐに案件を獲得できる環境があるかが重要。',
       '単価交渉・契約書作成・営業などフリーランス特有のビジネス面のサポートがあるか確認する。',
@@ -49,6 +67,11 @@ const categoryGuide: Record<string, {
   'AI特化': {
     heading: 'AI特化スクールを選ぶポイント',
     intro: 'AI・機械学習・データサイエンスを学び、AI領域での転職・副業・研究を目指す方向けの専門スクールです。',
+    faqs: [
+      { q: 'AIエンジニアになるために必要なスキルは何ですか？', a: 'Python・統計・線形代数の基礎 + TensorFlow/PyTorchなど機械学習ライブラリの実践が必要です。実務ではSQL・データ前処理・クラウド（AWS/GCP）の知識も求められます。未経験から学ぶには6〜12ヶ月のスクール受講が一般的です。' },
+      { q: 'AI特化スクールと通常のプログラミングスクールはどう違いますか？', a: 'AI特化スクールはPython・機械学習・データ分析に特化したカリキュラムです。通常スクールがWebエンジニア転職を目指すのに対し、AI特化スクールはAIエンジニア・データサイエンティストを目指す方向けです。数学（確率・統計）の学習も含まれます。' },
+      { q: 'AIエンジニアの年収はどのくらいですか？', a: '経験・スキル・企業によって大きく異なりますが、未経験からエンジニア転職の場合は年収400〜600万円、3〜5年の経験があれば700〜1000万円以上も可能です。特にMLOps・LLMの実務経験を持つエンジニアの市場価値は高い傾向があります。' },
+    ],
     points: [
       'AI・機械学習はPythonが必須。Pythonの基礎からAIモデル構築まで一貫して学べるカリキュラムを選ぶ。',
       '数学（線形代数・統計）の基礎が必要。数学に不安がある方は入門数学サポートがあるスクールを選ぶ。',
@@ -60,6 +83,11 @@ const categoryGuide: Record<string, {
   '独学支援': {
     heading: '独学支援スクールを選ぶポイント',
     intro: '費用を抑えながらプログラミングを学びたい方、まず入門として試したい方向けの低コスト学習サービスです。',
+    faqs: [
+      { q: 'プログラミング独学とスクールどちらが良いですか？', a: '転職を目指す場合はスクールが有利です。独学は費用を抑えられる（テキスト代のみ）が、ポートフォリオ作成・面接対策・転職サポートが自己責任になります。スクールは費用がかかりますが給付金（最大70%還付）で実質8〜12万円程度に抑えられる場合があります。' },
+      { q: 'Progateは転職に役立ちますか？', a: 'Progateはプログラミングの入門に最適ですが、転職に直結するレベルには不足があります。基礎学習後に実務課題・ポートフォリオ制作・転職サポートのある有料スクールへの移行を検討すると転職成功率が上がります。' },
+      { q: '独学でプログラミングを習得するのにどれくらいかかりますか？', a: '基礎習得まで200〜400時間が目安です（1日2時間で3〜6ヶ月）。ただし独学は挫折率が高く、現役エンジニアに質問できる環境がないと詰まりやすい。入門後にスクールのメンタリングサービスを活用するのが効率的です。' },
+    ],
     points: [
       '無料・低価格のサービスは自己管理が重要。学習計画を自分で立て、継続する意志が必要。',
       '「プログラミングが自分に向いているか試したい」という方は、まず独学支援サービスで試してから有料スクールへの進学を検討する流れが合理的。',
@@ -79,7 +107,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const decoded = decodeURIComponent(category);
   const guide = categoryGuide[decoded];
   return {
-    title: `${decoded}のプログラミングスクール比較【2025年版】`,
+    title: `${decoded}のプログラミングスクール比較【2026年版】`,
     description: guide?.intro ?? `${decoded}に特化したプログラミングスクールを比較。料金・特徴・転職成功率を一覧で確認できます。`,
   };
 }
@@ -95,8 +123,31 @@ export default async function CategoryPage({ params }: Props) {
     ? columns.filter((c) => guide.relatedColumns.includes(c.slug))
     : [];
 
+  const jsonLd = guide?.faqs ? {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'ホーム', item: BASE },
+          { '@type': 'ListItem', position: 2, name: 'スクール一覧', item: `${BASE}/schools` },
+          { '@type': 'ListItem', position: 3, name: decoded, item: `${BASE}/category/${encodeURIComponent(decoded)}` },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: guide.faqs.map(({ q, a }) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: a },
+        })),
+      },
+    ],
+  } : null;
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
+      {jsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />}
       <nav className="text-sm text-gray-500 mb-6">
         <Link href="/" className="hover:text-slate-700">ホーム</Link>
         <span className="mx-2">/</span>
@@ -152,6 +203,20 @@ export default async function CategoryPage({ params }: Props) {
           ))}
         </div>
       </section>
+
+      {guide?.faqs && (
+        <section className="mb-8">
+          <h2 className="text-lg font-bold text-gray-900 mb-4">よくある質問</h2>
+          <div className="space-y-3">
+            {guide.faqs.map(({ q, a }) => (
+              <div key={q} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+                <p className="font-bold text-gray-900 text-sm mb-2">Q. {q}</p>
+                <p className="text-sm text-gray-700 leading-relaxed">A. {a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3 mt-8">
         ※ 当サイトはアフィリエイト広告を掲載しています。掲載情報は参考値です。最新情報は各スクール公式サイトでご確認ください。
