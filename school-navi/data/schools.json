@@ -25,7 +25,7 @@
     "targetAudience": "転職希望者",
     "rating": 4.3,
     "reviewCount": 1240,
-    "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=techcamp_placeholder",
+    "affiliate_url": "#",
     "highlight": true,
     "description": "業界最大規模のプログラミングスクール。専属メンターによる充実したサポートで、未経験から最短10週間でエンジニア転職を実現。転職できなければ全額返金の保証あり。",
     "pros": [
@@ -63,7 +63,7 @@
     "targetAudience": "転職希望者",
     "rating": 4.2,
     "reviewCount": 890,
-    "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=dmmwebcamp_placeholder",
+    "affiliate_url": "#",
     "highlight": true,
     "description": "DMMグループ運営の転職特化スクール。最大70%の給付金制度あり。転職できなければ全額返金保証。9万人以上の卒業生ネットワークを持つ。",
     "pros": [
@@ -103,7 +103,7 @@
     "targetAudience": "プログラミング入門者",
     "rating": 4.4,
     "reviewCount": 3200,
-    "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=progate_placeholder",
+    "affiliate_url": "#",
     "highlight": false,
     "description": "初心者向けオンライン学習サービス。スライドとハンズオン形式で直感的に学べる。無料コースも充実しており、まずは気軽に試せる。",
     "pros": [
@@ -143,7 +143,7 @@
     "targetAudience": "副業・スキルアップ希望者",
     "rating": 4.1,
     "reviewCount": 670,
-    "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=techacademy_placeholder",
+    "affiliate_url": "#",
     "highlight": false,
     "description": "オンライン完結のプログラミングスクール。副業エンジニアを目指す人向けのコースが充実。現役エンジニアが週2回メンタリングを実施。",
     "pros": [
@@ -181,7 +181,7 @@
     "targetAudience": "本格的な転職希望者",
     "rating": 4.5,
     "reviewCount": 420,
-    "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=runteq_placeholder",
+    "affiliate_url": "#",
     "highlight": false,
     "description": "実務レベルのエンジニアを育てることにこだわったスクール。9ヶ月間の長期カリキュラムで実践力を徹底的に鍛える。卒業生の評価が非常に高い。",
     "pros": [
@@ -220,7 +220,7 @@
     "targetAudience": "個別指導希望者",
     "rating": 4.0,
     "reviewCount": 310,
-    "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=codecamp_placeholder",
+    "affiliate_url": "#",
     "highlight": false,
     "description": "完全マンツーマン指導のオンラインプログラミングスクール。英語対応も可能で外資系への転職希望者にも人気。法人研修実績も豊富。",
     "pros": [
@@ -258,7 +258,7 @@
     "targetAudience": "フリーランス志望者",
     "rating": 4.2,
     "reviewCount": 280,
-    "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=coachtech_placeholder",
+    "affiliate_url": "#",
     "highlight": false,
     "description": "フリーランスエンジニアを目指す人に特化したスクール。卒業後の案件紹介まで一貫してサポート。チーム開発経験も積める実践的なカリキュラム。",
     "pros": [
@@ -297,7 +297,7 @@
     "targetAudience": "AI・データサイエンス志望者",
     "rating": 4.1,
     "reviewCount": 190,
-    "affiliate_url": "https://px.a8.net/svt/ejp?a8mat=zeroplus_placeholder",
+    "affiliate_url": "#",
     "highlight": true,
     "description": "AIエンジニアを目指す人に特化した新世代スクール。給付金制度を活用すれば実質負担を大幅削減。ChatGPT APIなど最新AI技術まで学べる。",
     "pros": [
