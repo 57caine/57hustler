@@ -363,6 +363,28 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ol>
       </section>
 
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">給付金対応おすすめスクール</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'DMM WEBCAMP', slug: 'dmm-webcamp', badge: '最大70%給付金', point: '専門実践教育訓練給付金（70%）対象コースあり。給付後実質13万円〜の受講が可能。給付金対応スクールの中で卒業生満足度が高い。' },
+            { name: 'TECH CAMP', slug: 'techcamp', badge: '一部給付金対応', point: '一般教育訓練給付金（40%）対象コースあり。業界最大手で転職成功率99%（自社調べ）。給付金+転職保証の組み合わせでリスク最小化。' },
+            { name: 'ゼロプラス', slug: 'zero-plus', badge: 'AI特化・給付金', point: 'AI・Python特化スクールでも給付金活用可能。受講費498,000円→給付後約150,000円。AI・データ系エンジニアを目指す方に。' }
+          ].map(({ name, slug, badge, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+                <h3 className="font-bold text-gray-900 text-sm leading-snug">{name}</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/schools/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
@@ -429,6 +451,28 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ul>
       </section>
 
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">未経験からの転職におすすめスクール</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'TECH CAMP', slug: 'techcamp', badge: '転職保証', point: '転職成功率99%（自社調べ）・卒業生5万人以上。転職できなければ全額返金保証で業界最大手。未経験転職の安心感を最重視する方に。' },
+            { name: 'DMM WEBCAMP', slug: 'dmm-webcamp', badge: '給付金+転職保証', point: '給付金活用で実質13万円〜の受講が可能。転職保証+給付金のダブル保証で未経験転職リスクを最小化できる。' },
+            { name: 'GEEK JOB', slug: 'geekjob', badge: '最短22日', point: '業界最速クラスの転職サポート。内定まで平均最短22日。「とにかく早く転職したい」20代向けに転職支援に特化したプログラム。' }
+          ].map(({ name, slug, badge, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+                <h3 className="font-bold text-gray-900 text-sm leading-snug">{name}</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/schools/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
@@ -500,6 +544,28 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ul>
       </section>
 
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">コスパ重視のおすすめスクール</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'DMM WEBCAMP', slug: 'dmm-webcamp', badge: 'コスパ最強', point: '給付金活用後の実質負担が約13万円。転職成功率98%・9万人卒業生。給付金を最大活用すれば業界最高水準のコスパを実現できる。' },
+            { name: 'TechAcademy', slug: 'techacademy', badge: '副業向け', point: '4週間コースが174,900円〜と短期・低コストで受講できる。現役エンジニアがメンター。副業・スキルアップ目的の社会人に人気。' },
+            { name: 'Progate', slug: 'progate', badge: '月990円〜', point: '月990円〜の月額サブスクで気軽に学習開始できる。転職支援はないが、スクール前の基礎学習やコード体験に最適。まず試してみたい方に。' }
+          ].map(({ name, slug, badge, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+                <h3 className="font-bold text-gray-900 text-sm leading-snug">{name}</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/schools/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
@@ -559,6 +625,28 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ol>
       </section>
 
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">フリーランス特化おすすめスクール</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'CoachTech', slug: 'coachtech', badge: 'フリーランス特化', point: '案件保証（卒業後3ヶ月以内に10万円以上の案件を保証）。卒業後も継続的な案件サポートがある唯一のスクール。独立直前〜独立後に強い。' },
+            { name: 'DMM WEBCAMP', slug: 'dmm-webcamp', badge: '給付金・転職保証', point: '受講費の最大70%給付金対応。転職成功率98%・9万人卒業生。フリーランスになる前に正社員エンジニアとしての実務経験を積みたい方に。' },
+            { name: 'RaiseTech', slug: 'raise-tech', badge: '実案件経験', point: '実際のクライアントワーク経験を積めるカリキュラム。フリーランスとして活躍する講師から直接指導。副業・フリーランスへの移行実績あり。' }
+          ].map(({ name, slug, badge, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+                <h3 className="font-bold text-gray-900 text-sm leading-snug">{name}</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/schools/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
@@ -812,6 +900,28 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-sm text-gray-700">女性がプログラミングスクールを選ぶ際は、「卒業後に女性エンジニアとして働いている先輩の声」を参考にするのが最も参考になります。各スクールの無料カウンセリングでは、女性向けのサポート内容を具体的に確認してみましょう。</p>
       </section>
 
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">女性におすすめのスクール</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'DMM WEBCAMP', slug: 'dmm-webcamp', badge: '女性受講者多数', point: 'オンライン完結・自分のペースで学習可能。育児中・主婦の方の受講実績も豊富。給付金活用で実質13万円〜。転職成功率98%。' },
+            { name: 'TechAcademy', slug: 'techacademy', badge: 'スキマ学習', point: '現役エンジニアのメンターが週2回マンツーマン指導。自分のペースで学べるオンライン完結型。副業・スキルアップ目的の女性に特に人気。' },
+            { name: 'TECH CAMP', slug: 'techcamp', badge: '転職保証', point: '転職できなければ全額返金保証。育児・家事との両立実績あり。女性エンジニアの転職支援事例が豊富で、女性カウンセラーも在籍。' }
+          ].map(({ name, slug, badge, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+                <h3 className="font-bold text-gray-900 text-sm leading-snug">{name}</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/schools/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">

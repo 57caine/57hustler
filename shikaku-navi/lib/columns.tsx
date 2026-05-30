@@ -468,6 +468,28 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
 
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">簿記通信講座おすすめ3選</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'スタディング', slug: 'studying', badge: 'コスパ最強', point: '簿記2・3級コースが16,500円〜と格安。スマホで完結する学習UIで通勤中の学習も快適。合格者の口コミ評価が高い。' },
+            { name: 'フォーサイト', slug: 'foresight', badge: '合格率重視', point: '全国平均を大幅に上回る合格率（独自調査）。フルカラーテキスト+問題集+映像講義のセットで理解が深まりやすい。給付金対象コースあり。' },
+            { name: 'ユーキャン', slug: 'yukiyukan', badge: '知名度No.1', point: '受講者数が業界最大クラスのユーキャンが提供する簿記講座。丁寧なテキスト解説が初学者に特に好評。分割払い・給付金対応あり。' }
+          ].map(({ name, slug, badge, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+                <h3 className="font-bold text-gray-900 text-sm leading-snug">{name}</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/courses/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
@@ -538,6 +560,28 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
 
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">転職・キャリアアップに強い通信講座</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'スタディング', slug: 'studying', badge: 'コスパ最強', point: '業界最安値水準の料金でスマホ1台で学習完結。宅建・FP・行政書士・社労士・中小企業診断士など多数の資格に対応。働きながらスキマ時間で学習できる。' },
+            { name: 'アガルート', slug: 'agaroot', badge: '合格率最高水準', point: '講師陣の質と合格率の高さで定評あり。社労士・行政書士・宅建などで業界屈指の合格率を公表。合格後に全額返金される合格特典も。' },
+            { name: 'フォーサイト', slug: 'foresight', badge: '合格実績豊富', point: '全国平均の2〜4倍の合格率（独自調査）を誇る。フルカラーテキストと過去問中心の効率学習で、仕事をしながら合格を目指す方に人気。' }
+          ].map(({ name, slug, badge, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+                <h3 className="font-bold text-gray-900 text-sm leading-snug">{name}</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/courses/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
@@ -703,6 +747,28 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ol>
       </section>
 
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">行政書士おすすめ通信講座</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'アガルート', slug: 'agaroot', badge: '合格率No.1', point: '行政書士試験の合格率が全国平均の3〜4倍（自社調べ）。豊富な演習問題と質問対応サービスで、独学での限界を超えた学習が可能。' },
+            { name: 'スタディング', slug: 'studying', badge: '低価格', point: '行政書士コースが59,400円〜と業界最安値水準。スマホ完結型で通勤中・スキマ時間に学習できる。コストを抑えて挑戦したい方に。' },
+            { name: 'フォーサイト', slug: 'foresight', badge: 'バランス型', point: 'フルカラーのわかりやすいテキストと的中率の高い予想問題集が特徴。行政書士の合格者は全国平均の約2倍の合格率（独自調査）を公表。' }
+          ].map(({ name, slug, badge, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+                <h3 className="font-bold text-gray-900 text-sm leading-snug">{name}</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/courses/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
@@ -970,6 +1036,28 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
 
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">社会人の学習効率が上がるおすすめ通信講座</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'スタディング', slug: 'studying', badge: 'スキマ学習特化', point: 'スマホ1台で通勤・スキマ時間に学習完結。AI問題復習機能が弱点を自動検出してくれる。働きながら学ぶ社会人に最も支持されている通信講座。' },
+            { name: 'フォーサイト', slug: 'foresight', badge: 'eラーニング', point: 'スマホ・PC・タブレット全対応のeラーニングシステム「ManaBun」で場所を選ばない学習が可能。合格率が高く、限られた時間で確実に合格したい方向け。' },
+            { name: 'アガルート', slug: 'agaroot', badge: '動画講義充実', point: '豊富な動画講義と充実した質問対応で、独学では解決できない疑問をすぐに解消できる。合格時の全額返金特典が強い動機づけになっている。' }
+          ].map(({ name, slug, badge, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+                <h3 className="font-bold text-gray-900 text-sm leading-snug">{name}</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/courses/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
@@ -1154,6 +1242,28 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ul>
       </section>
 
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">中小企業診断士おすすめ通信講座</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'スタディング', slug: 'studying', badge: 'コスパ最強', point: '中小企業診断士コースが89,100円〜と業界最安値水準。スマホアプリで学習できるAI問題復習機能が高評価。短期合格者を多数輩出。' },
+            { name: 'アガルート', slug: 'agaroot', badge: '合格実績豊富', point: '中小企業診断士の1次・2次試験ともに充実した対策講座。2次試験の事例問題解法フレームワークの指導が特に評価されている。' },
+            { name: 'TAC', slug: 'tac', badge: '大手実績', point: '中小企業診断士の合格実績No.1クラスの大手資格予備校。通信+通学の選択肢があり、質問対応・答練が充実。費用は高めだが確実な合格を目指す方に。' }
+          ].map(({ name, slug, badge, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+                <h3 className="font-bold text-gray-900 text-sm leading-snug">{name}</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/courses/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
