@@ -43,29 +43,15 @@ export default function HomePage() {
   const updatedAt = getPricesUpdatedAt();
   const topProducts = [...allProducts].sort((a, b) => b.popularity - a.popularity).slice(0, 6);
 
-  const jsonLd = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      name: 'レンズナビ',
-      url: 'https://lens-navi.jp',
-      description: '人気コンタクトレンズの最安値を一括比較するサイト',
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: 'https://lens-navi.jp/ranking',
-        'query-input': 'required name=search_term_string',
-      },
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: homeFaqs.map(({ q, a }) => ({
-        '@type': 'Question',
-        name: q,
-        acceptedAnswer: { '@type': 'Answer', text: a },
-      })),
-    },
-  ];
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: homeFaqs.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
