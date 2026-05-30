@@ -465,5 +465,85 @@
       "完全オンラインのみ",
       "費用がやや高め"
     ]
+  },
+  {
+    "id": "raise-tech",
+    "slug": "raise-tech",
+    "name": "RaiseTech",
+    "tagline": "フリーランスエンジニアへの最短ルート・案件獲得まで徹底サポート",
+    "category": "フリーランス特化",
+    "price": 297000,
+    "priceNote": "Laravelコース（4ヶ月）",
+    "period": "4〜6ヶ月",
+    "format": [
+      "オンライン"
+    ],
+    "features": [
+      "案件獲得サポート",
+      "現役エンジニア講師",
+      "無期限サポート"
+    ],
+    "languages": [
+      "PHP",
+      "Laravel",
+      "Vue.js",
+      "AWS"
+    ],
+    "targetAudience": "フリーランス志望者",
+    "rating": 4.4,
+    "reviewCount": 620,
+    "affiliate_url": "#",
+    "highlight": false,
+    "description": "フリーランスエンジニアとして独立することを目標に設計されたスクール。Laravel・Vue.js・AWSなどの実務に直結する技術を習得し、卒業後の案件獲得まで支援。現役フリーランスエンジニアが直接指導する体制が特徴。",
+    "pros": [
+      "実務直結のLaravel・Vue.js・AWSカリキュラム",
+      "案件獲得・フリーランス独立に特化したサポート",
+      "無期限サポートで卒業後も質問できる",
+      "現役フリーランスエンジニアが講師"
+    ],
+    "cons": [
+      "転職サポートは充実していない（フリーランス特化のため）",
+      "自己管理が必要なオンライン完結型"
+    ]
+  },
+  {
+    "id": "tech-train",
+    "slug": "tech-train",
+    "name": "TechTrain",
+    "tagline": "現役エンジニアのOJT型指導でリアルな開発経験を積む",
+    "category": "スキルアップ",
+    "price": 198000,
+    "priceNote": "3ヶ月プラン",
+    "period": "3〜6ヶ月",
+    "format": [
+      "オンライン"
+    ],
+    "features": [
+      "OJT型学習",
+      "現役エンジニアメンター",
+      "実務プロジェクト経験"
+    ],
+    "languages": [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Python"
+    ],
+    "targetAudience": "スキルアップ希望者・転職希望者",
+    "rating": 4.2,
+    "reviewCount": 380,
+    "affiliate_url": "#",
+    "highlight": false,
+    "description": "現役エンジニアによるOJT（On-the-Job Training）型の指導が特徴。実際の開発現場に近い環境でプロジェクトを進めることで、現場で通用するスキルを効率的に習得できる。転職やフリーランス独立を目指す方のスキルアップに適している。",
+    "pros": [
+      "実際の開発現場に近いOJT型学習でリアルなスキルが身につく",
+      "現役エンジニアからプロのフィードバックをもらえる",
+      "GitHub・チーム開発・コードレビュー経験が積める",
+      "他のスクールと比べて価格が比較的リーズナブル"
+    ],
+    "cons": [
+      "転職保証なし・転職サポートは限定的",
+      "自主学習が中心のため、サポートを求める方には不向き"
+    ]
   }
 ]

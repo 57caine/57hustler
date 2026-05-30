@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { columns } from '@/lib/columns';
 
 export const metadata: Metadata = {
-  title: 'プログラミングスクール コラム一覧【全17記事】| スクールナビ',
+  title: 'プログラミングスクール コラム一覧【全17記事】| スクールナビ・14校比較',
   description: 'プログラミングスクールの選び方・定額補助・転職保証・給付金・フリーランス・JavaScript・React・AI学習に役立つ全17記事。未経験からの転職、30代・40代・女性向け、Python・Web制作など目的別に解説。',
 };
 

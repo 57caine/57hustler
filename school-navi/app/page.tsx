@@ -5,8 +5,8 @@ import { columns } from '@/lib/columns';
 import SchoolCard from '@/components/SchoolCard';
 
 export const metadata: Metadata = {
-  title: 'プログラミングスクール比較ランキング2025年版｜おすすめ12校を徹底比較',
-  description: 'TECH CAMP・DMM WEBCAMP・侍エンジニア塾など人気プログラミングスクール12校を料金・転職実績・給付金対応で徹底比較。未経験からIT転職・副業・フリーランスを目指す方向け完全ガイド。',
+  title: 'プログラミングスクール比較ランキング2025年版｜おすすめ14校を徹底比較',
+  description: 'TECH CAMP・DMM WEBCAMP・侍エンジニア塾・RaiseTechなど人気プログラミングスクール14校を料金・転職実績・給付金対応で徹底比較。未経験からIT転職・副業・フリーランスを目指す方向け完全ガイド。',
 };
 
 const homeFaqs = [

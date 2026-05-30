@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { schools, formatPrice } from '@/lib/schools';
 
 export const metadata: Metadata = {
-  title: 'プログラミングスクール比較表【2025年版・全12校】',
-  description: 'プログラミングスクール12校を料金・期間・給付金対応・転職サポートで一覧比較。スクール選びの判断材料としてご活用ください。',
+  title: 'プログラミングスクール比較表【2025年版・全14校】',
+  description: 'プログラミングスクール14校を料金・期間・給付金対応・転職サポートで一覧比較。スクール選びの判断材料としてご活用ください。',
 };
 
 const categoryColors: Record<string, string> = {
