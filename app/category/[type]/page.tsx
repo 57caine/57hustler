@@ -17,19 +17,19 @@ export async function generateStaticParams() {
 
 const categoryMeta: Record<string, { title: string; description: string }> = {
   '1day': {
-    title: 'ワンデーコンタクトレンズ 最安値比較【2025年版・全商品対応】',
+    title: 'ワンデーコンタクトレンズ 最安値比較【2026年版・全商品対応】',
     description: '1日使い捨てコンタクトレンズの最安値を送料込みで比較。アキュビュー・デイリーズ・バイオトゥルーなど人気全商品の価格を一覧で確認。',
   },
   '2week': {
-    title: '2週間コンタクトレンズ 最安値比較【2025年版】',
+    title: '2週間コンタクトレンズ 最安値比較【2026年版】',
     description: '2週間交換コンタクトレンズの最安値を送料込みで比較。アキュビューオアシス・シード2ウィークピュアなど人気全商品の価格を一覧で確認。',
   },
   monthly: {
-    title: 'マンスリーコンタクトレンズ 最安値比較【2025年版】',
+    title: 'マンスリーコンタクトレンズ 最安値比較【2026年版】',
     description: '1ヶ月交換コンタクトレンズの最安値を送料込みで比較。バイオフィニティ・エアオプティクスなど人気全商品の価格を一覧で確認。',
   },
   color: {
-    title: 'カラコン 最安値比較【2025年版・度あり・度なし対応】',
+    title: 'カラコン 最安値比較【2026年版・度あり・度なし対応】',
     description: 'カラーコンタクトレンズの最安値を送料込みで比較。GEO・フレッシュルックなど人気全商品の価格を一覧で確認。度あり・度なし両方対応。',
   },
 };
@@ -45,6 +45,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `${category.name}コンタクトレンズの最安値を比較。${category.description}`,
   };
 }
+
+const categoryFaqs: Record<string, { q: string; a: string }[]> = {
+  '1day': [
+    { q: 'ワンデーコンタクトレンズはどこで最安値で買えますか？', a: '最安値はショップによって異なり日々変動します。当サイトでは24ショップの送料込み最安値をリアルタイムで比較しています。ページ上の価格比較表からその日の最安値をご確認ください。' },
+    { q: 'ワンデーコンタクトレンズの相場はいくらですか？', a: 'ワンデーコンタクトの相場は1箱（30枚）あたり1,800〜5,000円です。ハイエンドモデル（デイリーズ トータルワン・アキュビュー オアシス）は3,000〜4,500円前後、コスパ重視モデル（アキュビュー モイスト・デイリーズ アクア）は1,800〜2,500円前後が目安です。' },
+    { q: 'ワンデーと2weekコンタクトはどちらがコスパが良いですか？', a: '毎日使う場合は2week・マンスリーの方がランニングコストは安くなることが多いです。ただしケア用品代（月1,000〜2,000円）が別途かかります。週3〜4日以下の使用頻度なら2weekのコスパメリットが薄れるため、使用頻度で比較してください。' },
+  ],
+  '2week': [
+    { q: '2週間コンタクトレンズで安いのはどれですか？', a: 'アキュビュー オアシス・シード 2ウィークピュア・メニコン2weekなどが人気の2weekレンズです。コスパ重視ならシードやメニコン系が比較的安く、乾きにくさ重視ならアキュビュー オアシスがおすすめです。通販最安値は当サイトの価格表でご確認ください。' },
+    { q: '2weekコンタクトのケア用品は何を使えばいいですか？', a: 'MPS（マルチパーパスソリューション）が一般的です。レニュー・バイオトゥルー・オプティフリープラスなどが代表的な商品です。コンタクトを外したらすぐに洗浄・保存し、2週間を過ぎたら必ず交換してください。' },
+    { q: '2週間コンタクトは水道水で洗えますか？', a: '絶対に水道水での洗浄・保存は行わないでください。水道水にはアカントアメーバなどの微生物が含まれており、角膜炎など深刻な目の病気の原因になります。必ず専用のケア用品（MPS）を使用してください。' },
+  ],
+  monthly: [
+    { q: 'マンスリーコンタクトレンズで一番コスパが良いのはどれですか？', a: 'バイオフィニティ・エアオプティクスアクア・シード1monthピュアなどが人気です。シリコーンハイドロゲル素材（バイオフィニティ・エアオプティクス）は酸素透過率が高くコスパも良好。長時間装用が多い方には特におすすめです。' },
+    { q: 'マンスリーコンタクトは本当に1ヶ月使えますか？', a: '「マンスリー」は使い始めから1ヶ月ではなく、開封から30日間（またはメーカー指定期間）が交換目安です。汚れ・タンパク質の蓄積により目への負担が増すため、期間を超えての使用は避けてください。' },
+    { q: 'マンスリーとワンデーのコスト差はどのくらいですか？', a: '1日あたりのコストはマンスリーがワンデーの半額以下になることが多いです。ただしケア用品（月約1,000〜2,000円）を加えると差は縮まります。年間コストで比較するとマンスリーは15,000〜25,000円、ワンデーは25,000〜50,000円が目安です。' },
+  ],
+  color: [
+    { q: 'カラコンは眼科の処方箋が必要ですか？', a: 'カラコンは度あり・度なしを問わず高度管理医療機器です。初めて使用する方・度数変更がある方は眼科で処方を受けることを強くおすすめします。同じ商品を継続購入する場合は処方箋不要で購入できるショップが多くあります。' },
+    { q: '度なしカラコンは危険ですか？', a: '適切に使用すれば危険ではありません。しかし装用時間・使用期限を守らない・ケアが不十分な場合は角膜炎などのリスクがあります。必ず医療機器として認可されている製品を使用し、装用時間・使用期限を守ってください。' },
+    { q: 'カラコンのDIAはどのくらいがおすすめですか？', a: '13.8〜14.2mmが自然な大きさとして人気です。14.5mm以上はよりドーリーな印象になりますが角膜を覆う面積が増えます。初めての方は14.0〜14.2mm程度から試すのがおすすめです。' },
+  ],
+};
 
 const categoryGuide: Record<string, { heading: string; points: string[]; note: string }> = {
   '1day': {
@@ -117,6 +140,7 @@ export default async function CategoryPage({ params }: Props) {
   };
   const label = categoryLabel[type] ?? category.name;
 
+  const faqs = categoryFaqs[type] ?? [];
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -127,6 +151,14 @@ export default async function CategoryPage({ params }: Props) {
           { '@type': 'ListItem', position: 2, name: label, item: `${BASE}/category/${type}` },
         ],
       },
+      ...(faqs.length > 0 ? [{
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(({ q, a }) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: a },
+        })),
+      }] : []),
     ],
   };
 
@@ -173,7 +205,21 @@ export default async function CategoryPage({ params }: Props) {
         </>
       )}
 
-      <div className="mt-10 text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
+      {faqs.length > 0 && (
+        <section className="mt-10 mb-6">
+          <h2 className="text-lg font-bold text-gray-900 mb-4">よくある質問</h2>
+          <div className="space-y-3">
+            {faqs.map(({ q, a }) => (
+              <div key={q} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+                <p className="font-bold text-gray-900 text-sm mb-2">Q. {q}</p>
+                <p className="text-sm text-gray-700 leading-relaxed">A. {a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <div className="mt-6 text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
         ※ 価格は税込・送料別。最終更新: {new Date().toLocaleDateString('ja-JP')} | 最新価格は各ショップでご確認ください。
       </div>
     </div>
