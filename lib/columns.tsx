@@ -191,6 +191,24 @@ export const columns: ColumnMeta[] = [
     updatedAt: '2026-05-29',
     readingTime: 6,
   },
+  {
+    slug: 'dailies-total1-vs-oasys',
+    title: 'デイリーズ トータルワン vs アキュビュー オアシス 徹底比較【どっちが良い？】',
+    description: 'コンタクト最高峰2製品「デイリーズ トータルワン」と「アキュビュー オアシス 1day」を乾きにくさ・装用感・価格・素材スペックで徹底比較。あなたにはどちらが向いているかを解説。',
+    category: '商品比較',
+    publishedAt: '2026-05-30',
+    updatedAt: '2026-05-30',
+    readingTime: 7,
+  },
+  {
+    slug: 'contact-dryeye-osusume',
+    title: 'ドライアイ向けコンタクトレンズ おすすめランキング【目が乾く方必見】',
+    description: 'ドライアイや目の乾燥が気になる方向けに、乾きにくいコンタクトレンズを厳選ランキング。シリコーンハイドロゲル素材・高含水タイプ・目薬との組み合わせ方も解説。',
+    category: '購入ガイド',
+    publishedAt: '2026-05-30',
+    updatedAt: '2026-05-30',
+    readingTime: 7,
+  },
 ];
 
 export function getColumnBySlug(slug: string): ColumnMeta | undefined {
@@ -2394,6 +2412,287 @@ export const columnContent: Record<string, React.ReactNode> = {
       <section>
         <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
           ※ 掲載している製品情報・酸素透過率（Dk/t値）は参考値です。長時間装用については必ず眼科医に相談し、処方に従ってください。最新の製品仕様は各メーカー公式サイトでご確認ください。
+        </p>
+      </section>
+    </div>
+  ),
+
+  'dailies-total1-vs-oasys': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">2大プレミアムレンズを徹底比較</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          「デイリーズ トータルワン」（アルコン）と「アキュビュー オアシス 1-day with HydraLuxe」（ジョンソン＆ジョンソン）は、
+          1dayコンタクト市場の頂点に立つ2製品です。どちらも乾きにくさ・酸素透過率で最高クラスのスペックを持ちますが、素材アプローチが異なります。
+        </p>
+        <div className="overflow-x-auto bg-slate-50 rounded-xl p-4 mb-4">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="border-b border-gray-200">
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">項目</th>
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">デイリーズ トータルワン</th>
+                <th className="text-left py-2 text-gray-600 font-semibold">アキュビュー オアシス 1-day</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['メーカー', 'アルコン', 'ジョンソン＆ジョンソン'],
+                ['素材', 'ダレフィルコン A（SiHy）', 'セノフィルコン A（SiHy）'],
+                ['Dk/t値', '156', '103'],
+                ['含水率（表面/中心）', '80% / 33%', '38%'],
+                ['BC', '8.5', '8.5'],
+                ['DIA', '14.1mm', '14.3mm'],
+                ['UVカット', 'あり（クラス1）', 'あり（クラス1）'],
+                ['1箱あたり枚数', '30枚', '30枚'],
+                ['価格帯（目安）', '3,000〜4,500円/箱', '2,800〜4,000円/箱'],
+              ].map(([item, total1, oasys]) => (
+                <tr key={item} className="border-b border-gray-100">
+                  <td className="py-2 pr-4 font-semibold text-gray-700">{item}</td>
+                  <td className="py-2 pr-4 text-gray-600">{total1}</td>
+                  <td className="py-2 text-gray-600">{oasys}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">5つの観点で比較</h2>
+        <div className="space-y-4">
+          {[
+            {
+              title: '乾きにくさ',
+              winner: 'デイリーズ トータルワン',
+              body: 'デイリーズ トータルワンは「ウォーターグラジエントテクノロジー」により、レンズ表面の含水率が80%に達します。目の表面に触れる部分がほぼ水分で構成されているため、装用感が目立ちにくく乾燥感を感じにくい設計です。アキュビュー オアシスも「HydraLuxe」涙液模倣テクノロジーで高い保水力を持ちますが、乾きにくさの純粋なスペックではデイリーズに軍配が上がります。',
+            },
+            {
+              title: '装用感・フィット感',
+              winner: '個人差あり',
+              body: 'アキュビュー オアシス（DIA 14.3mm）はやや大きめのため瞳を大きく見せる効果があり、フィット感が高いと感じる方が多いです。デイリーズ トータルワン（DIA 14.1mm）は小さめでナチュラルな見た目。初めてコンタクトを使う方やソフトレンズに慣れていない方にはアキュビュー オアシスの装用感が合いやすい傾向があります。',
+            },
+            {
+              title: '酸素透過率（Dk/t値）',
+              winner: 'デイリーズ トータルワン',
+              body: 'Dk/t値はデイリーズ トータルワンが156と業界トップクラス。アキュビュー オアシスの103も十分高い水準ですが、長時間装用や角膜への酸素供給を特に重視する場合はデイリーズ トータルワンが有利です。',
+            },
+            {
+              title: '価格',
+              winner: 'アキュビュー オアシス 1-day',
+              body: '通販最安値ベースではアキュビュー オアシスの方が若干安いケースが多いです。デイリーズ トータルワンは製造コストが高く、最安値でも1枚あたり約100〜150円前後。まとめ買いでのコスト差も考慮すると、予算が限られている場合はアキュビュー オアシス 1-dayが選ばれやすいです。',
+            },
+            {
+              title: '乱視用・カラーラインナップ',
+              winner: 'アキュビュー オアシス 1-day',
+              body: 'アキュビュー オアシスには乱視用「with HydraLuxe for Astigmatism」があり、乱視対応の選択肢が充実しています。デイリーズ トータルワンの乱視用は「デイリーズ トータルワン for Astigmatism」として提供されていますが、国内取り扱い度数範囲が若干異なる場合があります。',
+            },
+          ].map(({ title, winner, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <div className="flex items-center gap-3 mb-2">
+                <p className="font-bold text-gray-900">{title}</p>
+                <span className="text-xs bg-slate-800 text-white px-2 py-0.5 rounded-full">{winner}</span>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">あなたに向いているのはどっち？</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="bg-white border-2 border-slate-800 rounded-xl p-5">
+            <p className="font-bold text-slate-800 mb-3">デイリーズ トータルワンが向いている方</p>
+            <ul className="space-y-2 text-sm text-gray-700">
+              {[
+                'とにかく乾きにくいレンズを探している',
+                '長時間（10時間以上）の装用が多い',
+                '高い酸素透過率を重視する',
+                'ドライアイ気味で他のレンズで乾燥感があった',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="text-slate-500 mt-0.5">-</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-white border-2 border-gray-200 rounded-xl p-5">
+            <p className="font-bold text-gray-800 mb-3">アキュビュー オアシス 1-dayが向いている方</p>
+            <ul className="space-y-2 text-sm text-gray-700">
+              {[
+                'コストパフォーマンスも重視したい',
+                '乱視用の選択肢が豊富な方がいい',
+                'やや大きめのレンズでフィット感を重視',
+                '初めてプレミアムレンズに挑戦する方',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="text-gray-400 mt-0.5">-</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">最安値を確認する</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <Link href="/product/dailies-total1" className="block bg-white border border-gray-200 rounded-xl p-4 hover:border-slate-400 hover:shadow-sm transition-all">
+            <p className="font-bold text-gray-900 mb-1">デイリーズ トータルワン</p>
+            <p className="text-xs text-gray-500 mb-3">アルコン / 30枚入</p>
+            <span className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg">最安値を見る</span>
+          </Link>
+          <Link href="/product/acuvue-oasys-1day" className="block bg-white border border-gray-200 rounded-xl p-4 hover:border-slate-400 hover:shadow-sm transition-all">
+            <p className="font-bold text-gray-900 mb-1">アキュビュー オアシス 1-day</p>
+            <p className="text-xs text-gray-500 mb-3">ジョンソン＆ジョンソン / 30枚入</p>
+            <span className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg">最安値を見る</span>
+          </Link>
+        </div>
+      </section>
+
+      <section>
+        <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
+          ※ 掲載しているスペック・価格は参考値です。実際の製品仕様は各メーカー公式サイト・販売店でご確認ください。コンタクトレンズは医療機器のため、初めてご使用の方は必ず眼科を受診して処方箋を取得してください。
+        </p>
+      </section>
+    </div>
+  ),
+
+  'contact-dryeye-osusume': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ドライアイとコンタクトレンズの関係</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          ドライアイは涙の量や質が低下し、目の表面が乾燥しやすくなる状態です。コンタクトレンズはレンズ自体が水分を必要とするため、
+          ドライアイの方が装用すると乾燥感・異物感・充血が起きやすくなります。ただし、素材や含水率を適切に選ぶことでこれらの症状を大幅に軽減できます。
+        </p>
+        <div className="bg-slate-50 border border-slate-100 rounded-xl p-4 mb-4">
+          <p className="font-semibold text-gray-800 mb-2 text-sm">ドライアイの方がレンズ選びで重視すべきポイント</p>
+          <ul className="space-y-2 text-sm text-gray-700">
+            {[
+              'シリコーンハイドロゲル（SiHy）素材：酸素透過率が高く角膜への負担が少ない',
+              '含水率が高いレンズ or 表面コーティングで保水するレンズ',
+              '1dayタイプ：毎日新しいレンズに取り替えるため汚れ・タンパク質の蓄積がない',
+              '大きすぎない直径（DIA）：瞼との摩擦を減らす',
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <span className="text-slate-500 mt-0.5 shrink-0">-</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ドライアイ向けコンタクト おすすめランキング</h2>
+        <div className="space-y-4">
+          {[
+            {
+              rank: 1,
+              name: 'デイリーズ トータルワン',
+              maker: 'アルコン',
+              type: '1day',
+              material: 'ダレフィルコン A（SiHy）',
+              moisture: 'Dk/t 156・表面含水率80%',
+              comment: '水分勾配テクノロジーにより、目の表面に触れるレンズ外側が約80%の含水率を実現。ドライアイ対策として最高峰の設計。長時間装用でも快適さを維持しやすい。',
+            },
+            {
+              rank: 2,
+              name: 'アキュビュー オアシス 1-day with HydraLuxe',
+              maker: 'ジョンソン＆ジョンソン',
+              type: '1day',
+              material: 'セノフィルコン A（SiHy）',
+              moisture: 'Dk/t 103・HydraLuxeテクノロジー',
+              comment: '涙液の成分に似た構造を持つHydraLuxeが涙膜を安定させ、乾燥感を軽減。デジタルデバイス作業が多い方に人気。乱視用ラインアップも充実。',
+            },
+            {
+              rank: 3,
+              name: 'バイオトゥルー ONEday',
+              maker: 'ボシュロム',
+              type: '1day',
+              material: 'ハイプロキシフィルコン A',
+              moisture: '含水率78%・ハイドロソート技術',
+              comment: 'ハイドロゲル素材ながら含水率78%を誇り、涙液タンパク質と同様の成分でレンズ表面を保水。価格が比較的リーズナブルでコスパの良いドライアイ対策レンズ。',
+            },
+            {
+              rank: 4,
+              name: 'アキュビュー オアシス 2week',
+              maker: 'ジョンソン＆ジョンソン',
+              type: '2week',
+              material: 'セノフィルコン A（SiHy）',
+              moisture: 'Dk/t 147・HYDRACLEAR Plus',
+              comment: '2weekタイプの中ではトップクラスの乾きにくさ。HYDRACLEAR Plusがレンズ内部に浸透し装用中の保湿を維持。1dayより低コストで乾燥感対策を継続できる。',
+            },
+            {
+              rank: 5,
+              name: 'プロクリア 1day',
+              maker: 'クーパービジョン',
+              type: '1day',
+              material: 'オマフィルコン A',
+              moisture: '含水率62%・PC技術',
+              comment: 'フォスフォリルコリン（PC）テクノロジーにより、生体との親和性が高い表面を形成。タンパク質・細菌の付着を抑制し清潔に保てる。ドライアイ初期・軽度の方に適合。',
+            },
+          ].map(({ rank, name, maker, type, material, moisture, comment }) => (
+            <div key={name} className="bg-white border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-3">
+                <span className="bg-slate-800 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0">{rank}</span>
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
+                    <p className="font-bold text-gray-900">{name}</p>
+                    <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full">{type}</span>
+                  </div>
+                  <p className="text-xs text-gray-500 mb-2">{maker}</p>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <span className="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full">{material}</span>
+                    <span className="text-xs bg-slate-50 text-slate-700 px-2 py-0.5 rounded-full">{moisture}</span>
+                  </div>
+                  <p className="text-sm text-gray-700 leading-relaxed">{comment}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ドライアイとコンタクトの乾燥対策ケア</h2>
+        <div className="space-y-3">
+          {[
+            { title: 'コンタクト対応の目薬（人工涙液）を使う', body: '「コンタクトレンズ装用中OK」と表示のある防腐剤フリーの点眼液を使用。ソフトサンティア（参天製薬）やロートコンタクト（ロート製薬）シリーズが代表的。1〜2時間に1回程度の点眼が乾燥感を和らげます。' },
+            { title: '装用時間を短くする', body: 'ドライアイがある場合、1日の装用上限は8〜10時間を目安にしましょう。帰宅後はなるべく早く外し、目を休ませる時間を確保してください。' },
+            { title: 'まばたきを意識的に増やす', body: 'PCやスマホ使用中はまばたきの回数が通常の3分の1程度に減ります。20分に1回、意識的に10回まばたきするクセをつけましょう。' },
+            { title: '定期的に眼科で検診を受ける', body: 'ドライアイは進行する場合もあります。年2回程度、眼科でドライアイの状態とレンズの適合性を確認してもらいましょう。必要に応じてレンズの種類や度数の見直しを行います。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">各製品の最安値を確認する</h2>
+        <div className="grid sm:grid-cols-2 gap-3">
+          <Link href="/product/dailies-total1" className="block bg-white border border-gray-200 rounded-xl p-4 hover:border-slate-400 hover:shadow-sm transition-all">
+            <p className="font-bold text-gray-900 mb-1 text-sm">デイリーズ トータルワン</p>
+            <p className="text-xs text-gray-500 mb-2">アルコン / 1day</p>
+            <span className="inline-block bg-slate-800 text-white text-xs font-bold px-3 py-1.5 rounded-lg">最安値を見る</span>
+          </Link>
+          <Link href="/product/acuvue-oasys-1day" className="block bg-white border border-gray-200 rounded-xl p-4 hover:border-slate-400 hover:shadow-sm transition-all">
+            <p className="font-bold text-gray-900 mb-1 text-sm">アキュビュー オアシス 1-day</p>
+            <p className="text-xs text-gray-500 mb-2">J&J / 1day</p>
+            <span className="inline-block bg-slate-800 text-white text-xs font-bold px-3 py-1.5 rounded-lg">最安値を見る</span>
+          </Link>
+        </div>
+      </section>
+
+      <section>
+        <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
+          ※ 掲載している製品情報・スペックは参考値です。ドライアイの症状が重い場合は自己判断せず、必ず眼科医に相談してください。最新の製品仕様は各メーカー公式サイトでご確認ください。
         </p>
       </section>
     </div>
