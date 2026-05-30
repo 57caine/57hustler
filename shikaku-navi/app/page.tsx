@@ -1,22 +1,54 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { courses, getHighlightedCourses, formatPrice, getSubsidyCourses } from '@/lib/courses';
 import { columns } from '@/lib/columns';
 import CourseCard from '@/components/CourseCard';
+
+export const metadata: Metadata = {
+  title: '資格通信講座 比較ランキング2026年版｜おすすめ16社を徹底比較',
+  description: 'スタディング、ユーキャン、フォーサイト、資格の大原など人気資格通信講座16社を徹底比較。料金・合格率・教材の質を一覧で確認。宅建・簿記・FP・ITパスポート・副業資格まで対応。',
+};
+
+const homeFaqs = [
+  {
+    q: '資格通信講座の選び方を教えてください。',
+    a: '①目標資格の難易度（必要勉強時間）を確認 ②給付金対象講座かを調べる ③合格率の実績を比較 ④学習スタイル（スマホ・動画・テキスト）が自分に合うか確認、の4ステップで選ぶと失敗が少ないです。費用重視ならスタディング、合格率重視ならフォーサイト・アガルートが一般的な選択肢です。',
+  },
+  {
+    q: '教育訓練給付金はどの資格講座で使えますか？',
+    a: '雇用保険に一定期間加入している方が対象で、厚生労働大臣指定の講座を修了すると受講料の20〜70%が還付されます。スタディング・フォーサイト・ユーキャン・資格の大原など主要16社のうち多くの講座が対象です。受講前に必ずハローワークに申請が必要です。',
+  },
+  {
+    q: '社会人が働きながら取れるおすすめ資格はどれですか？',
+    a: 'ITパスポート（100〜200時間）・FP3級（100〜150時間）・日商簿記3級（100〜200時間）は比較的短期間で取得でき、社会人の入門資格として人気があります。転職・年収アップを目指す場合は宅建・FP2級・社労士・行政書士などの国家資格が有効です。',
+  },
+];
 
 export default function HomePage() {
   const highlighted = getHighlightedCourses();
   const topColumns = columns.slice(0, 3);
   const subsidyCourses = getSubsidyCourses();
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: homeFaqs.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
+
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Hero */}
       <section className="bg-slate-900 text-white py-14 px-4">
         <div className="max-w-4xl mx-auto">
           <p className="text-slate-400 text-xs font-medium mb-3 uppercase tracking-widest">Qualification School Navigator</p>
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-white">
             資格取得で年収・キャリアアップ<br />
-            <span className="text-slate-300">通信講座 徹底比較ガイド 2025年版</span>
+            <span className="text-slate-300">通信講座 徹底比較ガイド 2026年版</span>
           </h1>
           <p className="text-slate-400 mb-8 max-w-xl text-sm leading-relaxed">
             スタディング・フォーサイト・アガルートなど{courses.length}講座を費用・合格率・学習スタイルで客観的に比較。
@@ -38,7 +70,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto flex flex-wrap gap-6 text-sm">
           <span><strong className="text-white">{courses.length}講座</strong> を掲載</span>
           <span><strong className="text-white">{subsidyCourses.length > 0 ? subsidyCourses.length : '複数'}講座</strong> が給付金対象</span>
-          <span>最終更新: <strong className="text-white">2025年6月</strong></span>
+          <span>最終更新: <strong className="text-white">2026年5月</strong></span>
         </div>
       </section>
 
@@ -64,14 +96,14 @@ export default function HomePage() {
           <h2 className="text-lg font-bold text-gray-900 mb-5">試験・資格から探す</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { label: '宅建（宅地建物取引士）', href: '/courses', desc: '不動産業界の必須国家資格' },
-              { label: '日商簿記 2・3級', href: '/courses', desc: '経理・会計の定番資格' },
-              { label: 'FP 2・3級', href: '/courses', desc: '金融・保険業界で活躍' },
-              { label: 'IT資格（ITパスポート）', href: '/courses', desc: 'IT基礎知識の証明' },
-              { label: '中小企業診断士', href: '/courses', desc: '経営コンサルの国家資格' },
-              { label: '社会保険労務士', href: '/courses', desc: '人事・労務の専門家' },
-              { label: '行政書士', href: '/courses', desc: '法律系・独立も可能' },
-              { label: '基本情報技術者', href: '/courses', desc: 'ITエンジニアの登竜門' },
+              { label: '宅建（宅地建物取引士）', href: '/category/kokukaShikaku', desc: '不動産業界の必須国家資格' },
+              { label: '日商簿記 2・3級', href: '/category/fukugyou', desc: '経理・会計の定番資格' },
+              { label: 'FP 2・3級', href: '/category/fukugyou', desc: '金融・保険業界で活躍' },
+              { label: 'IT資格（ITパスポート）', href: '/category/it', desc: 'IT基礎知識の証明' },
+              { label: '中小企業診断士', href: '/category/tensyoku', desc: '経営コンサルの国家資格' },
+              { label: '社会保険労務士', href: '/category/kokukaShikaku', desc: '人事・労務の専門家' },
+              { label: '行政書士', href: '/category/kokukaShikaku', desc: '法律系・独立も可能' },
+              { label: '基本情報技術者', href: '/category/it', desc: 'ITエンジニアの登竜門' },
             ].map((cat) => (
               <Link
                 key={cat.label}

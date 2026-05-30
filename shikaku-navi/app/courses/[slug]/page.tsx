@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const course = getCourseBySlug(slug);
   if (!course) return {};
   return {
-    title: `${course.name}の評判・料金・合格率`,
-    description: `${course.name}の料金・合格率・カリキュラムを詳しく解説。${course.tagline}`,
+    title: `${course.name}の評判・料金・合格率【2026年版】`,
+    description: `${course.name}の料金・合格率・カリキュラムを詳しく解説。${course.tagline} 対応資格: ${course.targetExam.slice(0, 3).join('・')}など。`,
   };
 }
 
@@ -27,6 +27,27 @@ export default async function CoursePage({ params }: Props) {
   if (!course) notFound();
 
   const related = courses.filter((c) => c.slug !== slug && c.category === course.category).slice(0, 3);
+
+  const courseFaqs = [
+    {
+      q: `${course.name}の受講料はいくらですか？`,
+      a: `${course.name}の受講料は${formatPrice(course.price)}〜です。${course.priceNote}コースや対象資格によって異なるため、最新の料金は公式サイトでご確認ください。`,
+    },
+    {
+      q: `${course.name}の合格率はどのくらいですか？`,
+      a: `${course.name}の合格率は${course.passRate}です。資格の種類・受講コースによって異なります。詳細な合格実績は公式サイトをご覧ください。`,
+    },
+    {
+      q: `${course.name}はどんな資格に対応していますか？`,
+      a: `${course.name}は${course.targetExam.join('・')}などの資格・試験に対応しています。`,
+    },
+    {
+      q: `${course.name}で給付金は使えますか？`,
+      a: course.features.includes('給付金対象')
+        ? `${course.name}は教育訓練給付金の対象講座を提供しています。雇用保険の加入期間など条件があるため、受講前にハローワークでご確認ください。給付金を活用すると受講料の20〜70%が還付される場合があります。`
+        : `${course.name}の給付金対象講座については公式サイトでご確認ください。分割払いや早割制度を利用することで実質負担を軽減できる場合があります。`,
+    },
+  ];
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -49,6 +70,14 @@ export default async function CoursePage({ params }: Props) {
           { '@type': 'ListItem', position: 2, name: '講座一覧', item: `${BASE}/courses` },
           { '@type': 'ListItem', position: 3, name: course.name, item: `${BASE}/courses/${course.slug}` },
         ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: courseFaqs.map(({ q, a }) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: a },
+        })),
       },
     ],
   };
@@ -102,14 +131,20 @@ export default async function CoursePage({ params }: Props) {
         </div>
 
         <div className="mt-5 flex gap-3">
-          <a
-            href={course.affiliate_url}
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            className="flex-1 text-center bg-slate-800 text-white py-3 rounded-xl font-bold hover:bg-slate-700 transition-colors"
-          >
-            公式サイトで詳細を確認する →
-          </a>
+          {course.affiliate_url === '#' ? (
+            <span className="flex-1 text-center border border-gray-200 text-gray-400 py-3 rounded-xl text-sm">
+              近日追加予定
+            </span>
+          ) : (
+            <a
+              href={course.affiliate_url}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="flex-1 text-center bg-slate-800 text-white py-3 rounded-xl font-bold hover:bg-slate-700 transition-colors"
+            >
+              公式サイトで詳細を確認する →
+            </a>
+          )}
         </div>
       </div>
 
@@ -152,18 +187,37 @@ export default async function CoursePage({ params }: Props) {
         </div>
       </div>
 
+      {/* FAQ Section */}
+      <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
+        <h2 className="text-lg font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-4">
+          {courseFaqs.map(({ q, a }) => (
+            <div key={q} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-bold text-gray-900 text-sm mb-2">Q. {q}</p>
+              <p className="text-sm text-gray-700 leading-relaxed">A. {a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* CTA */}
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8 text-center">
         <p className="font-bold text-gray-900 mb-2">{course.name}の詳細・無料資料請求はこちら</p>
         <p className="text-sm text-gray-600 mb-4">まずは公式サイトで最新の料金・コース内容をご確認ください。</p>
-        <a
-          href={course.affiliate_url}
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-          className="inline-block bg-slate-800 text-white px-8 py-3 rounded-full font-bold hover:bg-slate-700 transition-colors"
-        >
-          公式サイトを見る
-        </a>
+        {course.affiliate_url === '#' ? (
+          <span className="inline-block border border-gray-200 text-gray-400 px-8 py-3 rounded-full text-sm">
+            近日追加予定
+          </span>
+        ) : (
+          <a
+            href={course.affiliate_url}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="inline-block bg-slate-800 text-white px-8 py-3 rounded-full font-bold hover:bg-slate-700 transition-colors"
+          >
+            公式サイトを見る
+          </a>
+        )}
       </div>
 
       <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3 mb-8">

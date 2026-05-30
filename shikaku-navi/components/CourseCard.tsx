@@ -9,7 +9,7 @@ type Props = {
 
 const categoryColors: Record<string, string> = {
   '国家資格': 'bg-slate-50 text-slate-700 border-slate-200',
-  '転職・就職向け': 'bg-blue-50 text-blue-700 border-blue-200',
+  '転職・就職向け': 'bg-slate-50 text-slate-700 border-slate-200',
   'IT資格': 'bg-emerald-50 text-emerald-700 border-emerald-200',
   '副業・スキルアップ': 'bg-amber-50 text-amber-700 border-amber-200',
 };
@@ -61,14 +61,20 @@ export default function CourseCard({ course, rank }: Props) {
           >
             詳細を見る
           </Link>
-          <a
-            href={course.affiliate_url}
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            className="flex-1 text-center bg-slate-800 text-white py-2 rounded-lg text-sm hover:bg-slate-700 transition-colors"
-          >
-            公式サイト
-          </a>
+          {course.affiliate_url === '#' ? (
+            <span className="flex-1 text-center border border-gray-200 text-gray-400 py-2 rounded-lg text-sm whitespace-nowrap">
+              近日追加予定
+            </span>
+          ) : (
+            <a
+              href={course.affiliate_url}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="flex-1 text-center bg-slate-800 text-white py-2 rounded-lg text-sm hover:bg-slate-700 transition-colors"
+            >
+              公式サイト
+            </a>
+          )}
         </div>
       </div>
     </div>

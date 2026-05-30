@@ -57,12 +57,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className={`${notoSansJP.className} bg-gray-50 text-gray-900`}>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-CPMBND5884" strategy="afterInteractive" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-E7XQY6BT4Q" strategy="afterInteractive" />
         <Script id="ga4" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-CPMBND5884', { page_path: window.location.pathname });
+          gtag('config', 'G-E7XQY6BT4Q', { page_path: window.location.pathname });
         `}</Script>
         <Header />
         <main className="min-h-screen">{children}</main>

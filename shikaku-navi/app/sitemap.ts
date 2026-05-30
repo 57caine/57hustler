@@ -12,8 +12,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const categorySlugMap: Record<string, string> = {
+    '国家資格': 'kokukaShikaku',
+    '転職・就職向け': 'tensyoku',
+    '副業・スキルアップ': 'fukugyou',
+    'IT資格': 'it',
+  };
   const categoryUrls: MetadataRoute.Sitemap = getAllCategories().map((c) => ({
-    url: `${BASE_URL}/category/${encodeURIComponent(c)}`,
+    url: `${BASE_URL}/category/${categorySlugMap[c] ?? encodeURIComponent(c)}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: 0.7,

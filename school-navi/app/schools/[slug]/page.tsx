@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const BASE = 'https://nsplot.com';
 
 const categoryColors: Record<string, string> = {
-  '転職特化': 'bg-blue-50 text-blue-700 border-blue-200',
+  '転職特化': 'bg-slate-50 text-slate-700 border-slate-200',
   'スキルアップ': 'bg-emerald-50 text-emerald-700 border-emerald-200',
   'フリーランス特化': 'bg-amber-50 text-amber-700 border-amber-200',
   'AI特化': 'bg-violet-50 text-violet-700 border-violet-200',
@@ -37,6 +37,27 @@ export default async function SchoolPage({ params }: Props) {
   const related = schools
     .filter((s) => s.slug !== slug && s.category === school.category)
     .slice(0, 3);
+
+  const schoolFaqs = [
+    {
+      q: `${school.name}の料金はいくらですか？`,
+      a: `${school.name}の受講料は${school.price === 0 ? '無料（転職成功報酬型など）' : `${formatPrice(school.price)}円〜`}です。${school.priceNote}コースや受講形態によって異なるため、最新の料金は公式サイトでご確認ください。`,
+    },
+    {
+      q: `${school.name}は未経験者でも受講できますか？`,
+      a: `${school.name}は${school.targetAudience}を対象としており、プログラミング未経験の方でも受講可能です。基礎から丁寧にサポートするカリキュラムが用意されています。`,
+    },
+    {
+      q: `${school.name}の受講期間はどのくらいですか？`,
+      a: `${school.name}の標準的な受講期間は${school.period}です。学習ペースやコースによって異なる場合があります。`,
+    },
+    {
+      q: `${school.name}では給付金は使えますか？`,
+      a: school.features.includes('給付金対象')
+        ? `${school.name}は教育訓練給付金の対象講座を提供しています。雇用保険の加入期間など条件がありますので、受講前にハローワークでご確認ください。`
+        : `${school.name}の給付金対象講座については公式サイトでご確認ください。給付金非対応の場合でも分割払いや奨学金制度を設けているケースがあります。`,
+    },
+  ];
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -58,6 +79,14 @@ export default async function SchoolPage({ params }: Props) {
           { '@type': 'ListItem', position: 2, name: 'スクール一覧', item: `${BASE}/schools` },
           { '@type': 'ListItem', position: 3, name: school.name, item: `${BASE}/schools/${school.slug}` },
         ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: schoolFaqs.map(({ q, a }) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: a },
+        })),
       },
     ],
   };
@@ -118,14 +147,20 @@ export default async function SchoolPage({ params }: Props) {
         </div>
 
         <div className="mt-5 pt-5 border-t border-gray-100 flex flex-col sm:flex-row gap-3">
-          <a
-            href={school.affiliate_url}
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            className="flex-1 text-center bg-slate-800 text-white py-3 rounded-xl font-semibold hover:bg-slate-700 transition-colors text-sm"
-          >
-            公式サイトで詳細を確認する
-          </a>
+          {school.affiliate_url === '#' ? (
+            <span className="flex-1 text-center border border-gray-200 text-gray-400 py-3 rounded-xl text-sm">
+              近日追加予定
+            </span>
+          ) : (
+            <a
+              href={school.affiliate_url}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="flex-1 text-center bg-slate-800 text-white py-3 rounded-xl font-semibold hover:bg-slate-700 transition-colors text-sm"
+            >
+              公式サイトで詳細を確認する
+            </a>
+          )}
           <Link
             href="/compare"
             className="text-center border border-gray-300 text-gray-600 py-3 px-5 rounded-xl font-medium hover:border-gray-400 hover:bg-gray-50 transition-colors text-sm"
@@ -190,14 +225,33 @@ export default async function SchoolPage({ params }: Props) {
       <div className="border border-gray-200 rounded-xl p-6 mb-6">
         <p className="font-semibold text-gray-900 mb-1 text-sm">{school.name}の詳細・無料相談</p>
         <p className="text-xs text-gray-500 mb-4">料金・カリキュラムの詳細は公式サイトでご確認ください。無料カウンセリングを実施しているスクールが多いため、まず話を聞いてみることをお勧めします。</p>
-        <a
-          href={school.affiliate_url}
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-          className="inline-block bg-slate-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-700 transition-colors text-sm"
-        >
-          公式サイトを確認する
-        </a>
+        {school.affiliate_url === '#' ? (
+          <span className="inline-block border border-gray-200 text-gray-400 px-8 py-3 rounded-lg text-sm">
+            近日追加予定
+          </span>
+        ) : (
+          <a
+            href={school.affiliate_url}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="inline-block bg-slate-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-700 transition-colors text-sm"
+          >
+            公式サイトを確認する
+          </a>
+        )}
+      </div>
+
+      {/* FAQ Section */}
+      <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
+        <h2 className="text-lg font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-4">
+          {schoolFaqs.map(({ q, a }) => (
+            <div key={q} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-bold text-gray-900 text-sm mb-2">Q. {q}</p>
+              <p className="text-sm text-gray-700 leading-relaxed">A. {a}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <p className="text-xs text-gray-400 border border-gray-100 rounded-lg p-3 mb-10">

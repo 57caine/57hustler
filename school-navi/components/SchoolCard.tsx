@@ -8,7 +8,7 @@ type Props = {
 };
 
 const categoryColors: Record<string, string> = {
-  '転職特化': 'bg-blue-50 text-blue-700 border-blue-200',
+  '転職特化': 'bg-slate-50 text-slate-700 border-slate-200',
   'スキルアップ': 'bg-emerald-50 text-emerald-700 border-emerald-200',
   'フリーランス特化': 'bg-amber-50 text-amber-700 border-amber-200',
   'AI特化': 'bg-violet-50 text-violet-700 border-violet-200',
@@ -31,7 +31,7 @@ export default function SchoolCard({ school, rank }: Props) {
           </div>
           <div className="text-right shrink-0">
             <p className="text-xs text-gray-400">受講料</p>
-            <p className="font-bold text-gray-800 text-sm">{formatPrice(school.price)}〜</p>
+            <p className="font-bold text-gray-800 text-sm">{school.price === 0 ? '無料' : `${formatPrice(school.price)}〜`}</p>
           </div>
         </div>
 
@@ -58,14 +58,20 @@ export default function SchoolCard({ school, rank }: Props) {
           >
             詳細を見る
           </Link>
-          <a
-            href={school.affiliate_url}
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            className="flex-1 text-center bg-slate-800 text-white py-2 rounded-lg text-sm hover:bg-slate-700 transition-colors"
-          >
-            公式サイト
-          </a>
+          {school.affiliate_url === '#' ? (
+            <span className="flex-1 text-center border border-gray-200 text-gray-400 py-2 rounded-lg text-sm whitespace-nowrap">
+              近日追加予定
+            </span>
+          ) : (
+            <a
+              href={school.affiliate_url}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="flex-1 text-center bg-slate-800 text-white py-2 rounded-lg text-sm hover:bg-slate-700 transition-colors"
+            >
+              公式サイト
+            </a>
+          )}
         </div>
       </div>
     </div>
