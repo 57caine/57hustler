@@ -209,6 +209,24 @@ export const columns: ColumnMeta[] = [
     updatedAt: '2026-05-30',
     readingTime: 7,
   },
+  {
+    slug: 'contact-tsuhan-shop-hikaku',
+    title: 'コンタクトレンズ通販おすすめショップ比較【2026年版・最安値24店舗】',
+    description: 'レンズクイック・アットレンズ・24Lens・シンシアなどコンタクト通販の主要24店舗を価格・送料・配送速度・処方箋対応で比較。初めての通販でも安心な選び方ガイド。',
+    category: '購入ガイド',
+    publishedAt: '2026-05-30',
+    updatedAt: '2026-05-30',
+    readingTime: 9,
+  },
+  {
+    slug: 'acuvue-moist-vs-oasys-chigai',
+    title: 'アキュビュー モイスト vs アキュビュー オアシス 違いを徹底比較【どっちを選ぶ？】',
+    description: 'アキュビューの定番2モデル「モイスト」と「オアシス」の違いを乾きにくさ・価格・酸素透過率・素材で比較。用途・予算別にどちらが合うか選び方を解説します。',
+    category: '商品比較',
+    publishedAt: '2026-05-30',
+    updatedAt: '2026-05-30',
+    readingTime: 7,
+  },
 ];
 
 export function getColumnBySlug(slug: string): ColumnMeta | undefined {
@@ -2693,6 +2711,228 @@ export const columnContent: Record<string, React.ReactNode> = {
       <section>
         <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
           ※ 掲載している製品情報・スペックは参考値です。ドライアイの症状が重い場合は自己判断せず、必ず眼科医に相談してください。最新の製品仕様は各メーカー公式サイトでご確認ください。
+        </p>
+      </section>
+    </div>
+  ),
+
+  'contact-tsuhan-shop-hikaku': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">コンタクトレンズ通販を選ぶ5つのポイント</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          コンタクトレンズの通販ショップは価格・送料・配送スピード・処方箋対応・クーポン頻度で大きく差があります。
+          「最安値」だけで選ぶと送料を含めるとトータルで高くなるケースも。以下の5点を確認して選びましょう。
+        </p>
+        <div className="space-y-3">
+          {[
+            { no: '1', title: '送料込みの最終価格を比較する', body: '「1箱○○円」の表示でも送料が別途かかるショップが多い。特定金額以上で送料無料になるラインも各ショップで異なるため、実際の購入金額で比較してください。当サイトでは送料込みの最安値を掲載しています。' },
+            { no: '2', title: 'まとめ買いの割引率を確認する', body: '4箱・6箱・8箱のまとめ買いで追加割引を設けているショップが多い。毎月購入する場合は年間まとめ買いが最もコスパが良くなるケースが多いです。' },
+            { no: '3', title: '処方箋不要の対応範囲を確認する', body: '「処方箋不要」対応ショップでも条件があります（同商品の継続使用者のみ・初めてのコンタクトには不可など）。初めて使う方や度数変更がある場合は眼科を受診してください。' },
+            { no: '4', title: 'クーポン・ポイント還元を活用する', body: 'メルマガ登録で初回割引・誕生月クーポン・楽天ポイント還元など、各ショップで定期的なお得情報がある。楽天市場・Yahoo!ショッピング経由での購入もポイント還元率を考慮すると有利なことが多い。' },
+            { no: '5', title: '配送スピードと在庫の豊富さ', body: '急いでいる場合は「最短翌日お届け」のショップを選ぶ。在庫が豊富で取り扱いブランドが多いショップほど、欲しい商品が欠品なく購入できる。' },
+          ].map(({ no, title, body }) => (
+            <div key={no} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="bg-slate-800 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">{no}</span>
+                <p className="font-semibold text-gray-800 text-sm">{title}</p>
+              </div>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">主要通販ショップ特徴まとめ</h2>
+        <div className="overflow-x-auto bg-slate-50 rounded-xl p-4 mb-4">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="border-b border-gray-200">
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">ショップ</th>
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">特徴</th>
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">送料無料条件</th>
+                <th className="text-left py-2 text-gray-600 font-semibold">処方箋</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['レンズクイック', '価格競争力が高い', '一定金額以上', '不要対応あり'],
+                ['アットレンズ', 'まとめ買い割引充実', '一定金額以上', '不要対応あり'],
+                ['24Lens', 'クーポン頻度が高い', '一定金額以上', '不要対応あり'],
+                ['シンシア', '国内ブランドに強い', '一定金額以上', '不要対応あり'],
+                ['楽天市場', 'ポイント還元が豊富', 'ショップ依存', 'ショップ依存'],
+                ['Yahoo!ショッピング', 'Paypayポイント還元', 'ショップ依存', 'ショップ依存'],
+              ].map(([shop, feature, free, rx]) => (
+                <tr key={shop} className="border-b border-gray-100">
+                  <td className="py-2 pr-4 font-semibold text-gray-700">{shop}</td>
+                  <td className="py-2 pr-4 text-gray-600">{feature}</td>
+                  <td className="py-2 pr-4 text-gray-600">{free}</td>
+                  <td className="py-2 text-gray-600">{rx}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-gray-500">※ 送料無料条件・処方箋対応は変更される場合があります。最新情報は各ショップでご確認ください。</p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ランキングで最安値を確認する</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          当サイトでは24店舗の価格を毎日自動更新し、送料込みの最安値を一覧で比較できます。
+          商品ページからその日の最安値ショップを確認してご購入ください。
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/ranking" className="inline-block bg-slate-800 text-white text-sm font-bold px-5 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+            人気ランキングTOP6を見る
+          </Link>
+          <Link href="/category/1day" className="inline-block border border-slate-300 text-slate-700 text-sm font-medium px-5 py-2 rounded-lg hover:bg-slate-50 transition-colors">
+            ワンデー一覧を見る
+          </Link>
+        </div>
+      </section>
+
+      <section>
+        <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
+          ※ 当サイトはアフィリエイト広告を掲載しています。掲載情報は参考値であり、最新の価格・条件は各ショップ公式サイトでご確認ください。コンタクトレンズは医療機器です。初めてご使用の方は必ず眼科を受診してください。
+        </p>
+      </section>
+    </div>
+  ),
+
+  'acuvue-moist-vs-oasys-chigai': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">アキュビュー モイストとオアシスの基本スペック比較</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          アキュビュー（ジョンソン＆ジョンソン）の1dayシリーズで最も売れている2モデルが「モイスト」と「オアシス」です。
+          両者は同じブランドですが素材・酸素透過率・価格帯が大きく異なります。
+        </p>
+        <div className="overflow-x-auto bg-slate-50 rounded-xl p-4 mb-4">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="border-b border-gray-200">
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">項目</th>
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">アキュビュー モイスト</th>
+                <th className="text-left py-2 text-gray-600 font-semibold">アキュビュー オアシス 1-day</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['素材', 'エタフィルコン A（ハイドロゲル）', 'セノフィルコン A（シリコーンHG）'],
+                ['Dk/t値', '33.3', '103'],
+                ['含水率', '58%', '38%'],
+                ['BC', '8.5', '8.5'],
+                ['DIA', '14.2mm', '14.3mm'],
+                ['UVカット', 'あり（クラス2）', 'あり（クラス1）'],
+                ['乱視用ライン', 'あり', 'あり'],
+                ['価格帯（目安）', '1,600〜2,200円/箱', '2,800〜4,000円/箱'],
+              ].map(([item, moist, oasys]) => (
+                <tr key={item} className="border-b border-gray-100">
+                  <td className="py-2 pr-4 font-semibold text-gray-700">{item}</td>
+                  <td className="py-2 pr-4 text-gray-600">{moist}</td>
+                  <td className="py-2 text-gray-600">{oasys}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">モイストとオアシス 4つの違い</h2>
+        <div className="space-y-4">
+          {[
+            {
+              title: '価格の違い',
+              winner: 'アキュビュー モイスト',
+              body: 'モイストはオアシスの約半額〜60%の価格で購入できます。年間使用量で換算すると1〜2万円以上の差になることも。コストを重視する場合は迷わずモイストを選びましょう。まとめ買いでもモイストの方がトータルコストは大幅に低い。',
+            },
+            {
+              title: '乾きにくさ・酸素透過率',
+              winner: 'アキュビュー オアシス 1-day',
+              body: 'オアシスはシリコーンハイドロゲル素材でDk/t値103と高い酸素透過率を誇ります。モイストはハイドロゲル素材でDk/t値33.3。長時間装用（8時間以上）や目の乾燥が気になる方にはオアシスが明らかに優れています。',
+            },
+            {
+              title: '初心者・ライトユーザーへの適合性',
+              winner: 'アキュビュー モイスト',
+              body: 'コンタクト初心者・週3〜4日程度の使用・予算を抑えたい方には、モイストが最適な選択肢です。装用感も一般的なハイドロゲルとしては標準以上で、日常的な使用には十分な品質です。',
+            },
+            {
+              title: '長時間・ハードユーザーへの適合性',
+              winner: 'アキュビュー オアシス 1-day',
+              body: 'PCワーク・長時間外出・ドライアイ気味の方には価格差を払ってでもオアシスを選ぶ価値があります。1日の装用終わりの乾燥感・眼精疲労の感じ方が大きく異なります。',
+            },
+          ].map(({ title, winner, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <div className="flex items-center gap-3 mb-2">
+                <p className="font-bold text-gray-900">{title}</p>
+                <span className="text-xs bg-slate-800 text-white px-2 py-0.5 rounded-full">{winner}</span>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">どちらを選べばいい？</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="bg-white border-2 border-slate-800 rounded-xl p-5">
+            <p className="font-bold text-slate-800 mb-3">モイストが向いている方</p>
+            <ul className="space-y-2 text-sm text-gray-700">
+              {[
+                'コストをできるだけ抑えたい',
+                '週3〜4日程度のライトな使用',
+                '目の乾燥はそれほど気にならない',
+                '初めてアキュビューを使う',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="text-slate-500 mt-0.5">-</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-white border-2 border-gray-200 rounded-xl p-5">
+            <p className="font-bold text-gray-800 mb-3">オアシスが向いている方</p>
+            <ul className="space-y-2 text-sm text-gray-700">
+              {[
+                '1日8時間以上の長時間装用が多い',
+                '目の乾燥・疲れが気になる',
+                'PCやスマホを長時間使用する',
+                '最高品質のアキュビューを使いたい',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="text-gray-400 mt-0.5">-</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">最安値を確認する</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <Link href="/product/acuvue-moist-1day" className="block bg-white border border-gray-200 rounded-xl p-4 hover:border-slate-400 hover:shadow-sm transition-all">
+            <p className="font-bold text-gray-900 mb-1">アキュビュー モイスト 1day</p>
+            <p className="text-xs text-gray-500 mb-3">J&J / ハイドロゲル / 30枚入</p>
+            <span className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg">最安値を見る</span>
+          </Link>
+          <Link href="/product/acuvue-oasys-1day" className="block bg-white border border-gray-200 rounded-xl p-4 hover:border-slate-400 hover:shadow-sm transition-all">
+            <p className="font-bold text-gray-900 mb-1">アキュビュー オアシス 1-day</p>
+            <p className="text-xs text-gray-500 mb-3">J&J / シリコーンHG / 30枚入</p>
+            <span className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg">最安値を見る</span>
+          </Link>
+        </div>
+      </section>
+
+      <section>
+        <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
+          ※ 掲載しているスペック・価格は参考値です。最新の製品仕様は各メーカー公式サイトでご確認ください。コンタクトレンズは医療機器のため、初めてご使用の方は必ず眼科を受診して処方箋を取得してください。
         </p>
       </section>
     </div>

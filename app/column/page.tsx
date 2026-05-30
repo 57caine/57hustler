@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { columns } from '@/lib/columns';
 
 export const metadata: Metadata = {
-  title: 'コンタクトレンズ コラム・ガイド【全22記事】| レンズナビ',
-  description: 'コンタクトレンズの度数の見方、初めての選び方、乾きにくい・乱視用・カラコン・2week・マンスリー・長時間装用・ドライアイ向けレンズ比較まで、購入前に知っておきたい情報を全22記事で解説。',
+  title: 'コンタクトレンズ コラム・ガイド【全24記事】| レンズナビ',
+  description: 'コンタクトレンズの度数の見方、初めての選び方、乾きにくい・乱視用・カラコン・2week・マンスリー・長時間装用・ドライアイ向けレンズ比較・通販ショップ比較まで、購入前に知っておきたい情報を全24記事で解説。',
 };
 
 const categoryColors: Record<string, string> = {
