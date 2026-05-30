@@ -8,6 +8,7 @@ export type ColumnMeta = {
   publishedAt: string;
   updatedAt: string;
   readingTime: number;
+  headings?: string[];
 };
 
 export const columns: ColumnMeta[] = [
@@ -19,6 +20,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-01',
     updatedAt: '2026-05-28',
     readingTime: 7,
+    headings: ['PWR（度数）とは？', 'BC（ベースカーブ）とは？', 'DIA（直径）とは？', '乱視用のパラメータ（CYL・AXIS）', '処方箋の右目・左目の見分け方'],
   },
   {
     slug: 'shohosen-nashi-tsuuhan',
@@ -28,6 +30,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-05',
     updatedAt: '2026-05-28',
     readingTime: 6,
+    headings: ['コンタクトレンズは「高度管理医療機器」', '通販で安全に購入するための3条件', '通販ショップの選び方', 'おすすめ通販ショップの比較'],
   },
   {
     slug: 'hajimete-erabikata',
@@ -37,6 +40,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-10',
     updatedAt: '2026-05-28',
     readingTime: 8,
+    headings: ['まず眼科へ行こう', '種類の違いを知ろう', '初心者にはワンデーがおすすめ', '初心者におすすめのワンデーコンタクト', 'ネット通販での購入の流れ（6ステップ）', '処方箋について知っておこう', '送料を含めた実際のコスト計算例', 'よくある質問（Q&A）'],
   },
   {
     slug: 'kanso-shinikui-contact',
@@ -46,6 +50,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-15',
     updatedAt: '2026-05-28',
     readingTime: 7,
+    headings: ['コンタクトで目が乾く原因', '乾きにくいレンズの選び方', '乾きにくいコンタクトおすすめ7選', '乾燥対策のその他のポイント'],
   },
   {
     slug: 'ranshi-contact-erabikata',
@@ -55,6 +60,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-18',
     updatedAt: '2026-05-28',
     readingTime: 7,
+    headings: ['乱視とは？CYL・AXISの意味', '乱視用コンタクトの仕組み', '軽度・中等度別おすすめ乱視用コンタクト', '乱視用コンタクトを選ぶ際の注意点'],
   },
   {
     slug: 'contact-kakaku-hikaku-2024',
@@ -64,6 +70,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-19',
     updatedAt: '2026-05-28',
     readingTime: 5,
+    headings: ['コンタクト通販サイトを選ぶポイント', '主要通販ショップの特徴比較', '商品別最安値を比較する', '賢い節約術まとめ'],
   },
   {
     slug: 'acuvue-zenkindai-hikaku',
@@ -73,6 +80,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-20',
     updatedAt: '2026-05-28',
     readingTime: 8,
+    headings: ['アキュビューのラインナップ一覧', '目的別・おすすめアキュビューはこれ', 'オアシスとモイストの違い'],
   },
   {
     slug: 'colorcl-hajimete-guide',
@@ -82,6 +90,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-21',
     updatedAt: '2026-05-28',
     readingTime: 6,
+    headings: ['カラコンとは？基本知識', '度あり vs 度なしカラコンの違い', '自然に見えるカラコンの選び方', '初心者におすすめのカラコン', '安全な使い方のポイント'],
   },
   {
     slug: 'contact-kaigai-vs-kokunai',
@@ -91,6 +100,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-22',
     updatedAt: '2026-05-28',
     readingTime: 5,
+    headings: ['日本の主要コンタクトブランドまとめ', '国産コンタクトのメリット・デメリット', '海外製コンタクトのメリット・デメリット', '結論：どちらを選ぶべき？'],
   },
   {
     slug: 'contact-maintenance',
@@ -100,6 +110,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-23',
     updatedAt: '2026-05-28',
     readingTime: 6,
+    headings: ['なぜケアが必要？', '正しいケアの手順', '洗浄液の種類と選び方', '絶対にやってはいけないNG行為'],
   },
   {
     slug: 'silicon-hydrogel-merit',
@@ -109,6 +120,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-24',
     updatedAt: '2026-05-28',
     readingTime: 6,
+    headings: ['シリコーンハイドロゲルとは？', 'シリコーンハイドロゲルのメリット', 'シリコーンハイドロゲルのデメリット', 'おすすめのシリコーンHGコンタクト'],
   },
   {
     slug: 'contact-nenkan-cost',
@@ -118,6 +130,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-25',
     updatedAt: '2026-05-28',
     readingTime: 5,
+    headings: ['年間コスト比較の前提条件', 'タイプ別年間コスト比較', '生活スタイル別おすすめ', 'コスト削減のコツ'],
   },
   {
     slug: 'contact-tsuuhan-osusume-shop',
@@ -127,6 +140,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-29',
     updatedAt: '2026-05-29',
     readingTime: 8,
+    headings: ['ショップを選ぶ3つのポイント', 'おすすめ通販ショップ一覧', '処方箋不要で購入できる条件', '価格比較の方法'],
   },
   {
     slug: 'acuvue-oasys-1day-review',
@@ -136,6 +150,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-29',
     updatedAt: '2026-05-29',
     readingTime: 7,
+    headings: ['ワンデーアキュビューオアシスの特徴', 'スペック一覧', 'こんな人におすすめ', '最安値で購入する'],
   },
   {
     slug: 'bifocal-multifocal-contact',
@@ -145,6 +160,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-29',
     updatedAt: '2026-05-29',
     readingTime: 8,
+    headings: ['遠近両用コンタクトの仕組み', 'おすすめ遠近両用コンタクト', '遠近両用を始める前に知っておくこと'],
   },
   {
     slug: '2week-contact-osusume',
@@ -154,6 +170,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-29',
     updatedAt: '2026-05-29',
     readingTime: 7,
+    headings: ['2ウィークコンタクトが選ばれる理由', '2ウィークコンタクト おすすめ5選', '2ウィークコンタクトを選ぶ際のチェックポイント'],
   },
   {
     slug: 'monthly-contact-hikaku',
@@ -163,6 +180,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-29',
     updatedAt: '2026-05-29',
     readingTime: 6,
+    headings: ['マンスリーコンタクトのメリットとデメリット', 'マンスリーコンタクト 価格・スペック比較', 'マンスリーケア用品のコストも考慮しよう'],
   },
   {
     slug: 'colorcon-ranking-2025',
@@ -172,6 +190,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-29',
     updatedAt: '2026-05-29',
     readingTime: 7,
+    headings: ['カラコン選びの基本：安全に使うための3つのポイント', 'カラコン人気ランキング2025【ナチュラル系】', 'カラコン人気ランキング2025【度あり・度数選び方】'],
   },
   {
     slug: 'ranshi-contact-ranking-2025',
@@ -181,6 +200,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-29',
     updatedAt: '2026-05-29',
     readingTime: 8,
+    headings: ['乱視用コンタクト（トーリックレンズ）とは', 'ワンデー乱視用コンタクト おすすめランキング', '2week乱視用コンタクト おすすめランキング', 'マンスリー乱視用コンタクト おすすめ', 'CYL・AXISの選び方と注意点'],
   },
   {
     slug: 'contact-chouji-so',
@@ -190,6 +210,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-29',
     updatedAt: '2026-05-29',
     readingTime: 6,
+    headings: ['長時間装用で大切なのは「素材」', '長時間装用向けおすすめコンタクト5選', '長時間装用のケアポイント'],
   },
   {
     slug: 'dailies-total1-vs-oasys',
@@ -199,6 +220,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-30',
     updatedAt: '2026-05-30',
     readingTime: 7,
+    headings: ['2大プレミアムレンズを徹底比較', '5つの観点で比較', 'あなたに向いているのはどっち？', '最安値を確認する'],
   },
   {
     slug: 'contact-dryeye-osusume',
@@ -208,6 +230,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-30',
     updatedAt: '2026-05-30',
     readingTime: 7,
+    headings: ['ドライアイとコンタクトレンズの関係', 'ドライアイ向けコンタクト おすすめランキング', 'ドライアイとコンタクトの乾燥対策ケア', '各製品の最安値を確認する'],
   },
   {
     slug: 'contact-tsuhan-shop-hikaku',
@@ -217,6 +240,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-30',
     updatedAt: '2026-05-30',
     readingTime: 9,
+    headings: ['コンタクトレンズ通販を選ぶ5つのポイント', '主要通販ショップ特徴まとめ', 'ランキングで最安値を確認する'],
   },
   {
     slug: 'acuvue-moist-vs-oasys-chigai',
@@ -226,6 +250,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-30',
     updatedAt: '2026-05-30',
     readingTime: 7,
+    headings: ['アキュビュー モイストとオアシスの基本スペック比較', 'モイストとオアシス 4つの違い', 'どちらを選べばいい？', '最安値を確認する'],
   },
   {
     slug: 'contact-2week-osusume',
@@ -235,6 +260,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-30',
     updatedAt: '2026-05-30',
     readingTime: 8,
+    headings: ['2weekコンタクトのメリット・デメリット', 'おすすめ2weekコンタクト ランキング', '2weekコンタクトの最安値を比較する'],
   },
   {
     slug: 'menicon-contact-osusume',
@@ -244,6 +270,7 @@ export const columns: ColumnMeta[] = [
     publishedAt: '2026-05-30',
     updatedAt: '2026-05-30',
     readingTime: 7,
+    headings: ['メニコンの特徴', 'メニコン商品のおすすめポイント別選び方', 'メニコンの最安値を確認する'],
   },
 ];
 
