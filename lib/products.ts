@@ -1,5 +1,6 @@
 import productsData from '@/data/products.json';
 import pricesData from '@/data/prices.json';
+import productUrlMap from '@/data/product-url-map.json';
 
 export type Product = {
   id: string;
@@ -107,7 +108,9 @@ export function getPricesForProduct(productId: string): (Price & { store: Store 
   return prices
     .map((price) => {
       const store = getStoreById(price.storeId);
-      return store ? { ...price, store } : null;
+      const storeMap = (productUrlMap as Record<string, Record<string, string>>)[price.storeId];
+      const productUrl = storeMap?.[price.productId];
+      return store ? { ...price, url: productUrl ?? price.url, store } : null;
     })
     .filter(Boolean)
     .sort((a, b) => a!.price - b!.price) as (Price & { store: Store })[];
