@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { courses, getAllCategories } from '@/lib/courses';
 import { columns } from '@/lib/columns';
 
-const BASE_URL = 'https://shikaku-navi.jp';
+const BASE_URL = 'https://shikaku.lens-navi.jp';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const courseUrls: MetadataRoute.Sitemap = courses.map((c) => ({

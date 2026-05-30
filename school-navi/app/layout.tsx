@@ -11,7 +11,7 @@ const notoSansJP = Noto_Sans_JP({
   display: 'swap',
 });
 
-const BASE = 'https://nsplot.com';
+const BASE = 'https://school.lens-navi.jp';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),

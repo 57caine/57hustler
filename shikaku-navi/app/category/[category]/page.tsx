@@ -128,7 +128,7 @@ export default async function CategoryPage({ params }: Props) {
     return keywords[category]?.some((kw) => c.title.includes(kw) || c.description.includes(kw));
   }).slice(0, 3);
 
-  const BASE = 'https://shikaku-navi.jp';
+  const BASE = 'https://shikaku.lens-navi.jp';
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [

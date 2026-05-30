@@ -28,7 +28,7 @@ const categoryColors: Record<string, string> = {
   '年代別おすすめ': 'bg-amber-50 text-amber-700',
 };
 
-const BASE = 'https://nsplot.com';
+const BASE = 'https://school.lens-navi.jp';
 
 export default async function ColumnArticlePage({ params }: Props) {
   const { slug } = await params;

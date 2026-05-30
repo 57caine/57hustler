@@ -21,7 +21,7 @@ export default function AboutPage() {
         <section>
           <h2 className="text-lg font-bold text-gray-900 mb-3 pb-2 border-b border-gray-200">スクールナビとは</h2>
           <p className="text-sm">
-            スクールナビ（nsplot.com）は、プログラミングスクールを検討している方に向けて、客観的な情報を提供する比較メディアです。
+            スクールナビ（school.lens-navi.jp）は、プログラミングスクールを検討している方に向けて、客観的な情報を提供する比較メディアです。
             編集部が各スクールの公式情報・受講者の声・カリキュラム内容を独自に調査・検証し、掲載しています。
           </p>
         </section>

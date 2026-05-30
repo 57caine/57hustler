@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const BASE = 'https://shikaku-navi.jp';
+const BASE = 'https://shikaku.lens-navi.jp';
 
 export default async function CoursePage({ params }: Props) {
   const { slug } = await params;

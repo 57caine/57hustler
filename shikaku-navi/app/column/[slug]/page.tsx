@@ -29,7 +29,7 @@ const categoryColors: Record<string, string> = {
   '副業・スキルアップ': 'bg-amber-50 text-amber-700',
 };
 
-const BASE = 'https://shikaku-navi.jp';
+const BASE = 'https://shikaku.lens-navi.jp';
 
 export default async function ColumnArticlePage({ params }: Props) {
   const { slug } = await params;

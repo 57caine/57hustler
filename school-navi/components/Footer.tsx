@@ -56,7 +56,7 @@ export default function Footer() {
 
         <div className="border-t border-slate-800 pt-6 text-xs text-slate-600">
           <p className="mb-1">本サイトはアフィリエイト広告プログラムに参加しています。リンク経由でお申し込みいただいた場合、当サイトに紹介料が発生します。掲載内容は編集部が独自に調査したものですが、最新情報は各スクール公式サイトでご確認ください。</p>
-          <p>© 2025 スクールナビ（nsplot.com）</p>
+          <p>© 2025 スクールナビ（school.lens-navi.jp）</p>
         </div>
       </div>
     </footer>

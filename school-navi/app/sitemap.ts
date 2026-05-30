@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { schools, getAllCategories } from '@/lib/schools';
 import { columns } from '@/lib/columns';
 
-const BASE_URL = 'https://nsplot.com';
+const BASE_URL = 'https://school.lens-navi.jp';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const schoolUrls: MetadataRoute.Sitemap = schools.map((s) => ({

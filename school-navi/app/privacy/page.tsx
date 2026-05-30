@@ -22,7 +22,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-base font-bold text-gray-900 mb-3">1. 基本方針</h2>
           <p>
-            スクールナビ（nsplot.com、以下「当サイト」）は、ユーザーの個人情報の取り扱いについて、
+            スクールナビ（school.lens-navi.jp、以下「当サイト」）は、ユーザーの個人情報の取り扱いについて、
             以下のプライバシーポリシーを定め、適切な管理・保護に努めます。
           </p>
         </section>

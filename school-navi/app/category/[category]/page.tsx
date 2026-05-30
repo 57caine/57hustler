@@ -7,7 +7,7 @@ import SchoolCard from '@/components/SchoolCard';
 
 type Props = { params: Promise<{ category: string }> };
 
-const BASE = 'https://nsplot.com';
+const BASE = 'https://school.lens-navi.jp';
 
 const categoryGuide: Record<string, {
   heading: string;

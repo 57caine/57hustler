@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const BASE = 'https://nsplot.com';
+const BASE = 'https://school.lens-navi.jp';
 
 const categoryColors: Record<string, string> = {
   '転職特化': 'bg-slate-50 text-slate-700 border-slate-200',

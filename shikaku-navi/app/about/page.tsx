@@ -21,7 +21,7 @@ export default function AboutPage() {
         <section>
           <h2 className="text-lg font-bold text-gray-900 mb-3 pb-2 border-b border-gray-200">資格ナビとは</h2>
           <p className="text-sm">
-            資格ナビ（shikaku-navi.jp）は、資格取得・通信講座を検討している方に向けて、客観的な情報を提供する比較メディアです。
+            資格ナビ（shikaku.lens-navi.jp）は、資格取得・通信講座を検討している方に向けて、客観的な情報を提供する比較メディアです。
             編集部が各講座の公式情報・受講者の声・合格率などのデータを独自に調査・検証し、掲載しています。
             宅建・簿記・FP・社労士・行政書士・ITパスポートなど、社会人に人気の国家資格・通信講座を中心に情報を提供します。
           </p>

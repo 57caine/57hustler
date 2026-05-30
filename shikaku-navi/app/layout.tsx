@@ -11,7 +11,7 @@ const notoSansJP = Noto_Sans_JP({
   display: 'swap',
 });
 
-const BASE = 'https://shikaku-navi.jp';
+const BASE = 'https://shikaku.lens-navi.jp';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
