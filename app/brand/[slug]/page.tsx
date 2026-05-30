@@ -84,6 +84,24 @@ export default async function BrandPage({ params }: Props) {
     .sort((a, b) => b.popularity - a.popularity);
 
   const BASE = 'https://lens-navi.jp';
+
+  const brandFaqs = [
+    {
+      q: `${brand.name}のコンタクトはどこで最安値で買えますか？`,
+      a: `${brand.name}の最安値はショップによって異なり日々変動します。当サイトでは24店舗の送料込み最安値をリアルタイムで比較しています。各商品ページから最新の最安値をご確認ください。`,
+    },
+    {
+      q: `${brand.name}の人気商品はどれですか？`,
+      a: brandInfo?.strengths
+        ? `${brand.name}の特徴として${brandInfo.strengths[0]}が挙げられます。具体的な人気商品はページ上の一覧をご確認ください。`
+        : `${brand.name}の人気商品についてはページ上の一覧をご確認ください。`,
+    },
+    {
+      q: `${brand.name}のコンタクトは処方箋なしで購入できますか？`,
+      a: '同じ商品を継続使用している方は処方箋不要で購入できるショップが多くあります。初めてご使用の方は必ず眼科を受診して処方箋を取得してください。各ショップの詳細条件については購入先のショップページでご確認ください。',
+    },
+  ];
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -98,6 +116,14 @@ export default async function BrandPage({ params }: Props) {
           { '@type': 'ListItem', position: 1, name: 'ホーム', item: BASE },
           { '@type': 'ListItem', position: 2, name: brand.name, item: `${BASE}/brand/${slug}` },
         ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: brandFaqs.map(({ q, a }) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: a },
+        })),
       },
     ],
   };
@@ -157,7 +183,19 @@ export default async function BrandPage({ params }: Props) {
         </>
       )}
 
-      <div className="mt-8 text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
+      <section className="mt-10 mb-6">
+        <h2 className="text-lg font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {brandFaqs.map(({ q, a }) => (
+            <div key={q} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-bold text-gray-900 text-sm mb-2">Q. {q}</p>
+              <p className="text-sm text-gray-700 leading-relaxed">A. {a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="mt-4 text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
         ※ 価格は税込・送料別の目安。最終更新: {new Date().toLocaleDateString('ja-JP')} | 最新価格は各ショップでご確認ください。
       </div>
     </div>
