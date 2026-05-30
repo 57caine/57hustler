@@ -751,6 +751,66 @@ export const columnContent: Record<string, React.ReactNode> = {
         <li>室内の加湿（湿度40〜60%が理想）</li>
       </ul>
 
+      <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4 pb-2 border-b-2 border-slate-200">おすすめランキング商品の最安値を今すぐ確認</h2>
+      <div className="grid sm:grid-cols-2 gap-3 mb-8">
+        {[
+          { name: 'デイリーズ トータルワン', brand: 'アルコン', slug: 'dailies-total1', badge: '乾きにくさ最強' },
+          { name: 'アキュビュー オアシス 1day', brand: 'J&J', slug: 'acuvue-oasys-1day', badge: 'HydraLuxe技術' },
+          { name: 'バイオトゥルー ONEday', brand: 'ボシュロム', slug: 'biotrue-oneday', badge: '含水率78%' },
+          { name: 'ネオサイト ワンデー SiHy UV', brand: 'シード', slug: 'neo-sight-1day', badge: '国産・コスパ' },
+        ].map(({ name, brand, slug, badge }) => (
+          <Link key={slug} href={`/product/${slug}`} className="block bg-white border border-gray-200 rounded-xl p-4 hover:border-slate-400 hover:shadow-sm transition-all">
+            <span className="inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded-full mb-2">{badge}</span>
+            <p className="font-bold text-gray-900 text-sm mb-0.5">{name}</p>
+            <p className="text-xs text-gray-500 mb-3">{brand}</p>
+            <span className="inline-block bg-slate-800 text-white text-xs font-bold px-3 py-1.5 rounded-lg">最安値を見る →</span>
+          </Link>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4 pb-2 border-b-2 border-slate-200">乾燥感の原因と対処法まとめ</h2>
+      <p className="mb-4 text-gray-700">コンタクトの乾燥感は「レンズの素材・含水率」だけでなく、日常の使い方や環境も大きく影響します。以下のポイントを押さえることで、同じレンズでも快適さが大きく変わります。</p>
+      <div className="space-y-3 mb-8">
+        {[
+          { title: '装用時間を守る', body: 'どんなに高品質なレンズでも、12〜16時間を超えた装用は角膜への酸素供給が限界に近づきます。帰宅後はなるべく早く外し、眼鏡で過ごす習慣をつけましょう。' },
+          { title: 'コンタクト対応の目薬を使う', body: '「コンタクト装用中OK」の防腐剤フリー目薬を1〜2時間おきに点眼するだけで乾燥感が大幅に改善します。ソフトサンティア・ロートコンタクトシリーズが代表的です。' },
+          { title: '環境を整える', body: '冷暖房の風が直接目に当たらない席を選ぶ、加湿器で室内湿度を40〜60%に保つ、PCディスプレイの明るさを下げる、の3つが最も効果的です。' },
+          { title: '定期的な眼科受診', body: '乾燥感が続く場合はドライアイが進行している可能性があります。年1〜2回の眼科検診で適切なレンズ選定と処方を見直してもらいましょう。' },
+        ].map(({ title, body }) => (
+          <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+            <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+            <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4 pb-2 border-b-2 border-slate-200">よくある質問</h2>
+      <div className="space-y-3 mb-8">
+        {[
+          {
+            q: '含水率が高いレンズの方が乾きにくいですか？',
+            a: '必ずしもそうではありません。含水率が高いレンズは初期のうるおいは豊富ですが、逆に大気中の水分を多く吸収しようとするため、乾燥した環境では蒸発しやすくなります。乾燥感対策には「シリコーンハイドロゲル素材」と「表面保湿コーティング」の組み合わせが最も効果的です。',
+          },
+          {
+            q: 'ハードコンタクトはソフトより乾きにくいですか？',
+            a: 'ハードコンタクト（RGP）は酸素透過率が非常に高く、涙液交換が活発なため長時間装用でも乾燥感が少ないとされます。ただし装用感に慣れるまで時間がかかり、激しい運動時にずれやすいデメリットがあります。',
+          },
+          {
+            q: 'ワンデーと2weekではどちらが乾きにくいですか？',
+            a: '一般的にワンデーの方が新品のレンズを毎日使うため、タンパク汚れが蓄積せず快適さを維持しやすいです。ただし2weekでも高品質なシリコーンHGレンズ（アキュビュー オアシス 2weekなど）は乾きにくい設計になっています。',
+          },
+        ].map(({ q, a }) => (
+          <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+            <summary className="bg-gray-50 px-4 py-3 cursor-pointer font-medium text-gray-800 text-sm flex items-center gap-2 hover:bg-gray-100 transition-colors">
+              <span className="text-slate-700 font-bold shrink-0">Q.</span>{q}
+            </summary>
+            <div className="px-4 py-3 text-sm text-gray-700 bg-white leading-relaxed">
+              <span className="text-emerald-600 font-bold">A. </span>{a}
+            </div>
+          </details>
+        ))}
+      </div>
+
       <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
         <h3 className="text-xl font-bold mb-2">乾きにくいコンタクトを最安値で購入する</h3>
         <p className="text-slate-300 mb-4">気になった商品の最安値ショップを今すぐ比較できます。</p>
@@ -2473,6 +2533,54 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">おすすめ商品の最安値を確認する</h2>
+        <div className="grid sm:grid-cols-2 gap-3 mb-2">
+          {[
+            { name: 'アキュビュー オアシス 1day', brand: 'J&J', slug: 'acuvue-oasys-1day', badge: 'Dk/t 103' },
+            { name: 'デイリーズ トータルワン', brand: 'アルコン', slug: 'dailies-total1', badge: 'Dk/t 156' },
+            { name: 'バイオフィニティ（2week）', brand: 'クーパービジョン', slug: 'biofinity', badge: 'Dk/t 160' },
+            { name: 'アキュビュー オアシス 2week', brand: 'J&J', slug: 'acuvue-oasys-2week', badge: 'Dk/t 147' },
+          ].map(({ name, brand, slug, badge }) => (
+            <Link key={slug} href={`/product/${slug}`} className="block bg-white border border-gray-200 rounded-xl p-4 hover:border-slate-400 hover:shadow-sm transition-all">
+              <span className="inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded-full mb-2">{badge}</span>
+              <p className="font-bold text-gray-900 text-sm mb-0.5">{name}</p>
+              <p className="text-xs text-gray-500 mb-3">{brand}</p>
+              <span className="inline-block bg-slate-800 text-white text-xs font-bold px-3 py-1.5 rounded-lg">最安値を見る →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            {
+              q: '1日8時間のPC作業ならどのコンタクトがおすすめですか？',
+              a: 'シリコーンハイドロゲル素材で酸素透過率の高い「アキュビュー オアシス 1day（Dk/t 103）」または「デイリーズ トータルワン（Dk/t 156）」が特に適しています。PC作業中はまばたきが減り乾燥しやすいため、HydraLuxeや水分勾配テクノロジーなどの保湿技術を持つ製品を選びましょう。',
+            },
+            {
+              q: '長時間装用しても大丈夫なコンタクトはありますか？',
+              a: 'シリコーンハイドロゲル素材のコンタクトは従来素材より長時間装用に適していますが、1日の装用上限は最大12〜14時間が推奨です。これを超える場合は眼科医に相談してください。どんな高品質なレンズでも長時間の連続装用は角膜への負担がかかります。',
+            },
+            {
+              q: '目薬はコンタクトをしたまま使えますか？',
+              a: '「コンタクト装用中OK」と表示のある防腐剤フリーの目薬であれば使用できます。一般的な目薬（防腐剤入り）はコンタクトに吸着してしまうため使用できません。ソフトサンティア・ロートコンタクトシリーズ・アイボン コンタクトなどが代表的な装用中OKの目薬です。',
+            },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="bg-gray-50 px-4 py-3 cursor-pointer font-medium text-gray-800 text-sm flex items-center gap-2 hover:bg-gray-100 transition-colors">
+                <span className="text-slate-700 font-bold shrink-0">Q.</span>{q}
+              </summary>
+              <div className="px-4 py-3 text-sm text-gray-700 bg-white leading-relaxed">
+                <span className="text-emerald-600 font-bold">A. </span>{a}
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section>
         <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
           ※ 掲載している製品情報・酸素透過率（Dk/t値）は参考値です。長時間装用については必ず眼科医に相談し、処方に従ってください。最新の製品仕様は各メーカー公式サイトでご確認ください。
         </p>
@@ -2596,6 +2704,66 @@ export const columnContent: Record<string, React.ReactNode> = {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">価格帯・コスパ比較</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          2製品は同じ30枚入りですが、価格帯に差があります。乾きにくさや酸素透過率でトータルワンが勝る一方、オアシスはコストを抑えつつ高品質を実現しています。年間コスト（両目・365日）で比べると：
+        </p>
+        <div className="overflow-x-auto bg-slate-50 rounded-xl p-4 mb-4">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="border-b border-gray-200">
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">製品</th>
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">1箱の目安価格</th>
+                <th className="text-left py-2 text-gray-600 font-semibold">年間コスト目安（両目）</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['デイリーズ トータルワン', '3,500円前後', '約85,000円'],
+                ['アキュビュー オアシス 1-day', '3,000円前後', '約73,000円'],
+              ].map(([name, box, annual]) => (
+                <tr key={name} className="border-b border-gray-100">
+                  <td className="py-2 pr-4 font-semibold text-gray-700">{name}</td>
+                  <td className="py-2 pr-4 text-gray-600">{box}</td>
+                  <td className="py-2 text-gray-600">{annual}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-gray-500">※ 価格は送料込み最安値ショップ利用時の参考値。実際の最安値はショップ・時期によって異なります。</p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            {
+              q: 'デイリーズ トータルワンとオアシスはどちらが乾きにくいですか？',
+              a: '乾きにくさのスペックではデイリーズ トータルワンが上回ります。水分勾配テクノロジーにより表面含水率が約80%に達し、目の表面に触れる部分がほぼ水分のみで構成されます。ただし個人差があり、オアシスの方が合うと感じる方も一定数います。',
+            },
+            {
+              q: '乱視がある場合はどちらを選べばよいですか？',
+              a: '乱視用（トーリック）ラインナップはアキュビュー オアシスの方が充実しており、CYL・AXISの対応範囲も広いです。デイリーズ トータルワン 乱視用は高品質ですが対応CYL範囲が限られます。',
+            },
+            {
+              q: '初めてプレミアムレンズを試す場合はどちらがおすすめですか？',
+              a: 'アキュビュー オアシス 1dayが入門としておすすめです。デイリーズ トータルワンより価格が抑えられており、初めてシリコーンハイドロゲル素材を試す場合でも購入しやすいです。気に入ればそのまま継続し、さらなる乾燥感改善を求める場合にトータルワンへのアップグレードを検討しましょう。',
+            },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="bg-gray-50 px-4 py-3 cursor-pointer font-medium text-gray-800 text-sm flex items-center gap-2 hover:bg-gray-100 transition-colors">
+                <span className="text-slate-700 font-bold shrink-0">Q.</span>{q}
+              </summary>
+              <div className="px-4 py-3 text-sm text-gray-700 bg-white leading-relaxed">
+                <span className="text-emerald-600 font-bold">A. </span>{a}
+              </div>
+            </details>
+          ))}
         </div>
       </section>
 
@@ -2750,6 +2918,35 @@ export const columnContent: Record<string, React.ReactNode> = {
             <p className="text-xs text-gray-500 mb-2">J&J / 1day</p>
             <span className="inline-block bg-slate-800 text-white text-xs font-bold px-3 py-1.5 rounded-lg">最安値を見る</span>
           </Link>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            {
+              q: 'ドライアイでもコンタクトは使えますか？',
+              a: '軽度〜中等度のドライアイであれば、適切なレンズを選ぶことで使用できます。シリコーンハイドロゲル素材・1日使い捨てタイプ・表面保湿テクノロジーを持つレンズ（デイリーズ トータルワン・アキュビュー オアシスなど）が特に適しています。重度のドライアイの場合は眼科医に相談し、コンタクトの適合可否を確認してください。',
+            },
+            {
+              q: 'ドライアイ対策で目薬はどれを選べばいいですか？',
+              a: 'コンタクト装用中は「コンタクト装用中OK」と表示のある防腐剤フリーの目薬を選んでください。ソフトサンティア（参天製薬）・ロートコンタクトシリーズ（ロート製薬）が代表的です。防腐剤入りの一般目薬はレンズに吸着するため使用不可です。眼科でドライアイと診断された場合は、処方目薬（ヒアルロン酸点眼など）を使用することで症状を効果的に緩和できます。',
+            },
+            {
+              q: '含水率が高いほどドライアイに良いですか？',
+              a: '必ずしもそうとは言えません。含水率が高すぎるレンズは、逆に目の水分を吸収しようとして乾燥感を悪化させることがあります（高含水率パラドックス）。ドライアイ対策では「シリコーンハイドロゲル素材」と「表面の保湿コーティング技術」の組み合わせが最も効果的とされています。',
+            },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="bg-gray-50 px-4 py-3 cursor-pointer font-medium text-gray-800 text-sm flex items-center gap-2 hover:bg-gray-100 transition-colors">
+                <span className="text-slate-700 font-bold shrink-0">Q.</span>{q}
+              </summary>
+              <div className="px-4 py-3 text-sm text-gray-700 bg-white leading-relaxed">
+                <span className="text-emerald-600 font-bold">A. </span>{a}
+              </div>
+            </details>
+          ))}
         </div>
       </section>
 
@@ -2956,6 +3153,66 @@ export const columnContent: Record<string, React.ReactNode> = {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">年間コスト比較</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          同じアキュビューブランドですが価格帯が異なります。両目・365日装用の年間コスト目安：
+        </p>
+        <div className="overflow-x-auto bg-slate-50 rounded-xl p-4 mb-4">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="border-b border-gray-200">
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">製品</th>
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">1箱の目安価格</th>
+                <th className="text-left py-2 text-gray-600 font-semibold">年間コスト目安（両目）</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['アキュビュー モイスト 1day', '1,300〜1,800円', '約31,000〜44,000円'],
+                ['アキュビュー オアシス 1-day', '2,800〜4,000円', '約68,000〜97,000円'],
+              ].map(([name, box, annual]) => (
+                <tr key={name} className="border-b border-gray-100">
+                  <td className="py-2 pr-4 font-semibold text-gray-700">{name}</td>
+                  <td className="py-2 pr-4 text-gray-600">{box}</td>
+                  <td className="py-2 text-gray-600">{annual}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-gray-500">※ 最安値ショップ利用時の参考値。実際の価格は各ショップでご確認ください。</p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            {
+              q: 'モイストからオアシスに変えると乾燥感は改善しますか？',
+              a: 'ほとんどの方で改善します。モイストはハイドロゲル素材（Dk/t 28.9）、オアシスはシリコーンハイドロゲル素材（Dk/t 103）で酸素透過率が約3.5倍高く、長時間装用後の充血・乾燥感が大幅に軽減される方が多いです。ただし个人差があるため、できれば眼科でサンプルレンズを試してから購入することをおすすめします。',
+            },
+            {
+              q: 'アキュビュー モイストで問題ない人はオアシスにする必要はありますか？',
+              a: '不要です。モイストで乾燥感・充血などのトラブルがなく、快適に使えているならそのままで問題ありません。オアシスはモイストより価格が2〜3倍高いため、満足している場合は無理に切り替える必要はありません。',
+            },
+            {
+              q: 'アキュビュー オアシスとデイリーズ トータルワンはどちらが乾きにくいですか？',
+              a: 'スペック上はデイリーズ トータルワンが上回ります。水分勾配テクノロジーにより表面含水率が約80%に達します。ただし価格はトータルワンがさらに高いため、まずオアシスを試してさらに改善を求める場合にトータルワンへのアップグレードをおすすめします。',
+            },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="bg-gray-50 px-4 py-3 cursor-pointer font-medium text-gray-800 text-sm flex items-center gap-2 hover:bg-gray-100 transition-colors">
+                <span className="text-slate-700 font-bold shrink-0">Q.</span>{q}
+              </summary>
+              <div className="px-4 py-3 text-sm text-gray-700 bg-white leading-relaxed">
+                <span className="text-emerald-600 font-bold">A. </span>{a}
+              </div>
+            </details>
+          ))}
         </div>
       </section>
 
