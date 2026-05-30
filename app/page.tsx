@@ -22,14 +22,54 @@ const columnCategoryColors: Record<string, string> = {
   '商品比較': 'bg-slate-100 text-slate-700',
 };
 
+const homeFaqs = [
+  {
+    q: 'コンタクトレンズを最安値で購入できるショップはどこですか？',
+    a: 'ショップによって値段が異なり、また同じショップでも購入枚数・クーポンによって変動します。当サイトでは24の主要ショップの送料込み最安値をリアルタイムで比較しています。商品ページから各ショップの最新価格を確認し、その日の最安値でご購入ください。',
+  },
+  {
+    q: '処方箋なしでコンタクトを購入できますか？',
+    a: '日本国内では、コンタクトレンズは医療機器のため処方箋が推奨されています。ただし「処方箋不要」対応のショップでは、同じ商品を継続使用している方を対象に処方箋なしでの購入を可能としています。初めてコンタクトを購入する方は、必ず眼科を受診して処方箋を取得してください。',
+  },
+  {
+    q: 'ワンデーと2weekコンタクトどちらがコスパが良いですか？',
+    a: '毎日使う場合のランニングコストは2week・マンスリーの方が安くなるケースが多いです。ただしケア用品代（洗浄液・保存液）が別途かかります。ワンデーはケア不要で衛生的ですが1枚あたりのコストは高くなります。週3〜4日以下の使用頻度なら2weekやマンスリーのコスパが下がるため、使用頻度に合わせて選ぶのがポイントです。',
+  },
+];
+
 export default function HomePage() {
   const allProducts = getAllProductsWithPrices();
   const categories = getAllCategories();
   const updatedAt = getPricesUpdatedAt();
   const topProducts = [...allProducts].sort((a, b) => b.popularity - a.popularity).slice(0, 6);
 
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'レンズナビ',
+      url: 'https://lens-navi.jp',
+      description: '人気コンタクトレンズの最安値を一括比較するサイト',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: 'https://lens-navi.jp/ranking',
+        'query-input': 'required name=search_term_string',
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: homeFaqs.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    },
+  ];
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}
       <section className="text-center mb-12">
