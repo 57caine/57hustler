@@ -2114,9 +2114,57 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">マンスリーケア用品のコストも考慮しよう</h2>
-        <p className="text-sm text-gray-700 leading-relaxed">
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
           マンスリーコンタクトの真のコストは、レンズ代＋ケア用品（洗浄液・保存液・レンズケース）の合計です。洗浄液は月あたり500〜1,500円程度。1dayと比較する際は必ずケア用品代も含めた試算を行いましょう。それでもマンスリーが低コストになることが多いです。
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">おすすめマンスリーの最安値を確認</h2>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {[
+            { name: 'バイオフィニティ', brand: 'クーパービジョン', slug: 'biofinity', badge: 'Dk/t 160' },
+            { name: 'エア オプティクス ハイドラグライド', brand: 'アルコン', slug: 'air-optix-hydraglyde', badge: 'Dk/t 138' },
+            { name: 'クラリティ アドバンス', brand: 'クーパービジョン', slug: 'clariti-monthly', badge: 'SiHy・低価格' },
+            { name: 'バイオトゥルー マンスリー', brand: 'ボシュロム', slug: 'biotrue-monthly', badge: '含水率78%' },
+          ].map(({ name, brand, slug, badge }) => (
+            <Link key={slug} href={`/product/${slug}`} className="block bg-white border border-gray-200 rounded-xl p-4 hover:border-slate-400 hover:shadow-sm transition-all">
+              <span className="inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded-full mb-2">{badge}</span>
+              <p className="font-bold text-gray-900 text-sm mb-0.5">{name}</p>
+              <p className="text-xs text-gray-500 mb-3">{brand}</p>
+              <span className="inline-block bg-slate-800 text-white text-xs font-bold px-3 py-1.5 rounded-lg">最安値を見る →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            {
+              q: 'マンスリーコンタクトを2週間で交換してもいいですか？',
+              a: '問題ありません。メーカー指定より短い期間での交換は安全性の観点では問題なく、むしろ清潔です。ただし2weekや1dayへの変更を検討した方がコスト面で合理的です。',
+            },
+            {
+              q: 'マンスリーレンズを旅行に持っていくのは大変ですか？',
+              a: 'ケア用品（MPS洗浄液・保存液）を持ち歩く必要があります。1週間以上の旅行なら、旅行中だけワンデーを使い、帰宅後マンスリーに戻す方法も効率的です。',
+            },
+            {
+              q: 'マンスリーのシリコーンHGと通常素材はどちらがよいですか？',
+              a: 'PC作業・長時間装用が多い方はシリコーンHG（バイオフィニティ・エア オプティクスなど）を強くおすすめします。Dk/t値が高く角膜への酸素供給量が多いため、充血・乾燥感が起きにくいです。コスパを最優先する場合は通常ハイドロゲル素材（バイオトゥルー マンスリーなど）でも使用条件次第で十分です。',
+            },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="bg-gray-50 px-4 py-3 cursor-pointer font-medium text-gray-800 text-sm flex items-center gap-2 hover:bg-gray-100 transition-colors">
+                <span className="text-slate-700 font-bold shrink-0">Q.</span>{q}
+              </summary>
+              <div className="px-4 py-3 text-sm text-gray-700 bg-white leading-relaxed">
+                <span className="text-emerald-600 font-bold">A. </span>{a}
+              </div>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   ),
@@ -2196,6 +2244,53 @@ export const columnContent: Record<string, React.ReactNode> = {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">人気カラコンの最安値を確認</h2>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {[
+            { name: 'アキュビュー ディファイン モイスト 1day', brand: 'J&J', slug: 'acuvue-define-moist-1day', badge: 'ナチュラル系人気No.1' },
+            { name: 'フレッシュルック イルミネート', brand: 'アルコン', slug: 'freshlook-illuminate', badge: '透明感' },
+            { name: 'GEO ベラ カラー', brand: 'GEO Medical', slug: 'geo-bella-color', badge: 'コスパ優秀' },
+          ].map(({ name, brand, slug, badge }) => (
+            <Link key={slug} href={`/product/${slug}`} className="block bg-white border border-gray-200 rounded-xl p-4 hover:border-slate-400 hover:shadow-sm transition-all">
+              <span className="inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded-full mb-2">{badge}</span>
+              <p className="font-bold text-gray-900 text-sm mb-0.5">{name}</p>
+              <p className="text-xs text-gray-500 mb-3">{brand}</p>
+              <span className="inline-block bg-slate-800 text-white text-xs font-bold px-3 py-1.5 rounded-lg">最安値を見る →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            {
+              q: 'カラコンと普通のコンタクトは安全性が違いますか？',
+              a: '薬機法認証済み（高度管理医療機器認証）のカラコンであれば安全性の基準は同等です。問題なのは無認証の海外製安価品。認証番号が表示されていない製品は避け、必ず認証済み製品を眼科処方のもとで使用してください。',
+            },
+            {
+              q: 'カラコンを初めて使うときに気をつけることは？',
+              a: '必ず眼科で処方を受けてから購入してください。目の形（BC値）はカラコンと合っている必要があります。最初は短時間（4〜6時間）から始めて目の慣れを確認し、違和感があればすぐに外して眼科を受診してください。',
+            },
+            {
+              q: 'カラコンは毎日使っても大丈夫ですか？',
+              a: '適切なケアを行い、装用時間を守れば毎日使用できます。1dayタイプは毎日新品を使うため衛生的です。2weekタイプは毎日の洗浄・保存が必須です。目に異常（充血・痛み・かすみ）を感じたらすぐに外して眼科を受診してください。',
+            },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="bg-gray-50 px-4 py-3 cursor-pointer font-medium text-gray-800 text-sm flex items-center gap-2 hover:bg-gray-100 transition-colors">
+                <span className="text-slate-700 font-bold shrink-0">Q.</span>{q}
+              </summary>
+              <div className="px-4 py-3 text-sm text-gray-700 bg-white leading-relaxed">
+                <span className="text-emerald-600 font-bold">A. </span>{a}
+              </div>
+            </details>
+          ))}
         </div>
       </section>
     </div>
@@ -2396,6 +2491,54 @@ export const columnContent: Record<string, React.ReactNode> = {
               <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
               <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">乱視用コンタクトの最安値を確認</h2>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {[
+            { name: 'デイリーズ トータルワン 乱視用', brand: 'アルコン', slug: 'dailies-total1-toric', badge: '1day・乾きにくさ最強' },
+            { name: 'ワンデーアキュビュー モイスト 乱視用', brand: 'J&J', slug: 'acuvue-moist-1day-astig', badge: '1day・コスパ' },
+            { name: 'アキュビュー オアシス 乱視用', brand: 'J&J', slug: 'acuvue-oasys-astig', badge: '2week・乾きにくい' },
+            { name: 'バイオフィニティ トーリック', brand: 'クーパービジョン', slug: 'biofinity-toric', badge: 'マンスリー・高酸素' },
+          ].map(({ name, brand, slug, badge }) => (
+            <Link key={slug} href={`/product/${slug}`} className="block bg-white border border-gray-200 rounded-xl p-4 hover:border-slate-400 hover:shadow-sm transition-all">
+              <span className="inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded-full mb-2">{badge}</span>
+              <p className="font-bold text-gray-900 text-sm mb-0.5">{name}</p>
+              <p className="text-xs text-gray-500 mb-3">{brand}</p>
+              <span className="inline-block bg-slate-800 text-white text-xs font-bold px-3 py-1.5 rounded-lg">最安値を見る →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            {
+              q: '乱視用コンタクトは普通のコンタクトより見え方が安定しにくいですか？',
+              a: '装用直後は回転するため見え方が安定するまで数秒〜十数秒かかることがありますが、これは正常です。適切に処方されたトーリックレンズは数秒後に安定し、通常のコンタクトと同等の視力矯正が期待できます。見え方がいつまでもぼやける場合はフィッティングが合っていない可能性があります。',
+            },
+            {
+              q: '軽い乱視（CYL -0.75）でも乱視用コンタクトが必要ですか？',
+              a: '個人差がありますが、CYL -0.75程度の軽度乱視では通常の球面レンズで十分見えると感じる方も多いです。乱視用を試してみて視力・見え方が改善しない場合は球面レンズに戻す選択肢もあります。眼科医の判断に従うことが最善です。',
+            },
+            {
+              q: '乱視用コンタクトの選択肢は通常レンズより少ないですか？',
+              a: '少ないです。対応度数（PWR）・CYL・AXISの組み合わせが限られるため、強度近視（-8.00以上）や強い乱視（CYL-2.25超）の方は対応レンズが見つかりにくいことがあります。眼科処方後にショップで在庫を確認してください。',
+            },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="bg-gray-50 px-4 py-3 cursor-pointer font-medium text-gray-800 text-sm flex items-center gap-2 hover:bg-gray-100 transition-colors">
+                <span className="text-slate-700 font-bold shrink-0">Q.</span>{q}
+              </summary>
+              <div className="px-4 py-3 text-sm text-gray-700 bg-white leading-relaxed">
+                <span className="text-emerald-600 font-bold">A. </span>{a}
+              </div>
+            </details>
           ))}
         </div>
       </section>
