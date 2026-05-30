@@ -180,8 +180,8 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">転職特化型スクール比較</h2>
-        <div className="bg-blue-50 rounded-xl p-5 mb-4">
-          <h3 className="font-bold text-blue-800 mb-2">1位：TECH CAMP（テックキャンプ）</h3>
+        <div className="bg-slate-50 rounded-xl p-5 mb-4">
+          <h3 className="font-bold text-slate-800 mb-2">1位：TECH CAMP（テックキャンプ）</h3>
           <ul className="text-sm space-y-1 text-gray-700">
             <li>転職成功率99%（自社調べ）</li>
             <li>業界最大規模・卒業生5万人以上</li>
@@ -312,8 +312,8 @@ export const columnContent: Record<string, React.ReactNode> = {
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">未経験からエンジニア転職できる？現実を解説</h2>
         <p className="mb-4">結論から言うと、未経験からのエンジニア転職は十分可能です。ただし、独学だけでは難しく、適切なスクールとサポートが成功の鍵を握ります。</p>
-        <div className="bg-blue-50 rounded-xl p-4 mb-4">
-          <p className="font-bold text-blue-800 mb-2">未経験エンジニア転職の現状（2025年）</p>
+        <div className="bg-slate-50 rounded-xl p-4 mb-4">
+          <p className="font-bold text-slate-800 mb-2">未経験エンジニア転職の現状（2025年）</p>
           <ul className="text-sm space-y-1 text-gray-700">
             <li>・IT人材不足：2030年に79万人不足の見込み（経済産業省試算）</li>
             <li>・20代〜30代前半は未経験採用が活発</li>
@@ -402,7 +402,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="mb-3">「料金÷転職後の年収増加額」で考えると、給付金を活用したDMM WEBCAMPが最もコスパが良いケースが多いです。</p>
         <ul className="text-sm space-y-2">
           <li className="flex gap-2"><span className="text-green-500 font-bold">◎</span><span><strong>DMM WEBCAMP</strong>：給付金活用で実質13万円、転職後年収+100万円以上も可能</span></li>
-          <li className="flex gap-2"><span className="text-blue-500 font-bold">○</span><span><strong>Progate</strong>：月990円、まず試してみたい人に最適</span></li>
+          <li className="flex gap-2"><span className="text-slate-500 font-bold">○</span><span><strong>Progate</strong>：月990円、まず試してみたい人に最適</span></li>
           <li className="flex gap-2"><span className="text-purple-500 font-bold">○</span><span><strong>TechAcademy</strong>：副業月5万円を目指すなら17万円投資は元が取れる</span></li>
         </ul>
       </section>
@@ -418,9 +418,9 @@ export const columnContent: Record<string, React.ReactNode> = {
             { label: 'フリーランス平均年収', value: '800〜1,200万円' },
             { label: '案件単価（中堅）', value: '月60〜80万円' },
           ].map((stat) => (
-            <div key={stat.label} className="bg-blue-50 rounded-xl p-4">
+            <div key={stat.label} className="bg-slate-50 rounded-xl p-4">
               <p className="text-xs text-gray-500 mb-1">{stat.label}</p>
-              <p className="font-bold text-blue-700 text-lg">{stat.value}</p>
+              <p className="font-bold text-slate-700 text-lg">{stat.value}</p>
             </div>
           ))}
         </div>
@@ -476,7 +476,7 @@ export const columnContent: Record<string, React.ReactNode> = {
           </div>
           <div className="border border-gray-200 rounded-xl p-4">
             <div className="flex items-center gap-2 mb-2">
-              <span className="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full">転職特化</span>
+              <span className="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded-full">転職特化</span>
               <h3 className="font-bold text-gray-900">TECH CAMP（AIコース）</h3>
             </div>
             <p className="text-sm text-gray-600 mb-2">従来のWebエンジニアコースに加え、AIエンジニア向けコースも拡充。転職保証付き。</p>
@@ -522,13 +522,13 @@ export const columnContent: Record<string, React.ReactNode> = {
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">社会人がスクール選びで重視すべき3つのポイント</h2>
         <p className="mb-4">社会人がプログラミングスクールを選ぶ際には、学習スタイルの柔軟性・メンタリングのサポート体制・転職支援の充実度の3点が特に重要です。平日の夜や土日にしか学習時間を確保できない場合、非同期でのサポートが受けられるかどうかも確認しましょう。</p>
-        <div className="bg-blue-50 rounded-xl p-5 mb-4">
-          <h3 className="font-bold text-blue-800 mb-3">チェックリスト：社会人向けスクールの見極め方</h3>
+        <div className="bg-slate-50 rounded-xl p-5 mb-4">
+          <h3 className="font-bold text-slate-800 mb-3">チェックリスト：社会人向けスクールの見極め方</h3>
           <ul className="text-sm space-y-2 text-gray-700">
-            <li className="flex gap-2"><span className="text-blue-500 font-bold">◎</span><span>オンライン完結で受講できるか</span></li>
-            <li className="flex gap-2"><span className="text-blue-500 font-bold">◎</span><span>夜間・週末にメンター質問が可能か</span></li>
-            <li className="flex gap-2"><span className="text-blue-500 font-bold">◎</span><span>受講期間の延長制度はあるか</span></li>
-            <li className="flex gap-2"><span className="text-blue-500 font-bold">◎</span><span>転職活動中もサポートが続くか</span></li>
+            <li className="flex gap-2"><span className="text-slate-500 font-bold">◎</span><span>オンライン完結で受講できるか</span></li>
+            <li className="flex gap-2"><span className="text-slate-500 font-bold">◎</span><span>夜間・週末にメンター質問が可能か</span></li>
+            <li className="flex gap-2"><span className="text-slate-500 font-bold">◎</span><span>受講期間の延長制度はあるか</span></li>
+            <li className="flex gap-2"><span className="text-slate-500 font-bold">◎</span><span>転職活動中もサポートが続くか</span></li>
           </ul>
         </div>
       </section>
@@ -567,8 +567,8 @@ export const columnContent: Record<string, React.ReactNode> = {
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">各スクールの特徴と社会人向けポイント</h2>
         <div className="space-y-4">
-          <div className="bg-blue-50 rounded-xl p-4">
-            <h3 className="font-bold text-blue-800 mb-2">1. TECH CAMP 夜間・休日コース</h3>
+          <div className="bg-slate-50 rounded-xl p-4">
+            <h3 className="font-bold text-slate-800 mb-2">1. TECH CAMP 夜間・休日コース</h3>
             <p className="text-sm text-gray-700 mb-2">社会人向けの夜間・休日専用コースを設けており、平日夜と土日で10週間学習するスタイルです。転職成功率99%（自社調べ）・転職保証付きと実績も十分。毎日メンターに質問できるサポート体制が心強いです。</p>
             <p className="text-xs text-gray-500">詳細は<a href="/schools/techcamp" className="text-slate-700 underline">TECH CAMPの詳細ページ</a>をご覧ください。</p>
           </div>
@@ -678,7 +678,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">40代・50代にとっての現実的な目標設定</h2>
         <div className="space-y-3">
-          <div className="border-l-4 border-blue-400 pl-4">
+          <div className="border-l-4 border-slate-400 pl-4">
             <h3 className="font-bold text-gray-900 mb-1">転職を目指す場合</h3>
             <p className="text-sm text-gray-700">未経験エンジニア転職は難易度が高いため、現職の業界知識とプログラミングを組み合わせた「DXエンジニア」や「社内SE」などを狙うのが現実的です。医療・製造・金融などの専門業界でのITエンジニア需要は高く、業界知識は大きな武器になります。</p>
           </div>
@@ -753,7 +753,7 @@ export const columnContent: Record<string, React.ReactNode> = {
                 <tr key={row.item} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                   <td className="border border-gray-200 px-3 py-2 font-medium">{row.item}</td>
                   <td className="border border-gray-200 px-3 py-2 text-center">{row.self}</td>
-                  <td className="border border-gray-200 px-3 py-2 text-center text-blue-700 font-medium">{row.school}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-center text-slate-700 font-medium">{row.school}</td>
                 </tr>
               ))}
             </tbody>
@@ -773,13 +773,13 @@ export const columnContent: Record<string, React.ReactNode> = {
               <li className="flex gap-2"><span className="text-gray-500">◎</span><span>すでにある程度の技術的基礎がある</span></li>
             </ul>
           </div>
-          <div className="bg-blue-50 rounded-xl p-4">
-            <h3 className="font-bold text-blue-800 mb-3">スクールが向いている人</h3>
+          <div className="bg-slate-50 rounded-xl p-4">
+            <h3 className="font-bold text-slate-800 mb-3">スクールが向いている人</h3>
             <ul className="text-sm space-y-2 text-gray-700">
-              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>エンジニア転職を明確な目標としている</span></li>
-              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>短期間で確実にスキルを習得したい</span></li>
-              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>挫折経験があり、サポートが必要</span></li>
-              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>転職後の年収アップを期待している</span></li>
+              <li className="flex gap-2"><span className="text-slate-500">◎</span><span>エンジニア転職を明確な目標としている</span></li>
+              <li className="flex gap-2"><span className="text-slate-500">◎</span><span>短期間で確実にスキルを習得したい</span></li>
+              <li className="flex gap-2"><span className="text-slate-500">◎</span><span>挫折経験があり、サポートが必要</span></li>
+              <li className="flex gap-2"><span className="text-slate-500">◎</span><span>転職後の年収アップを期待している</span></li>
             </ul>
           </div>
         </div>
@@ -831,7 +831,7 @@ export const columnContent: Record<string, React.ReactNode> = {
                   <td className="border border-gray-200 px-3 py-2 font-medium">{row.method}</td>
                   <td className="border border-gray-200 px-3 py-2">{row.study}</td>
                   <td className="border border-gray-200 px-3 py-2">{row.job}</td>
-                  <td className="border border-gray-200 px-3 py-2 font-bold text-blue-700">{row.total}</td>
+                  <td className="border border-gray-200 px-3 py-2 font-bold text-slate-700">{row.total}</td>
                 </tr>
               ))}
             </tbody>
@@ -842,13 +842,13 @@ export const columnContent: Record<string, React.ReactNode> = {
         <h2 className="text-xl font-bold text-gray-900 mb-4">転職成功に必要なスキルレベルとは</h2>
         <p className="mb-4">企業が未経験エンジニアに求めるスキルレベルは年々上がっています。「HTMLとCSSが書ける」だけでは転職市場でのアピールは難しく、実用的なWebアプリを1〜2本ポートフォリオとして作れることが求められます。</p>
         <div className="space-y-3">
-          <div className="bg-blue-50 rounded-xl p-4">
-            <h3 className="font-bold text-blue-800 mb-2">最低限必要なスキルセット（フロントエンド）</h3>
+          <div className="bg-slate-50 rounded-xl p-4">
+            <h3 className="font-bold text-slate-800 mb-2">最低限必要なスキルセット（フロントエンド）</h3>
             <ul className="text-sm space-y-1 text-gray-700">
-              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>HTML / CSS / JavaScript（ES6+）</span></li>
-              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>ReactまたはVue.jsの基礎</span></li>
-              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>GitHubでのバージョン管理</span></li>
-              <li className="flex gap-2"><span className="text-blue-500">◎</span><span>オリジナルWebアプリ1〜2本（ポートフォリオ）</span></li>
+              <li className="flex gap-2"><span className="text-slate-500">◎</span><span>HTML / CSS / JavaScript（ES6+）</span></li>
+              <li className="flex gap-2"><span className="text-slate-500">◎</span><span>ReactまたはVue.jsの基礎</span></li>
+              <li className="flex gap-2"><span className="text-slate-500">◎</span><span>GitHubでのバージョン管理</span></li>
+              <li className="flex gap-2"><span className="text-slate-500">◎</span><span>オリジナルWebアプリ1〜2本（ポートフォリオ）</span></li>
             </ul>
           </div>
           <div className="bg-green-50 rounded-xl p-4">
