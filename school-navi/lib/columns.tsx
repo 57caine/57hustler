@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export type Column = {
   slug: string;
@@ -1385,6 +1386,22 @@ export const columnContent: Record<string, React.ReactNode> = {
           ))}
         </div>
       </section>
+
+      <section className="bg-slate-50 border border-slate-200 rounded-xl p-5">
+        <p className="font-semibold text-gray-800 mb-3">JavaScript・Reactが学べるスクールを確認する</p>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { name: 'TECH CAMP', slug: 'techcamp' },
+            { name: 'DMM WEBCAMP', slug: 'dmm-webcamp' },
+            { name: 'TechAcademy', slug: 'techacademy' },
+            { name: '侍エンジニア塾', slug: 'samurai-engineer' },
+          ].map(({ name, slug }) => (
+            <Link key={slug} href={`/schools/${slug}`} className="text-sm border border-slate-300 bg-white text-slate-700 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors">
+              {name}の詳細を見る →
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -1481,6 +1498,22 @@ export const columnContent: Record<string, React.ReactNode> = {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section className="bg-slate-50 border border-slate-200 rounded-xl p-5">
+        <p className="font-semibold text-gray-800 mb-3">評判の良いスクールを詳しく見る</p>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { name: 'TECH CAMP', slug: 'techcamp' },
+            { name: 'DMM WEBCAMP', slug: 'dmm-webcamp' },
+            { name: '侍エンジニア塾', slug: 'samurai-engineer' },
+            { name: 'RUNTEQ', slug: 'runteq' },
+          ].map(({ name, slug }) => (
+            <Link key={slug} href={`/schools/${slug}`} className="text-sm border border-slate-300 bg-white text-slate-700 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors">
+              {name}の詳細を見る →
+            </Link>
+          ))}
+        </div>
       </section>
     </div>
   ),

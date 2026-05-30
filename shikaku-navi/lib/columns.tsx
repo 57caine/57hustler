@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export type Column = {
   slug: string;
@@ -1246,6 +1247,22 @@ export const columnContent: Record<string, React.ReactNode> = {
           ))}
         </div>
       </section>
+
+      <section className="bg-slate-50 border border-slate-200 rounded-xl p-5">
+        <p className="font-semibold text-gray-800 mb-3">医療事務対応のおすすめ通信講座を確認する</p>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { name: 'ユーキャン', slug: 'yukiyukan' },
+            { name: 'スタディング', slug: 'studying' },
+            { name: 'キャリアカレッジ', slug: 'career-college-japan' },
+            { name: 'ニチイ学館', slug: 'nichiiko-gakkan' },
+          ].map(({ name, slug }) => (
+            <Link key={slug} href={`/courses/${slug}`} className="text-sm border border-slate-300 bg-white text-slate-700 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors">
+              {name}の詳細を見る →
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   ),
 
@@ -1464,6 +1481,23 @@ export const columnContent: Record<string, React.ReactNode> = {
           </table>
         </div>
         <p className="text-xs text-gray-500 mt-2">※ 料金は最安コースの参考価格です。最新情報は各公式サイトでご確認ください。</p>
+      </section>
+
+      <section className="bg-slate-50 border border-slate-200 rounded-xl p-5">
+        <p className="font-semibold text-gray-800 mb-3">行政書士・社労士対応の通信講座を比較する</p>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { name: 'スタディング', slug: 'studying' },
+            { name: 'フォーサイト', slug: 'foresight' },
+            { name: 'アガルート', slug: 'agaroot' },
+            { name: 'クレアール', slug: 'crecer' },
+            { name: 'LEC', slug: 'lec' },
+          ].map(({ name, slug }) => (
+            <Link key={slug} href={`/courses/${slug}`} className="text-sm border border-slate-300 bg-white text-slate-700 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors">
+              {name}の詳細を見る →
+            </Link>
+          ))}
+        </div>
       </section>
     </div>
   ),
