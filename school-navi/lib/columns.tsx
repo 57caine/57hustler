@@ -146,6 +146,24 @@ export const columns: Column[] = [
     updatedAt: '2026-05-29',
     readingTime: 9,
   },
+  {
+    slug: 'javascript-react-school',
+    title: 'JavaScript・Reactが学べるプログラミングスクール おすすめ5選【2025年版】',
+    description: 'JavaScriptとReactに特化したプログラミングスクールを比較。フロントエンドエンジニア転職・Web制作副業を目指す方向けに、カリキュラム・費用・転職実績をランキング形式で紹介。',
+    category: 'スクール比較',
+    publishedAt: '2026-05-29',
+    updatedAt: '2026-05-29',
+    readingTime: 8,
+  },
+  {
+    slug: 'school-koukai-shinai-erabi',
+    title: 'プログラミングスクールで後悔しないための選び方【失敗例と回避策】',
+    description: 'プログラミングスクールで後悔した人の失敗パターンを分析。「高い受講料が無駄だった」「就職できなかった」などの失敗を避けるための選び方・確認事項を詳しく解説。',
+    category: 'スクール比較',
+    publishedAt: '2026-05-29',
+    updatedAt: '2026-05-29',
+    readingTime: 9,
+  },
 ];
 
 export function getColumnBySlug(slug: string): Column | undefined {
@@ -1231,6 +1249,232 @@ export const columnContent: Record<string, React.ReactNode> = {
             '家族・生活費などを考慮した「学習・転職活動費用の確保」。給付金や教育ローンも活用を検討する',
             '「Webエンジニア」「インフラエンジニア」など方向性を絞ること。分野が多すぎると学習が散漫になる',
             '30代後半（35〜39歳）でも転職実績はあるが、難易度は上がる。早めの行動が重要',
+          ].map((item) => (
+            <li key={item} className="flex gap-2 text-sm text-gray-700">
+              <span className="text-slate-400 shrink-0 mt-0.5">▸</span>{item}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  ),
+
+  'javascript-react-school': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">なぜJavaScript・Reactを選ぶのか</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          フロントエンドエンジニアの求人の多くがJavaScript + Reactの知識を必要としています。2025年現在、ReactはWeb開発フレームワークの中で圧倒的なシェアを誇り、転職・副業どちらの目標にも直結するスキルです。
+        </p>
+        <div className="bg-slate-50 rounded-xl p-4 mb-4">
+          <p className="text-xs font-semibold text-gray-700 mb-2">JavaScript・Reactで目指せるキャリア</p>
+          <div className="grid sm:grid-cols-2 gap-2">
+            {[
+              { career: 'フロントエンドエンジニア', salary: '年収400〜700万円' },
+              { career: 'Webデザイナー（コーディング込み）', salary: '年収350〜550万円' },
+              { career: 'フルスタックエンジニア', salary: '年収500〜900万円' },
+              { career: 'フリーランスWeb制作', salary: '月30〜80万円' },
+            ].map(({ career, salary }) => (
+              <div key={career} className="bg-white rounded-lg p-3 border border-gray-100">
+                <p className="text-sm font-medium text-gray-800">{career}</p>
+                <p className="text-xs text-emerald-700">{salary}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">JavaScript・React特化スクール おすすめランキング</h2>
+        <div className="space-y-5">
+          {[
+            {
+              rank: 1,
+              name: 'TECH CAMP（テックキャンプ）',
+              price: '217,800円〜',
+              period: '10週間〜',
+              support: '転職保証・メンター常駐',
+              curriculum: 'HTML/CSS → JavaScript → React → Node.js。実務レベルのポートフォリオ制作まで一貫指導。',
+              pros: ['現役エンジニアによるメンター制度（平均回答15分）', 'React + Node.jsのフルスタック開発まで学べる', '転職成功率98.8%（公表値）', '給付金対象コース（最大70%還付）'],
+              recommended: '転職目的でReact実務スキルを最短で身につけたい方',
+            },
+            {
+              rank: 2,
+              name: 'DMM WEBCAMP',
+              price: '329,000円〜',
+              period: '3ヶ月',
+              support: '転職保証・給付金対象',
+              curriculum: 'JavaScript基礎 → React → Webアプリ開発。実際のプロダクト開発に近い環境で学習。',
+              pros: ['教育訓練給付金（専門実践）で最大70%還付', 'React + TypeScriptまで学べる現代的カリキュラム', '転職活動サポートが厚く内定実績も豊富', 'オンライン・通学選べる'],
+              recommended: '給付金を使ってコストを抑えたい転職希望者',
+            },
+            {
+              rank: 3,
+              name: 'Code Chrysalis',
+              price: '300,000円〜',
+              period: '12週間',
+              support: '英語環境・外資系転職に強い',
+              curriculum: 'JavaScript → React → TypeScript → Node.js。英語でのコーディング面接対策も含む。',
+              pros: ['外資系・グローバル企業への転職に強い', 'JavaScriptの深い理解を重視した本格カリキュラム', '少人数制で質問しやすい環境', '卒業生ネットワークが豊富'],
+              recommended: '外資系IT・英語環境でのエンジニア転職を目指す方',
+            },
+            {
+              rank: 4,
+              name: 'Progate Path',
+              price: '198,000円〜',
+              period: '3〜6ヶ月',
+              support: 'メンタリング・ポートフォリオ支援',
+              curriculum: 'Progateの教材をベースにJavaScript → React → 実践プロジェクト。基礎固めから始められる。',
+              pros: ['Progateの実績ある教材を活用した学習設計', 'JavaScript基礎が不安な方でも安心して始められる', 'ポートフォリオ制作サポートが充実', '比較的リーズナブルな価格'],
+              recommended: '初めてJavaScriptを学ぶ方・基礎から丁寧に学びたい方',
+            },
+            {
+              rank: 5,
+              name: 'Samurai Engineer（侍エンジニア）',
+              price: '594,000円〜',
+              period: '3〜6ヶ月',
+              support: '完全個別指導・マンツーマン',
+              curriculum: 'マンツーマン指導でJavaScript・Reactを自分のペースで学習。副業・フリーランス向けカリキュラムも充実。',
+              pros: ['完全個別指導で自分のペースに合わせた学習が可能', '副業・フリーランス向けカリキュラムが豊富', '現役エンジニアが担当し技術的な質問も安心', '幅広い年齢層・学習目的に対応'],
+              recommended: '副業・フリーランスWeb制作を目指す方・個別指導を希望する方',
+            },
+          ].map(({ rank, name, price, period, support, curriculum, pros, recommended }) => (
+            <div key={name} className="bg-white border border-gray-200 rounded-xl p-5">
+              <div className="flex items-start gap-3 mb-3">
+                <span className={`text-white text-sm font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0 ${rank <= 2 ? 'bg-slate-800' : 'bg-slate-500'}`}>{rank}</span>
+                <div>
+                  <p className="font-bold text-gray-900 text-base">{name}</p>
+                  <div className="flex flex-wrap gap-1.5 mt-1">
+                    <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full">受講料: {price}</span>
+                    <span className="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full">期間: {period}</span>
+                    <span className="text-xs bg-slate-50 text-slate-600 px-2 py-0.5 rounded-full">{support}</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-gray-700 mb-3 leading-relaxed">{curriculum}</p>
+              <ul className="space-y-1 mb-3">
+                {pros.map((p) => (
+                  <li key={p} className="flex gap-2 text-sm text-gray-700">
+                    <span className="text-emerald-500 shrink-0">✓</span>{p}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs bg-slate-50 rounded-lg px-3 py-2 text-slate-700">おすすめ対象: {recommended}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">JavaScript学習ロードマップ</h2>
+        <div className="space-y-3">
+          {[
+            { step: 'STEP 1', title: 'HTML・CSS基礎（1〜2週間）', body: 'Webページの構造（HTML）とデザイン（CSS）の基礎を習得。ProGate・ドットインストールなどで無料で学べる。' },
+            { step: 'STEP 2', title: 'JavaScript基礎（2〜4週間）', body: '変数・関数・配列・DOM操作の基礎。ここが最も時間のかかるステップ。「Eloquent JavaScript」や各スクールのカリキュラムで体系的に学習。' },
+            { step: 'STEP 3', title: 'React入門（2〜4週間）', body: 'コンポーネント・状態管理（useState）・React Router（画面遷移）の基礎。公式ドキュメントが非常に充実している。' },
+            { step: 'STEP 4', title: 'ポートフォリオ制作（1〜2ヶ月）', body: 'TODOアプリ・天気アプリ・ECサイトなど実際のWebアプリを制作。GitHubで公開し、転職活動での技術力証明に使う。' },
+            { step: 'STEP 5', title: 'TypeScript導入（学習と並行）', body: 'TypeScriptはJavaScriptに型付けを追加した言語で、現代の現場では必須。Reactと組み合わせて学習することが多い。' },
+          ].map(({ step, title, body }) => (
+            <div key={step} className="flex gap-4 border-l-2 border-slate-300 pl-4">
+              <div className="shrink-0 text-xs text-slate-500 w-16 pt-0.5">{step}</div>
+              <div>
+                <p className="font-semibold text-gray-900 text-sm mb-1">{title}</p>
+                <p className="text-sm text-gray-600">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'school-koukai-shinai-erabi': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">プログラミングスクールで後悔する人の共通パターン</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          プログラミングスクールへの入学後に後悔する人の多くは、入学前の「確認不足」が原因です。高額な受講料を支払ってから後悔しないために、よくある失敗パターンとその回避策を解説します。
+        </p>
+        <div className="space-y-3">
+          {[
+            {
+              pattern: '「なんとなく需要がありそうだから」で入学した',
+              risk: '学習目標が曖昧だと挫折しやすく、転職活動でも「なぜエンジニアになりたいのか」が答えられない。',
+              solution: '入学前に「Webエンジニア・インフラ・AI」など方向性を決め、その職種の求人を実際に見てから判断する。',
+            },
+            {
+              pattern: '転職保証の条件をきちんと確認しなかった',
+              risk: '「転職保証あり」と謳っていても、「卒業後〇ヶ月以内」「応募〇社以上」「特定の職種のみ」など細かい条件がある場合が多い。',
+              solution: '入学前に転職保証の対象条件・除外条件・返金額を書面で確認する。口頭の説明だけでは不十分。',
+            },
+            {
+              pattern: '給付金の対象確認を怠った',
+              risk: '雇用保険の加入期間・講座の給付金指定番号が必要で、要件を満たさないと給付金がもらえない。',
+              solution: 'ハローワークで事前に給付金受給資格を確認する。受給要件は在職中から調べておく。',
+            },
+            {
+              pattern: '受講中のサポート内容を詳しく確認しなかった',
+              risk: '「質問し放題」と書かれていても回答が翌日以降、もしくはテキストベースのみというスクールもある。',
+              solution: '体験授業でサポートの質・速度を実際に確認。「平均回答時間は？」「現役エンジニアが担当？」を直接聞く。',
+            },
+            {
+              pattern: 'ポートフォリオ指導なしのコースを選んだ',
+              risk: '技術を学んでも成果物がないと転職活動で評価されない。コードレビューのないスクールは実力が付きにくい。',
+              solution: 'ポートフォリオ制作・コードレビューが含まれるコースを選ぶ。成果物の完成度が転職成功率に直結する。',
+            },
+          ].map(({ pattern, risk, solution }) => (
+            <div key={pattern} className="bg-white border border-gray-200 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-2">失敗パターン：「{pattern}」</p>
+              <div className="space-y-2">
+                <div className="bg-red-50 rounded-lg px-3 py-2">
+                  <p className="text-xs font-medium text-red-700 mb-0.5">リスク</p>
+                  <p className="text-xs text-red-600">{risk}</p>
+                </div>
+                <div className="bg-emerald-50 rounded-lg px-3 py-2">
+                  <p className="text-xs font-medium text-emerald-700 mb-0.5">回避策</p>
+                  <p className="text-xs text-emerald-700">{solution}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">入学前に必ず確認すべき7つのポイント</h2>
+        <div className="space-y-2">
+          {[
+            { no: 1, check: '転職実績・転職率の具体的な数値を公開しているか', detail: '「転職率98%」などの数値が第三者機関による調査か、自社調査かを確認。対象期間・条件も重要。' },
+            { no: 2, check: '給付金（教育訓練給付金）の対象コースか', detail: '特定一般教育訓練（20%還付）または専門実践教育訓練（最大70%還付）の認定を受けているかをハローワーク・厚労省サイトで確認。' },
+            { no: 3, check: '転職保証の詳細条件を書面で確認', detail: '返金額・期限・応募条件・除外職種などを書面で取得。口頭説明を信用しない。' },
+            { no: 4, check: '現役エンジニアがメンターを担当しているか', detail: '学習中のサポートが現役エンジニアか、受講修了生かで技術的な深さが大きく変わる。' },
+            { no: 5, check: '無料体験・カウンセリングに参加して雰囲気を確認', detail: '雰囲気が合わないと挫折しやすい。体験授業でコミュニケーションスタイル・教材品質を実際に確認。' },
+            { no: 6, check: 'ポートフォリオ制作・コードレビューがカリキュラムに含まれるか', detail: '成果物のレビューなしに「技術が身についた」は転職活動で証明できない。' },
+            { no: 7, check: '卒業後の転職活動サポート期間はどのくらいか', detail: '転職活動は卒業後も数ヶ月続く。サポートが卒業後〇ヶ月まで、または無制限かを確認。' },
+          ].map(({ no, check, detail }) => (
+            <div key={no} className="bg-slate-50 rounded-xl p-4">
+              <div className="flex gap-3">
+                <span className="bg-slate-800 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">{no}</span>
+                <div>
+                  <p className="font-semibold text-gray-800 text-sm mb-1">{check}</p>
+                  <p className="text-xs text-gray-600">{detail}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">後悔しにくいスクールの特徴まとめ</h2>
+        <ul className="space-y-2">
+          {[
+            '転職実績・合格率を具体的な数値で公開している（第三者調査が望ましい）',
+            '教育訓練給付金対象コースがあり費用の負担を抑えられる',
+            '無料体験授業が充実しており入学前に雰囲気を確認できる',
+            '現役エンジニアが担当するメンタリング・コードレビューがある',
+            '転職保証の条件が明確で現実的（応募数・期間が無理のない範囲）',
+            'ポートフォリオ制作が含まれ、転職活動に使える成果物が作れる',
           ].map((item) => (
             <li key={item} className="flex gap-2 text-sm text-gray-700">
               <span className="text-slate-400 shrink-0 mt-0.5">▸</span>{item}

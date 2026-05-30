@@ -23,7 +23,9 @@ const categoryColors: Record<string, string> = {
   'スクール比較': 'bg-slate-100 text-slate-700',
   '費用・給付金': 'bg-emerald-50 text-emerald-700',
   '転職・キャリア': 'bg-slate-100 text-slate-700',
+  '転職・就職': 'bg-slate-100 text-slate-700',
   'AI・最新技術': 'bg-violet-50 text-violet-700',
+  '年代別おすすめ': 'bg-amber-50 text-amber-700',
 };
 
 const BASE = 'https://nsplot.com';
