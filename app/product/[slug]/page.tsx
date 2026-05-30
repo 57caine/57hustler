@@ -40,6 +40,23 @@ export default async function ProductPage({ params }: Props) {
     .sort((a, b) => b.popularity - a.popularity)
     .slice(0, 3);
 
+  const productFaqs = [
+    {
+      q: `${product.name}の最安値はいくらですか？`,
+      a: product.lowestPrice != null
+        ? `当サイト調べでは${product.prices.length}店舗中の送料込み最安値は¥${product.lowestPrice.toLocaleString()}（税込）です。価格は日々変動するため、最新の価格はページ上の比較表でご確認ください。`
+        : `${product.name}の最安値は現在調査中です。複数のオンラインショップで販売されており、ページ上の価格比較表をご確認ください。`,
+    },
+    {
+      q: `${product.name}は処方箋なしで購入できますか？`,
+      a: 'コンタクトレンズは医療機器のため、初めてご使用の方は眼科を受診して処方箋を取得してください。同じ商品を継続使用している方については、処方箋不要で購入できるショップが多くあります。詳しくは価格表の「処方箋」欄をご確認ください。',
+    },
+    {
+      q: `${product.name}のBC・含水率などのスペックは？`,
+      a: `${product.name}のBC（ベースカーブ）は${product.bc}、DIA（直径）は${product.dia}、含水率は${product.waterContent}です。素材・酸素透過率など詳細スペックはメーカー公式サイトでご確認ください。`,
+    },
+  ];
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -63,6 +80,14 @@ export default async function ProductPage({ params }: Props) {
           { '@type': 'ListItem', position: 2, name: label, item: `${BASE}/category/${product.category}` },
           { '@type': 'ListItem', position: 3, name: product.name, item: `${BASE}/product/${product.slug}` },
         ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: productFaqs.map(({ q, a }) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: a },
+        })),
       },
     ],
   };
