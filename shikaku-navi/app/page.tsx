@@ -5,7 +5,7 @@ import { columns } from '@/lib/columns';
 import CourseCard from '@/components/CourseCard';
 
 export const metadata: Metadata = {
-  title: '資格通信講座 比較ランキング2025年版｜おすすめ16社を徹底比較',
+  title: '資格通信講座 比較ランキング2026年版｜おすすめ16社を徹底比較',
   description: 'スタディング、ユーキャン、フォーサイト、資格の大原など人気資格通信講座16社を徹底比較。料金・合格率・教材の質を一覧で確認。宅建・簿記・FP・ITパスポート・副業資格まで対応。',
 };
 
@@ -48,7 +48,7 @@ export default function HomePage() {
           <p className="text-slate-400 text-xs font-medium mb-3 uppercase tracking-widest">Qualification School Navigator</p>
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-white">
             資格取得で年収・キャリアアップ<br />
-            <span className="text-slate-300">通信講座 徹底比較ガイド 2025年版</span>
+            <span className="text-slate-300">通信講座 徹底比較ガイド 2026年版</span>
           </h1>
           <p className="text-slate-400 mb-8 max-w-xl text-sm leading-relaxed">
             スタディング・フォーサイト・アガルートなど{courses.length}講座を費用・合格率・学習スタイルで客観的に比較。

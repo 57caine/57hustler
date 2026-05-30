@@ -14,7 +14,7 @@ export type Column = {
 export const columns: Column[] = [
   {
     slug: 'shikaku-hikaku-online',
-    title: '社会人に人気の資格通信講座5選【2025年版・費用・合格率比較】',
+    title: '社会人に人気の資格通信講座5選【2026年版・費用・合格率比較】',
     description: 'スタディング・フォーサイト・アガルート・ユーキャン・クレアールの5社を費用・合格率・学習スタイルで徹底比較。社会人が働きながら資格取得できる通信講座の選び方を解説します。',
     category: '資格比較',
     publishedAt: '2025-04-01',
@@ -50,7 +50,7 @@ export const columns: Column[] = [
   },
   {
     slug: 'fp-tsushin-osusume',
-    title: 'FP（ファイナンシャルプランナー）通信講座おすすめ比較【2025年版】',
+    title: 'FP（ファイナンシャルプランナー）通信講座おすすめ比較【2026年版】',
     description: 'FP2・3級の通信講座をスタディング・フォーサイト・アガルート・ユーキャンで比較。費用・合格率・学習スタイル別の選び方を解説します。',
     category: '資格比較',
     publishedAt: '2025-05-20',
@@ -95,7 +95,7 @@ export const columns: Column[] = [
   },
   {
     slug: 'shakushi-tsushin-osusume',
-    title: '社労士 通信講座 おすすめ5選【2025年版・合格率・費用を比較】',
+    title: '社労士 通信講座 おすすめ5選【2026年版・合格率・費用を比較】',
     description: '社会保険労務士（社労士）試験に強い通信講座を徹底比較。アガルート・フォーサイト・スタディング・クレアールの費用・合格率・サポート体制を一覧で確認。',
     category: '国家資格',
     publishedAt: '2025-06-15',
@@ -113,7 +113,7 @@ export const columns: Column[] = [
   },
   {
     slug: 'it-passport-tsushin-hikaku',
-    title: 'ITパスポート通信講座おすすめ比較【2025年版・最短合格を狙う】',
+    title: 'ITパスポート通信講座おすすめ比較【2026年版・最短合格を狙う】',
     description: 'ITパスポート試験に対応したおすすめ通信講座を徹底比較。費用・学習時間・合格率・スマホ対応度をランキング形式で紹介。CBT試験対策のポイントも解説。',
     category: 'IT資格',
     publishedAt: '2026-05-20',
@@ -122,7 +122,7 @@ export const columns: Column[] = [
   },
   {
     slug: 'fukugyou-shikaku-osusume',
-    title: '副業で稼げる資格おすすめ10選【2025年版・収入アップに直結】',
+    title: '副業で稼げる資格おすすめ10選【2026年版・収入アップに直結】',
     description: '副業に活かせる人気資格をランキング形式で紹介。FP・簿記・宅建・医療事務・ITパスポートなど収入アップに直結する資格の特徴・取得難易度・稼ぎ方を徹底解説。',
     category: '副業・スキルアップ',
     publishedAt: '2026-05-22',
@@ -131,7 +131,7 @@ export const columns: Column[] = [
   },
   {
     slug: 'iryo-jimu-shikaku-osusume',
-    title: '医療事務 資格 通信講座 おすすめ5選【2025年版・費用・難易度比較】',
+    title: '医療事務 資格 通信講座 おすすめ5選【2026年版・費用・難易度比較】',
     description: '医療事務資格（医療事務技能審査試験・医療事務管理士）の取得に強い通信講座を比較。ユーキャン・ニチイ学館・キャリアカレッジの費用・カリキュラム・就職サポートを解説。',
     category: '国家資格',
     publishedAt: '2026-05-29',

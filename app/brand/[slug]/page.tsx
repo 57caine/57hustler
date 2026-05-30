@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!brand) return {};
   const desc = brandDescriptions[slug];
   return {
-    title: `${brand.name}コンタクトレンズ 最安値比較【2025年版】`,
+    title: `${brand.name}コンタクトレンズ 最安値比較【2026年版】`,
     description: desc?.description.slice(0, 120) ?? `${brand.name}（${brand.manufacturer}）のコンタクトレンズ最安値を比較。`,
   };
 }

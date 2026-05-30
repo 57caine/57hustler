@@ -5,7 +5,7 @@ import { columns } from '@/lib/columns';
 import ProductCard from '@/components/ProductCard';
 
 export const metadata: Metadata = {
-  title: 'コンタクトレンズ最安値比較【2025年版・45商品対応】| レンズナビ',
+  title: 'コンタクトレンズ最安値比較【2026年版・45商品対応】| レンズナビ',
   description: '人気コンタクトレンズ45商品の最安値を一括比較。アキュビュー、デイリーズ、シードなど主要ブランドの価格を毎日更新。送料込み最安値をすぐ確認。乱視・カラコン・遠近両用も対応。',
 };
 
@@ -61,7 +61,7 @@ export default function HomePage() {
       <section className="text-center mb-12">
         <p className="text-xs text-gray-400 font-medium mb-3 uppercase tracking-widest">Contact Lens Price Navigator</p>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 leading-tight">
-          コンタクトレンズ最安値比較<br className="md:hidden" /><span className="text-slate-600"> 2025年版</span>
+          コンタクトレンズ最安値比較<br className="md:hidden" /><span className="text-slate-600"> 2026年版</span>
         </h1>
         <p className="text-gray-500 mb-1">
           24店舗を一括比較 ・ アキュビュー・デイリーズ・シードなど{allProducts.length}商品対応

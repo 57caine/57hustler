@@ -4,7 +4,7 @@ import { getAllProductsWithPrices } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
 
 export const metadata: Metadata = {
-  title: 'コンタクトレンズ 人気ランキング2025年版【45商品・送料込み最安値】',
+  title: 'コンタクトレンズ 人気ランキング2026年版【45商品・送料込み最安値】',
   description: '売れ筋コンタクトレンズランキング。アキュビュー・デイリーズ・バイオフィニティなど人気45商品を人気順・最安値で比較。カテゴリ別ランキングも掲載。',
 };
 
@@ -65,7 +65,7 @@ export default function RankingPage() {
       </nav>
 
       <h1 className="text-2xl font-bold text-gray-900 mb-2">
-        コンタクトレンズ 人気ランキング2025年版
+        コンタクトレンズ 人気ランキング2026年版
       </h1>
       <p className="text-gray-600 mb-8">
         全{allRanked.length}商品の中から人気順・最安値で比較。カテゴリ別ランキングも掲載しています。

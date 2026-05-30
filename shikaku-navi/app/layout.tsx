@@ -16,7 +16,7 @@ const BASE = 'https://shikaku-navi.jp';
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
   title: {
-    default: '資格ナビ｜資格取得・通信講座を徹底比較【2025年版】',
+    default: '資格ナビ｜資格取得・通信講座を徹底比較【2026年版】',
     template: '%s | 資格ナビ',
   },
   description: 'スタディング・フォーサイト・アガルートなど人気資格通信講座10社を徹底比較。宅建・簿記・FP・社労士など国家資格の通信講座を費用・合格率・学習スタイルで比較できます。',

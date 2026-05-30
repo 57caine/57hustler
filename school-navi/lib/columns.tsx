@@ -50,7 +50,7 @@ export const columns: Column[] = [
   },
   {
     slug: 'freelance-engineer-school',
-    title: 'フリーランスエンジニアになるためのスクール選び方【2025年版】',
+    title: 'フリーランスエンジニアになるためのスクール選び方【2026年版】',
     description: '副業・フリーランスエンジニアを目指す人向けのスクール選び方ガイド。案件紹介まで対応するCoachTechなどフリーランス特化スクールを紹介。',
     category: '転職・キャリア',
     publishedAt: '2025-02-01',
@@ -77,7 +77,7 @@ export const columns: Column[] = [
   },
   {
     slug: 'programming-school-josei-osusume',
-    title: '女性向けプログラミングスクール おすすめ5選【2025年版】',
+    title: '女性向けプログラミングスクール おすすめ5選【2026年版】',
     description: '女性が学びやすいプログラミングスクールを比較。女性講師・女性コミュニティ・育児との両立サポートなど女性特有のニーズに応えるスクールを紹介。',
     category: 'スクール比較',
     publishedAt: '2025-06-01',
@@ -113,7 +113,7 @@ export const columns: Column[] = [
   },
   {
     slug: 'python-programming-school',
-    title: 'Pythonが学べるプログラミングスクール おすすめ5選【2025年版・AI・データサイエンス対応】',
+    title: 'Pythonが学べるプログラミングスクール おすすめ5選【2026年版・AI・データサイエンス対応】',
     description: 'Python・機械学習・データサイエンスが学べるプログラミングスクールを徹底比較。AI・バックエンド・副業など目的別のおすすめスクールを料金・カリキュラムで選べます。',
     category: 'AI・最新技術',
     publishedAt: '2025-06-15',
@@ -131,7 +131,7 @@ export const columns: Column[] = [
   },
   {
     slug: 'tensyoku-hosho-school',
-    title: '転職保証付きプログラミングスクール比較【2025年版・返金条件も徹底解説】',
+    title: '転職保証付きプログラミングスクール比較【2026年版・返金条件も徹底解説】',
     description: '転職できなければ全額返金・一部返金の転職保証があるプログラミングスクールを比較。保証の条件・対象コース・実績を詳しく解説。未経験転職を確実にしたい方向け。',
     category: '転職・就職',
     publishedAt: '2026-05-25',
@@ -149,7 +149,7 @@ export const columns: Column[] = [
   },
   {
     slug: 'javascript-react-school',
-    title: 'JavaScript・Reactが学べるプログラミングスクール おすすめ5選【2025年版】',
+    title: 'JavaScript・Reactが学べるプログラミングスクール おすすめ5選【2026年版】',
     description: 'JavaScriptとReactに特化したプログラミングスクールを比較。フロントエンドエンジニア転職・Web制作副業を目指す方向けに、カリキュラム・費用・転職実績をランキング形式で紹介。',
     category: 'スクール比較',
     publishedAt: '2026-05-29',
