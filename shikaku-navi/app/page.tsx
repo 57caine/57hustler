@@ -9,13 +9,48 @@ export const metadata: Metadata = {
   description: 'スタディング、ユーキャン、フォーサイト、資格の大原など人気資格通信講座16社を徹底比較。料金・合格率・教材の質を一覧で確認。宅建・簿記・FP・ITパスポート・副業資格まで対応。',
 };
 
+const homeFaqs = [
+  {
+    q: '資格通信講座の選び方を教えてください。',
+    a: '①目標資格の難易度（必要勉強時間）を確認 ②給付金対象講座かを調べる ③合格率の実績を比較 ④学習スタイル（スマホ・動画・テキスト）が自分に合うか確認、の4ステップで選ぶと失敗が少ないです。費用重視ならスタディング、合格率重視ならフォーサイト・アガルートが一般的な選択肢です。',
+  },
+  {
+    q: '教育訓練給付金はどの資格講座で使えますか？',
+    a: '雇用保険に一定期間加入している方が対象で、厚生労働大臣指定の講座を修了すると受講料の20〜70%が還付されます。スタディング・フォーサイト・ユーキャン・資格の大原など主要16社のうち多くの講座が対象です。受講前に必ずハローワークに申請が必要です。',
+  },
+  {
+    q: '社会人が働きながら取れるおすすめ資格はどれですか？',
+    a: 'ITパスポート（100〜200時間）・FP3級（100〜150時間）・日商簿記3級（100〜200時間）は比較的短期間で取得でき、社会人の入門資格として人気があります。転職・年収アップを目指す場合は宅建・FP2級・社労士・行政書士などの国家資格が有効です。',
+  },
+];
+
 export default function HomePage() {
   const highlighted = getHighlightedCourses();
   const topColumns = columns.slice(0, 3);
   const subsidyCourses = getSubsidyCourses();
 
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: '資格ナビ',
+      url: 'https://shikaku-navi.jp',
+      description: '資格通信講座を比較するサイト',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: homeFaqs.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    },
+  ];
+
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Hero */}
       <section className="bg-slate-900 text-white py-14 px-4">
         <div className="max-w-4xl mx-auto">

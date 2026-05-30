@@ -9,13 +9,48 @@ export const metadata: Metadata = {
   description: 'TECH CAMP・DMM WEBCAMP・侍エンジニア塾など人気プログラミングスクール12校を料金・転職実績・給付金対応で徹底比較。未経験からIT転職・副業・フリーランスを目指す方向け完全ガイド。',
 };
 
+const homeFaqs = [
+  {
+    q: 'プログラミングスクールと独学どちらが良いですか？',
+    a: '転職を目指す場合はスクールが有利です。独学は費用を抑えられますが、ポートフォリオ作成・面接対策・転職サポートが自己責任になります。スクールは20〜40万円かかりますが、給付金（最大70%還付）を活用すると実質8〜12万円程度に抑えられます。挫折率も独学の方が高い傾向があります。',
+  },
+  {
+    q: 'プログラミングスクールで給付金を使える条件は何ですか？',
+    a: '雇用保険に一定期間加入していること（一般：1年以上、専門実践：2〜3年以上）と、厚生労働大臣指定の講座を受講することが必要です。受講開始前にハローワークで受給資格確認と申請を行う必要があります。在職中でも受給可能なので、退職前に手続きを進めることを推奨します。',
+  },
+  {
+    q: '未経験からエンジニア転職は何ヶ月かかりますか？',
+    a: '一般的に学習開始〜内定まで6〜12ヶ月が目安です。スクール受講（3〜6ヶ月）+転職活動（2〜4ヶ月）の流れが多いです。転職特化スクール（TECH CAMP・DMM WEBCAMPなど）は転職支援が充実しており、短期での内定取得をサポートしています。',
+  },
+];
+
 export default function HomePage() {
   const highlighted = getHighlightedSchools();
   const topColumns = columns.slice(0, 3);
   const subsidySchools = schools.filter((s) => s.features.includes('給付金対象'));
 
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'スクールナビ',
+      url: 'https://nsplot.com',
+      description: 'プログラミングスクールを比較するサイト',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: homeFaqs.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    },
+  ];
+
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Hero */}
       <section className="bg-slate-900 text-white py-14 px-4">
         <div className="max-w-4xl mx-auto">
