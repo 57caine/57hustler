@@ -7,9 +7,43 @@ export const metadata: Metadata = {
   description: '主要資格通信講座16社を費用・合格率・学習形式・給付金対応で一覧比較。スタディング・フォーサイト・ユーキャン・資格の大原など人気講座を徹底比較。',
 };
 
+const faqs = [
+  {
+    q: '資格通信講座の費用の相場はいくらですか？',
+    a: '資格・コースによって大きく異なりますが、宅建・FP・簿記などの通信講座は1〜10万円程度が多く、社労士・行政書士・中小企業診断士などの難関資格は10〜20万円以上になります。スタディングは最安水準で1〜3万円台、ユーキャンは3〜8万円台が中心です。教育訓練給付金を利用すると費用の20〜70%が還付されます。',
+  },
+  {
+    q: '教育訓練給付金とは何ですか？どの講座で使えますか？',
+    a: '教育訓練給付金は、雇用保険に一定期間加入している方が厚生労働大臣指定の教育訓練を修了した場合に受講料の一部（20〜70%）が給付される制度です。「一般教育訓練」は受講費用の20%、「専門実践教育訓練」は最大70%が支給されます。スタディング・フォーサイト・ユーキャン・資格の大原・クレアールなど主要講座の多くが対象です。受講前にハローワークへの申請が必要です。',
+  },
+  {
+    q: '通信講座と独学ではどちらが合格しやすいですか？',
+    a: '通信講座を活用すると合格率が大幅に向上するケースが多いです。フォーサイトの宅建講座では合格率が全国平均の約2倍、アガルートでは約3〜5倍に達するとされています。独学は費用を抑えられますが、学習効率・継続率・合格率すべての面で通信講座が有利なことが多く、特に難関資格（社労士・中小企業診断士など）は通信講座の活用を強く推奨します。',
+  },
+  {
+    q: 'スタディングとフォーサイトどちらがおすすめですか？',
+    a: 'スタディングは最安水準の価格とスマホ完結学習が強みで、費用を抑えてすきま時間に学習したい方に向いています。フォーサイトは合格率の実績が高く、教材の品質と添削サポートが充実しており、確実に合格したい方向けです。費用重視→スタディング、合格率重視→フォーサイト、が一般的な選び方です。',
+  },
+  {
+    q: '社会人でも働きながら資格取得できますか？',
+    a: '可能です。ただし資格の難易度によって必要な学習時間が異なります。FP3級・ITパスポートは100〜200時間程度で3〜6ヶ月、宅建は300〜400時間で6ヶ月〜1年、社労士・行政書士は700〜1000時間で1〜2年が目安です。スタディング・フォーサイトのようなスマホ対応講座を活用することで、通勤・昼休みなどのスキマ時間を学習に充てられます。',
+  },
+];
+
 export default function ComparePage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <nav className="text-sm text-gray-500 mb-6">
         <Link href="/" className="hover:text-slate-700">ホーム</Link>
         <span className="mx-2">/</span>
@@ -73,6 +107,18 @@ export default function ComparePage() {
           </Link>
         ))}
       </div>
+
+      <section className="mb-8">
+        <h2 className="text-lg font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {faqs.map(({ q, a }) => (
+            <div key={q} className="bg-white border border-gray-200 rounded-xl p-5">
+              <p className="font-semibold text-gray-900 text-sm mb-2">Q: {q}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">A: {a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
         ※ 当サイトはアフィリエイト広告を掲載しています。掲載情報は参考値です。最新の料金・内容は各講座公式サイトでご確認ください。

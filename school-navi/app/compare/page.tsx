@@ -15,9 +15,43 @@ const categoryColors: Record<string, string> = {
   '独学支援': 'bg-gray-50 text-gray-600',
 };
 
+const faqs = [
+  {
+    q: 'プログラミングスクールの受講料の相場はいくらですか？',
+    a: '未経験からの転職を目指す転職特化コースは20〜40万円が一般的です。ただし、教育訓練給付金（専門実践）を利用すると受講料の最大70%が還付されるため、実質負担は8〜12万円程度になる場合もあります。無料・低価格の独学支援型サービスから始める選択肢もあります。',
+  },
+  {
+    q: 'プログラミング未経験でも転職できますか？',
+    a: '未経験転職は可能ですが、スクール選びと学習量が重要です。TECH CAMP・DMM WEBCAMPのような転職特化スクールは転職成功率98%前後を公表しており、転職保証制度も設けています。ただし保証には一定の条件（活動期間・応募数など）があるため、事前に確認が必要です。',
+  },
+  {
+    q: '給付金（教育訓練給付金）を使えるスクールはどれですか？',
+    a: 'DMM WEBCAMP・侍エンジニア塾・RUNTEQ・CoachTechなどが教育訓練給付金対象コースを設けています。受給には雇用保険への一定期間の加入（一般：1年以上、専門実践：2〜3年以上）とハローワークへの事前申請が必要です。',
+  },
+  {
+    q: 'プログラミングスクールの選び方のポイントは？',
+    a: '①転職目的か副業目的かを明確にする ②給付金対象かどうかを確認する ③転職保証の詳細条件（期限・応募数・対象職種）を書面で確認する ④無料体験授業で雰囲気・サポート品質を確認する ⑤卒業後の転職活動サポート期間を確認する、の5点が重要です。',
+  },
+  {
+    q: '転職保証とはどういう制度ですか？',
+    a: '転職保証とは「定められた条件を満たして転職活動をしたにもかかわらず内定が得られなかった場合、受講料を全額または一部返金する」制度です。「転職できなければ全額返金」と謳っていても、応募社数・活動期間・対象職種などの条件が細かく設定されています。入学前に書面で詳細条件を確認することが重要です。',
+  },
+];
+
 export default function ComparePage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <nav className="text-sm text-gray-500 mb-6">
         <Link href="/" className="hover:text-slate-700">ホーム</Link>
         <span className="mx-2">/</span>
@@ -25,7 +59,7 @@ export default function ComparePage() {
       </nav>
 
       <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">プログラミングスクール比較表</h1>
-      <p className="text-gray-500 text-sm mb-2">全{schools.length}校 ・ 2025年6月更新</p>
+      <p className="text-gray-500 text-sm mb-2">全{schools.length}校 ・ 2026年5月更新</p>
       <p className="text-gray-600 text-sm mb-8">料金・受講期間・給付金対応・転職サポートの有無を一覧にまとめました。</p>
 
       {/* Desktop table */}
@@ -136,6 +170,18 @@ export default function ComparePage() {
           料金は各スクールの主要コースの参考価格です。最新情報は公式サイトでご確認ください。
         </p>
       </div>
+
+      <section className="mb-8">
+        <h2 className="text-lg font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {faqs.map(({ q, a }) => (
+            <div key={q} className="bg-white border border-gray-200 rounded-xl p-5">
+              <p className="font-semibold text-gray-900 text-sm mb-2">Q: {q}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">A: {a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <p className="text-xs text-gray-400">
         ※ 当サイトはアフィリエイト広告を掲載しています。リンク経由で申し込まれた場合、当サイトに紹介料が発生することがあります。
