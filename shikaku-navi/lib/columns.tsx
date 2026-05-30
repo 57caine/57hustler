@@ -166,6 +166,24 @@ export const columns: Column[] = [
     readingTime: 8,
   },
   {
+    slug: 'chuusho-shindan-shi-tsushin-hikaku',
+    title: '中小企業診断士 通信講座おすすめ比較【2026年版・費用・合格率】',
+    description: '中小企業診断士の通信講座をスタディング・アガルート・TAC・LEC・クレアールで比較。費用・合格率・学習期間・サポート内容を徹底解説します。',
+    category: '資格比較',
+    publishedAt: '2026-05-30',
+    updatedAt: '2026-05-30',
+    readingTime: 10,
+  },
+  {
+    slug: 'kango-fukushi-shikaku-tsushin',
+    title: '介護・福祉系資格の通信講座おすすめ比較【ケアマネ・介護福祉士・社会福祉士】',
+    description: 'ケアマネージャー・介護福祉士・社会福祉士など介護・福祉系国家資格の通信講座を比較。ニチイ学館・ユーキャン・キャリアカレッジなど主要講座の費用・特徴を解説。',
+    category: '国家資格',
+    publishedAt: '2026-05-30',
+    updatedAt: '2026-05-30',
+    readingTime: 9,
+  },
+  {
     slug: 'gyousei-vs-shakushi',
     title: '行政書士 vs 社労士 どっちを取るべき？難易度・年収・将来性を徹底比較',
     description: '行政書士と社労士の難易度・合格率・必要勉強時間・年収・独立開業のしやすさを詳しく比較。どちらを先に取るべきか迷っている社会人向けに選択基準を解説します。',
@@ -1774,6 +1792,229 @@ export const columnContent: Record<string, React.ReactNode> = {
       <section>
         <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
           ※ 掲載している合格率・試験情報は参考値です。最新の試験日程・受験料は日本FP協会・きんざいの公式サイトでご確認ください。
+        </p>
+      </section>
+    </div>
+  ),
+
+  'chuusho-shindan-shi-tsushin-hikaku': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">中小企業診断士の試験概要</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          中小企業診断士は、中小企業の経営課題に対して診断・助言を行う国家資格です。
+          一次試験（7科目・マーク式）と二次試験（4科目・記述式＋口述）の2段階で構成され、
+          合格率は一次試験30〜40%・二次試験18〜20%・最終合格は約4〜5%と難関資格です。
+          合格までの学習時間は1,000〜1,500時間が目安とされています。
+        </p>
+        <div className="bg-slate-50 border border-slate-100 rounded-xl p-4 mb-4">
+          <p className="font-semibold text-gray-800 mb-2 text-sm">試験概要</p>
+          <div className="grid sm:grid-cols-2 gap-3 text-xs">
+            {[
+              { label: '一次試験科目数', value: '7科目（経済・財務・企業経営論など）' },
+              { label: '二次試験', value: '4事例（筆記）+ 口述試験' },
+              { label: '一次試験合格率', value: '30〜40%（年によって変動）' },
+              { label: '最終合格率', value: '約4〜5%' },
+              { label: '学習時間（目安）', value: '1,000〜1,500時間' },
+              { label: '試験実施月', value: '一次：8月 / 二次：10月' },
+            ].map(({ label, value }) => (
+              <div key={label} className="bg-white rounded-lg p-2 border border-gray-100">
+                <p className="text-gray-500 mb-0.5">{label}</p>
+                <p className="font-semibold text-gray-800">{value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">中小企業診断士 通信講座 比較</h2>
+        <div className="space-y-4">
+          {[
+            {
+              name: 'スタディング',
+              slug: 'studying',
+              price: '56,800円〜（一次・二次対策コース）',
+              pass: '合格者多数（合格率非公開）',
+              period: '12〜18ヶ月',
+              feature: '最安値クラス',
+              point: '業界最安値クラス。スマホ完結型でAI学習機能で効率的に弱点克服。一次試験の7科目をまとめて対策できるセットコースが充実。',
+            },
+            {
+              name: 'アガルート',
+              slug: 'agaroot',
+              price: '148,000円〜（総合コース）',
+              pass: '高い実績（詳細は公式参照）',
+              period: '12〜18ヶ月',
+              feature: '合格率重視',
+              point: '二次試験の事例演習・添削が充実。合格時の全額返金制度あり。動画講義の品質が高く、独学では理解しにくい二次試験（事例問題）の対策に強い。',
+            },
+            {
+              name: 'TAC',
+              slug: 'tac',
+              price: '278,000円〜（一次二次総合コース）',
+              pass: '高い合格実績',
+              period: '12〜24ヶ月',
+              feature: '質問サポート充実',
+              point: '中小企業診断士対策の老舗スクール。講師陣の質と二次試験対策のノウハウが豊富。教育訓練給付金の対象講座あり。オンラインと通学の選択が可能。',
+            },
+            {
+              name: 'クレアール',
+              slug: 'crecer',
+              price: '149,000円〜（一次二次合格コース）',
+              pass: '高い（詳細は公式参照）',
+              period: '12〜18ヶ月',
+              feature: '非常識合格法',
+              point: '「非常識合格法」で頻出範囲に絞った効率的な学習が可能。二次試験の添削サービスが充実しており、記述式問題の改善が着実に進む。',
+            },
+          ].map(({ name, slug, price, pass, period, feature, point }) => (
+            <div key={slug} className="bg-white border border-gray-200 rounded-xl p-5">
+              <div className="flex items-start justify-between gap-3 mb-2">
+                <p className="font-bold text-gray-900">{name}</p>
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{feature}</span>
+              </div>
+              <div className="grid sm:grid-cols-3 gap-2 text-xs mb-3">
+                <div><span className="text-gray-500">費用: </span><span className="font-medium text-gray-800">{price}</span></div>
+                <div><span className="text-gray-500">合格: </span><span className="font-medium text-gray-800">{pass}</span></div>
+                <div><span className="text-gray-500">期間: </span><span className="font-medium text-gray-800">{period}</span></div>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed mb-3">{point}</p>
+              <Link href={`/courses/${slug}`} className="inline-block text-sm border border-slate-300 bg-white text-slate-700 px-4 py-1.5 rounded-lg hover:bg-slate-50 transition-colors">
+                {name}の詳細を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">中小企業診断士の取得メリット</h2>
+        <div className="space-y-3">
+          {[
+            { title: 'コンサルタント・独立開業が可能', body: '中小企業診断士は独占業務はないが、経営コンサルタントとしての独立・副業が可能です。中小企業向けの経営相談・補助金申請支援・事業計画書作成など幅広い業務で需要があります。' },
+            { title: '大企業・金融機関での評価が高い', body: '金融機関・コンサルティング会社・商社などで評価される資格。企業内診断士として社内コンサルタント的な役割を担う方も多い。昇格・評価で有利に働くことが多い。' },
+            { title: '経営知識が体系的に身につく', body: '財務・マーケティング・生産管理・IT・経済など経営に必要な知識を一通り学べる。MBAに近い学習内容を資格取得という形で達成できる点も人気の理由。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
+          ※ 掲載している合格率・費用は参考値です。最新の試験情報は中小企業診断協会の公式サイトでご確認ください。
+        </p>
+      </section>
+    </div>
+  ),
+
+  'kango-fukushi-shikaku-tsushin': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">介護・福祉系の国家資格一覧</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          介護・福祉の分野には複数の国家資格があり、それぞれ役割と対象者が異なります。
+          社会人が通信講座で取得を目指せる主な資格を一覧で確認しましょう。
+        </p>
+        <div className="overflow-x-auto bg-slate-50 rounded-xl p-4 mb-4">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="border-b border-gray-200">
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">資格名</th>
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">合格率</th>
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">学習時間</th>
+                <th className="text-left py-2 text-gray-600 font-semibold">活躍の場</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['ケアマネージャー（介護支援専門員）', '約20%', '200〜400時間', 'ケアプラン作成・相談窓口'],
+                ['介護福祉士（国家資格）', '約70%', '300〜500時間', '介護施設・訪問介護'],
+                ['社会福祉士（国家資格）', '約30%', '400〜600時間', '相談・支援業務全般'],
+                ['介護職員初任者研修', 'ほぼ100%', '130時間', '入門資格・就職に有利'],
+                ['実務者研修', 'ほぼ100%', '450時間', '介護福祉士受験の必須要件'],
+              ].map(([name, pass, time, use]) => (
+                <tr key={name} className="border-b border-gray-100">
+                  <td className="py-2 pr-4 font-semibold text-gray-700">{name}</td>
+                  <td className="py-2 pr-4 text-gray-600">{pass}</td>
+                  <td className="py-2 pr-4 text-gray-600">{time}</td>
+                  <td className="py-2 text-gray-600">{use}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">介護・福祉系資格の通信講座おすすめ</h2>
+        <div className="space-y-4">
+          {[
+            {
+              name: 'ニチイ学館',
+              slug: 'nichiiko-gakkan',
+              target: '介護職員初任者研修・介護福祉士',
+              price: '89,000円〜（初任者研修）',
+              feature: '就職支援充実',
+              point: '介護業界で最大手の研修機関。全国に教室があり通信+通学のハイブリッド型。受講修了後の就職支援も強く、ニチイグループへの就職ルートもある。',
+            },
+            {
+              name: 'ユーキャン',
+              slug: 'yukiyukan',
+              target: '介護福祉士・社会福祉士・ケアマネ',
+              price: '54,000円〜（介護福祉士コース）',
+              feature: '教材の分かりやすさ',
+              point: '通信講座の大手で教材の分かりやすさに定評あり。テキスト・動画・添削がセットになった充実のコースが揃う。教育訓練給付金の対象講座も多い。',
+            },
+            {
+              name: 'キャリアカレッジジャパン',
+              slug: 'career-college-japan',
+              target: '介護職員初任者研修・ケアマネ対策',
+              price: '29,700円〜（初任者研修）',
+              feature: 'コスパ',
+              point: '受講料が比較的リーズナブルで通信メインの学習スタイル。仕事・育児と並行しながら自分のペースで学べる。介護初任者研修から介護福祉士まで段階的に取得できる。',
+            },
+          ].map(({ name, slug, target, price, feature, point }) => (
+            <div key={slug} className="bg-white border border-gray-200 rounded-xl p-5">
+              <div className="flex items-start justify-between gap-3 mb-2">
+                <p className="font-bold text-gray-900">{name}</p>
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{feature}</span>
+              </div>
+              <div className="text-xs mb-3 space-y-1">
+                <div><span className="text-gray-500">対応資格: </span><span className="font-medium text-gray-800">{target}</span></div>
+                <div><span className="text-gray-500">費用: </span><span className="font-medium text-gray-800">{price}</span></div>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed mb-3">{point}</p>
+              <Link href={`/courses/${slug}`} className="inline-block text-sm border border-slate-300 bg-white text-slate-700 px-4 py-1.5 rounded-lg hover:bg-slate-50 transition-colors">
+                {name}の詳細を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">介護・福祉系資格の取得メリット</h2>
+        <div className="space-y-3">
+          {[
+            { title: '未経験からでも就職・転職できる', body: '介護職員初任者研修は未経験者でも短期間（130時間）で取得でき、資格取得後すぐに介護施設への就職・転職が可能です。人材不足の業界のため採用率が高い傾向があります。' },
+            { title: '女性・主婦の再就職に強い', body: '介護・福祉系は女性が多く活躍する業界。育休・産休明けや子育て後の再就職でも受け入れが積極的。ニチイ学館などは就職支援まで一貫してサポートしてくれます。' },
+            { title: '資格手当・給与アップが期待できる', body: '介護福祉士・ケアマネジャーなどの上位資格を取得すると資格手当（月1〜5万円程度）が付くことが多く、給与アップが期待できます。キャリアアップを考えるなら段階的な資格取得が有効です。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
+          ※ 掲載している費用・合格率は参考値です。最新の試験情報・受験要件は社会福祉振興・試験センター等の公式サイトでご確認ください。
         </p>
       </section>
     </div>

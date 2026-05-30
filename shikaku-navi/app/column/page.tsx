@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { columns } from '@/lib/columns';
 
 export const metadata: Metadata = {
-  title: '資格取得コラム 一覧【全18記事】| 資格ナビ',
-  description: '資格通信講座の選び方・給付金・転職・副業・IT資格・医療事務など資格取得に役立つ全18記事。宅建独学vs通信比較・FP2級3級の違い・社労士・行政書士・中小企業診断士・ITパスポートなど人気資格の情報を掲載。',
+  title: '資格取得コラム 一覧【全20記事】| 資格ナビ',
+  description: '資格通信講座の選び方・給付金・転職・副業・IT資格・医療事務など資格取得に役立つ全20記事。宅建独学vs通信比較・FP2級3級の違い・社労士・行政書士・中小企業診断士・ITパスポートなど人気資格の情報を掲載。',
 };
 
 const categoryColors: Record<string, string> = {

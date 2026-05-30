@@ -227,6 +227,24 @@ export const columns: ColumnMeta[] = [
     updatedAt: '2026-05-30',
     readingTime: 7,
   },
+  {
+    slug: 'contact-2week-osusume',
+    title: '2weekコンタクトレンズ おすすめランキング2026年版【コスパ・乾きにくさ別】',
+    description: 'アキュビュー オアシス・シード 2ウィークピュア・バイオフィニティなど人気2weekコンタクト7選を比較。コスパ重視・乾きにくさ重視・乱視用など目的別のおすすめをランキング形式で解説。',
+    category: '商品比較',
+    publishedAt: '2026-05-30',
+    updatedAt: '2026-05-30',
+    readingTime: 8,
+  },
+  {
+    slug: 'menicon-contact-osusume',
+    title: 'メニコン コンタクトレンズ おすすめ比較【1day・2week・マンスリー対応】',
+    description: 'メニコンの人気コンタクトレンズを1day・2week・マンスリー別に比較。1monthメニコン・めにサポなど各シリーズの違い、特徴、最安値の調べ方を解説します。',
+    category: '商品比較',
+    publishedAt: '2026-05-30',
+    updatedAt: '2026-05-30',
+    readingTime: 7,
+  },
 ];
 
 export function getColumnBySlug(slug: string): ColumnMeta | undefined {
@@ -2933,6 +2951,199 @@ export const columnContent: Record<string, React.ReactNode> = {
       <section>
         <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
           ※ 掲載しているスペック・価格は参考値です。最新の製品仕様は各メーカー公式サイトでご確認ください。コンタクトレンズは医療機器のため、初めてご使用の方は必ず眼科を受診して処方箋を取得してください。
+        </p>
+      </section>
+    </div>
+  ),
+
+  'contact-2week-osusume': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">2weekコンタクトのメリット・デメリット</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          2週間使い捨てコンタクトレンズは、ワンデーと比べてコストを抑えつつ、毎日のレンズケア（洗浄・保存）を前提にした設計です。
+          毎日使う方には経済的な選択肢ですが、ケア用品代と手間もかかります。
+        </p>
+        <div className="grid sm:grid-cols-2 gap-4 mb-4">
+          <div className="bg-emerald-50 border border-emerald-100 rounded-xl p-4">
+            <p className="font-bold text-emerald-800 text-sm mb-2">メリット</p>
+            <ul className="space-y-1 text-sm text-gray-700">
+              {['ワンデーより1日あたりのコストが安い', '多くのシリーズがシリコーンHG素材で酸素透過率が高い', '乱視用・遠近両用のラインナップが豊富', 'まとめ買いでさらにコスト削減可能'].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="text-emerald-500 mt-0.5 shrink-0">+</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+            <p className="font-bold text-slate-700 text-sm mb-2">デメリット</p>
+            <ul className="space-y-1 text-sm text-gray-700">
+              {['毎日のレンズケアが必要（洗浄・保存液代も発生）', '水道水洗浄は厳禁（感染リスクあり）', 'ケア不足だとタンパク汚れが蓄積しやすい', '旅行・外泊時はケア用品も持ち歩く必要がある'].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="text-slate-400 mt-0.5 shrink-0">-</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">おすすめ2weekコンタクト ランキング</h2>
+        <div className="space-y-4">
+          {[
+            {
+              rank: 1,
+              name: 'アキュビュー オアシス（2week）',
+              maker: 'ジョンソン＆ジョンソン',
+              material: 'セノフィルコン A（SiHy）',
+              dk: '147',
+              price: '2,500〜3,800円/箱（6枚）',
+              point: '2weekレンズの中で最高クラスの乾きにくさ。HYDRACLEAR Plusがレンズ全体に保湿成分を届け、12〜14時間の長時間装用でも快適さを維持。PC・デスクワーク・コンタクト中心の生活の方に最適。',
+            },
+            {
+              rank: 2,
+              name: 'バイオフィニティ',
+              maker: 'クーパービジョン',
+              material: 'コメットフィルコン A（SiHy）',
+              dk: '160',
+              price: '2,200〜3,200円/箱（6枚）',
+              point: 'Dk/t値160と業界最高水準の酸素透過率を誇るマンスリー・2weekシリーズの主力。Aquaformテクノロジーで保水性も高い。長時間・高酸素環境を求める方に支持されている。',
+            },
+            {
+              rank: 3,
+              name: 'シード 2ウィーク ピュア EDOF',
+              maker: 'シード',
+              material: 'エタフィルコン A',
+              dk: '28',
+              price: '1,500〜2,400円/箱（6枚）',
+              point: '国産ブランドのシードが提供するコスパ重視の2weekレンズ。EDOF（拡張焦点深度）技術採用で手元から遠方まで見やすい。価格を抑えながらも安定した品質を重視する方に。',
+            },
+            {
+              rank: 4,
+              name: 'メニコン 2week Menicon Premio',
+              maker: 'メニコン',
+              material: 'シリコーンハイドロゲル',
+              dk: '161',
+              price: '1,800〜2,800円/箱（6枚）',
+              point: '国内最大コンタクトメーカーのメニコンが提供する高スペック2weekレンズ。酸素透過率が高く、日本人の眼形状に合わせた設計で安定した装用感。',
+            },
+          ].map(({ rank, name, maker, material, dk, price, point }) => (
+            <div key={name} className="bg-white border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-3">
+                <span className="bg-slate-800 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0">{rank}</span>
+                <div className="flex-1">
+                  <p className="font-bold text-gray-900 mb-1">{name}</p>
+                  <p className="text-xs text-gray-500 mb-2">{maker}</p>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <span className="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full">{material}</span>
+                    <span className="text-xs bg-slate-50 text-slate-700 px-2 py-0.5 rounded-full">Dk/t: {dk}</span>
+                    <span className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">{price}</span>
+                  </div>
+                  <p className="text-sm text-gray-700 leading-relaxed">{point}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">2weekコンタクトの最安値を比較する</h2>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/category/2week" className="inline-block bg-slate-800 text-white text-sm font-bold px-5 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+            2week商品一覧で最安値を見る
+          </Link>
+          <Link href="/ranking" className="inline-block border border-slate-300 text-slate-700 text-sm font-medium px-5 py-2 rounded-lg hover:bg-slate-50 transition-colors">
+            全商品ランキングを見る
+          </Link>
+        </div>
+      </section>
+
+      <section>
+        <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
+          ※ 掲載しているスペック・価格は参考値です。最新の製品情報は各メーカー公式サイトでご確認ください。コンタクトレンズは医療機器のため、初めてご使用の方は必ず眼科を受診してください。
+        </p>
+      </section>
+    </div>
+  ),
+
+  'menicon-contact-osusume': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">メニコンの特徴</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          メニコン（Menicon）は1951年創業の日本最大のコンタクトレンズ専業メーカーです。
+          国産ブランドならではの品質管理と日本人の眼形状に合わせた設計が特徴で、特に高い酸素透過率のレンズ開発で定評があります。
+        </p>
+        <div className="bg-slate-50 border border-slate-100 rounded-xl p-4 mb-4">
+          <p className="font-semibold text-gray-800 mb-2 text-sm">メニコンの主なラインナップ</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="border-b border-gray-200">
+                  <th className="text-left py-2 pr-4 text-gray-600 font-semibold">シリーズ名</th>
+                  <th className="text-left py-2 pr-4 text-gray-600 font-semibold">交換周期</th>
+                  <th className="text-left py-2 text-gray-600 font-semibold">特徴</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['メニコンワンデー', '1day', 'シリコーンHG素材・高酸素透過率'],
+                  ['シード ワンデー ピュアUV', '1day', 'UV保護・薄型設計'],
+                  ['2week Menicon Premio', '2week', 'Dk/t 161・高酸素透過率'],
+                  ['1month Menicon', 'マンスリー', '薄型デザイン・使いやすい'],
+                  ['1month Menicon Toric', 'マンスリー', '乱視用・安定したフィット感'],
+                ].map(([name, period, feature]) => (
+                  <tr key={name} className="border-b border-gray-100">
+                    <td className="py-2 pr-4 font-semibold text-gray-700">{name}</td>
+                    <td className="py-2 pr-4 text-gray-600">{period}</td>
+                    <td className="py-2 text-gray-600">{feature}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">メニコン商品のおすすめポイント別選び方</h2>
+        <div className="space-y-3">
+          {[
+            { category: '長時間装用・仕事中重視の方', product: '2week Menicon Premio', reason: 'Dk/t 161の高い酸素透過率で1日中装用しても角膜への負担が少ない。シリコーンハイドロゲル素材で乾燥感も軽減。' },
+            { category: 'コスパ重視の方', product: '1month Menicon', reason: 'マンスリータイプは1日あたりのコストが最も安い。ケア用品代を含めても年間コストはワンデーの半分以下になることが多い。' },
+            { category: '乱視がある方', product: '1month Menicon Toric / 2week Menicon Toric', reason: '乱視用（トーリック）レンズは軸の安定性が重要。メニコンのトーリックレンズは日本人の眼形状に合わせた設計でずれにくい。' },
+            { category: '手軽に使いたい方', product: 'メニコンワンデー', reason: '1day使い捨てで毎日のケア不要。旅行・出張・週数回の使用に最適。シリコーンHG素材で乾きにくい。' },
+          ].map(({ category, product, reason }) => (
+            <div key={category} className="bg-white border border-gray-200 rounded-xl p-4">
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <p className="font-semibold text-gray-800 text-sm">{category}</p>
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full">{product}</span>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed">{reason}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">メニコンの最安値を確認する</h2>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/brand/menicon" className="inline-block bg-slate-800 text-white text-sm font-bold px-5 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+            メニコン 商品一覧を見る
+          </Link>
+          <Link href="/ranking" className="inline-block border border-slate-300 text-slate-700 text-sm font-medium px-5 py-2 rounded-lg hover:bg-slate-50 transition-colors">
+            全商品ランキングを見る
+          </Link>
+        </div>
+      </section>
+
+      <section>
+        <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
+          ※ 掲載しているスペック・価格は参考値です。最新の製品情報はメニコン公式サイトでご確認ください。コンタクトレンズは医療機器のため、初めてご使用の方は必ず眼科を受診してください。
         </p>
       </section>
     </div>
