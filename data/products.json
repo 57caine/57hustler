@@ -964,7 +964,8 @@
       "waterContent": "54%",
       "image": "/images/myday-1day.jpg",
       "slug": "myday-1day",
-      "popularity": 78
+      "popularity": 78,
+      "isNew": true
     },
     {
       "id": "acuvue-vita",
@@ -985,7 +986,8 @@
       "waterContent": "41%",
       "image": "/images/acuvue-vita.jpg",
       "slug": "acuvue-vita",
-      "popularity": 74
+      "popularity": 74,
+      "isNew": true
     },
     {
       "id": "air-optix-astig",
@@ -1006,7 +1008,8 @@
       "waterContent": "33%",
       "image": "/images/air-optix-astig.jpg",
       "slug": "air-optix-astig",
-      "popularity": 68
+      "popularity": 68,
+      "isNew": true
     },
     {
       "id": "soflens-daily-disposable",
@@ -1027,7 +1030,8 @@
       "waterContent": "59%",
       "image": "/images/soflens-daily.jpg",
       "slug": "soflens-daily-disposable",
-      "popularity": 63
+      "popularity": 63,
+      "isNew": true
     },
     {
       "id": "menicon-premio",
@@ -1048,7 +1052,8 @@
       "waterContent": "40%",
       "image": "/images/menicon-premio.jpg",
       "slug": "menicon-premio",
-      "popularity": 71
+      "popularity": 71,
+      "isNew": true
     },
     {
       "id": "seed-2week-pure-uv",
@@ -1069,7 +1074,8 @@
       "waterContent": "38%",
       "image": "/images/seed-2week-pure-uv.jpg",
       "slug": "seed-2week-pure-uv",
-      "popularity": 66
+      "popularity": 66,
+      "isNew": true
     },
     {
       "id": "proclear-multifocal",
@@ -1090,7 +1096,8 @@
       "waterContent": "62%",
       "image": "/images/proclear-multifocal.jpg",
       "slug": "proclear-multifocal",
-      "popularity": 55
+      "popularity": 55,
+      "isNew": true
     },
     {
       "id": "dailies-total1-multifocal",
@@ -1111,7 +1118,8 @@
       "waterContent": "80%",
       "image": "/images/dailies-total1-multifocal.jpg",
       "slug": "dailies-total1-multifocal",
-      "popularity": 58
+      "popularity": 58,
+      "isNew": true
     },
     {
       "id": "acuvue-oasys-multifocal",
@@ -1132,7 +1140,8 @@
       "waterContent": "38%",
       "image": "/images/acuvue-oasys-multifocal.jpg",
       "slug": "acuvue-oasys-multifocal",
-      "popularity": 61
+      "popularity": 61,
+      "isNew": true
     },
     {
       "id": "geo-angel-color-1day",
@@ -1153,7 +1162,8 @@
       "waterContent": "55%",
       "image": "/images/geo-angel-color-1day.jpg",
       "slug": "geo-angel-color-1day",
-      "popularity": 70
+      "popularity": 70,
+      "isNew": true
     }
   ],
   "brands": [

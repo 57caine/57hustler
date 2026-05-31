@@ -29,9 +29,12 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
             </div>
           )}
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 mb-1">
+            <div className="flex items-center gap-2 mb-1 flex-wrap">
               <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded">{label}</span>
               <span className="text-xs text-gray-500">{product.brandName}</span>
+              {product.isNew && (
+                <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-bold">NEW</span>
+              )}
             </div>
             <h3 className="font-bold text-gray-900 text-sm leading-tight mb-2">{product.name}</h3>
             <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-100">

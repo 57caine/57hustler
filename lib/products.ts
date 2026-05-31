@@ -18,6 +18,7 @@ export type Product = {
   image: string;
   slug: string;
   popularity: number;
+  isNew?: boolean;
 };
 
 export type Brand = {
