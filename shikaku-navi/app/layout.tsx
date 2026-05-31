@@ -25,6 +25,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ja_JP',
     siteName: '資格ナビ',
+    url: BASE,
+    description: 'スタディング・フォーサイト・アガルートなど人気資格通信講座10社を徹底比較。宅建・簿記・FP・社労士の通信講座を費用・合格率で比較。',
+  },
+  twitter: {
+    card: 'summary',
+    title: '資格ナビ｜資格取得・通信講座を徹底比較【2026年版】',
+    description: 'スタディング・フォーサイト・アガルートなど人気資格通信講座10社を徹底比較。費用・合格率・学習スタイルで比較。',
   },
   robots: { index: true, follow: true },
 };

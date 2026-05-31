@@ -9,7 +9,11 @@
       "category": "1day",
       "subcategory": "clear",
       "description": "HydraLuxe™テクノロジー搭載の超薄型1日使い捨てコンタクトレンズ。長時間装用でも快適。",
-      "features": ["高い含水率", "UV保護", "薄型デザイン"],
+      "features": [
+        "高い含水率",
+        "UV保護",
+        "薄型デザイン"
+      ],
       "bc": "8.5",
       "dia": "14.3",
       "waterContent": "38%",
@@ -26,7 +30,11 @@
       "category": "1day",
       "subcategory": "clear",
       "description": "LACREON®テクノロジーで瞳の乾きを防ぐ人気No.1ワンデーコンタクト。",
-      "features": ["LACREON技術", "UV保護", "ソフトエッジ"],
+      "features": [
+        "LACREON技術",
+        "UV保護",
+        "ソフトエッジ"
+      ],
       "bc": "8.5",
       "dia": "14.2",
       "waterContent": "58%",
@@ -43,7 +51,11 @@
       "category": "1day",
       "subcategory": "astig",
       "description": "LACREON®テクノロジーで乾きを防ぎながら乱視を矯正。乱視用1日使い捨てコンタクトの定番。",
-      "features": ["LACREON技術", "UV保護", "乱視矯正"],
+      "features": [
+        "LACREON技術",
+        "UV保護",
+        "乱視矯正"
+      ],
       "bc": "8.5",
       "dia": "14.5",
       "waterContent": "58%",
@@ -60,7 +72,11 @@
       "category": "1day",
       "subcategory": "astig",
       "description": "HydraLuxe™テクノロジーで乾きに強い乱視用ワンデー。激しい動きでもレンズが安定。",
-      "features": ["HydraLuxe技術", "UV保護", "安定した乱視矯正"],
+      "features": [
+        "HydraLuxe技術",
+        "UV保護",
+        "安定した乱視矯正"
+      ],
       "bc": "8.5",
       "dia": "14.3",
       "waterContent": "38%",
@@ -77,7 +93,11 @@
       "category": "1day",
       "subcategory": "clear",
       "description": "世界初の水勾配テクノロジー搭載。表面含水率約99%で究極のうるおい。",
-      "features": ["水勾配テクノロジー", "超高含水", "UV保護"],
+      "features": [
+        "水勾配テクノロジー",
+        "超高含水",
+        "UV保護"
+      ],
       "bc": "8.5",
       "dia": "14.1",
       "waterContent": "33-99%",
@@ -94,7 +114,11 @@
       "category": "1day",
       "subcategory": "clear",
       "description": "3種類のうるおい成分配合。まばたきのたびにうるおいが広がるコスパ優秀なワンデー。",
-      "features": ["3種うるおい成分", "まばたき保湿", "コスパ優秀"],
+      "features": [
+        "3種うるおい成分",
+        "まばたき保湿",
+        "コスパ優秀"
+      ],
       "bc": "8.7",
       "dia": "14.0",
       "waterContent": "69%",
@@ -111,7 +135,11 @@
       "category": "1day",
       "subcategory": "clear",
       "description": "生体模倣技術で角膜と同じ含水率78%を実現。長時間装用でも目に優しいワンデー。",
-      "features": ["含水率78%", "生体模倣技術", "高い酸素透過率"],
+      "features": [
+        "含水率78%",
+        "生体模倣技術",
+        "高い酸素透過率"
+      ],
       "bc": "8.6",
       "dia": "14.2",
       "waterContent": "78%",
@@ -128,7 +156,11 @@
       "category": "1day",
       "subcategory": "clear",
       "description": "国産コンタクトレンズメーカーが作る高品質ワンデー。コスパ最強。",
-      "features": ["国産品質", "高含水率", "コスパ最強"],
+      "features": [
+        "国産品質",
+        "高含水率",
+        "コスパ最強"
+      ],
       "bc": "8.8",
       "dia": "14.2",
       "waterContent": "57%",
@@ -145,7 +177,11 @@
       "category": "1day",
       "subcategory": "clear",
       "description": "国産シリコーンハイドロゲルワンデー。高い酸素透過率で夜遅くまで快適。",
-      "features": ["シリコーンハイドロゲル", "高酸素透過率", "UVカット"],
+      "features": [
+        "シリコーンハイドロゲル",
+        "高酸素透過率",
+        "UVカット"
+      ],
       "bc": "8.8",
       "dia": "14.2",
       "waterContent": "33%",
@@ -162,7 +198,11 @@
       "category": "1day",
       "subcategory": "clear",
       "description": "日本の老舗コンタクトメーカーによる信頼の1日使い捨て。",
-      "features": ["高い酸素透過率", "安心の国産", "優れた装用感"],
+      "features": [
+        "高い酸素透過率",
+        "安心の国産",
+        "優れた装用感"
+      ],
       "bc": "8.6",
       "dia": "14.2",
       "waterContent": "58%",
@@ -179,7 +219,11 @@
       "category": "1day",
       "subcategory": "clear",
       "description": "シリコーンハイドロゲル素材のワンデーコンタクト。高い酸素透過率で目の健康を守る。",
-      "features": ["シリコーンハイドロゲル", "高酸素透過率", "UVカット"],
+      "features": [
+        "シリコーンハイドロゲル",
+        "高酸素透過率",
+        "UVカット"
+      ],
       "bc": "8.6",
       "dia": "14.1",
       "waterContent": "56%",
@@ -196,7 +240,11 @@
       "category": "2week",
       "subcategory": "clear",
       "description": "HYDRACLEAR® PLUSテクノロジーで2週間快適装用。乾きにくさNo.1。",
-      "features": ["HYDRACLEAR PLUS", "UV保護", "シリコーンハイドロゲル"],
+      "features": [
+        "HYDRACLEAR PLUS",
+        "UV保護",
+        "シリコーンハイドロゲル"
+      ],
       "bc": "8.4",
       "dia": "14.0",
       "waterContent": "38%",
@@ -213,7 +261,11 @@
       "category": "2week",
       "subcategory": "clear",
       "description": "国産品質の2週間交換タイプ。高含水率57%で長時間快適に装用できる。",
-      "features": ["含水率57%", "国産品質", "UVカット"],
+      "features": [
+        "含水率57%",
+        "国産品質",
+        "UVカット"
+      ],
       "bc": "8.8",
       "dia": "14.2",
       "waterContent": "57%",
@@ -230,7 +282,11 @@
       "category": "2week",
       "subcategory": "clear",
       "description": "高い酸素透過率のシリコーンハイドロゲル素材。2週間清潔に使えるプレミアムレンズ。",
-      "features": ["高酸素透過率", "シリコーンハイドロゲル", "連続装用対応"],
+      "features": [
+        "高酸素透過率",
+        "シリコーンハイドロゲル",
+        "連続装用対応"
+      ],
       "bc": "8.6",
       "dia": "14.0",
       "waterContent": "40%",
@@ -247,7 +303,11 @@
       "category": "monthly",
       "subcategory": "clear",
       "description": "シリコーンハイドロゲル素材のマンスリーコンタクト。1ヶ月快適装用。",
-      "features": ["シリコーンハイドロゲル", "Aquaform技術", "高酸素透過率"],
+      "features": [
+        "シリコーンハイドロゲル",
+        "Aquaform技術",
+        "高酸素透過率"
+      ],
       "bc": "8.6",
       "dia": "14.0",
       "waterContent": "48%",
@@ -264,7 +324,11 @@
       "category": "monthly",
       "subcategory": "clear",
       "description": "HYDRAGLYDE®モイスチャーマトリックスで1ヶ月間うるおいが続くマンスリーコンタクト。",
-      "features": ["HYDRAGLYDE技術", "持続保湿", "シリコーンハイドロゲル"],
+      "features": [
+        "HYDRAGLYDE技術",
+        "持続保湿",
+        "シリコーンハイドロゲル"
+      ],
       "bc": "8.6",
       "dia": "14.2",
       "waterContent": "33%",
@@ -281,7 +345,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "韓国発の人気カラコン。豊富なカラーバリエーションで瞳をカラフルに演出。",
-      "features": ["UVカット", "高発色", "豊富なカラー"],
+      "features": [
+        "UVカット",
+        "高発色",
+        "豊富なカラー"
+      ],
       "bc": "8.7",
       "dia": "14.2",
       "waterContent": "55%",
@@ -298,7 +366,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "3色ブレンドで自然な立体感を演出するカラコン。瞳に奥行きをプラス。",
-      "features": ["3色ブレンド", "自然な発色", "高含水率"],
+      "features": [
+        "3色ブレンド",
+        "自然な発色",
+        "高含水率"
+      ],
       "bc": "8.6",
       "dia": "14.5",
       "waterContent": "55%",
@@ -315,7 +387,11 @@
       "category": "2week",
       "subcategory": "astig",
       "description": "HYDRACLEAR PLUS技術で乱視を安定矯正。2週間使い捨て乱視用の定番商品。",
-      "features": ["HYDRACLEAR PLUS", "UV保護", "安定した乱視矯正"],
+      "features": [
+        "HYDRACLEAR PLUS",
+        "UV保護",
+        "安定した乱視矯正"
+      ],
       "bc": "8.6",
       "dia": "14.5",
       "waterContent": "38%",
@@ -332,7 +408,11 @@
       "category": "1day",
       "subcategory": "astig",
       "description": "国産品質の乱視用ワンデー。コスパ最強の乱視対応コンタクト。",
-      "features": ["国産品質", "UV保護", "乱視矯正"],
+      "features": [
+        "国産品質",
+        "UV保護",
+        "乱視矯正"
+      ],
       "bc": "8.8",
       "dia": "14.2",
       "waterContent": "57%",
@@ -349,7 +429,11 @@
       "category": "1day",
       "subcategory": "clear",
       "description": "メニコンの高機能ワンデー。優れたうるおいと装用感を両立。",
-      "features": ["高含水率", "国産", "UV保護"],
+      "features": [
+        "高含水率",
+        "国産",
+        "UV保護"
+      ],
       "bc": "8.6",
       "dia": "14.2",
       "waterContent": "58%",
@@ -366,7 +450,11 @@
       "category": "1day",
       "subcategory": "clear",
       "description": "PC技術でリン脂質に似た保湿膜を形成。ドライアイ気味の方に人気。",
-      "features": ["PC技術", "高含水率60%", "ドライアイ対応"],
+      "features": [
+        "PC技術",
+        "高含水率60%",
+        "ドライアイ対応"
+      ],
       "bc": "8.7",
       "dia": "14.2",
       "waterContent": "60%",
@@ -383,7 +471,11 @@
       "category": "monthly",
       "subcategory": "clear",
       "description": "水勾配テクノロジーをマンスリータイプに。最高のうるおいを1ヶ月続けられる。",
-      "features": ["水勾配テクノロジー", "シリコーンハイドロゲル", "高酸素透過率"],
+      "features": [
+        "水勾配テクノロジー",
+        "シリコーンハイドロゲル",
+        "高酸素透過率"
+      ],
       "bc": "8.8",
       "dia": "14.2",
       "waterContent": "55%",
@@ -400,7 +492,11 @@
       "category": "monthly",
       "subcategory": "clear",
       "description": "MoistureSeal技術で16時間装用でも終日うるおいが続くマンスリーコンタクト。",
-      "features": ["MoistureSeal技術", "16時間装用", "シリコーンハイドロゲル"],
+      "features": [
+        "MoistureSeal技術",
+        "16時間装用",
+        "シリコーンハイドロゲル"
+      ],
       "bc": "8.5",
       "dia": "14.2",
       "waterContent": "46%",
@@ -417,7 +513,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "国産カラコンの定番。瞳に馴染む自然な発色と快適な装用感。",
-      "features": ["国産品質", "UVカット", "自然な発色"],
+      "features": [
+        "国産品質",
+        "UVカット",
+        "自然な発色"
+      ],
       "bc": "8.7",
       "dia": "14.2",
       "waterContent": "57%",
@@ -434,7 +534,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "自然なブラウン・グレーで盛れるナチュラルカラコン。ヌーディーで使いやすいデザイン。",
-      "features": ["ナチュラル発色", "UVカット", "高含水率"],
+      "features": [
+        "ナチュラル発色",
+        "UVカット",
+        "高含水率"
+      ],
       "bc": "8.7",
       "dia": "14.0",
       "waterContent": "55%",
@@ -451,7 +555,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "独自のLimbal Ringデザインで目を自然にキレイに見せるカラコン。LACREON技術配合。",
-      "features": ["LACREON技術", "UV保護", "自然なリングデザイン"],
+      "features": [
+        "LACREON技術",
+        "UV保護",
+        "自然なリングデザイン"
+      ],
       "bc": "8.5",
       "dia": "14.2",
       "waterContent": "58%",
@@ -468,7 +576,11 @@
       "category": "monthly",
       "subcategory": "astig",
       "description": "Aquaform技術搭載のマンスリー乱視用。高い酸素透過率と安定した乱視矯正。",
-      "features": ["Aquaform技術", "高酸素透過率", "安定した乱視矯正"],
+      "features": [
+        "Aquaform技術",
+        "高酸素透過率",
+        "安定した乱視矯正"
+      ],
       "bc": "8.7",
       "dia": "14.5",
       "waterContent": "48%",
@@ -485,7 +597,11 @@
       "category": "1day",
       "subcategory": "clear",
       "description": "シリコーンハイドロゲル素材で高酸素透過性を実現。紫外線カット機能付き1日使い捨てコンタクトレンズ。",
-      "features": ["シリコーンハイドロゲル", "UV保護", "高酸素透過"],
+      "features": [
+        "シリコーンハイドロゲル",
+        "UV保護",
+        "高酸素透過"
+      ],
       "bc": "8.5",
       "dia": "14.2",
       "waterContent": "46%",
@@ -502,7 +618,11 @@
       "category": "1day",
       "subcategory": "toric",
       "description": "デイリーズ トータルワンの乱視対応版。水勾配テクノロジーで乾燥感を抑える。",
-      "features": ["水勾配テクノロジー", "乱視対応", "高含水表面"],
+      "features": [
+        "水勾配テクノロジー",
+        "乱視対応",
+        "高含水表面"
+      ],
       "bc": "8.6",
       "dia": "14.4",
       "waterContent": "33%",
@@ -519,7 +639,11 @@
       "category": "1day",
       "subcategory": "toric",
       "description": "HyperGel素材で角膜と同じ水分量78%を実現した乱視用1日使い捨てレンズ。",
-      "features": ["HyperGel", "含水率78%", "乱視対応"],
+      "features": [
+        "HyperGel",
+        "含水率78%",
+        "乱視対応"
+      ],
       "bc": "8.4",
       "dia": "14.5",
       "waterContent": "78%",
@@ -536,7 +660,11 @@
       "category": "2week",
       "subcategory": "toric",
       "description": "メニコン 2ウィーク プレミオの乱視対応版。シリコーンハイドロゲル素材で高酸素透過。",
-      "features": ["シリコーンハイドロゲル", "乱視対応", "2週間使い捨て"],
+      "features": [
+        "シリコーンハイドロゲル",
+        "乱視対応",
+        "2週間使い捨て"
+      ],
       "bc": "8.6",
       "dia": "14.3",
       "waterContent": "40%",
@@ -553,7 +681,11 @@
       "category": "2week",
       "subcategory": "toric",
       "description": "シード ツーウィークピュアの乱視対応版。安定したフィット感と高い酸素透過性。",
-      "features": ["乱視対応", "高酸素透過", "2週間使い捨て"],
+      "features": [
+        "乱視対応",
+        "高酸素透過",
+        "2週間使い捨て"
+      ],
       "bc": "8.5",
       "dia": "14.4",
       "waterContent": "45%",
@@ -570,7 +702,11 @@
       "category": "1day",
       "subcategory": "toric",
       "description": "PC技術による乾燥しにくい素材を使用した乱視用1日使い捨てコンタクトレンズ。",
-      "features": ["PC技術", "乾燥しにくい", "乱視対応"],
+      "features": [
+        "PC技術",
+        "乾燥しにくい",
+        "乱視対応"
+      ],
       "bc": "8.7",
       "dia": "14.5",
       "waterContent": "57%",
@@ -587,7 +723,11 @@
       "category": "color",
       "subcategory": "1day",
       "description": "自然な瞳を演出するGEOのナチュラルカラコン。豊富なカラーバリエーション。",
-      "features": ["1日使い捨て", "ナチュラル系", "UV保護"],
+      "features": [
+        "1日使い捨て",
+        "ナチュラル系",
+        "UV保護"
+      ],
       "bc": "8.6",
       "dia": "14.2",
       "waterContent": "38%",
@@ -604,7 +744,11 @@
       "category": "color",
       "subcategory": "1day",
       "description": "自然なサークルレンズ効果とHEMA素材の快適な装用感を兼ね備えたカラコン。",
-      "features": ["サークルレンズ", "UV保護", "1日使い捨て"],
+      "features": [
+        "サークルレンズ",
+        "UV保護",
+        "1日使い捨て"
+      ],
       "bc": "8.5",
       "dia": "14.2",
       "waterContent": "58%",
@@ -621,7 +765,11 @@
       "category": "color",
       "subcategory": "monthly",
       "description": "自然な瞳の輝きを演出するアルコンのサークルレンズ。1ヶ月使い捨て。",
-      "features": ["サークルレンズ", "月1交換", "ナチュラル系"],
+      "features": [
+        "サークルレンズ",
+        "月1交換",
+        "ナチュラル系"
+      ],
       "bc": "8.6",
       "dia": "14.5",
       "waterContent": "69%",
@@ -638,7 +786,11 @@
       "category": "1day",
       "subcategory": "toric",
       "description": "アクアコンフォートプラスの乱視対応版。3つの潤い成分配合で快適な1日を。",
-      "features": ["3つの潤い成分", "乱視対応", "UVカット"],
+      "features": [
+        "3つの潤い成分",
+        "乱視対応",
+        "UVカット"
+      ],
       "bc": "8.8",
       "dia": "14.5",
       "waterContent": "69%",
@@ -655,7 +807,11 @@
       "category": "color",
       "subcategory": "1day",
       "description": "シードの人気ナチュラルカラコン。UV・HEVカット機能搭載で日中も安心。",
-      "features": ["ナチュラル系", "UV+HEVカット", "1日使い捨て"],
+      "features": [
+        "ナチュラル系",
+        "UV+HEVカット",
+        "1日使い捨て"
+      ],
       "bc": "8.6",
       "dia": "14.2",
       "waterContent": "38%",
@@ -672,7 +828,11 @@
       "category": "monthly",
       "subcategory": "toric",
       "description": "エア オプティクスの乱視対応マンスリーレンズ。HydraGlyde素材で1ヶ月快適。",
-      "features": ["HydraGlyde", "乱視対応", "マンスリー"],
+      "features": [
+        "HydraGlyde",
+        "乱視対応",
+        "マンスリー"
+      ],
       "bc": "8.7",
       "dia": "14.5",
       "waterContent": "33%",
@@ -689,7 +849,11 @@
       "category": "1day",
       "subcategory": "toric",
       "description": "シリコーンハイドロゲル素材を使用した乱視用1日使い捨てコンタクトレンズ。",
-      "features": ["シリコーンハイドロゲル", "乱視対応", "高酸素透過"],
+      "features": [
+        "シリコーンハイドロゲル",
+        "乱視対応",
+        "高酸素透過"
+      ],
       "bc": "8.6",
       "dia": "14.5",
       "waterContent": "56%",
@@ -706,7 +870,11 @@
       "category": "1day",
       "subcategory": "toric",
       "description": "乾燥しにくい素材を使用したシードの乱視用1日使い捨てコンタクトレンズ。",
-      "features": ["乱視対応", "乾燥しにくい", "シリコーンハイドロゲル"],
+      "features": [
+        "乱視対応",
+        "乾燥しにくい",
+        "シリコーンハイドロゲル"
+      ],
       "bc": "8.6",
       "dia": "14.6",
       "waterContent": "56%",
@@ -723,7 +891,11 @@
       "category": "monthly",
       "subcategory": "toric",
       "description": "MoistureSeal技術採用のボシュロム ウルトラの乱視対応マンスリーレンズ。",
-      "features": ["MoistureSeal", "乱視対応", "マンスリー"],
+      "features": [
+        "MoistureSeal",
+        "乱視対応",
+        "マンスリー"
+      ],
       "bc": "8.6",
       "dia": "14.5",
       "waterContent": "46%",
@@ -740,7 +912,11 @@
       "category": "1day",
       "subcategory": "multifocal",
       "description": "遠近両用の1日使い捨てコンタクトレンズ。遠中近がなめらかに見える遠近両用設計。",
-      "features": ["遠近両用", "老眼対応", "1日使い捨て"],
+      "features": [
+        "遠近両用",
+        "老眼対応",
+        "1日使い捨て"
+      ],
       "bc": "8.6",
       "dia": "14.0",
       "waterContent": "69%",
@@ -757,56 +933,540 @@
       "category": "monthly",
       "subcategory": "multifocal",
       "description": "Balanced Progressive Technology採用のマンスリー遠近両用コンタクトレンズ。",
-      "features": ["遠近両用", "シリコーンハイドロゲル", "マンスリー"],
+      "features": [
+        "遠近両用",
+        "シリコーンハイドロゲル",
+        "マンスリー"
+      ],
       "bc": "8.6",
       "dia": "14.0",
       "waterContent": "48%",
       "image": "/images/biofinity-multifocal.jpg",
       "slug": "biofinity-multifocal",
       "popularity": 32
+    },
+    {
+      "id": "myday-1day",
+      "name": "マイデイ ワンデー",
+      "brand": "coopervision",
+      "brandName": "クーパービジョン",
+      "manufacturer": "クーパービジョン",
+      "category": "1day",
+      "subcategory": "clear",
+      "description": "シリコーンハイドロゲル素材採用のワンデーコンタクト。Smart Silicone™技術で高酸素透過率と快適な装用感を両立。",
+      "features": [
+        "シリコーンハイドロゲル",
+        "高酸素透過率",
+        "スマートシリコーン"
+      ],
+      "bc": "8.4",
+      "dia": "14.2",
+      "waterContent": "54%",
+      "image": "/images/myday-1day.jpg",
+      "slug": "myday-1day",
+      "popularity": 78
+    },
+    {
+      "id": "acuvue-vita",
+      "name": "アキュビュー ビタ",
+      "brand": "acuvue",
+      "brandName": "アキュビュー",
+      "manufacturer": "ジョンソン・エンド・ジョンソン",
+      "category": "monthly",
+      "subcategory": "clear",
+      "description": "月間装用タイプの高酸素透過シリコーンハイドロゲルコンタクト。HYDRAMAX™技術で月末まで快適な装用感を実現。",
+      "features": [
+        "HYDRAMAX技術",
+        "月間装用",
+        "UV保護"
+      ],
+      "bc": "8.4",
+      "dia": "14.0",
+      "waterContent": "41%",
+      "image": "/images/acuvue-vita.jpg",
+      "slug": "acuvue-vita",
+      "popularity": 74
+    },
+    {
+      "id": "air-optix-astig",
+      "name": "エア オプティクス 乱視用",
+      "brand": "alcon",
+      "brandName": "アルコン",
+      "manufacturer": "アルコン",
+      "category": "monthly",
+      "subcategory": "toric",
+      "description": "アルコンの月間装用乱視用コンタクト。スタビライズデザインで安定した視力矯正を提供。",
+      "features": [
+        "乱視矯正",
+        "スタビライズデザイン",
+        "月間装用"
+      ],
+      "bc": "8.7",
+      "dia": "14.5",
+      "waterContent": "33%",
+      "image": "/images/air-optix-astig.jpg",
+      "slug": "air-optix-astig",
+      "popularity": 68
+    },
+    {
+      "id": "soflens-daily-disposable",
+      "name": "ソフレンズ デイリー",
+      "brand": "bausch",
+      "brandName": "ボシュロム",
+      "manufacturer": "ボシュロム",
+      "category": "1day",
+      "subcategory": "clear",
+      "description": "ボシュロムの1日使い捨てコンタクト。高い含水率と快適なつけ心地で、初めてのコンタクトユーザーにも人気。",
+      "features": [
+        "高含水率",
+        "1日使い捨て",
+        "初心者向け"
+      ],
+      "bc": "8.6",
+      "dia": "14.2",
+      "waterContent": "59%",
+      "image": "/images/soflens-daily.jpg",
+      "slug": "soflens-daily-disposable",
+      "popularity": 63
+    },
+    {
+      "id": "menicon-premio",
+      "name": "メニコン プレミオ",
+      "brand": "menicon",
+      "brandName": "メニコン",
+      "manufacturer": "メニコン",
+      "category": "monthly",
+      "subcategory": "clear",
+      "description": "国産メーカーの高品質月間装用シリコーンハイドロゲルコンタクト。NANOGLOSS™加工で汚れが付きにくく清潔。",
+      "features": [
+        "国産高品質",
+        "シリコーンハイドロゲル",
+        "NANOGLOSS加工"
+      ],
+      "bc": "8.6",
+      "dia": "14.0",
+      "waterContent": "40%",
+      "image": "/images/menicon-premio.jpg",
+      "slug": "menicon-premio",
+      "popularity": 71
+    },
+    {
+      "id": "seed-2week-pure-uv",
+      "name": "シード 2ウィークピュア UV",
+      "brand": "seed",
+      "brandName": "シード",
+      "manufacturer": "シード",
+      "category": "2week",
+      "subcategory": "clear",
+      "description": "国産2週間使い捨てコンタクト。UVカット機能付き。なめらかなエッジデザインで快適な装用感。",
+      "features": [
+        "UVカット",
+        "2週間使い捨て",
+        "国産品質"
+      ],
+      "bc": "8.8",
+      "dia": "14.0",
+      "waterContent": "38%",
+      "image": "/images/seed-2week-pure-uv.jpg",
+      "slug": "seed-2week-pure-uv",
+      "popularity": 66
+    },
+    {
+      "id": "proclear-multifocal",
+      "name": "プロクリア マルチフォーカル",
+      "brand": "coopervision",
+      "brandName": "クーパービジョン",
+      "manufacturer": "クーパービジョン",
+      "category": "monthly",
+      "subcategory": "multifocal",
+      "description": "老眼・遠近両用の月間装用コンタクト。PC™技術で目の乾燥を防ぎ、長時間快適に遠近両用視力を提供。",
+      "features": [
+        "遠近両用",
+        "老眼対応",
+        "PC技術"
+      ],
+      "bc": "8.7",
+      "dia": "14.4",
+      "waterContent": "62%",
+      "image": "/images/proclear-multifocal.jpg",
+      "slug": "proclear-multifocal",
+      "popularity": 55
+    },
+    {
+      "id": "dailies-total1-multifocal",
+      "name": "デイリーズ トータルワン マルチフォーカル",
+      "brand": "alcon",
+      "brandName": "アルコン",
+      "manufacturer": "アルコン",
+      "category": "1day",
+      "subcategory": "multifocal",
+      "description": "アルコンの水グラジェント技術を採用した1日使い捨て遠近両用コンタクト。老眼の方でも1日中快適な視力を実現。",
+      "features": [
+        "水グラジェント技術",
+        "1日使い捨て",
+        "遠近両用"
+      ],
+      "bc": "8.6",
+      "dia": "14.1",
+      "waterContent": "80%",
+      "image": "/images/dailies-total1-multifocal.jpg",
+      "slug": "dailies-total1-multifocal",
+      "popularity": 58
+    },
+    {
+      "id": "acuvue-oasys-multifocal",
+      "name": "アキュビュー オアシス マルチフォーカル",
+      "brand": "acuvue",
+      "brandName": "アキュビュー",
+      "manufacturer": "ジョンソン・エンド・ジョンソン",
+      "category": "2week",
+      "subcategory": "multifocal",
+      "description": "2週間使い捨て遠近両用コンタクト。HydraLuxe™技術採用で老眼の方の遠・中・近距離の視力をサポート。",
+      "features": [
+        "HydraLuxe技術",
+        "2週間使い捨て",
+        "遠近両用"
+      ],
+      "bc": "8.4",
+      "dia": "14.3",
+      "waterContent": "38%",
+      "image": "/images/acuvue-oasys-multifocal.jpg",
+      "slug": "acuvue-oasys-multifocal",
+      "popularity": 61
+    },
+    {
+      "id": "geo-angel-color-1day",
+      "name": "GEO エンジェルカラー ワンデー",
+      "brand": "geo",
+      "brandName": "GEO",
+      "manufacturer": "GEO Medical",
+      "category": "1day",
+      "subcategory": "color",
+      "description": "自然な発色のカラーコンタクト1day。薄いカラーリングでナチュラルな瞳を演出。度あり・度なし選択可能。",
+      "features": [
+        "1日使い捨て",
+        "ナチュラル発色",
+        "度あり・度なし"
+      ],
+      "bc": "8.6",
+      "dia": "14.0",
+      "waterContent": "55%",
+      "image": "/images/geo-angel-color-1day.jpg",
+      "slug": "geo-angel-color-1day",
+      "popularity": 70
     }
   ],
   "brands": [
-    { "slug": "acuvue", "name": "アキュビュー", "nameEn": "Acuvue", "manufacturer": "ジョンソン・エンド・ジョンソン", "country": "アメリカ" },
-    { "slug": "alcon", "name": "アルコン", "nameEn": "Alcon", "manufacturer": "アルコン", "country": "スイス" },
-    { "slug": "seed", "name": "シード", "nameEn": "Seed", "manufacturer": "シード", "country": "日本" },
-    { "slug": "menicon", "name": "メニコン", "nameEn": "Menicon", "manufacturer": "メニコン", "country": "日本" },
-    { "slug": "coopervision", "name": "クーパービジョン", "nameEn": "CooperVision", "manufacturer": "クーパービジョン", "country": "アメリカ" },
-    { "slug": "bausch", "name": "ボシュロム", "nameEn": "Bausch + Lomb", "manufacturer": "ボシュロム", "country": "アメリカ" },
-    { "slug": "geo", "name": "GEO", "nameEn": "GEO", "manufacturer": "GEO Medical", "country": "韓国" }
+    {
+      "slug": "acuvue",
+      "name": "アキュビュー",
+      "nameEn": "Acuvue",
+      "manufacturer": "ジョンソン・エンド・ジョンソン",
+      "country": "アメリカ"
+    },
+    {
+      "slug": "alcon",
+      "name": "アルコン",
+      "nameEn": "Alcon",
+      "manufacturer": "アルコン",
+      "country": "スイス"
+    },
+    {
+      "slug": "seed",
+      "name": "シード",
+      "nameEn": "Seed",
+      "manufacturer": "シード",
+      "country": "日本"
+    },
+    {
+      "slug": "menicon",
+      "name": "メニコン",
+      "nameEn": "Menicon",
+      "manufacturer": "メニコン",
+      "country": "日本"
+    },
+    {
+      "slug": "coopervision",
+      "name": "クーパービジョン",
+      "nameEn": "CooperVision",
+      "manufacturer": "クーパービジョン",
+      "country": "アメリカ"
+    },
+    {
+      "slug": "bausch",
+      "name": "ボシュロム",
+      "nameEn": "Bausch + Lomb",
+      "manufacturer": "ボシュロム",
+      "country": "アメリカ"
+    },
+    {
+      "slug": "geo",
+      "name": "GEO",
+      "nameEn": "GEO",
+      "manufacturer": "GEO Medical",
+      "country": "韓国"
+    }
   ],
   "categories": [
-    { "slug": "1day", "name": "1日使い捨て", "nameEn": "1 Day", "description": "毎日新しいレンズで清潔・快適。ケア用品不要で便利。" },
-    { "slug": "2week", "name": "2週間使い捨て", "nameEn": "2 Weeks", "description": "2週間交換タイプ。毎日交換より経済的。" },
-    { "slug": "monthly", "name": "マンスリー", "nameEn": "Monthly", "description": "1ヶ月交換タイプ。長期使用でコスパ最高。" },
-    { "slug": "color", "name": "カラーコンタクト", "nameEn": "Color Contacts", "description": "おしゃれな瞳に。度あり・度なし両方あり。" }
+    {
+      "slug": "1day",
+      "name": "1日使い捨て",
+      "nameEn": "1 Day",
+      "description": "毎日新しいレンズで清潔・快適。ケア用品不要で便利。"
+    },
+    {
+      "slug": "2week",
+      "name": "2週間使い捨て",
+      "nameEn": "2 Weeks",
+      "description": "2週間交換タイプ。毎日交換より経済的。"
+    },
+    {
+      "slug": "monthly",
+      "name": "マンスリー",
+      "nameEn": "Monthly",
+      "description": "1ヶ月交換タイプ。長期使用でコスパ最高。"
+    },
+    {
+      "slug": "color",
+      "name": "カラーコンタクト",
+      "nameEn": "Color Contacts",
+      "description": "おしゃれな瞳に。度あり・度なし両方あり。"
+    }
   ],
   "stores": [
-    { "id": "lensquick",    "name": "レンズクイック",           "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6GSIB6+20YY+ZTFR6",  "affiliateParam": "", "shipping": 330, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "at-lens",      "name": "アットレンズ",             "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6D7WOI+20YY+TU14H",   "affiliateParam": "", "shipping": 330, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "lens24",       "name": "24lens",                   "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+61WO6Q+2GRU+HZI6P",   "affiliateParam": "", "shipping": 440, "freeShippingMin": 5500, "prescriptionFree": true },
-    { "id": "lenszero",     "name": "レンズゼロ",               "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIXRM+76W+NV1XD",    "affiliateParam": "", "shipping": 330, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "lensup",       "name": "レンズアップ",             "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5YXI5U+2GRU+NY9O1",   "affiliateParam": "", "shipping": 330, "freeShippingMin": 2000, "prescriptionFree": true },
-    { "id": "lenson",       "name": "レンズオン",               "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5YC2K2+2GRU+5ZMCH",   "affiliateParam": "", "shipping": 330, "freeShippingMin": 2000, "prescriptionFree": true },
-    { "id": "lensmode",     "name": "レンズモード",             "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+604DDE+76W+ZQV5T",    "affiliateParam": "", "shipping": 440, "freeShippingMin": 3000, "prescriptionFree": true },
-    { "id": "lensmarche",   "name": "レンズマルシェ",           "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5LTYUQ+2WGA+TUGK1",   "affiliateParam": "", "shipping": 550, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "lensbomber",   "name": "レンズボンバー",           "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5L8J8Y+2WGA+C3J0H",   "affiliateParam": "", "shipping": 330, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "lensfine",     "name": "レンズファイン",           "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6FLN3M+2GRU+1TJE9T",  "affiliateParam": "", "shipping": 330, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "lenschampio",  "name": "レンズチャンピオン",       "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5O7P9U+2WGA+HYV1D",   "affiliateParam": "", "shipping": 330, "freeShippingMin": 2000, "prescriptionFree": true },
-    { "id": "lensya",       "name": "レンズ屋.com",             "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+61B8KY+1PQI+HV7V6",   "affiliateParam": "", "shipping": 550, "freeShippingMin": 4400, "prescriptionFree": true },
-    { "id": "clearcontact", "name": "クリアコンタクト",         "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5KN3N6+PI2+HV7V5",    "affiliateParam": "", "shipping": 330, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "tiara",        "name": "ティアラコンタクト",       "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6CMH2Q+2WGA+NUMHT",   "affiliateParam": "", "shipping": 440, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "famille",      "name": "ふぁみーるコンタクト",     "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5NM9O2+1PQI+5ZU29",   "affiliateParam": "", "shipping": 330, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "ilife",        "name": "アイライフコンタクト",     "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5JG8FM+PI2+5YRHD",    "affiliateParam": "", "shipping": 440, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "morecon",      "name": "モアコン",                 "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5XQMYA+3S0E+6AJV5",   "affiliateParam": "", "shipping": 330, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "qieto",        "name": "Qieto",                   "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5WJRQQ+76W+TRVYQ",    "affiliateParam": "", "shipping": 330, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "shonan",       "name": "湘南コンタクトレンズライフ","url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5X57CI+PI2+BZ8OX",    "affiliateParam": "", "shipping": 550, "freeShippingMin": 4400, "prescriptionFree": true },
-    { "id": "charm",        "name": "チャームカラー",           "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6F07HU+1PQI+NVP2P",   "affiliateParam": "", "shipping": 330, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "olens",        "name": "OLENS",                   "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+60PSZ6+4XSA+6QMKH",   "affiliateParam": "", "shipping": 0,   "freeShippingMin": 0,    "prescriptionFree": true },
-    { "id": "aredz",        "name": "AREDZ",                   "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5IUSTU+2WGA+5ZEMP",   "affiliateParam": "", "shipping": 330, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "fits",         "name": "フィッツユーストア",       "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+65H9TE+4GRI+5YJRM",   "affiliateParam": "", "shipping": 330, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "at-style",     "name": "アットスタイル",           "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5K1O1E+20YY+BXIYP",   "affiliateParam": "", "shipping": 330, "freeShippingMin": 3300, "prescriptionFree": true },
-    { "id": "rakuten",      "name": "楽天市場",                 "url": "#rakuten",                                                    "affiliateParam": "", "shipping": 0,   "freeShippingMin": 0,    "prescriptionFree": true },
-    { "id": "amazon",       "name": "Amazon",                  "url": "#amazon",                                                     "affiliateParam": "", "shipping": 410, "freeShippingMin": 2000, "prescriptionFree": true }
+    {
+      "id": "lensquick",
+      "name": "レンズクイック",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6GSIB6+20YY+ZTFR6",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "at-lens",
+      "name": "アットレンズ",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6D7WOI+20YY+TU14H",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "lens24",
+      "name": "24lens",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+61WO6Q+2GRU+HZI6P",
+      "affiliateParam": "",
+      "shipping": 440,
+      "freeShippingMin": 5500,
+      "prescriptionFree": true
+    },
+    {
+      "id": "lenszero",
+      "name": "レンズゼロ",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIXRM+76W+NV1XD",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "lensup",
+      "name": "レンズアップ",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5YXI5U+2GRU+NY9O1",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 2000,
+      "prescriptionFree": true
+    },
+    {
+      "id": "lenson",
+      "name": "レンズオン",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5YC2K2+2GRU+5ZMCH",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 2000,
+      "prescriptionFree": true
+    },
+    {
+      "id": "lensmode",
+      "name": "レンズモード",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+604DDE+76W+ZQV5T",
+      "affiliateParam": "",
+      "shipping": 440,
+      "freeShippingMin": 3000,
+      "prescriptionFree": true
+    },
+    {
+      "id": "lensmarche",
+      "name": "レンズマルシェ",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5LTYUQ+2WGA+TUGK1",
+      "affiliateParam": "",
+      "shipping": 550,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "lensbomber",
+      "name": "レンズボンバー",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5L8J8Y+2WGA+C3J0H",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "lensfine",
+      "name": "レンズファイン",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6FLN3M+2GRU+1TJE9T",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "lenschampio",
+      "name": "レンズチャンピオン",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5O7P9U+2WGA+HYV1D",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 2000,
+      "prescriptionFree": true
+    },
+    {
+      "id": "lensya",
+      "name": "レンズ屋.com",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+61B8KY+1PQI+HV7V6",
+      "affiliateParam": "",
+      "shipping": 550,
+      "freeShippingMin": 4400,
+      "prescriptionFree": true
+    },
+    {
+      "id": "clearcontact",
+      "name": "クリアコンタクト",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5KN3N6+PI2+HV7V5",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "tiara",
+      "name": "ティアラコンタクト",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6CMH2Q+2WGA+NUMHT",
+      "affiliateParam": "",
+      "shipping": 440,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "famille",
+      "name": "ふぁみーるコンタクト",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5NM9O2+1PQI+5ZU29",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "ilife",
+      "name": "アイライフコンタクト",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5JG8FM+PI2+5YRHD",
+      "affiliateParam": "",
+      "shipping": 440,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "morecon",
+      "name": "モアコン",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5XQMYA+3S0E+6AJV5",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "qieto",
+      "name": "Qieto",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5WJRQQ+76W+TRVYQ",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "shonan",
+      "name": "湘南コンタクトレンズライフ",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5X57CI+PI2+BZ8OX",
+      "affiliateParam": "",
+      "shipping": 550,
+      "freeShippingMin": 4400,
+      "prescriptionFree": true
+    },
+    {
+      "id": "charm",
+      "name": "チャームカラー",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+6F07HU+1PQI+NVP2P",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "olens",
+      "name": "OLENS",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+60PSZ6+4XSA+6QMKH",
+      "affiliateParam": "",
+      "shipping": 0,
+      "freeShippingMin": 0,
+      "prescriptionFree": true
+    },
+    {
+      "id": "aredz",
+      "name": "AREDZ",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5IUSTU+2WGA+5ZEMP",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "fits",
+      "name": "フィッツユーストア",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+65H9TE+4GRI+5YJRM",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "at-style",
+      "name": "アットスタイル",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+5K1O1E+20YY+BXIYP",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "rakuten",
+      "name": "楽天市場",
+      "url": "#rakuten",
+      "affiliateParam": "",
+      "shipping": 0,
+      "freeShippingMin": 0,
+      "prescriptionFree": true
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "url": "#amazon",
+      "affiliateParam": "",
+      "shipping": 410,
+      "freeShippingMin": 2000,
+      "prescriptionFree": true
+    }
   ]
 }

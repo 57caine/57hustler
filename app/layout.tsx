@@ -26,6 +26,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ja_JP',
     siteName: 'レンズナビ',
+    url: 'https://lens-navi.jp',
+    description: 'アキュビュー、デイリーズ、シードなど人気コンタクトレンズの最安値を比較。スマイルコンタクト、アイシティなど主要ショップの価格を毎日自動更新。',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'コンタクトレンズ最安値比較 | レンズナビ',
+    description: 'アキュビュー、デイリーズ、シードなど人気コンタクトレンズの最安値を比較。主要ショップの価格を毎日自動更新。',
   },
   robots: {
     index: true,

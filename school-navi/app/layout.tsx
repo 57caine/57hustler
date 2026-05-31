@@ -25,6 +25,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ja_JP',
     siteName: 'スクールナビ',
+    url: BASE,
+    description: 'TECH CAMP、DMM WEBCAMP、RUNTEQなど人気プログラミングスクール8校を徹底比較。料金・転職成功率・給付金対応を一覧で確認。',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'プログラミングスクール比較2025 | スクールナビ',
+    description: 'TECH CAMP、DMM WEBCAMP、RUNTEQなど人気プログラミングスクール8校を徹底比較。料金・転職成功率・給付金対応を確認。',
   },
   robots: { index: true, follow: true },
 };
