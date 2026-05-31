@@ -147,13 +147,13 @@ export default async function SchoolPage({ params }: Props) {
         </div>
 
         <div className="mt-5 pt-5 border-t border-gray-100 flex flex-col sm:flex-row gap-3">
-          {school.affiliate_url === '#' ? (
+          {school.affiliate_url === '#' && !school.official_url ? (
             <span className="flex-1 text-center border border-gray-200 text-gray-400 py-3 rounded-xl text-sm">
               近日追加予定
             </span>
           ) : (
             <a
-              href={school.affiliate_url}
+              href={school.affiliate_url !== '#' ? school.affiliate_url : school.official_url!}
               target="_blank"
               rel="noopener noreferrer nofollow"
               className="flex-1 text-center bg-slate-800 text-white py-3 rounded-xl font-semibold hover:bg-slate-700 transition-colors text-sm"
@@ -225,13 +225,13 @@ export default async function SchoolPage({ params }: Props) {
       <div className="border border-gray-200 rounded-xl p-6 mb-6">
         <p className="font-semibold text-gray-900 mb-1 text-sm">{school.name}の詳細・無料相談</p>
         <p className="text-xs text-gray-500 mb-4">料金・カリキュラムの詳細は公式サイトでご確認ください。無料カウンセリングを実施しているスクールが多いため、まず話を聞いてみることをお勧めします。</p>
-        {school.affiliate_url === '#' ? (
+        {school.affiliate_url === '#' && !school.official_url ? (
           <span className="inline-block border border-gray-200 text-gray-400 px-8 py-3 rounded-lg text-sm">
             近日追加予定
           </span>
         ) : (
           <a
-            href={school.affiliate_url}
+            href={school.affiliate_url !== '#' ? school.affiliate_url : school.official_url!}
             target="_blank"
             rel="noopener noreferrer nofollow"
             className="inline-block bg-slate-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-700 transition-colors text-sm"
