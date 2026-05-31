@@ -5,8 +5,8 @@ import { columns } from '@/lib/columns';
 import ProductCard from '@/components/ProductCard';
 
 export const metadata: Metadata = {
-  title: 'コンタクトレンズ最安値比較【2026年版・45商品対応】| レンズナビ',
-  description: '人気コンタクトレンズ45商品の最安値を一括比較。アキュビュー、デイリーズ、シードなど主要ブランドの価格を毎日更新。送料込み最安値をすぐ確認。乱視・カラコン・遠近両用も対応。',
+  title: 'コンタクトレンズ最安値比較【2026年版・55商品対応】| レンズナビ',
+  description: '人気コンタクトレンズ55商品の最安値を一括比較。アキュビュー、デイリーズ、シードなど主要ブランドの価格を毎日更新。送料込み最安値をすぐ確認。乱視・カラコン・遠近両用も対応。',
 };
 
 const categoryConfig = {
