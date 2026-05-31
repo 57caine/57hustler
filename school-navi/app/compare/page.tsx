@@ -117,12 +117,24 @@ export default function ComparePage() {
                   )}
                 </td>
                 <td className="px-4 py-3 text-center">
-                  <Link
-                    href={`/schools/${school.slug}`}
-                    className="text-xs text-slate-600 border border-slate-300 px-2.5 py-1 rounded hover:bg-slate-50 transition-colors whitespace-nowrap"
-                  >
-                    詳細
-                  </Link>
+                  <div className="flex gap-1.5 justify-center">
+                    <Link
+                      href={`/schools/${school.slug}`}
+                      className="text-xs text-slate-600 border border-slate-300 px-2.5 py-1 rounded hover:bg-slate-50 transition-colors whitespace-nowrap"
+                    >
+                      詳細
+                    </Link>
+                    {(school.affiliate_url !== '#' || school.official_url) && (
+                      <a
+                        href={school.affiliate_url !== '#' ? school.affiliate_url : school.official_url!}
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        className="text-xs bg-slate-800 text-white px-2.5 py-1 rounded hover:bg-slate-700 transition-colors whitespace-nowrap"
+                      >
+                        公式
+                      </a>
+                    )}
+                  </div>
                 </td>
               </tr>
             ))}
