@@ -1,5 +1,10 @@
+'use client';
+
+import { useState } from 'react';
 import { Price, Store, calcTotalPrice } from '@/lib/products';
-import Link from 'next/link';
+
+type SortKey = 'totalPrice' | 'price' | 'store';
+type SortDir = 'asc' | 'desc';
 
 type PriceTableProps = {
   prices: (Price & { store: Store })[];
@@ -7,20 +12,41 @@ type PriceTableProps = {
 };
 
 export default function PriceTable({ prices, productName }: PriceTableProps) {
+  const [sortKey, setSortKey] = useState<SortKey>('totalPrice');
+  const [sortDir, setSortDir] = useState<SortDir>('asc');
+
   if (prices.length === 0) {
     return <p className="text-gray-500 text-sm p-4">価格情報がありません</p>;
   }
 
-  // Calculate total (price + shipping) for each entry
   const withTotal = prices.map((item) => ({
     ...item,
     totalPrice: calcTotalPrice(item.price, item.store),
     isFreeShipping: item.price >= item.store.freeShippingMin || item.store.freeShippingMin === 0,
   }));
 
-  // Find the cheapest total among in-stock items
   const inStockItems = withTotal.filter((item) => item.inStock);
   const minTotal = inStockItems.length > 0 ? Math.min(...inStockItems.map((i) => i.totalPrice)) : null;
+
+  const sorted = [...withTotal].sort((a, b) => {
+    // 在庫なしは常に末尾
+    if (a.inStock !== b.inStock) return a.inStock ? -1 : 1;
+    let diff = 0;
+    if (sortKey === 'totalPrice') diff = a.totalPrice - b.totalPrice;
+    else if (sortKey === 'price') diff = a.price - b.price;
+    else if (sortKey === 'store') diff = a.store.name.localeCompare(b.store.name);
+    return sortDir === 'asc' ? diff : -diff;
+  });
+
+  const handleSort = (key: SortKey) => {
+    if (sortKey === key) setSortDir(d => d === 'asc' ? 'desc' : 'asc');
+    else { setSortKey(key); setSortDir('asc'); }
+  };
+
+  const SortIcon = ({ col }: { col: SortKey }) => {
+    if (sortKey !== col) return <span className="text-gray-300 ml-1">↕</span>;
+    return <span className="text-slate-600 ml-1">{sortDir === 'asc' ? '↑' : '↓'}</span>;
+  };
 
   const isRakuten = (id: string) => id === 'rakuten';
   const isAmazon = (id: string) => id === 'amazon';
@@ -30,24 +56,34 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
       <table className="w-full text-sm">
         <thead>
           <tr className="bg-gray-50 border-b border-gray-200">
-            <th className="text-left px-4 py-3 font-semibold text-gray-700">ショップ</th>
-            <th className="text-right px-4 py-3 font-semibold text-gray-700">商品価格</th>
+            <th className="text-left px-4 py-3 font-semibold text-gray-700">
+              <button onClick={() => handleSort('store')} className="flex items-center hover:text-slate-900">
+                ショップ<SortIcon col="store" />
+              </button>
+            </th>
+            <th className="text-right px-4 py-3 font-semibold text-gray-700">
+              <button onClick={() => handleSort('price')} className="flex items-center justify-end w-full hover:text-slate-900">
+                商品価格<SortIcon col="price" />
+              </button>
+            </th>
             <th className="text-right px-4 py-3 font-semibold text-gray-700 hidden sm:table-cell">送料</th>
-            <th className="text-right px-4 py-3 font-semibold text-gray-700">合計（送料込）</th>
+            <th className="text-right px-4 py-3 font-semibold text-gray-700">
+              <button onClick={() => handleSort('totalPrice')} className="flex items-center justify-end w-full hover:text-slate-900">
+                合計（送料込）<SortIcon col="totalPrice" />
+              </button>
+            </th>
             <th className="text-center px-4 py-3 font-semibold text-gray-700 hidden md:table-cell">処方箋</th>
             <th className="text-center px-4 py-3 font-semibold text-gray-700">購入</th>
           </tr>
         </thead>
         <tbody>
-          {withTotal.map((item, index) => {
+          {sorted.map((item, index) => {
             const isCheapest = item.inStock && item.totalPrice === minTotal;
             const rowClass = [
               'border-b border-gray-100 transition-colors',
               !item.inStock ? 'opacity-50 bg-gray-50' : '',
               isCheapest ? 'bg-amber-50 hover:bg-amber-100' : 'hover:bg-slate-50',
-            ]
-              .filter(Boolean)
-              .join(' ');
+            ].filter(Boolean).join(' ');
 
             return (
               <tr key={`${item.storeId}-${index}`} className={rowClass}>
