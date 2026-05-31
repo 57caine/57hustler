@@ -61,13 +61,13 @@ export default function CourseCard({ course, rank }: Props) {
           >
             詳細を見る
           </Link>
-          {course.affiliate_url === '#' ? (
+          {course.affiliate_url === '#' && !course.official_url ? (
             <span className="flex-1 text-center border border-gray-200 text-gray-400 py-2 rounded-lg text-sm whitespace-nowrap">
               近日追加予定
             </span>
           ) : (
             <a
-              href={course.affiliate_url}
+              href={course.affiliate_url !== '#' ? course.affiliate_url : course.official_url!}
               target="_blank"
               rel="noopener noreferrer nofollow"
               className="flex-1 text-center bg-slate-800 text-white py-2 rounded-lg text-sm hover:bg-slate-700 transition-colors"

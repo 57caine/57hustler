@@ -16,6 +16,7 @@ export type School = {
   rating: number;
   reviewCount: number;
   affiliate_url: string;
+  official_url?: string;
   highlight: boolean;
   description: string;
   pros: string[];

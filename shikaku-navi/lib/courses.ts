@@ -13,6 +13,7 @@ export type Course = {
   features: string[];
   passRate: string;
   affiliate_url: string;
+  official_url?: string;
   highlight: boolean;
   description: string;
   pros: string[];
