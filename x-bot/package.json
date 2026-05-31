@@ -1,0 +1,12 @@
+{
+  "name": "x-bot",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "auth": "node auth.js",
+    "post": "node post.js"
+  },
+  "dependencies": {
+    "twitter-api-v2": "^1.17.0"
+  }
+}

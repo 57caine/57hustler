@@ -1,0 +1,38 @@
+name: X 自動投稿
+
+on:
+  schedule:
+    # 毎日 12:00 JST (03:00 UTC) に投稿
+    - cron: '0 3 * * *'
+  workflow_dispatch: # 手動実行も可能
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: パッケージインストール
+        working-directory: x-bot
+        run: npm install
+
+      - name: X に投稿
+        working-directory: x-bot
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+        run: node post.js
+
+      - name: queue.json をコミット（投稿済みフラグ更新）
+        run: |
+          git config user.name "x-bot"
+          git config user.email "bot@lens-navi.jp"
+          git add x-bot/queue.json
+          git diff --staged --quiet || git commit -m "chore: mark post as done"
+          git push
