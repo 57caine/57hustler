@@ -152,21 +152,21 @@ export default async function ProductPage({ params }: Props) {
         <h2 className="text-base font-bold text-slate-800 mb-4">初めてネット購入の方へ</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
           <div className="flex items-start gap-3">
-            <div className="bg-slate-800 text-white rounded w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
+            <div className="bg-sky-600 text-white rounded w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
             <div>
               <p className="font-semibold text-gray-800 text-sm">処方箋を手元に用意</p>
               <p className="text-xs text-gray-600 mt-0.5">BC・度数（PWR）・DIAを確認</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <div className="bg-slate-800 text-white rounded w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
+            <div className="bg-sky-600 text-white rounded w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
             <div>
               <p className="font-semibold text-gray-800 text-sm">ショップで購入</p>
               <p className="text-xs text-gray-600 mt-0.5">下の表で送料込み最安値を比較</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <div className="bg-slate-800 text-white rounded w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
+            <div className="bg-sky-600 text-white rounded w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
             <div>
               <p className="font-semibold text-gray-800 text-sm">商品到着</p>
               <p className="text-xs text-gray-600 mt-0.5">最短翌日〜2日で自宅に届く</p>

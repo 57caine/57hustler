@@ -43,22 +43,22 @@ export default function HomePage() {
     <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Hero */}
-      <section className="bg-slate-900 text-white py-14 px-4">
+      <section className="bg-gradient-to-br from-sky-500 to-blue-600 text-white py-14 px-4">
         <div className="max-w-4xl mx-auto">
-          <p className="text-slate-400 text-xs font-medium mb-3 uppercase tracking-widest">Qualification School Navigator</p>
+          <p className="text-sky-100 text-xs font-medium mb-3 uppercase tracking-widest">Qualification School Navigator</p>
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-white">
             資格取得で年収・キャリアアップ<br />
-            <span className="text-slate-300">通信講座 徹底比較ガイド 2026年版</span>
+            <span className="text-sky-100">通信講座 徹底比較ガイド 2026年版</span>
           </h1>
-          <p className="text-slate-400 mb-8 max-w-xl text-sm leading-relaxed">
+          <p className="text-sky-100 mb-8 max-w-xl text-sm leading-relaxed">
             スタディング・フォーサイト・アガルートなど{courses.length}講座を費用・合格率・学習スタイルで客観的に比較。
             宅建・簿記・FP・社労士・行政書士などの国家資格対策講座を厳選紹介。
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <Link href="/courses" className="inline-block bg-white text-slate-900 font-bold px-7 py-3 rounded-lg hover:bg-slate-100 transition-colors text-sm text-center">
+            <Link href="/courses" className="inline-block bg-white text-sky-700 font-bold px-7 py-3 rounded-lg hover:bg-sky-50 transition-colors text-sm text-center">
               講座一覧を見る
             </Link>
-            <Link href="/compare" className="inline-block border border-slate-600 text-slate-300 font-medium px-7 py-3 rounded-lg hover:border-slate-400 hover:text-white transition-colors text-sm text-center">
+            <Link href="/compare" className="inline-block border border-white/40 text-white font-medium px-7 py-3 rounded-lg hover:border-white/80 hover:bg-white/10 transition-colors text-sm text-center">
               比較表で見る
             </Link>
           </div>
@@ -66,7 +66,7 @@ export default function HomePage() {
       </section>
 
       {/* Stats bar */}
-      <section className="bg-slate-800 text-slate-300 py-4 px-4">
+      <section className="bg-sky-700 text-sky-100 py-4 px-4">
         <div className="max-w-4xl mx-auto flex flex-wrap gap-6 text-sm">
           <span><strong className="text-white">{courses.length}講座</strong> を掲載</span>
           <span><strong className="text-white">{subsidyCourses.length > 0 ? subsidyCourses.length : '複数'}講座</strong> が給付金対象</span>
@@ -122,7 +122,7 @@ export default function HomePage() {
       <section className="max-w-6xl mx-auto px-4 py-12">
         <div className="border border-gray-200 rounded-xl p-6 md:p-8">
           <div className="flex items-start gap-3 mb-4">
-            <div className="bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded shrink-0">制度解説</div>
+            <div className="bg-sky-600 text-white text-xs font-bold px-2 py-1 rounded shrink-0">制度解説</div>
             <h2 className="text-lg font-bold text-gray-900">教育訓練給付金で受講料が最大20〜70%戻る</h2>
           </div>
           <p className="text-gray-600 mb-5 text-sm leading-relaxed">

@@ -109,7 +109,7 @@ export default async function ColumnPage({ params }: Props) {
             <p className="text-sm font-bold text-gray-800">この記事の商品を最安値で購入する</p>
             <p className="text-xs text-gray-500 mt-0.5">24店舗の送料込み最安値をリアルタイム比較</p>
           </div>
-          <Link href="/ranking" className="shrink-0 bg-slate-800 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors whitespace-nowrap">
+          <Link href="/ranking" className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors whitespace-nowrap">
             ランキングを見る →
           </Link>
         </div>
@@ -124,7 +124,7 @@ export default async function ColumnPage({ params }: Props) {
           <p className="text-sm font-bold text-gray-800 mb-1">送料込み最安値を今すぐ比較</p>
           <p className="text-xs text-gray-500 mb-3">24店舗のリアルタイム価格。この記事の商品を最安値で購入できます。</p>
           <div className="flex flex-wrap gap-2">
-            <Link href="/ranking" className="bg-slate-800 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+            <Link href="/ranking" className="bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors">
               人気ランキングで比較する →
             </Link>
             <Link href="/category/1day" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2 rounded-lg hover:border-slate-300 transition-colors">

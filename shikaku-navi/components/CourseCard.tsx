@@ -70,7 +70,7 @@ export default function CourseCard({ course, rank }: Props) {
               href={course.affiliate_url !== '#' ? course.affiliate_url : course.official_url!}
               target="_blank"
               rel="noopener noreferrer nofollow"
-              className="flex-1 text-center bg-slate-800 text-white py-2 rounded-lg text-sm hover:bg-slate-700 transition-colors"
+              className="flex-1 text-center bg-sky-600 text-white py-2 rounded-lg text-sm hover:bg-sky-500 transition-colors"
             >
               公式サイト
             </a>

@@ -22,7 +22,7 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
           {rank != null && (
             <div
               className={`flex-shrink-0 w-7 h-7 rounded flex items-center justify-center text-xs font-bold ${
-                rank <= 3 ? 'bg-slate-800 text-white' : 'bg-gray-100 text-gray-500'
+                rank <= 3 ? 'bg-sky-600 text-white' : 'bg-gray-100 text-gray-500'
               }`}
             >
               {rank}
@@ -46,7 +46,7 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
               ) : (
                 <p className="text-gray-400 text-sm">価格情報なし</p>
               )}
-              <span className="text-xs bg-slate-800 text-white px-3 py-1.5 rounded-lg font-medium">ショップ比較 →</span>
+              <span className="text-xs bg-sky-600 text-white px-3 py-1.5 rounded-lg font-medium">ショップ比較 →</span>
             </div>
           </div>
         </div>

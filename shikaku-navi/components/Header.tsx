@@ -6,7 +6,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-7 h-7 bg-slate-800 rounded-md flex items-center justify-center">
+            <div className="w-7 h-7 bg-sky-600 rounded-md flex items-center justify-center">
               <span className="text-white text-xs font-bold">S</span>
             </div>
             <div>
@@ -18,7 +18,7 @@ export default function Header() {
             <Link href="/courses" className="text-gray-600 hover:text-slate-900 transition-colors">講座一覧</Link>
             <Link href="/compare" className="text-gray-600 hover:text-slate-900 transition-colors">比較表</Link>
             <Link href="/column" className="text-gray-600 hover:text-slate-900 transition-colors">コラム</Link>
-            <Link href="/courses" className="bg-slate-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-slate-700 transition-colors">
+            <Link href="/courses" className="bg-sky-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-sky-500 transition-colors">
               講座を探す
             </Link>
           </nav>
@@ -27,7 +27,7 @@ export default function Header() {
           <Link href="/courses" className="whitespace-nowrap border border-gray-200 px-3 py-1.5 rounded-lg text-gray-600 text-xs">講座一覧</Link>
           <Link href="/compare" className="whitespace-nowrap border border-gray-200 px-3 py-1.5 rounded-lg text-gray-600 text-xs">比較表</Link>
           <Link href="/column" className="whitespace-nowrap border border-gray-200 px-3 py-1.5 rounded-lg text-gray-600 text-xs">コラム</Link>
-          <Link href="/courses" className="whitespace-nowrap bg-slate-800 text-white px-3 py-1.5 rounded-lg text-xs ml-auto">探す</Link>
+          <Link href="/courses" className="whitespace-nowrap bg-sky-600 text-white px-3 py-1.5 rounded-lg text-xs ml-auto">探す</Link>
         </nav>
       </div>
     </header>

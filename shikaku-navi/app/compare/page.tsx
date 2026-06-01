@@ -56,7 +56,7 @@ export default function ComparePage() {
       <div className="overflow-x-auto mb-8">
         <table className="w-full text-sm border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
           <thead>
-            <tr className="bg-slate-800 text-white">
+            <tr className="bg-sky-700 text-white">
               <th className="px-4 py-3 text-left">講座名</th>
               <th className="px-4 py-3 text-left">カテゴリ</th>
               <th className="px-4 py-3 text-right">年間費用</th>
@@ -94,7 +94,7 @@ export default function ComparePage() {
                         href={course.affiliate_url !== '#' ? course.affiliate_url : course.official_url!}
                         target="_blank"
                         rel="noopener noreferrer nofollow"
-                        className="text-xs bg-slate-800 text-white px-2 py-0.5 rounded hover:bg-slate-700 transition-colors"
+                        className="text-xs bg-sky-600 text-white px-2 py-0.5 rounded hover:bg-sky-500 transition-colors"
                       >
                         公式
                       </a>

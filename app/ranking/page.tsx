@@ -73,7 +73,7 @@ export default function RankingPage() {
 
       {/* Category jump links */}
       <div className="flex flex-wrap gap-2 mb-8">
-        <a href="#overall" className="text-sm bg-slate-800 text-white px-3 py-1 rounded-full font-medium">総合TOP10</a>
+        <a href="#overall" className="text-sm bg-sky-600 text-white px-3 py-1 rounded-full font-medium">総合TOP10</a>
         {byCategory.map(({ cat, label }) => (
           <a
             key={cat}

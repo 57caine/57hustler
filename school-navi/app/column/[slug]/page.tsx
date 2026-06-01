@@ -111,7 +111,7 @@ export default async function ColumnArticlePage({ params }: Props) {
             <p className="text-sm font-bold text-gray-800">この記事のスクールを無料で比較する</p>
             <p className="text-xs text-gray-500 mt-0.5">料金・転職実績・給付金対応を一覧で確認</p>
           </div>
-          <Link href="/schools" className="shrink-0 bg-slate-800 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors whitespace-nowrap">
+          <Link href="/schools" className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors whitespace-nowrap">
             スクール一覧を見る →
           </Link>
         </div>
@@ -124,7 +124,7 @@ export default async function ColumnArticlePage({ params }: Props) {
           <p className="text-sm font-bold text-gray-800 mb-1">無料でスクールを比較・資料請求する</p>
           <p className="text-xs text-gray-500 mb-3">料金・給付金対応・転職保証・受講期間を一覧比較。全て無料で確認できます。</p>
           <div className="flex flex-wrap gap-2">
-            <Link href="/schools" className="bg-slate-800 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+            <Link href="/schools" className="bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors">
               全スクールを比較する →
             </Link>
             <Link href="/category/tensyoku" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2 rounded-lg hover:border-slate-300 transition-colors">

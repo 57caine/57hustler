@@ -112,7 +112,7 @@ export default async function ColumnArticlePage({ params }: Props) {
             <p className="text-sm font-bold text-gray-800">この記事の通信講座を無料で比較する</p>
             <p className="text-xs text-gray-500 mt-0.5">料金・合格率・給付金対応を一覧で確認</p>
           </div>
-          <Link href="/courses" className="shrink-0 bg-slate-800 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors whitespace-nowrap">
+          <Link href="/courses" className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors whitespace-nowrap">
             講座一覧を見る →
           </Link>
         </div>
@@ -125,7 +125,7 @@ export default async function ColumnArticlePage({ params }: Props) {
           <p className="text-sm font-bold text-gray-800 mb-1">無料で通信講座を比較・資料請求する</p>
           <p className="text-xs text-gray-500 mb-3">料金・合格率・給付金対応・学習期間を一覧比較。全て無料で確認できます。</p>
           <div className="flex flex-wrap gap-2">
-            <Link href="/courses" className="bg-slate-800 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+            <Link href="/courses" className="bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors">
               全講座を比較する →
             </Link>
             <Link href="/category/kyuufu" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2 rounded-lg hover:border-slate-300 transition-colors">

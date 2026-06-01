@@ -90,7 +90,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-2 flex-wrap">
                     {isCheapest && (
-                      <span className="bg-slate-800 text-white text-xs px-2 py-0.5 rounded-full font-bold whitespace-nowrap">
+                      <span className="bg-sky-600 text-white text-xs px-2 py-0.5 rounded-full font-bold whitespace-nowrap">
                         送料込み最安
                       </span>
                     )}
@@ -148,7 +148,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                       rel="noopener noreferrer sponsored"
                       className={`inline-block px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
                         isCheapest
-                          ? 'bg-slate-800 text-white hover:bg-slate-700'
+                          ? 'bg-sky-600 text-white hover:bg-sky-500'
                           : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
                       }`}
                     >

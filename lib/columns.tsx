@@ -4454,4 +4454,1006 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
     </div>
   ),
+
+  'multifocal-contact-rogansetsu': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        40代を過ぎたころから「近くの文字が読みにくくなった」「スマホを離して見るようになった」という経験はありませんか？それは老眼（老視）のサインです。遠近両用コンタクトレンズなら、老眼鏡なしで遠くも近くも快適に見えるようになります。この記事では仕組み・種類・選び方・おすすめ商品をすべて解説します。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">遠近両用コンタクトが必要になるサイン</h2>
+      <p className="mb-4">
+        老眼は40代前後から始まり、年齢とともに進行します。以下のような症状が出てきたら、遠近両用コンタクトの使用を検討するタイミングです。
+      </p>
+      <ul className="list-disc list-inside mb-4 space-y-2 text-gray-700">
+        <li>スマートフォンや本を遠ざけないと読めなくなってきた</li>
+        <li>コンタクトをしていると手元の文字がぼやける</li>
+        <li>目が疲れやすくなり、頭痛が出ることがある</li>
+        <li>レストランのメニューが暗い場所で読みにくい</li>
+      </ul>
+      <div className="bg-blue-50 border-l-4 border-blue-400 pl-4 py-3 mb-6">
+        <p className="font-bold text-blue-800">老眼鏡の「かけ外し」から卒業できる</p>
+        <p className="text-sm mt-1">遠近両用コンタクトは、一枚のレンズに遠距離・中距離・近距離の複数の焦点エリアが設計されており、かけ外しの手間なく両方の距離をカバーできます。</p>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">遠近両用コンタクトの仕組みと種類</h2>
+      <p className="mb-4">
+        遠近両用コンタクト（マルチフォーカルレンズ）には大きく2つの設計方式があります。どちらが自分に合うかは眼科で試してみることが重要です。
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div className="bg-purple-50 rounded-xl p-4">
+          <h3 className="font-bold text-purple-800 mb-2">同時視タイプ（マルチフォーカル）</h3>
+          <p className="text-sm text-gray-700">レンズ中央に近距離用、周辺に遠距離用（または逆）の度数ゾーンを配置。脳が自動的に焦点を選択する仕組み。現在の主流設計。</p>
+        </div>
+        <div className="bg-orange-50 rounded-xl p-4">
+          <h3 className="font-bold text-orange-800 mb-2">交互視タイプ（バイフォーカル）</h3>
+          <p className="text-sm text-gray-700">上半分が遠用、下半分が近用に分かれた設計。目を動かすことで焦点を切り替える。ソフトコンタクトでは主流ではない。</p>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">同時視タイプと交互視タイプの違い</h2>
+      <div className="bg-slate-50 rounded-xl p-4 mb-6">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-2 rounded">項目</th>
+              <th className="text-left p-2">同時視タイプ</th>
+              <th className="text-left p-2">交互視タイプ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">慣れやすさ</td><td className="p-2">慣れるまで時間がかかることも</td><td className="p-2">見え方が明確</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">対応商品数</td><td className="p-2">非常に多い</td><td className="p-2">少ない</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">使い捨て対応</td><td className="p-2">ワンデー・2week・マンスリーあり</td><td className="p-2">主にハードレンズ</td></tr>
+            <tr><td className="p-2 font-medium">おすすめの人</td><td className="p-2">軽〜中度の老眼</td><td className="p-2">強度老眼・矯正力重視</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">人気遠近両用コンタクトランキング</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          { rank: 1, name: 'ワンデーアキュビュー モイスト マルチフォーカル', maker: 'ジョンソン&ジョンソン', type: 'ワンデー', feature: '滑らかなグラデーション設計で自然な見え方。乾きにくいLASHICON技術搭載。老眼初期の方に特におすすめ。' },
+          { rank: 2, name: 'デイリーズ トータルワン マルチフォーカル', maker: 'アルコン', type: 'ワンデー', feature: '水分勾配技術で瞳との相性が抜群。シリコーンハイドロゲル素材で長時間装用でも快適。' },
+          { rank: 3, name: 'バイオフィニティ マルチフォーカル', maker: 'クーパービジョン', type: 'マンスリー', feature: 'コスパ重視の遠近両用。高酸素透過性シリコーン素材で長時間装用OK。' },
+        ].map(({ rank, name, maker, type, feature }) => (
+          <div key={name} className="bg-white border border-gray-200 rounded-xl p-4 flex gap-4">
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-white flex-shrink-0 ${rank === 1 ? 'bg-yellow-500' : rank === 2 ? 'bg-gray-400' : 'bg-amber-600'}`}>{rank}</div>
+            <div>
+              <p className="font-bold text-gray-800">{name}</p>
+              <p className="text-xs text-gray-500 mb-1">{maker} / {type}</p>
+              <p className="text-sm text-gray-700 leading-relaxed">{feature}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">遠近両用コンタクトを始める前に知っておくこと</h2>
+      <p className="mb-4">
+        遠近両用コンタクトは通常のコンタクトよりも慣れに時間がかかることがあります。眼科で必ずトライアルレンズを試してから処方してもらいましょう。
+      </p>
+      <ul className="list-disc list-inside mb-4 space-y-2 text-gray-700">
+        <li>装用初日から完璧に見えなくても数日で慣れることが多い</li>
+        <li>夜間のハロー・グレアが出やすいため、夜間運転が多い方は要相談</li>
+        <li>加入度数（ADD）は老眼の程度によって異なる（Low/Mid/Highなど）</li>
+        <li>乱視が強い方はトーリックマルチフォーカルが必要な場合も</li>
+      </ul>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">老眼鏡との使い分け方</h2>
+      <p className="mb-4">
+        遠近両用コンタクトだけでは手元が見えにくい場合、低度数（+1.0〜+1.5）の既製老眼鏡をコンタクトの上から使う「オーバーリーディンググラス」という方法も効果的です。精密な手作業が多い方、細かい文字を長時間読む方に向いています。
+      </p>
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-6">
+        <h3 className="text-xl font-bold mb-2">遠近両用コンタクトを最安値で購入する</h3>
+        <p className="text-slate-300 mb-4">マルチフォーカルコンタクトレンズの価格を24ショップで比較。</p>
+        <Link href="/ranking" className="inline-block bg-white text-slate-800 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 transition-colors">
+          最安値ランキングを確認する →
+        </Link>
+      </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '遠近両用コンタクトは老眼が始まったばかりでも使えますか？', a: '老眼初期の方ほど遠近両用コンタクトへの適応が早いといわれています。老眼が進んでから始めるより、早めに試した方が慣れやすいです。まずは眼科でトライアルレンズを体験してみることをおすすめします。' },
+            { q: '遠近両用コンタクトと老眼鏡はどちらが見えやすいですか？', a: '手元の細かい作業（読書・裁縫など）では老眼鏡の方が明確に見えます。ただし日常生活全般（買い物・会話・PC作業）ではコンタクトの方が便利です。どちらが優れているというより、使い分けが理想的です。' },
+            { q: '遠近両用コンタクトの「加入度数（ADD）」とは何ですか？', a: 'ADDは近用部の追加度数を示す数値で、老眼の程度に応じてLow・Mid・Highなどがあります。+1.00（Low）〜+2.50（High）程度が一般的で、眼科でフィッティングして最適なADDを選んでもらう必要があります。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'colorcl-doari-donashi-guide': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        カラコンを選ぶとき「度あり」と「度なし」のどちらを選べばいいか迷っていませんか？近視や乱視がある方は度ありカラコンが必要です。この記事では、度あり・度なしカラコンの違い、パラメータの見方、おすすめ商品、そして安全な使用ルールをすべて解説します。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">度あり・度なしカラコンとは</h2>
+      <p className="mb-4">
+        カラコン（カラーコンタクトレンズ）には、視力矯正機能がある「度あり」と、色のみのファッション目的の「度なし（プレノ）」があります。
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div className="bg-blue-50 rounded-xl p-4">
+          <h3 className="font-bold text-blue-800 mb-2">度ありカラコン</h3>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>・近視・遠視・乱視を矯正できる</li>
+            <li>・裸眼でも視力が出る方には不要</li>
+            <li>・眼科での処方が必要</li>
+            <li>・PWR値がマイナス（近視）またはプラス（遠視）</li>
+          </ul>
+        </div>
+        <div className="bg-pink-50 rounded-xl p-4">
+          <h3 className="font-bold text-pink-800 mb-2">度なしカラコン</h3>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>・視力矯正なし（PWR 0.00）</li>
+            <li>・裸眼視力が良い方向け</li>
+            <li>・色だけを楽しめる</li>
+            <li>・コンタクト未使用者も利用可能</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">度ありカラコンが必要な人・不要な人</h2>
+      <div className="space-y-3 mb-6">
+        <div className="bg-green-50 border-l-4 border-green-400 pl-4 py-3">
+          <p className="font-bold text-green-800 mb-1">度ありが必要な人</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>・普段コンタクトや眼鏡で視力矯正している方</li>
+            <li>・近視（裸眼視力0.5未満程度）の方</li>
+            <li>・遠視や乱視のある方（乱視用カラコンも展開あり）</li>
+          </ul>
+        </div>
+        <div className="bg-gray-50 border-l-4 border-gray-300 pl-4 py-3">
+          <p className="font-bold text-gray-800 mb-1">度なしで良い人</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>・裸眼視力が1.0以上ある方</li>
+            <li>・眼鏡やコンタクトを普段使わない方</li>
+            <li>・色だけ楽しみたい方</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">度ありカラコンのパラメータ（PWR・BC・DIA）の見方</h2>
+      <p className="mb-4">
+        度ありカラコンを購入する際は、眼科で処方されたパラメータを正確に入力する必要があります。
+      </p>
+      <div className="bg-slate-50 rounded-xl p-4 mb-6">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-2 rounded">パラメータ</th>
+              <th className="text-left p-2">意味</th>
+              <th className="text-left p-2">例</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">PWR / SPH</td><td className="p-2">度数（近視はマイナス）</td><td className="p-2">-3.00</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">BC</td><td className="p-2">ベースカーブ（レンズの曲率）</td><td className="p-2">8.6mm</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">DIA</td><td className="p-2">レンズ直径</td><td className="p-2">14.5mm</td></tr>
+            <tr><td className="p-2 font-medium">着色直径</td><td className="p-2">色のついた部分の直径（デカ目度合い）</td><td className="p-2">13.8mm</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p className="mb-4 bg-yellow-50 border-l-4 border-yellow-400 pl-4 py-2 text-sm">
+        <strong>注意：</strong>DIAはレンズ全体の直径、着色直径は色がついたゾーンの直径です。着色直径が大きいほどデカ目効果が出ます。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">度ありカラコンおすすめ商品</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          { name: 'アキュビュー ディファイン モイスト', type: 'ワンデー・度あり', feature: 'ジョンソン&ジョンソン製の度ありカラコン。ナチュラルな黒目強調デザインで、医療機器認証取得済みの安心商品。乾きにくいレベテックス技術搭載。' },
+          { name: 'フレッシュルック デイリーズ', type: 'ワンデー・度あり', feature: 'アルコン製の使い捨て度ありカラコン。3トーンデザインで自然な瞳に仕上がる。PWR -0.50〜-6.00に対応。' },
+          { name: 'GEO ベラ（Bella）', type: 'マンスリー・度あり', feature: 'コスパに優れたマンスリーカラコン。ナチュラル系カラーが豊富で、度あり・度なし両展開。' },
+        ].map(({ name, type, feature }) => (
+          <div key={name} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-gray-800">{name}</p>
+            <p className="text-xs text-blue-600 mb-2">{type}</p>
+            <p className="text-sm text-gray-700 leading-relaxed">{feature}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">度なしカラコンの注意点と適切な使い方</h2>
+      <p className="mb-4">
+        度なしカラコンは視力矯正機能はありませんが、コンタクトレンズとして目に直接触れる医療機器です。以下の点に注意して使用してください。
+      </p>
+      <ul className="list-disc list-inside mb-4 space-y-2 text-gray-700">
+        <li>眼科での装用指導と定期検査は度なしでも推奨</li>
+        <li>1日の装用時間は8〜10時間以内が目安</li>
+        <li>使い捨てタイプ（ワンデー）が最も衛生的</li>
+        <li>就寝時は必ず外す（連続装用禁止）</li>
+        <li>認証を受けていない雑貨扱いのカラコンは購入しない</li>
+      </ul>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">安全に楽しむための使用ルール</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+        {[
+          { rule: '薬機法認証品を購入する', detail: '「高度管理医療機器承認番号」がある商品のみ購入。雑貨店・輸入品は要注意。' },
+          { rule: '手洗い後に装用する', detail: '清潔な手でレンズを扱い、水道水でのレンズ洗浄は厳禁。' },
+          { rule: '装用期間を守る', detail: 'ワンデーは1日で廃棄、マンスリーは必ず30日以内に交換。' },
+          { rule: '目のトラブルは即受診', detail: '充血・痛み・見え方の変化があればすぐにレンズを外して眼科へ。' },
+        ].map(({ rule, detail }) => (
+          <div key={rule} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-semibold text-gray-800 text-sm mb-1">{rule}</p>
+            <p className="text-xs text-gray-600 leading-relaxed">{detail}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-6">
+        <h3 className="text-xl font-bold mb-2">度ありカラコンの最安値を比較する</h3>
+        <p className="text-slate-300 mb-4">人気カラコンの価格を24ショップで一括比較。安心の正規品のみ掲載。</p>
+        <Link href="/ranking" className="inline-block bg-white text-slate-800 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 transition-colors">
+          カラコンの価格を比較する →
+        </Link>
+      </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '乱視がありますが度ありカラコンは使えますか？', a: '乱視（CYL）がある方向けの「トーリック（乱視用）カラコン」が存在します。ただし商品数は限られており、対応しているCYL・AXISの範囲が決まっています。眼科でご自身の乱視パラメータを確認した上で、対応商品を探してください。' },
+            { q: '度なしカラコンは眼科に行かなくても買えますか？', a: '法律上は処方箋の提示義務はありませんが、コンタクトレンズは高度管理医療機器のため、初回は眼科でBC（ベースカーブ）を確認し、装用指導を受けることを強くおすすめします。目に合わないBCのレンズは角膜障害のリスクがあります。' },
+            { q: 'カラコンの「着色直径」と「DIA（レンズ直径）」は何が違いますか？', a: 'DIAはレンズ全体の直径で、角膜への乗り方を決める重要なパラメータです。着色直径はレンズのうち実際に色がついている部分の直径で、値が大きいほどデカ目効果があります。DIAはBC同様に眼科で処方されたものを選び、着色直径は好みで選べます。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'contact-dosu-mikata-erabikata': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        コンタクトレンズの処方箋を見ると「PWR」「BC」「DIA」「CYL」「AXIS」などさまざまな記号が並んでいます。これらの意味を正しく理解することで、通販でも間違いなくコンタクトを選べるようになります。眼鏡の度数との違いも含めて、わかりやすく完全解説します。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">コンタクトレンズの処方箋を読む前に</h2>
+      <p className="mb-4">
+        コンタクトレンズの処方箋は、眼科での検査を受けた後に発行されます。処方箋には右目（R/OD）と左目（L/OS）それぞれのパラメータが記載されています。通販購入の際は必ずこの情報を手元に用意しましょう。
+      </p>
+      <div className="bg-yellow-50 border-l-4 border-yellow-400 pl-4 py-3 mb-6">
+        <p className="font-bold text-yellow-800">処方箋がない方は眼科へ</p>
+        <p className="text-sm mt-1">初めてコンタクトを作る方、または度数が変わった可能性がある方は必ず眼科を受診してください。古い処方箋をそのまま使い続けると視力悪化の原因になります。</p>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">PWR（度数）の意味と近視・遠視の違い</h2>
+      <p className="mb-4">
+        <strong>PWR（Power）</strong>はコンタクトレンズの矯正力を表す最も重要なパラメータです。「SPH（Sphere）」と表記される場合もあります。
+      </p>
+      <div className="bg-slate-50 rounded-xl p-4 mb-6">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-2 rounded">値の範囲</th>
+              <th className="text-left p-2">意味</th>
+              <th className="text-left p-2">目安</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-100"><td className="p-2">-0.25〜-1.50</td><td className="p-2">軽度近視</td><td className="p-2">裸眼でも日常生活できる程度</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2">-1.75〜-4.00</td><td className="p-2">中度近視</td><td className="p-2">最も多いゾーン</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2">-4.25〜-6.00</td><td className="p-2">強度近視</td><td className="p-2">裸眼では生活困難</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2">+0.25以上</td><td className="p-2">遠視</td><td className="p-2">近くが見えにくい</td></tr>
+            <tr><td className="p-2">0.00</td><td className="p-2">度なし</td><td className="p-2">カラコン専用</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">BC（ベースカーブ）とDIA（直径）の見方</h2>
+      <p className="mb-4">
+        <strong>BC（Base Curve）</strong>はレンズの曲率を示すmm単位の数値です。角膜のカーブに合わせて選ぶ必要があります。BCが合わないと装用感が悪くなるだけでなく、角膜への負担も増えます。
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div className="bg-blue-50 rounded-xl p-4">
+          <h3 className="font-bold text-blue-800 mb-2">BC（ベースカーブ）</h3>
+          <p className="text-sm text-gray-700">日本人の平均は8.3〜9.0mm。商品によって固定されていることが多く、処方された値の商品のみ選べます。</p>
+          <p className="text-xs text-gray-500 mt-2">例：8.4、8.5、8.6、8.7、8.8mm など</p>
+        </div>
+        <div className="bg-green-50 rounded-xl p-4">
+          <h3 className="font-bold text-green-800 mb-2">DIA（直径）</h3>
+          <p className="text-sm text-gray-700">透明コンタクトは13.8〜14.5mmが標準。商品ごとに固定されており、選べる場合は少ない。</p>
+          <p className="text-xs text-gray-500 mt-2">例：14.0、14.2、14.5mm など</p>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">乱視用CYL・AXISの読み方</h2>
+      <p className="mb-4">
+        乱視がある方のコンタクトには、通常のPWR・BC・DIAに加えて乱視用のパラメータが必要です。
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div className="bg-purple-50 rounded-xl p-4">
+          <h3 className="font-bold text-purple-800 mb-2">CYL（乱視度数）</h3>
+          <p className="text-sm text-gray-700">乱視の強さ。マイナスで表記（-0.75〜-2.25が一般的）。値が大きいほど乱視が強い。</p>
+        </div>
+        <div className="bg-purple-50 rounded-xl p-4">
+          <h3 className="font-bold text-purple-800 mb-2">AXIS（軸度）</h3>
+          <p className="text-sm text-gray-700">乱視の向き（軸の角度）を1〜180度で表す。わずかなズレでも見え方が大きく変わるため正確に。</p>
+        </div>
+      </div>
+      <p className="mb-4 bg-orange-50 border-l-4 border-orange-400 pl-4 py-2 text-sm">
+        乱視用コンタクトはCYL・AXISが処方値に完全一致する商品を選ぶ必要があります。「だいたい合っている」では視力が出ません。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">眼鏡の度数とコンタクトの度数の違い</h2>
+      <p className="mb-4">
+        眼鏡とコンタクトでは、レンズが目から離れている距離（頂点間距離）が異なるため、同じ視力を矯正するのに必要な度数が変わります。
+      </p>
+      <ul className="list-disc list-inside mb-4 space-y-2 text-gray-700">
+        <li>眼鏡は目から約12mm離れた位置でレンズが光を屈折させる</li>
+        <li>コンタクトは目に直接乗るため屈折距離が変わる</li>
+        <li>近視の場合：眼鏡よりコンタクトの度数がやや弱くなることが多い</li>
+        <li>-4.00D以上の強度近視では差が大きくなるため特に要注意</li>
+      </ul>
+      <p className="mb-6 bg-red-50 border-l-4 border-red-400 pl-4 py-2 text-sm">
+        <strong>絶対にNG：</strong>眼鏡の度数をそのままコンタクトの注文に使わないでください。必ず眼科でコンタクト用の度数を処方してもらいましょう。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">通販で間違えないための確認ポイント</h2>
+      <div className="space-y-3 mb-6">
+        {[
+          { step: '処方箋を手元に用意する', desc: '購入ページを開く前に処方箋を手元に置き、RとLを確認しながら入力する。' },
+          { step: '右目と左目の入力順を確認', desc: '注文フォームが「右→左」か「左→右」の順か確認し、取り違えに注意。' },
+          { step: '商品のBCと処方BCが一致しているか確認', desc: '商品詳細ページに記載のBC値が処方値と一致していることを確認。' },
+          { step: '注文確認画面で全パラメータを再確認', desc: 'PWR・BC・DIA（+CYL・AXIS）が正しいか注文確定前にもう一度チェック。' },
+        ].map(({ step, desc }) => (
+          <div key={step} className="flex gap-3 bg-white border border-gray-200 rounded-xl p-4">
+            <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0" />
+            <div>
+              <p className="font-semibold text-gray-800 text-sm">{step}</p>
+              <p className="text-xs text-gray-600 mt-1 leading-relaxed">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-6">
+        <h3 className="text-xl font-bold mb-2">処方されたコンタクトを最安値で購入する</h3>
+        <p className="text-slate-300 mb-4">度数を確認したら、当サイトで24ショップの価格を一括比較。</p>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/ranking" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">
+            人気商品のランキングを見る
+          </Link>
+          <Link href="/category/1day" className="inline-block bg-yellow-400 text-gray-900 font-bold px-4 py-2 rounded-xl hover:bg-yellow-300 transition-colors text-sm">
+            ワンデーを比較する
+          </Link>
+        </div>
+      </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'コンタクトの度数は自分で変更しても大丈夫ですか？', a: '自己判断での度数変更は絶対にNGです。度数が強すぎると眼精疲労・頭痛の原因になり、弱すぎると視力矯正ができません。「見えにくくなった」と感じたら眼科を受診して再処方を受けてください。' },
+            { q: 'BC（ベースカーブ）が処方値と±0.1違う商品でも大丈夫ですか？', a: '原則としてNG。BCが合わないと装用感の悪化・角膜への負担増加・レンズのズレが生じます。希望商品のBCが処方と異なる場合は眼科でその商品のトライアルレンズを試してフィッティングを確認してもらいましょう。' },
+            { q: '左右で度数が違う場合、どう注文すればいいですか？', a: '通販では右目（R）・左目（L）それぞれに度数を指定して注文できます。処方箋の「OD/R」が右目、「OS/L」が左目です。左右を入れ間違えると全く効果が出ないので、注文確認画面で必ず確認してください。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'dryeye-contact-sentaku': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        ドライアイを抱えながらコンタクトを使うと、目の乾燥・充血・不快感が悪化しやすくなります。しかし、素材・含水率・装用時間を正しく選べば、ドライアイの方でも快適にコンタクトを使うことができます。この記事では、ドライアイの方が知っておくべきコンタクト選びのすべてを解説します。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">ドライアイとコンタクトレンズの関係</h2>
+      <p className="mb-4">
+        ドライアイはまぶたの内側（結膜）や角膜の表面を覆う「涙液層」が不安定になる状態です。コンタクトレンズは涙液の上に浮かんで装用されるため、涙液が少ないドライアイの方は以下のような症状が出やすくなります。
+      </p>
+      <ul className="list-disc list-inside mb-4 space-y-2 text-gray-700">
+        <li>装用数時間後に目がゴロゴロ・ショボショボする</li>
+        <li>充血や痛みが出やすい</li>
+        <li>視力がぼやける（乾燥によるレンズのくもり）</li>
+        <li>まばたきのたびに不快感がある</li>
+      </ul>
+      <div className="bg-blue-50 border-l-4 border-blue-400 pl-4 py-3 mb-6">
+        <p className="font-bold text-blue-800">ドライアイの方がコンタクトをあきらめないために</p>
+        <p className="text-sm mt-1">素材・含水率・装用時間を適切に選ぶことで、ドライアイの方でも快適なコンタクトライフを送れます。眼科でドライアイの状態を診てもらいながら最適な商品を選びましょう。</p>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">乾きにくいコンタクトを選ぶ3つのポイント</h2>
+      <div className="space-y-4 mb-6">
+        <div className="flex gap-4 bg-slate-50 rounded-xl p-4">
+          <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 text-sm">1</div>
+          <div>
+            <h3 className="font-bold text-gray-800">シリコーンハイドロゲル素材を選ぶ</h3>
+            <p className="text-sm text-gray-600 mt-1">酸素透過率が高く、乾燥しにくい次世代素材。涙液蒸発を抑える設計のものが多い。</p>
+          </div>
+        </div>
+        <div className="flex gap-4 bg-slate-50 rounded-xl p-4">
+          <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 text-sm">2</div>
+          <div>
+            <h3 className="font-bold text-gray-800">含水率に注意する</h3>
+            <p className="text-sm text-gray-600 mt-1">高含水素材は乾燥しやすい環境で逆に水分を奪うことがある。低〜中含水（38〜55%）のシリコーン素材が◎。</p>
+          </div>
+        </div>
+        <div className="flex gap-4 bg-slate-50 rounded-xl p-4">
+          <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 text-sm">3</div>
+          <div>
+            <h3 className="font-bold text-gray-800">ワンデーを選ぶ</h3>
+            <p className="text-sm text-gray-600 mt-1">毎日新しいレンズを使うことで汚れ・タンパク付着による乾燥感を防げる。ドライアイの方に特におすすめ。</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">シリコーンハイドロゲル vs 含水率高いハイドロゲル</h2>
+      <div className="bg-slate-50 rounded-xl p-4 mb-6">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-2 rounded">特徴</th>
+              <th className="text-left p-2">シリコーンHG</th>
+              <th className="text-left p-2">高含水HG</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">酸素透過率</td><td className="p-2 text-green-700 font-semibold">高い（Dk/t 100以上）</td><td className="p-2">中程度</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">乾燥感</td><td className="p-2 text-green-700 font-semibold">少ない</td><td className="p-2">乾燥環境では出やすい</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">価格</td><td className="p-2">やや高め</td><td className="p-2">安め</td></tr>
+            <tr><td className="p-2 font-medium">ドライアイへの適性</td><td className="p-2 text-green-700 font-semibold">高い</td><td className="p-2">低い（悪化させる場合も）</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">ドライアイ向けおすすめコンタクトレンズ</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          { name: 'デイリーズ トータルワン', maker: 'アルコン', feature: '業界最高水準の「水分勾配技術」で表面水分含有量80%超。ドライアイ向けNo.1候補。シリコーンHG素材でDk/t 156。', price: 'ワンデー（やや高め）' },
+          { name: 'ワンデーアキュビュー オアシス', maker: 'J&J', feature: 'HYDRALUXE技術で涙液と一体化。PCや空調の多い環境でも快適。長時間装用でも乾きにくい。', price: 'ワンデー（高め）' },
+          { name: 'バイオフィニティ', maker: 'クーパービジョン', feature: 'コメット素材による高い保水性と酸素透過率。2week・マンスリーでコスパ良好。', price: 'マンスリー（コスパ優秀）' },
+        ].map(({ name, maker, feature, price }) => (
+          <div key={name} className="bg-white border border-gray-200 rounded-xl p-4">
+            <div className="flex justify-between items-start mb-1">
+              <p className="font-bold text-gray-800">{name}</p>
+              <span className="text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">{price}</span>
+            </div>
+            <p className="text-xs text-gray-500 mb-2">{maker}</p>
+            <p className="text-sm text-gray-700 leading-relaxed">{feature}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">目薬・人工涙液との正しい組み合わせ方</h2>
+      <p className="mb-4">
+        コンタクト装用中に使える目薬は限られています。防腐剤が含まれる目薬はコンタクトに吸着して角膜に悪影響を与える可能性があるため、必ず「コンタクト装用中に使用可能」と明記された製品を選んでください。
+      </p>
+      <ul className="list-disc list-inside mb-4 space-y-2 text-gray-700">
+        <li>「ソフトコンタクト装用中OK」の記載がある人工涙液を選ぶ</li>
+        <li>1回使い切りタイプは防腐剤フリーで安心</li>
+        <li>点眼後はまばたきを数回して馴染ませる</li>
+        <li>1日5〜6回以上の点眼は眼科に相談</li>
+      </ul>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">ドライアイを悪化させないための装用習慣</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+        {[
+          { habit: '装用時間を短くする', detail: '1日8時間以内を目安に。長時間PC使用の日はメガネに切り替えるのも有効。' },
+          { habit: '意識的にまばたきをする', detail: 'PC作業中はまばたきが減りやすい。1分ごとに意識的にまばたきする。' },
+          { habit: '湿度を保つ環境づくり', detail: 'エアコン・暖房使用時は加湿器を使用。乾燥した環境はドライアイを悪化させる。' },
+          { habit: '定期的に眼科を受診', detail: 'ドライアイが悪化していないか年2回は眼科で確認。適切なレンズへの変更を相談。' },
+        ].map(({ habit, detail }) => (
+          <div key={habit} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-semibold text-gray-800 text-sm mb-1">{habit}</p>
+            <p className="text-xs text-gray-600 leading-relaxed">{detail}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-6">
+        <h3 className="text-xl font-bold mb-2">乾きにくいコンタクトの最安値を比較する</h3>
+        <p className="text-slate-300 mb-4">デイリーズトータルワン・アキュビューオアシスなどドライアイ向けレンズの価格を比較。</p>
+        <Link href="/ranking" className="inline-block bg-white text-slate-800 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 transition-colors">
+          ドライアイ向けレンズを探す →
+        </Link>
+      </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'ドライアイでもコンタクトは使えますか？', a: '使えます。ただし素材・含水率の選択が重要です。シリコーンハイドロゲル素材の乾きにくいコンタクトを選び、装用時間を短めに設定することで快適に使える方が多いです。眼科でドライアイの重症度を確認した上で相談してください。' },
+            { q: '高含水タイプのコンタクトはドライアイに良いと聞きましたが？', a: '以前はそのように言われていましたが、現在の見解は異なります。高含水素材は環境の水分を吸収しやすく、乾燥した室内環境では目から水分を奪ってしまうことがあります。ドライアイには低〜中含水率のシリコーンハイドロゲル素材の方が適しています。' },
+            { q: 'コンタクト中に目薬を使っても大丈夫ですか？', a: '「コンタクト装用中OK」と記載された目薬・人工涙液なら使用できます。防腐剤（ベンザルコニウム塩化物など）が入った目薬はコンタクトに吸着して角膜に悪影響を与える可能性があるため使用禁止。薬局でコンタクト対応の目薬かどうか必ず確認してください。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'student-shufu-contact-setsuyaku': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        「コンタクト代が毎月かかりすぎる」「少しでも節約したい」という学生・主婦の方は多いはず。コンタクトレンズは種類・購入場所・購入方法を変えるだけで年間数万円の節約も可能です。この記事では、目の健康を守りながら賢くコンタクト代を節約する方法を徹底解説します。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">コンタクト代を節約するための基本戦略</h2>
+      <p className="mb-4">
+        コンタクトレンズの節約は「種類選び」「購入場所」「購入方法」の3つの軸で考えます。この3つを最適化するだけで、年間コストを大幅に削減できます。
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div className="bg-green-50 rounded-xl p-4 text-center">
+          <p className="text-3xl font-bold text-green-600 mb-1">種類選び</p>
+          <p className="text-sm text-gray-700">使用頻度に合った種類を選ぶことが基本</p>
+        </div>
+        <div className="bg-blue-50 rounded-xl p-4 text-center">
+          <p className="text-3xl font-bold text-blue-600 mb-1">通販活用</p>
+          <p className="text-sm text-gray-700">眼科・薬局より最大50%安くなることも</p>
+        </div>
+        <div className="bg-orange-50 rounded-xl p-4 text-center">
+          <p className="text-3xl font-bold text-orange-600 mb-1">まとめ買い</p>
+          <p className="text-sm text-gray-700">箱数が多いほど1枚あたりが安くなる</p>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">種類別コスト比較（1day・2week・マンスリー）</h2>
+      <div className="bg-slate-50 rounded-xl p-4 mb-6">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-2 rounded">種類</th>
+              <th className="text-left p-2">レンズ代（年）</th>
+              <th className="text-left p-2">ケア用品（年）</th>
+              <th className="text-left p-2">合計（年）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">ワンデー</td><td className="p-2">約30,000〜50,000円</td><td className="p-2">不要</td><td className="p-2 font-semibold">約30,000〜50,000円</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">2ウィーク</td><td className="p-2">約15,000〜25,000円</td><td className="p-2">約6,000〜8,000円</td><td className="p-2 font-semibold">約21,000〜33,000円</td></tr>
+            <tr><td className="p-2 font-medium">マンスリー</td><td className="p-2">約10,000〜18,000円</td><td className="p-2">約6,000〜8,000円</td><td className="p-2 font-semibold">約16,000〜26,000円</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p className="mb-4 text-sm text-gray-600 bg-gray-50 rounded-xl p-3">
+        ※上記は両眼・通販購入時の目安。毎日装用の場合。週数日のみ装用する方はワンデーの方が割安になることも。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">通販vsドラッグストア・眼科での価格差</h2>
+      <p className="mb-4">
+        同じ商品でも購入場所によって価格が大きく異なります。一般的な価格差の目安は以下の通りです。
+      </p>
+      <div className="space-y-3 mb-6">
+        {[
+          { place: '眼科クリニック内の販売', price: '最も高い（定価の100〜120%程度）', note: '処方後すぐに購入できる便利さ' },
+          { place: 'ドラッグストア・量販店', price: '中程度（定価の80〜100%程度）', note: 'セールや会員割引で安くなることも' },
+          { place: 'コンタクト通販サイト', price: '最も安い（定価の50〜70%程度）', note: '24ショップ比較で最安値を探せる' },
+        ].map(({ place, price, note }) => (
+          <div key={place} className="bg-white border border-gray-200 rounded-xl p-4">
+            <div className="flex justify-between items-start">
+              <p className="font-semibold text-gray-800 text-sm">{place}</p>
+            </div>
+            <p className="text-sm text-blue-700 font-medium mt-1">{price}</p>
+            <p className="text-xs text-gray-500 mt-1">{note}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">まとめ買いと定期購入でさらに節約</h2>
+      <p className="mb-4">
+        多くの通販サイトでは、購入箱数が多いほど1枚あたりの単価が下がります。また、定期購入（サブスクリプション）サービスを提供しているショップも増えており、追加の割引が受けられます。
+      </p>
+      <ul className="list-disc list-inside mb-4 space-y-2 text-gray-700">
+        <li>6箱・8箱セットが単品購入より20〜30%安くなるケースが多い</li>
+        <li>まとめ買いで送料無料条件を達成できる（条件は3,000〜5,000円程度が多い）</li>
+        <li>定期購入は毎回5〜10%OFFになるサービスあり</li>
+        <li>ポイントカード・クーポンの活用も忘れずに</li>
+      </ul>
+      <div className="bg-yellow-50 border-l-4 border-yellow-400 pl-4 py-3 mb-6">
+        <p className="font-bold text-yellow-800">注意：保管期限を確認しよう</p>
+        <p className="text-sm mt-1">まとめ買いは経済的ですが、コンタクトレンズには使用期限（外箱に記載）があります。まとめ買いしすぎて期限切れになった場合は使用禁止。ライフスタイルに合わせた量を購入しましょう。</p>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">学生・主婦におすすめのコスパ重視商品</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          { name: 'ワンデーピュア うるおいプラス', type: 'ワンデー', maker: 'シード', feature: '国産ワンデーのコスパ最強クラス。通販価格は1枚50〜60円程度。乾燥しにくい保湿成分配合。' },
+          { name: 'シード 2ウィークピュア', type: '2ウィーク', maker: 'シード', feature: '2weekコンタクトの中でも特にコスパが高い。1枚あたり100〜150円程度で両眼年間約20,000円以下に。' },
+          { name: 'エア オプティクス プラス ハイドラグライド', type: 'マンスリー', maker: 'アルコン', feature: 'マンスリーながらシリコーンHG素材で快適。1枚500〜700円程度。ケア用品込みでも年間20,000円台に収まる。' },
+        ].map(({ name, type, maker, feature }) => (
+          <div key={name} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-gray-800">{name}</p>
+            <p className="text-xs text-gray-500 mb-2">{maker} / {type}</p>
+            <p className="text-sm text-gray-700 leading-relaxed">{feature}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">節約しながら目の健康を守るポイント</h2>
+      <p className="mb-4">
+        節約を優先するあまり目の健康をおろそかにすると、後から高額な治療費がかかることがあります。以下の点は節約してはいけません。
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+        {[
+          { ng: '装用期間を超えて使い続ける', reason: '角膜感染症・角膜潰瘍のリスクが急増。ワンデーを2日使い回すのは絶対NG。' },
+          { ng: '眼科の定期検査をサボる', reason: '自覚症状のない角膜異常が進行することがある。年1〜2回の検査は必須。' },
+          { ng: '認証のない格安カラコンを買う', reason: '品質基準を満たさないカラコンは角膜を傷つける可能性がある。' },
+          { ng: 'ケア用品を節約しすぎる', reason: '洗浄不十分のレンズは感染症の原因に。ケア用品は適切なものを使う。' },
+        ].map(({ ng, reason }) => (
+          <div key={ng} className="bg-red-50 border border-red-100 rounded-xl p-4">
+            <p className="font-semibold text-red-700 text-sm mb-1">✗ {ng}</p>
+            <p className="text-xs text-gray-700 leading-relaxed">{reason}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-6">
+        <h3 className="text-xl font-bold mb-2">今すぐ最安値を比較して節約する</h3>
+        <p className="text-slate-300 mb-4">24ショップの価格を一括比較。送料込みの実質最安値がひとめでわかります。</p>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/ranking" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">
+            人気商品ランキング
+          </Link>
+          <Link href="/category/1day" className="inline-block bg-yellow-400 text-gray-900 font-bold px-4 py-2 rounded-xl hover:bg-yellow-300 transition-colors text-sm">
+            ワンデーを安く買う
+          </Link>
+        </div>
+      </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '週3〜4日しか装用しない場合、どの種類がお得ですか？', a: '週3〜4日の装用なら「ワンデー」が最もお得になります。2week・マンスリーは使用しない日でも開封後2週間（または1ヶ月）で交換が必要なため、使用日数が少ないとコスパが悪くなります。ワンデーなら使った日数分だけのコストで済みます。' },
+            { q: '処方箋なしで通販購入すれば眼科代も節約できますか？', a: '初回は必ず眼科を受診してください。ただし2回目以降・同一商品の継続購入であれば通販で処方箋なし購入が可能です。眼科は処方箋取得の場だけでなく、目の定期検査の場でもあるため、年1〜2回は受診しましょう。' },
+            { q: 'コンタクトと眼鏡を使い分けると節約になりますか？', a: 'なります。毎日コンタクトを使う代わりに、週2〜3日は眼鏡を使うことでコンタクトの消費量が減り、年間コストを大幅に削減できます。さらにコンタクトによる目の負担も減り、目の健康にも良い効果があります。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'contact-care-guide-yohin-hikaku': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        2week・マンスリーコンタクトを使うなら、正しいケア（洗浄・保存）は目の健康を守る最重要ポイントです。ケアを怠ると角膜感染症や角膜潰瘍などの深刻なトラブルにつながります。この記事では、正しいケアの手順からMPS・過酸化水素系洗浄液の選び方、NG行為まで徹底的に解説します。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">なぜコンタクトのケアが重要なのか</h2>
+      <p className="mb-4">
+        コンタクトレンズは使用中に涙液成分（タンパク質・脂質）や外気中のゴミ、細菌が付着します。適切にケアしないと以下のリスクが生じます。
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div className="bg-red-50 rounded-xl p-4">
+          <h3 className="font-bold text-red-800 mb-2">ケア不足のリスク</h3>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>・角膜感染症（アカントアメーバ角膜炎など）</li>
+            <li>・角膜潰瘍（最悪の場合、視力低下）</li>
+            <li>・アレルギー反応・充血の悪化</li>
+            <li>・レンズの寿命が短くなる</li>
+          </ul>
+        </div>
+        <div className="bg-green-50 rounded-xl p-4">
+          <h3 className="font-bold text-green-800 mb-2">正しいケアのメリット</h3>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>・目のトラブルを未然に防げる</li>
+            <li>・レンズのうるおい・透明感を維持</li>
+            <li>・快適な装用感が続く</li>
+            <li>・レンズの使用期限まで安全に使える</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">正しいケアの基本ステップ</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          { step: 'STEP 1', title: '手を洗う', detail: '石けんでよく手を洗い、清潔なタオルで水気を拭き取る。手に付いた細菌・ウイルスがレンズを通じて目に入るリスクを防ぐ。' },
+          { step: 'STEP 2', title: 'レンズを外す', detail: '指先にレンズを乗せ、洗浄液を数滴垂らす。レンズを指の腹で約20秒こすり洗いする（擦り洗い）。' },
+          { step: 'STEP 3', title: 'すすぎ洗い', detail: '洗浄液でこすり洗いした後、新しい洗浄液（またはすすぎ液）でレンズの両面をしっかりすすぐ。' },
+          { step: 'STEP 4', title: 'ケース保存', detail: '清潔なレンズケースに新鮮な保存液を入れ、レンズを浸漬して蓋をする。最低4〜6時間の浸漬が必要。' },
+          { step: 'STEP 5', title: 'ケース管理', detail: 'ケースは毎回洗浄液でゆすぎ、逆さにして乾燥させる。3ヶ月に1回は新しいケースに交換。' },
+        ].map(({ step, title, detail }) => (
+          <div key={step} className="flex gap-4 bg-slate-50 rounded-xl p-4">
+            <div className="bg-blue-600 text-white text-xs font-bold rounded-lg px-2 py-1 flex-shrink-0 h-fit">{step}</div>
+            <div>
+              <p className="font-bold text-gray-800 mb-1">{title}</p>
+              <p className="text-sm text-gray-700 leading-relaxed">{detail}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">MPS（マルチパーパスソリューション）の選び方</h2>
+      <p className="mb-4">
+        MPSは洗浄・すすぎ・消毒・保存を1本でできるオールインワン洗浄液です。最もポピュラーなタイプで、初心者にも扱いやすいのが特徴です。
+      </p>
+      <ul className="list-disc list-inside mb-4 space-y-2 text-gray-700">
+        <li><strong>ボシュロム レニューフレッシュ</strong>：使い心地の良さとコスパのバランスが◎</li>
+        <li><strong>アルコン オプティフリーピュアモイスト</strong>：乾燥対策成分配合、快適な装用をサポート</li>
+        <li><strong>AMO コンプリートダブルモイスト</strong>：保湿成分が豊富でうるおい重視の方向け</li>
+        <li><strong>シード オーツーケア</strong>：シード製レンズとの相性◎、コスパ重視の選択肢</li>
+      </ul>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">過酸化水素系洗浄液とMPSの違い</h2>
+      <div className="bg-slate-50 rounded-xl p-4 mb-6">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-2 rounded">比較項目</th>
+              <th className="text-left p-2">MPS</th>
+              <th className="text-left p-2">過酸化水素系</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">消毒力</td><td className="p-2">標準的</td><td className="p-2 text-green-700 font-semibold">非常に高い</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">扱いやすさ</td><td className="p-2 text-green-700 font-semibold">簡単</td><td className="p-2">中和時間が必要（要注意）</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">目への刺激</td><td className="p-2">少ない</td><td className="p-2">中和前は使用不可（失明リスク）</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">アレルギーの方</td><td className="p-2">防腐剤含有</td><td className="p-2 text-green-700 font-semibold">防腐剤フリーが多い</td></tr>
+            <tr><td className="p-2 font-medium">コスト</td><td className="p-2 text-green-700 font-semibold">安め</td><td className="p-2">やや高め</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div className="bg-red-50 border-l-4 border-red-400 pl-4 py-3 mb-6">
+        <p className="font-bold text-red-800">過酸化水素系の重要な注意</p>
+        <p className="text-sm mt-1">過酸化水素系洗浄液は必ず6時間以上の中和時間を経てから装用してください。中和が完了していない状態のレンズを装用すると、激しい痛み・角膜損傷の危険があります。</p>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">絶対にやってはいけないNG行為</h2>
+      <div className="space-y-3 mb-6">
+        {[
+          { ng: '水道水でレンズを洗う', reason: '水道水にはアカントアメーバという原虫が含まれる場合があり、感染すると治療が困難な角膜炎を引き起こします。' },
+          { ng: '唾液でレンズを湿らす', reason: '口腔内の細菌がレンズを通じて目に感染するリスクがあります。絶対にNGです。' },
+          { ng: '保存液を継ぎ足しで使う', reason: '保存液は毎回全量交換が必要。継ぎ足しは細菌繁殖の温床になります。' },
+          { ng: 'ケースを洗わずずっと使う', reason: '汚れたケースはバイオフィルムが形成され、細菌・アカントアメーバの繁殖地になります。' },
+          { ng: '装用期限を超えて使い続ける', reason: 'レンズの素材劣化・汚れ蓄積が起こり、感染・角膜障害のリスクが大幅に上昇します。' },
+        ].map(({ ng, reason }) => (
+          <div key={ng} className="bg-white border border-red-200 rounded-xl p-4">
+            <p className="font-semibold text-red-700 text-sm mb-1">✗ {ng}</p>
+            <p className="text-xs text-gray-700 leading-relaxed">{reason}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">ケア用品のコスト比較とおすすめ商品</h2>
+      <p className="mb-4">
+        ケア用品のコストはMPSで月500〜1,000円程度が目安です。通販での大容量購入でさらにコストを抑えられます。
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        {[
+          { type: 'コスパ重視', product: 'ボシュロム レニュー', cost: '月400〜600円', feature: '大容量タイプで1本500ml以上。通販なら特に安い。' },
+          { type: '快適さ重視', product: 'オプティフリーピュアモイスト', cost: '月700〜1,000円', feature: 'TearGlyde技術でレンズのうるおいを維持。乾燥感対策に。' },
+          { type: 'アレルギー体質向け', product: 'クリアケアプラス（過酸化水素系）', cost: '月800〜1,200円', feature: '防腐剤フリーで目への刺激が少ない。中和時間を厳守。' },
+          { type: 'シンプル重視', product: 'エーオーセプト クリアケア', cost: '月700〜1,000円', feature: '過酸化水素系の定番品。消毒力が高く衛生的。' },
+        ].map(({ type, product, cost, feature }) => (
+          <div key={product} className="bg-white border border-gray-200 rounded-xl p-4">
+            <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium">{type}</span>
+            <p className="font-bold text-gray-800 mt-2">{product}</p>
+            <p className="text-xs text-green-700 font-semibold mb-1">{cost}</p>
+            <p className="text-xs text-gray-600 leading-relaxed">{feature}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-6">
+        <h3 className="text-xl font-bold mb-2">コンタクトレンズも最安値で購入する</h3>
+        <p className="text-slate-300 mb-4">ケア用品と合わせてコンタクト本体も通販でまとめて購入してコストを削減。</p>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/category/2week" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">
+            2weekの最安値を見る
+          </Link>
+          <Link href="/ranking" className="inline-block bg-yellow-400 text-gray-900 font-bold px-4 py-2 rounded-xl hover:bg-yellow-300 transition-colors text-sm">
+            人気商品ランキング
+          </Link>
+        </div>
+      </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'こすり洗いは本当に必要ですか？溶液につけるだけではダメですか？', a: '「こすり洗い」は必須です。浸けるだけの「ノーこすり」方式は現在は推奨されていません。こすり洗いによってレンズ表面のタンパク質・脂質・細菌を物理的に除去することが、感染予防の基本です。必ず毎回20秒以上のこすり洗いを行ってください。' },
+            { q: 'コンタクトケースはいつ交換すれば良いですか？', a: '一般的に3ヶ月に1回の交換が推奨されています。ケースは毎回洗浄液でゆすいで乾燥させても、長期使用でバイオフィルムが形成されるため、定期的な交換が必要です。多くのMPSは新品のケースが付属しているため、MPS購入のタイミングで交換するのが便利です。' },
+            { q: 'MPSと目薬を一緒に使っても大丈夫ですか？', a: 'MPSはレンズのケア用（保存液）であり、直接目に点眼するものではありません。装用中に目の乾燥を感じたら「コンタクト装用中OK」の目薬を使用してください。MPSを目薬代わりに使う行為は絶対にNGです。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  '1day-vs-2week-dotchiga-otoku': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        「1dayと2week、結局どっちがお得なの？」という疑問は、コンタクトレンズ選びで最もよく聞かれる質問のひとつです。答えは「使用頻度によって異なる」。この記事では年間コスト・利便性・手間を数字で徹底比較し、あなたのライフスタイルに合った選択肢を提案します。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">1dayと2weekの基本的な違い</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div className="bg-blue-50 rounded-xl p-4">
+          <h3 className="font-bold text-blue-800 mb-3">1day（ワンデー）</h3>
+          <ul className="text-sm text-gray-700 space-y-2">
+            <li>・毎日新しいレンズを使う</li>
+            <li>・ケア用品（洗浄液）が不要</li>
+            <li>・清潔でアレルギー・感染リスクが低い</li>
+            <li>・旅行・スポーツに便利</li>
+            <li>・1日分のコストが高め</li>
+          </ul>
+        </div>
+        <div className="bg-green-50 rounded-xl p-4">
+          <h3 className="font-bold text-green-800 mb-3">2week（2ウィーク）</h3>
+          <ul className="text-sm text-gray-700 space-y-2">
+            <li>・2週間ごとに1枚のレンズを使い続ける</li>
+            <li>・毎日のケア（洗浄・保存）が必要</li>
+            <li>・1枚のコストは安いがケア代が追加</li>
+            <li>・毎日装用する人ほどコスパが良い</li>
+            <li>・手間がかかるが経済的</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">年間コスト比較（ケア用品込み）</h2>
+      <p className="mb-4">毎日両眼装用（365日）の場合の年間コスト試算（通販価格ベース）：</p>
+      <div className="bg-slate-50 rounded-xl p-4 mb-4">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-2 rounded">項目</th>
+              <th className="text-left p-2">1day（ワンデー）</th>
+              <th className="text-left p-2">2week</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">レンズ代（年間）</td><td className="p-2">約32,000〜48,000円</td><td className="p-2">約15,000〜24,000円</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">ケア用品（年間）</td><td className="p-2">不要（0円）</td><td className="p-2">約6,000〜10,000円</td></tr>
+            <tr className="border-b border-gray-100 bg-yellow-50"><td className="p-2 font-bold">合計（年間）</td><td className="p-2 font-bold">約32,000〜48,000円</td><td className="p-2 font-bold">約21,000〜34,000円</td></tr>
+            <tr><td className="p-2 font-medium">1日あたりのコスト</td><td className="p-2">約88〜131円</td><td className="p-2 text-green-700 font-semibold">約58〜93円</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p className="mb-6 text-sm text-gray-600 bg-gray-50 rounded-xl p-3">
+        ※通販での一般的なコンタクト（アキュビューモイスト1dayと2weekオアシス）をベースにした試算。商品・ショップによって異なります。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">使用頻度別・どちらがお得か</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          { freq: '週7日（毎日）装用', winner: '2week', reason: '毎日使うなら2weekのコスパが最大限発揮される。ケア用品コストを含めても年間1万円以上お得になることが多い。' },
+          { freq: '週4〜5日装用', winner: 'どちらも近い', reason: '使用日数が減ると2weekでも未使用の期間ができる。1dayと2weekのコスト差が縮まるため、利便性で選ぶのも手。' },
+          { freq: '週1〜3日（たまに）装用', winner: '1day', reason: '2weekは開封後14日で交換が必要のため、使用日が少ないと未使用分が無駄に。1dayの方が使った日数分だけのコストで済む。' },
+        ].map(({ freq, winner, reason }) => (
+          <div key={freq} className="bg-white border border-gray-200 rounded-xl p-4">
+            <div className="flex justify-between items-center mb-2">
+              <p className="font-bold text-gray-800">{freq}</p>
+              <span className={`text-xs font-bold px-3 py-1 rounded-full ${winner === '2week' ? 'bg-green-100 text-green-700' : winner === '1day' ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-700'}`}>
+                {winner === 'どちらも近い' ? '甲乙つけがたい' : `${winner}がお得`}
+              </span>
+            </div>
+            <p className="text-sm text-gray-700 leading-relaxed">{reason}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">手間・利便性の比較</h2>
+      <div className="bg-slate-50 rounded-xl p-4 mb-6">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-2 rounded">シーン</th>
+              <th className="text-left p-2">1day</th>
+              <th className="text-left p-2">2week</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">日々のケア</td><td className="p-2 text-green-700">不要（楽）</td><td className="p-2">毎日こすり洗い必要</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">旅行・出張</td><td className="p-2 text-green-700">荷物が少ない</td><td className="p-2">ケア用品を持参必要</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">スポーツ時</td><td className="p-2 text-green-700">使い捨てで清潔</td><td className="p-2">汚れたら交換できない</td></tr>
+            <tr className="border-b border-gray-100"><td className="p-2 font-medium">目のトラブル時</td><td className="p-2 text-green-700">新品に変えられる</td><td className="p-2">使いかけを継続使用</td></tr>
+            <tr><td className="p-2 font-medium">在庫管理</td><td className="p-2">消費が早い</td><td className="p-2 text-green-700">在庫管理が楽</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">1dayがおすすめな人・2weekがおすすめな人</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div className="bg-blue-50 rounded-xl p-4">
+          <h3 className="font-bold text-blue-800 mb-3">1dayがおすすめな人</h3>
+          <ul className="text-sm text-gray-700 space-y-2">
+            <li>・週3日以下のたまに装用する方</li>
+            <li>・ケアの手間を省きたい方</li>
+            <li>・アレルギー体質・ドライアイの方</li>
+            <li>・旅行・スポーツで使う機会が多い方</li>
+            <li>・コンタクト初心者の方</li>
+          </ul>
+        </div>
+        <div className="bg-green-50 rounded-xl p-4">
+          <h3 className="font-bold text-green-800 mb-3">2weekがおすすめな人</h3>
+          <ul className="text-sm text-gray-700 space-y-2">
+            <li>・毎日装用する方</li>
+            <li>・コスト削減を最優先する方</li>
+            <li>・ケア習慣を継続できる方</li>
+            <li>・シリコーンHG素材を求める方（高品質）</li>
+            <li>・同じブランドを長く使いたい方</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">最安値通販で賢く購入する方法</h2>
+      <p className="mb-4">
+        どちらの種類を選んでも、購入場所によって価格が大きく変わります。眼科やドラッグストアで購入するより、通販を活用することで年間5,000〜15,000円の節約が可能です。
+      </p>
+      <ul className="list-disc list-inside mb-4 space-y-2 text-gray-700">
+        <li>複数の通販ショップを比較して最安値を確認する</li>
+        <li>送料無料条件を満たすまとめ買いでコストを最小化</li>
+        <li>ポイント制度や定期購入割引を活用する</li>
+        <li>商品によって最安値ショップが異なるため毎回比較が大切</li>
+      </ul>
+
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-6">
+        <h3 className="text-xl font-bold mb-2">1day・2week両方の最安値を一括比較</h3>
+        <p className="text-slate-300 mb-4">24ショップの価格を比較して、送料込みの実質最安値をチェック。</p>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/category/1day" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">
+            ワンデーを比較する
+          </Link>
+          <Link href="/category/2week" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">
+            2weekを比較する
+          </Link>
+          <Link href="/ranking" className="inline-block bg-yellow-400 text-gray-900 font-bold px-4 py-2 rounded-xl hover:bg-yellow-300 transition-colors text-sm">
+            人気ランキングを見る
+          </Link>
+        </div>
+      </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '2weekコンタクトは開封後、2週間使えますか？', a: '「開封後2週間」が使用期限です。たとえば月曜日に開封した場合、次の月曜日（14日後）には装用日数に関わらず新しいレンズに交換が必要です。週に2〜3日しか装用しなくても同じです。装用日数ではなく「開封からの日数」でカウントしてください。' },
+            { q: '1dayを2日使い回すことはできますか？', a: '絶対にNGです。ワンデーは1日使い捨て前提で設計されており、薄くて汚れを除去しにくい構造です。再使用すると角膜感染症・角膜潰瘍のリスクが急上昇します。「もったいない」という気持ちは理解できますが、眼の健康のため絶対に守ってください。' },
+            { q: '1dayと2weekで見え方や快適さに差はありますか？', a: '同じメーカー・グレードの商品であれば快適さはほぼ同等です。ただし2weekは使用日数が経つにつれてタンパク質・脂質が蓄積し、後半は装用感が落ちることがあります。1dayは毎日新品なので常に最良の状態を保てます。最高の快適さを求めるなら1dayに軍配が上がります。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
 };

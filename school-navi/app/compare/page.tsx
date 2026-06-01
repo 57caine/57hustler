@@ -129,7 +129,7 @@ export default function ComparePage() {
                         href={school.affiliate_url !== '#' ? school.affiliate_url : school.official_url!}
                         target="_blank"
                         rel="noopener noreferrer nofollow"
-                        className="text-xs bg-slate-800 text-white px-2.5 py-1 rounded hover:bg-slate-700 transition-colors whitespace-nowrap"
+                        className="text-xs bg-sky-600 text-white px-2.5 py-1 rounded hover:bg-sky-500 transition-colors whitespace-nowrap"
                       >
                         公式
                       </a>

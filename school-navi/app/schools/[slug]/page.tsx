@@ -156,7 +156,7 @@ export default async function SchoolPage({ params }: Props) {
               href={school.affiliate_url !== '#' ? school.affiliate_url : school.official_url!}
               target="_blank"
               rel="noopener noreferrer nofollow"
-              className="flex-1 text-center bg-slate-800 text-white py-3 rounded-xl font-semibold hover:bg-slate-700 transition-colors text-sm"
+              className="flex-1 text-center bg-sky-600 text-white py-3 rounded-xl font-semibold hover:bg-sky-500 transition-colors text-sm"
             >
               公式サイトで詳細を確認する
             </a>
@@ -234,7 +234,7 @@ export default async function SchoolPage({ params }: Props) {
             href={school.affiliate_url !== '#' ? school.affiliate_url : school.official_url!}
             target="_blank"
             rel="noopener noreferrer nofollow"
-            className="inline-block bg-slate-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-700 transition-colors text-sm"
+            className="inline-block bg-sky-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-sky-500 transition-colors text-sm"
           >
             公式サイトを確認する
           </a>

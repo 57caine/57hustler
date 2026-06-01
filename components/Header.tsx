@@ -6,7 +6,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-7 h-7 bg-slate-800 rounded-md flex items-center justify-center shrink-0">
+            <div className="w-7 h-7 bg-sky-600 rounded-md flex items-center justify-center shrink-0">
               <span className="text-white text-xs font-bold">L</span>
             </div>
             <div>
@@ -30,7 +30,7 @@ export default function Header() {
             <Link href="/column" className="text-gray-600 hover:text-slate-900 transition-colors">
               コラム
             </Link>
-            <Link href="/ranking" className="bg-slate-800 text-white px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm font-medium">
+            <Link href="/ranking" className="bg-sky-600 text-white px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors text-sm font-medium">
               人気ランキング
             </Link>
           </nav>
@@ -42,7 +42,7 @@ export default function Header() {
           <Link href="/category/monthly" className="whitespace-nowrap bg-gray-100 px-3 py-1 rounded-full text-gray-700 text-xs">マンスリー</Link>
           <Link href="/category/color" className="whitespace-nowrap bg-gray-100 px-3 py-1 rounded-full text-gray-700 text-xs">カラコン</Link>
           <Link href="/column" className="whitespace-nowrap bg-gray-100 px-3 py-1 rounded-full text-gray-700 text-xs">コラム</Link>
-          <Link href="/ranking" className="whitespace-nowrap bg-slate-800 text-white px-3 py-1 rounded-full text-xs">ランキング</Link>
+          <Link href="/ranking" className="whitespace-nowrap bg-sky-600 text-white px-3 py-1 rounded-full text-xs">ランキング</Link>
         </nav>
       </div>
     </header>

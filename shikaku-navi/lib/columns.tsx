@@ -2896,4 +2896,817 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
     </div>
   ),
+  'shakushi-nanido-tsushin-ranking': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">社労士試験の難易度と合格率の実態</h2>
+        <p className="mb-4">社会保険労務士（社労士）試験は、国家資格の中でも難関の部類に入ります。合格率は例年6〜7%台で推移しており、受験者の多くが複数年をかけて合格を目指します。ただし、試験範囲は労働法・社会保険法令といった実務に直結した内容のため、正しい学習法と教材選びで効率的な合格が可能です。</p>
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-4">
+          <p className="font-bold text-slate-800 mb-2">社労士試験 基本データ</p>
+          <ul className="text-sm space-y-1 text-gray-700">
+            <li>試験日：毎年8月第4日曜日</li>
+            <li>合格率：6〜7%（例年）</li>
+            <li>試験科目：労働科目8科目＋社会保険科目5科目（択一式・選択式）</li>
+            <li>受験費用：15,000円</li>
+            <li>必要勉強時間：800〜1,000時間（目安）</li>
+          </ul>
+        </div>
+        <p className="mb-3">合格率の低さだけで諦めるのは早計です。受験者の多くは働きながら独学で挑む社会人であり、適切な通信講座を活用した場合の合格率は全国平均を大幅に上回ります。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">社労士に必要な勉強時間</h2>
+        <p className="mb-3">社労士の合格には一般的に800〜1,000時間の学習時間が必要とされています。1日2〜3時間の学習を継続する場合、約1〜1.5年かかる計算です。通信講座を使うと、効率的なカリキュラム・過去問演習・AI苦手分析で学習時間を700〜850時間程度に圧縮できるケースもあります。</p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-200 px-3 py-2 text-left">学習スタイル</th>
+                <th className="border border-gray-200 px-3 py-2 text-center">必要時間目安</th>
+                <th className="border border-gray-200 px-3 py-2 text-center">期間目安</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { style: '独学', hours: '900〜1,200時間', period: '1.5〜2年' },
+                { style: '通信講座', hours: '700〜900時間', period: '1〜1.5年' },
+                { style: '通学スクール', hours: '800〜1,000時間', period: '1〜1.5年' },
+              ].map((row, i) => (
+                <tr key={row.style} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="border border-gray-200 px-3 py-2 font-medium">{row.style}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-center">{row.hours}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-center">{row.period}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">社労士通信講座おすすめランキング4選</h2>
+        <div className="space-y-4">
+          {[
+            { rank: 1, name: 'アガルート', slug: 'agaroot', badge: '合格実績No.1', price: '77,000円〜', rate: '合格率28.4%（全国平均の約4倍）', point: '講師によるオンライン質問対応・合格特典（全額返金または祝い金）が充実。フルカラーテキストと講義動画の質が高く、初学者から再受験者まで幅広く対応。' },
+            { rank: 2, name: 'フォーサイト', slug: 'foresight', badge: '高合格率', price: '58,000円〜', rate: '合格率（独自調査）全国平均の2倍以上', point: '教育訓練給付金対象コースで実質負担を削減できる。フルカラーテキスト＋eラーニング（ManaBun）でスキマ時間活用が得意な方に最適。' },
+            { rank: 3, name: 'スタディング', slug: 'studying', badge: 'コスパ重視', price: '27,800円〜', rate: '非公開', point: '業界最安水準の受講料でスマホ完結学習が可能。AI復習機能・スタディングAI問題演習で効率的に弱点を克服。コストを最小化して挑みたい方向け。' },
+            { rank: 4, name: 'クレアール', slug: 'crecer', badge: '長期サポート', price: '51,000円〜', rate: '非公開', point: '独自の「非常識合格法」で頻出論点に絞って学習。複数年にわたるセーフティコースで万が一の不合格時も翌年度まで延長受講できる。' },
+          ].map(({ rank, name, slug, badge, price, rate, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-5">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="bg-slate-800 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shrink-0">{rank}</span>
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full">{badge}</span>
+                <h3 className="font-bold text-gray-900">{name}</h3>
+              </div>
+              <p className="text-sm text-gray-700 mb-1">受講料：{price}　|　{rate}</p>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/courses/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+        <p className="text-xs text-gray-400 mt-2">※費用・合格率は参考値。各社公式サイトで最新情報をご確認ください。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">社労士資格で開ける独立・転職の道</h2>
+        <p className="mb-3">社労士資格を取得すると、大きく3つのキャリアパスが開けます。</p>
+        <div className="space-y-3">
+          {[
+            { path: '社労士事務所への転職', detail: '中堅〜大手の社労士法人への転職で、年収400〜600万円が目安。実務経験を積みながら独立を視野に入れるルート。' },
+            { path: '企業内社労士', detail: '人事・労務部門で社労士資格を活かす。給与・社会保険手続き・就業規則管理などを担当。資格手当が付く企業も多い。' },
+            { path: '独立開業', detail: '社労士として個人または事務所を開業。顧問契約で毎月安定収入を得るモデルが一般的。平均年収は700〜1,000万円超の事務所も。' },
+          ].map(({ path, detail }) => (
+            <div key={path} className="border-l-4 border-slate-400 pl-4">
+              <p className="font-bold text-gray-900 text-sm mb-1">{path}</p>
+              <p className="text-sm text-gray-700">{detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">社労士 vs 行政書士：どちらを取るべきか</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-200 px-3 py-2 text-left">比較項目</th>
+                <th className="border border-gray-200 px-3 py-2 text-center">社労士</th>
+                <th className="border border-gray-200 px-3 py-2 text-center">行政書士</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { item: '合格率', sharoshi: '6〜7%', gyousei: '10〜15%' },
+                { item: '必要勉強時間', sharoshi: '800〜1,000時間', gyousei: '600〜800時間' },
+                { item: '独立開業のしやすさ', sharoshi: '高（顧問契約型）', gyousei: '高（書類作成・許認可）' },
+                { item: '企業内評価', sharoshi: '人事・労務部門で特に高い', gyousei: '法務・コンプライアンス部門' },
+                { item: '受験資格', sharoshi: '大学卒業等の資格要件あり', gyousei: 'なし（誰でも受験可）' },
+              ].map((row, i) => (
+                <tr key={row.item} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="border border-gray-200 px-3 py-2 font-medium">{row.item}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-center">{row.sharoshi}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-center">{row.gyousei}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-3 text-sm text-gray-700">人事・労務を専門にしたい方は社労士、幅広い法務・許認可業務に関わりたい方は行政書士が適しています。ダブルライセンスで相乗効果を狙う戦略も有効です。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '社労士試験に合格するまで平均何年かかりますか？', a: '社労士試験の合格率は6〜7%と低く、受験者の平均受験回数は3〜4回程度といわれます。ただし通信講座を活用した方の中には初回受験や2回目での合格者も多数います。アガルートは合格者の半数近くが初学者だと公表しています。1〜2年での合格を目標に設定し、適切な教材と学習計画を立てることが重要です。' },
+            { q: '社労士の受験資格はどうなっていますか？', a: '社労士試験には受験資格が必要です。主な要件は①4年制大学卒業（学部問わず）、②短大・専門学校卒業＋実務経験3年、③行政書士資格保有者、などです。高卒の場合は実務経験（社会保険・労働保険事務の3年以上）が必要なケースが多いので、事前に受験資格を必ず確認してください。' },
+            { q: '社労士の通信講座は独学より合格率が高いですか？', a: 'アガルートやフォーサイトなど主要通信講座の公表合格率は全国平均（6〜7%）の2〜4倍です。通信講座では頻出論点に絞ったカリキュラム・過去問演習・AI分析による弱点補強が受けられるため、独学より効率的に学習できます。ただし自己管理能力と継続学習が合否の鍵であることは変わりません。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'gyousei-goukakuritsu-dokugaku-hikaku': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">行政書士の合格率・難易度の実態</h2>
+        <p className="mb-4">行政書士試験は毎年11月に実施される国家資格試験です。合格率は例年10〜15%程度で、社労士（6〜7%）より取り組みやすい一方、宅建（15〜18%）よりやや難しい位置づけです。受験者数は約5〜6万人で、法律知識ゼロからでも1〜1.5年で合格を目指せます。</p>
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-4">
+          <p className="font-bold text-slate-800 mb-2">行政書士試験 基本データ</p>
+          <ul className="text-sm space-y-1 text-gray-700">
+            <li>試験日：毎年11月第2日曜日</li>
+            <li>合格率：10〜15%（例年）</li>
+            <li>合格基準：行政書士法令等科目122点以上＋一般知識等科目24点以上（総得点180点以上）</li>
+            <li>受験費用：10,400円</li>
+            <li>受験資格：なし（誰でも受験可能）</li>
+          </ul>
+        </div>
+        <p className="text-sm text-gray-700">合格ラインは300点満点中180点（6割）ですが、各科目で足切り基準があるため、苦手科目をゼロにする学習戦略が重要です。特に「一般知識」は足切りリスクがあるため要注意。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">独学で合格できる？必要な条件と勉強法</h2>
+        <p className="mb-3">行政書士は独学合格者も一定数います。ただし、独学での合格には次の条件が揃っていることが重要です。</p>
+        <div className="space-y-3">
+          {[
+            { cond: '法律の基礎知識がある', detail: '民法・憲法・行政法の基本概念を事前に理解していると、テキスト学習の進みが格段に早くなります。全くの法律未経験の場合は通信講座が有利です。' },
+            { cond: '1日3〜4時間の学習時間を確保できる', detail: '独学での合格には600〜800時間が必要。週5日で換算すると約12〜16ヶ月かかります。社会人が働きながら独学する場合はさらに時間がかかることを考慮してください。' },
+            { cond: '過去問演習を中心にした学習計画', detail: '行政書士試験は過去問の類似問題が多い傾向があります。テキスト精読より過去問演習を中心にした学習が合格への近道です。' },
+          ].map(({ cond, detail }) => (
+            <div key={cond} className="border-l-4 border-slate-400 pl-4">
+              <p className="font-bold text-gray-900 text-sm mb-1">{cond}</p>
+              <p className="text-sm text-gray-700">{detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">通信講座が独学より有利な理由</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { reason: 'カリキュラムが整理されている', desc: '独学では教材選び・学習順の設計から始める必要がある。通信講座は頻出論点を絞り込んだカリキュラムで無駄な学習時間を排除できる。' },
+            { reason: 'AI・過去問システムで弱点分析', desc: 'スタディング・アガルートはAIによる弱点自動抽出・復習スケジュール最適化機能が充実。独学では難しい「自分の弱点把握」が自動化できる。' },
+            { reason: '質問・サポート体制', desc: '独学では疑問点が解決できず進捗が止まるリスクがある。通信講座では講師へのオンライン質問・掲示板・チューター制度で疑問をすぐ解消できる。' },
+            { reason: '模擬試験・直前対策', desc: '本番形式の模擬試験が含まれる講座は多く、時間配分・本番の緊張感を事前に体験できる。独学では模試受験に別途費用がかかる。' },
+          ].map(({ reason, desc }) => (
+            <div key={reason} className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+              <p className="font-bold text-slate-800 text-sm mb-2">{reason}</p>
+              <p className="text-xs text-gray-600 leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">行政書士通信講座 費用・合格率比較</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-200 px-3 py-2 text-left">講座名</th>
+                <th className="border border-gray-200 px-3 py-2 text-right">費用（目安）</th>
+                <th className="border border-gray-200 px-3 py-2 text-center">公表合格率</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">特徴</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { name: 'アガルート', slug: 'agaroot', price: '66,000円〜', rate: '56.11%', note: '合格特典・全額返金保証' },
+                { name: 'フォーサイト', slug: 'foresight', price: '48,000円〜', rate: '全国平均の約2倍', note: '給付金対象・フルカラーテキスト' },
+                { name: 'スタディング', slug: 'studying', price: '27,800円〜', rate: '非公開', note: 'コスパ最強・スマホ完結' },
+              ].map((row, i) => (
+                <tr key={row.name} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="border border-gray-200 px-3 py-2 font-medium">
+                    <Link href={`/courses/${row.slug}`} className="text-slate-700 hover:underline">{row.name}</Link>
+                  </td>
+                  <td className="border border-gray-200 px-3 py-2 text-right">{row.price}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-center font-medium text-slate-700">{row.rate}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-gray-500">{row.note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-gray-400 mt-2">※費用・合格率は参考値。各社公式サイトで最新情報をご確認ください。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">行政書士取得後のキャリアパス</h2>
+        <div className="space-y-2">
+          {[
+            { path: '行政書士事務所への就職・転職', detail: '行政書士法人や個人事務所でのアシスタント業務からキャリアをスタート。実務経験を積みながら独立を視野に入れられる。' },
+            { path: '独立開業', detail: '許認可申請（建設業・飲食店・自動車関連など）・外国人ビザ・遺言・相続などが主要業務。地方でも需要があり、副業・フリーランスとしても活用可能。' },
+            { path: '企業内法務', detail: '大手企業の法務・コンプライアンス部門では行政書士資格が評価されるケースも。社労士・宅建とのダブルライセンスで市場価値が増す。' },
+          ].map(({ path, detail }) => (
+            <div key={path} className="border-l-4 border-slate-300 pl-4 py-1">
+              <p className="font-bold text-gray-800 text-sm">{path}</p>
+              <p className="text-xs text-gray-600 mt-0.5 leading-relaxed">{detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '行政書士は独学で合格できますか？', a: '行政書士は独学での合格者も多い資格ですが、法律の基礎知識なし・働きながらの場合は通信講座の活用を推奨します。独学では教材費2〜3万円と600〜800時間が必要です。通信講座は27,000〜66,000円程度ですが、カリキュラムの効率性・AI弱点分析・質問サポートで学習時間を短縮でき、合格率も向上します。' },
+            { q: '行政書士と社労士、どちらを先に取るべきですか？', a: '受験資格がない行政書士を先に取得し、行政書士合格後に社労士受験資格（行政書士保有者は受験可）を活用する方法がおすすめです。ただし目指すキャリアによって選択肢は変わります。人事・労務に進みたいなら社労士、許認可・法務に進みたいなら行政書士を優先するのが合理的です。' },
+            { q: '行政書士試験の一般知識科目が苦手ですが、対策は？', a: '一般知識は政治・経済・社会・情報通信・文章理解から出題され、足切り（6問以上正解）があります。対策として①文章理解問題は確実に得点（論理的読解で正答率80%以上を目指す）、②情報通信は毎年出題されるIT基礎・個人情報保護法を重点的に、③時事問題は直前期にニュースサイトで話題を確認、が効果的です。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'it-passport-it-shikaku-roadmap': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ITパスポートの位置づけと取得メリット</h2>
+        <p className="mb-4">ITパスポート（iパス）は経済産業省が認定する国家資格で、IT分野の入門資格として位置づけられています。合格率は約50%と比較的高く、文系・非IT職の社会人でも3〜4ヶ月の学習で取得できます。DX推進・デジタル人材育成の文脈で多くの企業が社員のiパス取得を推奨しており、2026年現在もその需要は増加しています。</p>
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-4">
+          <p className="font-bold text-slate-800 mb-2">ITパスポート 基本データ</p>
+          <ul className="text-sm space-y-1 text-gray-700">
+            <li>試験形式：CBT（コンピュータ試験）・随時受験可能</li>
+            <li>合格率：約50%（例年）</li>
+            <li>試験時間：120分・四肢択一100問</li>
+            <li>合格基準：総合600点以上（1,000点満点）＋各分野300点以上</li>
+            <li>受験費用：7,500円</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">IT資格ロードマップ全体像</h2>
+        <p className="mb-4">IT資格は難易度・専門性に応じて段階的に取得することで、キャリアアップが可能です。以下は代表的なIT資格のロードマップです。</p>
+        <div className="space-y-4">
+          {[
+            { level: 'レベル1（入門）', badge: 'bg-green-100 text-green-800', exams: 'ITパスポート（iパス）', desc: '非IT職・文系社会人・学生向けの入門資格。IT基礎・経営・法務の幅広い知識を証明できる。', period: '1〜3ヶ月' },
+            { level: 'レベル2（初級）', badge: 'bg-blue-100 text-blue-800', exams: '基本情報技術者試験（FE）', desc: 'エンジニアとしての基礎知識を証明。プログラミング・アルゴリズム・システム設計の基礎。', period: '3〜6ヶ月' },
+            { level: 'レベル3（中級）', badge: 'bg-purple-100 text-purple-800', exams: '応用情報技術者試験（AP）', desc: '実務レベルのシステム設計・プロジェクト管理・セキュリティ対策の知識を証明。', period: '6〜12ヶ月' },
+            { level: 'レベル4（高度）', badge: 'bg-red-100 text-red-800', exams: 'ネットワークスペシャリスト・情報処理安全確保支援士・プロジェクトマネージャー 等', desc: '専門性の高いIT上級資格。特定分野（セキュリティ・NW・PM等）のスペシャリストとして認定される。', period: '1〜2年' },
+          ].map(({ level, badge, exams, desc, period }) => (
+            <div key={level} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${badge}`}>{level}</span>
+                <p className="font-bold text-gray-900 text-sm">{exams}</p>
+              </div>
+              <p className="text-xs text-gray-600 mb-1 leading-relaxed">{desc}</p>
+              <p className="text-xs text-gray-400">目安学習期間：{period}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ITパスポート→基本情報技術者へのステップ</h2>
+        <p className="mb-3">iパス合格後、エンジニア・SE職を目指す方は基本情報技術者試験（FE）へのステップアップが推奨されます。2023年以降、FEは通年CBT試験に移行しており、受験しやすくなっています。</p>
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+          <p className="font-bold text-slate-800 mb-2">ステップアップのポイント</p>
+          <ol className="text-sm space-y-2 text-gray-700">
+            <li className="flex gap-2"><span className="font-bold text-slate-600 shrink-0">①</span>iパス合格後2〜3ヶ月以内にFE学習開始が効果的（知識の重複が多い）</li>
+            <li className="flex gap-2"><span className="font-bold text-slate-600 shrink-0">②</span>科目A（知識問題）はiパスの延長。科目B（アルゴリズム・擬似言語）が新たな山場</li>
+            <li className="flex gap-2"><span className="font-bold text-slate-600 shrink-0">③</span>プログラミング経験がない場合は通信講座やPing-tのような問題集アプリを活用</li>
+          </ol>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">目的別・IT資格の選び方</h2>
+        <div className="space-y-3">
+          {[
+            { purpose: 'IT未経験からエンジニアに転職', recommend: 'ITパスポート → 基本情報技術者 → 応用情報技術者', note: '転職エージェントでのアピール材料として基本情報まで取得するのが現実的。' },
+            { purpose: 'DX推進・社内IT担当', recommend: 'ITパスポート → ITストラテジスト（業務系）', note: '非エンジニア職でのDX・デジタル化推進担当には、経営・企画系の高度試験が有効。' },
+            { purpose: 'セキュリティ専門職', recommend: '基本情報技術者 → 情報処理安全確保支援士（登録セキスペ）', note: 'セキュリティ実務に必要な国家資格。企業のCSIRT・SOC担当者に高く評価される。' },
+            { purpose: 'クラウド・インフラエンジニア', recommend: 'AWS認定・Azure認定 + 応用情報技術者', note: 'ベンダー資格と国家資格の組み合わせが現場で最も評価されるパターン。' },
+          ].map(({ purpose, recommend, note }) => (
+            <div key={purpose} className="border-l-4 border-slate-400 pl-4">
+              <p className="font-bold text-gray-900 text-sm mb-0.5">{purpose}</p>
+              <p className="text-sm text-slate-700 mb-0.5">推奨ルート：{recommend}</p>
+              <p className="text-xs text-gray-500">{note}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">IT資格取得に役立つ通信講座・学習ツール</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'スタディング', slug: 'studying', point: 'ITパスポート・基本情報対応。スマホ完結でAI問題演習が充実。費用14,000円〜と格安で、通勤学習に最適。' },
+            { name: 'Ping-t', slug: 'ping-t', point: 'IT資格専門の問題集プラットフォーム。ITパスポート・基本情報・応用情報に対応。無料プランと有料プランがある。' },
+          ].map(({ name, slug, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <h3 className="font-bold text-gray-900 mb-2 text-sm">{name}</h3>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/courses/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'ITパスポートは文系・非IT職でも取れますか？', a: 'はい、取れます。ITパスポートは「ITを正しく活用できる社会人」を対象にした試験で、プログラミングの知識は不要です。試験範囲はIT基礎・経営戦略・法務が中心で、文系・非IT職の社会人でも3ヶ月前後の学習で合格できます。スタディングのiパスコースは13,000円程度でスマホ学習が可能です。' },
+            { q: 'ITパスポートと基本情報技術者は両方必要ですか？', a: 'エンジニアとして転職・就職を目指す方は基本情報技術者まで取得するのが理想です。非エンジニア職（営業・企画・総務等）でDX推進を担う場合はITパスポートで十分なケースが多いです。企業によっては採用要件や昇進要件として基本情報技術者を指定しているケースもあるため、志望先の要件を事前に確認することをおすすめします。' },
+            { q: 'IT資格はベンダー資格（AWS・Cisco等）と国家資格どちらが有利ですか？', a: 'どちらも重要で、目的によって使い分けます。AWS・Azureなどのベンダー資格は現場での即戦力として評価され、特定技術の専門性を証明できます。一方、国家資格（基本情報・応用情報等）は幅広いIT知識を証明でき、採用・昇進の基準になる企業が多い。理想は国家資格＋ベンダー資格のダブル取得です。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'kyouiku-kunren-kanzen-guide': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">教育訓練給付金の3種類と給付率</h2>
+        <p className="mb-4">教育訓練給付金は雇用保険加入者が職業能力開発のために活用できる制度です。資格通信講座の受講費用を国が一部負担してくれる仕組みで、最大で受講費用の70%が給付されます。給付金は3種類あり、対象となる資格・講座によって適用される種類が異なります。</p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-200 px-3 py-2 text-left">種類</th>
+                <th className="border border-gray-200 px-3 py-2 text-center">給付率</th>
+                <th className="border border-gray-200 px-3 py-2 text-center">上限額</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">対象例</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { type: '一般教育訓練', rate: '20%', limit: '10万円', example: '簿記・語学・ITパスポートなど' },
+                { type: '特定一般教育訓練', rate: '40%', limit: '20万円', example: '宅建・介護福祉士・大型免許など' },
+                { type: '専門実践教育訓練', rate: '50〜70%', limit: '年56〜168万円', example: '看護師・社会福祉士・MBAなど' },
+              ].map((row, i) => (
+                <tr key={row.type} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="border border-gray-200 px-3 py-2 font-medium">{row.type}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-center font-bold text-slate-700">{row.rate}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-center">{row.limit}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-gray-600 text-xs">{row.example}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-gray-400 mt-2">※専門実践は雇用保険加入期間・離職後受講等の条件により給付率が変わります。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">給付金を受けるための条件と確認方法</h2>
+        <p className="mb-3">給付金を受けるには次の主要条件をすべて満たす必要があります。</p>
+        <div className="space-y-3">
+          {[
+            { cond: '雇用保険の加入期間', detail: '一般・特定一般：1年以上（初回受講の場合は1年以上）。専門実践：3年以上。初めて受講する場合は加入期間の要件が緩和されることもあります。' },
+            { cond: '指定講座の受講', detail: 'ハローワークが指定する教育訓練給付金対象講座であること。講座が対象かどうかは「教育訓練給付制度 検索システム（厚生労働省）」で事前確認できます。' },
+            { cond: '受講前の手続き（特定一般・専門実践）', detail: '特定一般・専門実践教育訓練は受講開始1ヶ月前までにハローワークで「訓練前キャリアコンサルティング」の受講が必要。一般教育訓練は受講後の申請のみ可能。' },
+          ].map(({ cond, detail }) => (
+            <div key={cond} className="border-l-4 border-amber-400 pl-4">
+              <p className="font-bold text-gray-900 text-sm mb-1">{cond}</p>
+              <p className="text-sm text-gray-700">{detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">申請の流れ：受講前・受講中・受講後</h2>
+        <ol className="space-y-4">
+          {[
+            { step: '受講前', items: ['①対象講座を「教育訓練給付制度検索システム」で検索・確認', '②特定一般・専門実践の場合：受講1ヶ月前までにハローワークでキャリアコンサルティングを受け、「教育訓練給付金及び教育訓練支援給付金受給資格確認票」を取得', '③講座の申込・受講料の支払い（給付金は受講後の給付のため、いったん全額支払いが必要）'] },
+            { step: '受講中', items: ['①出席・修了要件を確認しながら受講（修了要件を満たさないと給付対象外になることも）', '②専門実践は6ヶ月ごとの給付申請が可能（在籍中給付）'] },
+            { step: '受講後', items: ['①修了証明書・領収書・本人確認書類を準備', '②受講修了後1ヶ月以内にハローワークで給付申請', '③審査後、指定口座に給付金が振り込まれる（数週間〜1ヶ月程度）'] },
+          ].map(({ step, items }) => (
+            <div key={step} className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+              <p className="font-bold text-slate-800 mb-2">{step}</p>
+              <ul className="text-sm space-y-1 text-gray-700">
+                {items.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </ol>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">給付金対象の人気資格通信講座一覧</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'フォーサイト', slug: 'foresight', target: '宅建・FP・行政書士・簿記など', benefit: '特定一般教育訓練対象コースあり（40%給付・上限20万円）。フルカラーテキストと高合格率が強み。' },
+            { name: 'ユーキャン', slug: 'yukiyukan', target: '医療事務・介護職員初任者研修など', benefit: '一般教育訓練および特定一般教育訓練の対象講座が豊富。通信講座最大手で安心感がある。' },
+            { name: 'アガルート', slug: 'agaroot', target: '宅建・社労士・行政書士・司法書士など', benefit: '一部講座で教育訓練給付金対応。合格特典（全額返金）と組み合わせてリスクを最小化できる。' },
+            { name: 'キャリアカレッジ', slug: 'career-college-japan', target: '医療事務・介護・保育・心理など', benefit: '介護・医療・福祉系講座での給付金対象多数。就職・転職サポートも充実。' },
+          ].map(({ name, slug, target, benefit }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <h3 className="font-bold text-gray-900 mb-1 text-sm">{name}</h3>
+              <p className="text-xs text-slate-600 mb-1">対象資格：{target}</p>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{benefit}</p>
+              <Link href={`/courses/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・対象講座を確認 →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">給付金と組み合わせると最もお得な講座</h2>
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-5">
+          <p className="font-bold text-slate-800 mb-3">フォーサイト 宅建士コース × 特定一般教育訓練給付金の例</p>
+          <ul className="text-sm space-y-1 text-gray-700 mb-3">
+            <li>通常受講料：58,000円（バリューセット3）</li>
+            <li>給付金（40%）：約23,200円</li>
+            <li>実質負担：約34,800円</li>
+            <li>さらに合格すれば…お祝い品・特典あり</li>
+          </ul>
+          <p className="text-xs text-gray-500">※給付金の受給には受講前のハローワーク手続きが必要です。必ず受講開始1ヶ月前に手続きを行ってください。</p>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '教育訓練給付金はパート・アルバイトでも使えますか？', a: '雇用保険に加入しているパート・アルバイトの方も利用できます。雇用保険の加入は週20時間以上・31日以上の雇用見込みがある場合に加入義務があります。加入期間の要件（一般：1年以上）を満たしていれば申請可能です。まず自分が雇用保険に加入しているかを給与明細または勤務先に確認してください。' },
+            { q: '給付金は受講前に受け取れますか？', a: '給付金は受講後の申請・給付が原則です。受講料はいったん全額を自己負担で支払い、受講修了後1ヶ月以内にハローワークで申請することで給付金が口座に振り込まれます。特定一般・専門実践教育訓練は受講前にハローワークでの手続きが必要なため、「受講前手続き→受講・支払い→修了後申請→給付」の順序を守ることが重要です。' },
+            { q: '給付金の対象講座かどうかはどうやって確認しますか？', a: '厚生労働省の「教育訓練給付制度 検索システム」（公式サイト）から講座名・分野・受講施設名で検索できます。また各通信講座のサイトでも「教育訓練給付金対象」の表記がある場合は対象です。フォーサイト・ユーキャン・アガルートなど主要通信講座では対象コースを公式サイトで明示しているので確認しやすいです。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'hataraki-nagara-shikaku-jikankanri': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">社会人の「学習時間がない」問題を解決する</h2>
+        <p className="mb-4">「仕事が忙しくて勉強する時間がない」――これは働きながら資格取得を目指す社会人が最も多く口にする悩みです。しかし統計的に見ると、社会人の平均的な「隙間時間」を合計すると1日1.5〜2時間程度は確保できることが分かっています。問題は時間の有無ではなく、その時間を資格学習に変換できているかどうかです。</p>
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-4">
+          <p className="font-bold text-slate-800 mb-2">社会人の隙間時間の例（1日合計）</p>
+          <ul className="text-sm space-y-1 text-gray-700">
+            <li>通勤往復：約60〜90分</li>
+            <li>昼休み：約30〜40分（うち学習可能：15〜20分）</li>
+            <li>入浴・食事中：約30分</li>
+            <li>就寝前：約20〜30分</li>
+          </ul>
+          <p className="text-xs text-gray-500 mt-2">合計：1日約100〜160分の隙間時間</p>
+        </div>
+        <p className="text-sm text-gray-700">この時間を全て学習に充てることは現実的ではありませんが、半分（50〜80分）でも資格学習に使えれば、多くの資格で1年以内の合格を目指せます。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">スキマ時間を資格学習に変える5つの方法</h2>
+        <div className="space-y-3">
+          {[
+            { method: '通勤時間：音声・動画学習', detail: '電車・バス通勤の方は、スマホで通信講座の動画・音声講義を視聴。スタディング・フォーサイトはスマホ最適化されており、倍速再生・オフライン再生が可能。片道30分の通勤なら、往復で毎日1時間の学習時間を確保できる。' },
+            { method: '昼休み：問題演習で記憶定着', detail: '食事後の15〜20分をスマホでの過去問演習に充てる。問題を解くことでインプット内容が定着しやすい。スタディングのAI問題集はスキマ時間での演習に最適化されている。' },
+            { method: '早朝学習（朝活）：集中力の高い時間帯を活用', detail: '始業1〜1.5時間前に起床し、カフェやデスクで集中学習。朝は脳がリセットされた状態で集中力が高く、夜より記憶定着率が高いとされる。週3〜4日の朝活で週5〜6時間の追加学習が可能。' },
+            { method: '就寝前：1日の復習タイム', detail: '就寝30分前に当日学んだ内容を復習するノート・アプリの確認。睡眠中に記憶が整理されるため、就寝前の復習は特に効果的とされる。ただし長時間の夜学習は睡眠の質を下げるため注意。' },
+            { method: '家事・移動中：ながら学習', detail: '料理・皿洗い・洗濯物たたみなど「手は動いているが脳は空いている時間」に音声教材を活用。宅建・社労士などの音声学習コンテンツを提供している通信講座も多い。' },
+          ].map(({ method, detail }, i) => (
+            <div key={method} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="bg-slate-800 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shrink-0">{i + 1}</span>
+                <p className="font-bold text-gray-900 text-sm">{method}</p>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed">{detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">週次・月次の学習スケジュールの立て方</h2>
+        <p className="mb-3">資格学習を継続するには、週単位・月単位の計画を立てることが不可欠です。以下は宅建（目標：10月試験）を例にした学習スケジュールの考え方です。</p>
+        <div className="space-y-3">
+          {[
+            { phase: '逆算からスタート（試験日の確認）', desc: '試験日から逆算して「何ヶ月で何をマスターするか」を設定。宅建なら4〜6ヶ月を基準に月別の学習目標を決める。' },
+            { phase: '週単位の目標設定', desc: '「今週は権利関係の第1〜3章を完了する」「今週は過去問50問を解く」など具体的な週次ゴールを設定。曖昧な目標は達成できない。' },
+            { phase: '曜日別の学習時間割を作る', desc: '平日はスキマ時間中心（1〜1.5時間）、土曜は3〜4時間の集中学習、日曜は復習・過去問演習といった固定パターンが定着しやすい。' },
+            { phase: '月次で進捗確認・計画修正', desc: '月末に「計画通りに進んだか」を振り返り、次月の計画を調整。過度なプレッシャーは禁物で、少し余裕を持たせたスケジュールが継続のコツ。' },
+          ].map(({ phase, desc }) => (
+            <div key={phase} className="border-l-4 border-slate-400 pl-4">
+              <p className="font-bold text-gray-900 text-sm mb-1">{phase}</p>
+              <p className="text-sm text-gray-700">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">モチベーションを維持する3つの仕組み</h2>
+        <div className="grid sm:grid-cols-3 gap-4">
+          {[
+            { title: '学習記録を可視化', desc: '毎日の学習時間・進捗をアプリやノートに記録。累積時間が増えるほど「やめるのがもったいない」という心理が働き、継続しやすくなる。スタディングは学習時間の自動記録機能あり。' },
+            { title: '仲間・コミュニティの活用', desc: 'SNSで同じ資格を目指す受験仲間とつながる。「#宅建2026」「#社労士勉強垢」などのハッシュタグで学習日記を共有することで、継続のプレッシャーと励ましが得られる。' },
+            { title: '合格後の自分をイメージ', desc: '資格取得後の転職先・年収・働き方を具体的に書き出しておく。モチベーションが下がった時に見返すことで、学習の意義を再確認できる。' },
+          ].map(({ title, desc }) => (
+            <div key={title} className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+              <p className="font-bold text-slate-800 text-sm mb-2">{title}</p>
+              <p className="text-xs text-gray-600 leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">通信講座で学習効率を最大化する方法</h2>
+        <p className="mb-3">社会人の時間管理に最も適した学習手段は通信講座です。スマホ1台で隙間時間に学べる通信講座を選ぶことで、学習効率が大幅に向上します。</p>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'スタディング', slug: 'studying', point: 'スマホ特化・業界最安値の通信講座。AI問題演習・学習時間記録・スキップ再生など、社会人の隙間学習に最適化された機能が揃っている。' },
+            { name: 'フォーサイト', slug: 'foresight', point: 'eラーニングManaBunでスマホ学習が可能。フルカラーテキストとデジタル学習を組み合わせた高合格率が強み。教育訓練給付金で費用も削減できる。' },
+          ].map(({ name, slug, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <h3 className="font-bold text-gray-900 mb-2 text-sm">{name}</h3>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/courses/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '1日30分の学習で資格取得できますか？', a: '資格によっては可能です。ITパスポート・FP3級・簿記3級など比較的取り組みやすい資格は、1日30〜60分の学習を3〜6ヶ月継続することで合格できます。宅建（300〜400時間）や社労士（800〜1,000時間）などの難関資格は1日30分では難しく、少なくとも1日1〜2時間を確保することが現実的な合格ラインです。' },
+            { q: '残業が多い時期は学習を休んでも良いですか？', a: '短期間の中断は問題ありません。ただし「繁忙期だから2週間休む」が「1ヶ月休む」→「やる気がなくなる」と悪循環になりやすい。繁忙期は1日5〜10分でも学習を継続する「最低ライン」を設けることが挫折防止のコツです。通信講座の短い1問演習や音声聴講だけでも「継続した」という実績が重要です。' },
+            { q: '子育て中・家事と両立しながら資格の勉強は可能ですか？', a: 'はい、可能です。特に通信講座はスマホ1台で隙間時間に学習できるため、子育て中・家事の合間でも活用できます。子供が寝た後の30〜60分の学習・通勤中の音声講義・家事中のながら学習を組み合わせることで、多くの方が1〜1.5年で合格しています。育児休業中に集中学習で短期合格した事例も多数あります。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'fukugyou-freelance-shikaku-2026': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">副業で資格が「稼ぎ」につながる仕組み</h2>
+        <p className="mb-4">副業・フリーランスで資格が収入に結びつくのは、「その資格がないとできない業務（業務独占資格）」か「資格がある方が高い単価を得やすい業務」に携わる場合です。資格そのものが収入を生むのではなく、資格を活かした業務・サービスが収入源になります。</p>
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-4">
+          <p className="font-bold text-slate-800 mb-2">副業で資格が稼ぎにつながる3パターン</p>
+          <ul className="text-sm space-y-2 text-gray-700">
+            <li><span className="font-medium">①業務独占型：</span>行政書士・社労士・FPなど、有資格者しかできない業務を副業で受注</li>
+            <li><span className="font-medium">②単価アップ型：</span>IT資格・簿記・Webデザインなど、資格があることで時給・案件単価が上がる</li>
+            <li><span className="font-medium">③信頼獲得型：</span>医療事務・介護・保育など、資格が就業先への採用に直結する</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">副業・フリーランスで稼げる資格ランキングTOP10</h2>
+        <div className="space-y-3">
+          {[
+            { rank: 1, name: 'FP（ファイナンシャルプランナー）2・3級', income: '時給2,000〜5,000円', detail: '家計相談・保険見直し・資産運用アドバイスなどの独立系FP業務。副業として個人向け相談業務（30〜60分1万円〜）での収入が可能。ブログ・YouTube副業との相性も抜群。' },
+            { rank: 2, name: '行政書士', income: '案件10万〜50万円', detail: '許認可申請・外国人ビザ・会社設立手続きなど。副業での受注も可能で、専門性の高い案件は高単価。副業として月10〜30万円の収入を得る行政書士も増えている。' },
+            { rank: 3, name: '宅建士（宅地建物取引士）', income: '副業時給2,500〜4,000円', detail: '不動産会社への非常勤・スポット勤務需要が高い。重要事項説明の立会いなど宅建士が必要な業務の依頼も多い。試験合格後すぐ副業として活用可能。' },
+            { rank: 4, name: '簿記2級', income: '時給1,800〜3,000円', detail: '中小企業の記帳代行・経理サポートのクラウドソーシング案件が豊富。月次決算サポート・freee/マネーフォワード導入支援など。フリーランスとして月5〜15万円が目安。' },
+            { rank: 5, name: 'ITパスポート・基本情報技術者', income: '時給2,000〜4,000円', detail: 'DX推進・IT導入支援・業務システム研修講師としての副業案件が増加中。企業のIT化相談や社内研修の講師業で収入を得るケースも多い。' },
+            { rank: 6, name: '社労士', income: '顧問料月3〜10万円', detail: '企業の社会保険手続き・就業規則作成・給与計算の顧問契約。副業での社労士業務は顧問先1社で月3〜5万円が相場。本業を続けながら副業顧問を持つ社労士も増えている。' },
+            { rank: 7, name: 'Webデザイン関連資格', income: '案件5万〜30万円', detail: 'ウェブデザイン技能検定・アドビ認定などの資格で受注単価アップ。クラウドソーシングでのバナー・LP制作、コーポレートサイトリニューアル案件。' },
+            { rank: 8, name: '医療事務', income: '時給1,200〜1,800円', detail: '医療機関での非常勤・派遣・パートとして副業勤務。診療報酬請求業務はリモートワーク案件も増えており、本業との両立がしやすい。' },
+            { rank: 9, name: '保育士', income: '時給1,300〜1,800円', detail: 'ベビーシッターサービス・学童保育・子育て支援センターでの副業勤務。保育士資格は業務独占ではないが、有資格者として優先採用されやすい。' },
+            { rank: 10, name: 'TOEIC高得点（800点以上）', income: '時給2,000〜5,000円', detail: '翻訳・通訳副業・英語講師・グローバル企業での英語対応業務。特許翻訳・医療翻訳などの専門分野は高単価。' },
+          ].map(({ rank, name, income, detail }) => (
+            <div key={rank} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="bg-slate-800 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shrink-0">{rank}</span>
+                <div>
+                  <p className="font-bold text-gray-900 text-sm">{name}</p>
+                  <p className="text-xs text-slate-600">{income}</p>
+                </div>
+              </div>
+              <p className="text-xs text-gray-600 leading-relaxed">{detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">資格別・副業の始め方と収入目安</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-200 px-3 py-2 text-left">資格</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">副業の形態</th>
+                <th className="border border-gray-200 px-3 py-2 text-center">月収目安</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { cert: 'FP2級', type: '個人向け家計・保険相談', income: '3〜15万円' },
+                { cert: '行政書士', type: '許認可申請・ビザ申請代行', income: '5〜30万円' },
+                { cert: '簿記2級', type: '記帳代行・経理サポート', income: '3〜10万円' },
+                { cert: '宅建士', type: '不動産会社スポット勤務', income: '2〜8万円' },
+                { cert: '社労士', type: '企業顧問・手続き代行', income: '5〜20万円' },
+              ].map((row, i) => (
+                <tr key={row.cert} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="border border-gray-200 px-3 py-2 font-medium">{row.cert}</td>
+                  <td className="border border-gray-200 px-3 py-2">{row.type}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-center font-medium text-slate-700">{row.income}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-gray-400 mt-2">※収入目安は副業初期〜軌道に乗った段階の参考値。実績により大きく異なります。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">資格取得から副業開始までのロードマップ</h2>
+        <ol className="space-y-3 text-sm">
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">1</span><span>副業で目指す業務・収入目標を明確にする</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">2</span><span>目標業務に必要な資格を選択し、取得計画を立てる（通信講座活用で効率化）</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">3</span><span>資格取得後、クラウドソーシング・SNS・知人紹介で最初の案件を受注</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">4</span><span>実績・口コミを積み上げて単価アップ・案件数を増やす</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">5</span><span>副業収入が本業を超えたタイミングでフリーランス独立を検討</span></li>
+        </ol>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">副業資格取得に最適な通信講座の選び方</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'スタディング', slug: 'studying', point: '副業準備として最短・最安で資格取得したい方に最適。FP・宅建・簿記・行政書士など副業向け資格に幅広く対応。' },
+            { name: 'アガルート', slug: 'agaroot', point: '行政書士・社労士など難関資格で確実に合格したい方向け。合格特典（全額返金・祝い金）でリスクを最小化できる。' },
+          ].map(({ name, slug, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <h3 className="font-bold text-gray-900 mb-2 text-sm">{name}</h3>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/courses/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '副業で稼げる資格として最もコスパがいいのはどれですか？', a: '取得のしやすさ・副業収入・資格取得費用を総合するとFP2級が最もコスパが高いと言えます。受験費用約13,000円・通信講座14,000〜38,000円程度で取得でき、個人向け相談業務・ブログ・YouTube副業（金融・保険・節税コンテンツ）に幅広く活用できます。行政書士・社労士はより高収入ですが、取得難易度・費用が高くなります。' },
+            { q: '副業収入に税金はかかりますか？確定申告は必要ですか？', a: '副業収入（年間20万円超）は確定申告が必要です。給与所得以外の収入が年20万円を超えると、翌年2〜3月に確定申告書を提出する義務があります。簿記・FP資格があれば確定申告を自分で行えます。なお副業が禁止されている職場の場合は、就業規則を事前に確認してください。' },
+            { q: 'フリーランス独立は副業からどのくらいで目指せますか？', a: '資格取得後、副業を開始してから副業収入が安定するまで通常6ヶ月〜1年程度かかります。月収20〜30万円が安定して得られるようになった段階でフリーランス独立を検討するのが現実的です。社労士・行政書士など独占業務資格の場合は、顧問先5〜10社（月15〜30万円）を確保してから独立するケースが多いです。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'tensyoku-shikaku-mikiwake': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">転職で「評価される資格」の4つの共通点</h2>
+        <p className="mb-4">転職活動において、資格はアピール材料として有効ですが、全ての資格が転職市場で評価されるわけではありません。転職で実際に評価される資格には4つの共通点があります。</p>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { point: '業界・職種で需要が高い', desc: '不動産業界で宅建・金融業界でFP・IT業界で基本情報技術者など、採用先の業界で「あって当然」または「あると歓迎」とされる資格は評価が高い。' },
+            { point: '客観的な難易度・信頼性がある', desc: '国家資格・公的資格は受験制度・合格基準が明確で、採用担当者が「どのレベルの知識があるか」を客観的に判断できる。民間資格でも知名度が高いものは評価される。' },
+            { point: '実務に直結するスキルを証明できる', desc: '資格の取得が即戦力の証明になるもの（介護福祉士・医療事務・FPなど）は転職評価が高い。「知識があるだけ」でなく「実務で使える」資格が求められる。' },
+            { point: '希少性・差別化になる', desc: '同じ求人に応募する競合候補と差別化できる資格は強い。中小企業診断士・社労士・弁理士などは有資格者自体が少なく、持っているだけでスクリーニングで有利になる。' },
+          ].map(({ point, desc }) => (
+            <div key={point} className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+              <p className="font-bold text-slate-800 text-sm mb-2">{point}</p>
+              <p className="text-xs text-gray-600 leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">役立たない資格の特徴と見分け方</h2>
+        <p className="mb-3">逆に、転職市場で評価されにくい資格には次のような特徴があります。取得前に必ず確認してください。</p>
+        <div className="space-y-3">
+          {[
+            { flag: '知名度・認知度が低い民間資格', detail: '主催団体が明確でない・受験者数が極端に少ない・合格基準が不透明な民間資格は採用担当者に理解されない場合がある。「○○検定」「△△スペシャリスト」など独自認定の資格は事前に業界内での評価を調べること。' },
+            { flag: '業界需要と合致しない資格', detail: '例：IT職に転職したいのに医療事務の資格を取っても評価されない。転職先の業界・職種で必要とされる資格かどうかが最重要。求人票の「歓迎要件」欄で必要資格を事前確認すること。' },
+            { flag: '取得難易度に見合わない資格', detail: '1〜2時間の講習で取れるような資格は転職においてほぼ評価されない。努力・時間を要する資格（国家資格・公的資格・難関民間資格）こそが差別化要因になる。' },
+            { flag: '期限切れ・更新が必要な資格の失効', detail: '宅建士登録・社労士登録など、資格試験合格後に登録・更新が必要な資格で手続きを怠ると業務ができない。また公認会計士・弁護士などは合格だけでなく登録が必要であることを忘れずに。' },
+          ].map(({ flag, detail }) => (
+            <div key={flag} className="border-l-4 border-red-300 pl-4">
+              <p className="font-bold text-gray-900 text-sm mb-1">{flag}</p>
+              <p className="text-sm text-gray-700 leading-relaxed">{detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">業界別・転職に有利な資格一覧</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-200 px-3 py-2 text-left">業界・職種</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">有利な資格</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">ポイント</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { industry: '不動産', certs: '宅建士・管理業務主任者・マンション管理士', point: '宅建は業務独占資格で設置義務あり。採用の必須または大きな加点要因。' },
+                { industry: '金融・保険', certs: 'FP2・3級・証券外務員・生命保険募集人', point: 'FP2級はほぼ必須要件の金融機関も。証券会社は外務員資格が採用条件になることが多い。' },
+                { industry: 'IT・通信', certs: '基本情報技術者・応用情報技術者・AWS/Azure認定', point: '国家資格＋クラウドベンダー資格の組み合わせが最も評価される。' },
+                { industry: '人事・労務', certs: '社労士・産業カウンセラー・衛生管理者', point: '社労士は独占業務資格で希少性が高い。人事部門での昇進に直結する場合も。' },
+                { industry: '会計・経理', certs: '日商簿記2級・1級・公認会計士・税理士', point: '経理職転職では簿記2級以上が歓迎・必須のケースが多い。' },
+                { industry: '介護・医療', certs: '介護福祉士・ケアマネージャー・医療事務', point: '介護福祉士は国家資格で転職に直結。ケアマネは年収アップの近道。' },
+              ].map((row, i) => (
+                <tr key={row.industry} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="border border-gray-200 px-3 py-2 font-medium">{row.industry}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-xs">{row.certs}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-xs text-gray-600">{row.point}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">資格選びの前に確認すべき3つの質問</h2>
+        <div className="space-y-4">
+          {[
+            { q: 'Q1. 転職先の求人票に「必要・歓迎」として記載されているか？', a: '実際の求人票を検索して確認するのが最も確実です。「宅建 歓迎」「FP2級 必須」など採用要件として記載があれば転職市場での評価が明確です。求人検索サイト（doda・リクルートなど）で資格名を入れて求人数を確認することで需要が分かります。' },
+            { q: 'Q2. 取得にかかる費用・時間と転職後の年収アップが見合うか？', a: '例：社労士（費用50〜80万円、時間1,000時間）→転職後年収+100万円ならROIは良好。一方、取得に30万円・500時間かかる資格で転職後年収がほとんど変わらないなら費用対効果が低い。費用・時間対効果を事前に計算することが重要です。' },
+            { q: 'Q3. 今の業界・職種と転職先の間で「橋渡し」になる資格か？', a: '全く異業種への転職の場合、取得した資格が新しい業界で評価されるかを確認してください。例えば製造業から金融への転職でFP資格を取れば、金融知識を証明しながら異業種からの転職動機を説明できます。「この資格でどんな仕事をしたいか」を一言で言えることが重要です。' },
+          ].map(({ q, a }) => (
+            <div key={q} className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+              <p className="font-bold text-slate-800 text-sm mb-2">{q}</p>
+              <p className="text-xs text-gray-600 leading-relaxed">{a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">転職目的の資格取得におすすめの通信講座</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'スタディング', slug: 'studying', point: '転職に有利な国家資格（宅建・FP・簿記・社労士・行政書士など）に幅広く対応。スマホ完結で働きながら最短合格を狙える。業界最安水準で費用対効果が高い。' },
+            { name: 'アガルート', slug: 'agaroot', point: '難関国家資格（司法書士・社労士・行政書士・宅建）に強い。合格実績・特典が充実しており、確実に転職目標を達成したい方向け。' },
+            { name: 'フォーサイト', slug: 'foresight', point: '教育訓練給付金対象コースで実質費用を削減しながら高合格率を狙える。転職目的の資格取得でコスト意識が高い方に最適。' },
+            { name: 'TAC', slug: 'tac', point: '中小企業診断士・簿記・FP・公認会計士など会計・経営系資格に強い老舗スクール。通学・通信両対応で、難関資格を確実に取りたい方に。' },
+          ].map(({ name, slug, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <h3 className="font-bold text-gray-900 mb-2 text-sm">{name}</h3>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/courses/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '転職活動中に資格を取るべきか、転職後に取るべきか？', a: '転職活動中（就職前）に資格を取っておくのが理想です。特に業界・職種への転換を伴う転職の場合、「この分野を学ぶ意欲がある」という証拠になります。ただし難関資格（社労士・行政書士など）は取得に1〜2年かかるため、目標が決まったらすぐに学習開始が重要。転職先への応募書類に「〇〇資格取得勉強中（2026年10月受験予定）」と記載することで意欲をアピールできます。' },
+            { q: '40代以降でも資格取得は転職に有効ですか？', a: '40代以降は「資格＋実務経験」の組み合わせが転職の鍵です。資格単体での転職は難しいですが、現職の実務経験と新しい資格を組み合わせることで転職先の幅が広がります。例えば40代の人事担当者が社労士を取得すれば、社労士事務所への転職や人事コンサルタントとしての副業・独立が現実的になります。資格は「今から始めても遅い」ことはありません。' },
+            { q: '履歴書に資格を書く場合、どこまで書くべきですか？', a: '転職先の業界・職種に関連する資格は全て記載することをおすすめします。一般的に自動車運転免許は「業務上必要な場合」のみ記載。英検・漢検は3級以上から記載が有効とされます。取得年月日の記載も重要で、最近取得した資格は「転職準備のために努力した」証拠になります。資格取得中の場合は「〇〇資格 勉強中（受験予定：2026年〇月）」と記載することが推奨されます。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
 };

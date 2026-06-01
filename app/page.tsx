@@ -70,7 +70,7 @@ export default function HomePage() {
           価格最終更新: {new Date(updatedAt).toLocaleDateString('ja-JP')}
         </p>
         <div className="flex flex-wrap justify-center gap-3">
-          <Link href="/ranking" className="bg-slate-800 text-white px-6 py-3 rounded-xl font-bold hover:bg-slate-700 transition-colors text-sm">
+          <Link href="/ranking" className="bg-sky-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-sky-500 transition-colors text-sm">
             人気ランキングを見る
           </Link>
           <Link href="/column/hajimete-erabikata" className="bg-white text-gray-700 border border-gray-200 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition-colors text-sm">
@@ -152,7 +152,7 @@ export default function HomePage() {
             { step: '3', title: '最安値で購入', desc: '「最安値で買う」ボタンからそのまま公式ショップで購入' },
           ].map((item) => (
             <div key={item.step} className="flex items-start gap-3">
-              <div className="bg-slate-800 text-white rounded-lg w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
+              <div className="bg-sky-600 text-white rounded-lg w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
                 {item.step}
               </div>
               <div>

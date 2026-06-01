@@ -57,7 +57,7 @@ export default function ColumnListPage() {
           気になった商品の価格を複数ショップで一括比較。毎日価格を自動更新しています。
         </p>
         <div className="flex flex-wrap gap-3">
-          <Link href="/ranking" className="bg-slate-800 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-slate-700 transition-colors">
+          <Link href="/ranking" className="bg-sky-600 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-sky-500 transition-colors">
             人気ランキングを見る
           </Link>
           <Link href="/category/1day" className="bg-white text-slate-800 border border-slate-200 px-4 py-2 rounded-xl text-sm font-medium hover:bg-slate-50 transition-colors">
