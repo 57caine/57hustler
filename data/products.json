@@ -1472,7 +1472,7 @@
     {
       "id": "amazon",
       "name": "Amazon",
-      "url": "#amazon",
+      "url": "https://www.amazon.co.jp",
       "affiliateParam": "",
       "shipping": 410,
       "freeShippingMin": 2000,
