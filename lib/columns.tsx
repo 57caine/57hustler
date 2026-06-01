@@ -3981,4 +3981,477 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
     </div>
   ),
+
+  'soft-vs-hard-contact-hikaku': (
+    <div className="space-y-8">
+      <section>
+        <p className="lead text-lg text-gray-700 mb-6">
+          コンタクトレンズには大きく「ソフト」と「ハード」の2種類があります。装用感・矯正力・コスト・手入れの手間が大きく異なるため、自分のライフスタイルや目の状態に合った選択が重要です。この記事では両者の違いを徹底的に比較します。
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ソフトとハード、根本的な違いとは</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-4">
+          ソフトコンタクトレンズは柔らかい素材（ハイドロゲルまたはシリコーンハイドロゲル）でできており、角膜より大きく目全体を覆うように装用します。一方、ハードコンタクトレンズは硬い素材（酸素透過性プラスチック）でできており、角膜より小さいサイズで中央部のみを覆います。
+        </p>
+        <div className="overflow-x-auto bg-slate-50 rounded-xl p-4 mb-4">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="border-b border-gray-200">
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">項目</th>
+                <th className="text-left py-2 pr-4 text-gray-600 font-semibold">ソフト</th>
+                <th className="text-left py-2 text-gray-600 font-semibold">ハード</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['素材', '柔らかい（含水性）', '硬い（酸素透過性）'],
+                ['サイズ', '13.8〜14.5mm（大きい）', '8.5〜9.5mm（小さい）'],
+                ['装用感', '最初から快適', '慣れが必要（1〜2週間）'],
+                ['矯正力', '標準〜やや低め', '高い（乱視・高度近視向き）'],
+                ['交換周期', '1day〜マンスリー', '1〜2年以上'],
+                ['年間コスト', '中〜高', '長期的には安い'],
+              ].map(([item, soft, hard]) => (
+                <tr key={item} className="border-b border-gray-100">
+                  <td className="py-2 pr-4 font-semibold text-gray-700">{item}</td>
+                  <td className="py-2 pr-4 text-gray-600">{soft}</td>
+                  <td className="py-2 text-gray-600">{hard}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ソフトコンタクトのメリット・デメリット</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div className="bg-green-50 rounded-xl p-4">
+            <h3 className="font-bold text-green-800 mb-2">メリット</h3>
+            <ul className="text-sm text-gray-700 space-y-1">
+              <li>・最初から装用感が快適</li>
+              <li>・落下・ずれにくい</li>
+              <li>・スポーツ時も安心</li>
+              <li>・種類・ブランドが豊富</li>
+              <li>・1dayタイプはケア不要</li>
+              <li>・カラーレンズも選べる</li>
+            </ul>
+          </div>
+          <div className="bg-red-50 rounded-xl p-4">
+            <h3 className="font-bold text-red-800 mb-2">デメリット</h3>
+            <ul className="text-sm text-gray-700 space-y-1">
+              <li>・ハードより酸素透過率が低い場合も</li>
+              <li>・乱視の矯正精度がやや劣る</li>
+              <li>・年間コストが高め（特に1day）</li>
+              <li>・素材によって乾きやすい</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">ハードコンタクトのメリット・デメリット</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div className="bg-green-50 rounded-xl p-4">
+            <h3 className="font-bold text-green-800 mb-2">メリット</h3>
+            <ul className="text-sm text-gray-700 space-y-1">
+              <li>・高い矯正力（乱視・強度近視向き）</li>
+              <li>・長期使用でコストが安い</li>
+              <li>・酸素透過率が高いものが多い</li>
+              <li>・耐久性が高い（1〜2年使用可）</li>
+              <li>・視力矯正の精度が高い</li>
+            </ul>
+          </div>
+          <div className="bg-red-50 rounded-xl p-4">
+            <h3 className="font-bold text-red-800 mb-2">デメリット</h3>
+            <ul className="text-sm text-gray-700 space-y-1">
+              <li>・慣れるまで異物感がある</li>
+              <li>・外れやすい・落としやすい</li>
+              <li>・埃が入ると痛い</li>
+              <li>・スポーツ中に外れるリスク</li>
+              <li>・種類・ブランドが少ない</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">費用と維持コストの比較</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          初期費用はハードのほうが高め（1枚1万〜2万円程度）ですが、1〜2年以上使えるため長期的には安くなります。ソフトは商品によりますが、ワンデーは年間3〜6万円、2weekは年間1.5〜3万円（ケア用品込み）が目安です。
+        </p>
+        <div className="bg-yellow-50 border-l-4 border-yellow-400 pl-4 py-3 mb-4">
+          <p className="font-bold text-yellow-800 text-sm">コスト比較の目安（両目・年間）</p>
+          <ul className="text-sm text-gray-700 mt-2 space-y-1">
+            <li>ワンデーソフト：約3〜6万円</li>
+            <li>2weekソフト：約1.5〜3万円（ケア用品含む）</li>
+            <li>マンスリーソフト：約1〜2万円（ケア用品含む）</li>
+            <li>ハード：初年度1〜2万円＋ケア用品、2年目以降ケア用品のみ</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">乱視・高度近視への適性</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          乱視の矯正においてはハードコンタクトが有利です。ハードレンズは涙液レンズ効果により角膜の不規則な形状を補正するため、強い乱視でも高精度の矯正が可能です。ソフトの乱視用（トーリック）レンズも改善されていますが、強い乱視（CYL -2.25超）や不正乱視にはハードが優れています。
+        </p>
+        <p className="text-sm text-gray-700 leading-relaxed">
+          高度近視（PWR -8.00以上）の場合も、ハードレンズのほうが対応度数の幅が広く、薄型設計で装用しやすい選択肢があります。
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">どちらを選べばいい？タイプ別おすすめ</h2>
+        <div className="space-y-3">
+          {[
+            { type: '初めてコンタクトを使う方', rec: 'ソフト（ワンデー）', reason: '装用感の慣れが不要で、万が一目に合わなくても使い切りなので損失が少ない。' },
+            { type: '強い乱視・不正乱視がある方', rec: 'ハード', reason: 'ソフトの乱視用では矯正しきれない場合もあり、ハードの涙液レンズ効果で高精度の矯正が可能。' },
+            { type: 'スポーツ・アウトドアが好きな方', rec: 'ソフト', reason: '落下リスクが低く、砂埃が入っても痛みが少ない。ワンデーなら衛生的。' },
+            { type: 'コストを徹底的に抑えたい方', rec: 'ハードまたはマンスリーソフト', reason: 'ハードは長期使用できるためランニングコストが最も安い。ソフトならマンスリーが次点。' },
+            { type: 'PC作業・長時間装用の方', rec: 'シリコーンハイドロゲルソフト', reason: '高酸素透過率素材で角膜への負担を軽減。乾燥対策になる目薬との併用も効果的。' },
+          ].map(({ type, rec, reason }) => (
+            <div key={type} className="bg-white border border-gray-200 rounded-xl p-4">
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <p className="font-semibold text-gray-800 text-sm">{type}</p>
+                <span className="text-xs bg-slate-800 text-white px-2 py-0.5 rounded-full">{rec}</span>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed">{reason}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <div className="bg-slate-800 text-white rounded-2xl p-6">
+          <h3 className="text-xl font-bold mb-2">ソフトコンタクトの最安値を比較する</h3>
+          <p className="text-slate-300 mb-4">ワンデー・2week・マンスリーの人気商品を24ショップで価格比較。</p>
+          <Link href="/ranking" className="inline-block bg-white text-slate-800 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 transition-colors">
+            人気商品の価格を比較する →
+          </Link>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'ソフトからハードに変えることはできますか？', a: '可能ですが、眼科での再処方が必要です。ハードは角膜に合わせた精密なフィッティングが必要で、慣れるまで数週間かかることがあります。いきなりハードに変えると異物感で続けられないケースもあるため、医師と相談の上で試用期間を設けることをおすすめします。' },
+            { q: 'ハードコンタクトは通販で購入できますか？', a: 'ハードコンタクトはソフトと比べて通販での取り扱いが少なく、眼科または眼科指定のショップで購入するのが一般的です。個人の角膜形状に合わせたカスタム品も多いため、通販よりも眼科経由の購入が安全です。' },
+            { q: 'ソフトとハードを目的によって使い分けることはできますか？', a: '医師の処方のもとであれば可能です。例えば平日の仕事中はハード、週末のスポーツ時はソフトという使い分けをする方もいます。ただし、ハードからソフトへの切り替え時に角膜形状が一時的に変化することがあり、視力測定に影響する場合があります。眼科医に相談することを推奨します。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'ranshi-contact-ranking-erabikata': (
+    <div className="space-y-8">
+      <section>
+        <p className="lead text-lg text-gray-700 mb-6">
+          乱視用コンタクトレンズ（トーリックレンズ）は、通常の近視・遠視矯正に加えて乱視も同時に補正できる特殊なレンズです。この記事では乱視の基礎知識から、自分に合ったレンズの選び方、2026年版の人気ランキングまで徹底解説します。
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">乱視とは何か？トーリックレンズが必要な理由</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          乱視は角膜または水晶体の形が球面ではなく楕円形（ラグビーボール形）になっているため、光が一点に集まらず像がぼやけたり二重に見えたりする状態です。日本人の約6〜7割が何らかの乱視を持っているとされており、軽度の乱視は通常の球面レンズでも問題ない場合がありますが、中等度以上（CYL -0.75以上）では乱視用レンズの使用が推奨されます。
+        </p>
+        <div className="bg-purple-50 rounded-xl p-4 mb-4">
+          <p className="font-bold text-purple-800 mb-2 text-sm">乱視の症状チェックリスト</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>・遠くの文字がぼやけたり二重に見える</li>
+            <li>・夜間の光が滲んで見える（ハロー・グレア）</li>
+            <li>・眼精疲労・頭痛が起きやすい</li>
+            <li>・ものが歪んで見える</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">乱視の度数（CYL）・軸度（AXIS）の読み方</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          処方箋に記載される乱視関連のパラメータは主に2つです。
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div className="bg-slate-50 rounded-xl p-4">
+            <h3 className="font-bold text-slate-800 mb-2 text-sm">CYL（乱視度数）</h3>
+            <p className="text-xs text-gray-700 leading-relaxed">乱視の強さを表す。マイナスで表記され、数値が大きいほど乱視が強い。一般的な範囲は -0.75〜-2.25。</p>
+            <div className="mt-2 text-xs text-gray-600">
+              <p>-0.75：軽度乱視</p>
+              <p>-1.25：中等度乱視</p>
+              <p>-1.75以上：やや強い乱視</p>
+            </div>
+          </div>
+          <div className="bg-slate-50 rounded-xl p-4">
+            <h3 className="font-bold text-slate-800 mb-2 text-sm">AXIS（軸度）</h3>
+            <p className="text-xs text-gray-700 leading-relaxed">乱視の方向（軸の角度）を1〜180度で表す。この数値が異なると矯正効果が得られないため、必ず正確に入力する必要がある。</p>
+            <div className="mt-2 text-xs text-gray-600">
+              <p>10度刻み（10・20・30…）で設定されることが多い</p>
+              <p>製品によって選択できるAXISの数が異なる</p>
+            </div>
+          </div>
+        </div>
+        <div className="bg-yellow-50 border-l-4 border-yellow-400 pl-4 py-3">
+          <p className="text-sm font-bold text-yellow-800">重要：AXISは製品によって対応範囲が異なります</p>
+          <p className="text-xs text-gray-700 mt-1">処方箋のAXIS値が購入したいレンズで選択できない場合、別の商品を選ぶ必要があります。通販で購入する際は必ず対応AXISを確認してください。</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">装用スタイル別おすすめ乱視用コンタクト</h2>
+        <div className="space-y-3">
+          {[
+            { style: 'ワンデー（1日使い捨て）', merit: 'ケア不要で衛生的。週数回だけ使う方や旅行・外出時に便利。', cost: '年間コスト高め', rec: 'デイリーズ トータルワン乱視用、ワンデーアキュビュー モイスト乱視用' },
+            { style: '2week（2週間交換）', merit: 'ワンデーより経済的で、毎日使う方に向く。毎日のケアが必要。', cost: '年間コスト中程度', rec: 'アキュビュー オアシス乱視用、メダリスト乱視用' },
+            { style: 'マンスリー（月1交換）', merit: '最もコストが安い。しっかりしたケアが必要。毎日使用する方向け。', cost: '年間コスト安め', rec: 'バイオフィニティ トーリック、エアオプティクスプラス乱視用' },
+          ].map(({ style, merit, cost, rec }) => (
+            <div key={style} className="bg-white border border-gray-200 rounded-xl p-4">
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <p className="font-bold text-gray-900 text-sm">{style}</p>
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full">{cost}</span>
+              </div>
+              <p className="text-sm text-gray-700 mb-2">{merit}</p>
+              <p className="text-xs text-gray-500">おすすめ：{rec}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">人気乱視用コンタクトランキング2026</h2>
+        <div className="space-y-4">
+          {[
+            { rank: 1, name: 'デイリーズ トータルワン 乱視用', maker: 'アルコン', type: 'ワンデー', feature: '水分保持96%のウォーターグラジェント素材。1日中快適な装用感でドライアイ気味の方にも最適。CYL -0.75〜-2.25対応。' },
+            { rank: 2, name: 'アキュビュー オアシス 乱視用', maker: 'ジョンソン&ジョンソン', type: '2week', feature: 'HYDRACLEAR PLUSテクノロジーで涙液の安定膜を形成。乾きにくさと視力安定性を両立。BC 8.6mm。' },
+            { rank: 3, name: 'ワンデーアキュビュー モイスト 乱視用', maker: 'ジョンソン&ジョンソン', type: 'ワンデー', feature: 'LACREON配合でうるおい持続。10度刻みのAXIS設定で日本人の細かい乱視軸に対応。' },
+            { rank: 4, name: 'バイオフィニティ トーリック', maker: 'クーパービジョン', type: 'マンスリー', feature: 'Aquaform技術で含水率48%を自然に維持。BC 8.5/8.7の2種類から選べるフィット性。' },
+          ].map(({ rank, name, maker, type, feature }) => (
+            <div key={name} className="bg-white border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-3">
+                <span className="bg-slate-800 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">{rank}</span>
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
+                    <p className="font-bold text-gray-900 text-sm">{name}</p>
+                    <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">{type}</span>
+                  </div>
+                  <p className="text-xs text-gray-500 mb-2">{maker}</p>
+                  <p className="text-sm text-gray-700 leading-relaxed">{feature}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">乱視用レンズを選ぶ際の注意点</h2>
+        <ul className="space-y-2 text-sm text-gray-700">
+          <li className="flex items-start gap-2"><span className="text-red-500 font-bold shrink-0">!</span>必ず眼科で乱視の度数（CYL）と軸度（AXIS）を処方してもらう</li>
+          <li className="flex items-start gap-2"><span className="text-red-500 font-bold shrink-0">!</span>購入する商品のAXIS選択肢に自分の軸度が含まれているか確認する</li>
+          <li className="flex items-start gap-2"><span className="text-red-500 font-bold shrink-0">!</span>装用直後に見え方が安定しない場合は数秒待つ（レンズが回転して安定する）</li>
+          <li className="flex items-start gap-2"><span className="text-red-500 font-bold shrink-0">!</span>通販で購入する際は左右のCYL・AXISを正確に入力する</li>
+        </ul>
+      </section>
+
+      <section>
+        <div className="bg-slate-800 text-white rounded-2xl p-6">
+          <h3 className="text-xl font-bold mb-2">乱視用コンタクトの最安値を比較する</h3>
+          <p className="text-slate-300 mb-4">主要ショップの価格を毎日更新。送料込みで最安値を探せます。</p>
+          <Link href="/ranking" className="inline-block bg-white text-slate-800 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 transition-colors">
+            ランキングで最安値を見る →
+          </Link>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '軽い乱視（CYL -0.75）でも乱視用コンタクトは必要ですか？', a: '個人差があります。CYL -0.75の軽度乱視では通常の球面レンズで十分見えると感じる方も多いです。ただし眼精疲労や夜間の見えにくさが気になる場合は乱視用を試す価値があります。眼科医に相談してください。' },
+            { q: '乱視用コンタクトは通常のコンタクトより高価ですか？', a: '一般的に同じブランド・シリーズの乱視用は通常品より1〜2割程度高い傾向があります。ただし通販を利用することで大幅に安く購入できます。' },
+            { q: 'AXIS（軸度）が少しずれても問題ありませんか？', a: '軸度のずれは視力矯正効果に大きく影響します。処方通りのAXISを選ぶことが重要です。製品のAXISラインナップに合わない場合は眼科医に相談して近い数値での処方を検討してください。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'shoshinsha-contact-guide': (
+    <div className="space-y-8">
+      <section>
+        <p className="lead text-lg text-gray-700 mb-6">
+          初めてコンタクトレンズを使いたいけれど、どこで何を買えばいいかわからない…という方は多いはずです。この記事では眼科受診から種類の選び方、通販での購入手順まで、失敗しないためのポイントをわかりやすく解説します。
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">まず眼科を受診しよう</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          コンタクトレンズは目に直接触れる医療機器です。初めて使う方は必ず眼科を受診し、処方を受けてください。眼科では以下のことを行います。
+        </p>
+        <div className="space-y-2 mb-4">
+          {[
+            { step: '1', label: '視力・屈折検査', desc: '近視・遠視・乱視の度数を測定します。' },
+            { step: '2', label: '角膜曲率検査', desc: 'BC（ベースカーブ）を決めるために角膜のカーブを測定します。' },
+            { step: '3', label: '眼科疾患の確認', desc: 'コンタクトを使用できない眼の状態がないかチェックします。' },
+            { step: '4', label: 'トライアルレンズ装用', desc: '実際にレンズを試してフィット感を確認します。' },
+            { step: '5', label: '処方箋の発行', desc: 'PWR・BC・DIAなどの数値が記載された処方箋をもらいます。' },
+          ].map(({ step, label, desc }) => (
+            <div key={step} className="flex gap-3 bg-slate-50 rounded-xl p-3">
+              <span className="bg-slate-800 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">{step}</span>
+              <div>
+                <p className="font-semibold text-gray-800 text-sm">{label}</p>
+                <p className="text-xs text-gray-600 mt-0.5">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="bg-yellow-50 border-l-4 border-yellow-400 pl-4 py-3">
+          <p className="text-sm font-bold text-yellow-800">眼科受診の費用目安</p>
+          <p className="text-xs text-gray-700 mt-1">初診料＋コンタクト処方料で3,000〜5,000円程度（保険適用時）。トライアルレンズを使用する場合は別途費用がかかる場合があります。</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">コンタクトレンズの種類と選び方</h2>
+        <div className="overflow-x-auto bg-slate-50 rounded-xl p-4 mb-4">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="border-b border-gray-200">
+                <th className="text-left py-2 pr-3 text-gray-600 font-semibold">種類</th>
+                <th className="text-left py-2 pr-3 text-gray-600 font-semibold">交換周期</th>
+                <th className="text-left py-2 pr-3 text-gray-600 font-semibold">年間コスト目安</th>
+                <th className="text-left py-2 text-gray-600 font-semibold">おすすめな人</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['ワンデー', '毎日交換', '3〜6万円', 'ケアが面倒・不定期使用'],
+                ['2week', '2週間で交換', '1.5〜3万円', '毎日使用・バランス重視'],
+                ['マンスリー', '1ヶ月で交換', '1〜2万円', '毎日使用・コスト重視'],
+              ].map(([type, period, cost, rec]) => (
+                <tr key={type} className="border-b border-gray-100">
+                  <td className="py-2 pr-3 font-semibold text-gray-700">{type}</td>
+                  <td className="py-2 pr-3 text-gray-600">{period}</td>
+                  <td className="py-2 pr-3 text-gray-600">{cost}</td>
+                  <td className="py-2 text-gray-600">{rec}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm text-gray-700 leading-relaxed">
+          初心者には<strong>ワンデー</strong>がおすすめです。毎日新しいレンズを使うため衛生的で、ケア用品も不要。万が一目に合わなくても損失が少なく、生活に合わせた使い方ができます。
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">処方箋の見方と必要なパラメータ</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          通販でコンタクトを購入する際に必要なパラメータを理解しておきましょう。
+        </p>
+        <div className="space-y-2 mb-4">
+          {[
+            { param: 'PWR / SPH', desc: '度数（近視はマイナス、遠視はプラス）' },
+            { param: 'BC', desc: 'ベースカーブ（レンズの曲率。8.3〜9.0mmが一般的）' },
+            { param: 'DIA', desc: '直径（レンズのサイズ。14.0mm前後が一般的）' },
+            { param: 'CYL', desc: '乱視度数（乱視がある方のみ）' },
+            { param: 'AXIS', desc: '乱視の軸度（乱視がある方のみ）' },
+          ].map(({ param, desc }) => (
+            <div key={param} className="flex gap-3 items-start">
+              <span className="bg-slate-100 text-slate-700 text-xs font-mono font-bold px-2 py-1 rounded shrink-0">{param}</span>
+              <p className="text-sm text-gray-700 pt-1">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">はじめての通販購入ステップ</h2>
+        <div className="space-y-3">
+          {[
+            { n: '1', t: '処方箋を手元に用意する', d: '眼科でもらった処方箋の数値（PWR・BC・DIA）を確認します。' },
+            { n: '2', t: '商品を選ぶ', d: '処方されたブランド・商品名で検索するか、当サイトのランキングから選びましょう。' },
+            { n: '3', t: '左右の度数を入力する', d: 'R（右目）とL（左目）の度数が異なる場合が多いため、間違えないよう注意して入力します。' },
+            { n: '4', t: '送料込みの最安値を確認する', d: '商品価格だけでなく、送料を含めた合計金額で比較しましょう。まとめ買いで送料無料になるショップが多いです。' },
+            { n: '5', t: '決済・注文完了', d: 'クレジットカードまたはコンビニ払いなどで決済。注文履歴をスクリーンショットで保存しておくと安心です。' },
+          ].map(({ n, t, d }) => (
+            <div key={n} className="flex gap-3 bg-white border border-gray-200 rounded-xl p-4">
+              <span className="bg-green-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">{n}</span>
+              <div>
+                <p className="font-semibold text-gray-800 text-sm">{t}</p>
+                <p className="text-xs text-gray-600 mt-1 leading-relaxed">{d}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">初心者が失敗しやすいポイントと対策</h2>
+        <div className="space-y-3">
+          {[
+            { fail: '左右の度数を入れ間違える', fix: '処方箋を手元に置き、RとLを確認しながら入力。注文確認メールで再チェックする。' },
+            { fail: '眼鏡の度数をそのまま使う', fix: '眼鏡とコンタクトの度数は異なります。必ず眼科で処方されたコンタクト用の度数を使用。' },
+            { fail: '処方と違うBCで購入する', fix: 'BCが合わないと装用感が悪くなります。処方箋通りのBCで注文しましょう。' },
+            { fail: 'ケア用品を購入し忘れる', fix: '2week・マンスリーを選んだ場合は洗浄液・保存液も一緒に購入。ワンデーならケア不要。' },
+          ].map(({ fail, fix }) => (
+            <div key={fail} className="bg-white border border-gray-200 rounded-xl p-4">
+              <p className="font-semibold text-red-700 text-sm mb-1">✗ {fail}</p>
+              <p className="text-sm text-gray-700 leading-relaxed">→ {fix}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">購入後のケア・定期検査について</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          コンタクトを使い始めたら、年に1〜2回の定期検査を受けることが推奨されています。自覚症状がなくても、角膜に問題が起きていることがあるためです。「目がゴロゴロする」「充血が続く」「見え方が急に変わった」などの症状がある場合はすぐに眼科を受診してください。
+        </p>
+        <div className="bg-slate-800 text-white rounded-2xl p-6">
+          <h3 className="text-xl font-bold mb-2">今すぐ最安値を比較する</h3>
+          <p className="text-slate-300 mb-4">初心者におすすめのワンデーコンタクトを24ショップで価格比較。</p>
+          <Link href="/category/1day" className="inline-block bg-white text-slate-800 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 transition-colors">
+            ワンデーの最安値を見る →
+          </Link>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '初めてコンタクトを使う場合、眼科はどこでも同じですか？', a: 'コンタクトレンズの処方に慣れた眼科を選ぶことが重要です。トライアルレンズの在庫が豊富な眼科では、複数の商品を試してから処方してもらえます。「コンタクトレンズ外来あり」と明記している眼科が安心です。' },
+            { q: '処方箋なしで通販購入しても大丈夫ですか？', a: '薬機法上は処方箋の提示義務がありませんが、初めての方は必ず眼科での処方後に購入してください。2回目以降・同一商品の継続購入であれば通販が便利です。' },
+            { q: 'コンタクトを初めて装用するコツはありますか？', a: '手をしっかり洗い、レンズの表裏を確認（裏返しは縁が外側に反る）してから装用します。眼科でのトライアル時に装用・取り外しの練習ができるので、初回は焦らず練習しましょう。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
 };

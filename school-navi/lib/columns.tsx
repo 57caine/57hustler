@@ -2361,4 +2361,944 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
     </div>
   ),
+  '30dai-40dai-programming-school-osoi': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">30代・40代のエンジニア転職は本当に遅い？現実データ</h2>
+        <p className="mb-4">「30代・40代からプログラミングスクールに通うのは遅すぎる」と思っている方は多いですが、実際のデータはどうでしょうか。ITエンジニアの転職市場は2026年現在も活況で、経済産業省の試算では2030年に最大79万人のIT人材が不足するとされています。</p>
+        <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-4">
+          <p className="font-bold text-blue-800 mb-2">年齢別・転職成功者の割合（主要スクール調べ）</p>
+          <ul className="text-sm space-y-1 text-gray-700">
+            <li>・20代：全転職者の約60%</li>
+            <li>・30代：全転職者の約30%</li>
+            <li>・40代以上：全転職者の約10%</li>
+          </ul>
+        </div>
+        <p className="mb-3 text-sm text-gray-700">30代は決して少数派ではありません。むしろ、社会人経験・コミュニケーション能力・マネジメントスキルを持つ30代・40代は採用現場でも評価される場面が多く、「即戦力として期待できる」と見られるケースも増えています。</p>
+        <p className="text-sm text-gray-700">問題は年齢ではなく、「何を目指すか」と「どのスクールを選ぶか」です。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">年齢を強みに変える転職戦略</h2>
+        <p className="mb-4">30代・40代がエンジニア転職で若者と差別化できるポイントは3つあります。</p>
+        <div className="space-y-3">
+          {[
+            { title: '業界・業務知識の活用', body: '前職での経験（金融・医療・製造など）をITに組み合わせることで、業界特化型のエンジニア・ITコンサルタント・システムPMとして強みを発揮できます。純粋な技術力では若手に劣っても、ドメイン知識の深さで勝負できます。' },
+            { title: 'プロジェクト管理・折衝経験', body: 'チームリーダーや営業の経験があれば、テックリード・スクラムマスター・PMとしてのキャリアパスも視野に入ります。エンジニア職でも非技術系のマネジメント能力は高く評価されます。' },
+            { title: '即戦力としての姿勢', body: '「一から育てる」よりも「すぐ動ける人材が欲しい」という企業は多く、自走力・責任感・コミュニケーション力を持つ30代・40代は採用担当者に好印象を与えることができます。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">30代・40代に向いているプログラミングスクールの選び方</h2>
+        <p className="mb-4">30代・40代がスクール選びで重視すべきポイントは、若い世代とは異なります。</p>
+        <ul className="space-y-3 text-sm">
+          <li className="flex gap-3 items-start"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0 mt-0.5">1</span><span><strong>転職支援の対象年齢を確認：</strong>スクールによっては「転職保証は35歳まで」などの年齢制限がある場合があります。入学前に上限年齢を必ず確認しましょう。</span></li>
+          <li className="flex gap-3 items-start"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0 mt-0.5">2</span><span><strong>オンライン・夜間対応：</strong>仕事・家庭と両立するためにオンライン受講・夜間受講に対応しているスクールを選びましょう。通学が難しい方はオンライン完結型が最適です。</span></li>
+          <li className="flex gap-3 items-start"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0 mt-0.5">3</span><span><strong>30代・40代の転職実績：</strong>スクールに「30代以上の転職成功事例」があるか確認しましょう。無料カウンセリングで具体的な事例を聞くと安心です。</span></li>
+          <li className="flex gap-3 items-start"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0 mt-0.5">4</span><span><strong>学習サポートの質：</strong>30代・40代は独学で詰まった際に挫折しやすいため、メンター・チューターが充実しているスクールを選ぶことが継続の鍵です。</span></li>
+        </ul>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">おすすめスクールと注意点</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'DMM WEBCAMP', slug: 'dmm-webcamp', badge: '40代転職実績あり', point: '給付金活用で実質13万円〜。40代の転職成功事例も公開。オンライン完結で働きながら学べる。転職保証付きで年齢リスクを軽減できる。' },
+            { name: 'TECH CAMP', slug: 'techcamp', badge: '豊富な転職支援', point: '業界最大手・卒業生5万人以上。転職支援が手厚く、エンジニア未経験の30代・40代の転職実績も多数。無料カウンセリングで年齢相談が可能。' },
+            { name: 'RUNTEQ', slug: 'runteq', badge: 'スキル重視', point: '9ヶ月かけて実務レベルのスキルを習得。年齢よりも「何ができるか」で評価する企業が多いRuby on Rails系開発会社への転職に強い。' },
+          ].map(({ name, slug, badge, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+                <h3 className="font-bold text-gray-900 text-sm leading-snug">{name}</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/schools/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある不安と解決策</h2>
+        <div className="space-y-3">
+          {[
+            { q: '40代でエンジニア転職は現実的ですか？', a: '40代でのエンジニア転職は難易度は上がりますが、不可能ではありません。重要なのは「純粋な開発エンジニア」だけを目指すのではなく、前職の業界知識を活かした業界特化型エンジニア・ITコンサル・テクニカルPMなど幅広い職種を視野に入れることです。実際に40代でIT業界に転職し年収アップした事例は複数あります。' },
+            { q: '30代・40代でプログラミングを習得できますか？', a: 'プログラミングの習得に年齢制限はありません。むしろ30代・40代は目的意識が明確で、学習を継続するモチベーションが高い方が多いです。ただし若い頃より記憶力・吸収速度で劣る可能性があるため、学習時間を確保しやすい環境（スケジュール管理・家族の理解）を整えることが重要です。' },
+            { q: '今の仕事を辞めずにスクールに通えますか？', a: 'ほとんどの主要スクールはオンライン完結・夜間・週末受講に対応しています。在職中に受講し、スキルが身についてから転職活動を始めるパターンが多いです。ただし受講期間中は学習時間の確保が難しくなるため、週20〜30時間の学習時間を確保できるかスケジュールを確認しておきましょう。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'bunkei-engineer-tenshoku-benkyo': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">文系出身でもエンジニアになれる？現実を確認</h2>
+        <p className="mb-4">「文系だからプログラミングは無理」という思い込みは根拠がありません。現役エンジニアの約40%は文系出身との調査もあり、理系・文系の差よりも「継続して学べるか」「論理的に考えられるか」の方が重要です。</p>
+        <div className="bg-green-50 border border-green-200 rounded-xl p-4 mb-4">
+          <p className="font-bold text-green-800 mb-2">文系エンジニアの強み</p>
+          <ul className="text-sm space-y-1 text-gray-700">
+            <li>・ドキュメント作成・文章力が高い</li>
+            <li>・顧客折衝・コミュニケーション能力が高い</li>
+            <li>・ビジネス視点でシステムを考えられる</li>
+            <li>・営業・マーケティング経験があればプロダクト開発に強い</li>
+          </ul>
+        </div>
+        <p className="text-sm text-gray-700">文系出身者がエンジニア転職で成功するカギは「自分の文系スキルをどのエンジニア職に活かすか」を明確にすることです。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">文系が活かせるエンジニア職種</h2>
+        <div className="space-y-3">
+          {[
+            { title: 'Webエンジニア（フロントエンド）', body: 'HTMLやCSS・JavaScriptでWebサイトやアプリの見た目・ユーザー体験を構築する職種。デザイン感覚やコミュニケーション能力が重視され、文系出身者に多い職種の一つ。' },
+            { title: 'ITコンサルタント・SE（上流工程）', body: '顧客からシステム要件をヒアリングし、設計書や仕様書を作成する仕事。文系の論理的文章力・顧客対応力が活きる。SIer・コンサル会社への就職が多い。' },
+            { title: 'Webディレクター・プロダクトマネージャー', body: 'Webサービスの企画・進行管理を担う職種。技術知識ゼロでは厳しいが、基礎的なプログラミング知識＋文系のビジネス力で活躍できる。年収500〜800万円も狙える。' },
+            { title: 'マーケティングエンジニア（MA・GA）', body: 'Google Analytics・Salesforceなどのツールを駆使してマーケティングデータを分析する仕事。文系のマーケ経験＋SQLやPythonの基礎が強力な武器になる。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">文系向けプログラミング学習ロードマップ</h2>
+        <ol className="space-y-3 text-sm">
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">1</span><span><strong>まずHTMLとCSSで「動くものを作る体験」：</strong>Progateなどの無料ツールで1〜2週間試す。向いているかどうかを確認する。</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">2</span><span><strong>目的を決めてスクールに入学：</strong>Webエンジニア・バックエンド・AIなど方向性を絞る。文系はWebフロントエンドまたはRuby on Railsのバックエンドが定番ルート。</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">3</span><span><strong>ポートフォリオを作成する：</strong>オリジナルWebアプリをGitHubで公開。文系の場合「なぜエンジニアを目指したのか」のストーリーも重要な差別化要素になる。</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">4</span><span><strong>転職活動開始：</strong>スクールの転職支援を活用。前職の経験が活かせる業界の企業を優先的に受ける。</span></li>
+        </ol>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">スクール選びのポイント（文系視点）</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'RUNTEQ', slug: 'runteq', badge: 'ポートフォリオ重視', point: '9ヶ月かけて実務水準のポートフォリオを作成。文系出身者でも「作品で勝負できる」スキルが身につく。文系出身エンジニアの転職事例も豊富。' },
+            { name: 'DMM WEBCAMP', slug: 'dmm-webcamp', badge: '文系転職実績あり', point: '文系・未経験からの転職実績が豊富。Webアプリ開発から転職サポートまで一貫して対応。給付金を使えば実質13万円〜で学べる。' },
+            { name: 'TechAcademy', slug: 'techacademy', badge: '現役エンジニアが指導', point: '現役エンジニアのメンターが1対1でサポート。文系出身者の「詰まる」ポイントを経験者が丁寧にサポートしてくれる体制が整っている。' },
+          ].map(({ name, slug, badge, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+                <h3 className="font-bold text-gray-900 text-sm leading-snug">{name}</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/schools/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">転職成功のための差別化戦略</h2>
+        <div className="space-y-3">
+          {[
+            { q: '文系出身はエンジニア転職で不利ですか？', a: '採用担当者の多くは「文系か理系か」よりも「何ができるか」を重視します。文系出身のポイントは、前職の業界知識・コミュニケーション力・文章力を前面に出した自己PRです。特に顧客との折衝が多い受託開発会社・上流工程のSIer・Web系ベンチャーでは文系の強みが評価されやすい傾向があります。' },
+            { q: '文系でも数学・アルゴリズムの勉強は必要ですか？', a: 'Webエンジニアやフロントエンド、Ruby on Railsを使ったバックエンド開発では高度な数学の知識はほぼ不要です。一方でAI・機械学習・データサイエンス系のエンジニアを目指す場合は線形代数・統計学の基礎知識が必要になります。目指す職種によって必要な数学レベルが大きく異なるため、最初に職種を絞ることが重要です。' },
+            { q: '文系出身エンジニアの平均年収はどのくらいですか？', a: '文系・理系に関わらず、エンジニアの年収は職種・企業規模・経験年数によって決まります。未経験転職直後は300〜400万円が相場ですが、3〜5年の経験を積めば500〜700万円も十分狙えます。特に文系の強みを活かしたプロダクトマネージャー・テックリードへのキャリアアップで年収800万円以上も珍しくありません。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'freelance-engineer-roadmap': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">フリーランスエンジニアの現状と収入</h2>
+        <p className="mb-4">フリーランスエンジニアの平均年収は800〜1,200万円とされており、会社員エンジニアと比べて高収入を得やすい働き方です。ただし「スキルなしでいきなりフリーランス」は現実的ではなく、まず会社員として2〜3年の実務経験を積むことが一般的なルートです。</p>
+        <div className="grid grid-cols-2 gap-4 text-center">
+          {[
+            { label: 'フリーランス平均年収', value: '800〜1,200万円' },
+            { label: '案件単価（中堅）', value: '月60〜100万円' },
+            { label: 'フリーランス人口', value: '約57万人（IT系）' },
+            { label: '案件成約までの期間', value: '平均1〜2週間' },
+          ].map((stat) => (
+            <div key={stat.label} className="bg-slate-50 rounded-xl p-4">
+              <p className="text-xs text-gray-500 mb-1">{stat.label}</p>
+              <p className="font-bold text-slate-800 text-lg">{stat.value}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">フリーランス独立までの3ステップロードマップ</h2>
+        <div className="space-y-4">
+          {[
+            { step: 'STEP 1', title: 'スクールでスキルを習得する（0〜6ヶ月）', body: 'プログラミングスクールでWebアプリ開発のスキルを習得。フリーランス向けにはRuby on Rails・Python・React・TypeScriptのいずれかをメインに学ぶ。ポートフォリオを作成し、GitHub上で公開する。', color: 'blue' },
+            { step: 'STEP 2', title: '会社員エンジニアとして実務経験を積む（1〜3年）', body: '転職後に実案件のコードレビュー・チーム開発・Gitワークフロー・Agileなどの実務経験を積む。社内でのチームプロジェクト経験が後のフリーランス活動での信頼性につながる。', color: 'green' },
+            { step: 'STEP 3', title: 'フリーランス転向・案件獲得（独立後）', body: 'クラウドワークス・レバテックフリーランス・Midworksなどのエージェントに登録。最初の案件は単価を抑えて実績を作り、口コミ・リピート案件を増やす。副業から始めるとリスクを下げられる。', color: 'purple' },
+          ].map(({ step, title, body, color }) => (
+            <div key={step} className={`border border-${color}-200 bg-${color}-50 rounded-xl p-4`}>
+              <div className="flex items-center gap-2 mb-2">
+                <span className={`text-xs font-bold text-${color}-700 bg-${color}-100 px-2 py-0.5 rounded-full`}>{step}</span>
+                <p className="font-semibold text-gray-800 text-sm">{title}</p>
+              </div>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">必要なスキルセットと習得順序</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-200 px-3 py-2 text-left">スキル</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">重要度</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">習得期間目安</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { skill: 'HTML / CSS / JavaScript基礎', level: '必須', period: '1〜2ヶ月' },
+                { skill: 'React / TypeScript（フロント）', level: '高', period: '2〜3ヶ月' },
+                { skill: 'Ruby on Rails / Python（バック）', level: '高', period: '3〜4ヶ月' },
+                { skill: 'Git / GitHub / チーム開発', level: '必須', period: '1ヶ月' },
+                { skill: 'Linux / クラウド（AWS基礎）', level: '中〜高', period: '2〜3ヶ月' },
+                { skill: 'テスト・CI/CD・Dockerの基礎', level: '中', period: '1〜2ヶ月' },
+              ].map((row, i) => (
+                <tr key={row.skill} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="border border-gray-200 px-3 py-2 font-medium">{row.skill}</td>
+                  <td className="border border-gray-200 px-3 py-2">{row.level}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-gray-500">{row.period}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">最初の案件を獲得する方法</h2>
+        <div className="space-y-3">
+          {[
+            { title: 'フリーランスエージェントを活用', body: 'レバテックフリーランス・Midworks・クラウドテックなどのエージェントは、未経験フリーランスでも案件を紹介してもらえる場合があります。エージェントが企業との交渉を代行するため、初案件の獲得に最もおすすめの方法です。' },
+            { title: 'クラウドソーシングで実績作り', body: 'ランサーズ・クラウドワークスでは1万〜5万円の小規模案件が多数あります。最初は単価が低くても実績・レビューを積み、それを元に単価交渉を有利に進められます。' },
+            { title: '人脈・SNSからの受注', body: 'Twitter（X）・LinkedInでのポートフォリオ公開・技術発信が案件獲得につながるケースが増えています。会社員時代の人脈から仕事を受けるケースも多く、退職前の関係構築が重要です。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">フリーランスになる前に準備すべきこと</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'フリーランスエンジニアに必要な実務経験は何年ですか？', a: '最低1〜2年の実務経験があれば案件を受注できるフリーランスが多いですが、安定して高単価（月60万円以上）を狙うには3年以上の経験が推奨されます。スキルセット・ポートフォリオ・GitHubの充実度によって実務年数の壁を低くすることも可能です。' },
+            { q: 'フリーランスエンジニアになったら確定申告は必要ですか？', a: 'フリーランス（個人事業主）として活動する場合は毎年確定申告が必要です。また、年収が大きくなると消費税の申告・納税も必要になります。開業届の提出・青色申告の活用・経費管理など、事前に基礎知識を身につけておくことをおすすめします。freeeやマネーフォワードなどの会計ソフトを使うと手続きが楽になります。' },
+            { q: 'フリーランス特化のプログラミングスクールはありますか？', a: 'CoachTechはフリーランス特化のスクールとして有名で、受講中から実際のフリーランス案件を経験できるカリキュラムを持ちます。また、DMM WEBCAMPにもフリーランスコースがあります。これらのスクールはフリーランスとしての営業・案件管理のノウハウも教えてくれるため、フリーランス独立を目指す方に特におすすめです。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'kyuufu-kin-kanzen-guide': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">教育訓練給付金の種類と違い</h2>
+        <p className="mb-4">教育訓練給付金は厚生労働省が運営するスキルアップ支援制度です。大きく3種類あり、プログラミングスクールで使えるのは主に「特定一般教育訓練給付金」と「専門実践教育訓練給付金」の2種類です。</p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-200 px-3 py-2 text-left">種類</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">給付率</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">上限額</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">主な対象スクール</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-200 px-3 py-2">一般教育訓練給付金</td>
+                <td className="border border-gray-200 px-3 py-2">20%</td>
+                <td className="border border-gray-200 px-3 py-2">10万円</td>
+                <td className="border border-gray-200 px-3 py-2">TechAcademy等</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="border border-gray-200 px-3 py-2">特定一般教育訓練給付金</td>
+                <td className="border border-gray-200 px-3 py-2">40%</td>
+                <td className="border border-gray-200 px-3 py-2">20万円</td>
+                <td className="border border-gray-200 px-3 py-2">TECH CAMP等</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-200 px-3 py-2">専門実践教育訓練給付金</td>
+                <td className="border border-gray-200 px-3 py-2">最大70%</td>
+                <td className="border border-gray-200 px-3 py-2">年間56万円</td>
+                <td className="border border-gray-200 px-3 py-2">DMM WEBCAMP・ゼロプラス等</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-3 text-sm text-gray-600">専門実践教育訓練給付金は受講費の50%が在学中に支給され、修了後1年以内に就職した場合はさらに20%（合計70%）が追加支給されます。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">受給資格・条件を確認しよう</h2>
+        <div className="space-y-3">
+          {[
+            { title: '在職者の場合', body: '雇用保険の被保険者期間が通算1年以上（2回目以降の利用は3年以上）あること。現在雇用保険に加入している正社員・派遣社員・パートタイム等が対象。' },
+            { title: '離職者の場合', body: '離職日から受講開始日まで1年以内であること（出産・育児・疾病等で受講を延期した場合は最大20年まで延長可能）。雇用保険の被保険者期間が通算1年以上（2回目以降は3年以上）あること。' },
+            { title: '初めて利用する場合の特例', body: '初めて給付金を利用する場合は、被保険者期間が1年未満でも利用できるケースがあります。詳しくはハローワークに相談してください。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">給付金申請の手順ステップバイステップ</h2>
+        <ol className="space-y-3 text-sm">
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">1</span><span><strong>厚労省の検索システムで対象講座を確認</strong>（「教育訓練給付制度 検索」で検索）</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">2</span><span><strong>ハローワークで「訓練前キャリアコンサルティング」を受ける</strong>（専門実践のみ必須・受講開始1ヶ月前まで）</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">3</span><span><strong>支給申請書・必要書類をハローワークに提出</strong>（受講開始前）</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">4</span><span><strong>スクールに入学・受講開始</strong></span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">5</span><span><strong>受講修了後1ヶ月以内にハローワークへ支給申請</strong>（修了証明書・領収書等を持参）</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">6</span><span><strong>審査完了後、指定口座に給付金が振込まれる</strong>（審査に1〜2ヶ月かかる場合あり）</span></li>
+        </ol>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">給付金対応スクールの選び方</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'DMM WEBCAMP', slug: 'dmm-webcamp', badge: '専門実践・最大70%', point: '専門実践教育訓練給付金（最大70%）対象。受講費437,800円が実質130,000円程度に。転職保証も合わせて安心して受講できる給付金最大活用スクール。' },
+            { name: 'TECH CAMP', slug: 'techcamp', badge: '特定一般・40%', point: '特定一般教育訓練給付金（40%）対象コースあり。業界最大手の転職実績と組み合わせれば、給付金とリターンのバランスが高い選択肢。' },
+            { name: 'ゼロプラス', slug: 'zero-plus', badge: 'AI特化・70%', point: 'AI・Python特化でも専門実践給付金対象。受講費498,000円が給付後約150,000円に。AIエンジニアを目指しつつ給付金を最大活用したい方に。' },
+          ].map(({ name, slug, badge, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+                <h3 className="font-bold text-gray-900 text-sm leading-snug">{name}</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/schools/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある失敗と注意点</h2>
+        <div className="space-y-3">
+          {[
+            { q: '受講開始後に給付金の申請はできますか？', a: '専門実践教育訓練給付金は、受講開始前にハローワークで手続きをすることが必須要件です。受講を開始した後から申請しても給付を受けることができません。受講を検討し始めたら、まず最寄りのハローワークに相談することを強くおすすめします。' },
+            { q: '給付金を受け取ったが途中でスクールを辞めた場合は？', a: '途中退学した場合は給付金の返還が求められる場合があります。専門実践教育訓練給付金は定期的に受講状況の報告が必要で、一定の出席率・修了条件を満たさないと支給が打ち切られることもあります。受講前にスクールの退学・休学ルールを確認しておきましょう。' },
+            { q: '給付金の手続きはスクールが代行してくれますか？', a: '給付金の申請手続きはご本人がハローワークで行う必要があります。ただし、多くのスクールでは申請に必要な書類（受講証明書など）の準備を支援してくれます。また、給付金申請の流れを丁寧に案内してくれるスクールのカウンセラーを頼るとスムーズです。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'web-design-vs-programming-school': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">Webデザインスクールとプログラミングスクールの基本的な違い</h2>
+        <p className="mb-4">Webデザインスクールとプログラミングスクールは、学ぶ内容・目指すキャリア・費用が大きく異なります。どちらを選ぶかは「何を仕事にしたいか」によって決まります。</p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-200 px-3 py-2 text-left">項目</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">Webデザインスクール</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">プログラミングスクール</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { item: '主な学習内容', design: 'Photoshop・Figma・UI/UX設計', prog: 'HTML/CSS/JavaScript・Ruby・Python等' },
+                { item: '目指す職種', design: 'WebデザイナーUI/UXデザイナー', prog: 'Webエンジニア・バックエンドエンジニア等' },
+                { item: '平均費用', design: '20〜50万円', prog: '30〜75万円' },
+                { item: '学習期間', design: '3〜6ヶ月', prog: '3〜9ヶ月' },
+                { item: '平均年収（転職後）', design: '300〜450万円', prog: '350〜500万円' },
+                { item: '給付金対応', design: '一部あり', prog: '多くが対応' },
+              ].map((row, i) => (
+                <tr key={row.item} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="border border-gray-200 px-3 py-2 font-medium">{row.item}</td>
+                  <td className="border border-gray-200 px-3 py-2">{row.design}</td>
+                  <td className="border border-gray-200 px-3 py-2">{row.prog}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">学べるスキルと就職先の比較</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="border border-pink-200 bg-pink-50 rounded-xl p-4">
+            <h3 className="font-bold text-pink-800 mb-3">Webデザインスクール</h3>
+            <ul className="text-sm space-y-1 text-gray-600 mb-3">
+              <li>・Figma・AdobeXDでのUIデザイン</li>
+              <li>・Photoshop・Illustratorでのグラフィック制作</li>
+              <li>・HTML・CSSのコーディング（基礎）</li>
+              <li>・ユーザー体験設計（UX）の考え方</li>
+            </ul>
+            <p className="text-sm font-semibold text-gray-700 mb-1">主な就職先：</p>
+            <p className="text-sm text-gray-600">Web制作会社、広告代理店、インハウスデザイナー、フリーランスデザイナー</p>
+          </div>
+          <div className="border border-blue-200 bg-blue-50 rounded-xl p-4">
+            <h3 className="font-bold text-blue-800 mb-3">プログラミングスクール</h3>
+            <ul className="text-sm space-y-1 text-gray-600 mb-3">
+              <li>・JavaScript・React（フロントエンド）</li>
+              <li>・Ruby on Rails・Python（バックエンド）</li>
+              <li>・データベース・API設計</li>
+              <li>・Git・チーム開発</li>
+            </ul>
+            <p className="text-sm font-semibold text-gray-700 mb-1">主な就職先：</p>
+            <p className="text-sm text-gray-600">Web系企業、SIer、スタートアップ、フリーランスエンジニア</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">費用・期間の比較</h2>
+        <p className="mb-3 text-sm text-gray-700">費用面では、Webデザインスクールの方が若干安い傾向がありますが、プログラミングスクールは教育訓練給付金（最大70%）を活用できるコースが多く、実質負担を大幅に下げられる点が大きな違いです。</p>
+        <div className="bg-slate-50 rounded-xl p-4 text-sm">
+          <p className="font-bold text-slate-800 mb-2">給付金活用時の実質費用比較</p>
+          <ul className="space-y-1 text-gray-700">
+            <li>・Webデザインスクール：20〜50万円（給付金対応が少ない）</li>
+            <li>・プログラミングスクール（給付金あり）：実質13〜25万円程度</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">どちらを選ぶべきか：目的別診断</h2>
+        <div className="space-y-3">
+          {[
+            { title: 'Webデザインスクールが向いている人', body: 'デザインやビジュアルクリエイティブが好きな人・美術系の経験がある人・コーディングよりデザインツールで作ることが楽しいと感じる人。副業でバナー制作・LP制作をしたい人にもおすすめ。' },
+            { title: 'プログラミングスクールが向いている人', body: 'ロジックを組み立てることが好きな人・年収アップを重視する人・AIやシステム開発に興味がある人。転職による大幅な年収増を目指すなら、平均年収が高いエンジニア職を目指せるプログラミングスクールが有利。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">どちらも学べるスクールの紹介</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'TechAcademy', slug: 'techacademy', badge: 'デザイン+コーディング', point: 'WebデザインコースとWebアプリコースを持つ。デザインとプログラミング両方の基礎を学べる。副業・転職いずれも対応した現役エンジニアによるメンタリング。' },
+            { name: 'DMM WEBCAMP', slug: 'dmm-webcamp', badge: 'Web制作特化', point: 'HTML/CSS/JavaScriptのフロントエンドスキルとデザインの基礎を合わせて学べるWeb制作コースあり。給付金対応で実質負担を抑えられる。' },
+          ].map(({ name, slug, badge, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+                <h3 className="font-bold text-gray-900 text-sm leading-snug">{name}</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/schools/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'WebデザイナーとWebエンジニアの年収差はありますか？', a: '一般的にWebエンジニア（バックエンド・フルスタック）の方がWebデザイナーより年収が高い傾向があります。未経験転職の初年度で比較すると、Webデザイナー300〜380万円、Webエンジニア350〜450万円程度が相場です。ただしシニアUIデザイナー・UXデザイナーとして大手IT企業で活躍すれば年収600〜900万円も可能です。' },
+            { q: 'デザインスクールとプログラミングスクール、両方通う必要がありますか？', a: 'フロントエンドエンジニアを目指す場合は、デザインの基礎とプログラミングの両方を学ぶと差別化できますが、両方のスクールに通う必要はありません。TechAcademyやDMM WEBCAMPのようにWeb制作コースとしてデザイン基礎+コーディングをセットで教えるスクールを選ぶ方が効率的です。' },
+            { q: 'Webデザインスクールでも就職サポートはありますか？', a: 'スクールによっては就職支援・ポートフォリオ添削・求人紹介を行うWebデザインスクールもあります。ただしプログラミングスクールと比べると転職支援の充実度は低い傾向があります。就職・転職を目標とするなら、転職支援の実績が豊富なスクールを事前に確認することが重要です。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'ruby-python-javascript-hikaku-shoshinsha': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">Ruby・Python・JavaScriptの基本的な特徴</h2>
+        <p className="mb-4">プログラミングを学び始める際に多くの人が悩む「最初に何の言語を学ぶべきか」という問いに対して、Ruby・Python・JavaScriptはいずれも人気の高い選択肢です。目的に合った言語を選ぶことが学習効率と転職成功の鍵です。</p>
+        <div className="space-y-3">
+          {[
+            { lang: 'Ruby', color: 'red', desc: '日本発のプログラミング言語。Webアプリ開発フレームワーク「Ruby on Rails」で有名。日本国内での求人が多く、スタートアップ・Web系企業に多く採用。初学者にも読みやすい文法が特徴で、コードが短く書けるため学習効率が高い。' },
+            { lang: 'Python', color: 'yellow', desc: 'AI・機械学習・データサイエンス分野で最も使われている言語。文法がシンプルで初心者にも学びやすい。Web開発（Django・FastAPI）にも使われるが、AI・データ分析での需要が急拡大中。2026年現在、最も将来性が高い言語の一つ。' },
+            { lang: 'JavaScript', color: 'blue', desc: 'ブラウザ上で動く唯一の言語で、Webサイトの動的な動きを実現するために必須。React・Next.jsなどのフレームワークでWebアプリ開発にも広く使われる。フロントエンドエンジニアは全員が使う言語であり、Web系への転職なら避けて通れない。' },
+          ].map(({ lang, color, desc }) => (
+            <div key={lang} className={`border border-${color}-200 bg-${color}-50 rounded-xl p-4`}>
+              <p className={`font-bold text-${color}-800 mb-2`}>{lang}</p>
+              <p className="text-sm text-gray-700 leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">学習難易度と習得期間の比較</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-200 px-3 py-2 text-left">言語</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">初心者難易度</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">基礎習得期間</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">転職レベルまで</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { lang: 'Ruby', diff: '易しい', period: '2〜3ヶ月', job: '3〜6ヶ月' },
+                { lang: 'Python', diff: '易しい', period: '1〜2ヶ月（基礎）', job: '3〜12ヶ月（分野による）' },
+                { lang: 'JavaScript', diff: '普通', period: '2〜3ヶ月', job: '4〜6ヶ月' },
+              ].map((row, i) => (
+                <tr key={row.lang} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="border border-gray-200 px-3 py-2 font-bold">{row.lang}</td>
+                  <td className="border border-gray-200 px-3 py-2">{row.diff}</td>
+                  <td className="border border-gray-200 px-3 py-2">{row.period}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-gray-500">{row.job}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">就職先・年収・需要の比較</h2>
+        <div className="space-y-3">
+          {[
+            { title: 'Ruby：Web系スタートアップへの転職に強い', body: '国内のWeb系スタートアップ・メガベンチャーはRuby on Railsを採用しているケースが多い。転職後の初年度年収は350〜500万円が相場。技術コミュニティが活発でスキルアップの機会が多い。スクールのカリキュラムも充実しており、学習リソースが豊富。' },
+            { title: 'Python：AI・データ分析の需要が急増中', body: '機械学習エンジニア・データサイエンティストの求人はPython一択。AI人材の需要急増により、Pythonエンジニアの年収は600〜900万円の求人も増えている。ただし転職レベルに達するまでの学習期間が長い傾向がある。' },
+            { title: 'JavaScript：フロントエンドは全員が必須', body: 'Webフロントエンドエンジニアとして働くなら、JavaScriptは避けられない。React・TypeScriptとセットで学ぶことで需要の高いフロントエンドエンジニアになれる。年収は400〜700万円の幅が広く、スキルレベルで大きく異なる。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">目的別おすすめ言語の選び方</h2>
+        <ul className="space-y-2 text-sm">
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">Webエンジニアに転職したい：</span><span>RubyまたはJavaScript（React）。転職市場での求人数が多く、スクールのカリキュラムも充実している。</span></li>
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">AIエンジニア・データ分析を目指す：</span><span>Python一択。機械学習ライブラリ（NumPy・Pandas・TensorFlow）もPythonで動く。</span></li>
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">フロントエンドに特化したい：</span><span>JavaScriptとReact・TypeScriptのセット学習が最短ルート。</span></li>
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">副業・フリーランスを目指す：</span><span>Webサイト制作ならJavaScript、Webアプリ受注ならRuby on Railsが定番。</span></li>
+        </ul>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">各言語を学べるスクール紹介</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'Rubyを学べるスクールはどこがおすすめですか？', a: 'RUNTEQはRuby on Rails特化スクールとして業界内で高評価を得ています。9ヶ月間の充実したカリキュラムで実務水準のスキルが身につきます。DMM WEBCAMPもRubyコースを提供しており、給付金と合わせてコスパよく学べます。' },
+            { q: 'PythonはどのスクールでAIまで学べますか？', a: 'ゼロプラス（Zero Plus）はAI・Python特化スクールとして専門実践教育訓練給付金の対象。ChatGPT APIを使ったアプリ開発まで学べます。TECH CAMPもPythonコースがあり、AIエンジニア転職の実績があります。' },
+            { q: 'JavaScriptとReactを集中して学べるスクールは？', a: 'TechAcademy・RUNTEQ・侍エンジニア塾などでJavaScript・Reactのコースがあります。特に実務でよく使われるTypeScriptまでカバーしているスクールを選ぶと、転職後のギャップを最小化できます。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'programming-school-sotsugyogo-tenshoku': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">卒業後すぐに始める転職活動の準備</h2>
+        <p className="mb-4">プログラミングスクールを卒業した後、多くの人が「何から始めればいいかわからない」という状態に陥ります。卒業後の転職活動は、在籍中から準備を始めることが成功の鍵です。スクール在籍の最終1ヶ月から並行してポートフォリオ完成・職務経歴書作成を進めましょう。</p>
+        <div className="bg-slate-50 rounded-xl p-4 mb-4">
+          <p className="font-bold text-slate-800 mb-2">転職活動のタイムライン目安</p>
+          <ul className="text-sm space-y-1 text-gray-700">
+            <li>・卒業1ヶ月前：ポートフォリオ作成・GitHubの整備</li>
+            <li>・卒業直前：職務経歴書・エンジニア向け自己PRの作成</li>
+            <li>・卒業後〜1ヶ月：求人応募・面接・コーディングテスト</li>
+            <li>・卒業後1〜3ヶ月：内定獲得・入社日調整</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">エンジニア転職に必要なポートフォリオの作り方</h2>
+        <div className="space-y-3">
+          {[
+            { title: 'オリジナルWebアプリを1〜2個作る', body: 'チュートリアルのコピーではなく、自分が「欲しい」と思うオリジナルのWebアプリを作ることが重要です。シンプルでも機能が動くものを完成させ、GitHubで公開しましょう。READMEには使用技術・工夫した点・苦労した点を記載します。' },
+            { title: 'デプロイして本番環境で動かす', body: 'HerokuやRenderなどのサービスでアプリをデプロイし、実際にURLでアクセスできる状態にします。「動くポートフォリオ」は採用担当者に強い印象を与えます。AWSのEC2やS3の利用経験があればさらに高評価です。' },
+            { title: 'GitHubのコミット履歴を充実させる', body: '採用担当者はGitHubを確認します。毎日コミットする習慣をつけ、コミットメッセージは日本語より英語の方が好印象です。Issues・Pull Requestも使ってチーム開発の形式を意識したリポジトリ管理が評価されます。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">求人サイト・エージェントの使い分け方</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-200 px-3 py-2 text-left">サービス</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">特徴</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">おすすめ度</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { name: 'Green', feature: 'IT・Web系求人特化。企業から直接スカウトが来る', recommend: '★★★★★' },
+                { name: 'Wantedly', feature: 'スタートアップ・ベンチャー中心。カルチャー重視', recommend: '★★★★☆' },
+                { name: 'レバテックキャリア', feature: 'ITエンジニア特化エージェント。面接対策が手厚い', recommend: '★★★★★' },
+                { name: 'マイナビIT', feature: '大手〜中堅IT企業の求人が豊富。エージェント支援あり', recommend: '★★★★☆' },
+                { name: 'スクールの転職支援', feature: '在籍スクールの求人紹介。企業との関係性が深い', recommend: '★★★★★' },
+              ].map((row, i) => (
+                <tr key={row.name} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="border border-gray-200 px-3 py-2 font-medium">{row.name}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-gray-600">{row.feature}</td>
+                  <td className="border border-gray-200 px-3 py-2">{row.recommend}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">面接対策と技術テストの準備</h2>
+        <div className="space-y-3">
+          {[
+            { title: 'コーディングテストの対策', body: 'LeetCode・AtCoder・Paizaなどのプラットフォームでアルゴリズム問題を練習しましょう。特にB〜Cランク相当の基礎問題を解けるようにすることが最初の目標です。多くの未経験転職向け企業ではそこまで難易度の高い問題は出ません。' },
+            { title: '技術面接の定番質問に備える', body: '「Gitとは何か」「HTTPとHTTPSの違い」「データベースのインデックスとは」などの基礎的な技術質問は必ず回復できるよう準備します。スクールのカリキュラムで学んだ内容を自分の言葉で説明できるかが重要です。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">内定後の交渉・入社準備</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'スクール卒業後どのくらいで内定が出ますか？', a: '平均的には卒業後1〜2ヶ月で内定が出るケースが多いです。ただし応募数・ポートフォリオの質・面接準備の充実度によって大きく異なります。スクールの転職支援を最大限活用し、エージェント経由の応募も並行して行うことで内定までの期間を短縮できます。' },
+            { q: '転職活動中の生活費が心配です。どのくらいの期間を見ておけばいいですか？', a: '転職活動期間として最低3ヶ月分の生活費を確保しておくことをおすすめします。在職中に転職活動を始める場合はリスクが少なく、スクール在籍中から並行して活動を始める方が多いです。雇用保険の失業給付を活用できるケースもあるため、離職前にハローワークに確認しておきましょう。' },
+            { q: '内定後に年収交渉はできますか？', a: '未経験転職でも年収交渉は可能ですが、まず内定を獲得することを優先しましょう。交渉の際は「他社オファーがある」「希望年収とその根拠」を準備します。エージェント経由の場合はエージェントが交渉を代行してくれます。スクール卒業後の1社目は年収よりも「技術が身につく環境かどうか」を優先する方が長期的なキャリアに有利です。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'remote-work-engineer-shokushu': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">リモートワーク可能なエンジニア職種一覧</h2>
+        <p className="mb-4">IT・エンジニア職はリモートワーク対応率が高い職種の代表です。2026年現在、エンジニア求人の約60〜70%がリモートワーク可能とされており、フルリモート・週数回出社など柔軟な働き方が実現しやすい職種です。</p>
+        <div className="space-y-3">
+          {[
+            { job: 'Webエンジニア（フロントエンド）', remote: 'フルリモート率高', salary: '350〜650万円', skill: 'HTML/CSS/JavaScript/React/TypeScript' },
+            { job: 'Webエンジニア（バックエンド）', remote: 'フルリモート率高', salary: '400〜750万円', skill: 'Ruby/Python/Go/Node.js' },
+            { job: 'AIエンジニア・機械学習エンジニア', remote: 'フルリモート対応多', salary: '500〜1,000万円', skill: 'Python/TensorFlow/PyTorch' },
+            { job: 'クラウドエンジニア（AWS/GCP）', remote: 'フルリモート対応多', salary: '450〜850万円', skill: 'AWS/GCP/Terraform/Linux' },
+            { job: 'モバイルエンジニア（iOS/Android）', remote: 'フルリモート対応あり', salary: '400〜700万円', skill: 'Swift/Kotlin/Flutter' },
+            { job: 'データエンジニア・データアナリスト', remote: 'フルリモート対応多', salary: '400〜800万円', skill: 'Python/SQL/BigQuery' },
+          ].map((row, i) => (
+            <div key={row.job} className={`border rounded-xl p-4 ${i % 2 === 0 ? 'border-slate-200 bg-slate-50' : 'border-blue-100 bg-blue-50'}`}>
+              <div className="flex items-start justify-between gap-2 mb-2">
+                <p className="font-semibold text-gray-800 text-sm">{row.job}</p>
+                <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full shrink-0">{row.remote}</span>
+              </div>
+              <div className="grid grid-cols-2 gap-2 text-xs text-gray-600">
+                <span>年収目安：{row.salary}</span>
+                <span className="col-span-2">主要スキル：{row.skill}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">職種別の平均年収と需要</h2>
+        <p className="mb-3 text-sm text-gray-700">リモートワーク対応のエンジニア職の中でも、AI・クラウド系の需要が特に急増しています。2026年に向けてDX推進・生成AI活用が企業課題となっており、これらのスキルを持つエンジニアの市場価値は高まっています。</p>
+        <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
+          <p className="font-bold text-yellow-800 mb-2">2026年需要急増中のリモートエンジニア職</p>
+          <ul className="text-sm space-y-1 text-gray-700">
+            <li>1位：AIエンジニア・機械学習エンジニア（求人数前年比+45%）</li>
+            <li>2位：クラウドエンジニア・AWSアーキテクト（+38%）</li>
+            <li>3位：フロントエンドエンジニア（React/TypeScript）（+28%）</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">リモート求人を獲得するための必要スキル</h2>
+        <ul className="space-y-3 text-sm">
+          <li className="flex gap-3 items-start"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0 mt-0.5">1</span><span><strong>非同期コミュニケーション能力：</strong>Slack・Notionなどのツールで文章で意図を伝える能力が必須。テキストで明確に質問・報告できることがリモートワーク成功の鍵。</span></li>
+          <li className="flex gap-3 items-start"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0 mt-0.5">2</span><span><strong>GitHubでの自己管理能力：</strong>コミット履歴・Issue管理・PR作成など、Gitワークフローを自律的に回せる経験。スクールのチーム開発で実践経験を積むと有利。</span></li>
+          <li className="flex gap-3 items-start"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0 mt-0.5">3</span><span><strong>実績・ポートフォリオの充実：</strong>リモートでは「対面でのアピール」ができないため、GitHubや公開ポートフォリオで実力を示すことが採用の決め手になる。</span></li>
+        </ul>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">リモートワーク転職に強いスクール</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {[
+            { name: 'RUNTEQ', slug: 'runteq', badge: 'リモート転職実績', point: '実務水準のスキルで自社開発・Web系スタートアップへの転職に強い。リモート対応企業への転職実績も豊富。GitHubを使ったチーム開発を学べるカリキュラム。' },
+            { name: 'DMM WEBCAMP', slug: 'dmm-webcamp', badge: 'フルリモーク求人あり', point: 'フルリモート・週数回出社など柔軟な求人を紹介。給付金対応で実質13万円〜。転職支援でリモートワーク希望を伝えると求人を絞り込んでもらえる。' },
+          ].map(({ name, slug, badge, point }) => (
+            <div key={slug} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-2">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{badge}</span>
+                <h3 className="font-bold text-gray-900 text-sm leading-snug">{name}</h3>
+              </div>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">{point}</p>
+              <Link href={`/schools/${slug}`} className="inline-block bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">
+                詳細・料金を見る →
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">リモートエンジニアとして働くための準備</h2>
+        <div className="space-y-3">
+          {[
+            { q: '未経験エンジニアでもフルリモートで働けますか？', a: '未経験転職の直後はフルリモートの求人は少なめです。多くの企業は最初の3〜6ヶ月を試用期間とし、出社またはハイブリッドで業務を覚えた後にリモートを認める場合があります。ただし自社開発のWeb系スタートアップや、もともとフルリモートが標準の企業では入社直後からリモートのケースもあります。' },
+            { q: 'リモートエンジニアに向いている人の特徴は？', a: '自己管理ができる人・文章での報告・連絡が得意な人・誰かに聞かなくても問題を調べて解決できる人が向いています。スクールでのオンライン受講でも同じ自律性が求められるため、スクール在籍中から「自走できる習慣」を身につけておくとリモート転職後もスムーズです。' },
+            { q: 'リモートエンジニアの求人を効率よく探す方法は？', a: 'GreenやWantedlyは「リモート可」「フルリモート」での絞り込みができ、IT・Web系の求人に特化しています。またレバテックキャリアなどのIT特化エージェントに「リモート希望」を伝えると、条件に合う求人を紹介してもらえます。スクールの転職支援でも同様に希望を伝えることが重要です。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'programming-school-kuchikomi-mikata': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">口コミ・評判が信頼できないケースとは</h2>
+        <p className="mb-4">プログラミングスクールを選ぶ際に口コミを参考にする方は多いですが、インターネット上の口コミには注意が必要なものも含まれています。以下のようなケースは信頼性が低い可能性があります。</p>
+        <div className="space-y-2">
+          {[
+            { label: 'アフィリエイト目的の比較サイト', body: '「おすすめ〇選」という記事の多くは、スクールから広告費を受け取るアフィリエイトサイトです。紹介しているスクールに有利な情報が強調され、デメリットが隠されていることがあります。' },
+            { label: 'Googleマップの極端な評価', body: '星1や星5のレビューは、競合が意図的に投稿したり、スクール側が依頼して書いてもらったりした可能性があります。極端な評価より星3〜4の具体的なレビューの方が参考になります。' },
+            { label: 'SNSの誇張した成功体験', body: 'Twitter（X）やInstagramの「〇ヶ月で年収〇倍！」系の投稿はアフィリエイト目的の場合があります。特定スクールへのリンクが含まれている場合は注意しましょう。' },
+          ].map(({ label, body }) => (
+            <div key={label} className="bg-red-50 border border-red-100 rounded-xl p-4">
+              <p className="font-semibold text-red-800 text-sm mb-1">{label}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">信頼できる口コミ情報源の見分け方</h2>
+        <div className="space-y-3">
+          {[
+            { title: '転職・就活プラットフォームの口コミ', body: 'OpenWork（旧Vorkers）・転職会議・Glassdoorなどは実際の受講者・社員が匿名で投稿するレビューサイトです。スクールの口コミより転職先の企業評判調査に向いていますが、スクール卒業生の声も参考になります。' },
+            { title: 'スクールの無料カウンセリングでの質問', body: '最も信頼性の高い情報はスクール自身から直接得ることです。無料カウンセリングでは「30代の転職実績」「給付金対応コースの実際の費用」など具体的な数字を聞いてください。答えをはぐらかすスクールは注意が必要です。' },
+            { title: 'スクール卒業生のSNS・ブログ', body: '検索エンジンでスクール名＋「卒業後」「転職」「正直な感想」などで検索すると、アフィリエイトとは別の個人ブログが見つかる場合があります。費用・カリキュラムの詳細・転職後のリアルな体験を書いた記事は参考になります。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">スクール公式情報と口コミの照合ポイント</h2>
+        <ul className="space-y-2 text-sm">
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">転職成功率：</span><span>「転職成功率99%」などの数字は「どの期間のデータか」「分母は何か」を確認。卒業生全員なのか、転職活動した人だけなのかで意味が変わります。</span></li>
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">返金条件：</span><span>転職保証の「条件」が口コミと公式サイトで一致しているか確認。「全額返金」でも「提示された求人を断ったら対象外」などの細かい条件があります。</span></li>
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">卒業後のサポート期間：</span><span>転職支援が「卒業後〇ヶ月」まで対応するのか、卒業後に質問サポートがあるかなど、公式情報と口コミを照らし合わせましょう。</span></li>
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">実際の学習時間：</span><span>「週〇時間学習すれば〇ヶ月で転職できる」という公式情報と、実際に必要だった時間についての口コミを比較。大きく乖離している場合は注意。</span></li>
+        </ul>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">良い口コミ・悪い口コミの読み解き方</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="border border-green-200 bg-green-50 rounded-xl p-4">
+            <h3 className="font-bold text-green-800 mb-3 text-sm">信頼できる良い口コミの特徴</h3>
+            <ul className="text-sm space-y-1 text-gray-700">
+              <li>・具体的な数字（期間・費用・転職先の年収）がある</li>
+              <li>・良い点だけでなく改善点も書かれている</li>
+              <li>・スクール名を宣伝する表現が少ない</li>
+              <li>・投稿者のプロフィールが具体的</li>
+            </ul>
+          </div>
+          <div className="border border-red-200 bg-red-50 rounded-xl p-4">
+            <h3 className="font-bold text-red-800 mb-3 text-sm">要注意な悪い口コミの特徴</h3>
+            <ul className="text-sm space-y-1 text-gray-700">
+              <li>・「最悪」「詐欺」など感情的な表現のみ</li>
+              <li>・具体的な内容がなく、根拠が不明</li>
+              <li>・競合スクールのリンクが含まれている</li>
+              <li>・投稿者の他のレビューが不自然</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">口コミ以外のスクール評価方法</h2>
+        <div className="space-y-3">
+          {[
+            { q: '口コミだけを信じてスクールを選ぶのは危険ですか？', a: '口コミはあくまで参考情報であり、スクール選びの決定打にすべきではありません。最終的な判断は「無料カウンセリングでの実際の対応」「カリキュラムの詳細」「給付金・返金条件の公式情報」「転職支援の具体的な実績」を自分の目で確認した上で行いましょう。口コミは「気になる候補を絞り込む段階」で活用するのが正しい使い方です。' },
+            { q: 'プログラミングスクールの無料体験・カウンセリングは有効ですか？', a: '非常に有効です。無料カウンセリングは「スクールの雰囲気・対応の丁寧さ」を直接確認できる最良の機会です。カウンセラーが具体的な質問に真摯に答えてくれるか、費用・転職条件・返金ルールを明確に説明してくれるかを確認しましょう。対応が曖昧なスクールは入学後のサポートも期待しにくい傾向があります。' },
+            { q: 'スクールの転職成功率はどこまで信頼できますか？', a: '「転職成功率〇%」の数字は計算方法によって大きく変わります。重要な確認ポイントは「対象期間」「分母（全卒業生 or 転職希望者のみ）」「転職先の業種・企業規模」です。信頼できるスクールは「転職先の実績リスト」や「年代・バックグラウンド別の事例」を公開しています。数字だけでなく、中身まで確認することをおすすめします。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'engineer-tenshoku-nenshu-career': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">エンジニア転職後の初年度年収の現実</h2>
+        <p className="mb-4">未経験からプログラミングスクールを経てエンジニアに転職した場合、初年度の年収はどのくらいになるのでしょうか。職種・企業タイプ・地域によって異なりますが、一般的な相場を解説します。</p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-200 px-3 py-2 text-left">職種</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">未経験転職時の年収</th>
+                <th className="border border-gray-200 px-3 py-2 text-left">3年後の目安</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { job: 'Webエンジニア（フロント）', entry: '320〜420万円', after3: '450〜600万円' },
+                { job: 'Webエンジニア（バックエンド）', entry: '350〜450万円', after3: '500〜700万円' },
+                { job: 'AIエンジニア', entry: '400〜550万円', after3: '600〜900万円' },
+                { job: 'インフラ・クラウドエンジニア', entry: '350〜480万円', after3: '500〜750万円' },
+                { job: 'ITコンサルタント', entry: '400〜500万円', after3: '550〜800万円' },
+              ].map((row, i) => (
+                <tr key={row.job} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="border border-gray-200 px-3 py-2 font-medium">{row.job}</td>
+                  <td className="border border-gray-200 px-3 py-2">{row.entry}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-green-700 font-medium">{row.after3}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">職種別・経験年数別の年収推移</h2>
+        <p className="mb-3 text-sm text-gray-700">エンジニアの年収は経験年数とスキルの掛け算で決まります。転職後1〜3年でスキルアップと実績を積むことが、年収を大きく引き上げる鍵です。</p>
+        <div className="space-y-3">
+          {[
+            { phase: '転職後1年目', range: '300〜450万円', note: '実務の基礎を固める時期。プルリクレビューを受けながらコードの品質・チーム開発のルールを習得。', color: 'blue' },
+            { phase: '転職後2〜3年目', range: '450〜600万円', note: '1人で機能を設計・実装できるレベルに到達。後輩のメンタリングや技術選定に関わり始める。転職や社内昇給交渉のタイミング。', color: 'green' },
+            { phase: '転職後4〜6年目', range: '600〜850万円', note: 'チームリーダー・テックリード・上位エンジニアとして活躍。設計・アーキテクチャの意思決定に関わる。大手IT企業・メガベンチャーへの転職で年収アップも。', color: 'purple' },
+            { phase: '7年目以降', range: '800万円〜', note: 'シニアエンジニア・エンジニアリングマネージャー・CTO候補として高年収ポジションに。フリーランスなら月単価100万円超も視野に。', color: 'red' },
+          ].map(({ phase, range, note, color }) => (
+            <div key={phase} className={`border border-${color}-200 bg-${color}-50 rounded-xl p-4`}>
+              <div className="flex items-center gap-3 mb-2">
+                <span className={`text-xs font-bold text-${color}-700 bg-${color}-100 px-2 py-0.5 rounded-full shrink-0`}>{phase}</span>
+                <span className="font-bold text-gray-900 text-sm">{range}</span>
+              </div>
+              <p className="text-sm text-gray-600 leading-relaxed">{note}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">エンジニアのキャリアパス：3つのルート</h2>
+        <div className="space-y-3">
+          {[
+            { title: 'スペシャリスト（技術職）ルート', body: '特定の技術領域を深掘りし、業界トップレベルの技術者を目指すルート。AIエンジニア・セキュリティエンジニア・データベースエンジニアなどが該当。年収は高いが、継続的な学習が必要。' },
+            { title: 'マネジメントルート', body: 'エンジニアリングマネージャー・テックリード・VPoEなど、チームや組織を率いるリーダーを目指すルート。技術力＋コミュニケーション力が求められ、大手IT企業での年収1,000万円超も現実的。' },
+            { title: '起業・フリーランスルート', body: '自分のスキルを武器にフリーランスとして独立、またはスタートアップを創業するルート。リスクは高いが、年収・自由度ともに大きな可能性がある。実績を積んだ後に選ぶパターンが多い。' },
+          ].map(({ title, body }) => (
+            <div key={title} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
+              <p className="font-semibold text-gray-800 text-sm mb-1">{title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">年収を上げるための具体的な戦略</h2>
+        <ul className="space-y-2 text-sm">
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">1〜2年目：</span><span>社内での実績を積みつつ、GitHubや技術ブログで外部への発信を開始。副業案件を取ることでスキルの市場価値を測る。</span></li>
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">3年目以降：</span><span>転職活動を開始。同じスキルでも企業規模・職種によって年収は大きく変わる。エンジニア特化エージェント（レバテックキャリア等）を活用して市場価値を把握する。</span></li>
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">資格・認定：</span><span>AWS認定資格・情報処理技術者試験（応用情報等）・Google Cloud認定などの資格が昇給・転職交渉の根拠になる。</span></li>
+          <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">英語スキル：</span><span>外資系IT企業・グローバルスタートアップでは年収が1.3〜1.5倍になるケースも。TOEIC800点以上を目指すと転職の幅が大きく広がる。</span></li>
+        </ul>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">スクール卒業後のキャリア相談先</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'エンジニア転職後に年収を上げるにはどうすればいいですか？', a: '最も効果的な方法は「転職」です。同じスキルレベルでも、企業・職種・業界が変わるだけで年収が50〜150万円上がることは珍しくありません。在籍2〜3年で技術力と実績が積み上がったら、転職市場で自分の価値を確認することをおすすめします。エンジニア特化の転職エージェント（レバテックキャリア・Geekly等）に相談するのが手軽です。' },
+            { q: 'スクール卒業後もキャリア相談に乗ってもらえますか？', a: '多くのプログラミングスクールは卒業後も一定期間（6ヶ月〜1年程度）は転職支援・キャリア相談を継続して提供します。ただしスクールによって期間・サポート内容は異なります。入学前に「卒業後のサポート期間と内容」を確認しておくことが重要です。転職後のキャリアパス相談まで対応してくれるスクールは、長期的な視点でのサポートが期待できます。' },
+            { q: 'エンジニアとして副業を始めるのはいつから可能ですか？', a: 'スクール卒業後に転職し、3〜6ヶ月程度で基礎的な実務スキルが身についてきたタイミングが副業開始の目安です。副業はクラウドワークス・ランサーズでの小規模案件から始めるのが安全です。ただし在職先の就業規則で副業が禁止されている場合があるため、事前に確認してください。副業収入が年20万円を超えたら確定申告が必要です。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
 };

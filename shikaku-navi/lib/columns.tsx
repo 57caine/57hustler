@@ -213,6 +213,106 @@ export const columns: Column[] = [
     readingTime: 10,
     headings: ['行政書士 vs 社労士 基本比較', '業務内容の違い', 'どちらを先に取るべき？目的別の選び方', '行政書士・社労士の通信講座比較'],
   },
+  {
+    slug: 'takken-nanido-goukakuritsu',
+    title: '宅建士試験の難易度・合格率・勉強時間を徹底解説【2026年版】',
+    description: '宅建士（宅地建物取引士）試験の難易度・合格率・必要勉強時間を詳しく解説。独学と通信講座の比較、効率的な勉強法、試験科目の攻略ポイントまでまとめました。',
+    category: '勉強法・対策',
+    publishedAt: '2026-05-31',
+    updatedAt: '2026-05-31',
+    readingTime: 8,
+    headings: ['宅建士試験の基本データ（難易度・合格率）', '宅建合格に必要な勉強時間の目安', '科目別・攻略のポイント', '独学 vs 通信講座：どちらが効率的か', '宅建合格後のキャリアと資格活用'],
+  },
+  {
+    slug: 'bookkeeping-2kyu-dokugaku',
+    title: '簿記2級を独学で取得する最短勉強法【3ヶ月合格プラン付き】',
+    description: '日商簿記2級を独学で3ヶ月以内に合格するための勉強法・スケジュールを解説。おすすめテキスト・問題集の選び方から、工業簿記の攻略まで独学合格のコツを徹底紹介。',
+    category: '勉強法・対策',
+    publishedAt: '2026-05-31',
+    updatedAt: '2026-05-31',
+    readingTime: 7,
+    headings: ['簿記2級の難易度と独学合格は可能か', '3ヶ月合格プラン：週別スケジュール', 'おすすめテキスト・問題集の選び方', '工業簿記の効率的な攻略法', '独学の限界を感じたら通信講座も検討'],
+  },
+  {
+    slug: 'fp-2kyu-3kyu-kanzen-guide',
+    title: 'FP2級・3級の違いと試験対策完全ガイド【どちらから取るべきか解説】',
+    description: 'FP（ファイナンシャルプランナー）2級と3級の試験範囲・難易度・合格率・費用を徹底比較。初学者がどちらから受験すべきか、効率的な学習順序と対策ポイントを解説します。',
+    category: '勉強法・対策',
+    publishedAt: '2026-05-31',
+    updatedAt: '2026-05-31',
+    readingTime: 7,
+    headings: ['FP3級とFP2級の違いを一覧比較', '試験科目と出題傾向の攻略ポイント', '初学者はどちらから受験すべきか', 'FP試験対策のおすすめ勉強法', 'FP資格の活かし方とキャリアへの影響'],
+  },
+  {
+    slug: 'shakushi-nanido-tsushin-ranking',
+    title: '社労士試験の難易度と通信講座おすすめランキング【2026年最新版】',
+    description: '社会保険労務士（社労士）試験の難易度・合格率・勉強時間を解説。アガルート・フォーサイト・スタディング・クレアールの通信講座を費用・合格実績・サポートで徹底比較。',
+    category: '国家資格',
+    publishedAt: '2026-05-31',
+    updatedAt: '2026-05-31',
+    readingTime: 8,
+    headings: ['社労士試験の難易度と合格率の実態', '社労士に必要な勉強時間', '社労士通信講座おすすめランキング4選', '社労士資格で開ける独立・転職の道', '社労士 vs 行政書士：どちらを取るべきか'],
+  },
+  {
+    slug: 'gyousei-goukakuritsu-dokugaku-hikaku',
+    title: '行政書士の合格率と独学vs通信講座の徹底比較【2026年対策ガイド】',
+    description: '行政書士試験の合格率・難易度・必要勉強時間を解説。独学と通信講座（アガルート・フォーサイト・スタディング）を費用・合格率・サポートで比較し、最適な学習方法を提案します。',
+    category: '勉強法・対策',
+    publishedAt: '2026-05-31',
+    updatedAt: '2026-05-31',
+    readingTime: 8,
+    headings: ['行政書士の合格率・難易度の実態', '独学で合格できる？必要な条件と勉強法', '通信講座が独学より有利な理由', '行政書士通信講座 費用・合格率比較', '行政書士取得後のキャリアパス'],
+  },
+  {
+    slug: 'it-passport-it-shikaku-roadmap',
+    title: 'ITパスポートから始めるIT資格ロードマップ【段階別キャリア設計】',
+    description: 'ITパスポートを出発点に基本情報技術者・応用情報技術者・高度IT資格へのステップアップを解説。IT未経験者から上級エンジニアまで、段階別のIT資格ロードマップを紹介します。',
+    category: 'IT資格',
+    publishedAt: '2026-05-31',
+    updatedAt: '2026-05-31',
+    readingTime: 7,
+    headings: ['ITパスポートの位置づけと取得メリット', 'IT資格ロードマップ全体像', 'ITパスポート→基本情報技術者へのステップ', '目的別・IT資格の選び方', 'IT資格取得に役立つ通信講座・学習ツール'],
+  },
+  {
+    slug: 'kyouiku-kunren-kanzen-guide',
+    title: '教育訓練給付金を使って資格取得する完全ガイド【申請方法・対象講座2026】',
+    description: '教育訓練給付金（一般・特定一般・専門実践）の3種類を徹底解説。申請手順・対象講座の調べ方・受講前の手続きまで、最大70%の給付を受けるための完全ガイドです。',
+    category: '費用・給付金',
+    publishedAt: '2026-05-31',
+    updatedAt: '2026-05-31',
+    readingTime: 7,
+    headings: ['教育訓練給付金の3種類と給付率', '給付金を受けるための条件と確認方法', '申請の流れ：受講前・受講中・受講後', '給付金対象の人気資格通信講座一覧', '給付金と組み合わせると最もお得な講座'],
+  },
+  {
+    slug: 'hataraki-nagara-shikaku-jikankanri',
+    title: '働きながら資格取得するための時間管理術【社会人の合格戦略】',
+    description: '仕事と資格学習を両立するための時間管理・勉強計画の立て方を解説。通勤・昼休み・朝活の活用法、週次スケジュールの組み方、モチベーション維持のコツまで網羅します。',
+    category: '転職・キャリア',
+    publishedAt: '2026-05-31',
+    updatedAt: '2026-05-31',
+    readingTime: 6,
+    headings: ['社会人の「学習時間がない」問題を解決する', 'スキマ時間を資格学習に変える5つの方法', '週次・月次の学習スケジュールの立て方', 'モチベーションを維持する3つの仕組み', '通信講座で学習効率を最大化する方法'],
+  },
+  {
+    slug: 'fukugyou-freelance-shikaku-2026',
+    title: '副業・フリーランスで稼げる資格ランキング2026【収入別おすすめ】',
+    description: '副業やフリーランス活動で実際に稼げる資格をランキング形式で紹介。FP・簿記・IT系・Webデザイン・語学など、取得難易度・時給単価・案件数で評価した2026年最新版です。',
+    category: '副業・スキルアップ',
+    publishedAt: '2026-05-31',
+    updatedAt: '2026-05-31',
+    readingTime: 7,
+    headings: ['副業で資格が「稼ぎ」につながる仕組み', '副業・フリーランスで稼げる資格ランキングTOP10', '資格別・副業の始め方と収入目安', '資格取得から副業開始までのロードマップ', '副業資格取得に最適な通信講座の選び方'],
+  },
+  {
+    slug: 'tensyoku-shikaku-mikiwake',
+    title: '転職に有利な資格・役立たない資格の見分け方【判断基準を解説】',
+    description: '転職市場で本当に評価される資格と、取得しても就職に役立たない資格の見分け方を解説。業界別・職種別の需要・市場価値・費用対効果で資格を選ぶための判断基準を紹介します。',
+    category: '転職・キャリア',
+    publishedAt: '2026-05-31',
+    updatedAt: '2026-05-31',
+    readingTime: 6,
+    headings: ['転職で「評価される資格」の4つの共通点', '役立たない資格の特徴と見分け方', '業界別・転職に有利な資格一覧', '資格選びの前に確認すべき3つの質問', '転職目的の資格取得におすすめの通信講座'],
+  },
 ];
 
 export function getColumnBySlug(slug: string): Column | undefined {
@@ -2498,6 +2598,292 @@ export const columnContent: Record<string, React.ReactNode> = {
             { q: '介護福祉士と社会福祉士の違いは何ですか？', a: '介護福祉士は「介護の実践者」で、高齢者・障害者の身体介護・生活支援が主な業務。社会福祉士は「福祉の相談援助専門職」で、福祉施設・病院の相談員・ケースワーカーとして支援計画の立案・調整を担います。どちらも国家資格。介護福祉士は実務経験（3年）+研修後に試験受験、社会福祉士は大学の指定科目修了または通信教育での受験資格取得が一般的です。' },
             { q: '介護・福祉系の資格は通信講座だけで取れますか？', a: '取れる資格と取れない資格があります。社会福祉士・精神保健福祉士は通信制大学+通信講座の組み合わせで受験資格を取得できます。介護福祉士は実務経験3年が必須条件で、通信講座だけでは取れません。ホームヘルパー（訪問介護員）養成研修は通信+実技研修の組み合わせで取得可能です。まず目指す資格の受験資格を確認してください。' },
             { q: '介護・福祉系の資格を取ると年収はどのくらいになりますか？', a: '介護職員（介護福祉士取得後）の平均年収は320〜380万円程度。社会福祉士（相談援助職）は300〜450万円。ケアマネジャー（ケアマネ）は350〜450万円程度です。管理職・施設長になると500万円以上も可能です。給与水準は施設種別（特別養護老人ホーム・グループホーム・障害者施設）によっても差があります。処遇改善加算制度により介護職の給与は年々上昇傾向にあります。' }
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'takken-nanido-goukakuritsu': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">宅建士試験の基本データ（難易度・合格率）</h2>
+        <p className="mb-4">宅地建物取引士（宅建士）試験は、毎年20万人以上が受験する日本最大規模の国家資格試験のひとつです。合格率は例年15〜18%程度で推移しており、難易度は「普通〜やや難しい」レベルとされています。法律系国家資格の中では比較的取り組みやすい部類ですが、毎年多数の受験者が不合格になる現実もあります。</p>
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          {[
+            { label: '合格率', value: '15〜18%', sub: '例年の平均値' },
+            { label: '受験者数', value: '約22万人', sub: '年間（2025年度）' },
+            { label: '試験形式', value: '四肢択一50問', sub: '2時間・マークシート' },
+            { label: '受験料', value: '8,200円', sub: '2026年度参考値' },
+          ].map(({ label, value, sub }) => (
+            <div key={label} className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
+              <p className="text-xs text-gray-500 mb-1">{label}</p>
+              <p className="font-bold text-slate-800 text-lg">{value}</p>
+              <p className="text-xs text-gray-400 mt-1">{sub}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-sm text-gray-700">難易度の観点では、行政書士・社労士・司法書士などの上位法律系資格と比べて学習範囲が限定的で、正しい学習戦略を立てれば初学者でも十分に合格を狙えます。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">宅建合格に必要な勉強時間の目安</h2>
+        <div className="space-y-3">
+          {[
+            { type: '法律系知識ゼロの初学者', hours: '300〜500時間', period: '6〜12ヶ月' },
+            { type: '不動産業務経験者', hours: '150〜250時間', period: '3〜6ヶ月' },
+            { type: '通信講座利用者（初学者）', hours: '200〜350時間', period: '4〜8ヶ月' },
+          ].map(({ type, hours, period }) => (
+            <div key={type} className="flex items-center gap-4 border border-gray-200 rounded-xl p-4">
+              <div className="flex-1">
+                <p className="font-medium text-gray-800 text-sm">{type}</p>
+                <p className="text-xs text-gray-500 mt-0.5">期間目安：{period}</p>
+              </div>
+              <div className="text-right shrink-0">
+                <p className="font-bold text-slate-700">{hours}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="text-xs text-gray-400 mt-2">※個人差があります。学習効率・事前知識により大きく変動します。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">科目別・攻略のポイント</h2>
+        <div className="space-y-3">
+          {[
+            { subject: '権利関係（民法等）14問', difficulty: '難', tip: '民法の条文・判例理解が必要。過去問を繰り返して出題パターンを把握することが効率的。捨て問を作らず基本論点を確実に押さえる。' },
+            { subject: '法令上の制限8問', difficulty: '普通', tip: '都市計画法・建築基準法が中心。暗記要素が強いため、一覧表を作り繰り返し確認する学習法が有効。' },
+            { subject: '宅建業法20問', difficulty: '易〜普通', tip: '最も得点が見込めるドル箱科目。条文を正確に理解し、満点近くを目指す。通信講座ではここに学習リソースを集中させる設計が多い。' },
+            { subject: '税・その他8問', difficulty: '普通', tip: '不動産取得税・固定資産税・印紙税などが出題。毎年同じ範囲から出るため、過去問で出題傾向を掴めば得点しやすい。' },
+          ].map(({ subject, difficulty, tip }) => (
+            <div key={subject} className="border-l-4 border-slate-400 pl-4">
+              <div className="flex items-center gap-2 mb-1">
+                <h3 className="font-bold text-gray-900 text-sm">{subject}</h3>
+                <span className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full">難易度：{difficulty}</span>
+              </div>
+              <p className="text-sm text-gray-700">{tip}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">独学 vs 通信講座：どちらが効率的か</h2>
+        <p className="mb-3">宅建は独学合格者も多い試験ですが、通信講座を使うことで学習効率が大幅に向上します。独学では参考書選び・学習順序の設計・弱点把握をすべて自力で行う必要があります。一方、通信講座は出題傾向に沿ったカリキュラムと過去問演習システムが整っており、忙しい社会人が短期合格を目指す場合に特に有効です。</p>
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-5">
+          <p className="font-bold text-slate-800 mb-3">通信講座がおすすめな方の特徴</p>
+          <ul className="text-sm space-y-1 text-gray-700">
+            <li>・1日の学習時間が2時間以下の忙しい社会人</li>
+            <li>・法律系の勉強が初めてで独学に不安がある方</li>
+            <li>・1発合格を最優先に考えている方</li>
+            <li>・教育訓練給付金を活用してコストを抑えたい方</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">宅建合格後のキャリアと資格活用</h2>
+        <p className="mb-3">宅建士資格は不動産業界で特に需要が高く、宅建業者では従業員5人に1人の設置義務があります。資格手当（月1〜3万円程度）を設定している会社も多く、取得すると即座に収入アップにつながります。また不動産売買・賃貸管理・住宅ローン相談など幅広い業務に活用できるため、金融・保険業界でも評価される資格です。</p>
+        <div className="space-y-2 text-sm">
+          <div className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">不動産会社：</span><span>宅建士として重要事項説明・契約業務に従事。昇給・昇進に直結する必須資格。</span></div>
+          <div className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">金融機関：</span><span>住宅ローン担当や不動産担保融資の際に知識が活用できる。</span></div>
+          <div className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">独立開業：</span><span>宅建業免許取得の要件となる。不動産エージェントとしての独立も可能。</span></div>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '宅建士試験は何回目で合格する人が多いですか？', a: '宅建士試験は初受験合格率が高い試験ではなく、2〜3回受験する方も多いです。ただし通信講座を活用した受験者は初回合格率が高い傾向にあります。フォーサイトやアガルートでは受講生の合格率が全国平均の2〜4倍と公表しています。初受験で確実に合格したい場合は通信講座の活用をおすすめします。' },
+            { q: '宅建士試験に年齢制限はありますか？', a: '宅建士試験に年齢制限はありません。高校生から70代の方まで受験しており、合格後に登録する宅建士証の交付にも年齢制限はありません。ただし宅建士証の交付には実務経験2年または登録実務講習の修了が必要です。' },
+            { q: '宅建と管理業務主任者はどちらを先に取るべきですか？', a: '不動産業界全般で活躍したいなら宅建を先に取得することをおすすめします。宅建は業界での必置義務があり需要が高い。管理業務主任者はマンション管理会社に特化した資格で、宅建取得後にダブルライセンスとして取得すると転職市場での価値がさらに高まります。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'bookkeeping-2kyu-dokugaku': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">簿記2級の難易度と独学合格は可能か</h2>
+        <p className="mb-4">日商簿記2級は「商業簿記＋工業簿記」が試験範囲で、合格率は試験回によって10〜30%と変動します。近年はネット試験（CBT）の導入により受験機会が増えた一方、問題の難易度も上昇傾向にあります。独学合格は十分可能ですが、工業簿記の概念は初学者には難しいため、参考書選びと学習計画が重要です。</p>
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-4">
+          <p className="font-bold text-slate-800 mb-2">簿記2級の試験概要</p>
+          <ul className="text-sm space-y-1 text-gray-700">
+            <li>試験形式：商業簿記3問＋工業簿記2問（合計5問）</li>
+            <li>試験時間：90分</li>
+            <li>合格基準：70点以上（100点満点）</li>
+            <li>受験料：5,500円（税込）</li>
+            <li>試験方式：統一試験（年3回）またはネット試験（随時）</li>
+          </ul>
+        </div>
+        <p className="text-sm text-gray-700">3ヶ月での合格は十分現実的ですが、1日2〜3時間の学習時間を確保できることが前提です。働きながら取得する場合は4〜6ヶ月のスケジュールが安全です。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">3ヶ月合格プラン：週別スケジュール</h2>
+        <ol className="space-y-3 text-sm">
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs shrink-0">1</span><div><p className="font-bold text-gray-800">1〜2週目：商業簿記の基礎固め</p><p className="text-gray-600">仕訳の基本・勘定科目・決算整理を集中学習。3級の内容を復習してから入ると効率的。</p></div></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs shrink-0">2</span><div><p className="font-bold text-gray-800">3〜5週目：商業簿記の応用・連結会計</p><p className="text-gray-600">連結財務諸表・リース・税効果会計など2級固有の論点を学習。ここが最難関。</p></div></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs shrink-0">3</span><div><p className="font-bold text-gray-800">6〜8週目：工業簿記を集中攻略</p><p className="text-gray-600">費目別計算・部門別計算・標準原価計算の3本柱を順に学習。問題演習を並行して実施。</p></div></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs shrink-0">4</span><div><p className="font-bold text-gray-800">9〜10週目：過去問・予想問題演習</p><p className="text-gray-600">本試験形式の過去問を時間を測って解く。解説を読み込み苦手論点を補強。</p></div></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs shrink-0">5</span><div><p className="font-bold text-gray-800">11〜12週目：弱点克服・仕上げ</p><p className="text-gray-600">ミスが多い論点を重点復習。直前予想問題集を2〜3回転させて本番に備える。</p></div></li>
+        </ol>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">おすすめテキスト・問題集の選び方</h2>
+        <div className="space-y-3">
+          {[
+            { name: 'スッキリわかる日商簿記2級（TAC出版）', type: 'テキスト＋問題集一体型', point: '初学者でも読みやすいイラスト多めの解説。商業簿記・工業簿記それぞれ1冊ずつ。独学の定番テキストとして長年支持されている。' },
+            { name: 'パブロフ流でみんな合格 日商簿記2級（よせだあつこ著）', type: 'テキスト', point: 'マンガ・イラスト形式で工業簿記の概念が理解しやすい。特に工業簿記で苦手意識がある人に評判が高い。' },
+            { name: '合格するための過去問題集（TAC出版）', type: '過去問集', point: '直近12回分の本試験問題を収録。解説が丁寧で、模擬試験形式で実力測定できる。演習フェーズで必須の一冊。' },
+          ].map(({ name, type, point }) => (
+            <div key={name} className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start gap-2 mb-1">
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full shrink-0">{type}</span>
+              </div>
+              <p className="font-bold text-gray-800 text-sm mb-1">{name}</p>
+              <p className="text-xs text-gray-600 leading-relaxed">{point}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">工業簿記の効率的な攻略法</h2>
+        <p className="mb-3">工業簿記は商業簿記とは別の体系を持ち、独学者が最もつまずきやすいポイントです。製造業の原価計算を理解する必要があり、最初は難しく感じますが、体系を一度理解すれば得点源になります。</p>
+        <div className="bg-slate-50 rounded-xl p-5">
+          <p className="font-bold text-slate-800 mb-3">工業簿記攻略の3ステップ</p>
+          <ol className="text-sm space-y-2 text-gray-700">
+            <li><span className="font-bold">①全体像の把握：</span>費目別計算→部門別計算→個別・総合原価計算の流れを図で理解する</li>
+            <li><span className="font-bold">②仕訳パターンの暗記：</span>材料費・労務費・製造間接費の仕訳を反射的にできるまで練習</li>
+            <li><span className="font-bold">③問題演習で定着：</span>同じ問題を3回以上解いて「解法の型」を体に覚えさせる</li>
+          </ol>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">独学の限界を感じたら通信講座も検討</h2>
+        <p className="mb-3">独学で行き詰まりを感じたら、通信講座への切り替えを検討しましょう。スタディングの簿記2級コースは16,500円〜と格安で、AI問題演習と動画講義でスマホ1台から学習できます。テキスト代と費用がほぼ同じため、コスパを重視する方にも選択肢に入ります。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '簿記3級なしで2級から始めても大丈夫ですか？', a: '可能ですが非効率です。2級の商業簿記は3級の内容を前提として設計されています。3級未取得の場合は、3級のテキストを1〜2週間でざっと読んでから2級に入ることをおすすめします。スタディングやフォーサイトでは3級＋2級のセットコースも用意されており、一貫した学習ができます。' },
+            { q: '簿記2級はネット試験（CBT）と統一試験どちらがおすすめですか？', a: 'ネット試験は随時受験でき、結果がその場でわかります。統一試験は年3回で問題が公開される点がメリット。ネット試験は問題がランダムで難易度のばらつきがあり、初受験なら統一試験で問題傾向を把握してから挑む方が戦略的です。ただし受験機会を増やしたい方はネット試験が便利です。' },
+            { q: '簿記2級を取ると年収はどのくらい上がりますか？', a: '経理・財務職への転職では、2級取得で年収20〜50万円のアップが見込めるケースがあります。現職での資格手当（月5,000〜20,000円）が設定されている企業も多い。ただし資格単独ではなく「実務経験＋簿記2級」の組み合わせが転職市場では最も評価されます。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+  'fp-2kyu-3kyu-kanzen-guide': (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">FP3級とFP2級の違いを一覧比較</h2>
+        <p className="mb-4">ファイナンシャルプランナー（FP）資格は1〜3級の3段階があり、最も需要が高いのはFP2級（AFP認定研修修了または3級合格が受験要件）です。3級と2級では試験範囲・難易度・転職市場での評価に大きな違いがあります。</p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-200 px-3 py-2 text-left">項目</th>
+                <th className="border border-gray-200 px-3 py-2 text-center">FP3級</th>
+                <th className="border border-gray-200 px-3 py-2 text-center">FP2級</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { item: '合格率', grade3: '約60〜70%', grade2: '約25〜40%' },
+                { item: '受験料（学科＋実技）', grade3: '約6,000円', grade2: '約13,000円' },
+                { item: '必要勉強時間', grade3: '80〜150時間', grade2: '200〜350時間' },
+                { item: '転職市場の評価', grade3: '入門レベル', grade2: '実践レベル・高評価' },
+                { item: '受験資格', grade3: 'なし（誰でも受験可）', grade2: 'FP3級合格等の条件あり' },
+              ].map((row, i) => (
+                <tr key={row.item} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="border border-gray-200 px-3 py-2 font-medium">{row.item}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-center">{row.grade3}</td>
+                  <td className="border border-gray-200 px-3 py-2 text-center font-medium text-slate-700">{row.grade2}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">試験科目と出題傾向の攻略ポイント</h2>
+        <p className="mb-3">FP試験は「ライフプランニング・リスク管理・金融資産・タックス・不動産・相続」の6分野から出題されます。2級では各分野の深い理解と計算問題が増えます。</p>
+        <div className="space-y-2">
+          {[
+            { field: 'ライフプランニングと資金計画', point: '社会保険・年金制度の理解が重要。2級では計算問題が増える。' },
+            { field: 'リスク管理（保険）', point: '生命保険・損害保険の種類と税務上の取扱いを整理。' },
+            { field: '金融資産運用', point: '株式・債券・投資信託の基礎知識。利回り計算は必須。' },
+            { field: 'タックスプランニング', point: '所得税・住民税の計算が頻出。源泉徴収・確定申告の仕組みを押さえる。' },
+            { field: '不動産', point: '不動産取得・保有・譲渡の税務が中心。宅建知識があると有利。' },
+            { field: '相続・事業承継', point: '相続税の計算・遺産分割が頻出。2級では難易度が上がる論点。' },
+          ].map(({ field, point }) => (
+            <div key={field} className="border-l-4 border-slate-300 pl-4 py-1">
+              <p className="font-bold text-gray-800 text-sm">{field}</p>
+              <p className="text-xs text-gray-600 mt-0.5">{point}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">初学者はどちらから受験すべきか</h2>
+        <div className="space-y-3">
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-5">
+            <p className="font-bold text-slate-800 mb-2">FP3級から始めるべき人</p>
+            <ul className="text-sm space-y-1 text-gray-700">
+              <li>・金融・税務・保険の知識がほぼゼロの初学者</li>
+              <li>・学習時間が週10時間以下で2〜3ヶ月かけて取りたい方</li>
+              <li>・FP2級の受験資格を得るために3級合格が必要な方</li>
+            </ul>
+          </div>
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-5">
+            <p className="font-bold text-slate-800 mb-2">FP2級から直接受験できる人</p>
+            <ul className="text-sm space-y-1 text-gray-700">
+              <li>・金融・保険・税務の実務経験がある方</li>
+              <li>・AFP認定研修を修了した方</li>
+              <li>・宅建・簿記2級など近い分野の資格保有者</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">FP試験対策のおすすめ勉強法</h2>
+        <ol className="space-y-3 text-sm">
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">1</span><span>まず全6分野をテキストで一周し、全体像を把握する（2〜3週間）</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">2</span><span>分野別に過去問を解いて出題パターンを把握する（4〜6週間）</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">3</span><span>計算問題（利回り・所得税・相続税）は繰り返し演習で定着させる</span></li>
+          <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">4</span><span>直前2週間は模擬試験形式で時間配分・解答速度を最終調整する</span></li>
+        </ol>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">FP資格の活かし方とキャリアへの影響</h2>
+        <p className="mb-3">FP2級は金融機関・保険会社・不動産会社・証券会社への転職で特に高く評価されます。また独立系FPとして個人向けの資産相談・ライフプランニング業務での副業・独立にも活用できます。FP1級またはCFP資格へのステップアップも見据えると、長期キャリアの基盤となります。</p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'FP2級を取ると就職・転職で有利になりますか？', a: 'FP2級は金融・保険・不動産業界での転職で高く評価されます。特に銀行・証券会社・生命保険会社ではFP資格を昇進要件としているケースもあります。一般企業の総務・経理での評価は業界により異なりますが、資産形成・節税・保険見直しなどの相談業務への応用が可能です。' },
+            { q: 'FPの通信講座を使うと独学より合格率は上がりますか？', a: 'FP試験は比較的取り組みやすいため独学合格者も多いですが、通信講座を使うと学習効率が向上し、短期合格が狙いやすくなります。スタディングのFP2・3級コースは14,000円〜と格安で、スマホでスキマ学習ができます。フォーサイトは合格率が全国平均の約2倍と高合格実績を公表しています。' },
+            { q: 'FP2級合格後にCFPやFP1級を目指すべきですか？', a: 'FP業務で独立・開業を目指す方はCFP（認定ファイナンシャルプランナー）の取得が有利です。証券会社・信託銀行など上位職を目指す方にはFP1級が評価されます。一般的にはFP2級で十分なケースが多く、他の資格（宅建・簿記等）との組み合わせを先に検討することをおすすめします。' },
           ].map(({ q, a }) => (
             <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
               <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
