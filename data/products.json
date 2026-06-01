@@ -1463,7 +1463,7 @@
     {
       "id": "rakuten",
       "name": "楽天市場",
-      "url": "#rakuten",
+      "url": "https://www.rakuten.co.jp",
       "affiliateParam": "",
       "shipping": 0,
       "freeShippingMin": 0,
