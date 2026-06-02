@@ -111,9 +111,14 @@ async function scrapePriceFromPage(page: Page, url: string): Promise<number | nu
 async function scrapeAllPrices(
   urlMap: Record<string, Record<string, string>>,
 ): Promise<Map<string, number>> {
+  const older = '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
+  const executablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH ??
+    (fs.existsSync(older) ? older : undefined);
+
   const browser = await chromium.launch({
     headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--ignore-certificate-errors'],
+    ...(executablePath ? { executablePath } : {}),
   });
   const context: BrowserContext = await browser.newContext({
     userAgent:
