@@ -1,10 +1,12 @@
-name: 毎日価格データ・アフィリエイトリンク自動更新
+name: 価格データ・アフィリエイトリンク自動更新
 
 on:
   schedule:
-    # 毎朝6時（JST）= UTC 21:00 前日
-    - cron: '0 21 * * *'
-  workflow_dispatch: # 手動実行も可能
+    # 1日3回実行: 6:00 / 14:00 / 22:00 JST (UTC: 21:00前日 / 05:00 / 13:00)
+    - cron: '0 21 * * *'   # 06:00 JST
+    - cron: '0 5 * * *'    # 14:00 JST
+    - cron: '0 13 * * *'   # 22:00 JST
+  workflow_dispatch:
 
 jobs:
   update-data:
@@ -28,14 +30,19 @@ jobs:
       - name: Playwright ブラウザをインストール
         run: npx playwright install chromium --with-deps
 
-      - name: A8.net アフィリエイトリンク自動取得
+      - name: A8.net コンタクトレンズ用アフィリエイトリンク取得
         run: npx ts-node scripts/fetch-a8-links.ts
         env:
           A8_JSESSIONID: ${{ secrets.A8_JSESSIONID }}
-        # リンク取得に失敗してもワークフロー全体は止めない
         continue-on-error: true
 
-      - name: 価格データ更新スクリプト実行
+      - name: A8.net スクール・資格用アフィリエイトリンク取得
+        run: npx ts-node scripts/fetch-school-links.ts
+        env:
+          A8_JSESSIONID: ${{ secrets.A8_JSESSIONID }}
+        continue-on-error: true
+
+      - name: 価格データ更新（実スクレイピング）
         run: npx ts-node scripts/update-prices.ts
         env:
           NODE_ENV: production
@@ -44,6 +51,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Actions Bot"
-          git add data/prices.json data/products.json
-          git diff --staged --quiet || git commit -m "chore: 価格・アフィリエイトリンク自動更新 $(date '+%Y-%m-%d')"
+          git add data/prices.json data/products.json \
+                  school-navi/data/schools.json \
+                  shikaku-navi/data/courses.json
+          git diff --staged --quiet || git commit -m "chore: 価格・アフィリエイトリンク自動更新 $(date '+%Y-%m-%d %H:%M JST')"
           git push

@@ -18,7 +18,14 @@
     "acuvue-trueye-1day": "https://www.atlens.jp/item/C_1DAYACV_TRUEYE.html",
     "menicon-2week-astig": "https://www.atlens.jp/item/C_2W_MENICON_ATTC_1P.html",
     "acuvue-define-moist-1day": "https://www.atlens.jp/item/K_JJ_DFMCZ0_01_H.html",
-    "biofinity-multifocal": "https://www.atlens.jp/item/K_CV_BFMFZ0_01_M.html"
+    "biofinity-multifocal": "https://www.atlens.jp/item/K_CV_BFMFZ0_01_M.html",
+    "dailies-aqua-comfort-plus": "https://www.atlens.jp/item/C_AQUACOM_1P.html",
+    "dailies-aqua-astig": "https://www.atlens.jp/item/C_AQUACOM_TC_1P.html",
+    "dailies-aqua-multifocal": "https://www.atlens.jp/item/C_AQUACOM_MF_1P.html",
+    "coopervision-proclear": "https://www.atlens.jp/item/K_CV_PC30Z0_01_H.html",
+    "proclear-multifocal": "https://www.atlens.jp/item/K_CV_PCMFZ0_01_H.html",
+    "seed-2week-pure": "https://www.atlens.jp/item/K_SE_2WPUZ0_01_M.html",
+    "acuvue-define-1day": "https://www.atlens.jp/item/C_1DAYDFN.html"
   },
   "lens24": {
     "acuvue-oasys-1day": "https://www.24lens.jp/products/os/pid/JJ1DAO/",
@@ -191,7 +198,14 @@
     "acuvue-trueye-1day": "https://www.lensquick.jp/item/C_1DAYACV_TRUEYE.html",
     "menicon-2week-astig": "https://www.lensquick.jp/item/C_2W_MENICON_ATTC_1P.html",
     "acuvue-define-moist-1day": "https://www.lensquick.jp/item/K_JJ_DFMCZ0_01_H.html",
-    "biofinity-multifocal": "https://www.lensquick.jp/item/K_CV_BFMFZ0_01_M.html"
+    "biofinity-multifocal": "https://www.lensquick.jp/item/K_CV_BFMFZ0_01_M.html",
+    "dailies-aqua-comfort-plus": "https://www.lensquick.jp/item/C_AQUACOM_1P.html",
+    "dailies-aqua-astig": "https://www.lensquick.jp/item/C_AQUACOM_TC_1P.html",
+    "dailies-aqua-multifocal": "https://www.lensquick.jp/item/C_AQUACOM_MF_1P.html",
+    "coopervision-proclear": "https://www.lensquick.jp/item/K_CV_PC30Z0_01_H.html",
+    "proclear-multifocal": "https://www.lensquick.jp/item/K_CV_PCMFZ0_01_H.html",
+    "seed-2week-pure": "https://www.lensquick.jp/item/K_SE_2WPUZ0_01_M.html",
+    "acuvue-define-1day": "https://www.lensquick.jp/item/C_1DAYDFN.html"
   },
   "at-style": {
     "acuvue-define-moist-1day": "https://www.atnetstyle.com/item/K_JJ_DFMCZ0_01_H.html"

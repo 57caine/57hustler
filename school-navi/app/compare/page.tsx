@@ -1,18 +1,11 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { schools, formatPrice } from '@/lib/schools';
+import { schools } from '@/lib/schools';
+import CompareTable from './CompareTable';
 
 export const metadata: Metadata = {
-  title: 'プログラミングスクール比較表【2026年版・全14校】',
-  description: 'プログラミングスクール14校を料金・期間・給付金対応・転職サポートで一覧比較。スクール選びの判断材料としてご活用ください。',
-};
-
-const categoryColors: Record<string, string> = {
-  '転職特化': 'bg-slate-100 text-slate-700',
-  'スキルアップ': 'bg-emerald-50 text-emerald-700',
-  'フリーランス特化': 'bg-amber-50 text-amber-700',
-  'AI特化': 'bg-violet-50 text-violet-700',
-  '独学支援': 'bg-gray-50 text-gray-600',
+  title: 'プログラミングスクール比較表【2026年版・全14校】料金・給付金・転職保証',
+  description: 'プログラミングスクール14校を料金・期間・給付金対応・転職サポートで一覧比較。受講料・評価でソート可能。スクール選びにご活用ください。',
 };
 
 const faqs = [
@@ -59,90 +52,16 @@ export default function ComparePage() {
       </nav>
 
       <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">プログラミングスクール比較表</h1>
-      <p className="text-gray-500 text-sm mb-2">全{schools.length}校 ・ 2026年5月更新</p>
-      <p className="text-gray-600 text-sm mb-8">料金・受講期間・給付金対応・転職サポートの有無を一覧にまとめました。</p>
+      <p className="text-gray-500 text-sm mb-2">全{schools.length}校 ・ 2026年6月更新</p>
+      <p className="text-gray-600 text-sm mb-6">
+        料金・受講期間・給付金対応・転職サポートを一覧比較。
+        <span className="text-sky-700 font-medium">受講料・評価でソート可能</span>です。
+      </p>
 
-      {/* Desktop table */}
-      <div className="overflow-x-auto mb-10 rounded-xl border border-gray-200">
-        <table className="w-full text-sm bg-white">
-          <thead>
-            <tr className="border-b border-gray-200 bg-gray-50">
-              <th className="px-4 py-3 text-left font-semibold text-gray-700 min-w-[140px]">スクール名</th>
-              <th className="px-4 py-3 text-left font-semibold text-gray-700">カテゴリ</th>
-              <th className="px-4 py-3 text-right font-semibold text-gray-700">受講料</th>
-              <th className="px-4 py-3 text-center font-semibold text-gray-700">期間</th>
-              <th className="px-4 py-3 text-center font-semibold text-gray-700">形式</th>
-              <th className="px-4 py-3 text-center font-semibold text-gray-700">給付金</th>
-              <th className="px-4 py-3 text-center font-semibold text-gray-700">転職保証</th>
-              <th className="px-4 py-3 text-center font-semibold text-gray-700"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {schools.map((school, i) => (
-              <tr
-                key={school.slug}
-                className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'} hover:bg-slate-50 transition-colors`}
-              >
-                <td className="px-4 py-3">
-                  <Link href={`/schools/${school.slug}`} className="font-medium text-gray-900 hover:text-slate-600 hover:underline">
-                    {school.name}
-                  </Link>
-                </td>
-                <td className="px-4 py-3">
-                  <span className={`text-xs px-2 py-0.5 rounded font-medium ${categoryColors[school.category] ?? 'bg-gray-50 text-gray-600'}`}>
-                    {school.category}
-                  </span>
-                </td>
-                <td className="px-4 py-3 text-right font-medium text-gray-800">
-                  {school.price === 0 ? (
-                    <span className="text-emerald-700 font-semibold">無料</span>
-                  ) : (
-                    `${formatPrice(school.price)}〜`
-                  )}
-                </td>
-                <td className="px-4 py-3 text-center text-gray-600 text-xs">{school.period}</td>
-                <td className="px-4 py-3 text-center text-gray-600 text-xs">{school.format.join(' / ')}</td>
-                <td className="px-4 py-3 text-center">
-                  {school.features.includes('給付金対象') ? (
-                    <span className="text-emerald-600 font-bold text-base">○</span>
-                  ) : (
-                    <span className="text-gray-300 text-base">—</span>
-                  )}
-                </td>
-                <td className="px-4 py-3 text-center">
-                  {school.features.includes('転職保証') ? (
-                    <span className="text-emerald-600 font-bold text-base">○</span>
-                  ) : (
-                    <span className="text-gray-300 text-base">—</span>
-                  )}
-                </td>
-                <td className="px-4 py-3 text-center">
-                  <div className="flex gap-1.5 justify-center">
-                    <Link
-                      href={`/schools/${school.slug}`}
-                      className="text-xs text-slate-600 border border-slate-300 px-2.5 py-1 rounded hover:bg-slate-50 transition-colors whitespace-nowrap"
-                    >
-                      詳細
-                    </Link>
-                    {(school.affiliate_url !== '#' || school.official_url) && (
-                      <a
-                        href={school.affiliate_url !== '#' ? school.affiliate_url : school.official_url!}
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        className="text-xs bg-sky-600 text-white px-2.5 py-1 rounded hover:bg-sky-500 transition-colors whitespace-nowrap"
-                      >
-                        公式
-                      </a>
-                    )}
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      {/* ソート・フィルター付き比較テーブル（クライアントコンポーネント） */}
+      <CompareTable />
 
-      {/* Situation-based guide */}
+      {/* 状況別おすすめ */}
       <section className="mb-10">
         <h2 className="text-lg font-bold text-gray-900 mb-4">状況別・編集部おすすめ</h2>
         <div className="grid md:grid-cols-3 gap-4">
