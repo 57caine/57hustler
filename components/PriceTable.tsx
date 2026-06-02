@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Price, Store, calcTotalPrice } from '@/lib/products';
 
-type SortKey = 'totalPrice' | 'price' | 'store';
+type SortKey = 'totalPrice' | 'price' | 'store' | 'shipping' | 'prescription';
 type SortDir = 'asc' | 'desc';
 
 type PriceTableProps = {
@@ -34,7 +34,13 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
     let diff = 0;
     if (sortKey === 'totalPrice') diff = a.totalPrice - b.totalPrice;
     else if (sortKey === 'price') diff = a.price - b.price;
-    else if (sortKey === 'store') diff = a.store.name.localeCompare(b.store.name);
+    else if (sortKey === 'store') diff = a.store.name.localeCompare(b.store.name, 'ja');
+    else if (sortKey === 'shipping') {
+      const sa = a.isFreeShipping ? 0 : a.store.shipping;
+      const sb = b.isFreeShipping ? 0 : b.store.shipping;
+      diff = sa - sb;
+    }
+    else if (sortKey === 'prescription') diff = (a.store.prescriptionFree ? 0 : 1) - (b.store.prescriptionFree ? 0 : 1);
     return sortDir === 'asc' ? diff : -diff;
   });
 
@@ -66,13 +72,21 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                 商品価格<SortIcon col="price" />
               </button>
             </th>
-            <th className="text-right px-4 py-3 font-semibold text-gray-700 hidden sm:table-cell">送料</th>
+            <th className="text-right px-4 py-3 font-semibold text-gray-700 hidden sm:table-cell">
+              <button onClick={() => handleSort('shipping')} className="flex items-center justify-end w-full hover:text-slate-900">
+                送料<SortIcon col="shipping" />
+              </button>
+            </th>
             <th className="text-right px-4 py-3 font-semibold text-gray-700">
               <button onClick={() => handleSort('totalPrice')} className="flex items-center justify-end w-full hover:text-slate-900">
                 合計（送料込）<SortIcon col="totalPrice" />
               </button>
             </th>
-            <th className="text-center px-4 py-3 font-semibold text-gray-700 hidden md:table-cell">処方箋</th>
+            <th className="text-center px-4 py-3 font-semibold text-gray-700 hidden md:table-cell">
+              <button onClick={() => handleSort('prescription')} className="flex items-center justify-center w-full hover:text-slate-900">
+                処方箋<SortIcon col="prescription" />
+              </button>
+            </th>
             <th className="text-center px-4 py-3 font-semibold text-gray-700">購入</th>
           </tr>
         </thead>
