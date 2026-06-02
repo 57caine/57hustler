@@ -25,7 +25,11 @@
     "coopervision-proclear": "https://www.atlens.jp/item/K_CV_PC30Z0_01_H.html",
     "proclear-multifocal": "https://www.atlens.jp/item/K_CV_PCMFZ0_01_H.html",
     "seed-2week-pure": "https://www.atlens.jp/item/K_SE_2WPUZ0_01_M.html",
-    "acuvue-define-1day": "https://www.atlens.jp/item/C_1DAYDFN.html"
+    "acuvue-define-1day": "https://www.atlens.jp/item/C_1DAYDFN.html",
+    "clariti-1day": "https://www.atlens.jp/item/K_CV_CL30Z0_06_H.html",
+    "seed-2week-pure-astig": "https://www.atlens.jp/item/K_SE_2PTCZ0_02_M.html",
+    "seed-eyecoffret-natural": "https://www.atlens.jp/item/K_SE_EC30Z0_04_NMK.html",
+    "freshlook-illuminate": "https://www.atlens.jp/item/K_AL_FLILZ0_01_RBR.html"
   },
   "lens24": {
     "acuvue-oasys-1day": "https://www.24lens.jp/products/os/pid/JJ1DAO/",
@@ -205,10 +209,16 @@
     "coopervision-proclear": "https://www.lensquick.jp/item/K_CV_PC30Z0_01_H.html",
     "proclear-multifocal": "https://www.lensquick.jp/item/K_CV_PCMFZ0_01_H.html",
     "seed-2week-pure": "https://www.lensquick.jp/item/K_SE_2WPUZ0_01_M.html",
-    "acuvue-define-1day": "https://www.lensquick.jp/item/C_1DAYDFN.html"
+    "acuvue-define-1day": "https://www.lensquick.jp/item/C_1DAYDFN.html",
+    "clariti-1day": "https://www.lensquick.jp/item/K_CV_CL30Z0_06_H.html",
+    "seed-2week-pure-astig": "https://www.lensquick.jp/item/K_SE_2PTCZ0_02_M.html",
+    "seed-eyecoffret-natural": "https://www.lensquick.jp/item/K_SE_EC30Z0_04_NMK.html",
+    "freshlook-illuminate": "https://www.lensquick.jp/item/K_AL_FLILZ0_01_RBR.html"
   },
   "at-style": {
-    "acuvue-define-moist-1day": "https://www.atnetstyle.com/item/K_JJ_DFMCZ0_01_H.html"
+    "acuvue-define-moist-1day": "https://www.atnetstyle.com/item/K_JJ_DFMCZ0_01_H.html",
+    "freshlook-illuminate": "https://www.atnetstyle.com/item/K_AL_FLILZ0_01_RBR.html",
+    "seed-eyecoffret-natural": "https://www.atnetstyle.com/item/K_SE_EC30Z0_04_NMK.html"
   },
   "amazon": {
     "acuvue-oasys-1day": "https://www.amazon.co.jp/dp/B01I15BRHU/?tag=57plot-22",
