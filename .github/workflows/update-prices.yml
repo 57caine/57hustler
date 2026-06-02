@@ -55,4 +55,5 @@ jobs:
                   school-navi/data/schools.json \
                   shikaku-navi/data/courses.json
           git diff --staged --quiet || git commit -m "chore: 価格・アフィリエイトリンク自動更新 $(date '+%Y-%m-%d %H:%M JST')"
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
           git push
