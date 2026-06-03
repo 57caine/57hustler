@@ -1,0 +1,11 @@
+[
+  {
+    "id": "sample_ai_tool",
+    "name": "AIツールサンプル",
+    "category": "ai_tool",
+    "affiliate_url": "#",
+    "description": "AIを使った業務自動化ツール",
+    "cta": "👉 無料で試してみる",
+    "tags": ["AI", "自動化", "生産性"]
+  }
+]

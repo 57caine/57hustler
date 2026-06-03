@@ -1,0 +1,4 @@
+.env
+sources/today_topic.json
+__pycache__/
+*.pyc
