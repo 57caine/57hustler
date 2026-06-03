@@ -1,12 +1,17 @@
 """
-Step 2: 投稿文生成＆アフィリエイト紐付けスクリプト
-sources/today_topic.json を読み込み、CLAUDE.md の世界観・口調に従って
-Claude API で SNS 投稿文を生成し posts/draft/ に保存する。
+Step 2: 投稿文生成＆アフィリエイト紐付けスクリプト (generate_post.py)
+=======================================================================
+sources/today_topic.json を読み込み、Claude API で SNS 投稿文を生成し
+posts/draft/ に Markdown ファイルとして保存する。
+
+【カスタマイズ箇所】
+  - SYSTEM_PROMPT        : 世界観・ターゲット・口調の定義 ★最重要
+  - affiliates.json      : アフィリエイト案件の追加・編集
+  - attach_affiliate()   : ツリー投稿（2枚目）のフォーマット
 """
 
 import json
 import os
-import random
 import re
 import sys
 from datetime import datetime, timezone, timedelta
@@ -21,10 +26,14 @@ JST = timezone(timedelta(hours=9))
 BASE_DIR = Path(__file__).parent.parent
 TOPIC_FILE = BASE_DIR / "sources" / "today_topic.json"
 AFFILIATES_FILE = BASE_DIR / "affiliates" / "affiliates.json"
-CLAUDE_MD = BASE_DIR / "CLAUDE.md"
 DRAFT_DIR = BASE_DIR / "posts" / "draft"
 DRAFT_DIR.mkdir(parents=True, exist_ok=True)
 
+# ============================================================
+# ★ カスタマイズ: SYSTEM_PROMPT
+#    ここにあなたのアカウントの「世界観・ターゲット・口調」を記述する。
+#    Claude API に毎回渡される指示文なので、ここを変えると投稿のトーンが変わる。
+# ============================================================
 SYSTEM_PROMPT = """
 あなたはSNS運用の専門家です。以下の運用方針を厳格に守って投稿文を生成してください。
 
@@ -46,8 +55,9 @@ AIツール活用・ビジネス自動化・副業ノウハウ・生産性向上
 1行目: キャッチーな書き出し（疑問形 or 数字入り）
 本文: ステップ or ポイントを列挙
 末尾: 行動を促す一言
-※ハッシュタグは末尾に2〜3個
+※ハッシュタグは末尾に2〜3個のみ
 """.strip()
+# ============================================================
 
 
 def load_topic() -> dict:
@@ -58,28 +68,45 @@ def load_topic() -> dict:
 
 
 def load_affiliates() -> list[dict]:
+    """
+    affiliates/affiliates.json からアフィリエイト案件を読み込む。
+    ★ カスタマイズ: affiliates.json に案件を追加してください（後述のフォーマット参照）
+    """
     if not AFFILIATES_FILE.exists():
         return []
     return json.loads(AFFILIATES_FILE.read_text(encoding="utf-8"))
 
 
 def pick_affiliate(topic: dict, affiliates: list[dict]) -> dict | None:
-    """トピックのキーワードに最もマッチするアフィリエイト案件を選ぶ。"""
+    """
+    トピックのタイトル・要約と affiliates.json の tags をマッチングして
+    最も関連性の高いアフィリエイト案件を自動選択する。
+
+    ★ カスタマイズ: affiliates.json の tags を充実させると精度が上がる
+    """
     if not affiliates:
         return None
-    title = (topic.get("title", "") + " " + topic.get("summary", "")).lower()
+
+    text = (topic.get("title", "") + " " + topic.get("summary", "")).lower()
     scored = []
     for aff in affiliates:
+        # affiliate_url が "#" の案件はスキップ（未登録）
         if aff.get("affiliate_url", "#") == "#":
             continue
-        score = sum(1 for tag in aff.get("tags", []) if tag.lower() in title)
+        score = sum(1 for tag in aff.get("tags", []) if tag.lower() in text)
         scored.append((score, aff))
+
     scored.sort(key=lambda x: x[0], reverse=True)
-    return scored[0][1] if scored and scored[0][0] > 0 else (affiliates[0] if affiliates else None)
+    # スコアが1以上ならマッチした案件を、なければ先頭案件をフォールバック
+    if scored and scored[0][0] > 0:
+        return scored[0][1]
+    return affiliates[0] if affiliates else None
 
 
 def generate_post(topic: dict) -> str:
+    """Claude API を使って投稿文を生成する。"""
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+
     user_msg = f"""
 以下のニュース・トピックを元に、SNS投稿文を1件生成してください。
 
@@ -92,7 +119,7 @@ def generate_post(topic: dict) -> str:
 【出典】
 {topic.get('source', '')}
 
-投稿文のみを出力してください（説明・コメント不要）。
+投稿文のみを出力してください（説明・前置き・コメント不要）。
 """.strip()
 
     message = client.messages.create(
@@ -106,21 +133,32 @@ def generate_post(topic: dict) -> str:
 
 def attach_affiliate(post_body: str, aff: dict | None) -> tuple[str, str]:
     """
-    メイン投稿文とアフィリエイトツリー（2枚目想定）を返す。
-    aff が None の場合はツリーなし。
+    メイン投稿文と、ツリー2枚目（アフィリエイト訴求）テキストを返す。
+
+    ★ カスタマイズ: ツリー投稿のフォーマットを変更したい場合はここを編集
+       aff の構造（affiliates.json のフィールド）:
+         id           : 識別子
+         name         : 案件名
+         category     : カテゴリ
+         affiliate_url: アフィリエイトURL（ここが収益の要）
+         description  : 案件の説明文（1〜2行）
+         cta          : CTA テキスト（例: "👉 無料で試してみる"）
+         tags         : マッチング用キーワード配列
     """
     if not aff:
         return post_body, ""
 
+    # ツリー2枚目のテキスト
     tree = (
         f"{aff['description']}\n\n"
         f"{aff['cta']}\n"
-        f"{aff['affiliate_url']}"
+        f"{aff['affiliate_url']}"   # ★ アフィリエイトURLがここに入る
     )
     return post_body, tree
 
 
 def save_draft(topic: dict, post_body: str, tree: str, aff: dict | None) -> Path:
+    """生成した投稿を posts/draft/ に Markdown ファイルとして保存する。"""
     now = datetime.now(JST)
     slug = re.sub(r"[^\w\-]", "-", topic.get("title", "post"))[:40]
     filename = DRAFT_DIR / f"{now.strftime('%Y-%m-%d_%H%M')}_{slug}.md"
