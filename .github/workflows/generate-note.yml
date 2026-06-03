@@ -1,0 +1,37 @@
+name: note記事 週次自動生成
+
+on:
+  schedule:
+    # 毎週月曜 8:00 JST (日曜 23:00 UTC) に生成
+    - cron: '0 23 * * 0'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: note記事生成
+        run: npx ts-node scripts/generate-note-draft.ts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: 下書きをコミット・プッシュ
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add note-drafts/
+          git diff --staged --quiet || git commit -m "chore: note下書き自動生成 $(date '+%Y-%m-%d')"
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          git push
