@@ -51,7 +51,7 @@ async function generateArticle(): Promise<string> {
 記事本文のみ出力してください（前置き・解説は不要）。`;
 
   const message = await client.messages.create({
-    model: 'claude-opus-4-8',
+    model: 'claude-sonnet-4-6',
     max_tokens: 4000,
     system: 'あなたは人気占い師・スピリチュアルライターです。読者の心に響く、保存されやすいnote記事を書きます。毎週一貫したトーンと世界観を維持します。',
     messages: [{ role: 'user', content: prompt }],

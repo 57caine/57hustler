@@ -32,7 +32,7 @@ async function generateFortuneText(): Promise<string> {
 本文のみ出力してください（前置き不要）。`;
 
   const message = await client.messages.create({
-    model: 'claude-opus-4-8',
+    model: 'claude-sonnet-4-6',
     max_tokens: 1000,
     system: 'あなたは人気占い師です。毎日Threadsに星座占いを投稿しています。読者が保存・シェアしたくなる内容を書きます。',
     messages: [{ role: 'user', content: prompt }],
