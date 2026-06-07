@@ -18,18 +18,20 @@ async function generateFortuneText(): Promise<string> {
     year: 'numeric', month: 'long', day: 'numeric', weekday: 'long',
   });
 
-  const prompt = `今日（${today}）の12星座の運勢を投稿してください。
+  const prompt = `今日（${today}）の12星座の運勢をThreadsに投稿します。
 
-【要件】
-- 全12星座を簡潔に（各1〜2行）
-- 全体で500字以内
-- 冒頭に「🔮 今日の星座占い」と日付
-- 絵文字を使って視覚的に読みやすく
-- ラッキーカラー or ラッキーアイテムを1つ各星座に添える
-- 末尾に「詳しい今週の運勢はnoteで🌟」を入れる
-- ハッシュタグ: #占い #今日の運勢 #星座占い
+【厳守事項】
+- 投稿全体を**必ず450文字以内**に収めること（超えると投稿エラーになる）
+- 各星座は「絵文字＋星座名＋運勢（10〜15字）＋ラッキー（色or物）」を1行に収める
+- 冒頭1行：🔮 今日の星座占い【${today}】
+- 末尾：詳細はnoteで🌟 #占い #今日の運勢
 
-本文のみ出力してください（前置き不要）。`;
+【フォーマット例（このくらい短く）】
+♈牡羊 行動力が鍵🔑 🍀赤
+♉牡牛 安定の運気💛 🍀緑
+（以下同様）
+
+本文のみ出力（前置き・説明不要）。`;
 
   const message = await client.messages.create({
     model: 'claude-sonnet-4-6',
@@ -38,7 +40,9 @@ async function generateFortuneText(): Promise<string> {
     messages: [{ role: 'user', content: prompt }],
   });
 
-  return (message.content[0] as { type: string; text: string }).text;
+  const text = (message.content[0] as { type: string; text: string }).text;
+  // Threads APIは500文字制限
+  return text.length <= 500 ? text : text.slice(0, 497) + '…';
 }
 
 async function createThreadsContainer(text: string): Promise<string> {
