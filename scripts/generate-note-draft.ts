@@ -1,8 +1,7 @@
 /**
- * note記事 週次自動生成スクリプト
+ * note記事 週次自動生成スクリプト（占いマガジン版）
  *
- * prices.json + products.json から今週の最安値ランキングを集計し、
- * Claude API で読み物として面白いnote記事の下書きを生成する。
+ * Claude API で今週の12星座詳細占い記事を生成する。
  * 出力: note-drafts/YYYY-MM-DD.md
  *
  * GitHub Actions で週1回実行 → オーナーがnoteにコピーして公開するだけ
@@ -12,137 +11,49 @@ import Anthropic from '@anthropic-ai/sdk';
 import * as fs from 'fs';
 import * as path from 'path';
 
-interface PriceRecord {
-  productId: string;
-  storeId: string;
-  price: number;
-  inStock: boolean;
-  lastUpdated: string;
-}
-
-interface Product {
-  id: string;
-  name: string;
-  brandName: string;
-  manufacturer: string;
-  category: string;
-  subcategory: string;
-  description: string;
-  waterContent?: string;
-  popularity: number;
-}
-
-interface Store {
-  id: string;
-  name: string;
-  shipping: number;
-  freeShippingMin: number;
-}
-
-function calcTotal(price: number, store: Store): number {
-  const free = store.freeShippingMin === 0 || price >= store.freeShippingMin;
-  return free ? price : price + store.shipping;
-}
-
-function buildRankingData() {
-  const pricesData = JSON.parse(fs.readFileSync('data/prices.json', 'utf-8'));
-  const productsData = JSON.parse(fs.readFileSync('data/products.json', 'utf-8'));
-
-  const products = new Map<string, Product>(productsData.products.map((p: Product) => [p.id, p]));
-  const stores = new Map<string, Store>(productsData.stores.map((s: Store) => [s.id, s]));
-
-  // 商品ごとの最安値（送料込み）を集計
-  const cheapestByProduct = new Map<string, { price: number; total: number; storeName: string; productName: string; category: string }>();
-
-  for (const record of pricesData.prices as PriceRecord[]) {
-    if (!record.inStock) continue;
-    const store = stores.get(record.storeId);
-    const product = products.get(record.productId);
-    if (!store || !product) continue;
-
-    const total = calcTotal(record.price, store);
-    const existing = cheapestByProduct.get(record.productId);
-    if (!existing || total < existing.total) {
-      cheapestByProduct.set(record.productId, {
-        price: record.price,
-        total,
-        storeName: store.name,
-        productName: product.name,
-        category: product.category,
-      });
-    }
-  }
-
-  // popularity順にソートして上位10件
-  const ranked = Array.from(cheapestByProduct.entries())
-    .map(([id, data]) => ({
-      id,
-      popularity: products.get(id)?.popularity ?? 0,
-      ...data,
-    }))
-    .sort((a, b) => b.popularity - a.popularity)
-    .slice(0, 10);
-
-  // カテゴリ別最安
-  const categories: Record<string, { name: string; cheapest: number; storeName: string }> = {};
-  for (const [, data] of cheapestByProduct) {
-    const cat = data.category;
-    if (!categories[cat] || data.total < categories[cat].cheapest) {
-      const catName = productsData.categories.find((c: { slug: string; name: string }) => c.slug === cat)?.name ?? cat;
-      categories[cat] = { name: catName, cheapest: data.total, storeName: data.storeName };
-    }
-  }
-
-  return { ranked, categories, updatedAt: pricesData.updatedAt };
-}
-
-async function generateArticle(rankingData: ReturnType<typeof buildRankingData>): Promise<string> {
+async function generateArticle(): Promise<string> {
   const client = new Anthropic();
 
-  const today = new Date().toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
+  const today = new Date();
+  const dateStr = today.toLocaleDateString('ja-JP', {
+    year: 'numeric', month: 'long', day: 'numeric', weekday: 'long',
+  });
 
-  const rankingText = rankingData.ranked
-    .map((item, i) =>
-      `${i + 1}. ${item.productName}（${item.category}）: ¥${item.total.toLocaleString()}送料込 @ ${item.storeName}（商品価格¥${item.price.toLocaleString()}）`
-    )
-    .join('\n');
+  // 今週の日付範囲
+  const weekStart = new Date(today);
+  weekStart.setDate(today.getDate() - today.getDay() + 1); // 月曜
+  const weekEnd = new Date(weekStart);
+  weekEnd.setDate(weekStart.getDate() + 6); // 日曜
 
-  const categoryText = Object.values(rankingData.categories)
-    .map(c => `・${c.name}: 最安¥${c.cheapest.toLocaleString()}送料込（${c.storeName}）`)
-    .join('\n');
+  const weekRange = `${weekStart.toLocaleDateString('ja-JP', { month: 'long', day: 'numeric' })}〜${weekEnd.toLocaleDateString('ja-JP', { month: 'long', day: 'numeric' })}`;
 
-  const prompt = `あなたはコンタクトレンズ情報を発信するnoteクリエイターです。
-今週のコンタクトレンズ価格データをもとに、読者が思わず保存したくなるnote記事を書いてください。
-
-【今日の日付】
-${today}
-
-【人気商品ランキング（送料込み最安値）】
-${rankingText}
-
-【カテゴリ別最安値】
-${categoryText}
+  const prompt = `あなたは人気占い師・ライターです。
+今週（${weekRange}）の12星座詳細週間占い記事をnote用に書いてください。
 
 【記事の要件】
-- 文字数: 1500〜2000字
-- トーン: 親しみやすく・情報が濃い・信頼できる
+- 文字数: 2000〜3000字
+- 読者層: 20〜40代女性・スピリチュアルに興味がある
+- トーン: 温かみがあり・具体的・背中を押してくれる
 - 構成:
-  1. 見出し（タイトル）: 読者が「これは読まなきゃ」と感じるもの。数字を入れる。
-  2. リード文（3〜4行）: 今週の価格トレンドを一言で
-  3. 今週のMVP商品: 1位の商品をフィーチャーして詳しく解説
-  4. カテゴリ別おすすめ: 各カテゴリのベストバイを解説
-  5. 節約ポイント: 読者がすぐ使える購入タイミング・比較のコツ
-  6. まとめ + CTA: lens-navi（https://lens-navi.jp）で最新比較をチェック、と促す
-- 数字・金額は必ず具体的に記載すること
-- 専門的すぎず、コンタクトを普段使いしている人が読んで「ためになった」と思える内容
-- マークダウン形式で出力（## 見出し、**太字** など使用可）
+  1. タイトル: 今週のテーマを反映した、読者が「私のことだ」と感じるもの（例:「運命の扉が開く1週間」「変化を恐れないで」等）
+  2. 今週全体の星の動き（3〜4行）: 惑星の動きを踏まえた今週のエネルギー解説
+  3. 12星座それぞれの週間運勢:
+     - 各星座2〜4行
+     - 恋愛・仕事・金運のどれかにフォーカス（毎週変える）
+     - ラッキーデー・ラッキーカラー・ラッキーアイテム
+  4. 今週の開運アクション（全星座共通・3つ）
+  5. まとめ + CTA: 「毎日の運勢はThreadsで発信中。フォローして毎朝チェック → @westin_lab」
+
+- マークダウン形式（## 見出し、**太字**、絵文字を適度に使用）
+- 数字（〇〇日、〇〇時など）は具体的に書く
+- 「なんとなく」「かもしれない」より「この日に行動を」「〇〇を手放して」等の具体的アドバイス
 
 記事本文のみ出力してください（前置き・解説は不要）。`;
 
   const message = await client.messages.create({
     model: 'claude-opus-4-8',
-    max_tokens: 3000,
-    system: 'あなたはコンタクトレンズ情報の専門ライターです。読者の役に立つ、保存されやすいnote記事を書きます。',
+    max_tokens: 4000,
+    system: 'あなたは人気占い師・スピリチュアルライターです。読者の心に響く、保存されやすいnote記事を書きます。毎週一貫したトーンと世界観を維持します。',
     messages: [{ role: 'user', content: prompt }],
   });
 
@@ -150,13 +61,10 @@ ${categoryText}
 }
 
 async function main() {
-  console.log('=== note記事生成開始 ===');
-
-  const rankingData = buildRankingData();
-  console.log(`価格データ読み込み完了: ${rankingData.ranked.length}商品`);
+  console.log('=== note占い記事生成開始 ===');
 
   console.log('Claude API で記事生成中...');
-  const article = await generateArticle(rankingData);
+  const article = await generateArticle();
 
   const date = new Date().toISOString().split('T')[0];
   const outputDir = path.join(process.cwd(), 'note-drafts');
@@ -165,9 +73,10 @@ async function main() {
   const outputPath = path.join(outputDir, `${date}.md`);
   const header = `---
 生成日: ${date}
-価格データ更新日時: ${rankingData.updatedAt}
+ジャンル: 週間占い
 ステータス: 下書き（未公開）
 公開手順: このファイルの内容をnote.comにコピーして公開
+Threads連携: @westin_lab でフォロー誘導あり
 ---
 
 `;

@@ -1,0 +1,28 @@
+name: Threads 占い 日次自動投稿
+
+on:
+  schedule:
+    # 毎朝 7:00 JST (前日 22:00 UTC) に投稿
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: 占い投稿
+        run: npx ts-node scripts/post-threads-fortune.ts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
