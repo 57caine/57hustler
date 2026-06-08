@@ -11,16 +11,16 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 // 九星データベース
-const KYUSEI: Record<number, { name: string; element: string; direction: string; color: string; theme: string }> = {
-  1: { name: '一白水星', element: '水', direction: '北', color: '白・黒', theme: '知恵・流れ・人脈' },
-  2: { name: '二黒土星', element: '土', direction: '南西', color: '黄・茶', theme: '継続・家庭・忍耐' },
-  3: { name: '三碧木星', element: '木', direction: '東', color: '碧・緑', theme: '行動・革新・若さ' },
-  4: { name: '四緑木星', element: '木', direction: '東南', color: '緑', theme: '信用・縁・旅' },
-  5: { name: '五黄土星', element: '土', direction: '中央', color: '黄', theme: '変革・破壊と創造・帝王' },
-  6: { name: '六白金星', element: '金', direction: '北西', color: '白・金', theme: '権威・決断・正義' },
-  7: { name: '七赤金星', element: '金', direction: '西', color: '赤・白', theme: '喜び・金運・交際' },
-  8: { name: '八白土星', element: '土', direction: '東北', color: '白・黄', theme: '変革・蓄積・継承' },
-  9: { name: '九紫火星', element: '火', direction: '南', color: '紫・赤', theme: '明晰・名誉・学問' },
+const KYUSEI: Record<number, { name: string; element: string; direction: string; color: string; theme: string; birthYears: string }> = {
+  1: { name: '一白水星', element: '水', direction: '北', color: '白・黒', theme: '知恵・流れ・人脈', birthYears: '1973・1982・1991・2000・2009年生まれ' },
+  2: { name: '二黒土星', element: '土', direction: '南西', color: '黄・茶', theme: '継続・家庭・忍耐', birthYears: '1972・1981・1990・1999・2008年生まれ' },
+  3: { name: '三碧木星', element: '木', direction: '東', color: '碧・緑', theme: '行動・革新・若さ', birthYears: '1971・1980・1989・1998・2007年生まれ' },
+  4: { name: '四緑木星', element: '木', direction: '東南', color: '緑', theme: '信用・縁・旅', birthYears: '1970・1979・1988・1997・2006年生まれ' },
+  5: { name: '五黄土星', element: '土', direction: '中央', color: '黄', theme: '変革・破壊と創造・帝王', birthYears: '1969・1978・1987・1996・2005年生まれ' },
+  6: { name: '六白金星', element: '金', direction: '北西', color: '白・金', theme: '権威・決断・正義', birthYears: '1968・1977・1986・1995・2004年生まれ' },
+  7: { name: '七赤金星', element: '金', direction: '西', color: '赤・白', theme: '喜び・金運・交際', birthYears: '1967・1976・1985・1994・2003年生まれ' },
+  8: { name: '八白土星', element: '土', direction: '東北', color: '白・黄', theme: '変革・蓄積・継承', birthYears: '1966・1975・1984・1993・2002年生まれ' },
+  9: { name: '九紫火星', element: '火', direction: '南', color: '紫・赤', theme: '明晰・名誉・学問', birthYears: '1965・1974・1983・1992・2001年生まれ' },
 };
 
 // 易経 主要64卦（週番号から選択）
@@ -92,7 +92,7 @@ async function generateArticle(): Promise<string> {
 
   // 九星データを全て渡す
   const allStarsText = Object.entries(KYUSEI)
-    .map(([num, s]) => `${s.name}（${s.element}・${s.direction}）テーマ：${s.theme}`)
+    .map(([num, s]) => `${s.name}（${s.element}・${s.direction}）テーマ：${s.theme} ／ ${s.birthYears}`)
     .join('\n');
 
   const prompt = `30歳まで鳴かず飛ばず、九星気学の吉方位参拝で人生が逆転した、ちょっと不思議なおじさん占い師として、noteの週間鑑定記事を書いてください。
@@ -113,7 +113,7 @@ ${allStarsText}
 構成:
 1. タイトル: 「今週の運勢まとめ〜${weekRange}〜✨」形式で、読者が思わず開きたくなる一言を添える
 2. 今週のエネルギー解説（今週はどんな週か、難しい言葉なしに300字で解説。宇宙や自然のリズムというニュアンスを少し入れる）
-3. 九星別 今週の運勢（全9星、各150字程度。恋愛・仕事・金運の3軸で。「〇〇星の方は〜ですね」という語りかける書き方で）
+3. 九星別 今週の運勢（全9星、各150字程度。恋愛・仕事・金運の3軸で。「〇〇星（XX・XX年生まれの方）は〜ですね」のように生年を必ず入れて、読者が自分の星を探しながら読めるように）
 4. 易経コーナー:「今週、宇宙はこう言っています」という切り口で第${hexagram.number}卦「${hexagram.name}」を身近な言葉で解説（400字）
 5. 今週の開運アクション（3項目、「〜してみてください」という口調で。理由も一言添える）
 6. Threads連携：「毎日の運勢は @westin_lab（Threads）で毎朝7時に無料でお届けしています。ぜひフォローしてみてください🌟」
