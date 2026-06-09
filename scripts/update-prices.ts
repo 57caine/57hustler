@@ -30,47 +30,102 @@ interface PricesData {
 // スキップするストア（スクレイピング非対応）
 const SKIP_STORES = new Set(['amazon', 'rakuten']);
 
-// 税込価格を文字列から抽出する
+// 税込価格を文字列から抽出する（税込明示パターンを優先）
 function extractPrice(text: string): number | null {
   if (!text) return null;
 
-  const patterns = [
-    /[¥￥][\s]*([\d]{1,2},[\d]{3})/g,
-    /[¥￥][\s]*([\d]{3,5})/g,
-    /([\d]{1,2},[\d]{3})[\s]*円/g,
-    /([\d]{3,5})[\s]*円(?:\s*[\(（]税込[\)）])/g,
+  // 優先パターン: 税込と明示されているもの
+  const taxPatterns = [
+    /(\d{1,2},\d{3})\s*円\s*[\(（]\s*税込[^\)）]*[\)）]/g,
+    /(\d{3,5})\s*円\s*[\(（]\s*税込[^\)）]*[\)）]/g,
+    /税込[^\d]*(\d{1,2},\d{3})/g,
+    /税込[^\d]*(\d{3,5})/g,
+    /[¥￥]\s*(\d{1,2},\d{3})\s*[\(（]\s*税込/g,
+    /[¥￥]\s*(\d{3,5})\s*[\(（]\s*税込/g,
   ];
-
-  const found: number[] = [];
-  for (const re of patterns) {
+  for (const re of taxPatterns) {
     re.lastIndex = 0;
-    let m: RegExpExecArray | null;
-    while ((m = re.exec(text)) !== null) {
-      const raw = (m[1] ?? m[0]).replace(/[^\d]/g, '');
-      const val = parseInt(raw, 10);
-      if (val >= 500 && val <= 30000) found.push(val);
+    const m = re.exec(text);
+    if (m) {
+      const val = parseInt((m[1] ?? '').replace(/,/g, ''), 10);
+      if (val >= 500 && val <= 30000) return val;
     }
   }
 
-  if (found.length === 0) return null;
-  return Math.min(...found);
+  // フォールバック: ¥記号付きの価格（最初の一致）
+  const yenPatterns = [
+    /[¥￥]\s*(\d{1,2},\d{3})/,
+    /[¥￥]\s*(\d{3,5})/,
+    /(\d{1,2},\d{3})\s*円/,
+  ];
+  for (const re of yenPatterns) {
+    const m = re.exec(text);
+    if (m) {
+      const val = parseInt((m[1] ?? '').replace(/,/g, ''), 10);
+      if (val >= 500 && val <= 30000) return val;
+    }
+  }
+
+  return null;
 }
 
 function getSelectorsForUrl(url: string): string[] {
+  // PIDシステム (lensup/lenson/24lens/lensfine)
   if (
     url.includes('lensup.jp') || url.includes('lenson.jp') ||
     url.includes('24lens.jp') || url.includes('lensfine.jp')
   ) {
-    return ['.price-box .price', '[class*="tax-price"]', '[class*="item-price"]', '.price', '#price'];
+    return [
+      '.item-price__tax', '.item-price', '.price__tax', '.tax-price',
+      '[class*="tax-price"]', '[class*="item-price"]', '.price',
+    ];
   }
+  // GCシステム (lenszero/lensmode)
   if (url.includes('lenszero.com') || url.includes('lensmode.com')) {
     return ['.item_price', '.goods-price', '[class*="price"]', '.price'];
   }
+  // 商品コードシステム (atlens/lensquick/atnetstyle)
   if (
     url.includes('atlens.jp') || url.includes('lensquick.jp') ||
     url.includes('atnetstyle.com')
   ) {
-    return ['[class*="tax"]', '[class*="price"]', '.price'];
+    return [
+      '.item-price-block', '[class*="tax-price"]', '[class*="item-price"]',
+      '[class*="tax"]', '[class*="price"]',
+    ];
+  }
+  // lensmarche / lensbomber / tiara (shop_menu or lens-1day slug)
+  if (
+    url.includes('lensmarche.jp') || url.includes('lensbomber.biz') ||
+    url.includes('tealla.jp')
+  ) {
+    return [
+      '.price-box', '[class*="tax-price"]', '[class*="item-price"]',
+      '[class*="price"]', '.price',
+    ];
+  }
+  // lenschampion
+  if (url.includes('lenschampion.jp')) {
+    return ['[class*="price"]', '.price', '#price'];
+  }
+  // clearcontact (kurikon)
+  if (url.includes('kurikon.co.jp')) {
+    return [
+      '.price_actual', '[class*="price_actual"]', '[class*="tax"]',
+      '[class*="price"]', '.price',
+    ];
+  }
+  // shopdetailシステム (famille/famiru, lensya/c-lensya)
+  if (url.includes('famiru.com') || url.includes('c-lensya.com')) {
+    return ['.price', '[class*="price"]', '#price'];
+  }
+  // aredz
+  if (url.includes('aredz.com')) {
+    return ['[class*="price"]', '.price', '#price'];
+  }
+  // eyelifecontact / e-scl (ilife / shonan)
+  if (url.includes('eyelifecontact.com') || url.includes('e-scl.jp')) {
+    return ['[class*="price"]', '[class*="tax"]', '.price'];
   }
   return ['[class*="tax-price"]', '[class*="item-price"]', '[class*="price"]', '.price', '#price'];
 }
@@ -91,14 +146,24 @@ async function scrapePriceFromPage(page: Page, url: string): Promise<number | nu
       } catch {}
     }
 
-    // フォールバック: 税込周辺のテキストから抽出
+    // フォールバック: 税込を含む短い要素から優先的に抽出
     const snippets: string = await page.evaluate(() => {
+      // 税込明示の要素を最優先
+      const taxEls = Array.from(document.querySelectorAll('*'))
+        .filter(el => {
+          const t = el.textContent ?? '';
+          return t.includes('税込') && t.length < 200 && el.children.length < 3;
+        })
+        .map(el => el.textContent ?? '');
+      if (taxEls.length > 0) return taxEls.join('\n');
+
+      // ¥記号のある短い要素
       return Array.from(document.querySelectorAll('*'))
         .filter(el => {
           const t = el.textContent ?? '';
-          return (t.includes('税込') || t.includes('¥') || t.includes('￥')) && t.length < 300;
+          return (t.includes('¥') || t.includes('￥')) && t.length < 100 && el.children.length < 3;
         })
-        .map(el => el.textContent)
+        .map(el => el.textContent ?? '')
         .join('\n');
     });
     return extractPrice(snippets);
