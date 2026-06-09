@@ -161,8 +161,9 @@ async function publishThread(creationId: string): Promise<string> {
 }
 
 async function main() {
-  console.log('=== Threads 夜間コラム投稿開始 ===');
-  if (!USER_ID || !ACCESS_TOKEN) throw new Error('THREADS_USER_ID と THREADS_ACCESS_TOKEN を設定してください');
+  const dryRun = process.argv.includes('--dry-run');
+  console.log(`=== Threads 夜間コラム投稿開始${dryRun ? '（DRY RUN）' : ''} ===`);
+  if (!dryRun && (!USER_ID || !ACCESS_TOKEN)) throw new Error('THREADS_USER_ID と THREADS_ACCESS_TOKEN を設定してください');
 
   const theme = getThemeForToday();
   console.log(`今日のテーマ: ${theme.title}`);
@@ -173,6 +174,11 @@ async function main() {
   console.log(text);
   console.log(`文字数: ${text.length}`);
   console.log('-------------------');
+
+  if (dryRun) {
+    console.log('✓ DRY RUN 完了（投稿はしていません）');
+    return;
+  }
 
   console.log('Threads コンテナ作成中...');
   const creationId = await createThreadsContainer(text);
