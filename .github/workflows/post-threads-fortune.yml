@@ -2,8 +2,8 @@ name: Threads 占い 日次自動投稿
 
 on:
   schedule:
-    # 毎朝 7:00 JST (前日 22:00 UTC) に投稿
-    - cron: '0 22 * * *'
+    # 毎朝 7:00 JST (23:00 UTC) に投稿
+    - cron: '0 23 * * *'
   workflow_dispatch:
 
 jobs:
