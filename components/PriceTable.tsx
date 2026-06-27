@@ -156,18 +156,23 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                       近日追加予定
                     </span>
                   ) : (
-                    <a
-                      href={item.url + item.store.affiliateParam}
-                      target="_blank"
-                      rel="noopener noreferrer sponsored"
-                      className={`inline-block px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
-                        isCheapest
-                          ? 'bg-sky-600 text-white hover:bg-sky-500'
-                          : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      {isCheapest ? '最安値で買う' : '購入する'}
-                    </a>
+                    <div className="flex flex-col items-center gap-0.5">
+                      <a
+                        href={item.url + item.store.affiliateParam}
+                        target="_blank"
+                        rel="noopener noreferrer sponsored"
+                        className={`inline-block px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
+                          isCheapest
+                            ? 'bg-sky-600 text-white hover:bg-sky-500'
+                            : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        {isCheapest ? '最安値で買う' : '購入する'}
+                      </a>
+                      {isCheapest && (
+                        <span className="text-xs text-gray-400 whitespace-nowrap">※ 価格は変動する場合があります</span>
+                      )}
+                    </div>
                   )}
                 </td>
               </tr>
@@ -175,8 +180,11 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
           })}
         </tbody>
       </table>
-      <p className="text-xs text-gray-400 mt-2 px-4 pb-3">
-        ※ 価格は税込。送料は代表的な1箱購入時の目安。実際の送料・ポイント還元は各ショップの条件による。最終更新: {new Date().toLocaleDateString('ja-JP')} | 最新価格は各ショップでご確認ください
+      <p className="text-sm text-gray-500 mt-3 px-4 pb-4 flex items-start gap-1.5">
+        <span className="flex-shrink-0 mt-0.5">⚠️</span>
+        <span>
+          表示価格は取得時点の目安です。送料・クーポン・会員価格により実際の価格と異なる場合があります。最終価格はショップでご確認ください。
+        </span>
       </p>
     </div>
   );

@@ -44,8 +44,8 @@ export default function HomePage() {
   const topProducts = [...allProducts].sort((a, b) => b.popularity - a.popularity).slice(0, 6);
 
   const updatedAtDate = new Date(updatedAt);
-  const jstDateStr = updatedAtDate.toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo', year: 'numeric', month: 'numeric', day: 'numeric' });
-  const jstTimeStr = updatedAtDate.toLocaleTimeString('ja-JP', { timeZone: 'Asia/Tokyo', hour: '2-digit', minute: '2-digit', hour12: false });
+  const jstMonthDay = updatedAtDate.toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo', month: 'long', day: 'numeric' });
+  const jstHour = updatedAtDate.toLocaleTimeString('ja-JP', { timeZone: 'Asia/Tokyo', hour: 'numeric', hour12: false });
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -72,7 +72,7 @@ export default function HomePage() {
         </p>
         <div className="flex justify-center mb-6">
           <span className="inline-flex items-center gap-1.5 bg-white border border-emerald-200 text-emerald-700 text-sm px-4 py-1.5 rounded-full shadow-sm">
-            ✅ 価格は <strong className="font-semibold">{jstDateStr} {jstTimeStr}</strong> 時点のデータです
+            ✅ 価格データは1日6回自動更新（最終更新: <strong className="font-semibold">{jstMonthDay} {jstHour}</strong>）
           </span>
         </div>
         <div className="flex flex-wrap justify-center gap-3">
