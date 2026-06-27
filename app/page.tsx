@@ -43,6 +43,10 @@ export default function HomePage() {
   const updatedAt = getPricesUpdatedAt();
   const topProducts = [...allProducts].sort((a, b) => b.popularity - a.popularity).slice(0, 6);
 
+  const updatedAtDate = new Date(updatedAt);
+  const jstDateStr = updatedAtDate.toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo', year: 'numeric', month: 'numeric', day: 'numeric' });
+  const jstTimeStr = updatedAtDate.toLocaleTimeString('ja-JP', { timeZone: 'Asia/Tokyo', hour: '2-digit', minute: '2-digit', hour12: false });
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -58,22 +62,24 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}
-      <section className="text-center mb-12">
-        <p className="text-xs text-gray-400 font-medium mb-3 uppercase tracking-widest">Contact Lens Price Navigator</p>
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 leading-tight">
-          コンタクトレンズ最安値比較<br className="md:hidden" /><span className="text-slate-600"> 2026年版</span>
+      <section className="text-center mb-12 bg-gradient-to-br from-sky-50 via-white to-blue-50 rounded-2xl px-6 py-12 border border-sky-100">
+        <p className="text-xs text-sky-500 font-semibold mb-3 uppercase tracking-widest">Contact Lens Price Navigator</p>
+        <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3 leading-tight">
+          コンタクトレンズ最安値比較<br className="md:hidden" /><span className="text-sky-600"> 2026年版</span>
         </h1>
-        <p className="text-gray-500 mb-1">
+        <p className="text-slate-600 mb-4">
           24店舗を一括比較 ・ アキュビュー・デイリーズ・シードなど{allProducts.length}商品対応
         </p>
-        <p className="text-xs text-gray-400 mb-6">
-          価格最終更新: {new Date(updatedAt).toLocaleDateString('ja-JP')}
-        </p>
+        <div className="flex justify-center mb-6">
+          <span className="inline-flex items-center gap-1.5 bg-white border border-emerald-200 text-emerald-700 text-sm px-4 py-1.5 rounded-full shadow-sm">
+            ✅ 価格は <strong className="font-semibold">{jstDateStr} {jstTimeStr}</strong> 時点のデータです
+          </span>
+        </div>
         <div className="flex flex-wrap justify-center gap-3">
-          <Link href="/ranking" className="bg-sky-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-sky-500 transition-colors text-sm">
+          <Link href="/ranking" className="bg-sky-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-sky-500 transition-colors text-sm shadow-sm">
             人気ランキングを見る
           </Link>
-          <Link href="/column/hajimete-erabikata" className="bg-white text-gray-700 border border-gray-200 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition-colors text-sm">
+          <Link href="/column/hajimete-erabikata" className="bg-white text-slate-700 border border-slate-200 px-6 py-3 rounded-xl font-medium hover:bg-slate-50 transition-colors text-sm">
             初めての方はこちら
           </Link>
         </div>
