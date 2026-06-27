@@ -2,8 +2,8 @@ name: Threads 夜間コラム自動投稿
 
 on:
   schedule:
-    # 毎晩 19:00 JST (Asia/Tokyo = UTC+9, 10:00 UTC) に投稿
-    - cron: '0 10 * * *'
+    # 毎晩 19:00 JST狙い（GitHub Actions遅延を考慮し09:00 UTC=JST 18:00に設定）
+    - cron: '0 9 * * *'
   workflow_dispatch:
 
 jobs:
