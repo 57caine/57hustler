@@ -263,18 +263,21 @@ async function main(): Promise<void> {
       return { ...record, lastUpdated: now };
     }
 
-    // 既存価格との乖離が40%超の場合は異常値として無視
-    const changeRatio = Math.abs(newPrice - record.price) / record.price;
-    if (changeRatio > 0.4) {
+    // 極端な異常値のみ除外（extractPrice で 500〜30000 は保証済み）
+    // 10倍超かつ新価格が5000円超の場合のみ疑わしいと判断して保持
+    const changeRatio = newPrice / record.price;
+    if (record.price > 0 && changeRatio > 10 && newPrice > 5000) {
       console.warn(
-        `  ⚠ 異常値: ${record.storeId}/${record.productId} ¥${record.price}→¥${newPrice} (${(changeRatio * 100).toFixed(0)}%変動) → 保持`,
+        `  ⚠ 疑わしい値: ${record.storeId}/${record.productId} ¥${record.price}→¥${newPrice} (${changeRatio.toFixed(1)}x) → 保持`,
       );
       kept++;
       return { ...record, lastUpdated: now };
     }
 
     updated++;
-    return { ...record, price: newPrice, pricePerBox: newPrice, inStock: true, lastUpdated: now };
+    const pricePerBox = record.boxes > 1 ? Math.round(newPrice / record.boxes) : newPrice;
+    console.log(`  更新: ${record.storeId}/${record.productId} ¥${record.price}→¥${newPrice}`);
+    return { ...record, price: newPrice, pricePerBox, inStock: true, lastUpdated: now };
   });
 
   fs.writeFileSync(
