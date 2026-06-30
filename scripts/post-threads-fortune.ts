@@ -104,17 +104,10 @@ async function generateFortuneText(): Promise<string> {
 
   const context = `
 【今日の日付】${dateStr}
-【今日の日盤の星】${dailyStar.name}（${dailyStar.birthYears}）
-【年間の流れ】${yearlyStar.name}（${yearlyStar.element}・${yearlyStar.direction}）
-【今日のキーワード】${dailyStar.keywords.join('・')}
-【今日の各運勢傾向】
-  全体: ${dailyStar.fortune.overall}
-  金運: ${dailyStar.fortune.money}
-  恋愛: ${dailyStar.fortune.love}
-  仕事: ${dailyStar.fortune.work}
-  注意: ${dailyStar.fortune.caution}
-【吉方位】${dailyStar.direction}
-【ラッキーカラー】${dailyStar.color}
+【今日の星】${dailyStar.name}（${dailyStar.birthYears}）
+【星の属性】${dailyStar.element}・${dailyStar.direction}方位・ラッキーカラー:${dailyStar.color}
+【キーワード】${dailyStar.keywords.join('・')}
+【年間の流れ】${yearlyStar.name}（${yearlyStar.element}）
 `;
 
   const prompt = `以下のデータをもとに、Threads投稿文を作ってください。
@@ -128,8 +121,16 @@ ${context}
 - 「九星気学」「日盤」「五行」などの専門用語は使わない
 - 「〜です」「〜ます」「〜してみてください」というですます調で丁寧で温かい口調（「〜ですよ」「〜ますよ」は使わない）
 - 各運勢（全体・お金・恋愛・仕事）を絵文字つきで1行ずつ、短く
-- 末尾の文章は本文の締めのみ。「詳細はnoteで」「#ハッシュタグ」は一切入れない
-- ポジティブで、でも少し深みのある言葉を使う
+- 末尾に💡豆知識を必ず1つ入れる（この星・方位・五行にまつわる「え、そうなんだ！」と思える事実）
+- 「詳細はnoteで」「#ハッシュタグ」は一切入れない
+
+【特に重要：運勢は具体的なアクションで書く】
+- 「この星は○○な性質だから〜」という一般論の言い換えは絶対に駄目
+- 今日の具体的な行動・場面に落とし込んで書く
+  良い例（仕事）：「午後の会議では発言より記録役に回ると◎」
+  良い例（金運）：「サブスクを1つだけ見直すと後からじわじわ効いてきます」
+  良い例（恋愛）：「LINEの返信は短くても、丁寧な一言を添えてみてください」
+- 読んだ人が「今日これをやってみよう」と思える内容にする
 
 本文のみ出力（前置き不要）。`;
 
