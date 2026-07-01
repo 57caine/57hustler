@@ -58,6 +58,13 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
   const isAmazon = (id: string) => id === 'amazon';
 
   return (
+    <div>
+      <div className="flex items-start gap-2 bg-yellow-50 border border-yellow-200 rounded-lg px-4 py-3 mb-3 text-sm text-yellow-800">
+        <span className="flex-shrink-0 mt-0.5">⚠️</span>
+        <span>
+          表示価格は取得時の参考価格です。度数・枚数・クーポンにより実際の価格と異なる場合があります。必ずショップでご確認ください。
+        </span>
+      </div>
     <div className="overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
@@ -186,6 +193,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
           表示価格は取得時点の目安です。送料・クーポン・会員価格により実際の価格と異なる場合があります。最終価格はショップでご確認ください。
         </span>
       </p>
+    </div>
     </div>
   );
 }
