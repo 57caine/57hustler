@@ -12,7 +12,8 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
   chrome.storage.local.set({
     pendingPin: {
       imageUrl: info.srcUrl,
-      pageUrl: tab.url,
+      // 画像を囲む<a>のhrefを優先（キャンペーンページ上の商品画像でも商品URLを取得できる）
+      pageUrl: info.linkUrl || tab.url,
     },
   }, () => {
     chrome.windows.create({
