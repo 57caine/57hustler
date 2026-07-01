@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "henkutsu Pinterest投稿",
+  "version": "1.0.0",
+  "description": "商品画像を右クリックしてPinterestにピン投稿する",
+
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://api.pinterest.com/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_title": "henkutsu Pinterest投稿"
+  },
+
+  "options_page": "options.html"
+}
