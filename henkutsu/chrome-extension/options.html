@@ -12,7 +12,7 @@
       background: #f8f8f8;
       color: #111;
       padding: 40px;
-      max-width: 560px;
+      max-width: 520px;
     }
 
     h1 {
@@ -43,9 +43,7 @@
       letter-spacing: 0.05em;
     }
 
-    .field {
-      margin-bottom: 14px;
-    }
+    .field { margin-bottom: 14px; }
     label {
       display: block;
       font-size: 12px;
@@ -64,19 +62,12 @@
       outline: none;
       transition: border-color 0.15s;
     }
-    input:focus {
-      border-color: #e60023;
-      background: #fff;
-    }
+    input:focus { border-color: #e60023; background: #fff; }
     .hint {
       font-size: 11px;
       color: #999;
       margin-top: 4px;
       line-height: 1.5;
-    }
-    .hint a {
-      color: #e60023;
-      text-decoration: none;
     }
 
     #btn-save {
@@ -105,36 +96,14 @@
 </head>
 <body>
   <h1>📌 henkutsu 設定</h1>
-  <p class="subtitle">Pinterest APIの接続情報を保存します</p>
-
-  <div class="section">
-    <h2>Pinterest API</h2>
-
-    <div class="field">
-      <label>アクセストークン</label>
-      <input type="password" id="token" placeholder="pintrest_xxxxxxxxxxxx">
-      <p class="hint">
-        Pinterest Developers でアプリを作成し、User OAuth Token を取得してください。<br>
-        スコープ: <code>boards:read</code>, <code>pins:write</code> が必要です。
-      </p>
-    </div>
-
-    <div class="field">
-      <label>ボードID</label>
-      <input type="text" id="board-id" placeholder="1234567890123456789">
-      <p class="hint">
-        ボードURLの末尾の数字、またはAPIで
-        <code>GET /v5/boards</code> を叩いて取得できます。
-      </p>
-    </div>
-  </div>
+  <p class="subtitle">アフィリエイトタグを設定します</p>
 
   <div class="section">
     <h2>Amazon アフィリエイト</h2>
     <div class="field">
       <label>アソシエイトタグ</label>
       <input type="text" id="amazon-tag" placeholder="hustle-digger-22">
-      <p class="hint">デフォルト: <code>hustle-digger-22</code>（変更不要なら空白のまま）</p>
+      <p class="hint">Amazon URLに自動付与されます。空白の場合は <code>hustle-digger-22</code> を使用します。</p>
     </div>
   </div>
 
