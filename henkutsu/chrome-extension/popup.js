@@ -43,36 +43,17 @@ function setStatus(msg, type) {
   el.className = type || '';
 }
 
-async function postToPinterest(token, boardId, { title, description, imageUrl, linkUrl }) {
-  const body = {
-    board_id: boardId,
-    title: title || '',
-    description: description || '',
-    media_source: {
-      source_type: 'image_url',
-      url: imageUrl,
-    },
-    link: linkUrl || '',
-  };
-
-  const res = await fetch('https://api.pinterest.com/v5/pins', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(body),
+function buildPinterestUrl(imageUrl, linkUrl, title, description) {
+  const desc = [title, description].filter(Boolean).join(' / ');
+  const params = new URLSearchParams({
+    url: linkUrl || '',
+    media: imageUrl,
+    description: desc,
   });
-
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`Pinterest API エラー ${res.status}: ${err}`);
-  }
-  return res.json();
+  return `https://www.pinterest.com/pin/create/button/?${params.toString()}`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 設定リンク
   document.getElementById('settings-link').addEventListener('click', () => {
     chrome.runtime.openOptionsPage();
   });
@@ -83,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const { imageUrl, pageUrl } = pendingPin;
 
-    // 画像プレビュー
     if (imageUrl) {
       document.getElementById('image-url').value = imageUrl;
       const img = document.createElement('img');
@@ -93,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
       wrap.appendChild(img);
     }
 
-    // リンクURL（アフィリ変換済み）
     if (pageUrl) {
       chrome.storage.sync.get('amazonTag', ({ amazonTag }) => {
         const affiliateUrl = toAffiliateUrl(pageUrl, amazonTag);
@@ -103,50 +82,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // リンクURL 手動編集時もバッジ更新
   document.getElementById('link-url').addEventListener('input', (e) => {
     updateLinkBadge(e.target.value);
   });
 
-  // 投稿ボタン
+  // 投稿ボタン → Pinterest の投稿URLを新しいタブで開く
   document.getElementById('btn-post').addEventListener('click', async () => {
-    const imageUrl   = document.getElementById('image-url').value.trim();
-    const title      = document.getElementById('title').value.trim();
+    const imageUrl    = document.getElementById('image-url').value.trim();
+    const title       = document.getElementById('title').value.trim();
     const description = document.getElementById('description').value.trim();
-    const rawLink    = document.getElementById('link-url').value.trim();
-    const linkUrl    = toAffiliateUrl(rawLink, amazonTag);
+    const rawLink     = document.getElementById('link-url').value.trim();
 
     if (!imageUrl) { setStatus('画像URLが取得できていません。', 'error'); return; }
-    if (!title)    { setStatus('タイトルを入力してください。', 'error'); return; }
 
-    const { pinterestToken, pinterestBoardId, amazonTag } = await chrome.storage.sync.get([
-      'pinterestToken', 'pinterestBoardId', 'amazonTag',
-    ]);
+    const { amazonTag } = await chrome.storage.sync.get('amazonTag');
+    const linkUrl = toAffiliateUrl(rawLink, amazonTag);
 
-    if (!pinterestToken) {
-      setStatus('アクセストークンが未設定です。設定画面で入力してください。', 'error');
-      return;
-    }
-    if (!pinterestBoardId) {
-      setStatus('ボードIDが未設定です。設定画面で入力してください。', 'error');
-      return;
-    }
+    const pinterestUrl = buildPinterestUrl(imageUrl, linkUrl, title, description);
+    chrome.tabs.create({ url: pinterestUrl });
 
-    const btn = document.getElementById('btn-post');
-    btn.disabled = true;
-    setStatus('投稿中...');
-
-    try {
-      const result = await postToPinterest(pinterestToken, pinterestBoardId, {
-        title, description, imageUrl, linkUrl,
-      });
-      const pinId = result.id;
-      setStatus(`✓ 投稿完了！ Pin ID: ${pinId}`, 'success');
-      // 送信済みの pendingPin を消す
-      chrome.storage.local.remove('pendingPin');
-    } catch (e) {
-      setStatus(e.message, 'error');
-      btn.disabled = false;
-    }
+    setStatus('✓ Pinterestを開きました。「保存」を押して完了です。', 'success');
+    chrome.storage.local.remove('pendingPin');
   });
 });

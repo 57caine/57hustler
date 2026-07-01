@@ -7,10 +7,8 @@
   "permissions": [
     "contextMenus",
     "storage",
-    "activeTab"
-  ],
-  "host_permissions": [
-    "https://api.pinterest.com/*"
+    "activeTab",
+    "tabs"
   ],
 
   "background": {
