@@ -10,7 +10,11 @@ function toAffiliateUrl(url, amazonTag) {
     return `${u}${sep}tag=${tag}`;
   }
 
-  // 楽天はそのまま（アフィリIDは後で追加）
+  if (/rakuten\.co\.jp/.test(url)) {
+    const encoded = encodeURIComponent(url);
+    return `https://hb.afl.rakuten.co.jp/hsc/5566e80a.494d34bb.5566e80b.873f2e04/?pc=${encoded}&link_type=text&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJ0ZXh0IiwiY29sIjoxfQ==`;
+  }
+
   return url;
 }
 
