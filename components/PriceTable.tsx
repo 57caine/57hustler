@@ -19,11 +19,12 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
     return <p className="text-gray-500 text-sm p-4">価格情報がありません</p>;
   }
 
-  const withTotal = prices.map((item) => ({
-    ...item,
-    totalPrice: calcTotalPrice(item.price, item.store),
-    isFreeShipping: item.price >= item.store.freeShippingMin || item.store.freeShippingMin === 0,
-  }));
+  const withTotal = prices.map((item) => {
+    const isFreeShipping = item.price >= item.store.freeShippingMin || item.store.freeShippingMin === 0;
+    // 合計はショップ表示価格（price）で送料判定し、1箱あたり価格（pricePerBox）に送料を加算
+    const totalPrice = item.pricePerBox + (isFreeShipping ? 0 : item.store.shipping);
+    return { ...item, totalPrice, isFreeShipping };
+  });
 
   const inStockItems = withTotal.filter((item) => item.inStock);
   const minTotal = inStockItems.length > 0 ? Math.min(...inStockItems.map((i) => i.totalPrice)) : null;
@@ -33,7 +34,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
     if (a.inStock !== b.inStock) return a.inStock ? -1 : 1;
     let diff = 0;
     if (sortKey === 'totalPrice') diff = a.totalPrice - b.totalPrice;
-    else if (sortKey === 'price') diff = a.price - b.price;
+    else if (sortKey === 'price') diff = a.pricePerBox - b.pricePerBox;
     else if (sortKey === 'store') diff = a.store.name.localeCompare(b.store.name, 'ja');
     else if (sortKey === 'shipping') {
       const sa = a.isFreeShipping ? 0 : a.store.shipping;
@@ -58,6 +59,13 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
   const isAmazon = (id: string) => id === 'amazon';
 
   return (
+    <div>
+      <div className="flex items-start gap-2 bg-yellow-50 border border-yellow-200 rounded-lg px-4 py-3 mb-3 text-sm text-yellow-800">
+        <span className="flex-shrink-0 mt-0.5">⚠️</span>
+        <span>
+          表示価格は取得時の参考価格です。度数・枚数・クーポンにより実際の価格と異なる場合があります。必ずショップでご確認ください。
+        </span>
+      </div>
     <div className="overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
@@ -126,8 +134,11 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                 </td>
                 <td className="px-4 py-3 text-right">
                   <span className={`font-bold ${isCheapest ? 'text-slate-800' : 'text-gray-700'}`}>
-                    ¥{item.price.toLocaleString()}
+                    ¥{item.pricePerBox.toLocaleString()}
                   </span>
+                  {item.boxes > 1 && (
+                    <div className="text-xs text-gray-400 mt-0.5">×{item.boxes}箱購入時</div>
+                  )}
                 </td>
                 <td className="px-4 py-3 text-right text-gray-500 hidden sm:table-cell">
                   {item.isFreeShipping ? (
@@ -156,18 +167,23 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                       近日追加予定
                     </span>
                   ) : (
-                    <a
-                      href={item.url + item.store.affiliateParam}
-                      target="_blank"
-                      rel="noopener noreferrer sponsored"
-                      className={`inline-block px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
-                        isCheapest
-                          ? 'bg-sky-600 text-white hover:bg-sky-500'
-                          : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      {isCheapest ? '最安値で買う' : '購入する'}
-                    </a>
+                    <div className="flex flex-col items-center gap-0.5">
+                      <a
+                        href={item.url + item.store.affiliateParam}
+                        target="_blank"
+                        rel="noopener noreferrer sponsored"
+                        className={`inline-block px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
+                          isCheapest
+                            ? 'bg-sky-600 text-white hover:bg-sky-500'
+                            : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        {isCheapest ? '最安値で買う' : '購入する'}
+                      </a>
+                      {isCheapest && (
+                        <span className="text-xs text-gray-400 whitespace-nowrap">※ 価格は変動する場合があります</span>
+                      )}
+                    </div>
                   )}
                 </td>
               </tr>
@@ -175,9 +191,13 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
           })}
         </tbody>
       </table>
-      <p className="text-xs text-gray-400 mt-2 px-4 pb-3">
-        ※ 価格は税込。送料は代表的な1箱購入時の目安。実際の送料・ポイント還元は各ショップの条件による。最終更新: {new Date().toLocaleDateString('ja-JP')} | 最新価格は各ショップでご確認ください
+      <p className="text-sm text-gray-500 mt-3 px-4 pb-4 flex items-start gap-1.5">
+        <span className="flex-shrink-0 mt-0.5">⚠️</span>
+        <span>
+          表示価格は取得時点の目安です。送料・クーポン・会員価格により実際の価格と異なる場合があります。最終価格はショップでご確認ください。
+        </span>
       </p>
+    </div>
     </div>
   );
 }
