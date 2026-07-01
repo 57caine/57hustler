@@ -12,7 +12,7 @@ function toAffiliateUrl(url, amazonTag) {
 
   if (/rakuten\.co\.jp/.test(url)) {
     const encoded = encodeURIComponent(url);
-    return `https://hb.afl.rakuten.co.jp/hsc/5566e80a.494d34bb.5566e80b.873f2e04/?pc=${encoded}&link_type=text&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJ0ZXh0IiwiY29sIjoxfQ==`;
+    return `https://hb.afl.rakuten.co.jp/hsc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encoded}&link_type=text&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJ0ZXh0IiwiY29sIjoxfQ==`;
   }
 
   return url;
