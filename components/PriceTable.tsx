@@ -19,11 +19,12 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
     return <p className="text-gray-500 text-sm p-4">価格情報がありません</p>;
   }
 
-  const withTotal = prices.map((item) => ({
-    ...item,
-    totalPrice: calcTotalPrice(item.price, item.store),
-    isFreeShipping: item.price >= item.store.freeShippingMin || item.store.freeShippingMin === 0,
-  }));
+  const withTotal = prices.map((item) => {
+    const isFreeShipping = item.price >= item.store.freeShippingMin || item.store.freeShippingMin === 0;
+    // 合計はショップ表示価格（price）で送料判定し、1箱あたり価格（pricePerBox）に送料を加算
+    const totalPrice = item.pricePerBox + (isFreeShipping ? 0 : item.store.shipping);
+    return { ...item, totalPrice, isFreeShipping };
+  });
 
   const inStockItems = withTotal.filter((item) => item.inStock);
   const minTotal = inStockItems.length > 0 ? Math.min(...inStockItems.map((i) => i.totalPrice)) : null;
@@ -33,7 +34,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
     if (a.inStock !== b.inStock) return a.inStock ? -1 : 1;
     let diff = 0;
     if (sortKey === 'totalPrice') diff = a.totalPrice - b.totalPrice;
-    else if (sortKey === 'price') diff = a.price - b.price;
+    else if (sortKey === 'price') diff = a.pricePerBox - b.pricePerBox;
     else if (sortKey === 'store') diff = a.store.name.localeCompare(b.store.name, 'ja');
     else if (sortKey === 'shipping') {
       const sa = a.isFreeShipping ? 0 : a.store.shipping;
@@ -133,8 +134,11 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                 </td>
                 <td className="px-4 py-3 text-right">
                   <span className={`font-bold ${isCheapest ? 'text-slate-800' : 'text-gray-700'}`}>
-                    ¥{item.price.toLocaleString()}
+                    ¥{item.pricePerBox.toLocaleString()}
                   </span>
+                  {item.boxes > 1 && (
+                    <div className="text-xs text-gray-400 mt-0.5">×{item.boxes}箱購入時</div>
+                  )}
                 </td>
                 <td className="px-4 py-3 text-right text-gray-500 hidden sm:table-cell">
                   {item.isFreeShipping ? (
