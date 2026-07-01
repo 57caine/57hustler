@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    background: #06061a;
+    font-family: 'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', 'Georgia', serif;
+    color: #f0e8d0;
+    position: relative;
+  }
+
+  /* 星空背景 */
+  .starfield {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 80% 10%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 45% 5%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 92% 35%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 8% 55%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(2px 2px at 60% 15%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 75% 70%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 90%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 20% 40%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 88% 60%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 40% 50%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 45%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(2px 2px at 5% 90%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 95% 80%, rgba(255,255,255,0.4) 0%, transparent 100%);
+  }
+
+  /* 霞グラデーション */
+  .nebula {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 600px 300px at 20% 30%, rgba(80, 30, 120, 0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 500px 400px at 85% 65%, rgba(20, 60, 120, 0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 400px 200px at 50% 80%, rgba(40, 10, 80, 0.1) 0%, transparent 70%);
+  }
+
+  /* 墨流しライン */
+  .ink-line {
+    position: absolute;
+    left: 72px;
+    right: 72px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,167,110,0.4), rgba(201,167,110,0.7), rgba(201,167,110,0.4), transparent);
+  }
+  .ink-line.top    { top: 108px; }
+  .ink-line.bottom { bottom: 108px; }
+
+  /* 縦ライン */
+  .ink-line-v {
+    position: absolute;
+    top: 108px;
+    bottom: 108px;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(201,167,110,0.3), rgba(201,167,110,0.5), rgba(201,167,110,0.3), transparent);
+  }
+  .ink-line-v.left  { left: 72px; }
+  .ink-line-v.right { right: 72px; }
+
+  /* コンテンツ枠 */
+  .content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 140px 100px 130px;
+  }
+
+  /* 日付 */
+  .date-label {
+    font-size: 22px;
+    letter-spacing: 0.25em;
+    color: rgba(201,167,110,0.75);
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-weight: 300;
+  }
+
+  /* 上部タイトル */
+  .top-title {
+    font-size: 20px;
+    letter-spacing: 0.35em;
+    color: rgba(240,232,208,0.55);
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Noto Serif JP', serif;
+  }
+
+  /* 星名 */
+  .star-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(201,167,110,0.08);
+    border: 1px solid rgba(201,167,110,0.35);
+    border-radius: 50px;
+    padding: 10px 28px;
+    margin-bottom: 46px;
+  }
+  .star-badge .glyph {
+    font-size: 20px;
+    color: #c9a76e;
+  }
+  .star-badge .name {
+    font-size: 26px;
+    letter-spacing: 0.2em;
+    color: #c9a76e;
+  }
+
+  /* 区切り */
+  .divider {
+    width: 180px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,167,110,0.5), transparent);
+    margin-bottom: 44px;
+  }
+
+  /* 運勢テキスト本文 */
+  .fortune-text {
+    font-size: 30px;
+    line-height: 1.9;
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: #f0e8d0;
+    max-width: 820px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  /* アドバイスブロック */
+  .advice-block {
+    width: 100%;
+    max-width: 840px;
+    background: rgba(201,167,110,0.06);
+    border-left: 3px solid rgba(201,167,110,0.6);
+    padding: 18px 26px;
+    margin-top: 40px;
+    border-radius: 0 8px 8px 0;
+  }
+  .advice-label {
+    font-size: 17px;
+    letter-spacing: 0.2em;
+    color: rgba(201,167,110,0.7);
+    margin-bottom: 8px;
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+  .advice-text {
+    font-size: 22px;
+    line-height: 1.7;
+    color: rgba(240,232,208,0.85);
+    letter-spacing: 0.05em;
+  }
+
+  /* 下部ブランド */
+  .footer {
+    position: absolute;
+    bottom: 48px;
+    left: 0; right: 0;
+    text-align: center;
+  }
+  .brand {
+    font-size: 19px;
+    letter-spacing: 0.4em;
+    color: rgba(201,167,110,0.45);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+  }
+</style>
+</head>
+<body>
+  <div class="starfield"></div>
+  <div class="nebula"></div>
+  <div class="ink-line top"></div>
+  <div class="ink-line bottom"></div>
+  <div class="ink-line-v left"></div>
+  <div class="ink-line-v right"></div>
+
+  <div class="content">
+    <div class="date-label">2026年7月1日（水）</div>
+    <div class="top-title">今 日 の 運 勢</div>
+
+    <div class="star-badge">
+      <span class="glyph">☯</span>
+      <span class="name">九紫火星</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="fortune-text">才能と知性が輝く一日です。今日は表に出ることで、思わぬ縁が生まれます。</div>
+
+    <div class="advice-block">
+      <div class="advice-label">TODAY'S ACTION</div>
+      <div class="advice-text">SNSへの発信・メール返信は午前中に済ませると、夜に良い反応が届きます。</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">夜中のおじさん</div>
+  </div>
+</body>
+</html>
