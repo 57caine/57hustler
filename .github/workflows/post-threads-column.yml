@@ -1,0 +1,37 @@
+name: Threads 夜間コラム自動投稿
+
+on:
+  schedule:
+    # 毎晩 19:00 JST狙い（GitHub Actions遅延を考慮し09:00 UTC=JST 18:00に設定）
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: コラム投稿
+        run: npx ts-node scripts/post-threads-column.ts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+
+      - name: 投稿履歴をコミット
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/column-history.json
+          git diff --staged --quiet || git commit -m "chore: Threadsコラム投稿履歴更新 $(date '+%Y-%m-%d')"
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          git push
