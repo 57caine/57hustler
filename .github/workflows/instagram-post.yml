@@ -45,14 +45,8 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "post_type=${{ inputs.post_type }}" >> "$GITHUB_OUTPUT"
-          elif [ "$(date -u +%u)" -eq 1 ] || [ "$(date -u +%u)" -eq 3 ] || [ "$(date -u +%u)" -eq 5 ]; then
-            # 月水金の UTC 10:00 cron は swipe
-            HOUR=$(date -u +%H)
-            if [ "$HOUR" = "10" ]; then
-              echo "post_type=swipe" >> "$GITHUB_OUTPUT"
-            else
-              echo "post_type=fortune" >> "$GITHUB_OUTPUT"
-            fi
+          elif [ "$(date -u +%H)" = "10" ]; then
+            echo "post_type=swipe" >> "$GITHUB_OUTPUT"
           else
             echo "post_type=fortune" >> "$GITHUB_OUTPUT"
           fi
@@ -66,7 +60,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Actions Bot"
-          git add instagram/output/ data/neta-bank.json
+          git add instagram/output/*.png data/neta-bank.json
           git diff --staged --quiet || git commit -m "chore: Instagram用画像生成 $(date '+%Y-%m-%d')"
           git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
           git push
@@ -74,17 +68,31 @@ jobs:
       - name: GitHub CDN への反映待機
         run: sleep 15
 
-      - name: Instagram に投稿
-        run: npx ts-node instagram/scripts/post-instagram.ts --type=${{ steps.type.outputs.post_type }}
-        env:
-          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
-          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
-
-      - name: 投稿履歴をコミット・プッシュ
+      - name: Make Webhook に投稿データを送信
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Actions Bot"
-          git add data/instagram-history.json
-          git diff --staged --quiet || git commit -m "chore: Instagram投稿履歴更新 $(date '+%Y-%m-%d')"
-          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
-          git push
+          node -e "
+          const fs = require('fs');
+          const https = require('https');
+          const manifest = JSON.parse(fs.readFileSync('instagram/output/manifest.json', 'utf-8'));
+          const base = 'https://raw.githubusercontent.com/57caine/57hustler/main/instagram/output/';
+          const payload = JSON.stringify({
+            post_type: manifest.post_type,
+            caption: manifest.caption,
+            image_urls: manifest.images.map(f => base + encodeURIComponent(f)),
+          });
+          const url = new URL(process.env.MAKE_WEBHOOK_URL);
+          const req = https.request(
+            { hostname: url.hostname, path: url.pathname + url.search, method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(payload) } },
+            res => {
+              let body = '';
+              res.on('data', d => body += d);
+              res.on('end', () => { console.log('Webhook status:', res.statusCode, body); });
+            }
+          );
+          req.on('error', e => { console.error(e); process.exit(1); });
+          req.write(payload);
+          req.end();
+          "
+        env:
+          MAKE_WEBHOOK_URL: ${{ secrets.MAKE_WEBHOOK_URL }}
