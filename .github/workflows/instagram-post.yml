@@ -1,0 +1,90 @@
+name: Instagram 自動投稿
+
+on:
+  schedule:
+    - cron: '0 22 * * *'       # fortune: 毎日 JST 7:00
+    - cron: '0 10 * * 1,3,5'   # swipe: 月水金 JST 19:00
+  workflow_dispatch:
+    inputs:
+      post_type:
+        description: '投稿タイプ'
+        required: true
+        default: 'fortune'
+        type: choice
+        options:
+          - fortune
+          - swipe
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: 日本語フォントのインストール
+        run: sudo apt-get install -y fonts-noto-cjk
+
+      - run: npm ci
+
+      - name: Playwright Chromium のインストール
+        run: npx playwright install chromium
+
+      - name: 投稿タイプを決定
+        id: type
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "post_type=${{ inputs.post_type }}" >> "$GITHUB_OUTPUT"
+          elif [ "$(date -u +%u)" -eq 1 ] || [ "$(date -u +%u)" -eq 3 ] || [ "$(date -u +%u)" -eq 5 ]; then
+            # 月水金の UTC 10:00 cron は swipe
+            HOUR=$(date -u +%H)
+            if [ "$HOUR" = "10" ]; then
+              echo "post_type=swipe" >> "$GITHUB_OUTPUT"
+            else
+              echo "post_type=fortune" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "post_type=fortune" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 画像生成
+        run: npx ts-node instagram/scripts/generate-images.ts --type=${{ steps.type.outputs.post_type }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: 生成画像をコミット・プッシュ
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add instagram/output/ data/neta-bank.json
+          git diff --staged --quiet || git commit -m "chore: Instagram用画像生成 $(date '+%Y-%m-%d')"
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          git push
+
+      - name: GitHub CDN への反映待機
+        run: sleep 15
+
+      - name: Instagram に投稿
+        run: npx ts-node instagram/scripts/post-instagram.ts --type=${{ steps.type.outputs.post_type }}
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+
+      - name: 投稿履歴をコミット・プッシュ
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/instagram-history.json
+          git diff --staged --quiet || git commit -m "chore: Instagram投稿履歴更新 $(date '+%Y-%m-%d')"
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          git push

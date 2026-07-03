@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>henkutsu ピン投稿</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 13px;
+      background: #fff;
+      color: #111;
+      padding: 16px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #e60023;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .preview-wrap {
+      width: 100%;
+      height: 140px;
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .preview-placeholder {
+      color: #aaa;
+      font-size: 12px;
+    }
+
+    .field {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    input, textarea {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 7px 9px;
+      font-size: 13px;
+      color: #111;
+      background: #fafafa;
+      outline: none;
+      resize: vertical;
+      transition: border-color 0.15s;
+    }
+    input:focus, textarea:focus {
+      border-color: #e60023;
+      background: #fff;
+    }
+    input[readonly] {
+      color: #666;
+      background: #f0f0f0;
+      cursor: default;
+    }
+    .affiliate-tag {
+      display: inline-block;
+      font-size: 10px;
+      color: #fff;
+      background: #e60023;
+      border-radius: 3px;
+      padding: 1px 5px;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+
+    .link-row {
+      position: relative;
+    }
+    .link-badge {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+      pointer-events: none;
+    }
+    .link-badge.amazon { background: #FF9900; color: #111; }
+    .link-badge.rakuten { background: #BF0000; color: #fff; }
+
+    #btn-post {
+      width: 100%;
+      margin-top: 14px;
+      padding: 11px;
+      background: #e60023;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    #btn-post:hover { background: #c0001e; }
+    #btn-post:disabled { background: #ccc; cursor: not-allowed; }
+
+    #status {
+      margin-top: 10px;
+      font-size: 12px;
+      text-align: center;
+      min-height: 18px;
+    }
+    #status.error { color: #e60023; }
+    #status.success { color: #1a8a1a; }
+
+    .settings-link {
+      display: block;
+      text-align: right;
+      font-size: 11px;
+      color: #aaa;
+      margin-top: 8px;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>📌 henkutsu ピン投稿</h1>
+
+  <div class="preview-wrap" id="preview-wrap">
+    <span class="preview-placeholder">画像プレビュー</span>
+  </div>
+
+  <div class="field">
+    <label>画像URL</label>
+    <input type="text" id="image-url" readonly>
+  </div>
+
+  <div class="field">
+    <label>商品タイトル</label>
+    <input type="text" id="title" placeholder="例: ワイヤレスイヤホン Anker Q20i">
+  </div>
+
+  <div class="field">
+    <label>説明文</label>
+    <textarea id="description" rows="3" placeholder="例: 低遅延＆ノイキャン搭載。これで価格帯がおかしい。"></textarea>
+  </div>
+
+  <div class="field">
+    <label>リンクURL <span id="affiliate-label"></span></label>
+    <div class="link-row">
+      <input type="text" id="link-url" placeholder="商品ページURL">
+      <span class="link-badge" id="link-badge" style="display:none"></span>
+    </div>
+  </div>
+
+  <button id="btn-post">Pinterestに投稿</button>
+  <div id="status"></div>
+  <a class="settings-link" id="settings-link">⚙ 設定（アクセストークン・ボードID）</a>
+
+  <script src="popup.js"></script>
+</body>
+</html>
