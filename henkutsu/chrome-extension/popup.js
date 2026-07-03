@@ -14,7 +14,7 @@ function toAffiliateUrl(url, amazonTag) {
     const match = url.match(/https:\/\/item\.rakuten\.co\.jp\/[^\/\?]+\/[^\/\?]+/);
     const cleanUrl = match ? match[0] + '/' : url.split('?')[0];
     const encoded = encodeURIComponent(cleanUrl);
-    return `https://hb.afl.rakuten.co.jp/hsc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encoded}&link_type=text&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJ0ZXh0IiwiY29sIjoxfQ==`;
+    return `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encoded}&link_type=text&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJ0ZXh0IiwiY29sIjoxfQ==`;
   }
 
   return url;
