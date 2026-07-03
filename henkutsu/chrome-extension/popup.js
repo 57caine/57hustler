@@ -10,6 +10,8 @@ function toAffiliateUrl(url, amazonTag) {
     return `${u}${sep}tag=${tag}`;
   }
 
+  if (url.includes('hb.afl.rakuten.co.jp')) return url;
+
   if (/rakuten\.co\.jp/.test(url)) {
     const match = url.match(/https:\/\/item\.rakuten\.co\.jp\/[^\/\?]+\/[^\/\?]+/);
     const cleanUrl = match ? match[0] + '/' : url.split('?')[0];
