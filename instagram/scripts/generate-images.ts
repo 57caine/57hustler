@@ -196,12 +196,21 @@ async function main() {
       }, outputPath);
     }
 
-    // キャプションを一時ファイルに保存（post-instagram.tsが読む）
     fs.writeFileSync(
       path.join(OUTPUT_DIR, `fortune-${dateSlug}.caption.txt`),
       content.caption,
       'utf-8',
     );
+
+    if (!DRY_RUN) {
+      const manifest = {
+        post_type: 'fortune' as const,
+        date: dateSlug,
+        images: [`fortune-${dateSlug}.png`],
+        caption: content.caption,
+      };
+      fs.writeFileSync(path.join(OUTPUT_DIR, 'manifest.json'), JSON.stringify(manifest, null, 2), 'utf-8');
+    }
     console.log('✓ fortune-card 完了');
 
   } else {
@@ -211,31 +220,38 @@ async function main() {
 
     const content = await generateSwipeContent(client, topic);
     const total = content.cards.length + 2; // cover + cards + end
+    const imageFiles: string[] = [];
 
     if (!DRY_RUN) {
       // 表紙
+      const coverFile = `swipe-${dateSlug}-0-cover.png`;
       const coverTpl = loadTemplate('swipe-cover.html');
       await renderHtml(coverTpl, {
         CATEGORY: content.category,
         HOOK:     content.hook,
-      }, path.join(OUTPUT_DIR, `swipe-${dateSlug}-0-cover.png`));
+      }, path.join(OUTPUT_DIR, coverFile));
+      imageFiles.push(coverFile);
 
       // 本文カード
       const bodyTpl = loadTemplate('swipe-body.html');
       for (let i = 0; i < content.cards.length; i++) {
         const card = content.cards[i];
+        const bodyFile = `swipe-${dateSlug}-${i + 1}-body.png`;
         await renderHtml(bodyTpl, {
           CARD_NUM:      String(i + 2),
           TOTAL:         String(total),
           SECTION_LABEL: card.sectionLabel,
           CONTENT:       card.content,
           POINT:         card.point,
-        }, path.join(OUTPUT_DIR, `swipe-${dateSlug}-${i + 1}-body.png`));
+        }, path.join(OUTPUT_DIR, bodyFile));
+        imageFiles.push(bodyFile);
       }
 
       // 締め
+      const endFile = `swipe-${dateSlug}-${total - 1}-end.png`;
       const endTpl = loadTemplate('swipe-end.html');
-      await renderHtml(endTpl, {}, path.join(OUTPUT_DIR, `swipe-${dateSlug}-${total - 1}-end.png`));
+      await renderHtml(endTpl, {}, path.join(OUTPUT_DIR, endFile));
+      imageFiles.push(endFile);
     }
 
     fs.writeFileSync(
@@ -243,6 +259,16 @@ async function main() {
       content.caption,
       'utf-8',
     );
+
+    if (!DRY_RUN) {
+      const manifest = {
+        post_type: 'swipe' as const,
+        date: dateSlug,
+        images: imageFiles,
+        caption: content.caption,
+      };
+      fs.writeFileSync(path.join(OUTPUT_DIR, 'manifest.json'), JSON.stringify(manifest, null, 2), 'utf-8');
+    }
     console.log(`✓ swipe 完了（${total}枚）`);
   }
 }
