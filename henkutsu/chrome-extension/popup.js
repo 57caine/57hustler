@@ -11,7 +11,9 @@ function toAffiliateUrl(url, amazonTag) {
   }
 
   if (/rakuten\.co\.jp/.test(url)) {
-    const encoded = encodeURIComponent(url);
+    const match = url.match(/(https:\/\/item\.rakuten\.co\.jp\/[^\/]+\/[^\/\?]+)/);
+    const cleanUrl = match ? match[1] + '/' : url;
+    const encoded = encodeURIComponent(cleanUrl);
     return `https://hb.afl.rakuten.co.jp/hsc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encoded}&link_type=text&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJ0ZXh0IiwiY29sIjoxfQ==`;
   }
 
