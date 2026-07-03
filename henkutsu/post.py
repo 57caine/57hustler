@@ -51,8 +51,10 @@ def convert_rakuten(url: str) -> str:
         print("⚠️  RAKUTEN_AFFILIATE_ID が未設定です。URLをそのまま使用します。")
         return url
 
-    encoded = urlencode({"url": url})
-    affiliate_url = f"https://hb.afl.rakuten.co.jp/hgc/{RAKUTEN_AFFILIATE_ID}/?pc={url}&m={url}"
+    match = re.match(r"(https://item\.rakuten\.co\.jp/[^/]+/[^/?]+)", url)
+    clean_url = f"{match.group(1)}/" if match else url
+
+    affiliate_url = f"https://hb.afl.rakuten.co.jp/hgc/{RAKUTEN_AFFILIATE_ID}/?pc={clean_url}&m={clean_url}"
     return affiliate_url
 
 
