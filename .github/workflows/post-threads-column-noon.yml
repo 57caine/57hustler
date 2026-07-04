@@ -1,0 +1,41 @@
+name: Threads 昼間コラム自動投稿
+
+on:
+  schedule:
+    - cron: '0 3 * * *'   # 毎日 JST 12:00 (UTC 3:00)
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: コラム投稿（昼）
+        run: npx ts-node scripts/post-threads-column.ts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+
+      - name: 投稿履歴をコミット
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/column-history.json
+          git diff --staged --quiet || git commit -m "chore: Threadsコラム投稿履歴更新（昼） $(date '+%Y-%m-%d')"
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          git push
