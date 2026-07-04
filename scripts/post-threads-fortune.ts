@@ -1,8 +1,8 @@
 /**
- * Threads 九星気学 日次自動投稿スクリプト
+ * Threads 九星気学 9星まとめ日次投稿スクリプト
  *
- * 本日の日盤中宮星を算出し、星の特性に基づく運勢をClaude APIで生成してThreadsに投稿する。
- * 全てのコンテンツは九星気学の原則・五行理論に基づく。
+ * 今日の日盤中宮星を表示しつつ、全9星の今日の一言をまとめて1投稿する。
+ * 各星の一言はClaude APIで動的生成（10文字以内）。
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -11,138 +11,78 @@ const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
 const USER_ID = process.env.THREADS_USER_ID!;
 const ACCESS_TOKEN = process.env.THREADS_ACCESS_TOKEN!;
 
-// 九星データベース（五行・方位・特性・各運勢の傾向）
-const KYUSEI: Record<number, {
-  name: string; element: string; direction: string; color: string;
-  birthYears: string;
-  keywords: string[];
-  fortune: { overall: string; money: string; love: string; work: string; caution: string };
-}> = {
-  1: {
-    name: '一白水星', element: '水', direction: '北', color: '白・黒',
-    birthYears: '1973・1982・1991・2000・2009年生まれ',
-    keywords: ['知恵', '流れ', '柔軟', '人脈', '縁'],
-    fortune: { overall: '流れに乗ることで道が開ける', money: '情報や人脈が収益に繋がる', love: '感情を素直に表現する日', work: '情報収集・ネットワークが吉', caution: '優柔不断に注意' },
-  },
-  2: {
-    name: '二黒土星', element: '土', direction: '南西', color: '黄・茶',
-    birthYears: '1972・1981・1990・1999・2008年生まれ',
-    keywords: ['継続', '忍耐', '家庭', '母性', '蓄積'],
-    fortune: { overall: '地道な積み重ねが最大の力', money: 'コツコツ貯める・節約が正解', love: '家庭運◎ 相手を支える姿勢が○', work: '縁の下の力持ち役が評価される', caution: '無理な拡大は避けて' },
-  },
-  3: {
-    name: '三碧木星', element: '木', direction: '東', color: '碧・緑',
-    birthYears: '1971・1980・1989・1998・2007年生まれ',
-    keywords: ['行動', '発展', '若さ', '革新', '音'],
-    fortune: { overall: '動いた分だけ運気が上がる日', money: '積極的な行動が収入を生む', love: '先手必勝。思いを伝えて', work: '新しい挑戦・提案が吉', caution: '衝動的な判断に注意' },
-  },
-  4: {
-    name: '四緑木星', element: '木', direction: '東南', color: '緑',
-    birthYears: '1970・1979・1988・1997・2006年生まれ',
-    keywords: ['信用', '縁', '旅', '風', '商売'],
-    fortune: { overall: '縁と信用が広がる日', money: '人脈・紹介から収益が生まれる', love: '自然な出会い・縁に期待', work: '評判・口コミが力になる', caution: '八方美人にならないよう注意' },
-  },
-  5: {
-    name: '五黄土星', element: '土', direction: '中央', color: '黄',
-    birthYears: '1969・1978・1987・1996・2005年生まれ',
-    keywords: ['帝王', '変革', '破壊と創造', '強力', '中心'],
-    fortune: { overall: '大きな力が動く。慎重に構えて', money: '大きく動く日。焦らず判断を', love: '強い縁が動く可能性あり', work: '決断力が問われる重要な日', caution: '無理・暴走は禁物' },
-  },
-  6: {
-    name: '六白金星', element: '金', direction: '北西', color: '白・金',
-    birthYears: '1968・1977・1986・1995・2004年生まれ',
-    keywords: ['権威', '決断', '正義', '天', '指導'],
-    fortune: { overall: '実力と権威が輝く日', money: '実力が正当に評価される', love: 'リードする姿勢が魅力になる', work: '決断・指導力を発揮する場面', caution: '高圧的にならないよう注意' },
-  },
-  7: {
-    name: '七赤金星', element: '金', direction: '西', color: '赤・白',
-    birthYears: '1967・1976・1985・1994・2003年生まれ',
-    keywords: ['喜び', '口', '金運', '交際', '楽しみ'],
-    fortune: { overall: '喜びと社交運が高まる日', money: '出費も多いが収入の縁も来る', love: '楽しい会話が縁を結ぶ', work: 'プレゼン・交渉・接待が吉', caution: '散財・口の軽さに注意' },
-  },
-  8: {
-    name: '八白土星', element: '土', direction: '東北', color: '白・黄',
-    birthYears: '1966・1975・1984・1993・2002年生まれ',
-    keywords: ['変革', '山', '相続', '継承', '蓄積'],
-    fortune: { overall: '基盤を固める・見直す好機', money: '貯蓄・固定資産に向く日', love: '安定した絆を深める日', work: '組織の基盤整備・引き継ぎが吉', caution: '変化への抵抗は損になる' },
-  },
-  9: {
-    name: '九紫火星', element: '火', direction: '南', color: '紫・赤',
-    birthYears: '1965・1974・1983・1992・2001年生まれ',
-    keywords: ['明晰', '礼節', '名誉', '火', '学問'],
-    fortune: { overall: '才能と知性が輝く日', money: '名声・評判が収益に繋がる', love: '外見・センスが魅力を増す', work: '発表・公表・SNS発信が吉', caution: '見栄の張りすぎに注意' },
-  },
+const KYUSEI: Record<number, { name: string; short: string; emoji: string; element: string; keywords: string[] }> = {
+  1: { name: '一白水星', short: '一白', emoji: '⚪', element: '水', keywords: ['知恵', '流れ', '柔軟', '人脈'] },
+  2: { name: '二黒土星', short: '二黒', emoji: '🟤', element: '土', keywords: ['継続', '忍耐', '家庭', '蓄積'] },
+  3: { name: '三碧木星', short: '三碧', emoji: '🟢', element: '木', keywords: ['行動', '発展', '革新'] },
+  4: { name: '四緑木星', short: '四緑', emoji: '🟢', element: '木', keywords: ['信用', '縁', '商売'] },
+  5: { name: '五黄土星', short: '五黄', emoji: '🟡', element: '土', keywords: ['帝王', '変革', '中心'] },
+  6: { name: '六白金星', short: '六白', emoji: '⚪', element: '金', keywords: ['権威', '決断', '指導'] },
+  7: { name: '七赤金星', short: '七赤', emoji: '🔴', element: '金', keywords: ['喜び', '金運', '交際'] },
+  8: { name: '八白土星', short: '八白', emoji: '🟤', element: '土', keywords: ['変革', '蓄積', '基盤'] },
+  9: { name: '九紫火星', short: '九紫', emoji: '🔴', element: '火', keywords: ['明晰', '名誉', '学問'] },
 };
 
-/** 年盤の中宮星 (2024=四緑基準、逆行) */
-function getYearlyStar(year: number): number {
-  return ((4 - 1 - (year - 2024) % 9 + 900) % 9) + 1;
-}
-
-/** 日盤の中宮星 (2024-01-06=一白基準、逆行、JST日付基準) */
 function getDailyStar(): number {
-  const now = new Date();
-  const jstStr = now.toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' }); // 'YYYY-MM-DD'
-  const jstDate = new Date(jstStr);
-  const ref = new Date('2024-01-06');
-  const diff = Math.round((jstDate.getTime() - ref.getTime()) / 86400000);
+  const jstStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
+  const diff = Math.round((new Date(jstStr).getTime() - new Date('2024-01-06').getTime()) / 86400000);
   return ((1 - 1 - diff % 9 + 900) % 9) + 1;
 }
 
-async function generateFortuneText(): Promise<string> {
+async function generateOneLiners(dailyStarNum: number): Promise<Record<number, string>> {
   const client = new Anthropic();
-
-  const today = new Date();
-  const dateStr = today.toLocaleDateString('ja-JP', {
-    year: 'numeric', month: 'long', day: 'numeric', weekday: 'long',
-    timeZone: 'Asia/Tokyo',
+  const dailyStar = KYUSEI[dailyStarNum];
+  const dateStr = new Date().toLocaleDateString('ja-JP', {
+    year: 'numeric', month: 'long', day: 'numeric', weekday: 'long', timeZone: 'Asia/Tokyo',
   });
 
-  const year = today.getFullYear();
-  const yearlyStar = KYUSEI[getYearlyStar(year)];
-  const dailyStar = KYUSEI[getDailyStar()];
-
-  const context = `
-【今日の日付】${dateStr}
-【今日の星】${dailyStar.name}（${dailyStar.birthYears}）
-【星の属性】${dailyStar.element}・${dailyStar.direction}方位・ラッキーカラー:${dailyStar.color}
-【キーワード】${dailyStar.keywords.join('・')}
-【年間の流れ】${yearlyStar.name}（${yearlyStar.element}）
-`;
-
-  const prompt = `以下のデータをもとに、Threads投稿文を作ってください。
-
-${context}
-
-【絶対守ること】
-- 全体480文字以内（超えると投稿できない）
-- 冒頭：🔯 今日の運勢【${dateStr}】
-- 2行目：今日の星：${dailyStar.name}（${dailyStar.birthYears}）※必ず入れる
-- 「九星気学」「日盤」「五行」などの専門用語は使わない
-- 「〜です」「〜ます」「〜してみてください」というですます調で丁寧で温かい口調（「〜ですよ」「〜ますよ」は使わない）
-- 各運勢（全体・お金・恋愛・仕事）を絵文字つきで1行ずつ、短く
-- 末尾に💡豆知識を必ず1つ入れる（この星・方位・五行にまつわる「え、そうなんだ！」と思える事実）
-- 「詳細はnoteで」「#ハッシュタグ」は一切入れない
-
-【特に重要：運勢は具体的なアクションで書く】
-- 「この星は○○な性質だから〜」という一般論の言い換えは絶対に駄目
-- 今日の具体的な行動・場面に落とし込んで書く
-  良い例（仕事）：「午後の会議では発言より記録役に回ると◎」
-  良い例（金運）：「サブスクを1つだけ見直すと後からじわじわ効いてきます」
-  良い例（恋愛）：「LINEの返信は短くても、丁寧な一言を添えてみてください」
-- 読んだ人が「今日これをやってみよう」と思える内容にする
-
-本文のみ出力（前置き不要）。`;
+  const starList = Object.entries(KYUSEI)
+    .map(([n, s]) => `${n}（${s.name}）: ${s.element}・${s.keywords.join('・')}`)
+    .join('\n');
 
   const message = await client.messages.create({
     model: 'claude-sonnet-4-6',
-    max_tokens: 600,
-    system: '30歳まで鳴かず飛ばず、九星気学の吉方位参拝で人生が逆転した経験を持つ、親しみやすいおじさん占い師です。九星気学と易経を日常生活に役立てることを大切にしています。20〜50代の占い初心者の方に向けて、専門用語は使わず「〜です」「〜ます」「〜してみてください」というですます調で丁寧に語りかけます。「〜ですよ」「〜ますよ」のような語尾は使いません。怪しい・神秘的すぎる表現は避け、読者が明日からすぐ試せる具体的な言葉を心がけます。',
-    messages: [{ role: 'user', content: prompt }],
+    max_tokens: 400,
+    system: '九星気学に詳しいおじさんです。今日の日盤中宮星を踏まえ、各星への短いメッセージを生成します。',
+    messages: [{
+      role: 'user',
+      content: `今日（${dateStr}）の日盤中宮は「${dailyStar.name}」です。
+
+この日のエネルギーを踏まえて、各星（1〜9）の今日の一言を**10文字以内**で出力してください。
+体言止め・命令形・短い行動ヒントのいずれかで。ですます調不要。
+
+各星の特性：
+${starList}
+
+以下のJSONのみ出力（前置き不要）：
+{"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":"","9":""}`,
+    }],
   });
 
-  const text = (message.content[0] as { type: string; text: string }).text;
-  return text.length <= 500 ? text : text.slice(0, 497) + '…';
+  const raw = (message.content[0] as { type: string; text: string }).text;
+  const json = JSON.parse(raw.replace(/```json\n?|\n?```/g, '').trim()) as Record<string, string>;
+  return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v).slice(0, 10)]));
+}
+
+function buildPostText(dailyStarNum: number, oneLiners: Record<number, string>): string {
+  const dateStr = new Date().toLocaleDateString('ja-JP', {
+    year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Tokyo',
+  });
+
+  const lines = [
+    `🔯 今日の運勢｜${dateStr}`,
+    `${KYUSEI[dailyStarNum].name}の日`,
+    '',
+    ...Array.from({ length: 9 }, (_, i) => {
+      const n = i + 1;
+      const s = KYUSEI[n];
+      return `${s.emoji}${s.short}｜${oneLiners[n] ?? ''}`;
+    }),
+    '',
+    '🌙 #九星気学 #今日の運勢 #夜中のおじさん',
+  ];
+
+  return lines.join('\n');
 }
 
 async function createThreadsContainer(text: string): Promise<string> {
@@ -169,14 +109,16 @@ async function publishThread(creationId: string): Promise<string> {
 
 async function main() {
   const dryRun = process.argv.includes('--dry-run');
-  console.log(`=== 九星気学 Threads投稿開始${dryRun ? '（DRY RUN）' : ''} ===`);
+  console.log(`=== 九星気学まとめ投稿開始${dryRun ? '（DRY RUN）' : ''} ===`);
   if (!dryRun && (!USER_ID || !ACCESS_TOKEN)) throw new Error('THREADS_USER_ID と THREADS_ACCESS_TOKEN を設定してください');
 
-  const dailyStar = getDailyStar();
-  console.log(`本日の日盤中宮: ${KYUSEI[dailyStar].name}`);
+  const dailyStarNum = getDailyStar();
+  console.log(`本日の日盤中宮: ${KYUSEI[dailyStarNum].name}`);
 
-  console.log('Claude API で運勢テキスト生成中...');
-  const text = await generateFortuneText();
+  console.log('Claude API で各星の一言を生成中...');
+  const oneLiners = await generateOneLiners(dailyStarNum);
+  const text = buildPostText(dailyStarNum, oneLiners);
+
   console.log('--- 生成テキスト ---');
   console.log(text);
   console.log(`文字数: ${text.length}`);
