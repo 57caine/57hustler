@@ -1,0 +1,12 @@
+{
+  "current_month": "",
+  "theme": "",
+  "category": "",
+  "series_week_start": "",
+  "posts_completed": {
+    "monday": false,
+    "wednesday": false,
+    "friday": false,
+    "sunday": false
+  }
+}
