@@ -94,6 +94,56 @@ document.addEventListener('DOMContentLoaded', () => {
     updateLinkBadge(e.target.value);
   });
 
+  // うんちく生成
+  document.getElementById('btn-unchiku').addEventListener('click', async () => {
+    const title = document.getElementById('title').value.trim();
+    if (!title) { setStatus('商品タイトルを入力してください。', 'error'); return; }
+
+    const { anthropicKey } = await chrome.storage.local.get('anthropicKey');
+    if (!anthropicKey) {
+      setStatus('設定画面でAnthropicAPIキーを設定してください。', 'error');
+      return;
+    }
+
+    const btn = document.getElementById('btn-unchiku');
+    btn.textContent = '生成中...';
+    btn.disabled = true;
+    setStatus('');
+
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': anthropicKey,
+          'anthropic-version': '2023-06-01',
+        },
+        body: JSON.stringify({
+          model: 'claude-3-5-haiku-latest',
+          max_tokens: 150,
+          messages: [{
+            role: 'user',
+            content: `以下の商品名について、SNS投稿で使う一言のうんちく・豆知識を40〜60文字で1つ生成してください。硬すぎず、親しみやすい口調で。商品名：${title}`,
+          }],
+        }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error?.message || `APIエラー ${res.status}`);
+      }
+
+      const data = await res.json();
+      document.getElementById('description').value = data.content[0].text.trim();
+      setStatus('✓ うんちくを生成しました', 'success');
+    } catch (e) {
+      setStatus(`エラー: ${e.message}`, 'error');
+    } finally {
+      btn.textContent = '✨ うんちく生成';
+      btn.disabled = false;
+    }
+  });
+
   // 投稿ボタン → Pinterest の投稿URLを新しいタブで開く
   document.getElementById('btn-post').addEventListener('click', async () => {
     const imageUrl    = document.getElementById('image-url').value.trim();
