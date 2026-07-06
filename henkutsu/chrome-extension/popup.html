@@ -109,6 +109,22 @@
     .link-badge.amazon { background: #FF9900; color: #111; }
     .link-badge.rakuten { background: #BF0000; color: #fff; }
 
+    #btn-unchiku {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      background: #fff;
+      color: #6b4fbb;
+      border: 1.5px solid #6b4fbb;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    #btn-unchiku:hover { background: #6b4fbb; color: #fff; }
+    #btn-unchiku:disabled { border-color: #ccc; color: #ccc; cursor: not-allowed; }
+
     #btn-post {
       width: 100%;
       margin-top: 14px;
@@ -161,6 +177,8 @@
     <label>商品タイトル</label>
     <input type="text" id="title" placeholder="例: ワイヤレスイヤホン Anker Q20i">
   </div>
+
+  <button id="btn-unchiku">✨ うんちく生成</button>
 
   <div class="field">
     <label>説明文</label>
