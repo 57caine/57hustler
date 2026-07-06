@@ -23,36 +23,81 @@ const KYUSEI: Record<number, { name: string; short: string; emoji: string; eleme
   9: { name: '九紫火星', short: '九紫', emoji: '🔴', element: '火', keywords: ['明晰', '名誉', '学問'] },
 };
 
+const POSITION_MEANINGS: Record<number, { name: string; direction: string; meaning: string }> = {
+  1: { name: '坎宮', direction: '北',   meaning: '苦難の中の知恵・真の才能が試される・水の流れに乗る' },
+  2: { name: '坤宮', direction: '南西', meaning: '忍耐・地道な積み重ね・縁の下の力持ち' },
+  3: { name: '震宮', direction: '東',   meaning: '動く・始める・積極行動が吉・発言が力になる' },
+  4: { name: '巽宮', direction: '東南', meaning: '縁・信用・コミュニケーション・風のように広がる' },
+  5: { name: '中宮', direction: '中央', meaning: '影響力最大・変化の核心・動きが大きく出る' },
+  6: { name: '乾宮', direction: '北西', meaning: '権威・天の助け・完成期・リーダーシップ発揮' },
+  7: { name: '兌宮', direction: '西',   meaning: '喜び・交際・金運・口から縁が生まれる' },
+  8: { name: '艮宮', direction: '北東', meaning: '内に蓄える・変革の準備期・山のように待つ' },
+  9: { name: '離宮', direction: '南',   meaning: '火の輝き・表現・名誉・発信が実を結ぶ' },
+};
+
 function getDailyStar(): number {
   const jstStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
   const diff = Math.round((new Date(jstStr).getTime() - new Date('2024-01-06').getTime()) / 86400000);
   return ((1 - 1 - diff % 9 + 900) % 9) + 1;
 }
 
-async function generateOneLiners(dailyStarNum: number): Promise<Record<number, string>> {
+function getYearlyStar(year: number): number {
+  return ((4 - 1 - (year - 2024) % 9 + 900) % 9) + 1;
+}
+
+function getMonthlyStar(): number {
+  const jstStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
+  const year  = parseInt(jstStr.slice(0, 4));
+  const month = parseInt(jstStr.slice(5, 7));
+  // 寅月（2月）の月盤中宮: 年盤1,4,7→8 / 2,5,8→5 / 3,6,9→2
+  const febStar = [8, 5, 2][(getYearlyStar(year) - 1) % 3];
+  // 月オフセット（2月=0, 3月=1, …, 1月=11）
+  const offset = month >= 2 ? month - 2 : month + 10;
+  return ((febStar - 1 - offset + 900) % 9) + 1;
+}
+
+// 日盤で星kが入る宮のインデックス（1-9）
+function getStarPositionIndex(k: number, dailyStar: number): number {
+  return ((k - dailyStar + 13) % 9) + 1;
+}
+
+async function generateOneLiners(dailyStarNum: number, monthlyStarNum: number): Promise<Record<number, string>> {
   const client = new Anthropic();
-  const dailyStar = KYUSEI[dailyStarNum];
+  const dailyStar   = KYUSEI[dailyStarNum];
+  const monthlyStar = KYUSEI[monthlyStarNum];
   const dateStr = new Date().toLocaleDateString('ja-JP', {
     year: 'numeric', month: 'long', day: 'numeric', weekday: 'long', timeZone: 'Asia/Tokyo',
   });
 
-  const starList = Object.entries(KYUSEI)
-    .map(([n, s]) => `${n}（${s.name}）: ${s.element}・${s.keywords.join('・')}`)
-    .join('\n');
+  // 各星の日盤回座情報
+  const positionInfo = Array.from({ length: 9 }, (_, i) => {
+    const k = i + 1;
+    const pos = POSITION_MEANINGS[getStarPositionIndex(k, dailyStarNum)];
+    return `  ${KYUSEI[k].short}（${KYUSEI[k].element}）→ ${pos.name}（${pos.direction}）: ${pos.meaning}`;
+  }).join('\n');
 
   const message = await client.messages.create({
     model: 'claude-sonnet-4-6',
     max_tokens: 400,
-    system: '九星気学に詳しいおじさんです。今日の日盤中宮星を踏まえ、各星への短いメッセージを生成します。',
+    system: '九星気学に詳しいおじさんです。月盤・日盤の回座宮を踏まえた具体的なアドバイスを生成します。象意の言い換えは禁止。',
     messages: [{
       role: 'user',
-      content: `今日（${dateStr}）の日盤中宮は「${dailyStar.name}」です。
+      content: `今日（${dateStr}）
+月盤中宮：${monthlyStar.name}
+日盤中宮：${dailyStar.name}
 
-この日のエネルギーを踏まえて、各星（1〜9）の今日の一言を**10文字以内**で出力してください。
-体言止め・命令形・短い行動ヒントのいずれかで。ですます調不要。
+各星の本日の日盤回座宮：
+${positionInfo}
 
-各星の特性：
-${starList}
+月盤「${monthlyStar.name}」＋ 各星の回座宮の組み合わせから、
+その星が今日「具体的にどんな状況・行動に置かれているか」を読み取り、
+10文字以内の一言を生成してください。
+
+【厳守】
+- 象意の言い換えは絶対NG。「地盤を固める」「じっくり取り組む」などは禁止
+- 行動・場面・注意点で具体的に
+  良い例：「午後に動くと吉」「メモを惜しまず」「頼む前に整理」
+- 体言止め・命令形・短い行動ヒントのいずれか。ですます調不要
 
 以下のJSONのみ出力（前置き不要）：
 {"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":"","9":""}`,
@@ -112,11 +157,12 @@ async function main() {
   console.log(`=== 九星気学まとめ投稿開始${dryRun ? '（DRY RUN）' : ''} ===`);
   if (!dryRun && (!USER_ID || !ACCESS_TOKEN)) throw new Error('THREADS_USER_ID と THREADS_ACCESS_TOKEN を設定してください');
 
-  const dailyStarNum = getDailyStar();
-  console.log(`本日の日盤中宮: ${KYUSEI[dailyStarNum].name}`);
+  const dailyStarNum   = getDailyStar();
+  const monthlyStarNum = getMonthlyStar();
+  console.log(`本日の日盤中宮: ${KYUSEI[dailyStarNum].name} / 月盤中宮: ${KYUSEI[monthlyStarNum].name}`);
 
   console.log('Claude API で各星の一言を生成中...');
-  const oneLiners = await generateOneLiners(dailyStarNum);
+  const oneLiners = await generateOneLiners(dailyStarNum, monthlyStarNum);
   const text = buildPostText(dailyStarNum, oneLiners);
 
   console.log('--- 生成テキスト ---');
