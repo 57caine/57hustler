@@ -2,7 +2,7 @@ name: Threads 夜中のおじさん 自動投稿
 
 on:
   schedule:
-    - cron: '0 13 * * *'   # 毎日 JST 22:00 (UTC 13:00)
+    - cron: '0 23,3,7,11,13,19 * * *'   # 1日6回 JST 08:00/12:00/16:00/20:00/22:00/04:00
   workflow_dispatch:
 
 jobs:
