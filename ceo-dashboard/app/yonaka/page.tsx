@@ -1,6 +1,16 @@
 'use client';
 import { useState } from 'react';
 
+const CATEGORIES = [
+  { key: 'ミックス',     label: '🌀 ミックス' },
+  { key: '日常の気づき', label: '🌿 日常' },
+  { key: '日本神事',    label: '⛩️ 神事' },
+  { key: '量子',       label: '🔬 量子' },
+  { key: '宇宙',       label: '🌌 宇宙' },
+  { key: 'オカルト',    label: '🌙 オカルト' },
+  { key: '都市伝説',    label: '🕵️ 都市伝説' },
+];
+
 function Card({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
     <div className={`rounded-xl p-4 ${className}`}
@@ -12,6 +22,7 @@ function Card({ children, className = '' }: { children: React.ReactNode; classNa
 
 export default function YonakaPage() {
   const [hint, setHint] = useState('');
+  const [category, setCategory] = useState('ミックス');
   const [loading, setLoading] = useState(false);
   const [history, setHistory] = useState<string[]>([]);
   const [error, setError] = useState('');
@@ -24,7 +35,7 @@ export default function YonakaPage() {
       const res = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ hint: hint.trim() || undefined }),
+        body: JSON.stringify({ hint: hint.trim() || undefined, category }),
       });
       const data = await res.json() as { text?: string; error?: string };
       if (!res.ok || data.error) throw new Error(data.error ?? 'Unknown error');
@@ -49,7 +60,27 @@ export default function YonakaPage() {
       </h1>
 
       <Card>
-        <div className="space-y-3">
+        <div className="space-y-4">
+          <div>
+            <label className="text-xs mb-2 block" style={{ color: 'var(--muted)' }}>
+              カテゴリ
+            </label>
+            <div className="flex flex-wrap gap-2">
+              {CATEGORIES.map(c => (
+                <button
+                  key={c.key}
+                  onClick={() => setCategory(c.key)}
+                  className="px-3 py-1.5 rounded-full text-xs font-medium transition-all"
+                  style={{
+                    background: category === c.key ? 'var(--accent)' : 'var(--bg)',
+                    color: category === c.key ? '#fff' : 'var(--muted)',
+                    border: `1px solid ${category === c.key ? 'var(--accent)' : 'var(--border)'}`,
+                  }}>
+                  {c.label}
+                </button>
+              ))}
+            </div>
+          </div>
           <div>
             <label className="text-xs mb-1 block" style={{ color: 'var(--muted)' }}>
               テーマヒント（省略可）
@@ -58,7 +89,7 @@ export default function YonakaPage() {
               type="text"
               value={hint}
               onChange={e => setHint(e.target.value)}
-              placeholder="例：鳥居、量子もつれ、夢..."
+              placeholder="例：七夕、梅雨、鳥居..."
               onKeyDown={e => e.key === 'Enter' && !loading && generate()}
               className="w-full rounded-lg px-3 py-2 text-sm outline-none"
               style={{
