@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 const links = [
   { href: '/',        label: '📊 ダッシュボード' },
   { href: '/yonaka',  label: '🌙 夜中のおじさん' },
+  { href: '/fx',      label: '📈 FXツール' },
 ];
 
 export default function Nav() {
