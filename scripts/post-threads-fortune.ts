@@ -91,13 +91,15 @@ ${positionInfo}
 
 月盤「${monthlyStar.name}」＋ 各星の回座宮の組み合わせから、
 その星が今日「具体的にどんな状況・行動に置かれているか」を読み取り、
-10文字以内の一言を生成してください。
+各本命星の一言を生成してください。
 
 【厳守】
 - 象意の言い換えは絶対NG。「地盤を固める」「じっくり取り組む」などは禁止
-- 行動・場面・注意点で具体的に
-  良い例：「午後に動くと吉」「メモを惜しまず」「頼む前に整理」
-- 体言止め・命令形・短い行動ヒントのいずれか。ですます調不要
+- 8文字以内・体言止めで終わること（「〜が吉」「〜の日」「〜に注意」等）
+- 動詞で終わらない（「〜する」「〜変わる」「〜答える」はNG）
+- 必ず完結した一言にする（途中で切れても意味が通じる形はNG）
+- 良い例：「深夜の縁が動く日」「朝イチの発信が吉」「頼む前に整理を」
+- NG例：「朝イチの一声で流れが」「深夜の問い合わせに答」
 
 以下のJSONのみ出力（前置き不要）：
 {"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":"","9":""}`,
@@ -106,7 +108,7 @@ ${positionInfo}
 
   const raw = (message.content[0] as { type: string; text: string }).text;
   const json = JSON.parse(raw.replace(/```json\n?|\n?```/g, '').trim()) as Record<string, string>;
-  return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v).slice(0, 10)]));
+  return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v).slice(0, 8)]));
 }
 
 function buildPostText(dailyStarNum: number, oneLiners: Record<number, string>): string {
