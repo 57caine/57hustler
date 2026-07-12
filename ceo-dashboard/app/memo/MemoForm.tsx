@@ -17,11 +17,13 @@ export default function MemoForm() {
   const [category, setCategory] = useState<Category>('other');
   const [state, setState] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
   const [listening, setListening] = useState(false);
-  const recRef = useRef<SpeechRecognition | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const recRef = useRef<{ stop: () => void } | null>(null);
 
   function toggleVoice() {
-    const SpeechRec = (window as unknown as Record<string, unknown>).SpeechRecognition as typeof SpeechRecognition
-      || (window as unknown as Record<string, unknown>).webkitSpeechRecognition as typeof SpeechRecognition;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const w = window as any;
+    const SpeechRec = w.SpeechRecognition || w.webkitSpeechRecognition;
     if (!SpeechRec) { alert('このブラウザは音声入力に対応していません'); return; }
 
     if (listening) {
@@ -30,17 +32,18 @@ export default function MemoForm() {
       return;
     }
 
-    const rec = new SpeechRec();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const rec: any = new SpeechRec();
     rec.lang = 'ja-JP';
     rec.continuous = true;
     rec.interimResults = false;
-    rec.onresult = (e) => {
-      const t = Array.from(e.results).map(r => r[0].transcript).join('');
+    rec.onresult = (e: { results: { [i: number]: { [j: number]: { transcript: string } } } }) => {
+      const t = Array.from(Object.values(e.results)).map((r: { [j: number]: { transcript: string } }) => r[0].transcript).join('');
       setText(prev => (prev ? prev + '　' : '') + t);
     };
     rec.onend = () => setListening(false);
     rec.start();
-    recRef.current = rec as unknown as SpeechRecognition;
+    recRef.current = rec;
     setListening(true);
   }
 
