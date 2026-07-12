@@ -1,0 +1,35 @@
+{
+  "weekStart": "2026-07-06",
+  "weekEnd": "2026-07-13",
+  "generatedAt": "2026-07-12T22:41:16.617Z",
+  "posts": {
+    "yonaka": 35,
+    "column": 14,
+    "total": 49
+  },
+  "actions": {
+    "total": 100,
+    "success": 84,
+    "byWorkflow": {
+      "週次レポート自動生成": 1,
+      "Instagram 自動投稿": 8,
+      "Threads 占い 日次自動投稿": 6,
+      "価格データ・アフィリエイトリンク自動更新": 17,
+      "Threads 夜中のおじさん 自動投稿": 30,
+      "Threads 夜間コラム自動投稿": 6,
+      "Deploy CEO Dashboard to Vercel": 7,
+      "henkutsu 海外商品リサーチ": 4,
+      "仕組み名鑑 自動索引更新": 4,
+      "Threads 一文考察 自動投稿": 6,
+      "フィードバック蒸留": 1,
+      "X 自動投稿": 5,
+      "Threads 昼間コラム自動投稿": 5
+    }
+  },
+  "completedTasks": [],
+  "nextWeekTasks": [
+    "note第8回作成・公開",
+    "Instagram投稿開始（週2本〜）"
+  ],
+  "summary": "# 57hustler社 週次レポート（2026-07-06～2026-07-13）\n\n今週はThreads投稿35本、コラム14本を公開し、GitHub Actionsを100回実行（成功率84%）しました。継続的なコンテンツ配信とシステム運用を着実に進めています。来週はnote第8回の作成・公開とInstagram投稿開始（週2本～）を重点に、マルチプラットフォーム展開を加速させます。"
+}
