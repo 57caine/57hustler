@@ -2,13 +2,14 @@
  * henkutsuリサーチbot
  * Kickstarter / Product Hunt / Reddit r/shutupandtakemymoney から
  * 日本未上陸のニッチ商品を自動収集し data/henkutsu-candidates.json に追記する。
- * GitHub Actions で月・水・金 JST 09:00 に実行。
  */
 
 import Anthropic from '@anthropic-ai/sdk';
 import * as fs from 'fs';
 import * as path from 'path';
 import { chromium } from 'playwright';
+
+const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36';
 
 interface RawItem {
   title: string;
@@ -39,112 +40,205 @@ interface CandidatesFile {
   candidates: HenkutsuCandidate[];
 }
 
-// ── Reddit (JSON API) ─────────────────────────────────────────────────────────
+// ── Reddit (Playwright でbot検知を回避) ───────────────────────────────────────
 
-async function fetchReddit(): Promise<RawItem[]> {
-  try {
-    const res = await fetch(
-      'https://www.reddit.com/r/shutupandtakemymoney/hot.json?limit=40',
-      { headers: { 'User-Agent': '57hustler-henkutsu-bot/1.0' } }
-    );
-    if (!res.ok) { console.warn('Reddit fetch failed:', res.status); return []; }
-
-    const json = await res.json() as {
-      data: { children: { data: { title: string; selftext: string; url: string; permalink: string } }[] }
-    };
-
-    return json.data.children
-      .filter(c => c.data.url && !c.data.url.includes('reddit.com'))
-      .map(c => ({
-        title: c.data.title,
-        description: c.data.selftext?.slice(0, 300) || c.data.title,
-        url: c.data.url,
-        source: 'reddit' as const,
-      }));
-  } catch (e) {
-    console.warn('Reddit error:', e);
-    return [];
-  }
-}
-
-// ── Product Hunt (Playwright) ─────────────────────────────────────────────────
-
-async function fetchProductHunt(browser: Awaited<ReturnType<typeof chromium.launch>>): Promise<RawItem[]> {
+async function fetchReddit(browser: Awaited<ReturnType<typeof chromium.launch>>): Promise<RawItem[]> {
   const page = await browser.newPage();
+  await page.setExtraHTTPHeaders({ 'User-Agent': UA });
   try {
-    await page.goto('https://www.producthunt.com/', { waitUntil: 'domcontentloaded', timeout: 30000 });
+    // JSON APIをブラウザ経由でアクセス（GitHub ActionsのIPでもblockされにくい）
+    await page.goto(
+      'https://www.reddit.com/r/shutupandtakemymoney/hot.json?limit=40&raw_json=1',
+      { waitUntil: 'domcontentloaded', timeout: 25000 }
+    );
+    await page.waitForTimeout(1500);
+
+    const text = await page.evaluate(() => {
+      const pre = document.querySelector('pre');
+      return pre ? pre.textContent : document.body.innerText;
+    });
+
+    if (text) {
+      const json = JSON.parse(text.trim()) as {
+        data: { children: { data: { title: string; selftext: string; url: string } }[] }
+      };
+      const items = (json.data?.children ?? [])
+        .filter(c => c.data?.url && !c.data.url.includes('reddit.com') && !c.data.url.includes('imgur.com') && c.data.url.startsWith('http'))
+        .slice(0, 25)
+        .map(c => ({
+          title: c.data.title,
+          description: (c.data.selftext || c.data.title).slice(0, 300),
+          url: c.data.url,
+          source: 'reddit' as const,
+        }));
+      console.log(`  Reddit JSON API: ${items.length}件`);
+      if (items.length > 0) return items;
+    }
+  } catch (e) {
+    console.warn('  Reddit JSON APIフォールバックへ:', (e as Error).message);
+  }
+
+  // フォールバック: 実際のページをスクレイピング
+  try {
+    await page.goto('https://www.reddit.com/r/shutupandtakemymoney/', {
+      waitUntil: 'networkidle',
+      timeout: 30000,
+    });
     await page.waitForTimeout(3000);
 
     const items = await page.evaluate(() => {
-      const results: { title: string; description: string; url: string }[] = [];
-      // Product Hunt product cards typically have data-test or specific class patterns
-      const cards = document.querySelectorAll('[data-test="product-item"], .styles_item__Dk_nz, [class*="product"]');
-      cards.forEach(card => {
-        const titleEl = card.querySelector('a[data-test="product-name"], h3, h2');
-        const descEl  = card.querySelector('p, [class*="tagline"]');
-        const linkEl  = card.querySelector('a[href*="/posts/"]');
-        if (titleEl && linkEl) {
-          results.push({
-            title: titleEl.textContent?.trim() || '',
-            description: descEl?.textContent?.trim() || '',
-            url: 'https://www.producthunt.com' + (linkEl.getAttribute('href') || ''),
-          });
+      const results: { title: string; description: string; url: string; source: string }[] = [];
+      const seen = new Set<string>();
+
+      // 新Reddit: shreddit-post コンポーネント
+      document.querySelectorAll('shreddit-post').forEach(el => {
+        const title = el.getAttribute('post-title') || el.querySelector('h2, h3')?.textContent?.trim() || '';
+        const permalink = el.getAttribute('permalink') || '';
+        const url = el.getAttribute('content-href') || (permalink ? `https://www.reddit.com${permalink}` : '');
+        if (title && url && !seen.has(url)) {
+          seen.add(url);
+          results.push({ title, description: title, url, source: 'reddit' });
         }
       });
+
+      if (results.length === 0) {
+        // 旧Reddit / その他レイアウト
+        document.querySelectorAll('[data-testid="post-container"], article, .Post').forEach(el => {
+          const titleEl = el.querySelector('h3, [data-testid="post-title"]');
+          const linkEl = el.querySelector('a[href*="/comments/"]');
+          const title = titleEl?.textContent?.trim() || '';
+          const href = linkEl?.getAttribute('href') || '';
+          if (title && href && !seen.has(href)) {
+            seen.add(href);
+            const url = href.startsWith('http') ? href : `https://www.reddit.com${href}`;
+            results.push({ title, description: title, url, source: 'reddit' });
+          }
+        });
+      }
+
       return results.slice(0, 20);
     });
 
-    return items
-      .filter(i => i.title)
-      .map(i => ({ ...i, source: 'producthunt' as const }));
+    console.log(`  Reddit scrape fallback: ${items.length}件`);
+    return items.filter(i => i.title) as RawItem[];
   } catch (e) {
-    console.warn('Product Hunt error:', e);
+    console.warn('  Reddit scrape error:', (e as Error).message);
     return [];
   } finally {
     await page.close();
   }
 }
 
-// ── Kickstarter (Playwright) ──────────────────────────────────────────────────
+// ── Product Hunt ──────────────────────────────────────────────────────────────
 
-async function fetchKickstarter(browser: Awaited<ReturnType<typeof chromium.launch>>): Promise<RawItem[]> {
+async function fetchProductHunt(browser: Awaited<ReturnType<typeof chromium.launch>>): Promise<RawItem[]> {
   const page = await browser.newPage();
+  await page.setExtraHTTPHeaders({ 'User-Agent': UA });
   try {
-    await page.goto(
-      'https://www.kickstarter.com/discover/advanced?sort=newest&seed=2357161&page=1',
-      { waitUntil: 'domcontentloaded', timeout: 30000 }
-    );
-    await page.waitForTimeout(3000);
+    await page.goto('https://www.producthunt.com/', { waitUntil: 'networkidle', timeout: 35000 });
+    await page.waitForTimeout(5000);
 
     const items = await page.evaluate(() => {
-      const results: { title: string; description: string; url: string; price?: string }[] = [];
-      const cards = document.querySelectorAll('[class*="project-card"], .ProjectCard');
-      cards.forEach(card => {
-        const titleEl = card.querySelector('h3, h2, [class*="title"]');
-        const descEl  = card.querySelector('p, [class*="description"], [class*="blurb"]');
-        const linkEl  = card.querySelector('a[href*="/projects/"]');
-        const goalEl  = card.querySelector('[class*="goal"], [class*="money"]');
-        if (titleEl && linkEl) {
+      const results: { title: string; description: string; url: string; source: string }[] = [];
+      const seen = new Set<string>();
+
+      // /posts/ へのリンクを全収集して親要素からタイトルを取得
+      document.querySelectorAll('a[href^="/posts/"]').forEach(link => {
+        const href = link.getAttribute('href') || '';
+        const pathPart = href.split('?')[0];
+        if (!pathPart || seen.has(pathPart)) return;
+        seen.add(pathPart);
+
+        // 最大5階層上を探索してテキストを取得
+        let el: Element | null = link;
+        let title = '';
+        let desc  = '';
+        for (let i = 0; i < 6 && !title; i++) {
+          el = el?.parentElement || null;
+          if (!el) break;
+          const h = el.querySelector('h2, h3, [class*="name"], [class*="title"]');
+          if (h?.textContent?.trim()) title = h.textContent.trim();
+          const p = el.querySelector('p, [class*="tagline"]');
+          if (p?.textContent?.trim()) desc = p.textContent.trim();
+        }
+        if (!title) title = link.textContent?.trim() || '';
+        if (title && title.length > 3) {
           results.push({
-            title: titleEl.textContent?.trim() || '',
-            description: descEl?.textContent?.trim() || '',
-            url: linkEl.getAttribute('href') || '',
-            price: goalEl?.textContent?.trim(),
+            title,
+            description: desc || title,
+            url: `https://www.producthunt.com${pathPart}`,
+            source: 'producthunt',
           });
         }
       });
+
       return results.slice(0, 20);
     });
 
-    return items
-      .filter(i => i.title)
-      .map(i => ({
-        ...i,
-        url: i.url.startsWith('http') ? i.url : `https://www.kickstarter.com${i.url}`,
-        source: 'kickstarter' as const,
-      }));
+    console.log(`  Product Hunt: ${items.length}件`);
+    return items as RawItem[];
   } catch (e) {
-    console.warn('Kickstarter error:', e);
+    console.warn('  Product Hunt error:', (e as Error).message);
+    return [];
+  } finally {
+    await page.close();
+  }
+}
+
+// ── Kickstarter ───────────────────────────────────────────────────────────────
+
+async function fetchKickstarter(browser: Awaited<ReturnType<typeof chromium.launch>>): Promise<RawItem[]> {
+  const page = await browser.newPage();
+  await page.setExtraHTTPHeaders({ 'User-Agent': UA });
+  try {
+    // 新着ガジェット系プロジェクトをページ
+    await page.goto(
+      'https://www.kickstarter.com/discover/advanced?category_id=16&sort=newest&seed=12345',
+      { waitUntil: 'networkidle', timeout: 35000 }
+    );
+    await page.waitForTimeout(4000);
+
+    const items = await page.evaluate(() => {
+      const results: { title: string; description: string; url: string; price?: string; source: string }[] = [];
+      const seen = new Set<string>();
+
+      // キックスターターの現行HTML: /projects/ へのaタグ
+      document.querySelectorAll('a[href*="/projects/"]').forEach(link => {
+        const href = link.getAttribute('href') || '';
+        const base = href.split('?')[0].replace(/\/$/, '');
+        if (!base.includes('/projects/') || seen.has(base)) return;
+        seen.add(base);
+
+        const url = base.startsWith('http') ? base : `https://www.kickstarter.com${base}`;
+
+        // 親要素からタイトルと説明を取得
+        let el: Element | null = link;
+        let title = '';
+        let desc  = '';
+        let price = '';
+        for (let i = 0; i < 6; i++) {
+          el = el?.parentElement || null;
+          if (!el) break;
+          const h = el.querySelector('h3, h2, [class*="name"], [class*="title"]');
+          if (h?.textContent?.trim()) title = title || h.textContent.trim();
+          const p = el.querySelector('p, [class*="blurb"], [class*="description"]');
+          if (p?.textContent?.trim()) desc = desc || p.textContent.trim();
+          const m = el.querySelector('[class*="money"], [class*="goal"], [class*="pledge"]');
+          if (m?.textContent?.trim()) price = price || m.textContent.trim();
+        }
+        if (!title) title = link.textContent?.trim() || '';
+        if (title && title.length > 3) {
+          results.push({ title, description: desc || title, url, price: price || undefined, source: 'kickstarter' });
+        }
+      });
+
+      return results.slice(0, 20);
+    });
+
+    console.log(`  Kickstarter: ${items.length}件`);
+    return items as RawItem[];
+  } catch (e) {
+    console.warn('  Kickstarter error:', (e as Error).message);
     return [];
   } finally {
     await page.close();
@@ -168,12 +262,12 @@ async function filterWithClaude(items: RawItem[]): Promise<ClaudeItem[]> {
 
   const client = new Anthropic();
   const itemList = items.map((item, i) =>
-    `[${i}] ${item.source.toUpperCase()} | ${item.title}\n    ${item.description?.slice(0, 150)}`
+    `[${i}] ${item.source.toUpperCase()} | ${item.title}\n    ${item.description?.slice(0, 150) || ''}`
   ).join('\n');
 
   const msg = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
-    max_tokens: 2000,
+    max_tokens: 3000,
     messages: [{
       role: 'user',
       content: `あなたは日本の越境EC・ガジェットバイヤー「henkutsu」の商品リサーチャーです。
@@ -182,7 +276,7 @@ async function filterWithClaude(items: RawItem[]): Promise<ClaudeItem[]> {
 選定基準：
 - 日本のAmazon/楽天に「まだない」または「なじみの薄い」ニッチ商品
 - ガジェット・日用品・アウトドア・ライフスタイル系
-- 価格帯 $20-$300 が理想（外れてもよい）
+- 価格帯 $20〜$300 が理想（外れてもよい）
 - 「これ何？」「面白い！」と思わせる独自性がある
 - 物議を醸すもの・成人向けは除外
 
@@ -196,14 +290,14 @@ ${itemList}
     "score": 8,
     "category": "ガジェット",
     "descriptionJa": "日本にまだないマグネット式充電ケーブル。向きを気にせずパチッとはまる",
-    "postDraft": "これ、日本にまだないんだけど…\\n\\n磁気でパチってくっつく充電ケーブル。\\n向きとか関係ない。\\n差すたびにイライラしてた人に届いてほしい。\\n\\nKickstarterで話題になってる🔥",
+    "postDraft": "これ、日本にまだないんだけど…\\n\\n磁気でパチってくっつく充電ケーブル。\\n向きとか関係ない。\\nKickstarterで話題🔥",
     "reason": "日本未上陸の磁気充電ケーブル。独自形状で差別化あり",
     "keep": true
   }
 ]
 
 スコア10点満点。5点以上かつkeep:trueのみ採用。全${items.length}件に対して必ず配列を返すこと。
-postDraftはhenkutsu（海外ニッチ商品紹介アカウント）らしいThreads投稿文（100〜150字、改行あり）。`,
+postDraftはhenkutsu（海外ニッチ商品紹介）らしいThreads投稿文（100〜150字、改行あり）。`,
     }],
   });
 
@@ -228,30 +322,26 @@ async function main() {
 
   const existingUrls = new Set(existing.candidates.map(c => c.url));
 
-  console.log('Reddit 取得中...');
-  const redditItems = await fetchReddit();
-  console.log(`  Reddit: ${redditItems.length}件`);
-
-  const browser = await chromium.launch({ headless: true });
-  let phItems: RawItem[] = [];
-  let ksItems: RawItem[] = [];
+  const browser = await chromium.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+  let allItems: RawItem[] = [];
 
   try {
+    console.log('Reddit 取得中...');
+    const redditItems = await fetchReddit(browser);
+
     console.log('Product Hunt 取得中...');
-    phItems = await fetchProductHunt(browser);
-    console.log(`  Product Hunt: ${phItems.length}件`);
+    const phItems     = await fetchProductHunt(browser);
 
     console.log('Kickstarter 取得中...');
-    ksItems = await fetchKickstarter(browser);
-    console.log(`  Kickstarter: ${ksItems.length}件`);
+    const ksItems     = await fetchKickstarter(browser);
+
+    allItems = [...redditItems, ...phItems, ...ksItems]
+      .filter(item => item.title && item.url && !existingUrls.has(item.url));
+
+    console.log(`新規候補合計: ${allItems.length}件（重複除外済み）`);
   } finally {
     await browser.close();
   }
-
-  const allItems = [...redditItems, ...phItems, ...ksItems]
-    .filter(item => item.title && item.url && !existingUrls.has(item.url));
-
-  console.log(`新規候補: ${allItems.length}件（重複除外済み）`);
 
   if (allItems.length === 0) {
     console.log('新規アイテムなし。終了。');
@@ -287,13 +377,11 @@ async function main() {
     addedCount++;
   });
 
-  // 最大200件まで保持
   existing.candidates = existing.candidates.slice(0, 200);
   existing.lastUpdated = now;
 
   fs.writeFileSync(dataPath, JSON.stringify(existing, null, 2), 'utf-8');
   console.log(`✓ ${addedCount}件の新候補を追加（合計: ${existing.candidates.length}件）`);
-  console.log(`  出力: ${dataPath}`);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
