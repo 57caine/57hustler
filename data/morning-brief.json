@@ -1,26 +1,124 @@
 {
-  "date": "2026-07-12",
-  "generatedAt": "2026-07-12T07:00:00+09:00",
+  "date": "2026-07-13",
+  "generatedAt": "2026-07-12T22:42:55.796Z",
   "todayAiStaff": [
-    { "time": "04:00", "name": "夜中のおじさん", "task": "Threads投稿" },
-    { "time": "07:00", "name": "九星気学bot",   "task": "運勢まとめ投稿" },
-    { "time": "08:00", "name": "夜中のおじさん", "task": "Threads投稿" },
-    { "time": "12:00", "name": "コラムbot・夜中", "task": "Threads投稿2本" },
-    { "time": "16:00", "name": "夜中のおじさん", "task": "Threads投稿" },
-    { "time": "20:00", "name": "夜中のおじさん", "task": "Threads投稿" },
-    { "time": "21:00", "name": "コラムbot",      "task": "一文考察投稿" },
-    { "time": "22:00", "name": "夜中のおじさん", "task": "Threads投稿" },
-    { "time": "23:00", "name": "コラムbot",      "task": "コラム夜投稿" }
+    {
+      "time": "04:00",
+      "name": "夜中のおじさん",
+      "task": "Threads投稿"
+    },
+    {
+      "time": "07:00",
+      "name": "九星気学bot",
+      "task": "運勢まとめ投稿"
+    },
+    {
+      "time": "08:00",
+      "name": "夜中のおじさん",
+      "task": "Threads投稿"
+    },
+    {
+      "time": "12:00",
+      "name": "コラムbot・夜中",
+      "task": "Threads投稿2本"
+    },
+    {
+      "time": "16:00",
+      "name": "夜中のおじさん",
+      "task": "Threads投稿"
+    },
+    {
+      "time": "20:00",
+      "name": "夜中のおじさん",
+      "task": "Threads投稿"
+    },
+    {
+      "time": "21:00",
+      "name": "コラムbot",
+      "task": "一文考察投稿"
+    },
+    {
+      "time": "22:00",
+      "name": "夜中のおじさん",
+      "task": "Threads投稿"
+    },
+    {
+      "time": "23:00",
+      "name": "コラムbot",
+      "task": "コラム夜投稿"
+    }
   ],
-  "postsToday": 0,
+  "postsToday": 1,
   "actionsStatus": {
-    "total": 0,
-    "success": 0,
-    "failed": 0,
-    "runs": []
+    "total": 30,
+    "success": 25,
+    "failed": 4,
+    "runs": [
+      {
+        "name": "朝の司令書生成",
+        "status": null,
+        "time": "2026-07-12T22:42:26Z"
+      },
+      {
+        "name": "週次レポート自動生成",
+        "status": "success",
+        "time": "2026-07-12T22:40:45Z"
+      },
+      {
+        "name": "Instagram 自動投稿",
+        "status": "failure",
+        "time": "2026-07-12T22:38:03Z"
+      },
+      {
+        "name": "Threads 占い 日次自動投稿",
+        "status": "success",
+        "time": "2026-07-12T22:36:46Z"
+      },
+      {
+        "name": "価格データ・アフィリエイトリンク自動更新",
+        "status": "success",
+        "time": "2026-07-12T21:56:38Z"
+      },
+      {
+        "name": "Threads 夜中のおじさん 自動投稿",
+        "status": "success",
+        "time": "2026-07-12T20:00:02Z"
+      },
+      {
+        "name": "Threads 夜間コラム自動投稿",
+        "status": "success",
+        "time": "2026-07-12T15:01:11Z"
+      },
+      {
+        "name": "価格データ・アフィリエイトリンク自動更新",
+        "status": "success",
+        "time": "2026-07-12T14:35:15Z"
+      },
+      {
+        "name": "Threads 夜中のおじさん 自動投稿",
+        "status": "success",
+        "time": "2026-07-12T14:22:20Z"
+      },
+      {
+        "name": "Deploy CEO Dashboard to Vercel",
+        "status": "success",
+        "time": "2026-07-12T14:14:17Z"
+      }
+    ]
   },
-  "urgent": ["note第8回作成・公開", "Instagram投稿開始（週2本〜）"],
-  "defer": ["Amazon Associates申請（売上3件後）"],
-  "confirm": [],
-  "summary": "初期データ。morning-brief.yml が実行されると自動更新されます。"
+  "urgent": [
+    "Instagram自動投稿の失敗原因を特定・修正（GitHub Actions失敗ログ確認）",
+    "note第8回の作成・公開を完了",
+    "Instagram投稿開始の実装確認（週2本ペースで定期配信開始）"
+  ],
+  "defer": [
+    "Amazon Associates申請（売上3件到達まで待機）",
+    "GitHub Actions全体の安定性向上（成功率83%を目指す）",
+    "CEO Dashboardの機能追加検討"
+  ],
+  "confirm": [
+    "Instagram投稿の自動化スケジュール確定（曜日・時間帯）",
+    "note第8回の内容テーマと公開プラットフォーム確認"
+  ],
+  "summary": "Instagram自動投稿失敗を即日対応。note第8回とInstagram定期配信を本日中に完結させる。"
 }
