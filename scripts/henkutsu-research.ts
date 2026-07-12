@@ -24,6 +24,8 @@ interface HenkutsuCandidate {
   source: 'kickstarter' | 'producthunt' | 'reddit';
   url: string;
   description: string;
+  descriptionJa: string;
+  postDraft: string;
   category: string;
   price?: string;
   score: number;
@@ -155,6 +157,8 @@ interface ClaudeItem {
   index: number;
   score: number;
   category: string;
+  descriptionJa: string;
+  postDraft: string;
   reason: string;
   keep: boolean;
 }
@@ -191,12 +195,15 @@ ${itemList}
     "index": 0,
     "score": 8,
     "category": "ガジェット",
+    "descriptionJa": "日本にまだないマグネット式充電ケーブル。向きを気にせずパチッとはまる",
+    "postDraft": "これ、日本にまだないんだけど…\\n\\n磁気でパチってくっつく充電ケーブル。\\n向きとか関係ない。\\n差すたびにイライラしてた人に届いてほしい。\\n\\nKickstarterで話題になってる🔥",
     "reason": "日本未上陸の磁気充電ケーブル。独自形状で差別化あり",
     "keep": true
   }
 ]
 
-スコア10点満点。5点以上かつkeep:trueのみ採用。全${items.length}件に対して必ず配列を返すこと。`,
+スコア10点満点。5点以上かつkeep:trueのみ採用。全${items.length}件に対して必ず配列を返すこと。
+postDraftはhenkutsu（海外ニッチ商品紹介アカウント）らしいThreads投稿文（100〜150字、改行あり）。`,
     }],
   });
 
@@ -268,6 +275,8 @@ async function main() {
       source: raw.source,
       url: raw.url,
       description: raw.description?.slice(0, 300) || '',
+      descriptionJa: r.descriptionJa || '',
+      postDraft: r.postDraft || '',
       category: r.category,
       price: raw.price,
       score: r.score,

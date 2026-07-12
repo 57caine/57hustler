@@ -1,3 +1,5 @@
+import ApproveButton from './ApproveButton';
+
 const RAW = 'https://raw.githubusercontent.com/57caine/57hustler/main/data';
 
 async function fetchJson<T>(path: string): Promise<T | null> {
@@ -8,7 +10,6 @@ async function fetchJson<T>(path: string): Promise<T | null> {
   } catch { return null; }
 }
 
-type CandidateStatus = 'new' | 'reviewed' | 'approved' | 'rejected';
 type Source = 'kickstarter' | 'producthunt' | 'reddit';
 
 interface HenkutsuCandidate {
@@ -17,12 +18,14 @@ interface HenkutsuCandidate {
   source: Source;
   url: string;
   description: string;
+  descriptionJa?: string;
+  postDraft?: string;
   category: string;
   price?: string;
   score: number;
   reason: string;
   addedAt: string;
-  status: CandidateStatus;
+  status: 'new' | 'reviewed' | 'approved' | 'rejected';
 }
 
 interface CandidatesFile {
@@ -30,18 +33,122 @@ interface CandidatesFile {
   candidates: HenkutsuCandidate[];
 }
 
+interface ApprovedFile {
+  lastUpdated: string;
+  approved: { id: string; title: string }[];
+}
+
 const SOURCE: Record<Source, { label: string; color: string; bg: string }> = {
-  kickstarter: { label: 'Kickstarter', color: '#05ce78', bg: 'rgba(5,206,120,0.12)' },
-  producthunt: { label: 'Product Hunt', color: '#da552f', bg: 'rgba(218,85,47,0.12)' },
-  reddit:      { label: 'Reddit',      color: '#ff4500', bg: 'rgba(255,69,0,0.12)'   },
+  kickstarter: { label: 'Kickstarter', color: '#05ce78', bg: 'rgba(5,206,120,0.1)'  },
+  producthunt: { label: 'Product Hunt', color: '#da552f', bg: 'rgba(218,85,47,0.1)' },
+  reddit:      { label: 'Reddit',       color: '#ff6314', bg: 'rgba(255,99,20,0.1)' },
 };
 
-const STAT: Record<CandidateStatus, { label: string; color: string }> = {
-  new:      { label: '新着',   color: 'var(--accent)' },
-  reviewed: { label: '確認済', color: '#f59e0b'       },
-  approved: { label: '採用',   color: '#22c55e'       },
-  rejected: { label: '却下',   color: '#6b6b8a'       },
-};
+function ScoreBar({ score }: { score: number }) {
+  const color = score >= 8 ? '#22c55e' : score >= 6 ? '#f59e0b' : 'var(--accent)';
+  return (
+    <div className="flex items-center gap-2">
+      <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ background: 'var(--bg)' }}>
+        <div className="h-full rounded-full"
+          style={{ width: `${score * 10}%`, background: color, transition: 'width 0.3s' }} />
+      </div>
+      <span className="text-[10px] font-mono font-bold shrink-0" style={{ color }}>{score}/10</span>
+    </div>
+  );
+}
+
+function CandidateCard({ c, approvedIds }: { c: HenkutsuCandidate; approvedIds: Set<string> }) {
+  const src        = SOURCE[c.source];
+  const isApproved = approvedIds.has(c.id);
+
+  return (
+    <div className="rounded-xl overflow-hidden"
+      style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+
+      {/* Header */}
+      <div className="px-4 pt-4 pb-3">
+        <div className="flex items-start justify-between gap-3 mb-2">
+          <div className="flex-1 min-w-0">
+            <a href={c.url} target="_blank" rel="noopener noreferrer"
+              className="text-sm font-semibold leading-snug hover:underline block"
+              style={{ color: 'var(--text)' }}>
+              {c.title}
+            </a>
+          </div>
+          <div className="flex items-center gap-1.5 shrink-0 mt-0.5">
+            {c.price && (
+              <span className="text-[10px] font-mono font-bold" style={{ color: '#f59e0b' }}>
+                {c.price}
+              </span>
+            )}
+            <span className="text-[9px] px-1.5 py-0.5 rounded font-medium"
+              style={{ background: src.bg, color: src.color }}>{src.label}</span>
+          </div>
+        </div>
+
+        {/* 日本語説明 */}
+        {c.descriptionJa ? (
+          <p className="text-[11px] mb-2 leading-relaxed" style={{ color: 'var(--text)' }}>
+            {c.descriptionJa}
+          </p>
+        ) : c.description ? (
+          <p className="text-[11px] mb-2 leading-relaxed" style={{ color: 'var(--muted)' }}>
+            {c.description.slice(0, 140)}{c.description.length > 140 ? '…' : ''}
+          </p>
+        ) : null}
+
+        {/* スコアバー */}
+        <div className="mb-2">
+          <div className="text-[9px] mb-1" style={{ color: 'var(--muted)' }}>フィルタースコア</div>
+          <ScoreBar score={c.score} />
+        </div>
+
+        {/* カテゴリ */}
+        {c.category && (
+          <span className="inline-block text-[9px] px-1.5 py-0.5 rounded mb-2"
+            style={{ background: 'var(--bg)', color: 'var(--muted)', border: '1px solid var(--border)' }}>
+            {c.category}
+          </span>
+        )}
+      </div>
+
+      {/* 投稿文案 */}
+      {c.postDraft && (
+        <div className="mx-4 mb-3 rounded-lg px-3 py-2.5"
+          style={{ background: 'rgba(124,110,247,0.06)', border: '1px solid rgba(124,110,247,0.18)' }}>
+          <div className="text-[9px] font-bold mb-1.5 uppercase tracking-widest" style={{ color: 'var(--accent)' }}>
+            henkutsu 投稿文案
+          </div>
+          <p className="text-[11px] leading-relaxed" style={{ color: 'var(--text)', whiteSpace: 'pre-line' }}>
+            {c.postDraft}
+          </p>
+        </div>
+      )}
+
+      {/* Footer */}
+      <div className="px-4 pb-4 flex items-center justify-between gap-2">
+        <div className="text-[9px]" style={{ color: 'var(--muted)' }}>
+          {new Date(c.addedAt).toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo', month: 'short', day: 'numeric' })}
+          ｜<a href={c.url} target="_blank" rel="noopener noreferrer"
+            className="hover:underline ml-1" style={{ color: 'var(--accent)' }}>
+            元記事 →
+          </a>
+        </div>
+        {isApproved ? (
+          <span className="text-xs px-3 py-1.5 rounded-lg font-medium"
+            style={{ background: 'rgba(34,197,94,0.12)', color: '#22c55e', border: '1px solid rgba(34,197,94,0.3)' }}>
+            ✓ 承認済み
+          </span>
+        ) : (
+          <ApproveButton candidate={{
+            id: c.id, title: c.title, descriptionJa: c.descriptionJa,
+            postDraft: c.postDraft, url: c.url, source: c.source, score: c.score, price: c.price,
+          }} />
+        )}
+      </div>
+    </div>
+  );
+}
 
 function SLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -51,74 +158,11 @@ function SLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function ScoreDots({ score }: { score: number }) {
-  return (
-    <div className="flex gap-0.5">
-      {Array.from({ length: 10 }).map((_, i) => (
-        <span key={i} className="w-1.5 h-1.5 rounded-full"
-          style={{ background: i < score ? '#7c6ef7' : 'var(--border)' }} />
-      ))}
-    </div>
-  );
-}
-
-function CandidateCard({ c }: { c: HenkutsuCandidate }) {
-  const src  = SOURCE[c.source];
-  const stat = STAT[c.status];
-  return (
-    <div className="rounded-xl p-4" style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
-      <div className="flex items-start justify-between gap-2 mb-2">
-        <div className="flex-1 min-w-0">
-          <a href={c.url} target="_blank" rel="noopener noreferrer"
-            className="text-sm font-semibold leading-tight hover:underline"
-            style={{ color: 'var(--text)' }}>
-            {c.title}
-          </a>
-        </div>
-        <span className="text-[9px] px-1.5 py-0.5 rounded-full shrink-0 font-medium"
-          style={{ background: `${stat.color}20`, color: stat.color }}>
-          {stat.label}
-        </span>
-      </div>
-
-      <p className="text-[11px] mb-2 leading-relaxed" style={{ color: 'var(--muted)' }}>
-        {c.description.slice(0, 120)}{c.description.length > 120 ? '…' : ''}
-      </p>
-
-      <div className="text-[10px] mb-2 px-2 py-1.5 rounded"
-        style={{ background: 'rgba(124,110,247,0.08)', color: 'var(--accent)', borderLeft: '2px solid var(--accent)' }}>
-        {c.reason}
-      </div>
-
-      <div className="flex items-center justify-between flex-wrap gap-2">
-        <div className="flex items-center gap-2">
-          <span className="text-[10px] px-1.5 py-0.5 rounded font-medium"
-            style={{ background: src.bg, color: src.color }}>{src.label}</span>
-          {c.category && (
-            <span className="text-[10px] px-1.5 py-0.5 rounded"
-              style={{ background: 'var(--bg)', color: 'var(--muted)', border: '1px solid var(--border)' }}>
-              {c.category}
-            </span>
-          )}
-          {c.price && (
-            <span className="text-[10px] font-mono" style={{ color: '#f59e0b' }}>{c.price}</span>
-          )}
-        </div>
-        <div className="flex items-center gap-2">
-          <ScoreDots score={c.score} />
-          <span className="text-[10px] font-mono font-bold" style={{ color: 'var(--accent)' }}>{c.score}/10</span>
-        </div>
-      </div>
-
-      <div className="mt-2 text-[9px]" style={{ color: 'var(--muted)' }}>
-        {new Date(c.addedAt).toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo' })}
-      </div>
-    </div>
-  );
-}
-
 export default async function HenkutsuPage() {
-  const data = await fetchJson<CandidatesFile>('henkutsu-candidates.json');
+  const [data, approvedData] = await Promise.all([
+    fetchJson<CandidatesFile>('henkutsu-candidates.json'),
+    fetchJson<ApprovedFile>('henkutsu-approved.json'),
+  ]);
 
   if (!data || data.candidates.length === 0) {
     return (
@@ -126,95 +170,78 @@ export default async function HenkutsuPage() {
         <div className="text-4xl mb-3">🌍</div>
         <div className="text-sm">候補リストはまだありません。</div>
         <div className="text-xs mt-2">月・水・金 09:00 JST に自動収集されます。</div>
-        <div className="text-xs mt-1 font-mono">npx ts-node scripts/henkutsu-research.ts</div>
+        <div className="text-xs mt-1.5 font-mono px-4 py-2 rounded inline-block"
+          style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+          npx ts-node scripts/henkutsu-research.ts
+        </div>
       </div>
     );
   }
 
-  const { candidates } = data;
-  const newItems      = candidates.filter(c => c.status === 'new');
-  const approvedItems = candidates.filter(c => c.status === 'approved');
-  const reviewedItems = candidates.filter(c => c.status === 'reviewed');
-  const rejectedItems = candidates.filter(c => c.status === 'rejected');
+  const approvedIds = new Set((approvedData?.approved ?? []).map(a => a.id));
 
-  const topByScore = [...newItems].sort((a, b) => b.score - a.score).slice(0, 5);
+  // 今週の候補（直近7日）
+  const weekAgo   = Date.now() - 7 * 24 * 60 * 60 * 1000;
+  const thisWeek  = data.candidates.filter(c => new Date(c.addedAt).getTime() > weekAgo);
+
+  // スコア順ソート（却下除く）
+  const sorted = [...data.candidates]
+    .filter(c => c.status !== 'rejected')
+    .sort((a, b) => b.score - a.score);
 
   return (
     <div className="space-y-5" style={{ color: 'var(--text)' }}>
+
+      {/* ヘッダー */}
       <div>
         <div className="text-lg font-bold mb-0.5">henkutsu 海外商品候補</div>
         <div className="text-xs" style={{ color: 'var(--muted)' }}>
-          最終更新: {new Date(data.lastUpdated).toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo' })}
-          ｜月・水・金 09:00 JST 自動収集
+          月・水・金 09:00 JST 自動収集
         </div>
       </div>
 
       {/* サマリー */}
-      <div className="grid grid-cols-4 gap-2">
-        {[
-          { label: '総数',    v: candidates.length,  c: 'var(--text)'     },
-          { label: '新着',    v: newItems.length,     c: 'var(--accent)'   },
-          { label: '採用',    v: approvedItems.length, c: '#22c55e'        },
-          { label: '確認待', v: reviewedItems.length, c: '#f59e0b'         },
-        ].map(s => (
-          <div key={s.label} className="rounded-xl p-3 text-center"
-            style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
-            <div className="text-xl font-bold font-mono" style={{ color: s.c }}>{s.v}</div>
-            <div className="text-[10px]" style={{ color: 'var(--muted)' }}>{s.label}</div>
+      <div className="grid grid-cols-3 gap-2">
+        <div className="rounded-xl p-3 text-center"
+          style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+          <div className="text-2xl font-bold font-mono" style={{ color: 'var(--accent)' }}>
+            {thisWeek.length}
           </div>
-        ))}
+          <div className="text-[10px]" style={{ color: 'var(--muted)' }}>今週の候補</div>
+        </div>
+        <div className="rounded-xl p-3 text-center"
+          style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+          <div className="text-2xl font-bold font-mono" style={{ color: '#22c55e' }}>
+            {approvedIds.size}
+          </div>
+          <div className="text-[10px]" style={{ color: 'var(--muted)' }}>承認済み</div>
+        </div>
+        <div className="rounded-xl p-3 text-center"
+          style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+          <div className="text-2xl font-bold font-mono" style={{ color: 'var(--text)' }}>
+            {data.candidates.length}
+          </div>
+          <div className="text-[10px]" style={{ color: 'var(--muted)' }}>累計候補</div>
+        </div>
       </div>
 
-      {/* Top 5 スコア */}
-      {topByScore.length > 0 && (
-        <div>
-          <SLabel>今週のおすすめTop {topByScore.length}</SLabel>
-          <div className="space-y-3">
-            {topByScore.map(c => <CandidateCard key={c.id} c={c} />)}
-          </div>
-        </div>
-      )}
+      <div className="text-[10px]" style={{ color: 'var(--muted)' }}>
+        最終更新: {new Date(data.lastUpdated).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}
+      </div>
 
-      {/* 採用済み */}
-      {approvedItems.length > 0 && (
-        <div>
-          <SLabel>採用済み（{approvedItems.length}件）</SLabel>
-          <div className="space-y-3">
-            {approvedItems.map(c => <CandidateCard key={c.id} c={c} />)}
-          </div>
+      {/* 候補リスト */}
+      <div>
+        <SLabel>スコア順（{sorted.length}件）</SLabel>
+        <div className="space-y-3">
+          {sorted.map(c => (
+            <CandidateCard key={c.id} c={c} approvedIds={approvedIds} />
+          ))}
         </div>
-      )}
-
-      {/* 残りの新着（Top5除く） */}
-      {newItems.length > 5 && (
-        <div>
-          <SLabel>新着一覧（{newItems.length - 5}件）</SLabel>
-          <div className="space-y-3">
-            {[...newItems]
-              .sort((a, b) => b.score - a.score)
-              .slice(5)
-              .map(c => <CandidateCard key={c.id} c={c} />)}
-          </div>
-        </div>
-      )}
-
-      {rejectedItems.length > 0 && (
-        <div>
-          <SLabel style={{ opacity: 0.5 }}>却下済み（{rejectedItems.length}件）</SLabel>
-          <div className="space-y-2 opacity-40">
-            {rejectedItems.slice(0, 5).map(c => (
-              <div key={c.id} className="rounded-lg px-3 py-2 text-xs"
-                style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
-                <a href={c.url} target="_blank" rel="noopener noreferrer"
-                  className="truncate block" style={{ color: 'var(--muted)' }}>{c.title}</a>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+      </div>
 
       <div className="text-[10px] text-center pb-4" style={{ color: 'var(--muted)' }}>
-        ステータス変更は <span className="font-mono">data/henkutsu-candidates.json</span> を直接編集
+        承認するとGitHubの <span className="font-mono">data/henkutsu-approved.json</span> に自動保存されます。
+        <br />VERCELに <span className="font-mono">GITHUB_TOKEN</span> 環境変数が必要です。
       </div>
     </div>
   );
