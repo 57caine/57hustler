@@ -1,4 +1,103 @@
 {
-  "lastUpdated": "2026-07-12T00:00:00Z",
-  "candidates": []
+  "lastUpdated": "2026-07-12T13:21:07.623Z",
+  "candidates": [
+    {
+      "id": "mrhtnl7s0v167",
+      "title": "Modo Cube: fully customizable gadget",
+      "source": "kickstarter",
+      "url": "https://www.kickstarter.com/projects/657427226/modo-cube",
+      "description": "Nicolò Baccin",
+      "descriptionJa": "Modo Cube：完全カスタマイズ可能なモジュール式ガジェット。無限の拡張性",
+      "postDraft": "モジュール式ガジェット革命。\n\nModo Cubeは完全カスタマイズ。\nブロック感覚で\n自分仕様に組み換え。\n\nこの自由度、日本にない🧩✨",
+      "category": "ガジェット・アクセサリー",
+      "score": 8,
+      "reason": "モジュール式カスタマイズで独自性が高い。日本未上陸でhenkutsu層に刺さる",
+      "addedAt": "2026-07-12T13:21:07.623Z",
+      "status": "new"
+    },
+    {
+      "id": "mrhtnl7sontw4",
+      "title": "FEGVE Tetrach2.0—The Last EDC Quick-Release You'll Ever Need",
+      "source": "kickstarter",
+      "url": "https://www.kickstarter.com/projects/fegve/fegve-tetrach-the-safest-titanium-alloy-quick-release-system",
+      "description": "Fegve",
+      "descriptionJa": "FEGVE Tetrach2.0：EDC用クイックリリースマウント。究極の装着ソリューション",
+      "postDraft": "EDC愛好家へ。\n\nクイックリリースマウントの\n最高峰。\n\nTetrach2.0なら\nどんなギアも\nパチッと一瞬装着。\n\n日本未上陸🔧✨",
+      "category": "EDC・ガジェット",
+      "score": 7,
+      "reason": "EDC市場ニッチ。クイックリリース機構で独自性あり。minoリユーザー層も層も合う",
+      "addedAt": "2026-07-12T13:21:07.623Z",
+      "status": "new"
+    },
+    {
+      "id": "mrhtnl7sw3w9g",
+      "title": "Starbond Vox: Build Your Own Claude AI Pet Robot",
+      "source": "kickstarter",
+      "url": "https://www.kickstarter.com/projects/starbond/starbond-vox-a-physical-ai-companion-for-your-desk",
+      "description": "STARBOND",
+      "descriptionJa": "Claude AI搭載ペットロボット組立キット。カスタマイズ可能なAIロボット",
+      "postDraft": "自分だけのAIペットが\n作れる時代🤖\n\nClaudeを搭載して\nビルド。\n\nペット感覚のAIロボット。\n日本にはまだない\nこのジャンル✨",
+      "category": "ガジェット・AI",
+      "score": 7,
+      "reason": "Claude AI統合のペットロボットは日本未上陸。独自性・話題性が高い",
+      "addedAt": "2026-07-12T13:21:07.623Z",
+      "status": "new"
+    },
+    {
+      "id": "mrhtnl7syl79b",
+      "title": "SentryAlert — AI-Powered Near-Real-Time Tesla Cam Alerts",
+      "source": "kickstarter",
+      "url": "https://www.kickstarter.com/projects/2017098884/sentryalert-ai-powered-near-real-time-tesla-cam-alerts",
+      "description": "Raymond Lay",
+      "descriptionJa": "テスラカメラ用AI自動通知システム。車内セキュリティの革新",
+      "postDraft": "テスラ乗りへ。\n\nAI搭載で、TeslaCam映像を\n自動リアルタイム通知。\n\n不正アクセス検知で\n盗難防止。\n\nこのAI機能、日本では\nまだ見ない🚨",
+      "category": "カーガジェット",
+      "score": 6,
+      "reason": "テスラオーナーはニッチだが、AI×セキュリティで話題性あり。やや採用基準に入る",
+      "addedAt": "2026-07-12T13:21:07.623Z",
+      "status": "new"
+    },
+    {
+      "id": "mrhtnl7sbbvbr",
+      "title": "COWZRY T5 ：Mini Magnetic Adapter To Protect Your iPad",
+      "source": "kickstarter",
+      "url": "https://www.kickstarter.com/projects/828791693/cowzry-t5-thin-and-handy-magnetic-contact-charger-for-ipad",
+      "description": "COWZRY",
+      "descriptionJa": "iPad用マグネット式アダプター。磁力でシンプルに保護",
+      "postDraft": "iPad用マグネット保護アダプター。\n\n余計な機能は一切なし。\nシンプルに磁力で装着。\n\nミニマリスト向けの\niPadアクセサリー🧲",
+      "category": "アクセサリー",
+      "score": 6,
+      "reason": "iPad関連は日本でも競争があるが、マグネット式の独自性はある。やや採用基準に収まる",
+      "addedAt": "2026-07-12T13:21:07.623Z",
+      "status": "new"
+    },
+    {
+      "id": "mrhtnl7shznl9",
+      "title": "World’s First 80FPS Large Dual-Screen E-Ink Smartphone",
+      "source": "kickstarter",
+      "url": "https://www.kickstarter.com/projects/bigme/worlds-first-large-dual-screen-color-e-ink-smartphone",
+      "description": "Bigme",
+      "descriptionJa": "80FPS対応デュアル電子インク画面スマートフォン。革新的なディスプレイ技術",
+      "postDraft": "これまで見たことない\nスマートフォン。\n\nデュアル電子インク画面で\n80FPS対応。\n\nプログラマー・ライターの\n相棒になりそう…🖥️✨",
+      "category": "スマートフォン",
+      "score": 7,
+      "reason": "革新的なE-Inkデュアル画面。日本未上陸で話題性・独自性が高い",
+      "addedAt": "2026-07-12T13:21:07.623Z",
+      "status": "new"
+    },
+    {
+      "id": "mrhtnl7sy7weh",
+      "title": "RearGo: 11\" Wireless CarPlay & True Wire-Free 4-CH DVR",
+      "source": "kickstarter",
+      "url": "https://www.kickstarter.com/projects/gopump/reargo-11-wireless-carplay-and-true-wire-free-4-ch-dvr",
+      "description": "GoPump",
+      "descriptionJa": "11インチワイヤレスCarPlay搭載リアカメラ4CHドライブレコーダー。日本未上陸の多機能カーガジェット",
+      "postDraft": "車好き必見。\n\nワイヤレスCarPlay対応の\n11インチリアモニター。\n4CHドライブレコーダー内蔵。\n\nこの組み合わせ、日本にまだない🚗",
+      "category": "カーガジェット",
+      "score": 8,
+      "reason": "日本市場にない高機能カーガジェット。価格帯・機能性・独自性で採用基準クリア",
+      "addedAt": "2026-07-12T13:21:07.623Z",
+      "status": "new"
+    }
+  ]
 }
