@@ -43,86 +43,83 @@ interface CandidatesFile {
 // ── Reddit (Playwright でbot検知を回避) ───────────────────────────────────────
 
 async function fetchReddit(browser: Awaited<ReturnType<typeof chromium.launch>>): Promise<RawItem[]> {
+  // 試す順: old.reddit JSON → new.reddit JSON → old.reddit スクレイプ
+  const endpoints = [
+    'https://old.reddit.com/r/shutupandtakemymoney/hot.json?limit=40&raw_json=1',
+    'https://www.reddit.com/r/shutupandtakemymoney/hot.json?limit=40&raw_json=1',
+  ];
+
+  for (const url of endpoints) {
+    const page = await browser.newPage();
+    await page.setExtraHTTPHeaders({ 'User-Agent': UA });
+    try {
+      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+      await page.waitForTimeout(2000);
+
+      const text = await page.evaluate(() => {
+        const pre = document.querySelector('pre');
+        return pre ? pre.textContent : document.body.innerText;
+      });
+
+      if (text && text.trim().startsWith('{')) {
+        const json = JSON.parse(text.trim()) as {
+          data: { children: { data: { title: string; selftext: string; url: string } }[] }
+        };
+        const items = (json.data?.children ?? [])
+          .filter(c => c.data?.url && !c.data.url.includes('reddit.com') && !c.data.url.includes('imgur.com') && c.data.url.startsWith('http'))
+          .slice(0, 25)
+          .map(c => ({
+            title: c.data.title,
+            description: (c.data.selftext || c.data.title).slice(0, 300),
+            url: c.data.url,
+            source: 'reddit' as const,
+          }));
+        console.log(`  Reddit JSON (${url.includes('old') ? 'old' : 'new'}): ${items.length}件`);
+        await page.close();
+        if (items.length > 0) return items;
+      } else {
+        console.warn(`  Reddit blocked/invalid at ${url.includes('old') ? 'old' : 'new'}: ${text?.slice(0, 60)}`);
+      }
+    } catch (e) {
+      console.warn(`  Reddit error (${url.includes('old') ? 'old' : 'new'}):`, (e as Error).message.slice(0, 80));
+    } finally {
+      await page.close().catch(() => undefined);
+    }
+  }
+
+  // フォールバック: old.reddit HTMLスクレイプ（クラシックHTML、JSなし）
   const page = await browser.newPage();
   await page.setExtraHTTPHeaders({ 'User-Agent': UA });
   try {
-    // JSON APIをブラウザ経由でアクセス（GitHub ActionsのIPでもblockされにくい）
-    await page.goto(
-      'https://www.reddit.com/r/shutupandtakemymoney/hot.json?limit=40&raw_json=1',
-      { waitUntil: 'domcontentloaded', timeout: 25000 }
-    );
-    await page.waitForTimeout(1500);
-
-    const text = await page.evaluate(() => {
-      const pre = document.querySelector('pre');
-      return pre ? pre.textContent : document.body.innerText;
+    await page.goto('https://old.reddit.com/r/shutupandtakemymoney/', {
+      waitUntil: 'load',
+      timeout: 40000,
     });
-
-    if (text) {
-      const json = JSON.parse(text.trim()) as {
-        data: { children: { data: { title: string; selftext: string; url: string } }[] }
-      };
-      const items = (json.data?.children ?? [])
-        .filter(c => c.data?.url && !c.data.url.includes('reddit.com') && !c.data.url.includes('imgur.com') && c.data.url.startsWith('http'))
-        .slice(0, 25)
-        .map(c => ({
-          title: c.data.title,
-          description: (c.data.selftext || c.data.title).slice(0, 300),
-          url: c.data.url,
-          source: 'reddit' as const,
-        }));
-      console.log(`  Reddit JSON API: ${items.length}件`);
-      if (items.length > 0) return items;
-    }
-  } catch (e) {
-    console.warn('  Reddit JSON APIフォールバックへ:', (e as Error).message);
-  }
-
-  // フォールバック: 実際のページをスクレイピング
-  try {
-    await page.goto('https://www.reddit.com/r/shutupandtakemymoney/', {
-      waitUntil: 'networkidle',
-      timeout: 30000,
-    });
-    await page.waitForTimeout(3000);
+    await page.waitForTimeout(2000);
 
     const items = await page.evaluate(() => {
       const results: { title: string; description: string; url: string; source: string }[] = [];
       const seen = new Set<string>();
 
-      // 新Reddit: shreddit-post コンポーネント
-      document.querySelectorAll('shreddit-post').forEach(el => {
-        const title = el.getAttribute('post-title') || el.querySelector('h2, h3')?.textContent?.trim() || '';
-        const permalink = el.getAttribute('permalink') || '';
-        const url = el.getAttribute('content-href') || (permalink ? `https://www.reddit.com${permalink}` : '');
-        if (title && url && !seen.has(url)) {
+      // old.reddit: .thing > .entry > .title > a.title
+      document.querySelectorAll('.thing').forEach(el => {
+        const titleEl = el.querySelector('a.title');
+        const outboundEl = el.querySelector('a.title[href^="http"]:not([href*="reddit.com"])');
+        const title = titleEl?.textContent?.trim() || '';
+        const url = outboundEl?.getAttribute('href') || titleEl?.getAttribute('href') || '';
+        if (title && url && url.startsWith('http') && !url.includes('reddit.com') && !seen.has(url)) {
           seen.add(url);
           results.push({ title, description: title, url, source: 'reddit' });
         }
       });
 
-      if (results.length === 0) {
-        // 旧Reddit / その他レイアウト
-        document.querySelectorAll('[data-testid="post-container"], article, .Post').forEach(el => {
-          const titleEl = el.querySelector('h3, [data-testid="post-title"]');
-          const linkEl = el.querySelector('a[href*="/comments/"]');
-          const title = titleEl?.textContent?.trim() || '';
-          const href = linkEl?.getAttribute('href') || '';
-          if (title && href && !seen.has(href)) {
-            seen.add(href);
-            const url = href.startsWith('http') ? href : `https://www.reddit.com${href}`;
-            results.push({ title, description: title, url, source: 'reddit' });
-          }
-        });
-      }
-
       return results.slice(0, 20);
     });
 
-    console.log(`  Reddit scrape fallback: ${items.length}件`);
+    console.log(`  Reddit old.reddit scrape: ${items.length}件`);
     return items.filter(i => i.title) as RawItem[];
   } catch (e) {
-    console.warn('  Reddit scrape error:', (e as Error).message);
+    console.warn('  Reddit old.reddit scrape error:', (e as Error).message.slice(0, 80));
     return [];
   } finally {
     await page.close();
@@ -135,8 +132,9 @@ async function fetchProductHunt(browser: Awaited<ReturnType<typeof chromium.laun
   const page = await browser.newPage();
   await page.setExtraHTTPHeaders({ 'User-Agent': UA });
   try {
-    await page.goto('https://www.producthunt.com/', { waitUntil: 'networkidle', timeout: 35000 });
-    await page.waitForTimeout(5000);
+    // networkidle never fires on PH (analytics polling); use 'load' + explicit wait
+    await page.goto('https://www.producthunt.com/', { waitUntil: 'load', timeout: 60000 });
+    await page.waitForTimeout(6000);
 
     const items = await page.evaluate(() => {
       const results: { title: string; description: string; url: string; source: string }[] = [];
@@ -191,12 +189,12 @@ async function fetchKickstarter(browser: Awaited<ReturnType<typeof chromium.laun
   const page = await browser.newPage();
   await page.setExtraHTTPHeaders({ 'User-Agent': UA });
   try {
-    // 新着ガジェット系プロジェクトをページ
+    // networkidle never fires on KS; use 'load' + explicit wait
     await page.goto(
       'https://www.kickstarter.com/discover/advanced?category_id=16&sort=newest&seed=12345',
-      { waitUntil: 'networkidle', timeout: 35000 }
+      { waitUntil: 'load', timeout: 60000 }
     );
-    await page.waitForTimeout(4000);
+    await page.waitForTimeout(5000);
 
     const items = await page.evaluate(() => {
       const results: { title: string; description: string; url: string; price?: string; source: string }[] = [];
