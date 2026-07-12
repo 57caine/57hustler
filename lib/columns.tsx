@@ -372,6 +372,46 @@ export const columns: ColumnMeta[] = [
     readingTime: 6,
     headings: ['1dayと2weekの基本的な違い', '年間コスト比較（ケア用品込み）', '使用頻度別・どちらがお得か', '手間・利便性の比較', '1dayがおすすめな人・2weekがおすすめな人', '最安値通販で賢く購入する方法'],
   },
+  {
+    slug: 'bc-to-ha',
+    title: 'ベースカーブ（BC）とは？コンタクトレンズのBC選び方完全ガイド',
+    description: 'コンタクトレンズのBC（ベースカーブ）とは何か、自分のBCの調べ方、BC 8.4〜8.8の違い、BCが合わないとどうなるかを徹底解説。処方箋の読み方とBC別おすすめ商品も紹介。',
+    category: 'BC選び方',
+    publishedAt: '2026-07-12',
+    updatedAt: '2026-07-12',
+    readingTime: 8,
+    headings: ['BC（ベースカーブ）とは何か', '自分のBCの調べ方', 'BC 8.4〜8.8の違いと特徴', 'BCが合わないとどうなる？', 'BC値別 おすすめコンタクトレンズ', 'よくある質問'],
+  },
+  {
+    slug: 'maker-bc-hyou',
+    title: 'メーカー別BC対応表【アキュビュー・シード・アルコン・メニコン全商品】',
+    description: 'アキュビュー・シード・アルコン・メニコン・クーパービジョン・ボシュロムの主要コンタクトレンズ全商品のBC（ベースカーブ）値を一覧表で確認。BC別に商品を探せます。',
+    category: 'BC選び方',
+    publishedAt: '2026-07-12',
+    updatedAt: '2026-07-12',
+    readingTime: 6,
+    headings: ['メーカー別BC対応表の見方', 'アキュビュー（ジョンソン＆ジョンソン）BC一覧', 'アルコン BC一覧', 'シード BC一覧', 'メニコン BC一覧', 'クーパービジョン・ボシュロム BC一覧'],
+  },
+  {
+    slug: 'bc-86-osusume',
+    title: 'BC 8.6のコンタクトレンズ おすすめランキング【最多対応商品数】',
+    description: 'BC 8.6対応のコンタクトレンズおすすめランキング。バイオトゥルーワンデー・メニコン・バイオフィニティ・クラリティなど23商品の特徴と最安値を比較。BC 8.6は最も対応商品数が多いスタンダードBC。',
+    category: 'BC選び方',
+    publishedAt: '2026-07-12',
+    updatedAt: '2026-07-12',
+    readingTime: 7,
+    headings: ['BC 8.6とは？特徴と対応ブランド', 'BC 8.6 おすすめワンデーコンタクト', 'BC 8.6 おすすめ2week・マンスリー', 'BC 8.6 カラコン', 'BC 8.6商品の最安値を比較する'],
+  },
+  {
+    slug: 'bc-88-osusume',
+    title: 'BC 8.8のコンタクトレンズ おすすめランキング【シード製品を中心に解説】',
+    description: 'BC 8.8対応のコンタクトレンズおすすめランキング。ワンデーピュア うるおいプラス・ネオサイト ワンデーシリコーンUV・シード ツーウィークピュアなどシード製品を中心に7商品を徹底比較。',
+    category: 'BC選び方',
+    publishedAt: '2026-07-12',
+    updatedAt: '2026-07-12',
+    readingTime: 6,
+    headings: ['BC 8.8とは？どんな人に処方される？', 'BC 8.8 おすすめコンタクトランキング', 'シードブランドがBC 8.8に多い理由', 'BC 8.8商品の最安値を比較する'],
+  },
 ];
 
 export function getColumnBySlug(slug: string): ColumnMeta | undefined {
@@ -5444,6 +5484,547 @@ export const columnContent: Record<string, React.ReactNode> = {
             { q: '2weekコンタクトは開封後、2週間使えますか？', a: '「開封後2週間」が使用期限です。たとえば月曜日に開封した場合、次の月曜日（14日後）には装用日数に関わらず新しいレンズに交換が必要です。週に2〜3日しか装用しなくても同じです。装用日数ではなく「開封からの日数」でカウントしてください。' },
             { q: '1dayを2日使い回すことはできますか？', a: '絶対にNGです。ワンデーは1日使い捨て前提で設計されており、薄くて汚れを除去しにくい構造です。再使用すると角膜感染症・角膜潰瘍のリスクが急上昇します。「もったいない」という気持ちは理解できますが、眼の健康のため絶対に守ってください。' },
             { q: '1dayと2weekで見え方や快適さに差はありますか？', a: '同じメーカー・グレードの商品であれば快適さはほぼ同等です。ただし2weekは使用日数が経つにつれてタンパク質・脂質が蓄積し、後半は装用感が落ちることがあります。1dayは毎日新品なので常に最良の状態を保てます。最高の快適さを求めるなら1dayに軍配が上がります。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'bc-to-ha': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        コンタクトレンズを購入するとき、処方箋に書かれた「BC 8.6」などの数字の意味はご存じですか？
+        BCはコンタクトレンズを安全に使うための重要な数値です。この記事ではBCとは何か、
+        自分のBCの調べ方、BC値別の特徴を完全解説します。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">BC（ベースカーブ）とは何か</h2>
+      <p className="mb-4">
+        <strong>BC（Base Curve、ベースカーブ）</strong>とは、コンタクトレンズの内側のカーブ（曲率）を表す数値です。
+        単位はmm（ミリメートル）で、<strong>数値が小さいほどカーブがきつく、大きいほど緩やか</strong>になります。
+      </p>
+      <p className="mb-4">
+        人間の角膜（黒目の表面）はゆるやかな球面になっており、その曲率半径は個人差があります。
+        コンタクトレンズはその角膜の上に乗せるため、角膜のカーブに合ったBCのレンズを選ぶことが重要です。
+      </p>
+      <div className="bg-sky-50 border border-sky-200 rounded-xl p-5 mb-6">
+        <h3 className="font-bold text-sky-800 mb-3">日本のコンタクトレンズの主なBC値</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-sky-100">
+                <th className="text-left p-2 rounded">BC値</th>
+                <th className="text-left p-2">カーブの特徴</th>
+                <th className="text-left p-2">代表的なブランド</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-gray-100"><td className="p-2 font-medium">BC 8.4</td><td className="p-2">きつめ</td><td className="p-2">アキュビュー オアシス（2week）、マイデイ</td></tr>
+              <tr className="border-b border-gray-100"><td className="p-2 font-medium">BC 8.5</td><td className="p-2">やや標準</td><td className="p-2">アキュビュー オアシス ワンデー、デイリーズ トータルワン</td></tr>
+              <tr className="border-b border-gray-100"><td className="p-2 font-medium">BC 8.6</td><td className="p-2">標準（最多）</td><td className="p-2">メニコン、バイオフィニティ、クラリティ、バイオトゥルー</td></tr>
+              <tr className="border-b border-gray-100"><td className="p-2 font-medium">BC 8.7</td><td className="p-2">やや緩やか</td><td className="p-2">デイリーズ アクア、GEOカラコン</td></tr>
+              <tr><td className="p-2 font-medium">BC 8.8</td><td className="p-2">緩やか</td><td className="p-2">ワンデーピュア、ネオサイト、シード系</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">自分のBCの調べ方</h2>
+      <p className="mb-4">
+        BCは<strong>眼科の処方箋</strong>に記載されています。コンタクトレンズを初めて購入する方は、
+        まず眼科を受診して「コンタクトレンズの処方箋」を発行してもらいましょう。
+      </p>
+      <div className="bg-amber-50 border-l-4 border-amber-400 pl-4 py-3 mb-6">
+        <p className="font-bold text-amber-800 mb-1">⚠️ 自己判断でBCを変えてはいけません</p>
+        <p className="text-sm text-amber-700">
+          BCは眼科での検査（フィッティング）が必要です。
+          自己判断でBC値を変えると、レンズのズレ・不快感・角膜への負担・眼のトラブルにつながります。
+          必ず眼科で処方されたBCに従ってください。
+        </p>
+      </div>
+      <p className="mb-4">
+        すでにコンタクトレンズを使用している方は、現在使用中のレンズのパッケージにBCが記載されています。
+        パッケージの「BC」または「ベースカーブ」という項目を確認してください。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">BC 8.4〜8.8の違いと特徴</h2>
+
+      <div className="space-y-4 mb-6">
+        {[
+          { bc: '8.4', label: 'きつめのカーブ', desc: '角膜のカーブが比較的きつい（小さい）方向けのBC。アキュビュー オアシス（2week）やクーパービジョン マイデイなどに採用されています。フィット感が高い設計。', href: '/bc/8.4' },
+          { bc: '8.5', label: '日本人に多いBC', desc: '日本人の平均的な角膜カーブに近いBC値。アキュビュー オアシス ワンデー・1デイ アキュビュー モイスト・デイリーズ トータルワンなど最人気商品が集中。', href: '/bc/8.5' },
+          { bc: '8.6', label: '最多対応商品数', desc: '国内で最も多くの商品が対応するスタンダードBC。メニコン・バイオフィニティ・クラリティ ワンデー・バイオトゥルーワンデーなど23商品が対応。', href: '/bc/8.6' },
+          { bc: '8.7', label: 'やや緩やかなBC', desc: '角膜のカーブが比較的緩やか（大きい）な方向け。デイリーズ アクア コンフォートプラス・GEOエンジェルカラーなどに採用。', href: '/bc/8.7' },
+          { bc: '8.8', label: 'シード系に多いBC', desc: 'シードブランドを中心とした緩やかなBC値。ワンデーピュア うるおいプラス・ネオサイト ワンデーシリコーンUV・シード ツーウィークピュアなど7商品が対応。', href: '/bc/8.8' },
+        ].map(({ bc, label, desc, href }) => (
+          <div key={bc} className="border border-gray-200 rounded-xl p-4 bg-white">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="bg-sky-600 text-white font-bold px-3 py-1 rounded-lg text-sm">BC {bc}</span>
+              <span className="text-sm font-medium text-gray-700">{label}</span>
+            </div>
+            <p className="text-sm text-gray-600 mb-2">{desc}</p>
+            <Link href={href} className="text-sm text-sky-600 hover:underline font-medium">
+              BC {bc}対応商品一覧を見る →
+            </Link>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">BCが合わないとどうなる？</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+          <h3 className="font-bold text-red-700 mb-2">BCが小さすぎる（きつすぎる）場合</h3>
+          <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li>角膜を締め付ける</li>
+            <li>酸素不足・充血が起きやすい</li>
+            <li>痛みや不快感</li>
+            <li>長期使用で角膜トラブルのリスク</li>
+          </ul>
+        </div>
+        <div className="bg-orange-50 border border-orange-200 rounded-xl p-4">
+          <h3 className="font-bold text-orange-700 mb-2">BCが大きすぎる（ゆるすぎる）場合</h3>
+          <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li>レンズがずれやすい</li>
+            <li>ゴロゴロ感・異物感</li>
+            <li>視力の不安定さ</li>
+            <li>まばたきのたびにズレる</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">BC値別 おすすめコンタクトレンズ</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+        {[
+          { bc: '8.5', name: 'アキュビュー オアシス ワンデー', href: '/product/acuvue-oasys-1day', slug: 'acuvue-oasys-1day' },
+          { bc: '8.5', name: 'デイリーズ トータルワン', href: '/product/dailies-total1', slug: 'dailies-total1' },
+          { bc: '8.6', name: 'メニコン ワンデー', href: '/product/menicon-1day', slug: 'menicon-1day' },
+          { bc: '8.6', name: 'バイオフィニティ', href: '/product/biofinity', slug: 'biofinity' },
+          { bc: '8.8', name: 'ワンデーピュア うるおいプラス', href: '/product/seed-1day-pure', slug: 'seed-1day-pure' },
+          { bc: '8.8', name: 'ネオサイト ワンデー シリコーン UV', href: '/product/neo-sight-1day', slug: 'neo-sight-1day' },
+        ].map(({ bc, name, href }) => (
+          <Link key={href} href={href} className="block border border-gray-200 rounded-xl p-3 hover:border-sky-300 hover:bg-sky-50 transition-all">
+            <span className="text-xs bg-sky-100 text-sky-700 px-2 py-0.5 rounded font-medium">BC {bc}</span>
+            <p className="text-sm font-medium text-gray-800 mt-1">{name}</p>
+            <p className="text-xs text-sky-600 mt-1">価格を比較 →</p>
+          </Link>
+        ))}
+      </div>
+
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
+        <h3 className="text-xl font-bold mb-2">BC値別の商品一覧・最安値を比較する</h3>
+        <p className="text-slate-300 mb-4 text-sm">処方箋のBC値に合った商品を24店舗で価格比較できます。</p>
+        <div className="flex flex-wrap gap-2">
+          <Link href="/bc/8.5" className="inline-block bg-sky-500 text-white font-bold px-4 py-2 rounded-xl hover:bg-sky-400 transition-colors text-sm">BC 8.5を探す</Link>
+          <Link href="/bc/8.6" className="inline-block bg-sky-500 text-white font-bold px-4 py-2 rounded-xl hover:bg-sky-400 transition-colors text-sm">BC 8.6を探す</Link>
+          <Link href="/bc/8.8" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">BC 8.8を探す</Link>
+        </div>
+      </div>
+
+      <section className="mt-8">
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'BCが違うコンタクトを使っても大丈夫ですか？', a: '基本的にNGです。BCは角膜のカーブに合わせて眼科で処方されるものです。処方と異なるBCのレンズを使うと、ズレ・不快感・角膜への負担が生じます。ただし、同じBC値の異なるブランドに変更する場合でも、必ず眼科でフィッティング確認を受けることを推奨します。' },
+            { q: 'BCは左右の目で違う場合がありますか？', a: 'はい、あります。人によって右目と左目で角膜のカーブが異なるため、BCが左右で違う処方になることがあります。処方箋をよく確認し、右目（R/OD）と左目（L/OS）それぞれのBCに合った商品を選んでください。' },
+            { q: '同じBCでも商品によって装用感が違うのはなぜですか？', a: 'BCが同じでもレンズの素材（ハイドロゲル・シリコーンハイドロゲル）、含水率、DIA（直径）、レンズデザインが異なるため装用感に差が出ます。同じBCで複数の商品を試して自分に合うものを見つけることが重要です。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'maker-bc-hyou': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        アキュビュー・シード・アルコン・メニコンなど主要メーカーのコンタクトレンズ全商品のBC（ベースカーブ）値を一覧表にまとめました。
+        処方箋のBC値に合った商品を探すときにご活用ください。
+      </p>
+
+      <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 mb-6">
+        <p className="text-sm text-sky-800">
+          <strong>表の見方：</strong>処方箋に記載されたBC値の行を確認してください。同じBC値の商品の中から、
+          ご自身の度数（PWR）・使い捨て頻度・予算に合った商品を選んでください。
+        </p>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">アキュビュー（ジョンソン＆ジョンソン）BC一覧</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-center p-3 border border-gray-200">BC</th>
+              <th className="text-center p-3 border border-gray-200">DIA</th>
+              <th className="text-center p-3 border border-gray-200">種類</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'アキュビュー オアシス ワンデー', bc: '8.5', dia: '14.3', type: '1day' },
+              { name: '1デイ アキュビュー モイスト', bc: '8.5', dia: '14.2', type: '1day' },
+              { name: '1デイ アキュビュー モイスト 乱視用', bc: '8.5', dia: '14.5', type: '1day' },
+              { name: 'アキュビュー オアシス（2week）', bc: '8.4', dia: '14.0', type: '2week' },
+              { name: 'アキュビュー オアシス 乱視用', bc: '8.6', dia: '14.5', type: '2week' },
+            ].map((r) => (
+              <tr key={r.name} className="border-b border-gray-100 hover:bg-slate-50">
+                <td className="p-3 border border-gray-200">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-center font-medium text-sky-700">BC {r.bc}</td>
+                <td className="p-3 border border-gray-200 text-center">{r.dia}mm</td>
+                <td className="p-3 border border-gray-200 text-center">{r.type}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">アルコン BC一覧</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-center p-3 border border-gray-200">BC</th>
+              <th className="text-center p-3 border border-gray-200">DIA</th>
+              <th className="text-center p-3 border border-gray-200">種類</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'デイリーズ トータルワン', bc: '8.5', dia: '14.1', type: '1day' },
+              { name: 'デイリーズ トータルワン 乱視用', bc: '8.6', dia: '14.4', type: '1day' },
+              { name: 'デイリーズ アクア コンフォートプラス', bc: '8.7', dia: '14.0', type: '1day' },
+              { name: 'デイリーズ アクア 乱視用', bc: '8.8', dia: '14.4', type: '1day' },
+              { name: 'エアオプティクス ハイドラグライド', bc: '8.6', dia: '14.2', type: 'monthly' },
+              { name: 'デイリーズ トータルワン マンスリー', bc: '8.8', dia: '14.2', type: 'monthly' },
+            ].map((r) => (
+              <tr key={r.name} className="border-b border-gray-100 hover:bg-slate-50">
+                <td className="p-3 border border-gray-200">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-center font-medium text-sky-700">BC {r.bc}</td>
+                <td className="p-3 border border-gray-200 text-center">{r.dia}mm</td>
+                <td className="p-3 border border-gray-200 text-center">{r.type}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">シード BC一覧</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-center p-3 border border-gray-200">BC</th>
+              <th className="text-center p-3 border border-gray-200">DIA</th>
+              <th className="text-center p-3 border border-gray-200">種類</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'ワンデーピュア うるおいプラス', bc: '8.8', dia: '14.2', type: '1day' },
+              { name: 'ワンデーピュア うるおいプラス 乱視用', bc: '8.8', dia: '14.4', type: '1day' },
+              { name: 'ネオサイト ワンデー シリコーン UV', bc: '8.8', dia: '14.2', type: '1day' },
+              { name: 'シード アイコフレ ワンデーUV N', bc: '8.6', dia: '14.2', type: '1day' },
+              { name: 'シード ツーウィークピュア', bc: '8.8', dia: '14.2', type: '2week' },
+              { name: 'シード 2ウィークピュア UV', bc: '8.8', dia: '14.2', type: '2week' },
+            ].map((r) => (
+              <tr key={r.name} className="border-b border-gray-100 hover:bg-slate-50">
+                <td className="p-3 border border-gray-200">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-center font-medium text-sky-700">BC {r.bc}</td>
+                <td className="p-3 border border-gray-200 text-center">{r.dia}mm</td>
+                <td className="p-3 border border-gray-200 text-center">{r.type}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">メニコン BC一覧</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-center p-3 border border-gray-200">BC</th>
+              <th className="text-center p-3 border border-gray-200">DIA</th>
+              <th className="text-center p-3 border border-gray-200">種類</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'メニコン ワンデー', bc: '8.6', dia: '14.2', type: '1day' },
+              { name: 'メニワン プレーン', bc: '8.6', dia: '14.2', type: '1day' },
+              { name: 'メニコン 2ウィーク プレミオ', bc: '8.6', dia: '14.0', type: '2week' },
+              { name: 'メニコン 2ウィーク プレミオ 乱視用', bc: '8.6', dia: '14.4', type: '2week' },
+              { name: 'メニコン プレミオ', bc: '8.6', dia: '14.0', type: 'monthly' },
+            ].map((r) => (
+              <tr key={r.name} className="border-b border-gray-100 hover:bg-slate-50">
+                <td className="p-3 border border-gray-200">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-center font-medium text-sky-700">BC {r.bc}</td>
+                <td className="p-3 border border-gray-200 text-center">{r.dia}mm</td>
+                <td className="p-3 border border-gray-200 text-center">{r.type}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">クーパービジョン・ボシュロム BC一覧</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-center p-3 border border-gray-200">BC</th>
+              <th className="text-center p-3 border border-gray-200">DIA</th>
+              <th className="text-center p-3 border border-gray-200">種類</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'マイデイ ワンデー', bc: '8.4', dia: '14.2', type: '1day' },
+              { name: 'クラリティ ワンデー', bc: '8.6', dia: '14.2', type: '1day' },
+              { name: 'バイオフィニティ', bc: '8.6', dia: '14.0', type: 'monthly' },
+              { name: 'バイオトゥルーワンデー', bc: '8.6', dia: '14.2', type: '1day' },
+              { name: 'ボシュロム ウルトラ', bc: '8.5', dia: '14.2', type: 'monthly' },
+            ].map((r) => (
+              <tr key={r.name} className="border-b border-gray-100 hover:bg-slate-50">
+                <td className="p-3 border border-gray-200">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-center font-medium text-sky-700">BC {r.bc}</td>
+                <td className="p-3 border border-gray-200 text-center">{r.dia}mm</td>
+                <td className="p-3 border border-gray-200 text-center">{r.type}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
+        <h3 className="text-xl font-bold mb-2">BC値別の商品を最安値で比較する</h3>
+        <p className="text-slate-300 mb-4 text-sm">処方箋のBC値に合った商品を、24店舗の最安値で比較できます。</p>
+        <div className="flex flex-wrap gap-2">
+          <Link href="/bc" className="inline-block bg-sky-500 text-white font-bold px-4 py-2 rounded-xl hover:bg-sky-400 transition-colors text-sm">BC別に商品を探す</Link>
+          <Link href="/ranking" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">人気ランキングで比較</Link>
+        </div>
+      </div>
+    </div>
+  ),
+
+  'bc-86-osusume': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        BC 8.6は国内のコンタクトレンズの中で<strong>最も対応商品数が多いスタンダードBC値</strong>です。
+        メニコン・バイオフィニティ・クラリティ・バイオトゥルーなど23商品以上が対応しています。
+        この記事ではBC 8.6のおすすめ商品を種類別にランキング形式で紹介します。
+      </p>
+
+      <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 mb-6">
+        <p className="text-sm font-bold text-sky-800 mb-1">BC 8.6とは</p>
+        <p className="text-sm text-sky-700">
+          BC 8.6は緩やかなカーブのBC値で、日本人の幅広い角膜カーブに対応しています。
+          国産・外資系問わず多くのブランドが採用しており、選択肢が最も豊富です。
+        </p>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">BC 8.6 おすすめワンデーコンタクト</h2>
+
+      {[
+        {
+          rank: 1, name: 'メニコン ワンデー', slug: 'menicon-1day', brand: 'メニコン',
+          desc: '日本製ワンデーの定番。シリコーンハイドロゲル素材で酸素透過率が高く、長時間装用でも快適。コスパが高く人気No.1クラス。',
+          tags: ['シリコーンハイドロゲル', '長時間装用◎', '国産'],
+        },
+        {
+          rank: 2, name: 'バイオトゥルーワンデー', slug: 'biotrue-oneday', brand: 'ボシュロム',
+          desc: '涙と同じ78%の含水率を維持するHypergel素材。乾燥感が少なく、16時間装用しても快適な装用感が続く。',
+          tags: ['含水率78%', '乾燥に強い', 'コスパ良好'],
+        },
+        {
+          rank: 3, name: 'クラリティ ワンデー', slug: 'clariti-1day', brand: 'クーパービジョン',
+          desc: 'シリコーンハイドロゲル素材のワンデー。コスパと装用感のバランスが優れ、初心者にもおすすめ。',
+          tags: ['シリコーンHG', 'コスパ優秀'],
+        },
+      ].map(({ rank, name, slug, brand, desc, tags }) => (
+        <div key={slug} className="border border-gray-200 rounded-xl p-5 mb-4 bg-white">
+          <div className="flex items-start gap-4">
+            <div className="bg-sky-600 text-white font-bold text-xl w-10 h-10 flex items-center justify-center rounded-lg shrink-0">{rank}</div>
+            <div className="flex-1">
+              <p className="text-xs text-gray-400 mb-0.5">{brand}</p>
+              <h3 className="font-bold text-gray-900 text-base mb-2">{name}</h3>
+              <p className="text-sm text-gray-600 mb-3">{desc}</p>
+              <div className="flex flex-wrap gap-1.5 mb-3">
+                {tags.map(t => (
+                  <span key={t} className="text-xs bg-sky-50 text-sky-700 px-2 py-0.5 rounded border border-sky-200">{t}</span>
+                ))}
+              </div>
+              <Link href={`/product/${slug}`} className="inline-block bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors">
+                最安値で購入 →
+              </Link>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">BC 8.6 おすすめ2week・マンスリー</h2>
+
+      {[
+        {
+          rank: 1, name: 'バイオフィニティ', slug: 'biofinity', brand: 'クーパービジョン',
+          desc: '2weekとして最高水準の酸素透過率（Dk/t=160）を誇るシリコーンハイドロゲルマンスリー。薄くて柔らかく装用感に優れる。',
+          tags: ['酸素透過率最高クラス', 'マンスリー', '2week使用も可'],
+        },
+        {
+          rank: 2, name: 'メニコン 2ウィーク プレミオ', slug: 'menicon-2week', brand: 'メニコン',
+          desc: '日本製2weekの定番。豊富な度数展開と安定した装用感が特徴。コスパも高く継続ユーザーが多い。',
+          tags: ['日本製', '豊富な度数', 'コスパ良好'],
+        },
+      ].map(({ rank, name, slug, brand, desc, tags }) => (
+        <div key={slug} className="border border-gray-200 rounded-xl p-5 mb-4 bg-white">
+          <div className="flex items-start gap-4">
+            <div className="bg-sky-600 text-white font-bold text-xl w-10 h-10 flex items-center justify-center rounded-lg shrink-0">{rank}</div>
+            <div className="flex-1">
+              <p className="text-xs text-gray-400 mb-0.5">{brand}</p>
+              <h3 className="font-bold text-gray-900 text-base mb-2">{name}</h3>
+              <p className="text-sm text-gray-600 mb-3">{desc}</p>
+              <div className="flex flex-wrap gap-1.5 mb-3">
+                {tags.map(t => (
+                  <span key={t} className="text-xs bg-sky-50 text-sky-700 px-2 py-0.5 rounded border border-sky-200">{t}</span>
+                ))}
+              </div>
+              <Link href={`/product/${slug}`} className="inline-block bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors">
+                最安値で購入 →
+              </Link>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">BC 8.6 カラコン</h2>
+      <p className="mb-4">BC 8.6対応のカラコンも豊富に揃っています。</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+        {[
+          { name: 'GEO エンジェルカラー ワンデー', slug: 'geo-angel-color-1day' },
+          { name: 'GEO ベラ カラーコンタクト', slug: 'geo-bella-color' },
+          { name: 'シードアイコフレ ワンデーUV N', slug: 'seed-eyecoffret-natural' },
+          { name: 'フレッシュルック イルミネイト', slug: 'freshlook-illuminate' },
+        ].map(({ name, slug }) => (
+          <Link key={slug} href={`/product/${slug}`} className="block border border-gray-200 rounded-xl p-3 hover:border-sky-300 hover:bg-sky-50 transition-all">
+            <span className="text-xs bg-pink-100 text-pink-700 px-2 py-0.5 rounded font-medium">カラコン</span>
+            <p className="text-sm font-medium text-gray-800 mt-1">{name}</p>
+            <p className="text-xs text-sky-600 mt-1">価格を比較 →</p>
+          </Link>
+        ))}
+      </div>
+
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
+        <h3 className="text-xl font-bold mb-2">BC 8.6商品の最安値を比較する</h3>
+        <p className="text-slate-300 mb-4 text-sm">24店舗の送料込み最安値をリアルタイムで比較できます。</p>
+        <Link href="/bc/8.6" className="inline-block bg-sky-500 text-white font-bold px-6 py-3 rounded-xl hover:bg-sky-400 transition-colors">
+          BC 8.6 全商品一覧を見る →
+        </Link>
+      </div>
+    </div>
+  ),
+
+  'bc-88-osusume': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        BC 8.8は<strong>シードブランドを中心とした緩やかなBC値</strong>です。
+        ワンデーピュア うるおいプラス・ネオサイト ワンデー シリコーン UV・シード ツーウィークピュアなど、
+        シード愛用者には必須のBC値です。この記事ではBC 8.8のおすすめ商品をランキング形式で紹介します。
+      </p>
+
+      <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 mb-6">
+        <p className="text-sm font-bold text-sky-800 mb-1">BC 8.8とは</p>
+        <p className="text-sm text-sky-700">
+          BC 8.8は国内コンタクトレンズの中でも比較的緩やかなBC値。
+          主にシードブランドが採用しており、角膜のカーブが緩やか（フラット）な方に処方されやすい値です。
+        </p>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">BC 8.8 おすすめコンタクトランキング</h2>
+
+      {[
+        {
+          rank: 1, name: 'ワンデーピュア うるおいプラス', slug: 'seed-1day-pure', brand: 'シード',
+          desc: 'シードの定番ワンデー。日本製で豊富な度数展開、うるおい成分配合で乾燥しにくい。BC 8.8のコスパ最強ワンデー。',
+          tags: ['日本製', 'うるおい成分配合', 'コスパ優秀'],
+        },
+        {
+          rank: 2, name: 'ネオサイト ワンデー シリコーン UV', slug: 'neo-sight-1day', brand: 'シード',
+          desc: 'シリコーンハイドロゲル素材採用のUVカットワンデー。高い酸素透過率と乾燥耐性を両立。BC 8.8の最上位グレード。',
+          tags: ['シリコーンHG', 'UVカット', '高酸素透過'],
+        },
+        {
+          rank: 3, name: 'シード ツーウィークピュア', slug: 'seed-2week-pure', brand: 'シード',
+          desc: 'コスト重視のシード2weekコンタクト。豊富な度数ラインナップと低価格が魅力。BC 8.8の2weekの定番。',
+          tags: ['2week', 'コスパ最強', '豊富な度数'],
+        },
+        {
+          rank: 4, name: 'デイリーズ アクア コンフォートプラス 乱視用', slug: 'dailies-aqua-astig', brand: 'アルコン',
+          desc: 'アルコンの乱視用ワンデー。BC 8.8対応の乱視用として選択肢が限られる中、優れた安定性と装用感を提供。',
+          tags: ['乱視用', 'アルコン', 'BC8.8'],
+        },
+      ].map(({ rank, name, slug, brand, desc, tags }) => (
+        <div key={slug} className="border border-gray-200 rounded-xl p-5 mb-4 bg-white">
+          <div className="flex items-start gap-4">
+            <div className="bg-sky-600 text-white font-bold text-xl w-10 h-10 flex items-center justify-center rounded-lg shrink-0">{rank}</div>
+            <div className="flex-1">
+              <p className="text-xs text-gray-400 mb-0.5">{brand}</p>
+              <h3 className="font-bold text-gray-900 text-base mb-2">{name}</h3>
+              <p className="text-sm text-gray-600 mb-3">{desc}</p>
+              <div className="flex flex-wrap gap-1.5 mb-3">
+                {tags.map(t => (
+                  <span key={t} className="text-xs bg-sky-50 text-sky-700 px-2 py-0.5 rounded border border-sky-200">{t}</span>
+                ))}
+              </div>
+              <Link href={`/product/${slug}`} className="inline-block bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors">
+                最安値で購入 →
+              </Link>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">シードブランドがBC 8.8に多い理由</h2>
+      <p className="mb-4">
+        シード（SEED）は日本の老舗コンタクトレンズメーカーで、日本人の眼の特性に合わせた設計を長年研究してきました。
+        シードが採用するBC 8.8は、日本人の中でも角膜のカーブが比較的緩やかな方向けに最適化された設計です。
+      </p>
+      <p className="mb-4">
+        シード製品を愛用している方は処方箋のBC値が8.8であることが多く、
+        他ブランドへの乗り換え時にBC 8.8に対応した商品が少なくて困ることがあります。
+        当サイトのBC 8.8一覧ページでは、シード以外のBC 8.8対応商品も確認できます。
+      </p>
+
+      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
+        <h3 className="text-xl font-bold mb-2">BC 8.8商品の最安値を比較する</h3>
+        <p className="text-slate-300 mb-4 text-sm">24店舗の送料込み最安値をリアルタイムで比較できます。</p>
+        <Link href="/bc/8.8" className="inline-block bg-sky-500 text-white font-bold px-6 py-3 rounded-xl hover:bg-sky-400 transition-colors">
+          BC 8.8 全商品一覧を見る →
+        </Link>
+      </div>
+
+      <section className="mt-8">
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'BC 8.8のコンタクトはシード以外にありますか？', a: 'はい、あります。アルコンのデイリーズ アクア コンフォートプラス 乱視用（BC 8.8）や、デイリーズ トータルワン マンスリー（BC 8.8）なども対応しています。ただし、BC 8.8対応商品はBC 8.6と比較して少ないため、当サイトのBC 8.8一覧ページで全商品を確認することをおすすめします。' },
+            { q: 'シード製品からBC 8.8の他ブランドに変えても大丈夫ですか？', a: 'BC値が同じでも、レンズの素材・含水率・DIAなどが異なるため、必ず眼科でフィッティング確認を受けてから変更してください。特にBC 8.8対応商品は数が限られるため、眼科の処方の元で適切な商品を選ぶことが大切です。' },
           ].map(({ q, a }) => (
             <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
               <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">

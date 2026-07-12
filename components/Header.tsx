@@ -11,7 +11,7 @@ export default function Header() {
             </div>
             <div>
               <span className="text-base font-bold text-gray-900">レンズナビ</span>
-              <p className="text-xs text-gray-500 leading-none mt-0.5">コンタクトレンズ価格比較</p>
+              <p className="text-xs text-gray-500 leading-none mt-0.5">BC選び方 & 最安値比較</p>
             </div>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -27,6 +27,9 @@ export default function Header() {
             <Link href="/category/color" className="text-gray-600 hover:text-slate-900 transition-colors">
               カラコン
             </Link>
+            <Link href="/bc" className="text-gray-600 hover:text-slate-900 transition-colors">
+              BC選び方
+            </Link>
             <Link href="/column" className="text-gray-600 hover:text-slate-900 transition-colors">
               コラム
             </Link>
@@ -41,6 +44,7 @@ export default function Header() {
           <Link href="/category/2week" className="whitespace-nowrap bg-gray-100 px-3 py-1 rounded-full text-gray-700 text-xs">ツーウィーク</Link>
           <Link href="/category/monthly" className="whitespace-nowrap bg-gray-100 px-3 py-1 rounded-full text-gray-700 text-xs">マンスリー</Link>
           <Link href="/category/color" className="whitespace-nowrap bg-gray-100 px-3 py-1 rounded-full text-gray-700 text-xs">カラコン</Link>
+          <Link href="/bc" className="whitespace-nowrap bg-sky-50 text-sky-700 border border-sky-200 px-3 py-1 rounded-full text-xs">BC選び方</Link>
           <Link href="/column" className="whitespace-nowrap bg-gray-100 px-3 py-1 rounded-full text-gray-700 text-xs">コラム</Link>
           <Link href="/ranking" className="whitespace-nowrap bg-sky-600 text-white px-3 py-1 rounded-full text-xs">ランキング</Link>
         </nav>

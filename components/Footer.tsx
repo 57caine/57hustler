@@ -6,6 +6,15 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 py-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           <div>
+            <h3 className="font-bold text-gray-700 mb-3">BCで探す</h3>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/bc/8.5" className="hover:text-sky-600 transition-colors">BC 8.5のコンタクト</Link></li>
+              <li><Link href="/bc/8.6" className="hover:text-sky-600 transition-colors">BC 8.6のコンタクト</Link></li>
+              <li><Link href="/bc/8.7" className="hover:text-sky-600 transition-colors">BC 8.7のコンタクト</Link></li>
+              <li><Link href="/bc/8.8" className="hover:text-sky-600 transition-colors">BC 8.8のコンタクト</Link></li>
+            </ul>
+          </div>
+          <div>
             <h3 className="font-bold text-gray-700 mb-3">種類から探す</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/category/1day" className="hover:text-sky-600 transition-colors">ワンデー</Link></li>
@@ -26,10 +35,10 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-gray-700 mb-3">コラム</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/column/dosu-mikata" className="hover:text-sky-600 transition-colors">度数の見方・読み方</Link></li>
-              <li><Link href="/column/shohosen-nashi-tsuuhan" className="hover:text-sky-600 transition-colors">処方箋なしで通販購入</Link></li>
+              <li><Link href="/column/bc-to-ha" className="hover:text-sky-600 transition-colors">BCとは？選び方ガイド</Link></li>
+              <li><Link href="/column/maker-bc-hyou" className="hover:text-sky-600 transition-colors">メーカー別BC対応表</Link></li>
               <li><Link href="/column/hajimete-erabikata" className="hover:text-sky-600 transition-colors">初めての選び方</Link></li>
-              <li><Link href="/column/kanso-shinikui-contact" className="hover:text-sky-600 transition-colors">乾きにくいコンタクト</Link></li>
+              <li><Link href="/column/dosu-mikata" className="hover:text-sky-600 transition-colors">度数の見方・読み方</Link></li>
             </ul>
           </div>
           <div>

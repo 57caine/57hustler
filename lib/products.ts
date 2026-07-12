@@ -151,6 +151,15 @@ export function getPricesUpdatedAt(): string {
   return pricesData.updatedAt;
 }
 
+export function getProductsByBC(bc: string): Product[] {
+  return productsData.products.filter((p) => p.bc === bc) as Product[];
+}
+
+export function getAllBCValues(): string[] {
+  const vals = new Set(productsData.products.map((p) => (p as Product).bc).filter(Boolean));
+  return [...vals].sort();
+}
+
 export function calcTotalPrice(price: number, store: Store): number {
   return price >= store.freeShippingMin ? price : price + store.shipping;
 }
