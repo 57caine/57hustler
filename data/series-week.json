@@ -1,10 +1,10 @@
 {
-  "current_month": "",
-  "theme": "",
-  "category": "",
-  "series_week_start": "",
+  "current_month": "2026-07",
+  "theme": "日本の神様はなぜ「八百万」いるのか——一神教と多神教の世界観の違い",
+  "category": "宗教の共通項（黄金律、因果応報など）",
+  "series_week_start": "2026-07-13",
   "posts_completed": {
-    "monday": false,
+    "monday": true,
     "wednesday": false,
     "friday": false,
     "sunday": false
