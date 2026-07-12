@@ -1,0 +1,42 @@
+name: フィードバック蒸留
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'   # 毎月1日 00:00 UTC = 09:00 JST
+  push:
+    paths:
+      - 'data/yonaka-feedback.json'
+  workflow_dispatch:
+
+jobs:
+  distill:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: フィードバックを蒸留
+        run: npx ts-node scripts/distill-feedback.ts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: ルール集をコミット
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/yonaka-rules.json
+          git diff --staged --quiet || git commit -m "chore: ルール集を更新 $(date '+%Y-%m-%d' --utc)"
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          git push

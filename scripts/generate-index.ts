@@ -1,0 +1,277 @@
+/**
+ * 仕組み名鑑（自動索引化）
+ * 57hustlerの全自動化仕組みを自動索引化して data/system-index.json に出力する。
+ * GitHub Actions の push 時に自動実行。
+ */
+
+import * as fs from 'fs';
+import * as path from 'path';
+
+interface SystemEntry {
+  name: string;
+  scriptFile: string | null;
+  workflowFile: string | null;
+  role: string;
+  aiStaff: string;
+  schedule: string;
+  status: 'active' | 'standby' | 'planned' | 'development';
+  lastRun?: string;
+}
+
+// 手動定義のシステム一覧（スクリプト・ワークフローと紐付け）
+const SYSTEMS: SystemEntry[] = [
+  {
+    name: '夜中のおじさん自動投稿',
+    scriptFile: 'scripts/yonaka-generate-post.ts',
+    workflowFile: '.github/workflows/yonaka-threads-post.yml',
+    role: 'Threadsへの自動投稿生成（ですます調・3〜5文）',
+    aiStaff: '夜中のおじさん',
+    schedule: '1日6回（4時間ごと）',
+    status: 'active',
+  },
+  {
+    name: '九星気学まとめ投稿',
+    scriptFile: 'scripts/post-threads-fortune.ts',
+    workflowFile: '.github/workflows/post-threads-fortune.yml',
+    role: '全9星の今日の一言を日盤・月盤から生成して投稿',
+    aiStaff: '九星気学bot',
+    schedule: '1日1回（07:00 JST）',
+    status: 'active',
+  },
+  {
+    name: 'Threadsコラム・一文考察',
+    scriptFile: 'scripts/post-threads-column.ts',
+    workflowFile: '.github/workflows/post-threads-column.yml',
+    role: '日本伝統×現代科学の一文考察・コラムを生成して投稿',
+    aiStaff: 'コラムbot',
+    schedule: '1日3回（12:00/21:00/23:00 JST）',
+    status: 'active',
+  },
+  {
+    name: 'lens-navi価格スクレイピング',
+    scriptFile: 'scripts/update-prices.ts',
+    workflowFile: '.github/workflows/update-prices.yml',
+    role: 'コンタクトレンズ各ショップの実価格をPlaywrightで取得',
+    aiStaff: '価格監視bot',
+    schedule: '1日3回（06:00/14:00/22:00 JST）',
+    status: 'active',
+  },
+  {
+    name: 'note下書き生成',
+    scriptFile: 'scripts/generate-note-draft.ts',
+    workflowFile: '.github/workflows/generate-note.yml',
+    role: 'note記事の下書きをClaudeで生成',
+    aiStaff: 'note執筆bot',
+    schedule: '手動実行',
+    status: 'active',
+  },
+  {
+    name: 'Instagram swipe投稿',
+    scriptFile: null,
+    workflowFile: '.github/workflows/instagram-post.yml',
+    role: 'Instagramへのswipe動画/画像投稿',
+    aiStaff: 'Instagrambot',
+    schedule: '火・木・土 19:00 JST（準備中）',
+    status: 'standby',
+  },
+  {
+    name: 'henkutsu X投稿',
+    scriptFile: null,
+    workflowFile: '.github/workflows/henkutsu-x-post.yml',
+    role: 'henkutsu商品のX自動投稿',
+    aiStaff: 'henkutsubot',
+    schedule: '手動実行',
+    status: 'standby',
+  },
+  {
+    name: '朝の司令書システム',
+    scriptFile: 'scripts/morning-brief.ts',
+    workflowFile: '.github/workflows/morning-brief.yml',
+    role: '毎朝のタスク分類・GitHub状況・AI社員スケジュールをJSON出力',
+    aiStaff: '朝の司令書bot',
+    schedule: '毎日 07:00 JST',
+    status: 'active',
+  },
+  {
+    name: '週次レポート自動生成',
+    scriptFile: 'scripts/weekly-report.ts',
+    workflowFile: '.github/workflows/weekly-report.yml',
+    role: '週次の投稿数・タスク完了・GitHub実行状況をまとめてJSON出力',
+    aiStaff: '週次レポートbot',
+    schedule: '毎週月曜 07:00 JST',
+    status: 'active',
+  },
+  {
+    name: '業務棚卸しシステム',
+    scriptFile: 'scripts/business-audit.ts',
+    workflowFile: null,
+    role: '全業務を自動化レベルで分類してJSON出力',
+    aiStaff: '業務棚卸しbot',
+    schedule: '手動実行',
+    status: 'active',
+  },
+  {
+    name: 'フィードバック蒸留システム',
+    scriptFile: 'scripts/distill-feedback.ts',
+    workflowFile: '.github/workflows/distill-feedback.yml',
+    role: '修正フィードバックを確定ルール集に圧縮',
+    aiStaff: 'フィードバック蒸留bot',
+    schedule: '毎月1日 09:00 JST',
+    status: 'active',
+  },
+  {
+    name: 'マニュアル総点検システム',
+    scriptFile: 'scripts/manual-audit.ts',
+    workflowFile: '.github/workflows/manual-audit.yml',
+    role: 'マニュアル・スクリプト・ワークフローの整合性点検',
+    aiStaff: 'マニュアル点検bot',
+    schedule: '毎月1日 10:00 JST',
+    status: 'active',
+  },
+  {
+    name: 'コンテンツ転用工場',
+    scriptFile: 'scripts/content-repurpose.ts',
+    workflowFile: null,
+    role: 'note記事1本から4媒体向けコンテンツを生成',
+    aiStaff: 'コンテンツ転用bot',
+    schedule: '手動実行',
+    status: 'active',
+  },
+  {
+    name: '公開前検品システム',
+    scriptFile: 'scripts/content-check.ts',
+    workflowFile: null,
+    role: '投稿文のルール違反・断言・重複をチェック',
+    aiStaff: '検品bot',
+    schedule: '手動実行',
+    status: 'active',
+  },
+  {
+    name: '人事評価・日報システム',
+    scriptFile: 'scripts/monthly-evaluation.ts',
+    workflowFile: '.github/workflows/monthly-evaluation.yml',
+    role: 'AI社員の月次実績（投稿数・成功率・重複率）を自動評価',
+    aiStaff: '人事評価bot',
+    schedule: '毎月1日 08:45 JST',
+    status: 'active',
+  },
+  {
+    name: '仕組み名鑑（自動索引化）',
+    scriptFile: 'scripts/generate-index.ts',
+    workflowFile: '.github/workflows/update-index.yml',
+    role: '全自動化仕組みをJSONに索引化',
+    aiStaff: '索引生成bot',
+    schedule: 'mainへのpush時',
+    status: 'active',
+  },
+  {
+    name: 'CEOダッシュボード自動デプロイ',
+    scriptFile: null,
+    workflowFile: '.github/workflows/deploy-ceo-dashboard.yml',
+    role: 'ceo-dashboard/の変更をVercelに自動デプロイ',
+    aiStaff: 'デプロイbot',
+    schedule: 'ceo-dashboard/**変更時',
+    status: 'active',
+  },
+  {
+    name: 'FX分析ツール',
+    scriptFile: null,
+    workflowFile: null,
+    role: 'USD/JPY・EUR/USD・EUR/JPYのローソク足チャート＋バックテスト',
+    aiStaff: 'FX分析bot',
+    schedule: 'ブラウザ手動',
+    status: 'active',
+  },
+  {
+    name: 'トレード日誌',
+    scriptFile: null,
+    workflowFile: null,
+    role: 'FXトレード記録・集計・CSV出力（localStorage）',
+    aiStaff: 'トレード日誌bot',
+    schedule: 'ブラウザ手動',
+    status: 'active',
+  },
+  {
+    name: 'リスク管理計算機',
+    scriptFile: null,
+    workflowFile: null,
+    role: 'ロットサイズ計算・最大損失表示',
+    aiStaff: 'リスク計算bot',
+    schedule: 'ブラウザ手動',
+    status: 'active',
+  },
+  {
+    name: 'eBay無在庫販売bot',
+    scriptFile: null,
+    workflowFile: null,
+    role: 'eBayでの無在庫販売自動化',
+    aiStaff: 'eBaybot',
+    schedule: '2〜3年後に構築予定',
+    status: 'planned',
+  },
+  {
+    name: '株式ポートフォリオ監視bot',
+    scriptFile: null,
+    workflowFile: null,
+    role: '証券口座のポートフォリオを取得してダッシュボードに表示',
+    aiStaff: '株式bot',
+    schedule: '計画中',
+    status: 'planned',
+  },
+  {
+    name: 'NISA進捗bot',
+    scriptFile: null,
+    workflowFile: null,
+    role: 'NISA積立進捗をCEOダッシュボードに表示',
+    aiStaff: 'NISAbot',
+    schedule: '計画中',
+    status: 'planned',
+  },
+  {
+    name: 'RC物件CF管理bot',
+    scriptFile: null,
+    workflowFile: null,
+    role: 'RC物件のキャッシュフロー管理・月次レポート',
+    aiStaff: 'RC物件bot',
+    schedule: '7年後引継ぎ後に構築',
+    status: 'planned',
+  },
+  {
+    name: 'freee記帳bot',
+    scriptFile: null,
+    workflowFile: null,
+    role: 'freee APIで収支を自動記帳',
+    aiStaff: '記帳bot',
+    schedule: '計画中',
+    status: 'planned',
+  },
+];
+
+function verifyFiles(systems: SystemEntry[]): SystemEntry[] {
+  return systems.map(s => {
+    const scriptOk   = !s.scriptFile   || fs.existsSync(path.join(process.cwd(), s.scriptFile));
+    const workflowOk = !s.workflowFile || fs.existsSync(path.join(process.cwd(), s.workflowFile));
+    return { ...s, _scriptExists: scriptOk, _workflowExists: workflowOk } as SystemEntry;
+  });
+}
+
+function main() {
+  console.log('=== 仕組み名鑑 索引生成 ===');
+  const verified = verifyFiles(SYSTEMS);
+  const active   = verified.filter(s => s.status === 'active').length;
+  const standby  = verified.filter(s => s.status === 'standby').length;
+  const planned  = verified.filter(s => s.status === 'planned').length;
+
+  const index = {
+    lastUpdated: new Date().toISOString(),
+    summary: { total: SYSTEMS.length, active, standby, planned },
+    systems: verified,
+  };
+
+  const outPath = path.join(process.cwd(), 'data', 'system-index.json');
+  fs.writeFileSync(outPath, JSON.stringify(index, null, 2), 'utf-8');
+  console.log(`✓ 索引を生成しました: ${outPath}`);
+  console.log(`  稼働中: ${active}件 / 待機中: ${standby}件 / 計画中: ${planned}件`);
+}
+
+main();

@@ -1,0 +1,31 @@
+{
+  "tasks": [
+    {
+      "id": "task-001",
+      "title": "note第8回作成・公開",
+      "priority": "high",
+      "category": "content",
+      "dueDate": null,
+      "completed": false,
+      "addedDate": "2026-07-12"
+    },
+    {
+      "id": "task-002",
+      "title": "Instagram投稿開始（週2本〜）",
+      "priority": "high",
+      "category": "sns",
+      "dueDate": null,
+      "completed": false,
+      "addedDate": "2026-07-12"
+    },
+    {
+      "id": "task-003",
+      "title": "Amazon Associates申請（売上3件後）",
+      "priority": "medium",
+      "category": "monetize",
+      "dueDate": null,
+      "completed": false,
+      "addedDate": "2026-07-12"
+    }
+  ]
+}

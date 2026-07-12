@@ -105,10 +105,22 @@ function SLabel({ children }: { children: React.ReactNode }) {
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
+interface MorningBrief {
+  date: string;
+  generatedAt: string;
+  postsToday: number;
+  actionsStatus: { total: number; success: number; failed: number };
+  urgent: string[];
+  defer: string[];
+  confirm: string[];
+  summary: string;
+}
+
 export default async function Dashboard() {
-  const [yonaka, column] = await Promise.all([
+  const [yonaka, column, brief] = await Promise.all([
     fetchJson<{ posts: { date: string }[] }>('yonaka-post-history.json'),
     fetchJson<{ posts: { date: string }[] }>('column-history.json'),
+    fetchJson<MorningBrief>('morning-brief.json'),
   ]);
 
   const todayJST   = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
@@ -160,6 +172,52 @@ export default async function Dashboard() {
           </div>
         </div>
       </div>
+
+      {/* ① 朝の司令書 */}
+      {brief && (
+        <div>
+          <SLabel>朝の司令書</SLabel>
+          <div className="rounded-xl p-4" style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+            {brief.summary && (
+              <p className="text-sm mb-3 leading-relaxed">{brief.summary}</p>
+            )}
+            {brief.urgent.length > 0 && (
+              <div className="mb-2">
+                <div className="text-[10px] font-bold mb-1" style={{ color: '#ef4444' }}>🔴 今日やること</div>
+                {brief.urgent.map((t, i) => (
+                  <div key={i} className="text-xs py-1 flex items-start gap-2">
+                    <span style={{ color: '#ef4444' }}>→</span><span>{t}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+            {brief.confirm.length > 0 && (
+              <div className="mb-2">
+                <div className="text-[10px] font-bold mb-1" style={{ color: '#f59e0b' }}>🟡 要確認</div>
+                {brief.confirm.map((t, i) => (
+                  <div key={i} className="text-xs py-1 flex items-start gap-2">
+                    <span style={{ color: '#f59e0b' }}>→</span><span>{t}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+            {brief.defer.length > 0 && (
+              <div>
+                <div className="text-[10px] font-bold mb-1" style={{ color: 'var(--muted)' }}>⬜ 後回し</div>
+                {brief.defer.map((t, i) => (
+                  <div key={i} className="text-xs py-1 flex items-start gap-2">
+                    <span style={{ color: 'var(--muted)' }}>→</span><span style={{ color: 'var(--muted)' }}>{t}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+            <div className="mt-3 text-[10px] flex items-center justify-between" style={{ color: 'var(--muted)' }}>
+              <span>{brief.date} 司令書</span>
+              <span>Actions {brief.actionsStatus.success}/{brief.actionsStatus.total} 成功</span>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ② 会社KPI */}
       <div>

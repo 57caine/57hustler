@@ -1,0 +1,41 @@
+name: henkutsu 海外商品リサーチ
+
+on:
+  schedule:
+    - cron: '0 0 * * 1,3,5'   # 月・水・金 00:00 UTC = 09:00 JST
+  workflow_dispatch:
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Playwright ブラウザ取得
+        run: npx playwright install chromium --with-deps
+
+      - name: リサーチ実行
+        run: npx ts-node scripts/henkutsu-research.ts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: 結果をコミット
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/henkutsu-candidates.json
+          git diff --staged --quiet || git commit -m "chore: henkutsu候補リスト更新 $(date '+%Y-%m-%d' --utc)"
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          git push

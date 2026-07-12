@@ -1,0 +1,26 @@
+{
+  "date": "2026-07-12",
+  "generatedAt": "2026-07-12T07:00:00+09:00",
+  "todayAiStaff": [
+    { "time": "04:00", "name": "夜中のおじさん", "task": "Threads投稿" },
+    { "time": "07:00", "name": "九星気学bot",   "task": "運勢まとめ投稿" },
+    { "time": "08:00", "name": "夜中のおじさん", "task": "Threads投稿" },
+    { "time": "12:00", "name": "コラムbot・夜中", "task": "Threads投稿2本" },
+    { "time": "16:00", "name": "夜中のおじさん", "task": "Threads投稿" },
+    { "time": "20:00", "name": "夜中のおじさん", "task": "Threads投稿" },
+    { "time": "21:00", "name": "コラムbot",      "task": "一文考察投稿" },
+    { "time": "22:00", "name": "夜中のおじさん", "task": "Threads投稿" },
+    { "time": "23:00", "name": "コラムbot",      "task": "コラム夜投稿" }
+  ],
+  "postsToday": 0,
+  "actionsStatus": {
+    "total": 0,
+    "success": 0,
+    "failed": 0,
+    "runs": []
+  },
+  "urgent": ["note第8回作成・公開", "Instagram投稿開始（週2本〜）"],
+  "defer": ["Amazon Associates申請（売上3件後）"],
+  "confirm": [],
+  "summary": "初期データ。morning-brief.yml が実行されると自動更新されます。"
+}

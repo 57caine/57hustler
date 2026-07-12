@@ -1,0 +1,40 @@
+name: AI社員 月次人事評価
+
+on:
+  schedule:
+    - cron: '45 23 28-31 * *'   # 毎月末 23:45 UTC ≈ 毎月1日 08:45 JST
+  workflow_dispatch:
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: 月次評価を生成
+        run: npx ts-node scripts/monthly-evaluation.ts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 評価をコミット
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/evaluations/
+          git diff --staged --quiet || git commit -m "chore: AI社員月次評価 $(date '+%Y-%m' --utc)"
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          git push

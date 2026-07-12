@@ -1,0 +1,40 @@
+name: 仕組み名鑑 自動索引更新
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/**'
+  workflow_dispatch:
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: 索引を生成
+        run: npx ts-node scripts/generate-index.ts
+
+      - name: 索引をコミット
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/system-index.json
+          git diff --staged --quiet || git commit -m "chore: 仕組み名鑑を自動更新"
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          git push

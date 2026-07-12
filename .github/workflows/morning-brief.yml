@@ -1,0 +1,40 @@
+name: 朝の司令書生成
+
+on:
+  schedule:
+    - cron: '0 22 * * *'   # 毎日 JST 07:00
+  workflow_dispatch:
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: 朝の司令書を生成
+        run: npx ts-node scripts/morning-brief.ts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 司令書をコミット
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/morning-brief.json
+          git diff --staged --quiet || git commit -m "chore: 朝の司令書更新 $(date '+%Y-%m-%d' --utc)"
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          git push
