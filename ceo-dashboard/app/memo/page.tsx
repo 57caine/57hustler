@@ -1,5 +1,6 @@
 import MemoForm from './MemoForm';
 import GenerateButton from './GenerateButton';
+import DeleteButton from './DeleteButton';
 
 const RAW = 'https://raw.githubusercontent.com/57caine/57hustler/main/data';
 
@@ -25,11 +26,11 @@ async function fetchMemos(): Promise<MemosFile | null> {
   } catch { return null; }
 }
 
-const CAT: Record<Category, { label: string; color: string; bg: string }> = {
-  yonaka:   { label: '🌙 夜中のおじさん', color: '#7c6ef7', bg: 'rgba(124,110,247,0.1)' },
-  henkutsu: { label: '🌍 henkutsu',       color: '#05ce78', bg: 'rgba(5,206,120,0.1)'   },
-  ceo:      { label: '💡 CEO',             color: '#f59e0b', bg: 'rgba(245,158,11,0.1)'  },
-  other:    { label: '📝 その他',           color: '#94a3b8', bg: 'rgba(148,163,184,0.1)' },
+const CAT: Record<Category, { label: string; color: string; bg: string; border: string }> = {
+  yonaka:   { label: '🌙 夜中のおじさん', color: '#7c6ef7', bg: 'rgba(124,110,247,0.1)',  border: 'rgba(124,110,247,0.3)' },
+  henkutsu: { label: '🌍 henkutsu',       color: '#05ce78', bg: 'rgba(5,206,120,0.1)',    border: 'rgba(5,206,120,0.3)' },
+  ceo:      { label: '💡 CEO',             color: '#f59e0b', bg: 'rgba(245,158,11,0.1)',   border: 'rgba(245,158,11,0.3)' },
+  other:    { label: '📝 その他',           color: '#94a3b8', bg: 'rgba(148,163,184,0.1)', border: 'rgba(148,163,184,0.3)' },
 };
 
 function reltime(iso: string): string {
@@ -63,33 +64,67 @@ export default async function MemoPage() {
         <MemoForm />
       </div>
 
+      {/* List header */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
+        <div style={{ fontSize: 10, color: 'var(--muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+          {memos.length > 0 ? `${memos.length}件のメモ` : '保存済みメモ'}
+        </div>
+        {memos.length > 0 && (
+          <div style={{ display: 'flex', gap: 5 }}>
+            {(Object.entries(CAT) as [Category, typeof CAT[Category]][]).map(([key, c]) => {
+              const count = memos.filter(m => m.category === key).length;
+              if (count === 0) return null;
+              return (
+                <span key={key} style={{
+                  fontSize: 10, color: c.color, background: c.bg,
+                  border: `1px solid ${c.border}`, borderRadius: 6,
+                  padding: '2px 7px', fontWeight: 600,
+                }}>
+                  {key === 'yonaka' ? '🌙' : key === 'henkutsu' ? '🌍' : key === 'ceo' ? '💡' : '📝'} {count}
+                </span>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
       {/* List */}
       {memos.length === 0 ? (
-        <div style={{ textAlign: 'center', color: 'var(--muted)', fontSize: 13, paddingTop: 32 }}>
-          まだメモがありません
+        <div style={{
+          textAlign: 'center', color: 'var(--muted)', fontSize: 13,
+          paddingTop: 40, paddingBottom: 40,
+          border: '1px dashed var(--border)', borderRadius: 12,
+        }}>
+          <div style={{ fontSize: 28, marginBottom: 8 }}>📝</div>
+          まだメモがありません<br />
+          <span style={{ fontSize: 11 }}>上のフォームから最初のメモを追加してください</span>
         </div>
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-          <div style={{ fontSize: 10, color: 'var(--muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 2 }}>
-            {memos.length}件のメモ
-          </div>
           {memos.map(m => {
             const c = CAT[m.category] ?? CAT.other;
-            const showGenerate = m.category === 'yonaka' || m.category === 'henkutsu';
             return (
               <div key={m.id} className="rounded-xl p-4"
-                style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
-                {/* Category + time */}
+                style={{
+                  background: 'var(--surface)',
+                  border: '1px solid var(--border)',
+                  borderLeft: `3px solid ${c.color}`,
+                }}>
+
+                {/* Category + time + delete */}
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
                   <span style={{
-                    fontSize: 10, padding: '3px 8px', borderRadius: 6, fontWeight: 600,
-                    background: c.bg, color: c.color,
+                    fontSize: 10, padding: '2px 8px', borderRadius: 6, fontWeight: 600,
+                    background: c.bg, color: c.color, border: `1px solid ${c.border}`,
                   }}>
                     {c.label}
                   </span>
-                  <span style={{ fontSize: 10, color: 'var(--muted)' }}>
-                    {reltime(m.createdAt)}
-                  </span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <span style={{ fontSize: 10, color: 'var(--muted)' }}>
+                      {reltime(m.createdAt)}
+                    </span>
+                    <DeleteButton id={m.id} />
+                  </div>
                 </div>
 
                 {/* Text */}
@@ -97,10 +132,8 @@ export default async function MemoPage() {
                   {m.text}
                 </p>
 
-                {/* Generate button */}
-                {showGenerate && (
-                  <GenerateButton text={m.text} category={m.category} />
-                )}
+                {/* Generate button — all categories */}
+                <GenerateButton text={m.text} category={m.category} />
               </div>
             );
           })}
