@@ -2,16 +2,18 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { columns, getColumnBySlug, columnContent } from '@/lib/columns';
+import { eyeColumns, eyeColumnContent } from '@/lib/eye-columns';
+import { allColumns, getAnyColumnBySlug } from '@/lib/all-columns';
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return columns.map((c) => ({ slug: c.slug }));
+  return allColumns.map((c) => ({ slug: c.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const column = getColumnBySlug(slug);
+  const column = getAnyColumnBySlug(slug);
   if (!column) return {};
   return {
     title: column.title,
@@ -23,17 +25,23 @@ const categoryColors: Record<string, string> = {
   '度数・処方箋': 'bg-purple-100 text-purple-700',
   '購入ガイド': 'bg-emerald-100 text-emerald-700',
   '商品比較': 'bg-slate-100 text-slate-700',
+  'BC選び方': 'bg-sky-100 text-sky-700',
+  '眼鏡・サングラス': 'bg-indigo-100 text-indigo-700',
+  'VR・スマートグラス': 'bg-violet-100 text-violet-700',
+  'レーシック・視力矯正': 'bg-emerald-100 text-emerald-700',
+  'アイケア・目薬': 'bg-cyan-100 text-cyan-700',
+  '目の雑貨・グッズ': 'bg-orange-100 text-orange-700',
 };
 
 export default async function ColumnPage({ params }: Props) {
   const { slug } = await params;
-  const column = getColumnBySlug(slug);
+  const column = getAnyColumnBySlug(slug);
   if (!column) notFound();
 
-  const content = columnContent[slug];
+  const content = columnContent[slug] ?? eyeColumnContent[slug];
   if (!content) notFound();
 
-  const otherColumns = columns.filter((c) => c.slug !== slug).slice(0, 4);
+  const otherColumns = allColumns.filter((c) => c.slug !== slug).slice(0, 4);
   const BASE = 'https://lens-navi.jp';
 
   const jsonLd = {
@@ -103,10 +111,10 @@ export default async function ColumnPage({ params }: Props) {
           </nav>
         )}
 
-        {/* 記事前比較CTA */}
+        {/* 記事前CTA */}
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-3">
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-bold text-gray-800">この記事の商品を最安値で購入する</p>
+            <p className="text-sm font-bold text-gray-800">コンタクトレンズを最安値で購入する</p>
             <p className="text-xs text-gray-500 mt-0.5">24店舗の送料込み最安値をリアルタイム比較</p>
           </div>
           <Link href="/ranking" className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors whitespace-nowrap">
@@ -119,7 +127,7 @@ export default async function ColumnPage({ params }: Props) {
           {content}
         </div>
 
-        {/* 記事後比較CTA */}
+        {/* 記事後CTA */}
         <div className="mt-10 p-5 bg-slate-50 border border-slate-200 rounded-xl">
           <p className="text-sm font-bold text-gray-800 mb-1">送料込み最安値を今すぐ比較</p>
           <p className="text-xs text-gray-500 mb-3">24店舗のリアルタイム価格。この記事の商品を最安値で購入できます。</p>
@@ -133,8 +141,8 @@ export default async function ColumnPage({ params }: Props) {
             <Link href="/category/2week" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2 rounded-lg hover:border-slate-300 transition-colors">
               2ウィーク
             </Link>
-            <Link href="/category/monthly" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2 rounded-lg hover:border-slate-300 transition-colors">
-              マンスリー
+            <Link href="/eye-care" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2 rounded-lg hover:border-slate-300 transition-colors">
+              アイケア
             </Link>
           </div>
         </div>

@@ -2,13 +2,23 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllProductsWithPrices, getAllCategories, getPricesUpdatedAt, getAllBCValues, getProductsByBC } from '@/lib/products';
 import { columns } from '@/lib/columns';
+import { eyeColumns } from '@/lib/eye-columns';
 import ProductCard from '@/components/ProductCard';
 
 export const metadata: Metadata = {
-  title: 'コンタクトレンズ BC選び方・おすすめ比較【2026年版】| レンズナビ',
-  description: 'ベースカーブ（BC）でコンタクトレンズを選ぶ方法を徹底解説。BC 8.4〜8.8別のおすすめ商品一覧と、24店舗の最安値比較も。アキュビュー・シード・アルコンなど55商品対応。',
-  keywords: ['コンタクト BC', 'ベースカーブ 選び方', 'BC 8.6 コンタクト', 'BC 8.8 コンタクト', 'コンタクトレンズ 最安値'],
+  title: '目のことなら、レンズナビ。コンタクト・眼鏡・アイケア・レーシック総合情報 | レンズナビ',
+  description: 'コンタクトレンズの最安値比較から眼鏡選び・VRゴーグル・レーシック・ドライアイ対策まで。目に関するすべての情報が揃う総合サイト。レンズナビは目のことなら何でもわかります。',
+  keywords: ['コンタクトレンズ 選び方', '眼鏡 選び方', 'VRゴーグル 視力', 'レーシック 費用', 'ドライアイ 目薬 おすすめ', 'ホットアイマスク おすすめ'],
 };
+
+const SITE_CATEGORIES = [
+  { href: '/category/1day', icon: '👁', label: 'コンタクトレンズ', desc: 'BC別・種類別で最安値比較', color: 'from-sky-50 to-blue-50', border: 'border-sky-200', accent: 'text-sky-600' },
+  { href: '/megane', icon: '👓', label: '眼鏡・サングラス', desc: '顔型別フレーム・ブルーライトカット', color: 'from-indigo-50 to-violet-50', border: 'border-indigo-200', accent: 'text-indigo-600' },
+  { href: '/vr', icon: '🥽', label: 'VR・スマートグラス', desc: 'Meta Quest・Ray-Ban Meta比較', color: 'from-violet-50 to-purple-50', border: 'border-violet-200', accent: 'text-violet-600' },
+  { href: '/lasik', icon: '✨', label: 'レーシック・視力矯正', desc: '費用・リスク・ICLとの違い', color: 'from-emerald-50 to-teal-50', border: 'border-emerald-200', accent: 'text-emerald-600' },
+  { href: '/eye-care', icon: '💊', label: 'アイケア・目薬', desc: 'ドライアイ・コンタクト用目薬', color: 'from-cyan-50 to-teal-50', border: 'border-cyan-200', accent: 'text-cyan-600' },
+  { href: '/eye-goods', icon: '🛍', label: '目の雑貨・グッズ', desc: 'ホットアイマスク・モニターライト', color: 'from-orange-50 to-amber-50', border: 'border-orange-200', accent: 'text-orange-600' },
+];
 
 const categoryConfig = {
   '1day':    { label: '1day',    bg: 'bg-slate-50',   border: 'border-slate-200',   text: 'text-slate-700'   },
@@ -17,25 +27,18 @@ const categoryConfig = {
   'color':   { label: 'color',   bg: 'bg-pink-50',   border: 'border-pink-200',   text: 'text-pink-700'   },
 } as const;
 
-const columnCategoryColors: Record<string, string> = {
-  '度数・処方箋': 'bg-slate-100 text-slate-700',
-  '購入ガイド': 'bg-emerald-50 text-emerald-700',
-  '商品比較': 'bg-slate-100 text-slate-700',
-  'BC選び方': 'bg-sky-100 text-sky-700',
-};
-
 const homeFaqs = [
   {
-    q: 'ベースカーブ（BC）が合っていないとどうなりますか？',
+    q: 'コンタクトレンズのBC（ベースカーブ）が合っていないとどうなりますか？',
     a: 'BCが小さすぎると角膜を締め付け、充血・痛み・酸素不足が起きます。BCが大きすぎるとレンズがずれやすく、ゴロゴロ感・視力の不安定さにつながります。必ず眼科で処方されたBCのレンズを選んでください。',
   },
   {
-    q: '自分のBCはどうやって調べますか？',
-    a: '眼科を受診してコンタクトレンズの処方箋を発行してもらうことで確認できます。処方箋に「BC」または「ベースカーブ」として記載されています。自己判断でBCを変えることは眼の健康上危険ですので、必ず眼科での処方に従ってください。',
+    q: 'ドライアイに効く市販の目薬はありますか？',
+    a: 'コンタクト装用者にはソフトサンティア（防腐剤フリー）やロートモイストアイが人気です。主成分としてヒアルロン酸Naを含む目薬は保湿効果に優れています。ただし症状が続く場合は眼科を受診してください。',
   },
   {
-    q: 'BC 8.5とBC 8.6のコンタクトでは、どちらが自分に合いますか？',
-    a: 'これは眼科での検査結果次第です。一般的にBC 8.5は日本人に多いカーブで、アキュビュー系に多く採用されています。BC 8.6はメニコン・バイオフィニティ・クラリティなどに多い値です。眼科の処方箋に記載されたBCと同じ商品を選んでください。',
+    q: 'レーシックの費用はいくらですか？',
+    a: '両眼で15万〜30万円が一般的な相場です。最新機器を使ったプレミアムプランは30万円以上になることも。ICL（眼内コンタクト）は50〜70万円程度です。クリニックのカウンセリングは無料なのでまず相談してみましょう。',
   },
 ];
 
@@ -46,8 +49,8 @@ export default function HomePage() {
   const topProducts = [...allProducts].sort((a, b) => b.popularity - a.popularity).slice(0, 6);
   const bcValues = getAllBCValues();
 
-  const bcColumns = columns.filter(c => c.category === 'BC選び方').slice(0, 4);
-  const otherColumns = columns.filter(c => c.category !== 'BC選び方').slice(0, 4);
+  const recentEyeColumns = eyeColumns.slice(0, 4);
+  const bcColumns = columns.filter(c => c.category === 'BC選び方').slice(0, 2);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -65,30 +68,85 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="text-center mb-12">
-        <p className="text-xs text-gray-400 font-medium mb-3 uppercase tracking-widest">Contact Lens BC Guide</p>
+        <p className="text-xs text-gray-400 font-medium mb-3 uppercase tracking-widest">Eye Care & Vision Guide</p>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 leading-tight">
-          コンタクトレンズは<br className="md:hidden" />
-          <span className="text-sky-600">BC（ベースカーブ）</span>から選ぶ
+          目のことなら、<span className="text-sky-600">レンズナビ。</span>
         </h1>
-        <p className="text-gray-500 mb-1">
-          処方箋のBC値を確認して、ぴったりのコンタクトレンズを見つけよう
-        </p>
-        <p className="text-xs text-gray-400 mb-6">
-          {allProducts.length}商品 ・ 24店舗で価格比較 ・ 価格更新: {new Date(updatedAt).toLocaleDateString('ja-JP')}
+        <p className="text-gray-500 mb-6 text-sm max-w-xl mx-auto">
+          コンタクトレンズの最安値比較から、眼鏡・VR・レーシック・アイケアまで。目に関するあらゆる情報を網羅します。
         </p>
         <div className="flex flex-wrap justify-center gap-3">
-          <Link href="/bc" className="bg-sky-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-sky-500 transition-colors text-sm">
-            BCで商品を探す
+          <Link href="/ranking" className="bg-sky-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-sky-500 transition-colors text-sm">
+            コンタクト最安値を比較する
           </Link>
-          <Link href="/column/bc-to-ha" className="bg-white text-gray-700 border border-gray-200 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition-colors text-sm">
-            BCとは？基礎知識を読む
+          <Link href="/column" className="bg-white text-gray-700 border border-gray-200 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition-colors text-sm">
+            コラムを読む
           </Link>
         </div>
       </section>
 
-      {/* BC別クイック選択 */}
+      {/* 6カテゴリ */}
       <section className="mb-12">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">BC値から選ぶ</h2>
+        <h2 className="text-xl font-bold text-gray-800 mb-4">カテゴリから探す</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          {SITE_CATEGORIES.map(cat => (
+            <Link key={cat.href} href={cat.href} className="group block">
+              <div className={`bg-gradient-to-br ${cat.color} border ${cat.border} rounded-xl p-5 hover:shadow-sm transition-all`}>
+                <div className="text-2xl mb-2">{cat.icon}</div>
+                <p className={`font-bold text-sm mb-1 ${cat.accent}`}>{cat.label}</p>
+                <p className="text-xs text-gray-500">{cat.desc}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 最新コラム（目のカテゴリ） */}
+      <section className="mb-12">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl font-bold text-gray-800">目の健康・アイケアコラム</h2>
+          <Link href="/column" className="text-sky-600 text-sm hover:underline">全記事を見る →</Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {recentEyeColumns.map((column) => (
+            <Link key={column.slug} href={`/column/${column.slug}`} className="group block">
+              <div className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm hover:border-sky-200 transition-all h-full">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded font-medium">{column.category}</span>
+                  <span className="text-xs text-gray-400">{column.readingTime}分</span>
+                </div>
+                <h3 className="font-bold text-gray-800 text-sm leading-snug group-hover:text-sky-600 transition-colors mb-2">
+                  {column.title}
+                </h3>
+                <p className="text-xs text-gray-500 leading-relaxed line-clamp-2">{column.description}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* コンタクト価格比較 */}
+      <section className="mb-12">
+        <div className="flex items-center justify-between mb-2">
+          <h2 className="text-xl font-bold text-gray-800">コンタクトレンズ 最安値ランキング</h2>
+          <Link href="/ranking" className="text-slate-600 text-sm hover:underline">すべて見る →</Link>
+        </div>
+        <p className="text-xs text-gray-400 mb-4">
+          {allProducts.length}商品 ・ 24店舗で比較 ・ 価格更新: {new Date(updatedAt).toLocaleDateString('ja-JP')}
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {topProducts.map((product, index) => (
+            <ProductCard key={product.id} product={product} rank={index + 1} />
+          ))}
+        </div>
+      </section>
+
+      {/* BC選択 */}
+      <section className="mb-12">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl font-bold text-gray-800">BC値（ベースカーブ）で選ぶ</h2>
+          <Link href="/bc" className="text-sky-600 text-sm hover:underline">BCとは？</Link>
+        </div>
         <p className="text-sm text-gray-500 mb-4">処方箋に記載されているBC値をタップしてください</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
           {bcValues.map((bc) => {
@@ -98,7 +156,7 @@ export default function HomePage() {
                 <div className="bg-white border border-gray-200 rounded-xl p-4 text-center hover:border-sky-400 hover:shadow-sm transition-all cursor-pointer group">
                   <p className="text-xs text-gray-400 mb-1">ベースカーブ</p>
                   <p className="text-2xl font-bold text-sky-600 group-hover:text-sky-500">BC {bc}</p>
-                  <p className="text-xs text-gray-400 mt-1">{count}商品対応</p>
+                  <p className="text-xs text-gray-400 mt-1">{count}商品</p>
                 </div>
               </Link>
             );
@@ -110,7 +168,7 @@ export default function HomePage() {
       {bcColumns.length > 0 && (
         <section className="mb-12">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-bold text-gray-800">BC・ベースカーブ 選び方ガイド</h2>
+            <h2 className="text-xl font-bold text-gray-800">BC・コンタクト 選び方ガイド</h2>
             <Link href="/column" className="text-slate-600 text-sm hover:underline">全記事を見る →</Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -118,9 +176,7 @@ export default function HomePage() {
               <Link key={column.slug} href={`/column/${column.slug}`} className="group block">
                 <div className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm hover:border-sky-200 transition-all h-full">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className={`text-xs px-2 py-0.5 rounded font-medium ${columnCategoryColors[column.category] ?? 'bg-gray-100 text-gray-600'}`}>
-                      {column.category}
-                    </span>
+                    <span className="text-xs bg-sky-100 text-sky-700 px-2 py-0.5 rounded font-medium">{column.category}</span>
                     <span className="text-xs text-gray-400">{column.readingTime}分</span>
                   </div>
                   <h3 className="font-bold text-gray-800 text-sm leading-snug group-hover:text-sky-600 transition-colors mb-2">
@@ -134,22 +190,9 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* 人気ランキング */}
-      <section className="mb-12">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-bold text-gray-800">人気ランキング TOP6</h2>
-          <Link href="/ranking" className="text-slate-600 text-sm hover:underline">すべて見る →</Link>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {topProducts.map((product, index) => (
-            <ProductCard key={product.id} product={product} rank={index + 1} />
-          ))}
-        </div>
-      </section>
-
       {/* 種類で探す */}
       <section className="mb-12">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">種類から探す</h2>
+        <h2 className="text-xl font-bold text-gray-800 mb-4">コンタクト種類から探す</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {categories.map((cat) => {
             const cfg = categoryConfig[cat.slug as keyof typeof categoryConfig];
@@ -166,40 +209,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* コンタクト購入ガイド */}
-      <section className="mb-12">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-bold text-gray-800">コンタクト購入ガイド</h2>
-          <Link href="/column" className="text-slate-600 text-sm hover:underline">全{columns.length}記事を見る →</Link>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {otherColumns.map((column) => (
-            <Link key={column.slug} href={`/column/${column.slug}`} className="group block">
-              <div className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm hover:border-gray-300 transition-all h-full">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className={`text-xs px-2 py-0.5 rounded font-medium ${columnCategoryColors[column.category] ?? 'bg-gray-100 text-gray-600'}`}>
-                    {column.category}
-                  </span>
-                  <span className="text-xs text-gray-400">{column.readingTime}分</span>
-                </div>
-                <h3 className="font-bold text-gray-800 text-sm leading-snug group-hover:text-slate-600 transition-colors mb-2">
-                  {column.title}
-                </h3>
-                <p className="text-xs text-gray-500 leading-relaxed line-clamp-2">{column.description}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-        <div className="text-center mt-4">
-          <Link href="/column" className="inline-block text-sm text-slate-700 border border-slate-300 px-5 py-2 rounded-xl hover:bg-slate-50 transition-colors">
-            全{columns.length}記事を見る
-          </Link>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="mb-12">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">よくある質問（BC・ベースカーブ）</h2>
+        <h2 className="text-xl font-bold text-gray-800 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {homeFaqs.map(({ q, a }) => (
             <details key={q} className="border border-gray-200 rounded-xl overflow-hidden bg-white">
@@ -214,7 +226,7 @@ export default function HomePage() {
 
       {/* ブランドリンク */}
       <section className="mb-12">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">ブランドから探す</h2>
+        <h2 className="text-xl font-bold text-gray-800 mb-4">コンタクトブランドから探す</h2>
         <div className="flex flex-wrap gap-3">
           {['acuvue', 'alcon', 'seed', 'menicon', 'coopervision', 'bausch', 'geo'].map((brand) => {
             const names: Record<string, string> = {
@@ -235,16 +247,14 @@ export default function HomePage() {
 
       {/* SEO text */}
       <section className="text-sm text-gray-600 leading-relaxed bg-white border border-gray-100 rounded-2xl p-6">
-        <h2 className="text-lg font-bold text-gray-800 mb-3">ベースカーブ（BC）で選ぶコンタクトレンズ</h2>
+        <h2 className="text-lg font-bold text-gray-800 mb-3">目のことなら、レンズナビ。</h2>
         <p className="mb-3">
-          コンタクトレンズを選ぶ際に最も重要なのが<strong>BC（ベースカーブ）</strong>です。
-          処方箋に記載されたBC値と同じ商品を選ぶことが、快適な装用感の基本です。
-          当サイト「レンズナビ」では、BC 8.4・8.5・8.6・8.7・8.8それぞれのおすすめ商品を一覧で確認できます。
+          「レンズナビ」は、コンタクトレンズの最安値比較から始まり、眼鏡・サングラス・VRゴーグル・レーシック・アイケア・目のグッズまで、
+          目に関するすべての情報を網羅する総合サイトです。
         </p>
         <p>
-          さらに、アキュビュー・デイリーズ・シード・メニコンなど
-          {allProducts.length}商品について24の主要オンラインショップの最安値比較も提供しています。
-          BC選び方ガイドと価格比較を組み合わせて、賢くコンタクトレンズを購入しましょう。
+          コンタクトレンズは<strong>BC（ベースカーブ）</strong>別に{allProducts.length}商品を24の主要ショップで価格比較。
+          ドライアイ対策・ブルーライトカット眼鏡・ホットアイマスクなどのアイケア情報も専門ライターが丁寧に解説しています。
         </p>
       </section>
     </div>

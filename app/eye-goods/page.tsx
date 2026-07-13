@@ -1,0 +1,138 @@
+import { Metadata } from 'next';
+import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: '目の雑貨・グッズおすすめ【ホットアイマスク・PC目疲れ対策・拡大鏡】| レンズナビ',
+  description: 'ホットアイマスク・モニターライト・ブルーライトカット眼鏡など、目を労わるグッズのおすすめランキング。Amazon・楽天で買えるアイケアグッズを厳選紹介。',
+  keywords: ['ホットアイマスク おすすめ', '目のグッズ', 'モニターライト おすすめ', 'アイウォーマー', 'PC 目疲れ 対策'],
+};
+
+const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=hustle-digger-22`;
+const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
+
+const articles = [
+  {
+    slug: 'hot-eye-mask-osusume',
+    title: 'ホットアイマスクおすすめランキング2026【Panasonic・使い捨て・繰り返し使用タイプ比較】',
+    desc: 'Panasonic EH-SW68・花王めぐりズム・アイリスオーヤマなど人気ホットアイマスクを徹底比較。',
+    readingTime: 6,
+  },
+  {
+    slug: 'eye-goods-pc',
+    title: 'PC作業で目を守るグッズおすすめ10選【ブルーライトカット・モニターライト・目薬】',
+    desc: 'PC・在宅ワークの目疲れを防ぐグッズを厳選。BenQ ScreenBarやブルーライトカット眼鏡のおすすめも。',
+    readingTime: 6,
+  },
+];
+
+const products = [
+  { label: 'ホットアイマスク（Panasonic等）', amzn: 'ホットアイマスク Panasonic', rakuten: 'ホットアイマスク おすすめ' },
+  { label: '使い捨てアイマスク（花王めぐりズム等）', amzn: '花王 めぐりズム アイマスク', rakuten: 'めぐりズム アイマスク' },
+  { label: 'モニターライト（BenQ ScreenBar等）', amzn: 'BenQ ScreenBar モニターライト', rakuten: 'モニターライト デスク' },
+  { label: '拡大鏡・ルーペ（Amazon）', amzn: '拡大鏡 ルーペ おすすめ', rakuten: '拡大鏡 ルーペ' },
+];
+
+const faqs = [
+  { q: 'ホットアイマスクは毎日使っても大丈夫ですか？', a: '適切な温度（40〜45℃程度）であれば毎日使用できます。ただし目に異常感（痛み・充血・かすみ）がある場合は使用を中止し眼科を受診してください。コンタクトレンズは外してから使用してください。' },
+  { q: 'ブルーライトカット眼鏡は度なしで効果がありますか？', a: 'ブルーライトをカットする機能自体は度なし眼鏡でも同じです。ただし、目の疲れの原因はブルーライトだけでなく、画面の輝度・距離・姿勢なども影響します。眼鏡だけに頼らず総合的な対策が重要です。' },
+  { q: 'モニターライトとデスクライトはどちらがおすすめですか？', a: 'モニターの上に設置するモニターライト（BenQ ScreenBar等）は、画面に反射しない設計で目への負担を軽減します。デスクライトよりも場所を取らず、モニターを正面から照らすため長時間のPC作業に適しています。' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+
+export default function EyeGoodsPage() {
+  return (
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      <nav className="text-sm text-gray-500 mb-6">
+        <Link href="/" className="hover:text-sky-600">ホーム</Link>
+        <span className="mx-2">/</span>
+        <span className="text-gray-800">目の雑貨・グッズ</span>
+      </nav>
+
+      {/* Hero */}
+      <div className="bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-100 rounded-2xl p-8 mb-10">
+        <div className="text-4xl mb-3">🛍️</div>
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">目の雑貨・グッズ</h1>
+        <p className="text-gray-600 text-sm leading-relaxed max-w-xl">
+          ホットアイマスク・モニターライト・ブルーライトカット眼鏡など、目を労わるグッズを厳選紹介。
+          Amazon・楽天で購入できるおすすめアイテムをまとめました。
+        </p>
+      </div>
+
+      {/* Articles */}
+      <h2 className="text-xl font-bold text-gray-800 mb-4">目のグッズ ガイド記事</h2>
+      <div className="grid md:grid-cols-2 gap-4 mb-10">
+        {articles.map(a => (
+          <Link key={a.slug} href={`/column/${a.slug}`} className="group block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm hover:border-orange-300 transition-all">
+            <span className="text-xs bg-orange-50 text-orange-700 px-2 py-0.5 rounded font-medium">目の雑貨・グッズ</span>
+            <h3 className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1 group-hover:text-orange-700">{a.title}</h3>
+            <p className="text-xs text-gray-500 line-clamp-2">{a.desc}</p>
+            <p className="text-xs text-orange-600 mt-2">{a.readingTime}分で読める →</p>
+          </Link>
+        ))}
+      </div>
+
+      {/* Popular items grid */}
+      <div className="grid sm:grid-cols-3 gap-4 mb-10">
+        {[
+          { emoji: '♨️', name: 'ホットアイマスク', desc: 'Panasonic・花王など繰り返し使用タイプが人気', amzn: 'ホットアイマスク おすすめ' },
+          { emoji: '💡', name: 'モニターライト', desc: 'BenQ ScreenBarが最人気。PC作業の目疲れを軽減', amzn: 'モニターライト BenQ' },
+          { emoji: '🔍', name: '拡大鏡・ルーペ', desc: '細かい作業・読書に。スタンド型・手持ち型を比較', amzn: '拡大鏡 おすすめ' },
+        ].map(item => (
+          <div key={item.name} className="bg-white border border-gray-200 rounded-xl p-4 text-center">
+            <div className="text-3xl mb-2">{item.emoji}</div>
+            <p className="font-bold text-gray-800 text-sm mb-1">{item.name}</p>
+            <p className="text-xs text-gray-500 mb-3">{item.desc}</p>
+            <a href={AMZN(item.amzn)} target="_blank" rel="noopener noreferrer nofollow"
+              className="inline-block text-xs font-medium bg-amber-400 hover:bg-amber-300 text-gray-900 px-3 py-1.5 rounded-lg transition-colors">
+              Amazon で探す
+            </a>
+          </div>
+        ))}
+      </div>
+
+      {/* Products / Affiliate */}
+      <h2 className="text-xl font-bold text-gray-800 mb-4">アイケアグッズを購入する</h2>
+      <div className="grid sm:grid-cols-2 gap-3 mb-10">
+        {products.map(p => (
+          <div key={p.label} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="text-sm font-medium text-gray-800 mb-3">{p.label}</p>
+            <div className="flex gap-2">
+              <a href={AMZN(p.amzn)} target="_blank" rel="noopener noreferrer nofollow"
+                className="flex-1 text-center text-xs font-medium bg-amber-400 hover:bg-amber-300 text-gray-900 px-3 py-2 rounded-lg transition-colors">
+                Amazon で探す
+              </a>
+              <a href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow"
+                className="flex-1 text-center text-xs font-medium bg-red-500 hover:bg-red-400 text-white px-3 py-2 rounded-lg transition-colors">
+                楽天で探す
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* FAQ */}
+      <h2 className="text-xl font-bold text-gray-800 mb-4">よくある質問</h2>
+      <div className="space-y-3">
+        {faqs.map(({ q, a }) => (
+          <details key={q} className="border border-gray-200 rounded-xl overflow-hidden bg-white">
+            <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+              {q}<span className="text-gray-400 ml-2 text-xs shrink-0">▾</span>
+            </summary>
+            <div className="px-4 pb-4 pt-2 text-sm text-gray-700 border-t border-gray-100 leading-relaxed">{a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  );
+}

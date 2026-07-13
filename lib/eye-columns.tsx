@@ -1,0 +1,1010 @@
+import Link from 'next/link';
+
+export type EyeColumnMeta = {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  section: 'megane' | 'vr' | 'lasik' | 'eye-care' | 'eye-goods';
+  publishedAt: string;
+  updatedAt: string;
+  readingTime: number;
+  headings?: string[];
+};
+
+const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=hustle-digger-22`;
+const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
+
+export const eyeColumns: EyeColumnMeta[] = [
+  {
+    slug: 'megane-kaomikata',
+    title: '眼鏡の選び方【顔型別ガイド2026】丸顔・面長・卵型・ベース型別おすすめフレーム',
+    description: '顔の形に合った眼鏡フレームの選び方を徹底解説。丸顔・面長・卵型・ベース型それぞれに似合うデザインと、オンラインで失敗しない試着方法。',
+    category: '眼鏡・サングラス',
+    section: 'megane',
+    publishedAt: '2026-07-13',
+    updatedAt: '2026-07-13',
+    readingTime: 8,
+    headings: ['顔型の調べ方', '顔型別おすすめフレーム', 'レンズの種類と選び方', 'フレーム素材の比較', 'オンライン購入のポイント'],
+  },
+  {
+    slug: 'blue-light-megane-kouka',
+    title: 'ブルーライトカット眼鏡の効果は本当にある？科学的根拠と正しい選び方',
+    description: 'ブルーライトカット眼鏡の効果について科学的根拠を解説。度なし・度ありの違い、PCメガネの選び方、おすすめ商品まで。',
+    category: '眼鏡・サングラス',
+    section: 'megane',
+    publishedAt: '2026-07-13',
+    updatedAt: '2026-07-13',
+    readingTime: 6,
+    headings: ['ブルーライトとは', '科学的根拠の実態', '度なし vs 度あり', '選び方のポイント', 'おすすめ商品'],
+  },
+  {
+    slug: 'megane-online-shopping',
+    title: '眼鏡をオンラインで買う方法【Zoff・JINS・Warby Parker】失敗しない選び方',
+    description: 'JINSやZoff、楽天眼鏡など主要オンラインショップの比較。度数入力の方法、フィッティング、返品対応まで解説。',
+    category: '眼鏡・サングラス',
+    section: 'megane',
+    publishedAt: '2026-07-13',
+    updatedAt: '2026-07-13',
+    readingTime: 7,
+    headings: ['オンライン購入のメリット・デメリット', '主要ショップ比較', '度数の入力方法', 'バーチャル試着の使い方', '返品・調整サービス'],
+  },
+  {
+    slug: 'vr-shiryoku-warui',
+    title: '視力が悪い人のVRゴーグル対策【コンタクト・度付きインサート・メガネスペーサー完全ガイド】',
+    description: '近視・乱視があってもVRを快適に楽しむ3つの方法を解説。Meta Quest対応の度付きインサートレンズも紹介。',
+    category: 'VR・スマートグラス',
+    section: 'vr',
+    publishedAt: '2026-07-13',
+    updatedAt: '2026-07-13',
+    readingTime: 7,
+    headings: ['視力が悪い人の3つの選択肢', 'コンタクトレンズで使う', '度付きインサートレンズ', 'メガネスペーサーを使う', 'ドライアイ対策'],
+  },
+  {
+    slug: 'smart-glass-2026',
+    title: 'スマートグラス・VRゴーグル おすすめ2026【Meta Quest 3・Ray-Ban Meta・Vision Pro比較】',
+    description: '2026年最新のVRゴーグル・スマートグラスを徹底比較。視力対応状況、価格、用途別おすすめも解説。',
+    category: 'VR・スマートグラス',
+    section: 'vr',
+    publishedAt: '2026-07-13',
+    updatedAt: '2026-07-13',
+    readingTime: 8,
+    headings: ['VRゴーグル vs スマートグラスの違い', 'Meta Quest 3レビュー', 'Ray-Ban Metaレビュー', 'Apple Vision Proレビュー', '用途別おすすめ'],
+  },
+  {
+    slug: 'lasik-hiyo-risk',
+    title: 'レーシックとは？費用・リスク・メリット・デメリット完全解説【2026年版】',
+    description: '費用相場・リスク・術後のケア・クリニック選びまで、レーシックに関するすべての疑問に答える完全ガイド。',
+    category: 'レーシック・視力矯正',
+    section: 'lasik',
+    publishedAt: '2026-07-13',
+    updatedAt: '2026-07-13',
+    readingTime: 10,
+    headings: ['レーシックの仕組み', '費用相場', 'メリット・デメリット', 'リスクと副作用', 'クリニック選びのポイント'],
+  },
+  {
+    slug: 'icl-to-ha',
+    title: 'ICL（眼内コンタクト）とは？レーシックとの違い・費用・向いている人を解説',
+    description: '強度近視・角膜が薄い方に向いているICL手術の仕組み・費用・リスクをレーシックと比較。手術を検討中の方必読。',
+    category: 'レーシック・視力矯正',
+    section: 'lasik',
+    publishedAt: '2026-07-13',
+    updatedAt: '2026-07-13',
+    readingTime: 8,
+    headings: ['ICLとは', 'レーシックとの違い', 'ICLの費用', '向いている人・向いていない人', '術後の生活'],
+  },
+  {
+    slug: 'contact-megusuri-erabikata',
+    title: 'コンタクト用目薬の選び方【ソフト・ハード対応・防腐剤フリー】おすすめランキング',
+    description: 'コンタクト装用中に使える目薬の選び方・防腐剤フリーの重要性・症状別おすすめランキング。ドライアイ対策にも。',
+    category: 'アイケア・目薬',
+    section: 'eye-care',
+    publishedAt: '2026-07-13',
+    updatedAt: '2026-07-13',
+    readingTime: 7,
+    headings: ['コンタクト対応目薬の見分け方', '防腐剤フリーが重要な理由', 'ソフト・ハード別おすすめ', 'ドライアイ向け目薬', '目薬の正しい使い方'],
+  },
+  {
+    slug: 'dryeye-taisaku',
+    title: 'ドライアイ・疲れ目の対策【目薬・生活習慣・サプリで症状改善】原因と対処法',
+    description: 'ドライアイの原因から目薬・サプリ・生活習慣による対策まで徹底解説。コンタクト装用者向け情報も充実。',
+    category: 'アイケア・目薬',
+    section: 'eye-care',
+    publishedAt: '2026-07-13',
+    updatedAt: '2026-07-13',
+    readingTime: 8,
+    headings: ['ドライアイの原因', '目薬で改善する方法', 'ホットアイマスクの効果', 'ルテインサプリの活用', '生活習慣の改善'],
+  },
+  {
+    slug: 'hot-eye-mask-osusume',
+    title: 'ホットアイマスクおすすめランキング2026【Panasonic・使い捨て・繰り返し使用タイプ比較】',
+    description: 'Panasonic EH-SW68・花王めぐりズム・アイリスオーヤマなど人気ホットアイマスクを徹底比較。選び方のポイントも解説。',
+    category: '目の雑貨・グッズ',
+    section: 'eye-goods',
+    publishedAt: '2026-07-13',
+    updatedAt: '2026-07-13',
+    readingTime: 6,
+    headings: ['ホットアイマスクの効果', '繰り返し使用タイプの比較', '使い捨てタイプの比較', '選び方のポイント', 'おすすめランキング'],
+  },
+  {
+    slug: 'eye-goods-pc',
+    title: 'PC作業で目を守るグッズおすすめ10選【ブルーライトカット・モニターライト・目薬】',
+    description: 'PC・在宅ワークの目疲れを防ぐグッズを厳選。BenQ ScreenBarやブルーライトカット眼鏡のおすすめも紹介。',
+    category: '目の雑貨・グッズ',
+    section: 'eye-goods',
+    publishedAt: '2026-07-13',
+    updatedAt: '2026-07-13',
+    readingTime: 6,
+    headings: ['PC作業で目が疲れる原因', 'モニターライトの効果', 'ブルーライトカット眼鏡', 'モニターフィルター', '目薬・サプリの活用'],
+  },
+];
+
+const AffiliateBtns = ({ amzn, rakuten }: { amzn: string; rakuten: string }) => (
+  <div className="flex gap-2 my-4">
+    <a href={AMZN(amzn)} target="_blank" rel="noopener noreferrer nofollow"
+      className="flex-1 text-center text-xs font-medium bg-amber-400 hover:bg-amber-300 text-gray-900 px-3 py-2 rounded-lg transition-colors">
+      Amazon で探す
+    </a>
+    <a href={RAKUTEN(rakuten)} target="_blank" rel="noopener noreferrer nofollow"
+      className="flex-1 text-center text-xs font-medium bg-red-500 hover:bg-red-400 text-white px-3 py-2 rounded-lg transition-colors">
+      楽天で探す
+    </a>
+  </div>
+);
+
+export const eyeColumnContent: Record<string, React.ReactNode> = {
+  'megane-kaomikata': (
+    <article className="prose prose-sm max-w-none">
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        眼鏡選びで最も重要なのは「顔型に合ったフレーム」を選ぶことです。このガイドでは顔型の見つけ方から、それぞれの顔型に似合うフレームを詳しく解説します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">顔型の調べ方</h2>
+      <p className="text-gray-700 mb-4">
+        髪をまとめて顔の輪郭をはっきりさせた状態で鏡を見てください。顔の横幅と縦の長さ、顎のライン、頬骨の張りを確認します。
+      </p>
+      <div className="bg-gray-50 rounded-xl p-5 mb-6">
+        <ul className="space-y-2 text-sm text-gray-700">
+          <li><strong>丸顔：</strong>縦横の長さがほぼ同じで、顎が丸い</li>
+          <li><strong>卵型：</strong>顔の上部がやや広く、顎に向かって細くなる（最も眼鏡が似合う顔型）</li>
+          <li><strong>面長：</strong>縦の長さが横より明らかに長い</li>
+          <li><strong>ベース型：</strong>頬骨が張っており、顎がしっかりしている</li>
+        </ul>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">顔型別おすすめフレーム</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-indigo-50">
+              <th className="text-left p-3 border border-gray-200">顔型</th>
+              <th className="text-left p-3 border border-gray-200">おすすめ</th>
+              <th className="text-left p-3 border border-gray-200">避けたいスタイル</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { face: '丸顔', rec: '角張ったスクエア・ウェリントン', avoid: '丸い・オーバルフレーム' },
+              { face: '卵型', rec: 'ほぼ何でも似合う・ウェイファーラーが定番', avoid: '極端に大きすぎるフレーム' },
+              { face: '面長', rec: '大きめの丸・オーバル・ウェリントン', avoid: '縦に細いフレーム' },
+              { face: 'ベース型', rec: '細め・リムレス・ラウンド', avoid: '角張った幅広フレーム' },
+            ].map(r => (
+              <tr key={r.face} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.face}</td>
+                <td className="p-3 border border-gray-200 text-green-700">{r.rec}</td>
+                <td className="p-3 border border-gray-200 text-red-600">{r.avoid}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">レンズの種類と選び方</h2>
+      <p className="text-gray-700 mb-3">眼鏡レンズはフレームと同様に重要です。主なレンズの種類：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>単焦点レンズ：</strong>近視・遠視・乱視の矯正に。最もシンプルで費用も安い</li>
+        <li><strong>遠近両用（累進レンズ）：</strong>老眼・近視の両方を1枚でカバー</li>
+        <li><strong>ブルーライトカットレンズ：</strong>PC・スマホ使用が多い方に。ただし効果は限定的</li>
+        <li><strong>調光レンズ（フォトクロミック）：</strong>紫外線に反応してサングラスになる</li>
+      </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">フレーム素材の比較</h2>
+      <div className="grid sm:grid-cols-3 gap-4 mb-6">
+        {[
+          { mat: 'プラスチック（アセテート）', feat: '軽量・豊富な色・低価格', price: '¥3,000〜' },
+          { mat: 'メタル（チタン等）', feat: '耐久性が高い・軽い・シンプル', price: '¥10,000〜' },
+          { mat: 'TR-90', feat: '超軽量・柔軟性・スポーツ向け', price: '¥5,000〜' },
+        ].map(m => (
+          <div key={m.mat} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-gray-800 text-sm mb-1">{m.mat}</p>
+            <p className="text-xs text-gray-500 mb-2">{m.feat}</p>
+            <p className="text-xs font-bold text-indigo-600">{m.price}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">オンライン購入のポイント</h2>
+      <p className="text-gray-700 mb-3">
+        オンラインで眼鏡を購入する場合は、PD（瞳孔間距離）の測定と、フレームサイズの確認が重要です。JINSやZoffのような主要チェーンはオンラインでも試着サービスを提供しています。
+      </p>
+      <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-4 mb-6">
+        <p className="font-bold text-indigo-800 text-sm mb-2">PDの調べ方</p>
+        <p className="text-sm text-gray-700">
+          眼科で処方箋をもらう際にPD値も確認しましょう。眼鏡店では無料で測定してもらえます。スマートフォンのアプリでも大まかに測定できます。
+        </p>
+      </div>
+
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-gray-800 mb-3">おすすめ眼鏡を探す</p>
+        <AffiliateBtns amzn="眼鏡フレーム おすすめ" rakuten="眼鏡フレーム" />
+      </div>
+    </article>
+  ),
+
+  'blue-light-megane-kouka': (
+    <article className="prose prose-sm max-w-none">
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        「ブルーライトカット眼鏡は本当に効果があるの？」という疑問を持つ方は多いです。科学的根拠をもとに、効果と正しい選び方を解説します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ブルーライトとは</h2>
+      <p className="text-gray-700 mb-4">
+        ブルーライトは波長380〜500nmの青色光で、スマートフォンやPCのLEDディスプレイから多く放出されます。太陽光にも含まれており、人体への影響は昼間と夜間で大きく異なります。
+      </p>
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
+        <p className="text-sm text-blue-800"><strong>夜間のブルーライト：</strong>メラトニン（睡眠ホルモン）の分泌を抑制し、睡眠の質を低下させる可能性があります。</p>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">科学的根拠の実態</h2>
+      <p className="text-gray-700 mb-4">
+        2021年にアメリカ眼科学会（AAO）は「ブルーライトカット眼鏡が眼精疲労を軽減するという科学的根拠はない」と発表しました。目の疲れの主な原因は：
+      </p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>画面を見ているときの瞬き減少（通常の1/3程度に減少）</li>
+        <li>同じ距離を長時間見続けることによる毛様体筋の疲労</li>
+        <li>画面の明るさや姿勢の問題</li>
+      </ul>
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6">
+        <p className="text-sm text-amber-800"><strong>ポイント：</strong>ブルーライトカット眼鏡よりも「20-20-20ルール（20分おきに20フィート先を20秒見る）」の方が疲れ目に効果的とされています。</p>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">度なし vs 度あり</h2>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        <div className="bg-white border border-gray-200 rounded-xl p-4">
+          <p className="font-bold text-gray-800 mb-2">度なしブルーライトカット眼鏡</p>
+          <ul className="text-xs text-gray-600 space-y-1">
+            <li>✓ 視力が正常な方に</li>
+            <li>✓ 価格が安い（¥1,000〜）</li>
+            <li>✓ 夜間のスマホ使用に効果的</li>
+            <li>✗ 疲れ目への効果は限定的</li>
+          </ul>
+        </div>
+        <div className="bg-white border border-gray-200 rounded-xl p-4">
+          <p className="font-bold text-gray-800 mb-2">度ありブルーライトカット眼鏡</p>
+          <ul className="text-xs text-gray-600 space-y-1">
+            <li>✓ 近視・遠視の矯正も同時に</li>
+            <li>✓ 長時間PC作業に最適</li>
+            <li>✓ 専用の度数設定も可能</li>
+            <li>✗ 価格が高い（¥15,000〜）</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方のポイント</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+        <li><strong>カット率：</strong>30〜40%カットが一般的。高すぎると色が黄ばんで見える</li>
+        <li><strong>レンズの色：</strong>クリアタイプがデザイン面で使いやすい</li>
+        <li><strong>フレームの重さ：</strong>長時間装用するため軽量素材を選ぶ</li>
+        <li><strong>価格：</strong>度なしなら安価なもので十分。度ありなら眼鏡店での処方が安心</li>
+      </ul>
+
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-gray-800 mb-3">ブルーライトカット眼鏡を探す</p>
+        <AffiliateBtns amzn="ブルーライトカット 眼鏡 PC" rakuten="ブルーライトカット眼鏡" />
+      </div>
+    </article>
+  ),
+
+  'megane-online-shopping': (
+    <article className="prose prose-sm max-w-none">
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        眼鏡のオンライン購入は、店頭より安く多くの選択肢から選べるメリットがあります。失敗しないためのポイントを解説します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">オンライン購入のメリット・デメリット</h2>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+          <p className="font-bold text-green-800 mb-2">メリット</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>✓ 実店舗より30〜50%安い</li>
+            <li>✓ デザインの選択肢が豊富</li>
+            <li>✓ 24時間注文可能</li>
+            <li>✓ 海外ブランドも購入しやすい</li>
+          </ul>
+        </div>
+        <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+          <p className="font-bold text-red-800 mb-2">デメリット</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>✗ フィッティング調整が難しい</li>
+            <li>✗ 実際の色味が異なる場合も</li>
+            <li>✗ PD測定が必要</li>
+            <li>✗ 返品・交換に時間がかかる</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">主要ショップ比較</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-indigo-50">
+              <th className="text-left p-3 border border-gray-200">ショップ</th>
+              <th className="text-left p-3 border border-gray-200">価格帯</th>
+              <th className="text-left p-3 border border-gray-200">特徴</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { shop: 'JINS オンライン', price: '¥5,500〜', feat: 'バーチャル試着あり・全国で調整可能' },
+              { shop: 'Zoff オンライン', price: '¥5,500〜', feat: '豊富なデザイン・店舗でのアフターケアあり' },
+              { shop: '楽天市場 眼鏡', price: '¥1,000〜', feat: '激安フレームが豊富・ポイント還元' },
+              { shop: 'Amazon 眼鏡', price: '¥1,000〜', feat: '即日配送・レビューが参考になる' },
+            ].map(r => (
+              <tr key={r.shop} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.shop}</td>
+                <td className="p-3 border border-gray-200 text-indigo-700 font-bold">{r.price}</td>
+                <td className="p-3 border border-gray-200 text-gray-600 text-xs">{r.feat}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">PDの入力方法</h2>
+      <p className="text-gray-700 mb-4">
+        PD（瞳孔間距離）はオンライン購入で最も重要な数値です。眼科処方箋に記載されているか、眼鏡店で無料測定できます。通常60〜70mmが成人の平均値です。
+      </p>
+      <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-4 mb-6">
+        <p className="text-sm text-indigo-800">
+          <strong>PDを自分で測る方法：</strong>定規を目の前に当て、鏡を見ながら右目の瞳孔の中心から左目の瞳孔の中心までの距離を測ります。誤差±2mm以内が理想的です。
+        </p>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">バーチャル試着の使い方</h2>
+      <p className="text-gray-700 mb-4">
+        JINSやZoffのアプリでは、スマートフォンのカメラを使ったバーチャル試着が可能です。顔の輪郭に合わせてフレームがリアルタイムで表示されるため、大まかなイメージを確認できます。
+      </p>
+
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-gray-800 mb-3">オンラインで眼鏡を探す</p>
+        <AffiliateBtns amzn="眼鏡フレーム おしゃれ" rakuten="眼鏡フレーム おしゃれ" />
+      </div>
+    </article>
+  ),
+
+  'vr-shiryoku-warui': (
+    <article className="prose prose-sm max-w-none">
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        視力が悪くてもVRゴーグルを快適に楽しめます。3つの方法とそれぞれのメリット・デメリットを詳しく解説します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">視力が悪い人の3つの選択肢</h2>
+      <div className="grid sm:grid-cols-3 gap-4 mb-6">
+        {[
+          { num: '①', title: 'コンタクトレンズ', merit: '最もシンプル・画質への影響なし', demerit: 'ドライアイになりやすい', cost: 'ランニングコストあり' },
+          { num: '②', title: '度付きインサートレンズ', merit: '眼鏡・コンタクト不要', demerit: 'ゴーグル専用なので別途購入', cost: '¥5,000〜15,000（一度だけ）' },
+          { num: '③', title: 'メガネスペーサー', merit: '眼鏡をかけたまま使用', demerit: '眼鏡の形状によっては使えない', cost: '無料〜¥2,000' },
+        ].map(m => (
+          <div key={m.num} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="text-lg font-bold text-violet-600 mb-1">{m.num}</p>
+            <p className="font-bold text-gray-800 text-sm mb-2">{m.title}</p>
+            <p className="text-xs text-green-700 mb-1">✓ {m.merit}</p>
+            <p className="text-xs text-red-600 mb-2">✗ {m.demerit}</p>
+            <p className="text-xs text-gray-500">{m.cost}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">コンタクトレンズで使う（最もおすすめ）</h2>
+      <p className="text-gray-700 mb-4">
+        ソフトコンタクトレンズを装用したままVRゴーグルを使うのが最も手軽で画質への影響もありません。ただし注意点があります：
+      </p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>VR使用中は瞬きが減少しドライアイになりやすい → 目薬を準備</li>
+        <li>ワンデーコンタクトが衛生面でおすすめ</li>
+        <li>1回の使用は1〜2時間程度にとどめる</li>
+        <li>ハードコンタクトはズレやすいため非推奨</li>
+      </ul>
+      <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 mb-6">
+        <p className="font-bold text-sky-800 mb-2">VR用コンタクトを探す</p>
+        <p className="text-sm text-gray-700 mb-3">ワンデーのソフトコンタクトが最適です。</p>
+        <Link href="/category/1day" className="inline-block bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors">
+          ワンデーコンタクトを比較する →
+        </Link>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">度付きインサートレンズ</h2>
+      <p className="text-gray-700 mb-4">
+        VRゴーグルの内側に装着する度付きレンズです。Meta Quest 3対応品が多数販売されています。乱視矯正にも対応した製品があります。
+      </p>
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-gray-800 mb-3">VR度付きインサートレンズを探す</p>
+        <AffiliateBtns amzn="VR 度付き インサートレンズ Meta Quest" rakuten="VR インサートレンズ 度付き" />
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">メガネスペーサーを使う</h2>
+      <p className="text-gray-700 mb-4">
+        Meta Quest 3にはメガネスペーサーが付属しています。ゴーグル内部を広げて眼鏡をかけたまま使用できます。ただしフレームが大きすぎる場合は装着できないことがあります。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ドライアイ対策</h2>
+      <p className="text-gray-700 mb-3">
+        VR使用中のドライアイ対策として、コンタクト対応の防腐剤フリー目薬を手元に置いておくことをおすすめします。
+      </p>
+      <AffiliateBtns amzn="コンタクト 目薬 防腐剤フリー" rakuten="コンタクト用 目薬 防腐剤なし" />
+    </article>
+  ),
+
+  'smart-glass-2026': (
+    <article className="prose prose-sm max-w-none">
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        2026年のVRゴーグル・スマートグラス市場は急速に進化しています。主要製品の最新スペックと視力対応状況を比較します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VRゴーグル vs スマートグラスの違い</h2>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        <div className="bg-violet-50 border border-violet-200 rounded-xl p-4">
+          <p className="font-bold text-violet-800 mb-2">VRゴーグル</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>現実を完全に遮断して仮想空間に没入</li>
+            <li>ゲーム・映画・トレーニングに最適</li>
+            <li>代表：Meta Quest 3、Apple Vision Pro</li>
+            <li>価格：¥50,000〜</li>
+          </ul>
+        </div>
+        <div className="bg-sky-50 border border-sky-200 rounded-xl p-4">
+          <p className="font-bold text-sky-800 mb-2">スマートグラス</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>現実世界にデジタル情報をオーバーレイ</li>
+            <li>カメラ・音楽・通話機能を搭載</li>
+            <li>代表：Ray-Ban Meta、XREAL Air 2</li>
+            <li>価格：¥20,000〜</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Meta Quest 3</h2>
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-4">
+        <div className="flex flex-wrap gap-2 mb-3">
+          <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">メガネ対応○</span>
+          <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">インサートレンズ対応○</span>
+          <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded">価格 ¥74,800〜</span>
+        </div>
+        <p className="text-sm text-gray-700 mb-3">
+          2023年発売。カラーパススルーで現実とVRをシームレスに切り替えられるミックスリアリティ対応。
+          度付きインサートレンズはZendure等が対応品を販売。眼鏡スペーサーも付属。
+        </p>
+        <AffiliateBtns amzn="Meta Quest 3" rakuten="Meta Quest 3" />
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Ray-Ban Meta Smart Glasses</h2>
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-4">
+        <div className="flex flex-wrap gap-2 mb-3">
+          <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">普通の眼鏡型</span>
+          <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded">度付きレンズ交換可</span>
+          <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded">価格 ¥40,000〜</span>
+        </div>
+        <p className="text-sm text-gray-700 mb-3">
+          Ray-BanのサングラスにカメラとスピーカーとAIを内蔵。度付きレンズへの交換が可能なため、視力が悪い方も使いやすい。
+          Meta AIとの連携でリアルタイム翻訳・情報取得も可能。
+        </p>
+        <AffiliateBtns amzn="Ray-Ban Meta Smart Glasses" rakuten="Ray-Ban Meta スマートグラス" />
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Apple Vision Pro</h2>
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
+        <div className="flex flex-wrap gap-2 mb-3">
+          <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">Zeiss光学インサート対応</span>
+          <span className="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded">価格 ¥599,800〜</span>
+        </div>
+        <p className="text-sm text-gray-700 mb-3">
+          Apple純正のZeissオプティカルインサートを購入することで視力矯正が可能（別途¥20,000〜）。
+          世界最高品質のディスプレイとAR機能を持つが、価格が高い。
+        </p>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">用途別おすすめ</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-violet-50">
+              <th className="text-left p-3 border border-gray-200">用途</th>
+              <th className="text-left p-3 border border-gray-200">おすすめ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { use: 'VRゲーム・映画鑑賞', rec: 'Meta Quest 3' },
+              { use: '日常使い・SNS・音楽', rec: 'Ray-Ban Meta' },
+              { use: '仕事・プレゼン・クリエイティブ', rec: 'Apple Vision Pro' },
+              { use: '映像視聴（大画面）', rec: 'XREAL Air 2 Pro' },
+            ].map(r => (
+              <tr key={r.use} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 text-gray-700">{r.use}</td>
+                <td className="p-3 border border-gray-200 font-medium text-violet-700">{r.rec}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </article>
+  ),
+
+  'lasik-hiyo-risk': (
+    <article className="prose prose-sm max-w-none">
+      <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-6">
+        <p className="text-xs text-amber-700">※ 当記事は医療情報の提供を目的としており、最終的な手術の判断は必ず眼科専門医にご相談ください。</p>
+      </div>
+
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        レーシックは近視・乱視・遠視を手術で矯正する方法です。費用・リスク・術後ケアまで徹底解説します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">レーシックの仕組み</h2>
+      <p className="text-gray-700 mb-4">
+        レーシック（LASIK：Laser-Assisted In Situ Keratomileusis）は、角膜にフラップを作成し、エキシマレーザーで角膜の形状を削って視力を矯正する手術です。手術時間は両眼合わせて10〜15分程度です。
+      </p>
+      <div className="grid sm:grid-cols-3 gap-3 mb-6">
+        {[
+          { step: 'STEP 1', title: 'フラップ作成', desc: 'フェムトセカンドレーザーまたはマイクロケラトームで薄い角膜フラップを作成' },
+          { step: 'STEP 2', title: 'レーザー照射', desc: 'エキシマレーザーで角膜を削り、屈折を矯正' },
+          { step: 'STEP 3', title: 'フラップを戻す', desc: 'フラップを元の位置に戻して自然に接着。縫合不要' },
+        ].map(s => (
+          <div key={s.step} className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+            <p className="text-xs font-bold text-emerald-600 mb-1">{s.step}</p>
+            <p className="font-bold text-gray-800 text-sm mb-1">{s.title}</p>
+            <p className="text-xs text-gray-600">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">費用相場</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-emerald-50">
+              <th className="text-left p-3 border border-gray-200">プラン</th>
+              <th className="text-left p-3 border border-gray-200">費用（両眼）</th>
+              <th className="text-left p-3 border border-gray-200">特徴</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { plan: '標準レーシック', cost: '15〜20万円', feat: '最もポピュラー・回復が早い' },
+              { plan: 'プレミアムレーシック', cost: '25〜35万円', feat: 'アマリスレッド等の最新機器・精度が高い' },
+              { plan: 'スマイル（SMILE）', cost: '20〜30万円', feat: 'フラップを作らない・ドライアイになりにくい' },
+              { plan: 'ICL（眼内コンタクト）', cost: '50〜70万円', feat: '角膜を削らない・強度近視に対応・可逆性あり' },
+            ].map(r => (
+              <tr key={r.plan} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.plan}</td>
+                <td className="p-3 border border-gray-200 text-emerald-700 font-bold">{r.cost}</td>
+                <td className="p-3 border border-gray-200 text-gray-600 text-xs">{r.feat}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">メリット・デメリット</h2>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+          <p className="font-bold text-green-800 mb-2">メリット</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>✓ 眼鏡・コンタクトが不要になる</li>
+            <li>✓ 手術翌日から視力が回復</li>
+            <li>✓ 効果は基本的に永続</li>
+            <li>✓ スポーツ・水泳が快適に</li>
+          </ul>
+        </div>
+        <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+          <p className="font-bold text-red-800 mb-2">デメリット</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>✗ ドライアイが悪化することがある</li>
+            <li>✗ ハロー・グレア（光のにじみ）</li>
+            <li>✗ 角膜が薄い方は手術できない</li>
+            <li>✗ 老眼には対応できない</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">リスクと副作用</h2>
+      <div className="bg-red-50 border border-red-100 rounded-xl p-5 mb-6">
+        <ul className="space-y-2 text-sm text-gray-700">
+          <li><strong>ドライアイの悪化：</strong>最も多い副作用。術後3〜6ヶ月で改善することが多い</li>
+          <li><strong>ハロー・グレア：</strong>夜間に光がにじんで見える。通常は数ヶ月で軽減</li>
+          <li><strong>矯正不足・過矯正：</strong>追加矯正（Enhancement）で対応可能なことが多い</li>
+          <li><strong>角膜フラップのトラブル：</strong>SMILEや最新フェムトレーシックで大幅にリスク低減</li>
+          <li><strong>感染症：</strong>発生率は0.1%未満。術後のケアで予防可能</li>
+        </ul>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">クリニック選びのポイント</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+        <li>術前検査が十分か（角膜形状・厚みを詳しく測定するか）</li>
+        <li>アフターケア・保証制度（無料再手術の条件など）</li>
+        <li>使用する機器のメーカー・型番を公開しているか</li>
+        <li>眼科専門医が手術を担当するか</li>
+        <li>複数クリニックでのカウンセリングを比較する</li>
+      </ul>
+
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-gray-800 mb-3">術後の目薬・アイケアグッズ</p>
+        <AffiliateBtns amzn="目薬 防腐剤フリー 術後" rakuten="防腐剤フリー 目薬" />
+      </div>
+    </article>
+  ),
+
+  'icl-to-ha': (
+    <article className="prose prose-sm max-w-none">
+      <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-6">
+        <p className="text-xs text-amber-700">※ 当記事は医療情報の提供を目的としており、最終的な手術の判断は必ず眼科専門医にご相談ください。</p>
+      </div>
+
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        ICL（Implantable Collamer Lens）は眼内にレンズを挿入する視力矯正手術です。レーシックが適応外の強度近視や角膜が薄い方の選択肢として注目されています。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ICLとは</h2>
+      <p className="text-gray-700 mb-4">
+        ICLはコラーゲンとHEMAで作られた柔らかいレンズを、虹彩と水晶体の間（後房）に挿入する手術です。角膜を削らないため、角膜の形状が保たれます。スイスのSTAAR Surgical社が開発しました。
+      </p>
+      <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-6">
+        <p className="text-sm text-emerald-800">
+          <strong>最大の特徴：</strong>レンズを取り出すことができる「可逆性」があります。将来的に白内障手術が必要になっても対応可能です。
+        </p>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">レーシックとの違い</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-emerald-50">
+              <th className="text-left p-3 border border-gray-200">比較項目</th>
+              <th className="text-left p-3 border border-gray-200">レーシック</th>
+              <th className="text-left p-3 border border-gray-200">ICL</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { item: '手術方法', lasik: '角膜を削る', icl: 'レンズを挿入' },
+              { item: '可逆性', lasik: 'なし（元に戻せない）', icl: 'あり（レンズ取り出し可）' },
+              { item: '費用', lasik: '15〜30万円', icl: '50〜70万円' },
+              { item: '強度近視', lasik: '〜-8D程度まで', icl: '〜-18D程度まで対応' },
+              { item: 'ドライアイ', lasik: '悪化しやすい', icl: '比較的少ない' },
+              { item: '術後視力の質', lasik: '良好', icl: '非常に良好（コントラスト感度が高い）' },
+            ].map(r => (
+              <tr key={r.item} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.item}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.lasik}</td>
+                <td className="p-3 border border-gray-200 text-emerald-700 font-medium">{r.icl}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">向いている人・向いていない人</h2>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+          <p className="font-bold text-green-800 mb-2">ICLが向いている人</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>✓ 強度近視（-6D以上）の方</li>
+            <li>✓ 角膜が薄くレーシック不適応の方</li>
+            <li>✓ 乾燥した環境で働く方</li>
+            <li>✓ 将来の可逆性を重視する方</li>
+            <li>✓ 視力の質（コントラスト）を求める方</li>
+          </ul>
+        </div>
+        <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+          <p className="font-bold text-red-800 mb-2">ICLが向いていない人</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>✗ 前房が浅い方</li>
+            <li>✗ 21歳未満</li>
+            <li>✗ 白内障・緑内障がある方</li>
+            <li>✗ 費用を抑えたい方</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">術後の生活</h2>
+      <p className="text-gray-700 mb-4">
+        手術翌日から大幅に視力が改善します。術後1週間は目を触らない・プールは1ヶ月禁止などの制限があります。定期検査は術後1日・1週・1ヶ月・3ヶ月・6ヶ月・1年後が目安です。
+      </p>
+
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-gray-800 mb-3">術後のアイケアグッズ</p>
+        <AffiliateBtns amzn="ルテイン サプリ 目 健康" rakuten="ルテイン サプリ 目" />
+      </div>
+    </article>
+  ),
+
+  'contact-megusuri-erabikata': (
+    <article className="prose prose-sm max-w-none">
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        コンタクトレンズ装用中でも使える目薬の選び方を解説します。「防腐剤フリー」が重要な理由と、症状別のおすすめを紹介します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">コンタクト対応目薬の見分け方</h2>
+      <p className="text-gray-700 mb-4">
+        コンタクト装用中に使える目薬かどうかは、パッケージの表示で確認できます。「コンタクトレンズ装用中に使えます」という表示があるものを選びましょう。
+      </p>
+      <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-4 mb-6">
+        <p className="font-bold text-cyan-800 mb-2">必ず確認すること</p>
+        <ul className="text-sm text-gray-700 space-y-1">
+          <li>• パッケージの「コンタクトレンズ装用中に使えます」表示</li>
+          <li>• 防腐剤（塩化ベンザルコニウム）の有無</li>
+          <li>• ソフト・ハード・O2（ハード）対応か</li>
+        </ul>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">防腐剤フリーが重要な理由</h2>
+      <p className="text-gray-700 mb-4">
+        多くの一般的な目薬に含まれる「塩化ベンザルコニウム」はコンタクトレンズに吸収・蓄積し、角膜を傷める可能性があります。コンタクト装用者には防腐剤フリー（無防腐剤）または防腐剤不使用の目薬が推奨されます。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">症状別おすすめ目薬</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          { symptom: 'ドライアイ・乾燥', recs: ['ソフトサンティア（防腐剤フリー）', 'ロートモイストアイ', 'ヒアレイン点眼液（処方薬）'], key: 'ヒアルロン酸Na配合を選ぶ' },
+          { symptom: '疲れ目・眼精疲労', recs: ['ロートビタ40α', 'サンテFXネオ', 'ロートデジアイ'], key: 'ビタミンB12・タウリン配合を選ぶ' },
+          { symptom: '充血', recs: ['サンテボーティエ', 'ロートクール40α'], key: '血管収縮剤入りは連用注意' },
+        ].map(s => (
+          <div key={s.symptom} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-gray-800 mb-1">{s.symptom}</p>
+            <p className="text-xs text-cyan-600 mb-2">選び方：{s.key}</p>
+            <ul className="text-sm text-gray-600 space-y-0.5">
+              {s.recs.map(r => <li key={r}>• {r}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-gray-800 mb-3">コンタクト用目薬を探す</p>
+        <AffiliateBtns amzn="コンタクト 目薬 防腐剤フリー ドライアイ" rakuten="コンタクト用 目薬 防腐剤なし" />
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目薬の正しい使い方</h2>
+      <ul className="list-decimal pl-5 space-y-2 text-gray-700 mb-4">
+        <li>使用前に手を石けんで洗う</li>
+        <li>容器の先が目やまつ毛に触れないように1滴さす</li>
+        <li>1〜2分間は目頭を軽く押さえて涙点からの流出を防ぐ</li>
+        <li>複数の目薬は5分以上間隔をあける</li>
+        <li>コンタクトを装用している場合は15分後に装用が目安（防腐剤フリーでも）</li>
+      </ul>
+    </article>
+  ),
+
+  'dryeye-taisaku': (
+    <article className="prose prose-sm max-w-none">
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        ドライアイは日本で推定800万人以上が悩む症状です。原因から効果的な対処法まで、コンタクト装用者向けの情報を中心に解説します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ドライアイの原因</h2>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        <div className="bg-white border border-gray-200 rounded-xl p-4">
+          <p className="font-bold text-gray-800 mb-2">環境・行動的原因</p>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• PC・スマホの長時間使用（瞬き減少）</li>
+            <li>• エアコン・暖房による乾燥</li>
+            <li>• コンタクトレンズ（特に含水率が高いソフト）</li>
+            <li>• 睡眠不足・ストレス</li>
+          </ul>
+        </div>
+        <div className="bg-white border border-gray-200 rounded-xl p-4">
+          <p className="font-bold text-gray-800 mb-2">体質・疾患的原因</p>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• 加齢（涙液分泌の減少）</li>
+            <li>• マイボーム腺機能不全（MGD）</li>
+            <li>• シェーグレン症候群</li>
+            <li>• 一部の薬の副作用</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目薬で改善する方法</h2>
+      <p className="text-gray-700 mb-3">
+        ドライアイの種類（水分不足型・油分不足型）によって適切な目薬が異なります。
+      </p>
+      <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-4 mb-6">
+        <p className="text-sm text-cyan-800">
+          <strong>水分不足型：</strong>ヒアルロン酸Na・ポリビニルアルコール配合の目薬が効果的<br />
+          <strong>油分不足型（MGD）：</strong>ホットアイマスクでマイボーム腺を温めることが有効
+        </p>
+      </div>
+      <AffiliateBtns amzn="ドライアイ 目薬 防腐剤フリー おすすめ" rakuten="ドライアイ 目薬 コンタクト" />
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスクの効果</h2>
+      <p className="text-gray-700 mb-3">
+        ホットアイマスクは40〜45℃の温熱でまぶたを温め、マイボーム腺から油分の分泌を促進します。油分不足型のドライアイに特に効果的です。1回10〜15分が目安。
+      </p>
+      <AffiliateBtns amzn="ホットアイマスク ドライアイ おすすめ" rakuten="ホットアイマスク ドライアイ" />
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインサプリの活用</h2>
+      <p className="text-gray-700 mb-3">
+        ルテイン・ゼアキサンチンは目の黄斑部に集中する天然色素で、光ダメージから目を守ります。食事（ほうれん草・ケール等）からの摂取が難しい場合はサプリメントが有効です。1日10mg以上が目安。
+      </p>
+      <AffiliateBtns amzn="ルテイン サプリ 目 ドライアイ" rakuten="ルテイン アスタキサンチン サプリ" />
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">生活習慣の改善</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>20-20-20ルール：</strong>20分に1度、20フィート（約6m）先を20秒間見る</li>
+        <li><strong>意識的な瞬き：</strong>PC作業中は意識的に瞬きを増やす</li>
+        <li><strong>加湿器の使用：</strong>室内湿度を50〜60%に保つ</li>
+        <li><strong>スクリーンの位置：</strong>目線より少し下に調整し、まぶたの開きを小さくする</li>
+        <li><strong>オメガ3脂肪酸：</strong>青魚・亜麻仁油の摂取でドライアイ改善の報告あり</li>
+      </ul>
+
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-4">
+        <p className="text-sm text-amber-800">
+          <strong>眼科受診の目安：</strong>目薬や生活習慣の改善で2週間以上改善しない場合、目の痛み・充血が強い場合は眼科を受診してください。
+        </p>
+      </div>
+    </article>
+  ),
+
+  'hot-eye-mask-osusume': (
+    <article className="prose prose-sm max-w-none">
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        疲れ目・ドライアイ・肩こりに効果的なホットアイマスク。繰り返し使えるタイプから使い捨てまで、2026年のおすすめランキングを紹介します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスクの効果</h2>
+      <div className="grid sm:grid-cols-3 gap-3 mb-6">
+        {[
+          { effect: 'ドライアイ改善', desc: 'マイボーム腺を温めて油分分泌を促進' },
+          { effect: '疲れ目・眼精疲労', desc: '血行促進でピント調節筋の疲労回復' },
+          { effect: '睡眠の質向上', desc: '就寝前の使用でリラックス効果' },
+        ].map(e => (
+          <div key={e.effect} className="bg-orange-50 border border-orange-200 rounded-xl p-4 text-center">
+            <p className="font-bold text-orange-700 text-sm mb-1">{e.effect}</p>
+            <p className="text-xs text-gray-600">{e.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">繰り返し使用タイプの比較</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          {
+            name: 'Panasonic EH-SW68',
+            price: '¥7,000〜10,000',
+            features: ['スチーム式・潤いが高い', '温度4段階調節', '充電式コードレス', '連続使用約10分'],
+            verdict: '総合最高峰。スチームで目元に潤いを与えたい方に',
+          },
+          {
+            name: 'アイリスオーヤマ HOT17',
+            price: '¥3,000〜4,000',
+            features: ['USB充電式', '温度3段階', '振動機能付き', '軽量180g'],
+            verdict: 'コスパ最強。初めてのホットアイマスクに最適',
+          },
+        ].map(p => (
+          <div key={p.name} className="bg-white border border-gray-200 rounded-xl p-5">
+            <div className="flex justify-between items-start mb-2">
+              <p className="font-bold text-gray-800">{p.name}</p>
+              <p className="text-sm font-bold text-orange-600">{p.price}</p>
+            </div>
+            <ul className="text-xs text-gray-600 grid grid-cols-2 gap-1 mb-2">
+              {p.features.map(f => <li key={f}>• {f}</li>)}
+            </ul>
+            <p className="text-xs text-gray-500 italic">{p.verdict}</p>
+          </div>
+        ))}
+      </div>
+      <AffiliateBtns amzn="ホットアイマスク Panasonic 繰り返し" rakuten="ホットアイマスク 繰り返し おすすめ" />
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">使い捨てタイプの比較</h2>
+      <div className="space-y-3 mb-6">
+        {[
+          { name: '花王 めぐりズム 蒸気でホットアイマスク', price: '14枚 ¥700〜', feat: '約40℃・約10分持続。ラベンダー・ローズ等5種の香り。旅行・出張に最適' },
+          { name: 'バブ メディキュア ホットアイマスク', price: '5枚 ¥500〜', feat: '45℃の高温で強力なホット感。寝る前の集中ケアに' },
+        ].map(p => (
+          <div key={p.name} className="bg-white border border-gray-200 rounded-xl p-4">
+            <div className="flex justify-between items-start mb-1">
+              <p className="font-bold text-gray-800 text-sm">{p.name}</p>
+              <p className="text-xs font-bold text-orange-600">{p.price}</p>
+            </div>
+            <p className="text-xs text-gray-600">{p.feat}</p>
+          </div>
+        ))}
+      </div>
+      <AffiliateBtns amzn="花王 めぐりズム ホットアイマスク" rakuten="めぐりズム アイマスク ホット" />
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方のポイント</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-orange-50">
+              <th className="text-left p-3 border border-gray-200">こんな方に</th>
+              <th className="text-left p-3 border border-gray-200">おすすめタイプ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { user: '毎日使いたい・コスパ重視', rec: '繰り返し使用タイプ（アイリスオーヤマ等）' },
+              { user: '潤い・スチーム効果を求める', rec: 'Panasonic EH-SW68' },
+              { user: '出張・旅行が多い', rec: '使い捨て（花王めぐりズム）' },
+              { user: '香りでリラックスしたい', rec: '使い捨て（各種香りバリエーション）' },
+            ].map(r => (
+              <tr key={r.user} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 text-gray-700">{r.user}</td>
+                <td className="p-3 border border-gray-200 font-medium text-orange-700">{r.rec}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </article>
+  ),
+
+  'eye-goods-pc': (
+    <article className="prose prose-sm max-w-none">
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        長時間のPC作業で目が疲れる方向けに、疲れ目対策グッズを厳選。モニターライトからブルーライトカット眼鏡まで、効果的なアイテムを紹介します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">PC作業で目が疲れる原因</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+        <li><strong>瞬きの減少：</strong>通常の1/3程度に減少しドライアイになる</li>
+        <li><strong>ピント調節の酷使：</strong>同じ距離を見続けることで毛様体筋が疲労</li>
+        <li><strong>モニターの反射・グレア：</strong>余計な明暗差で目に負荷がかかる</li>
+        <li><strong>室内照明との明暗差：</strong>画面が明るすぎる・暗すぎると目が疲れやすい</li>
+      </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">モニターライトの効果</h2>
+      <p className="text-gray-700 mb-3">
+        モニター上部に設置するモニターライトは、画面に反射しない設計で手元を照らします。デスクライトより省スペースで、PC作業に最適な照明環境を作れます。
+      </p>
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-gray-800 mb-2">BenQ ScreenBar（最もおすすめ）</p>
+        <p className="text-sm text-gray-600 mb-3">モニタークリップ式・非対称光学設計でグレアなし・自動照度調節・USB給電。PC作業のモニターライトとして世界シェアNo.1。</p>
+        <AffiliateBtns amzn="BenQ ScreenBar モニターライト" rakuten="BenQ ScreenBar" />
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ブルーライトカット眼鏡</h2>
+      <p className="text-gray-700 mb-3">
+        PC作業専用の度なしブルーライトカット眼鏡は、夜間の作業での睡眠への影響を軽減します。度ありの場合はJINSやZoffで「PC用度数（弱度数設計）」のオプションも検討を。
+      </p>
+      <AffiliateBtns amzn="ブルーライトカット 眼鏡 PC作業 度なし" rakuten="ブルーライトカット 眼鏡 PC" />
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">モニターフィルター・アンチグレアフィルム</h2>
+      <p className="text-gray-700 mb-3">
+        モニターに貼るアンチグレア（非光沢）フィルムは、照明の映り込みを防ぎ目への負担を軽減します。プライバシーフィルターと兼用のものも人気です。
+      </p>
+      <AffiliateBtns amzn="モニター アンチグレア フィルター ブルーライトカット" rakuten="モニターフィルター アンチグレア" />
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">PC作業の目疲れ対策まとめ</h2>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        {[
+          { title: 'モニターライト', effect: '手元の照度改善・グレア軽減', cost: '¥8,000〜15,000', recommend: 'BenQ ScreenBar / Plus' },
+          { title: 'ブルーライトカット眼鏡', effect: '夜間の睡眠への影響を軽減', cost: '¥1,000〜5,000', recommend: 'JINSのPC GLASSES' },
+          { title: 'コンタクト対応目薬', effect: 'ドライアイ・疲れ目をケア', cost: '¥500〜2,000', recommend: 'ソフトサンティア（防腐剤フリー）' },
+          { title: 'ホットアイマスク', effect: '仕事後の目の回復を促進', cost: '¥3,000〜10,000', recommend: 'Panasonic EH-SW68' },
+        ].map(g => (
+          <div key={g.title} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-gray-800 text-sm mb-1">{g.title}</p>
+            <p className="text-xs text-green-700 mb-1">{g.effect}</p>
+            <p className="text-xs text-gray-500 mb-1">参考価格：{g.cost}</p>
+            <p className="text-xs text-orange-600">おすすめ：{g.recommend}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-gray-800 mb-3">目疲れ対策グッズをまとめて探す</p>
+        <AffiliateBtns amzn="PC 目疲れ 対策 グッズ" rakuten="目疲れ PC 対策 グッズ" />
+      </div>
+    </article>
+  ),
+};

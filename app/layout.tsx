@@ -17,22 +17,22 @@ export const metadata: Metadata = {
     google: 'ms0YnowygFYwPKk3oWjnPGoyx0Jpox_yJAzBU8mVaA8',
   },
   title: {
-    default: 'コンタクトレンズ最安値比較 | レンズナビ',
+    default: '目のことなら、レンズナビ。コンタクト・眼鏡・アイケア・レーシック総合情報',
     template: '%s | レンズナビ',
   },
-  description: 'アキュビュー、デイリーズ、シードなど人気コンタクトレンズの最安値を比較。スマイルコンタクト、アイシティなど主要ショップの価格を毎日自動更新。',
-  keywords: ['コンタクトレンズ', '最安値', '価格比較', 'アキュビュー', 'ワンデー', 'カラコン', '通販'],
+  description: 'コンタクトレンズの最安値比較から眼鏡選び・VRゴーグル・レーシック・ドライアイ対策まで。目に関するすべての情報が揃う総合サイト「レンズナビ」。',
+  keywords: ['コンタクトレンズ', '最安値', '眼鏡 選び方', 'VRゴーグル 視力', 'レーシック 費用', 'ドライアイ 目薬', 'ホットアイマスク おすすめ', 'アイケア'],
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
     siteName: 'レンズナビ',
     url: 'https://lens-navi.jp',
-    description: 'アキュビュー、デイリーズ、シードなど人気コンタクトレンズの最安値を比較。スマイルコンタクト、アイシティなど主要ショップの価格を毎日自動更新。',
+    description: 'コンタクトレンズの最安値比較から眼鏡・VRゴーグル・レーシック・アイケアまで。目に関するすべての情報が揃う総合サイト。',
   },
   twitter: {
     card: 'summary',
-    title: 'コンタクトレンズ最安値比較 | レンズナビ',
-    description: 'アキュビュー、デイリーズ、シードなど人気コンタクトレンズの最安値を比較。主要ショップの価格を毎日自動更新。',
+    title: '目のことなら、レンズナビ。',
+    description: 'コンタクトレンズの最安値比較から眼鏡・VRゴーグル・レーシック・アイケアまで。目に関するすべての情報が揃う総合サイト。',
   },
   robots: {
     index: true,
@@ -66,7 +66,7 @@ export default function RootLayout({
         '@id': 'https://lens-navi.jp/#organization',
         name: 'レンズナビ',
         url: 'https://lens-navi.jp',
-        description: 'コンタクトレンズの最安値比較サイト。アキュビュー・デイリーズ・シードなど人気商品を24店舗で比較。',
+        description: 'コンタクトレンズの最安値比較から眼鏡・VRゴーグル・レーシック・アイケアまで、目に関するすべての情報が揃う総合サイト。',
       },
     ],
   };
