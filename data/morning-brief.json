@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-14",
-  "generatedAt": "2026-07-13T22:53:01.141Z",
+  "date": "2026-07-15",
+  "generatedAt": "2026-07-14T22:54:46.338Z",
   "todayAiStaff": [
     {
       "time": "04:00",
@@ -50,74 +50,74 @@
   ],
   "postsToday": 1,
   "actionsStatus": {
-    "total": 19,
-    "success": 15,
-    "failed": 3,
+    "total": 25,
+    "success": 22,
+    "failed": 2,
     "runs": [
       {
         "name": "朝の司令書生成",
         "status": null,
-        "time": "2026-07-13T22:52:36Z"
+        "time": "2026-07-14T22:54:17Z"
       },
       {
         "name": "Instagram 自動投稿",
         "status": "failure",
-        "time": "2026-07-13T22:45:04Z"
+        "time": "2026-07-14T22:47:20Z"
       },
       {
         "name": "Threads 占い 日次自動投稿",
         "status": "success",
-        "time": "2026-07-13T22:43:51Z"
+        "time": "2026-07-14T22:45:14Z"
       },
       {
         "name": "価格データ・アフィリエイトリンク自動更新",
         "status": "success",
-        "time": "2026-07-13T22:00:32Z"
+        "time": "2026-07-14T22:02:25Z"
       },
       {
         "name": "Threads 夜中のおじさん 自動投稿",
         "status": "success",
-        "time": "2026-07-13T20:06:44Z"
-      },
-      {
-        "name": "Deploy CEO Dashboard to Vercel",
-        "status": "success",
-        "time": "2026-07-13T17:17:22Z"
+        "time": "2026-07-14T20:04:00Z"
       },
       {
         "name": "Threads 夜間コラム自動投稿",
         "status": "success",
-        "time": "2026-07-13T16:37:43Z"
+        "time": "2026-07-14T15:26:19Z"
       },
       {
         "name": "価格データ・アフィリエイトリンク自動更新",
         "status": "success",
-        "time": "2026-07-13T15:44:34Z"
-      },
-      {
-        "name": "Threads 一文考察 自動投稿",
-        "status": "success",
-        "time": "2026-07-13T14:33:10Z"
+        "time": "2026-07-14T14:57:30Z"
       },
       {
         "name": "Threads 夜中のおじさん 自動投稿",
         "status": "success",
-        "time": "2026-07-13T13:11:26Z"
+        "time": "2026-07-14T14:41:27Z"
+      },
+      {
+        "name": "Threads 一文考察 自動投稿",
+        "status": "success",
+        "time": "2026-07-14T13:42:26Z"
+      },
+      {
+        "name": "Threads 夜中のおじさん 自動投稿",
+        "status": "success",
+        "time": "2026-07-14T12:04:45Z"
       }
     ]
   },
   "urgent": [
-    "Instagram投稿失敗の原因究明と復旧（GitHub Actions失敗ログ確認）",
-    "note第8回の作成・公開（高優先度タスク）",
-    "Instagram週2本投稿体制の構築確認"
+    "Instagram投稿失敗の原因調査・復旧（GitHub Actions失敗ログ確認）",
+    "note第8回の作成・公開完了",
+    "Instagram週2本投稿スケジュール確定・実行"
   ],
   "defer": [
-    "Amazon Associates申請（売上3件到達まで待機中）",
-    "GitHub Actions成功率向上施策の検討"
+    "Amazon Associates申請準備（売上3件達成時点で実行）",
+    "GitHub Actions成功率分析（現在88%、許容範囲内）"
   ],
   "confirm": [
-    "Instagram自動投稿の失敗原因（認証情報またはAPI仕様変更の確認）",
-    "note第8回のコンテンツ準備状況"
+    "Instagram自動投稿の復旧確認と今後の運用体制",
+    "note第8回の公開予定時刻・内容確認"
   ],
-  "summary": "Instagram投稿失敗を即解決、note公開を本日中完了。自動化体制の維持に注力。"
+  "summary": "Instagram障害対応＋note公開が本日の優先。自動化は好調継続中。"
 }
