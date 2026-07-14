@@ -77,7 +77,7 @@ export default function HomePage() {
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <Link href="/ranking" className="bg-sky-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-sky-500 transition-colors text-sm">
-            コンタクト最安値を比較する
+            コンタクトおすすめを見る
           </Link>
           <Link href="/column" className="bg-white text-gray-700 border border-gray-200 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition-colors text-sm">
             コラムを読む
@@ -132,7 +132,7 @@ export default function HomePage() {
           <Link href="/ranking" className="text-slate-600 text-sm hover:underline">すべて見る →</Link>
         </div>
         <p className="text-xs text-gray-400 mb-4">
-          {allProducts.length}商品 ・ 24店舗で比較 ・ 価格更新: {new Date(updatedAt).toLocaleDateString('ja-JP')}
+          {allProducts.length}商品掲載 ・ 価格更新: {new Date(updatedAt).toLocaleDateString('ja-JP')}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {topProducts.map((product, index) => (
@@ -253,7 +253,7 @@ export default function HomePage() {
           目に関するすべての情報を網羅する総合サイトです。
         </p>
         <p>
-          コンタクトレンズは<strong>BC（ベースカーブ）</strong>別に{allProducts.length}商品を24の主要ショップで価格比較。
+          コンタクトレンズは<strong>BC（ベースカーブ）</strong>別に{allProducts.length}商品を掲載。Amazon・楽天で最安値をチェックできます。
           ドライアイ対策・ブルーライトカット眼鏡・ホットアイマスクなどのアイケア情報も専門ライターが丁寧に解説しています。
         </p>
       </section>
