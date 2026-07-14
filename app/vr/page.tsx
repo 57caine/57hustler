@@ -26,10 +26,10 @@ const articles = [
 ];
 
 const products = [
-  { label: 'Meta Quest 3（Amazon）', amzn: 'Meta Quest 3', rakuten: 'Meta Quest 3' },
-  { label: 'Ray-Ban Meta Smart Glasses（Amazon）', amzn: 'Ray-Ban Meta Smart Glasses', rakuten: 'Ray-Ban Meta' },
-  { label: 'VR度付きインサートレンズ（Amazon）', amzn: 'VR 度付き インサートレンズ', rakuten: 'VR インサートレンズ' },
-  { label: 'VRメガネスペーサー（Amazon）', amzn: 'VR メガネスペーサー', rakuten: 'VR メガネスペーサー' },
+  { emoji: '🥽', label: 'Meta Quest 3', amzn: 'Meta Quest 3', rakuten: 'Meta Quest 3' },
+  { emoji: '😎', label: 'Ray-Ban Meta Smart Glasses', amzn: 'Ray-Ban Meta Smart Glasses', rakuten: 'Ray-Ban Meta' },
+  { emoji: '🔭', label: 'VR度付きインサートレンズ', amzn: 'VR 度付き インサートレンズ', rakuten: 'VR インサートレンズ' },
+  { emoji: '📦', label: 'VRメガネスペーサー', amzn: 'VR メガネスペーサー', rakuten: 'VR メガネスペーサー' },
 ];
 
 const faqs = [
@@ -98,18 +98,16 @@ export default function VRPage() {
       <h2 className="text-xl font-bold text-gray-800 mb-4">VR・スマートグラスを購入する</h2>
       <div className="grid sm:grid-cols-2 gap-3 mb-10">
         {products.map(p => (
-          <div key={p.label} className="bg-white border border-gray-200 rounded-xl p-4">
-            <p className="text-sm font-medium text-gray-800 mb-3">{p.label}</p>
-            <div className="flex gap-2">
-              <a href={AMZN(p.amzn)} target="_blank" rel="noopener noreferrer nofollow"
-                className="flex-1 text-center text-xs font-medium bg-amber-400 hover:bg-amber-300 text-gray-900 px-3 py-2 rounded-lg transition-colors">
-                Amazon で探す
-              </a>
-              <a href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow"
-                className="flex-1 text-center text-xs font-medium bg-red-500 hover:bg-red-400 text-white px-3 py-2 rounded-lg transition-colors">
-                楽天で探す
-              </a>
-            </div>
+          <div key={p.label} className="relative bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-sm hover:border-amber-300 transition-all">
+            <a href={AMZN(p.amzn)} target="_blank" rel="noopener noreferrer nofollow sponsored" className="block p-5 pb-10 text-center">
+              <div className="text-3xl mb-2">{p.emoji}</div>
+              <p className="text-sm font-bold text-gray-800">{p.label}</p>
+              <p className="text-xs text-amber-700 font-medium mt-1">Amazon で購入 →</p>
+            </a>
+            <a href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
+              className="absolute bottom-0 left-0 right-0 text-center text-xs text-red-600 hover:text-red-500 border-t border-gray-100 py-2.5 bg-white hover:bg-red-50 transition-colors">
+              楽天でも見る
+            </a>
           </div>
         ))}
       </div>

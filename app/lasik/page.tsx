@@ -114,23 +114,21 @@ export default function LasikPage() {
       <h2 className="text-xl font-bold text-gray-800 mb-4">手術前後のアイケアグッズ</h2>
       <div className="grid sm:grid-cols-2 gap-3 mb-10">
         {[
-          { label: '防腐剤フリー目薬（術後ケア）', amzn: '目薬 防腐剤フリー', rakuten: '防腐剤フリー 目薬' },
-          { label: '保護メガネ（術後使用）', amzn: '保護メガネ 目 手術後', rakuten: '保護ゴーグル 目薬' },
-          { label: '眼帯・アイシールド（Amazon）', amzn: '眼帯 手術用', rakuten: '眼帯 手術' },
-          { label: 'アイケアサプリ（ルテイン）', amzn: 'ルテイン サプリ 目', rakuten: 'ルテイン サプリ' },
+          { emoji: '💧', label: '防腐剤フリー目薬（術後ケア）', amzn: '目薬 防腐剤フリー', rakuten: '防腐剤フリー 目薬' },
+          { emoji: '🥽', label: '保護メガネ（術後使用）', amzn: '保護メガネ 目 手術後', rakuten: '保護ゴーグル 目薬' },
+          { emoji: '🩹', label: '眼帯・アイシールド', amzn: '眼帯 手術用', rakuten: '眼帯 手術' },
+          { emoji: '🌿', label: 'アイケアサプリ（ルテイン）', amzn: 'ルテイン サプリ 目', rakuten: 'ルテイン サプリ' },
         ].map(p => (
-          <div key={p.label} className="bg-white border border-gray-200 rounded-xl p-4">
-            <p className="text-sm font-medium text-gray-800 mb-3">{p.label}</p>
-            <div className="flex gap-2">
-              <a href={AMZN(p.amzn)} target="_blank" rel="noopener noreferrer nofollow"
-                className="flex-1 text-center text-xs font-medium bg-amber-400 hover:bg-amber-300 text-gray-900 px-3 py-2 rounded-lg transition-colors">
-                Amazon で探す
-              </a>
-              <a href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow"
-                className="flex-1 text-center text-xs font-medium bg-red-500 hover:bg-red-400 text-white px-3 py-2 rounded-lg transition-colors">
-                楽天で探す
-              </a>
-            </div>
+          <div key={p.label} className="relative bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-sm hover:border-amber-300 transition-all">
+            <a href={AMZN(p.amzn)} target="_blank" rel="noopener noreferrer nofollow sponsored" className="block p-5 pb-10 text-center">
+              <div className="text-3xl mb-2">{p.emoji}</div>
+              <p className="text-sm font-bold text-gray-800">{p.label}</p>
+              <p className="text-xs text-amber-700 font-medium mt-1">Amazon で購入 →</p>
+            </a>
+            <a href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
+              className="absolute bottom-0 left-0 right-0 text-center text-xs text-red-600 hover:text-red-500 border-t border-gray-100 py-2.5 bg-white hover:bg-red-50 transition-colors">
+              楽天でも見る
+            </a>
           </div>
         ))}
       </div>

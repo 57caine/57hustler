@@ -26,10 +26,10 @@ const articles = [
 ];
 
 const products = [
-  { label: 'ホットアイマスク（Panasonic等）', amzn: 'ホットアイマスク Panasonic', rakuten: 'ホットアイマスク おすすめ' },
-  { label: '使い捨てアイマスク（花王めぐりズム等）', amzn: '花王 めぐりズム アイマスク', rakuten: 'めぐりズム アイマスク' },
-  { label: 'モニターライト（BenQ ScreenBar等）', amzn: 'BenQ ScreenBar モニターライト', rakuten: 'モニターライト デスク' },
-  { label: '拡大鏡・ルーペ（Amazon）', amzn: '拡大鏡 ルーペ おすすめ', rakuten: '拡大鏡 ルーペ' },
+  { emoji: '♨️', label: 'ホットアイマスク', amzn: 'ホットアイマスク Panasonic', rakuten: 'ホットアイマスク おすすめ' },
+  { emoji: '😴', label: '使い捨てアイマスク（めぐりズム等）', amzn: '花王 めぐりズム アイマスク', rakuten: 'めぐりズム アイマスク' },
+  { emoji: '💡', label: 'モニターライト（BenQ ScreenBar等）', amzn: 'BenQ ScreenBar モニターライト', rakuten: 'モニターライト デスク' },
+  { emoji: '🔍', label: '拡大鏡・ルーペ', amzn: '拡大鏡 ルーペ おすすめ', rakuten: '拡大鏡 ルーペ' },
 ];
 
 const faqs = [
@@ -85,17 +85,20 @@ export default function EyeGoodsPage() {
       {/* Popular items grid */}
       <div className="grid sm:grid-cols-3 gap-4 mb-10">
         {[
-          { emoji: '♨️', name: 'ホットアイマスク', desc: 'Panasonic・花王など繰り返し使用タイプが人気', amzn: 'ホットアイマスク おすすめ' },
-          { emoji: '💡', name: 'モニターライト', desc: 'BenQ ScreenBarが最人気。PC作業の目疲れを軽減', amzn: 'モニターライト BenQ' },
-          { emoji: '🔍', name: '拡大鏡・ルーペ', desc: '細かい作業・読書に。スタンド型・手持ち型を比較', amzn: '拡大鏡 おすすめ' },
+          { emoji: '♨️', name: 'ホットアイマスク', desc: 'Panasonic・花王など繰り返し使用タイプが人気', amzn: 'ホットアイマスク おすすめ', rakuten: 'ホットアイマスク おすすめ' },
+          { emoji: '💡', name: 'モニターライト', desc: 'BenQ ScreenBarが最人気。PC作業の目疲れを軽減', amzn: 'モニターライト BenQ', rakuten: 'モニターライト デスク' },
+          { emoji: '🔍', name: '拡大鏡・ルーペ', desc: '細かい作業・読書に。スタンド型・手持ち型を比較', amzn: '拡大鏡 おすすめ', rakuten: '拡大鏡 ルーペ' },
         ].map(item => (
-          <div key={item.name} className="bg-white border border-gray-200 rounded-xl p-4 text-center">
-            <div className="text-3xl mb-2">{item.emoji}</div>
-            <p className="font-bold text-gray-800 text-sm mb-1">{item.name}</p>
-            <p className="text-xs text-gray-500 mb-3">{item.desc}</p>
-            <a href={AMZN(item.amzn)} target="_blank" rel="noopener noreferrer nofollow"
-              className="inline-block text-xs font-medium bg-amber-400 hover:bg-amber-300 text-gray-900 px-3 py-1.5 rounded-lg transition-colors">
-              Amazon で探す
+          <div key={item.name} className="relative bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-sm hover:border-amber-300 transition-all">
+            <a href={AMZN(item.amzn)} target="_blank" rel="noopener noreferrer nofollow sponsored" className="block p-5 pb-10 text-center">
+              <div className="text-3xl mb-2">{item.emoji}</div>
+              <p className="font-bold text-gray-800 text-sm mb-1">{item.name}</p>
+              <p className="text-xs text-gray-500 mb-2">{item.desc}</p>
+              <p className="text-xs text-amber-700 font-medium">Amazon で購入 →</p>
+            </a>
+            <a href={RAKUTEN(item.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
+              className="absolute bottom-0 left-0 right-0 text-center text-xs text-red-600 hover:text-red-500 border-t border-gray-100 py-2.5 bg-white hover:bg-red-50 transition-colors">
+              楽天でも見る
             </a>
           </div>
         ))}
@@ -105,18 +108,16 @@ export default function EyeGoodsPage() {
       <h2 className="text-xl font-bold text-gray-800 mb-4">アイケアグッズを購入する</h2>
       <div className="grid sm:grid-cols-2 gap-3 mb-10">
         {products.map(p => (
-          <div key={p.label} className="bg-white border border-gray-200 rounded-xl p-4">
-            <p className="text-sm font-medium text-gray-800 mb-3">{p.label}</p>
-            <div className="flex gap-2">
-              <a href={AMZN(p.amzn)} target="_blank" rel="noopener noreferrer nofollow"
-                className="flex-1 text-center text-xs font-medium bg-amber-400 hover:bg-amber-300 text-gray-900 px-3 py-2 rounded-lg transition-colors">
-                Amazon で探す
-              </a>
-              <a href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow"
-                className="flex-1 text-center text-xs font-medium bg-red-500 hover:bg-red-400 text-white px-3 py-2 rounded-lg transition-colors">
-                楽天で探す
-              </a>
-            </div>
+          <div key={p.label} className="relative bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-sm hover:border-amber-300 transition-all">
+            <a href={AMZN(p.amzn)} target="_blank" rel="noopener noreferrer nofollow sponsored" className="block p-5 pb-10 text-center">
+              <div className="text-3xl mb-2">{p.emoji}</div>
+              <p className="text-sm font-bold text-gray-800">{p.label}</p>
+              <p className="text-xs text-amber-700 font-medium mt-1">Amazon で購入 →</p>
+            </a>
+            <a href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
+              className="absolute bottom-0 left-0 right-0 text-center text-xs text-red-600 hover:text-red-500 border-t border-gray-100 py-2.5 bg-white hover:bg-red-50 transition-colors">
+              楽天でも見る
+            </a>
           </div>
         ))}
       </div>
