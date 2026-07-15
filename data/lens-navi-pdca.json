@@ -1,0 +1,113 @@
+{
+  "site": "lens-navi.jp",
+  "lastUpdated": "2026-07-15",
+  "improvements": [
+    {
+      "date": "2026-07-14",
+      "area": "サイト構成",
+      "description": "コンタクトレンズ専門サイトから目の総合サイトへリニューアル。6カテゴリ（コンタクト・眼鏡・VR・レーシック・アイケア・目の雑貨）に拡張",
+      "files": ["app/page.tsx", "components/Header.tsx", "components/Footer.tsx", "app/layout.tsx"],
+      "status": "完了"
+    },
+    {
+      "date": "2026-07-14",
+      "area": "新カテゴリページ",
+      "description": "眼鏡・サングラス、VR・スマートグラス、レーシック・視力矯正、アイケア・目薬、目の雑貨・グッズの5カテゴリページを新設",
+      "files": ["app/megane/page.tsx", "app/vr/page.tsx", "app/lasik/page.tsx", "app/eye-care/page.tsx", "app/eye-goods/page.tsx"],
+      "status": "完了"
+    },
+    {
+      "date": "2026-07-14",
+      "area": "コラム・記事",
+      "description": "目の健康・アイケア系コラム11本を新規追加。各記事にFAQ（3〜4問）、アフィリエイトCTA、SEOキーワードを実装",
+      "files": ["lib/eye-columns.tsx", "lib/all-columns.ts"],
+      "status": "完了"
+    },
+    {
+      "date": "2026-07-14",
+      "area": "アフィリエイトCTA",
+      "description": "「リアルタイム価格比較」CTAを削除。カテゴリ別Amazon・楽天アフィリエイトリンクに差し替え。記事前後にも動的CTAを設置",
+      "files": ["app/column/[slug]/page.tsx", "app/page.tsx", "app/category/[type]/page.tsx", "app/brand/[slug]/page.tsx"],
+      "status": "完了"
+    },
+    {
+      "date": "2026-07-14",
+      "area": "楽天URLフォーマット修正",
+      "description": "楽天アフィリエイトURL内の`hgc`を`ichiba`に統一。二重エンコード防止のため既存アフィリエイトURLはスキップする実装",
+      "files": ["lib/eye-columns.tsx", "app/megane/page.tsx", "app/vr/page.tsx", "app/lasik/page.tsx", "app/eye-care/page.tsx", "app/eye-goods/page.tsx", "app/column/[slug]/page.tsx"],
+      "status": "完了"
+    },
+    {
+      "date": "2026-07-14",
+      "area": "ビルドエラー修正",
+      "description": "apps/ceo-dashboard/app/layout.tsxが存在しないコンポーネントをインポートしてビルド失敗していた問題を修正。tsconfig.jsonのexclude設定を追加",
+      "files": ["tsconfig.json"],
+      "status": "完了"
+    },
+    {
+      "date": "2026-07-14",
+      "area": "GitHub Actions デプロイ設定",
+      "description": "lens-naviファイル変更時にVercelへ自動デプロイするGitHub Actionsワークフローを新設",
+      "files": [".github/workflows/deploy-lens-navi.yml"],
+      "status": "完了"
+    },
+    {
+      "date": "2026-07-15",
+      "area": "VR・スマートグラス コンテンツ強化",
+      "description": "VRゲーム・アプリおすすめ、VR酔い対策、VRビジネス活用・メタバースの3記事を追加。app/vr/page.tsxの記事一覧も更新。lib/eye-columns.tsxにメタデータ＋JSXコンテンツを実装。",
+      "files": ["lib/eye-columns.tsx", "app/vr/page.tsx"],
+      "status": "完了"
+    },
+    {
+      "date": "2026-07-15",
+      "area": "コンタクト初心者コンテンツ強化",
+      "description": "コンタクト初心者向け4記事を2000文字以上で追加（ネット購入ガイド・処方箋知識・完全入門2026・度数の違い）。lib/columns.tsxにメタデータ＋JSXコンテンツを実装。",
+      "files": ["lib/columns.tsx"],
+      "status": "完了"
+    },
+    {
+      "date": "2026-07-15",
+      "area": "価格表示の廃止・CTA統一（価格ズレ解消）",
+      "description": "PriceTable.tsxから全ての価格列（商品価格・送料・合計・最安値バッジ）を削除。「価格を確認する →」CTAボタンのみ表示するシンプルな店舗一覧に変更。価格変動ディスクレーマーを強化。",
+      "files": ["components/PriceTable.tsx"],
+      "status": "完了"
+    },
+    {
+      "date": "2026-07-15",
+      "area": "コンテンツ自動生成システム構築",
+      "description": "Claude API（claude-opus-4-8）を使ったコラム自動生成スクリプトと重複チェックログを新設。毎日9:00 JST新規コラム1本・毎週月曜既存コラム更新・VR週3本のGitHub Actionsワークフローを設定。",
+      "files": [
+        "scripts/generate-lens-navi-column.ts",
+        "data/lens-navi-content-log.json",
+        ".github/workflows/generate-lens-navi-column.yml"
+      ],
+      "status": "完了"
+    }
+  ],
+  "nextActions": [
+    {
+      "priority": "高",
+      "area": "コンタクト商品アフィリエイト",
+      "description": "product-url-map.jsonの全商品×全ストアのURLマッピングを完成させる（目標: 24ストア × 55商品）",
+      "deadline": "2026-07-21"
+    },
+    {
+      "priority": "高",
+      "area": "ANTHROPIC_API_KEY設定",
+      "description": "GitHubリポジトリのSecretsにANTHROPIC_API_KEYを登録してコラム自動生成を有効化",
+      "deadline": "2026-07-16"
+    },
+    {
+      "priority": "中",
+      "area": "眼鏡カテゴリ強化",
+      "description": "眼鏡ブランド比較・フレーム選び方コラムを追加",
+      "deadline": "2026-07-28"
+    },
+    {
+      "priority": "中",
+      "area": "SEO",
+      "description": "サイトマップ（sitemap.xml）、robots.txtを自動生成するNext.js設定を追加",
+      "deadline": "2026-07-28"
+    }
+  ]
+}

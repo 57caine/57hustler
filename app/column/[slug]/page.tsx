@@ -2,16 +2,29 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { columns, getColumnBySlug, columnContent } from '@/lib/columns';
+import { eyeColumns, eyeColumnContent, type EyeColumnMeta } from '@/lib/eye-columns';
+import { allColumns, getAnyColumnBySlug } from '@/lib/all-columns';
+
+const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=hustle-digger-22`;
+const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
+
+const SECTION_CTA: Record<string, { label: string; amzn: string; rakuten: string }> = {
+  megane:     { label: '眼鏡・サングラスを探す', amzn: '眼鏡フレーム おすすめ', rakuten: '眼鏡フレーム' },
+  vr:         { label: 'VR・スマートグラスを探す', amzn: 'VRゴーグル おすすめ', rakuten: 'VRゴーグル Meta Quest' },
+  lasik:      { label: 'アイケアグッズを探す', amzn: '目薬 防腐剤フリー', rakuten: '目薬 コンタクト' },
+  'eye-care': { label: 'アイケアグッズを探す', amzn: 'コンタクト 目薬 おすすめ', rakuten: 'ドライアイ 目薬 コンタクト' },
+  'eye-goods': { label: '目のグッズを探す', amzn: 'ホットアイマスク おすすめ', rakuten: 'ホットアイマスク おすすめ' },
+};
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return columns.map((c) => ({ slug: c.slug }));
+  return allColumns.map((c) => ({ slug: c.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const column = getColumnBySlug(slug);
+  const column = getAnyColumnBySlug(slug);
   if (!column) return {};
   return {
     title: column.title,
@@ -23,17 +36,23 @@ const categoryColors: Record<string, string> = {
   '度数・処方箋': 'bg-purple-100 text-purple-700',
   '購入ガイド': 'bg-emerald-100 text-emerald-700',
   '商品比較': 'bg-slate-100 text-slate-700',
+  'BC選び方': 'bg-sky-100 text-sky-700',
+  '眼鏡・サングラス': 'bg-indigo-100 text-indigo-700',
+  'VR・スマートグラス': 'bg-violet-100 text-violet-700',
+  'レーシック・視力矯正': 'bg-emerald-100 text-emerald-700',
+  'アイケア・目薬': 'bg-cyan-100 text-cyan-700',
+  '目の雑貨・グッズ': 'bg-orange-100 text-orange-700',
 };
 
 export default async function ColumnPage({ params }: Props) {
   const { slug } = await params;
-  const column = getColumnBySlug(slug);
+  const column = getAnyColumnBySlug(slug);
   if (!column) notFound();
 
-  const content = columnContent[slug];
+  const content = columnContent[slug] ?? eyeColumnContent[slug];
   if (!content) notFound();
 
-  const otherColumns = columns.filter((c) => c.slug !== slug).slice(0, 4);
+  const otherColumns = allColumns.filter((c) => c.slug !== slug).slice(0, 4);
   const BASE = 'https://lens-navi.jp';
 
   const jsonLd = {
@@ -103,41 +122,108 @@ export default async function ColumnPage({ params }: Props) {
           </nav>
         )}
 
-        {/* 記事前比較CTA */}
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-3">
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-bold text-gray-800">この記事の商品を最安値で購入する</p>
-            <p className="text-xs text-gray-500 mt-0.5">24店舗の送料込み最安値をリアルタイム比較</p>
-          </div>
-          <Link href="/ranking" className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors whitespace-nowrap">
-            ランキングを見る →
-          </Link>
-        </div>
+        {/* 記事前CTA */}
+        {(() => {
+          const isEye = 'section' in column;
+          const eyeSection = isEye ? (column as EyeColumnMeta).section : null;
+          const cta = eyeSection ? SECTION_CTA[eyeSection] : null;
+          if (cta) {
+            return (
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+                <p className="text-sm font-bold text-gray-800 mb-2">{cta.label}</p>
+                <div className="flex gap-2">
+                  <a href={AMZN(cta.amzn)} target="_blank" rel="noopener noreferrer nofollow"
+                    className="flex-1 text-center text-xs font-bold bg-amber-400 hover:bg-amber-300 text-gray-900 px-3 py-2 rounded-lg transition-colors">
+                    Amazon で探す
+                  </a>
+                  <a href={RAKUTEN(cta.rakuten)} target="_blank" rel="noopener noreferrer nofollow"
+                    className="flex-1 text-center text-xs font-bold bg-red-500 hover:bg-red-400 text-white px-3 py-2 rounded-lg transition-colors">
+                    楽天で探す
+                  </a>
+                </div>
+              </div>
+            );
+          }
+          return (
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-3">
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-bold text-gray-800">コンタクトレンズをお得に購入する</p>
+                <p className="text-xs text-gray-500 mt-0.5">Amazon・楽天で最安値をチェック</p>
+              </div>
+              <Link href="/ranking" className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors whitespace-nowrap">
+                おすすめ商品を見る →
+              </Link>
+            </div>
+          );
+        })()}
 
         {/* 本文 */}
         <div className="text-gray-800 leading-relaxed">
           {content}
         </div>
 
-        {/* 記事後比較CTA */}
-        <div className="mt-10 p-5 bg-slate-50 border border-slate-200 rounded-xl">
-          <p className="text-sm font-bold text-gray-800 mb-1">送料込み最安値を今すぐ比較</p>
-          <p className="text-xs text-gray-500 mb-3">24店舗のリアルタイム価格。この記事の商品を最安値で購入できます。</p>
-          <div className="flex flex-wrap gap-2">
-            <Link href="/ranking" className="bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors">
-              人気ランキングで比較する →
-            </Link>
-            <Link href="/category/1day" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2 rounded-lg hover:border-slate-300 transition-colors">
-              ワンデー
-            </Link>
-            <Link href="/category/2week" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2 rounded-lg hover:border-slate-300 transition-colors">
-              2ウィーク
-            </Link>
-            <Link href="/category/monthly" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2 rounded-lg hover:border-slate-300 transition-colors">
-              マンスリー
-            </Link>
+        {/* FAQ（メタデータから） */}
+        {('faqs' in column) && column.faqs && column.faqs.length > 0 && (
+          <div className="mt-10">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+            <div className="space-y-3">
+              {(column as EyeColumnMeta).faqs!.map(({ q, a }) => (
+                <details key={q} className="border border-gray-200 rounded-xl overflow-hidden bg-white">
+                  <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                    {q}<span className="text-gray-400 ml-2 text-xs shrink-0">▾</span>
+                  </summary>
+                  <div className="px-4 pb-4 pt-2 text-sm text-gray-700 border-t border-gray-100 leading-relaxed">{a}</div>
+                </details>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
+
+        {/* 記事後CTA */}
+        {(() => {
+          const isEye = 'section' in column;
+          const eyeSection = isEye ? (column as EyeColumnMeta).section : null;
+          const cta = eyeSection ? SECTION_CTA[eyeSection] : null;
+          if (cta) {
+            return (
+              <div className="mt-10 p-5 bg-slate-50 border border-slate-200 rounded-xl">
+                <p className="text-sm font-bold text-gray-800 mb-3">この記事に関連する商品を探す</p>
+                <div className="flex gap-2">
+                  <a href={AMZN(cta.amzn)} target="_blank" rel="noopener noreferrer nofollow"
+                    className="flex-1 text-center text-sm font-bold bg-amber-400 hover:bg-amber-300 text-gray-900 px-4 py-2 rounded-lg transition-colors">
+                    Amazon で探す
+                  </a>
+                  <a href={RAKUTEN(cta.rakuten)} target="_blank" rel="noopener noreferrer nofollow"
+                    className="flex-1 text-center text-sm font-bold bg-red-500 hover:bg-red-400 text-white px-4 py-2 rounded-lg transition-colors">
+                    楽天で探す
+                  </a>
+                </div>
+              </div>
+            );
+          }
+          return (
+            <div className="mt-10 p-5 bg-slate-50 border border-slate-200 rounded-xl">
+              <p className="text-sm font-bold text-gray-800 mb-1">コンタクトレンズをお得に購入する</p>
+              <p className="text-xs text-gray-500 mb-3">Amazon・楽天でコンタクトレンズをチェック</p>
+              <div className="flex flex-wrap gap-2">
+                <a href={AMZN('コンタクトレンズ ワンデー おすすめ')} target="_blank" rel="noopener noreferrer nofollow"
+                  className="bg-amber-400 hover:bg-amber-300 text-gray-900 text-sm font-bold px-4 py-2 rounded-lg transition-colors">
+                  Amazon で探す
+                </a>
+                <a href={RAKUTEN('コンタクトレンズ ワンデー')} target="_blank" rel="noopener noreferrer nofollow"
+                  className="bg-red-500 hover:bg-red-400 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors">
+                  楽天で探す
+                </a>
+                <Link href="/category/1day" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2 rounded-lg hover:border-slate-300 transition-colors">
+                  ワンデー
+                </Link>
+                <Link href="/category/2week" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2 rounded-lg hover:border-slate-300 transition-colors">
+                  2ウィーク
+                </Link>
+              </div>
+            </div>
+          );
+        })()}
 
         <div className="mt-6 pt-6 border-t border-gray-100">
           <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">

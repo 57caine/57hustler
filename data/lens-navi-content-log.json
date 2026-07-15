@@ -1,0 +1,29 @@
+{
+  "lastUpdated": "2026-07-15",
+  "columns": [
+    { "slug": "contact-lens-basic", "title": "コンタクトレンズの種類・選び方【初心者向け完全ガイド】", "section": "contact", "publishedAt": "2026-07-01" },
+    { "slug": "1day-contact-merit-demerit", "title": "ワンデーコンタクトのメリット・デメリット", "section": "contact", "publishedAt": "2026-07-01" },
+    { "slug": "2week-contact-care", "title": "2weekコンタクトのケア方法・洗浄液の選び方", "section": "contact", "publishedAt": "2026-07-01" },
+    { "slug": "bc-size-meaning", "title": "コンタクトのBC（ベースカーブ）とは？サイズが合わないと？", "section": "contact", "publishedAt": "2026-07-01" },
+    { "slug": "contact-dry-eye", "title": "コンタクトで目が乾く原因と対策【ドライアイ対応レンズも紹介】", "section": "contact", "publishedAt": "2026-07-01" },
+    { "slug": "colored-contact-safety", "title": "カラコンの安全な選び方【度なし・度ありの違い・認証マーク】", "section": "contact", "publishedAt": "2026-07-01" },
+    { "slug": "contact-online-shop-compare", "title": "コンタクトレンズ通販ショップ比較2026【最安値・処方箋不要】", "section": "contact", "publishedAt": "2026-07-01" },
+    { "slug": "eye-care-basics", "title": "目のケア基本ガイド【疲れ目・充血・ドライアイ対策】", "section": "eye-care", "publishedAt": "2026-07-14" },
+    { "slug": "eye-drops-how-to-choose", "title": "目薬の選び方【成分・症状別おすすめ】", "section": "eye-care", "publishedAt": "2026-07-14" },
+    { "slug": "pc-eye-strain-relief", "title": "PC・スマホの疲れ目対策【ブルーライトカット・目薬・ストレッチ】", "section": "eye-care", "publishedAt": "2026-07-14" },
+    { "slug": "lasik-basics-2026", "title": "レーシック手術の基本【費用・リスク・術後ケア2026年版】", "section": "lasik", "publishedAt": "2026-07-14" },
+    { "slug": "lasik-vs-icl", "title": "レーシックとICLの違い【費用・適応・回復期間を比較】", "section": "lasik", "publishedAt": "2026-07-14" },
+    { "slug": "megane-frame-choose", "title": "眼鏡フレームの選び方【顔型・素材・ブランド比較】", "section": "megane", "publishedAt": "2026-07-14" },
+    { "slug": "blue-light-glasses-effect", "title": "ブルーライトカット眼鏡の効果【科学的根拠・おすすめ製品2026】", "section": "megane", "publishedAt": "2026-07-14" },
+    { "slug": "sunglasses-uv-choose", "title": "サングラスの選び方【UV・偏光・ブランド比較】", "section": "megane", "publishedAt": "2026-07-14" },
+    { "slug": "vr-shiryoku-warui", "title": "視力が悪い人のVRゴーグル対策【コンタクト・度付きインサート・メガネスペーサー完全ガイド】", "section": "vr", "publishedAt": "2026-07-14" },
+    { "slug": "smart-glass-2026", "title": "スマートグラス・VRゴーグル おすすめ2026【Meta Quest 3・Ray-Ban Meta・Vision Pro比較】", "section": "vr", "publishedAt": "2026-07-14" },
+    { "slug": "vr-game-osusume-2026", "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】", "section": "vr", "publishedAt": "2026-07-15" },
+    { "slug": "vr-yoi-taisaku", "title": "VR酔い対策完全ガイド【原因・防ぐ方法・Meta Quest設定】", "section": "vr", "publishedAt": "2026-07-15" },
+    { "slug": "vr-business-metaverse-2026", "title": "VRビジネス活用・メタバース最新動向2026【XR会議・トレーニング・産業活用】", "section": "vr", "publishedAt": "2026-07-15" },
+    { "slug": "contact-net-kounyu-guide", "title": "コンタクトレンズはネットで買える？処方箋なしでも大丈夫？完全ガイド", "section": "contact", "publishedAt": "2026-07-15" },
+    { "slug": "shohosen-souyo-shijisho-chishiki", "title": "処方箋と装用指示書の違い【コンタクトを安全に買うための正しい知識】", "section": "contact", "publishedAt": "2026-07-15" },
+    { "slug": "contact-kanzen-nyumon-2026", "title": "コンタクトレンズ完全入門2026【種類・選び方・費用・安全な買い方まで】", "section": "contact", "publishedAt": "2026-07-15" },
+    { "slug": "contact-megane-dosu-chigai", "title": "コンタクトの度数とメガネの度数の違い【換算方法・ズレの原因を解説】", "section": "contact", "publishedAt": "2026-07-15" }
+  ]
+}

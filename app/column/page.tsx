@@ -1,16 +1,22 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { columns } from '@/lib/columns';
+import { allColumns } from '@/lib/all-columns';
 
 export const metadata: Metadata = {
-  title: 'コンタクトレンズ コラム・ガイド【全26記事】| レンズナビ',
-  description: 'コンタクトレンズの度数の見方、初めての選び方、乾きにくい・乱視用・カラコン・2week・マンスリー・長時間装用・ドライアイ向けレンズ比較・通販ショップ比較まで、購入前に知っておきたい情報を全26記事で解説。',
+  title: 'コラム・ガイド記事一覧【コンタクト・眼鏡・アイケア・レーシック】| レンズナビ',
+  description: 'コンタクトレンズの選び方・BC解説から、眼鏡の選び方・VRゴーグル対策・レーシック費用・ドライアイ対策・ホットアイマスクまで。目に関する全記事一覧。',
 };
 
 const categoryColors: Record<string, string> = {
   '度数・処方箋': 'bg-purple-100 text-purple-700',
   '購入ガイド': 'bg-emerald-100 text-emerald-700',
   '商品比較': 'bg-slate-100 text-slate-700',
+  'BC選び方': 'bg-sky-100 text-sky-700',
+  '眼鏡・サングラス': 'bg-indigo-100 text-indigo-700',
+  'VR・スマートグラス': 'bg-violet-100 text-violet-700',
+  'レーシック・視力矯正': 'bg-emerald-100 text-emerald-700',
+  'アイケア・目薬': 'bg-cyan-100 text-cyan-700',
+  '目の雑貨・グッズ': 'bg-orange-100 text-orange-700',
 };
 
 export default function ColumnListPage() {
@@ -22,14 +28,14 @@ export default function ColumnListPage() {
         <span className="text-gray-800">コラム</span>
       </nav>
 
-      <h1 className="text-2xl font-bold text-gray-900 mb-2">コンタクトレンズ コラム・ガイド</h1>
-      <p className="text-gray-500 text-sm mb-1">全{columns.length}記事</p>
+      <h1 className="text-2xl font-bold text-gray-900 mb-2">コラム・ガイド記事一覧</h1>
+      <p className="text-gray-500 text-sm mb-1">全{allColumns.length}記事</p>
       <p className="text-gray-600 mb-8">
-        度数の見方、種類の選び方、通販おすすめショップなど、コンタクトレンズに関するお役立ち情報を掲載しています。
+        コンタクトレンズ・眼鏡・VR・レーシック・アイケアなど、目に関するお役立ち情報を掲載しています。
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {columns.map((column) => (
+        {allColumns.map((column) => (
           <Link key={column.slug} href={`/column/${column.slug}`} className="group block">
             <article className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg hover:border-slate-200 transition-all duration-200 h-full">
               <div className="flex items-center gap-2 mb-3">
@@ -52,7 +58,7 @@ export default function ColumnListPage() {
       </div>
 
       <div className="mt-12 bg-slate-50 rounded-2xl p-6">
-        <h2 className="text-lg font-bold text-gray-800 mb-3">最安値で購入する</h2>
+        <h2 className="text-lg font-bold text-gray-800 mb-3">コンタクトを最安値で購入する</h2>
         <p className="text-gray-600 text-sm mb-4">
           気になった商品の価格を複数ショップで一括比較。毎日価格を自動更新しています。
         </p>

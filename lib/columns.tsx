@@ -372,6 +372,46 @@ export const columns: ColumnMeta[] = [
     readingTime: 6,
     headings: ['1dayと2weekの基本的な違い', '年間コスト比較（ケア用品込み）', '使用頻度別・どちらがお得か', '手間・利便性の比較', '1dayがおすすめな人・2weekがおすすめな人', '最安値通販で賢く購入する方法'],
   },
+  {
+    slug: 'contact-net-kounyu-guide',
+    title: 'コンタクトレンズはネットで買える【完全ガイド】処方箋不要・Amazon・楽天での正しい買い方',
+    description: 'コンタクトレンズをネットで安全に購入する方法を完全解説。処方箋なしで買える理由・安全に購入するための3つのポイント・Amazon楽天での具体的な手順。',
+    category: '購入ガイド',
+    publishedAt: '2026-07-15',
+    updatedAt: '2026-07-15',
+    readingTime: 8,
+    headings: ['コンタクトレンズは通販で購入できる', '処方箋不要で購入できる理由', '安全に買うための3つのポイント', 'Amazon・楽天での具体的な買い方', 'おすすめ通販サイトの選び方'],
+  },
+  {
+    slug: 'shohosen-souyo-shijisho-chishiki',
+    title: '処方箋と装用指示書の違い【コンタクトレンズ購入前に知っておくべき正しい知識】',
+    description: '処方箋と装用指示書の法的な違い、度数・BC・DIA・PWRの読み方、自分の度数を確認する方法を分かりやすく解説。コンタクト初心者必読。',
+    category: '度数・処方箋',
+    publishedAt: '2026-07-15',
+    updatedAt: '2026-07-15',
+    readingTime: 7,
+    headings: ['処方箋と装用指示書は別物', '装用指示書は法的義務ではない', 'PWR・BC・DIA・CYL・AXISの読み方', '自分の度数を確認する方法', '通販でコンタクトを買うときの注意点'],
+  },
+  {
+    slug: 'contact-kanzen-nyumon-2026',
+    title: 'コンタクトレンズ完全入門2026【1day・2week・monthly違い・初めて失敗しない選び方】',
+    description: '1day・2week・1monthの違いとコスパ比較、ソフト・ハードの違い、初めて買う人が失敗しないポイント、目のトラブルを防ぐケア方法を完全解説。',
+    category: '購入ガイド',
+    publishedAt: '2026-07-15',
+    updatedAt: '2026-07-15',
+    readingTime: 10,
+    headings: ['コンタクトレンズの種類を理解する', '1day・2week・monthlyのコスパ比較', 'ソフト・ハードコンタクトの違い', '初めて買う人が失敗しないポイント5つ', '目のトラブルを防ぐ正しいケア', '初心者におすすめのコンタクト'],
+  },
+  {
+    slug: 'contact-megane-dosu-chigai',
+    title: 'コンタクトの度数とメガネの度数の違い【なぜ異なる？自分に合った度数の選び方】',
+    description: 'コンタクトレンズとメガネで度数が異なる理由を解説。頂点間距離の仕組み、自分に合った度数の換算方法、眼科での正しい処方の受け方。',
+    category: '度数・処方箋',
+    publishedAt: '2026-07-15',
+    updatedAt: '2026-07-15',
+    readingTime: 6,
+    headings: ['なぜコンタクトとメガネで度数が違うのか', '頂点間距離とは', '度数換算の目安表', '自分に合った度数の選び方', '度数が合わないサインと対処法'],
+  },
 ];
 
 export function getColumnBySlug(slug: string): ColumnMeta | undefined {
@@ -5444,6 +5484,441 @@ export const columnContent: Record<string, React.ReactNode> = {
             { q: '2weekコンタクトは開封後、2週間使えますか？', a: '「開封後2週間」が使用期限です。たとえば月曜日に開封した場合、次の月曜日（14日後）には装用日数に関わらず新しいレンズに交換が必要です。週に2〜3日しか装用しなくても同じです。装用日数ではなく「開封からの日数」でカウントしてください。' },
             { q: '1dayを2日使い回すことはできますか？', a: '絶対にNGです。ワンデーは1日使い捨て前提で設計されており、薄くて汚れを除去しにくい構造です。再使用すると角膜感染症・角膜潰瘍のリスクが急上昇します。「もったいない」という気持ちは理解できますが、眼の健康のため絶対に守ってください。' },
             { q: '1dayと2weekで見え方や快適さに差はありますか？', a: '同じメーカー・グレードの商品であれば快適さはほぼ同等です。ただし2weekは使用日数が経つにつれてタンパク質・脂質が蓄積し、後半は装用感が落ちることがあります。1dayは毎日新品なので常に最良の状態を保てます。最高の快適さを求めるなら1dayに軍配が上がります。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'contact-net-kounyu-guide': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        「コンタクトレンズってネットで買えるの？」と疑問に思う方は多いです。答えはYES。正しい知識と購入方法を理解すれば、Amazon・楽天など通販で安全に購入できます。このガイドでは具体的な手順を解説します。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">コンタクトレンズは通販で購入できる</h2>
+      <p className="mb-4">
+        コンタクトレンズは「高度管理医療機器」に分類されますが、日本の法律では医師の処方箋がなくてもネット通販で購入することが可能です。ただし、初めて使う場合は必ず眼科で検査を受けることを強く推奨します。
+      </p>
+      <div className="bg-sky-50 border border-sky-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-sky-800 mb-2">ネット購入が便利な3つの理由</p>
+        <ul className="text-sm text-gray-700 space-y-2">
+          <li>✓ 実店舗より30〜50%安い価格で購入できる</li>
+          <li>✓ 24時間いつでも注文でき、自宅に届く</li>
+          <li>✓ 在庫が豊富で、希望の度数を確実に入手できる</li>
+        </ul>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">処方箋不要で購入できる理由</h2>
+      <p className="mb-4">
+        日本では薬機法上、コンタクトレンズの販売に処方箋の提出義務はありません。ただし、「装用指示書」を求めるショップもあります。装用指示書とは眼科で作成してもらう使用許可証のようなもので、処方箋とは異なります。
+      </p>
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6">
+        <p className="text-sm text-amber-800">
+          <strong>重要：</strong>処方箋不要で買えることと、眼科受診が不要なことは別です。初めてコンタクトを使う場合・度数が変わった場合は必ず眼科で検査を受けてください。角膜の状態確認はとても重要です。
+        </p>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">安全に買うための3つのポイント</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          { num: '①', title: '自分の度数（PWR・BC・DIA）を正確に把握する', desc: '眼科で発行された装用指示書や処方箋に記載されている数値を正確に使用します。推測や眼鏡の度数からの流用は禁物です。' },
+          { num: '②', title: '信頼できるショップを選ぶ', desc: '高度管理医療機器の販売許可（販売業許可証）を持つショップを選びましょう。Amazon・楽天の大手ショップは許可を持っています。' },
+          { num: '③', title: '同じ商品・同じ度数を継続購入する', desc: 'ネット購入は自分が過去に眼科で処方・使用したことのある商品を継続購入する用途に最適です。初めての商品は眼科受診後に。' },
+        ].map(p => (
+          <div key={p.num} className="flex gap-3 bg-white border border-gray-200 rounded-xl p-4">
+            <span className="text-xl font-bold text-sky-600 shrink-0">{p.num}</span>
+            <div>
+              <p className="font-bold text-gray-800 text-sm mb-1">{p.title}</p>
+              <p className="text-sm text-gray-600">{p.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">Amazon・楽天での具体的な買い方</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-3 border border-gray-200">STEP</th>
+              <th className="text-left p-3 border border-gray-200">手順</th>
+              <th className="text-left p-3 border border-gray-200">ポイント</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { step: '1', action: '商品名で検索', point: '「アキュビュー オアシス 1day」など商品名を正確に入力' },
+              { step: '2', action: '度数・BC・枚数を選択', point: '装用指示書の数値と完全一致させること。-（マイナス）の見落とし注意' },
+              { step: '3', action: 'レビュー・販売者を確認', point: '評価4.0以上・レビュー数が多い信頼できる出品者を選ぶ' },
+              { step: '4', action: '数量と配送を選択', point: '定期おトク便・まとめ買い割引で年間コストを下げられる' },
+              { step: '5', action: '注文・支払い・受け取り', point: 'プライム会員は翌日配送。まとめ買いで送料無料になることが多い' },
+            ].map(r => (
+              <tr key={r.step} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-bold text-sky-600">STEP {r.step}</td>
+                <td className="p-3 border border-gray-200 font-medium">{r.action}</td>
+                <td className="p-3 border border-gray-200 text-xs text-gray-600">{r.point}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">おすすめ通販サイトの選び方</h2>
+      <p className="mb-4">
+        Amazon・楽天が最も安心です。コンタクト専門の通販ショップ（アットレンズ・レンズクイック・24Lens等）はさらに価格が安い場合があります。
+      </p>
+      <div className="grid sm:grid-cols-3 gap-3 mb-6">
+        {[
+          { site: 'Amazon', merit: 'Prime翌日配送・返品しやすい・信頼性が高い', tag: '安心・速い' },
+          { site: '楽天市場', merit: 'ポイント還元・セール時が最安・楽天カードでお得', tag: 'ポイント重視' },
+          { site: 'コンタクト専門店', merit: 'Amazon・楽天より安い場合も。まとめ買い割引が豊富', tag: '価格重視' },
+        ].map(s => (
+          <div key={s.site} className="bg-white border border-gray-200 rounded-xl p-4">
+            <span className="text-xs bg-sky-100 text-sky-700 px-2 py-0.5 rounded font-medium">{s.tag}</span>
+            <p className="font-bold text-gray-800 text-sm mt-2 mb-1">{s.site}</p>
+            <p className="text-xs text-gray-600">{s.merit}</p>
+          </div>
+        ))}
+      </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'コンタクトをネットで買うのは違法ですか？', a: '違法ではありません。日本の薬機法では、高度管理医療機器（コンタクトレンズ）の販売に処方箋の提出義務はなく、販売業許可を持つ事業者であれば通販で販売できます。ただし初めての商品は眼科受診を強く推奨します。' },
+            { q: 'Amazonでコンタクトを買うとき何に気をつければいいですか？', a: '①商品名・度数（PWR）・BC・DIAが正確に一致しているか ②信頼できる出品者か（Amazon本体か正規代理店）③使用期限・賞味期限の確認、の3点が重要です。マーケットプレイスの安価な商品は注意が必要です。' },
+            { q: '通販のコンタクトは安全ですか？', a: '正規品を販売している許可取得ショップであれば安全です。Amazon・楽天の大手ショップや認定コンタクト専門ショップは問題ありません。「格安すぎる」「認証番号の記載がない」ショップは避けましょう。' },
+            { q: '度数を間違えて注文してしまった場合は？', a: 'Amazon・楽天では開封前の商品は返品・交換ができるケースが多いです。ただしコンタクトレンズは衛生用品のため、開封後の返品はほぼ不可能です。注文前に度数を必ず二重確認してください。' },
+            { q: '定期おトク便でコンタクトを注文するメリットは？', a: 'Amazonの定期おトク便は通常価格より5〜15%割引になります。送料も無料です。コンタクトは毎月使うものなので定期注文は費用削減に効果的です。受け取り日や間隔も変更可能なので使い勝手も良いです。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'shohosen-souyo-shijisho-chishiki': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        コンタクトレンズを購入する際によく出てくる「処方箋」と「装用指示書」。この2つは全く別のものです。違いと正しい知識を理解しておきましょう。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">処方箋と装用指示書は別物</h2>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <p className="font-bold text-blue-800 mb-2">処方箋（医薬品処方箋）</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>• 医師が患者に薬を処方するための書類</li>
+            <li>• 薬剤師が調剤するために必要</li>
+            <li>• 有効期限：発行から4日以内</li>
+            <li>• コンタクトレンズには通常使用しない</li>
+          </ul>
+        </div>
+        <div className="bg-green-50 border border-green-200 rounded-xl p-5">
+          <p className="font-bold text-green-800 mb-2">装用指示書（コンタクト用）</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>• 眼科医がコンタクト使用を許可する書類</li>
+            <li>• 度数・BC・DIA・使用商品名が記載</li>
+            <li>• 有効期限：通常1〜3年（眼科により異なる）</li>
+            <li>• ショップで要求される場合がある</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">装用指示書は法的義務ではない</h2>
+      <p className="mb-4">
+        日本の薬機法では、コンタクトレンズ購入時に装用指示書の提出は義務付けられていません。ただし、販売店側が独自ルールとして要求する場合があります。特にコンタクト専門の通販ショップの多くは装用指示書なしで購入可能です。
+      </p>
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6">
+        <p className="text-sm text-amber-800">
+          <strong>大切なこと：</strong>「装用指示書がなくても買える」≠「眼科に行かなくていい」です。角膜の健康状態チェックや正確な度数確認は眼科でしかできません。年1回以上の眼科受診を推奨します。
+        </p>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">度数パラメータの完全解説</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          { param: 'PWR / SPH（度数）', desc: 'レンズの矯正力。-（マイナス）が近視、+（プラス）が遠視。数値が大きいほど度が強い。単位はD（ジオプター）。', example: '例：-3.00 = 中程度の近視' },
+          { param: 'BC（ベースカーブ）', desc: 'レンズのカーブの大きさ（mm）。角膜の形状に合わせる。日本人の平均は8.3〜8.7mm。', example: '例：BC 8.6mm（最も一般的）' },
+          { param: 'DIA（直径）', desc: 'レンズ全体の直径（mm）。通常のコンタクトは13.8〜14.5mm。カラコンは14.5mm以上も。', example: '例：DIA 14.0mm（標準サイズ）' },
+          { param: 'CYL（乱視度数）', desc: '乱視用コンタクトのみ。乱視の矯正力。マイナス表記が一般的。-（マイナス）で表記。', example: '例：CYL -0.75（軽度乱視）' },
+          { param: 'AXIS（乱視の軸）', desc: '乱視の方向（角度）。0〜180度で表示。CYLとセットで使用。', example: '例：AXIS 180（水平方向の乱視）' },
+        ].map(p => (
+          <div key={p.param} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-sky-700 text-sm mb-1">{p.param}</p>
+            <p className="text-sm text-gray-700 mb-1">{p.desc}</p>
+            <p className="text-xs text-gray-500 bg-gray-50 px-3 py-1 rounded">{p.example}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">自分の度数を確認する方法</h2>
+      <div className="space-y-3 mb-6">
+        <div className="bg-white border border-gray-200 rounded-xl p-4">
+          <p className="font-bold text-gray-800 mb-2">方法① 眼科で処方してもらう（最も確実）</p>
+          <p className="text-sm text-gray-600">眼科で視力検査・屈折検査・角膜曲率測定を行い、最適なコンタクトの度数を処方してもらう方法。初めての方はこの方法必須。</p>
+        </div>
+        <div className="bg-white border border-gray-200 rounded-xl p-4">
+          <p className="font-bold text-gray-800 mb-2">方法② 手元のコンタクトレンズの箱を確認</p>
+          <p className="text-sm text-gray-600">使用中のコンタクトの箱にPWR・BC・DIAが印刷されています。同じ商品・同じ度数を継続購入する場合はこれを参照。</p>
+        </div>
+        <div className="bg-white border border-gray-200 rounded-xl p-4">
+          <p className="font-bold text-gray-800 mb-2">方法③ 眼鏡店でのチェック（目安のみ）</p>
+          <p className="text-sm text-gray-600">眼鏡店でも屈折検査ができますが、コンタクトレンズ用の度数は眼鏡より弱めになるため、眼科受診が推奨されます。</p>
+        </div>
+      </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '眼鏡の度数とコンタクトの度数は同じですか？', a: '異なります。眼鏡は目から12〜15mm離れた位置にレンズがありますが、コンタクトは角膜に直接乗ります。この頂点間距離の違いにより、特に強度近視（-4D以上）では眼鏡より弱い度数のコンタクトが適切になります。眼科で処方を受けることが必要です。' },
+            { q: '装用指示書の有効期限が切れている場合はどうすればいいですか？', a: '眼科を受診して新しい装用指示書を発行してもらってください。目の状態は変化するため、1〜2年に1回の定期検診を推奨します。特に長期間受診していない場合は、度数が変わっている可能性があります。' },
+            { q: '左右で度数が違う場合はどうすればいいですか？', a: '左右で度数が異なる場合は、装用指示書に「右（R）」「左（L）」で別々の数値が記載されます。通販で購入する際も、右目用・左目用を別々に選択します。度数の違う方を間違えると目に負担がかかるため、必ず確認してください。' },
+            { q: 'PWRが「0.00」のコンタクトはありますか？', a: 'あります。度なし（視力矯正なし）のコンタクトはPWR=0.00またはPLANO（プレーノ）と表記されます。カラーコンタクトや大きく見えるデカ目レンズなどで度なしの商品が多くあります。' },
+            { q: 'コンタクトの処方は何年に一度もらえばよいですか？', a: '1年に1回の眼科受診が推奨されています。視力は年齢や生活環境で変化するため、古い処方書を使い続けることは角膜への負担になる可能性があります。特に急に見えにくくなったり、目の違和感がある場合はすぐに受診してください。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'contact-kanzen-nyumon-2026': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        コンタクトレンズを初めて使おうとしている方向け、2026年版の完全入門ガイドです。種類の違い・コスパ比較・初めて失敗しないポイント・正しいケア方法まで全て解説します。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">コンタクトレンズの種類を理解する</h2>
+      <div className="grid sm:grid-cols-3 gap-4 mb-6">
+        {[
+          { type: '1day（ワンデー）', cycle: '毎日交換', merit: 'ケア不要・清潔・旅行に便利', demerit: '毎月コストが高め', cost: '月3,000〜8,000円' },
+          { type: '2week（2ウィーク）', cycle: '2週間で交換', merit: 'コスパ良好・種類が豊富', demerit: '毎日の洗浄・保存が必要', cost: '月1,500〜4,000円' },
+          { type: 'monthly（マンスリー）', cycle: '1ヶ月で交換', merit: '最もコスパ良い', demerit: 'ケア手間が多い・管理が必要', cost: '月500〜2,000円' },
+        ].map(t => (
+          <div key={t.type} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-sky-700 text-sm mb-1">{t.type}</p>
+            <p className="text-xs text-gray-500 mb-2">交換サイクル：{t.cycle}</p>
+            <p className="text-xs text-green-700 mb-1">✓ {t.merit}</p>
+            <p className="text-xs text-red-600 mb-2">✗ {t.demerit}</p>
+            <p className="text-xs font-bold text-gray-700">{t.cost}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">1day・2week・monthlyのコスパ比較</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-3 border border-gray-200">使用頻度</th>
+              <th className="text-left p-3 border border-gray-200">1day（年間）</th>
+              <th className="text-left p-3 border border-gray-200">2week（年間）</th>
+              <th className="text-left p-3 border border-gray-200">monthly（年間）</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { use: '毎日（週7日）', oneday: '¥60,000〜', twoweek: '¥25,000〜', monthly: '¥15,000〜' },
+              { use: '週5日（平日のみ）', oneday: '¥43,000〜', twoweek: '¥20,000〜', monthly: '¥15,000〜' },
+              { use: '週3〜4日', oneday: '¥30,000〜', twoweek: '¥18,000〜', monthly: '¥15,000〜' },
+              { use: '週1〜2日（たまに）', oneday: '¥15,000〜', twoweek: '¥18,000〜', monthly: '¥15,000〜' },
+            ].map(r => (
+              <tr key={r.use} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.use}</td>
+                <td className="p-3 border border-gray-200 text-sky-700">{r.oneday}</td>
+                <td className="p-3 border border-gray-200 text-sky-700">{r.twoweek}</td>
+                <td className="p-3 border border-gray-200 text-sky-700">{r.monthly}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="text-xs text-gray-400 mt-1">※ ケア用品込みの概算。通販最安値ベース。</p>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">ソフト・ハードコンタクトの違い</h2>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        <div className="bg-sky-50 border border-sky-200 rounded-xl p-4">
+          <p className="font-bold text-sky-800 mb-2">ソフトコンタクト（主流）</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>✓ 装用感が良い・すぐ慣れる</li>
+            <li>✓ 1day・2week・monthlyの選択肢</li>
+            <li>✓ スポーツ中もズレにくい</li>
+            <li>✗ 酸素透過率がハードより低い場合がある</li>
+            <li>✗ 花粉・タンパク付着がしやすい</li>
+          </ul>
+        </div>
+        <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-4">
+          <p className="font-bold text-indigo-800 mb-2">ハードコンタクト</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>✓ 視力矯正精度が高い（特に乱視）</li>
+            <li>✓ 酸素透過率が高く角膜に優しい</li>
+            <li>✓ 耐久性が高く長期使用できる</li>
+            <li>✗ 慣れるまで異物感がある</li>
+            <li>✗ ズレやすく、スポーツ不向き</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">初めて買う人が失敗しないポイント5つ</h2>
+      <div className="space-y-3 mb-6">
+        {[
+          { num: '①', title: '必ず眼科で検査を受けてから購入', desc: '角膜のサイズや健康状態は人それぞれ。自己判断で買うと目に傷がついたりフィットしない場合があります。' },
+          { num: '②', title: '初めては1dayを選ぶ', desc: 'ケアが不要で失敗しにくい。「自分にコンタクトが合うかどうか」を試すのに最適です。2weekやmonthlyは慣れてから。' },
+          { num: '③', title: '装着・外し方を練習する', desc: '最初は眼科でスタッフに教えてもらいましょう。5〜10分で習得できます。無理に引っ張ると角膜を傷つけます。' },
+          { num: '④', title: '1日8〜12時間を上限に', desc: '初心者は特に長時間装用は禁物。目が乾いたり充血したりする場合はすぐに外しましょう。' },
+          { num: '⑤', title: '就寝前には必ず外す', desc: '睡眠中のコンタクト装用は角膜に深刻なダメージを与えます（コンタクト装用中の角膜潰瘍の主因）。' },
+        ].map(p => (
+          <div key={p.num} className="flex gap-3 bg-white border border-gray-200 rounded-xl p-4">
+            <span className="text-xl font-bold text-sky-600 shrink-0">{p.num}</span>
+            <div>
+              <p className="font-bold text-gray-800 text-sm mb-0.5">{p.title}</p>
+              <p className="text-sm text-gray-600">{p.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">目のトラブルを防ぐ正しいケア</h2>
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-gray-800 mb-3">2week・monthlyコンタクトの毎日のケア手順</p>
+        <ol className="space-y-2 text-sm text-gray-700">
+          <li className="flex gap-2"><span className="font-bold text-sky-600 shrink-0">1.</span>外す前に石けんで手洗い</li>
+          <li className="flex gap-2"><span className="font-bold text-sky-600 shrink-0">2.</span>レンズを手のひらにのせ、洗浄液を数滴つけて両面を20秒こする</li>
+          <li className="flex gap-2"><span className="font-bold text-sky-600 shrink-0">3.</span>保存液（新しい液）でよくすすぐ</li>
+          <li className="flex gap-2"><span className="font-bold text-sky-600 shrink-0">4.</span>保存ケースに新しい保存液を入れて保管</li>
+          <li className="flex gap-2"><span className="font-bold text-sky-600 shrink-0">5.</span>ケースは毎日洗浄・乾燥（水道水NG、洗浄液で洗う）</li>
+        </ol>
+      </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'コンタクトレンズはいつから使えますか？年齢制限は？', a: '法律上の年齢制限はありませんが、眼科では中学生以上から処方するケースが一般的です。小学生への処方は医師の判断によります。目の成長が続いているため、定期的な度数チェックが特に重要です。' },
+            { q: '初めてコンタクトを選ぶとき、何を重視すればいいですか？', a: '①装着の手軽さ（1dayがおすすめ）②乾きにくさ（シリコーンハイドロゲル素材）③眼科で処方されたBC・PWRの一致、の3点です。価格よりも目への負担の少なさを優先しましょう。' },
+            { q: 'コンタクトをして目が充血したらどうすればいいですか？', a: 'すぐにコンタクトを外し、目薬（コンタクト用防腐剤フリー）を使って休ませてください。翌日も充血・痛みが続く場合は眼科を受診してください。充血は角膜への酸素不足・感染・アレルギーのサインである可能性があります。' },
+            { q: 'コンタクトしながら温泉・プールに入っても大丈夫ですか？', a: 'NGです。水道水・温泉・プールの水には細菌・アカントアメーバが含まれており、コンタクト装用中に目に入ると角膜感染症を引き起こすリスクがあります。水に入る場合は必ずコンタクトを外してください。' },
+            { q: 'コンタクトレンズの期限切れはどのくらいまで使えますか？', a: '絶対に使用しないでください。使用期限が切れたコンタクトは素材が劣化し、角膜を傷つけたり感染症のリスクが高まります。「もったいない」という気持ちはわかりますが、角膜を傷つけると治療に高額な費用がかかります。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'contact-megane-dosu-chigai': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        「眼鏡で-3.00なのに、コンタクトは-2.75だった」——こんな経験はありませんか？コンタクトとメガネで度数が異なる理由と、正しい度数の選び方を解説します。
+      </p>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">なぜコンタクトとメガネで度数が違うのか</h2>
+      <p className="mb-4">
+        メガネのレンズは目から約12〜15mm離れた位置にあります。コンタクトレンズは角膜に直接乗ります。この「頂点間距離（ちょうてんかんきょり）」の差が、必要な矯正力の違いを生み出します。
+      </p>
+      <div className="bg-sky-50 border border-sky-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-sky-800 mb-2">頂点間距離の影響</p>
+        <p className="text-sm text-gray-700 mb-2">
+          近視の場合：コンタクトの方がメガネより度数が「弱く」なります。<br />
+          例：メガネ -4.00D → コンタクト -3.75D程度
+        </p>
+        <p className="text-sm text-gray-700">
+          軽度近視（-3.00D以下）では差がほとんど出ませんが、強度近視（-4.00D以上）では1段階以上差が出ることがあります。
+        </p>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">度数換算の目安表</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="text-left p-3 border border-gray-200">メガネ度数</th>
+              <th className="text-left p-3 border border-gray-200">コンタクト目安度数</th>
+              <th className="text-left p-3 border border-gray-200">差</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { megane: '-1.00〜-3.00', contact: 'ほぼ同じ', diff: '差なし〜0.25D' },
+              { megane: '-3.25〜-4.00', contact: '0.25D弱く', diff: '-0.25D' },
+              { megane: '-4.25〜-5.00', contact: '0.25〜0.50D弱く', diff: '-0.25〜-0.50D' },
+              { megane: '-5.25〜-6.00', contact: '0.50D弱く', diff: '-0.50D' },
+              { megane: '-6.25以上', contact: '0.50〜1.00D弱く', diff: '-0.50〜-1.00D' },
+            ].map(r => (
+              <tr key={r.megane} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.megane}</td>
+                <td className="p-3 border border-gray-200 text-sky-700">{r.contact}</td>
+                <td className="p-3 border border-gray-200 text-gray-500 text-xs">{r.diff}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="text-xs text-gray-400 mt-1">※ あくまで目安。必ず眼科で処方を受けてください。</p>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">自分に合った度数の選び方</h2>
+      <div className="space-y-4 mb-6">
+        <div className="bg-white border border-gray-200 rounded-xl p-4">
+          <p className="font-bold text-gray-800 mb-2">ステップ1：眼科で処方を受ける（最重要）</p>
+          <p className="text-sm text-gray-600">コンタクトの度数は眼科で実際にレンズを装用して視力を確認しながら決めます。上記の換算表はあくまで目安です。</p>
+        </div>
+        <div className="bg-white border border-gray-200 rounded-xl p-4">
+          <p className="font-bold text-gray-800 mb-2">ステップ2：処方されたコンタクトを試用する</p>
+          <p className="text-sm text-gray-600">眼科でトライアルレンズを装用し、実際の見え方を確認します。遠くが見えるか、近くは見えるか、長時間使用しても問題ないかを確認。</p>
+        </div>
+        <div className="bg-white border border-gray-200 rounded-xl p-4">
+          <p className="font-bold text-gray-800 mb-2">ステップ3：処方と同じ商品・度数を通販で購入</p>
+          <p className="text-sm text-gray-600">眼科で処方してもらった度数・商品名を元に、Amazonや楽天、コンタクト専門通販で同じものを購入します。</p>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">度数が合わないサインと対処法</h2>
+      <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
+        <p className="font-bold text-red-800 mb-2">こんな症状が出たら度数が合っていない可能性</p>
+        <ul className="text-sm text-gray-700 space-y-1">
+          <li>• 頭痛・眼精疲労が続く</li>
+          <li>• 遠くがぼやける・近くが見づらい</li>
+          <li>• コンタクト装用後に目が疲れやすい</li>
+          <li>• 以前より見えにくくなった感じがある</li>
+        </ul>
+        <p className="text-sm text-amber-800 mt-3 font-medium">→ 眼科を受診して度数の再確認を</p>
+      </div>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '眼鏡の度数をそのままコンタクトに使っても問題ありませんか？', a: '軽度近視（-3.00D以下）では大きな差が出ないため問題ないことが多いです。ただし強度近視（-4.00D以上）では眼鏡より弱い度数のコンタクトが適切です。また眼科での角膜状態チェックを省略することになるため、定期受診は続けてください。' },
+            { q: 'コンタクトの度数を1段階強くすると見えすぎる問題がありますか？', a: 'はい、コンタクトの度数が強すぎると「過矯正」の状態になり、目が疲れやすくなります。特に近距離作業（PC・スマホ）が多い方は、やや弱めの度数の方が目への負担が少ない場合があります。眼科でライフスタイルに合わせた処方を相談してみてください。' },
+            { q: '左右で度数が違う場合、コンタクトも左右別の度数が必要ですか？', a: 'はい、左右で度数が異なる場合は、それぞれの目に合った度数のコンタクトを使います。通販で購入する際も左右別々に度数を選択します。「左右同じ度数のものが安い」からと統一してしまうと、見え方が悪くなります。' },
           ].map(({ q, a }) => (
             <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
               <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
