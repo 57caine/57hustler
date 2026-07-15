@@ -82,6 +82,41 @@
         ".github/workflows/generate-lens-navi-column.yml"
       ],
       "status": "完了"
+    },
+    {
+      "date": "2026-07-15",
+      "area": "① 目次アンカーリンク",
+      "description": "全コラムにクライアントサイドTOCを実装。ArticleTOC.tsxコンポーネントがH2/H3を自動スキャンしてIDを付与し、スムーズスクロールとIntersectionObserverによるアクティブセクション強調を提供。",
+      "files": ["components/ArticleTOC.tsx", "app/column/[slug]/page.tsx"],
+      "status": "完了"
+    },
+    {
+      "date": "2026-07-15",
+      "area": "② ダークモード対応",
+      "description": "globals.cssにCSS変数（--bg/--fg/--border等）とprefers-color-scheme: darkメディアクエリを実装。bg-white・text-gray-*・border-gray-*等の主要Tailwindクラスをダークモードで自動上書き。layout.tsxのbodyをCSS変数ベースに変更。",
+      "files": ["app/globals.css", "app/layout.tsx"],
+      "status": "完了"
+    },
+    {
+      "date": "2026-07-15",
+      "area": "③ コンテンツ3300字以上に増量",
+      "description": "レーシック記事に手術フロー・クリニックチェックリスト・費用ローン・医療費控除・術後生活制限を追加。VR記事にスペック用語解説・PC VRvsスタンドアローン比較・体験スペース情報を追加。ドライアイ記事にドライアイ種類・目薬成分の読み方・眼科受診タイミングを追加。眼鏡記事にフレーム素材詳細・レンズ種類・PDの測り方を追加。",
+      "files": ["lib/eye-columns.tsx"],
+      "status": "完了"
+    },
+    {
+      "date": "2026-07-15",
+      "area": "④ 競合リサーチ反映",
+      "description": "競合10サイト（シルチカ・価格.com・マイベスト・360LiFE・sakidori・SHOPSTAFF・参天・千寿・etc）をWeb検索で分析。日本のアフィリエイト比較サイトの標準構成（完結型記事パターン・TOC・スコアバッジ・医師監修表記）を確認。ダークモードは競合未実装だが差別化として実装。TOC・コンテンツ増量を優先実施。",
+      "files": ["data/lens-navi-pdca.json"],
+      "status": "完了"
+    },
+    {
+      "date": "2026-07-15",
+      "area": "⑤ 継続的自律改善ワークフロー",
+      "description": "毎週月曜9:00 JSTに自動実行するGitHub Actionsワークフローを作成。SEOオーディット→最弱セクションへの新規コラム生成→最古記事の更新→pdca.jsonへの記録を自動化。",
+      "files": [".github/workflows/lens-navi-self-improvement.yml"],
+      "status": "完了"
     }
   ],
   "nextActions": [

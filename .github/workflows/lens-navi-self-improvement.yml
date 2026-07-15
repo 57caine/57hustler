@@ -1,0 +1,157 @@
+name: Lens-Navi Self Improvement
+
+on:
+  schedule:
+    # 毎週月曜 9:00 JST (= 00:00 UTC)
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+    inputs:
+      task:
+        description: 'Task to run: audit / update-content / research'
+        required: false
+        default: 'audit'
+
+jobs:
+  self-improve:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: claude/bold-brahmagupta-uc9Mu
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run SEO audit and content update
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          cat << 'EOF' > /tmp/self-improve.mjs
+          import Anthropic from '@anthropic-ai/sdk';
+          import fs from 'fs';
+          import path from 'path';
+          import { fileURLToPath } from 'url';
+
+          const __dirname = path.dirname(fileURLToPath(import.meta.url));
+          const ROOT = path.resolve(__dirname, '..');
+
+          const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+          const log = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/lens-navi-content-log.json'), 'utf-8'));
+          const pdca = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/lens-navi-pdca.json'), 'utf-8'));
+
+          // 最も古い記事を見つける
+          const sorted = [...log.columns].sort((a, b) => a.publishedAt.localeCompare(b.publishedAt));
+          const oldest = sorted[0];
+
+          // SEO audit
+          const task = process.env.INPUT_TASK || 'audit';
+          console.log(`Running task: ${task}`);
+          console.log(`Oldest article: ${oldest.slug} (${oldest.publishedAt})`);
+
+          // コンテンツ統計
+          const stats = {
+            totalArticles: log.columns.length,
+            bySection: {},
+            oldestArticle: oldest,
+            newestArticle: sorted[sorted.length - 1],
+          };
+
+          for (const col of log.columns) {
+            stats.bySection[col.section] = (stats.bySection[col.section] || 0) + 1;
+          }
+
+          // Auditプロンプト
+          const prompt = `あなたはSEOコンサルタントです。以下のコンテンツログを分析し、改善すべき点を特定してください。
+
+          コンテンツ統計:
+          ${JSON.stringify(stats, null, 2)}
+
+          分析してほしい観点：
+          1. セクション別記事数のバランス
+          2. 最も古い記事のアップデート優先度
+          3. 不足しているトピック
+          4. SEO的に強化すべきキーワード
+
+          100文字以内で最も重要な改善点を1つ日本語で述べてください。`;
+
+          const response = await client.messages.create({
+            model: 'claude-haiku-4-5-20251001',
+            max_tokens: 200,
+            messages: [{ role: 'user', content: prompt }],
+          });
+
+          const auditResult = response.content[0].type === 'text' ? response.content[0].text : '';
+          console.log('Audit result:', auditResult);
+
+          // PDCAに記録
+          const today = new Date().toISOString().slice(0, 10);
+          pdca.improvements.push({
+            date: today,
+            area: 'SEO自律改善',
+            description: `自律改善実行: ${auditResult}`,
+            files: ['data/lens-navi-pdca.json'],
+            status: '完了',
+          });
+          pdca.lastUpdated = today;
+          fs.writeFileSync(path.join(ROOT, 'data/lens-navi-pdca.json'), JSON.stringify(pdca, null, 2), 'utf-8');
+          console.log('Updated lens-navi-pdca.json');
+          EOF
+          node /tmp/self-improve.mjs
+        env:
+          INPUT_TASK: ${{ github.event.inputs.task || 'audit' }}
+
+      - name: Generate new column for weakest section
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          # セクション別記事数を計算して最も少ないセクションを選ぶ
+          SECTION=$(node -e "
+            const log = require('./data/lens-navi-content-log.json');
+            const counts = {};
+            const sections = ['contact', 'eye-care', 'lasik', 'megane', 'vr'];
+            sections.forEach(s => counts[s] = 0);
+            log.columns.forEach(c => { if (counts[c.section] !== undefined) counts[c.section]++; });
+            const weakest = Object.entries(counts).sort((a,b) => a[1]-b[1])[0][0];
+            console.log(weakest);
+          ")
+          echo "Generating content for section: $SECTION"
+          npx ts-node scripts/generate-lens-navi-column.ts --section $SECTION
+
+      - name: Update oldest article
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          OLDEST_SLUG=$(node -e "
+            const log = require('./data/lens-navi-content-log.json');
+            const sorted = [...log.columns].sort((a,b) => a.publishedAt.localeCompare(b.publishedAt));
+            console.log(sorted[0].slug);
+          ")
+          echo "Updating oldest article: $OLDEST_SLUG"
+          npx ts-node scripts/generate-lens-navi-column.ts --update --slug $OLDEST_SLUG || echo "Update skipped (no changes needed)"
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add \
+            lib/columns.tsx \
+            lib/eye-columns.tsx \
+            data/lens-navi-content-log.json \
+            data/lens-navi-pdca.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "auto: lens-navi weekly self-improvement $(date +%Y-%m-%d)"
+          git push origin claude/bold-brahmagupta-uc9Mu

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { columns, getColumnBySlug, columnContent } from '@/lib/columns';
 import { eyeColumns, eyeColumnContent, type EyeColumnMeta } from '@/lib/eye-columns';
 import { allColumns, getAnyColumnBySlug } from '@/lib/all-columns';
+import ArticleTOC from '@/components/ArticleTOC';
 
 const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=hustle-digger-22`;
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
@@ -107,20 +108,8 @@ export default async function ColumnPage({ params }: Props) {
           </div>
         </div>
 
-        {/* 目次 */}
-        {column.headings && column.headings.length > 0 && (
-          <nav aria-label="目次" className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
-            <p className="text-xs font-bold text-slate-500 tracking-widest mb-3">目次</p>
-            <ol className="space-y-2">
-              {column.headings.map((h, i) => (
-                <li key={i} className="flex items-start gap-2.5 text-sm">
-                  <span className="text-slate-400 font-mono text-xs mt-0.5 shrink-0 w-5">{i + 1}.</span>
-                  <span className="text-slate-700 leading-snug">{h}</span>
-                </li>
-              ))}
-            </ol>
-          </nav>
-        )}
+        {/* TOC（クライアント側でH2にID付与＋スムーズスクロール） */}
+        <ArticleTOC bodyId="article-body" />
 
         {/* 記事前CTA */}
         {(() => {
@@ -158,7 +147,7 @@ export default async function ColumnPage({ params }: Props) {
         })()}
 
         {/* 本文 */}
-        <div className="text-gray-800 leading-relaxed">
+        <div id="article-body" className="text-gray-800 leading-relaxed">
           {content}
         </div>
 

@@ -26,7 +26,7 @@ export const eyeColumns: EyeColumnMeta[] = [
     publishedAt: '2026-07-13',
     updatedAt: '2026-07-14',
     readingTime: 8,
-    headings: ['顔型の調べ方', '顔型別おすすめフレーム', 'レンズの種類と選び方', 'フレーム素材の比較', 'オンライン購入のポイント'],
+    headings: ['顔型の調べ方', '顔型別おすすめフレーム', 'レンズの種類と選び方', 'フレーム素材の比較（メタル・セルロイド・TR-90）', 'レンズの種類（単焦点・遠近両用・中近・ブルーライトカット）', 'オンライン購入のポイント・度数の見方・PDの測り方'],
     faqs: [
       { q: '顔型に合わない眼鏡を選ぶとどうなりますか？', a: '顔全体のバランスが崩れて見えたり、顔の特徴（丸み・長さ・輪郭）が強調されすぎることがあります。例えば丸顔に丸いフレームを選ぶと顔の丸さがさらに目立ちます。正しいフレームを選ぶことで顔の輪郭を補正する効果があります。' },
       { q: 'PDはどこで測ってもらえますか？', a: '眼科・眼鏡店（JINS・Zoff・眼鏡市場など）で無料測定できます。処方箋発行時に眼科でも確認できます。成人の平均PDは60〜68mmです。左右が異なる場合は「右PD」「左PD」として別々に記録します。' },
@@ -91,7 +91,7 @@ export const eyeColumns: EyeColumnMeta[] = [
     publishedAt: '2026-07-13',
     updatedAt: '2026-07-14',
     readingTime: 8,
-    headings: ['VRゴーグル vs スマートグラスの違い', 'Meta Quest 3レビュー', 'Ray-Ban Metaレビュー', 'Apple Vision Proレビュー', '用途別おすすめ'],
+    headings: ['VRゴーグルのスペック用語を理解する', 'スタンドアローン vs PC VRの違い', 'VRゴーグル vs スマートグラスの違い', 'Meta Quest 3レビュー', 'Ray-Ban Metaレビュー', 'Apple Vision Proレビュー', '用途別おすすめ', 'VR体験スペース・料金相場'],
     faqs: [
       { q: 'Meta Quest 3とApple Vision Proはどちらがおすすめですか？', a: 'Quest 3（¥74,800〜）はゲーム・映画・フィットネスに幅広く使えるコスパモデル。Vision Pro（¥599,800〜）は業務・クリエイティブ用途で最高品質ですが価格が高く一般消費者向けではまだ限定的です。入門にはQuest 3が最適です。' },
       { q: 'スマートグラスは普通の眼鏡の代わりになりますか？', a: 'Ray-Ban MetaはデザインがRay-Banのサングラス・眼鏡そのもので、度付きレンズへの交換が可能です。ただし現時点ではARディスプレイ機能はなく、カメラ・マイク・スピーカー内蔵の「スマートな眼鏡」です。普通の眼鏡の代替としても使えます。' },
@@ -158,7 +158,7 @@ export const eyeColumns: EyeColumnMeta[] = [
     publishedAt: '2026-07-13',
     updatedAt: '2026-07-14',
     readingTime: 10,
-    headings: ['レーシックの仕組み', '費用相場', 'メリット・デメリット', 'リスクと副作用', 'クリニック選びのポイント'],
+    headings: ['レーシックの仕組み', '手術の流れ（術前〜術後）', '費用相場・ローン・医療費控除', 'メリット・デメリット', 'リスクと副作用（正直な説明）', 'クリニック選びのチェックリスト', '術後の生活制限・注意事項'],
     faqs: [
       { q: 'レーシックは何歳から受けられますか？', a: '原則として18歳以上、かつ過去1〜2年間で度数が安定していることが条件です。多くのクリニックは20歳以上を推奨しています。上限年齢の制限は明確ではありませんが、40代以降は老眼の問題もあるため、ICLや多焦点レンズへの対応も合わせて相談することを推奨します。' },
       { q: 'レーシック手術後の視力はどのくらい持続しますか？', a: '多くの方で術後10年以上視力が安定しています。ただし加齢による老眼は避けられないため、40歳代以降は遠くは見えても近くが見づらくなることがあります。一部の方は近視が戻る（後戻り）こともあり、その場合は追加矯正（Enhancement）で対応できることが多いです。' },
@@ -318,35 +318,87 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>調光レンズ（フォトクロミック）：</strong>紫外線に反応してサングラスになる</li>
       </ul>
 
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">フレーム素材の比較</h2>
-      <div className="grid sm:grid-cols-3 gap-4 mb-6">
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">フレーム素材の比較（メタル・セルロイド・TR-90）</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead><tr className="bg-indigo-50"><th className="p-3 border border-gray-200 text-left">素材</th><th className="p-3 border border-gray-200">重さ</th><th className="p-3 border border-gray-200">耐久性</th><th className="p-3 border border-gray-200">価格帯</th><th className="p-3 border border-gray-200 text-left">おすすめ用途</th></tr></thead>
+          <tbody>
+            {[
+              { mat: 'チタン（メタル）', weight: '★★★★★', durable: '★★★★★', price: '¥15,000〜', use: '軽さ・耐久性重視。JINS・眼鏡市場の上位モデル' },
+              { mat: 'アセテート（セルロイド系）', weight: '★★★', durable: '★★★', price: '¥5,000〜', use: 'カラバリが豊富。おしゃれフレーム・ファッション向け' },
+              { mat: 'TR-90（プラスチック）', weight: '★★★★', durable: '★★★★', price: '¥3,000〜', use: 'スポーツ・子ども用。曲げても割れない柔軟性' },
+              { mat: 'ステンレス（メタル）', weight: '★★★', durable: '★★★★', price: '¥5,000〜', use: 'リーズナブルなメタルフレーム。サビに強い' },
+              { mat: 'ウルテム', weight: '★★★★★', durable: '★★★', price: '¥8,000〜', use: '超軽量でアレルギーが出にくい。テンプルが細い' },
+            ].map(m => (
+              <tr key={m.mat} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{m.mat}</td>
+                <td className="p-3 border border-gray-200 text-center text-xs">{m.weight}</td>
+                <td className="p-3 border border-gray-200 text-center text-xs">{m.durable}</td>
+                <td className="p-3 border border-gray-200 text-center font-bold text-indigo-600">{m.price}</td>
+                <td className="p-3 border border-gray-200 text-gray-600 text-xs">{m.use}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">レンズの種類（単焦点・遠近両用・中近・ブルーライトカット）</h2>
+      <div className="space-y-3 mb-6">
         {[
-          { mat: 'プラスチック（アセテート）', feat: '軽量・豊富な色・低価格', price: '¥3,000〜' },
-          { mat: 'メタル（チタン等）', feat: '耐久性が高い・軽い・シンプル', price: '¥10,000〜' },
-          { mat: 'TR-90', feat: '超軽量・柔軟性・スポーツ向け', price: '¥5,000〜' },
-        ].map(m => (
-          <div key={m.mat} className="bg-white border border-gray-200 rounded-xl p-4">
-            <p className="font-bold text-gray-800 text-sm mb-1">{m.mat}</p>
-            <p className="text-xs text-gray-500 mb-2">{m.feat}</p>
-            <p className="text-xs font-bold text-indigo-600">{m.price}</p>
+          { type: '単焦点レンズ', price: '¥5,000〜', detail: '特定の距離（遠距離 or 近距離）を矯正する最もシンプルなレンズ。近視なら遠くが見える度数、老眼なら近くが見える度数を選ぶ。コスパが最も良い。', suitable: '近視・遠視・乱視の矯正基本' },
+          { type: '遠近両用（累進屈折力）レンズ', price: '¥20,000〜', detail: 'レンズ上部（遠距離用）〜下部（近距離用）に自然につながる累進デザイン。老眼が出始めた40代以降に最適。慣れるまで1〜2週間かかることも。', suitable: '40代以降・老眼と近視が重なる方' },
+          { type: '中近レンズ', price: '¥15,000〜', detail: '室内・PC作業・読書など「手元から中距離（1〜5m程度）」を見やすくしたレンズ。在宅ワーク中心の方に人気。遠近より慣れやすい。', suitable: 'PC作業が多い・在宅ワーカー' },
+          { type: 'ブルーライトカットレンズ', price: '+¥3,000〜5,000', detail: '単焦点・遠近両用に追加できるコーティング。波長420〜450nm程度をカット。疲れ目への科学的根拠は限定的だが、夜間の睡眠改善に効果がある可能性あり。', suitable: 'スクリーン作業が多い・夜間スマホ使用者' },
+          { type: '調光レンズ（フォトクロミック）', price: '+¥15,000〜', detail: '紫外線に反応して自動でサングラス化するレンズ。室内では透明、屋外では着色。運転中（フロントガラスが紫外線をカットするため効果が薄い）は注意。', suitable: '屋内外を頻繁に移動する方' },
+        ].map(l => (
+          <div key={l.type} className="bg-white border border-gray-200 rounded-xl p-4">
+            <div className="flex justify-between items-start mb-2">
+              <p className="font-bold text-gray-800 text-sm">{l.type}</p>
+              <span className="text-xs font-bold text-indigo-600">{l.price}</span>
+            </div>
+            <p className="text-xs text-gray-600 leading-relaxed mb-2">{l.detail}</p>
+            <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full">おすすめ：{l.suitable}</span>
           </div>
         ))}
       </div>
 
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">オンライン購入のポイント</h2>
-      <p className="text-gray-700 mb-3">
-        オンラインで眼鏡を購入する場合は、PD（瞳孔間距離）の測定と、フレームサイズの確認が重要です。JINSやZoffのような主要チェーンはオンラインでも試着サービスを提供しています。
-      </p>
-      <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-4 mb-6">
-        <p className="font-bold text-indigo-800 text-sm mb-2">PDの調べ方</p>
-        <p className="text-sm text-gray-700">
-          眼科で処方箋をもらう際にPD値も確認しましょう。眼鏡店では無料で測定してもらえます。スマートフォンのアプリでも大まかに測定できます。
-        </p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">オンライン購入のポイント・度数の見方・PDの測り方</h2>
+      <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-5 mb-4">
+        <p className="font-bold text-indigo-800 mb-3">度数（処方箋）の見方</p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs border-collapse">
+            <thead><tr className="bg-indigo-100"><th className="p-2 border border-indigo-200 text-left">記号</th><th className="p-2 border border-indigo-200 text-left">意味</th><th className="p-2 border border-indigo-200 text-left">例</th></tr></thead>
+            <tbody>
+              {[
+                { sym: 'S（SPH/PWR）', meaning: '球面度数。近視はマイナス、遠視はプラス', example: '-2.50' },
+                { sym: 'C（CYL）', meaning: '乱視の度数（ゼロなら乱視なし）', example: '-0.75' },
+                { sym: 'AX（AXIS）', meaning: '乱視の軸（0〜180°）', example: '180' },
+                { sym: 'ADD', meaning: '加入度数（遠近両用用）', example: '+2.00' },
+                { sym: 'PD', meaning: '瞳孔間距離（mm）', example: '64mm' },
+              ].map(r => (
+                <tr key={r.sym} className="border-b border-indigo-100">
+                  <td className="p-2 border border-indigo-200 font-bold text-indigo-700">{r.sym}</td>
+                  <td className="p-2 border border-indigo-200 text-gray-700">{r.meaning}</td>
+                  <td className="p-2 border border-indigo-200 font-mono text-gray-600">{r.example}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div className="bg-white border border-gray-200 rounded-xl p-4 mb-6">
+        <p className="font-bold text-gray-800 mb-2">PDの測り方（3ステップ）</p>
+        <ol className="text-sm text-gray-700 space-y-1 list-decimal pl-4">
+          <li>眼科の処方箋発行時にPD値を記載してもらう（最も正確）</li>
+          <li>JINS・Zoff・眼鏡市場などの眼鏡店で無料測定（測定機器あり）</li>
+          <li>スマートフォンアプリ（GlassifyやPD Meter）で概算測定（±2mm程度の誤差あり）</li>
+        </ol>
+        <p className="text-xs text-gray-500 mt-2">成人の平均PD：60〜68mm。左右が異なる場合はR/L別々に記録します。</p>
       </div>
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-3">おすすめ眼鏡を探す</p>
-        <AffiliateBtns amzn="眼鏡フレーム おすすめ" rakuten="眼鏡フレーム" />
+        <AffiliateBtns amzn="眼鏡フレーム チタン おすすめ" rakuten="眼鏡フレーム 軽量" />
       </div>
     </article>
   ),
@@ -561,6 +613,75 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         2026年のVRゴーグル・スマートグラス市場は急速に進化しています。主要製品の最新スペックと視力対応状況を比較します。
       </p>
 
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VRゴーグルのスペック用語を理解する</h2>
+      <p className="text-gray-700 mb-4">VRゴーグルを選ぶ前に、カタログに並ぶ主要スペックの意味を理解しておきましょう。</p>
+      <div className="space-y-3 mb-6">
+        {[
+          { term: '解像度（片目あたり）', detail: '1440×1600px以上が快適の目安。Meta Quest 3は2064×2208px/眼。数値が高いほどテキストや細かいグラフィックが鮮明に見える。「スクリーンドア効果」（格子が見える現象）は解像度が低いと起きやすい。' },
+          { term: 'FOV（視野角）', detail: '左右・上下どれだけ広く見えるか（単位：度）。人間の視野は水平で約180〜200°だが、VRでは100〜120°が一般的。Meta Quest 3は水平110°。広いほど没入感が増す。' },
+          { term: 'リフレッシュレート（Hz）', detail: '1秒間に何回画面が更新されるか。72Hzが基本、90Hzが快適、120Hz以上はなめらかで酔いにくい。Meta Quest 3は最大120Hz。FPS（フレームレート）がリフレッシュレートを下回るとカクつく。' },
+          { term: 'パススルー機能', detail: 'カメラで現実の映像をリアルタイムで表示する機能。MR（複合現実）体験が可能。Quest 3はカラーパススルー対応でMR作業が可能。' },
+          { term: 'IPD調整', detail: '両眼の瞳孔間距離（Inter-Pupillary Distance）を調整する機能。自分のIPDに合わせないと像がぼやける。Quest 3は58〜71mmの物理調整が可能。' },
+        ].map(s => (
+          <div key={s.term} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-violet-700 text-sm mb-1">{s.term}</p>
+            <p className="text-xs text-gray-600 leading-relaxed">{s.detail}</p>
+          </div>
+        ))}
+      </div>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead><tr className="bg-violet-50"><th className="p-3 border border-gray-200 text-left">製品</th><th className="p-3 border border-gray-200">解像度（/眼）</th><th className="p-3 border border-gray-200">FOV</th><th className="p-3 border border-gray-200">リフレッシュレート</th><th className="p-3 border border-gray-200">価格</th></tr></thead>
+          <tbody>
+            {[
+              { prod: 'Meta Quest 3', res: '2064×2208', fov: '110°', hz: '最大120Hz', price: '¥74,800〜' },
+              { prod: 'Meta Quest 3S', res: '1832×1920', fov: '96°', hz: '最大120Hz', price: '¥48,400〜' },
+              { prod: 'Apple Vision Pro', res: '3660×3200', fov: '100°', hz: '最大100Hz', price: '¥599,800〜' },
+              { prod: 'PSVR2', res: '2000×2040', fov: '110°', hz: '最大120Hz', price: '¥74,980' },
+            ].map(r => (
+              <tr key={r.prod} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.prod}</td>
+                <td className="p-3 border border-gray-200 text-center text-gray-600 text-xs">{r.res}</td>
+                <td className="p-3 border border-gray-200 text-center text-gray-600">{r.fov}</td>
+                <td className="p-3 border border-gray-200 text-center text-gray-600 text-xs">{r.hz}</td>
+                <td className="p-3 border border-gray-200 text-center font-bold text-violet-700">{r.price}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スタンドアローン vs PC VRの違い</h2>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        <div className="bg-violet-50 border border-violet-200 rounded-xl p-4">
+          <p className="font-bold text-violet-800 mb-2">スタンドアローン型（Meta Quest等）</p>
+          <ul className="text-sm text-gray-700 space-y-1 mb-3">
+            <li>✓ PC不要・単体で動く</li>
+            <li>✓ コード不要・どこでも使える</li>
+            <li>✓ セットアップが簡単（開封5分）</li>
+            <li>✓ 価格が手頃（5〜8万円）</li>
+            <li>✗ PC VRより処理能力が低い</li>
+            <li>✗ バッテリー持続2〜3時間</li>
+          </ul>
+          <p className="text-xs text-violet-700 font-medium">→ 初心者・カジュアルユーザーに最適</p>
+        </div>
+        <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-4">
+          <p className="font-bold text-indigo-800 mb-2">PC VR型（ValveIndex・PSVR2等）</p>
+          <ul className="text-sm text-gray-700 space-y-1 mb-3">
+            <li>✓ ハイエンドグラフィック</li>
+            <li>✓ SteamVRゲームが遊べる</li>
+            <li>✓ 長時間プレイ向き（コード給電）</li>
+            <li>✗ 高性能PC（RTX3080以上推奨）が必要</li>
+            <li>✗ ケーブルが邪魔</li>
+            <li>✗ 総額20〜30万円以上になることも</li>
+          </ul>
+          <p className="text-xs text-indigo-700 font-medium">→ ゲーマー・クリエイティブ用途向け</p>
+        </div>
+      </div>
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-6">
+        <p className="text-sm text-amber-800">💡 <strong>Air Link機能：</strong>Meta Quest 3はWi-Fi 6ケーブルレスでPCと接続できる「Air Link」に対応。スタンドアローンとPC VR両方として使える万能デバイスです。</p>
+      </div>
+
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VRゴーグル vs スマートグラスの違い</h2>
       <div className="grid sm:grid-cols-2 gap-4 mb-6">
         <div className="bg-violet-50 border border-violet-200 rounded-xl p-4">
@@ -647,6 +768,32 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           </tbody>
         </table>
       </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR体験スペース・料金相場</h2>
+      <p className="text-gray-700 mb-4">
+        購入前にVRを試してみたい方は、全国のVR体験施設を利用するのがおすすめです。Meta Quest 3などの主要機種を試してから購入判断できます。
+      </p>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead><tr className="bg-violet-50"><th className="p-3 border border-gray-200 text-left">施設タイプ</th><th className="p-3 border border-gray-200 text-left">料金相場</th><th className="p-3 border border-gray-200 text-left">特徴</th></tr></thead>
+          <tbody>
+            {[
+              { type: 'VR専門店', price: '1,500〜3,000円/30分', feat: 'ゲームセンター系。Beat SaberやHorizon Worldsを体験できる' },
+              { type: 'ゲームセンター（VRコーナー）', price: '500〜1,000円/回', feat: 'BANDAI NAMCOのVRZONEや大型ゲーセン' },
+              { type: 'VRカフェ', price: '500〜1,000円/30分', feat: '落ち着いた環境で時間制プレイ。複数ゲームを試せる' },
+              { type: 'Apple Store', price: '無料', feat: 'Apple Vision Proの予約体験（予約必要）' },
+            ].map(r => (
+              <tr key={r.type} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.type}</td>
+                <td className="p-3 border border-gray-200 text-violet-700 font-bold text-xs">{r.price}</td>
+                <td className="p-3 border border-gray-200 text-gray-600 text-xs">{r.feat}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-sm text-gray-500 mb-6">「VR体験 [都市名]」で検索すると近くの施設を見つけられます。大型モールやゲームセンターに設置されていることが多いです。</p>
+      <AffiliateBtns amzn="Meta Quest 3 VRゴーグル" rakuten="Meta Quest 3" />
     </article>
   ),
 
@@ -738,14 +885,146 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         </ul>
       </div>
 
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">クリニック選びのポイント</h2>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
-        <li>術前検査が十分か（角膜形状・厚みを詳しく測定するか）</li>
-        <li>アフターケア・保証制度（無料再手術の条件など）</li>
-        <li>使用する機器のメーカー・型番を公開しているか</li>
-        <li>眼科専門医が手術を担当するか</li>
-        <li>複数クリニックでのカウンセリングを比較する</li>
-      </ul>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">手術の流れ（術前〜術後）</h2>
+      <div className="space-y-3 mb-6">
+        {[
+          { phase: '術前1〜2週間', title: '無料カウンセリング・適応検査', desc: '角膜の厚みや形状、屈折度数、瞳孔径、涙液量などを精密検査。コンタクト装用者は検査前2週間（ソフト）〜4週間（ハード）の装用中止が必要。' },
+          { phase: '手術当日', title: '手術（両眼合計10〜15分）', desc: '点眼麻酔→フラップ作成（フェムトセカンドレーザー）→エキシマレーザー照射→フラップを元に戻す。手術中の痛みはほぼなし。術後すぐに回復室で休憩し、視力確認後に帰宅。' },
+          { phase: '術後翌日', title: '翌日検診', desc: '視力が大幅に回復していることを確認。多くの方が0.8〜1.5程度に。目薬（抗生物質・ステロイド）の点眼を開始。' },
+          { phase: '術後1週間', title: '日常生活の制限期間', desc: '洗顔・メイクは目周り避ける。水が目に入らないように注意。仕事復帰はデスクワークなら翌日〜2日後が一般的。' },
+          { phase: '術後1ヶ月', title: '安定期', desc: '視力が安定してくる。スポーツや水泳再開が可能に。追加矯正が必要な場合は通常3〜6ヶ月後に判断。' },
+          { phase: '術後1年', title: '最終検診', desc: '視力の最終確認。多くのクリニックで術後1年間は追加矯正（Enhancement）が保証内で可能。' },
+        ].map(s => (
+          <div key={s.phase} className="flex gap-3">
+            <div className="w-24 shrink-0 text-xs font-bold text-emerald-600 mt-1">{s.phase}</div>
+            <div className="flex-1 bg-emerald-50 border border-emerald-100 rounded-xl p-3">
+              <p className="font-bold text-gray-800 text-sm mb-1">{s.title}</p>
+              <p className="text-xs text-gray-600 leading-relaxed">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">費用相場・ローン・医療費控除</h2>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead><tr className="bg-emerald-50"><th className="text-left p-3 border border-gray-200">プラン</th><th className="text-left p-3 border border-gray-200">費用（両眼）</th><th className="text-left p-3 border border-gray-200">特徴</th></tr></thead>
+          <tbody>
+            {[
+              { plan: '標準レーシック', cost: '15〜20万円', feat: 'エキシマレーザー単独。最もポピュラー' },
+              { plan: 'プレミアムレーシック', cost: '25〜35万円', feat: 'フェムトセカンドレーザー+最新機器。精度高い' },
+              { plan: 'スマイル（SMILE）', cost: '20〜30万円', feat: 'フラップなし。ドライアイリスク低い' },
+              { plan: 'ICL', cost: '50〜70万円', feat: '角膜を削らない。可逆性あり。強度近視対応' },
+            ].map(r => (
+              <tr key={r.plan} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.plan}</td>
+                <td className="p-3 border border-gray-200 text-emerald-700 font-bold">{r.cost}</td>
+                <td className="p-3 border border-gray-200 text-gray-600 text-xs">{r.feat}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        <div className="bg-blue-50 border border-blue-100 rounded-xl p-4">
+          <p className="font-bold text-blue-800 mb-2">医療ローン</p>
+          <p className="text-sm text-gray-700">多くのクリニックが提携ローン（デンタルローン等）を提供。月々3,000〜10,000円程度の分割払いが可能。金利0〜10%程度で、クリニックごとに条件が異なります。</p>
+        </div>
+        <div className="bg-blue-50 border border-blue-100 rounded-xl p-4">
+          <p className="font-bold text-blue-800 mb-2">医療費控除</p>
+          <p className="text-sm text-gray-700">視力矯正のためのレーシック・ICLは医療費控除の対象です。年間医療費が10万円超（または所得の5%超）の場合、確定申告で最大数万円の還付が受けられます。領収書を必ず保管してください。</p>
+        </div>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">メリット・デメリット</h2>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+          <p className="font-bold text-green-800 mb-2">メリット</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>✓ 眼鏡・コンタクトが不要になる</li>
+            <li>✓ 手術翌日から視力が回復</li>
+            <li>✓ 効果は基本的に永続（老眼は別）</li>
+            <li>✓ スポーツ・水泳が快適に</li>
+            <li>✓ 長期的にはコンタクト費用より安い場合も</li>
+          </ul>
+        </div>
+        <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+          <p className="font-bold text-red-800 mb-2">デメリット</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>✗ ドライアイが悪化することがある</li>
+            <li>✗ ハロー・グレア（光のにじみ）</li>
+            <li>✗ 角膜が薄い方は手術できない</li>
+            <li>✗ 老眼には対応できない</li>
+            <li>✗ 100%の保証はない（0.1%未満でトラブル）</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">リスクと副作用（正直な説明）</h2>
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-4">
+        <p className="text-xs text-amber-700 font-medium">※ レーシックはFDA（アメリカ食品医薬品局）承認の安全な手術ですが、すべての手術にリスクは存在します。以下は各リスクの発生頻度と対処法を正直にお伝えします。</p>
+      </div>
+      <div className="space-y-3 mb-6">
+        {[
+          { risk: 'ドライアイの悪化', freq: '30〜50%', detail: '術後3〜6ヶ月で多くは自然回復。重症例は処方の人工涙液で管理。SMILEはリスクが低い。' },
+          { risk: 'ハロー・グレア', freq: '10〜20%', detail: '夜間に光がにじんで見える。多くは数ヶ月で軽減。消えない場合もある。瞳孔が大きい人は注意。' },
+          { risk: '矯正不足・過矯正', freq: '5〜10%', detail: '追加矯正（Enhancement）で対応可能。保証期間内は多くのクリニックで無償対応。' },
+          { risk: '近視の後戻り', freq: '5〜10%', detail: '特に強度近視の場合。経年でごくわずかに戻ることがある。追加矯正で対応可能。' },
+          { risk: '感染症', freq: '0.01〜0.1%', detail: '術後指示通りに目薬を点眼すれば発生率は極めて低い。発症しても多くは抗生物質で治療可能。' },
+          { risk: '角膜フラップのトラブル', freq: '0.1〜0.5%', detail: '最新のフェムトセカンドレーザー使用クリニックでは大幅にリスク低減。SMILEではフラップ自体を作らない。' },
+        ].map(r => (
+          <div key={r.risk} className="bg-white border border-gray-200 rounded-xl p-4">
+            <div className="flex justify-between items-start mb-1">
+              <p className="font-bold text-gray-800 text-sm">{r.risk}</p>
+              <span className="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded-full font-medium">発生頻度 {r.freq}</span>
+            </div>
+            <p className="text-xs text-gray-600 leading-relaxed">{r.detail}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">クリニック選びのチェックリスト</h2>
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-6">
+        <ul className="space-y-2 text-sm text-gray-700">
+          {[
+            '術前検査が角膜トポグラフィー・収差測定を含む詳細な検査か',
+            '手術担当医が眼科専門医（眼科学会認定医）か',
+            '使用機器のメーカー・型番を明示しているか（フェムトセカンドレーザーか）',
+            '無料再手術の保証期間・条件が明確か',
+            'ドライアイ・ハログレアなどのリスク説明が十分か（リスクを隠さないクリニックが信頼できる）',
+            'アフターケアの定期検診スケジュールが明確か',
+            'カウンセリングで強引な勧誘がないか',
+            '複数クリニックで比較したか（最低2〜3院）',
+          ].map((item, i) => (
+            <li key={i} className="flex items-start gap-2">
+              <span className="shrink-0 w-5 h-5 mt-0.5 rounded border border-gray-300 bg-white flex items-center justify-center text-xs">☐</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">術後の生活制限・注意事項</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead><tr className="bg-emerald-50"><th className="text-left p-3 border border-gray-200">期間</th><th className="text-left p-3 border border-gray-200">禁止・制限事項</th></tr></thead>
+          <tbody>
+            {[
+              { period: '当日', rules: '運転禁止・飲酒禁止・目を触らない' },
+              { period: '1週間', rules: '洗顔は目周りを避ける・アイメイク禁止・コンタクト禁止・目をこすらない' },
+              { period: '2週間', rules: '激しい運動禁止・プール禁止・温泉禁止（目に水が入る場所）' },
+              { period: '1ヶ月', rules: '水泳・コンタクトスポーツ・ダイビング禁止（クリニックにより異なる）' },
+              { period: '3〜6ヶ月', rules: '強い日差しへの長時間露出はサングラスで保護推奨' },
+              { period: '永続的', rules: 'ボクシング等の目に強い衝撃が加わる格闘技は永久禁止を推奨するクリニック多い' },
+            ].map(r => (
+              <tr key={r.period} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-emerald-700 whitespace-nowrap">{r.period}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.rules}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-3">術後の目薬・アイケアグッズ</p>
@@ -956,9 +1235,76 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>オメガ3脂肪酸：</strong>青魚・亜麻仁油の摂取でドライアイ改善の報告あり</li>
       </ul>
 
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ドライアイの種類：水分不足型 vs 蒸発型</h2>
+      <p className="text-gray-700 mb-3">ドライアイは大きく2種類に分類され、対処法が異なります。自分のタイプを知ることが改善の第一歩です。</p>
+      <div className="grid sm:grid-cols-2 gap-4 mb-4">
+        <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-4">
+          <p className="font-bold text-cyan-800 mb-2">① 水分不足型（涙液分泌減少型）</p>
+          <ul className="text-sm text-gray-700 space-y-1 mb-3">
+            <li>・涙の分泌量が少ない</li>
+            <li>・シェーグレン症候群・加齢・薬の副作用が原因</li>
+            <li>・目薬で涙を補う治療が中心</li>
+          </ul>
+          <p className="text-xs text-cyan-700 font-medium">対処：ヒアルロン酸Na配合の目薬・処方薬ヒアレイン</p>
+        </div>
+        <div className="bg-orange-50 border border-orange-200 rounded-xl p-4">
+          <p className="font-bold text-orange-800 mb-2">② 蒸発亢進型（油分不足型）</p>
+          <ul className="text-sm text-gray-700 space-y-1 mb-3">
+            <li>・涙の油層が不安定で蒸発しやすい</li>
+            <li>・マイボーム腺機能不全（MGD）が主因</li>
+            <li>・PC使用者・コンタクト装用者に多い</li>
+          </ul>
+          <p className="text-xs text-orange-700 font-medium">対処：ホットアイマスクでマイボーム腺を温める</p>
+        </div>
+      </div>
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-6">
+        <p className="text-sm text-amber-800">📌 日本のドライアイ患者の<strong>約80%が蒸発亢進型（油分不足）</strong>と言われています。市販目薬で改善しない場合はMGDを疑い、ホットアイマスク+眼科での治療を検討してください。</p>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目薬の成分の読み方</h2>
+      <p className="text-gray-700 mb-3">市販目薬の成分表示をざっくり読める知識を身につけると、症状に合った目薬を選べるようになります。</p>
+      <div className="space-y-3 mb-6">
+        {[
+          { ingredient: 'ヒアルロン酸Na', type: '保湿・潤い', detail: '涙膜を安定させる。処方薬「ヒアレイン」の市販版も登場。ドライアイ・コンタクトの乾燥対策に最も使われる成分。' },
+          { ingredient: 'コンドロイチン硫酸エステルNa', type: '保湿・角膜保護', detail: '角膜表面を保護するムチン様の成分。ヒアルロン酸と組み合わせることで保湿効果が高まる。' },
+          { ingredient: 'ビタミンB12（シアノコバラミン）', type: '疲れ目・視力回復', detail: 'ピント調節筋（毛様体筋）の疲労を回復。デジタル眼精疲労に有効。' },
+          { ingredient: 'タウリン', type: '目の新陳代謝', detail: '細胞内の浸透圧調整・疲労回復を助ける。目薬に含まれる量では臨床的な効果は限定的だが疲れ目対策に多用される。' },
+          { ingredient: 'ネオスチグミンメチル硫酸塩', type: 'ピント調節', detail: '毛様体筋のコリをほぐし、ピント調節力を助ける成分。近業（近くを見る作業）後の疲れに有効。' },
+          { ingredient: '塩化ベンザルコニウム（BAK）', type: '防腐剤', detail: 'ほとんどの目薬に含まれる防腐剤。コンタクトレンズに吸収されて角膜にダメージを与える可能性があるため、コンタクト装用者は「防腐剤フリー」を選ぶべき。' },
+        ].map(s => (
+          <div key={s.ingredient} className="flex gap-3 items-start">
+            <div className="w-36 shrink-0">
+              <p className="text-xs font-bold text-gray-800">{s.ingredient}</p>
+              <span className="text-xs bg-cyan-100 text-cyan-700 px-2 py-0.5 rounded-full">{s.type}</span>
+            </div>
+            <p className="text-xs text-gray-600 leading-relaxed flex-1">{s.detail}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">眼科に行くべきタイミング</h2>
+      <div className="bg-red-50 border border-red-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-red-800 mb-3">⚠️ 以下に当てはまる場合は市販薬でなく眼科を受診してください</p>
+        <ul className="space-y-2 text-sm text-gray-700">
+          {[
+            '市販の目薬を1〜2週間使っても改善しない',
+            '目の痛みや強い充血がある',
+            '急に視力が落ちた・ぼやける',
+            '光がまぶしく感じる（光過敏症）',
+            '目ヤニが多い・目が腫れている',
+            '飛蚊症（虫が飛んでいるように見える）が突然増えた',
+            '視野の一部が欠けている・黒い点がある（緊急：すぐ受診）',
+          ].map((item, i) => (
+            <li key={i} className="flex items-start gap-2">
+              <span className="shrink-0 text-red-500 mt-0.5">！</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-4">
         <p className="text-sm text-amber-800">
-          <strong>眼科受診の目安：</strong>目薬や生活習慣の改善で2週間以上改善しない場合、目の痛み・充血が強い場合は眼科を受診してください。
+          <strong>眼科での処方薬について：</strong>市販のヒアルロン酸目薬の濃度は0.1%程度ですが、処方薬のヒアレインは0.1%と0.3%があります。重症ドライアイには保険診療で0.3%のヒアレインを処方してもらえます（3割負担で月500〜1,000円程度）。市販品より確実に有効です。
         </p>
       </div>
     </article>
