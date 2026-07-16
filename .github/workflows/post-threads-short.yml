@@ -1,4 +1,4 @@
-name: Threads 一文考察 自動投稿
+name: Threads 夜21時 自動投稿（一文考察・夜占い）
 
 on:
   schedule:
@@ -19,7 +19,7 @@ jobs:
 
       - run: npm ci
 
-      - name: 一文考察投稿
+      - name: 夜21時投稿（月・水・金：夜占い／火・木・土・日：一文考察）
         run: npx ts-node scripts/post-threads-short.ts
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
