@@ -5,7 +5,7 @@ export type EyeColumnMeta = {
   title: string;
   description: string;
   category: string;
-  section: 'megane' | 'vr' | 'lasik' | 'eye-care' | 'eye-goods';
+  section: 'megane' | 'vr' | 'lasik' | 'eye-care' | 'eye-goods' | 'karakon';
   publishedAt: string;
   updatedAt: string;
   readingTime: number;

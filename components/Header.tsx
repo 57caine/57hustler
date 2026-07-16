@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 const NAV = [
   { href: '/category/1day', label: 'コンタクト', icon: '👁' },
+  { href: '/karakon',       label: 'カラコン', icon: '👁‍🗨' },
   { href: '/megane',        label: '眼鏡・サングラス', icon: '👓' },
   { href: '/vr',            label: 'VR・スマートグラス', icon: '🥽' },
   { href: '/lasik',         label: 'レーシック', icon: '✨' },
