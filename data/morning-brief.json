@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-16",
-  "generatedAt": "2026-07-15T22:56:09.035Z",
+  "date": "2026-07-17",
+  "generatedAt": "2026-07-16T22:54:01.257Z",
   "todayAiStaff": [
     {
       "time": "04:00",
@@ -50,74 +50,24 @@
   ],
   "postsToday": 1,
   "actionsStatus": {
-    "total": 21,
-    "success": 16,
-    "failed": 4,
-    "runs": [
-      {
-        "name": "朝の司令書生成",
-        "status": null,
-        "time": "2026-07-15T22:55:45Z"
-      },
-      {
-        "name": "Instagram 自動投稿",
-        "status": "failure",
-        "time": "2026-07-15T22:49:55Z"
-      },
-      {
-        "name": "Threads 占い 日次自動投稿",
-        "status": "success",
-        "time": "2026-07-15T22:47:45Z"
-      },
-      {
-        "name": "価格データ・アフィリエイトリンク自動更新",
-        "status": "success",
-        "time": "2026-07-15T22:06:04Z"
-      },
-      {
-        "name": "Threads 夜中のおじさん 自動投稿",
-        "status": "success",
-        "time": "2026-07-15T20:00:57Z"
-      },
-      {
-        "name": "Threads 夜間コラム自動投稿",
-        "status": "success",
-        "time": "2026-07-15T15:37:04Z"
-      },
-      {
-        "name": "価格データ・アフィリエイトリンク自動更新",
-        "status": "success",
-        "time": "2026-07-15T14:56:45Z"
-      },
-      {
-        "name": "Threads 夜中のおじさん 自動投稿",
-        "status": "success",
-        "time": "2026-07-15T14:41:23Z"
-      },
-      {
-        "name": "Threads 一文考察 自動投稿",
-        "status": "success",
-        "time": "2026-07-15T13:42:37Z"
-      },
-      {
-        "name": "Threads 夜中のおじさん 自動投稿",
-        "status": "success",
-        "time": "2026-07-15T12:09:08Z"
-      }
-    ]
+    "total": 0,
+    "success": 0,
+    "failed": 0,
+    "runs": []
   },
   "urgent": [
-    "Instagram投稿失敗の原因特定・修正（自動化の信頼性向上）",
-    "note第8回の作成・公開（高優先度タスク未完了）",
-    "GitHub Actions 失敗4件の詳細ログ確認"
+    "note第8回の作成・公開完了（高優先度・未完了）",
+    "Instagram投稿1本目公開（週2本ペースで開始）",
+    "GitHub Actionsの実行状況確認（直近24時間0件の原因調査）"
   ],
   "defer": [
-    "Amazon Associates申請準備（売上3件到達まで待機）",
-    "Instagram週2本投稿体制の安定化"
+    "Amazon Associates申請準備（売上3件までは不要）",
+    "来週のInstagram投稿スケジュール作成",
+    "note第9回以降のコンテンツ企画"
   ],
   "confirm": [
-    "Instagram自動投稿の失敗原因（認証？API仕様変更？）",
-    "note第8回の公開予定日時確認"
+    "note第8回の公開スケジュール確認（予定日時）",
+    "Instagram投稿のアカウント設定・プロフィール完成の確認"
   ],
-  "summary": "自動化パイプライン安定化とnote第8回公開が本日の最優先。"
+  "summary": "note公開とInstagram開始を優先。CI/CD状況を即座に確認。"
 }
