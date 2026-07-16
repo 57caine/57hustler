@@ -1,0 +1,18 @@
+{
+  "fetchedAt": "2026-07-15T22:00:00+09:00",
+  "username": "westin_lab",
+  "totalArticles": 7,
+  "latestTitle": "第7回：自動化で作る「手を動かさない収益」の設計図",
+  "latestUrl": "https://note.com/westin_lab",
+  "latestPublishedAt": "2026-07-14",
+  "articles": [
+    { "title": "第7回：自動化で作る「手を動かさない収益」の設計図", "publishedAt": "2026-07-14" },
+    { "title": "第6回：副業から複業へ。57hustlerの全体像", "publishedAt": "2026-07-07" },
+    { "title": "第5回：コンタクトレンズサイトが月1万円を生むまで", "publishedAt": "2026-06-30" },
+    { "title": "第4回：AI×アフィリエイトで「寝ている間に稼ぐ」の現実", "publishedAt": "2026-06-23" },
+    { "title": "第3回：プログラミングゼロから始めるウェブサイト収益化", "publishedAt": "2026-06-16" },
+    { "title": "第2回：スモールビジネスを束ねるCEOになる", "publishedAt": "2026-06-09" },
+    { "title": "第1回：57歳からの複業戦略", "publishedAt": "2026-06-02" }
+  ],
+  "note": "note RSSから自動更新されます（毎朝7:00 JST）"
+}

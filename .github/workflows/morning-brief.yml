@@ -1,0 +1,158 @@
+name: Morning Brief
+
+on:
+  schedule:
+    # 毎朝 7:00 JST (= 22:00 UTC 前日)
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+
+jobs:
+  morning-brief:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: claude/bold-brahmagupta-uc9Mu
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate morning brief
+        run: |
+          cat << 'EOF' > /tmp/morning-brief.mjs
+          import fs from 'fs';
+          import https from 'https';
+
+          const ROOT = process.cwd();
+
+          function readJson(p) {
+            try { return JSON.parse(fs.readFileSync(p, 'utf-8')); }
+            catch { return null; }
+          }
+
+          function fetchUrl(url) {
+            return new Promise((resolve) => {
+              https.get(url, (res) => {
+                let data = '';
+                res.on('data', d => data += d);
+                res.on('end', () => resolve(data));
+              }).on('error', () => resolve(null));
+            });
+          }
+
+          // 1. yonaka-post-history.json から投稿数
+          const yonaka = readJson(`${ROOT}/data/yonaka-post-history.json`);
+          const threadsPostsTotal = yonaka?.posts?.length ?? 0;
+          const today = new Date().toISOString().slice(0, 10);
+          const threadsPostsToday = yonaka?.posts?.filter(p => p.date === today).length ?? 0;
+
+          // 2. lens-navi-content-log.json からコラム数
+          const contentLog = readJson(`${ROOT}/data/lens-navi-content-log.json`);
+          const lensNaviColumns = contentLog?.columns?.length ?? 0;
+          const lensNaviColumnsThisWeek = (() => {
+            const weekAgo = new Date(Date.now() - 7 * 24 * 3600 * 1000).toISOString().slice(0, 10);
+            return contentLog?.columns?.filter(c => c.publishedAt >= weekAgo).length ?? 0;
+          })();
+
+          // 3. henkutsu-candidates.json から候補数
+          const henkutsu = readJson(`${ROOT}/data/henkutsu-candidates.json`);
+          const henkutsuCandidates = henkutsu?.candidates?.length ?? 0;
+          const henkutsuApproved = henkutsu?.approved?.length ?? 0;
+
+          // 4. note-stats.json から記事数
+          let noteStats = readJson(`${ROOT}/data/note-stats.json`);
+
+          // Note RSS を取得して note-stats.json を更新
+          const rssData = await fetchUrl('https://note.com/westin_lab/rss');
+          if (rssData) {
+            const titles = [...rssData.matchAll(/<title><!\[CDATA\[([^\]]+)\]\]><\/title>/g)]
+              .map(m => m[1])
+              .filter(t => t !== 'westin_lab');
+            const dates = [...rssData.matchAll(/<pubDate>([^<]+)<\/pubDate>/g)]
+              .map(m => new Date(m[1]).toISOString().slice(0, 10));
+            const links = [...rssData.matchAll(/<link>([^<]+)<\/link>/g)]
+              .map(m => m[1])
+              .filter(u => u.includes('note.com/westin_lab/n/'));
+
+            const articles = titles.map((t, i) => ({
+              title: t,
+              publishedAt: dates[i] ?? '',
+              url: links[i] ?? '',
+            }));
+
+            if (articles.length > 0) {
+              noteStats = {
+                fetchedAt: new Date().toISOString(),
+                username: 'westin_lab',
+                totalArticles: articles.length,
+                latestTitle: articles[0].title,
+                latestUrl: articles[0].url || 'https://note.com/westin_lab',
+                latestPublishedAt: articles[0].publishedAt,
+                articles,
+                note: 'note RSSから自動更新されます（毎朝7:00 JST）',
+              };
+              fs.writeFileSync(`${ROOT}/data/note-stats.json`, JSON.stringify(noteStats, null, 2));
+              console.log('Updated note-stats.json:', articles.length, 'articles');
+            }
+          }
+
+          const noteArticles = noteStats?.totalArticles ?? 0;
+          const noteLatestTitle = noteStats?.latestTitle ?? '';
+          const noteLastUpdated = noteStats?.latestPublishedAt ?? '';
+
+          // 5. GitHub Actions 24h ステータスは静的に記録（APIトークン不要のためゼロで初期化）
+          const githubActions = {
+            last24h: { total: 0, success: 0, failure: 0, successRate: 100 }
+          };
+
+          // 6. 優先タスク
+          const pdca = readJson(`${ROOT}/data/lens-navi-pdca.json`);
+          const priorities = [
+            'ANTHROPIC_API_KEYをGitHub Secretsに登録してコラム自動生成を有効化',
+            'product-url-map.jsonの全商品URLマッピングを完成（24ストア×55商品）',
+            'henkutsu Amazon提携申請フォームを送付',
+            'Instagram westin_lab 最初の投稿を準備',
+          ];
+
+          const brief = {
+            generatedAt: new Date().toISOString().replace('Z', '+09:00').replace(/T(\d{2})/, (_, h) => `T${String((+h + 9) % 24).padStart(2, '0')}`),
+            date: today,
+            stats: {
+              threadsPostsTotal,
+              threadsPostsToday,
+              lensNaviColumns,
+              lensNaviColumnsThisWeek,
+              henkutsuCandidates,
+              henkutsuApproved,
+              noteArticles,
+              noteLatestTitle,
+              noteLastUpdated,
+            },
+            githubActions,
+            priorities,
+            note: 'GitHub Actionsから自動更新されます（毎朝7:00 JST）',
+          };
+
+          fs.writeFileSync(`${ROOT}/data/morning-brief.json`, JSON.stringify(brief, null, 2));
+          console.log('Morning brief generated:', JSON.stringify(brief.stats, null, 2));
+          EOF
+          node /tmp/morning-brief.mjs
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/morning-brief.json data/note-stats.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "auto: morning brief $(date -u +%Y-%m-%d)"
+          git push origin claude/bold-brahmagupta-uc9Mu

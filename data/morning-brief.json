@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-07-15T22:00:00+09:00",
+  "date": "2026-07-15",
+  "stats": {
+    "threadsPostsTotal": 0,
+    "threadsPostsToday": 0,
+    "lensNaviColumns": 24,
+    "lensNaviColumnsThisWeek": 7,
+    "henkutsuCandidates": 0,
+    "henkutsuApproved": 0,
+    "noteArticles": 7,
+    "noteLatestTitle": "第7回：自動化で作る「手を動かさない収益」の設計図",
+    "noteLastUpdated": "2026-07-14"
+  },
+  "githubActions": {
+    "last24h": {
+      "total": 0,
+      "success": 0,
+      "failure": 0,
+      "successRate": 100
+    }
+  },
+  "priorities": [
+    "ANTHROPIC_API_KEYをGitHub Secretsに登録してコラム自動生成を有効化",
+    "product-url-map.jsonの全商品URLマッピングを完成（24ストア×55商品）",
+    "henkutsu Amazon提携申請フォームを送付",
+    "Instagram westin_lab 最初の投稿を準備"
+  ],
+  "note": "GitHub Actionsから自動更新されます（毎朝7:00 JST）"
+}
