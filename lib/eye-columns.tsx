@@ -11,51 +11,6 @@ export type EyeColumnMeta = {
   readingTime: number;
   headings?: string[];
   faqs?: { q: string; a: string }[];
-    "apple-vision-pro-japan-guide": (
-    <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Apple Vision Proとは？空間コンピュータの基本を理解する</h2>
-      <p className="text-gray-700 mb-4">Apple Vision Proは、Appleが2024年に発売した「空間コンピュータ」と呼ばれる新カテゴリーのデバイスです。従来のVRヘッドセットとは異なり、現実世界とデジタルコンテンツを融合させる「空間コンピューティング」を実現する点が最大の特徴です。</p>
-      <p className="text-gray-700 mb-4">日本では2024年6月28日に正式発売され、Apple Store直営店とApple公式オンラインストアで購入できるようになりました。本記事では、日本国内でApple Vision Proを購入する際に知っておきたい価格・スペック・購入方法を整理して解説します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">日本での価格とラインナップ</h2>
-      <p className="text-gray-700 mb-4">Apple Vision Proの日本での販売価格は、ストレージ容量によって以下のように分かれています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">モデルごとの価格</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>256GBモデル：599,800円（税込）</li>
-        <li>512GBモデル：629,800円（税込）</li>
-        <li>1TBモデル：659,800円（税込）</li>
-      </ul>
-      <p className="text-gray-700 mb-4">いずれのモデルも本体性能（プロセッサやディスプレイ）は共通で、違いはストレージ容量のみです。アプリやコンテンツを多くダウンロードする予定があれば512GB以上を検討する価値があります。</p>
-      <p className="text-gray-700 mb-4">本体価格に加えて、視力矯正が必要な場合の度付きインサートレンズ（約19,800円）や、保証サービスのAppleCare+の費用が別途かかる点も予算計画に入れておきましょう。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">主なスペックと特徴</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ディスプレイと映像性能</h3>
-      <p className="text-gray-700 mb-4">Apple Vision Proは両眼合計で2,300万ピクセルを超えるマイクロOLEDディスプレイを搭載しています。これは4Kテレビを両目それぞれに配置したことに相当する超高解像度で、テキストの読みやすさや映像の没入感に大きく貢献しています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">プロセッサ</h3>
-      <p className="text-gray-700 mb-4">本体にはMacと同じM2チップに加え、センサー処理専用のR1チップを搭載。R1チップは12個のカメラ、5つのセンサー、6つのマイクからの情報を処理し、映像遅延を極めて短く抑えています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">操作方法</h3>
-      <p className="text-gray-700 mb-4">目線・手のジェスチャー・音声で操作する仕組みを採用しており、コントローラーが不要です。視線でアイコンを選び、指をつまむ動作でタップするという直感的な操作が可能です。</p>
-      <p className="text-gray-700 mb-4">各種VRヘッドセットや空間コンピュータのアクセサリーは以下からチェックできます。</p>
-      <p className="text-gray-700 mb-4">Amazon: https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=hustle-digger-22</p>
-      <p className="text-gray-700 mb-4">楽天: https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FVR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%2F</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">日本での購入方法とステップ</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">店頭で購入する場合</h3>
-      <p className="text-gray-700 mb-4">Apple Store直営店では、購入前に実機を試せるデモ体験が用意されています。視力矯正が必要な場合は、店頭でメガネの度数測定を行い、適切なインサートレンズを注文する流れになります。フィッティング（頭のサイズに合わせたバンドやライトシールの選定）も店頭で行えるため、初めての方には店頭購入がおすすめです。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">オンラインで購入する場合</h3>
-      <p className="text-gray-700 mb-4">Apple公式オンラインストアでも購入可能です。この場合、iPhoneやiPadのFace ID機能を使って顔をスキャンし、自分に最適なライトシールとヘッドバンドのサイズを自動計測します。度付きレンズが必要な場合は、メガネやコンタクトの処方箋情報を入力する必要があります。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">購入前に確認したい注意点</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">メガネの上からは装着できない</h3>
-      <p className="text-gray-700 mb-4">Apple Vision Proはメガネを装着したままでは使えません。視力矯正が必要な方はZEISS製の度付きインサートレンズ（約19,800円）またはリーディングレンズ（約14,800円）を別途購入する必要があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">バッテリー駆動時間</h3>
-      <p className="text-gray-700 mb-4">外付けバッテリーによる駆動時間は一般的な使用で約2時間、ビデオ再生で最大2.5時間です。長時間使用する場合は電源接続が前提となる点を理解しておきましょう。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">重量と装着感</h3>
-      <p className="text-gray-700 mb-4">本体重量は装着構成によって約600〜650gとされており、長時間の使用では首や顔への負担を感じる場合があります。付属のバンドを調整することで負担を軽減できます。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">こんな人におすすめ</h2>
-      <p className="text-gray-700 mb-4">Apple Vision Proは、高解像度の映像視聴、複数の仮想ディスプレイを使った作業、3D空間でのアプリ利用などに関心がある方に向いています。一方で、価格が60万円前後と高額なため、まずVR体験を試したいという方にはより手頃なVRヘッドセットから始める選択肢もあります。</p>
-      <p className="text-gray-700 mb-4">入門用のVRデバイスや周辺機器を探している方は、Amazonや楽天で幅広い製品を比較検討してみてください。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
-      <p className="text-gray-700 mb-4">Apple Vision Proは2024年6月に日本発売され、599,800円からApple StoreおよびオンラインストアでⓅ購入できます。M2チップとR1チップ、2,300万ピクセル超の高解像度ディスプレイを搭載した空間コンピュータで、視線と手のジェスチャーによる直感的な操作が魅力です。</p>
-      <p className="text-gray-700 mb-4">購入前には度付きレンズの必要性やバッテリー駆動時間、装着感などを確認し、可能であれば店頭でのデモ体験を受けることをおすすめします。自分の用途と予算に合った選択をして、新しい空間コンピューティングの世界を体験してみてください。</p>
-    </article>
-  ),
 };
 
 const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=hustle-digger-22`;

@@ -320,18 +320,23 @@ ${jsxBody}
   )`;
 }
 
+function appendEntry(src: string, entryCode: string): string {
+  // ]; はファイル内に1つだけ存在（配列の終端）
+  return src.replace(/^(\];)$/m, `  ${entryCode},\n$1`);
+}
+
+function appendContent(src: string, contentCode: string): string {
+  // ファイル末尾の }; （コンテンツオブジェクトの終端）の直前に挿入
+  const lastBrace = src.lastIndexOf('\n};');
+  if (lastBrace === -1) return src;
+  return src.slice(0, lastBrace) + '\n  ' + contentCode + ',\n};' + src.slice(lastBrace + '\n};'.length);
+}
+
 function appendToEyeColumns(col: GeneratedColumn): void {
   const filePath = path.join(__dirname, '../lib/eye-columns.tsx');
   let src = fs.readFileSync(filePath, 'utf-8');
-
-  // eyeColumns配列末尾（];の直前）に追加
-  const entryCode = buildColumnEntryCode(col);
-  src = src.replace(/(\];\s*\nexport const eyeColumnContent)/, `  ${entryCode},\n$1`);
-
-  // eyeColumnContent末尾（};の直前）に追加
-  const contentCode = buildColumnContentCode(col);
-  src = src.replace(/^(\};)$/m, `  ${contentCode},\n$1`);
-
+  src = appendEntry(src, buildColumnEntryCode(col));
+  src = appendContent(src, buildColumnContentCode(col));
   fs.writeFileSync(filePath, src, 'utf-8');
   console.log(`✓ Added to eye-columns.tsx: ${col.slug}`);
 }
@@ -339,13 +344,8 @@ function appendToEyeColumns(col: GeneratedColumn): void {
 function appendToColumns(col: GeneratedColumn): void {
   const filePath = path.join(__dirname, '../lib/columns.tsx');
   let src = fs.readFileSync(filePath, 'utf-8');
-
-  const entryCode = buildColumnEntryCode(col);
-  src = src.replace(/(\];\s*\nexport const columnContent)/, `  ${entryCode},\n$1`);
-
-  const contentCode = buildColumnContentCode(col);
-  src = src.replace(/^(\};)$/m, `  ${contentCode},\n$1`);
-
+  src = appendEntry(src, buildColumnEntryCode(col));
+  src = appendContent(src, buildColumnContentCode(col));
   fs.writeFileSync(filePath, src, 'utf-8');
   console.log(`✓ Added to columns.tsx: ${col.slug}`);
 }
@@ -353,15 +353,8 @@ function appendToColumns(col: GeneratedColumn): void {
 function appendToKarakonColumns(col: GeneratedColumn): void {
   const filePath = path.join(__dirname, '../lib/karakon-columns.tsx');
   let src = fs.readFileSync(filePath, 'utf-8');
-
-  // karakonColumns配列末尾に追加
-  const entryCode = buildColumnEntryCode(col);
-  src = src.replace(/(\];\s*\n\/\/ ─── 記事コンテンツ)/, `  ${entryCode},\n$1`);
-
-  // karakonColumnContent末尾（};の直前）に追加
-  const contentCode = buildColumnContentCode(col);
-  src = src.replace(/^(\};)$/m, `  ${contentCode},\n$1`);
-
+  src = appendEntry(src, buildColumnEntryCode(col));
+  src = appendContent(src, buildColumnContentCode(col));
   fs.writeFileSync(filePath, src, 'utf-8');
   console.log(`✓ Added to karakon-columns.tsx: ${col.slug}`);
 }
