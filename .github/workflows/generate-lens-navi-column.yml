@@ -95,4 +95,9 @@ jobs:
             exit 0
           fi
           git commit -m "auto: lens-navi column generation $(date +%Y-%m-%d-%H%M)"
-          git push origin claude/bold-brahmagupta-uc9Mu
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin claude/bold-brahmagupta-uc9Mu && \
+            git push origin claude/bold-brahmagupta-uc9Mu && break
+            echo "Push attempt $i failed, retrying..."
+            sleep $((i * 2))
+          done
