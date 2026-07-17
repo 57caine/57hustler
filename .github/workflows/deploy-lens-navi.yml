@@ -2,7 +2,9 @@ name: Deploy lens-navi to Vercel
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - claude/bold-brahmagupta-uc9Mu
     paths:
       - 'app/**'
       - 'components/**'
