@@ -36,15 +36,14 @@ jobs:
       - name: Run SEO audit and content update
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          INPUT_TASK: ${{ github.event.inputs.task || 'audit' }}
         run: |
           cat << 'EOF' > /tmp/self-improve.mjs
           import Anthropic from '@anthropic-ai/sdk';
           import fs from 'fs';
           import path from 'path';
-          import { fileURLToPath } from 'url';
 
-          const __dirname = path.dirname(fileURLToPath(import.meta.url));
-          const ROOT = path.resolve(__dirname, '..');
+          const ROOT = process.cwd();
 
           const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
           const log = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/lens-navi-content-log.json'), 'utf-8'));
@@ -108,8 +107,6 @@ jobs:
           console.log('Updated lens-navi-pdca.json');
           EOF
           node /tmp/self-improve.mjs
-        env:
-          INPUT_TASK: ${{ github.event.inputs.task || 'audit' }}
 
       - name: Generate new column for weakest section
         env:

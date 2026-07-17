@@ -247,6 +247,102 @@ export const eyeColumns: EyeColumnMeta[] = [
       { q: 'PC用目薬は何時間おきにさすのがよいですか？', a: 'コンタクト装用中は2〜3時間おき、裸眼の場合は疲れを感じたときにさすのが基本です。1日の使用回数制限（多くは5〜6回まで）がある目薬もあるため、パッケージの指示に従ってください。防腐剤フリーの目薬は比較的回数制限が緩いものが多いです。' },
     ],
   },
+  {
+    slug: 'meta-quest-3-review-2026',
+    title: 'Meta Quest 3 完全レビュー2026【実機レポート・スペック・価格・おすすめ用途】',
+    description: 'Meta Quest 3の実機使用レポート。スペック、Quest 2との比較、ゲーム・映像・仕事での使用感、購入すべき人をわかりやすく解説。',
+    category: 'VR・スマートグラス',
+    section: 'vr',
+    publishedAt: '2026-07-17',
+    updatedAt: '2026-07-17',
+    readingTime: 10,
+    headings: ['Meta Quest 3のスペック・基本情報', 'Quest 2・Quest Proとの比較', 'ゲームでの使用感', '映画・動画視聴の体験', 'PCとのAir Link・仮想デスクトップ', '購入すべき人・待った方がいい人'],
+    faqs: [
+      { q: 'Meta Quest 3は日本で購入できますか？', a: 'はい、Meta公式サイト・Amazon・家電量販店（ビックカメラ・ヨドバシカメラ等）で購入可能です。128GB版が74,800円、512GB版が96,800円が定価です（2026年時点）。セール時期（ブラックフライデー等）は10〜15%程度の値引きがあることも。' },
+      { q: 'Meta Quest 3はPCなしでゲームができますか？', a: 'はい、スタンドアローン型のため、PCやゲーム機なしで動作します。Meta Questストアから直接ゲームをダウンロードして遊べます。PCが必要なのはSteamVRのタイトルや高解像度コンテンツをPCストリーミングで楽しむ場合です。' },
+      { q: 'Meta Quest 3の電池持ちはどれくらいですか？', a: '一般的なゲームプレイで約2〜3時間、動画視聴で約2.5〜3.5時間が目安です。USB-C充電しながら使用すれば連続使用が可能です。別売りのElite Batteryストラップ（約8,000〜12,000円）を使うと3〜4時間以上の連続使用が実現します。' },
+    ],
+  },
+  {
+    slug: 'vr-fitness-app-2026',
+    title: 'VRフィットネス・エクササイズおすすめアプリ2026【消費カロリー・Meta Quest対応】',
+    description: 'VRで本当に痩せる？Meta Quest 3対応のフィットネスアプリTOP5を徹底比較。消費カロリー、継続しやすさ、初心者向けおすすめを紹介。',
+    category: 'VR・スマートグラス',
+    section: 'vr',
+    publishedAt: '2026-07-17',
+    updatedAt: '2026-07-17',
+    readingTime: 8,
+    headings: ['VRフィットネスで本当に痩せるのか？', 'おすすめVRフィットネスアプリTOP5', 'ゲーム感覚で続けられるワークアウト', 'VRとジム・ランニングの運動量比較', '始める前の注意点と必要機材'],
+    faqs: [
+      { q: 'VRフィットネスアプリで1時間で何カロリー消費できますか？', a: 'アプリや運動強度によって異なりますが、Beat Saberなら1時間で300〜500kcal、Supernatural（HIIT系）なら400〜600kcal程度の消費が期待できます。参考までにジョギング（8km/h）で1時間約500kcalです。慣れてきたら運動強度が上がり消費カロリーも増えます。' },
+      { q: 'VRフィットネスを毎日やっても大丈夫ですか？', a: '最初は週2〜3回から始め、体が慣れてきたら頻度を上げるのが安全です。運動後のVR酔いや眼精疲労に注意し、装用時間は1日1〜2時間以内を目安に。筋肉痛が出た場合は休養日を設けてください。' },
+      { q: 'VRフィットネスは狭い部屋でもできますか？', a: '多くのアプリは2m×2m程度のスペースで動作します（「定常モード」選択可）。ただしSupernatural等の一部アプリはルームスケール設定で3m×2m程度必要な場合も。Meta Quest 3の「ガーディアン」機能で安全なプレイ範囲を設定しましょう。' },
+    ],
+  },
+  {
+    slug: 'smile-surgery-guide-2026',
+    title: 'SMILE（スマイル）手術とレーシックの違い【切開・ドライアイリスク・費用2026年版】',
+    description: '最新視力矯正のSMILE手術をレーシックと徹底比較。切開量の差、ドライアイリスクの低さ、費用相場、向いている人を詳しく解説。',
+    category: 'レーシック・視力矯正',
+    section: 'lasik',
+    publishedAt: '2026-07-17',
+    updatedAt: '2026-07-17',
+    readingTime: 9,
+    headings: ['SMILEとはどんな手術か', '手術の流れ（SMILE vs LASIK）', 'ドライアイリスクの比較', '費用相場・医療費控除', '向いている人・向いていない人'],
+    faqs: [
+      { q: 'SMILE手術の痛みはレーシックと比べてどうですか？', a: '両術式とも点眼麻酔を使用するため手術中の痛みはほとんどありません。SMILEはフラップを作成しないため術後の異物感・乾燥感がレーシックより少ない傾向があります。術後翌日から通常生活に戻る点は同様です。' },
+      { q: 'SMILE手術の費用はレーシックより高いですか？', a: 'SMILEの費用相場は両眼で35〜60万円程度で、レーシック（20〜45万円）より一般的に高めです。ただし医療費控除の対象（視力の矯正が目的）のため確定申告で一部を取り戻せます。医療費控除の上限は200万円です。' },
+      { q: 'SMILEは強度近視でも受けられますか？', a: 'SMILEは-1.00D〜-10.00D程度の近視に対応しています。角膜の厚さが十分であることが条件で、術前の適応検査（角膜トポグラフィー・パキメトリー）で判断されます。-8.00D以上の強度近視はICL（眼内コンタクト）が適合する場合もあります。' },
+    ],
+  },
+  {
+    slug: 'orthokeratology-guide-2026',
+    title: 'オルソケラトロジーとは？寝ている間に近視矯正【子ども・大人向け完全解説2026】',
+    description: '就寝時に特殊コンタクトを装用して日中裸眼で過ごせるオルソケラトロジーの仕組み・費用・効果・向いている人をわかりやすく解説。',
+    category: 'レーシック・視力矯正',
+    section: 'lasik',
+    publishedAt: '2026-07-17',
+    updatedAt: '2026-07-17',
+    readingTime: 9,
+    headings: ['オルソケラトロジーとは？', '近視進行抑制効果（子ども向け）', 'レーシック・ICLとの比較', '費用と保険適用', '向いている人・デメリット'],
+    faqs: [
+      { q: 'オルソケラトロジーの効果はどれくらい持続しますか？', a: '就寝時に装用すると翌朝から日中（12〜16時間程度）は裸眼で過ごせます。毎晩装用することで矯正効果が維持されます。装用をやめると通常1〜3日で元の視力に戻るため、可逆的な治療です。' },
+      { q: 'オルソケラトロジーは何歳から使えますか？', a: '子どもの場合は5〜6歳から使用できるとされています。眼科医が適応と判断した場合に処方されます。大人も使用可能で、近視度数が安定している方に向いています。成人の場合は-6.00D以下の近視が適応の目安です。' },
+      { q: 'オルソケラトロジーの費用はどれくらいかかりますか？', a: '初期費用（レンズ代＋診察料）として両眼で8万〜15万円程度。その後は定期検査費用（月1,000〜3,000円程度）とレンズの交換費用（1〜2年ごとに3〜6万円程度）がかかります。子どもの場合は近視進行抑制として長期的な医療費が抑えられる可能性があります。' },
+    ],
+  },
+  {
+    slug: 'me-juketsu-taisaku-guide',
+    title: '目の充血の原因と対策完全ガイド【コンタクト装用中・疲れ目・目薬の選び方2026】',
+    description: '目の充血の原因別対策を解説。コンタクト装用中の充血、疲れ目・ドライアイによる充血、眼科受診が必要なサインと充血目薬の選び方。',
+    category: 'アイケア・目薬',
+    section: 'eye-care',
+    publishedAt: '2026-07-17',
+    updatedAt: '2026-07-17',
+    readingTime: 7,
+    headings: ['充血の種類と主な原因', 'コンタクト装用中の充血対策', '疲れ目・ドライアイによる充血', '充血に効く目薬の選び方', '眼科受診が必要なサイン'],
+    faqs: [
+      { q: '目の充血が続く場合、眼科に行くべき目安はありますか？', a: '以下の場合はすぐに眼科を受診してください：①痛みや激しい異物感がある ②視力が低下している ③分泌物が多い（目やに） ④1週間以上充血が続く ⑤コンタクト装用中に突然の充血と痛み（感染性角膜炎の可能性）。' },
+      { q: 'コンタクト装用中に使える充血目薬はありますか？', a: '「コンタクト装用中OK」と明記された目薬は装用中に使えます。ただし充血除去成分（塩酸テトラヒドロゾリン等）は血管収縮作用があり、依存性や反跳充血のリスクがあります。日常的な充血対策には人工涙液（防腐剤フリー）が安全です。' },
+      { q: '目の充血を予防するにはどうすればいいですか？', a: '①コンタクトの装用時間を守る（1日8〜10時間以内）②PCやスマホ使用中は20分ごとに遠くを見る（20-20-20ルール） ③十分な睡眠をとる ④加湿器や目薬で乾燥対策 ⑤アルコールを控える ⑥紫外線対策（サングラス着用）が基本です。' },
+    ],
+  },
+  {
+    slug: 'sunglass-polarized-guide',
+    title: '偏光サングラスとは？通常サングラスとの違い・釣り・ドライブ向け選び方ガイド',
+    description: '偏光サングラスの仕組みと通常サングラスとの違いを解説。釣り・ドライブ・スキーなど用途別のおすすめとレンズカラーの選び方まで。',
+    category: '眼鏡・サングラス',
+    section: 'megane',
+    publishedAt: '2026-07-17',
+    updatedAt: '2026-07-17',
+    readingTime: 8,
+    headings: ['偏光レンズの仕組み', '通常サングラスとの違い', '用途別おすすめ（釣り・ドライブ・アウトドア）', '偏光サングラスの選び方', '度付き偏光サングラスという選択肢'],
+    faqs: [
+      { q: '偏光サングラスをかけるとスマホ画面が見えなくなることがありますか？', a: 'スマートフォンの液晶はある角度で偏光フィルターの影響を受けます。画面を縦向きで使うと暗く見えることがあります（反時計回りに45度傾けると改善することも）。有機EL（AMOLED）ディスプレイでは影響が出にくいです。カーナビも角度によって見づらくなる場合があります。' },
+      { q: '偏光レンズと普通のUVカットレンズはどちらが目に優しいですか？', a: '偏光レンズは反射光（眩しさの主因）を特異的にカットするため、目の疲れ軽減効果が高いです。普通のUVカットレンズはUV遮断はするものの乱反射は遮断しません。長時間の屋外使用には偏光レンズの方が目への負担が少ないとされています。' },
+      { q: '釣りに偏光サングラスが必要な理由は何ですか？', a: '水面からの反射光を除去することで、水中の魚・岩・地形が見えるようになるためです。反射光は偏光レンズで大幅にカットできるため、水深を読む・魚の位置を見つけるといった釣りの効率が上がります。湖・川・海釣りで特に効果が高く、多くのプロアングラーが使用しています。' },
+    ],
+  },
 ];
 
 const AffiliateBtns = ({ amzn, rakuten }: { amzn: string; rakuten: string }) => (
@@ -1666,6 +1762,609 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <p className="font-bold text-gray-800 mb-3">目疲れ対策グッズをまとめて探す</p>
         <AffiliateBtns amzn="PC 目疲れ 対策 グッズ" rakuten="目疲れ PC 対策 グッズ" />
       </div>
+    </article>
+  ),
+
+  'meta-quest-3-review-2026': (
+    <article className="prose prose-sm max-w-none">
+      <p className="text-gray-600 text-base leading-relaxed mb-6">
+        Meta Quest 3は2023年10月に発売されたMeta社のスタンドアローン型MR（複合現実）ヘッドセットです。PCやゲーム機なしで動作し、パススルーカメラによる現実世界のAR合成も可能。2026年現在もVR入門〜中級者に最も選ばれているデバイスです。この記事では実際の使用感・スペック・用途別の評価を詳しくお伝えします。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Meta Quest 3のスペック・基本情報</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-violet-50">
+              <th className="text-left p-3 border border-gray-200">項目</th>
+              <th className="text-left p-3 border border-gray-200">Meta Quest 3（128GB）</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { k: '価格（2026年定価）', v: '74,800円（128GB）/ 96,800円（512GB）' },
+              { k: 'プロセッサ', v: 'Snapdragon XR2 Gen 2' },
+              { k: 'RAM', v: '8GB' },
+              { k: '解像度', v: '2,064×2,208ピクセル/眼（合計4,128×2,208）' },
+              { k: 'リフレッシュレート', v: '最大120Hz' },
+              { k: '視野角（FOV）', v: '横110° / 縦96°' },
+              { k: '重量', v: '515g' },
+              { k: 'バッテリー持続時間', v: '約2〜3時間（用途による）' },
+              { k: 'トラッキング', v: 'インサイドアウト（カメラ4台、センサー不要）' },
+              { k: 'パススルー解像度', v: '18PPD（Quest 2の約10倍鮮明）' },
+            ].map(r => (
+              <tr key={r.k} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-gray-700">{r.k}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.v}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-gray-700 mb-4">
+        Snapdragon XR2 Gen 2の採用によりQuest 2と比べてGPU性能が約2倍以上向上。レンダリング解像度を上げた状態でもフレームレートが安定しており、特にアクションゲームでの恩恵が大きいです。また、パンケーキレンズの採用でヘッドセット本体が薄くなり、装用時の快適性も向上しました。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Quest 2・Quest Proとの比較</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-violet-50">
+              <th className="text-left p-3 border border-gray-200">比較項目</th>
+              <th className="text-left p-3 border border-gray-200">Quest 2</th>
+              <th className="text-left p-3 border border-gray-200">Quest 3</th>
+              <th className="text-left p-3 border border-gray-200">Quest Pro</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { k: '価格', q2: '販売終了（中古4〜6万）', q3: '74,800円〜', qp: '159,800円' },
+              { k: 'MR対応', q2: '✗ VRのみ', q3: '◎ カラーパススルー', qp: '◎ カラーパススルー' },
+              { k: '解像度', q2: '1,832×1,920/眼', q3: '2,064×2,208/眼', qp: '1,800×1,920/眼' },
+              { k: '重量', q2: '503g', q3: '515g', qp: '722g' },
+              { k: '用途', q2: 'ゲーム・エンタメ入門', q3: 'ゲーム・MR・仕事', qp: 'ビジネス・クリエイター' },
+            ].map(r => (
+              <tr key={r.k} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-gray-700">{r.k}</td>
+                <td className="p-3 border border-gray-200 text-xs text-gray-600">{r.q2}</td>
+                <td className="p-3 border border-gray-200 text-xs font-medium text-violet-700">{r.q3}</td>
+                <td className="p-3 border border-gray-200 text-xs text-gray-600">{r.qp}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ゲームでの使用感</h2>
+      <p className="text-gray-700 mb-4">
+        Beat Saber・Asgard's Wrath 2・Among Us VRなど人気タイトルで実際に使用したところ、解像度の向上による文字・テクスチャの鮮明さが特に印象的でした。Quest 2では文字がにじんで見えたUI要素もQuest 3ではくっきり読めます。リフレッシュレート120Hzの環境では動きの滑らかさが大幅に改善し、酔いにくさも向上しています。
+      </p>
+      <p className="text-gray-700 mb-4">
+        コントローラーはTouch Plus（Quest 3付属）を使用。Quest 2よりも軽量化され、指輪状のリングが廃止されてすっきりしたデザインです。ハンドトラッキングの精度も向上しており、一部ゲームはコントローラーなしで手の動作だけでプレイ可能です。
+      </p>
+      <AffiliateBtns amzn="Meta Quest 3 VRゴーグル" rakuten="Meta Quest 3" />
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">映画・動画視聴の体験</h2>
+      <p className="text-gray-700 mb-4">
+        Meta TVアプリ・YouTube VR・Prime Video VRで映画を視聴。最大500インチ相当の仮想スクリーンに投影でき、映画館以上の没入感が得られます。Quest 3の解像度向上により、4K映像でのピクセルの粒感が感じにくくなりました。ただし現実の4Kテレビと比べると鮮明さで劣る部分があることも正直に伝えておきます。
+      </p>
+      <p className="text-gray-700 mb-4">
+        パススルーMR機能を使えば、リビングの壁や天井を仮想スクリーンとして利用する「MR映画体験」も可能です。家族に声をかけられてもヘッドセットを外さずに会話できる透過モードは、長時間視聴時に重宝します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">PCとのAir Link・仮想デスクトップ</h2>
+      <p className="text-gray-700 mb-4">
+        Wi-Fi 6環境でMeta Air Linkを使用すると、PCのSteamVRタイトルをワイヤレスでプレイ可能です。Half-Life: Alyx・Boneworks等のPCVR専用タイトルも遅延ほぼなしでプレイできました（※Wi-Fi 6ルーター・PCの性能次第）。有線接続よりも若干の映像圧縮が入りますが、一般的なプレイには問題ない品質です。
+      </p>
+      <p className="text-gray-700 mb-4">
+        Virtual Desktop（有料アプリ・約3,000円）を使用するとさらに安定したストリーミングが可能で、PCのデスクトップを360度空間に展開してマルチモニター環境を構築できます。テレワークや動画編集作業を「大画面バーチャルオフィス」で行うユーザーも増えています。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">購入すべき人・待った方がいい人</h2>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        {[
+          { title: '今すぐ購入を推奨', items: ['VRゲームを本格的に始めたい', 'PCなしでスタンドアローンVRを楽しみたい', 'MR（現実+VR）体験に興味がある', 'テレワークに大画面仮想デスクトップを使いたい', 'Quest 2から性能アップしたい'], color: 'border-green-200 bg-green-50' },
+          { title: '待った方がいい人', items: ['主に映画・動画視聴目的（通常のテレビで十分なことも）', '極めて精細な画質を求めるプロ用途（Appleや専門デバイスを検討）', '予算が5万円以下の場合（中古Quest 2も選択肢に）', '近い将来次世代機（Quest 4等）の発表が予想される時期'], color: 'border-amber-200 bg-amber-50' },
+        ].map(c => (
+          <div key={c.title} className={`border rounded-xl p-4 ${c.color}`}>
+            <p className="font-bold text-gray-800 text-sm mb-2">{c.title}</p>
+            <ul className="text-xs text-gray-700 space-y-1">
+              {c.items.map(i => <li key={i}>✓ {i}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </article>
+  ),
+
+  'vr-fitness-app-2026': (
+    <article className="prose prose-sm max-w-none">
+      <p className="text-gray-600 text-base leading-relaxed mb-6">
+        「VRで痩せる」という話題が増えています。実際にゲームをプレイしながら汗をかき、体重が減ったという報告は多数あります。この記事では、Meta Quest 3対応のVRフィットネスアプリを実際に検証し、消費カロリー・楽しさ・継続しやすさの観点からまとめました。自宅でジムいらずの新しい運動習慣として、VRフィットネスは本当に使えるのか確認しましょう。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VRフィットネスで本当に痩せるのか？</h2>
+      <p className="text-gray-700 mb-4">
+        VRフィットネスの有効性を示す研究が増えています。2021年にBeat Saberを対象にした研究（Brigham Young University）では、1時間のプレイで平均9.8METの運動強度（中〜高強度の有酸素運動に相当）が記録され、消費カロリーは298〜400kcalでした。現在はより運動強度の高いアプリが増えており、1時間で400〜600kcalの消費も珍しくありません。
+      </p>
+      <p className="text-gray-700 mb-4">
+        VRフィットネスが継続しやすい最大の理由は「ゲームとして楽しいから」です。従来のトレッドミルやエアロバイクと違い、スコア・ランキング・ストーリー進行のモチベーションがあります。メタアナリシス（複数研究の統合分析）でも、VRエクサゲーミングは従来のフィットネスより長期継続率が高いという結果が出ています。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめVRフィットネスアプリTOP5</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          { rank: 1, name: 'Supernatural', type: 'サブスクリプション型（月1,500円〜）', cal: '400〜600kcal/時', desc: '毎日新しいHIITワークアウト動画が配信。実際の絶景を背景にプロコーチが指導。最も本格的なVRフィットネス体験。運動強度が高く、継続率も高い。', note: '日本語未対応・海外クレカ推奨' },
+          { rank: 2, name: 'Beat Saber', type: '買い切り（3,490円）', cal: '300〜500kcal/時', desc: '音楽に合わせてブロックを斬るリズムゲーム。楽しさは最高水準。高難度譜面（ExpertPlus）になるほど運動強度が上がる。カスタム曲追加も可能。', note: 'Quest版で日本語対応あり' },
+          { rank: 3, name: 'FitXR', type: 'サブスクリプション型（月1,200円〜）', cal: '350〜550kcal/時', desc: 'ボクシング・ダンス・HIITの3種類のワークアウトが充実。マルチプレイヤー対応でグループトレーニングも可能。', note: 'アップデートで内容が増え続けている' },
+          { rank: 4, name: 'Thrill of the Fight', type: '買い切り（2,000円程度）', cal: '500〜700kcal/時', desc: 'VRボクシングシミュレーター。リアルな打ち合い動作で上半身全体を使う。消費カロリーはVRフィットネス最上位クラス。', note: '少し古いが今でも人気。激しい動作要' },
+          { rank: 5, name: 'OhShape', type: '買い切り（1,500円程度）', cal: '250〜400kcal/時', desc: '壁に開いた形に合わせてポーズを取るリズムゲーム。全身のストレッチとバランスに効果的。ウォームアップ・クールダウン向き。', note: '初心者・運動不足の方の導入に最適' },
+        ].map(a => (
+          <div key={a.rank} className="bg-white border border-gray-200 rounded-xl p-4">
+            <div className="flex items-start gap-3">
+              <span className="shrink-0 w-7 h-7 bg-violet-100 text-violet-700 font-bold text-sm rounded-full flex items-center justify-center">{a.rank}</span>
+              <div className="flex-1 min-w-0">
+                <p className="font-bold text-gray-800">{a.name}</p>
+                <p className="text-xs text-violet-700 mb-1">{a.type} | 消費カロリー目安：{a.cal}</p>
+                <p className="text-xs text-gray-600 mb-1">{a.desc}</p>
+                <p className="text-xs text-amber-700">※ {a.note}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <AffiliateBtns amzn="Meta Quest 3 VRゴーグル フィットネス" rakuten="VRゴーグル Meta Quest" />
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ゲーム感覚で続けられるワークアウト</h2>
+      <p className="text-gray-700 mb-4">
+        VRフィットネスを3ヶ月継続したユーザーの体験談では「ゲームのスコアを上げることに集中していたら運動になっていた」という感想が多く聞かれます。スコアランキング・デイリーチャレンジ・フレンドとの競争など、ゲーミフィケーション要素が継続の鍵です。
+      </p>
+      <p className="text-gray-700 mb-4">
+        週3〜4回×1回30分の継続で、多くのユーザーが1〜2ヶ月で体重減少・体力向上を実感しています。ジムに通う時間・移動コスト・天候制約がないため、特に多忙なビジネスパーソン・育児中の保護者・地方在住の方に向いています。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VRとジム・ランニングの運動量比較</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-violet-50">
+              <th className="text-left p-3 border border-gray-200">種類</th>
+              <th className="text-left p-3 border border-gray-200">消費カロリー/時</th>
+              <th className="text-left p-3 border border-gray-200">継続しやすさ</th>
+              <th className="text-left p-3 border border-gray-200">コスト</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { type: 'Beat Saber（VR）', cal: '300〜500kcal', cont: '◎ 楽しい', cost: '初期費用3,490円のみ' },
+              { type: 'Supernatural（VR）', cal: '400〜600kcal', cont: '◎ 飽きにくい', cost: '月1,500円〜' },
+              { type: 'ジョギング（8km/h）', cal: '約500kcal', cont: '△ 天候・モチベ依存', cost: 'シューズ代のみ' },
+              { type: 'ジム（筋トレ）', cal: '200〜400kcal', cont: '△ 通う手間', cost: '月5,000〜15,000円' },
+              { type: 'サイクリング（中強度）', cal: '約400kcal', cont: '○', cost: '自転車代' },
+            ].map(r => (
+              <tr key={r.type} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-gray-700">{r.type}</td>
+                <td className="p-3 border border-gray-200">{r.cal}</td>
+                <td className="p-3 border border-gray-200">{r.cont}</td>
+                <td className="p-3 border border-gray-200 text-xs text-gray-600">{r.cost}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">始める前の注意点と必要機材</h2>
+      <p className="text-gray-700 mb-4">
+        VRフィットネスを始める前に準備しておくべきことがあります。まずプレイスペースの確保が必要です。最低でも2m×2mのクリアなスペース（家具・壁から1m以上離れる）が必要で、汗をかいた際の床の滑り防止マットも推奨します。
+      </p>
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-amber-800 mb-3">快適なVRフィットネスに必要なもの</p>
+        <ul className="text-sm text-gray-700 space-y-2">
+          <li>✓ Meta Quest 3本体（74,800円〜）</li>
+          <li>✓ 汗対策フェイスクッション交換品（純正・サードパーティ品 1,500〜3,000円）</li>
+          <li>✓ 滑り防止マット（2,000〜5,000円）</li>
+          <li>✓ タオル・着替え（大量に汗をかきます）</li>
+          <li>✓ 充電しながら使うための延長コード（バッテリー対策）</li>
+        </ul>
+      </div>
+      <p className="text-gray-700 mb-4">
+        VR酔いが心配な方は、最初の1〜2週間は1回15〜20分程度から始め、徐々に延長することをおすすめします。特に移動系のゲーム（シューティング・走るアクション）は酔いやすいため、最初はBeat SaberやOhShapeのような定位置でのゲームから試してみましょう。
+      </p>
+    </article>
+  ),
+
+  'smile-surgery-guide-2026': (
+    <article className="prose prose-sm max-w-none">
+      <p className="text-gray-600 text-base leading-relaxed mb-6">
+        レーシックの次世代術式として注目されているSMILE（スモール インシジョン レンティキュール エクストラクション）。フラップ（角膜の切り開き）を作らず、小さな切開口だけで行う術式です。レーシックとどう違うのか、ドライアイリスクは本当に低いのか、費用は？向いている人は？このガイドで徹底解説します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">SMILEとはどんな手術か</h2>
+      <p className="text-gray-700 mb-4">
+        SMILE（スマイル）は、角膜実質内にフェムト秒レーザーを照射してレンティキュールと呼ばれる小さな角膜組織片を作り、2〜4mm程度の小切開から取り出すことで屈折矯正を行う術式です。レーシックのように角膜表面に大きなフラップを作る必要がないため、角膜神経の切断が少なく、術後のドライアイリスクが低いとされています。
+      </p>
+      <p className="text-gray-700 mb-4">
+        現在日本で行われているSMILEはカールツァイス社の「VisuMax」レーザーシステムを使用する術式（SMILE Pro）が主流です。2023年にSMILE Proが承認されて以来、対応クリニックが増加しています。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">手術の流れ（SMILE vs LASIK）</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-emerald-50">
+              <th className="text-left p-3 border border-gray-200">ステップ</th>
+              <th className="text-left p-3 border border-gray-200">SMILE</th>
+              <th className="text-left p-3 border border-gray-200">レーシック</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { step: '切開', smile: '2〜4mmの小切開のみ', lasik: '20mm超のフラップ作成' },
+              { step: 'レーザー照射', smile: 'フェムト秒レーザー1種', lasik: 'フェムト秒＋エキシマレーザー2種' },
+              { step: '手術時間（両眼）', smile: '約10〜15分', lasik: '約15〜20分' },
+              { step: '術後当日の見え方', smile: '△ やや回復が遅い', lasik: '◎ 翌日から良好' },
+              { step: '角膜神経切断量', smile: '少ない（約10%）', lasik: '多い（約70%）' },
+              { step: 'スポーツ・外傷への強さ', smile: '◎ フラップずれリスクなし', lasik: '△ フラップずれリスクあり' },
+            ].map(r => (
+              <tr key={r.step} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-gray-700">{r.step}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.smile}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.lasik}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ドライアイリスクの比較</h2>
+      <p className="text-gray-700 mb-4">
+        レーシックの主な合併症の一つが術後のドライアイです。フラップ作成時に角膜表面の神経を大きく切断するため、涙液分泌を制御する神経が一時的に機能低下します。多くの場合6〜12ヶ月で回復しますが、一部では長期間ドライアイが続くケースもあります。
+      </p>
+      <p className="text-gray-700 mb-4">
+        SMILEでは切開が小さく角膜神経の切断量がレーシックの約1/7程度とされています。複数の臨床試験では、術後3〜6ヶ月の時点でSMILE群の方がレーシック群よりドライアイ症状が有意に少ないという結果が出ています。元々ドライアイがある方・コンタクト装用でドライアイが悪化している方には、SMILEが特に適しています。
+      </p>
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-blue-800 mb-2">ドライアイリスク比較まとめ</p>
+        <div className="grid grid-cols-3 gap-2 text-center text-xs">
+          {[
+            { method: 'PRK/ASA', risk: '低〜中', note: '表面の術式' },
+            { method: 'SMILE', risk: '低', note: '小切開' },
+            { method: 'レーシック', risk: '中〜高', note: 'フラップあり' },
+          ].map(r => (
+            <div key={r.method} className="bg-white rounded-lg p-2 border border-blue-100">
+              <p className="font-bold text-gray-800">{r.method}</p>
+              <p className="text-blue-700 font-medium">{r.risk}</p>
+              <p className="text-gray-500">{r.note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">費用相場・医療費控除</h2>
+      <p className="text-gray-700 mb-4">
+        SMILEの費用は両眼で35万〜60万円程度です。従来のレーシックが20万〜45万円程度であるため、やや高額です。ただし、医療費控除の対象となる治療であるため、確定申告で還付が受けられます。
+      </p>
+      <div className="bg-green-50 border border-green-200 rounded-xl p-4 mb-6">
+        <p className="font-bold text-green-800 mb-2">医療費控除の計算例</p>
+        <p className="text-sm text-gray-700">SMILE費用：45万円 / 所得税率20%の方の場合</p>
+        <p className="text-sm text-gray-700">還付額目安：(45万円 - 10万円) × 20% = <strong>7万円の税還付</strong></p>
+        <p className="text-xs text-gray-500 mt-1">※ 家族の医療費と合算可。領収書は5年間保管を。</p>
+      </div>
+      <AffiliateBtns amzn="目のサプリ ルテイン 術後 アイケア" rakuten="ルテイン サプリ 目 視力" />
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">向いている人・向いていない人</h2>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        {[
+          { title: 'SMILEが向いている人', items: ['ドライアイが気になる方', 'コンタクトトレランスが低く乾燥感が強い方', 'ラグビー・格闘技等コンタクトスポーツをする方', '-1.00〜-10.00Dの近視（乱視が少ない）方', '従来のレーシックに不安を感じている方'], color: 'border-emerald-200 bg-emerald-50' },
+          { title: 'レーシックまたはICLの方が向いている場合', items: ['強い乱視がある（SMILEは乱視矯正範囲が狭め）', '術後の視力回復を1日でも早くしたい', '費用を少しでも抑えたい', '対応クリニックが近隣にSMILEのみで少ない', '過去に角膜手術歴がある（要適応検査）'], color: 'border-amber-200 bg-amber-50' },
+        ].map(c => (
+          <div key={c.title} className={`border rounded-xl p-4 ${c.color}`}>
+            <p className="font-bold text-gray-800 text-sm mb-2">{c.title}</p>
+            <ul className="text-xs text-gray-700 space-y-1">
+              {c.items.map(i => <li key={i}>・{i}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </article>
+  ),
+
+  'orthokeratology-guide-2026': (
+    <article className="prose prose-sm max-w-none">
+      <p className="text-gray-600 text-base leading-relaxed mb-6">
+        オルソケラトロジー（オルソK・OKレンズ）は、就寝時に特殊なハードコンタクトレンズを装用することで角膜の形状を一時的に変化させ、日中は裸眼で過ごせるようにする近視矯正法です。手術不要・可逆的・子どもの近視進行抑制効果があるとして注目されています。この記事で基礎から費用まで徹底解説します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">オルソケラトロジーとは？</h2>
+      <p className="text-gray-700 mb-4">
+        オルソケラトロジーレンズは、角膜中央部を平坦化するリバースカーブ設計のハードコンタクトレンズです。就寝中（6〜8時間）に装用することで、角膜上皮の細胞が再分配され、翌朝から日中（10〜16時間程度）は裸眼または薄い矯正で過ごせます。
+      </p>
+      <p className="text-gray-700 mb-4">
+        矯正効果は一時的（可逆的）であり、装用をやめると数日〜2週間で角膜が元の形に戻ります。この特性から「手術なしで試せる視力矯正」として、手術を躊躇している方や、子どもの近視進行抑制を目的とする保護者に選ばれています。
+      </p>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-blue-50">
+              <th className="text-left p-3 border border-gray-200">項目</th>
+              <th className="text-left p-3 border border-gray-200">オルソケラトロジー</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { k: '適応近視度数', v: '-1.00D〜-6.00D程度（乱視は-1.50D以内が目安）' },
+              { k: '適応年齢', v: '小学校低学年（7〜8歳）〜大人（年齢上限なし）' },
+              { k: '装用時間', v: '就寝中8〜10時間' },
+              { k: '日中の見え方持続時間', v: '10〜16時間（近視度数による）' },
+              { k: '可逆性', v: 'あり（やめれば元の視力に戻る）' },
+              { k: 'レンズ寿命', v: '1〜2年（定期交換推奨）' },
+            ].map(r => (
+              <tr key={r.k} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-gray-700">{r.k}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.v}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">近視進行抑制効果（子ども向け）</h2>
+      <p className="text-gray-700 mb-4">
+        オルソケラトロジーの最も注目される効果の一つが、<strong>子どもの近視進行抑制</strong>です。複数の臨床研究（LORIC試験・ROMIO試験など）において、オルソKを装用した子ども群は対照群と比べて眼軸長（目の奥行き）の伸長が30〜50%抑制されたという報告があります。
+      </p>
+      <p className="text-gray-700 mb-4">
+        近視は眼軸が長くなることで進行し、強度近視は将来的に緑内障・網膜剥離・近視性黄斑変性症のリスクを高めます。早い段階で進行を抑えることが、将来の失明リスク低減につながります。日本眼科学会もオルソケラトロジーを近視進行抑制の選択肢の一つとして認めています。
+      </p>
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-blue-800 mb-2">近視進行抑制が特に期待される対象</p>
+        <ul className="text-sm text-gray-700 space-y-1">
+          <li>• 近視の進行が速い（年間-0.5D以上悪化）お子さん</li>
+          <li>• 両親ともに強度近視がある家族背景</li>
+          <li>• 屋外活動が少なく、デジタル機器の使用時間が長い</li>
+          <li>• -1.00D〜-4.00D程度の中等度以内の近視</li>
+        </ul>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">レーシック・ICLとの比較</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-blue-50">
+              <th className="text-left p-3 border border-gray-200">比較項目</th>
+              <th className="text-left p-3 border border-gray-200">オルソK</th>
+              <th className="text-left p-3 border border-gray-200">レーシック</th>
+              <th className="text-left p-3 border border-gray-200">ICL</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { k: '手術の有無', ok: '不要', lasik: 'あり', icl: 'あり' },
+              { k: '可逆性', ok: 'あり', lasik: 'なし', icl: 'あり（レンズ除去可）' },
+              { k: '近視進行抑制', ok: '◎ あり', lasik: '✗ なし', icl: '✗ なし' },
+              { k: '適応年齢下限', ok: '7〜8歳から', lasik: '18〜20歳から', icl: '18〜20歳から' },
+              { k: '費用（両眼）', ok: '8〜15万円（初年）', lasik: '20〜45万円', icl: '50〜80万円' },
+              { k: '強度近視への対応', ok: '△ -6D程度まで', lasik: '○ -12D程度', icl: '◎ -18D程度' },
+            ].map(r => (
+              <tr key={r.k} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-gray-700">{r.k}</td>
+                <td className="p-3 border border-gray-200 text-blue-700">{r.ok}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.lasik}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.icl}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">費用と保険適用</h2>
+      <p className="text-gray-700 mb-4">
+        オルソケラトロジーは自由診療（保険適用外）です。初年度の費用は両眼でレンズ代・検査料・定期検診込みで8万〜15万円程度が目安です。2年目以降は年間の定期検査費用（2〜4万円程度）とレンズ交換費用がかかります。
+      </p>
+      <p className="text-gray-700 mb-4">
+        医療費控除の対象となるため、年間の医療費が10万円を超えた場合（家族合算可）、確定申告で還付を受けられます。子どもに処方した場合でも、親の医療費として合算できます。
+      </p>
+      <AffiliateBtns amzn="コンタクト ハード ケア用品 洗浄液" rakuten="ハードコンタクト ケア用品 洗浄液" />
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">向いている人・デメリット</h2>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        {[
+          { title: '向いている人', items: ['近視が進行中の学童〜高校生', '日中コンタクトも眼鏡も使いたくない（スイミング・スポーツ選手）', 'レーシックの手術に不安を感じている', '-1.00〜-6.00D以内の近視', '可逆的な治療を希望'], color: 'border-blue-200 bg-blue-50' },
+          { title: 'デメリット・注意点', items: ['毎晩レンズを装用する習慣が必要', '強度近視（-6D超）や強い乱視は適応外', '就寝中の感染リスク（厳格なケアが必要）', '慣れるまで2〜4週間は視力がムラになる', '対応している眼科が限られる'], color: 'border-amber-200 bg-amber-50' },
+        ].map(c => (
+          <div key={c.title} className={`border rounded-xl p-4 ${c.color}`}>
+            <p className="font-bold text-gray-800 text-sm mb-2">{c.title}</p>
+            <ul className="text-xs text-gray-700 space-y-1">
+              {c.items.map(i => <li key={i}>・{i}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </article>
+  ),
+
+  'me-juketsu-taisaku-guide': (
+    <article className="prose prose-sm max-w-none">
+      <p className="text-gray-600 text-base leading-relaxed mb-6">
+        目の充血は「白目の部分が赤くなる」症状で、多くの人が経験します。原因は多岐にわたり、単純な疲れ目から重篤な疾患のサインまで様々です。特にコンタクトレンズ装用者は充血が起きやすいため、正しい対処法を知っておくことが重要です。この記事では充血の種類・原因・対策と目薬の選び方を詳しく解説します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">充血の種類と主な原因</h2>
+      <p className="text-gray-700 mb-4">
+        目の充血は大きく「結膜充血」と「毛様充血」の2種類に分けられます。一般的な充血（疲れ目・ドライアイ・アレルギー）の多くは結膜充血です。
+      </p>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        {[
+          { type: '結膜充血', color: '目の周辺部が赤い', causes: ['疲れ目・睡眠不足', 'ドライアイ', 'アレルギー性結膜炎', 'コンタクトレンズの長時間装用', '異物・ほこり・刺激物'], note: '多くの場合は休息・目薬で改善' },
+          { type: '毛様充血', color: '角膜周辺に深い赤みがある', causes: ['虹彩炎・ぶどう膜炎', '緑内障発作', '角膜炎（感染）', '外傷'], note: '痛みを伴う場合は要眼科受診' },
+        ].map(t => (
+          <div key={t.type} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-gray-800 text-sm mb-1">{t.type}</p>
+            <p className="text-xs text-red-600 mb-2">特徴：{t.color}</p>
+            <ul className="text-xs text-gray-700 space-y-1 mb-2">
+              {t.causes.map(c => <li key={c}>・{c}</li>)}
+            </ul>
+            <p className="text-xs text-amber-700">{t.note}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">コンタクト装用中の充血対策</h2>
+      <p className="text-gray-700 mb-4">
+        コンタクト装用中の充血は「低酸素状態」と「機械的刺激」が主な原因です。角膜は空気から直接酸素を取り込んでいるため、酸素透過率の低いレンズを長時間使用すると角膜が酸素不足になり充血が起きます。
+      </p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+        <li><strong>装用時間を守る：</strong>1日8〜10時間を目安に、就寝時は必ず外す</li>
+        <li><strong>シリコーンハイドロゲルレンズに変更：</strong>酸素透過性が高く充血しにくい</li>
+        <li><strong>2weekやマンスリーはこすり洗い徹底：</strong>タンパク汚れが充血を引き起こす</li>
+        <li><strong>ドライアイ対策：</strong>コンタクト対応人工涙液でこまめに潤す</li>
+        <li><strong>装用日数をカレンダーで管理：</strong>2weekを3週間使うのは厳禁</li>
+      </ul>
+      <p className="text-gray-700 mb-4">
+        コンタクト装用中に充血が始まったら、まずレンズを外して休憩しましょう。充血が収まったら再装用できますが、再度充血する場合はその日は眼鏡で過ごすことをおすすめします。
+      </p>
+      <AffiliateBtns amzn="目薬 充血 コンタクト 人工涙液" rakuten="目薬 充血除去 コンタクト OK" />
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">疲れ目・ドライアイによる充血</h2>
+      <p className="text-gray-700 mb-4">
+        現代人の充血の最多原因は「デジタル眼疲労（デジタルアイストレイン）」です。スマートフォン・PC作業中は瞬きが通常の1/3程度に減り、涙液が蒸発してドライアイ→充血が起きます。
+      </p>
+      <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-cyan-800 mb-3">疲れ目充血の予防法（20-20-20ルール）</p>
+        <p className="text-sm text-gray-700">PCやスマホを<strong>20分</strong>使ったら、<strong>20フィート（約6m）</strong>先を<strong>20秒間</strong>見る。</p>
+        <p className="text-sm text-gray-700 mt-2">この習慣で毛様体筋の緊張がほぐれ、ドライアイや眼精疲労による充血を予防できます。</p>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">充血に効く目薬の選び方</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          { type: '充血除去成分入り目薬', eg: 'ロートVアクティブ・アイリスCT', effect: '即効性あり・血管を収縮させて赤みを取る', caution: '連続使用で反跳充血（かえって悪化）リスク。週2〜3回以内が目安' },
+          { type: '抗アレルギー目薬', eg: 'アレジオン点眼液（処方）・ロートアルガード', effect: '花粉症・アレルギー性結膜炎の充血に◎', caution: '定期的に1日数回さして予防効果を維持' },
+          { type: '人工涙液（防腐剤フリー）', eg: 'ソフトサンティア・ヒアレイン点眼液（処方）', effect: 'ドライアイ由来の充血に◎・安全性が高く何度でも使える', caution: 'コンタクト装用中でも使いやすい。即効性は低め' },
+          { type: 'ビタミン入り疲れ目目薬', eg: 'サンテFX・ロートアイサプリ', effect: '疲れ目全般に。充血除去成分との組み合わせ商品も', caution: 'コンタクト装用中は「コンタクト対応」表示のものを選ぶ' },
+        ].map(t => (
+          <div key={t.type} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-gray-800 text-sm">{t.type}</p>
+            <p className="text-xs text-blue-700 mb-1">例：{t.eg}</p>
+            <p className="text-xs text-green-700 mb-1">効果：{t.effect}</p>
+            <p className="text-xs text-red-600">注意：{t.caution}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">眼科受診が必要なサイン</h2>
+      <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+        <p className="font-bold text-red-800 mb-2">こんな症状があったら、すぐに眼科へ</p>
+        <ul className="text-sm text-gray-700 space-y-1">
+          <li>🚨 強い目の痛み・刺激感（感染性角膜炎の可能性）</li>
+          <li>🚨 視力が急に低下した（網膜・角膜の問題）</li>
+          <li>🚨 大量の目やに・分泌物（感染症）</li>
+          <li>🚨 光がまぶしくて目を開けられない（虹彩炎等）</li>
+          <li>🚨 1週間以上充血が続く・悪化している</li>
+          <li>🚨 コンタクト装用中に突然の充血と激しい痛み（緑膿菌感染等のリスク）</li>
+        </ul>
+      </div>
+      <p className="text-gray-700 mb-4">
+        特にコンタクト装用中の「突然の激しい痛み＋充血」は角膜炎の緊急サインです。放置すると角膜潰瘍・最悪の場合失明につながるリスクがあります。すぐにコンタクトを外して眼科または救急眼科外来を受診してください。
+      </p>
+    </article>
+  ),
+
+  'sunglass-polarized-guide': (
+    <article className="prose prose-sm max-w-none">
+      <p className="text-gray-600 text-base leading-relaxed mb-6">
+        サングラスを選ぶとき「偏光レンズ」という言葉を見かけたことはありませんか？価格が通常品より高い偏光サングラスには、釣り・ドライブ・スキーなど特定の用途で圧倒的な効果があります。この記事では偏光レンズの仕組み・通常サングラスとの違い・用途別のおすすめを徹底解説します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">偏光レンズの仕組み</h2>
+      <p className="text-gray-700 mb-4">
+        光は空気中では様々な方向に振動しながら進みますが、水面・道路・雪・ガラス等のなめらかな面に当たると「水平方向に振動する光」として反射されます。これが「グレア（眩しい反射光）」です。偏光レンズは水平方向に振動する光だけをカットする特殊フィルターが内蔵されており、反射光（グレア）を選択的に除去します。
+      </p>
+      <div className="bg-sky-50 border border-sky-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-sky-800 mb-3">偏光レンズが特に効果を発揮する場面</p>
+        <div className="grid grid-cols-2 gap-3">
+          {[
+            { scene: '水面（釣り・マリンスポーツ）', effect: '水面の反射をカット→水中が透けて見える' },
+            { scene: '雨濡れた道路（ドライブ）', effect: 'アスファルトの反射光を除去→眩しさ激減' },
+            { scene: '雪山（スキー・スノーボード）', effect: '雪からの強烈な反射光をカット' },
+            { scene: 'ガラス越し（釣り堀・水族館）', effect: 'ガラス反射を減らして内側が見やすい' },
+          ].map(s => (
+            <div key={s.scene} className="bg-white rounded-lg p-3 border border-sky-100">
+              <p className="font-bold text-gray-800 text-xs mb-1">{s.scene}</p>
+              <p className="text-xs text-gray-600">{s.effect}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">通常サングラスとの違い</h2>
+      <p className="text-gray-700 mb-4">
+        通常のサングラスは「光の量を全体的に減らす」機能があります。UV（紫外線）カットや可視光線透過率の調整はできますが、反射光だけを選択的に除去することはできません。一方、偏光レンズは反射光を選択的にカットするため、全体的に暗くなるのではなく「眩しさだけが消える」という独特の効果があります。
+      </p>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-sky-50">
+              <th className="text-left p-3 border border-gray-200">比較項目</th>
+              <th className="text-left p-3 border border-gray-200">通常サングラス</th>
+              <th className="text-left p-3 border border-gray-200">偏光サングラス</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { k: 'UVカット', normal: '○（UVカット品）', polar: '◎（ほぼ全品）' },
+              { k: '反射光（グレア）カット', normal: '✗', polar: '◎' },
+              { k: '水中・路面が見やすい', normal: '✗', polar: '◎' },
+              { k: '価格', normal: '1,000〜20,000円', polar: '5,000〜80,000円' },
+              { k: 'スマホ画面との相性', normal: '○', polar: '△（角度によって暗くなる）' },
+              { k: '日常使い（街中）', normal: '◎', polar: '○' },
+            ].map(r => (
+              <tr key={r.k} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-gray-700">{r.k}</td>
+                <td className="p-3 border border-gray-200">{r.normal}</td>
+                <td className="p-3 border border-gray-200 text-sky-700 font-medium">{r.polar}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">用途別おすすめ（釣り・ドライブ・アウトドア）</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          { use: '🎣 釣り', lens: 'グリーン系偏光・コパー（銅色）系', brands: 'ZEAL OPTICS（ジールオプティクス）・Oakley・DAIWA', note: '水中の魚・底の地形が見える。グリーンは自然光で視認性が高く、コパーは曇り日に効果的。' },
+          { use: '🚗 ドライブ・長距離運転', lens: 'グレー系・ブラウン系偏光', brands: 'Ray-Ban偏光・Maui Jim・SWANS', note: '雨の路面・対向車のヘッドライトが眩しくない。色の見え方が自然なグレーが人気。' },
+          { use: '⛷ スキー・スノーボード', lens: '偏光+オレンジ or ローズ系', brands: 'OAKLEY PRIZM Snow・Smith・Giro', note: '雪の白さを和らげつつコントラストを強調。吹雪でも視界が確保しやすい。' },
+          { use: '🏃 ランニング・サイクリング', lens: 'ライトグレー偏光・イエロー偏光', brands: 'OAKLEY・adidas Sport・100% Speedcraft', note: '速い動きに対応するフレームの安定性も重要。鼻パッドのフィット感を確認。' },
+        ].map(u => (
+          <div key={u.use} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-gray-800 mb-1">{u.use}</p>
+            <p className="text-xs text-sky-700 mb-1">おすすめレンズカラー：{u.lens}</p>
+            <p className="text-xs text-violet-700 mb-1">代表ブランド：{u.brands}</p>
+            <p className="text-xs text-gray-600">{u.note}</p>
+          </div>
+        ))}
+      </div>
+      <AffiliateBtns amzn="偏光サングラス 釣り ドライブ おすすめ" rakuten="偏光サングラス 釣り スポーツ" />
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">偏光サングラスの選び方</h2>
+      <p className="text-gray-700 mb-4">
+        偏光サングラスを選ぶ際は「偏光度」を確認しましょう。偏光度は99%以上が理想で、一般的な偏光サングラスは偏光度98〜99.9%です。安価な商品では偏光フィルターが薄く、グレアカット効果が不十分な場合があります。
+      </p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+        <li><strong>偏光度99%以上：</strong>グレアカット効果が高い（5,000円以上の製品で多い）</li>
+        <li><strong>UVカット：</strong>UV400（400nm以下の紫外線を99%以上カット）表示を確認</li>
+        <li><strong>レンズカラー：</strong>グレー（色の歪みなし）、ブラウン/コパー（コントラスト強調）、グリーン（自然な視界）から用途で選ぶ</li>
+        <li><strong>フレームの安定性：</strong>スポーツ用途はラバーノーズパッドや滑り止めが付いているものを</li>
+        <li><strong>度付き対応：</strong>近視の方は度付き偏光レンズへの交換サービスがあるショップを選ぶ</li>
+      </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">度付き偏光サングラスという選択肢</h2>
+      <p className="text-gray-700 mb-4">
+        近視・乱視がある方も、度付き偏光レンズを使うことでコンタクトなしで偏光サングラスの恩恵を受けられます。JINS・Zoff・眼鏡市場では度付き偏光レンズへの交換サービスを行っており、5,000〜15,000円程度でレンズ交換が可能です。
+      </p>
+      <p className="text-gray-700 mb-4">
+        コンタクトを装用して通常サングラスをかけるのが最もシンプルですが、海・プール・マリンスポーツではコンタクトの流失リスクがあります。このような場面では度付き偏光サングラスが最も安全で快適な選択肢です。
+      </p>
     </article>
   ),
 };

@@ -16,7 +16,7 @@ import * as path from 'path';
 
 // ---- 型定義 ----
 
-type Section = 'contact' | 'eye-care' | 'lasik' | 'megane' | 'vr';
+type Section = 'contact' | 'eye-care' | 'lasik' | 'megane' | 'vr' | 'karakon';
 
 interface ContentLogEntry {
   slug: string;
@@ -39,6 +39,40 @@ interface GeneratedColumn {
   keywords: string[];
   faqs: Array<{ q: string; a: string }>;
   content: string;
+}
+
+// ---- Markdown → JSX 変換 ----
+
+function markdownToJSX(text: string): string {
+  const lines = text.split('\n');
+  const out: string[] = [];
+  let inUl = false;
+
+  const flush = () => { if (inUl) { out.push('      </ul>'); inUl = false; } };
+  const escape = (s: string) =>
+    s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">$1</a>');
+
+  for (const raw of lines) {
+    const line = raw.trimEnd();
+    if (line.startsWith('## ')) {
+      flush();
+      out.push(`      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">${escape(line.slice(3))}</h2>`);
+    } else if (line.startsWith('### ')) {
+      flush();
+      out.push(`      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">${escape(line.slice(4))}</h3>`);
+    } else if (line.startsWith('- ') || line.startsWith('* ')) {
+      if (!inUl) { out.push('      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">'); inUl = true; }
+      out.push(`        <li>${escape(line.slice(2))}</li>`);
+    } else if (line.trim() === '') {
+      flush();
+    } else {
+      flush();
+      out.push(`      <p className="text-gray-700 mb-4">${escape(line)}</p>`);
+    }
+  }
+  flush();
+  return out.join('\n');
 }
 
 // ---- セクション別キーワードプール ----
@@ -104,6 +138,18 @@ const SECTION_TOPICS: Record<Section, string[]> = {
     'メガネ 子ども用 選び方・強化プラスチックレンズ',
     'グレアレンズ 眩しさ対策 夜間運転に最適なレンズ',
   ],
+  karakon: [
+    'カラコン 度あり 近視・乱視対応 選び方2026',
+    'カラコン 長時間装用 乾燥しにくい おすすめ',
+    'カラコン ナチュラル系 職場OK バレない選び方',
+    '韓国カラコン 日本正規品 安全な通販',
+    'カラコン 高校生・大学生 初めての選び方',
+    'カラコン ハーフ系 ブラウン グレー おすすめ',
+    'カラコン UVカット 機能性 比較2026',
+    'カラコン 乱視用 度あり おすすめブランド',
+    'カラコン 着色直径 サイズ別 効果の違い',
+    'カラコン ケア用品 正しい洗浄方法',
+  ],
 };
 
 const SECTION_AFFILIATE_KEYWORDS: Record<Section, { amzn: string; rakuten: string }> = {
@@ -112,6 +158,7 @@ const SECTION_AFFILIATE_KEYWORDS: Record<Section, { amzn: string; rakuten: strin
   'eye-care': { amzn: '目薬 ドライアイ', rakuten: '目薬' },
   lasik: { amzn: '目のサプリ ルテイン', rakuten: 'アイケア サプリ' },
   megane: { amzn: 'メガネ ブルーライトカット', rakuten: 'メガネ フレーム' },
+  karakon: { amzn: 'カラコン ワンデー おすすめ', rakuten: 'カラコン 日本製 ワンデー' },
 };
 
 // ---- 重複チェック ----
@@ -251,14 +298,12 @@ ${faqsCode}
 }
 
 function buildColumnContentCode(col: GeneratedColumn): string {
-  const escaped = col.content
-    .replace(/`/g, '\\`')
-    .replace(/\$\{/g, '\\${');
+  const jsxBody = markdownToJSX(col.content);
 
   return `  ${JSON.stringify(col.slug)}: (
-    <div className="prose max-w-none">
-      <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">{\`${escaped}\`}</div>
-    </div>
+    <article className="prose prose-sm max-w-none">
+${jsxBody}
+    </article>
   )`;
 }
 
@@ -290,6 +335,22 @@ function appendToColumns(col: GeneratedColumn): void {
 
   fs.writeFileSync(filePath, src, 'utf-8');
   console.log(`✓ Added to columns.tsx: ${col.slug}`);
+}
+
+function appendToKarakonColumns(col: GeneratedColumn): void {
+  const filePath = path.join(__dirname, '../lib/karakon-columns.tsx');
+  let src = fs.readFileSync(filePath, 'utf-8');
+
+  // karakonColumns配列末尾に追加
+  const entryCode = buildColumnEntryCode(col);
+  src = src.replace(/(\];\s*\n\/\/ ─── 記事コンテンツ)/, `  ${entryCode},\n$1`);
+
+  // karakonColumnContent末尾（};の直前）に追加
+  const contentCode = buildColumnContentCode(col);
+  src = src.replace(/^(\};)$/m, `  ${contentCode},\n$1`);
+
+  fs.writeFileSync(filePath, src, 'utf-8');
+  console.log(`✓ Added to karakon-columns.tsx: ${col.slug}`);
 }
 
 // ---- メイン ----
@@ -325,6 +386,8 @@ async function main() {
       updated.slug = slugArg;
       if (['vr', 'eye-care', 'lasik', 'megane'].includes(existing.section)) {
         appendToEyeColumns(updated);
+      } else if (existing.section === 'karakon') {
+        appendToKarakonColumns(updated);
       } else {
         appendToColumns(updated);
       }
@@ -354,6 +417,8 @@ async function main() {
 
   if (['vr', 'eye-care', 'lasik', 'megane'].includes(targetSection)) {
     appendToEyeColumns(col);
+  } else if (targetSection === 'karakon') {
+    appendToKarakonColumns(col);
   } else {
     appendToColumns(col);
   }

@@ -412,6 +412,26 @@ export const columns: ColumnMeta[] = [
     readingTime: 6,
     headings: ['なぜコンタクトとメガネで度数が違うのか', '頂点間距離とは', '度数換算の目安表', '自分に合った度数の選び方', '度数が合わないサインと対処法'],
   },
+  {
+    slug: 'kafunsho-contact-guide',
+    title: '花粉症シーズンのコンタクトレンズ対策ガイド【目のかゆみ・充血を防ぐ方法2026】',
+    description: '花粉症のシーズンにコンタクトを安全に使うための対策を解説。かゆみ・充血・乾燥の対処法、目薬の選び方、ワンデーへの切り替えメリット。',
+    category: '購入ガイド',
+    publishedAt: '2026-07-17',
+    updatedAt: '2026-07-17',
+    readingTime: 7,
+    headings: ['花粉症でコンタクトが危険になる理由', '花粉症シーズンのコンタクト選び', '対症目薬の選び方', 'ワンデーへの切り替えメリット', '花粉を室内に持ち込まない工夫'],
+  },
+  {
+    slug: 'enkintsuyo-contact-guide',
+    title: '遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026',
+    description: '40代から始まる老眼とコンタクトの関係、遠近両用コンタクトの仕組み（同時視・交互視）、おすすめブランド、慣れるまでのコツを解説。',
+    category: '商品比較',
+    publishedAt: '2026-07-17',
+    updatedAt: '2026-07-17',
+    readingTime: 8,
+    headings: ['老眼とコンタクトの関係', '遠近両用コンタクトの仕組み', 'ワンデーvs月ケア型の比較', 'おすすめブランド・シリーズ比較', '慣れるまでのコツと注意点'],
+  },
 ];
 
 export function getColumnBySlug(slug: string): ColumnMeta | undefined {
@@ -5919,6 +5939,252 @@ export const columnContent: Record<string, React.ReactNode> = {
             { q: '眼鏡の度数をそのままコンタクトに使っても問題ありませんか？', a: '軽度近視（-3.00D以下）では大きな差が出ないため問題ないことが多いです。ただし強度近視（-4.00D以上）では眼鏡より弱い度数のコンタクトが適切です。また眼科での角膜状態チェックを省略することになるため、定期受診は続けてください。' },
             { q: 'コンタクトの度数を1段階強くすると見えすぎる問題がありますか？', a: 'はい、コンタクトの度数が強すぎると「過矯正」の状態になり、目が疲れやすくなります。特に近距離作業（PC・スマホ）が多い方は、やや弱めの度数の方が目への負担が少ない場合があります。眼科でライフスタイルに合わせた処方を相談してみてください。' },
             { q: '左右で度数が違う場合、コンタクトも左右別の度数が必要ですか？', a: 'はい、左右で度数が異なる場合は、それぞれの目に合った度数のコンタクトを使います。通販で購入する際も左右別々に度数を選択します。「左右同じ度数のものが安い」からと統一してしまうと、見え方が悪くなります。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'kafunsho-contact-guide': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        花粉症の季節になると、コンタクトレンズ装用者はかゆみ・充血・乾燥といったつらい症状に悩まされます。花粉はレンズの表面に付着しやすく、炎症を引き起こす原因となるため、適切な対策が必要です。この記事では、花粉症シーズンにコンタクトを安全に使い続けるための具体的な方法をまとめました。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">花粉症でコンタクトが危険になる理由</h2>
+      <p className="text-gray-700 mb-4">
+        コンタクトレンズは、空気中の花粉や化学物質を表面に捕集します。花粉がレンズに付着したまま長時間装用すると、角膜や結膜への継続的な刺激が生じ、アレルギー性結膜炎が悪化するリスクが高まります。目のかゆみで無意識に目をこすることで角膜を傷つける危険もあります。
+      </p>
+      <p className="text-gray-700 mb-4">
+        特にソフトコンタクトレンズは花粉を吸着しやすい素材特性があります。2weekや月ケア型のレンズは蓄積された花粉を十分に落とせないことがあり、毎日交換するワンデーと比べてリスクが高いとされています。花粉症の方はシーズン中のレンズ選択が重要です。
+      </p>
+      <div className="bg-red-50 border-l-4 border-red-400 p-4 mb-6 rounded">
+        <p className="font-bold text-red-800 mb-1">花粉症×コンタクトで起こりやすい症状</p>
+        <ul className="text-sm text-gray-700 space-y-1">
+          <li>• 目のかゆみ・ゴロゴロ感（アレルギー性結膜炎）</li>
+          <li>• 充血・まぶたの腫れ</li>
+          <li>• 乾燥感・ドライアイの悪化</li>
+          <li>• 視力の一時的なぼやけ（レンズへの花粉付着）</li>
+          <li>• 巨大乳頭結膜炎（GPC）のリスク増加</li>
+        </ul>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">花粉症シーズンのコンタクト選び</h2>
+      <p className="text-gray-700 mb-4">
+        花粉症シーズンに最も推奨されるのは<strong>ワンデータイプ（1日使い捨て）</strong>への切り替えです。毎日新しいレンズを使うため、花粉が蓄積しません。外出から帰宅後すぐにレンズを捨て、眼鏡に切り替えることで目への刺激を最小限に抑えられます。
+      </p>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-amber-50">
+              <th className="text-left p-3 border border-gray-200">レンズタイプ</th>
+              <th className="text-left p-3 border border-gray-200">花粉症への影響</th>
+              <th className="text-left p-3 border border-gray-200">対策</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { type: 'ワンデー（1日使い捨て）', impact: '◎ 最も安全', action: '帰宅後即廃棄でOK' },
+              { type: '2week交換', impact: '△ 花粉が蓄積しやすい', action: '毎日こすり洗い必須・シーズン中はワンデーへ' },
+              { type: '月ケア（マンスリー）', impact: '✗ 最もリスク高い', action: 'シーズン中はワンデーへ一時切替を推奨' },
+            ].map(r => (
+              <tr key={r.type} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.type}</td>
+                <td className="p-3 border border-gray-200">{r.impact}</td>
+                <td className="p-3 border border-gray-200 text-xs text-gray-600">{r.action}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-gray-700 mb-4">
+        素材選びも重要です。シリコーンハイドロゲル素材（アキュビュー オアシス 1-Day、デイリーズ トータル1 など）は酸素透過率が高く、乾燥しにくいため、花粉症シーズンの乾燥感を軽減します。従来のヒドロゲル素材と比べ、花粉の吸着量が少ないという研究結果もあります。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">対症目薬の選び方</h2>
+      <p className="text-gray-700 mb-4">
+        花粉症の目のかゆみには、<strong>抗アレルギー点眼薬</strong>が有効です。市販薬と処方薬で成分が異なります。コンタクト装用中に使える目薬かどうかを必ず確認してください。
+      </p>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        {[
+          { cat: '処方薬（眼科）', items: ['ザジテン点眼液（ケトチフェン）', 'パタノール（オロパタジン）', 'アレジオン点眼液（エピナスチン）'], note: 'コンタクト装用中は使用後5分以上待ってから装用' },
+          { cat: '市販薬', items: ['アイリスCL（コンタクト専用）', 'ロートアルガード コンタクトa', 'クリアデュー ハイドロ'], note: '「コンタクト装用中OK」の表示を確認' },
+        ].map(c => (
+          <div key={c.cat} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-gray-800 text-sm mb-2">{c.cat}</p>
+            <ul className="text-xs text-gray-700 space-y-1 mb-2">
+              {c.items.map(i => <li key={i}>・{i}</li>)}
+            </ul>
+            <p className="text-xs text-amber-700">{c.note}</p>
+          </div>
+        ))}
+      </div>
+      <p className="text-gray-700 mb-4">
+        防腐剤（塩化ベンザルコニウム）を含む目薬はコンタクト装用中の使用を避けてください。防腐剤がレンズに蓄積し、角膜障害を引き起こす可能性があります。「防腐剤フリー」または「コンタクト装用中可」の表示があるものを選びましょう。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ワンデーへの切り替えメリット</h2>
+      <p className="text-gray-700 mb-4">
+        花粉症シーズンの2月〜4月の3ヶ月間だけワンデーに切り替えるという方法は、非常に合理的です。年間を通じて2weekを使っている場合でも、シーズン中だけワンデーにすることで眼科での定期検査費用や目薬代を節約できる可能性があります。
+      </p>
+      <div className="bg-green-50 border border-green-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-green-800 mb-3">ワンデー切り替えのメリット</p>
+        <ul className="text-sm text-gray-700 space-y-2">
+          <li>✓ 花粉の蓄積ゼロ：毎日新品レンズで清潔</li>
+          <li>✓ ケア用品不要：旅行・外出先でも楽ちん</li>
+          <li>✓ 帰宅後すぐ外せる：眼鏡との併用がしやすい</li>
+          <li>✓ アレルギー性結膜炎のリスク軽減</li>
+          <li>✓ 乾燥しにくいプレミアムワンデーも選択肢に</li>
+        </ul>
+      </div>
+      <p className="text-gray-700 mb-4">
+        コスト面では、ワンデーは2weekより1日あたりの単価が高くなります。しかし花粉症シーズンに目のトラブルで眼科を受診する手間・費用を考えると、ワンデーを使う方が総合的にはコストパフォーマンスが良いケースも多いです。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">花粉を室内に持ち込まない工夫</h2>
+      <p className="text-gray-700 mb-4">
+        コンタクトの選択だけでなく、生活習慣の見直しも花粉症対策に効果的です。外出から帰宅したら、まず玄関でコートを脱ぎ、洗顔・手洗いをすることで室内への花粉の持ち込みを防ぎます。
+      </p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+        <li>帰宅後すぐにコンタクトを外し、眼鏡に切り替える</li>
+        <li>外出時はラップタイプのサングラスや花粉対策眼鏡を装用</li>
+        <li>洗顔時はぬるま湯で丁寧に目の周りも洗い流す</li>
+        <li>就寝前はホットアイマスクで目元を温め、血行促進・癒し効果を</li>
+        <li>空気清浄機を寝室・リビングに設置する</li>
+        <li>花粉飛散量の多い日は外出を控え、窓・ドアを閉めておく</li>
+      </ul>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '花粉症シーズン中はコンタクトをやめた方がいいですか？', a: '必ずしも全員がやめる必要はありませんが、目のかゆみや充血が強い場合は眼科医に相談のうえ、症状が落ち着くまで眼鏡に切り替えることを推奨します。ワンデーに変更して目薬を正しく使えば多くの方がシーズンを乗り越えられます。' },
+            { q: '花粉症の目薬はコンタクトを外してからさす必要がありますか？', a: 'コンタクト対応と表示されていない目薬はレンズを外してからさします。コンタクト対応の目薬でも、さした直後はレンズが曇ることがあるため、5分程度おいてから装用するのが安全です。処方の抗アレルギー点眼薬は眼科の指示に従ってください。' },
+            { q: 'コンタクト装用中に目がかゆくなったらどうすればいいですか？', a: 'まずレンズを外してください。こすらずに人工涙液（コンタクト対応）で目を洗い流します。かゆみが続く場合はコンタクト対応の抗アレルギー目薬をさし、症状が強い場合は眼科を受診してください。花粉症シーズン中は無理に装用し続けることで角膜炎のリスクがあります。' },
+            { q: '花粉症でコンタクトを使うときの最低限のルールは？', a: '①ワンデーへの切り替えを検討する ②装用時間を短くする（1日8時間以内）③帰宅後はすぐに外す ④コンタクト対応の抗アレルギー目薬を使う ⑤かゆくても絶対に目をこすらない の5つが基本です。' },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
+              </summary>
+              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  ),
+
+  'enkintsuyo-contact-guide': (
+    <div className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        40代を過ぎると多くの方が「近くが見づらい」老眼を経験します。コンタクトレンズを使ってきた方にとって、老眼が加わることでレンズ選びが複雑になります。遠近両用コンタクトレンズは、遠くも近くも1枚のレンズで見えるように設計された製品です。この記事では仕組みから選び方、慣れるまでのコツまで詳しく解説します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">老眼とコンタクトの関係</h2>
+      <p className="text-gray-700 mb-4">
+        老眼（老視）は、目のレンズ（水晶体）の柔軟性が加齢とともに低下し、近くにピントが合いにくくなる状態です。通常40歳前後から始まり、60代までゆっくりと進行します。近視があってコンタクトで遠くを矯正している方は、レンズを装用したまま近くを見ようとしてもピントが合わず不便を感じるようになります。
+      </p>
+      <p className="text-gray-700 mb-4">
+        対策としては①コンタクトの上から老眼鏡をかける ②利き目用と近方用でモノビジョン処方にする ③遠近両用コンタクトを使う の3つがあります。眼鏡なしで過ごしたい方には遠近両用コンタクトが最も自然な選択肢です。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">遠近両用コンタクトの仕組み</h2>
+      <p className="text-gray-700 mb-4">
+        遠近両用コンタクトレンズには主に2つの光学設計があります。
+      </p>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        {[
+          { name: '同時視（同時視型）', desc: '遠用・近用ゾーンが同心円状に配置され、脳が必要な距離の像を自動選択する。最も普及している設計。慣れれば快適だが慣れるまで時間がかかることも。', brands: 'アキュビュー バイフォーカル、デイリーズ AquaComfort Plus マルチフォーカルなど' },
+          { name: '交互視（モノビジョン）', desc: '利き目を遠用、非利き目を近用に処方する方法。脳への訓練が必要で奥行き感が変わることがある。', brands: '通常のシングルビジョンレンズを用途別に使い分け' },
+        ].map(c => (
+          <div key={c.name} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-gray-800 text-sm mb-2">{c.name}</p>
+            <p className="text-xs text-gray-600 mb-2">{c.desc}</p>
+            <p className="text-xs text-blue-700">代表: {c.brands}</p>
+          </div>
+        ))}
+      </div>
+      <p className="text-gray-700 mb-4">
+        同時視型の場合、遠くを見るときは瞳孔を通る光の中心部（遠用ゾーン）を、近くを見るときは周辺部（近用ゾーン）を自動的に使います。明るい環境では瞳孔が小さくなるため遠くが鮮明に、暗い環境では瞳孔が開くため近くも見えやすくなります。この仕組みに脳が適応するまで、1〜2週間程度かかることがあります。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ワンデーvs月ケア型の比較</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-blue-50">
+              <th className="text-left p-3 border border-gray-200">項目</th>
+              <th className="text-left p-3 border border-gray-200">ワンデー（1日使い捨て）</th>
+              <th className="text-left p-3 border border-gray-200">2week/マンスリー</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { item: '衛生面', oneday: '◎ 毎日新品', monthly: '○ ケアが必要' },
+              { item: 'コスト', oneday: '△ 1日あたり高め（60〜120円/日）', monthly: '○ 安め（20〜40円/日）' },
+              { item: 'ケアの手間', oneday: '◎ 不要', monthly: '△ 毎日洗浄必須' },
+              { item: '老眼対応の選択肢', oneday: '○ アキュビュー オアシス MDなど', monthly: '○ エアオプティクスAquaなど' },
+              { item: '慣れやすさ', oneday: '○ 同等', monthly: '○ 同等' },
+            ].map(r => (
+              <tr key={r.item} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-gray-700">{r.item}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.oneday}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.monthly}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめブランド・シリーズ比較</h2>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        {[
+          { name: 'アキュビュー® オアシス® マルチフォーカル', maker: 'J&J', type: '2week', feature: 'シームレスな光学設計「ライフスタイル デザイン」採用。PC・スマホ作業が多い方に人気。', price: '約3,000〜4,000円/箱' },
+          { name: 'デイリーズ® トータル®1 マルチフォーカル', maker: 'アルコン', type: 'ワンデー', feature: '水分含有量78%の超含水設計。1日中快適な装用感。同時視型の上位モデル。', price: '約3,500〜4,500円/箱（30枚入）' },
+          { name: 'バイオフィニティ マルチフォーカル', maker: 'クーパービジョン', type: 'マンスリー', feature: 'バランスドプログレッシブ技術で自然な視界。低コストでシリコーンハイドロゲル素材。', price: '約3,000〜3,800円/箱（6枚入）' },
+          { name: 'メダリスト マルチフォーカル', maker: 'B&L', type: '2week', feature: '3ゾーン光学デザインで遠・中・近のバランスが取れた見え方。コストパフォーマンスが高い。', price: '約2,500〜3,500円/箱（6枚入）' },
+        ].map(b => (
+          <div key={b.name} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-gray-800 text-sm mb-1">{b.name}</p>
+            <p className="text-xs text-violet-700 mb-1">{b.maker} | {b.type} | {b.price}</p>
+            <p className="text-xs text-gray-600">{b.feature}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">慣れるまでのコツと注意点</h2>
+      <p className="text-gray-700 mb-4">
+        遠近両用コンタクトは装用当初、視力が完全でないと感じることがあります。これは脳が新しい光学設計に適応するまでの過程であり、通常1〜2週間で改善します。焦らず徐々に装用時間を伸ばしていくのがコツです。
+      </p>
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-amber-800 mb-3">慣れるためのステップ</p>
+        <ol className="text-sm text-gray-700 space-y-2 list-decimal list-inside">
+          <li>最初の1〜2日：午前中2〜3時間だけ装用し、見え方を確認</li>
+          <li>3〜5日目：4〜6時間装用。様々な距離でのピント合わせを意識的に行う</li>
+          <li>1週間後：フルタイム装用へ。PC・スマホ・運転など様々なシーンで試す</li>
+          <li>2週間後：不満点を整理して眼科へ。度数の微調整が必要なこともある</li>
+        </ol>
+      </div>
+      <p className="text-gray-700 mb-4">
+        夜間運転時にハロー（光の周辺部のにじみ）やグレア（まぶしさ）を感じる方がいます。特に同時視型レンズでは光の分散が起こりやすく、夜間運転が多い方は眼科医に相談してモノビジョン処方や度数調整を検討しましょう。
+      </p>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <div className="space-y-3">
+          {[
+            { q: '遠近両用コンタクトは何歳から使えますか？', a: '老眼の症状が出始める40代前後から使用される方が多いです。年齢よりも「近くが見づらい」という症状が出ているかどうかが目安です。眼科で老視の度合い（ADD値）を測定してもらい、適切な処方を受けることをおすすめします。' },
+            { q: '遠近両用コンタクトをつけても老眼鏡が必要な場合はありますか？', a: 'ADD値が高い（老眼が進んでいる）場合や、読書・細かい作業など極めて近い距離を長時間見る場合は、遠近両用コンタクトだけでは近くの見え方が不十分なことがあります。その場合は遠近両用コンタクトの上から薄い老眼鏡（+0.5〜+1.00D）を補助的に使う方法もあります。' },
+            { q: '片目だけ遠近両用コンタクトにすることはできますか？', a: 'モノビジョン処方の場合、利き目（主眼）に遠用、非利き目に近用のレンズを入れるため、片目だけに遠近両用コンタクトを使うことはありません。同時視型も両眼に同じレンズを使います。どちらの設計が合うかは眼科で試装することで判断できます。' },
+            { q: '遠近両用コンタクトと遠近両用眼鏡はどちらがよく見えますか？', a: '一般的に遠近両用眼鏡の方が視野が広く、鮮明に見えます。コンタクトはレンズがずれないため自然な視界が得られますが、眼鏡と比べると視力の鮮明さでやや劣ることがあります。コンタクトの最大のメリットは眼鏡なしで過ごせることで、シーンによって使い分ける方も多いです。' },
           ].map(({ q, a }) => (
             <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
               <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">

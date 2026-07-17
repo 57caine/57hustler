@@ -88,6 +88,38 @@ export const karakonColumns: EyeColumnMeta[] = [
     ],
   },
   {
+    slug: 'karakon-do-ari-erabikata',
+    title: '度ありカラコンの選び方2026【度数・BC・ブランド比較｜ハードルを下げる完全ガイド】',
+    description: '度ありカラコンの正しい選び方を徹底解説。処方箋の取り方、度数・BCの見方、おすすめブランドランキング、安全な購入方法まで初心者にもわかりやすく説明。',
+    category: 'カラコン',
+    section: 'karakon',
+    publishedAt: '2026-07-17',
+    updatedAt: '2026-07-17',
+    readingTime: 9,
+    headings: ['度ありカラコンとは', '眼科で処方箋を取る手順', '度数・BCの見方', 'おすすめブランドランキング', '通販での買い方'],
+    faqs: [
+      { q: '度ありカラコンは通販で買えますか？', a: '処方箋または装用指示書があれば通販で購入可能です。眼科受診後に発行される書類をアップロードまたはFAXすることで、合法的にオンラインで購入できます。無処方での購入は薬機法違反となるサイトを利用することになりかねないため注意が必要です。' },
+      { q: '度ありカラコンの度数はメガネと同じですか？', a: 'コンタクトとメガネは目からの距離が異なるため、同じ度数ではありません。コンタクトの度数はメガネより弱くなることが多く（例：メガネ-4.00 → コンタクト-3.75など）、眼科処方が必要です。' },
+      { q: '度ありカラコンの最強度数はどのくらいまでありますか？', a: '多くのブランドで-10.00〜-0.50まで対応しています。強度近視（-6.00以上）の場合は取り扱いブランドが限られるため、対応ブランドを確認してから購入してください。' },
+    ],
+  },
+  {
+    slug: 'karakon-long-wear-osusume',
+    title: '長時間装用でも疲れにくいカラコンおすすめ2026【仕事・学校・旅行に】',
+    description: '長時間装用でも目が疲れにくいカラコンの選び方。高酸素透過性・高含水率・シリコーンハイドロゲル素材のブランドを徹底比較。10時間以上使いたい方必見。',
+    category: 'カラコン',
+    section: 'karakon',
+    publishedAt: '2026-07-17',
+    updatedAt: '2026-07-17',
+    readingTime: 8,
+    headings: ['長時間装用で目が疲れる原因', '疲れにくいレンズの選び方', '素材・スペック比較', 'おすすめブランドTOP5', '装用時間を延ばすコツ'],
+    faqs: [
+      { q: 'カラコンは何時間まで装用できますか？', a: '一般的なソフトカラコンは1日8〜10時間が推奨上限です。シリコーンハイドロゲル素材のものは酸素透過性が高く、眼科の指示のもとで12時間程度の使用が可能なものもあります。必ず処方に従ってください。' },
+      { q: '長時間でも目が乾きにくいカラコンの素材は何ですか？', a: 'シリコーンハイドロゲル素材が最も酸素透過性が高く、長時間装用に向いています。従来のHEMA系と比べて角膜への酸素供給が大幅に改善されています。ただしカラコンでシリコーンハイドロゲル素材の製品は現状まだ少ないため、含水率38〜46%の低含水率レンズも乾きにくいです。' },
+      { q: '仕事中（10時間以上）カラコンをつけ続けても大丈夫ですか？', a: '医師の処方なく10時間以上連続で装用することは推奨されません。どうしても必要な場合は眼科で相談し、長時間装用を前提とした処方を受けてください。コンタクト用点眼薬を使いながら定期的に休ませることも重要です。' },
+    ],
+  },
+  {
     slug: 'karakon-ambassador-brands',
     title: '公式アンバサダー起用カラコンブランド特集2026【公式発表済み情報のみ掲載】',
     description: '公式アンバサダー・イメージモデルが起用されているカラコンブランドを特集。すべて公式サイト・プレスリリースで確認した正式発表情報のみ掲載。',
@@ -613,6 +645,243 @@ export const karakonColumnContent: Record<string, React.ReactElement> = {
         ))}
       </div>
       <AffiliateBtnR rakuten="韓国 カラコン 日本正規品" label="韓国カラコンを楽天で見る" />
+    </article>
+  ),
+
+  // ─── 7. 度ありカラコンの選び方 ───────────────────────────────
+  'karakon-do-ari-erabikata': (
+    <article className="prose-sm max-w-none text-gray-700 leading-relaxed" id="article-body">
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">度ありカラコンとは</h2>
+      <p className="mb-4">度ありカラコン（度付きカラーコンタクトレンズ）は、視力矯正機能とカラーリング機能を兼ね備えたコンタクトレンズです。近視・乱視の方でもメガネを外してカラコンを楽しめるのが最大のメリットです。</p>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead><tr className="bg-pink-50"><th className="p-3 border border-gray-200 text-left">項目</th><th className="p-3 border border-gray-200 text-left">度なしカラコン</th><th className="p-3 border border-gray-200 text-left">度ありカラコン</th></tr></thead>
+          <tbody>
+            {[
+              { item: '視力矯正', wo: 'なし', w: 'あり（近視・乱視対応）' },
+              { item: '処方箋', wo: '不要（推奨）', w: '必要' },
+              { item: '価格', wo: '比較的安い', w: '度なしより高め' },
+              { item: 'デザイン種類', wo: '多い', w: '度なしより少ない' },
+              { item: '対象者', wo: '視力が良い方', w: '近視・乱視の方' },
+            ].map(r => (
+              <tr key={r.item} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-sm">{r.item}</td>
+                <td className="p-3 border border-gray-200 text-gray-500 text-xs">{r.wo}</td>
+                <td className="p-3 border border-gray-200 text-pink-700 text-xs font-medium">{r.w}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">眼科で処方箋を取る手順</h2>
+      <p className="mb-3">度ありカラコンは必ず眼科での処方が必要です。以下の流れで処方箋・装用指示書を取得してください。</p>
+      <div className="space-y-3 mb-6">
+        {[
+          { step: '①', title: '眼科を受診', desc: '「カラコンを使いたい」と伝える。視力・BC・DIAを測定してもらう。' },
+          { step: '②', title: '試着・フィッティング', desc: 'カラコンを実際に装着して目に合うか確認。異物感・フィット感をチェック。' },
+          { step: '③', title: '処方箋・装用指示書を受け取る', desc: '有効期限（多くは1〜3年）を確認。通販サイトにアップロードして使用可能。' },
+          { step: '④', title: 'オンラインで購入', desc: '処方通りのBC・度数・ブランドで注文。処方と異なるものは購入しない。' },
+        ].map(s => (
+          <div key={s.step} className="flex gap-3 bg-white border border-gray-200 rounded-xl p-4">
+            <span className="font-bold text-pink-600 shrink-0 text-lg">{s.step}</span>
+            <div>
+              <p className="font-bold text-gray-800 text-sm mb-1">{s.title}</p>
+              <p className="text-xs text-gray-600">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">度数・BCの見方</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead><tr className="bg-pink-50"><th className="p-3 border border-gray-200 text-left">記号</th><th className="p-3 border border-gray-200 text-left">意味</th><th className="p-3 border border-gray-200 text-left">目安・注意点</th></tr></thead>
+          <tbody>
+            {[
+              { sym: 'PWR / D（度数）', mean: '近視補正の強さ。マイナスが近視', note: 'コンタクトとメガネで度数は異なる。眼科処方に従う' },
+              { sym: 'BC（ベースカーブ）', mean: 'レンズの曲率。角膜の丸みに合わせる', note: '8.5〜9.0mmが一般的。BCが合わないとズレやすい' },
+              { sym: 'DIA（直径）', mean: 'レンズ全体のサイズ', note: '度ありは14.0〜14.5mmが多い' },
+              { sym: 'CYL（乱視度数）', mean: '乱視の強さ（負の値）', note: '乱視カラコンは取り扱いブランドが限られる' },
+              { sym: 'AXIS（乱視軸）', mean: '乱視の方向（0〜180度）', note: '乱視カラコン専用パラメータ' },
+            ].map(r => (
+              <tr key={r.sym} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-bold text-pink-700 text-xs">{r.sym}</td>
+                <td className="p-3 border border-gray-200 text-xs">{r.mean}</td>
+                <td className="p-3 border border-gray-200 text-gray-500 text-xs">{r.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">度ありカラコン おすすめブランドランキング2026</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          {
+            rank: 1, name: 'エバーカラーワンデー（度あり）', bc: '8.7mm', dia: '14.2mm', pwr: '-0.50〜-10.00',
+            point: '日本製・薬機法承認。高酸素透過性で長時間でも快適。ナチュラル系カラーが充実。度数展開が広い。',
+            price: '30枚入り¥2,200〜', rakuten: 'エバーカラーワンデー 度あり カラコン',
+          },
+          {
+            rank: 2, name: 'ReVIA（レヴィア）ワンデー（度あり）', bc: '8.6mm', dia: '14.2mm', pwr: '-0.50〜-8.00',
+            point: '国産ブランド。ナチュラルからトレンドカラーまで幅広い。ワンデータイプで衛生的。',
+            price: '10枚入り¥1,600〜', rakuten: 'ReVIA レヴィア 度あり カラコン',
+          },
+          {
+            rank: 3, name: 'FLANMY（フランミー）ワンデー（度あり）', bc: '8.6mm', dia: '14.2mm', pwr: '-0.50〜-6.00',
+            point: 'ガーリーでトレンド感のあるデザイン。度あり対応で視力矯正しながらおしゃれを楽しめる。',
+            price: '10枚入り¥1,480〜', rakuten: 'フランミー 度あり カラコン',
+          },
+          {
+            rank: 4, name: 'TOPARDS（トパーズ）（度あり）', bc: '8.7mm', dia: '14.2mm', pwr: '-0.50〜-8.00',
+            point: '指原莉乃プロデュース。発色が良くデザイン性が高い。ワンデータイプで使い捨て衛生的。',
+            price: '10枚入り¥1,500〜', rakuten: 'TOPARDS トパーズ 度あり',
+          },
+        ].map(p => (
+          <div key={p.rank} className="bg-white border border-gray-200 rounded-xl p-5">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="w-8 h-8 rounded-full bg-pink-600 text-white font-bold text-sm flex items-center justify-center shrink-0">{p.rank}</span>
+              <div>
+                <p className="font-bold text-gray-800">{p.name}</p>
+                <div className="flex flex-wrap gap-1 mt-1">
+                  {[`BC${p.bc}`, `DIA${p.dia}`, `度数${p.pwr}`].map(t => (
+                    <span key={t} className="text-xs bg-pink-50 text-pink-700 px-2 py-0.5 rounded">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <p className="text-xs text-gray-700 mb-2">{p.point}</p>
+            <p className="text-xs text-red-600 font-bold mb-2">{p.price}</p>
+            <AffiliateBtnR rakuten={p.rakuten} label={`${p.name}を楽天で見る`} />
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">通販での買い方</h2>
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-4">
+        <p className="font-bold text-blue-800 mb-2">度ありカラコン通販の流れ</p>
+        <ol className="text-sm text-blue-700 space-y-1 list-decimal pl-4">
+          <li>眼科で処方箋または装用指示書を取得する</li>
+          <li>楽天・公式サイトなどで処方通りのBC・度数を選ぶ</li>
+          <li>処方箋を指定の方法でアップロード・FAX送付</li>
+          <li>承認後に発送される（通常1〜3営業日）</li>
+          <li>届いたらパッケージの度数・BCを再確認してから使用</li>
+        </ol>
+      </div>
+      <AffiliateBtnR rakuten="度あり カラコン ワンデー 楽天" label="度ありカラコンを楽天で探す" />
+    </article>
+  ),
+
+  // ─── 8. 長時間装用カラコン ────────────────────────────────────
+  'karakon-long-wear-osusume': (
+    <article className="prose-sm max-w-none text-gray-700 leading-relaxed" id="article-body">
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">長時間装用で目が疲れる3つの原因</h2>
+      <p className="mb-4">カラコンを長時間つけ続けると目が乾いたり、充血したりする原因は主に3つあります。</p>
+      <div className="grid sm:grid-cols-3 gap-3 mb-6">
+        {[
+          { cause: '酸素不足', icon: '😮‍💨', desc: 'レンズが角膜への酸素供給を妨げる。酸素透過性が低いレンズほど影響が大きい。' },
+          { cause: '水分蒸発', icon: '💧', desc: '高含水率レンズは目の水分を吸収してしまう。装用時間が長いほど乾燥が進む。' },
+          { cause: 'レンズの汚れ', icon: '🔬', desc: '涙のタンパク質・脂質がレンズに付着。視界が曇り目への刺激にもなる。' },
+        ].map(c => (
+          <div key={c.cause} className="bg-white border border-gray-200 rounded-xl p-4 text-center">
+            <span className="text-2xl">{c.icon}</span>
+            <p className="font-bold text-gray-800 text-sm mt-2 mb-1">{c.cause}</p>
+            <p className="text-xs text-gray-500">{c.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">疲れにくいカラコンの選び方</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead><tr className="bg-pink-50"><th className="p-3 border border-gray-200 text-left">チェックポイント</th><th className="p-3 border border-gray-200 text-left">長時間向きの選択</th><th className="p-3 border border-gray-200 text-left">理由</th></tr></thead>
+          <tbody>
+            {[
+              { check: '酸素透過性（Dk/t）', good: '20以上を選ぶ', why: '角膜への酸素供給が多いほど疲れにくい' },
+              { check: '含水率', good: '低含水率（38〜46%）を選ぶ', why: '高含水率は目の水分を吸収しやすくドライアイになりがち' },
+              { check: '素材', good: 'シリコーンハイドロゲル系が理想', why: '酸素透過性が従来素材の5〜10倍高い' },
+              { check: '使い捨て期間', good: 'ワンデータイプを選ぶ', why: '毎日新しいレンズを使用するため汚れが蓄積しない' },
+              { check: '含水補助成分', good: 'MPCポリマー・ヒアルロン酸配合', why: '涙に近い成分が含まれ、乾燥を防ぐ効果が期待できる' },
+            ].map(r => (
+              <tr key={r.check} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-sm">{r.check}</td>
+                <td className="p-3 border border-gray-200 text-pink-700 text-xs font-medium">{r.good}</td>
+                <td className="p-3 border border-gray-200 text-gray-500 text-xs">{r.why}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">長時間装用向け おすすめカラコン TOP5（2026）</h2>
+      <div className="space-y-4 mb-6">
+        {[
+          {
+            rank: 1, name: 'エバーカラーワンデーモイスト', dkt: '約29', water: '40%低含水', type: '1day',
+            point: '独自の保湿成分「MPCポリマー」配合で長時間うるおいが続く。高酸素透過性で角膜への負担が少ない。',
+            rakuten: 'エバーカラーワンデー モイスト 長時間',
+          },
+          {
+            rank: 2, name: 'ReVIA ワンデー（低含水）', dkt: '約21', water: '38%低含水', type: '1day',
+            point: '低含水率設計で目の水分を奪いにくい。ヒアルロン酸・ポリビニルアルコール配合で乾きに強い。',
+            rakuten: 'ReVIA カラコン ワンデー 乾きにくい',
+          },
+          {
+            rank: 3, name: 'Chu\'s me（チューズミー）ワンデー', dkt: '約20', water: '38%低含水', type: '1day',
+            point: 'シリカハイドロゲル素材でうるおいと酸素供給を両立。発色は自然なシアーカラーでナチュラル派に人気。',
+            rakuten: 'チューズミー カラコン 長時間',
+          },
+          {
+            rank: 4, name: 'エンジェルカラーワンデー モイスト', dkt: '約22', water: '40%', type: '1day',
+            point: 'MPCポリマー・ポビドン配合。長時間装用向けに設計されたモイストシリーズ。度あり対応。',
+            rakuten: 'エンジェルカラー ワンデー モイスト',
+          },
+          {
+            rank: 5, name: 'FLANMY（フランミー）ワンデー', dkt: '約21', water: '40%低含水', type: '1day',
+            point: 'UVカット機能搭載。屋外でも快適な長時間装用が可能。人気のトレンドカラーが豊富。',
+            rakuten: 'フランミー ワンデー UVカット 長時間',
+          },
+        ].map(p => (
+          <div key={p.rank} className="bg-white border border-gray-200 rounded-xl p-5">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="w-8 h-8 rounded-full bg-pink-500 text-white font-bold text-sm flex items-center justify-center shrink-0">{p.rank}</span>
+              <div>
+                <p className="font-bold text-gray-800">{p.name}</p>
+                <div className="flex flex-wrap gap-1 mt-1">
+                  {[p.type, `Dk/t ${p.dkt}`, p.water].map(t => (
+                    <span key={t} className="text-xs bg-pink-50 text-pink-700 px-2 py-0.5 rounded">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <p className="text-xs text-gray-700 mb-3">{p.point}</p>
+            <AffiliateBtnR rakuten={p.rakuten} label={`${p.name}を楽天で見る`} />
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">装用時間を延ばすための5つのコツ</h2>
+      <div className="space-y-2 mb-6">
+        {[
+          { tip: 'コンタクト用点眼薬を持ち歩く', desc: 'ヒアルロン酸・コンドロイチン配合の点眼薬を使うと乾燥感を緩和できる。人工涙液タイプが安心。' },
+          { tip: 'パソコン作業中は意識的にまばたきをする', desc: '集中すると瞬きが減少し目が乾燥しやすい。20分に1回、20秒間20フィート先を見る「20-20-20ルール」が有効。' },
+          { tip: 'エアコンや扇風機の風を直接当てない', desc: '乾燥した空気が目に直接当たると水分蒸発が早まる。席の配置や加湿器で対策する。' },
+          { tip: '装用前に目薬をさしておく', desc: '装用前に目を潤しておくことで、最初から乾燥しにくい状態を作れる。' },
+          { tip: '就寝4時間前には必ず外す', desc: '睡眠中の装用は眼科医が強く禁忌とする。就寝2〜4時間前には外して目を休ませる。' },
+        ].map(t => (
+          <div key={t.tip} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-gray-800 text-sm mb-1">{t.tip}</p>
+            <p className="text-xs text-gray-600">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-4">
+        <p className="font-bold text-amber-800 mb-1">⚠️ 長時間装用の限界</p>
+        <p className="text-sm text-amber-700">カラコンの推奨装用時間を超えての使用は、角膜酸素不足・感染リスク・角膜新生血管などの深刻なトラブルにつながります。どうしても長時間使用が必要な場合は眼科に相談してください。</p>
+      </div>
+      <AffiliateBtnR rakuten="カラコン 長時間 乾きにくい ワンデー" label="長時間対応カラコンを楽天で見る" />
     </article>
   ),
 
