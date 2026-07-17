@@ -77,7 +77,7 @@ async function generateOneLiners(dailyStarNum: number, monthlyStarNum: number): 
   }).join('\n');
 
   const message = await client.messages.create({
-    model: 'claude-sonnet-4-6',
+    model: 'claude-haiku-4-5-20251001',
     max_tokens: 400,
     system: '九星気学に詳しいおじさんです。月盤・日盤の回座宮を踏まえた具体的なアドバイスを生成します。象意の言い換えは禁止。',
     messages: [{

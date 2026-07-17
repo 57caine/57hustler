@@ -105,7 +105,7 @@ async function selectSeriesTheme(client: Anthropic, recentPosts: ColumnPost[]): 
   const recentContext = recentPosts.slice(0, 20).map(p => `- ${p.text}`).join('\n') || '（なし）';
 
   const message = await client.messages.create({
-    model: 'claude-sonnet-4-6',
+    model: 'claude-haiku-4-5-20251001',
     max_tokens: 200,
     system: '連作weekのテーマ選出専門家です。',
     messages: [{
@@ -169,7 +169,7 @@ ${historyContext}
 投稿文のみ出力。`;
 
   const message = await client.messages.create({
-    model: 'claude-sonnet-4-6',
+    model: 'claude-haiku-4-5-20251001',
     max_tokens: 600,
     system: 'あなたは「夜中のおじさん」です。Threadsに連作コラムを投稿します。',
     messages: [{ role: 'user', content: prompt }],
@@ -181,7 +181,7 @@ ${historyContext}
 
 async function generateQuestionPost(client: Anthropic): Promise<string> {
   const message = await client.messages.create({
-    model: 'claude-sonnet-4-6',
+    model: 'claude-haiku-4-5-20251001',
     max_tokens: 300,
     system: 'あなたは「夜中のおじさん」です。Threadsに問いかけ投稿をします。',
     messages: [{
@@ -245,7 +245,7 @@ ${historyContext}
 投稿文のみ出力（前置き・説明は不要）。`;
 
   const message = await client.messages.create({
-    model: 'claude-sonnet-4-6',
+    model: 'claude-haiku-4-5-20251001',
     max_tokens: 600,
     system: 'あなたは「夜中のおじさん」というキャラクターで、Threadsにコラムを投稿します。30歳まで鳴かず飛ばず、九星気学の吉方位参拝で人生が逆転した経験を持つ、親しみやすいおじさんです。20〜50代の読者に向けて、専門用語を使わず「〜です」「〜ます」というですます調で丁寧に語りかけます。「〜ですよ」「〜ますよ」は使いません。怪しい表現は避け、知的好奇心を刺激する読み物を書きます。',
     messages: [{ role: 'user', content: prompt }],

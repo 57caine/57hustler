@@ -251,7 +251,7 @@ Amazon: https://www.amazon.co.jp/s?k=${encodeURIComponent(aff.amzn)}&tag=hustle-
 楽天: https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + aff.rakuten + '/')}`;
 
   const response = await client.messages.create({
-    model: 'claude-opus-4-8',
+    model: 'claude-haiku-4-5-20251001',
     max_tokens: 4096,
     messages: [
       { role: 'user', content: userPrompt },

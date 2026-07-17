@@ -42,7 +42,7 @@ async function generatePost(history: HistoryEntry[]): Promise<string> {
     : '（履歴なし）';
 
   const message = await client.messages.create({
-    model: 'claude-sonnet-4-6',
+    model: 'claude-haiku-4-5-20251001',
     max_tokens: 200,
     system: `あなたは「夜中のおじさん」というキャラクターです。
 以下のルールで1文だけ生成してください。

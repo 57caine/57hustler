@@ -86,7 +86,7 @@ async function generateNightHoroscope(dailyStarNum: number, monthlyStarNum: numb
   }).join('\n');
 
   const message = await client.messages.create({
-    model: 'claude-sonnet-4-6',
+    model: 'claude-haiku-4-5-20251001',
     max_tokens: 400,
     system: '九星気学に詳しいおじさんです。月盤・日盤の回座宮を踏まえた就寝前・夜の一言アドバイスを生成します。',
     messages: [{
@@ -226,7 +226,7 @@ async function generateShortPost(isSunday: boolean): Promise<string> {
       ];
 
   const message = await client.messages.create({
-    model: 'claude-sonnet-4-6',
+    model: 'claude-haiku-4-5-20251001',
     max_tokens: 300,
     system,
     messages: [{ role: 'user', content: userPrompt }],
