@@ -2,36 +2,26 @@ name: Generate Lens-Navi Column
 
 on:
   schedule:
-    # 毎日 9:00 JST (= 00:00 UTC) — contact/eye-care交互
+    # JST 9:00 (00:00 UTC) — 3本生成: contact / karakon / eye-goods
     - cron: '0 0 * * *'
-    # VR強化: 週3本 — 月・水・金 9:30 JST
-    - cron: '30 0 * * 1,3,5'
-    # 毎週月曜 既存コラム更新 — 10:00 JST
-    - cron: '0 1 * * 1'
+    # JST 13:00 (04:00 UTC) — 2本生成: vr / megane
+    - cron: '0 4 * * *'
+    # JST 19:00 (10:00 UTC) — 2本生成: lasik / eye-care
+    - cron: '0 10 * * *'
   workflow_dispatch:
     inputs:
       section:
-        description: 'Section to generate (contact / eye-care / lasik / megane / vr)'
+        description: 'Section: contact / eye-care / lasik / megane / vr / karakon / eye-goods'
         required: false
         default: 'contact'
-      mode:
-        description: 'Mode: generate or update'
+      count:
+        description: 'Number of columns to generate (1-3)'
         required: false
-        default: 'generate'
-      slug:
-        description: 'Slug to update (only for update mode)'
-        required: false
-        default: ''
+        default: '1'
 
 jobs:
   generate:
     runs-on: ubuntu-latest
-    # 月・水・金の第2スケジュール(VR)のみ、またはworkflow_dispatch
-    if: |
-      github.event_name == 'workflow_dispatch' ||
-      github.event.schedule == '30 0 * * 1,3,5' ||
-      github.event.schedule == '0 0 * * *' ||
-      github.event.schedule == '0 1 * * 1'
     permissions:
       contents: write
 
@@ -51,68 +41,58 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Determine section and mode
-        id: config
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "section=${{ github.event.inputs.section }}" >> $GITHUB_OUTPUT
-            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
-            echo "slug=${{ github.event.inputs.slug }}" >> $GITHUB_OUTPUT
-          elif [ "${{ github.event.schedule }}" = "30 0 * * 1,3,5" ]; then
-            echo "section=vr" >> $GITHUB_OUTPUT
-            echo "mode=generate" >> $GITHUB_OUTPUT
-            echo "slug=" >> $GITHUB_OUTPUT
-          elif [ "${{ github.event.schedule }}" = "0 1 * * 1" ]; then
-            echo "section=contact" >> $GITHUB_OUTPUT
-            echo "mode=update" >> $GITHUB_OUTPUT
-            # 最も古いコラムを選んで更新
-            SLUG=$(node -e "
-              const log = require('./data/lens-navi-content-log.json');
-              const oldest = [...log.columns].sort((a,b) => a.publishedAt.localeCompare(b.publishedAt))[0];
-              console.log(oldest.slug);
-            ")
-            echo "slug=$SLUG" >> $GITHUB_OUTPUT
-          else
-            # 毎日通常: contact/eye-care/megane/lasikをローテーション
-            DAY=$(date +%u)
-            if [ "$DAY" = "1" ] || [ "$DAY" = "5" ]; then
-              echo "section=contact" >> $GITHUB_OUTPUT
-            elif [ "$DAY" = "2" ] || [ "$DAY" = "6" ]; then
-              echo "section=eye-care" >> $GITHUB_OUTPUT
-            elif [ "$DAY" = "3" ]; then
-              echo "section=megane" >> $GITHUB_OUTPUT
-            else
-              echo "section=lasik" >> $GITHUB_OUTPUT
-            fi
-            echo "mode=generate" >> $GITHUB_OUTPUT
-            echo "slug=" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Generate column (generate mode)
-        if: steps.config.outputs.mode == 'generate'
+      # ── Morning batch: JST 9:00 → contact / karakon / eye-goods (×3) ──
+      - name: Morning batch (×3)
+        if: github.event.schedule == '0 0 * * *'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          npx ts-node scripts/generate-lens-navi-column.ts \
-            --section ${{ steps.config.outputs.section }}
+          npx ts-node scripts/generate-lens-navi-column.ts --section contact
+          npx ts-node scripts/generate-lens-navi-column.ts --section karakon
+          npx ts-node scripts/generate-lens-navi-column.ts --section eye-goods
 
-      - name: Update column (update mode)
-        if: steps.config.outputs.mode == 'update' && steps.config.outputs.slug != ''
+      # ── Noon batch: JST 13:00 → vr / megane (×2) ──
+      - name: Noon batch (×2)
+        if: github.event.schedule == '0 4 * * *'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          npx ts-node scripts/generate-lens-navi-column.ts \
-            --update \
-            --slug ${{ steps.config.outputs.slug }}
+          npx ts-node scripts/generate-lens-navi-column.ts --section vr
+          npx ts-node scripts/generate-lens-navi-column.ts --section megane
+
+      # ── Evening batch: JST 19:00 → lasik / eye-care (×2) ──
+      - name: Evening batch (×2)
+        if: github.event.schedule == '0 10 * * *'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          npx ts-node scripts/generate-lens-navi-column.ts --section lasik
+          npx ts-node scripts/generate-lens-navi-column.ts --section eye-care
+
+      # ── Manual dispatch ──
+      - name: Manual generate
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          COUNT=${{ github.event.inputs.count || '1' }}
+          SECTION=${{ github.event.inputs.section || 'contact' }}
+          for i in $(seq 1 $COUNT); do
+            npx ts-node scripts/generate-lens-navi-column.ts --section $SECTION
+          done
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add lib/columns.tsx lib/eye-columns.tsx data/lens-navi-content-log.json
+          git add \
+            lib/columns.tsx \
+            lib/eye-columns.tsx \
+            lib/karakon-columns.tsx \
+            data/lens-navi-content-log.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
           fi
-          git commit -m "auto: generate lens-navi column [${{ steps.config.outputs.section }}] $(date +%Y-%m-%d)"
+          git commit -m "auto: lens-navi column generation $(date +%Y-%m-%d-%H%M)"
           git push origin claude/bold-brahmagupta-uc9Mu

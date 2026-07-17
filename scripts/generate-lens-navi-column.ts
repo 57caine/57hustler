@@ -16,7 +16,7 @@ import * as path from 'path';
 
 // ---- 型定義 ----
 
-type Section = 'contact' | 'eye-care' | 'lasik' | 'megane' | 'vr' | 'karakon';
+type Section = 'contact' | 'eye-care' | 'lasik' | 'megane' | 'vr' | 'karakon' | 'eye-goods';
 
 interface ContentLogEntry {
   slug: string;
@@ -150,6 +150,18 @@ const SECTION_TOPICS: Record<Section, string[]> = {
     'カラコン 着色直径 サイズ別 効果の違い',
     'カラコン ケア用品 正しい洗浄方法',
   ],
+  'eye-goods': [
+    'ホットアイマスク おすすめランキング2026 蒸気・電熱・使い捨て比較',
+    'PC眼精疲労 おすすめグッズ モニターライト ブルーライトカット',
+    'まつ毛美容液 おすすめランキング2026 成分・効果・選び方',
+    'アイローラー 目の疲れ むくみ 解消グッズ',
+    '目の紫外線対策 サングラス UVカットグッズ2026',
+    'スマホ老眼 対策グッズ 拡大鏡 老眼鏡 おすすめ',
+    'ルテイン サプリ おすすめランキング2026 目の健康維持',
+    'アイクリーム 目元ケア 選び方・おすすめ2026',
+    'スマートアイウェア 機能性グッズ 最新2026',
+    '目のストレッチ ツボ押しグッズ おすすめ',
+  ],
 };
 
 const SECTION_AFFILIATE_KEYWORDS: Record<Section, { amzn: string; rakuten: string }> = {
@@ -159,6 +171,7 @@ const SECTION_AFFILIATE_KEYWORDS: Record<Section, { amzn: string; rakuten: strin
   lasik: { amzn: '目のサプリ ルテイン', rakuten: 'アイケア サプリ' },
   megane: { amzn: 'メガネ ブルーライトカット', rakuten: 'メガネ フレーム' },
   karakon: { amzn: 'カラコン ワンデー おすすめ', rakuten: 'カラコン 日本製 ワンデー' },
+  'eye-goods': { amzn: 'ホットアイマスク アイケアグッズ', rakuten: 'ホットアイマスク アイケア' },
 };
 
 // ---- 重複チェック ----
@@ -384,7 +397,7 @@ async function main() {
     });
     if (updated) {
       updated.slug = slugArg;
-      if (['vr', 'eye-care', 'lasik', 'megane'].includes(existing.section)) {
+      if (['vr', 'eye-care', 'lasik', 'megane', 'eye-goods'].includes(existing.section)) {
         appendToEyeColumns(updated);
       } else if (existing.section === 'karakon') {
         appendToKarakonColumns(updated);
@@ -415,7 +428,7 @@ async function main() {
     process.exit(1);
   }
 
-  if (['vr', 'eye-care', 'lasik', 'megane'].includes(targetSection)) {
+  if (['vr', 'eye-care', 'lasik', 'megane', 'eye-goods'].includes(targetSection)) {
     appendToEyeColumns(col);
   } else if (targetSection === 'karakon') {
     appendToKarakonColumns(col);

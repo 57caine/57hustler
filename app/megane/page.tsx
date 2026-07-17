@@ -1,5 +1,10 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { eyeColumns } from '@/lib/eye-columns';
+
+const articles = eyeColumns
+  .filter(c => c.section === 'megane')
+  .map(c => ({ slug: c.slug, title: c.title, desc: c.description, readingTime: c.readingTime }));
 
 export const metadata: Metadata = {
   title: '眼鏡・サングラスの選び方【顔型別・ブルーライト・オンライン購入ガイド】| レンズナビ',
@@ -10,26 +15,6 @@ export const metadata: Metadata = {
 const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=hustle-digger-22`;
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
 
-const articles = [
-  {
-    slug: 'megane-kaomikata',
-    title: '眼鏡の選び方【顔型別ガイド2026】丸顔・面長・卵型・ベース型別おすすめフレーム',
-    desc: '顔型別に似合う眼鏡フレームの形・素材を徹底解説。丸顔・面長・卵型・ベース型それぞれのおすすめも。',
-    readingTime: 8,
-  },
-  {
-    slug: 'blue-light-megane-kouka',
-    title: 'ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説',
-    desc: 'ブルーライトカット眼鏡の科学的な効果と、PC・スマホ作業が多い人向けの選び方を解説。',
-    readingTime: 6,
-  },
-  {
-    slug: 'megane-online-shopping',
-    title: 'オンラインで眼鏡を安く買う方法【JINS・Zoff・楽天・Amazon完全ガイド】',
-    desc: '処方箋を使ってオンラインで度付き眼鏡を注文する手順と、各サービスの比較ガイド。',
-    readingTime: 6,
-  },
-];
 
 const products = [
   { emoji: '👓', label: '眼鏡フレーム', amzn: '眼鏡 フレーム', rakuten: '眼鏡フレーム' },

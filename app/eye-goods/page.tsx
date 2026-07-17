@@ -1,5 +1,10 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { eyeColumns } from '@/lib/eye-columns';
+
+const articles = eyeColumns
+  .filter(c => c.section === 'eye-goods')
+  .map(c => ({ slug: c.slug, title: c.title, desc: c.description, readingTime: c.readingTime }));
 
 export const metadata: Metadata = {
   title: '目の雑貨・グッズおすすめ【ホットアイマスク・PC目疲れ対策・拡大鏡】| レンズナビ',
@@ -10,20 +15,6 @@ export const metadata: Metadata = {
 const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=hustle-digger-22`;
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
 
-const articles = [
-  {
-    slug: 'hot-eye-mask-osusume',
-    title: 'ホットアイマスクおすすめランキング2026【Panasonic・使い捨て・繰り返し使用タイプ比較】',
-    desc: 'Panasonic EH-SW68・花王めぐりズム・アイリスオーヤマなど人気ホットアイマスクを徹底比較。',
-    readingTime: 6,
-  },
-  {
-    slug: 'eye-goods-pc',
-    title: 'PC作業で目を守るグッズおすすめ10選【ブルーライトカット・モニターライト・目薬】',
-    desc: 'PC・在宅ワークの目疲れを防ぐグッズを厳選。BenQ ScreenBarやブルーライトカット眼鏡のおすすめも。',
-    readingTime: 6,
-  },
-];
 
 const products = [
   { emoji: '♨️', label: 'ホットアイマスク', amzn: 'ホットアイマスク Panasonic', rakuten: 'ホットアイマスク おすすめ' },

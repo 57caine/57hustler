@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { karakonColumns } from '@/lib/karakon-columns';
 
 export const metadata: Metadata = {
   title: 'カラコンのおすすめ・選び方【度あり・度なし・ナチュラル・韓国ブランド】2026年版 | レンズナビ',
@@ -10,50 +11,13 @@ export const metadata: Metadata = {
 const RAKUTEN = (kw: string) =>
   `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
 
-const articles = [
-  {
-    slug: 'karakon-osusume-ranking-2026',
-    title: 'カラコンおすすめランキング2026【度あり・度なし別】',
-    desc: '度あり・度なし別の人気カラコンランキング。BC・DIA・着色直径・ケア用品の選び方まで。',
-    readingTime: 9,
-    badge: '🏆 ランキング',
-  },
-  {
-    slug: 'karakon-shoshinsha-guide',
-    title: 'カラコン初心者完全ガイド2026【度数・DIA・装着・ケア方法】',
-    desc: '初めてのカラコン選びに必要な知識を全解説。基本用語・装着方法・ケア方法まで。',
-    readingTime: 10,
-    badge: '🔰 初心者向け',
-  },
-  {
-    slug: 'karakon-anzen-erabikata',
-    title: 'カラコンの安全な選び方【薬機法承認・危険品の見分け方】',
-    desc: '薬機法承認マークの確認方法、危険な並行輸入品を見分けるチェックリストを解説。',
-    readingTime: 8,
-    badge: '⚠️ 安全ガイド',
-  },
-  {
-    slug: 'karakon-natural-osusume',
-    title: 'ナチュラル系カラコンおすすめ特集2026【職場・学校OK】',
-    desc: 'バレないナチュラルカラコンの選び方。ブラウン・グレー・オリーブ系を徹底比較。',
-    readingTime: 8,
-    badge: '🌿 ナチュラル系',
-  },
-  {
-    slug: 'korea-karakon-ranking-2026',
-    title: '韓国で人気のカラコンブランドランキング2026【日本で買える】',
-    desc: 'OLENS・Lensmeなど韓国発ブランドの特徴と日本での安全な購入方法を解説。',
-    readingTime: 9,
-    badge: '🇰🇷 韓国ブランド',
-  },
-  {
-    slug: 'karakon-ambassador-brands',
-    title: '公式アンバサダー起用カラコンブランド特集2026',
-    desc: 'ReVIA・FLANMY・EverColorなど公式発表済みアンバサダー情報のみ掲載。',
-    readingTime: 7,
-    badge: '⭐ アンバサダー',
-  },
-];
+const articles = karakonColumns.map(c => ({
+  slug: c.slug,
+  title: c.title,
+  desc: c.description,
+  readingTime: c.readingTime,
+  badge: '👁‍🗨 カラコン',
+}));
 
 const quickBuys = [
   { label: 'カラコン 度あり', rakuten: 'カラコン 度あり ワンデー 日本製' },

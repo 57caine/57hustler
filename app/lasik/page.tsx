@@ -1,5 +1,10 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { eyeColumns } from '@/lib/eye-columns';
+
+const articles = eyeColumns
+  .filter(c => c.section === 'lasik')
+  .map(c => ({ slug: c.slug, title: c.title, desc: c.description, readingTime: c.readingTime }));
 
 export const metadata: Metadata = {
   title: 'レーシック・視力矯正の費用・リスク・クリニック選び完全ガイド | レンズナビ',
@@ -10,20 +15,6 @@ export const metadata: Metadata = {
 const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=hustle-digger-22`;
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
 
-const articles = [
-  {
-    slug: 'lasik-hiyo-risk',
-    title: 'レーシックとは？費用・リスク・メリット・デメリット完全解説【2026年版】',
-    desc: '費用相場・リスク・術後のケア・クリニック選びまで、レーシックに関するすべての疑問に答える完全ガイド。',
-    readingTime: 10,
-  },
-  {
-    slug: 'icl-to-ha',
-    title: 'ICL（眼内コンタクト）とは？レーシックとの違い・費用・向いている人を解説',
-    desc: '強度近視・角膜が薄い方に向いているICL手術の仕組み・費用・リスクをレーシックと比較。',
-    readingTime: 8,
-  },
-];
 
 const faqs = [
   { q: 'レーシックの費用はいくらですか？', a: 'クリニックや機器の種類によりますが、両眼で15万〜30万円が一般的な相場です。アマリスレッドやコンツラなど最新機器を使用したプレミアムプランは30万円以上になることもあります。大学病院や有名クリニックでは品質と安全性が高い分、費用も高くなる傾向があります。' },
