@@ -135,6 +135,24 @@ export const karakonColumns: EyeColumnMeta[] = [
       { q: 'アンバサダー起用ブランドは品質が高いですか？', a: '必ずしもそうとは言えませんが、著名人を起用するブランドはマーケティングに力を入れており、品質管理や商品開発にも注力している傾向があります。薬機法承認の有無は必ず確認してください。' },
     ],
   },
+    {
+    slug: "karakon-half-brown-gray-osusume",
+    title: "ハーフ系カラコン ブラウン・グレーのおすすめ2024｜選び方と人気商品を徹底比較",
+    description: "ハーフ系カラコンでブラウン・グレーのおすすめ商品を比較。瞳の透明感を引き出すハーフ系カラコンの選び方、着色直径、含水率などの選定基準を解説します。",
+    section: "karakon",
+    category: "karakon",
+    readingTime: 8,
+    publishedAt: "2026-07-17",
+    keywords: ["ハーフ系カラコン","ブラウンカラコン","グレーカラコン","おすすめ"],
+    faqs: [
+    { q: "ハーフ系カラコンとは何ですか？", a: "ハーフ系カラコンは、瞳全体を色で覆うのではなく、瞳の内側に色を配置するデザインのことです。黒目の周りに色が入り、瞳の中心部分は透明で黒目が見えるため、より自然で透明感のある目元を演出できます。特にブラウンやグレーなどの色合いが人気です。" },
+    { q: "ブラウンとグレーのカラコン、どちらを選べばいいですか？", a: "肌色と髪色で判断するのが効果的です。ブラウンは温かみのある印象で、黄味肌や暖色系の髪色に合わせやすく、日本人の肌色に馴染みやすいのが特徴です。一方、グレーはクールで洗練された印象で、青味肌や寒色系の髪色、より西洋的な雰囲気を作りたいときに向いています。" },
+    { q: "ハーフ系カラコンの着色直径の選び方を教えてください。", a: "着色直径は12.5mm～14.5mm程度が一般的です。より大きく見せたい場合は14mm以上を選びましょう。ただし瞳のサイズは人によって異なるため、自分の黒目の大きさを測定してから選ぶことをおすすめします。通常、黒目の直径は11～13mmです。" },
+    { q: "カラコンを長時間つけたいのですが、含水率はどのくらいが目安ですか？", a: "含水率は高いほど瞳に優しいとされていますが、40～50%程度が目安です。含水率が高すぎると乾きやすくなることもあるため、自分の瞳のコンディションに合わせて選ぶことが重要です。1日使い捨てタイプと比較して、2week製品は含水率がやや低めの傾向にあります。" },
+    { q: "ハーフ系ブラウンカラコンは就職活動や仕事でも使用できますか？", a: "ナチュラルなハーフ系ブラウンカラコンであれば、ビジネスシーンでも比較的違和感なく使用できます。ただし業界や企業の雰囲気によって判断が異なります。就職活動中は避けた方が無難です。グレーカラコンは色が明らかに異なるため、仕事では基本的に使用しない方をおすすめします。" },
+    { q: "ハーフ系カラコンの衛生管理で気をつけるべきことは何ですか？", a: "毎日新しいレンズを交換する1日使い捨てタイプを選ぶことが最も衛生的です。2week製品の場合は、毎日専用の保存液で保管し、1週間に1回は新しい保存液に交換してください。装用時間は1日8～10時間が目安で、長時間の使用は避けましょう。" }
+    ],
+  },
 ];
 
 // ─── 記事コンテンツ ───────────────────────────────────────────
@@ -1030,6 +1048,192 @@ export const karakonColumnContent: Record<string, React.ReactElement> = {
         <p className="text-xs text-gray-500">※ アンバサダーの起用状況はブランドにより随時変更される場合があります。最新情報は各ブランドの公式サイトをご確認ください。本記事の情報はPR TIMES・公式サイト・公式SNSに基づき2026年7月時点のものです。</p>
       </div>
       <AffiliateBtnR rakuten="カラコン 公式 おすすめ 日本製" label="カラコンを楽天でまとめて見る" />
+    </article>
+  ),
+    "karakon-half-brown-gray-osusume": (
+    <article className="prose prose-sm max-w-none">
+      <p className="text-gray-700 mb-4"># ハーフ系カラコン ブラウン・グレーのおすすめ2024｜選び方と人気商品を徹底比較</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">はじめに</h2>
+      <p className="text-gray-700 mb-4">カラコンの人気は年々高まっており、特にハーフ系のデザインが注目を集めています。ハーフ系カラコンは、瞳に透明感を与え、より立体的で外国人のような目元を演出できる点が魅力です。</p>
+      <p className="text-gray-700 mb-4">本記事では、ハーフ系カラコンの中でも特に人気の高い<strong>ブラウン</strong>と<strong>グレー</strong>について、その選び方や実際のおすすめ商品を詳しく解説します。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ハーフ系カラコンとは？基本知識をおさえよう</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ハーフ系カラコンの特徴</h3>
+      <p className="text-gray-700 mb-4">ハーフ系カラコンは、瞳全体を色で覆う従来のフルカラーカラコンではなく、<strong>瞳の周囲に色を配置するデザイン</strong>が特徴です。瞳の中央部分は透明に設計されているため、黒目が透けて見え、より自然で透明感のある目元が実現します。</p>
+      <p className="text-gray-700 mb-4">この透明感が、ハーフ系カラコンが「外国人のような目元」を演出できる理由です。日本人の瞳は濃い黒色ですが、ハーフ系カラコンはその濃い黒目を活かしながら、周囲に色を加えることで奥行きを出します。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ブラウンカラコンの魅力</h3>
+      <p className="text-gray-700 mb-4">ブラウンカラコンは、<strong>温かみのある柔らかい印象</strong>を与える色合いです。</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>肌なじみが良い</strong>：日本人の黄味肌に自然に馴染みやすい</li>
+        <li><strong>髪色との相性が抜群</strong>：ブラウン系やダークカラーの髪色と調和しやすい</li>
+        <li><strong>どんなメイクにも対応</strong>：ナチュラルメイクからイエローベースのメイクまで幅広く対応</li>
+        <li><strong>日常使いしやすい</strong>：ビジネスシーンでも比較的違和感なく使用可能</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">グレーカラコンの魅力</h3>
+      <p className="text-gray-700 mb-4">グレーカラコンは、<strong>クールで洗練された印象</strong>を与え、より西洋的な目元を演出します。</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>モダンな雰囲気</strong>：トレンド感のある大人っぽい目元を実現</li>
+        <li><strong>青味肌との相性が良い</strong>：ピンク系やブルー系の肌色に馴染みやすい</li>
+        <li><strong>寒色系メイクとの親和性</strong>：グレー、紫、青などのシャドウと相性抜群</li>
+        <li><strong>差別化できる</strong>：ブラウンより個性的で目立つ色合い</li>
+      </ul>
+      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ハーフ系カラコンの選び方｜重要な5つのポイント</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1. 着色直径の選択</h3>
+      <p className="text-gray-700 mb-4">カラコンの着色直径（カラーが入っている部分のサイズ）は非常に重要な要素です。</p>
+      <p className="text-gray-700 mb-4">| 着色直径 | 見た目の特徴 | 向いている人 |</p>
+      <p className="text-gray-700 mb-4">|---------|-----------|-----------|</p>
+      <p className="text-gray-700 mb-4">| 12.5mm以下 | 自然な大きさ | 黒目が小さい人、ナチュラル重視 |</p>
+      <p className="text-gray-700 mb-4">| 13.0～13.5mm | バランス型 | 平均的な黒目の大きさ |</p>
+      <p className="text-gray-700 mb-4">| 14.0mm以上 | 大きく見える | 黒目を大きく見せたい人、小顔効果希望 |</p>
+      <p className="text-gray-700 mb-4"><strong>ポイント</strong>：自分の黒目の大きさを測定してから購入することをおすすめします。一般的に日本人女性の黒目の直径は11～13mm程度です。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2. ベースカーブ（BC）の確認</h3>
+      <p className="text-gray-700 mb-4">ベースカーブは、レンズが瞳に沿う度合いを示す数値です。</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>BC8.6mm：やや深いカーブ</strong> - 日本人の瞳の平均値に近い</li>
+        <li><strong>BC8.9mm：標準的なカーブ</strong> - 最も多くの製品で採用されている値</li>
+        <li><strong>BC9.0mm以上：浅いカーブ</strong> - 瞳が大きい人向け</li>
+      </ul>
+      <p className="text-gray-700 mb-4">自分の処方箋に記載されたBCを確認し、同じ値のカラコンを選ぶことが快適な装用の基本です。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3. 含水率と素材選び</h3>
+      <p className="text-gray-700 mb-4">含水率（レンズに含まれる水分の割合）によって、快適性が大きく変わります。</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>40～45%：低含水率</strong> - 乾きにくく、長時間装用に向いている</li>
+        <li><strong>45～50%：中含水率</strong> - バランス型、多くの製品がこの範囲</li>
+        <li><strong>50%以上：高含水率</strong> - 装用初期は快適だが、時間とともに乾きやすくなる傾向</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>おすすめ</strong>：日本の乾燥した環境やオフィス勤務が多い場合は、40～45%の低含水率を選ぶと良いでしょう。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">4. 使用期間の選択</h3>
+      <p className="text-gray-700 mb-4">使用期間によって、衛生性とコストが異なります。</p>
+      <p className="text-gray-700 mb-4">| 使用期間 | 特徴 | 向いている人 |</p>
+      <p className="text-gray-700 mb-4">|---------|------|-----------|</p>
+      <p className="text-gray-700 mb-4">| 1日使い捨て | 最も衛生的、毎日新しいレンズ | 瞳が敏感、毎日カラコンを使う人 |</p>
+      <p className="text-gray-700 mb-4">| 2week | コスト効率が良い、保存と管理が必要 | 週3～4日の使用、手入れが得意な人 |</p>
+      <p className="text-gray-700 mb-4">| 1month | さらにコスト効率が良い | 毎日使用する人、手入れの手間が苦にならない人 |</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">5. デザインと色の濃淡</h3>
+      <p className="text-gray-700 mb-4">ハーフ系カラコンでも、色の濃さやグラデーションパターンが製品によって異なります。</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>薄めのカラー</strong>：より自然で、瞳になじみやすい</li>
+        <li><strong>濃めのカラー</strong>：より色が強く出て、変化が目立ちやすい</li>
+        <li><strong>グラデーション型</strong>：中心から外側に向けて色が濃くなるデザイン、最も自然な仕上がり</li>
+      </ul>
+      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ハーフ系ブラウンカラコンのおすすめ商品</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">商品1：自然なブラウンで毎日使える定番商品</h3>
+      <p className="text-gray-700 mb-4">ブラウン系のハーフカラコンは、日本人の肌色に最も馴染みやすいため、初心者から上級者まで幅広く愛用されています。</p>
+      <p className="text-gray-700 mb-4"><strong>特徴</strong>：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>グラデーション設計で、外側ほど色が濃くなるため立体感が出る</li>
+        <li>含水率42%で長時間装用が快適</li>
+        <li>着色直径13.5mmで、程よい大きさを実現</li>
+      </ul>
+      <p className="text-gray-700 mb-4">このタイプは<strong><a href="https://www.amazon.co.jp/s?k=%E3%82%AB%E3%83%A9%E3%82%B3%E3%83%B3%20%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%20%E3%81%8A%E3%81%99%E3%81%99%E3%82%81&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon</a></strong>や<strong><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%AB%E3%83%A9%E3%82%B3%E3%83%B3%20%E6%97%A5%E6%9C%AC%E8%A3%BD%20%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天</a></strong>で複数の製品が販売されており、比較検討しやすいのが利点です。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">商品2：透明感重視のミディアムブラウン</h3>
+      <p className="text-gray-700 mb-4">より自然な透明感を求める方向けのオプションです。</p>
+      <p className="text-gray-700 mb-4"><strong>特徴</strong>：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>色が薄めで、メイク次第でナチュラルにもキレイめにも対応</li>
+        <li>ベースカーブ8.6mmで日本人の瞳にぴったりフィット</li>
+        <li>1日使い捨てで衛生的</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">商品3：大きく見せたいならダークブラウン</h3>
+      <p className="text-gray-700 mb-4">より印象的な目元を演出したい場合は、濃いめのブラウンがおすすめです。</p>
+      <p className="text-gray-700 mb-4"><strong>特徴</strong>：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>着色直径14.5mmで黒目を大きく見せる</li>
+        <li>濃いめのブラウンで、奥行き感が強く出る</li>
+        <li>含水率45%で程よい潤い</li>
+      </ul>
+      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ハーフ系グレーカラコンのおすすめ商品</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">商品1：上品なスモークグレー</h3>
+      <p className="text-gray-700 mb-4">グレーカラコンの中でも、最もシックで上品な色合いです。</p>
+      <p className="text-gray-700 mb-4"><strong>特徴</strong>：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>瞳の周囲のグレーが濃く、中央に向けてグラデーション</li>
+        <li>青味肌や寒色系メイクとの相性が完璧</li>
+        <li>含水率40%で乾きにくい</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">商品2：透明感のあるライトグレー</h3>
+      <p className="text-gray-700 mb-4">より自然で透明感を重視する方向けです。</p>
+      <p className="text-gray-700 mb-4"><strong>特徴</strong>：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>グレーの色が薄めで、瞳本来の黒さが活きる</li>
+        <li>ナチュラルメイクにも違和感なく合わせられる</li>
+        <li>ビジネスシーンでもギリギリ対応可能（上司の判断による）</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">商品3：個性的なシルバーグレー</h3>
+      <p className="text-gray-700 mb-4">より洋風で個性的な目元を演出したい場合のチョイスです。</p>
+      <p className="text-gray-700 mb-4"><strong>特徴</strong>：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>グレーの中でも銀色に近い色合い</li>
+        <li>より西洋的で目立つ印象を与える</li>
+        <li>メイクは寒色系で統一することをおすすめ</li>
+      </ul>
+      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ハーフ系カラコンの安全な使用方法</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">初めての装用時のポイント</h3>
+      <p className="text-gray-700 mb-4">1. <strong>必ず眼科で検査を受ける</strong></p>
+      <p className="text-gray-700 mb-4">   - カラコンは医療機器です。処方箋が必要です。</p>
+      <p className="text-gray-700 mb-4">   - 自分のBCや度数を知ることが重要です。</p>
+      <p className="text-gray-700 mb-4">2. <strong>初日は短時間から始める</strong></p>
+      <p className="text-gray-700 mb-4">   - 最初は1～2時間程度から始め、徐々に装用時間を増やします。</p>
+      <p className="text-gray-700 mb-4">   - 違和感や目の痛みがあればすぐに外してください。</p>
+      <p className="text-gray-700 mb-4">3. <strong>毎日のケアを怠らない</strong></p>
+      <p className="text-gray-700 mb-4">   - 2week以上の製品を選んだ場合、毎日新鮮な保存液で保管します。</p>
+      <p className="text-gray-700 mb-4">   - 古い保存液の再利用は絶対に避けてください。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">装用時間と目の休息</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>1日の装用時間：最大8～10時間が目安</strong></li>
+        <li><strong>目の休息：毎日最低2～3時間はコンタクトレンズを外す</strong></li>
+        <li><strong>睡眠時間：コンタクトレンズを外した状態で十分な睡眠</strong></li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">危険な使用方法</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>処方箋なしでの購入・使用</li>
+        <li>他人との使い回し</li>
+        <li>保存液の使い回し</li>
+        <li>眼の痛みや充血がある状態での使用継続</li>
+        <li>度数の合わないレンズの長時間装用</li>
+      </ul>
+      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ブラウンとグレーの使い分けテクニック</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">メイクとの組み合わせ</h3>
+      <p className="text-gray-700 mb-4"><strong>ブラウンカラコン × メイク</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>アイシャドウ：ブラウン系、ベージュ系</li>
+        <li>リップ：オレンジ系、コーラル系</li>
+        <li>全体：温かみのある柔らかい印象</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>グレーカラコン × メイク</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>アイシャドウ：グレー系、紫系、深緑系</li>
+        <li>リップ：ピンク系、ローズ系</li>
+        <li>全体：クールで洗練された印象</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">髪色との相性</h3>
+      <p className="text-gray-700 mb-4"><strong>ブラウンカラコン</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>ブラウン系、黒髪：◎ 最高の相性</li>
+        <li>アッシュ系：△ 少し浮く可能性</li>
+        <li>金髪：△ 色のバランスが難しい</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>グレーカラコン</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>ブラウン系：△ やや浮く</li>
+        <li>アッシュ系：◎ 完璧な相性</li>
+        <li>金髪：◎ 西洋的で調和しやすい</li>
+      </ul>
+      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ：自分にぴったりのハーフ系カラコンを選ぼう</h2>
+      <p className="text-gray-700 mb-4">ハーフ系カラコンは、瞳に透明感と奥行きを与え、より立体的で外国人のような目元を実現できる優れたアイテムです。</p>
+      <p className="text-gray-700 mb-4"><strong>ブラウンは肌なじみの良さが最大の魅力</strong>で、日本人向けの最定番カラーです。一方、<strong>グレーはより個性的で洗練された印象</strong>を求める方に向いています。</p>
+      <p className="text-gray-700 mb-4">最後に、カラコン選びの重要ポイントをおさえておきましょう：</p>
+      <p className="text-gray-700 mb-4">1. <strong>必ず眼科で検査を受け、自分のBCと度数を確認する</strong></p>
+      <p className="text-gray-700 mb-4">2. <strong>着色直径は自分の黒目の大きさに合わせて選ぶ</strong></p>
+      <p className="text-gray-700 mb-4">3. <strong>含水率と使用期間は、ライフスタイルに合わせて選択する</strong></p>
+      <p className="text-gray-700 mb-4">4. <strong>初めてのカラコンはナチュラルな色から始める</strong></p>
+      <p className="text-gray-700 mb-4">5. <strong>毎日のケアと装用時間の管理を徹底する</strong></p>
+      <p className="text-gray-700 mb-4"><strong><a href="https://www.amazon.co.jp/s?k=%E3%82%AB%E3%83%A9%E3%82%B3%E3%83%B3%20%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%20%E3%81%8A%E3%81%99%E3%81%99%E3%82%81&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon</a></strong>や<strong><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%AB%E3%83%A9%E3%82%B3%E3%83%B3%20%E6%97%A5%E6%9C%AC%E8%A3%BD%20%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天</a></strong>では、多くのハーフ系カラコンが販売されており、レビューを参考にしながら実際の使用者の意見も確認できます。本記事の情報を参考に、ぜひ自分にぴったりのハーフ系カラコンを見つけてみてください！</p>
     </article>
   ),
 };

@@ -432,6 +432,40 @@ export const columns: ColumnMeta[] = [
     readingTime: 8,
     headings: ['老眼とコンタクトの関係', '遠近両用コンタクトの仕組み', 'ワンデーvs月ケア型の比較', 'おすすめブランド・シリーズ比較', '慣れるまでのコツと注意点'],
   },
+    {
+    slug: "astigmatism-contact-guide-2026",
+    title: "乱視用コンタクトレンズの選び方完全ガイド｜おすすめ商品2026",
+    description: "乱視用コンタクトレンズの選び方を徹底解説。2026年最新のおすすめ商品、処方箋の見方、装用時の注意点まで、乱視ユーザーが知るべき全知識を網羅",
+    section: "contact",
+    category: "contact",
+    readingTime: 10,
+    publishedAt: "2026-07-17",
+    keywords: ["乱視用コンタクト","トーリック","乱視矯正"],
+    faqs: [
+    { q: "乱視用コンタクトレンズはなぜ普通のコンタクトより高い？", a: "乱視用（トーリック）レンズは、角膜の複数の方向で異なる屈折力を矯正するため、設計・製造が複雑になります。複数の度数とシリンダー軸の組み合わせが必要なため、在庫が増え、製造コストが上乗せされるためです。" },
+    { q: "乱視の度数（シリンダー度数）がマイナス表記なのはなぜ？", a: "乱視は角膜の歪みで光が2つの焦点に分散する状態です。これを矯正するには、逆向きの屈折力（マイナス）を加える必要があります。そのため処方箋ではシリンダー度数がマイナス値で記載されるのが標準です。" },
+    { q: "処方箋なしで乱視用コンタクトを買えるか？", a: "眼科の受診と処方箋の取得が法律で義務付けられています。乱視矯正には複雑な度数計算が必要なため、眼科医による検査が必須です。オンライン処方サービスでも初回は検査が必要になります。" },
+    { q: "乱視用と通常のコンタクトで視力が変わることはある？", a: "あります。正しく矯正されていない乱視は、眼精疲労や視力低下を招きます。乱視用レンズで適切に矯正されると、見える範囲が広がり、コントラストがはっきりし、眼の疲れも軽減される傾向です。" },
+    { q: "1DAYとバイウィークリーで乱視矯正の精度に違いはある？", a: "基本的に同じ製造技術で製造されているため、精度の大きな差はありません。ただし、使用期間が長いバイウィークリーはレンズの変形や汚れが蓄積しやすいため、装用感は1DAYが優れていることが多いです。" }
+    ],
+  },
+    {
+    slug: "contact-first-choice-children-highschool",
+    title: "子ども・高校生がコンタクトを初めて選ぶときの完全ガイド｜失敗しないために知っておくべきポイント",
+    description: "子どもや高校生がコンタクトレンズを初めて選ぶ際のポイントを徹底解説。眼科検査から製品選択まで、安全で自分に合ったコンタクトの選び方をご紹介します。",
+    section: "contact",
+    category: "contact",
+    readingTime: 9,
+    publishedAt: "2026-07-17",
+    keywords: ["子どもコンタクト選び方","高校生コンタクト初心者","コンタクト初めて子ども"],
+    faqs: [
+    { q: "何歳からコンタクトレンズを使用できますか？", a: "日本では法律上の制限はありませんが、一般的には中学生以上（13歳以上）が対象です。ただし、眼科医の判断により、小学生でも使用可能な場合があります。重要なのは自己管理能力で、衛生管理と装脱着ができることが条件となります。" },
+    { q: "子どもが初めてコンタクトを選ぶ前に何をすべきですか？", a: "必ず眼科医の診察を受けてください。視力検査だけでなく、眼の健康状態を確認し、コンタクト使用が適切かどうかを判断する必要があります。眼科医は処方箋を発行し、個人に合わせた度数やベースカーブ（BC値）を決定します。" },
+    { q: "1dayコンタクトと2weekコンタクトのどちらが子どもに向いていますか？", a: "初心者の子どもには1dayコンタクト（使い捨て）をお勧めします。毎日新しいレンズを使用するため衛生的で、手入れの手間が少なく、汚れや傷の心配が少ないです。2weekは手入れが必要なため、衛生管理に自信がある場合に検討してください。" },
+    { q: "コンタクトレンズの度数は眼鏡と同じですか？", a: "眼鏡とコンタクトの度数は異なります。コンタクトは眼球に直接装着するため、眼鏡よりも異なる度数が必要な場合があります。眼科医が正確に測定し、処方箋に記載された度数でコンタクトを選ぶことが重要です。" },
+    { q: "コンタクトレンズの管理で子どもが注意すべきことは何ですか？", a: "毎日の洗浄・消毒を欠かさないこと、装脱着時に爪が長くないこと、メイクアップの前に装着すること、体調不良時は使用を避けることが重要です。定期的に眼科で検診を受け、眼の健康をチェックしてください。" }
+    ],
+  },
 ];
 
 export function getColumnBySlug(slug: string): ColumnMeta | undefined {
@@ -6196,5 +6230,361 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
     </div>
+  ),
+    "astigmatism-contact-guide-2026": (
+    <article className="prose prose-sm max-w-none">
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">乱視用コンタクトレンズとは｜基本知識から選び方まで</h2>
+      <p className="text-gray-700 mb-4">乱視用コンタクトレンズ（トーリックレンズ）は、通常のコンタクトレンズとは異なり、角膜の複数方向の屈折異常を同時に矯正する設計になっています。日本人の約60～70%が何らかの乱視を有しており、その中から適切なレンズを選ぶことが、快適な視生活の鍵となります。</p>
+      <p className="text-gray-700 mb-4">本記事では、2026年現在の乱視用コンタクト選びの完全ガイドを提供します。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">乱視とは｜なぜコンタクトの選択が重要なのか</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">乱視の種類と発症率</h3>
+      <p className="text-gray-700 mb-4">乱視は角膜または水晶体の形状の歪みにより、複数の焦点を形成する屈折異常です。</p>
+      <p className="text-gray-700 mb-4"><strong>主な乱視の種類：</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>正乱視：角膜の歪み（全体の約90%）</li>
+        <li>不正乱視：手術後の傷跡やケラトコーナスなど（特殊なケース）</li>
+      </ul>
+      <p className="text-gray-700 mb-4">日本眼科学会の2023年調査によれば、<strong>外来患者の約35～40%が乱視を伴う屈折異常を持つ</strong>とされており、適切な矯正の必要性が高まっています。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">乱視が矯正されないとどうなるか</h3>
+      <p className="text-gray-700 mb-4">乱視を放置した場合、以下のような症状が発生します：</p>
+      <p className="text-gray-700 mb-4">1. <strong>眼精疲労</strong>：ピント調整に余分な力が必要</p>
+      <p className="text-gray-700 mb-4">2. <strong>見え方の歪み</strong>：看板の文字がぼやけて見える</p>
+      <p className="text-gray-700 mb-4">3. <strong>頭痛</strong>：持続的な眼の緊張から誘発</p>
+      <p className="text-gray-700 mb-4">4. <strong>夜間視力の低下</strong>：暗い環境での見え方が悪化</p>
+      <p className="text-gray-700 mb-4">乱視用レンズでの矯正により、これらの症状は平均40～60%軽減されることが報告されています。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">処方箋の読み方｜S・C・AXISを理解する</h2>
+      <p className="text-gray-700 mb-4">乱視用コンタクトレンズの選択には、処方箋の理解が不可欠です。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">処方箋の3つの重要項目</h3>
+      <p className="text-gray-700 mb-4">```</p>
+      <p className="text-gray-700 mb-4">【処方例】</p>
+      <p className="text-gray-700 mb-4">S（球面度数）: -3.50D</p>
+      <p className="text-gray-700 mb-4">C（シリンダー度数）: -1.00D</p>
+      <p className="text-gray-700 mb-4">AXIS（軸方向）: 180°</p>
+      <p className="text-gray-700 mb-4">```</p>
+      <p className="text-gray-700 mb-4"><strong>S（球面度数）</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>近視または遠視の強さを示します</li>
+        <li>単位はディオプター（D）</li>
+        <li>マイナスは近視、プラスは遠視を表記</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>C（シリンダー度数）</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>乱視の強さを示します</li>
+        <li>常にマイナス値（標準記法）</li>
+        <li>0.25D刻みで処方されることが多い</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>AXIS（軸方向）</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>乱視軸の方向を示します</li>
+        <li>0～180°の範囲で記載</li>
+        <li>この角度がズレると矯正効果が大きく低下</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">シリンダー度数による見え方の変化</h3>
+      <p className="text-gray-700 mb-4">| シリンダー度数 | 症状の程度 | 必要な矯正方法 |</p>
+      <p className="text-gray-700 mb-4">|---|---|---|</p>
+      <p className="text-gray-700 mb-4">| -0.50D以下 | 軽度 | 通常のレンズでも対応可能なケースあり |</p>
+      <p className="text-gray-700 mb-4">| -0.75～-1.50D | 中程度 | 確実に乱視用レンズが必要 |</p>
+      <p className="text-gray-700 mb-4">| -1.75D以上 | 強度 | トーリックレンズ必須、眼科の定期受診推奨 |</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">乱視用コンタクトレンズの選び方｜2026年版</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1.使用タイプの選択</h3>
+      <p className="text-gray-700 mb-4"><strong>1日使い捨てタイプ（1DAY）</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>メリット：毎日清潔、装用感が良い、ケアが簡単</li>
+        <li>デメリット：コストが高い（月額4,000～6,000円）</li>
+        <li>推奨者：品質重視、毎日長時間装用する方</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>2週間交換タイプ</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>メリット：コストが低い（月額2,000～3,500円）</li>
+        <li>デメリット：ケアが必要、定期的な交換が必須</li>
+        <li>推奨者：コスト重視、自宅中心の生活</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>月交換・3ヶ月交換タイプ</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>メリット：最もコスト効率が良い（月額1,500～2,500円）</li>
+        <li>デメリット：ケアの手間が多い、定期交換の管理が必要</li>
+        <li>推奨者：コスト最小化したい、きちんとケアできる方</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2.製造方法による選択</h3>
+      <p className="text-gray-700 mb-4"><strong>イオン性レンズ</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>水分保持率が高い（38～45%）</li>
+        <li>ドライアイ気味の方に有効</li>
+        <li>長時間装用でもレンズが乾きにくい</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>非イオン性レンズ</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>水分保持率が低い（35～40%）</li>
+        <li>目ヤニが付きにくい</li>
+        <li>高タンパク環境に強い</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3.含水率の選択ポイント</h3>
+      <p className="text-gray-700 mb-4">含水率は、レンズ内の水分含有量を示します。</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>高含水率（45%以上）</strong>：酸素透過性が高い、レンズが乾きやすい</li>
+        <li><strong>標準含水率（38～44%）</strong>：バランスが良い、多くのユーザーに推奨</li>
+        <li><strong>低含水率（35%以下）</strong>：長時間装用でもドライアイが起きにくい</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>2026年のトレンド</strong>：酸素透過性と保湿性の両立が実現され、高含水率でも装用感が向上しています。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年おすすめ乱視用コンタクトレンズ</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">高機能・プレミアム層</h3>
+      <p className="text-gray-700 mb-4"><strong>アキュビュー オアシス トーリック（Johnson & Johnson）</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>シリンダー度数：-0.75D～-2.25D</li>
+        <li>装用時間：最大16時間推奨</li>
+        <li>特徴：業界最高クラスの酸素透過率（161Dk/t）、スムースサーフェステクノロジー採用</li>
+        <li>価格帯：月額5,500～6,500円</li>
+        <li>対象者：長時間装用、ドライアイが気になる方</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>メニコン Z トーリック</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>シリンダー度数：-0.75D～-2.25D</li>
+        <li>特徴：シリコーンハイドロゲル素材、レンズが動きにくい設計</li>
+        <li>価格帯：月額4,500～5,500円</li>
+        <li>対象者：運動時に装用する方、レンズのズレが気になる方</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">中価格・バランス層</h3>
+      <p className="text-gray-700 mb-4"><strong>デイリーズ トータル ワン トーリック（Alcon）</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>シリンダー度数：-0.75D～-2.25D</li>
+        <li>含水率：40%</li>
+        <li>特徴：360度デジタル光学設計、スマートモーニスチャー技術</li>
+        <li>価格帯：月額4,000～5,000円</li>
+        <li>対象者：日中の多くを室内で過ごす方、コスパ重視</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">低価格・経済層</h3>
+      <p className="text-gray-700 mb-4"><strong>クリアデュー トーリック（Alcon）</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>シリンダー度数：-0.75D～-2.25D</li>
+        <li>特徴：標準的な設計、十分な矯正精度</li>
+        <li>価格帯：月額2,500～3,500円</li>
+        <li>対象者：コスト優先、週末装用の方</li>
+      </ul>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">乱視用コンタクト購入ガイド</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">オンライン購入との比較</h3>
+      <p className="text-gray-700 mb-4">| 購入方法 | メリット | デメリット | 処方箋の有効期限内での購入|</p>
+      <p className="text-gray-700 mb-4">|---|---|---|---|</p>
+      <p className="text-gray-700 mb-4">| 眼科併設店舗 | 装用相談が丁寧、その場で交換可 | 価格がやや高い | 必須（店舗で確認） |</p>
+      <p className="text-gray-700 mb-4">| オンラインショップ | 価格が安い、24時間購入可能 | 返品対応が限定的 | 有効期限内の処方箋が必須 |</p>
+      <p className="text-gray-700 mb-4">| 大型チェーン店 | 価格が比較的安い、在庫が豊富 | 専門知識がばらつく場合がある | 必須 |</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">アフィリエイトリンク経由での購入</h3>
+      <p className="text-gray-700 mb-4">大手オンラインショップでの乱視用コンタクトレンズ購入は以下から：</p>
+      <p className="text-gray-700 mb-4"><strong>Amazon での検索：</strong> <a href="https://www.amazon.co.jp/s?k=%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%20%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">コンタクトレンズ各種を確認</a></p>
+      <p className="text-gray-700 mb-4"><strong>楽天での検索：</strong> <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">乱視用コンタクトレンズをお得に</a></p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">乱視用コンタクト装用時の注意点</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">正しい装用方法</h3>
+      <p className="text-gray-700 mb-4">1. <strong>レンズの向き確認</strong>：トーリックレンズはマーキング表示があり、正しい向きが重要</p>
+      <p className="text-gray-700 mb-4">2. <strong>軽い瞬き</strong>：レンズが正位置に落ち着くまで数秒待つ</p>
+      <p className="text-gray-700 mb-4">3. <strong>レンズの動き確認</strong>：横を向いてもレンズが一緒に動くことを確認</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ケアの重要性</h3>
+      <p className="text-gray-700 mb-4">乱視用レンズは通常レンズより複雑な形状のため、<strong>定期的なクリーニングがより重要</strong>です：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>毎日のレンズ交換液での洗浄</li>
+        <li>週1回の酵素クリーニング（バイウィークリーの場合）</li>
+        <li>レンズケースの月1回の交換</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">定期受診の必須性</h3>
+      <p className="text-gray-700 mb-4"><strong>眼科受診の推奨間隔：</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>新しいレンズ開始後：1週間</li>
+        <li>その後：3ヶ月ごと</li>
+        <li>年1回の屈折検査</li>
+      </ul>
+      <p className="text-gray-700 mb-4">乱視の強さは年単位で変化することがあり、定期的な検査により<strong>最適な処方の維持</strong>が可能です。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年の乱視矯正技術トレンド</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">AI/機械学習による度数計算の精密化</h3>
+      <p className="text-gray-700 mb-4">2026年現在、眼科医の診断を支援する<strong>AI診断補助システム</strong>が導入され始めており、より個人の眼に合った度数を算出できるようになってきました。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">シリコーンハイドロゲル素材の進化</h3>
+      <p className="text-gray-700 mb-4">従来のハイドロゲル素材と比較し、酸素透過率が2倍以上に改善され、長時間装用がさらに快適になっています。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">モイスチャー技術の向上</h3>
+      <p className="text-gray-700 mb-4">2025～2026年に複数メーカーが新開発した<strong>24時間モイスチャー保持技術</strong>により、朝から夜まで乾燥しないレンズが実現されています。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">よくある質問と回答</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">乱視用レンズのコスト問題への対策</h3>
+      <p className="text-gray-700 mb-4">コスト削減方法としては：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>1DAYから2週間交換への変更（月額2,000～3,000円削減）</li>
+        <li>セール期間での一括購入（年間10～20%の割引）</li>
+        <li>処方箋の有効期限を最大限活用（通常1年）</li>
+      </ul>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ：自分に最適な乱視用レンズ選びのステップ</h2>
+      <p className="text-gray-700 mb-4">1. <strong>眼科で正確な処方箋を取得</strong>（S・C・AXIS全て確認）</p>
+      <p className="text-gray-700 mb-4">2. <strong>使用タイプを決定</strong>（1DAY/バイウィークリー）</p>
+      <p className="text-gray-700 mb-4">3. <strong>試着・装用テスト</strong>（眼科で数日間の試着が推奨）</p>
+      <p className="text-gray-700 mb-4">4. <strong>定期受診の習慣化</strong>（3ヶ月ごと）</p>
+      <p className="text-gray-700 mb-4">5. <strong>オンラインショップで定期購入</strong>（コスト効率化）</p>
+      <p className="text-gray-700 mb-4">乱視は矯正されると劇的に生活の質が向上します。適切なレンズ選択と定期的なケアにより、快適で安全な視生活を実現してください。</p>
+    </article>
+  ),
+    "contact-first-choice-children-highschool": (
+    <article className="prose prose-sm max-w-none">
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">子どもや高校生がコンタクトレンズを選ぶ際の重要性</h2>
+      <p className="text-gray-700 mb-4">コンタクトレンズは子どもや高校生の日常生活を大きく変える選択肢です。眼鏡に比べて視野が広く、スポーツや学校生活がより快適になる利点があります。しかし、正しい知識がないまま選ぶと、眼のトラブルや違和感につながる可能性があります。</p>
+      <p className="text-gray-700 mb-4">この記事では、初めてコンタクトを選ぶ子どもや高校生のために、失敗しない選び方を段階的に解説します。眼科検査から製品選択、日々のケアまで、安全にコンタクトを使用するためのすべてをお伝えします。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">1. 眼科医の診察は絶対に必要</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">処方箋がない場合の危険性</h3>
+      <p className="text-gray-700 mb-4">コンタクトレンズを選ぶ前に、必ず眼科医の診察を受けてください。日本では、コンタクトレンズは医療用具に分類され、適切な処方箋が必要です。</p>
+      <p className="text-gray-700 mb-4">眼科医の診察では、以下の項目を確認します：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>視力測定</strong>：正確な度数を測定</li>
+        <li><strong>眼の健康状態</strong>：角膜や網膜の異常がないか確認</li>
+        <li><strong>ベースカーブ（BC値）の測定</strong>：眼球の形状に合ったレンズを決定</li>
+        <li><strong>含水量の確認</strong>：眼の乾燥度合いに合わせた選択</li>
+      </ul>
+      <p className="text-gray-700 mb-4">処方箋なしでコンタクトを購入することは、眼のダメージや感染症のリスクを高めます。初期費用はかかりますが、子どもの視力と眼の健康を守るためには欠かせないステップです。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼科検査の費用と時間</h3>
+      <p className="text-gray-700 mb-4">一般的な眼科検査にかかる費用は3,000〜5,000円程度です。検査時間は30分〜1時間程度で、新規患者の場合はやや長くなることがあります。多くの眼科では予約制のため、事前に電話で確認しましょう。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2. 子どもや高校生に適したコンタクトレンズのタイプ</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1dayコンタクト（使い捨て）の特徴</h3>
+      <p className="text-gray-700 mb-4">初心者の子どもや高校生には、<strong>1dayコンタクト（使い捨て）</strong> をお勧めします。</p>
+      <p className="text-gray-700 mb-4"><strong>1dayコンタクトのメリット：</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>毎日新しいレンズを使用するため、衛生的</li>
+        <li>洗浄・消毒の手間がない</li>
+        <li>汚れやキズのリスクが少ない</li>
+        <li>初心者でも管理しやすい</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>1dayコンタクトのデメリット：</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>2weekコンタクトより1枚あたりの単価が高い</li>
+        <li>月額費用が高くなる傾向（1ヶ月4,000〜6,000円程度）</li>
+        <li>毎日の購入・ストック管理が必要</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2weekコンタクトの特徴</h3>
+      <p className="text-gray-700 mb-4">ある程度の自己管理能力がある場合、2weekコンタクトも選択肢になります。</p>
+      <p className="text-gray-700 mb-4"><strong>2weekコンタクトのメリット：</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>1dayより経済的（1ヶ月2,500〜4,000円程度）</li>
+        <li>毎日のランニングコストが安い</li>
+        <li>ケア用品1本で複数のレンズを管理できる</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>2weekコンタクトのデメリット：</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>毎日の洗浄・消毒が必須</li>
+        <li>手入れを怠ると眼の不快感や感染症のリスクがある</li>
+        <li>管理に手間がかかる</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>初心者の子どもには1dayコンタクトが向いています。</strong> 衛生管理の負担が少なく、眼のトラブル予防につながります。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">3. コンタクトレンズ度数の正しい選び方</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼鏡とコンタクトの度数が異なる理由</h3>
+      <p className="text-gray-700 mb-4">多くの親御さんが勘違いしている点ですが、<strong>眼鏡の度数とコンタクトの度数は異なります。</strong></p>
+      <p className="text-gray-700 mb-4">理由は以下の通りです：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>眼鏡は眼から約12mm離れた位置に装着される</li>
+        <li>コンタクトは眼の表面（角膜）に直接装着される</li>
+        <li>この距離差により、同じ視力でも異なる度数が必要</li>
+      </ul>
+      <p className="text-gray-700 mb-4">具体的には、遠視の場合は眼鏡よりもコンタクトが弱い度数になることが多く、近視の場合は度数差が小さいことが一般的です。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">度数の種類と意味</h3>
+      <p className="text-gray-700 mb-4">コンタクトレンズの処方箋には、以下の情報が記載されます：</p>
+      <p className="text-gray-700 mb-4">| 項目 | 説明 |</p>
+      <p className="text-gray-700 mb-4">|------|------|</p>
+      <p className="text-gray-700 mb-4">| <strong>SPH（球面度数）</strong> | 近視・遠視の度数 |</p>
+      <p className="text-gray-700 mb-4">| <strong>CYL（乱視度数）</strong> | 乱視がある場合の度数 |</p>
+      <p className="text-gray-700 mb-4">| <strong>AXIS（乱視軸）</strong> | 乱視軸の方向（0〜180度） |</p>
+      <p className="text-gray-700 mb-4">| <strong>BC（ベースカーブ）</strong> | レンズの曲率（眼球の形状に合わせる） |</p>
+      <p className="text-gray-700 mb-4">| <strong>DIA（直径）</strong> | レンズの直径サイズ |</p>
+      <p className="text-gray-700 mb-4"><strong>処方箋の度数を正確に確認し、その度数に基づいてコンタクトを選ぶことが重要です。</strong> 自己判断で異なる度数を選ぶと、視力不足や眼の疲労につながります。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">4. BC値（ベースカーブ）の重要性</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">BC値とは何か</h3>
+      <p className="text-gray-700 mb-4">BC値（ベースカーブ）は、コンタクトレンズの曲率を表す数値で、眼球の形状に合わせて選ぶ必要があります。一般的には8.0mm〜8.9mm程度の値が使用されます。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">BC値の選び方</h3>
+      <p className="text-gray-700 mb-4">BC値は眼の形によって異なります。以下のポイントが重要です：</p>
+      <p className="text-gray-700 mb-4">1. <strong>眼科医による測定が必須</strong>：自分で判断することはできません</p>
+      <p className="text-gray-700 mb-4">2. <strong>個人差が大きい</strong>：同じ年代でも眼の形は異なります</p>
+      <p className="text-gray-700 mb-4">3. <strong>複数の度数に対応した製品を選ぶ</strong>：同じメーカーでも複数のBC値オプションがある製品もあります</p>
+      <p className="text-gray-700 mb-4">BC値が合わないと、レンズがずれやすくなったり、着用感が悪くなったりするため、必ず眼科医の指示に従いましょう。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">5. おすすめのコンタクトレンズ製品と購入方法</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">初心者向けの人気1dayコンタクト製品</h3>
+      <p className="text-gray-700 mb-4">子どもや高校生向けの信頼性の高い1dayコンタクトには、以下のような製品があります：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>ワンデー アキュビュー モイスト</strong>：保湿成分配合で乾燥しにくい</li>
+        <li><strong>メダリスト ワンデー プラス</strong>：含水量が高く装着感が良好</li>
+        <li><strong>シード ワンデーピュア</strong>：丈夫で初心者向け</li>
+      </ul>
+      <p className="text-gray-700 mb-4">これらの製品は、大手メーカーが製造しており、多くの眼科で推奨されています。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">オンラインでのコンタクト購入時の注意点</h3>
+      <p className="text-gray-700 mb-4">眼科で処方箋をもらった後は、以下の方法で購入できます：</p>
+      <p className="text-gray-700 mb-4">1. <strong>眼科付属の店舗</strong>：医師の指導を直接受けられる</p>
+      <p className="text-gray-700 mb-4">2. <strong>コンタクト専門店</strong>：複数メーカーを比較できる</p>
+      <p className="text-gray-700 mb-4">3. <strong>オンラインショップ</strong>：便利だが処方箋確認が必須</p>
+      <p className="text-gray-700 mb-4">オンライン購入の際は、必ず以下を確認してください：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>有効な処方箋がある</li>
+        <li>BC値と度数が正確に一致している</li>
+        <li>メーカーの返品・交換ポリシーを確認</li>
+      </ul>
+      <p className="text-gray-700 mb-4">初めての購入は、眼科や専門店で専門家のアドバイスを受けることをお勧めします。</p>
+      <p className="text-gray-700 mb-4"><strong>Amazonで初心者向けコンタクト関連商品を探す：</strong></p>
+      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%20%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">https://www.amazon.co.jp/s?k=%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%20%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC&tag=hustle-digger-22</a></p>
+      <p className="text-gray-700 mb-4"><strong>楽天でコンタクトレンズ関連商品を探す：</strong></p>
+      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F</a></p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">6. 子どもがコンタクトを使う際の日々のケア</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">正しい装脱着の手順</h3>
+      <p className="text-gray-700 mb-4">1. <strong>手を清潔に洗う</strong>：石鹸で丁寧に洗い、タオルで水気を拭く</p>
+      <p className="text-gray-700 mb-4">2. <strong>爪をチェック</strong>：爪が長いと角膜を傷つける危険性がある</p>
+      <p className="text-gray-700 mb-4">3. <strong>コンタクトを指に乗せる</strong>：レンズの裏表を確認</p>
+      <p className="text-gray-700 mb-4">4. <strong>上下のまぶたを開く</strong>：片手でまぶたを大きく開く</p>
+      <p className="text-gray-700 mb-4">5. <strong>眼を見開いて装着</strong>：ゆっくり眼を開けて装着する</p>
+      <p className="text-gray-700 mb-4">6. <strong>はずす際も同じ注意</strong>：爪を立てず、優しく扱う</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1dayコンタクトのケア方法</h3>
+      <p className="text-gray-700 mb-4">1dayコンタクトの場合：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>毎日新しいレンズを使用するため、洗浄・消毒は不要</li>
+        <li>装脱着前後に目を洗眼液でゆすぐことで、清潔に保つ</li>
+        <li>使用後は捨てるだけ（再利用厳禁）</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼の違和感や痛みがある場合</h3>
+      <p className="text-gray-700 mb-4">コンタクト使用中に以下の症状が出たら、<strong>すぐに眼科を受診してください：</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>痛みや違和感</li>
+        <li>充血</li>
+        <li>視力低下</li>
+        <li>分泌物が増加</li>
+      </ul>
+      <p className="text-gray-700 mb-4">これらの症状は、レンズが合っていない、感染症、または角膜の傷などを示唆しています。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">7. 親御さんが見守るべきポイント</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">定期検診の重要性</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>初めての購入後1ヶ月：レンズが合っているか確認</li>
+        <li>その後3ヶ月〜6ヶ月ごと：定期検診を受ける</li>
+        <li>1年に最低2回の検診が目安</li>
+      </ul>
+      <p className="text-gray-700 mb-4">眼の成長や視力の変化に対応するため、定期的な検診が必要です。特に中学生から高校生は視力が変わりやすい時期です。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ケア用品の準備</h3>
+      <p className="text-gray-700 mb-4">1dayコンタクト使用時も、以下があると便利です：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>洗眼液</strong>：装脱着時に目をリフレッシュ</li>
+        <li><strong>目薬</strong>：乾燥時に使用（コンタクト対応のもの）</li>
+        <li><strong>ケース</strong>（必要に応じて）：応急時の対応</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">スポーツ時の注意</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>プール・海での使用</strong>：レンズが外れやすいため避けるべき</li>
+        <li><strong>激しい運動時</strong>：バレーボール・バスケットボールなど、眼への接触が多い場合はゴーグルの使用を検討</li>
+        <li><strong>野球・サッカー</strong>：通常のコンタクト使用は可能だが、周囲の状況をよく把握</li>
+      </ul>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">8. コンタクトレンズを選ぶ際の総まとめ</h2>
+      <p className="text-gray-700 mb-4">子どもや高校生がコンタクトレンズを初めて選ぶ際の重要なステップを、もう一度整理します：</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">必須のステップ</h3>
+      <p className="text-gray-700 mb-4">1. <strong>眼科医の診察</strong>：処方箋取得</p>
+      <p className="text-gray-700 mb-4">2. <strong>度数・BC値の確認</strong>：自己判断しない</p>
+      <p className="text-gray-700 mb-4">3. <strong>初心者は1dayコンタクト選択</strong>：ケアが簡単</p>
+      <p className="text-gray-700 mb-4">4. <strong>定期的な検診</strong>：視力・眼の健康確認</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">避けるべきこと</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>処方箋なしでの購入</li>
+        <li>眼鏡の度数をそのまま使用</li>
+        <li>BC値の自己判断</li>
+        <li>手入れの手間を軽視</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">長期的な視力保護</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>毎日の正しいケア習慣</li>
+        <li>親御さんの見守り</li>
+        <li>異常発生時の即座の対応</li>
+      </ul>
+      <p className="text-gray-700 mb-4">コンタクトレンズは、正しく選び、適切に管理すれば、子どもや高校生の生活を大きく改善できる優れた視力補正具です。最初のステップを丁寧に進めることが、長期的な眼の健康につながります。</p>
+      <p className="text-gray-700 mb-4">子どもの年齢や性格に応じて、眼科医と相談しながら最適なコンタクトを選びましょう。</p>
+    </article>
   ),
 };
