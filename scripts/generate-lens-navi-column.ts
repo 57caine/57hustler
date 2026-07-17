@@ -422,8 +422,8 @@ async function main() {
   const col = await generateColumn(client, targetSection, topic, log);
 
   if (!col) {
-    console.error('Generation failed or duplicate detected');
-    process.exit(1);
+    console.warn('Skipped: duplicate or generation returned null (not an error)');
+    process.exit(0);
   }
 
   if (['vr', 'eye-care', 'lasik', 'megane', 'eye-goods'].includes(targetSection)) {
