@@ -268,8 +268,34 @@ Amazon: https://www.amazon.co.jp/s?k=${encodeURIComponent(aff.amzn)}&tag=hustle-
     return null;
   }
 
+  // LLMが文字列内に生の改行・制御文字を出力することがあるため修正する
+  function sanitizeJson(text: string): string {
+    let result = '';
+    let inString = false;
+    let escape = false;
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i];
+      if (escape) {
+        result += ch;
+        escape = false;
+      } else if (ch === '\\' && inString) {
+        result += ch;
+        escape = true;
+      } else if (ch === '"') {
+        result += ch;
+        inString = !inString;
+      } else if (inString && (ch === '\n' || ch === '\r' || ch === '\t')) {
+        result += ch === '\n' ? '\\n' : ch === '\r' ? '\\r' : '\\t';
+      } else {
+        result += ch;
+      }
+    }
+    return result;
+  }
+
   try {
-    const parsed = JSON.parse(jsonMatch[0]) as GeneratedColumn;
+    const sanitized = sanitizeJson(jsonMatch[0]);
+    const parsed = JSON.parse(sanitized) as GeneratedColumn;
     parsed.section = section;
 
     if (isSlugUsed(parsed.slug, log)) {
@@ -284,6 +310,7 @@ Amazon: https://www.amazon.co.jp/s?k=${encodeURIComponent(aff.amzn)}&tag=hustle-
     return parsed;
   } catch (e) {
     console.error('JSON parse error:', e);
+    console.error('Raw JSON snippet:', jsonMatch[0].slice(0, 200));
     return null;
   }
 }
