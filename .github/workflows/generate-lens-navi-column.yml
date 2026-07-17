@@ -1,0 +1,98 @@
+name: Generate Lens-Navi Column
+
+on:
+  schedule:
+    # JST 9:00 (00:00 UTC) — 3本生成: contact / karakon / eye-goods
+    - cron: '0 0 * * *'
+    # JST 13:00 (04:00 UTC) — 2本生成: vr / megane
+    - cron: '0 4 * * *'
+    # JST 19:00 (10:00 UTC) — 2本生成: lasik / eye-care
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+    inputs:
+      section:
+        description: 'Section: contact / eye-care / lasik / megane / vr / karakon / eye-goods'
+        required: false
+        default: 'contact'
+      count:
+        description: 'Number of columns to generate (1-3)'
+        required: false
+        default: '1'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: claude/bold-brahmagupta-uc9Mu
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # ── Morning batch: JST 9:00 → contact / karakon / eye-goods (×3) ──
+      - name: Morning batch (×3)
+        if: github.event.schedule == '0 0 * * *'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          npx ts-node scripts/generate-lens-navi-column.ts --section contact
+          npx ts-node scripts/generate-lens-navi-column.ts --section karakon
+          npx ts-node scripts/generate-lens-navi-column.ts --section eye-goods
+
+      # ── Noon batch: JST 13:00 → vr / megane (×2) ──
+      - name: Noon batch (×2)
+        if: github.event.schedule == '0 4 * * *'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          npx ts-node scripts/generate-lens-navi-column.ts --section vr
+          npx ts-node scripts/generate-lens-navi-column.ts --section megane
+
+      # ── Evening batch: JST 19:00 → lasik / eye-care (×2) ──
+      - name: Evening batch (×2)
+        if: github.event.schedule == '0 10 * * *'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          npx ts-node scripts/generate-lens-navi-column.ts --section lasik
+          npx ts-node scripts/generate-lens-navi-column.ts --section eye-care
+
+      # ── Manual dispatch ──
+      - name: Manual generate
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          COUNT=${{ github.event.inputs.count || '1' }}
+          SECTION=${{ github.event.inputs.section || 'contact' }}
+          for i in $(seq 1 $COUNT); do
+            npx ts-node scripts/generate-lens-navi-column.ts --section $SECTION
+          done
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add \
+            lib/columns.tsx \
+            lib/eye-columns.tsx \
+            lib/karakon-columns.tsx \
+            data/lens-navi-content-log.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "auto: lens-navi column generation $(date +%Y-%m-%d-%H%M)"
+          git push origin claude/bold-brahmagupta-uc9Mu
