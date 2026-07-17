@@ -229,22 +229,8 @@ async function generateColumn(
   const userPrompt = `セクション: ${section}
 トピック: ${topicHint}
 
-以下のJSON形式で記事を出力してください:
-{
-  "slug": "kebab-case-slug-in-japanese-romaji",
-  "title": "記事タイトル（日本語・SEOキーワード含む）",
-  "description": "SEOメタディスクリプション（120文字以内）",
-  "readingTime": 8,
-  "keywords": ["キーワード1", "キーワード2", "キーワード3"],
-  "faqs": [
-    {"q": "質問1？", "a": "回答1（100文字以上）"},
-    {"q": "質問2？", "a": "回答2"},
-    {"q": "質問3？", "a": "回答3"},
-    {"q": "質問4？", "a": "回答4"},
-    {"q": "質問5？", "a": "回答5"}
-  ],
-  "content": "## 見出し1\\n本文...\\n\\n## 見出し2\\n..."
-}
+generate_columnツールを使って記事を生成してください。
+contentフィールドには2000文字以上の本文をMarkdown形式で含めてください。
 
 アフィリエイトリンクはcontent内に以下の形式で含めてください:
 Amazon: https://www.amazon.co.jp/s?k=${encodeURIComponent(aff.amzn)}&tag=hustle-digger-22
@@ -252,67 +238,59 @@ Amazon: https://www.amazon.co.jp/s?k=${encodeURIComponent(aff.amzn)}&tag=hustle-
 
   const response = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
-    max_tokens: 4096,
-    messages: [
-      { role: 'user', content: userPrompt },
-    ],
+    max_tokens: 8000,
+    tools: [{
+      name: 'generate_column',
+      description: '記事データを構造化して出力する',
+      input_schema: {
+        type: 'object' as const,
+        properties: {
+          slug: { type: 'string', description: 'kebab-case スラッグ（ローマ字）' },
+          title: { type: 'string', description: '記事タイトル（日本語・SEOキーワード含む）' },
+          description: { type: 'string', description: 'SEOメタディスクリプション（120文字以内）' },
+          readingTime: { type: 'number', description: '想定読了時間（分）' },
+          keywords: { type: 'array', items: { type: 'string' }, description: 'SEOキーワード3〜5個' },
+          faqs: {
+            type: 'array',
+            items: {
+              type: 'object',
+              properties: {
+                q: { type: 'string' },
+                a: { type: 'string', description: '100文字以上の回答' },
+              },
+              required: ['q', 'a'],
+            },
+            description: 'FAQ 5問以上',
+          },
+          content: { type: 'string', description: 'Markdown形式の記事本文（2000文字以上）' },
+        },
+        required: ['slug', 'title', 'description', 'readingTime', 'keywords', 'faqs', 'content'],
+      },
+    }],
+    tool_choice: { type: 'tool', name: 'generate_column' },
+    messages: [{ role: 'user', content: userPrompt }],
     system: systemPrompt,
   });
 
-  const rawText = response.content[0].type === 'text' ? response.content[0].text : '';
-
-  // JSON抽出
-  const jsonMatch = rawText.match(/\{[\s\S]*\}/);
-  if (!jsonMatch) {
-    console.error('Failed to extract JSON from response');
+  const toolBlock = response.content.find((b) => b.type === 'tool_use');
+  if (!toolBlock || toolBlock.type !== 'tool_use') {
+    console.error('No tool_use block in response');
     return null;
   }
 
-  // LLMが文字列内に生の改行・制御文字を出力することがあるため修正する
-  function sanitizeJson(text: string): string {
-    let result = '';
-    let inString = false;
-    let escape = false;
-    for (let i = 0; i < text.length; i++) {
-      const ch = text[i];
-      if (escape) {
-        result += ch;
-        escape = false;
-      } else if (ch === '\\' && inString) {
-        result += ch;
-        escape = true;
-      } else if (ch === '"') {
-        result += ch;
-        inString = !inString;
-      } else if (inString && (ch === '\n' || ch === '\r' || ch === '\t')) {
-        result += ch === '\n' ? '\\n' : ch === '\r' ? '\\r' : '\\t';
-      } else {
-        result += ch;
-      }
-    }
-    return result;
-  }
+  const parsed = toolBlock.input as GeneratedColumn;
+  parsed.section = section;
 
-  try {
-    const sanitized = sanitizeJson(jsonMatch[0]);
-    const parsed = JSON.parse(sanitized) as GeneratedColumn;
-    parsed.section = section;
-
-    if (isSlugUsed(parsed.slug, log)) {
-      console.warn(`Slug already used: ${parsed.slug}. Skipping.`);
-      return null;
-    }
-    if (isTitleSimilar(parsed.title, log)) {
-      console.warn(`Title too similar to existing: ${parsed.title}. Skipping.`);
-      return null;
-    }
-
-    return parsed;
-  } catch (e) {
-    console.error('JSON parse error:', e);
-    console.error('Raw JSON snippet:', jsonMatch[0].slice(0, 200));
+  if (isSlugUsed(parsed.slug, log)) {
+    console.warn(`Slug already used: ${parsed.slug}. Skipping.`);
     return null;
   }
+  if (isTitleSimilar(parsed.title, log)) {
+    console.warn(`Title too similar to existing: ${parsed.title}. Skipping.`);
+    return null;
+  }
+
+  return parsed;
 }
 
 // ---- ファイル出力 ----
