@@ -47,9 +47,9 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          npx ts-node scripts/generate-lens-navi-column.ts --section contact
-          npx ts-node scripts/generate-lens-navi-column.ts --section karakon
-          npx ts-node scripts/generate-lens-navi-column.ts --section eye-goods
+          npx tsx scripts/generate-lens-navi-column.ts --section contact
+          npx tsx scripts/generate-lens-navi-column.ts --section karakon
+          npx tsx scripts/generate-lens-navi-column.ts --section eye-goods
 
       # ── Noon batch: JST 13:00 → vr / megane (×2) ──
       - name: Noon batch (×2)
@@ -57,8 +57,8 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          npx ts-node scripts/generate-lens-navi-column.ts --section vr
-          npx ts-node scripts/generate-lens-navi-column.ts --section megane
+          npx tsx scripts/generate-lens-navi-column.ts --section vr
+          npx tsx scripts/generate-lens-navi-column.ts --section megane
 
       # ── Evening batch: JST 19:00 → lasik / eye-care (×2) ──
       - name: Evening batch (×2)
@@ -66,8 +66,8 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          npx ts-node scripts/generate-lens-navi-column.ts --section lasik
-          npx ts-node scripts/generate-lens-navi-column.ts --section eye-care
+          npx tsx scripts/generate-lens-navi-column.ts --section lasik
+          npx tsx scripts/generate-lens-navi-column.ts --section eye-care
 
       # ── Manual dispatch ──
       - name: Manual generate
@@ -78,7 +78,7 @@ jobs:
           COUNT=${{ github.event.inputs.count || '1' }}
           SECTION=${{ github.event.inputs.section || 'contact' }}
           for i in $(seq 1 $COUNT); do
-            npx ts-node scripts/generate-lens-navi-column.ts --section $SECTION
+            npx tsx scripts/generate-lens-navi-column.ts --section $SECTION
           done
 
       - name: Commit and push
