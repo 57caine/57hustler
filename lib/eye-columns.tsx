@@ -4661,7 +4661,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <p className="text-gray-700 mb-4">  - 正常：≥15mm/5分</p>
       <p className="text-gray-700 mb-4">  - 軽度ドライアイ：10-14mm/5分</p>
-      <p className="text-gray-700 mb-4">  - 中等度以上：<10mm/5分</p>
+      <p className="text-gray-700 mb-4">  - 中等度以上：&lt;10mm/5分</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
         <li><strong>LASIK手術の基準</strong>：多くの施設では13mm/5分以上を手術適応の目安としています</li>
       </ul>
@@ -4672,7 +4672,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <p className="text-gray-700 mb-4">  - 正常：≥5秒</p>
       <p className="text-gray-700 mb-4">  - 軽度ドライアイ：3-5秒</p>
-      <p className="text-gray-700 mb-4">  - 中等度以上：<3秒</p>
+      <p className="text-gray-700 mb-4">  - 中等度以上：&lt;3秒</p>
       <p className="text-gray-700 mb-4">BUT値が5秒未満の場合、術後のドライアイリスクが2.5倍以上増加することが報告されています。</p>
       <p className="text-gray-700 mb-4">#### 3. 角膜スペキュラー顕微鏡検査</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
@@ -4696,7 +4696,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">|----------|----------|-----|--------|-----------------|</p>
       <p className="text-gray-700 mb-4">| 低リスク | ≥15mm | ≥5秒 | 異常なし | 15-20% |</p>
       <p className="text-gray-700 mb-4">| 中リスク | 10-14mm | 3-5秒 | 軽度の症状 | 50-60% |</p>
-      <p className="text-gray-700 mb-4">| 高リスク | <10mm | <3秒 | 中等度以上の症状 | 80-90% |</p>
+      <p className="text-gray-700 mb-4">| 高リスク | &lt;10mm | &lt;3秒 | 中等度以上の症状 | 80-90% |</p>
       <p className="text-gray-700 mb-4">---</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">術前のドライアイ対策（予防戦略）</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">術前3～4週間の準備期間</h3>
@@ -4777,7 +4777,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4"><strong>適応基準</strong>：</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
         <li>人工涙液だけでは不十分</li>
-        <li>シルマー値<10mm/5分が継続している</li>
+        <li>シルマー値&lt;10mm/5分が継続している</li>
       </ul>
       <p className="text-gray-700 mb-4"><strong>効果</strong>：</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
