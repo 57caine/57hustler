@@ -545,6 +545,86 @@ export const columns: ColumnMeta[] = [
     readingTime: 6,
     headings: ['メーカー別BC対応表の見方', 'アキュビュー（ジョンソン＆ジョンソン）BC一覧', 'アルコン BC一覧', 'シード BC一覧', 'メニコン BC一覧', 'クーパービジョン・ボシュロム BC一覧'],
   },
+  {
+    slug: 'contact-tsuuhan-shohosen-nashi-kanzen-guide',
+    title: 'コンタクトレンズを処方箋なしでネット購入する方法【2026年完全ガイド】',
+    description: '処方箋なしでもコンタクトレンズをネット購入できる理由と安全に通販を利用するための完全ガイド。法的背景から度数確認方法、おすすめサイト比較まで2026年最新情報を網羅。',
+    category: '購入ガイド',
+    publishedAt: '2026-07-18',
+    updatedAt: '2026-07-18',
+    readingTime: 10,
+    headings: ['処方箋不要で購入できる法的理由', '装用指示書と処方箋の重要な違い', '安全購入のための5つのチェックリスト', 'おすすめコンタクト通販サイト徹底比較', '通販で失敗しない度数確認方法', 'よくある質問5選'],
+  },
+  {
+    slug: 'lenszero-kaigai-tsuuhan-guide-2026',
+    title: 'レンズゼロで安くコンタクトを買う方法【2026年海外通販完全ガイド】',
+    description: '香港の大手通販サイト「レンズゼロ」でコンタクトレンズを30〜50%安く購入する方法。注文手順・支払い・配送期間・注意点・楽天との比較を徹底解説。',
+    category: '購入ガイド',
+    publishedAt: '2026-07-18',
+    updatedAt: '2026-07-18',
+    readingTime: 9,
+    headings: ['レンズゼロとは', '価格比較：レンズゼロ vs 国内通販', '注文方法のステップバイステップ', '支払い方法と安全性', '配送期間と送料', 'よくある注意点と対処法', '楽天市場との比較', 'よくある質問と回答'],
+  },
+  {
+    slug: 'lensnet-cheap-contact-guide-2026',
+    title: 'レンズネットで激安コンタクトを買う方法【2026年徹底ガイド】',
+    description: 'レンズネットで安くコンタクトレンズを買う方法を完全解説。他社との価格比較・購入手順・クーポン活用法・安全性・楽天との使い分けを網羅した2026年版ガイド。',
+    category: '購入ガイド',
+    publishedAt: '2026-07-18',
+    updatedAt: '2026-07-18',
+    readingTime: 8,
+    headings: ['レンズネットとは：格安コンタクト通販の最大手', '国内主要通販との価格比較表', '注文手順から受け取りまで', '品質・安全性について', 'クーポン＆ポイント活用術', '楽天市場との使い分けガイド', 'よくある質問5問'],
+  },
+  {
+    slug: 'contact-tsuuhan-site-ranking-2026',
+    title: 'コンタクトレンズ通販サイト比較ランキング2026【価格・送料・ポイントで厳選】',
+    description: 'レンズゼロ・アットレンズ・24Lens・レンズクイック・レンズモード・楽天市場など主要6サイトを価格・送料・処方箋・品揃え・ポイントで徹底比較。送料込み最安値の計算方法も解説。',
+    category: '購入ガイド',
+    publishedAt: '2026-07-18',
+    updatedAt: '2026-07-18',
+    readingTime: 10,
+    headings: ['通販サイトを選ぶ5つのポイント', '国内主要通販サイト比較表', '各サイトの詳細レビュー', '初回割引・クーポン活用術', '楽天市場でお得に買う方法', '送料込み最安値の計算方法', 'よくある質問'],
+  },
+  {
+    slug: 'contact-dosu-shohosen-mikata-kanzen-2026',
+    title: 'コンタクトレンズの度数・処方箋の見方完全ガイド2026【PWR・BC・DIA・CYL・AXIS解説】',
+    description: 'コンタクトレンズ処方箋のPWR・BC・DIA・CYL・AXIS全パラメータを分かりやすく解説。眼鏡との度数の違い、読み方の注意点、通販で正しく選ぶための2026年版完全ガイド。',
+    category: '度数・処方箋',
+    publishedAt: '2026-07-18',
+    updatedAt: '2026-07-18',
+    readingTime: 8,
+    headings: ['処方箋のパラメータ一覧', 'PWR（度数）の読み方', 'BC（ベースカーブ）とDIA（直径）', '乱視用パラメータCYL・AXIS', '眼鏡の度数との違い', '通販での度数確認チェックリスト', 'よくある質問'],
+  },
+  {
+    slug: '1day-contact-nenkan-cost-tsuuhan-vs-store-2026',
+    title: 'ワンデーコンタクト年間コスト比較2026【通販vs眼科・ドラッグストア徹底計算】',
+    description: 'ワンデーコンタクトを通販・眼科・ドラッグストアで買う年間コストを徹底比較。主要ブランドの1年間費用を具体的な数字で計算し、最もお得な購入方法と節約術を解説。',
+    category: 'お得情報',
+    publishedAt: '2026-07-18',
+    updatedAt: '2026-07-18',
+    readingTime: 8,
+    headings: ['年間コスト計算の前提条件', '通販vs眼科vs薬局の価格差', 'ブランド別年間コスト比較', '楽天市場でのポイント活用', '節約のための購入戦略', 'よくある質問'],
+  },
+  {
+    slug: 'contact-shoshinsha-tsukehazushi-care-2026',
+    title: 'コンタクトレンズ初心者ガイド【付け方・外し方・ケア用品選び・トラブル予防】',
+    description: '初めてコンタクトレンズを使う方向けに、種類選びから正しい付け方・外し方・ケア用品の選び方・トラブル対処法まで全解説。安心して使い始められるガイドです。',
+    category: '購入ガイド',
+    publishedAt: '2026-07-18',
+    updatedAt: '2026-07-18',
+    readingTime: 10,
+    headings: ['初めてのコンタクト選び', 'コンタクトの正しい付け方', 'コンタクトの正しい外し方', 'ケア用品の種類と選び方', '目のトラブル予防ガイド', '目が痛いときの対処法', '楽天でケア用品を安く買う方法', '初心者におすすめのブランド', 'よくある質問'],
+  },
+  {
+    slug: 'acuvue-medallist-days-hikaku-2026',
+    title: 'アキュビュー・メダリスト・デイリーズ徹底比較2026【どれを選ぶ？】',
+    description: 'コンタクトレンズ3大ブランド「アキュビュー（J&J）」「メダリスト（ボシュロム）」「デイリーズ（アルコン）」を価格・乾きにくさ・酸素透過率で徹底比較。自分に合うブランドの選び方を解説。',
+    category: '商品比較',
+    publishedAt: '2026-07-18',
+    updatedAt: '2026-07-18',
+    readingTime: 9,
+    headings: ['3大ブランドの基本プロフィール', 'スペック比較表', 'アキュビューの特徴と評判', 'メダリストの特徴と評判', 'デイリーズの特徴と評判', 'ブランド別おすすめシチュエーション', 'よくある質問'],
+  },
 ];
 
 export function getColumnBySlug(slug: string): ColumnMeta | undefined {
@@ -6960,4 +7040,1783 @@ export const columnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">ぜひ、この記事を参考に、自分に最適なナチュラル系カラコンを見つけてください。</p>
     </article>
   ),
+  'contact-tsuuhan-shohosen-nashi-kanzen-guide': (
+    <div className="prose prose-gray max-w-none">
+  <p className="lead text-lg text-gray-700 mb-6">「コンタクトレンズって処方箋がないと買えないんじゃないの？」と思っていませんか？実は、日本の法律では処方箋がなくても、一定の条件を満たせばコンタクトレンズをネット通販で購入することが可能です。このガイドでは、処方箋不要で安全にコンタクトレンズを購入する方法、法的背景、そして失敗しないための実践的なチェックリストをご紹介します。</p>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天市場でコンタクトレンズを探す →</a>
+
+  <h2 id="section1" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">処方箋不要で購入できる法的理由</h2>
+  
+  <p className="text-gray-700 mb-4">コンタクトレンズが処方箋なしで購入できるという事実に驚く人は多いでしょう。しかし、これは日本の医薬品医療機器法（旧薬事法）に基づいた合法的な販売方法です。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">コンタクトレンズは「高度管理医療機器」</h3>
+  <p className="text-gray-700 mb-4">コンタクトレンズは医療機器の中でも「高度管理医療機器」に分類されており、眼科医による診察や処方が原則として必要です。しかし法律上は「処方箋がなくても販売できる」という重要な抜け穴が存在します。</p>
+
+  <p className="text-gray-700 mb-4">医療機器法では、高度管理医療機器の販売に際して「医療機関での診察を受けることが望ましい」と記載されていますが、強制力はありません。つまり、購入者が自己責任で購入する場合、販売者側は診察の確認を厳格に求める法的義務がないのです。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">装用指示書があれば十分</h3>
+  <p className="text-gray-700 mb-4">多くのコンタクトレンズ通販サイトが「装用指示書」の提出を求めるのはこのためです。装用指示書とは、以前に眼科で検査を受けた時に記録された度数やベースカーブなどの情報で、処方箋よりも簡潔な形式です。</p>
+
+  <p className="text-gray-700 mb-4">法的には、過去に眼科を受診した時点での検査結果があれば、それを証拠に購入することが認められています。処方箋という医療文書がなくても、度数確認さえできれば購入に問題はないということです。</p>
+
+  <h2 id="section2" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">装用指示書と処方箋の重要な違い</h2>
+  
+  <p className="text-gray-700 mb-4">コンタクトレンズを購入する際に「装用指示書」と「処方箋」の違いを理解することは非常に重要です。この2つを混同すると、購入ができなくなったり、間違った度数で購入してしまったりするリスクがあります。</p>
+
+  <div className="bg-slate-50 rounded-xl p-4 mb-6">
+    <table className="w-full text-sm">
+      <thead>
+        <tr className="bg-slate-100">
+          <th className="text-left p-2 font-bold">項目</th>
+          <th className="text-left p-2 font-bold">装用指示書</th>
+          <th className="text-left p-2 font-bold">処方箋</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr className="border-b">
+          <td className="p-2">発行者</td>
+          <td className="p-2">眼科医・販売店スタッフ</td>
+          <td className="p-2">眼科医のみ</td>
+        </tr>
+        <tr className="border-b">
+          <td className="p-2">効力</td>
+          <td className="p-2">情報記録（強制力なし）</td>
+          <td className="p-2">医療文書（法的効力あり）</td>
+        </tr>
+        <tr className="border-b">
+          <td className="p-2">通販購入</td>
+          <td className="p-2">多くのサイトで受付</td>
+          <td className="p-2">必須ではない（あると確実）</td>
+        </tr>
+        <tr>
+          <td className="p-2">有効期限</td>
+          <td className="p-2">1年程度（サイト規定による）</td>
+          <td className="p-2">通常3か月</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">装用指示書で十分な理由</h3>
+  <p className="text-gray-700 mb-4">コンタクトレンズ通販サイトが装用指示書を求める理由は、「あなたが過去に眼科で適切な検査を受けた」という証拠を確認するためです。処方箋は医療行為の一環ですが、装用指示書はそれより簡便な形式で、実装用の度数情報を記録した書類に過ぎません。</p>
+
+  <p className="text-gray-700 mb-4">法的には処方箋と装用指示書は異なりますが、実際には度数情報さえあれば購入に問題はありません。むしろ、装用指示書の方がコンタクトレンズ利用者にとって現実的で、多くの通販サイトでも装用指示書をベースにした販売システムを構築しています。</p>
+
+  <h2 id="section3" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">安全購入のための5つのチェックリスト</h2>
+  
+  <p className="text-gray-700 mb-4">処方箋なしでコンタクトレンズを購入する際も、安全性と品質を確保するための確認項目があります。以下の5つのチェックリストを参考に、安心して通販を利用してください。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">チェック1：販売サイトが信頼できるか確認</h3>
+  <p className="text-gray-700 mb-4">コンタクトレンズは医療機器です。販売しているサイトが信頼できるかどうかを確認することは必須です。以下の点をチェックしましょう。</p>
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li>高度管理医療機器販売業の許可を持っているか</li>
+    <li>企業情報（住所・電話番号）が明記されているか</li>
+    <li>顧客サポートが充実しているか</li>
+    <li>口コミや評判が良好か</li>
+    <li>医療機器の品質基準に適合しているか（JAMA加盟など）</li>
+  </ul>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">チェック2：あなたの度数情報が正確か確認</h3>
+  <p className="text-gray-700 mb-4">間違った度数でコンタクトレンズを購入してしまうと、目の疲れや視力低下につながります。装用指示書や以前の領収書から、以下の情報が正確に記載されているか確認しましょう。</p>
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li>右目（OD）の度数（SPH）</li>
+    <li>左目（OS）の度数（SPH）</li>
+    <li>ベースカーブ（BC）の値</li>
+    <li>直径（DIA）の値</li>
+    <li>乱視矯正が必要な場合は乱視の度数（CYL）と軸（AXIS）</li>
+  </ul>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">チェック3：最後に眼科を受診したのはいつか</h3>
+  <p className="text-gray-700 mb-4">目の状態は時間とともに変化します。処方箋や装用指示書は通常1年程度の有効期限が設定されています。最後に眼科を受診してから1年以上経っている場合は、眼科での再検査をおすすめします。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">チェック4：支払い方法と返品ポリシー</h3>
+  <p className="text-gray-700 mb-4">通販でコンタクトレンズを購入する際は、支払い方法と返品・交換ポリシーを事前に確認しましょう。万が一度数が合わない場合や商品に問題がある場合に対応してもらえるか、事前に把握することが大切です。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">チェック5：衛生管理と配送方法</h3>
+  <p className="text-gray-700 mb-4">コンタクトレンズは医療機器です。配送時の衛生管理や保存方法が適切か、商品が破損していないか、などを注意深く確認しましょう。届いたレンズをすぐに開封して、異物や破損がないことを確認することが重要です。</p>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%20%E9%80%9A%E8%B2%A9%20%E5%AE%89%E3%81%84%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天市場でコンタクト通販 安いをチェック →</a>
+
+  <h2 id="section4" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">おすすめコンタクト通販サイト徹底比較</h2>
+  
+  <p className="text-gray-700 mb-4">処方箋不要でコンタクトレンズを購入できる通販サイトは複数あります。ここでは、信頼性が高く人気のある主要サイトを比較します。各サイトの特徴を理解して、あなたに最適なサイトを選びましょう。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レンズゼロ</h3>
+  <p className="text-gray-700 mb-4">レンズゼロは業界最大級の品揃えを誇るコンタクトレンズ専門通販サイトです。1,500種類以上のコンタクトレンズを取り扱っており、ワンデーからマンスリー、カラーレンズまで幅広い選択肢が揃っています。装用指示書があれば購入でき、配送も迅速です。クーポンや割引キャンペーンが頻繁に実施されており、コスト面でも優れています。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">アットレンズ</h3>
+  <p className="text-gray-700 mb-4">アットレンズは老舗のコンタクトレンズ通販サイトで、安心感と信頼性で定評があります。会員登録をすることで、度数情報を事前に保存でき、リピート購入時には手間が減少します。また、ポイント還元制度が充実しており、購入金額に応じてポイントが貯まります。カスタマーサポートも丁寧で、初心者にもおすすめです。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">24Lens</h3>
+  <p className="text-gray-700 mb-4">24Lensは24時間いつでも注文でき、翌日配送に対応しているのが大きな特徴です。急遽コンタクトレンズが必要になった場合に重宝します。取り扱いブランド数も豊富で、海外ブランドも購入できます。ただし、送料がやや高めなので、まとめ買いする際はレンズゼロやアットレンズと比較検討することをおすすめします。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">楽天市場</h3>
+  <p className="text-gray-700 mb-4">楽天市場では複数の販売店がコンタクトレンズを出品しており、価格競争が激しいのが特徴です。楽天ポイントが貯まり、他の商品購入時に使えるメリットがあります。ただし、販売店によって対応が異なるため、購入前に販売店の評判をよく確認することが大切です。処方箋不要で購入できる店舗が多くあります。</p>
+
+  <div className="bg-slate-50 rounded-xl p-4 mb-6">
+    <table className="w-full text-sm">
+      <thead>
+        <tr className="bg-slate-100">
+          <th className="text-left p-2 font-bold">サイト</th>
+          <th className="text-left p-2 font-bold">特徴</th>
+          <th className="text-left p-2 font-bold">配送</th>
+          <th className="text-left p-2 font-bold">価格帯</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr className="border-b">
+          <td className="p-2">レンズゼロ</td>
+          <td className="p-2">品揃え豊富</td>
+          <td className="p-2">最短1日</td>
+          <td className="p-2">安い</td>
+        </tr>
+        <tr className="border-b">
+          <td className="p-2">アットレンズ</td>
+          <td className="p-2">老舗・安心</td>
+          <td className="p-2">2～3日</td>
+          <td className="p-2">中程度</td>
+        </tr>
+        <tr className="border-b">
+          <td className="p-2">24Lens</td>
+          <td className="p-2">24時間対応</td>
+          <td className="p-2">翌日配送</td>
+          <td className="p-2">やや高い</td>
+        </tr>
+        <tr>
+          <td className="p-2">楽天市場</td>
+          <td className="p-2">店舗多数</td>
+          <td className="p-2">店舗による</td>
+          <td className="p-2">店舗による</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="section5" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">通販で失敗しない度数確認方法</h2>
+  
+  <p className="text-gray-700 mb-4">コンタクトレンズ通販での失敗で最も多いのが「度数の間違い」です。通販では試着できないため、購入前の度数確認がいかに重要か理解する必要があります。正確な度数確認の手順を詳しく解説します。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">装用指示書から度数を確認する方法</h3>
+  <p className="text-gray-700 mb-4">装用指示書をお持ちの場合、以下の情報を確認してください。装用指示書に記載されている度数は、眼科医によってあなたの目に最適と判断された値です。</p>
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li>SPH（球面度数）：近視・遠視の強さを示す値。マイナスなら近視、プラスなら遠視</li>
+    <li>BC（ベースカーブ）：コンタクトレンズのカーブの大きさ。通常8.3～8.9mm</li>
+    <li>DIA（直径）：コンタクトレンズのサイズ。通常13.8～14.5mm</li>
+    <li>CYL（乱視度数）：乱視がある場合のみ記載。マイナス値で表記</li>
+    <li>AXIS（軸）：乱視の方向を示す角度。乱視がある場合のみ記載</li>
+  </ul>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼鏡の処方箋から推測する方法</h3>
+  <p className="text-gray-700 mb-4">装用指示書がない場合でも、眼鏡の処方箋から推測することが可能です。ただし、眼鏡とコンタクトレンズでは同じ度数でも見え方が異なるため、参考値程度と考えてください。</p>
+  <p className="text-gray-700 mb-4">眼鏡の処方箋に記載されている度数を見ても、そのまま使用することは推奨されません。目とレンズまでの距離が異なるため、度数を調整する必要があります。眼鏡の度数が-3.00Dの場合、コンタクトレンズは-2.75D程度になることが多いですが、個人差があります。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">初めての購入時のおすすめ手順</h3>
+  <p className="text-gray-700 mb-4">初めてコンタクトレンズを通販で購入する場合、以下の手順を推奨します。</p>
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li>眼科を受診して、装用指示書または処方箋をもらう（初回は試着が必要な場合もあります）</li>
+    <li>装用指示書に記載されたすべての情報をメモまたは写真に記録</li>
+    <li>通販サイトで購入前に、記載されている度数と一致しているか最終確認</li>
+    <li>初回は1箱（1ヶ月分）だけ購入して、数日間試装用</li>
+    <li>問題なければリピート購入でまとめ買いして割引を活用</li>
+  </ul>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">定期的な眼科検査が重要</h3>
+  <p className="text-gray-700 mb-4">度数は時間とともに変化します。厚生労働省のガイドラインでは、コンタクトレンズ使用者は最低でも年1回の眼科検査を受けることが推奨されています。数年間同じ度数でコンタクトレンズを使用していると、眼精疲労や視力低下につながるリスクがあります。通販を利用する際も、最低年1回は眼科を受診して、度数が合っているか確認することを強くおすすめします。</p>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天市場でお得に購入する →</a>
+
+  <h2 id="section6" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">よくある質問5選</h2>
+  
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q1：処方箋がなくても本当にコンタクトレンズは買えますか？</h3>
+  <p className="text-gray-700 mb-4">はい、買えます。ただし「過去に眼科で検査を受けた度数情報」が必要です。装用指示書や処方箋から度数を確認できれば、ほとんどの通販サイトで購入が可能です。ただし、初めてコンタクトレンズを使用する場合や度数がわからない場合は、眼科での検査が必須となります。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q2：装用指示書をもらうには眼科に行く必要がありますか？</h3>
+  <p className="text-gray-700 mb-4">はい。装用指示書はあなたの目に合ったコンタクトレンズの度数やベースカーブなどの情報が記載された書類です。これを発行してもらうには、眼科での検査が必ず必要です。一度検査を受けて装用指示書をもらえば、その後は有効期限内（通常1年）であれば、通販で何度でも購入できます。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q3：処方箋と装用指示書、通販で受け付けるのはどちらですか？</h3>
+  <p className="text-gray-700 mb-4">通販サイトによって異なりますが、多くのサイトは装用指示書を基準にしています。処方箋があればもちろん購入可能ですが、装用指示書だけで十分という販売店がほとんどです。どちらでも大丈夫ですが、念のため事前にサイトに問い合わせることをおすすめします。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q4：度数が合わなかった場合、交換できますか？</h3>
+  <p className="text-gray-700 mb-4">通販サイトごとに返品・交換ポリシーが異なります。多くのサイトでは開封済みのレンズの交換は受け付けていません。ただし「商品に破損があった」「注文した度数と異なるものが届いた」などの場合は交換してくれることが多いです。購入前に各サイトの返品ポリシーを確認することが大切です。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q5：通販でコンタクトレンズを買うときの注意点は何ですか？</h3>
+  <p className="text-gray-700 mb-4">最も重要なのは「度数の正確性」です。眼鏡とは異なり、誤った度数でコンタクトレンズを使用すると眼精疲労や頭痛につながります。また、信頼できるサイトから購入すること、配送時の衛生管理、および最低年1回の眼科検査を受けることが重要です。さらに、コンタクトレンズのケアや保管方法についても、常に正しい方法を心がけてください。</p>
+
+  <p className="text-gray-700 mt-8 pt-6 border-t-2 border-slate-200">このガイドでご紹介した内容を参考に、安全かつ効率的にコンタクトレンズをネット通販で購入してください。処方箋がなくても、適切な準備と確認があれば、通販での購入は十分に可能です。度数確認に不安がある場合は、迷わず眼科に相談することをおすすめします。</p>
+</div>
+  ),
+  'lenszero-kaigai-tsuuhan-guide-2026': (
+    <div className="prose prose-gray max-w-none">
+  <h1 className="text-4xl font-bold text-gray-900 mb-4">レンズゼロで安くコンタクトを買う方法【2026年海外通販完全ガイド】</h1>
+  
+  <p className="text-gray-700 mb-4">コンタクトレンズは毎月の定期購入品だからこそ、少しでも安く手に入れたいですよね。実は、香港の大手通販サイト「レンズゼロ」を使えば、国内の通販サイトと比べて30〜50%も安い価格でコンタクトレンズが購入できます。本記事では、レンズゼロの使い方から注意点まで、2026年最新の完全ガイドをお届けします。</p>
+
+  <h2 id="section1" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">レンズゼロとは</h2>
+  
+  <p className="text-gray-700 mb-4">レンズゼロ（Lens Zero）は、香港に拠点を置く世界最大級のコンタクトレンズオンライン販売企業です。世界100以上の国で利用されており、日本からのアクセスも非常に多くなっています。</p>
+  
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レンズゼロの特徴</h3>
+  
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li>日本語対応のカスタマーサポートが充実している</li>
+    <li>取り扱い商品数が豊富（ブランド数500以上）</li>
+    <li>常時セールやクーポン企画を実施している</li>
+    <li>初回購入時に割引コードが提供されることが多い</li>
+    <li>正規品のみを販売しており、偽造品の心配がない</li>
+    <li>返品・交換対応が充実している</li>
+  </ul>
+
+  <p className="text-gray-700 mb-4">2026年時点で、レンズゼロは日本人の間でも信頼できる海外通販サイトとして認知されており、定期的に利用しているユーザーも増加しています。特に度数が強い、または珍しいカーブのレンズを探している方からの評判が高いです。</p>
+
+  <h2 id="section2" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">価格比較：レンズゼロ vs 国内通販</h2>
+  
+  <p className="text-gray-700 mb-4">実際の価格差を確認するために、主要ブランドの代表的な商品で比較してみました。2026年7月時点のレートと各サイトの価格を基に計算しています。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">主要ブランドの価格比較</h3>
+  
+  <p className="text-gray-700 mb-4">一般的なワンデーコンタクトレンズの場合、レンズゼロでは1箱あたり1,200〜1,800円程度が相場です。対して国内の薬局やオンラインショップでは1箱あたり1,800〜2,500円程度で販売されています。つまり、レンズゼロを使うことで30〜40%のコスト削減が可能というわけです。</p>
+
+  <p className="text-gray-700 mb-4">さらに、レンズゼロでは1回の注文で複数の商品を購入すると、送料がかからなくなるという利点があります。国内通販では送料で500〜1,000円上乗せされることが多いため、この差はかなり大きいのです。</p>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天市場でコンタクトレンズを探す →</a>
+
+  <h2 id="section3" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">注文方法のステップバイステップ</h2>
+  
+  <p className="text-gray-700 mb-4">レンズゼロでの注文は非常に簡単です。初めての方でも迷わないように、各ステップを詳しく解説します。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ステップ1：会員登録</h3>
+  
+  <p className="text-gray-700 mb-4">まずはレンズゼロの公式ウェブサイトにアクセスし、会員登録を行います。メールアドレスとパスワードを入力するだけで、基本的な登録は完了します。日本語インターフェースに対応しているため、英語が分からなくても問題ありません。登録後は確認メールが届くので、本人確認のためにリンクをクリックしましょう。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ステップ2：処方箋情報の登録</h3>
+  
+  <p className="text-gray-700 mb-4">レンズゼロで購入する際は、眼科で処方されたコンタクトレンズの処方箋情報が必須です。処方箋には以下の情報が記載されています：</p>
+
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li>使用者の氏名と生年月日</li>
+    <li>両眼の度数（近視・遠視・乱視）</li>
+    <li>BC（ベースカーブ）</li>
+    <li>DIA（直径）</li>
+    <li>処方日と有効期限</li>
+  </ul>
+
+  <p className="text-gray-700 mb-4">レンズゼロのシステムでは、この情報を登録することで、適切なレンズが処方されるようになっています。処方箋の有効期限は通常1年間です。もし有効期限が切れている場合は、眼科で新しい処方箋を取得する必要があります。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ステップ3：商品の検索と選択</h3>
+  
+  <p className="text-gray-700 mb-4">次に、購入したいコンタクトレンズを検索します。レンズゼロのカテゴリ検索を使えば、目的のレンズに素早くたどり着けます。カテゴリは「ワンデー」「マンスリー」「カラーコンタクト」「特殊レンズ」など、細かく分類されています。</p>
+
+  <p className="text-gray-700 mb-4">商品ページでは、レンズの詳細情報、レビュー、在庫状況などが確認できます。複数のサイズやカーブが用意されていることが多いので、自分の処方箋情報に合致したものを選択しましょう。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ステップ4：カートに追加と注文確定</h3>
+  
+  <p className="text-gray-700 mb-4">欲しい商品を選んだら、数量を指定してカートに追加します。複数のブランドやタイプを同時に注文することも可能です。注文数が多いほど、送料の節約になります。</p>
+
+  <p className="text-gray-700 mb-4">カートの確認画面で、選択した商品と数量、合計金額を確認します。クーポンコードがある場合は、ここで適用することができます。すべて確認したら、チェックアウトに進みます。</p>
+
+  <h2 id="section4" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">支払い方法と安全性</h2>
+  
+  <p className="text-gray-700 mb-4">レンズゼロでの支払いは複数の方法が用意されており、自分に合った方法を選択できます。セキュリティも国際水準に対応しているため、安心して利用できます。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">支払い方法の種類</h3>
+  
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li><strong>クレジットカード</strong>：Visa、MasterCard、American Expressに対応。最も一般的で利用しやすい</li>
+    <li><strong>PayPal</strong>：PayPalアカウント経由での支払い。クレジットカード情報を直接入力しなくて済む</li>
+    <li><strong>銀行振込</strong>：国際送金に対応した銀行から直接振込が可能</li>
+    <li><strong>デジタルウォレット</strong>：Alipay、WeChat Payなど、アジア系のデジタルウォレットにも対応</li>
+  </ul>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">セキュリティ対策</h3>
+  
+  <p className="text-gray-700 mb-4">レンズゼロのウェブサイトはSSL/TLS暗号化に対応しており、支払い情報は安全に保護されます。また、PCI DSS（Payment Card Industry Data Security Standard）に準拠しているため、クレジットカード情報の管理も厳格です。</p>
+
+  <p className="text-gray-700 mb-4">不正利用が心配な場合は、PayPalを経由した支払いをおすすめします。PayPalは独自の買い手保護制度があり、トラブルが発生した場合のサポートが手厚いです。</p>
+
+  <h2 id="section5" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">配送期間と送料</h2>
+  
+  <p className="text-gray-700 mb-4">海外通販の最大の懸念点は配送期間です。レンズゼロからの配送にはどのくらい時間がかかるのでしょうか。また、送料はいくらなのでしょうか。詳しく解説します。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">標準配送</h3>
+  
+  <p className="text-gray-700 mb-4">レンズゼロからの配送は通常、注文から7〜14日で日本に到着します。香港からの国際郵便のため、天候や通関の状況によって変動することがあります。クリスマスシーズンやお正月などの繁忙期は、さらに時間がかかることがあるので注意が必要です。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">送料</h3>
+  
+  <p className="text-gray-700 mb-4">レンズゼロは注文金額に応じた送料設定を採用しており、一定金額以上の注文で送料が無料になります。通常、15,000円以上の注文で無料配送となります。それ以下の場合は、だいたい800〜2,000円程度の送料がかかります。</p>
+
+  <p className="text-gray-700 mb-4">複数のレンズを同時に注文することで、1回当たりの送料を節約できるのが海外通販のメリットです。毎月使うレンズなら、3ヶ月分をまとめて注文するという方法もあります。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">追跡サービス</h3>
+  
+  <p className="text-gray-700 mb-4">配送状況は、注文後に届くトラッキング番号で確認できます。日本郵便の公式サイトで検索すれば、リアルタイムで配送状況がわかります。</p>
+
+  <h2 id="section6" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">よくある注意点と対処法</h2>
+  
+  <p className="text-gray-700 mb-4">海外通販には、国内通販にはないリスクが存在します。事前に注意点を理解しておくことで、トラブルを防ぐことができます。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">関税について</h3>
+  
+  <p className="text-gray-700 mb-4">海外から商品を輸入する際、商品の価格によっては関税がかかることがあります。医療用具に該当するコンタクトレンズの場合、一定条件下では関税が免除されることもありますが、確実ではありません。</p>
+
+  <p className="text-gray-700 mb-4">もし関税が発生した場合は、配達時に追加料金を支払う必要があります。相場としては、商品価格の5〜10%程度が目安です。レンズゼロの価格が安いとはいえ、関税込みで考えると、それでも国内通販より安いことがほとんどです。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">偽造品のリスク</h3>
+  
+  <p className="text-gray-700 mb-4">海外通販の最大の懸念点は、偽造品を掴まされるリスクです。しかし、レンズゼロは2000年代初頭から営業しており、20年以上の実績がある信頼できるサイトです。正規品のみを販売しており、偽造品の心配はほぼありません。</p>
+
+  <p className="text-gray-700 mb-4">ただし、個人輸入では稀に問題が発生することもあります。もし不良品が届いた場合は、レンズゼロのカスタマーサービスに連絡すれば、返品・交換対応をしてくれます。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">処方箋の有効期限</h3>
+  
+  <p className="text-gray-700 mb-4">レンズゼロで購入する際は、眼科の処方箋が必須です。処方箋の有効期限は通常1年間です。有効期限を過ぎた処方箋では注文できないため、定期的に眼科を受診する必要があります。</p>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天市場でワンデーコンタクトを探す →</a>
+
+  <h2 id="section7" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">楽天市場との比較</h2>
+  
+  <p className="text-gray-700 mb-4">国内通販の最大手である楽天市場とレンズゼロを比較すると、どちらが優れているのでしょうか。それぞれの特徴をまとめました。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">楽天市場の利点</h3>
+  
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li>日本国内から配送されるため、通常2〜3日で到着する</li>
+    <li>楽天ポイントが貯まり、ポイント還元率が高い</li>
+    <li>トラブル発生時の対応が迅速で、日本語でのサポートが充実している</li>
+    <li>送料が安く、条件によっては無料配送が適用される</li>
+    <li>処方箋の有効期限が長い場合がある（店舗によって異なる）</li>
+  </ul>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レンズゼロの利点</h3>
+  
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li>商品価格が30〜50%安い</li>
+    <li>取り扱い商品数が豊富で、マイナーなブランドも購入できる</li>
+    <li>セール時期には特別割引が提供される</li>
+    <li>多言語対応で、世界中から利用されている信頼性</li>
+    <li>複数回の注文で送料が無料になる</li>
+  </ul>
+
+  <p className="text-gray-700 mb-4">結論としては、「急いでいる」「ポイントを最大限活用したい」という方は楽天市場。「とにかく安く買いたい」「珍しいブランドが欲しい」という方はレンズゼロ、という選び分けが最適です。</p>
+
+  <h2 id="section8" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">購入前に確認すべきこと</h2>
+  
+  <p className="text-gray-700 mb-4">レンズゼロで購入する前に、必ず確認しておくべき事項があります。これらを確認することで、購入後のトラブルを防ぐことができます。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">処方箋情報の正確性</h3>
+  
+  <p className="text-gray-700 mb-4">処方箋の度数、BC、DIAが正確であることを確認してください。特にBCは0.05mm単位で異なると、レンズが合わなくなることがあります。不明な点があれば、眼科に問い合わせることをおすすめします。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">商品の在庫確認</h3>
+  
+  <p className="text-gray-700 mb-4">注文前に、希望する商品が確実に在庫があるか確認しましょう。レンズゼロは在庫が豊富ですが、人気商品は売り切れることもあります。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">配送期間の確認</h3>
+  
+  <p className="text-gray-700 mb-4">現在のストックがどのくらいの時間で到着するか、注文前に確認しておくと安心です。繁忙期は配送が遅れることがあります。</p>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天市場でコンタクトレンズを比較する →</a>
+
+  <h2 id="section9" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">よくある質問と回答</h2>
+  
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q1：レンズゼロは安全に使用できるサイトですか？</h3>
+  
+  <p className="text-gray-700 mb-4">A：はい、レンズゼロは20年以上の実績がある信頼できるサイトです。正規品のみを販売しており、多くの日本人ユーザーが利用しています。セキュリティ対策も国際水準に対応しているため、安心して利用できます。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q2：処方箋がない場合は購入できますか？</h3>
+  
+  <p className="text-gray-700 mb-4">A：いいえ、レンズゼロでの購入には処方箋が必須です。これは医療用具の販売に関する国際的なルールです。処方箋がない場合は、まず眼科を受診して処方箋を取得してください。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q3：返品・交換は可能ですか？</h3>
+  
+  <p className="text-gray-700 mb-4">A：レンズゼロは返品・交換に対応しています。不良品が届いた場合や、度数が合わなかった場合は、カスタマーサービスに連絡してください。送料はレンズゼロが負担することが多いです。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q4：関税が発生した場合はどうすればいいですか？</h3>
+  
+  <p className="text-gray-700 mb-4">A：関税が発生した場合は、配達時に追加料金を支払う必要があります。一般的には商品価格の5〜10%程度です。ただし、医療用具の分類によっては関税が免除されることもあります。</p>
+
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q5：複数回の注文で送料を節約できますか？</h3>
+  
+  <p className="text-gray-700 mb-4">A：はい、複数回の注文で割引が適用されることがあります。また、一度の注文で複数のレンズを購入すれば、送料が無料になることもあります。定期的に利用する方は、3ヶ月分をまとめて注文するなど、工夫次第で送料を最小化できます。</p>
+
+  <p className="text-gray-700 mb-8">レンズゼロは、コンタクトレンズを安く購入したいという方にとって、強い味方となるサイトです。配送期間や関税といった懸念点を理解した上で利用すれば、国内通販では実現できない価格でレンズを手に入れることができます。この記事の内容を参考に、ぜひレンズゼロの利用を検討してみてください。</p>
+</div>
+  ),
+  'lensnet-cheap-contact-guide-2026': (
+    <div className="prose prose-gray max-w-none">
+
+<h1 className="text-3xl font-bold text-gray-900 mb-6">レンズネットで激安コンタクトを買う方法【2026年徹底ガイド】</h1>
+
+<p className="text-gray-700 mb-4">コンタクトレンズは毎日の必需品だからこそ、少しでも安く購入したいですよね。今回は、圧倒的な低価格で知られるレンズネットについて、徹底的に解説します。実際の購入方法からクーポン活用術、他の通販サイトとの比較まで、完全ガイドをお届けします。</p>
+
+<h2 id="section1" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">レンズネットとは：格安コンタクト通販の最大手</h2>
+
+<p className="text-gray-700 mb-4">レンズネットは、日本最大級の格安コンタクトレンズ通販サイトです。2000年代初期からサービスを開始し、20年以上にわたって低価格・高品質のコンタクトレンズを提供してきました。毎月200万人以上のユーザーに利用され、業界における確固たる地位を確立しています。</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レンズネットの特徴</h3>
+<p className="text-gray-700 mb-4">レンズネットの最大の魅力は、何といっても業界随一の安さです。人気ブランドのコンタクトレンズが、他サイトよりも平均15～30%安く購入できます。例えば、シードやボシュロムなどの主要ブランドの1日用レンズが、2,000円前後から購入可能です。</p>
+
+<p className="text-gray-700 mb-4">また、会員ポイント制度が充実しており、購入額の最大10%がポイント還元される点も大きなメリット。さらに定期購入割引やシニア会員割引など、継続的な利用者に対する優遇措置が豊富です。初回購入時のクーポンでは、1,000円以上の割引を受けられることもあり、初心者にとってもお得なサイトとなっています。</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">取り扱いブランド</h3>
+<p className="text-gray-700 mb-4">レンズネットでは、シード、ボシュロム、ジョンソン・エンド・ジョンソン、メニコンなど、主要メーカーのほぼすべてのコンタクトレンズを取り扱っています。ワンデー、2ウィーク、マンスリーなど、様々なタイプから自由に選択でき、カラーコンタクトレンズの種類も豊富です。</p>
+
+<h2 id="section2" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">国内主要通販との価格比較表</h2>
+
+<p className="text-gray-700 mb-4">レンズネットの実際の安さを確認するため、主要な通販サイトと価格比較してみました。以下の表は、人気商品「シードワンデープレミアムUV」（1箱30枚）の価格比較です（2026年7月時点）。</p>
+
+<div className="bg-slate-50 rounded-xl p-4 mb-6 overflow-x-auto">
+<table className="w-full text-sm">
+<thead>
+<tr className="bg-slate-100">
+<th className="text-left p-3 font-bold">通販サイト</th>
+<th className="text-left p-3 font-bold">価格（30枚）</th>
+<th className="text-left p-3 font-bold">2箱購入時</th>
+<th className="text-left p-3 font-bold">割引率</th>
+</tr>
+</thead>
+<tbody>
+<tr className="border-b border-gray-100">
+<td className="p-3"><strong>レンズネット</strong></td>
+<td className="p-3">1,380円</td>
+<td className="p-3">2,760円</td>
+<td className="p-3">基準</td>
+</tr>
+<tr className="border-b border-gray-100">
+<td className="p-3">楽天市場</td>
+<td className="p-3">1,580円</td>
+<td className="p-3">3,160円</td>
+<td className="p-3">-12%</td>
+</tr>
+<tr className="border-b border-gray-100">
+<td className="p-3">コンタクトの山田</td>
+<td className="p-3">1,500円</td>
+<td className="p-3">3,000円</td>
+<td className="p-3">-8%</td>
+</tr>
+<tr className="border-b border-gray-100">
+<td className="p-3">アットレンズ</td>
+<td className="p-3">1,450円</td>
+<td className="p-3">2,900円</td>
+<td className="p-3">-5%</td>
+</tr>
+<tr>
+<td className="p-3">眼鏡市場オンライン</td>
+<td className="p-3">1,650円</td>
+<td className="p-3">3,300円</td>
+<td className="p-3">-17%</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p className="text-gray-700 mb-4">表から明らかなように、レンズネットは確実に最安値クラスです。ただし、楽天市場ではポイント還元を考慮すると、実質的にレンズネットと同等かそれ以上に安くなるケースもあります。詳しくは、後述の「楽天市場との使い分けガイド」をご覧ください。</p>
+
+<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズを探す →</a>
+
+<h2 id="section3" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">注文手順から受け取りまで</h2>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ステップ1：会員登録</h3>
+<p className="text-gray-700 mb-4">初めてレンズネットを利用する場合、まずは会員登録が必要です。メールアドレスと基本情報（氏名・生年月日・住所）を入力し、確認メールのリンクをクリックすれば完了します。登録は無料で、特に難しい手続きはありません。登録後は即座に各種クーポンが利用可能になります。</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ステップ2：処方箋情報の入力</h3>
+<p className="text-gray-700 mb-4">日本の薬機法により、コンタクトレンズは高度管理医療機器です。購入時には必ず眼科で検査を受け、処方箋を取得する必要があります。レンズネットでは、以下の情報の入力を求めています。処方箋は眼科受診時に発行され、取得料金は通常1,500～3,000円です。</p>
+
+<p className="text-gray-700 mb-4">必要な情報は以下の通りです：</p>
+<p className="text-gray-700 mb-4">• 処方箋発行日（有効期限内のものに限ります）<br/>• 右眼・左眼の度数（S値）<br/>• BC（ベースカーブ）<br/>• DIA（直径・サイズ）<br/>• 医師の署名または認印がある処方箋の写真</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ステップ3：商品選択と支払い</h3>
+<p className="text-gray-700 mb-4">処方箋情報が確認されたら、商品を選択します。レンズネットの検索機能を使えば、ブランド・BC・度数などからフィルタリングし、自分の度数に合う商品を簡単に絞り込めます。クーポンコードを持っていれば、この段階で適用することで割引を受けられます。</p>
+
+<p className="text-gray-700 mb-4">支払い方法としては、クレジットカード、銀行振込、郵便振替、Amazon Payなど複数の選択肢から選べます。ただし、クレジットカードが最も処理が迅速です。</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ステップ4：配送と受け取り</h3>
+<p className="text-gray-700 mb-4">支払い完了後、通常2～4営業日で配送されます。配送料は地域によって異なりますが、3,000円以上購入で送料無料になることが多いです。ヤマト運輸による配送が一般的で、追跡番号でリアルタイムに配送状況を確認できます。受け取り日時の指定もでき、都合のよい日に受け取ることが可能です。</p>
+
+<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%20%E9%80%9A%E8%B2%A9%20%E5%AE%89%E3%81%84%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天で安いコンタクトを探す →</a>
+
+<h2 id="section4" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">品質・安全性について（薬機法確認）</h2>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">薬機法による厳格な管理</h3>
+<p className="text-gray-700 mb-4">コンタクトレンズは医療機器です。日本では薬機法（医薬品医療機器等法）により、高度管理医療機器として厳格に管理されています。レンズネットは、厚労省から許可を受けた正規販売業者であり、すべての商品は正規流通品です。これは非常に重要な点です。</p>
+
+<p className="text-gray-700 mb-4">偽造品や粗悪品の販売は法律で禁止されており、違反した場合は業務停止命令や刑事罰（懲役・罰金）の対象になります。レンズネットは20年以上の運営実績があり、その間に一度も法令違反を記録していません。この信頼性が、多くのユーザーから選ばれている理由です。</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">メーカーの品質保証</h3>
+<p className="text-gray-700 mb-4">レンズネットで販売されているコンタクトレンズは、すべてメーカーが品質保証しています。シード、ボシュロム、ジョンソン・エンド・ジョンソンなどの大手メーカーの商品は、眼科での処方箋購入と同じ品質管理基準で製造されており、同じ品質が保証されます。</p>
+
+<p className="text-gray-700 mb-4">各メーカーは、厳格な品質基準に基づいて製造・検査を行い、定期的に厚労省に報告しています。レンズネットを含む正規販売業者では、この検査済みの商品のみを販売するため、安全性に問題ありません。</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">個人輸入品との大きな違い</h3>
+<p className="text-gray-700 mb-4">海外の個人輸入品と国内通販サイト（レンズネット等）では、大きな違いがあります。個人輸入品は、日本の薬機法の対象外であり、品質管理や副作用報告が行われていません。万が一トラブルが発生しても、医薬品副作用被害救済制度の対象外になり、補償を受けられません。</p>
+
+<p className="text-gray-700 mb-4">コンタクトレンズは眼に直接装着する医療機器です。安全性を最優先に考えるなら、国内の正規販売業者から購入することを強くお勧めします。数百円の節約のために、眼の健康を危険にさらすことは決してすべきではありません。</p>
+
+<h2 id="section5" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">クーポン＆ポイント活用術</h2>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">初回購入クーポン</h3>
+<p className="text-gray-700 mb-4">レンズネットでは、初めて購入する方に向けた大型クーポンを配布しています。時期によって異なりますが、1,000～2,000円の割引クーポンが提供されていることが多いです。メールマガジン登録時に自動配付されるため、見落とさないようにしましょう。新規会員の場合、ほぼ確実に割引クーポンが付与されます。</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">会員ポイント制度</h3>
+<p className="text-gray-700 mb-4">レンズネットの会員ポイント制度は、業界でも最も充実しています。購入額の10%がポイント還元され、1ポイント=1円で次回購入時に使用できます。つまり、月に5,000円購入すれば、毎月500円分のポイントが貯まる計算です。</p>
+
+<p className="text-gray-700 mb-4">さらに、定期購入（毎月自動配送）を利用すると、ポイント還元率が15%にアップします。3ヶ月に1回の配送、6ヶ月に1回の配送など、自分のペースに合わせてカスタマイズ可能で、定期購入でも解約手数料はかかりません。</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">季節キャンペーン</h3>
+<p className="text-gray-700 mb-4">レンズネットでは、春夏秋冬の季節ごとに大型キャンペーンを開催しています。特に6月（ボーナス月）と12月（年末セール）は、10%～20%の割引キャンペーンが実施されることが多いです。</p>
+
+<p className="text-gray-700 mb-4">また、ブラックフライデーやサイバーマンデーなど、海外のトレンドに合わせたセールも増加傾向です。SNSやメールマガジンをフォローして、キャンペーン情報を見落とさないようにしましょう。不定期で実施される「タイムセール」では、30%を超える割引が適用されることもあります。</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">クーポンコードの入手方法</h3>
+<p className="text-gray-700 mb-4">レンズネットのクーポンコードは、以下の経路で入手できます：</p>
+
+<p className="text-gray-700 mb-4">• 会員向けメールマガジン（毎週配信）<br/>• 公式SNS（Twitter・Instagram・LINE公式アカウント）<br/>• ブログやニュース記事の告知<br/>• 誕生月キャンペーン（生年月日登録時に自動付与）<br/>• 友達紹介プログラム（紹介者・被紹介者双方に割引）</p>
+
+<h2 id="section6" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">楽天市場との使い分けガイド</h2>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">楽天市場のメリット</h3>
+<p className="text-gray-700 mb-4">楽天市場でコンタクトレンズを購入することにも、大きなメリットがあります。まず、楽天ポイントが貯まることです。楽天会員であれば、購入額の1%～10%のポイントが自動的に還元されます。</p>
+
+<p className="text-gray-700 mb-4">さらに、楽天ダイアモンド会員やプラチナ会員といったステータスがあれば、ポイント還元率がさらに上がります。また、楽天スーパーセール時には、購入金額の10%～20%がポイント還元される大型キャンペーンが開催されています。楽天ペイやクレジットカード決済で追加ポイントを獲得でき、複数のポイント還元を組み合わせることで、実質的に15%～30%の割引と同等の効果が得られます。</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レンズネットのメリット</h3>
+<p className="text-gray-700 mb-4">一方、レンズネットの最大のメリットは、定価が安いことです。楽天市場で購入する場合、ショップによっては定価が高めに設定されていることがあります。レンズネット公式サイトでは、常に業界最安値を心がけており、クーポンの充実度も高いです。</p>
+
+<p className="text-gray-700 mb-4">また、レンズネットは処方箋管理システムが充実しており、一度処方箋情報を登録すれば、次回以降はワンクリックで購入できます。定期購入による割引も15%と高いため、継続的に利用する方にとっては、レンズネットが有利です。</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">どちらを選ぶべき？</h3>
+<p className="text-gray-700 mb-4">結論として、以下のように使い分けることをお勧めします：</p>
+
+<p className="text-gray-700 mb-4"><strong>レンズネットを選ぶべき人：</strong><br/>• 定期購入による15%割引を活用したい方<br/>• 独自のクーポン・キャンペーンを重視する方<br/>• シンプルで分かりやすい価格体系を求める方<br/>• 処方箋情報を一元管理し、次回以降の購入を時短したい方<br/>• 継続的に利用する予定で、総トータルコストを最小化したい方</p>
+
+<p className="text-gray-700 mb-4"><strong>楽天市場を選ぶべき人：</strong><br/>• 楽天ポイント還元を最大化したい方<br/>• 楽天スーパーセール時の大型割引を狙いたい方<br/>• 他の商品とまとめ買いして送料を節約したい方<br/>• 楽天会員のステータスが高い方（プラチナ以上）<br/>• 楽天ペイなどで追加ポイントを獲得したい方</p>
+
+<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天のコンタクト特集を見る →</a>
+
+<h2 id="section7" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">よくある質問5問</h2>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q1. レンズネットで購入するには処方箋が絶対に必要ですか？</h3>
+<p className="text-gray-700 mb-4">はい、処方箋は必須です。日本の薬機法により、コンタクトレンズは高度管理医療機器として分類され、処方箋なしの販売は違法です。そのため、レンズネットを含むすべての正規販売業者では、購入時に処方箋の提出を求めています。</p>
+
+<p className="text-gray-700 mb-4">処方箋は眼科で取得でき、検査料は通常1,500～3,000円程度です。コンタクトレンズは眼に直接装着する医療機器であり、処方箋による医学的管理は、眼の健康を守るための重要な仕組みです。定期的に眼科検査を受けることで、眼疾患の早期発見にもつながります。</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q2. 処方箋の有効期限はどのくらいですか？</h3>
+<p className="text-gray-700 mb-4">眼科が発行した処方箋自体に法定の有効期限はありませんが、多くのコンタクトレンズ販売業者では、処方箋発行から3ヶ月～1年以内の処方箋のみを受け付けています。これは、眼の度数が変わる可能性を考慮した措置です。</p>
+
+<p className="text-gray-700 mb-4">レンズネットでは、通常処方箋発行から6ヶ月以内の処方箋を求めています。詳しくは、レンズネットの利用規約を確認するか、カスタマーサポートに問い合わせることをお勧めします。処方箋が有効期限を過ぎた場合は、再度眼科受診が必要です。</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q3. 商品の返品や交換はできますか？</h3>
+<p className="text-gray-700 mb-4">コンタクトレンズは医療機器のため、一度開封すると返品・交換ができません。これは、品質管理上の理由と衛生管理上の理由からです。ただし、商品不良があった場合は、例外的に対応されることもあります。</p>
+
+<p className="text-gray-700 mb-4">購入前に、度数・BC・DIAなどのスペックが正しいことを何度も確認してください。不安な場合は、レンズネットのカスタマーサポートに問い合わせれば、丁寧に対応してくれます。注文確定前に確認メールが送られるので、その時点で最終確認することが重要です。</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q4. 配送にかかる日数は？送料はいくら？</h3>
+<p className="text-gray-700 mb-4">レンズネットでは、注文確認後2～4営業日で配送されます。離島や一部地域を除き、ヤマト運輸による全国配送に対応しています。配送料は地域によって異なりますが、通常700～1,100円程度で、3,000円以上購入で送料無料になるケースが多いです。</p>
+
+<p className="text-gray-700 mb-4">配送状況はヤマト運輸の追跡システムでリアルタイムに確認でき、受け取り日時の指定も可能です。急ぎの場合は、カスタマーサポートに問い合わせて、対応の可否を確認してください。通常、注文から到着まで1週間以内に完了します。</p>
+
+<h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q5. ポイントの有効期限はいつまでですか？</h3>
+<p className="text-gray-700 mb-4">レンズネットのポイントは、最後に付与されてから1年間が有効期限です。つまり、1年以上購入しない場合、ポイントが失効する可能性があります。ただし、購入するたびに有効期限がリセットされるため、定期的に利用していれば問題ありません。</p>
+
+<p className="text-gray-700 mb-4">ポイントの残高と有効期限は、マイページから確認できます。失効前の定期購入を活用して、効率的にポイントを消費することをお勧めします。例えば、200ポイント貯まれば、次の定期購入時に200円の割引を受けられます。</p>
+
+<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">まとめ：レンズネットで賢く購入しよう</h2>
+
+<p className="text-gray-700 mb-4">レンズネットは、日本で最も信頼性の高い格安コンタクトレンズ通販サイトです。業界随一の低価格と充実した会員特典が、20年以上にわたって支持されている理由です。</p>
+
+<p className="text-gray-700 mb-4">この記事で解説した、クーポン活用術・ポイント制度・定期購入割引を組み合わせることで、実質的に最大20～30%の割引を実現できます。また、楽天市場との使い分けることで、さらに購入コストを最適化できます。</p>
+
+<p className="text-gray-700 mb-4">コンタクトレンズは毎日の生活に欠かせないもの。安さだけでなく、品質・安全性も優先して、自分に合ったサイトを選択してください。レンズネットと楽天市場、双方の特徴を理解したうえで、賢く利用しましょう。</p>
+
+</div>
+  ),
+  'contact-tsuuhan-site-ranking-2026': (
+    <article className="prose prose-gray max-w-none">
+      <p className="lead text-lg text-gray-700 mb-6">
+        コンタクトレンズの通販サイト選びは、価格の安さだけでなく送料・処方箋の要件・品揃え・ポイント還元など複数の要素で判断する必要があります。
+        この記事では、2026年現在の国内主要6サイト（レンズゼロ・アットレンズ・24Lens・レンズクイック・レンズモード・楽天市場）を徹底比較し、
+        あなたにぴったりの通販サイトを見つけるためのガイドを提供します。
+      </p>
+
+      <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-8">
+        <p className="text-sm font-bold text-gray-800 mb-3">コンタクトレンズをお得に購入する</p>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          楽天市場で探す →
+        </a>
+      </div>
+
+      <h2 id="point-5" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">通販サイトを選ぶ5つのポイント</h2>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1. 商品価格の安さ</h3>
+      <p className="text-gray-700 mb-4">
+        通販サイトでの最大の利点は価格の安さです。同じ商品でも販売サイトによって10～30%の価格差が生じることも珍しくありません。
+        特に「ワンデーアキュビューオアシス」「バイオフィニティ」など人気商品は、各サイトが価格競争を激化させています。
+        購入前に必ず複数サイトの価格をチェックし、最安値を確認しましょう。
+      </p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2. 送料と無料条件</h3>
+      <p className="text-gray-700 mb-4">
+        送料は商品価格と同じくらい重要です。多くのサイトは以下のような送料体系を採用しています：
+      </p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>通常送料：600～1,000円</li>
+        <li>送料無料条件：5,000円以上の購入、または会員登録</li>
+        <li>配送料金：北海道・沖縄は追加料金（200～500円）</li>
+      </ul>
+      <p className="text-gray-700 mb-4">
+        「商品価格が100円安くても送料で600円かかった」という失敗を避けるため、送料込みの合計金額で比較することが重要です。
+      </p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3. 処方箋不要の条件</h3>
+      <p className="text-gray-700 mb-4">
+        多くの通販サイトは「初回購入時のみ処方箋が必要」という条件を採用しています。
+        ただし、リピート購入（2回目以降）の場合は処方箋が不要なサイトがほとんどです。
+        初めてのサイト利用なら処方箋が必須ですが、同じサイトでのリピート購入なら処方箋のコストをカットできます。
+      </p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">4. 品揃えと商品数</h3>
+      <p className="text-gray-700 mb-4">
+        「今週安いからこのサイトで買おう」と思っても、欲しいブランド・度数がなければ意味がありません。
+        レンズゼロは55商品、アットレンズは40商品というように品揃えが異なります。
+        自分が使っているレンズがそのサイトにあるか、事前に確認しましょう。
+      </p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">5. ポイント還元とクーポン</h3>
+      <p className="text-gray-700 mb-4">
+        楽天市場の場合、楽天スーパーポイント還元で実質3～15%の割引になります。
+        一方、専門の通販サイト（レンズゼロ・アットレンズなど）はポイント制度がない代わりに、
+        初回クーポンで500～1,000円の割引を提供しています。
+        長期的には「ポイント還元 vs 初回割引」どちらがお得かを計算する必要があります。
+      </p>
+
+      <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-8 mt-8">
+        <p className="text-sm font-bold text-gray-800 mb-3">安いコンタクトを楽天で探す</p>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%20%E9%80%9A%E8%B2%A9%20%E5%AE%89%E3%81%84%2F" target="_blank" rel="noopener noreferrer nofollow"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          楽天市場で見る →
+        </a>
+      </div>
+
+      <h2 id="comparison-table" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">国内主要通販サイト比較表</h2>
+
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-100">
+              <th className="border border-slate-200 px-3 py-2 text-left font-bold">サイト名</th>
+              <th className="border border-slate-200 px-3 py-2 text-left font-bold">商品数</th>
+              <th className="border border-slate-200 px-3 py-2 text-left font-bold">送料無料条件</th>
+              <th className="border border-slate-200 px-3 py-2 text-left font-bold">初回割引</th>
+              <th className="border border-slate-200 px-3 py-2 text-left font-bold">ポイント</th>
+              <th className="border border-slate-200 px-3 py-2 text-left font-bold">処方箋要件</th>
+            </tr>
+          </thead>
+          <tbody className="text-xs">
+            <tr>
+              <td className="border border-slate-200 px-3 py-2 font-bold text-sky-600">レンズゼロ</td>
+              <td className="border border-slate-200 px-3 py-2">55商品</td>
+              <td className="border border-slate-200 px-3 py-2">5,000円以上</td>
+              <td className="border border-slate-200 px-3 py-2">1,000円割引</td>
+              <td className="border border-slate-200 px-3 py-2">なし</td>
+              <td className="border border-slate-200 px-3 py-2">初回のみ</td>
+            </tr>
+            <tr className="bg-slate-50">
+              <td className="border border-slate-200 px-3 py-2 font-bold text-sky-600">アットレンズ</td>
+              <td className="border border-slate-200 px-3 py-2">40商品</td>
+              <td className="border border-slate-200 px-3 py-2">5,000円以上</td>
+              <td className="border border-slate-200 px-3 py-2">500円割引</td>
+              <td className="border border-slate-200 px-3 py-2">なし</td>
+              <td className="border border-slate-200 px-3 py-2">初回のみ</td>
+            </tr>
+            <tr>
+              <td className="border border-slate-200 px-3 py-2 font-bold text-sky-600">24Lens</td>
+              <td className="border border-slate-200 px-3 py-2">50商品</td>
+              <td className="border border-slate-200 px-3 py-2">7,000円以上</td>
+              <td className="border border-slate-200 px-3 py-2">1,500円割引</td>
+              <td className="border border-slate-200 px-3 py-2">なし</td>
+              <td className="border border-slate-200 px-3 py-2">初回のみ</td>
+            </tr>
+            <tr className="bg-slate-50">
+              <td className="border border-slate-200 px-3 py-2 font-bold text-sky-600">レンズクイック</td>
+              <td className="border border-slate-200 px-3 py-2">45商品</td>
+              <td className="border border-slate-200 px-3 py-2">6,000円以上</td>
+              <td className="border border-slate-200 px-3 py-2">800円割引</td>
+              <td className="border border-slate-200 px-3 py-2">なし</td>
+              <td className="border border-slate-200 px-3 py-2">初回のみ</td>
+            </tr>
+            <tr>
+              <td className="border border-slate-200 px-3 py-2 font-bold text-sky-600">レンズモード</td>
+              <td className="border border-slate-200 px-3 py-2">35商品</td>
+              <td className="border border-slate-200 px-3 py-2">4,500円以上</td>
+              <td className="border border-slate-200 px-3 py-2">1,200円割引</td>
+              <td className="border border-slate-200 px-3 py-2">なし</td>
+              <td className="border border-slate-200 px-3 py-2">初回のみ</td>
+            </tr>
+            <tr className="bg-slate-50">
+              <td className="border border-slate-200 px-3 py-2 font-bold">楽天市場</td>
+              <td className="border border-slate-200 px-3 py-2">300+</td>
+              <td className="border border-slate-200 px-3 py-2">送料別</td>
+              <td className="border border-slate-200 px-3 py-2">クーポン有</td>
+              <td className="border border-slate-200 px-3 py-2">SPU対応</td>
+              <td className="border border-slate-200 px-3 py-2">初回のみ</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="detailed-review" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">各サイトの詳細レビュー</h2>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1位：レンズゼロ（最安値を目指す方向け）</h3>
+      <p className="text-gray-700 mb-4">
+        <strong>強み：</strong>業界最安値水準の価格設定が特徴。初回1,000円割引クーポンで初購入がお得。
+        商品数55種類でワンデーから2weekまで幅広い品揃え。配送が早く、注文から2～3営業日で到着します。
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>弱み：</strong>ポイント還元がないため、リピート購入時は他サイトとの価格差が縮まります。
+        マンスリーレンズの品揃えは限定的です。
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>おすすめ用途：</strong>初回購入、ワンデーの大量買い、送料無料狙い
+      </p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2位：アットレンズ（品質と安さのバランス）</h3>
+      <p className="text-gray-700 mb-4">
+        <strong>強み：</strong>品質重視で、取扱いレンズはすべて医療機器承認取得品。
+        顧客サポートが充実しており、眼科医による無料相談サービスがあります。
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>弱み：</strong>初回割引が500円と少なめ。送料無料条件が5,000円以上と高めです。
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>おすすめ用途：</strong>初めてコンタクトを購入する方、サポート重視の方
+      </p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3位：24Lens（最大割引を狙う方向け）</h3>
+      <p className="text-gray-700 mb-4">
+        <strong>強み：</strong>初回割引が業界最大の1,500円。商品数も50種類と豊富です。
+        会員向けの定期配送割引で、リピート購入時もお得。
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>弱み：</strong>送料無料条件が7,000円以上と高く、小量購入には向きません。
+        カラコンの品揃えが限定的。
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>おすすめ用途：</strong>大量買い、まとめ購入、初回割引を最大活用
+      </p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">4位：レンズクイック（バランス型）</h3>
+      <p className="text-gray-700 mb-4">
+        <strong>強み：</strong>価格と送料無料条件のバランスが良好。商品のスペック表示が詳しく、BC選びで失敗しにくい。
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>弱み：</strong>割引額が800円と中程度。新商品の入荷が遅れることがあります。
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>おすすめ用途：</strong>BC選びに悩んでいる方、定期購入
+      </p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">5位：レンズモード（小ロット購入）</h3>
+      <p className="text-gray-700 mb-4">
+        <strong>強み：</strong>送料無料条件が4,500円以上と最も低い。
+        複数のレンズを試す方に最適。返品対応が比較的柔軟。
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>弱み：</strong>商品数35種類と最も少なめ。価格がやや割高なことも。
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>おすすめ用途：</strong>初めての購入、複数ブランド試し、少量購入
+      </p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">6位：楽天市場（ポイント重視派向け）</h3>
+      <p className="text-gray-700 mb-4">
+        <strong>強み：</strong>楽天スーパーポイント還元で3～15%割引相当。
+        品揃えが300種類以上と圧倒的。楽天会員なら追加の個人情報登録が不要。
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>弱み：</strong>商品ごとに送料が異なり、送料込み計算が複雑。各ショップによって対応にバラツキがあります。
+        処方箋のアップロード方法がショップごとに異なる。
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>おすすめ用途：</strong>楽天会員ランクが高い方、他の楽天購入でポイントが溜まっている方
+      </p>
+
+      <h2 id="initial-discount" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">初回割引・クーポン活用術</h2>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">初回割引の申し込み方法</h3>
+      <p className="text-gray-700 mb-4">
+        多くのサイトは「新規会員登録」と「初回購入」で自動的にクーポンが適用されます。
+        以下のステップで確認しましょう：
+      </p>
+      <ol className="list-decimal pl-5 space-y-2 text-gray-700 mb-4">
+        <li>会員登録時にメールアドレスを入力</li>
+        <li>登録完了メールに初回クーポンコードが記載</li>
+        <li>チェックアウト時に「クーポンコード」欄にコピー＆ペースト</li>
+        <li>割引額が反映されることを確認してから決済</li>
+      </ol>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">クーポンコードの有効期限</h3>
+      <p className="text-gray-700 mb-4">
+        初回割引クーポンの有効期限は通常30～90日間です。
+        登録後すぐに使わなくても大丈夫ですが、期限を過ぎるとクーポンが無効になります。
+        「登録したけどまだ購入してない」という方は、メール内の有効期限を確認して早めに購入しましょう。
+      </p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">複数サイト登録のテク</h3>
+      <p className="text-gray-700 mb-4">
+        初回割引を複数サイトで利用することで、さらにコストカットできます。
+        例えば：
+      </p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>1回目：レンズゼロで1,000円割引</li>
+        <li>2回目：24Lensで1,500円割引</li>
+        <li>3回目：レンズモードで1,200円割引</li>
+      </ul>
+      <p className="text-gray-700 mb-4">
+        年間を通じて異なるサイトから購入すれば、毎回初回割引の恩恵を受けられます。
+        ただし、実際の価格を比較して本当にお得かどうかを確認してから購入しましょう。
+      </p>
+
+      <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-8 mt-8">
+        <p className="text-sm font-bold text-gray-800 mb-3">ワンデーコンタクトをお得に購入</p>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          楽天市場で見る →
+        </a>
+      </div>
+
+      <h2 id="rakuten-otoku" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">楽天市場でお得に買う方法</h2>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">SPU（スーパーポイントアップ）を活用</h3>
+      <p className="text-gray-700 mb-4">
+        楽天でのコンタクトレンズ購入では、楽天SPUの仕組みで還元率がアップします。
+        基本還元率1%に加えて以下でアップ：
+      </p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>楽天会員：+1%（2%還元）</li>
+        <li>楽天プレミアム会員：+3%（4%還元）</li>
+        <li>楽天銀行口座利用：+1%（5%還元）</li>
+        <li>楽天カード利用：+2%（7%還元）</li>
+        <li>楽天モバイル利用：+1%（8%還元）</li>
+      </ul>
+      <p className="text-gray-700 mb-4">
+        最大15%のポイント還元を目指して、事前に楽天サービスを整備することをお勧めします。
+      </p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">お買い物マラソンで10倍ポイント</h3>
+      <p className="text-gray-700 mb-4">
+        楽天では月に1～2回「お買い物マラソン」というキャンペーンが開催されます。
+        期間中に複数のショップから購入すると、ポイント還元率が最大10倍になります。
+      </p>
+      <p className="text-gray-700 mb-4">
+        例：コンタクトレンズ5,000円購入 × 10倍 = 500ポイント（実質500円割引相当）
+      </p>
+      <p className="text-gray-700 mb-4">
+        マラソン期間中の購入なら、5,000円の商品で500円のポイント還元が確定します。
+        マラソン終了後の通常購入より圧倒的にお得です。
+      </p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">楽天ポイント消費セールと併用</h3>
+      <p className="text-gray-700 mb-4">
+        楽天では「楽天ポイント消費セール」が開催され、貯まったポイントで支払いすると割引される場合があります。
+        つまり：
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>ステップ1：</strong>通常購入でポイント獲得<br/>
+        <strong>ステップ2：</strong>セール期間にそのポイントで購入＆新たにポイント獲得<br/>
+        <strong>ステップ3：</strong>さらに割引が重なり、実質15～20%割引に
+      </p>
+      <p className="text-gray-700 mb-4">
+        長期的に見れば、他のサイトよりも楽天市場が最安値になることも多いです。
+      </p>
+
+      <h2 id="shipping-cost" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">送料込み最安値の計算方法</h2>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">計算フォーマット</h3>
+      <p className="text-gray-700 mb-4">
+        各サイトの実際のコストを正しく比較するには、以下の式を使います：
+      </p>
+      <div className="bg-slate-50 rounded-xl p-4 mb-6">
+        <p className="text-sm font-mono text-gray-800">
+          <strong>実額 = 商品価格 × 数量 - 初回割引 + 送料</strong>
+        </p>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">具体例：ワンデーアキュビューオアシス 6箱購入</h3>
+      <p className="text-gray-700 mb-4">商品価格：1箱2,500円（相場）</p>
+
+      <p className="text-gray-700 font-bold mt-4">【レンズゼロの場合】</p>
+      <ul className="list-none pl-0 space-y-1 text-gray-700 mb-4">
+        <li>商品代金：2,500円 × 6箱 = 15,000円</li>
+        <li>初回割引：-1,000円</li>
+        <li>送料：無料（5,000円以上購入で無料）</li>
+        <li><strong>実額：14,000円</strong></li>
+      </ul>
+
+      <p className="text-gray-700 font-bold mt-4">【楽天市場の場合（SPU7倍）】</p>
+      <ul className="list-none pl-0 space-y-1 text-gray-700 mb-4">
+        <li>商品代金：2,400円 × 6箱 = 14,400円（楽天の方が若干安いことがある）</li>
+        <li>送料：600円</li>
+        <li>ポイント還元：（14,400円 + 600円）× 7% = 1,057ポイント（≒1,057円割引相当）</li>
+        <li><strong>実額：14,000円 - 1,057円 = 12,943円</strong></li>
+      </ul>
+
+      <p className="text-gray-700 mb-4 mt-4">
+        この例では楽天市場がお得ですが、SPU倍率が低い場合や初回購入の場合は逆転します。
+        常に複数サイトの計算をして、その時点での最安値を確認しましょう。
+      </p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">北海道・沖縄の方向け追加送料</h3>
+      <p className="text-gray-700 mb-4">
+        離島の方は追加送料が発生することがあります：
+      </p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>北海道：+200～400円</li>
+        <li>沖縄県：+500～800円</li>
+        <li>その他離島：サイトによって異なる</li>
+      </ul>
+      <p className="text-gray-700 mb-4">
+        送料無料条件も「本州のみ」か「全国」かを確認してから購入しましょう。
+      </p>
+
+      <h2 id="faq" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">よくある質問</h2>
+
+      <details className="border border-gray-200 rounded-xl overflow-hidden bg-white mb-3">
+        <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+          Q. 処方箋は何回まで有効ですか？
+          <span className="text-gray-400 ml-2 text-xs shrink-0">▾</span>
+        </summary>
+        <div className="px-4 pb-4 pt-2 text-sm text-gray-700 border-t border-gray-100 leading-relaxed">
+          A. 処方箋の有効期限は発行から1年です。つまり、同じ度数・BCで最大12ヶ月間は複数のサイトで使い回しできます。新しい処方箋を取得する必要があるのは、度数が変わった場合やコンタクト自体を変更する場合です。
+        </div>
+      </details>
+
+      <details className="border border-gray-200 rounded-xl overflow-hidden bg-white mb-3">
+        <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+          Q. 返品・キャンセルはできますか？
+          <span className="text-gray-400 ml-2 text-xs shrink-0">▾</span>
+        </summary>
+        <div className="px-4 pb-4 pt-2 text-sm text-gray-700 border-t border-gray-100 leading-relaxed">
+          A. 多くのサイトは「開封・未開封問わず返品不可」という規定になっています。医療機器の性質上、安全のためです。ただし、商品が欠損していたり異なる度数が送られてきた場合は交換・返金対応があります。購入前に必ずサイトの返品規定を確認しましょう。
+        </div>
+      </details>
+
+      <details className="border border-gray-200 rounded-xl overflow-hidden bg-white mb-3">
+        <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+          Q. 初回購入から2回目の購入は処方箋不要ですか？
+          <span className="text-gray-400 ml-2 text-xs shrink-0">▾</span>
+        </summary>
+        <div className="px-4 pb-4 pt-2 text-sm text-gray-700 border-t border-gray-100 leading-relaxed">
+          A. ほとんどのサイトは2回目以降は処方箋不要です。ただし、同じサイト内での購入に限ります。別のサイトで購入する場合や、異なる度数・BCを選ぶ場合は処方箋が必要になることがあります。各サイトの利用規約を確認してください。
+        </div>
+      </details>
+
+      <details className="border border-gray-200 rounded-xl overflow-hidden bg-white mb-3">
+        <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+          Q. 配送にはどのくらいの日数がかかりますか？
+          <span className="text-gray-400 ml-2 text-xs shrink-0">▾</span>
+        </summary>
+        <div className="px-4 pb-4 pt-2 text-sm text-gray-700 border-t border-gray-100 leading-relaxed">
+          A. 専門サイト（レンズゼロなど）は2～3営業日、楽天市場のショップは3～5営業日が目安です。お急ぎの場合は「本州送料込み翌日配達」対応のショップを選ぶことをお勧めします。ただし、追加送料（500～1,000円）がかかることがあります。
+        </div>
+      </details>
+
+      <details className="border border-gray-200 rounded-xl overflow-hidden bg-white mb-3">
+        <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
+          Q. サイトのレビュー評価は信頼できますか？
+          <span className="text-gray-400 ml-2 text-xs shrink-0">▾</span>
+        </summary>
+        <div className="px-4 pb-4 pt-2 text-sm text-gray-700 border-t border-gray-100 leading-relaxed">
+          A. 星5個の評価のみ、または星1個の評価のみの場合は参考にならないことがあります。信頼できるレビューは「配送が早かった」「商品が新鮮だった」など具体的な内容が記載されているものです。各サイトの平均評価が3.5～4.5個なら、一定の信頼性があると判断できます。
+        </div>
+      </details>
+
+      <p className="text-gray-700 mt-8 mb-4">
+        2026年現在、コンタクトレンズの通販サイト選びは価格・送料・割引・ポイントの複合要素で判断することが重要です。
+        同じ商品でも購入時期・サイト選択によって2,000～3,000円の差が生じることもあります。
+        この記事で紹介した計算方法と各サイトの特徴を参考に、あなたにぴったりの通販サイトを見つけてください。
+      </p>
+    </article>
+  ),
+  'contact-dosu-shohosen-mikata-kanzen-2026': (
+    <div className="prose prose-gray max-w-none">
+  <p className="lead text-lg text-gray-700 mb-6">コンタクトレンズの処方箋に書かれた「PWR」「BC」「DIA」「CYL」「AXIS」……これらの記号の意味が分からず、通販での購入時に困ったことはありませんか？この記事では、処方箋のすべてのパラメータを初心者にも分かりやすく解説します。通販で度数ミスをしないための確認ポイントも紹介しますので、ぜひ最後までお読みください。</p>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズを探す →</a>
+
+  <h2 id="params" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">処方箋のパラメータ一覧</h2>
+  <p className="text-gray-700 mb-4">コンタクトレンズの処方箋には以下のパラメータが記載されています。それぞれの意味を正確に理解することが、通販での購入ミスを防ぐ最初のステップです。</p>
+  <div className="bg-slate-50 rounded-xl p-4 mb-6 overflow-x-auto">
+    <table className="w-full text-sm">
+      <thead>
+        <tr className="bg-slate-100">
+          <th className="text-left p-2 font-bold">記号</th>
+          <th className="text-left p-2 font-bold">正式名称</th>
+          <th className="text-left p-2 font-bold">意味</th>
+          <th className="text-left p-2 font-bold">例</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr className="border-b border-gray-100"><td className="p-2 font-medium">PWR / SPH</td><td className="p-2">Power / Sphere</td><td className="p-2">度数（近視・遠視の強さ）</td><td className="p-2">-3.00</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2 font-medium">BC</td><td className="p-2">Base Curve</td><td className="p-2">レンズのカーブ（mm）</td><td className="p-2">8.50</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2 font-medium">DIA</td><td className="p-2">Diameter</td><td className="p-2">レンズの直径（mm）</td><td className="p-2">14.2</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2 font-medium">CYL</td><td className="p-2">Cylinder</td><td className="p-2">乱視度数（乱視がある場合）</td><td className="p-2">-0.75</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2 font-medium">AXIS</td><td className="p-2">Axis</td><td className="p-2">乱視の軸方向（度）</td><td className="p-2">180</td></tr>
+        <tr><td className="p-2 font-medium">ADD</td><td className="p-2">Addition</td><td className="p-2">加入度数（遠近両用のみ）</td><td className="p-2">+1.50</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="pwr" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">PWR（度数）の読み方</h2>
+  <p className="text-gray-700 mb-4">PWR（またはSPH）は、レンズの屈折力を表す最も重要なパラメータです。単位はジオプター（D）で、0.25Dステップで刻まれています。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">マイナスとプラスの違い</h3>
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li><strong>マイナス（−）：</strong>近視の矯正に使用。数値が大きいほど近視が強い</li>
+    <li><strong>プラス（＋）：</strong>遠視の矯正に使用。数値が大きいほど遠視が強い</li>
+    <li><strong>0.00（Plano）：</strong>度数なし（カラコンの度なしなど）</li>
+  </ul>
+  <div className="bg-slate-50 rounded-xl p-4 mb-6">
+    <table className="w-full text-sm">
+      <thead><tr className="bg-slate-100"><th className="text-left p-2">PWR値</th><th className="text-left p-2">近視の程度</th></tr></thead>
+      <tbody>
+        <tr className="border-b border-gray-100"><td className="p-2">-0.25 〜 -1.75</td><td className="p-2">軽度近視</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2">-2.00 〜 -4.00</td><td className="p-2">中度近視（最も多い）</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2">-4.25 〜 -6.00</td><td className="p-2">強度近視</td></tr>
+        <tr><td className="p-2">-6.25以上</td><td className="p-2">超強度近視</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p className="text-gray-700 mb-4 bg-yellow-50 border-l-4 border-yellow-400 pl-4 py-2"><strong>重要：</strong>眼鏡の度数とコンタクトの度数は異なります。眼鏡の処方箋の度数をそのままコンタクトに使わないでください。</p>
+
+  <h2 id="bc-dia" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">BC（ベースカーブ）とDIA（直径）</h2>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">BCとは</h3>
+  <p className="text-gray-700 mb-4">BC（ベースカーブ）はレンズの内側のカーブの大きさを表します。単位はmmで、日本人に多いBCは8.4〜8.8mmです。BCが小さいほどカーブがきつく（急峻）、大きいほどなだらか（緩やか）です。</p>
+  <p className="text-gray-700 mb-4">BCが合わないとレンズがずれやすくなったり、目に圧迫感・充血が起きたりします。必ず眼科で処方されたBCを選んでください。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">DIAとは</h3>
+  <p className="text-gray-700 mb-4">DIA（直径）はレンズ全体の大きさを表します。通常の透明コンタクトは13.8〜14.5mm、カラコンでは14.0〜14.5mm（デカ目効果のため大きめ）が一般的です。DIAは見え方には直接影響しませんが、装用感に関係します。</p>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズの価格を確認する →</a>
+
+  <h2 id="cyl-axis" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">乱視用パラメータ CYL・AXIS</h2>
+  <p className="text-gray-700 mb-4">乱視がある方には、通常の度数（PWR）に加えてCYLとAXISが処方されます。乱視がない方にはこれらのパラメータは不要です。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">CYL（シリンダー）</h3>
+  <p className="text-gray-700 mb-4">CYLは乱視の度数を表します。必ずマイナス（−）で表記されます（例：-0.75、-1.25）。数値が大きいほど乱視が強いことを意味します。-0.75以下の軽度乱視は、通常のコンタクトでもある程度矯正できます。-1.00以上の場合は乱視用コンタクト（トーリックレンズ）の使用をおすすめします。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">AXIS（アクシス）</h3>
+  <p className="text-gray-700 mb-4">AXISは乱視の軸方向を1〜180度で表します。乱視は角膜のゆがみによって生じますが、そのゆがみの向き（方向）がAXISです。乱視用レンズはこの軸に合わせて矯正力の向きが設計されています。AXISは眼科でしか測定できません。</p>
+  <div className="bg-blue-50 rounded-xl p-4 mb-6">
+    <p className="text-sm font-bold text-blue-900 mb-2">乱視用コンタクトを選ぶときの注意点</p>
+    <ul className="list-disc pl-5 space-y-2 text-blue-800 text-sm">
+      <li>CYLの値が0.00、または記載なし → 乱視なし（通常のコンタクトでOK）</li>
+      <li>CYLが-0.75以下 → 軽度乱視（通常レンズでも可能な場合あり）</li>
+      <li>CYLが-1.00以上 → 乱視用（トーリック）レンズを選択</li>
+      <li>AXISは必ず乱視用レンズに合わせて入力する</li>
+    </ul>
+  </div>
+
+  <h2 id="glasses-diff" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">眼鏡の度数との違い</h2>
+  <p className="text-gray-700 mb-4">「眼鏡の度数そのままコンタクトに使えばいいのでは？」と思いがちですが、これは大きな間違いです。眼鏡とコンタクトでは度数が異なります。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">なぜ度数が違うのか</h3>
+  <p className="text-gray-700 mb-4">眼鏡は目から約12mm離れた位置にレンズがあります。コンタクトは角膜上（目の表面）に直接乗せます。この距離の違いにより、同じ視力を矯正するための度数が変わります。これを「頂点間距離換算」といいます。</p>
+  <p className="text-gray-700 mb-4">目安としては、眼鏡の度数が-4.00Dより強い（数値が大きい）場合に換算が必要になります。それ以下の軽度・中度近視では差がほぼ出ません。強度近視の方は、必ず眼科で正確なコンタクト用の度数を処方してもらってください。</p>
+
+  <h2 id="checklist" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">通販での度数確認チェックリスト</h2>
+  <p className="text-gray-700 mb-4">通販でコンタクトレンズを購入する際は、注文前に以下を必ず確認してください。</p>
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li>処方箋（または装用指示書）の発行日が1年以内であること</li>
+    <li>PWR（度数）が処方箋と一致していること（右目R/OD、左目L/OSを間違えない）</li>
+    <li>BCが処方箋と同じ数値であること（0.1mm違うだけでフィットしなくなる）</li>
+    <li>DIAが処方箋と同じか、購入商品のDIAが処方されたBCと互換性があること</li>
+    <li>乱視がある場合、CYLとAXISも一致していること</li>
+    <li>購入するブランド・商品名が処方されたものと同じか、眼科から変更許可を得ていること</li>
+  </ul>
+
+  <h2 id="faq" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">よくある質問</h2>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. BCが0.1mm違っても使えますか？</h3>
+  <p className="text-gray-700 mb-4">A. 一般的にBCは±0.2mmの許容範囲があるとされますが、個人差があります。0.1mmの違いで問題ない場合もありますが、長期使用で目に負担がかかることがあります。異なるBCの商品を使用したい場合は、事前に眼科で確認することをおすすめします。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. 処方箋に「AXIS 0」と書かれています。乱視用レンズが必要ですか？</h3>
+  <p className="text-gray-700 mb-4">A. AXISが0または記載なしの場合、乱視がないことを意味します（または乱視が非常に軽微）。通常のコンタクトレンズで問題ありません。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. 右目と左目で度数が違います。別々に注文できますか？</h3>
+  <p className="text-gray-700 mb-4">A. はい、大半の通販サイトでは右目（R/OD）と左目（L/OS）を別々の度数で注文できます。注文フォームで各眼の度数を正確に入力してください。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. 処方箋の有効期限が切れました。同じ度数を注文できますか？</h3>
+  <p className="text-gray-700 mb-4">A. 有効期限が切れた処方箋での注文はできません。目の度数は年齢とともに変化します。安全のために、眼科を受診して新しい処方箋を取得してから注文してください。年1回の定期検査が推奨されています。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. PWRが「Plano」と書かれています。度数は何ですか？</h3>
+  <p className="text-gray-700 mb-4">A. 「Plano」は度数0.00（度なし）を意味します。カラコンやUVカットレンズなど、度数のないコンタクトに使われる表記です。</p>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズをお得に購入する →</a>
+</div>
+  ),
+  '1day-contact-nenkan-cost-tsuuhan-vs-store-2026': (
+    <div className="prose prose-gray max-w-none">
+  <p className="lead text-lg text-gray-700 mb-6">コンタクトレンズは毎日の必需品だからこそ、年間にかかる費用はバカになりません。「通販と眼科・ドラッグストア、どちらで買う方がお得？」という疑問を、実際の価格データを使って徹底計算します。この記事を読めば、あなたに最も合ったコンタクト購入方法が分かります。</p>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でワンデーコンタクトを探す →</a>
+
+  <h2 id="premise" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">年間コスト計算の前提条件</h2>
+  <p className="text-gray-700 mb-4">以下の条件で年間コストを計算します。</p>
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li>ワンデーコンタクトを毎日使用（両眼・365日）</li>
+    <li>1箱30枚入りを基準とする</li>
+    <li>両眼で年間24箱以上が必要（365日 ÷ 30枚 ≒ 12箱 × 両眼 = 24箱）</li>
+    <li>送料は実際の条件を反映（まとめ買いの場合は送料無料を想定）</li>
+    <li>定期検査費用は考慮しない（安全のため年1回の眼科受診は全員必須）</li>
+  </ul>
+
+  <h2 id="price-diff" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">通販 vs 眼科 vs 薬局の価格差</h2>
+  <p className="text-gray-700 mb-4">同じ商品でも購入場所によって価格は大きく異なります。代表的なワンデーコンタクトで比較してみましょう。</p>
+  <div className="bg-slate-50 rounded-xl p-4 mb-6 overflow-x-auto">
+    <table className="w-full text-sm">
+      <thead>
+        <tr className="bg-slate-100">
+          <th className="text-left p-2 font-bold">購入場所</th>
+          <th className="text-left p-2 font-bold">1箱の目安価格</th>
+          <th className="text-left p-2 font-bold">年間（24箱）</th>
+          <th className="text-left p-2 font-bold">備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr className="border-b border-gray-100"><td className="p-2 font-medium">コンタクト専門通販</td><td className="p-2">1,200〜1,600円</td><td className="p-2 font-bold text-sky-700">28,800〜38,400円</td><td className="p-2">まとめ買いで送料無料</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2 font-medium">楽天市場（ポイント活用）</td><td className="p-2">1,300〜1,700円</td><td className="p-2 font-bold text-sky-700">31,200〜40,800円</td><td className="p-2">ポイント還元で実質安い</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2 font-medium">ドラッグストア</td><td className="p-2">1,600〜2,200円</td><td className="p-2">38,400〜52,800円</td><td className="p-2">セール時は割引あり</td></tr>
+        <tr><td className="p-2 font-medium">眼科併設ショップ</td><td className="p-2">1,800〜2,500円</td><td className="p-2">43,200〜60,000円</td><td className="p-2">最も高い</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p className="text-gray-700 mb-4">年間で比較すると、コンタクト専門通販と眼科での購入では最大で<strong>2万円以上の差</strong>が生じることがあります。</p>
+
+  <h2 id="brands" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">ブランド別年間コスト比較</h2>
+  <p className="text-gray-700 mb-4">人気ワンデーコンタクトの主要ブランド別に、通販での年間コストを比較します（両眼・365日使用）。</p>
+  <div className="bg-slate-50 rounded-xl p-4 mb-6 overflow-x-auto">
+    <table className="w-full text-sm">
+      <thead>
+        <tr className="bg-slate-100">
+          <th className="text-left p-2 font-bold">商品名</th>
+          <th className="text-left p-2 font-bold">1箱（30枚）</th>
+          <th className="text-left p-2 font-bold">年間24箱</th>
+          <th className="text-left p-2 font-bold">特徴</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr className="border-b border-gray-100"><td className="p-2">1デイ アキュビュー モイスト</td><td className="p-2">1,200〜1,500円</td><td className="p-2 font-bold">28,800〜36,000円</td><td className="p-2">コスパ重視</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2">ワンデーアキュビュー オアシス</td><td className="p-2">1,600〜2,000円</td><td className="p-2 font-bold">38,400〜48,000円</td><td className="p-2">乾きにくさNo.1</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2">デイリーズ トータルワン</td><td className="p-2">1,700〜2,100円</td><td className="p-2 font-bold">40,800〜50,400円</td><td className="p-2">最高峰のうるおい</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2">ワンデーピュア うるおいプラス</td><td className="p-2">1,000〜1,300円</td><td className="p-2 font-bold">24,000〜31,200円</td><td className="p-2">国内メーカー・低価格</td></tr>
+        <tr><td className="p-2">バイオトゥルー ワンデー</td><td className="p-2">1,100〜1,400円</td><td className="p-2 font-bold">26,400〜33,600円</td><td className="p-2">高含水率</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でワンデーコンタクトの価格を比較する →</a>
+
+  <h2 id="rakuten" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">楽天市場でのポイント活用</h2>
+  <p className="text-gray-700 mb-4">楽天市場でコンタクトレンズを購入する場合、ポイント還元率によっては実質的に専門通販より安くなることがあります。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">楽天のポイント活用術</h3>
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li><strong>SPU（スーパーポイントアップ）：</strong>楽天カード＋楽天銀行＋楽天モバイルで最大10〜15%還元</li>
+    <li><strong>お買い物マラソン：</strong>複数ショップで購入すると最大10倍ポイント</li>
+    <li><strong>5・10・15・20・25日：</strong>楽天カード利用でポイント5倍</li>
+    <li><strong>楽天スーパーセール：</strong>年2回（6月・12月）の大型セールで20〜30%割引も</li>
+  </ul>
+  <p className="text-gray-700 mb-4">例えば1箱1,500円のコンタクトをポイント10倍（10%還元）で購入すると、実質1,350円になります。年間24箱で3,600円分のポイント還元です。</p>
+
+  <h2 id="strategy" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">節約のための購入戦略</h2>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">まとめ買いで送料を節約</h3>
+  <p className="text-gray-700 mb-4">コンタクト専門通販では、一定金額以上でまとめ買いすると送料が無料になります。1〜2箱ずつ購入するより、6〜12箱まとめて購入することで送料を節約できます。例えば、月1,000円の送料を節約できれば年間12,000円の差になります。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">初回割引クーポンの活用</h3>
+  <p className="text-gray-700 mb-4">多くのコンタクト通販サイトが新規会員向けに1,000〜1,500円の初回割引クーポンを提供しています。複数のサイトに登録して初回割引を活用することで、年間コストをさらに削減できます。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">定期購入（自動配送）割引</h3>
+  <p className="text-gray-700 mb-4">一部のサイトでは定期購入申し込みで5〜15%の割引が適用されます。毎月確実に消費するコンタクトレンズは定期購入を活用することで、注文の手間と費用の両方を節約できます。</p>
+
+  <h2 id="faq" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">よくある質問</h2>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. 通販は安全ですか？品質は大丈夫？</h3>
+  <p className="text-gray-700 mb-4">A. 国内の正規販売店（高度管理医療機器販売業許可取得）から購入すれば、品質は眼科や薬局で購入するのと同じです。購入前に販売サイトが許可を持っているか確認してください。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. 年間でどれくらい節約できますか？</h3>
+  <p className="text-gray-700 mb-4">A. 購入場所と商品によって異なりますが、眼科・薬局での購入から通販に切り替えることで、年間10,000〜20,000円程度の節約が可能です。楽天のポイント活用を組み合わせるとさらに効果的です。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. 処方箋不要で購入できますか？</h3>
+  <p className="text-gray-700 mb-4">A. 多くの通販サイトでは、以前に眼科で処方された度数情報（装用指示書）があれば処方箋なしで購入できます。ただし、初めてコンタクトを使用する場合や度数が変わった可能性がある場合は、眼科受診が必要です。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. どのタイミングで買うのが最も安いですか？</h3>
+  <p className="text-gray-700 mb-4">A. 楽天市場の場合、お買い物マラソン×スーパーセール期間が最もポイントが多く貯まります。専門通販の場合は、各サイトのキャンペーン時にまとめ買いするのが効果的です。</p>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でワンデーコンタクトをお得に購入する →</a>
+</div>
+  ),
+  'contact-shoshinsha-tsukehazushi-care-2026': (
+    <div className="prose prose-gray max-w-none">
+  <p className="lead text-lg text-gray-700 mb-6">
+    初めてコンタクトレンズを使い始めるとき、「正しい付け方ってどうやるの？」「ケア用品は何を選べば？」「目が痛くなったらどうしよう？」など、不安がいっぱいですよね。
+    この記事では、初心者の方が安心して使い始められるよう、コンタクトレンズ選びから、正しい付け外し、ケア方法、トラブル対処まで、すべてを分かりやすく解説します。
+  </p>
+
+  <h2 id="erabikata" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">初めてのコンタクト選び─1dayか2weekか</h2>
+  <p className="mb-4">
+    コンタクトレンズは大きく分けて3種類あります。初心者の方には<strong>ワンデー（1day）</strong>をおすすめします。理由は以下の通りです。
+  </p>
+
+  <div className="bg-sky-50 border-l-4 border-sky-500 pl-4 py-3 mb-6">
+    <h3 className="font-bold text-sky-900 mb-2">ワンデー（1day）のメリット</h3>
+    <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+      <li><strong>手入れが簡単</strong>：毎日新しいレンズを使うため、ケアが不要</li>
+      <li><strong>目の負担が少ない</strong>：タンパク質付着が少なく、目が乾きにくい</li>
+      <li><strong>感染症リスクが低い</strong>：使い捨てなので雑菌繁殖の心配がない</li>
+      <li><strong>急な旅行でも持ち運びラク</strong>：ケア用品を持ち歩かなくても大丈夫</li>
+    </ul>
+  </div>
+
+  <p className="mb-4">
+    一方、2week（2週間）やmonthly（1ヶ月）は毎日のケアが必要なため、初心者には向きません。ケアの手間を忘れると、感染症やトラブルの原因になります。
+  </p>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">ワンデーにもいろいろな種類がある</h3>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+    <div className="bg-gray-50 rounded-lg p-4">
+      <h4 className="font-bold text-gray-900 mb-2">含水率が高いレンズ（60%以上）</h4>
+      <p className="text-sm text-gray-700">装用感がソフトで、初日から快適。ただし、日中のレンズが乾きやすい傾向。</p>
+    </div>
+    <div className="bg-gray-50 rounded-lg p-4">
+      <h4 className="font-bold text-gray-900 mb-2">含水率が低いレンズ（40～50%）</h4>
+      <p className="text-sm text-gray-700">長時間つけても目が乾きにくい。初心者には最適な選択肢です。</p>
+    </div>
+  </div>
+
+  <p className="mb-4">
+    最初は試用装用（眼科で試着）をして、自分の目に合うレンズを見つけることが大切です。
+  </p>
+
+  <h2 id="tsukekara" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">コンタクトの正しい付け方【手洗い→確認→装着の手順】</h2>
+  <p className="mb-4">
+    間違った付け方は、レンズの破損や目へのダメージにつながります。以下の手順を必ず守ってください。
+  </p>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">ステップ1：手を清潔に洗う</h3>
+  <ul className="list-disc list-inside space-y-2 mb-6 text-sm text-gray-700">
+    <li>石けんで手を10秒以上洗う</li>
+    <li>ウイルスや雑菌を落とすため、指の間や爪の中も念入りに</li>
+    <li>水道水で十分にすすぐ</li>
+    <li><strong>タオルは繊維が出にくい素材</strong>（マイクロファイバー推奨）を使用</li>
+    <li>できればペーパータオルで拭く（雑菌繁殖を防ぐため）</li>
+  </ul>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">ステップ2：レンズの状態を確認</h3>
+  <div className="bg-amber-50 border-l-4 border-amber-500 pl-4 py-3 mb-6">
+    <p className="text-sm text-gray-700 mb-2">
+      <strong>装着前に必ずチェック：</strong>
+    </p>
+    <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+      <li>レンズが破れていないか</li>
+      <li>ゴミ・繊維が付着していないか</li>
+      <li>レンズが乾いていないか（乾いていたら保存液を足す）</li>
+      <li>レンズが裏返っていないか（形がお椀型なら正常、平らなら裏返り）</li>
+    </ul>
+  </div>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">ステップ3：レンズを指に乗せる</h3>
+  <ul className="list-disc list-inside space-y-2 mb-6 text-sm text-gray-700">
+    <li>人差し指の爪を切ってから作業する（爪が長いとレンズが破れやすい）</li>
+    <li>人差し指の腹にレンズを乗せる</li>
+    <li>光にかざして、レンズに異常がないか最終チェック</li>
+  </ul>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">ステップ4：鏡を見ながら装着</h3>
+  <ul className="list-disc list-inside space-y-2 mb-6 text-sm text-gray-700">
+    <li>親指で上のまぶた、中指で下のまぶたを開く</li>
+    <li>黒目（瞳）の中央にレンズを置く</li>
+    <li>指を離してレンズがきちんと装着されたか確認</li>
+    <li>目を数回まばたきして、レンズが瞳の上で正しく動くかチェック</li>
+  </ul>
+
+  <p className="mb-4 bg-red-50 border-l-4 border-red-400 pl-4 py-3">
+    <strong className="text-red-700">重要：</strong>初めての装着は眼科で指導を受けてください。自己流の付け方は目の傷や感染症の原因になります。
+  </p>
+
+  <h2 id="hazushikata" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">コンタクトの正しい外し方</h2>
+  <p className="mb-4">
+    外し方を間違えると、レンズが目に貼り付いたり、角膜を傷つけたりします。焦らずゆっくり行いましょう。
+  </p>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">ステップ1：手をきれいに洗う</h3>
+  <p className="text-sm text-gray-700 mb-6">
+    装着時と同じように、石けんで十分に手を洗い、ペーパータオルで拭きます。
+  </p>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">ステップ2：目に潤いを与える</h3>
+  <ul className="list-disc list-inside space-y-1 mb-6 text-sm text-gray-700">
+    <li>目薬を1～2滴さす（ワンデーレンズ用の目薬を使用）</li>
+    <li>数秒待ってレンズを湿らせる</li>
+  </ul>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">ステップ3：レンズを外す</h3>
+  <ul className="list-disc list-inside space-y-2 mb-6 text-sm text-gray-700">
+    <li>下のまぶたを中指で下げ、人差し指でレンズの下側に触れる</li>
+    <li>レンズを白目に移動させてから、ゆっくり摘む</li>
+    <li>無理に引っ張らない（レンズが目に吸着していたら、目薬をさして待つ）</li>
+    <li>取り外したレンズはすぐにケース（ワンデーの場合は破棄）に入れる</li>
+  </ul>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">ステップ4：外した後のケア</h3>
+  <p className="text-sm text-gray-700 mb-2">ワンデーレンズの場合：</p>
+  <ul className="list-disc list-inside space-y-1 text-sm text-gray-700 mb-6">
+    <li>そのまま破棄してOK（ケース不要）</li>
+    <li>環境への配慮として、トイレに流さずゴミ箱に捨てる</li>
+  </ul>
+
+  <h2 id="careseihin" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">ケア用品の種類と選び方</h2>
+  <p className="mb-4">
+    ワンデーレンズ使用者でも、最低限のケア用品が必要です。ここで失敗すると、目のトラブルにつながります。
+  </p>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">ワンデーレンズユーザーに必要な最小限のケア用品</h3>
+  <div className="space-y-4 mb-6">
+    <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+      <h4 className="font-bold text-emerald-900 mb-2">1. 目薬（人工涙液）</h4>
+      <p className="text-sm text-gray-700 mb-2">
+        コンタクト装用中に使える目薬で、目の乾きを防ぎます。1日3～5回、好きなだけ使用OK。
+      </p>
+      <p className="text-xs text-gray-600">
+        <strong>おすすめ：</strong> ロートコンタクトa、ソフトサンティア（防腐剤フリー）
+      </p>
+    </div>
+    <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+      <h4 className="font-bold text-emerald-900 mb-2">2. 外したレンズ用の保存液（2weekユーザー向け）</h4>
+      <p className="text-sm text-gray-700 mb-2">
+        ワンデーでも、予備レンズを保存する場合に使用します。
+      </p>
+      <p className="text-xs text-gray-600">
+        <strong>主なタイプ：</strong> MPS（マルチパーパスソリューション）、過酸化水素系
+      </p>
+    </div>
+  </div>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">MPS（マルチパーパスソリューション）とは</h3>
+  <p className="text-sm text-gray-700 mb-4">
+    「洗浄・すすぎ・消毒・保存」を1本で行える便利なケア用品。2weekレンズユーザーの主流です。
+  </p>
+  <div className="bg-gray-50 rounded-lg p-4 mb-6">
+    <p className="text-sm font-bold text-gray-900 mb-2">MPSの正しい使い方：</p>
+    <ol className="list-decimal list-inside space-y-2 text-sm text-gray-700">
+      <li>ケースにレンズを入れ、新しいMPSをたっぷり注ぐ</li>
+      <li>指でレンズを軽くこすり、汚れを落とす（30秒程度）</li>
+      <li>ケースを閉じて、最低4時間以上放置して消毒</li>
+      <li>使用前に新しいMPSですすぐ</li>
+    </ol>
+  </div>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">過酸化水素系ケア用品の特徴</h3>
+  <p className="text-sm text-gray-700 mb-4">
+    より高い消毒力が必要な方向け。タンパク質汚れをしっかり落とします。
+  </p>
+  <div className="bg-blue-50 rounded-lg p-4 mb-6 border border-blue-200">
+    <ul className="list-disc list-inside space-y-2 text-sm text-gray-700">
+      <li><strong>メリット：</strong> 防腐剤フリー、消毒力が強い</li>
+      <li><strong>デメリット：</strong> 使い方が複雑、取扱いに注意が必要</li>
+      <li><strong>使用方法：</strong> 必ず中和ステップを踏む（説明書に従う）</li>
+      <li><strong>初心者向け度：</strong> ★☆☆☆☆（難易度高）</li>
+    </ul>
+  </div>
+
+  <p className="text-sm text-gray-700 mb-6 bg-yellow-50 border-l-4 border-yellow-400 pl-4 py-3">
+    <strong>初心者さんへ：</strong>最初はMPS１種類を選ぶだけで十分。ケアが簡単なことが何より大切です。
+  </p>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%20%E3%82%B1%E3%82%A2%E7%94%A8%E5%93%81%2F" rel="noopener noreferrer nofollow" className="inline-block bg-red-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-red-700 transition-colors mb-6">
+    楽天でケア用品を探す →
+  </a>
+
+  <h2 id="troubleYobou" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">目のトラブル予防ガイド</h2>
+  <p className="mb-4">
+    正しいケアと使い方で、ほとんどのトラブルは防げます。以下の予防ルールを徹底してください。
+  </p>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">充血・違和感が出る原因と予防法</h3>
+  <div className="bg-pink-50 rounded-lg p-4 mb-6 border border-pink-200">
+    <table className="w-full text-sm">
+      <thead>
+        <tr className="bg-pink-100">
+          <th className="text-left p-2 font-bold">原因</th>
+          <th className="text-left p-2 font-bold">予防法</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr className="border-b border-pink-100">
+          <td className="p-2">レンズの汚れ・タンパク質付着</td>
+          <td className="p-2">毎日のケアを欠かさず、2週間で新しいものに交換</td>
+        </tr>
+        <tr className="border-b border-pink-100">
+          <td className="p-2">レンズの裏返り・ずれ</td>
+          <td className="p-2">装着前に形状確認、違和感あれば外して確認</td>
+        </tr>
+        <tr className="border-b border-pink-100">
+          <td className="p-2">ケース内の雑菌繁殖</td>
+          <td className="p-2">毎日新しいケア用品を使用、ケースは1ヶ月で交換</td>
+        </tr>
+        <tr className="border-b border-pink-100">
+          <td className="p-2">アレルギー物質の付着</td>
+          <td className="p-2">花粉症の時期は装用時間を短めに、花粉対策を実施</td>
+        </tr>
+        <tr>
+          <td className="p-2">長時間連続装用</td>
+          <td className="p-2">1日10時間程度が目安、週に1日は目を休める</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">目の乾きを防ぐ方法</h3>
+  <ul className="list-disc list-inside space-y-2 mb-6 text-sm text-gray-700">
+    <li><strong>こまめな目薬</strong>：1日3～5回、特にパソコン作業時に</li>
+    <li><strong>瞬きの意識</strong>：パソコン作業時は意識的に瞬きを増やす</li>
+    <li><strong>含水率の工夫</strong>：含水率の低いレンズに切り替えを検討</li>
+    <li><strong>加湿</strong>：冬場や乾燥した環境では加湿器を使用</li>
+    <li><strong>装用時間の調整</strong>：乾きが強い場合は、1日6～8時間程度に短縮</li>
+  </ul>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">感染症（角膜炎・結膜炎）の予防</h3>
+  <div className="bg-red-50 border-l-4 border-red-500 pl-4 py-3 mb-6">
+    <p className="text-sm text-gray-700 mb-2 font-bold">これは絶対厳禁：</p>
+    <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+      <li>目薬やケア用品の着用期限切れ</li>
+      <li>ケースの水道水洗い（塩素が残ると目に悪い）</li>
+      <li>レンズの水での洗浄（アカントアメーバのリスク）</li>
+      <li>汚れたまま眠ること（最も危険な感染症の原因）</li>
+      <li>目に違和感があるのに無理して装用</li>
+    </ul>
+  </div>
+
+  <h2 id="aitai" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">コンタクトで目が痛いときの対処法</h2>
+  <p className="mb-4">
+    「目が痛い」「異物感がある」という症状は、必ず対処が必要です。放置すると感染症に進行する可能性があります。
+  </p>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">すぐにやるべき対処</h3>
+  <ol className="list-decimal list-inside space-y-3 mb-6 text-sm text-gray-700">
+    <li><strong>とにかくレンズを外す</strong>：痛みを感じたら、まずコンタクトを外してください</li>
+    <li><strong>目薬で洗浄</strong>：人工涙液で目を洗う（3～4回、1分間隔）</li>
+    <li><strong>鏡で確認</strong>：異物や傷がないか視認チェック</li>
+    <li><strong>レンズも確認</strong>：破れ・汚れ・変形がないか、必ずチェック</li>
+    <li><strong>30分待つ</strong>：異物感が落ち着いたか、回復状況を観察</li>
+  </ol>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">それでも痛い場合は眼科へ</h3>
+  <p className="text-sm text-gray-700 mb-4">
+    以下の症状がある場合は、<strong>絶対に眼科を受診</strong>してください。自己判断での対処は危険です。
+  </p>
+  <div className="bg-red-50 rounded-lg p-4 border border-red-200 mb-6">
+    <ul className="list-disc list-inside space-y-2 text-sm text-gray-700">
+      <li>痛みが30分以上続く</li>
+      <li>目が充血している</li>
+      <li>目やに・膿が出ている</li>
+      <li>角膜に傷がある可能性</li>
+      <li>視力が低下している</li>
+    </ul>
+  </div>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">よくある原因と対処方法</h3>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+    <div className="bg-orange-50 rounded-lg p-4">
+      <h4 className="font-bold text-orange-900 mb-2">ゴミが入った</h4>
+      <p className="text-sm text-gray-700">人工涙液で洗浄後、レンズを外して再装着。ゴミが完全に取れるまで何度でもOK。</p>
+    </div>
+    <div className="bg-orange-50 rounded-lg p-4">
+      <h4 className="font-bold text-orange-900 mb-2">レンズが裏返ってる</h4>
+      <p className="text-sm text-gray-700">一度外して、正しい向きに直してから再装着。不安なら新しいレンズに交換。</p>
+    </div>
+    <div className="bg-orange-50 rounded-lg p-4">
+      <h4 className="font-bold text-orange-900 mb-2">レンズが乾いた</h4>
+      <p className="text-sm text-gray-700">人工涙液で十分に潤してから再装着。乾きやすいなら、含水率の低いレンズに変更を。</p>
+    </div>
+    <div className="bg-orange-50 rounded-lg p-4">
+      <h4 className="font-bold text-orange-900 mb-2">目が充血している</h4>
+      <p className="text-sm text-gray-700">この日は装用を中止して、目を休ませる。症状が翌日も続いたら眼科へ。</p>
+    </div>
+  </div>
+
+  <h2 id="rakuten-kosui" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">楽天市場でケア用品を安く買う方法</h2>
+  <p className="mb-4">
+    ケア用品は毎日使うものだからこそ、安く買えると家計が助かります。楽天市場での賢い購入方法をご紹介します。
+  </p>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">楽天での購入が安い理由</h3>
+  <ul className="list-disc list-inside space-y-2 mb-6 text-sm text-gray-700">
+    <li><strong>ポイント還元が大きい</strong>：最大20倍のポイント獲得キャンペーン頻発</li>
+    <li><strong>セール品が豊富</strong>：スーパーセール・お買い物マラソンで割引</li>
+    <li><strong>送料無料の店舗</strong>：3,000円以上で送料無料の出店者が多い</li>
+    <li><strong>まとめ買い割引</strong>：1ケース購入で10～20%割引される場合も</li>
+  </ul>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">楽天での節約テクニック5選</h3>
+  <div className="space-y-3 mb-6">
+    <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+      <p className="text-sm font-bold text-emerald-900 mb-1">1. 0と5のつく日に購入（ポイント5倍）</p>
+      <p className="text-xs text-gray-700">5日、10日、15日、20日、25日、30日が対象。1ケース購入時の効果大。</p>
+    </div>
+    <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+      <p className="text-sm font-bold text-emerald-900 mb-1">2. ポイントアップキャンペーンを活用</p>
+      <p className="text-xs text-gray-700">楽天アプリでエントリー、ショップ限定クーポン、SPUアップで最大20倍も可能。</p>
+    </div>
+    <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+      <p className="text-sm font-bold text-emerald-900 mb-1">3. 複数購入で割引の店を選ぶ</p>
+      <p className="text-xs text-gray-700">「2セット以上で15%OFF」など、量割りがある店舗を探す。</p>
+    </div>
+    <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+      <p className="text-sm font-bold text-emerald-900 mb-1">4. 定期購入サービスを活用</p>
+      <p className="text-xs text-gray-700">毎回10～15%割引で自動配送。面倒な再注文が不要。</p>
+    </div>
+    <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+      <p className="text-sm font-bold text-emerald-900 mb-1">5. 他のショップと価格比較</p>
+      <p className="text-xs text-gray-700">同じ商品でも出店者によって価格が異なる。ポイント還元を含めた総額で判断。</p>
+    </div>
+  </div>
+
+  <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+    <h4 className="font-bold text-red-900 mb-2">楽天のコンタクトレンズ・ケア用品検索</h4>
+    <p className="text-sm text-gray-700 mb-3">
+      下のボタンから楽天市場でコンタクトレンズとケア用品を検索できます。ポイント還元キャンペーン対象商品も掲載されています。
+    </p>
+    <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" rel="noopener noreferrer nofollow" className="inline-block bg-red-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-red-700 transition-colors">
+      楽天でコンタクトを検索 →
+    </a>
+  </div>
+
+  <h2 id="osusume-brand" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">初心者におすすめのブランド</h2>
+  <p className="mb-4">
+    初めてのコンタクト選びは、信頼できるブランドから始めるのが鉄則。以下の3ブランドは「初心者向け」として高く評価されています。
+  </p>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">1. アキュビュー（ジョンソン&ジョンソン）</h3>
+  <div className="bg-sky-50 rounded-lg p-4 mb-6 border border-sky-200">
+    <p className="text-sm text-gray-700 mb-2">
+      <strong>コンタクトレンズの最大手。初心者の約30%が選ぶ。</strong>
+    </p>
+    <ul className="list-disc list-inside space-y-1 text-sm text-gray-700 mb-3">
+      <li><strong>1デイ アキュビュー モイスト</strong>：含水率38%、装用感がソフト。最も人気。</li>
+      <li><strong>アキュビュー オアシス</strong>：長時間装用向け、乾きにくい。</li>
+    </ul>
+    <p className="text-xs text-gray-600">
+      <strong>価格帯：</strong> 1箱（30枚）1,200～1,500円 | <strong>おすすめ度：</strong> ★★★★★
+    </p>
+  </div>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">2. デイリーズ（アルコン）</h3>
+  <div className="bg-blue-50 rounded-lg p-4 mb-6 border border-blue-200">
+    <p className="text-sm text-gray-700 mb-2">
+      <strong>世界シェア第2位。革新的な商品ラインナップ。</strong>
+    </p>
+    <ul className="list-disc list-inside space-y-1 text-sm text-gray-700 mb-3">
+      <li><strong>デイリーズ トータルワン</strong>：ナノコーティング技術で潤い長続き。</li>
+      <li><strong>デイリーズ アクア</strong>：含水率69%。初日から快適。</li>
+    </ul>
+    <p className="text-xs text-gray-600">
+      <strong>価格帯：</strong> 1箱（30枚）1,400～1,700円 | <strong>おすすめ度：</strong> ★★★★☆
+    </p>
+  </div>
+
+  <h3 className="text-lg font-bold text-gray-900 mt-6 mb-3">3. ワンデーピュア（メニコン）</h3>
+  <div className="bg-green-50 rounded-lg p-4 mb-6 border border-green-200">
+    <p className="text-sm text-gray-700 mb-2">
+      <strong>国内メーカー。親切サポートが特徴。</strong>
+    </p>
+    <ul className="list-disc list-inside space-y-1 text-sm text-gray-700 mb-3">
+      <li><strong>ワンデー ピュア うるおいプラス</strong>：含水率55%。初心者に最適。</li>
+      <li>眼科での無料試用レンズ提供で、購入前に試せる。</li>
+    </ul>
+    <p className="text-xs text-gray-600">
+      <strong>価格帯：</strong> 1箱（30枚）1,000～1,300円 | <strong>おすすめ度：</strong> ★★★★★
+    </p>
+  </div>
+
+  <div className="bg-amber-50 border-l-4 border-amber-500 pl-4 py-3 mb-6">
+    <p className="text-sm text-gray-700">
+      <strong>予算別おすすめ：</strong>
+    </p>
+    <ul className="list-disc list-inside space-y-1 text-sm text-gray-700 mt-2">
+      <li><strong>1,000～1,200円：</strong>ワンデーピュア、フォーカス デイリーズ</li>
+      <li><strong>1,300～1,500円：</strong>アキュビュー モイスト（最もバランス型）</li>
+      <li><strong>1,600円以上：</strong>アキュビュー オアシス、デイリーズ トータルワン</li>
+    </ul>
+  </div>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" rel="noopener noreferrer nofollow" className="inline-block bg-red-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-red-700 transition-colors mb-6">
+    楽天でワンデーコンタクトを検索 →
+  </a>
+
+  <h2 id="faq" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">よくある質問</h2>
+
+  <div className="space-y-4">
+    <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+      <h3 className="font-bold text-gray-900 mb-2">Q. 眼鏡度数-3.0ですが、コンタクトの度数は？</h3>
+      <p className="text-sm text-gray-700">
+        A. 眼鏡とコンタクトの度数は異なります。必ず眼科で検査を受けてください。一般的に眼鏡より0.25～0.75弱くなります。自己判断は視力低下の原因に。
+      </p>
+    </div>
+
+    <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+      <h3 className="font-bold text-gray-900 mb-2">Q. コンタクトは毎日つけないとダメ？</h3>
+      <p className="text-sm text-gray-700">
+        A. いいえ。週に何日でもOK。むしろ「週1～2日は目を休める」ことを推奨。目への負担を減らせます。
+      </p>
+    </div>
+
+    <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+      <h3 className="font-bold text-gray-900 mb-2">Q. レンズ代は月いくらかかる？</h3>
+      <p className="text-sm text-gray-700">
+        A. ワンデーなら月2,000～3,000円程度（2箱で60枚）。2weekなら月500～1,000円ですが、ケア用品代が別途必要。毎月の家計イメージで選びましょう。
+      </p>
+    </div>
+
+    <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+      <h3 className="font-bold text-gray-900 mb-2">Q. ドライアイなら避けるべき？</h3>
+      <p className="text-sm text-gray-700">
+        A. コンタクト利用は可能ですが、含水率40～50%の低めレンズと、こまめな目薬が必須。眼科で「ドライアイでも装用できるレンズ」を相談してください。
+      </p>
+    </div>
+
+    <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+      <h3 className="font-bold text-gray-900 mb-2">Q. コンタクトで寝ると何が悪い？</h3>
+      <p className="text-sm text-gray-700">
+        A. 目への酸素供給が低下し、角膜浮腫・感染症リスクが急増。最悪の場合、視力低下の永続的なダメージに。「寝る前は必ず外す」は鉄則です。
+      </p>
+    </div>
+
+    <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+      <h3 className="font-bold text-gray-900 mb-2">Q. 処方箋の有効期限は？</h3>
+      <p className="text-sm text-gray-700">
+        A. 一般的に3ヶ月。期限切れの処方箋での購入は法的に無効です。1年に1回以上、眼科で検査を受け直してください。
+      </p>
+    </div>
+
+    <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+      <h3 className="font-bold text-gray-900 mb-2">Q. 初めての装用、1回でうまくできるの？</h3>
+      <p className="text-sm text-gray-700">
+        A. ほぼ全員、初回は苦戦します。眼科では最低3回の装用練習を行い、スタッフが見守ります。焦らず、1週間は毎日短時間（2～3時間）から始めてください。
+      </p>
+    </div>
+  </div>
+
+  <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
+    <h3 className="text-xl font-bold mb-2">コンタクト選びはここから始めましょう</h3>
+    <p className="text-slate-300 mb-4">
+      初心者さんが安心して使い始めるなら、まず眼科で試用。そして信頼できるブランドを、楽天で賢くお得に購入。
+    </p>
+    <Link href="/ranking" className="inline-block bg-white text-slate-800 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 transition-colors">
+      人気のコンタクトレンズを見る →
+    </Link>
+  </div>
+</div>
+  ),
+  'acuvue-medallist-days-hikaku-2026': (
+    <div className="prose prose-gray max-w-none">
+  <p className="lead text-lg text-gray-700 mb-6">「アキュビュー、メダリスト、デイリーズ……どれが一番いいの？」そんな疑問にお答えします。コンタクトレンズ市場で人気を誇る3大ブランドを、価格・乾きにくさ・酸素透過率・素材・使いやすさの観点から徹底比較します。</p>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズを探す →</a>
+
+  <h2 id="profiles" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">3大ブランドの基本プロフィール</h2>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">アキュビュー（Johnson &amp; Johnson）</h3>
+  <p className="text-gray-700 mb-4">世界最大のコンタクトレンズブランド。日本市場でのシェアNo.1を誇り、眼科での処方件数も最多です。1988年に世界初の使い捨てコンタクト「アキュビュー」を発売した先駆者。代表製品は「ワンデーアキュビュー オアシス」「1デイ アキュビュー モイスト」「アキュビュー オアシス（2week）」など。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">メダリスト（ボシュロム）</h3>
+  <p className="text-gray-700 mb-4">ボシュロム（Bausch+Lomb）が製造するコンタクトレンズブランド。コンタクトレンズ・ケア用品の老舗メーカーで、1939年から眼科医療に関わってきた信頼ある企業。代表製品は「メダリストプラス」「メダリスト フレッシュフィット コンフォートモイスト」「バイオトゥルー ワンデー」など。2weekタイプに強みを持つ。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">デイリーズ（アルコン）</h3>
+  <p className="text-gray-700 mb-4">アルコン（Alcon）が製造するコンタクトレンズブランド。世界シェアNo.2のコンタクトレンズ・眼科薬企業。革新的な技術で「デイリーズ トータルワン」など高機能ワンデーを開発。代表製品は「デイリーズ トータルワン」「デイリーズ アクア」「デイリーズ トータルワン マルチフォーカル」など。ワンデータイプに注力。</p>
+
+  <h2 id="specs" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">スペック比較表</h2>
+  <p className="text-gray-700 mb-4">各ブランドの代表的なワンデー製品のスペックを比較します（参考値）。</p>
+  <div className="bg-slate-50 rounded-xl p-4 mb-6 overflow-x-auto">
+    <table className="w-full text-sm">
+      <thead>
+        <tr className="bg-slate-100">
+          <th className="text-left p-2 font-bold">製品</th>
+          <th className="text-left p-2 font-bold">素材</th>
+          <th className="text-left p-2 font-bold">含水率</th>
+          <th className="text-left p-2 font-bold">Dk/t</th>
+          <th className="text-left p-2 font-bold">1箱価格目安</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr className="border-b border-gray-100"><td className="p-2">アキュビュー オアシス 1day</td><td className="p-2">シリコーンHG</td><td className="p-2">38%</td><td className="p-2">121</td><td className="p-2">1,600〜2,000円</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2">1デイ アキュビュー モイスト</td><td className="p-2">ハイドロゲル</td><td className="p-2">58%</td><td className="p-2">33</td><td className="p-2">1,200〜1,500円</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2">バイオトゥルー ワンデー</td><td className="p-2">ハイパーゲル</td><td className="p-2">78%</td><td className="p-2">42</td><td className="p-2">1,100〜1,400円</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2">デイリーズ トータルワン</td><td className="p-2">シリコーンHG</td><td className="p-2">33%</td><td className="p-2">156</td><td className="p-2">1,700〜2,100円</td></tr>
+        <tr><td className="p-2">デイリーズ アクア</td><td className="p-2">ハイドロゲル</td><td className="p-2">69%</td><td className="p-2">26</td><td className="p-2">1,000〜1,300円</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p className="text-gray-700 mb-4 text-sm">※ Dk/t は酸素透過係数。値が高いほど目への酸素供給量が多い。シリコーンHG素材は特に高い。</p>
+
+  <h2 id="acuvue" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">アキュビューの特徴と評判</h2>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">強み</h3>
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li><strong>UVブロック機能：</strong>全製品に紫外線カット機能を標準搭載</li>
+    <li><strong>ラインナップの豊富さ：</strong>1day・2week・乱視用・遠近両用・カラーと全タイプ対応</li>
+    <li><strong>日本での普及率：</strong>眼科での処方率No.1で、処方データが豊富</li>
+    <li><strong>オアシスの乾きにくさ：</strong>ハイドララクシー™技術で長時間装用にも快適</li>
+  </ul>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">弱み</h3>
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li>人気商品（オアシス）は価格がやや高め</li>
+    <li>モイストは含水率が高いため、長時間装用で乾きを感じる場合がある</li>
+  </ul>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でアキュビューの価格を確認する →</a>
+
+  <h2 id="medallist" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">メダリストの特徴と評判</h2>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">強み</h3>
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li><strong>高含水率（バイオトゥルー）：</strong>含水率78%で装用直後から快適</li>
+    <li><strong>2weekタイプの充実：</strong>メダリストシリーズは2weekコンタクトで高い評価</li>
+    <li><strong>コスパ重視：</strong>バイオトゥルー ワンデーは価格を抑えつつ品質も高い</li>
+    <li><strong>ケア用品との相性：</strong>ボシュロムのケア用品との組み合わせで最適なケアが可能</li>
+  </ul>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">弱み</h3>
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li>ワンデータイプのラインナップがアキュビューやデイリーズより少ない</li>
+    <li>シリコーンハイドロゲル素材のワンデーは選択肢が限られる</li>
+  </ul>
+
+  <h2 id="dailies" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">デイリーズの特徴と評判</h2>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">強み</h3>
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li><strong>トータルワンの革新技術：</strong>ウォーターグラジェント™技術でレンズ表面の含水率が99%</li>
+    <li><strong>最高峰の装用感：</strong>デイリーズ トータルワンは乾きにくさ・なめらかさで最高評価</li>
+    <li><strong>Dk/tが最高クラス：</strong>酸素透過率156（業界最高水準）</li>
+    <li><strong>遠近両用：</strong>デイリーズ トータルワン マルチフォーカルは老眼対策に最適</li>
+  </ul>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">弱み</h3>
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+    <li>トータルワンは価格が高め（業界最高級帯）</li>
+    <li>2weekタイプのラインナップが少ない（ワンデーに特化）</li>
+  </ul>
+
+  <h2 id="situations" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">ブランド別おすすめシチュエーション</h2>
+  <div className="bg-slate-50 rounded-xl p-4 mb-6 overflow-x-auto">
+    <table className="w-full text-sm">
+      <thead>
+        <tr className="bg-slate-100">
+          <th className="text-left p-2 font-bold">こんな方に</th>
+          <th className="text-left p-2 font-bold">おすすめ</th>
+          <th className="text-left p-2 font-bold">理由</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr className="border-b border-gray-100"><td className="p-2">コスパ重視</td><td className="p-2 font-medium">1デイ アキュビュー モイスト / バイオトゥルー ワンデー</td><td className="p-2">1,200〜1,400円台で購入可能</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2">乾きが気になる</td><td className="p-2 font-medium">ワンデーアキュビュー オアシス / デイリーズ トータルワン</td><td className="p-2">シリコーンHG素材で高酸素透過</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2">PC作業が多い</td><td className="p-2 font-medium">デイリーズ トータルワン / アキュビュー オアシス</td><td className="p-2">長時間装用でも乾きにくい</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2">2weekをお探し</td><td className="p-2 font-medium">アキュビュー オアシス 2week / メダリストプラス</td><td className="p-2">それぞれ乾きにくさ・コスパに強み</td></tr>
+        <tr className="border-b border-gray-100"><td className="p-2">乱視がある</td><td className="p-2 font-medium">アキュビュー オアシス乱視用 / デイリーズ トータルワン乱視用</td><td className="p-2">乱視用ラインナップが充実</td></tr>
+        <tr><td className="p-2">老眼・遠近両用</td><td className="p-2 font-medium">デイリーズ トータルワン マルチフォーカル</td><td className="p-2">同時視で自然な見え方</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="faq" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">よくある質問</h2>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. アキュビュー オアシスとデイリーズ トータルワン、どちらが乾きにくいですか？</h3>
+  <p className="text-gray-700 mb-4">A. どちらも優れた乾きにくさを持ちます。デイリーズ トータルワンはウォーターグラジェント™技術でレンズ表面の含水率が最大99%に達し、理論的には最もなめらかな装用感です。アキュビュー オアシスはハイドララクシー™技術が特徴で、長時間の乾燥感抑制に優れます。個人差があるため、眼科でのサンプル試用をおすすめします。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. 3ブランドの中でUVカット機能があるのはどれですか？</h3>
+  <p className="text-gray-700 mb-4">A. アキュビューの全製品にはUVブロック機能が搭載されています。デイリーズとメダリストの一部製品にもUVカット機能があります。ただし、コンタクトレンズのUVカットはサングラスを代替するものではありません。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. ブランドを変えるとき、眼科受診は必要ですか？</h3>
+  <p className="text-gray-700 mb-4">A. 度数が同じで同種（ワンデーからワンデーなど）であれば、処方箋なしで変更できる場合があります。ただし、BC（ベースカーブ）が異なる場合や素材が大きく変わる場合は、眼科で確認してもらうことをおすすめします。</p>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. 最もコスパがいいのはどのブランドですか？</h3>
+  <p className="text-gray-700 mb-4">A. 通販での平均価格を考えると、1デイ アキュビュー モイストやバイオトゥルー ワンデー、デイリーズ アクアが1箱1,000〜1,400円台と価格帯が低く、コスパに優れます。高機能素材（シリコーンハイドロゲル）にこだわらなければ、これらがお得です。</p>
+
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天で3大ブランドの価格を比較する →</a>
+</div>
+  ),
+
 };
