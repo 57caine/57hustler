@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 };
 
 const SITE_CATEGORIES = [
-  { href: '/category/1day', icon: '👁', label: 'コンタクトレンズ', desc: 'BC別・種類別で最安値比較', color: 'from-sky-50 to-blue-50', border: 'border-sky-200', accent: 'text-sky-600' },
-  { href: '/karakon', icon: '👁‍🗨', label: 'カラコン', desc: 'ランキング・安全な選び方・韓国ブランド', color: 'from-pink-50 to-rose-50', border: 'border-pink-200', accent: 'text-pink-600' },
-  { href: '/megane', icon: '👓', label: '眼鏡・サングラス', desc: '顔型別フレーム・ブルーライトカット', color: 'from-indigo-50 to-violet-50', border: 'border-indigo-200', accent: 'text-indigo-600' },
-  { href: '/vr', icon: '🥽', label: 'VR・スマートグラス', desc: 'Meta Quest・Ray-Ban Meta比較', color: 'from-violet-50 to-purple-50', border: 'border-violet-200', accent: 'text-violet-600' },
-  { href: '/lasik', icon: '✨', label: 'レーシック・視力矯正', desc: '費用・リスク・ICLとの違い', color: 'from-emerald-50 to-teal-50', border: 'border-emerald-200', accent: 'text-emerald-600' },
-  { href: '/eye-care', icon: '💊', label: 'アイケア・目薬', desc: 'ドライアイ・コンタクト用目薬', color: 'from-cyan-50 to-teal-50', border: 'border-cyan-200', accent: 'text-cyan-600' },
-  { href: '/eye-goods', icon: '🛍', label: '目の雑貨・グッズ', desc: 'ホットアイマスク・モニターライト', color: 'from-orange-50 to-amber-50', border: 'border-orange-200', accent: 'text-orange-600' },
+  { href: '/category/1day', label: 'コンタクトレンズ', desc: 'BC別・種類別で最安値比較', bgGradient: 'from-blue-500 to-blue-700', colorCode: '#1565c0' },
+  { href: '/karakon', label: 'カラコン', desc: 'ランキング・安全な選び方・韓国ブランド', bgGradient: 'from-red-400 to-red-600', colorCode: '#ad1457' },
+  { href: '/megane', label: '眼鏡・サングラス', desc: '顔型別フレーム・ブルーライトカット', bgGradient: 'from-gray-600 to-gray-800', colorCode: '#37474f' },
+  { href: '/vr', label: 'VR・スマートグラス', desc: 'Meta Quest・Ray-Ban Meta比較', bgGradient: 'from-purple-500 to-purple-700', colorCode: '#4527a0' },
+  { href: '/lasik', label: 'レーシック・視力矯正', desc: '費用・リスク・ICLとの違い', bgGradient: 'from-teal-500 to-teal-700', colorCode: '#00695c' },
+  { href: '/eye-care', label: 'アイケア・目薬', desc: 'ドライアイ・コンタクト用目薬', bgGradient: 'from-green-500 to-green-700', colorCode: '#2e7d32' },
+  { href: '/eye-goods', label: '目の雑貨・グッズ', desc: 'ホットアイマスク・モニターライト', bgGradient: 'from-orange-500 to-orange-700', colorCode: '#e65100' },
 ];
 
 const categoryConfig = {
@@ -67,35 +67,75 @@ export default function HomePage() {
     <div className="max-w-6xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* Hero */}
-      <section className="text-center mb-12">
-        <p className="text-xs text-gray-400 font-medium mb-3 uppercase tracking-widest">Eye Care & Vision Guide</p>
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 leading-tight">
-          目のことなら、<span className="text-sky-600">レンズナビ。</span>
-        </h1>
-        <p className="text-gray-500 mb-6 text-sm max-w-xl mx-auto">
-          コンタクトレンズの最安値比較から、眼鏡・VR・レーシック・アイケアまで。目に関するあらゆる情報を網羅します。
-        </p>
-        <div className="flex flex-wrap justify-center gap-3">
-          <Link href="/ranking" className="bg-sky-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-sky-500 transition-colors text-sm">
-            コンタクトおすすめを見る
-          </Link>
-          <Link href="/column" className="bg-white text-gray-700 border border-gray-200 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition-colors text-sm">
-            コラムを読む
-          </Link>
+      {/* Hero Section */}
+      <section className="mb-16 -mx-4 md:-mx-0 -mt-8 md:-mt-0">
+        <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 text-white py-20 px-4 md:py-32 rounded-b-3xl md:rounded-2xl overflow-hidden">
+          {/* Animated background */}
+          <div className="absolute inset-0 opacity-20">
+            <svg className="w-full h-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="200" cy="200" r="150" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+              <circle cx="200" cy="200" r="100" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.2" />
+              <circle cx="200" cy="200" r="50" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.1" />
+            </svg>
+          </div>
+
+          {/* Eye icon with pulse animation */}
+          <div className="relative flex justify-center mb-6">
+            <div className="text-8xl md:text-9xl animate-pulse filter drop-shadow-lg">👁</div>
+          </div>
+
+          {/* Main heading */}
+          <h1 className="text-5xl md:text-6xl font-bold text-white text-center mb-4 leading-tight drop-shadow-lg">
+            目のことなら、<br className="md:hidden" />レンズナビ。
+          </h1>
+
+          {/* Sub heading */}
+          <p className="text-lg md:text-xl text-blue-100 text-center mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+            コンタクト・カラコン・VR・レーシック・アイケア
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 md:gap-5">
+            <Link href="/ranking" className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 md:px-10 rounded-lg transition-all duration-200 transform hover:scale-105 min-h-12 flex items-center justify-center text-base md:text-lg">
+              人気ランキングを見る
+            </Link>
+            <Link href="/column" className="bg-white hover:bg-gray-50 text-slate-900 font-bold py-3 px-8 md:px-10 rounded-lg border-2 border-white transition-all duration-200 transform hover:scale-105 min-h-12 flex items-center justify-center text-base md:text-lg">
+              コラムを読む
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* 6カテゴリ */}
-      <section className="mb-12">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">カテゴリから探す</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+      {/* Category Cards with Rich Design */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold text-gray-900 mb-8">カテゴリから探す</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SITE_CATEGORIES.map(cat => (
             <Link key={cat.href} href={cat.href} className="group block">
-              <div className={`bg-gradient-to-br ${cat.color} border ${cat.border} rounded-xl p-5 hover:shadow-sm transition-all`}>
-                <div className="text-2xl mb-2">{cat.icon}</div>
-                <p className={`font-bold text-sm mb-1 ${cat.accent}`}>{cat.label}</p>
-                <p className="text-xs text-gray-500">{cat.desc}</p>
+              <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full flex flex-col">
+                {/* Top gradient area */}
+                <div className={`bg-gradient-to-br ${cat.bgGradient} h-32 flex items-center justify-center relative overflow-hidden`}>
+                  <div className="absolute inset-0 opacity-10">
+                    <svg className="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="50" cy="50" r="40" fill="none" stroke="white" strokeWidth="0.5" />
+                      <circle cx="50" cy="50" r="20" fill="none" stroke="white" strokeWidth="0.5" />
+                    </svg>
+                  </div>
+                  <span className="text-6xl filter drop-shadow-lg relative z-10">👁</span>
+                </div>
+
+                {/* Content area */}
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="font-bold text-xl text-gray-900 mb-2 group-hover:text-sky-600 transition-colors">
+                    {cat.label}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed flex-1">
+                    {cat.desc}
+                  </p>
+                  <div className="mt-4 inline-flex items-center text-sky-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                    詳しく見る →
+                  </div>
+                </div>
               </div>
             </Link>
           ))}
@@ -126,16 +166,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* コンタクト価格比較 */}
-      <section className="mb-12">
-        <div className="flex items-center justify-between mb-2">
-          <h2 className="text-xl font-bold text-gray-800">コンタクトレンズ 最安値ランキング</h2>
-          <Link href="/ranking" className="text-slate-600 text-sm hover:underline">すべて見る →</Link>
+      {/* Ranking Section */}
+      <section className="mb-16 bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 md:p-12">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
+          <div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">人気ランキング TOP 6</h2>
+            <p className="text-sm text-gray-600">
+              {allProducts.length}商品掲載 ・ 更新: {new Date(updatedAt).toLocaleDateString('ja-JP')}
+            </p>
+          </div>
+          <Link href="/ranking" className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-6 rounded-lg transition-colors whitespace-nowrap">
+            全ランキングを見る →
+          </Link>
         </div>
-        <p className="text-xs text-gray-400 mb-4">
-          {allProducts.length}商品掲載 ・ 価格更新: {new Date(updatedAt).toLocaleDateString('ja-JP')}
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {topProducts.map((product, index) => (
             <ProductCard key={product.id} product={product} rank={index + 1} />
           ))}
