@@ -300,6 +300,7 @@ function buildColumnEntryCode(col: GeneratedColumn): string {
     `    { q: ${JSON.stringify(f.q)}, a: ${JSON.stringify(f.a)} }`,
   ).join(',\n');
 
+  const today = new Date().toISOString().slice(0, 10);
   return `  {
     slug: ${JSON.stringify(col.slug)},
     title: ${JSON.stringify(col.title)},
@@ -307,7 +308,8 @@ function buildColumnEntryCode(col: GeneratedColumn): string {
     section: ${JSON.stringify(col.section)},
     category: ${JSON.stringify(col.section)},
     readingTime: ${col.readingTime},
-    publishedAt: ${JSON.stringify(new Date().toISOString().slice(0, 10))},
+    publishedAt: ${JSON.stringify(today)},
+    updatedAt: ${JSON.stringify(today)},
     keywords: ${JSON.stringify(col.keywords)},
     faqs: [
 ${faqsCode}

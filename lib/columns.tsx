@@ -6,9 +6,12 @@ export type ColumnMeta = {
   description: string;
   category: string;
   publishedAt: string;
-  updatedAt: string;
+  updatedAt?: string;
   readingTime: number;
   headings?: string[];
+  section?: string;
+  keywords?: string[];
+  faqs?: { q: string; a: string }[];
 };
 
 export const columns: ColumnMeta[] = [

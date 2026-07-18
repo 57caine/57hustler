@@ -7,9 +7,10 @@ export type EyeColumnMeta = {
   category: string;
   section: 'megane' | 'vr' | 'lasik' | 'eye-care' | 'eye-goods' | 'karakon';
   publishedAt: string;
-  updatedAt: string;
+  updatedAt?: string;
   readingTime: number;
   headings?: string[];
+  keywords?: string[];
   faqs?: { q: string; a: string }[];
 };
 
@@ -3834,7 +3835,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">以下の患者では、LASIK以外の視力矯正法を検討すべきです：</p>
       <p className="text-gray-700 mb-4"><strong>ICL（眼内コンタクトレンズ）との比較</strong></p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ドライアイリスク：ICL < LASIK</li>
+        <li>ドライアイリスク：ICL &lt; LASIK</li>
         <li>理由：角膜を削除しないため、神経損傷がない</li>
         <li>推奨対象：高度な近視・乱視、術前ドライアイが重症な患者</li>
       </ul>

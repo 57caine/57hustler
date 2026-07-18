@@ -34,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/column`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     ...columns.map((c) => ({
       url: `${BASE_URL}/column/${c.slug}`,
-      lastModified: new Date(c.updatedAt),
+      lastModified: new Date(c.updatedAt ?? c.publishedAt),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
