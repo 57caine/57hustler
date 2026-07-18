@@ -107,7 +107,7 @@ export default async function ColumnPage({ params }: Props) {
           </h1>
           <div className="flex items-center gap-4 text-xs text-gray-400 pb-4 border-b border-gray-100">
             <span>公開: {column.publishedAt}</span>
-            <span>更新: {column.updatedAt}</span>
+            <span>更新: {column.updatedAt ?? column.publishedAt}</span>
           </div>
         </div>
 
