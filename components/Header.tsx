@@ -41,15 +41,15 @@ export default function Header() {
         </div>
 
         {/* Mobile/tablet nav */}
-        <nav className="lg:hidden flex items-center gap-2 mt-2 overflow-x-auto pb-1" style={{ scrollbarWidth: 'none' }}>
+        <nav className="lg:hidden flex items-center gap-2 mt-2 overflow-x-auto pb-1 scrollbar-hide">
           {NAV.map(l => (
             <Link key={l.href} href={l.href}
-              className="shrink-0 whitespace-nowrap bg-gray-50 border border-gray-200 px-3 py-1 rounded-full text-gray-700 text-xs font-medium hover:border-sky-300 hover:text-sky-700 transition-colors">
+              className="shrink-0 bg-gray-50 border border-gray-200 px-3 py-1 rounded-full text-gray-700 text-xs font-medium hover:border-sky-300 hover:text-sky-700 transition-colors whitespace-nowrap">
               {l.icon} {l.label}
             </Link>
           ))}
           <Link href="/ranking"
-            className="shrink-0 whitespace-nowrap bg-sky-600 text-white px-3 py-1 rounded-full text-xs font-bold">
+            className="shrink-0 bg-sky-600 text-white px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap">
             🏆 ランキング
           </Link>
         </nav>

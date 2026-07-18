@@ -79,13 +79,13 @@ export default function HomePage() {
             </svg>
           </div>
 
-          {/* Eye icon with pulse animation */}
-          <div className="relative flex justify-center mb-6">
-            <div className="text-8xl md:text-9xl animate-pulse filter drop-shadow-lg">👁</div>
+          {/* Eye icon watermark - top-right decorative */}
+          <div className="absolute top-8 right-8 text-8xl md:text-9xl opacity-20 animate-pulse filter drop-shadow-lg pointer-events-none">
+            👁
           </div>
 
           {/* Main heading */}
-          <h1 className="text-5xl md:text-6xl font-bold text-white text-center mb-4 leading-tight drop-shadow-lg">
+          <h1 className="text-5xl md:text-6xl font-bold text-white text-center mb-4 leading-tight relative z-10" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
             目のことなら、<br className="md:hidden" />レンズナビ。
           </h1>
 
