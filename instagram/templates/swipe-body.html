@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    background: #08081e;
+    font-family: 'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', 'Georgia', serif;
+    color: #f0e8d0;
+    position: relative;
+  }
+
+  /* 微弱な星 */
+  .starfield {
+    position: absolute;
+    inset: 0;
+    opacity: 0.5;
+    background:
+      radial-gradient(1px 1px at 20% 18%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 75% 10%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 45% 6%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 88% 32%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 10% 60%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 20%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 30% 78%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 72% 72%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 52% 92%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 92% 58%, rgba(255,255,255,0.4) 0%, transparent 100%);
+  }
+
+  /* サイドアクセントライン */
+  .side-accent {
+    position: absolute;
+    top: 120px;
+    bottom: 120px;
+    left: 60px;
+    width: 3px;
+    background: linear-gradient(180deg, transparent, rgba(201,167,110,0.5) 30%, rgba(201,167,110,0.5) 70%, transparent);
+    border-radius: 2px;
+  }
+
+  /* ページ番号エリア */
+  .page-indicator {
+    position: absolute;
+    top: 64px;
+    right: 80px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 20;
+  }
+  .page-current {
+    font-size: 28px;
+    color: #c9a76e;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+  }
+  .page-sep {
+    font-size: 20px;
+    color: rgba(201,167,110,0.35);
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+  .page-total {
+    font-size: 20px;
+    color: rgba(201,167,110,0.35);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+  }
+
+  /* コンテンツ */
+  .content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 130px 90px 110px 110px;
+  }
+
+  /* セクションラベル */
+  .section-label {
+    font-size: 18px;
+    letter-spacing: 0.35em;
+    color: rgba(201,167,110,0.55);
+    margin-bottom: 20px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+  }
+
+  /* 本文 */
+  .body-text {
+    font-size: 30px;
+    line-height: 2.0;
+    letter-spacing: 0.06em;
+    color: #f0e8d0;
+    flex: 1;
+  }
+
+  /* ハイライト */
+  .body-text em {
+    font-style: normal;
+    color: #c9a76e;
+  }
+
+  /* ポイントカード */
+  .point-card {
+    margin-top: 40px;
+    background: rgba(201,167,110,0.06);
+    border: 1px solid rgba(201,167,110,0.2);
+    border-radius: 12px;
+    padding: 22px 28px;
+  }
+  .point-label {
+    font-size: 16px;
+    letter-spacing: 0.3em;
+    color: rgba(201,167,110,0.6);
+    margin-bottom: 10px;
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+  .point-text {
+    font-size: 24px;
+    line-height: 1.7;
+    color: rgba(240,232,208,0.85);
+    letter-spacing: 0.04em;
+  }
+
+  /* 下部ドット */
+  .dots {
+    position: absolute;
+    bottom: 50px;
+    left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 20;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(201,167,110,0.2);
+  }
+  .dot.active {
+    background: rgba(201,167,110,0.7);
+    width: 24px;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+  <div class="starfield"></div>
+  <div class="side-accent"></div>
+
+  <div class="page-indicator">
+    <span class="page-current">{{CARD_NUM}}</span>
+    <span class="page-sep">/</span>
+    <span class="page-total">{{TOTAL}}</span>
+  </div>
+
+  <div class="content">
+    <div class="section-label">{{SECTION_LABEL}}</div>
+    <div class="body-text">{{CONTENT}}</div>
+    <div class="point-card">
+      <div class="point-label">POINT</div>
+      <div class="point-text">{{POINT}}</div>
+    </div>
+  </div>
+
+  <!-- ドットは静的サンプル（カード3/5の場合） -->
+  <div class="dots">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</body>
+</html>

@@ -1,8 +1,9 @@
 /**
- * Threads 一文考察 自動投稿スクリプト（夜21時）
+ * Threads 夜21時自動投稿スクリプト
  *
- * 平日: 日本伝統・宗教・神話と量子力学・現代科学を掛け合わせた「一文考察」
- * 日曜: 「問いかけ投稿」（答えを言わず読者に考えさせる）
+ * 月・水・金: 本命星別・一言占い（夜・就寝前）
+ * 火・木・土: 一文考察
+ * 日:         問いかけ投稿
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -11,11 +12,127 @@ const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
 const USER_ID  = process.env.THREADS_USER_ID!;
 const ACCESS_TOKEN = process.env.THREADS_ACCESS_TOKEN!;
 
+// ─── 九星気学マスターデータ ───────────────────────────────────
+const KYUSEI: Record<number, { short: string; emoji: string; element: string }> = {
+  1: { short: '一白', emoji: '⚪', element: '水' },
+  2: { short: '二黒', emoji: '🟤', element: '土' },
+  3: { short: '三碧', emoji: '🟢', element: '木' },
+  4: { short: '四緑', emoji: '🟢', element: '木' },
+  5: { short: '五黄', emoji: '🟡', element: '土' },
+  6: { short: '六白', emoji: '⚪', element: '金' },
+  7: { short: '七赤', emoji: '🔴', element: '金' },
+  8: { short: '八白', emoji: '🟤', element: '土' },
+  9: { short: '九紫', emoji: '🔴', element: '火' },
+};
+
+const POSITION_MEANINGS: Record<number, { name: string; direction: string; meaning: string }> = {
+  1: { name: '坎宮', direction: '北',   meaning: '苦難の中の知恵・真の才能が試される・水の流れに乗る' },
+  2: { name: '坤宮', direction: '南西', meaning: '忍耐・地道な積み重ね・縁の下の力持ち' },
+  3: { name: '震宮', direction: '東',   meaning: '動く・始める・積極行動が吉・発言が力になる' },
+  4: { name: '巽宮', direction: '東南', meaning: '縁・信用・コミュニケーション・風のように広がる' },
+  5: { name: '中宮', direction: '中央', meaning: '影響力最大・変化の核心・動きが大きく出る' },
+  6: { name: '乾宮', direction: '北西', meaning: '権威・天の助け・完成期・リーダーシップ発揮' },
+  7: { name: '兌宮', direction: '西',   meaning: '喜び・交際・金運・口から縁が生まれる' },
+  8: { name: '艮宮', direction: '北東', meaning: '内に蓄える・変革の準備期・山のように待つ' },
+  9: { name: '離宮', direction: '南',   meaning: '火の輝き・表現・名誉・発信が実を結ぶ' },
+};
+
+// ─── 日盤・月盤計算 ──────────────────────────────────────────
+function getDailyStar(): number {
+  const jstStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
+  const diff = Math.round((new Date(jstStr).getTime() - new Date('2024-01-06').getTime()) / 86400000);
+  return ((1 - 1 - diff % 9 + 900) % 9) + 1;
+}
+
+function getYearlyStar(year: number): number {
+  return ((4 - 1 - (year - 2024) % 9 + 900) % 9) + 1;
+}
+
+function getMonthlyStar(): number {
+  const jstStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
+  const year  = parseInt(jstStr.slice(0, 4));
+  const month = parseInt(jstStr.slice(5, 7));
+  const febStar = [8, 5, 2][(getYearlyStar(year) - 1) % 3];
+  const offset = month >= 2 ? month - 2 : month + 10;
+  return ((febStar - 1 - offset + 900) % 9) + 1;
+}
+
+function getStarPositionIndex(k: number, dailyStar: number): number {
+  return ((k - dailyStar + 13) % 9) + 1;
+}
+
+// ─── 曜日取得 ─────────────────────────────────────────────────
 function getJstDayOfWeek(): number {
   const jstStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
   return new Date(jstStr + 'T12:00:00Z').getDay();
 }
 
+type PostType = 'horoscope' | 'ikkouiku' | 'toikake';
+
+function getPostType(dow: number): PostType {
+  if (dow === 1 || dow === 3 || dow === 5) return 'horoscope'; // 月・水・金
+  if (dow === 0) return 'toikake';                              // 日
+  return 'ikkouiku';                                            // 火・木・土
+}
+
+// ─── 夜占い生成（月・水・金）─────────────────────────────────
+async function generateNightHoroscope(dailyStarNum: number, monthlyStarNum: number): Promise<Record<number, string>> {
+  const client = new Anthropic();
+
+  const positionInfo = Array.from({ length: 9 }, (_, i) => {
+    const k = i + 1;
+    const pos = POSITION_MEANINGS[getStarPositionIndex(k, dailyStarNum)];
+    return `  ${KYUSEI[k].short}（${KYUSEI[k].element}）→ ${pos.name}（${pos.direction}）: ${pos.meaning}`;
+  }).join('\n');
+
+  const message = await client.messages.create({
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 400,
+    system: '九星気学に詳しいおじさんです。月盤・日盤の回座宮を踏まえた就寝前・夜の一言アドバイスを生成します。',
+    messages: [{
+      role: 'user',
+      content: `月盤中宮：${KYUSEI[monthlyStarNum].short}
+日盤中宮：${KYUSEI[dailyStarNum].short}
+
+各星の本日の日盤回座宮：
+${positionInfo}
+
+月盤＋各星の回座宮の組み合わせから、
+「今夜・就寝前」の時間帯に合わせた一言を生成してください。
+
+【ルール】
+- 朝の全体運投稿と内容が被らないようにする
+- 夜・就寝前という時間帯を意識した内容
+  （今夜やること・明日の準備・眠りの前に意識すること）
+- 各星の一言は8文字以内・体言止め
+- 象意の言い換えは禁止（「地盤を固める」など不可）
+  良い例：「手帳を閉じて」「明日の服を決めて」「窓を開けて眠れ」
+
+以下のJSONのみ出力（前置き不要）：
+{"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":"","9":""}`,
+    }],
+  });
+
+  const raw = (message.content[0] as { type: string; text: string }).text;
+  const json = JSON.parse(raw.replace(/```json\n?|\n?```/g, '').trim()) as Record<string, string>;
+  return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v).slice(0, 8)]));
+}
+
+function buildHoroscopeText(oneLiners: Record<number, string>): string {
+  const lines = [
+    '🌙 今夜の本命星別',
+    '',
+    ...Array.from({ length: 9 }, (_, i) => {
+      const n = i + 1;
+      return `${KYUSEI[n].emoji}${KYUSEI[n].short}｜${oneLiners[n] ?? ''}`;
+    }),
+    '',
+    '#九星気学 #今夜の運勢 #夜中のおじさん',
+  ];
+  return lines.join('\n');
+}
+
+// ─── 一文考察・問いかけ生成（火・木・土・日）────────────────
 async function generateShortPost(isSunday: boolean): Promise<string> {
   const client = new Anthropic();
 
@@ -48,7 +165,6 @@ async function generateShortPost(isSunday: boolean): Promise<string> {
 - 読んだ人が「え、そうなの？」と思う切り口を選ぶ
 - ハッシュタグなし
 - 500文字以内厳守
-- 文が2つ以上の場合、文と文の間に改行を1つ入れる
 
 【参考トーン】
 「大祓詞の音韻は、量子もつれと同じ原理で現実を書き換えるとも言われている。」
@@ -110,7 +226,7 @@ async function generateShortPost(isSunday: boolean): Promise<string> {
       ];
 
   const message = await client.messages.create({
-    model: 'claude-sonnet-4-6',
+    model: 'claude-haiku-4-5-20251001',
     max_tokens: 300,
     system,
     messages: [{ role: 'user', content: userPrompt }],
@@ -120,6 +236,7 @@ async function generateShortPost(isSunday: boolean): Promise<string> {
   return text.length <= 500 ? text : text.slice(0, 497) + '…';
 }
 
+// ─── Threads投稿 ──────────────────────────────────────────────
 async function createThreadsContainer(text: string): Promise<string> {
   const params = new URLSearchParams({ media_type: 'TEXT', text, access_token: ACCESS_TOKEN });
   const res = await fetch(`${THREADS_API_BASE}/${USER_ID}/threads`, {
@@ -142,16 +259,30 @@ async function publishThread(creationId: string): Promise<string> {
   return ((await res.json()) as { id: string }).id;
 }
 
+// ─── メイン ──────────────────────────────────────────────────
 async function main() {
   const dryRun = process.argv.includes('--dry-run');
-  const isSunday = getJstDayOfWeek() === 0;
-  const postType = isSunday ? '問いかけ' : '一文考察';
+  const dow = getJstDayOfWeek();
+  const postType = getPostType(dow);
+  const DOW_NAMES = ['日', '月', '火', '水', '木', '金', '土'];
 
-  console.log(`=== Threads ${postType}投稿開始${dryRun ? '（DRY RUN）' : ''} ===`);
+  console.log(`=== 夜21時投稿開始（${DOW_NAMES[dow]}曜・${postType}）${dryRun ? '【DRY RUN】' : ''} ===`);
   if (!dryRun && (!USER_ID || !ACCESS_TOKEN)) throw new Error('THREADS_USER_ID と THREADS_ACCESS_TOKEN を設定してください');
 
-  console.log(`Claude API で${postType}を生成中...`);
-  const text = await generateShortPost(isSunday);
+  let text: string;
+
+  if (postType === 'horoscope') {
+    const dailyStarNum   = getDailyStar();
+    const monthlyStarNum = getMonthlyStar();
+    console.log(`日盤中宮: ${KYUSEI[dailyStarNum].short} / 月盤中宮: ${KYUSEI[monthlyStarNum].short}`);
+    console.log('Claude API で夜占いを生成中...');
+    const oneLiners = await generateNightHoroscope(dailyStarNum, monthlyStarNum);
+    text = buildHoroscopeText(oneLiners);
+  } else {
+    const isSunday = postType === 'toikake';
+    console.log(`Claude API で${isSunday ? '問いかけ' : '一文考察'}を生成中...`);
+    text = await generateShortPost(isSunday);
+  }
 
   console.log('--- 生成テキスト ---');
   console.log(text);

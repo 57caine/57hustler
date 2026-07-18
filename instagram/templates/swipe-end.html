@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    background: #06061a;
+    font-family: 'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', 'Georgia', serif;
+    color: #f0e8d0;
+    position: relative;
+  }
+
+  /* 星空 */
+  .starfield {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.65) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 80% 10%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 45% 5%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 92% 35%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 8% 55%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(2px 2px at 60% 15%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 75% 70%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 50% 90%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 20% 42%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 88% 60%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(2px 2px at 5% 90%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 93% 80%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 65% 35%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(2px 2px at 40% 60%, rgba(255,255,255,0.2) 0%, transparent 100%);
+  }
+
+  /* 霞グロー */
+  .nebula {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 600px 500px at 50% 55%, rgba(80, 40, 10, 0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 500px 300px at 20% 20%, rgba(60, 20, 100, 0.1) 0%, transparent 70%),
+      radial-gradient(ellipse 400px 400px at 85% 75%, rgba(15, 50, 110, 0.1) 0%, transparent 70%);
+  }
+
+  /* 中央グロー（note誘導の輝き） */
+  .center-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(201,167,110,0.06) 0%, transparent 70%);
+  }
+
+  /* 外枠 */
+  .frame {
+    position: absolute;
+    inset: 60px;
+    border: 1px solid rgba(201,167,110,0.15);
+  }
+
+  /* 四隅 */
+  .corner {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+  }
+  .corner.tl { top: 60px; left: 60px; border-top: 2px solid rgba(201,167,110,0.5); border-left: 2px solid rgba(201,167,110,0.5); }
+  .corner.tr { top: 60px; right: 60px; border-top: 2px solid rgba(201,167,110,0.5); border-right: 2px solid rgba(201,167,110,0.5); }
+  .corner.bl { bottom: 60px; left: 60px; border-bottom: 2px solid rgba(201,167,110,0.5); border-left: 2px solid rgba(201,167,110,0.5); }
+  .corner.br { bottom: 60px; right: 60px; border-bottom: 2px solid rgba(201,167,110,0.5); border-right: 2px solid rgba(201,167,110,0.5); }
+
+  /* コンテンツ */
+  .content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+    text-align: center;
+  }
+
+  /* 小タイトル */
+  .sub-title {
+    font-size: 20px;
+    letter-spacing: 0.35em;
+    color: rgba(201,167,110,0.55);
+    margin-bottom: 28px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+  }
+
+  /* メッセージ */
+  .message {
+    font-size: 34px;
+    line-height: 1.75;
+    letter-spacing: 0.06em;
+    color: #f0e8d0;
+    max-width: 800px;
+    margin-bottom: 52px;
+  }
+
+  /* 区切り */
+  .divider {
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,167,110,0.45), transparent);
+    margin-bottom: 52px;
+  }
+
+  /* note CTAボタン */
+  .note-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .note-label {
+    font-size: 18px;
+    letter-spacing: 0.3em;
+    color: rgba(201,167,110,0.5);
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+  .note-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(201,167,110,0.12);
+    border: 1px solid rgba(201,167,110,0.45);
+    border-radius: 50px;
+    padding: 18px 46px;
+  }
+  .note-icon {
+    font-size: 22px;
+    color: #c9a76e;
+  }
+  .note-text {
+    font-size: 26px;
+    letter-spacing: 0.15em;
+    color: #c9a76e;
+  }
+  .note-sub {
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    color: rgba(240,232,208,0.4);
+    line-height: 1.6;
+    max-width: 640px;
+  }
+
+  /* ブランド */
+  .footer {
+    position: absolute;
+    bottom: 44px;
+    left: 0; right: 0;
+    text-align: center;
+  }
+  .brand {
+    font-size: 18px;
+    letter-spacing: 0.4em;
+    color: rgba(201,167,110,0.35);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+  }
+</style>
+</head>
+<body>
+  <div class="starfield"></div>
+  <div class="nebula"></div>
+  <div class="center-glow"></div>
+  <div class="frame"></div>
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+
+  <div class="content">
+    <div class="sub-title">COLUMN ENDS HERE</div>
+    <div class="message">もっと深く知りたい方へ。<br>毎週、記事にまとめています。</div>
+    <div class="divider"></div>
+    <div class="note-cta">
+      <div class="note-label">READ MORE</div>
+      <div class="note-btn">
+        <span class="note-icon">✦</span>
+        <span class="note-text">noteで続きを読む</span>
+      </div>
+      <div class="note-sub">プロフィールのリンクからどうぞ</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">夜中のおじさん</div>
+  </div>
+</body>
+</html>

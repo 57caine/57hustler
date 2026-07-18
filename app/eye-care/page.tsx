@@ -1,5 +1,10 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { eyeColumns } from '@/lib/eye-columns';
+
+const articles = eyeColumns
+  .filter(c => c.section === 'eye-care')
+  .map(c => ({ slug: c.slug, title: c.title, desc: c.description, readingTime: c.readingTime }));
 
 export const metadata: Metadata = {
   title: 'アイケア・目薬の選び方【コンタクト対応・ドライアイ・ルテインサプリ】| レンズナビ',
@@ -10,20 +15,6 @@ export const metadata: Metadata = {
 const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=hustle-digger-22`;
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
 
-const articles = [
-  {
-    slug: 'contact-megusuri-erabikata',
-    title: 'コンタクト用目薬の選び方【ソフト・ハード対応・防腐剤フリー】おすすめランキング',
-    desc: 'コンタクト装用中に使える目薬の選び方・防腐剤フリーの重要性・症状別おすすめランキング。',
-    readingTime: 7,
-  },
-  {
-    slug: 'dryeye-taisaku',
-    title: 'ドライアイ・疲れ目の対策【目薬・生活習慣・サプリで症状改善】原因と対処法',
-    desc: 'ドライアイの原因から目薬・サプリ・生活習慣による対策まで徹底解説。コンタクト装用者向け情報も。',
-    readingTime: 8,
-  },
-];
 
 const products = [
   { emoji: '💧', label: 'コンタクト用目薬', amzn: 'コンタクト 目薬 防腐剤フリー', rakuten: 'コンタクト用目薬 防腐剤フリー' },

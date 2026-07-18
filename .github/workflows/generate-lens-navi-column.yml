@@ -77,9 +77,17 @@ jobs:
         run: |
           COUNT=${{ github.event.inputs.count || '1' }}
           SECTION=${{ github.event.inputs.section || 'contact' }}
-          for i in $(seq 1 $COUNT); do
-            npx tsx scripts/generate-lens-navi-column.ts --section $SECTION
-          done
+          if [ "$SECTION" = "all" ]; then
+            for s in contact karakon vr eye-care lasik megane eye-goods; do
+              for i in $(seq 1 $COUNT); do
+                npx tsx scripts/generate-lens-navi-column.ts --section $s || true
+              done
+            done
+          else
+            for i in $(seq 1 $COUNT); do
+              npx tsx scripts/generate-lens-navi-column.ts --section $SECTION || true
+            done
+          fi
 
       - name: Commit and push
         run: |

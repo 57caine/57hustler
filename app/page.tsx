@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 
 const SITE_CATEGORIES = [
   { href: '/category/1day', icon: '👁', label: 'コンタクトレンズ', desc: 'BC別・種類別で最安値比較', color: 'from-sky-50 to-blue-50', border: 'border-sky-200', accent: 'text-sky-600' },
+  { href: '/karakon', icon: '👁‍🗨', label: 'カラコン', desc: 'ランキング・安全な選び方・韓国ブランド', color: 'from-pink-50 to-rose-50', border: 'border-pink-200', accent: 'text-pink-600' },
   { href: '/megane', icon: '👓', label: '眼鏡・サングラス', desc: '顔型別フレーム・ブルーライトカット', color: 'from-indigo-50 to-violet-50', border: 'border-indigo-200', accent: 'text-indigo-600' },
   { href: '/vr', icon: '🥽', label: 'VR・スマートグラス', desc: 'Meta Quest・Ray-Ban Meta比較', color: 'from-violet-50 to-purple-50', border: 'border-violet-200', accent: 'text-violet-600' },
   { href: '/lasik', icon: '✨', label: 'レーシック・視力矯正', desc: '費用・リスク・ICLとの違い', color: 'from-emerald-50 to-teal-50', border: 'border-emerald-200', accent: 'text-emerald-600' },

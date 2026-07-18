@@ -34,90 +34,33 @@ function saveHistory(existing: HistoryEntry[], newText: string): void {
   fs.writeFileSync(HISTORY_PATH, JSON.stringify({ posts }, null, 2), 'utf-8');
 }
 
-// 現在のJST時刻から投稿枠ヒントを返す
-function getSlotHint(): string {
-  const jstHour = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo' })).getHours();
-  if (jstHour >= 3  && jstHour < 6)  return '深夜（04:00）枠。深夜の静けさ、眠れない夜、深夜だからこそ気づくこと、星空や月から入る。';
-  if (jstHour >= 6  && jstHour < 10) return '朝（08:00）枠。朝のルーティン、朝の光や空気、朝食、目覚めの感覚から入る。';
-  if (jstHour >= 10 && jstHour < 14) return '昼（12:00）枠。季節・天気・昼の雑踏・日常の出来事・食事の時間から入る。';
-  if (jstHour >= 14 && jstHour < 18) return '夕方（16:00）枠。夕焼け・影が長くなる時間・今日の出来事の振り返りから入る。';
-  if (jstHour >= 18 && jstHour < 21) return '夜（20:00）枠。夜の静けさ・夕食後・夜空・一日の終わりの気づきから入る。';
-  if (jstHour >= 21 && jstHour < 23) return '深夜前（22:00）枠。夜が深まる感覚・静寂・自分の内側への問いから入る。';
-  return '夜更け（23:00以降）枠。就寝前の思考・夢・意識の境目・日付が変わる頃の感覚から入る。';
-}
-
-// 直近7日間で「夜中に〜」系の書き出しを使った件数を返す
-function countNightOpenings(history: HistoryEntry[]): number {
-  const jst = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
-  jst.setDate(jst.getDate() - 7);
-  const cutoff = jst.toLocaleDateString('en-CA');
-  const NIGHT_PATTERN = /^(夜中に|夜中、|夜、|夜は|夜が|夜へ|深夜に|深夜、|深夜は)/;
-  return history
-    .filter(e => e.date >= cutoff)
-    .filter(e => NIGHT_PATTERN.test(e.text.trimStart()))
-    .length;
-}
-
 async function generatePost(history: HistoryEntry[]): Promise<string> {
   const client = new Anthropic();
 
-  const todayJST   = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
-  const todayPosts = history.filter(e => e.date === todayJST);
-  const nightCount = countNightOpenings(history);
-  const slotHint   = getSlotHint();
-
-  // 直近履歴（重複防止用）
-  const recentText = history.length > 0
-    ? history.slice(0, 30).map(p => `- ${p.text}`).join('\n')
+  const historyText = history.length > 0
+    ? history.map(p => `- ${p.text}`).join('\n')
     : '（履歴なし）';
 
-  // 当日投稿済みコンテンツ（同日重複防止）
-  const todaySection = todayPosts.length > 0
-    ? `【今日すでに投稿した内容（${todayPosts.length}件）】
-${todayPosts.map(p => `「${p.text.slice(0, 60)}」`).join('\n')}
-→ 上記と同じ書き出し・同じテーマ・同じトーンにならないようにすること。`
-    : '';
-
-  // 夜中書き出し制限
-  const nightWarning = nightCount >= 2
-    ? `【書き出し制限】「夜中に〜」「夜、〜」「深夜に〜」の書き出しは直近7日間ですでに${nightCount}回使用済み。今回は絶対に使わないこと。`
-    : '';
-
   const message = await client.messages.create({
-    model: 'claude-sonnet-4-6',
-    max_tokens: 400,
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 200,
     system: `あなたは「夜中のおじさん」というキャラクターです。
-以下のルールと文体参考例を踏まえて投稿文を生成してください。
+以下のルールで1文だけ生成してください。
 
-【文体の参考例】
-「地震がおきる、おきない、色んな話がありますよね。それも自分で世界線が選べると思うんですよ。心配してれば意識しているから起こりやすい世界線に寄る。気にしてなければ起こらない世界線に寄る。みんなで全体意識をコントロールして変えていければ良いですね。」
-
-「夏越の大祓ですね。お近くの神社で茅の輪が出ていたら、これまでの感謝と共に邪気を払っていただきましょう。26年後半もみなさまに良い事が起こりますように🙏」
-
-「雨の日が無いと、晴れの日のありがたさが分からないですよね。ハレとケ、意識して日々を過ごしたいですね」
-
-【ルール】
-- ですます調・柔らかい語り口
-- 日常の出来事・季節・気づきからスピリチュアル・宇宙・神事・量子につなげる
-- 説教臭くない・押しつけがましくない
-- 3〜5文程度
-- 絵文字は使わないか最小限（🙏程度）
+テーマ：日本神事・量子力学・宇宙哲学・オカルト・都市伝説・引き寄せをミックス
+ルール：
+- 1文のみ。余計な説明不要
+- 事実に基づくものは断言
+- 都市伝説・未確認情報は「とも言われている」「という説がある」で濁す
+- 一人称は使わない
+- 短文・体言止め・余韻重視
+- ですます調禁止
 - ハッシュタグなし
-- 事実は断言、未確認情報は「とも言われています」で表現
-- 現代に生きる実在人物の名前は使わない
-- 過去の投稿と重複しない
-- 【改行ルール】文と文の間に改行を1つ入れる。話題が変わるタイミングで空行（改行2つ）を入れる。改行を加えても500文字以内に収まるよう本文を短く調整してよい
+- 過去に投稿した文と重複しない
 
-過去の投稿履歴（直近30件）：
-${recentText}`,
-    messages: [{
-      role: 'user',
-      content: `【今回の投稿枠】${slotHint}
-${todaySection}
-${nightWarning}
-
-上記の枠に合った切り口・書き出しで投稿文を生成してください。`,
-    }],
+過去の投稿履歴：
+${historyText}`,
+    messages: [{ role: 'user', content: '1文を生成してください。' }],
   });
 
   return (message.content[0] as { type: string; text: string }).text.trim();
@@ -159,14 +102,7 @@ async function main() {
   if (!dryRun && (!USER_ID || !ACCESS_TOKEN)) throw new Error('THREADS_USER_ID と THREADS_ACCESS_TOKEN を設定してください');
 
   const history = loadHistory();
-  const todayJST   = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
-  const todayCount = history.filter(e => e.date === todayJST).length;
-  const nightCount = history.filter(e => {
-    const jst = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
-    jst.setDate(jst.getDate() - 7);
-    return e.date >= jst.toLocaleDateString('en-CA') && /^(夜中に|夜中、|夜、|夜は|夜が|深夜に|深夜、|深夜は)/.test(e.text.trimStart());
-  }).length;
-  console.log(`投稿履歴: 直近${history.length}件 / 今日${todayCount}件 / 夜中書き出し直近7日:${nightCount}回`);
+  console.log(`投稿履歴: 直近${history.length}件を参照`);
 
   let text: string;
   let fromStock = false;

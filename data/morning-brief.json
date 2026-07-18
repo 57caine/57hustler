@@ -1,124 +1,30 @@
 {
-  "date": "2026-07-18",
-  "generatedAt": "2026-07-17T22:44:36.308Z",
-  "todayAiStaff": [
-    {
-      "time": "04:00",
-      "name": "夜中のおじさん",
-      "task": "Threads投稿"
-    },
-    {
-      "time": "07:00",
-      "name": "九星気学bot",
-      "task": "運勢まとめ投稿"
-    },
-    {
-      "time": "08:00",
-      "name": "夜中のおじさん",
-      "task": "Threads投稿"
-    },
-    {
-      "time": "12:00",
-      "name": "コラムbot・夜中",
-      "task": "Threads投稿2本"
-    },
-    {
-      "time": "16:00",
-      "name": "夜中のおじさん",
-      "task": "Threads投稿"
-    },
-    {
-      "time": "20:00",
-      "name": "夜中のおじさん",
-      "task": "Threads投稿"
-    },
-    {
-      "time": "21:00",
-      "name": "コラムbot",
-      "task": "一文考察投稿"
-    },
-    {
-      "time": "22:00",
-      "name": "夜中のおじさん",
-      "task": "Threads投稿"
-    },
-    {
-      "time": "23:00",
-      "name": "コラムbot",
-      "task": "コラム夜投稿"
-    }
-  ],
-  "postsToday": 1,
-  "actionsStatus": {
-    "total": 30,
-    "success": 12,
-    "failed": 17,
-    "runs": [
-      {
-        "name": "朝の司令書生成",
-        "status": null,
-        "time": "2026-07-17T22:44:05Z"
-      },
-      {
-        "name": "Instagram 自動投稿",
-        "status": "failure",
-        "time": "2026-07-17T22:39:36Z"
-      },
-      {
-        "name": "Threads 占い 日次自動投稿",
-        "status": "success",
-        "time": "2026-07-17T22:38:11Z"
-      },
-      {
-        "name": "価格データ・アフィリエイトリンク自動更新",
-        "status": "success",
-        "time": "2026-07-17T21:57:32Z"
-      },
-      {
-        "name": "Threads 夜中のおじさん 自動投稿",
-        "status": "success",
-        "time": "2026-07-17T19:56:59Z"
-      },
-      {
-        "name": "Threads 夜間コラム自動投稿",
-        "status": "success",
-        "time": "2026-07-17T15:17:50Z"
-      },
-      {
-        "name": "価格データ・アフィリエイトリンク自動更新",
-        "status": "success",
-        "time": "2026-07-17T14:47:15Z"
-      },
-      {
-        "name": "Threads 夜中のおじさん 自動投稿",
-        "status": "success",
-        "time": "2026-07-17T14:24:04Z"
-      },
-      {
-        "name": "Threads 一文考察 自動投稿",
-        "status": "success",
-        "time": "2026-07-17T13:27:36Z"
-      },
-      {
-        "name": "Generate Lens-Navi Column",
-        "status": "success",
-        "time": "2026-07-17T13:03:55Z"
-      }
-    ]
+  "generatedAt": "2026-07-15T22:00:00+09:00",
+  "date": "2026-07-15",
+  "stats": {
+    "threadsPostsTotal": 0,
+    "threadsPostsToday": 0,
+    "lensNaviColumns": 24,
+    "lensNaviColumnsThisWeek": 7,
+    "henkutsuCandidates": 0,
+    "henkutsuApproved": 0,
+    "noteArticles": 7,
+    "noteLatestTitle": "第7回：自動化で作る「手を動かさない収益」の設計図",
+    "noteLastUpdated": "2026-07-14"
   },
-  "urgent": [
-    "Instagram投稿自動化の障害調査・修復（昨日失敗ログあり）",
-    "note第8回の作成・公開完了",
-    "GitHub Actions成功率向上（現在40%、目標85%以上）"
+  "githubActions": {
+    "last24h": {
+      "total": 0,
+      "success": 0,
+      "failure": 0,
+      "successRate": 100
+    }
+  },
+  "priorities": [
+    "ANTHROPIC_API_KEYをGitHub Secretsに登録してコラム自動生成を有効化",
+    "product-url-map.jsonの全商品URLマッピングを完成（24ストア×55商品）",
+    "henkutsu Amazon提携申請フォームを送付",
+    "Instagram westin_lab 最初の投稿を準備"
   ],
-  "defer": [
-    "Amazon Associates申請準備（売上3件到達まで）",
-    "Instagram投稿テンプレート最適化",
-    "Threads各自動投稿の精度向上"
-  ],
-  "confirm": [
-    "Instagram失敗の原因特定（API制限か認証か）",
-    "note第8回のコンテンツテーマ決定"
-  ],
-  "summary": "Instagram障害対応とnote第8回公開が最優先。自動化精度の改善を継続。"
+  "note": "GitHub Actionsから自動更新されます（毎朝7:00 JST）"
 }

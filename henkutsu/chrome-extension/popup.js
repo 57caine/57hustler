@@ -10,13 +10,9 @@ function toAffiliateUrl(url, amazonTag) {
     return `${u}${sep}tag=${tag}`;
   }
 
-  if (url.includes('hb.afl.rakuten.co.jp')) return url;
-
   if (/rakuten\.co\.jp/.test(url)) {
-    const match = url.match(/https:\/\/item\.rakuten\.co\.jp\/[^\/\?]+\/[^\/\?]+/);
-    const cleanUrl = match ? match[0] + '/' : url.split('?')[0];
-    const encoded = encodeURIComponent(cleanUrl);
-    return `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encoded}&link_type=text&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJ0ZXh0IiwiY29sIjoxfQ==`;
+    const encoded = encodeURIComponent(url);
+    return `https://hb.afl.rakuten.co.jp/hsc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encoded}&link_type=text&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJ0ZXh0IiwiY29sIjoxfQ==`;
   }
 
   return url;
@@ -119,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
           'anthropic-version': '2023-06-01',
         },
         body: JSON.stringify({
-          model: 'claude-3-5-haiku-latest',
+          model: 'claude-haiku-4-5-20251001',
           max_tokens: 150,
           messages: [{
             role: 'user',

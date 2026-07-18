@@ -82,7 +82,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${notoSansJP.className} bg-gray-50 text-gray-900`}>
+      <body className={`${notoSansJP.className} bg-[var(--bg)] text-[var(--fg)]`}>
         {/* Google Analytics */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}

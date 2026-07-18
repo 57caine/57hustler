@@ -1,0 +1,38 @@
+name: 投稿プレビュー（下書き確認）
+
+on:
+  workflow_dispatch:
+    inputs:
+      type:
+        description: '確認したい投稿の種類'
+        required: true
+        default: 'fortune'
+        type: choice
+        options:
+          - fortune
+          - column
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: 投稿プレビュー（fortune）
+        if: ${{ inputs.type == 'fortune' }}
+        run: npx ts-node scripts/post-threads-fortune.ts --dry-run
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: 投稿プレビュー（column）
+        if: ${{ inputs.type == 'column' }}
+        run: npx ts-node scripts/post-threads-column.ts --dry-run
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

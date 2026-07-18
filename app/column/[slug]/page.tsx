@@ -3,17 +3,20 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { columns, getColumnBySlug, columnContent } from '@/lib/columns';
 import { eyeColumns, eyeColumnContent, type EyeColumnMeta } from '@/lib/eye-columns';
+import { karakonColumnContent } from '@/lib/karakon-columns';
 import { allColumns, getAnyColumnBySlug } from '@/lib/all-columns';
+import ArticleTOC from '@/components/ArticleTOC';
 
 const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=hustle-digger-22`;
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
 
-const SECTION_CTA: Record<string, { label: string; amzn: string; rakuten: string }> = {
+const SECTION_CTA: Record<string, { label: string; amzn?: string; rakuten: string }> = {
   megane:     { label: '眼鏡・サングラスを探す', amzn: '眼鏡フレーム おすすめ', rakuten: '眼鏡フレーム' },
   vr:         { label: 'VR・スマートグラスを探す', amzn: 'VRゴーグル おすすめ', rakuten: 'VRゴーグル Meta Quest' },
   lasik:      { label: 'アイケアグッズを探す', amzn: '目薬 防腐剤フリー', rakuten: '目薬 コンタクト' },
   'eye-care': { label: 'アイケアグッズを探す', amzn: 'コンタクト 目薬 おすすめ', rakuten: 'ドライアイ 目薬 コンタクト' },
   'eye-goods': { label: '目のグッズを探す', amzn: 'ホットアイマスク おすすめ', rakuten: 'ホットアイマスク おすすめ' },
+  karakon:    { label: 'カラコンを楽天で探す', rakuten: 'カラコン おすすめ 日本製' },
 };
 
 type Props = { params: Promise<{ slug: string }> };
@@ -42,6 +45,7 @@ const categoryColors: Record<string, string> = {
   'レーシック・視力矯正': 'bg-emerald-100 text-emerald-700',
   'アイケア・目薬': 'bg-cyan-100 text-cyan-700',
   '目の雑貨・グッズ': 'bg-orange-100 text-orange-700',
+  'カラコン': 'bg-pink-100 text-pink-700',
 };
 
 export default async function ColumnPage({ params }: Props) {
@@ -49,7 +53,7 @@ export default async function ColumnPage({ params }: Props) {
   const column = getAnyColumnBySlug(slug);
   if (!column) notFound();
 
-  const content = columnContent[slug] ?? eyeColumnContent[slug];
+  const content = columnContent[slug] ?? eyeColumnContent[slug] ?? karakonColumnContent[slug];
   if (!content) notFound();
 
   const otherColumns = allColumns.filter((c) => c.slug !== slug).slice(0, 4);
@@ -103,24 +107,12 @@ export default async function ColumnPage({ params }: Props) {
           </h1>
           <div className="flex items-center gap-4 text-xs text-gray-400 pb-4 border-b border-gray-100">
             <span>公開: {column.publishedAt}</span>
-            <span>更新: {column.updatedAt}</span>
+            <span>更新: {column.updatedAt ?? column.publishedAt}</span>
           </div>
         </div>
 
-        {/* 目次 */}
-        {column.headings && column.headings.length > 0 && (
-          <nav aria-label="目次" className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
-            <p className="text-xs font-bold text-slate-500 tracking-widest mb-3">目次</p>
-            <ol className="space-y-2">
-              {column.headings.map((h, i) => (
-                <li key={i} className="flex items-start gap-2.5 text-sm">
-                  <span className="text-slate-400 font-mono text-xs mt-0.5 shrink-0 w-5">{i + 1}.</span>
-                  <span className="text-slate-700 leading-snug">{h}</span>
-                </li>
-              ))}
-            </ol>
-          </nav>
-        )}
+        {/* TOC（クライアント側でH2にID付与＋スムーズスクロール） */}
+        <ArticleTOC bodyId="article-body" />
 
         {/* 記事前CTA */}
         {(() => {
@@ -132,10 +124,12 @@ export default async function ColumnPage({ params }: Props) {
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
                 <p className="text-sm font-bold text-gray-800 mb-2">{cta.label}</p>
                 <div className="flex gap-2">
-                  <a href={AMZN(cta.amzn)} target="_blank" rel="noopener noreferrer nofollow"
-                    className="flex-1 text-center text-xs font-bold bg-amber-400 hover:bg-amber-300 text-gray-900 px-3 py-2 rounded-lg transition-colors">
-                    Amazon で探す
-                  </a>
+                  {cta.amzn && (
+                    <a href={AMZN(cta.amzn)} target="_blank" rel="noopener noreferrer nofollow"
+                      className="flex-1 text-center text-xs font-bold bg-amber-400 hover:bg-amber-300 text-gray-900 px-3 py-2 rounded-lg transition-colors">
+                      Amazon で探す
+                    </a>
+                  )}
                   <a href={RAKUTEN(cta.rakuten)} target="_blank" rel="noopener noreferrer nofollow"
                     className="flex-1 text-center text-xs font-bold bg-red-500 hover:bg-red-400 text-white px-3 py-2 rounded-lg transition-colors">
                     楽天で探す
@@ -158,7 +152,7 @@ export default async function ColumnPage({ params }: Props) {
         })()}
 
         {/* 本文 */}
-        <div className="text-gray-800 leading-relaxed">
+        <div id="article-body" className="text-gray-800 leading-relaxed">
           {content}
         </div>
 
@@ -189,10 +183,12 @@ export default async function ColumnPage({ params }: Props) {
               <div className="mt-10 p-5 bg-slate-50 border border-slate-200 rounded-xl">
                 <p className="text-sm font-bold text-gray-800 mb-3">この記事に関連する商品を探す</p>
                 <div className="flex gap-2">
-                  <a href={AMZN(cta.amzn)} target="_blank" rel="noopener noreferrer nofollow"
-                    className="flex-1 text-center text-sm font-bold bg-amber-400 hover:bg-amber-300 text-gray-900 px-4 py-2 rounded-lg transition-colors">
-                    Amazon で探す
-                  </a>
+                  {cta.amzn && (
+                    <a href={AMZN(cta.amzn)} target="_blank" rel="noopener noreferrer nofollow"
+                      className="flex-1 text-center text-sm font-bold bg-amber-400 hover:bg-amber-300 text-gray-900 px-4 py-2 rounded-lg transition-colors">
+                      Amazon で探す
+                    </a>
+                  )}
                   <a href={RAKUTEN(cta.rakuten)} target="_blank" rel="noopener noreferrer nofollow"
                     className="flex-1 text-center text-sm font-bold bg-red-500 hover:bg-red-400 text-white px-4 py-2 rounded-lg transition-colors">
                     楽天で探す

@@ -88,7 +88,7 @@ export default async function BrandPage({ params }: Props) {
   const brandFaqs = [
     {
       q: `${brand.name}のコンタクトはどこで最安値で買えますか？`,
-      a: `${brand.name}のコンタクトレンズはAmazon・楽天などで購入できます。各商品ページからAmazon・楽天の価格をチェックしてお得な方をご利用ください。`,
+      a: `${brand.name}の最安値はショップによって異なり日々変動します。当サイトでは24店舗の送料込み最安値をリアルタイムで比較しています。各商品ページから最新の最安値をご確認ください。`,
     },
     {
       q: `${brand.name}の人気商品はどれですか？`,

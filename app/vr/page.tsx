@@ -1,5 +1,10 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { eyeColumns } from '@/lib/eye-columns';
+
+const articles = eyeColumns
+  .filter(c => c.section === 'vr')
+  .map(c => ({ slug: c.slug, title: c.title, desc: c.description, readingTime: c.readingTime }));
 
 export const metadata: Metadata = {
   title: 'VR・スマートグラスの選び方【視力が悪い人の対策・Meta Quest・Ray-Ban Meta】| レンズナビ',
@@ -10,20 +15,6 @@ export const metadata: Metadata = {
 const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=hustle-digger-22`;
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
 
-const articles = [
-  {
-    slug: 'vr-shiryoku-warui',
-    title: '視力が悪い人のVRゴーグル対策【コンタクト・度付きインサート・メガネスペーサー完全ガイド】',
-    desc: '近視・乱視があってもVRを快適に楽しむ3つの方法を解説。Meta Quest対応の度付きインサートレンズも紹介。',
-    readingTime: 7,
-  },
-  {
-    slug: 'smart-glass-2026',
-    title: 'スマートグラス・VRゴーグル おすすめ2026【Meta Quest 3・Ray-Ban Meta・Vision Pro比較】',
-    desc: '2026年最新のVRゴーグル・スマートグラスを徹底比較。視力対応状況も解説。',
-    readingTime: 8,
-  },
-];
 
 const products = [
   { emoji: '🥽', label: 'Meta Quest 3', amzn: 'Meta Quest 3', rakuten: 'Meta Quest 3' },
