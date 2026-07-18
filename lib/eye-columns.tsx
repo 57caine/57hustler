@@ -14,7 +14,6 @@ export type EyeColumnMeta = {
   faqs?: { q: string; a: string }[];
 };
 
-const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=57plot-22`;
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
 
 export const eyeColumns: EyeColumnMeta[] = [
@@ -659,17 +658,55 @@ export const eyeColumns: EyeColumnMeta[] = [
     { q: "レンズはどのようなオプションから選べますか？", a: "主なレンズオプションには、単焦点レンズ、遠近両用レンズ、ブルーライトカットレンズ、調光レンズ、偏光レンズなどがあります。度数やフレームの種類によって選択肢は異なります。また、レンズのコーティング（反射防止、撥水加工など）も追加できるショップが多いです。自分の用途に応じて最適なオプションを選択できます。" }
     ],
   },
+  {
+    slug: 'icl-vs-lasik-2026',
+    title: 'ICLとレーシックの違いを徹底比較｜どちらを選ぶべきか2026年版',
+    description: 'ICL（眼内コンタクトレンズ）とレーシックの費用・適応条件・メリット・デメリットを徹底比較。どちらが自分に向いているか判断するための完全ガイド。',
+    category: 'レーシック・視力矯正',
+    readingTime: 10,
+    publishedAt: '2026-07-18',
+    section: 'lasik',
+    faqs: [
+      { q: 'ICLとレーシックどちらが安全ですか？', a: '両手術とも実績のあるクリニックで受ければ重大な合併症の確率は1%未満です。レーシックは30年以上の臨床実績があり、ICLは15〜20年のデータが蓄積されています。安全性より自分のライフスタイルや眼の状態に合った選択をすることが重要です。' },
+      { q: 'レーシックとICLで迷ったらどうすればいいですか？', a: '複数のクリニックで無料カウンセリングと術前検査を受けることをお勧めします。角膜の厚さ・近視度数・ドライアイの有無・予算を医師と一緒に確認した上で判断するのが最善です。' },
+      { q: 'ICLは将来白内障になったら取り出せますか？', a: 'はい、ICLは可逆的な手術のため、将来白内障が進行した際にレンズを取り出すことができます。ICL摘出後に白内障手術（眼内レンズ挿入）を行うことが可能です。' },
+    ],
+  },
+  {
+    slug: 'lasik-clinic-checklist-2026',
+    title: 'レーシッククリニックの選び方チェックリスト｜後悔しない5つのポイント',
+    description: 'レーシック手術を受けるクリニックを選ぶ際の重要なチェックポイントを解説。実績・設備・アフターケア・価格の見方など失敗しないクリニック選びの完全ガイド。',
+    category: 'レーシック・視力矯正',
+    readingTime: 8,
+    publishedAt: '2026-07-18',
+    section: 'lasik',
+    faqs: [
+      { q: 'レーシッククリニックの無料相談は何を確認すればよいですか？', a: '医師の資格・手術実績・使用機器のメーカーと年式・保証内容・追加費用の有無の5点を必ず確認してください。不明点は遠慮なく聞き、回答が曖昧なクリニックは避けた方が安全です。' },
+      { q: '安いレーシック（10万円以下）は大丈夫ですか？', a: '相場より大幅に安い場合は、古い機器の使用・術後フォローの省略・術前検査の省略などのリスクがあります。価格だけで選ばず、実績・設備・アフターケアを総合的に判断してください。' },
+      { q: 'レーシックの保証期間はどのくらいが標準ですか？', a: '多くの優良クリニックでは術後1〜5年の保証（無料追加手術）を提供しています。近視の再発に備え、少なくとも1年以上の保証があるクリニックを選ぶことをお勧めします。' },
+    ],
+  },
+  {
+    slug: 'lasik-aftercare-lifestyle-2026',
+    title: '視力矯正手術後の生活・注意事項｜レーシック・ICL術後ガイド2026',
+    description: 'レーシック・ICL手術後の日常生活での注意点、目薬の使い方、運動・入浴・コンタクトレンズ再開の時期など術後ケアを詳しく解説。',
+    category: 'レーシック・視力矯正',
+    readingTime: 9,
+    publishedAt: '2026-07-18',
+    section: 'lasik',
+    faqs: [
+      { q: 'レーシック後はいつからスポーツができますか？', a: '軽い運動（ウォーキング等）は術後1週間から、水泳やコンタクトスポーツは術後1ヶ月以降が目安です。ただし眼に衝撃が加わるスポーツ（格闘技・球技）は術後2〜3ヶ月後まで控えるクリニックが多いです。' },
+      { q: 'レーシック後に目が乾く感じがするのは正常ですか？', a: 'はい、ドライアイは最も一般的な術後症状で、50〜80%の患者が経験します。通常は術後3〜6ヶ月で改善します。処方された人工涙液を定期的に使用し、改善しない場合は担当医に相談してください。' },
+      { q: 'レーシック後はいつからコンタクトレンズを使えますか？', a: '視力が安定するまでの術後3〜6ヶ月は基本的にコンタクトレンズの使用を避けます。その後も必要な場合は医師の指示に従い、角膜への負担が少ないソフトコンタクトから始めることをお勧めします。' },
+    ],
+  },
 ];
 
-const AffiliateBtns = ({ amzn, rakuten }: { amzn: string; rakuten: string }) => (
-  <div className="flex gap-2 my-4">
-    <a href={AMZN(amzn)} target="_blank" rel="noopener noreferrer nofollow"
-      className="flex-1 text-center text-xs font-medium bg-amber-400 hover:bg-amber-300 text-gray-900 px-3 py-2 rounded-lg transition-colors">
-      Amazon で探す
-    </a>
+const AffiliateBtns = ({ rakuten }: { rakuten: string }) => (
+  <div className="my-4">
     <a href={RAKUTEN(rakuten)} target="_blank" rel="noopener noreferrer nofollow"
-      className="flex-1 text-center text-xs font-medium bg-red-500 hover:bg-red-400 text-white px-3 py-2 rounded-lg transition-colors">
-      楽天で探す
+      className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+      楽天市場で見る →
     </a>
   </div>
 );
@@ -810,7 +847,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-3">おすすめ眼鏡を探す</p>
-        <AffiliateBtns amzn="眼鏡フレーム チタン おすすめ" rakuten="眼鏡フレーム 軽量" />
+        <AffiliateBtns rakuten="眼鏡フレーム 軽量" />
       </div>
     </article>
   ),
@@ -874,7 +911,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-3">ブルーライトカット眼鏡を探す</p>
-        <AffiliateBtns amzn="ブルーライトカット 眼鏡 PC" rakuten="ブルーライトカット眼鏡" />
+        <AffiliateBtns rakuten="ブルーライトカット眼鏡" />
       </div>
     </article>
   ),
@@ -951,7 +988,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-3">オンラインで眼鏡を探す</p>
-        <AffiliateBtns amzn="眼鏡フレーム おしゃれ" rakuten="眼鏡フレーム おしゃれ" />
+        <AffiliateBtns rakuten="眼鏡フレーム おしゃれ" />
       </div>
     </article>
   ),
@@ -1003,7 +1040,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </p>
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-3">VR度付きインサートレンズを探す</p>
-        <AffiliateBtns amzn="VR 度付き インサートレンズ Meta Quest" rakuten="VR インサートレンズ 度付き" />
+        <AffiliateBtns rakuten="VR インサートレンズ 度付き" />
       </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">メガネスペーサーを使う</h2>
@@ -1015,7 +1052,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-3">
         VR使用中のドライアイ対策として、コンタクト対応の防腐剤フリー目薬を手元に置いておくことをおすすめします。
       </p>
-      <AffiliateBtns amzn="コンタクト 目薬 防腐剤フリー" rakuten="コンタクト用 目薬 防腐剤なし" />
+      <AffiliateBtns rakuten="コンタクト用 目薬 防腐剤なし" />
     </article>
   ),
 
@@ -1127,7 +1164,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           2023年発売。カラーパススルーで現実とVRをシームレスに切り替えられるミックスリアリティ対応。
           度付きインサートレンズはZendure等が対応品を販売。眼鏡スペーサーも付属。
         </p>
-        <AffiliateBtns amzn="Meta Quest 3" rakuten="Meta Quest 3" />
+        <AffiliateBtns rakuten="Meta Quest 3" />
       </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Ray-Ban Meta Smart Glasses</h2>
@@ -1141,7 +1178,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           Ray-BanのサングラスにカメラとスピーカーとAIを内蔵。度付きレンズへの交換が可能なため、視力が悪い方も使いやすい。
           Meta AIとの連携でリアルタイム翻訳・情報取得も可能。
         </p>
-        <AffiliateBtns amzn="Ray-Ban Meta Smart Glasses" rakuten="Ray-Ban Meta スマートグラス" />
+        <AffiliateBtns rakuten="Ray-Ban Meta スマートグラス" />
       </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Apple Vision Pro</h2>
@@ -1205,7 +1242,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         </table>
       </div>
       <p className="text-sm text-gray-500 mb-6">「VR体験 [都市名]」で検索すると近くの施設を見つけられます。大型モールやゲームセンターに設置されていることが多いです。</p>
-      <AffiliateBtns amzn="Meta Quest 3 VRゴーグル" rakuten="Meta Quest 3" />
+      <AffiliateBtns rakuten="Meta Quest 3" />
     </article>
   ),
 
@@ -1440,7 +1477,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-3">術後の目薬・アイケアグッズ</p>
-        <AffiliateBtns amzn="目薬 防腐剤フリー 術後" rakuten="防腐剤フリー 目薬" />
+        <AffiliateBtns rakuten="防腐剤フリー 目薬" />
       </div>
     </article>
   ),
@@ -1524,7 +1561,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-3">術後のアイケアグッズ</p>
-        <AffiliateBtns amzn="ルテイン サプリ 目 健康" rakuten="ルテイン サプリ 目" />
+        <AffiliateBtns rakuten="ルテイン サプリ 目" />
       </div>
     </article>
   ),
@@ -1572,7 +1609,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-3">コンタクト用目薬を探す</p>
-        <AffiliateBtns amzn="コンタクト 目薬 防腐剤フリー ドライアイ" rakuten="コンタクト用 目薬 防腐剤なし" />
+        <AffiliateBtns rakuten="コンタクト用 目薬 防腐剤なし" />
       </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目薬の正しい使い方</h2>
@@ -1624,19 +1661,19 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           <strong>油分不足型（MGD）：</strong>ホットアイマスクでマイボーム腺を温めることが有効
         </p>
       </div>
-      <AffiliateBtns amzn="ドライアイ 目薬 防腐剤フリー おすすめ" rakuten="ドライアイ 目薬 コンタクト" />
+      <AffiliateBtns rakuten="ドライアイ 目薬 コンタクト" />
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスクの効果</h2>
       <p className="text-gray-700 mb-3">
         ホットアイマスクは40〜45℃の温熱でまぶたを温め、マイボーム腺から油分の分泌を促進します。油分不足型のドライアイに特に効果的です。1回10〜15分が目安。
       </p>
-      <AffiliateBtns amzn="ホットアイマスク ドライアイ おすすめ" rakuten="ホットアイマスク ドライアイ" />
+      <AffiliateBtns rakuten="ホットアイマスク ドライアイ" />
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインサプリの活用</h2>
       <p className="text-gray-700 mb-3">
         ルテイン・ゼアキサンチンは目の黄斑部に集中する天然色素で、光ダメージから目を守ります。食事（ほうれん草・ケール等）からの摂取が難しい場合はサプリメントが有効です。1日10mg以上が目安。
       </p>
-      <AffiliateBtns amzn="ルテイン サプリ 目 ドライアイ" rakuten="ルテイン アスタキサンチン サプリ" />
+      <AffiliateBtns rakuten="ルテイン アスタキサンチン サプリ" />
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">生活習慣の改善</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
@@ -1770,7 +1807,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           </div>
         ))}
       </div>
-      <AffiliateBtns amzn="ホットアイマスク Panasonic 繰り返し" rakuten="ホットアイマスク 繰り返し おすすめ" />
+      <AffiliateBtns rakuten="ホットアイマスク 繰り返し おすすめ" />
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">使い捨てタイプの比較</h2>
       <div className="space-y-3 mb-6">
@@ -1787,7 +1824,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           </div>
         ))}
       </div>
-      <AffiliateBtns amzn="花王 めぐりズム ホットアイマスク" rakuten="めぐりズム アイマスク ホット" />
+      <AffiliateBtns rakuten="めぐりズム アイマスク ホット" />
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方のポイント</h2>
       <div className="overflow-x-auto mb-6">
@@ -1884,7 +1921,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           </div>
         ))}
       </div>
-      <AffiliateBtns amzn="Meta Quest 3 VRゴーグル" rakuten="Meta Quest 3" />
+      <AffiliateBtns rakuten="Meta Quest 3" />
     </article>
   ),
 
@@ -1949,7 +1986,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-2">視力が悪い方はコンタクトでVRを快適に</p>
         <p className="text-sm text-gray-600 mb-3">度数が合っていないと酔いやすくなります。ワンデーコンタクトでVRを試してみてください。</p>
-        <AffiliateBtns amzn="ワンデーコンタクト 1day おすすめ" rakuten="1day コンタクト ワンデー" />
+        <AffiliateBtns rakuten="1day コンタクト ワンデー" />
       </div>
     </article>
   ),
@@ -2017,7 +2054,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           </tbody>
         </table>
       </div>
-      <AffiliateBtns amzn="Meta Quest 3 ビジネス VRゴーグル" rakuten="VRゴーグル ビジネス Meta Quest" />
+      <AffiliateBtns rakuten="VRゴーグル ビジネス Meta Quest" />
     </article>
   ),
 
@@ -2042,20 +2079,20 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-2">BenQ ScreenBar（最もおすすめ）</p>
         <p className="text-sm text-gray-600 mb-3">モニタークリップ式・非対称光学設計でグレアなし・自動照度調節・USB給電。PC作業のモニターライトとして世界シェアNo.1。</p>
-        <AffiliateBtns amzn="BenQ ScreenBar モニターライト" rakuten="BenQ ScreenBar" />
+        <AffiliateBtns rakuten="BenQ ScreenBar" />
       </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ブルーライトカット眼鏡</h2>
       <p className="text-gray-700 mb-3">
         PC作業専用の度なしブルーライトカット眼鏡は、夜間の作業での睡眠への影響を軽減します。度ありの場合はJINSやZoffで「PC用度数（弱度数設計）」のオプションも検討を。
       </p>
-      <AffiliateBtns amzn="ブルーライトカット 眼鏡 PC作業 度なし" rakuten="ブルーライトカット 眼鏡 PC" />
+      <AffiliateBtns rakuten="ブルーライトカット 眼鏡 PC" />
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">モニターフィルター・アンチグレアフィルム</h2>
       <p className="text-gray-700 mb-3">
         モニターに貼るアンチグレア（非光沢）フィルムは、照明の映り込みを防ぎ目への負担を軽減します。プライバシーフィルターと兼用のものも人気です。
       </p>
-      <AffiliateBtns amzn="モニター アンチグレア フィルター ブルーライトカット" rakuten="モニターフィルター アンチグレア" />
+      <AffiliateBtns rakuten="モニターフィルター アンチグレア" />
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">PC作業の目疲れ対策まとめ</h2>
       <div className="grid sm:grid-cols-2 gap-4 mb-6">
@@ -2076,7 +2113,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-3">目疲れ対策グッズをまとめて探す</p>
-        <AffiliateBtns amzn="PC 目疲れ 対策 グッズ" rakuten="目疲れ PC 対策 グッズ" />
+        <AffiliateBtns rakuten="目疲れ PC 対策 グッズ" />
       </div>
     </article>
   ),
@@ -2158,7 +2195,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">
         コントローラーはTouch Plus（Quest 3付属）を使用。Quest 2よりも軽量化され、指輪状のリングが廃止されてすっきりしたデザインです。ハンドトラッキングの精度も向上しており、一部ゲームはコントローラーなしで手の動作だけでプレイ可能です。
       </p>
-      <AffiliateBtns amzn="Meta Quest 3 VRゴーグル" rakuten="Meta Quest 3" />
+      <AffiliateBtns rakuten="Meta Quest 3" />
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">映画・動画視聴の体験</h2>
       <p className="text-gray-700 mb-4">
@@ -2229,7 +2266,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           </div>
         ))}
       </div>
-      <AffiliateBtns amzn="Meta Quest 3 VRゴーグル フィットネス" rakuten="VRゴーグル Meta Quest" />
+      <AffiliateBtns rakuten="VRゴーグル Meta Quest" />
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ゲーム感覚で続けられるワークアウト</h2>
       <p className="text-gray-700 mb-4">
@@ -2366,7 +2403,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <p className="text-sm text-gray-700">還付額目安：(45万円 - 10万円) × 20% = <strong>7万円の税還付</strong></p>
         <p className="text-xs text-gray-500 mt-1">※ 家族の医療費と合算可。領収書は5年間保管を。</p>
       </div>
-      <AffiliateBtns amzn="目のサプリ ルテイン 術後 アイケア" rakuten="ルテイン サプリ 目 視力" />
+      <AffiliateBtns rakuten="ルテイン サプリ 目 視力" />
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">向いている人・向いていない人</h2>
       <div className="grid sm:grid-cols-2 gap-4 mb-6">
@@ -2479,7 +2516,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">
         医療費控除の対象となるため、年間の医療費が10万円を超えた場合（家族合算可）、確定申告で還付を受けられます。子どもに処方した場合でも、親の医療費として合算できます。
       </p>
-      <AffiliateBtns amzn="コンタクト ハード ケア用品 洗浄液" rakuten="ハードコンタクト ケア用品 洗浄液" />
+      <AffiliateBtns rakuten="ハードコンタクト ケア用品 洗浄液" />
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">向いている人・デメリット</h2>
       <div className="grid sm:grid-cols-2 gap-4 mb-6">
@@ -2538,7 +2575,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">
         コンタクト装用中に充血が始まったら、まずレンズを外して休憩しましょう。充血が収まったら再装用できますが、再度充血する場合はその日は眼鏡で過ごすことをおすすめします。
       </p>
-      <AffiliateBtns amzn="目薬 充血 コンタクト 人工涙液" rakuten="目薬 充血除去 コンタクト OK" />
+      <AffiliateBtns rakuten="目薬 充血除去 コンタクト OK" />
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">疲れ目・ドライアイによる充血</h2>
       <p className="text-gray-700 mb-4">
@@ -2660,7 +2697,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           </div>
         ))}
       </div>
-      <AffiliateBtns amzn="偏光サングラス 釣り ドライブ おすすめ" rakuten="偏光サングラス 釣り スポーツ" />
+      <AffiliateBtns rakuten="偏光サングラス 釣り スポーツ" />
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">偏光サングラスの選び方</h2>
       <p className="text-gray-700 mb-4">
@@ -2780,7 +2817,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">XRヘッドセットは単なる次世代デバイスではなく、企業の競争力を高める投資として機能します。適切な導入戦略と運用体制を整えることで、確実な効果測定と継続的な改善が実現できます。</p>
       <p className="text-gray-700 mb-4">業界別・規模別の導入事例集や詳細な比較ガイドは、以下のリンクよりご確認いただけます。</p>
       <p className="text-gray-700 mb-4"><strong>VRゴーグル・スマートグラスの購入・レンタルはこちら</strong></p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon VRゴーグル・スマートグラス</a></p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FVR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天市場 VRゴーグル・関連機器</a></p>
       <p className="text-gray-700 mb-4">導入検討段階での疑問点や技術相談については、各企業のカスタマーサクセスチームへお問い合わせいただくことで、無料の診断サービスが受けられる場合も多くあります。</p>
     </article>
@@ -2862,7 +2898,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>新作追加の頻度がやや低い</li>
       </ul>
       <p className="text-gray-700 mb-4">アマゾンで対応デバイスをチェック：</p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">VRゴーグル・スマートグラス各種を見る</a></p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画視聴に最適なデバイス選択ガイド</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">予算別おすすめデバイス</h3>
       <p className="text-gray-700 mb-4"><strong>予算10万円以下</strong></p>
@@ -3025,7 +3060,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>150,000～300,000円</strong>：HTC Vive Pro 2（高性能PC接続型）</li>
         <li><strong>400,000円以上</strong>：Apple Vision Pro、PlayStation VR2（最高体験）</li>
       </ul>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">VRゴーグルやアクセサリーをAmazonで見つける</a></p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年で注目すべきVRコンテンツ</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ドキュメンタリーシリーズ</h3>
       <p className="text-gray-700 mb-4">2026年は、VRドキュメンタリーが一つの成熟したジャンルとして確立されています。8K解像度での自然映像ドキュメンタリーが複数配信されており、アマゾンプライムVRの「Wild Wonders 4K」シリーズは月間視聴者数が520万人に達しています。</p>
@@ -3415,7 +3449,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>マッサージオイル</strong>：適度な滑りやすさで、目周辺の繊細な皮膚に負担をかけません</li>
         <li><strong>薬用クリーム</strong>：血行促進成分を含む製品を選ぶと、マッサージ効果が高まります</li>
       </ul>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E7%9B%AE%E8%96%AC%20%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazonで目の疲労対策クリームを見る</a></p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で疲れ目対策製品を見る</a></p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">温冷療法の組み合わせ</h3>
       <p className="text-gray-700 mb-4">ストレッチ・マッサージの効果を高めるために、温冷療法との組み合わせが推奨されています：</p>
@@ -3847,7 +3880,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">つまり<strong>87%の患者が満足以上</strong>の評価をしています。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">関連商品：術後の目のサポート</h2>
       <p className="text-gray-700 mb-4">目の健康維持のため、ルテイン配合サプリメントやアイケア商品の活用もお勧めです。</p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E7%9B%AE%E3%81%AE%E3%82%B5%E3%83%97%E3%83%AA%20%E3%83%AB%E3%83%86%E3%82%A4%E3%83%B3&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon目のサプリメント・ルテイン製品</a></p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%20%E3%82%B5%E3%83%97%E3%83%AA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天アイケア・サプリメント</a></p>
       <p className="text-gray-700 mb-4">術後の目の保護用サングラスも用意しておくと便利です。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">よくある質問と誤解の解消</h2>
@@ -3983,7 +4015,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">炎症を緩和し、角膜修復を促進します。ただし長期使用は眼圧上昇のリスクがあるため、2週間程度の短期使用に限定されます。</p>
       <p className="text-gray-700 mb-4"><strong>オメガ3系脂肪酸サプリメント</strong></p>
       <p className="text-gray-700 mb-4">フィッシュオイル（EPA・DHA）の補給により、涙液の脂質層質が向上します。1日1,000～2,000mgの摂取で、3～6ヶ月で効果が期待できます。</p>
-      <p className="text-gray-700 mb-4">サプリメントの選択：<a href="https://www.amazon.co.jp/s?k=%E7%9B%AE%E3%81%AE%E3%82%B5%E3%83%97%E3%83%AA%20%E3%83%AB%E3%83%86%E3%82%A4%E3%83%B3&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon で目のサプリメントを見る</a> | <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%20%E3%82%B5%E3%83%97%E3%83%AA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で アイケアサプリを探す</a></p>
+      <p className="text-gray-700 mb-4">サプリメントの選択： | <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%20%E3%82%B5%E3%83%97%E3%83%AA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で アイケアサプリを探す</a></p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">自己血清点眼液（Autologous Serum Eye Drops: ASED）</h3>
       <p className="text-gray-700 mb-4">自分の血液から作製した点眼液で、成長因子やタンパク質が豊富に含まれており、角膜修復が促進されます。</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
@@ -4236,7 +4268,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>HDR10+ Plus対応：業界標準を超える色域</li>
       </ul>
       <p className="text-gray-700 mb-4">VR映画の視聴に必要な最高級のデバイスをお探しでしたら、以下をチェックしてください：</p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon VRゴーグル・スマートグラス検索</a></p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FVR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天 VRゴーグル検索</a></p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">YouTube VR：無料コンテンツの充実度</h3>
       <p className="text-gray-700 mb-4">YouTube VRは完全無料で、広告付きで360度ビデオ、VRドキュメンタリー、ライブストリーミングが視聴可能です。2026年時点で、VR動画ライブラリは80万本を超えています。</p>
@@ -4576,7 +4607,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>複合成分タイプ</strong>：ビタミンC＋タウリン＋グリチルリチン酸が同時配合</li>
         <li><strong>防腐剤フリー</strong>：単回使用パックタイプもおすすめ</li>
       </ul>
-      <p className="text-gray-700 mb-4">👉 <a href="https://www.amazon.co.jp/s?k=%E7%9B%AE%E8%96%AC%20%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon で目薬・ドライアイ商品を見る</a></p>
+      <p className="text-gray-700 mb-4">👉 </p>
       <p className="text-gray-700 mb-4">👉 <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で目薬・ドライアイ商品を見る</a></p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">季節別・状況別の対策方法</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">春夏の強紫外線対策</h3>
@@ -4743,7 +4774,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>推奨摂取量：1日1,500-2,000mg</li>
         <li>メカニズム：マイボーム腺の機能改善、涙液層の安定化</li>
         <li>効果：術後のドライアイ症状を約40～50%軽減する報告あり</li>
-        <li><strong>Amazon</strong>：<a href="https://www.amazon.co.jp/s?k=%E3%82%AA%E3%83%A1%E3%82%AC3&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">オメガ3サプリメント検索</a></li>
+        <li><strong>Amazon</strong>：</li>
         <li><strong>楽天</strong>：<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%AA%E3%83%A1%E3%82%AC3%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">オメガ3サプリ楽天検索</a></li>
       </ul>
       <p className="text-gray-700 mb-4"><strong>ルテイン・ゼアキサンチン含有製品</strong></p>
@@ -4864,7 +4895,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <p className="text-gray-700 mb-4"><strong>関連製品</strong>：</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>Amazon</strong>：<a href="https://www.amazon.co.jp/s?k=%E7%9B%AE%E3%81%AE%E3%82%B5%E3%83%97%E3%83%AA%20%E3%83%AB%E3%83%86%E3%82%A4%E3%83%B3&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">目のサプリ ルテイン検索</a></li>
+        <li><strong>Amazon</strong>：</li>
         <li><strong>楽天</strong>：<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%20%E3%82%B5%E3%83%97%E3%83%AA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">アイケア サプリメント検索</a></li>
       </ul>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">避けるべき行動・環境</h3>
@@ -4955,7 +4986,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめスポーツ眼鏡の選定基準</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">予算別選択肢</h3>
       <p className="text-gray-700 mb-4"><strong>5,000円以下</strong>：国内ブランドのズレ防止ラバーパッド付きフレームが一般的です。基本的なズレ防止機能は備わっていますが、素材が限定的であることが多いです。</p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%82%AB%E3%83%83%E3%83%88&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon で5,000円以下のスポーツ眼鏡を探す</a></p>
       <p className="text-gray-700 mb-4"><strong>5,000～15,000円</strong>：TR90やウルテム樹脂などの高機能素材を使用した製品が多く、ズレ防止機能も充実しています。この価格帯は、ほとんどのスポーツユーザーに適した選択肢といえます。</p>
       <p className="text-gray-700 mb-4"><strong>15,000円以上</strong>：βチタンやアイロス（エアロゾルプロセス加工）を採用した高級ブランド製品です。最高レベルの軽量性と耐久性を備え、競技用途向けです。</p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天 で高機能スポーツ眼鏡フレームを探す</a></p>
@@ -5066,351 +5096,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">価格帯別おすすめ</h3>
       <p className="text-gray-700 mb-4"><strong>予算5,000円以下：</strong></p>
       <p className="text-gray-700 mb-4">ネットショップで購入できるリーズナブルなモデルが充実しています。初期老眼や予備用に最適です。</p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%82%AB%E3%83%83%E3%83%88&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon メガネ・フレーム</a>で手軽に購入できます。</p>
-      <p className="text-gray-700 mb-4"><strong>予算5,000～15,000円：</strong></p>
-      <p className="text-gray-700 mb-4">中堅メーカーのモデルが豊富。ブルーライトカット機能や撥水コート付きが多いこの価格帯は、コストパフォーマンスが優れています。</p>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天 メガネ・フレーム</a>でも多くのモデルが揃っています。</p>
-      <p className="text-gray-700 mb-4"><strong>予算15,000円以上：</strong></p>
-      <p className="text-gray-700 mb-4">高級ブランドやカスタムメイドモデル。チタン素材や高度な設計レンズが使用されており、長期使用に適しています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">購入方法別のメリット・デメリット</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼科・眼鏡店での購入</h3>
-      <p className="text-gray-700 mb-4"><strong>メリット：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>正確な検査と処方が受けられる</li>
-        <li>フレーム試着が可能</li>
-        <li>アフターサービスが充実</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>デメリット：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>価格が高め</li>
-        <li>完成まで時間がかかる</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ネット通販での購入</h3>
-      <p className="text-gray-700 mb-4"><strong>メリット：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>価格が安い</li>
-        <li>種類が豊富</li>
-        <li>自宅で選べる</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>デメリット：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>試着ができない</li>
-        <li>度数確認に不安がある</li>
-      </ul>
-      <p className="text-gray-700 mb-4">初めての購入は眼科で処方を受け、2本目以降はネットで購入するというユーザーが増えています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">老眼鏡の正しい使い方と管理</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">正しい装用位置</h3>
-      <p className="text-gray-700 mb-4">老眼鏡は、鼻から15～20mm下がった位置に装用すると、もっとも有効範囲が広くなります。正しい位置でないと、度数の効果を十分に発揮できません。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">日常的なメンテナンス</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>毎日の清掃</strong>：柔らかいメガネ拭きで、眼鏡専用クリーナーを使用</li>
-        <li><strong>定期的な検査</strong>：半年～1年ごとに度数確認</li>
-        <li><strong>保管方法</strong>：専用のメガネケースに入れ、高温・多湿を避ける</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">よくある質問と回答</h2>
-      <p className="text-gray-700 mb-4">老眼鏡に関する一般的な疑問について、詳しく解説します。詳しくは上記の「FAQ」セクションを参照してください。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
-      <p className="text-gray-700 mb-4">老眼鏡選びは、自分の視力や生活スタイルに合わせた賢い選択が大切です。度数、レンズタイプ、フレームデザイン、そして購入方法まで、複数の要素を総合的に判断する必要があります。</p>
-      <p className="text-gray-700 mb-4">2026年のトレンドを踏まえると、<strong>機能性とデザインを兼ね備えたモデル</strong>を選ぶことが、長く愛用できる老眼鏡選びの秘訣です。初めての購入は眼科での検査をおすすめしますが、すでに度数がわかっている場合は、ネット通販での購入も検討に値します。</p>
-      <p className="text-gray-700 mb-4">自分に合った最適な老眼鏡を見つけ、快適で豊かな日常生活を送ってください。</p>
-    </article>
-  ),
-    "pc-eyestrain-monitor-light-bluelight": (
-    <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">PC眼精疲労は深刻な問題：統計データが示す現実</h2>
-      <p className="text-gray-700 mb-4">現代人の約9割がPC画面を1日3時間以上見ており、その中で眼精疲労を経験している人は約70%にもなります。特にリモートワークの浸透により、一日の大半を画面の前で過ごす人が急増しています。</p>
-      <p className="text-gray-700 mb-4">眼精疲労は単なる「目の疲れ」ではなく、放置すると以下のような深刻な問題につながります：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>ドライアイ</strong>：涙液分泌量が40%低下</li>
-        <li><strong>視力低下</strong>：1年で0.1～0.3の視力低下</li>
-        <li><strong>頭痛・肩こり</strong>：首・肩の筋肉硬化により月平均8日間の不調</li>
-        <li><strong>睡眠障害</strong>：寝付きが悪くなり、睡眠の質が30%低下</li>
-      </ul>
-      <p className="text-gray-700 mb-4">これらの問題を予防・改善するために、モニターライトとブルーライトカット製品の導入が効果的です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">PC作業による眼精疲労の科学的メカニズム</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ブルーライトが目に与える影響</h3>
-      <p className="text-gray-700 mb-4">ブルーライトは波長380～500nm（ナノメートル）の可視光線で、最もエネルギーが高い光です。太陽光に含まれるブルーライトはわずか25%ですが、PC画面からは約35％のブルーライトが放出されています。</p>
-      <p className="text-gray-700 mb-4">ブルーライトが網膜に到達すると：</p>
-      <p className="text-gray-700 mb-4">1. <strong>メラトニン抑制</strong>：睡眠ホルモンの分泌が平均40%低下</p>
-      <p className="text-gray-700 mb-4">2. <strong>瞳孔収縮反応</strong>：瞳孔が過度に反応し、調節筋が疲労</p>
-      <p className="text-gray-700 mb-4">3. <strong>網膜細胞への刺激</strong>：酸化ストレスが増加し、細胞が傷つく</p>
-      <p className="text-gray-700 mb-4">特に22時以降のPC使用時のブルーライト exposure は、睡眠の質を60%低下させるという研究結果があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">不適切な照度による眼精疲労</h3>
-      <p className="text-gray-700 mb-4">PC作業の際の理想的な照度は300～500lux（ルクス）です。一般的なオフィスの照度は500lux程度ですが、PC画面の明るさはその数倍になることが多いです。</p>
-      <p className="text-gray-700 mb-4">この照度差（コントラスト）により：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>瞳孔が頻繁に開閉し、調節筋が過度に働く</li>
-        <li>網膜上のコントラスト感度が低下し、より強い集中力が必要になる</li>
-        <li>脳の疲労が増加し、全身疲労につながる</li>
-      </ul>
-      <p className="text-gray-700 mb-4">適切な照度を実現すれば、眼精疲労は平均47%軽減されます。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">モニターライトの選び方と効果</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">モニターライトが眼精疲労を軽減する理由</h3>
-      <p className="text-gray-700 mb-4">モニターライトはモニターの上部に取り付け、作業面全体を均等に照らす照明です。これにより：</p>
-      <p className="text-gray-700 mb-4">1. <strong>画面と周囲の照度差を低減</strong>：画面と作業面の明るさが同程度になり、瞳孔の頻繁な調節が不要に</p>
-      <p className="text-gray-700 mb-4">2. <strong>適切な色温度調整</strong>：3000K～4000Kの暖色系で、朝～昼の自然光に近い環境を再現</p>
-      <p className="text-gray-700 mb-4">3. <strong>フリッカー（ちらつき）軽減</strong>：高周波PWM調光で、60Hzレベルの人間が知覚しないちらつきを実現</p>
-      <p className="text-gray-700 mb-4">実際の導入効果として、モニターライト使用者は眼精疲労が平均38%軽減され、作業効率が約15%向上したという調査結果があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">選ぶべきモニターライトのスペック</h3>
-      <p className="text-gray-700 mb-4">効果的なモニターライトを選ぶための具体的な基準：</p>
-      <p className="text-gray-700 mb-4"><strong>① 照度調整機能</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>最低照度：100lux以上</li>
-        <li>最高照度：500lux以上</li>
-        <li>段階調整：10段階以上</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>② 色温度調整</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>範囲：3000K～6500K</li>
-        <li>朝は6500K（昼光色）、夕方～夜は3000K（電球色）に調整可能</li>
-        <li>自動調整機能付きなら、時間帯に応じた最適な色温度に自動変更</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>③ フリッカー軽減</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>PWM調光周波数：25kHz以上</li>
-        <li>人間が知覚できない高周波で調光</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>④ 給電方式</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>USB Type-C給電：1本のケーブルで給電と制御が可能</li>
-        <li>消費電力：5W以下（発熱が少ない）</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>⑤ デザイン・耐久性</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>アルミニウム素材：放熱性に優れ、長期使用でも劣化しにくい</li>
-        <li>重量：300g～500g（モニター上部への負荷が低い）</li>
-        <li>調光機構：メカニカルスイッチより電子制御が信頼性高い</li>
-      </ul>
-      <p className="text-gray-700 mb-4">おすすめのモニターライトは、<a href="https://www.amazon.co.jp/s?k=%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%E3%82%B0%E3%83%83%E3%82%BA&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon</a>や<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天</a>で5000円～8000円の価格帯で見つけることができます。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ブルーライトカット製品の種類と効果</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ブルーライトカット眼鏡</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ブルーライトの30～50%をカット</li>
-        <li>レンズにコーティング剤を塗布し、特定の波長を反射</li>
-        <li>装着が簡単で、複数の画面を同時に見る作業に最適</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>効果</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>眼精疲労が平均32%軽減（日本眼科学会調査）</li>
-        <li>睡眠の質が改善（入眠時間が平均12分短縮）</li>
-        <li>瞳孔反応が正常化</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>選ぶポイント</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>カット率</strong>：ブルーライト30～50%カット表記の製品</li>
-        <li><strong>透視率</strong>：75%以上（画面が暗くならない）</li>
-        <li><strong>レンズ色</strong>：ほぼ無色～薄い黄色（仕事で色彩認識が必要な場合は無色）</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ブルーライトカットフィルム</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>モニター画面に貼り付けるフィルム</li>
-        <li>ブルーライト25～40%をカット</li>
-        <li>半永久的に効果が持続</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>効果</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>導入後即座に効果を実感（眼精疲労が平均28%軽減）</li>
-        <li>定期的な交換不要</li>
-        <li>複数モニター環境では全画面をカバー可能</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>選ぶポイント</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>サイズ</strong>：使用モニターの画面サイズに対応</li>
-        <li><strong>粘着性</strong>：再利用可能な弱粘着タイプが推奨</li>
-        <li><strong>気泡軽減機能</strong>：施工時の気泡が入りにくい素材</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">設定によるブルーライトカット</h3>
-      <p className="text-gray-700 mb-4">PCやスマートフォンの設定機能でも、ブルーライト軽減が可能です：</p>
-      <p className="text-gray-700 mb-4"><strong>Windows</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>設定 → システム → ディスプレイ → 夜間モード</li>
-        <li>ブルーライト15～30%カット可能</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>Mac</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>システム設定 → ディスプレイ → Night Shift</li>
-        <li>色温度を3500K～4500Kに自動調整</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>iPhone/iPad</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>設定 → ディスプレイと明るさ → Night Shift</li>
-        <li>ブルーライト40%軽減</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>Android</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>設定 → ディスプレイ → ブルーライトフィルター</li>
-        <li>機種により名称・位置は異なる</li>
-      </ul>
-      <p className="text-gray-700 mb-4">設定による軽減効果は眼精疲労を平均15～20%軽減で、眼鏡やフィルムほど効果は高くありませんが、費用がかかりません。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">PC眼精疲労対策の総合的なアプローチ</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">最適な対策の組み合わせ</h3>
-      <p className="text-gray-700 mb-4">眼精疲労を最小化するには、複数の対策を組み合わせることが重要です：</p>
-      <p className="text-gray-700 mb-4"><strong>デスク環境整備</strong>：</p>
-      <p className="text-gray-700 mb-4">1. モニターライト導入（照度300～500lux確保）</p>
-      <p className="text-gray-700 mb-4">2. モニター位置調整（目から30～60cm、視線は15°下向き）</p>
-      <p className="text-gray-700 mb-4">3. 周囲照度確保（デスクライト併用で500lux以上）</p>
-      <p className="text-gray-700 mb-4"><strong>ブルーライト対策</strong>：</p>
-      <p className="text-gray-700 mb-4">1. ブルーライトカット眼鏡の装着（PC作業時は常時）</p>
-      <p className="text-gray-700 mb-4">2. モニターフィルム貼付（追加でブルーライト10～20%カット）</p>
-      <p className="text-gray-700 mb-4">3. OS設定で夜間モード有効化（追加で15～20%カット）</p>
-      <p className="text-gray-700 mb-4">この組み合わせにより、ブルーライト総カット率は65～80%となり、眼精疲労軽減効果は約55～65%に達します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">生活習慣の改善との組み合わせ</h3>
-      <p className="text-gray-700 mb-4">製品導入と同時に、以下の生活習慣改善も重要です：</p>
-      <p className="text-gray-700 mb-4"><strong>20-20-20ルール</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>20分ごとに、20秒間、20フィート（約6m）先を見つめる</li>
-        <li>眼筋をリラックスさせ、調節負荷を軽減</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>瞬き意識</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>PC作業時は瞬きが平均66%減少</li>
-        <li>意識的に瞬き回数を増やし、ドライアイを予防</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>睡眠時間確保</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>23時以降のPC使用を避ける</li>
-        <li>夜22時以降はブルーライトカット眼鏡を必ず装着</li>
-        <li>7時間以上の睡眠で眼精疲労が30%軽減される</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">効果測定と調整</h3>
-      <p className="text-gray-700 mb-4">導入後2週間で効果を測定し、以下のようにカスタマイズすることが重要です：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>眼精疲労が軽減しない</strong>：モニターライトの照度を50lux単位で調整</li>
-        <li><strong>まぶしさを感じる</strong>：モニターライトの色温度を3000Kに低くする</li>
-        <li><strong>画面がぼやけて見える</strong>：ブルーライトカット眼鏡のカット率が高すぎる可能性（別の眼鏡に変更）</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">手軽に導入できるおすすめグッズ</h2>
-      <p className="text-gray-700 mb-4">PC眼精疲労対策は、段階的に導入することが現実的です。初期投資3000～5000円で実感でき、その後は1000～2000円の追加投資で効果を高められます。</p>
-      <p className="text-gray-700 mb-4">まずは自分の作業環境とライフスタイルに合わせた対策を選び、2週間使用してから効果を評価することをおすすめします。正しく導入すれば、眼精疲労は大幅に軽減され、作業効率と生活の質が向上することは確実です。</p>
-      <p className="text-gray-700 mb-4">今すぐ<a href="https://www.amazon.co.jp/s?k=%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%E3%82%B0%E3%83%83%E3%82%BA&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon</a>や<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天</a>で、あなたに最適な眼精疲労対策グッズを見つけてください。</p>
-    </article>
-  ),
-    "eyelash-serum-ranking-2026": (
-    <article className="prose prose-sm max-w-none">
-      <p className="text-gray-700 mb-4"># まつ毛美容液おすすめランキング2026｜成分・効果・選び方を徹底解説</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">はじめに</h2>
-      <p className="text-gray-700 mb-4">目元の美しさを左右する「まつ毛」。ボリュームやツヤのあるまつ毛は顔全体の印象を大きく変えます。しかし、日々のメイクやクレンジングによるダメージ、加齢に伴うまつ毛の質低下など、多くの女性がまつ毛の悩みを抱えています。</p>
-      <p className="text-gray-700 mb-4">そこで注目されているのが「まつ毛美容液」です。市場調査によると、2024年～2025年のまつ毛美容液市場は約240億円規模で、前年比113％の成長を遂げています。これは、多くの消費者がまつ毛ケアに関心を持っていることの証です。</p>
-      <p className="text-gray-700 mb-4">本記事では、2026年最新のおすすめまつ毛美容液ランキング、選び方のポイント、配合成分の徹底比較を解説します。</p>
-      <p className="text-gray-700 mb-4">---</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まつ毛美容液の選び方｜3つの重要ポイント</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">①配合成分の確認</h3>
-      <p className="text-gray-700 mb-4">まつ毛美容液の効果は、配合成分で大きく左右されます。重要な成分は以下の通りです：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>ビタミンE（トコフェロール）</strong>: 抗酸化作用で毛根の健康維持</li>
-        <li><strong>ペプチド類</strong>: 毛髪の強度向上、コラーゲン促進</li>
-        <li><strong>植物エキス（カミリア、オタネニンジンなど）</strong>: 栄養補給、育毛促進</li>
-        <li><strong>ヒアルロン酸</strong>: 保湿、毛髪の水分保持</li>
-        <li><strong>セラミド</strong>: 毛髪のキューティクルケア、ツヤ向上</li>
-      </ul>
-      <p className="text-gray-700 mb-4">医薬部外品の場合は、有効成分として「パンテノール」「ニコチン酸アミド」などが配合されていることが多く、これらは保湿・血流促進に優れています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">②テクスチャーと使いやすさ</h3>
-      <p className="text-gray-700 mb-4">まつ毛美容液のテクスチャーは、チップタイプ・ブラシタイプ・ペンシルタイプがあります：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>チップタイプ</strong>: 少量の製品に向く、細かい部分に塗布しやすい</li>
-        <li><strong>ブラシタイプ</strong>: 広範囲に素早く塗布、アイライナーのような感覚で使用可能</li>
-        <li><strong>ペンシルタイプ</strong>: 非常に使いやすい、初心者向け</li>
-      </ul>
-      <p className="text-gray-700 mb-4">毎日継続することが効果を引き出すポイントなので、「使いやすさ」は意外と重要な要素です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">③肌質に合わせた選択</h3>
-      <p className="text-gray-700 mb-4">目元の皮膚は顔の中でも特にデリケート。敏感肌・乾燥肌・脂性肌など、肌質に応じた選択が必須です：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>敏感肌向け</strong>: 無添加・低刺激配合（アルコール、香料フリー）</li>
-        <li><strong>乾燥肌向け</strong>: セラミド・ヒアルロン酸配合</li>
-        <li><strong>脂性肌向け</strong>: さっぱりテクスチャー、油分控えめ</li>
-      </ul>
-      <p className="text-gray-700 mb-4">---</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年版｜まつ毛美容液おすすめランキング TOP5</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">🥇 第1位：LASH FORCE Premium EX</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>医薬部外品、日本製</li>
-        <li>配合成分：パンテノール、ニコチン酸アミド、ヒアルロン酸Na</li>
-        <li>テクスチャー：チップタイプ</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>評価ポイント</strong></p>
-      <p className="text-gray-700 mb-4">医薬部外品として厚生労働省の認可を受けた有効成分を配合。3ヶ月の臨床試験では、まつ毛の本数が平均8.3本増加、太さが15％向上したという実績があります。価格帯は3,500～4,500円で、コストパフォーマンスに優れています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">🥈 第2位：FIONA EYE ESSENCE</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>一般化粧品、海外ブランド（韓国）</li>
-        <li>配合成分：ペプチド複合体、プラセンタエキス、10種類の植物エキス</li>
-        <li>テクスチャー：ブラシタイプ</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>評価ポイント</strong></p>
-      <p className="text-gray-700 mb-4">アジアコスメトレンドを反映した製品。ペプチド複合体により毛髪の弾力性向上と黒ずみ改善の両立が可能です。SNS投稿数は月間15万件以上で、特に20～30代女性から高い支持を得ています。価格帯は2,800～3,500円。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">🥉 第3位：BOTANIST LASH SERUM</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>一般化粧品、国内ブランド</li>
-        <li>配合成分：オーガニック植物エキス6種、セラミド、ビタミンE</li>
-        <li>テクスチャー：ペンシルタイプ</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>評価ポイント</strong></p>
-      <p className="text-gray-700 mb-4">敏感肌向けに特化した製品。無添加（アルコール、香料、防腐剤フリー）で、皮膚科医のパッチテスト済み。使いやすいペンシルタイプで、朝のメイク時間が短い忙しい女性向けです。価格帯は3,200～4,000円。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">第4位：LUXURY LASH ELIXIR</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>医薬部外品、日本製プレミアム商品</li>
-        <li>配合成分：加水分解コラーゲン、ツバメの巣エキス、プラセンタ</li>
-        <li>テクスチャー：チップタイプ</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>評価ポイント</strong></p>
-      <p className="text-gray-700 mb-4">プレミアム価格帯（8,000～9,500円）ながら、リピート率86％を誇ります。加水分解コラーゲンは毛髪の保水力向上に優れており、目元のハリ感も同時にアップ。高級感のあるパッケージで、ギフト需要も多い製品です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">第5位：DAILY CARE LASH</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>一般化粧品、プチプラコスメ</li>
-        <li>配合成分：ビタミンE、ヒアルロン酸、アロエベラエキス</li>
-        <li>テクスチャー：ブラシタイプ</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>評価ポイント</strong></p>
-      <p className="text-gray-700 mb-4">1,500～2,000円の安価で手軽に始められる入門編。プチプラながら基本的な成分を配合しており、初めてまつ毛美容液を使う人に最適。コンビニエンスストア、大型薬局で入手可能な手軽さも魅力です。</p>
-      <p className="text-gray-700 mb-4">---</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">成分比較表｜主要製品の配合成分一覧</h2>
-      <p className="text-gray-700 mb-4">| 製品名 | 医薬部外品 | 主要成分数 | 保湿成分 | 育毛促進成分 |</p>
-      <p className="text-gray-700 mb-4">|--------|---------|---------|--------|----------|</p>
-      <p className="text-gray-700 mb-4">| LASH FORCE Premium EX | ✓ | 8種 | ○ | ○ |</p>
-      <p className="text-gray-700 mb-4">| FIONA EYE ESSENCE | × | 15種 | ○ | ○ |</p>
-      <p className="text-gray-700 mb-4">| BOTANIST LASH SERUM | × | 6種 | ○ | △ |</p>
-      <p className="text-gray-700 mb-4">| LUXURY LASH ELIXIR | ✓ | 12種 | ◎ | ◎ |</p>
-      <p className="text-gray-700 mb-4">| DAILY CARE LASH | × | 4種 | ○ | △ |</p>
-      <p className="text-gray-700 mb-4">※◎＝優秀、○＝十分、△＝基本的</p>
-      <p className="text-gray-700 mb-4">---</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まつ毛美容液で期待できる効果</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1. ボリュームアップ</h3>
-      <p className="text-gray-700 mb-4">まつ毛の1本1本が太くなり、結果として全体のボリュームが増加します。臨床試験データでは、医薬部外品使用者の平均ボリューム増加率は12～18％とされています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2. ツヤ・ハリの向上</h3>
-      <p className="text-gray-700 mb-4">配合されているセラミドやコラーゲンにより、毛髪のキューティクルが整い、光の反射が良くなります。これにより、目元全体が明るく見える効果があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3. まつ毛の長さ伸張</h3>
-      <p className="text-gray-700 mb-4">成長周期が正常化することで、自然とまつ毛が長くなります。3ヶ月継続使用での平均長さ増加は2～4mm程度です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">4. 抜け毛防止</h3>
-      <p className="text-gray-700 mb-4">毛根を強化し、ダメージケアにより、まつ毛の脱落を減らします。特に、メイク・クレンジングによるダメージが蓄積している人に効果的です。</p>
-      <p className="text-gray-700 mb-4">---</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">使用時の注意点とコツ</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">正しい使用方法</h3>
-      <p className="text-gray-700 mb-4">1. <strong>クレンジング後に使用</strong>：メイク落とし直後の清潔な目元に塗布</p>
-      <p className="text-gray-700 mb-4">2. <strong>根元に重点的に塗布</strong>：毛根に栄養を届けることが重要</p>
-      <p className="text-gray-700 mb-4">3. <strong>乾燥を待つ</strong>：1～2分程度乾燥させ、完全に浸透させる</p>
-      <p className="text-gray-700 mb-4">4. <strong>朝晩2回使用</strong>：夜間は毛根の成長が活発になるため、就寝前が効果的</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">避けるべき使用方法</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>濡れた目元への塗布（成分の浸透効率低下）</li>
-        <li>他のアイメイク製品との重ね塗り（刺激増加、テクスチャー変化）</li>
-        <li>過剰量の使用（目の刺激、かぶれのリスク）</li>
-      </ul>
-      <p className="text-gray-700 mb-4">---</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">購入ガイド｜どこで買うか？</h2>
-      <p className="text-gray-700 mb-4">まつ毛美容液は複数の販売チャネルで購入可能です：</p>
-      <p className="text-gray-700 mb-4"><strong>公式オンラインストア</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>最新キャンペーン、限定セット</li>
-        <li>サンプルサイズ、トライアルセットの提供</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>Amazon</strong></p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%E3%82%B0%E3%83%83%E3%82%BA&amp;tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazonでまつ毛美容液を検索</a></p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
         <li>プライム配送で最速翌日到着</li>
         <li>レビュー数が豊富で、使用者の実際の評価が参考になる</li>
@@ -5634,7 +5319,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>楽天モバイル利用者：+1倍</li>
       </ul>
       <p className="text-gray-700 mb-4">合計で最大15～18倍のポイント還元も可能です。</p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%82%AB%E3%83%83%E3%83%88&amp;tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">メガネをAmazonで探す</a></p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">メガネを楽天で探す</a></p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">オンラインメガネショップ選択時の最終チェックリスト</h2>
       <p className="text-gray-700 mb-4">最終的にショップを選択する前に、以下の全項目を確認してください：</p>
@@ -5676,4 +5360,260 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">初めてのオンライン購入なら、返品保証が充実したJINSか眼鏡市場から始めることをおすすめします。複数回の経験を積むことで、自分に最適なショップが自ずと見えてくるでしょう。</p>
     </article>
   ),
+  'icl-vs-lasik-2026': (
+    <div>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年版：ICLとレーシック、どちらを選ぶべき？【結論】</h2>
+      <p className="text-gray-700 mb-4">
+        <strong>ICLとレーシック、どちらを選ぶべきか</strong>という質問に対して、答えは「あなたの視力の度数・角膜の厚さ・生活スタイル・予算」の4点で決まります。近視が強い（−6D以上）・角膜が薄い・ドライアイが心配な方は<strong>ICL</strong>、軽度から中程度の近視・角膜が十分・費用を抑えたい方は<strong>レーシック</strong>が適しています。本記事では、2026年最新の医学知見に基づいて、両手術の仕組み・費用・リスク・向いている人を徹底比較します。
+      </p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">レーシックとICLの基本的な違い：仕組みと手術方法</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レーシックの仕組み</h3>
+      <p className="text-gray-700 mb-4">
+        レーシック（LASIK）は、<strong>角膜の表面を削ってレーザーで視力を矯正する手術</strong>です。角膜上層のフラップを作り、エキシマレーザーで内部組織を削り、屈折率を変えます。手術時間は両眼で15分程度と短く、翌日からほぼ日常生活が可能です。世界中で数千万人が受けており、<strong>30年以上の臨床実績がある最も一般的な視力矯正手術</strong>です。
+      </p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ICLの仕組み</h3>
+      <p className="text-gray-700 mb-4">
+        ICL（Implantable Collamer Lens）は、<strong>角膜を削らず、目の内部に人工レンズを埋め込む手術</strong>です。3mm程度の小さな切開からレンズを挿入し、虹彩と水晶体の間に位置させます。<strong>角膜を削らない可逆的な手術</strong>が特徴で、万が一満足できない場合はレンズを取り出して元の状態に戻せます。
+      </p>
+      <p className="text-gray-700 mb-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%20%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で術前・術後ケア用品を見る</a>
+      </p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">費用比較：レーシックとICLの価格差</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>レーシック：15〜30万円（両眼）</strong> — 最先端設備を使う場合は35万円程度</li>
+        <li><strong>ICL：45〜70万円（両眼）</strong> — 輸入レンズ代が高く、レーシックの2.5〜3倍</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>費用差は約30〜40万円</strong>。クリニックによって異なるため、複数で見積もりを比較することをお勧めします。医療費控除の対象になる場合があるため確認してください。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">適応条件の違い</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レーシックの適応条件</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>近視度数：</strong>−0.75D〜−10D程度</li>
+        <li><strong>角膜の厚さ：</strong>500μm以上（理想は550μm以上）</li>
+        <li><strong>年齢：</strong>18〜65歳（視力が安定していること）</li>
+        <li>妊娠中・授乳中は適応外</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ICLの適応条件</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>近視度数：</strong>−3D〜−18D（強度近視に対応）</li>
+        <li><strong>角膜の厚さ：</strong>制限なし（薄い角膜でも可）</li>
+        <li><strong>年齢：</strong>21〜60歳</li>
+        <li><strong>前房深度：</strong>2.8mm以上</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>最も重要な違いは「角膜の厚さ」</strong>です。角膜が薄い人・強度近視の人はICLが適しています。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">メリット・デメリット比較</h2>
+      <p className="text-gray-700 mb-4"><strong>■ レーシックのメリット</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>費用が安い（15〜30万円）/ 手術時間が短い（15分）/ 翌日から生活可能</li>
+        <li>長期実績が豊富（30年以上）/ 目の表面を削るため異物感なし</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>■ レーシックのデメリット</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>角膜を削るため不可逆 / 薄い角膜の人は対象外</li>
+        <li>ドライアイが悪化するリスク / 近視が再発する場合がある（5〜10%）</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>■ ICLのメリット</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>強度近視に対応 / 角膜を削らず可逆的</li>
+        <li>ドライアイになりにくい / 近視の再発がない</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>■ ICLのデメリット</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>費用が高い（45〜70万円）/ 手術時間が長い（30〜40分）</li>
+        <li>輸入レンズのため納期がかかる（2〜3ヶ月）/ 定期検査が必要</li>
+      </ul>
+      <p className="text-gray-700 mb-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%20%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で目の健康関連商品を見る</a>
+      </p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方フローチャート</h2>
+      <p className="text-gray-700 mb-4"><strong>Step 1：角膜が薄い（500μm未満）？</strong> → ICLを検討</p>
+      <p className="text-gray-700 mb-4"><strong>Step 2：強度近視（−8D以上）？</strong> → ICLを優先検討</p>
+      <p className="text-gray-700 mb-4"><strong>Step 3：ドライアイが心配・既にある？</strong> → ICLが有利</p>
+      <p className="text-gray-700 mb-4"><strong>Step 4：費用を抑えたい・すぐに回復したい？</strong> → レーシック / 費用に余裕・長期安定性優先？ → ICL</p>
+      <p className="text-gray-700 mb-4">最終判断は必ず複数の眼科クリニックで無料検査・カウンセリングを受けてから行ってください。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">
+        ICLとレーシックはどちらも優れた手術です。<strong>軽度〜中程度の近視・費用を抑えたい方はレーシック</strong>、<strong>強度近視・角膜が薄い・ドライアイが不安な方はICL</strong>が適しています。どちらを選ぶにせよ、実績あるクリニックで複数回カウンセリングを受け、医師と相談の上で決断してください。
+      </p>
+      <p className="text-gray-700 mb-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%20%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で術後ケア用品を見る</a>
+      </p>
+      <div className="lasik-affiliate-placeholder">※ レーシック・ICLクリニックのアフィリエイトリンクをここに設置予定（A8.net承認後）</div>
+    </div>
+  ),
+
+  'lasik-clinic-checklist-2026': (
+    <div>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">レーシッククリニックの選び方チェックリスト｜後悔しない5つのポイント</h2>
+
+      <p className="text-gray-700 mb-4">
+        レーシック手術は視力を矯正する効果的な方法ですが、<strong>クリニック選びが成功と後悔を分ける重要な要素</strong>です。この記事では、後悔しないためのクリニック選びの5つの重要ポイントと、実際の選択時に確認すべき項目をまとめます。手術前のコンタクトレンズケアも重要ですので、<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%20%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で目薬を見る</a>などで手術前のケアを万全にしましょう。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">【冒頭まとめ】クリニック選びで最重要な5つのポイント</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>手術実績が豊富</strong>：年間1000件以上の症例数を確認</li>
+        <li><strong>最新の医療機器</strong>：導入している機種とアップデート状況をチェック</li>
+        <li><strong>医師の専門資格</strong>：眼科専門医認定と手術経験年数の確認</li>
+        <li><strong>充実したアフターケア</strong>：保証期間と追加手術の条件が明記されているか</li>
+        <li><strong>料金の透明性</strong>：追加費用やオプション費用が事前に明確に示されているか</li>
+      </ul>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ポイント①：手術実績と症例数（年間1000件以上が目安）</h3>
+      <p className="text-gray-700 mb-4">クリニック選びの最も重要な指標の一つが<strong>手術実績の豊富さ</strong>です。年間1000件以上の手術を行うクリニックが目安とされています。クリニックのホームページで公開されている実績データを確認し、複数年の推移を見ることで信頼性を判断できます。また、無料カウンセリング時に担当医師の個人的な症例数についても質問することをお勧めします。</p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ポイント②：使用機器と設備</h3>
+      <p className="text-gray-700 mb-4">レーシック手術の成功には<strong>使用する医療機器の性能が大きく影響</strong>します。確認すべきポイント：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>エキシマレーザーのメーカーと機種名（Carl Zeiss、Bausch + Lomb、NIDEK など）</li>
+        <li>フェムトセカンドレーザーの有無（フラップ作成の精度に関わる）</li>
+        <li>波面収差解析装置（Wavefront）の搭載状況</li>
+        <li>機器の導入年と最新バージョンへのアップデート状況</li>
+      </ul>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ポイント③：医師の資格と専門性</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>日本眼科学会認定の眼科専門医資格</strong></li>
+        <li><strong>レーシック手術の専門医認定</strong>：眼科学会や日本屈折矯正手術学会での認定</li>
+        <li><strong>手術経験年数</strong>：最低でも5年以上の屈折矯正手術経験が望ましい</li>
+        <li><strong>学会発表・論文</strong>：最新の手術技法や研究成果を発表・発展させているか</li>
+      </ul>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ポイント④：アフターケア体制</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>保証期間の長さ</strong>：最低でも1年以上、できれば3年以上が理想的</li>
+        <li><strong>定期検診の回数と期間</strong>：術後1ヶ月・3ヶ月・6ヶ月・1年など</li>
+        <li><strong>追加手術（リトレイトメント）の条件</strong>：保証期間内の追加手術費用は無料か</li>
+        <li><strong>夜間の緊急対応</strong>：術後に問題が生じた場合の連絡体制</li>
+      </ul>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ポイント⑤：料金の透明性</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>基本手術費用</strong>：両眼いくらか、片眼いくらか</li>
+        <li><strong>検査費用</strong>：事前検査で追加費用が必要か</li>
+        <li><strong>オプション費用</strong>：カスタマイズ手術（wavefront-guided など）の追加費用</li>
+        <li><strong>術後検査・薬剤費</strong>：保証期間内の検査や点眼液が料金に含まれているか</li>
+        <li><strong>分割払いの金利</strong>：分割払いを希望する場合の手数料や金利</li>
+      </ul>
+
+      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%20%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で目のケア用品を見る</a></p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">要注意！怪しいクリニックの見分け方</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>症例数や医師の資格を明記していない</strong></li>
+        <li><strong>「100%成功」「必ず1.0以上になる」などの過度な保証</strong>：医学的に不可能な約束</li>
+        <li><strong>営業色が強く、患者の質問に丁寧に答えない</strong></li>
+        <li><strong>カウンセリングで十分な時間をかけない</strong></li>
+        <li><strong>術前検査が不十分</strong>：角膜厚さや度数の精密測定を省く</li>
+        <li><strong>保証内容が曖昧</strong>：「保証あり」と言いながら条件が明記されていない</li>
+      </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">無料カウンセリングの活用法（複数クリニック比較）</h2>
+      <p className="text-gray-700 mb-4"><strong>少なくとも3つ以上のクリニックでカウンセリングを受け、比較検討することをお勧めします。</strong>確認事項：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>自分の目の状態に合った手術方法の提案があるか</li>
+        <li>リスクと副作用（ドライアイ・ハロー・グレア）の説明があるか</li>
+        <li>手術後の見え方の予測を明確に説明しているか</li>
+        <li>医師との相性・スタッフの対応</li>
+      </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">クリニック選びチェックリスト12項目</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>□ 年間1000件以上の手術実績が明記されているか</li>
+        <li>□ 使用機器の機種と導入時期が明記されているか</li>
+        <li>□ 医師が日本眼科学会認定の眼科専門医か</li>
+        <li>□ 医師の手術経験年数が5年以上か</li>
+        <li>□ 保証期間が1年以上（理想は3年以上）か</li>
+        <li>□ 追加手術（リトレイトメント）の条件が明記されているか</li>
+        <li>□ 基本手術費用に含まれるものと含まれないものが明確か</li>
+        <li>□ 分割払いの金利・手数料が明記されているか</li>
+        <li>□ カウンセリングで十分な説明があったか</li>
+        <li>□ 疑問・質問に丁寧に答えてくれたか</li>
+        <li>□ 医師との相性が良いと感じたか</li>
+        <li>□ 複数のクリニックと比較したか</li>
+      </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">レーシック手術で後悔しないためには、<strong>クリニック選びが何よりも重要</strong>です。5つのポイント（手術実績・医療機器・医師の資格・アフターケア・料金の透明性）をしっかり確認し、複数クリニックでカウンセリングを受けることが成功への近道です。最安値ではなく、信頼でき、安心して任せられるクリニックを選んでください。</p>
+      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%20%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で術前・術後ケア用品を見る</a></p>
+      <div className="lasik-affiliate-placeholder">※ レーシッククリニックのアフィリエイトリンクをここに設置予定（A8.net承認後）</div>
+    </div>
+  ),
+
+  'lasik-aftercare-lifestyle-2026': (
+    <div>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">視力矯正手術後の生活で最重要な5つのルール</h2>
+      <p className="text-gray-700 mb-4">レーシックやICL手術後の生活は、<strong>術後の視力回復と長期的な目の健康を左右する最も重要な期間</strong>です。以下の5つのルールを守ることが、スムーズな回復と合併症予防の鍵になります。</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>指で目をこすらない</strong>：フラップがまだ完全癒着していない時期に目をこするとフラップがずれるリスクがあります</li>
+        <li><strong>処方された目薬を指示通りさす</strong>：ステロイド・抗菌・人工涙液のタイミングを守る</li>
+        <li><strong>激しい運動・水泳は1ヶ月待つ</strong>：目への衝撃や水の侵入が感染症を招きます</li>
+        <li><strong>スマホ・PCの使用時間を最小限に</strong>：ドライアイが加速し視力安定化が遅れます</li>
+        <li><strong>異常を感じたら即クリニックに連絡</strong>：小さな違和感でも手術直後は大事になる可能性があります</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%20%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で術後ケア用品を見る</a></p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">術後1週間の詳細スケジュール</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">手術当日〜翌日：最初の24時間</h3>
+      <p className="text-gray-700 mb-4">手術当日は目をできるだけ使わないことが最優先です。帰宅後は暗い部屋で休み、スマホやテレビは見ないようにします。目薬は指示通り朝・昼・夜に計3〜4回さします。就寝時は保護用ゴーグルを着用して無意識に目をこするのを防ぎます。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2〜3日目：視力が急速に改善する時期</h3>
+      <p className="text-gray-700 mb-4">この時期は視力が大きく改善しますが<strong>最も危険な時期</strong>でもあります。洗顔は目に水が入らないよう目を閉じたまま行い、シャワーも顔に直接水が当たらないよう注意します。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">4日目〜1週間：生活が少しずつ戻る</h3>
+      <p className="text-gray-700 mb-4">医師の許可があれば軽い家事や短時間の外出が可能になります。外出時は必ずUV対策用サングラスを着用します。やってはいけないこと：スマホの長時間使用・整髪料の使用・アイメイク・激しい家事。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">術後の目薬管理：3種類の役割とスケジュール</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1. ステロイド目薬（炎症抑制）</h3>
+      <p className="text-gray-700 mb-4">術直後は1日4〜6回、2週間で徐々に回数を減らします。<strong>ステロイド緑内障</strong>の副作用があるため定期的な眼圧チェックが必須です。自己判断で中止してはいけません。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2. 抗菌目薬（感染症予防）</h3>
+      <p className="text-gray-700 mb-4">術後1〜2週間、1日3〜4回使用します。開封後1ヶ月で廃棄します。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3. 人工涙液（ドライアイ対策）</h3>
+      <p className="text-gray-700 mb-4">術後数ヶ月から1年間、1日5〜10回が目安。<strong>防腐剤なしの人工涙液</strong>（1回用個別包装タイプ）を選ぶことをお勧めします。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">運動・スポーツ再開ガイド</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>1週間後〜</strong>：軽いウォーキング・ストレッチ（UV対策サングラス必須）</li>
+        <li><strong>1ヶ月後〜</strong>：ジム・ランニング・軽いトレーニング（汗が目に入らないよう注意）</li>
+        <li><strong>3ヶ月後〜</strong>：格闘技・コンタクトスポーツ（目への直接接触のリスクあるもの）</li>
+        <li><strong>水泳：最低1ヶ月禁止</strong>、再開時はゴーグル必須・医師の明確な許可を得てから</li>
+      </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">入浴・洗顔・メイク・飲酒の制限</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>洗顔：</strong>3〜4日後から（目に水が入らないよう注意）</li>
+        <li><strong>シャワー：</strong>1週間後から（顔に直接水が当たらないよう）</li>
+        <li><strong>入浴（浴槽）：</strong>最低2週間待つ</li>
+        <li><strong>アイメイク：</strong>最低2週間禁止（ファンデーション等は1週間後から可）</li>
+        <li><strong>飲酒：</strong>最低1週間は禁止（術後1ヶ月まで少量に抑える）</li>
+        <li><strong>喫煙：</strong>最低1ヶ月禁煙推奨（治癒を大きく遅延させる）</li>
+      </ul>
+
+      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%20%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で術後ケア用品を見る</a></p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スマホ・PC・読書の制限</h2>
+      <p className="text-gray-700 mb-4">画面を見ている間はまばたきが減り、涙の蒸発が加速します。<strong>30分ごとに15分の休憩</strong>を取り、その際に人工涙液をさします。ブルーライトカットメガネも有効です。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">すぐに受診すべき危険信号</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>急激な視力低下</strong>：数時間で落ちた場合はフラップのずれの可能性</li>
+        <li><strong>激しい眼痛</strong>：強い痛みは感染症の可能性</li>
+        <li><strong>色のついた分泌物の増加</strong>：感染症の証拠</li>
+        <li><strong>光過敏性の悪化</strong>：通常は数週間で軽減するが悪化する場合は問題あり</li>
+        <li><strong>ハロー・グレア現象が改善しない</strong>：1ヶ月経っても悪化し続ける場合</li>
+        <li><strong>目の充血が3週間以上引かない</strong></li>
+      </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">定期検査スケジュール</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>術後1日</strong>：フラップ位置・眼圧・視力の初回確認</li>
+        <li><strong>術後1週間</strong>：フラップ癒着・感染の有無・日常生活への復帰判断</li>
+        <li><strong>術後1ヶ月</strong>：眼圧・ドライアイの程度・ステロイド減量の開始</li>
+        <li><strong>術後3ヶ月</strong>：最終的な視力確認・新しいメガネの度数決定</li>
+        <li><strong>術後6ヶ月・1年</strong>：長期安定性の確認・白内障初期兆候チェック</li>
+      </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4"><strong>手術の成功は、術後の過ごし方で決まります。</strong>最初の数週間を慎重に過ごすことで、その後の数十年の快適な視力生活が約束されます。5つのルール・目薬管理・運動再開のタイミング・異常信号の見分け方・定期検査のスケジュールをすべて守ることが、あなたの新しい視力を守るための投資です。</p>
+      <div className="lasik-affiliate-placeholder">※ レーシッククリニックのアフィリエイトリンクをここに設置予定（A8.net承認後）</div>
+    </div>
+  ),
+
 };

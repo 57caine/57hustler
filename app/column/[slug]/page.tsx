@@ -7,16 +7,15 @@ import { karakonColumnContent } from '@/lib/karakon-columns';
 import { allColumns, getAnyColumnBySlug } from '@/lib/all-columns';
 import ArticleTOC from '@/components/ArticleTOC';
 
-const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=57plot-22`;
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
 
-const SECTION_CTA: Record<string, { label: string; amzn?: string; rakuten: string }> = {
-  megane:     { label: '眼鏡・サングラスを探す', amzn: '眼鏡フレーム おすすめ', rakuten: '眼鏡フレーム' },
-  vr:         { label: 'VR・スマートグラスを探す', amzn: 'VRゴーグル おすすめ', rakuten: 'VRゴーグル Meta Quest' },
-  lasik:      { label: 'アイケアグッズを探す', amzn: '目薬 防腐剤フリー', rakuten: '目薬 コンタクト' },
-  'eye-care': { label: 'アイケアグッズを探す', amzn: 'コンタクト 目薬 おすすめ', rakuten: 'ドライアイ 目薬 コンタクト' },
-  'eye-goods': { label: '目のグッズを探す', amzn: 'ホットアイマスク おすすめ', rakuten: 'ホットアイマスク おすすめ' },
-  karakon:    { label: 'カラコンを楽天で探す', rakuten: 'カラコン おすすめ 日本製' },
+const SECTION_CTA: Record<string, { label: string; rakuten: string }> = {
+  megane:      { label: '眼鏡・サングラスを楽天で探す', rakuten: '眼鏡フレーム おすすめ' },
+  vr:          { label: 'VR・スマートグラスを楽天で探す', rakuten: 'VRゴーグル Meta Quest' },
+  lasik:       { label: 'アイケアグッズを楽天で探す', rakuten: '目薬 コンタクト' },
+  'eye-care':  { label: 'アイケアグッズを楽天で探す', rakuten: 'ドライアイ 目薬 コンタクト' },
+  'eye-goods': { label: '目のグッズを楽天で探す', rakuten: 'ホットアイマスク おすすめ' },
+  karakon:     { label: 'カラコンを楽天で探す', rakuten: 'カラコン おすすめ 日本製' },
 };
 
 type Props = { params: Promise<{ slug: string }> };
@@ -121,28 +120,20 @@ export default async function ColumnPage({ params }: Props) {
           const cta = eyeSection ? SECTION_CTA[eyeSection] : null;
           if (cta) {
             return (
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-                <p className="text-sm font-bold text-gray-800 mb-2">{cta.label}</p>
-                <div className="flex gap-2">
-                  {cta.amzn && (
-                    <a href={AMZN(cta.amzn)} target="_blank" rel="noopener noreferrer nofollow"
-                      className="flex-1 text-center text-xs font-bold bg-amber-400 hover:bg-amber-300 text-gray-900 px-3 py-2 rounded-lg transition-colors">
-                      Amazon で探す
-                    </a>
-                  )}
-                  <a href={RAKUTEN(cta.rakuten)} target="_blank" rel="noopener noreferrer nofollow"
-                    className="flex-1 text-center text-xs font-bold bg-red-500 hover:bg-red-400 text-white px-3 py-2 rounded-lg transition-colors">
-                    楽天で探す
-                  </a>
-                </div>
+              <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-8">
+                <p className="text-sm font-bold text-gray-800 mb-3">{cta.label}</p>
+                <a href={RAKUTEN(cta.rakuten)} target="_blank" rel="noopener noreferrer nofollow"
+                  className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+                  楽天市場で見る →
+                </a>
               </div>
             );
           }
           return (
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-3">
+            <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-3">
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-bold text-gray-800">コンタクトレンズをお得に購入する</p>
-                <p className="text-xs text-gray-500 mt-0.5">Amazon・楽天で最安値をチェック</p>
+                <p className="text-xs text-gray-500 mt-0.5">楽天市場で最安値をチェック</p>
               </div>
               <Link href="/ranking" className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors whitespace-nowrap">
                 おすすめ商品を見る →
@@ -180,41 +171,29 @@ export default async function ColumnPage({ params }: Props) {
           const cta = eyeSection ? SECTION_CTA[eyeSection] : null;
           if (cta) {
             return (
-              <div className="mt-10 p-5 bg-slate-50 border border-slate-200 rounded-xl">
-                <p className="text-sm font-bold text-gray-800 mb-3">この記事に関連する商品を探す</p>
-                <div className="flex gap-2">
-                  {cta.amzn && (
-                    <a href={AMZN(cta.amzn)} target="_blank" rel="noopener noreferrer nofollow"
-                      className="flex-1 text-center text-sm font-bold bg-amber-400 hover:bg-amber-300 text-gray-900 px-4 py-2 rounded-lg transition-colors">
-                      Amazon で探す
-                    </a>
-                  )}
-                  <a href={RAKUTEN(cta.rakuten)} target="_blank" rel="noopener noreferrer nofollow"
-                    className="flex-1 text-center text-sm font-bold bg-red-500 hover:bg-red-400 text-white px-4 py-2 rounded-lg transition-colors">
-                    楽天で探す
-                  </a>
-                </div>
+              <div className="mt-10 p-5 bg-red-50 border border-red-200 rounded-xl">
+                <p className="text-sm font-bold text-gray-800 mb-3">この記事に関連する商品を楽天で探す</p>
+                <a href={RAKUTEN(cta.rakuten)} target="_blank" rel="noopener noreferrer nofollow"
+                  className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+                  楽天市場で見る →
+                </a>
               </div>
             );
           }
           return (
-            <div className="mt-10 p-5 bg-slate-50 border border-slate-200 rounded-xl">
-              <p className="text-sm font-bold text-gray-800 mb-1">コンタクトレンズをお得に購入する</p>
-              <p className="text-xs text-gray-500 mb-3">Amazon・楽天でコンタクトレンズをチェック</p>
+            <div className="mt-10 p-5 bg-red-50 border border-red-200 rounded-xl">
+              <p className="text-sm font-bold text-gray-800 mb-1">コンタクトレンズを楽天で購入する</p>
+              <p className="text-xs text-gray-500 mb-3">楽天市場で最安値をチェック</p>
               <div className="flex flex-wrap gap-2">
-                <a href={AMZN('コンタクトレンズ ワンデー おすすめ')} target="_blank" rel="noopener noreferrer nofollow"
-                  className="bg-amber-400 hover:bg-amber-300 text-gray-900 text-sm font-bold px-4 py-2 rounded-lg transition-colors">
-                  Amazon で探す
-                </a>
                 <a href={RAKUTEN('コンタクトレンズ ワンデー')} target="_blank" rel="noopener noreferrer nofollow"
-                  className="bg-red-500 hover:bg-red-400 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors">
-                  楽天で探す
+                  className="bg-[#bf0000] hover:opacity-90 text-white text-sm font-bold px-4 py-2.5 rounded-lg transition-opacity">
+                  楽天で探す →
                 </a>
-                <Link href="/category/1day" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2 rounded-lg hover:border-slate-300 transition-colors">
-                  ワンデー
+                <Link href="/category/1day" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2.5 rounded-lg hover:border-slate-300 transition-colors">
+                  ワンデー比較
                 </Link>
-                <Link href="/category/2week" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2 rounded-lg hover:border-slate-300 transition-colors">
-                  2ウィーク
+                <Link href="/category/2week" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2.5 rounded-lg hover:border-slate-300 transition-colors">
+                  2ウィーク比較
                 </Link>
               </div>
             </div>

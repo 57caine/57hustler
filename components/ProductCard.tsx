@@ -1,7 +1,5 @@
 import { ProductWithPrices } from '@/lib/products';
 
-const AMZN = (kw: string) =>
-  `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=57plot-22`;
 const RAKUTEN = (kw: string) =>
   `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent(
     'https://search.rakuten.co.jp/search/mall/' + kw + '/'
@@ -29,13 +27,16 @@ type ProductCardProps = {
 export default function ProductCard({ product, rank }: ProductCardProps) {
   const label = CATEGORY_LABEL[product.category] ?? product.category;
   const emoji = CATEGORY_EMOJI[product.category] ?? '👁';
-  const amznUrl = AMZN(product.name);
   const rakutenUrl = RAKUTEN(product.name);
 
   return (
-    <div className="relative bg-white rounded-xl border border-gray-200 hover:shadow-sm hover:border-amber-300 transition-all duration-200 overflow-hidden">
-      {/* Amazon link — covers image + name + price */}
-      <a href={amznUrl} target="_blank" rel="noopener noreferrer nofollow sponsored" className="block p-4 pb-10">
+    <a
+      href={rakutenUrl}
+      target="_blank"
+      rel="noopener noreferrer nofollow sponsored"
+      className="block relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-red-300 transition-all duration-200 overflow-hidden"
+    >
+      <div className="p-4">
         <div className="flex items-start gap-3">
           {rank != null && (
             <div
@@ -55,10 +56,9 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
               )}
             </div>
 
-            {/* image + name */}
             <div className="flex items-center gap-2 mb-2">
               <span className="text-2xl flex-shrink-0">{emoji}</span>
-              <h3 className="font-bold text-gray-900 text-sm leading-tight group-hover:text-amber-700">{product.name}</h3>
+              <h3 className="font-bold text-gray-900 text-sm leading-tight">{product.name}</h3>
             </div>
 
             <div className="pt-2 border-t border-gray-100">
@@ -71,20 +71,12 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
                 <p className="text-gray-400 text-sm">価格情報なし</p>
               )}
             </div>
-            <p className="text-xs text-amber-700 font-medium mt-1">Amazon で購入 →</p>
           </div>
         </div>
-      </a>
-
-      {/* Rakuten — absolute at bottom, separate <a> (no nesting) */}
-      <a
-        href={rakutenUrl}
-        target="_blank"
-        rel="noopener noreferrer nofollow sponsored"
-        className="absolute bottom-0 left-0 right-0 text-center text-xs text-red-600 hover:text-red-500 border-t border-gray-100 py-2.5 bg-white hover:bg-red-50 transition-colors"
-      >
-        楽天でも見る
-      </a>
-    </div>
+        <div className="mt-3 bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">
+          楽天市場で購入 →
+        </div>
+      </div>
+    </a>
   );
 }

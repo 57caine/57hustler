@@ -30,6 +30,85 @@
   --color-foreground: var(--fg);
 }
 
+/* ─── Article typography & affiliate button design ─── */
+
+/* H2: left border sky */
+#article-body h2 {
+  border-left: 4px solid #0284c7;
+  padding-left: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 2.25rem 0 1rem;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+/* H3: light sky bg */
+#article-body h3 {
+  background-color: #f0f9ff;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.75rem;
+  color: #0c4a6e;
+}
+
+/* Affiliate CTA button — Rakuten red */
+#article-body a[href*="hb.afl.rakuten.co.jp"],
+#article-body a[href*="search.rakuten.co.jp"],
+.affiliate-btn {
+  display: inline-block;
+  background-color: #bf0000;
+  color: #ffffff !important;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none !important;
+  margin: 6px 4px 6px 0;
+  transition: opacity 0.15s;
+  line-height: 1.4;
+}
+#article-body a[href*="hb.afl.rakuten.co.jp"]:hover,
+#article-body a[href*="search.rakuten.co.jp"]:hover,
+.affiliate-btn:hover {
+  opacity: 0.85;
+}
+@media (max-width: 640px) {
+  #article-body a[href*="hb.afl.rakuten.co.jp"],
+  #article-body a[href*="search.rakuten.co.jp"],
+  .affiliate-btn {
+    display: block;
+    text-align: center;
+    margin: 8px 0;
+  }
+}
+
+/* Article paragraphs: max 4 lines readable */
+#article-body p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+#article-body ul, #article-body ol {
+  margin: 0.75rem 0 1rem 1.5rem;
+  line-height: 1.8;
+}
+#article-body li {
+  margin-bottom: 0.35rem;
+}
+
+/* LASIK affiliate placeholder */
+.lasik-affiliate-placeholder {
+  border: 2px dashed #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  margin: 16px 0;
+}
+
 /* ─── Base ─── */
 html { scroll-behavior: smooth; }
 
@@ -132,4 +211,10 @@ body {
   /* Hover effects */
   .hover\:bg-slate-50:hover { background-color: #1e293b !important; }
   .hover\:bg-gray-50:hover { background-color: #1e293b !important; }
+
+  /* Article H2/H3 dark mode */
+  #article-body h2 { color: #e2e8f0 !important; }
+  #article-body h3 { background-color: #0c2138 !important; color: #7dd3fc !important; }
+  .bg-red-50 { background-color: #200a0a !important; }
+  .border-red-200 { border-color: #7f1d1d !important; }
 }

@@ -6448,7 +6448,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">| 大型チェーン店 | 価格が比較的安い、在庫が豊富 | 専門知識がばらつく場合がある | 必須 |</p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">アフィリエイトリンク経由での購入</h3>
       <p className="text-gray-700 mb-4">大手オンラインショップでの乱視用コンタクトレンズ購入は以下から：</p>
-      <p className="text-gray-700 mb-4"><strong>Amazon での検索：</strong> <a href="https://www.amazon.co.jp/s?k=%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%20%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">コンタクトレンズ各種を確認</a></p>
+      <p className="text-gray-700 mb-4"><strong>Amazon での検索：</strong> </p>
       <p className="text-gray-700 mb-4"><strong>楽天での検索：</strong> <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">乱視用コンタクトレンズをお得に</a></p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">乱視用コンタクト装用時の注意点</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">正しい装用方法</h3>
@@ -6594,7 +6594,6 @@ export const columnContent: Record<string, React.ReactNode> = {
       </ul>
       <p className="text-gray-700 mb-4">初めての購入は、眼科や専門店で専門家のアドバイスを受けることをお勧めします。</p>
       <p className="text-gray-700 mb-4"><strong>Amazonで初心者向けコンタクト関連商品を探す：</strong></p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%20%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">https://www.amazon.co.jp/s?k=%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%20%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC&tag=57plot-22</a></p>
       <p className="text-gray-700 mb-4"><strong>楽天でコンタクトレンズ関連商品を探す：</strong></p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F</a></p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">6. 子どもがコンタクトを使う際の日々のケア</h2>
@@ -6773,7 +6772,6 @@ export const columnContent: Record<string, React.ReactNode> = {
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">人気商品の購入リンク</h2>
       <p className="text-gray-700 mb-4">ナチュラル系カラコンを探す場合、以下のリンクから多数の商品を比較できます：</p>
       <p className="text-gray-700 mb-4"><strong>Amazonでカラコンを探す：</strong></p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%20%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">https://www.amazon.co.jp/s?k=%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%20%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC&tag=57plot-22</a></p>
       <p className="text-gray-700 mb-4"><strong>楽天でカラコンを探す：</strong></p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F</a></p>
       <p className="text-gray-700 mb-4">これらのプラットフォームでは、複数のブランドを一度に比較でき、カスタマーレビューも参考になります。購入前に、必ず眼科の処方箋を用意してください。</p>
@@ -6918,7 +6916,6 @@ export const columnContent: Record<string, React.ReactNode> = {
       </ul>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Amazon・楽天での購入</h3>
       <p className="text-gray-700 mb-4">ナチュラル系カラコンは、以下のリンクで購入できます：</p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%20%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC&amp;tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon でカラコンをチェック</a></p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天 でカラコンをチェック</a></p>
       <p className="text-gray-700 mb-4">Amazon・楽天では、セール時期に30～40%の割引が実施されることもあります。購入前に必ず処方箋を用意し、自分のBC・DIAと一致する商品を選択してください。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ナチュラル系カラコンの装用時の注意事項</h2>
