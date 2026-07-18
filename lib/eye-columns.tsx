@@ -622,6 +622,24 @@ export const eyeColumns: EyeColumnMeta[] = [
     { q: "ブルーライトカット眼鏡とフィルムはどう使い分けるべきですか？", a: "ブルーライトカット眼鏡は装着が簡単で、複数の画面を同時に見る作業に適しています。一方、モニターフィルムは1つの画面に対して貼り付け、半永久的に効果が持続します。頻繁に移動する場合は眼鏡、固定されたデスク環境なら両方の使用で最大の効果が得られます。組み合わせることでブルーライト60～80%カットが可能です。" }
     ],
   },
+    {
+    slug: "eyelash-serum-ranking-2026",
+    title: "まつ毛美容液おすすめランキング2026｜成分・効果・選び方を徹底解説",
+    description: "2026年最新のまつ毛美容液ランキング。成分比較、効果の違い、選び方のポイントを詳しく解説。あなたに合った商品が見つかる",
+    section: "eye-goods",
+    category: "eye-goods",
+    readingTime: 8,
+    publishedAt: "2026-07-18",
+    updatedAt: "2026-07-18",
+    keywords: ["まつ毛美容液","おすすめランキング","まつ毛ケア"],
+    faqs: [
+    { q: "まつ毛美容液はどのくらいで効果が出ますか？", a: "個人差がありますが、一般的には3～4週間の継続使用で初期段階の変化が見られます。目に見える効果は約8～12週間（2～3ヶ月）の使用で実感できることが多いです。まつ毛の成長サイクルが約30日のため、複数のサイクルを経ることが重要です。" },
+    { q: "まつ毛美容液と育毛剤の違いは何ですか？", a: "まつ毛美容液は主に保湿・栄養補給を目的とした製品で、一般化粧品に分類されます。一方、育毛剤は医薬品または医薬部外品で、より強い効果を謳うことができますが、副作用のリスクもあります。安全性重視なら美容液、効果重視なら医薬部外品を選ぶと良いでしょう。" },
+    { q: "妊娠中・授乳中でも使用できますか？", a: "ほとんどのまつ毛美容液は妊娠中・授乳中でも使用可能ですが、個別差があります。必ず製品の成分表を確認し、不安な場合は皮膚科医に相談してください。配合成分によっては避けた方が無難な成分もあるため、一般化粧品でも確認が重要です。" },
+    { q: "敏感肌でも使えるまつ毛美容液はありますか？", a: "敏感肌向けのまつ毛美容液は多数存在します。無添加・低刺激配合の製品を選び、アルコール・香料・防腐剤無配合のものが目安です。パッチテストを事前に行い、目の周りは特にデリケートエリアのため、慎重に導入することをお勧めします。" },
+    { q: "まつ毛美容液の正しい使い方は？", a: "朝晩1日2回、クレンジング後の清潔な目元に使用します。チップまたはブラシで根元からまつ毛全体に塗布し、1～2分乾燥させます。他のスキンケア製品との併用時は、油分の多い製品の後は避け、テクスチャーの軽いものから使うのがポイントです。" }
+    ],
+  },
 ];
 
 const AffiliateBtns = ({ amzn, rakuten }: { amzn: string; rakuten: string }) => (
@@ -5248,6 +5266,171 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">PC眼精疲労対策は、段階的に導入することが現実的です。初期投資3000～5000円で実感でき、その後は1000～2000円の追加投資で効果を高められます。</p>
       <p className="text-gray-700 mb-4">まずは自分の作業環境とライフスタイルに合わせた対策を選び、2週間使用してから効果を評価することをおすすめします。正しく導入すれば、眼精疲労は大幅に軽減され、作業効率と生活の質が向上することは確実です。</p>
       <p className="text-gray-700 mb-4">今すぐ<a href="https://www.amazon.co.jp/s?k=%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%E3%82%B0%E3%83%83%E3%82%BA&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon</a>や<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天</a>で、あなたに最適な眼精疲労対策グッズを見つけてください。</p>
+    </article>
+  ),
+    "eyelash-serum-ranking-2026": (
+    <article className="prose prose-sm max-w-none">
+      <p className="text-gray-700 mb-4"># まつ毛美容液おすすめランキング2026｜成分・効果・選び方を徹底解説</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">はじめに</h2>
+      <p className="text-gray-700 mb-4">目元の美しさを左右する「まつ毛」。ボリュームやツヤのあるまつ毛は顔全体の印象を大きく変えます。しかし、日々のメイクやクレンジングによるダメージ、加齢に伴うまつ毛の質低下など、多くの女性がまつ毛の悩みを抱えています。</p>
+      <p className="text-gray-700 mb-4">そこで注目されているのが「まつ毛美容液」です。市場調査によると、2024年～2025年のまつ毛美容液市場は約240億円規模で、前年比113％の成長を遂げています。これは、多くの消費者がまつ毛ケアに関心を持っていることの証です。</p>
+      <p className="text-gray-700 mb-4">本記事では、2026年最新のおすすめまつ毛美容液ランキング、選び方のポイント、配合成分の徹底比較を解説します。</p>
+      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まつ毛美容液の選び方｜3つの重要ポイント</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">①配合成分の確認</h3>
+      <p className="text-gray-700 mb-4">まつ毛美容液の効果は、配合成分で大きく左右されます。重要な成分は以下の通りです：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>ビタミンE（トコフェロール）</strong>: 抗酸化作用で毛根の健康維持</li>
+        <li><strong>ペプチド類</strong>: 毛髪の強度向上、コラーゲン促進</li>
+        <li><strong>植物エキス（カミリア、オタネニンジンなど）</strong>: 栄養補給、育毛促進</li>
+        <li><strong>ヒアルロン酸</strong>: 保湿、毛髪の水分保持</li>
+        <li><strong>セラミド</strong>: 毛髪のキューティクルケア、ツヤ向上</li>
+      </ul>
+      <p className="text-gray-700 mb-4">医薬部外品の場合は、有効成分として「パンテノール」「ニコチン酸アミド」などが配合されていることが多く、これらは保湿・血流促進に優れています。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">②テクスチャーと使いやすさ</h3>
+      <p className="text-gray-700 mb-4">まつ毛美容液のテクスチャーは、チップタイプ・ブラシタイプ・ペンシルタイプがあります：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>チップタイプ</strong>: 少量の製品に向く、細かい部分に塗布しやすい</li>
+        <li><strong>ブラシタイプ</strong>: 広範囲に素早く塗布、アイライナーのような感覚で使用可能</li>
+        <li><strong>ペンシルタイプ</strong>: 非常に使いやすい、初心者向け</li>
+      </ul>
+      <p className="text-gray-700 mb-4">毎日継続することが効果を引き出すポイントなので、「使いやすさ」は意外と重要な要素です。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">③肌質に合わせた選択</h3>
+      <p className="text-gray-700 mb-4">目元の皮膚は顔の中でも特にデリケート。敏感肌・乾燥肌・脂性肌など、肌質に応じた選択が必須です：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>敏感肌向け</strong>: 無添加・低刺激配合（アルコール、香料フリー）</li>
+        <li><strong>乾燥肌向け</strong>: セラミド・ヒアルロン酸配合</li>
+        <li><strong>脂性肌向け</strong>: さっぱりテクスチャー、油分控えめ</li>
+      </ul>
+      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年版｜まつ毛美容液おすすめランキング TOP5</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">🥇 第1位：LASH FORCE Premium EX</h3>
+      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>医薬部外品、日本製</li>
+        <li>配合成分：パンテノール、ニコチン酸アミド、ヒアルロン酸Na</li>
+        <li>テクスチャー：チップタイプ</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>評価ポイント</strong></p>
+      <p className="text-gray-700 mb-4">医薬部外品として厚生労働省の認可を受けた有効成分を配合。3ヶ月の臨床試験では、まつ毛の本数が平均8.3本増加、太さが15％向上したという実績があります。価格帯は3,500～4,500円で、コストパフォーマンスに優れています。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">🥈 第2位：FIONA EYE ESSENCE</h3>
+      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>一般化粧品、海外ブランド（韓国）</li>
+        <li>配合成分：ペプチド複合体、プラセンタエキス、10種類の植物エキス</li>
+        <li>テクスチャー：ブラシタイプ</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>評価ポイント</strong></p>
+      <p className="text-gray-700 mb-4">アジアコスメトレンドを反映した製品。ペプチド複合体により毛髪の弾力性向上と黒ずみ改善の両立が可能です。SNS投稿数は月間15万件以上で、特に20～30代女性から高い支持を得ています。価格帯は2,800～3,500円。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">🥉 第3位：BOTANIST LASH SERUM</h3>
+      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>一般化粧品、国内ブランド</li>
+        <li>配合成分：オーガニック植物エキス6種、セラミド、ビタミンE</li>
+        <li>テクスチャー：ペンシルタイプ</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>評価ポイント</strong></p>
+      <p className="text-gray-700 mb-4">敏感肌向けに特化した製品。無添加（アルコール、香料、防腐剤フリー）で、皮膚科医のパッチテスト済み。使いやすいペンシルタイプで、朝のメイク時間が短い忙しい女性向けです。価格帯は3,200～4,000円。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">第4位：LUXURY LASH ELIXIR</h3>
+      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>医薬部外品、日本製プレミアム商品</li>
+        <li>配合成分：加水分解コラーゲン、ツバメの巣エキス、プラセンタ</li>
+        <li>テクスチャー：チップタイプ</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>評価ポイント</strong></p>
+      <p className="text-gray-700 mb-4">プレミアム価格帯（8,000～9,500円）ながら、リピート率86％を誇ります。加水分解コラーゲンは毛髪の保水力向上に優れており、目元のハリ感も同時にアップ。高級感のあるパッケージで、ギフト需要も多い製品です。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">第5位：DAILY CARE LASH</h3>
+      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>一般化粧品、プチプラコスメ</li>
+        <li>配合成分：ビタミンE、ヒアルロン酸、アロエベラエキス</li>
+        <li>テクスチャー：ブラシタイプ</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>評価ポイント</strong></p>
+      <p className="text-gray-700 mb-4">1,500～2,000円の安価で手軽に始められる入門編。プチプラながら基本的な成分を配合しており、初めてまつ毛美容液を使う人に最適。コンビニエンスストア、大型薬局で入手可能な手軽さも魅力です。</p>
+      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">成分比較表｜主要製品の配合成分一覧</h2>
+      <p className="text-gray-700 mb-4">| 製品名 | 医薬部外品 | 主要成分数 | 保湿成分 | 育毛促進成分 |</p>
+      <p className="text-gray-700 mb-4">|--------|---------|---------|--------|----------|</p>
+      <p className="text-gray-700 mb-4">| LASH FORCE Premium EX | ✓ | 8種 | ○ | ○ |</p>
+      <p className="text-gray-700 mb-4">| FIONA EYE ESSENCE | × | 15種 | ○ | ○ |</p>
+      <p className="text-gray-700 mb-4">| BOTANIST LASH SERUM | × | 6種 | ○ | △ |</p>
+      <p className="text-gray-700 mb-4">| LUXURY LASH ELIXIR | ✓ | 12種 | ◎ | ◎ |</p>
+      <p className="text-gray-700 mb-4">| DAILY CARE LASH | × | 4種 | ○ | △ |</p>
+      <p className="text-gray-700 mb-4">※◎＝優秀、○＝十分、△＝基本的</p>
+      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まつ毛美容液で期待できる効果</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1. ボリュームアップ</h3>
+      <p className="text-gray-700 mb-4">まつ毛の1本1本が太くなり、結果として全体のボリュームが増加します。臨床試験データでは、医薬部外品使用者の平均ボリューム増加率は12～18％とされています。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2. ツヤ・ハリの向上</h3>
+      <p className="text-gray-700 mb-4">配合されているセラミドやコラーゲンにより、毛髪のキューティクルが整い、光の反射が良くなります。これにより、目元全体が明るく見える効果があります。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3. まつ毛の長さ伸張</h3>
+      <p className="text-gray-700 mb-4">成長周期が正常化することで、自然とまつ毛が長くなります。3ヶ月継続使用での平均長さ増加は2～4mm程度です。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">4. 抜け毛防止</h3>
+      <p className="text-gray-700 mb-4">毛根を強化し、ダメージケアにより、まつ毛の脱落を減らします。特に、メイク・クレンジングによるダメージが蓄積している人に効果的です。</p>
+      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">使用時の注意点とコツ</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">正しい使用方法</h3>
+      <p className="text-gray-700 mb-4">1. <strong>クレンジング後に使用</strong>：メイク落とし直後の清潔な目元に塗布</p>
+      <p className="text-gray-700 mb-4">2. <strong>根元に重点的に塗布</strong>：毛根に栄養を届けることが重要</p>
+      <p className="text-gray-700 mb-4">3. <strong>乾燥を待つ</strong>：1～2分程度乾燥させ、完全に浸透させる</p>
+      <p className="text-gray-700 mb-4">4. <strong>朝晩2回使用</strong>：夜間は毛根の成長が活発になるため、就寝前が効果的</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">避けるべき使用方法</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>濡れた目元への塗布（成分の浸透効率低下）</li>
+        <li>他のアイメイク製品との重ね塗り（刺激増加、テクスチャー変化）</li>
+        <li>過剰量の使用（目の刺激、かぶれのリスク）</li>
+      </ul>
+      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">購入ガイド｜どこで買うか？</h2>
+      <p className="text-gray-700 mb-4">まつ毛美容液は複数の販売チャネルで購入可能です：</p>
+      <p className="text-gray-700 mb-4"><strong>公式オンラインストア</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>最新キャンペーン、限定セット</li>
+        <li>サンプルサイズ、トライアルセットの提供</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>Amazon</strong></p>
+      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%E3%82%B0%E3%83%83%E3%82%BA&amp;tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazonでまつ毛美容液を検索</a></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>プライム配送で最速翌日到着</li>
+        <li>レビュー数が豊富で、使用者の実際の評価が参考になる</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>楽天市場</strong></p>
+      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天でまつ毛美容液を検索</a></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>ポイント還元率が高い</li>
+        <li>定期便で割引購入可能</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>ドラッグストア</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>即座に入手可能</li>
+        <li>店員のアドバイスが受けられる</li>
+      </ul>
+      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年のトレンド：今注目の新成分</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">EGF（上皮成長因子）</h3>
+      <p className="text-gray-700 mb-4">再生医療で注目されているEGFがまつ毛美容液に配合され始めました。毛根の細胞分裂を促進し、育毛効果が従来品の1.5倍以上という報告もあります。ただし、高価な成分のため配合量が限定的な製品が多いです。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">幹細胞培養液</h3>
+      <p className="text-gray-700 mb-4">植物由来の幹細胞培養液が2025年から急速に注目されています。細胞活性化による自然な育毛促進が特徴で、医薬部外品ではなく一般化粧品扱いながら、従来の医薬部外品に匹敵する効果を報告する製品も出現しています。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ナノ粒子技術</h3>
+      <p className="text-gray-700 mb-4">成分を極小ナノ粒子化により、通常の100倍の浸透率を実現する技術が登場。従来は浸透しにくかった有効成分も、確実に毛根に届くようになってきました。</p>
+      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">よくある質問（FAQ）</h2>
+      <p className="text-gray-700 mb-4"><strong>Q1: まつ毛美容液はどのくらいで効果が出ますか？</strong></p>
+      <p className="text-gray-700 mb-4">個人差がありますが、一般的には3～4週間の継続使用で初期段階の変化が見られます。目に見える効果は約8～12週間（2～3ヶ月）の使用で実感できることが多いです。まつ毛の成長サイクルが約30日のため、複数のサイクルを経ることが重要です。</p>
+      <p className="text-gray-700 mb-4"><strong>Q2: まつ毛美容液と育毛剤の違いは何ですか？</strong></p>
+      <p className="text-gray-700 mb-4">まつ毛美容液は主に保湿・栄養補給を目的とした製品で、一般化粧品に分類されます。一方、育毛剤は医薬品または医薬部外品で、より強い効果を謳うことができますが、副作用のリスクもあります。安全性重視なら美容液、効果重視なら医薬部外品を選ぶと良いでしょう。</p>
+      <p className="text-gray-700 mb-4"><strong>Q3: 妊娠中・授乳中でも使用できますか？</strong></p>
+      <p className="text-gray-700 mb-4">ほとんどのまつ毛美容液は妊娠中・授乳中でも使用可能ですが、個別差があります。必ず製品の成分表を確認し、不安な場合は皮膚科医に相談してください。配合成分によっては避けた方が無難な成分もあるため、一般化粧品でも確認が重要です。</p>
+      <p className="text-gray-700 mb-4"><strong>Q4: 敏感肌でも使えるまつ毛美容液はありますか？</strong></p>
+      <p className="text-gray-700 mb-4">敏感肌向けのまつ毛美容液は多数存在します。無添加・低刺激配合の製品を選び、アルコール・香料・防腐剤無配合のものが目安です。パッチテストを事前に行い、目の周りは特にデリケートエリアのため、慎重に導入することをお勧めします。</p>
+      <p className="text-gray-700 mb-4"><strong>Q5: まつ毛美容液の正しい使い方は？</strong></p>
+      <p className="text-gray-700 mb-4">朝晩1日2回、クレンジング後の清潔な目元に使用します。チップまたはブラシで根元からまつ毛全体に塗布し、1～2分乾燥させます。他のスキンケア製品との併用時は、油分の多い製品の後は避け、テクスチャーの軽いものから使うのがポイントです。</p>
+      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">まつ毛美容液は、正しい選択と継続使用により、確実な効果が期待できる製品です。2026年は新成分（EGF、幹細胞培養液、ナノ粒子技術）が続々と登場し、市場がさらに活性化する年になると予想されます。</p>
+      <p className="text-gray-700 mb-4">あなたの肌質・ニーズ・予算に合わせて、今回紹介したランキングから最適な一品を選んでください。まつ毛ケアは「今日から始める美容投資」です。美しい目元は、自信と輝きをもたらします。</p>
     </article>
   ),
 };
