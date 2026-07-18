@@ -17,6 +17,7 @@ const categoryColors: Record<string, string> = {
   'レーシック・視力矯正': 'bg-emerald-100 text-emerald-700',
   'アイケア・目薬': 'bg-cyan-100 text-cyan-700',
   '目の雑貨・グッズ': 'bg-orange-100 text-orange-700',
+  'カラコン': 'bg-pink-100 text-pink-700',
 };
 
 export default function ColumnListPage() {
