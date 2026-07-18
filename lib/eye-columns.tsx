@@ -5634,7 +5634,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>楽天モバイル利用者：+1倍</li>
       </ul>
       <p className="text-gray-700 mb-4">合計で最大15～18倍のポイント還元も可能です。</p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%82%AB%E3%83%83%E3%83%88&amp;tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">メガネをAmazonで探す</a></p>
+      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%82%AB%E3%83%83%E3%83%88&amp;tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">メガネをAmazonで探す</a></p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">メガネを楽天で探す</a></p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">オンラインメガネショップ選択時の最終チェックリスト</h2>
       <p className="text-gray-700 mb-4">最終的にショップを選択する前に、以下の全項目を確認してください：</p>
