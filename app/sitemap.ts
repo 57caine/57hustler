@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getAllProducts, getAllCategories, getAllBrands } from '@/lib/products';
-import { columns } from '@/lib/columns';
+import { allColumns } from '@/lib/all-columns';
 
 const BASE_URL = 'https://lens-navi.jp';
 
@@ -32,11 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const columnUrls: MetadataRoute.Sitemap = [
     { url: `${BASE_URL}/column`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    ...columns.map((c) => ({
+    { url: `${BASE_URL}/karakon`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    ...allColumns.map((c) => ({
       url: `${BASE_URL}/column/${c.slug}`,
       lastModified: new Date(c.updatedAt ?? c.publishedAt),
       changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      priority: c.category === 'カラコン' ? 0.8 : 0.7,
     })),
   ];
 
