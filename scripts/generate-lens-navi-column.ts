@@ -166,14 +166,14 @@ const SECTION_TOPICS: Record<Section, string[]> = {
   ],
 };
 
-const SECTION_AFFILIATE_KEYWORDS: Record<Section, { amzn: string; rakuten: string }> = {
-  vr: { amzn: 'VRゴーグル スマートグラス', rakuten: 'VRゴーグル' },
-  contact: { amzn: 'コンタクトレンズ ワンデー', rakuten: 'コンタクトレンズ' },
-  'eye-care': { amzn: '目薬 ドライアイ', rakuten: '目薬' },
-  lasik: { amzn: '目のサプリ ルテイン', rakuten: 'アイケア サプリ' },
-  megane: { amzn: 'メガネ ブルーライトカット', rakuten: 'メガネ フレーム' },
-  karakon: { amzn: 'カラコン ワンデー おすすめ', rakuten: 'カラコン 日本製 ワンデー' },
-  'eye-goods': { amzn: 'ホットアイマスク アイケアグッズ', rakuten: 'ホットアイマスク アイケア' },
+const SECTION_AFFILIATE_KEYWORDS: Record<Section, { rakuten: string }> = {
+  vr: { rakuten: 'VRゴーグル' },
+  contact: { rakuten: 'コンタクトレンズ' },
+  'eye-care': { rakuten: '目薬' },
+  lasik: { rakuten: 'アイケア サプリ' },
+  megane: { rakuten: 'メガネ フレーム' },
+  karakon: { rakuten: 'カラコン 日本製 ワンデー' },
+  'eye-goods': { rakuten: 'ホットアイマスク アイケア' },
 };
 
 // ---- 重複チェック ----
@@ -222,7 +222,7 @@ async function generateColumn(
 - H2/H3見出しを使って構造化
 - 具体的なデータ・数値を含む
 - FAQ 5問以上（Q&A形式）
-- アフィリエイトCTA（Amazon・楽天リンク）を自然に組み込む
+- アフィリエイトCTA（楽天リンク）を自然に組み込む
 - 事実のみ記述、推測・誇張禁止
 - 既存記事との内容重複を避ける
 
@@ -235,7 +235,6 @@ generate_columnツールを使って記事を生成してください。
 contentフィールドには2000文字以上の本文をMarkdown形式で含めてください。
 
 アフィリエイトリンクはcontent内に以下の形式で含めてください:
-Amazon: https://www.amazon.co.jp/s?k=${encodeURIComponent(aff.amzn)}&tag=57plot-22
 楽天: https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + aff.rakuten + '/')}`;
 
   const response = await client.messages.create({

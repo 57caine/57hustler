@@ -38,7 +38,6 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
   };
 
   const isRakuten = (id: string) => id === 'rakuten';
-  const isAmazon = (id: string) => id === 'amazon';
 
   return (
     <div>
@@ -75,9 +74,6 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                   <div className="flex items-center gap-2 flex-wrap">
                     {isRakuten(item.storeId) && (
                       <span className="bg-red-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">楽天</span>
-                    )}
-                    {isAmazon(item.storeId) && (
-                      <span className="bg-orange-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">Amazon</span>
                     )}
                     <span className={`font-medium ${!item.inStock ? 'text-gray-400' : 'text-gray-800'}`}>
                       {item.store.name}

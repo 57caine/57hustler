@@ -38,7 +38,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-lg font-bold text-gray-800 mb-3">アフィリエイトプログラムについて</h2>
           <p>
-            当サイトはAmazonアソシエイト、楽天アフィリエイト、A8.netなどのアフィリエイトプログラムに参加しています。
+            当サイトは楽天アフィリエイト、A8.netなどのアフィリエイトプログラムに参加しています。
             これらのプログラムはCookieを使用して、当サイトからの参照を識別します。
             詳細は<Link href="/disclosure" className="text-sky-600 hover:underline">アフィリエイト表示</Link>をご覧ください。
           </p>

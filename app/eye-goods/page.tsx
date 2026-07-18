@@ -16,10 +16,10 @@ const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a8
 
 
 const products = [
-  { emoji: '♨️', label: 'ホットアイマスク', amzn: 'ホットアイマスク Panasonic', rakuten: 'ホットアイマスク おすすめ' },
-  { emoji: '😴', label: '使い捨てアイマスク（めぐりズム等）', amzn: '花王 めぐりズム アイマスク', rakuten: 'めぐりズム アイマスク' },
-  { emoji: '💡', label: 'モニターライト（BenQ ScreenBar等）', amzn: 'BenQ ScreenBar モニターライト', rakuten: 'モニターライト デスク' },
-  { emoji: '🔍', label: '拡大鏡・ルーペ', amzn: '拡大鏡 ルーペ おすすめ', rakuten: '拡大鏡 ルーペ' },
+  { emoji: '♨️', label: 'ホットアイマスク', rakuten: 'ホットアイマスク おすすめ' },
+  { emoji: '😴', label: '使い捨てアイマスク（めぐりズム等）', rakuten: 'めぐりズム アイマスク' },
+  { emoji: '💡', label: 'モニターライト（BenQ ScreenBar等）', rakuten: 'モニターライト デスク' },
+  { emoji: '🔍', label: '拡大鏡・ルーペ', rakuten: '拡大鏡 ルーペ' },
 ];
 
 const faqs = [
@@ -75,9 +75,9 @@ export default function EyeGoodsPage() {
       {/* Popular items grid */}
       <div className="grid sm:grid-cols-3 gap-4 mb-10">
         {[
-          { emoji: '♨️', name: 'ホットアイマスク', desc: 'Panasonic・花王など繰り返し使用タイプが人気', amzn: 'ホットアイマスク おすすめ', rakuten: 'ホットアイマスク おすすめ' },
-          { emoji: '💡', name: 'モニターライト', desc: 'BenQ ScreenBarが最人気。PC作業の目疲れを軽減', amzn: 'モニターライト BenQ', rakuten: 'モニターライト デスク' },
-          { emoji: '🔍', name: '拡大鏡・ルーペ', desc: '細かい作業・読書に。スタンド型・手持ち型を比較', amzn: '拡大鏡 おすすめ', rakuten: '拡大鏡 ルーペ' },
+          { emoji: '♨️', name: 'ホットアイマスク', desc: 'Panasonic・花王など繰り返し使用タイプが人気', rakuten: 'ホットアイマスク おすすめ' },
+          { emoji: '💡', name: 'モニターライト', desc: 'BenQ ScreenBarが最人気。PC作業の目疲れを軽減', rakuten: 'モニターライト デスク' },
+          { emoji: '🔍', name: '拡大鏡・ルーペ', desc: '細かい作業・読書に。スタンド型・手持ち型を比較', rakuten: '拡大鏡 ルーペ' },
         ].map(item => (
           <a key={item.name} href={RAKUTEN(item.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-red-300 transition-all">

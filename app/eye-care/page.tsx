@@ -16,10 +16,10 @@ const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a8
 
 
 const products = [
-  { emoji: '💧', label: 'コンタクト用目薬', amzn: 'コンタクト 目薬 防腐剤フリー', rakuten: 'コンタクト用目薬 防腐剤フリー' },
-  { emoji: '👁', label: 'ドライアイ目薬', amzn: 'ドライアイ 目薬 おすすめ', rakuten: 'ドライアイ 目薬' },
-  { emoji: '🌿', label: 'ルテインサプリ', amzn: 'ルテイン サプリ 目 おすすめ', rakuten: 'ルテイン サプリ' },
-  { emoji: '🦐', label: 'アスタキサンチンサプリ', amzn: 'アスタキサンチン サプリ 目', rakuten: 'アスタキサンチン サプリ' },
+  { emoji: '💧', label: 'コンタクト用目薬', rakuten: 'コンタクト用目薬 防腐剤フリー' },
+  { emoji: '👁', label: 'ドライアイ目薬', rakuten: 'ドライアイ 目薬' },
+  { emoji: '🌿', label: 'ルテインサプリ', rakuten: 'ルテイン サプリ' },
+  { emoji: '🦐', label: 'アスタキサンチンサプリ', rakuten: 'アスタキサンチン サプリ' },
 ];
 
 const faqs = [

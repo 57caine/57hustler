@@ -1468,15 +1468,6 @@
       "shipping": 0,
       "freeShippingMin": 0,
       "prescriptionFree": true
-    },
-    {
-      "id": "amazon",
-      "name": "Amazon",
-      "url": "https://www.amazon.co.jp",
-      "affiliateParam": "",
-      "shipping": 410,
-      "freeShippingMin": 2000,
-      "prescriptionFree": true
     }
   ]
 }

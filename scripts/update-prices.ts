@@ -28,7 +28,7 @@ interface PricesData {
 }
 
 // スキップするストア（スクレイピング非対応）
-const SKIP_STORES = new Set(['amazon', 'rakuten']);
+const SKIP_STORES = new Set(['rakuten']);
 
 // 税込価格を文字列から抽出する（税込明示パターンを優先）
 function extractPrice(text: string): number | null {

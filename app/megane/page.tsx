@@ -16,10 +16,10 @@ const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a8
 
 
 const products = [
-  { emoji: '👓', label: '眼鏡フレーム', amzn: '眼鏡 フレーム', rakuten: '眼鏡フレーム' },
-  { emoji: '💙', label: 'ブルーライトカット眼鏡', amzn: 'ブルーライトカット 眼鏡', rakuten: 'ブルーライトカット眼鏡' },
-  { emoji: '🕶️', label: 'サングラス', amzn: 'サングラス UV400', rakuten: 'サングラス おすすめ' },
-  { emoji: '🎒', label: '眼鏡ケース', amzn: '眼鏡ケース おしゃれ', rakuten: '眼鏡ケース' },
+  { emoji: '👓', label: '眼鏡フレーム', rakuten: '眼鏡フレーム' },
+  { emoji: '💙', label: 'ブルーライトカット眼鏡', rakuten: 'ブルーライトカット眼鏡' },
+  { emoji: '🕶️', label: 'サングラス', rakuten: 'サングラス おすすめ' },
+  { emoji: '🎒', label: '眼鏡ケース', rakuten: '眼鏡ケース' },
 ];
 
 const faqs = [

@@ -9,8 +9,7 @@ declare global {
   }
 }
 
-function getAffiliatePlatform(href: string): 'amazon' | 'rakuten' | null {
-  if (href.includes('amazon.co.jp') || href.includes('amazon.com')) return 'amazon';
+function getAffiliatePlatform(href: string): 'rakuten' | null {
   if (href.includes('rakuten.co.jp') || href.includes('afl.rakuten')) return 'rakuten';
   return null;
 }

@@ -31,10 +31,6 @@ export default function DisclosurePage() {
           <h2 className="text-lg font-bold text-gray-800 mb-3">参加しているアフィリエイトプログラム</h2>
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
-              <span className="font-medium text-gray-800 w-32 shrink-0">Amazon</span>
-              <span>Amazonアソシエイト・プログラム（アソシエイトID: 57plot-22）</span>
-            </li>
-            <li className="flex items-start gap-3">
               <span className="font-medium text-gray-800 w-32 shrink-0">楽天市場</span>
               <span>楽天アフィリエイト</span>
             </li>

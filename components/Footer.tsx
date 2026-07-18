@@ -83,7 +83,7 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-gray-700 mb-3 text-sm">アフィリエイト表記</h3>
             <p className="text-xs leading-relaxed mb-4">
-              当サイトはAmazonアソシエイト・楽天アフィリエイト・A8.netなどのアフィリエイトプログラムに参加しています。
+              当サイトは楽天アフィリエイト・A8.netなどのアフィリエイトプログラムに参加しています。
               商品リンクから購入された場合、当サイトに手数料が発生することがあります。
             </p>
             <p className="text-xs leading-relaxed">

@@ -254,7 +254,7 @@ export default function HomePage() {
           目に関するすべての情報を網羅する総合サイトです。
         </p>
         <p>
-          コンタクトレンズは<strong>BC（ベースカーブ）</strong>別に{allProducts.length}商品を掲載。Amazon・楽天で最安値をチェックできます。
+          コンタクトレンズは<strong>BC（ベースカーブ）</strong>別に{allProducts.length}商品を掲載。楽天市場で最安値をチェックできます。
           ドライアイ対策・ブルーライトカット眼鏡・ホットアイマスクなどのアイケア情報も専門ライターが丁寧に解説しています。
         </p>
       </section>

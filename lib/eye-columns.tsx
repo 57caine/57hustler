@@ -959,7 +959,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
               { shop: 'JINS オンライン', price: '¥5,500〜', feat: 'バーチャル試着あり・全国で調整可能' },
               { shop: 'Zoff オンライン', price: '¥5,500〜', feat: '豊富なデザイン・店舗でのアフターケアあり' },
               { shop: '楽天市場 眼鏡', price: '¥1,000〜', feat: '激安フレームが豊富・ポイント還元' },
-              { shop: 'Amazon 眼鏡', price: '¥1,000〜', feat: '即日配送・レビューが参考になる' },
+              { shop: '楽天市場 眼鏡', price: '¥1,000〜', feat: 'ポイント還元・セール多数・レビュー豊富' },
             ].map(r => (
               <tr key={r.shop} className="border-b border-gray-100">
                 <td className="p-3 border border-gray-200 font-medium">{r.shop}</td>
@@ -3220,8 +3220,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>推奨用途：超高品質VR体験、高級映像制作</li>
       </ul>
       <p className="text-gray-700 mb-4">これらのヘッドセットは、以下のリンクから購入可能です。</p>
-      <p className="text-gray-700 mb-4">Amazon VRゴーグル・スマートグラス：</p>
-      <p className="text-gray-700 mb-4">https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=57plot-22</p>
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FVR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="affiliate-btn">楽天市場でVRゴーグル・スマートグラスを探す →</a>
       <p className="text-gray-700 mb-4">楽天 VRゴーグル：</p>
       <p className="text-gray-700 mb-4">https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FVR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%2F</p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">通信環境・スペック要件</h3>
@@ -3615,8 +3614,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>ブルーライトカットメガネの使用</strong>：PC作業が多い場合、専用メガネが眼への負担を約30%軽減します</li>
         <li><strong>目薬の活用</strong>：涙の質を改善する目薬を使用。以下のリンクから眼に優しい目薬を探せます</li>
       </ul>
-      <p className="text-gray-700 mb-4">【Amazon目薬検索】</p>
-      <p className="text-gray-700 mb-4">https://www.amazon.co.jp/s?k=%E7%9B%AE%E8%96%AC%20%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4&tag=57plot-22</p>
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4%20%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="affiliate-btn">楽天市場でドライアイ目薬を探す →</a>
       <p className="text-gray-700 mb-4">【楽天目薬検索】</p>
       <p className="text-gray-700 mb-4">https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F</p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">栄養補給による予防</h3>
@@ -4161,8 +4159,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">3. <strong>レンズ加工と装着調整</strong>（1～2日）</p>
       <p className="text-gray-700 mb-4">4. <strong>装着後の調整</strong>（必要に応じて）</p>
       <p className="text-gray-700 mb-4">眼鏡選びに関しては、以下のリンクから多数のメガネフレームを比較検討できます。</p>
-      <p className="text-gray-700 mb-4"><strong>Amazonでメガネフレームを探す：</strong></p>
-      <p className="text-gray-700 mb-4">https://www.amazon.co.jp/s?k=%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%82%AB%E3%83%83%E3%83%88&tag=57plot-22</p>
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%82%AB%E3%83%83%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="affiliate-btn">楽天市場でメガネフレームを探す →</a>
       <p className="text-gray-700 mb-4"><strong>楽天でメガネフレームを探す：</strong></p>
       <p className="text-gray-700 mb-4">https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%2F</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">よくある質問と回答</h2>
@@ -4511,8 +4508,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <p className="text-gray-700 mb-4">目薬を使用する場合は、緑内障の進行を抑える効果的な目薬があります。医師の処方に従い、正しく使用することが重要です。</p>
       <p className="text-gray-700 mb-4">緑内障専用の目薬（プロスタグランジン関連薬など）について詳しく知りたい場合は、以下で最新製品をチェックできます。</p>
-      <p className="text-gray-700 mb-4"><strong>Amazon</strong>でも目薬の関連商品が多く販売されています：</p>
-      <p className="text-gray-700 mb-4">https://www.amazon.co.jp/s?k=%E7%9B%AE%E8%96%AC%20%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4&tag=57plot-22</p>
+      <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4%20%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="affiliate-btn">楽天市場でドライアイ目薬を探す →</a>
       <p className="text-gray-700 mb-4"><strong>楽天</strong>では目薬の幅広い品揃えから選べます：</p>
       <p className="text-gray-700 mb-4">https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">各検査の利点と限界を理解する</h2>
@@ -4774,8 +4770,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>推奨摂取量：1日1,500-2,000mg</li>
         <li>メカニズム：マイボーム腺の機能改善、涙液層の安定化</li>
         <li>効果：術後のドライアイ症状を約40～50%軽減する報告あり</li>
-        <li><strong>Amazon</strong>：</li>
-        <li><strong>楽天</strong>：<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%AA%E3%83%A1%E3%82%AC3%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">オメガ3サプリ楽天検索</a></li>
+                <li><strong>楽天</strong>：<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%AA%E3%83%A1%E3%82%AC3%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">オメガ3サプリ楽天検索</a></li>
       </ul>
       <p className="text-gray-700 mb-4"><strong>ルテイン・ゼアキサンチン含有製品</strong></p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
@@ -4895,8 +4890,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <p className="text-gray-700 mb-4"><strong>関連製品</strong>：</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>Amazon</strong>：</li>
-        <li><strong>楽天</strong>：<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%20%E3%82%B5%E3%83%97%E3%83%AA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">アイケア サプリメント検索</a></li>
+                <li><strong>楽天</strong>：<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%20%E3%82%B5%E3%83%97%E3%83%AA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">アイケア サプリメント検索</a></li>
       </ul>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">避けるべき行動・環境</h3>
       <p className="text-gray-700 mb-4">#### 禁止事項（術後6ヶ月間）</p>

@@ -16,10 +16,10 @@ const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a8
 
 
 const products = [
-  { emoji: '🥽', label: 'Meta Quest 3', amzn: 'Meta Quest 3', rakuten: 'Meta Quest 3' },
-  { emoji: '😎', label: 'Ray-Ban Meta Smart Glasses', amzn: 'Ray-Ban Meta Smart Glasses', rakuten: 'Ray-Ban Meta' },
-  { emoji: '🔭', label: 'VR度付きインサートレンズ', amzn: 'VR 度付き インサートレンズ', rakuten: 'VR インサートレンズ' },
-  { emoji: '📦', label: 'VRメガネスペーサー', amzn: 'VR メガネスペーサー', rakuten: 'VR メガネスペーサー' },
+  { emoji: '🥽', label: 'Meta Quest 3', rakuten: 'Meta Quest 3' },
+  { emoji: '😎', label: 'Ray-Ban Meta Smart Glasses', rakuten: 'Ray-Ban Meta' },
+  { emoji: '🔭', label: 'VR度付きインサートレンズ', rakuten: 'VR インサートレンズ' },
+  { emoji: '📦', label: 'VRメガネスペーサー', rakuten: 'VR メガネスペーサー' },
 ];
 
 const faqs = [
