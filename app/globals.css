@@ -120,6 +120,12 @@ body {
   .bg-green-50 { background-color: #0a1f10 !important; }
   .bg-purple-50 { background-color: #1a0d33 !important; }
   .bg-pink-50 { background-color: #1f0d14 !important; }
+  .bg-pink-100 { background-color: #2a1020 !important; }
+  .bg-rose-50  { background-color: #200d0f !important; }
+  .bg-purple-100 { background-color: #1a0d33 !important; }
+  .bg-slate-100 { background-color: #1e293b !important; }
+  .from-pink-50  { --tw-gradient-from: #1f0d14 !important; }
+  .to-rose-50    { --tw-gradient-to:   #200d0f !important; }
   .bg-teal-50 { background-color: #0a1f1e !important; }
   .bg-slate-800 { background-color: #1e293b !important; }
 

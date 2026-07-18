@@ -235,7 +235,7 @@ generate_columnツールを使って記事を生成してください。
 contentフィールドには2000文字以上の本文をMarkdown形式で含めてください。
 
 アフィリエイトリンクはcontent内に以下の形式で含めてください:
-Amazon: https://www.amazon.co.jp/s?k=${encodeURIComponent(aff.amzn)}&tag=hustle-digger-22
+Amazon: https://www.amazon.co.jp/s?k=${encodeURIComponent(aff.amzn)}&tag=57plot-22
 楽天: https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + aff.rakuten + '/')}`;
 
   const response = await client.messages.create({

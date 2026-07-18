@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   keywords: ['ドライアイ 目薬 おすすめ', 'コンタクト 目薬', 'ルテイン サプリ', 'アイケア', '疲れ目 対策'],
 };
 
-const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=hustle-digger-22`;
+const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=57plot-22`;
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
 
 

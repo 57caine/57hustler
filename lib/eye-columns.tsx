@@ -14,7 +14,7 @@ export type EyeColumnMeta = {
   faqs?: { q: string; a: string }[];
 };
 
-const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=hustle-digger-22`;
+const AMZN = (kw: string) => `https://www.amazon.co.jp/s?k=${encodeURIComponent(kw)}&tag=57plot-22`;
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
 
 export const eyeColumns: EyeColumnMeta[] = [
@@ -2761,7 +2761,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">XRヘッドセットは単なる次世代デバイスではなく、企業の競争力を高める投資として機能します。適切な導入戦略と運用体制を整えることで、確実な効果測定と継続的な改善が実現できます。</p>
       <p className="text-gray-700 mb-4">業界別・規模別の導入事例集や詳細な比較ガイドは、以下のリンクよりご確認いただけます。</p>
       <p className="text-gray-700 mb-4"><strong>VRゴーグル・スマートグラスの購入・レンタルはこちら</strong></p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon VRゴーグル・スマートグラス</a></p>
+      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon VRゴーグル・スマートグラス</a></p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FVR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天市場 VRゴーグル・関連機器</a></p>
       <p className="text-gray-700 mb-4">導入検討段階での疑問点や技術相談については、各企業のカスタマーサクセスチームへお問い合わせいただくことで、無料の診断サービスが受けられる場合も多くあります。</p>
     </article>
@@ -2843,7 +2843,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>新作追加の頻度がやや低い</li>
       </ul>
       <p className="text-gray-700 mb-4">アマゾンで対応デバイスをチェック：</p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">VRゴーグル・スマートグラス各種を見る</a></p>
+      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">VRゴーグル・スマートグラス各種を見る</a></p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画視聴に最適なデバイス選択ガイド</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">予算別おすすめデバイス</h3>
       <p className="text-gray-700 mb-4"><strong>予算10万円以下</strong></p>
@@ -3006,7 +3006,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>150,000～300,000円</strong>：HTC Vive Pro 2（高性能PC接続型）</li>
         <li><strong>400,000円以上</strong>：Apple Vision Pro、PlayStation VR2（最高体験）</li>
       </ul>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">VRゴーグルやアクセサリーをAmazonで見つける</a></p>
+      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">VRゴーグルやアクセサリーをAmazonで見つける</a></p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年で注目すべきVRコンテンツ</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ドキュメンタリーシリーズ</h3>
       <p className="text-gray-700 mb-4">2026年は、VRドキュメンタリーが一つの成熟したジャンルとして確立されています。8K解像度での自然映像ドキュメンタリーが複数配信されており、アマゾンプライムVRの「Wild Wonders 4K」シリーズは月間視聴者数が520万人に達しています。</p>
@@ -3168,7 +3168,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <p className="text-gray-700 mb-4">これらのヘッドセットは、以下のリンクから購入可能です。</p>
       <p className="text-gray-700 mb-4">Amazon VRゴーグル・スマートグラス：</p>
-      <p className="text-gray-700 mb-4">https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=hustle-digger-22</p>
+      <p className="text-gray-700 mb-4">https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=57plot-22</p>
       <p className="text-gray-700 mb-4">楽天 VRゴーグル：</p>
       <p className="text-gray-700 mb-4">https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FVR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%2F</p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">通信環境・スペック要件</h3>
@@ -3396,7 +3396,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>マッサージオイル</strong>：適度な滑りやすさで、目周辺の繊細な皮膚に負担をかけません</li>
         <li><strong>薬用クリーム</strong>：血行促進成分を含む製品を選ぶと、マッサージ効果が高まります</li>
       </ul>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E7%9B%AE%E8%96%AC%20%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazonで目の疲労対策クリームを見る</a></p>
+      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E7%9B%AE%E8%96%AC%20%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazonで目の疲労対策クリームを見る</a></p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で疲れ目対策製品を見る</a></p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">温冷療法の組み合わせ</h3>
       <p className="text-gray-700 mb-4">ストレッチ・マッサージの効果を高めるために、温冷療法との組み合わせが推奨されています：</p>
@@ -3564,7 +3564,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>目薬の活用</strong>：涙の質を改善する目薬を使用。以下のリンクから眼に優しい目薬を探せます</li>
       </ul>
       <p className="text-gray-700 mb-4">【Amazon目薬検索】</p>
-      <p className="text-gray-700 mb-4">https://www.amazon.co.jp/s?k=%E7%9B%AE%E8%96%AC%20%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4&tag=hustle-digger-22</p>
+      <p className="text-gray-700 mb-4">https://www.amazon.co.jp/s?k=%E7%9B%AE%E8%96%AC%20%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4&tag=57plot-22</p>
       <p className="text-gray-700 mb-4">【楽天目薬検索】</p>
       <p className="text-gray-700 mb-4">https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F</p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">栄養補給による予防</h3>
@@ -3828,7 +3828,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">つまり<strong>87%の患者が満足以上</strong>の評価をしています。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">関連商品：術後の目のサポート</h2>
       <p className="text-gray-700 mb-4">目の健康維持のため、ルテイン配合サプリメントやアイケア商品の活用もお勧めです。</p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E7%9B%AE%E3%81%AE%E3%82%B5%E3%83%97%E3%83%AA%20%E3%83%AB%E3%83%86%E3%82%A4%E3%83%B3&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon目のサプリメント・ルテイン製品</a></p>
+      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E7%9B%AE%E3%81%AE%E3%82%B5%E3%83%97%E3%83%AA%20%E3%83%AB%E3%83%86%E3%82%A4%E3%83%B3&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon目のサプリメント・ルテイン製品</a></p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%20%E3%82%B5%E3%83%97%E3%83%AA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天アイケア・サプリメント</a></p>
       <p className="text-gray-700 mb-4">術後の目の保護用サングラスも用意しておくと便利です。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">よくある質問と誤解の解消</h2>
@@ -3964,7 +3964,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">炎症を緩和し、角膜修復を促進します。ただし長期使用は眼圧上昇のリスクがあるため、2週間程度の短期使用に限定されます。</p>
       <p className="text-gray-700 mb-4"><strong>オメガ3系脂肪酸サプリメント</strong></p>
       <p className="text-gray-700 mb-4">フィッシュオイル（EPA・DHA）の補給により、涙液の脂質層質が向上します。1日1,000～2,000mgの摂取で、3～6ヶ月で効果が期待できます。</p>
-      <p className="text-gray-700 mb-4">サプリメントの選択：<a href="https://www.amazon.co.jp/s?k=%E7%9B%AE%E3%81%AE%E3%82%B5%E3%83%97%E3%83%AA%20%E3%83%AB%E3%83%86%E3%82%A4%E3%83%B3&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon で目のサプリメントを見る</a> | <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%20%E3%82%B5%E3%83%97%E3%83%AA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で アイケアサプリを探す</a></p>
+      <p className="text-gray-700 mb-4">サプリメントの選択：<a href="https://www.amazon.co.jp/s?k=%E7%9B%AE%E3%81%AE%E3%82%B5%E3%83%97%E3%83%AA%20%E3%83%AB%E3%83%86%E3%82%A4%E3%83%B3&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon で目のサプリメントを見る</a> | <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%20%E3%82%B5%E3%83%97%E3%83%AA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で アイケアサプリを探す</a></p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">自己血清点眼液（Autologous Serum Eye Drops: ASED）</h3>
       <p className="text-gray-700 mb-4">自分の血液から作製した点眼液で、成長因子やタンパク質が豊富に含まれており、角膜修復が促進されます。</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
@@ -4111,7 +4111,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">4. <strong>装着後の調整</strong>（必要に応じて）</p>
       <p className="text-gray-700 mb-4">眼鏡選びに関しては、以下のリンクから多数のメガネフレームを比較検討できます。</p>
       <p className="text-gray-700 mb-4"><strong>Amazonでメガネフレームを探す：</strong></p>
-      <p className="text-gray-700 mb-4">https://www.amazon.co.jp/s?k=%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%82%AB%E3%83%83%E3%83%88&tag=hustle-digger-22</p>
+      <p className="text-gray-700 mb-4">https://www.amazon.co.jp/s?k=%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%82%AB%E3%83%83%E3%83%88&tag=57plot-22</p>
       <p className="text-gray-700 mb-4"><strong>楽天でメガネフレームを探す：</strong></p>
       <p className="text-gray-700 mb-4">https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%2F</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">よくある質問と回答</h2>
@@ -4217,7 +4217,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>HDR10+ Plus対応：業界標準を超える色域</li>
       </ul>
       <p className="text-gray-700 mb-4">VR映画の視聴に必要な最高級のデバイスをお探しでしたら、以下をチェックしてください：</p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon VRゴーグル・スマートグラス検索</a></p>
+      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=VR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon VRゴーグル・スマートグラス検索</a></p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FVR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天 VRゴーグル検索</a></p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">YouTube VR：無料コンテンツの充実度</h3>
       <p className="text-gray-700 mb-4">YouTube VRは完全無料で、広告付きで360度ビデオ、VRドキュメンタリー、ライブストリーミングが視聴可能です。2026年時点で、VR動画ライブラリは80万本を超えています。</p>
@@ -4462,7 +4462,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">目薬を使用する場合は、緑内障の進行を抑える効果的な目薬があります。医師の処方に従い、正しく使用することが重要です。</p>
       <p className="text-gray-700 mb-4">緑内障専用の目薬（プロスタグランジン関連薬など）について詳しく知りたい場合は、以下で最新製品をチェックできます。</p>
       <p className="text-gray-700 mb-4"><strong>Amazon</strong>でも目薬の関連商品が多く販売されています：</p>
-      <p className="text-gray-700 mb-4">https://www.amazon.co.jp/s?k=%E7%9B%AE%E8%96%AC%20%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4&tag=hustle-digger-22</p>
+      <p className="text-gray-700 mb-4">https://www.amazon.co.jp/s?k=%E7%9B%AE%E8%96%AC%20%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4&tag=57plot-22</p>
       <p className="text-gray-700 mb-4"><strong>楽天</strong>では目薬の幅広い品揃えから選べます：</p>
       <p className="text-gray-700 mb-4">https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">各検査の利点と限界を理解する</h2>
@@ -4557,7 +4557,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>複合成分タイプ</strong>：ビタミンC＋タウリン＋グリチルリチン酸が同時配合</li>
         <li><strong>防腐剤フリー</strong>：単回使用パックタイプもおすすめ</li>
       </ul>
-      <p className="text-gray-700 mb-4">👉 <a href="https://www.amazon.co.jp/s?k=%E7%9B%AE%E8%96%AC%20%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon で目薬・ドライアイ商品を見る</a></p>
+      <p className="text-gray-700 mb-4">👉 <a href="https://www.amazon.co.jp/s?k=%E7%9B%AE%E8%96%AC%20%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon で目薬・ドライアイ商品を見る</a></p>
       <p className="text-gray-700 mb-4">👉 <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で目薬・ドライアイ商品を見る</a></p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">季節別・状況別の対策方法</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">春夏の強紫外線対策</h3>
@@ -4724,7 +4724,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>推奨摂取量：1日1,500-2,000mg</li>
         <li>メカニズム：マイボーム腺の機能改善、涙液層の安定化</li>
         <li>効果：術後のドライアイ症状を約40～50%軽減する報告あり</li>
-        <li><strong>Amazon</strong>：<a href="https://www.amazon.co.jp/s?k=%E3%82%AA%E3%83%A1%E3%82%AC3&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">オメガ3サプリメント検索</a></li>
+        <li><strong>Amazon</strong>：<a href="https://www.amazon.co.jp/s?k=%E3%82%AA%E3%83%A1%E3%82%AC3&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">オメガ3サプリメント検索</a></li>
         <li><strong>楽天</strong>：<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%AA%E3%83%A1%E3%82%AC3%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">オメガ3サプリ楽天検索</a></li>
       </ul>
       <p className="text-gray-700 mb-4"><strong>ルテイン・ゼアキサンチン含有製品</strong></p>
@@ -4845,7 +4845,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <p className="text-gray-700 mb-4"><strong>関連製品</strong>：</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>Amazon</strong>：<a href="https://www.amazon.co.jp/s?k=%E7%9B%AE%E3%81%AE%E3%82%B5%E3%83%97%E3%83%AA%20%E3%83%AB%E3%83%86%E3%82%A4%E3%83%B3&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">目のサプリ ルテイン検索</a></li>
+        <li><strong>Amazon</strong>：<a href="https://www.amazon.co.jp/s?k=%E7%9B%AE%E3%81%AE%E3%82%B5%E3%83%97%E3%83%AA%20%E3%83%AB%E3%83%86%E3%82%A4%E3%83%B3&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">目のサプリ ルテイン検索</a></li>
         <li><strong>楽天</strong>：<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%20%E3%82%B5%E3%83%97%E3%83%AA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">アイケア サプリメント検索</a></li>
       </ul>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">避けるべき行動・環境</h3>
@@ -4936,7 +4936,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめスポーツ眼鏡の選定基準</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">予算別選択肢</h3>
       <p className="text-gray-700 mb-4"><strong>5,000円以下</strong>：国内ブランドのズレ防止ラバーパッド付きフレームが一般的です。基本的なズレ防止機能は備わっていますが、素材が限定的であることが多いです。</p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%82%AB%E3%83%83%E3%83%88&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon で5,000円以下のスポーツ眼鏡を探す</a></p>
+      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%82%AB%E3%83%83%E3%83%88&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon で5,000円以下のスポーツ眼鏡を探す</a></p>
       <p className="text-gray-700 mb-4"><strong>5,000～15,000円</strong>：TR90やウルテム樹脂などの高機能素材を使用した製品が多く、ズレ防止機能も充実しています。この価格帯は、ほとんどのスポーツユーザーに適した選択肢といえます。</p>
       <p className="text-gray-700 mb-4"><strong>15,000円以上</strong>：βチタンやアイロス（エアロゾルプロセス加工）を採用した高級ブランド製品です。最高レベルの軽量性と耐久性を備え、競技用途向けです。</p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天 で高機能スポーツ眼鏡フレームを探す</a></p>
@@ -5047,7 +5047,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">価格帯別おすすめ</h3>
       <p className="text-gray-700 mb-4"><strong>予算5,000円以下：</strong></p>
       <p className="text-gray-700 mb-4">ネットショップで購入できるリーズナブルなモデルが充実しています。初期老眼や予備用に最適です。</p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%82%AB%E3%83%83%E3%83%88&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon メガネ・フレーム</a>で手軽に購入できます。</p>
+      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%82%AB%E3%83%83%E3%83%88&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon メガネ・フレーム</a>で手軽に購入できます。</p>
       <p className="text-gray-700 mb-4"><strong>予算5,000～15,000円：</strong></p>
       <p className="text-gray-700 mb-4">中堅メーカーのモデルが豊富。ブルーライトカット機能や撥水コート付きが多いこの価格帯は、コストパフォーマンスが優れています。</p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天 メガネ・フレーム</a>でも多くのモデルが揃っています。</p>
@@ -5162,7 +5162,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>重量：300g～500g（モニター上部への負荷が低い）</li>
         <li>調光機構：メカニカルスイッチより電子制御が信頼性高い</li>
       </ul>
-      <p className="text-gray-700 mb-4">おすすめのモニターライトは、<a href="https://www.amazon.co.jp/s?k=%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%E3%82%B0%E3%83%83%E3%82%BA&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon</a>や<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天</a>で5000円～8000円の価格帯で見つけることができます。</p>
+      <p className="text-gray-700 mb-4">おすすめのモニターライトは、<a href="https://www.amazon.co.jp/s?k=%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%E3%82%B0%E3%83%83%E3%82%BA&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon</a>や<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天</a>で5000円～8000円の価格帯で見つけることができます。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ブルーライトカット製品の種類と効果</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ブルーライトカット眼鏡</h3>
       <p className="text-gray-700 mb-4"><strong>特徴</strong>：</p>
@@ -5265,7 +5265,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">手軽に導入できるおすすめグッズ</h2>
       <p className="text-gray-700 mb-4">PC眼精疲労対策は、段階的に導入することが現実的です。初期投資3000～5000円で実感でき、その後は1000～2000円の追加投資で効果を高められます。</p>
       <p className="text-gray-700 mb-4">まずは自分の作業環境とライフスタイルに合わせた対策を選び、2週間使用してから効果を評価することをおすすめします。正しく導入すれば、眼精疲労は大幅に軽減され、作業効率と生活の質が向上することは確実です。</p>
-      <p className="text-gray-700 mb-4">今すぐ<a href="https://www.amazon.co.jp/s?k=%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%E3%82%B0%E3%83%83%E3%82%BA&tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon</a>や<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天</a>で、あなたに最適な眼精疲労対策グッズを見つけてください。</p>
+      <p className="text-gray-700 mb-4">今すぐ<a href="https://www.amazon.co.jp/s?k=%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%E3%82%B0%E3%83%83%E3%82%BA&tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazon</a>や<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天</a>で、あなたに最適な眼精疲労対策グッズを見つけてください。</p>
     </article>
   ),
     "eyelash-serum-ranking-2026": (
@@ -5391,7 +5391,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>サンプルサイズ、トライアルセットの提供</li>
       </ul>
       <p className="text-gray-700 mb-4"><strong>Amazon</strong></p>
-      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%E3%82%B0%E3%83%83%E3%82%BA&amp;tag=hustle-digger-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazonでまつ毛美容液を検索</a></p>
+      <p className="text-gray-700 mb-4"><a href="https://www.amazon.co.jp/s?k=%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%E3%82%B0%E3%83%83%E3%82%BA&amp;tag=57plot-22" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">Amazonでまつ毛美容液を検索</a></p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
         <li>プライム配送で最速翌日到着</li>
         <li>レビュー数が豊富で、使用者の実際の評価が参考になる</li>
