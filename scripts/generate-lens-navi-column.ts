@@ -50,7 +50,9 @@ function markdownToJSX(text: string): string {
 
   const flush = () => { if (inUl) { out.push('      </ul>'); inUl = false; } };
   const escape = (s: string) =>
-    s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    s.replace(/&/g, '&amp;')
+     .replace(/<(?!strong>|\/strong>|a |\/a>)/g, '&lt;')
+     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">$1</a>');
 
   for (const raw of lines) {
