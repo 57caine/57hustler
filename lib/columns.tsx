@@ -7715,7 +7715,7 @@ export const columnContent: Record<string, React.ReactNode> = {
           </thead>
           <tbody className="text-xs">
             <tr>
-              <td className="border border-slate-200 px-3 py-2 font-bold text-sky-600">レンズゼロ</td>
+              <td className="border border-slate-200 px-3 py-2 font-bold"><a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">レンズゼロ</a></td>
               <td className="border border-slate-200 px-3 py-2">55商品</td>
               <td className="border border-slate-200 px-3 py-2">5,000円以上</td>
               <td className="border border-slate-200 px-3 py-2">1,000円割引</td>
@@ -7723,7 +7723,7 @@ export const columnContent: Record<string, React.ReactNode> = {
               <td className="border border-slate-200 px-3 py-2">初回のみ</td>
             </tr>
             <tr className="bg-slate-50">
-              <td className="border border-slate-200 px-3 py-2 font-bold text-sky-600">アットレンズ</td>
+              <td className="border border-slate-200 px-3 py-2 font-bold"><a href="https://px.a8.net/svt/ejp?a8mat=4B4176+6D7XGA+20YY+TSBE9" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">アットレンズ</a></td>
               <td className="border border-slate-200 px-3 py-2">40商品</td>
               <td className="border border-slate-200 px-3 py-2">5,000円以上</td>
               <td className="border border-slate-200 px-3 py-2">500円割引</td>
@@ -7731,7 +7731,7 @@ export const columnContent: Record<string, React.ReactNode> = {
               <td className="border border-slate-200 px-3 py-2">初回のみ</td>
             </tr>
             <tr>
-              <td className="border border-slate-200 px-3 py-2 font-bold text-sky-600">24Lens</td>
+              <td className="border border-slate-200 px-3 py-2 font-bold"><a href="https://px.a8.net/svt/ejp?a8mat=4B4176+61WOYI+2GRU+HY7W1" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">24Lens</a></td>
               <td className="border border-slate-200 px-3 py-2">50商品</td>
               <td className="border border-slate-200 px-3 py-2">7,000円以上</td>
               <td className="border border-slate-200 px-3 py-2">1,500円割引</td>
@@ -7739,7 +7739,7 @@ export const columnContent: Record<string, React.ReactNode> = {
               <td className="border border-slate-200 px-3 py-2">初回のみ</td>
             </tr>
             <tr className="bg-slate-50">
-              <td className="border border-slate-200 px-3 py-2 font-bold text-sky-600">レンズクイック</td>
+              <td className="border border-slate-200 px-3 py-2 font-bold"><a href="https://px.a8.net/svt/ejp?a8mat=4B4176+6GSIB6+20YY+ZTFR6" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">レンズクイック</a></td>
               <td className="border border-slate-200 px-3 py-2">45商品</td>
               <td className="border border-slate-200 px-3 py-2">6,000円以上</td>
               <td className="border border-slate-200 px-3 py-2">800円割引</td>
@@ -7747,7 +7747,7 @@ export const columnContent: Record<string, React.ReactNode> = {
               <td className="border border-slate-200 px-3 py-2">初回のみ</td>
             </tr>
             <tr>
-              <td className="border border-slate-200 px-3 py-2 font-bold text-sky-600">レンズモード</td>
+              <td className="border border-slate-200 px-3 py-2 font-bold"><a href="https://px.a8.net/svt/ejp?a8mat=4B8454+FEAMIQ+76W+65U41" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">レンズモード</a></td>
               <td className="border border-slate-200 px-3 py-2">35商品</td>
               <td className="border border-slate-200 px-3 py-2">4,500円以上</td>
               <td className="border border-slate-200 px-3 py-2">1,200円割引</td>
@@ -8037,6 +8037,100 @@ export const columnContent: Record<string, React.ReactNode> = {
         同じ商品でも購入時期・サイト選択によって2,000～3,000円の差が生じることもあります。
         この記事で紹介した計算方法と各サイトの特徴を参考に、あなたにぴったりの通販サイトを見つけてください。
       </p>
+
+      <h2 id="all-shops" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">全22通販ショップ一覧</h2>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">コンタクトレンズ専門ショップ（19社）</h3>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B8454+FEAMIQ+76W+65U41" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">レンズモード</div>
+          <div className="text-xs text-gray-500">小ロット購入向け</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+6GSIB6+20YY+ZTFR6" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">レンズクイック</div>
+          <div className="text-xs text-gray-500">バランス型</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+6FLNVE+2GRU+1TJE9T" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">レンズファイン</div>
+          <div className="text-xs text-gray-500">品質重視</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+6D7XGA+20YY+TSBE9" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">アットレンズ</div>
+          <div className="text-xs text-gray-500">サポート充実</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5NMAFU+1PQI+5ZU29" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">ふぁみーるコンタクト</div>
+          <div className="text-xs text-gray-500">手厚いサービス</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+6CMHUI+2WGA+NUMHT" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">ティアラコンタクト</div>
+          <div className="text-xs text-gray-500">丁寧な対応</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5LTZMI+2WGA+TTDZ5" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">レンズマルシェ</div>
+          <div className="text-xs text-gray-500">品揃え豊富</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5L8K0Q+2WGA+BXYE9" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">LensBomber</div>
+          <div className="text-xs text-gray-500">新商品多数</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5K1OT6+20YY+C0YF5" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">アットスタイル</div>
+          <div className="text-xs text-gray-500">スタイル豊富</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5JG97E+PI2+5ZEMP" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">アイ・ライフ・コンタクト</div>
+          <div className="text-xs text-gray-500">相談対応可</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5KN4EY+PI2+HV7V5" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">クリアコンタクト</div>
+          <div className="text-xs text-gray-500">安心サービス</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5IUTLM+2WGA+5YJRM" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">AREDZ</div>
+          <div className="text-xs text-gray-500">品揃え多数</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+61WOYI+2GRU+HY7W1" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">24lens</div>
+          <div className="text-xs text-gray-500">最大割引</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">レンズゼロ</div>
+          <div className="text-xs text-gray-500">最安値水準</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5YXIXM+2GRU+NY9O1" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">レンズアップ</div>
+          <div className="text-xs text-gray-500">送料無料</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5YC3BU+2GRU+63WO1" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">レンズオン</div>
+          <div className="text-xs text-gray-500">定期配送</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5WJSII+76W+TRVYQ" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">Qieto</div>
+          <div className="text-xs text-gray-500">高品質</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5X584A+PI2+C33KY" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-sky-400 hover:bg-sky-50 transition-colors">
+          <div className="font-bold text-gray-800">湘南コンタクトレンズライフ</div>
+          <div className="text-xs text-gray-500">丁寧説明</div>
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">カラコン専門ショップ（3社）</h3>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+6F089M+1PQI+NVP2P" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-pink-400 hover:bg-pink-50 transition-colors">
+          <div className="font-bold text-gray-800">チャームカラー</div>
+          <div className="text-xs text-gray-500">色選び豊富</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+60PTQY+4XSA+5Z6WX" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-pink-400 hover:bg-pink-50 transition-colors">
+          <div className="font-bold text-gray-800">OLENS</div>
+          <div className="text-xs text-gray-500">韓国ブランド</div>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5XQNQ2+3S0E+639IP" target="_blank" rel="noopener noreferrer nofollow sponsored" className="border border-gray-200 rounded-lg px-4 py-3 hover:border-pink-400 hover:bg-pink-50 transition-colors">
+          <div className="font-bold text-gray-800">モアコン</div>
+          <div className="text-xs text-gray-500">最新トレンド</div>
+        </a>
+      </div>
     </article>
   ),
   'contact-dosu-shohosen-mikata-kanzen-2026': (

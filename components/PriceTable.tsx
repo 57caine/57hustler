@@ -75,9 +75,20 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                     {isRakuten(item.storeId) && (
                       <span className="bg-red-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">楽天</span>
                     )}
-                    <span className={`font-medium ${!item.inStock ? 'text-gray-400' : 'text-gray-800'}`}>
-                      {item.store.name}
-                    </span>
+                    {!isRakuten(item.storeId) && item.store.url && !item.store.url.startsWith('#') ? (
+                      <a
+                        href={item.store.url}
+                        target="_blank"
+                        rel="noopener noreferrer nofollow sponsored"
+                        className={`font-medium ${!item.inStock ? 'text-gray-400' : 'text-sky-600 hover:underline'}`}
+                      >
+                        {item.store.name}
+                      </a>
+                    ) : (
+                      <span className={`font-medium ${!item.inStock ? 'text-gray-400' : 'text-gray-800'}`}>
+                        {item.store.name}
+                      </span>
+                    )}
                     {item.store.prescriptionFree && (
                       <span className="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded-full">処方箋不要</span>
                     )}

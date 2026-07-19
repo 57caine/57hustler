@@ -120,6 +120,29 @@ export default function KarakonPage() {
         ))}
       </div>
 
+      {/* Specialty Shops */}
+      <h2 className="text-xl font-bold text-gray-800 mb-4">カラコン専門ショップ</h2>
+      <div className="grid sm:grid-cols-3 gap-3 mb-10">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+6F089M+1PQI+NVP2P" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="bg-white border border-gray-200 rounded-xl p-4 hover:border-pink-300 hover:shadow-sm transition-all">
+          <div className="font-bold text-gray-800 text-sm mb-1">チャームカラー</div>
+          <p className="text-xs text-gray-500 mb-3">豊富な色選びと品揃え。初心者から上級者まで満足できるカラコン専門店。</p>
+          <span className="text-xs text-pink-600 font-bold">詳しく見る →</span>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+60PTQY+4XSA+5Z6WX" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="bg-white border border-gray-200 rounded-xl p-4 hover:border-pink-300 hover:shadow-sm transition-all">
+          <div className="font-bold text-gray-800 text-sm mb-1">OLENS</div>
+          <p className="text-xs text-gray-500 mb-3">韓国の人気カラコンブランド。トレンドカラーと高い品質が評判。</p>
+          <span className="text-xs text-pink-600 font-bold">詳しく見る →</span>
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5XQNQ2+3S0E+639IP" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="bg-white border border-gray-200 rounded-xl p-4 hover:border-pink-300 hover:shadow-sm transition-all">
+          <div className="font-bold text-gray-800 text-sm mb-1">モアコン</div>
+          <p className="text-xs text-gray-500 mb-3">最新トレンドのカラコンが揃う。季節限定カラーも充実。</p>
+          <span className="text-xs text-pink-600 font-bold">詳しく見る →</span>
+        </a>
+      </div>
+
       {/* FAQ */}
       <h2 className="text-xl font-bold text-gray-800 mb-4">よくある質問</h2>
       <div className="space-y-3 mb-8">
