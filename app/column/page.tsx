@@ -21,6 +21,19 @@ const categoryColors: Record<string, string> = {
   'karakon': 'bg-pink-100 text-pink-700',
 };
 
+const categoryThemes: Record<string, { startColor: string; endColor: string; icon: string }> = {
+  '購入ガイド': { startColor: '#1565c0', endColor: '#1976d2', icon: '🛒' },
+  '度数・処方箋': { startColor: '#00695c', endColor: '#00897b', icon: '👁️' },
+  '商品比較': { startColor: '#4527a0', endColor: '#512da8', icon: '⚖️' },
+  'カラコン': { startColor: '#ad1457', endColor: '#c2185b', icon: '✨' },
+  'アイケア・目薬': { startColor: '#2e7d32', endColor: '#388e3c', icon: '🛡️' },
+  'レーシック・視力矯正': { startColor: '#00695c', endColor: '#00897b', icon: '👁️' },
+  'VR・スマートグラス': { startColor: '#4527a0', endColor: '#512da8', icon: '🥽' },
+  '眼鏡・サングラス': { startColor: '#37474f', endColor: '#455a64', icon: '👓' },
+  '目の雑貨・グッズ': { startColor: '#e65100', endColor: '#f57c00', icon: '🛍️' },
+  'BC選び方': { startColor: '#1565c0', endColor: '#1976d2', icon: '🛒' },
+};
+
 const SECTIONS = [
   {
     key: 'karakon',
@@ -61,24 +74,31 @@ const SECTIONS = [
 
 function ArticleCard({ column }: { column: (typeof allColumns)[0] }) {
   const cat = column.category ?? '';
+  const theme = categoryThemes[cat] ?? { startColor: '#37474f', endColor: '#455a64', icon: '📰' };
+
   return (
     <Link href={`/column/${column.slug}`} className="group block">
-      <article className="bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-lg hover:border-slate-200 transition-all duration-200 h-full">
-        <div className="flex items-center gap-2 mb-3">
-          <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${categoryColors[cat] ?? 'bg-gray-100 text-gray-600'}`}>
-            {cat}
-          </span>
-          <span className="text-xs text-gray-400">{column.readingTime}分で読める</span>
+      <div className="bg-white rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 transition-transform duration-200 h-full flex flex-col">
+        {/* Thumbnail */}
+        <div
+          className="h-[120px] flex items-center justify-center text-5xl"
+          style={{ background: `linear-gradient(135deg, ${theme.startColor}, ${theme.endColor})` }}
+        >
+          {theme.icon}
         </div>
-        <h2 className="font-bold text-gray-900 text-base leading-snug mb-2 group-hover:text-slate-700 transition-colors">
-          {column.title}
-        </h2>
-        <p className="text-sm text-gray-600 leading-relaxed mb-3 line-clamp-2">{column.description}</p>
-        <div className="flex items-center justify-between text-xs text-gray-400">
-          <span>更新: {column.updatedAt ?? column.publishedAt}</span>
-          <span className="text-slate-700 font-medium group-hover:translate-x-1 transition-transform inline-block">続きを読む →</span>
+        {/* Content */}
+        <div className="p-4 flex-1 flex flex-col">
+          <h3 className="font-bold text-gray-900 text-sm leading-tight mb-3 group-hover:text-slate-700 transition-colors">
+            {column.title}
+          </h3>
+          <div className="flex items-center justify-between mt-auto">
+            <span className="text-xs text-gray-500">約{column.readingTime}分</span>
+            <span className="text-xs px-2 py-1 rounded-full text-white" style={{ background: theme.startColor }}>
+              {cat}
+            </span>
+          </div>
         </div>
-      </article>
+      </div>
     </Link>
   );
 }

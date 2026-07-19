@@ -126,6 +126,54 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 特集バナー */}
+      <section className="py-8 px-0 mb-16 bg-gray-50">
+        <div className="px-4 mb-4">
+          <h2 className="text-xl font-bold text-gray-900">特集</h2>
+        </div>
+        <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2 px-4">
+          {/* Banner 1: カラコン */}
+          <a
+            href="/karakon"
+            className="flex-none w-72 rounded-xl overflow-hidden block hover:shadow-lg transition-shadow duration-200"
+            style={{ background: 'linear-gradient(135deg, #ad1457, #c2185b)' }}
+          >
+            <div className="p-6 text-white">
+              <div className="text-3xl mb-2">✨</div>
+              <div className="font-bold text-lg mb-1">カラコン特集2026</div>
+              <div className="text-sm opacity-80 mb-3">人気ブランド徹底比較</div>
+              <div className="text-sm font-bold">詳しく見る →</div>
+            </div>
+          </a>
+          {/* Banner 2: VR */}
+          <a
+            href="/vr"
+            className="flex-none w-72 rounded-xl overflow-hidden block hover:shadow-lg transition-shadow duration-200"
+            style={{ background: 'linear-gradient(135deg, #4527a0, #512da8)' }}
+          >
+            <div className="p-6 text-white">
+              <div className="text-3xl mb-2">🥽</div>
+              <div className="font-bold text-lg mb-1">VRゴーグル完全ガイド</div>
+              <div className="text-sm opacity-80 mb-3">Quest・Vision Pro比較</div>
+              <div className="text-sm font-bold">詳しく見る →</div>
+            </div>
+          </a>
+          {/* Banner 3: レーシック */}
+          <a
+            href="/lasik"
+            className="flex-none w-72 rounded-xl overflow-hidden block hover:shadow-lg transition-shadow duration-200"
+            style={{ background: 'linear-gradient(135deg, #00695c, #00897b)' }}
+          >
+            <div className="p-6 text-white">
+              <div className="text-3xl mb-2">👁️</div>
+              <div className="font-bold text-lg mb-1">レーシック無料相談</div>
+              <div className="text-sm opacity-80 mb-3">費用・リスク・クリニック選び</div>
+              <div className="text-sm font-bold">詳しく見る →</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
       {/* コンタクト価格比較 */}
       <section className="mb-12">
         <div className="flex items-center justify-between mb-2">
