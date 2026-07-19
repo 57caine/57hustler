@@ -116,6 +116,10 @@ async function main() {
     fromStock = true;
   }
 
+  if (Math.random() < 0.4) {
+    text += '\n\nこの話、もう少し深いところまで書いた。\nhttps://note.com/westin_lab';
+  }
+
   console.log('--- 生成テキスト ---');
   console.log(text);
   console.log(`文字数: ${text.length}${fromStock ? '（ストックから）' : ''}`);
