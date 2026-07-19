@@ -68,21 +68,22 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}
-      <section className="text-center mb-12">
-        <p className="text-xs text-gray-400 font-medium mb-3 uppercase tracking-widest">Eye Care & Vision Guide</p>
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 leading-tight">
-          目のことなら、<span className="text-sky-600">レンズナビ。</span>
+      <section style={{ background: '#0f172a' }} className="py-20 px-4 text-center mb-12 -mx-4">
+        <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+          目のことなら、レンズナビ。
         </h1>
-        <p className="text-gray-500 mb-6 text-sm max-w-xl mx-auto">
-          コンタクトレンズの最安値比較から、眼鏡・VR・レーシック・アイケアまで。目に関するあらゆる情報を網羅します。
+        <p className="text-slate-400 text-base md:text-lg mb-8">
+          コンタクト・カラコン・VR・レーシック・アイケア
         </p>
-        <div className="flex flex-wrap justify-center gap-3">
-          <Link href="/ranking" className="bg-sky-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-sky-500 transition-colors text-sm">
-            コンタクトおすすめを見る
-          </Link>
-          <Link href="/column" className="bg-white text-gray-700 border border-gray-200 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition-colors text-sm">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-sm mx-auto">
+          <a href="/ranking"
+             className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity no-underline">
+            人気ランキングを見る
+          </a>
+          <a href="/column"
+             className="block w-full text-center border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-slate-900 transition-colors no-underline">
             コラムを読む
-          </Link>
+          </a>
         </div>
       </section>
 
