@@ -109,6 +109,15 @@
   margin: 16px 0;
 }
 
+/* ─── Scrollbar hide ─── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* ─── Base ─── */
 html { scroll-behavior: smooth; }
 
