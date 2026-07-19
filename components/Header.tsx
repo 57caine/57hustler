@@ -1,13 +1,13 @@
 import Link from 'next/link';
 
 const NAV = [
-  { href: '/category/1day', label: 'コンタクト', icon: '👁' },
-  { href: '/karakon',       label: 'カラコン', icon: '👁‍🗨' },
-  { href: '/megane',        label: '眼鏡・サングラス', icon: '👓' },
-  { href: '/vr',            label: 'VR・スマートグラス', icon: '🥽' },
-  { href: '/lasik',         label: 'レーシック', icon: '✨' },
-  { href: '/eye-care',      label: 'アイケア・目薬', icon: '💊' },
-  { href: '/eye-goods',     label: '目のグッズ', icon: '🛍' },
+  { href: '/category/1day', label: 'コンタクト' },
+  { href: '/karakon',       label: 'カラコン' },
+  { href: '/megane',        label: '眼鏡・サングラス' },
+  { href: '/vr',            label: 'VR・スマートグラス' },
+  { href: '/lasik',         label: 'レーシック' },
+  { href: '/eye-care',      label: 'アイケア・目薬' },
+  { href: '/eye-goods',     label: '目のグッズ' },
 ];
 
 export default function Header() {
@@ -41,16 +41,16 @@ export default function Header() {
         </div>
 
         {/* Mobile/tablet nav */}
-        <nav className="lg:hidden flex items-center gap-2 mt-2 overflow-x-auto pb-1 scrollbar-hide">
+        <nav className="lg:hidden flex items-center gap-2 mt-2 overflow-x-auto scrollbar-hide pb-1">
           {NAV.map(l => (
             <Link key={l.href} href={l.href}
-              className="shrink-0 bg-gray-50 border border-gray-200 px-3 py-1 rounded-full text-gray-700 text-xs font-medium hover:border-sky-300 hover:text-sky-700 transition-colors whitespace-nowrap">
-              {l.icon} {l.label}
+              className="shrink-0 whitespace-nowrap bg-gray-50 border border-gray-200 px-3 py-1 rounded-full text-gray-700 text-xs font-medium hover:border-sky-300 hover:text-sky-700 transition-colors">
+              {l.label}
             </Link>
           ))}
           <Link href="/ranking"
-            className="shrink-0 bg-sky-600 text-white px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap">
-            🏆 ランキング
+            className="shrink-0 whitespace-nowrap bg-sky-600 text-white px-3 py-1 rounded-full text-xs font-bold">
+            ランキング
           </Link>
         </nav>
       </div>
