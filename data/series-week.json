@@ -1,10 +1,10 @@
 {
-  "current_month": "",
-  "theme": "",
-  "category": "",
-  "series_week_start": "",
+  "current_month": "2026-07",
+  "theme": "古代シュメール文明における数学・天文学と現代科学の予言的一致",
+  "category": "古代ミステリー（シュメール、ピラミッド等）",
+  "series_week_start": "2026-07-20",
   "posts_completed": {
-    "monday": false,
+    "monday": true,
     "wednesday": false,
     "friday": false,
     "sunday": false
