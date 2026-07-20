@@ -58,11 +58,11 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}
-      <section style={{ background: '#0f172a' }} className="py-20 px-4 text-center">
+      <section className="bg-gradient-to-br from-sky-500 to-blue-600 py-20 px-4 text-center">
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
           目のことなら、レンズナビ。
         </h1>
-        <p className="text-slate-400 text-base md:text-lg mb-8">
+        <p className="text-sky-100 text-base md:text-lg mb-8">
           コンタクト・カラコン・VR・レーシック・アイケア
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-sm mx-auto">
@@ -71,14 +71,14 @@ export default function HomePage() {
             人気ランキングを見る
           </a>
           <a href="/column"
-             className="block w-full text-center border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-slate-900 transition-colors no-underline">
+             className="block w-full text-center border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-sky-600 transition-colors no-underline">
             コラムを読む
           </a>
         </div>
       </section>
 
       {/* Category Cards */}
-      <section className="py-10 px-4 bg-[#f8f9fa]">
+      <section className="py-10 px-4 bg-gray-50">
         <h2 className="text-xl font-bold text-gray-900 mb-6 text-center">カテゴリから探す</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
           {/* コンタクト */}
