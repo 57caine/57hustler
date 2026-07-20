@@ -124,8 +124,8 @@ export default async function Dashboard() {
   ]);
 
   const todayJST   = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
-  const todayPosts = yonaka?.posts.filter(p => p.date === todayJST).length ?? 0;
-  const totalPosts = (yonaka?.posts.length ?? 0) + (column?.posts.length ?? 0);
+  const todayPosts = (yonaka?.posts?.filter(p => p.date === todayJST).length ?? 0);
+  const totalPosts = (yonaka?.posts?.length ?? 0) + (column?.posts?.length ?? 0);
 
   // Roadmap progress: 2026-01-01 → 2032-12-31 = 7 years
   const START_MS    = new Date('2026-01-01').getTime();
@@ -181,39 +181,39 @@ export default async function Dashboard() {
             {brief.summary && (
               <p className="text-sm mb-3 leading-relaxed">{brief.summary}</p>
             )}
-            {brief.urgent.length > 0 && (
+            {(brief.urgent?.length ?? 0) > 0 && (
               <div className="mb-2">
                 <div className="text-[10px] font-bold mb-1" style={{ color: '#ef4444' }}>🔴 今日やること</div>
-                {brief.urgent.map((t, i) => (
+                {brief.urgent?.map((t, i) => (
                   <div key={i} className="text-xs py-1 flex items-start gap-2">
                     <span style={{ color: '#ef4444' }}>→</span><span>{t}</span>
                   </div>
-                ))}
+                )) ?? null}
               </div>
             )}
-            {brief.confirm.length > 0 && (
+            {(brief.confirm?.length ?? 0) > 0 && (
               <div className="mb-2">
                 <div className="text-[10px] font-bold mb-1" style={{ color: '#f59e0b' }}>🟡 要確認</div>
-                {brief.confirm.map((t, i) => (
+                {brief.confirm?.map((t, i) => (
                   <div key={i} className="text-xs py-1 flex items-start gap-2">
                     <span style={{ color: '#f59e0b' }}>→</span><span>{t}</span>
                   </div>
-                ))}
+                )) ?? null}
               </div>
             )}
-            {brief.defer.length > 0 && (
+            {(brief.defer?.length ?? 0) > 0 && (
               <div>
                 <div className="text-[10px] font-bold mb-1" style={{ color: 'var(--muted)' }}>⬜ 後回し</div>
-                {brief.defer.map((t, i) => (
+                {brief.defer?.map((t, i) => (
                   <div key={i} className="text-xs py-1 flex items-start gap-2">
                     <span style={{ color: 'var(--muted)' }}>→</span><span style={{ color: 'var(--muted)' }}>{t}</span>
                   </div>
-                ))}
+                )) ?? null}
               </div>
             )}
             <div className="mt-3 text-[10px] flex items-center justify-between" style={{ color: 'var(--muted)' }}>
               <span>{brief.date} 司令書</span>
-              <span>Actions {brief.actionsStatus.success}/{brief.actionsStatus.total} 成功</span>
+              <span>Actions {brief.actionsStatus?.success ?? 0}/{brief.actionsStatus?.total ?? 0} 成功</span>
             </div>
           </div>
         </div>

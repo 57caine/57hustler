@@ -1,0 +1,35 @@
+name: GA4アナリティクス週次取得
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # 毎週月曜 9:00 JST (UTC 0:00)
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch GA4 data
+        run: npx tsx scripts/fetch-ga4-analytics.ts
+        env:
+          GA4_SERVICE_ACCOUNT_KEY: ${{ secrets.GA4_SERVICE_ACCOUNT_KEY }}
+
+      - name: Commit analytics data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ga4-analytics.json ceo-dashboard/public/ga4-analytics.json
+          git diff --staged --quiet || git commit -m "chore: GA4アナリティクスデータ更新 $(date '+%Y-%m-%d %H:%M JST' --date='TZ=\"Asia/Tokyo\" now')"
+          git push

@@ -8,6 +8,7 @@ const links = [
   { href: '/fx',         label: '📈 FX'          },
   { href: '/office',     label: '👔 社員'        },
   { href: '/reports',    label: '📋 レポート'    },
+  { href: '/analytics',  label: '📊 Analytics'   },
   { href: '/audit',      label: '🔍 棚卸し'      },
   { href: '/systems',    label: '⚙️ 仕組み'      },
   { href: '/evaluation', label: '🏆 評価'        },
