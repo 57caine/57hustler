@@ -1174,7 +1174,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "韓国発の人気カラコン。自然なグラデーションで大きく見える瞳を演出。",
-      "features": ["グラデーション", "度あり・度なし", "韓国ブランド"],
+      "features": [
+        "グラデーション",
+        "度あり・度なし",
+        "韓国ブランド"
+      ],
       "bc": "8.7",
       "dia": "14.2",
       "waterContent": "55%",
@@ -1191,7 +1195,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "鮮やかな発色が特徴のカラコン。瞳に深みをプラス。",
-      "features": ["高発色", "深みのある色合い", "度あり"],
+      "features": [
+        "高発色",
+        "深みのある色合い",
+        "度あり"
+      ],
       "bc": "8.6",
       "dia": "14.0",
       "waterContent": "54%",
@@ -1208,7 +1216,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "韓国の人気ブランドOLENS。1日使い捨てカラコン。自然な瞳演出。",
-      "features": ["1日使い捨て", "ナチュラルカラー", "度あり・度なし"],
+      "features": [
+        "1日使い捨て",
+        "ナチュラルカラー",
+        "度あり・度なし"
+      ],
       "bc": "8.6",
       "dia": "14.2",
       "waterContent": "55%",
@@ -1225,7 +1237,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "キラキラとした瞳を演出するOLENSのカラコン。豊富なカラーバリエーション。",
-      "features": ["キラキラ効果", "豊富な色展開", "度あり"],
+      "features": [
+        "キラキラ効果",
+        "豊富な色展開",
+        "度あり"
+      ],
       "bc": "8.5",
       "dia": "14.1",
       "waterContent": "55%",
@@ -1242,7 +1258,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "イタリアンブランドのデジオ。自然で上質なカラコン。",
-      "features": ["イタリアンブランド", "上質な発色", "度あり・度なし"],
+      "features": [
+        "イタリアンブランド",
+        "上質な発色",
+        "度あり・度なし"
+      ],
       "bc": "8.6",
       "dia": "14.0",
       "waterContent": "53%",
@@ -1259,7 +1279,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "韓国ブランドのレンスビル。花のような瞳を表現。",
-      "features": ["韓国ブランド", "フローラルカラー", "度あり"],
+      "features": [
+        "韓国ブランド",
+        "フローラルカラー",
+        "度あり"
+      ],
       "bc": "8.7",
       "dia": "14.3",
       "waterContent": "55%",
@@ -1276,7 +1300,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "光の効果で瞳が輝く。レンスビルの最新作。",
-      "features": ["光の効果", "きらめく瞳", "度あり・度なし"],
+      "features": [
+        "光の効果",
+        "きらめく瞳",
+        "度あり・度なし"
+      ],
       "bc": "8.6",
       "dia": "14.1",
       "waterContent": "54%",
@@ -1293,7 +1321,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "グラマラスな瞳を演出するカラーヴュー。存在感のあるカラーコンタクト。",
-      "features": ["グラマラス", "存在感", "度あり"],
+      "features": [
+        "グラマラス",
+        "存在感",
+        "度あり"
+      ],
       "bc": "8.5",
       "dia": "14.2",
       "waterContent": "55%",
@@ -1310,7 +1342,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "魔法のような瞳を演出。目を大きく見せるデザイン。",
-      "features": ["大きく見せるデザイン", "魔法的カラー", "度あり・度なし"],
+      "features": [
+        "大きく見せるデザイン",
+        "魔法的カラー",
+        "度あり・度なし"
+      ],
       "bc": "8.6",
       "dia": "14.3",
       "waterContent": "55%",
@@ -1327,7 +1363,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "美しい女性の象徴ヴィーナス。大人っぽいカラーが特徴。",
-      "features": ["大人っぽい", "高級感", "度あり"],
+      "features": [
+        "大人っぽい",
+        "高級感",
+        "度あり"
+      ],
       "bc": "8.5",
       "dia": "14.0",
       "waterContent": "54%",
@@ -1344,7 +1384,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "オーロラのような光の効果。幻想的な瞳を演出。",
-      "features": ["光の効果", "幻想的", "度あり・度なし"],
+      "features": [
+        "光の効果",
+        "幻想的",
+        "度あり・度なし"
+      ],
       "bc": "8.6",
       "dia": "14.2",
       "waterContent": "55%",
@@ -1361,7 +1405,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "バービーコラボのカラコン。ナチュラルな瞳を演出。",
-      "features": ["バービーコラボ", "ナチュラル", "度あり"],
+      "features": [
+        "バービーコラボ",
+        "ナチュラル",
+        "度あり"
+      ],
       "bc": "8.6",
       "dia": "14.1",
       "waterContent": "55%",
@@ -1378,7 +1426,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "桜色の優しいカラーコンタクト。春らしい瞳を演出。",
-      "features": ["桜色", "優しい色合い", "度あり・度なし"],
+      "features": [
+        "桜色",
+        "優しい色合い",
+        "度あり・度なし"
+      ],
       "bc": "8.5",
       "dia": "14.0",
       "waterContent": "55%",
@@ -1395,7 +1447,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "宇宙のようなコスモスカラー。神秘的な瞳を演出。",
-      "features": ["コスモス色", "神秘的", "度あり"],
+      "features": [
+        "コスモス色",
+        "神秘的",
+        "度あり"
+      ],
       "bc": "8.6",
       "dia": "14.2",
       "waterContent": "55%",
@@ -1412,7 +1468,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "1日使い捨てのカラコン。装用感が快適。",
-      "features": ["1日使い捨て", "快適", "度あり"],
+      "features": [
+        "1日使い捨て",
+        "快適",
+        "度あり"
+      ],
       "bc": "8.6",
       "dia": "14.1",
       "waterContent": "56%",
@@ -1429,7 +1489,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "月間装用のカラコン。コスパ優秀。",
-      "features": ["月間装用", "コスパ優秀", "度あり・度なし"],
+      "features": [
+        "月間装用",
+        "コスパ優秀",
+        "度あり・度なし"
+      ],
       "bc": "8.5",
       "dia": "14.0",
       "waterContent": "54%",
@@ -1446,7 +1510,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "国産カラコン。自然な発色で人気。",
-      "features": ["国産", "自然発色", "度あり"],
+      "features": [
+        "国産",
+        "自然発色",
+        "度あり"
+      ],
       "bc": "8.6",
       "dia": "14.0",
       "waterContent": "55%",
@@ -1463,7 +1531,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "国産の月間装用カラコン。長期使用でコスパ最高。",
-      "features": ["国産", "月間装用", "度あり・度なし"],
+      "features": [
+        "国産",
+        "月間装用",
+        "度あり・度なし"
+      ],
       "bc": "8.5",
       "dia": "14.2",
       "waterContent": "55%",
@@ -1480,7 +1552,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "国産の1日使い捨てカラコン。瞳のボリュームが出る。",
-      "features": ["国産", "1日使い捨て", "ボリューム"],
+      "features": [
+        "国産",
+        "1日使い捨て",
+        "ボリューム"
+      ],
       "bc": "8.6",
       "dia": "14.3",
       "waterContent": "55%",
@@ -1497,7 +1573,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "宝石のような輝きが特徴。1日使い捨てカラコン。",
-      "features": ["1日使い捨て", "輝き", "度あり"],
+      "features": [
+        "1日使い捨て",
+        "輝き",
+        "度あり"
+      ],
       "bc": "8.5",
       "dia": "14.1",
       "waterContent": "56%",
@@ -1514,7 +1594,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "月間装用のトパーズ。上質なカラーが特徴。",
-      "features": ["月間装用", "上質", "度あり・度なし"],
+      "features": [
+        "月間装用",
+        "上質",
+        "度あり・度なし"
+      ],
       "bc": "8.6",
       "dia": "14.2",
       "waterContent": "55%",
@@ -1531,7 +1615,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "バンビのような大きく優しい瞳を演出。1日使い捨て。",
-      "features": ["1日使い捨て", "大きく見える", "ナチュラル"],
+      "features": [
+        "1日使い捨て",
+        "大きく見える",
+        "ナチュラル"
+      ],
       "bc": "8.6",
       "dia": "14.4",
       "waterContent": "55%",
@@ -1548,7 +1636,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "妖精のような幻想的なカラー。1日使い捨て。",
-      "features": ["1日使い捨て", "幻想的", "度あり"],
+      "features": [
+        "1日使い捨て",
+        "幻想的",
+        "度あり"
+      ],
       "bc": "8.5",
       "dia": "14.0",
       "waterContent": "55%",
@@ -1565,7 +1657,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "国産シードのカラコン。1日使い捨てでUV保護付き。",
-      "features": ["1日使い捨て", "UV保護", "国産"],
+      "features": [
+        "1日使い捨て",
+        "UV保護",
+        "国産"
+      ],
       "bc": "8.6",
       "dia": "14.1",
       "waterContent": "55%",
@@ -1582,7 +1678,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "メニコンのカラコン。1日使い捨てで手軽。",
-      "features": ["1日使い捨て", "手軽", "国産"],
+      "features": [
+        "1日使い捨て",
+        "手軽",
+        "国産"
+      ],
       "bc": "8.6",
       "dia": "14.2",
       "waterContent": "56%",
@@ -1599,7 +1699,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "アルコンの3色ブレンドカラコン。自然な立体感。",
-      "features": ["3色ブレンド", "自然", "度あり"],
+      "features": [
+        "3色ブレンド",
+        "自然",
+        "度あり"
+      ],
       "bc": "8.5",
       "dia": "14.0",
       "waterContent": "55%",
@@ -1616,7 +1720,11 @@
       "category": "color",
       "subcategory": "color",
       "description": "アキュビューの定番カラコン。定格の瞳を強調。",
-      "features": ["定格を強調", "自然", "度あり・度なし"],
+      "features": [
+        "定格を強調",
+        "自然",
+        "度あり・度なし"
+      ],
       "bc": "8.4",
       "dia": "14.0",
       "waterContent": "38%",
@@ -1633,7 +1741,11 @@
       "category": "1day",
       "subcategory": "clear",
       "description": "シリコーンハイドロゲル素材の高酸素透過性ワンデー。",
-      "features": ["シリコーンハイドロゲル", "高酸素透過率", "UV保護"],
+      "features": [
+        "シリコーンハイドロゲル",
+        "高酸素透過率",
+        "UV保護"
+      ],
       "bc": "8.6",
       "dia": "14.1",
       "waterContent": "56%",
@@ -1650,7 +1762,11 @@
       "category": "1day",
       "subcategory": "clear",
       "description": "コスパ優秀なワンデーコンタクト。毎日のアイテムとして最適。",
-      "features": ["コスパ優秀", "高酸素透過率", "快適"],
+      "features": [
+        "コスパ優秀",
+        "高酸素透過率",
+        "快適"
+      ],
       "bc": "8.7",
       "dia": "14.2",
       "waterContent": "56%",
@@ -1667,7 +1783,11 @@
       "category": "1day",
       "subcategory": "clear",
       "description": "ボシュロムの高品質ワンデー。高い含水率で快適。",
-      "features": ["高含水率", "快適", "UV保護"],
+      "features": [
+        "高含水率",
+        "快適",
+        "UV保護"
+      ],
       "bc": "8.6",
       "dia": "14.2",
       "waterContent": "59%",
@@ -1684,7 +1804,11 @@
       "category": "1day",
       "subcategory": "astig",
       "description": "生体模倣技術の乱視用ワンデー。安定した視力矯正。",
-      "features": ["生体模倣技術", "乱視矯正", "高含水率"],
+      "features": [
+        "生体模倣技術",
+        "乱視矯正",
+        "高含水率"
+      ],
       "bc": "8.6",
       "dia": "14.4",
       "waterContent": "78%",
@@ -1701,7 +1825,11 @@
       "category": "1day",
       "subcategory": "astig",
       "description": "HydraLuxe技術の乱視用ワンデー。激しい運動でも安定。",
-      "features": ["HydraLuxe技術", "安定矯正", "UV保護"],
+      "features": [
+        "HydraLuxe技術",
+        "安定矯正",
+        "UV保護"
+      ],
       "bc": "8.5",
       "dia": "14.5",
       "waterContent": "38%",
@@ -1718,7 +1846,11 @@
       "category": "1day",
       "subcategory": "astig",
       "description": "シリコーンハイドロゲルの乱視用1day。高い酸素透過率。",
-      "features": ["シリコーンハイドロゲル", "乱視矯正", "高酸素透過"],
+      "features": [
+        "シリコーンハイドロゲル",
+        "乱視矯正",
+        "高酸素透過"
+      ],
       "bc": "8.6",
       "dia": "14.2",
       "waterContent": "56%",
@@ -1735,7 +1867,11 @@
       "category": "1day",
       "subcategory": "astig",
       "description": "うるおい成分たっぷりの乱視用ワンデー。快適な装用感。",
-      "features": ["うるおい成分", "乱視矯正", "快適"],
+      "features": [
+        "うるおい成分",
+        "乱視矯正",
+        "快適"
+      ],
       "bc": "8.7",
       "dia": "14.2",
       "waterContent": "69%",
@@ -1752,7 +1888,11 @@
       "category": "1day",
       "subcategory": "astig",
       "description": "国産シリコーンハイドロゲルの乱視用ワンデー。高酸素透過率。",
-      "features": ["シリコーンハイドロゲル", "国産", "高酸素透過"],
+      "features": [
+        "シリコーンハイドロゲル",
+        "国産",
+        "高酸素透過"
+      ],
       "bc": "8.8",
       "dia": "14.4",
       "waterContent": "33%",
@@ -1769,7 +1909,11 @@
       "category": "1day",
       "subcategory": "astig",
       "description": "国産メニコンの乱視用1day。優れた矯正性。",
-      "features": ["国産", "優れた矯正性", "高含水率"],
+      "features": [
+        "国産",
+        "優れた矯正性",
+        "高含水率"
+      ],
       "bc": "8.6",
       "dia": "14.3",
       "waterContent": "58%",
@@ -1786,7 +1930,11 @@
       "category": "2week",
       "subcategory": "clear",
       "description": "HydraLuxe技術の2週間使い捨て。最新の快適性を実現。",
-      "features": ["HydraLuxe技術", "2週間交換", "高酸素透過"],
+      "features": [
+        "HydraLuxe技術",
+        "2週間交換",
+        "高酸素透過"
+      ],
       "bc": "8.4",
       "dia": "14.0",
       "waterContent": "38%",
@@ -1803,7 +1951,11 @@
       "category": "2week",
       "subcategory": "clear",
       "description": "シリコーンハイドロゲルの2週間使い捨て。Aquaform技術。",
-      "features": ["シリコーンハイドロゲル", "Aquaform技術", "2週間"],
+      "features": [
+        "シリコーンハイドロゲル",
+        "Aquaform技術",
+        "2週間"
+      ],
       "bc": "8.6",
       "dia": "14.0",
       "waterContent": "48%",
@@ -1820,7 +1972,11 @@
       "category": "2week",
       "subcategory": "clear",
       "description": "HYDRAGLYDE技術の2週間使い捨て。保湿が続く。",
-      "features": ["HYDRAGLYDE技術", "保湿", "2週間"],
+      "features": [
+        "HYDRAGLYDE技術",
+        "保湿",
+        "2週間"
+      ],
       "bc": "8.6",
       "dia": "14.2",
       "waterContent": "33%",
@@ -1837,7 +1993,11 @@
       "category": "2week",
       "subcategory": "toric",
       "description": "国産の2週間乱視用コンタクト。安心の品質。",
-      "features": ["国産", "乱視矯正", "2週間"],
+      "features": [
+        "国産",
+        "乱視矯正",
+        "2週間"
+      ],
       "bc": "8.6",
       "dia": "14.3",
       "waterContent": "40%",
@@ -1854,7 +2014,11 @@
       "category": "monthly",
       "subcategory": "toric",
       "description": "1ヶ月交換の乱視用シリコーンハイドロゲル。Aquaform技術。",
-      "features": ["乱視矯正", "月間装用", "シリコーンハイドロゲル"],
+      "features": [
+        "乱視矯正",
+        "月間装用",
+        "シリコーンハイドロゲル"
+      ],
       "bc": "8.6",
       "dia": "14.3",
       "waterContent": "48%",
@@ -1871,7 +2035,11 @@
       "category": "monthly",
       "subcategory": "toric",
       "description": "月間装用の乱視用コンタクト。スタビライズデザイン。",
-      "features": ["乱視矯正", "スタビライズ", "月間装用"],
+      "features": [
+        "乱視矯正",
+        "スタビライズ",
+        "月間装用"
+      ],
       "bc": "8.7",
       "dia": "14.5",
       "waterContent": "33%",
@@ -1888,7 +2056,11 @@
       "category": "monthly",
       "subcategory": "toric",
       "description": "HYDRAMAX技術の乱視用マンスリーコンタクト。月末まで快適。",
-      "features": ["HYDRAMAX技術", "乱視矯正", "月間装用"],
+      "features": [
+        "HYDRAMAX技術",
+        "乱視矯正",
+        "月間装用"
+      ],
       "bc": "8.4",
       "dia": "14.2",
       "waterContent": "41%",
@@ -1905,7 +2077,11 @@
       "category": "2week",
       "subcategory": "toric",
       "description": "国産の2週間乱視用。コスパと品質を両立。",
-      "features": ["国産", "乱視矯正", "2週間"],
+      "features": [
+        "国産",
+        "乱視矯正",
+        "2週間"
+      ],
       "bc": "8.8",
       "dia": "14.3",
       "waterContent": "57%",
@@ -2206,6 +2382,15 @@
       "affiliateParam": "",
       "shipping": 330,
       "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "lensapple",
+      "name": "レンズアップル",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B8454+FD3RB6+1RNO+5YJRL",
+      "affiliateParam": "",
+      "shipping": 0,
+      "freeShippingMin": 0,
       "prescriptionFree": true
     },
     {
