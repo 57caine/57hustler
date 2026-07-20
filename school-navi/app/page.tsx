@@ -95,23 +95,29 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-lg font-bold text-gray-900 mb-5">目的から探す</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {[
-              { label: 'プログラミング・IT転職 💻', href: '/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%EF%BC%8FIT%E8%BB%A2%E8%81%B7', desc: '転職・副業・フリーランス' },
-              { label: '資格・オンライン学習 📚', href: '/category/%E8%B3%87%E6%A0%BC%EF%BC%8F%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E5%AD%A6%E7%BF%92', desc: 'キャリアアップ・スキル習得' },
-              { label: 'クリエイティブ・デザイン 🎨', href: '/category/%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%83%86%E3%82%A3%E3%83%96%EF%BC%8F%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3', desc: '動画編集・グラフィック' },
-              { label: '音楽 🎵', href: '/category/%E9%9F%B3%E6%A5%BD', desc: 'ボーカル・楽器レッスン' },
-              { label: 'ゴルフ・フィットネス ⛳', href: '/category/%E3%82%B4%E3%83%AB%E3%83%95%EF%BC%8F%E3%83%95%E3%82%A3%E3%83%83%E3%83%88%E3%83%8D%E3%82%B9', desc: 'スコアアップ・健康' },
-              { label: '投資・トレード 📈', href: '/category/%E6%8A%95%E8%B3%87%EF%BC%8F%E3%83%88%E3%83%AC%E3%83%BC%E3%83%89', desc: 'FX・株式投資' },
-            ].map((cat) => (
-              <Link
-                key={cat.label}
-                href={cat.href}
-                className="bg-white border border-gray-200 rounded-xl p-4 hover:border-gray-400 hover:shadow-sm transition-all"
-              >
-                <p className="font-semibold text-gray-800 text-sm mb-1">{cat.label}</p>
-                <p className="text-xs text-gray-500">{cat.desc}</p>
-              </Link>
-            ))}
+            {(() => {
+              const categoryMeta: Record<string, { emoji: string; desc: string }> = {
+                'プログラミング・IT転職': { emoji: '💻', desc: '転職・副業・フリーランス' },
+                '資格・オンライン学習':   { emoji: '📚', desc: 'キャリアアップ・スキル習得' },
+                'クリエイティブ・デザイン': { emoji: '🎨', desc: '動画編集・グラフィック' },
+                '音楽':                   { emoji: '🎵', desc: 'ボーカル・楽器レッスン' },
+                'ゴルフ・フィットネス':   { emoji: '⛳', desc: 'スコアアップ・健康' },
+                '投資・トレード':         { emoji: '📈', desc: 'FX・株式投資' },
+              };
+              return getAllCategories().map((cat) => {
+                const meta = categoryMeta[cat] ?? { emoji: '📖', desc: 'スクールを比較' };
+                return (
+                  <Link
+                    key={cat}
+                    href={`/category/${encodeURIComponent(cat)}`}
+                    className="bg-white border border-gray-200 rounded-xl p-4 hover:border-gray-400 hover:shadow-sm transition-all"
+                  >
+                    <p className="font-semibold text-gray-800 text-sm mb-1">{cat} {meta.emoji}</p>
+                    <p className="text-xs text-gray-500">{meta.desc}</p>
+                  </Link>
+                );
+              });
+            })()}
           </div>
         </div>
       </section>
