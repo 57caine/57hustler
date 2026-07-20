@@ -1,6 +1,25 @@
 import React from 'react';
 import Link from 'next/link';
 
+// Generate ID from heading text by removing special characters and converting to lowercase
+export function getHeadingId(text: string): string {
+  // First, remove HTML tags and extra whitespace
+  const plainText = text.replace(/<[^>]*>/g, '').trim();
+
+  // Try ASCII conversion first (for mixed text)
+  let id = plainText.toLowerCase()
+    .replace(/[？！、。（）\s\-]/g, '')
+    .replace(/[^a-z0-9]/g, '');
+
+  // If result is empty, use first 20 characters of plain text as fallback
+  // This preserves Japanese characters in the ID
+  if (!id && plainText) {
+    id = plainText.substring(0, 20).replace(/\s/g, '');
+  }
+
+  return id;
+}
+
 export type Column = {
   slug: string;
   title: string;
@@ -313,12 +332,12 @@ export const columnContent: Record<string, React.ReactNode> = {
   'programming-school-hikaku-2025': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">プログラミングスクール選びの3つのポイント</h2>
+        <h2 id="3" className="text-xl font-bold text-gray-900 mb-4">プログラミングスクール選びの3つのポイント</h2>
         <p className="mb-4">プログラミングスクールを選ぶ際には、①転職・就職支援の充実度、②カリキュラムの実践性、③コストパフォーマンスの3点を重視することが大切です。</p>
         <p>2025年現在、国内には200校以上のプログラミングスクールが存在します。本記事では、実績・料金・カリキュラムの観点から厳選した8校を徹底比較します。</p>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">転職特化型スクール比較</h2>
+        <h2 id="転職特化型スクール比較" className="text-xl font-bold text-gray-900 mb-4">転職特化型スクール比較</h2>
         <div className="bg-slate-50 rounded-xl p-5 mb-4">
           <h3 className="font-bold text-slate-800 mb-2">1位：TECH CAMP（テックキャンプ）</h3>
           <ul className="text-sm space-y-1 text-gray-700">
@@ -348,7 +367,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">スキルアップ・副業向けスクール比較</h2>
+        <h2 id="スキルアップ・副業向けスクール比較" className="text-xl font-bold text-gray-900 mb-4">スキルアップ・副業向けスクール比較</h2>
         <p className="mb-4">転職よりも副業や学習目的でプログラミングを学びたい方には、月額制や短期コースがおすすめです。</p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
@@ -380,7 +399,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">まとめ：目的別おすすめスクール</h2>
+        <h2 id="まとめ：目的別おすすめスクール" className="text-xl font-bold text-gray-900 mb-4">まとめ：目的別おすすめスクール</h2>
         <ul className="space-y-2 text-sm">
           <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">転職希望：</span><span><a href="/schools/techcamp" className="text-slate-700 underline">TECH CAMP</a> または <a href="/schools/dmm-webcamp" className="text-slate-700 underline">DMM WEBCAMP</a>（転職保証・給付金あり）</span></li>
           <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">本格スキル習得：</span><span><a href="/schools/runteq" className="text-slate-700 underline">RUNTEQ</a>（9ヶ月間・実務レベル）</span></li>
@@ -391,7 +410,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: 'プログラミングスクールに通う前に独学を試すべきですか？', a: '独学で1〜2ヶ月試してから判断するのが理想的です。Progate・ドットインストール等の無料ツールで「続けられるか」「楽しいと感じるか」を確認しましょう。ただし転職を目指すなら、独学だけでは採用実績・転職支援が受けられません。転職成功率の高いスクールに入った方が、結果的に最短で目標達成できる場合が多いです。' },
@@ -412,7 +431,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'teiten-hojo-programming-school': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">教育訓練給付金とは？</h2>
+        <h2 id="教育訓練給付金とは？" className="text-xl font-bold text-gray-900 mb-4">教育訓練給付金とは？</h2>
         <p className="mb-4">教育訓練給付金は、厚生労働省が運営するスキルアップ支援制度です。雇用保険に一定期間加入していれば、指定されたプログラミングスクールの受講料を最大70%補助してもらえます。</p>
         <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
           <p className="font-bold text-yellow-800 mb-2">受給条件（一般的）</p>
@@ -424,7 +443,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">給付金対応プログラミングスクール一覧</h2>
+        <h2 id="給付金対応プログラミングスクール一覧" className="text-xl font-bold text-gray-900 mb-4">給付金対応プログラミングスクール一覧</h2>
         <div className="space-y-4">
           <div className="border border-gray-200 rounded-xl p-4">
             <div className="flex items-center justify-between mb-2">
@@ -453,7 +472,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">給付金申請の流れ</h2>
+        <h2 id="給付金申請の流れ" className="text-xl font-bold text-gray-900 mb-4">給付金申請の流れ</h2>
         <ol className="space-y-3 text-sm">
           <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">1</span><span>ハローワークで訓練前キャリアコンサルティングを受ける</span></li>
           <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">2</span><span>給付金支給申請書を入手する</span></li>
@@ -465,7 +484,7 @@ export const columnContent: Record<string, React.ReactNode> = {
 
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">給付金対応おすすめスクール</h2>
+        <h2 id="給付金対応おすすめスクール" className="text-xl font-bold text-gray-900 mb-4">給付金対応おすすめスクール</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             { name: 'DMM WEBCAMP', slug: 'dmm-webcamp', badge: '最大70%給付金', point: '専門実践教育訓練給付金（70%）対象コースあり。給付後実質13万円〜の受講が可能。給付金対応スクールの中で卒業生満足度が高い。' },
@@ -486,7 +505,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: '教育訓練給付金を申請する際の注意点は何ですか？', a: '最大のポイントは「受講開始前にハローワークで手続きが必要」な点です。受講を開始してから申請しても給付を受けられません。また、給付金対象の講座かどうかをスクールのページまたは厚労省の検索システムで必ず確認してください。条件（雇用保険加入期間等）を満たしているかの事前確認もハローワークで行えます。' },
@@ -507,7 +526,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'mikeiken-engineer-tenshi': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">未経験からエンジニア転職できる？現実を解説</h2>
+        <h2 id="未経験からエンジニア転職できる？現実を解" className="text-xl font-bold text-gray-900 mb-4">未経験からエンジニア転職できる？現実を解説</h2>
         <p className="mb-4">結論から言うと、未経験からのエンジニア転職は十分可能です。ただし、独学だけでは難しく、適切なスクールとサポートが成功の鍵を握ります。</p>
         <div className="bg-slate-50 rounded-xl p-4 mb-4">
           <p className="font-bold text-slate-800 mb-2">未経験エンジニア転職の現状（2025年）</p>
@@ -519,7 +538,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">転職成功率が高いスクール3選</h2>
+        <h2 id="3" className="text-xl font-bold text-gray-900 mb-4">転職成功率が高いスクール3選</h2>
         <div className="space-y-4">
           {[
             { rank: 1, name: 'TECH CAMP', rate: '99%', period: '10週間〜', price: '748,000円〜', note: '業界最大規模・転職保証あり', color: 'blue' },
@@ -542,7 +561,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">転職保証とは？条件を確認しよう</h2>
+        <h2 id="転職保証とは？条件を確認しよう" className="text-xl font-bold text-gray-900 mb-4">転職保証とは？条件を確認しよう</h2>
         <p className="mb-3">転職保証とは「卒業後一定期間内に転職できなければ受講料を返金する」制度です。ただし以下の条件があります。</p>
         <ul className="text-sm space-y-2">
           <li className="flex gap-2"><span className="text-red-500">△</span><span>一定数以上の求人応募実績が必要</span></li>
@@ -553,7 +572,7 @@ export const columnContent: Record<string, React.ReactNode> = {
 
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">未経験からの転職におすすめスクール</h2>
+        <h2 id="未経験からの転職におすすめスクール" className="text-xl font-bold text-gray-900 mb-4">未経験からの転職におすすめスクール</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             { name: 'TECH CAMP', slug: 'techcamp', badge: '転職保証', point: '転職成功率99%（自社調べ）・卒業生5万人以上。転職できなければ全額返金保証で業界最大手。未経験転職の安心感を最重視する方に。' },
@@ -574,7 +593,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: '未経験からエンジニアに転職するのに何ヶ月かかりますか？', a: '平均的には学習開始から転職成功まで3〜6ヶ月が目安です。スクール在籍中（3ヶ月）に転職活動を並行し、卒業後1〜2ヶ月で内定を取るパターンが多いです。ただし学習量・スクール選択・転職市場の状況によって大きく変わります。転職保証付きスクールを選ぶと最長期間のサポートが受けられます。' },
@@ -595,7 +614,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'programming-school-ryokin-hikaku': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">プログラミングスクール料金比較一覧（安い順）</h2>
+        <h2 id="プログラミングスクール料金比較一覧（安い" className="text-xl font-bold text-gray-900 mb-4">プログラミングスクール料金比較一覧（安い順）</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
@@ -627,7 +646,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">分割払い・ローンの活用</h2>
+        <h2 id="分割払い・ローンの活用" className="text-xl font-bold text-gray-900 mb-4">分割払い・ローンの活用</h2>
         <p className="mb-4">多くのスクールでは信販会社のローンが使えます。月々の負担を抑えながら学習できます。</p>
         <div className="bg-gray-50 rounded-xl p-4 text-sm">
           <p className="font-bold mb-2">例：TECH CAMP 748,000円を24回払いの場合</p>
@@ -635,7 +654,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">コスパ最強スクールはどこ？</h2>
+        <h2 id="コスパ最強スクールはどこ？" className="text-xl font-bold text-gray-900 mb-4">コスパ最強スクールはどこ？</h2>
         <p className="mb-3">「料金÷転職後の年収増加額」で考えると、給付金を活用したDMM WEBCAMPが最もコスパが良いケースが多いです。</p>
         <ul className="text-sm space-y-2">
           <li className="flex gap-2"><span className="text-green-500 font-bold">◎</span><span><strong>DMM WEBCAMP</strong>：給付金活用で実質13万円、転職後年収+100万円以上も可能</span></li>
@@ -646,7 +665,7 @@ export const columnContent: Record<string, React.ReactNode> = {
 
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">コスパ重視のおすすめスクール</h2>
+        <h2 id="コスパ重視のおすすめスクール" className="text-xl font-bold text-gray-900 mb-4">コスパ重視のおすすめスクール</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             { name: 'DMM WEBCAMP', slug: 'dmm-webcamp', badge: 'コスパ最強', point: '給付金活用後の実質負担が約13万円。転職成功率98%・9万人卒業生。給付金を最大活用すれば業界最高水準のコスパを実現できる。' },
@@ -667,7 +686,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: 'プログラミングスクールの料金が高い理由は何ですか？', a: '主に人件費（メンター・チューター・カウンセラー）と転職支援コスト（求人開拓・面接対策・企業とのマッチング）が占めます。また、少人数制・個別指導のスクールほど料金が高くなります。料金の高さと転職成功率は必ずしも比例しませんが、転職保証付きのスクールは失敗リスクが低くコスパが良いと評価されています。' },
@@ -688,7 +707,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'freelance-engineer-school': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">フリーランスエンジニアの現実：需要と収入</h2>
+        <h2 id="フリーランスエンジニアの現実：需要と収入" className="text-xl font-bold text-gray-900 mb-4">フリーランスエンジニアの現実：需要と収入</h2>
         <p className="mb-4">フリーランスエンジニアの平均年収は800万〜1,200万円と高水準です。2025年現在、クラウドワークス・ランサーズなどのフリーランスマーケットは急成長しており、スキルがあれば仕事に困りません。</p>
         <div className="grid grid-cols-2 gap-4 text-center">
           {[
@@ -703,7 +722,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">フリーランス特化スクール：<a href="/schools/coachtech" className="text-slate-700 underline">CoachTech</a></h2>
+        <h2 id="coachtech" className="text-xl font-bold text-gray-900 mb-4">フリーランス特化スクール：<a href="/schools/coachtech" className="text-slate-700 underline">CoachTech</a></h2>
         <div className="border border-gray-200 rounded-xl p-5">
           <h3 className="font-bold text-gray-900 mb-3">CoachTech（コーチテック）の特徴</h3>
           <ul className="text-sm space-y-2">
@@ -716,7 +735,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">フリーランスになるまでのロードマップ</h2>
+        <h2 id="フリーランスになるまでのロードマップ" className="text-xl font-bold text-gray-900 mb-4">フリーランスになるまでのロードマップ</h2>
         <ol className="space-y-3 text-sm">
           <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">1</span><span>スクールでWebアプリ開発の基礎を習得（3〜6ヶ月）</span></li>
           <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">2</span><span>副業で小規模案件を受注・実績を積む（3〜6ヶ月）</span></li>
@@ -727,7 +746,7 @@ export const columnContent: Record<string, React.ReactNode> = {
 
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">フリーランス特化おすすめスクール</h2>
+        <h2 id="フリーランス特化おすすめスクール" className="text-xl font-bold text-gray-900 mb-4">フリーランス特化おすすめスクール</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             { name: 'CoachTech', slug: 'coachtech', badge: 'フリーランス特化', point: '案件保証（卒業後3ヶ月以内に10万円以上の案件を保証）。卒業後も継続的な案件サポートがある唯一のスクール。独立直前〜独立後に強い。' },
@@ -748,7 +767,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: 'フリーランスエンジニアは会社員より収入が高いですか？', a: '平均的にはYes。フリーランスエンジニアの平均年収は700〜900万円程度（会社員の1.5〜2倍）という調査があります。ただし、会社員と違い社会保険料を自分で払う・確定申告が必要・案件が途切れるリスクがある等のデメリットも考慮する必要があります。副業からフリーランスへの段階的移行が現実的です。' },
@@ -769,7 +788,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'ai-engineer-school-guide': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">AIエンジニアとは？2025年の需要</h2>
+        <h2 id="ai2025" className="text-xl font-bold text-gray-900 mb-4">AIエンジニアとは？2025年の需要</h2>
         <p className="mb-4">AIエンジニアとは、機械学習・深層学習・ChatGPT APIなどのAI技術を使ってシステムを開発する職種です。ChatGPT登場以降、企業のAI活用ニーズが爆発的に高まっており、AIエンジニアの需要は今後も右肩上がりが見込まれます。</p>
         <div className="bg-red-50 border border-red-100 rounded-xl p-4">
           <p className="font-bold text-red-800 mb-2">AIエンジニアの市場価値（2025年）</p>
@@ -781,7 +800,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">AIエンジニアを目指せるスクール</h2>
+        <h2 id="ai" className="text-xl font-bold text-gray-900 mb-4">AIエンジニアを目指せるスクール</h2>
         <div className="space-y-4">
           <div className="border border-gray-200 rounded-xl p-4">
             <div className="flex items-center gap-2 mb-2">
@@ -802,7 +821,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">独学でAIを学ぶ場合との比較</h2>
+        <h2 id="ai" className="text-xl font-bold text-gray-900 mb-4">独学でAIを学ぶ場合との比較</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
@@ -831,7 +850,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: 'AIエンジニアになるためにはどのくらいの期間が必要ですか？', a: '基礎的なAI・機械学習を扱えるレベルまでは3〜6ヶ月が目安。ただし実業務レベルで活躍するには1〜2年の実践経験が必要です。Python・統計・数学の基礎知識がある方は習得が早く、完全未経験の場合は6ヶ月〜1年のスクール受講が推奨されます。AIエンジニアの市場価値は高く、学習投資に見合うリターンが期待できます。' },
@@ -855,7 +874,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="mb-4">仕事をしながらプログラミングを学ぶのは、時間管理の面で大きなハードルがあります。しかし2025年現在、社会人のライフスタイルに合わせた夜間・週末・オンライン対応のスクールが充実しており、無理なく学習を継続できる環境が整っています。本記事では、社会人が働きながら通えるおすすめスクール5選を徹底比較します。</p>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">社会人がスクール選びで重視すべき3つのポイント</h2>
+        <h2 id="3" className="text-xl font-bold text-gray-900 mb-4">社会人がスクール選びで重視すべき3つのポイント</h2>
         <p className="mb-4">社会人がプログラミングスクールを選ぶ際には、学習スタイルの柔軟性・メンタリングのサポート体制・転職支援の充実度の3点が特に重要です。平日の夜や土日にしか学習時間を確保できない場合、非同期でのサポートが受けられるかどうかも確認しましょう。</p>
         <div className="bg-slate-50 rounded-xl p-5 mb-4">
           <h3 className="font-bold text-slate-800 mb-3">チェックリスト：社会人向けスクールの見極め方</h3>
@@ -868,7 +887,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">社会人おすすめスクール5選：比較表</h2>
+        <h2 id="5" className="text-xl font-bold text-gray-900 mb-4">社会人おすすめスクール5選：比較表</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
@@ -900,7 +919,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-xs text-gray-400 mt-2">※料金は2025年6月時点の情報です。詳細は各スクール公式サイトをご確認ください。</p>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">各スクールの特徴と社会人向けポイント</h2>
+        <h2 id="各スクールの特徴と社会人向けポイント" className="text-xl font-bold text-gray-900 mb-4">各スクールの特徴と社会人向けポイント</h2>
         <div className="space-y-4">
           <div className="bg-slate-50 rounded-xl p-4">
             <h3 className="font-bold text-slate-800 mb-2">1. TECH CAMP 夜間・休日コース</h3>
@@ -924,7 +943,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: '社会人がプログラミングスクールに通いながら仕事を続けられますか？', a: '多くのスクールがオンライン・夜間・週末対応のコースを設けており、仕事を続けながら受講できます。TECH CAMP夜間・休日コース（10週間）やDMM WEBCAMPの自習型コースが人気です。週20〜30時間の学習時間を確保できるかが成功の鍵。「転職を急がない」方はゆっくり学べるが、転職保証の期限には注意が必要です。' },
@@ -948,7 +967,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="mb-4">「女性がプログラミングを学びやすい環境かどうか」は、スクール選びにおいて見落とされがちな重要な視点です。女性講師の有無・女性専用コミュニティ・育児中でも学べる柔軟なスケジュールなど、女性特有のニーズに応えるスクールは確実に増えています。本記事では2025年時点で女性におすすめのプログラミングスクール5選を紹介します。</p>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">女性がプログラミングを学ぶ背景</h2>
+        <h2 id="女性がプログラミングを学ぶ背景" className="text-xl font-bold text-gray-900 mb-4">女性がプログラミングを学ぶ背景</h2>
         <p className="mb-4">IT業界における女性エンジニアの比率は依然として低く（約20%程度）、裏を返せば市場価値が高いとも言えます。育児や家事と両立しながらキャリアアップを目指す女性にとって、リモートワーク可能なエンジニア職は特に魅力的な選択肢です。</p>
         <div className="bg-pink-50 border border-pink-100 rounded-xl p-4">
           <p className="font-bold text-pink-800 mb-2">女性エンジニアの働き方メリット</p>
@@ -960,7 +979,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">女性におすすめスクール5選：比較表</h2>
+        <h2 id="5" className="text-xl font-bold text-gray-900 mb-4">女性におすすめスクール5選：比較表</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
@@ -989,7 +1008,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">育児中・ブランク明けの女性でも学べる？</h2>
+        <h2 id="育児中・ブランク明けの女性でも学べる？" className="text-xl font-bold text-gray-900 mb-4">育児中・ブランク明けの女性でも学べる？</h2>
         <p className="mb-4">育児中や離職期間がある女性でも、オンラインのプログラミングスクールであれば自分のペースで学習を進められます。特にTechAcademyは学習期間を自由に設定できるため、子育てと並行して学びたい方に人気です。</p>
         <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
           <p className="font-bold text-yellow-800 mb-2">ポイント：給付金は育児中でも使える？</p>
@@ -1002,7 +1021,7 @@ export const columnContent: Record<string, React.ReactNode> = {
 
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">女性におすすめのスクール</h2>
+        <h2 id="女性におすすめのスクール" className="text-xl font-bold text-gray-900 mb-4">女性におすすめのスクール</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             { name: 'DMM WEBCAMP', slug: 'dmm-webcamp', badge: '女性受講者多数', point: 'オンライン完結・自分のペースで学習可能。育児中・主婦の方の受講実績も豊富。給付金活用で実質13万円〜。転職成功率98%。' },
@@ -1023,7 +1042,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: '女性のエンジニア転職は不利ですか？', a: 'むしろ現在は女性エンジニアの採用に積極的な企業が増えています。IT業界全体の女性比率が低いため、女性エンジニアは希少価値が高く評価される傾向があります。育児や時短勤務への理解があるIT企業も増えており、ライフワークバランスを重視した働き方がしやすい職種でもあります。' },
@@ -1047,7 +1066,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="mb-4">「40代・50代からでもプログラミングスクールに通えるの？」という疑問を持つ方は多くいます。結論から言うと、学習自体は何歳からでも可能ですが、転職市場の現実を理解した上でスクールを選ぶことが重要です。本記事では、シニア世代がプログラミングを学ぶ際の現実と、成功するための対策を解説します。</p>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">40代・50代のプログラミング学習：現実と可能性</h2>
+        <h2 id="4050" className="text-xl font-bold text-gray-900 mb-4">40代・50代のプログラミング学習：現実と可能性</h2>
         <p className="mb-4">プログラミングスクールの多くは年齢制限を設けておらず、40代・50代の受講生も珍しくありません。ただし「未経験からのエンジニア転職」という観点では、20〜30代と比べて難易度が上がることは正直に伝えておく必要があります。</p>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="bg-green-50 rounded-xl p-4">
@@ -1069,7 +1088,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">40代・50代にとっての現実的な目標設定</h2>
+        <h2 id="4050" className="text-xl font-bold text-gray-900 mb-4">40代・50代にとっての現実的な目標設定</h2>
         <div className="space-y-3">
           <div className="border-l-4 border-slate-400 pl-4">
             <h3 className="font-bold text-gray-900 mb-1">転職を目指す場合</h3>
@@ -1086,7 +1105,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">40代・50代におすすめのスクール選び方</h2>
+        <h2 id="4050" className="text-xl font-bold text-gray-900 mb-4">40代・50代におすすめのスクール選び方</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
@@ -1117,7 +1136,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: '40代・50代でのエンジニア転職は現実的ですか？', a: '40代の未経験転職は難易度が高く、求人数が限られます。ただし、「ITコンサル・社内SE・PM（プロジェクトマネージャー）」への転職なら前職の業界経験を活かせます。完全未経験のWebエンジニア転職は厳しいですが、副業・フリーランス（特定クライアント向け）や自社サービス企業の社内SEとして活躍している40代エンジニアも増えています。' },
@@ -1141,7 +1160,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="mb-4">「プログラミングは独学でも学べる」という意見がある一方、「スクールに通わないと挫折する」という声も多く聞かれます。どちらが正しいかは一概に言えず、学習者の状況や目標によって大きく異なります。本記事では独学とスクールの違いを費用・期間・転職成功率などの具体的な指標で徹底比較し、あなたに合った選択をサポートします。</p>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">独学 vs スクール：数字で比較</h2>
+        <h2 id="vs" className="text-xl font-bold text-gray-900 mb-4">独学 vs スクール：数字で比較</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
@@ -1173,7 +1192,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-xs text-gray-400 mt-2">※挫折率・転職成功率は各種調査・スクール公式データをもとにした参考値です。</p>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">独学が向いている人・スクールが向いている人</h2>
+        <h2 id="独学が向いている人・スクールが向いている" className="text-xl font-bold text-gray-900 mb-4">独学が向いている人・スクールが向いている人</h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="bg-gray-50 rounded-xl p-4">
             <h3 className="font-bold text-gray-800 mb-3">独学が向いている人</h3>
@@ -1196,7 +1215,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">スクール受講の費用対効果を試算する</h2>
+        <h2 id="スクール受講の費用対効果を試算する" className="text-xl font-bold text-gray-900 mb-4">スクール受講の費用対効果を試算する</h2>
         <p className="mb-4">スクールの費用は高く見えますが、転職後の年収増加を考えると長期的なROIは高くなります。たとえば転職後に年収が100万円アップすれば、50万円のスクール費用は半年で回収できます。</p>
         <div className="bg-green-50 rounded-xl p-4">
           <p className="font-bold text-green-800 mb-2">費用対効果の試算例</p>
@@ -1213,7 +1232,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: '独学とスクール、どちらを選ぶべきか判断するポイントは？', a: '「転職を目指しているか」が最大の判断基準です。転職なら転職支援・企業ネットワーク・ポートフォリオ支援があるスクールが有利。副業・スキルアップ目的なら独学で十分な場合も多い。また「学習継続に自信がない」「一人では挫折しそう」という方はスクールのメンタリング環境が重要な価値になります。独学挫折率は90%以上という調査もあります。' },
@@ -1237,7 +1256,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="mb-4">「未経験からエンジニアに転職するまでどのくらいかかるの？」は、プログラミング学習を始める前に誰もが気になる疑問です。正直に言うと、個人の学習ペースや目標とするエンジニア像によって大きく異なりますが、現実的な平均期間と必要な準備を理解することで、より戦略的に学習を進められます。</p>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">未経験エンジニア転職までの平均期間</h2>
+        <h2 id="未経験エンジニア転職までの平均期間" className="text-xl font-bold text-gray-900 mb-4">未経験エンジニア転職までの平均期間</h2>
         <p className="mb-4">一般的に、未経験からエンジニア転職までに必要な期間は「学習期間3〜9ヶ月＋転職活動1〜3ヶ月」で、合計4ヶ月〜1年程度が目安です。スクールを活用した場合と独学の場合では大きく差が出ます。</p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
@@ -1268,7 +1287,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">転職成功に必要なスキルレベルとは</h2>
+        <h2 id="転職成功に必要なスキルレベルとは" className="text-xl font-bold text-gray-900 mb-4">転職成功に必要なスキルレベルとは</h2>
         <p className="mb-4">企業が未経験エンジニアに求めるスキルレベルは年々上がっています。「HTMLとCSSが書ける」だけでは転職市場でのアピールは難しく、実用的なWebアプリを1〜2本ポートフォリオとして作れることが求められます。</p>
         <div className="space-y-3">
           <div className="bg-slate-50 rounded-xl p-4">
@@ -1292,7 +1311,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">スクール別の転職実績比較</h2>
+        <h2 id="スクール別の転職実績比較" className="text-xl font-bold text-gray-900 mb-4">スクール別の転職実績比較</h2>
         <div className="space-y-3">
           {[
             { name: 'TECH CAMP', rate: '99%', period: '平均2ヶ月以内', link: '/schools/techcamp', color: 'blue' },
@@ -1315,7 +1334,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: 'プログラミングスクールを卒業してから内定まで何ヶ月かかりますか？', a: '転職活動開始から内定まで平均1〜3ヶ月です。スクール在籍中に転職活動を並行する方が多く、カリキュラム終了直前〜修了直後に内定を取るパターンが多いです。書類選考・面接・コーディングテスト対策が並行して必要で、準備が整っているほど短期間で内定が出ます。スクールの転職支援を最大限活用しましょう。' },
@@ -1339,7 +1358,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-gray-700 mb-4 leading-relaxed">Pythonは現在最も需要が高いプログラミング言語のひとつです。AI・機械学習・データサイエンス・バックエンド開発・自動化ツール作成など、活用範囲が非常に広く、転職・副業どちらの目的でも学ぶ価値があります。本記事ではPythonに特化したプログラミングスクールを比較します。</p>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Pythonで目指せるキャリア</h2>
+        <h2 id="python" className="text-xl font-bold text-gray-900 mb-4">Pythonで目指せるキャリア</h2>
         <div className="grid sm:grid-cols-2 gap-4 mb-6">
           <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
             <h3 className="font-bold text-slate-800 text-sm mb-2">AIエンジニア・機械学習エンジニア</h3>
@@ -1360,7 +1379,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Pythonが学べるスクール比較</h2>
+        <h2 id="python" className="text-xl font-bold text-gray-900 mb-4">Pythonが学べるスクール比較</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
@@ -1401,7 +1420,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Python学習のロードマップ</h2>
+        <h2 id="python" className="text-xl font-bold text-gray-900 mb-4">Python学習のロードマップ</h2>
         <ol className="space-y-3 text-sm">
           <li className="flex gap-3">
             <span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">1</span>
@@ -1423,7 +1442,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: 'PythonはAIの学習にしか使えませんか？', a: 'Pythonは汎用プログラミング言語で、Webバックエンド（Django/Flask）・データ分析・機械学習・スクレイピング・自動化スクリプト等、幅広い用途があります。特にAI・データ系の需要が高く、Python人材の市場価値は高い状態が続いています。Webエンジニアを目指す場合もバックエンドにPythonを使う企業は多いです。' },
@@ -1447,7 +1466,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-gray-700 mb-4 leading-relaxed">Web制作（HTML・CSS・JavaScript）はプログラミング初心者が最初に学ぶことが多い分野です。難易度が比較的低く、副業・転職ともに活用できる実践的なスキルです。本記事では、Web制作に特化したプログラミングスクールを目的別に比較します。</p>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Web制作で目指せるキャリア</h2>
+        <h2 id="web" className="text-xl font-bold text-gray-900 mb-4">Web制作で目指せるキャリア</h2>
         <div className="grid sm:grid-cols-3 gap-4 mb-6">
           <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
             <h3 className="font-bold text-slate-800 text-sm mb-2">Webコーダー（副業）</h3>
@@ -1464,7 +1483,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Web制作スクール 比較表</h2>
+        <h2 id="web" className="text-xl font-bold text-gray-900 mb-4">Web制作スクール 比較表</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
@@ -1505,7 +1524,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">副業を目指すなら何ヶ月で稼げる？</h2>
+        <h2 id="副業を目指すなら何ヶ月で稼げる？" className="text-xl font-bold text-gray-900 mb-4">副業を目指すなら何ヶ月で稼げる？</h2>
         <p className="text-gray-700 mb-4">Web制作は、正しく学習すれば3〜6ヶ月で副業受注が可能です。ただし、ポートフォリオ（制作実績）なしでの案件獲得は難しいため、学習期間中にサンプルサイトを複数作成することが重要です。</p>
         <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
           <p className="font-semibold text-slate-800 mb-2 text-sm">副業受注までのステップ</p>
@@ -1520,7 +1539,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: 'Web制作の副業で月いくら稼げますか？', a: '副業初期（スクール卒業後半年）では月3〜5万円が現実的な目標です。1〜2年経験を積むと月10〜30万円以上を目指せます。案件単価は名刺サイト（3〜5万円）・コーポレートサイト（10〜30万円）・ECサイト（30〜100万円）と幅広く、スキルアップとともに単価が上がります。クラウドワークス・ランサーズ・知人紹介が主な案件獲得経路です。' },
@@ -1541,7 +1560,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'tensyoku-hosho-school': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">転職保証とは？仕組みと注意点</h2>
+        <h2 id="転職保証とは？仕組みと注意点" className="text-2xl font-bold text-gray-900 mb-4">転職保証とは？仕組みと注意点</h2>
         <p className="text-gray-700 mb-4">
           転職保証とは、スクールが定める条件を満たして就活活動を行ったにもかかわらず転職できなかった場合に、受講料の全額または一部を返金する制度です。保証があることで安心して学習に臨めますが、<strong>保証の条件は各スクールで大きく異なります</strong>。
         </p>
@@ -1558,7 +1577,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">転職保証付きスクール 比較</h2>
+        <h2 id="転職保証付きスクール比較" className="text-2xl font-bold text-gray-900 mb-4">転職保証付きスクール 比較</h2>
         <div className="space-y-4">
           {[
             {
@@ -1612,7 +1631,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">転職保証を最大限活かすための学習戦略</h2>
+        <h2 id="転職保証を最大限活かすための学習戦略" className="text-2xl font-bold text-gray-900 mb-4">転職保証を最大限活かすための学習戦略</h2>
         <ul className="space-y-3">
           {[
             '保証条件の「応募社数」「学習時間の記録」などは入学前から意識して管理する。卒業後に証明できないと保証が適用されないケースがある',
@@ -1627,7 +1646,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">転職保証なしでも検討すべき優良スクール</h2>
+        <h2 id="転職保証なしでも検討すべき優良スクール" className="text-2xl font-bold text-gray-900 mb-4">転職保証なしでも検討すべき優良スクール</h2>
         <p className="text-gray-600 text-sm mb-3">
           転職保証がなくても、高い転職実績・充実したサポートで成功率が高いスクールもあります。
         </p>
@@ -1645,7 +1664,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: '転職保証は本当に全額返金されますか？', a: '返金されるケースはありますが、条件を満たさないと受けられません。「コースの全課題を提出する」「転職活動中に紹介された企業へ必ず応募する」「卒業後〇ヶ月以内に申告する」等、細かい条件が設定されています。全員が活用できる制度ではなく、「積極的に取り組んで転職できなかった場合の保険」と考えるのが正確です。入学前に規約を必ず読んでください。' },
@@ -1666,7 +1685,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'programming-school-30dai': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">30代でのエンジニア転職は現実的か？</h2>
+        <h2 id="30" className="text-2xl font-bold text-gray-900 mb-4">30代でのエンジニア転職は現実的か？</h2>
         <p className="text-gray-700 mb-4">
           結論から言うと、<strong>30代前半（30〜34歳）のエンジニア転職は十分現実的</strong>です。IT人材不足が深刻な現在、スキルがあれば年齢よりも即戦力性・学習意欲が評価されます。ただし、20代と同じ戦略では通用しないため、30代に合った転職戦略が必要です。
         </p>
@@ -1686,7 +1705,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">30代にお勧めのプログラミングスクール</h2>
+        <h2 id="30" className="text-2xl font-bold text-gray-900 mb-4">30代にお勧めのプログラミングスクール</h2>
         <div className="space-y-4">
           {[
             {
@@ -1724,7 +1743,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">30代エンジニア転職のリアルなタイムライン</h2>
+        <h2 id="30" className="text-2xl font-bold text-gray-900 mb-4">30代エンジニア転職のリアルなタイムライン</h2>
         <div className="space-y-2">
           {[
             { month: '1〜2ヶ月目', label: 'プログラミング基礎学習', body: 'HTML/CSS/JavaScriptまたはPython/Javaを選択。スクールのカリキュラムに沿って基礎を固める。仕事しながらの場合は週15〜20時間の確保を目標に。' },
@@ -1743,7 +1762,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">30代でエンジニアを目指す前に確認すること</h2>
+        <h2 id="30" className="text-2xl font-bold text-gray-900 mb-4">30代でエンジニアを目指す前に確認すること</h2>
         <ul className="space-y-3">
           {[
             '現在の年収と転職後の年収ギャップを把握する。未経験入社後の初年度は現職より低くなる場合が多い（300〜380万円台が多い）',
@@ -1759,7 +1778,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: '30代のエンジニア転職で前職の経験は活かせますか？', a: '大いに活かせます。金融・医療・製造・物流など特定業界でのSE・社内SEポジションでは、その業界知識と技術スキルの両方を持つ30代エンジニアの需要が高いです。「業界経験×プログラミング」という差別化ができれば、純粋な未経験よりも有利に転職活動を進められます。スクール選びでは「業界別の転職支援実績」も確認しましょう。' },
@@ -1781,7 +1800,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'javascript-react-school': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">なぜJavaScript・Reactを選ぶのか</h2>
+        <h2 id="javascriptreact" className="text-xl font-bold text-gray-900 mb-4">なぜJavaScript・Reactを選ぶのか</h2>
         <p className="text-sm text-gray-700 leading-relaxed mb-3">
           フロントエンドエンジニアの求人の多くがJavaScript + Reactの知識を必要としています。2025年現在、ReactはWeb開発フレームワークの中で圧倒的なシェアを誇り、転職・副業どちらの目標にも直結するスキルです。
         </p>
@@ -1804,7 +1823,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">JavaScript・React特化スクール おすすめランキング</h2>
+        <h2 id="javascriptreact" className="text-xl font-bold text-gray-900 mb-4">JavaScript・React特化スクール おすすめランキング</h2>
         <div className="space-y-5">
           {[
             {
@@ -1885,7 +1904,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">JavaScript学習ロードマップ</h2>
+        <h2 id="javascript" className="text-xl font-bold text-gray-900 mb-4">JavaScript学習ロードマップ</h2>
         <div className="space-y-3">
           {[
             { step: 'STEP 1', title: 'HTML・CSS基礎（1〜2週間）', body: 'Webページの構造（HTML）とデザイン（CSS）の基礎を習得。ProGate・ドットインストールなどで無料で学べる。' },
@@ -1922,7 +1941,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: 'JavaScriptだけ学べばフロントエンドエンジニアになれますか？', a: 'JavaScriptの基礎の上にReact（またはVue.js）を学ぶことが現在の市場では必須です。HTML/CSS→JavaScript→React（またはNext.js）の順が一般的なフロントエンドスクールのカリキュラム。TypeScriptも近年採用が急増しており、習得すると市場価値がさらに高まります。' },
@@ -1944,7 +1963,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'school-koukai-shinai-erabi': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">プログラミングスクールで後悔する人の共通パターン</h2>
+        <h2 id="プログラミングスクールで後悔する人の共通" className="text-xl font-bold text-gray-900 mb-4">プログラミングスクールで後悔する人の共通パターン</h2>
         <p className="text-sm text-gray-700 leading-relaxed mb-4">
           プログラミングスクールへの入学後に後悔する人の多くは、入学前の「確認不足」が原因です。高額な受講料を支払ってから後悔しないために、よくある失敗パターンとその回避策を解説します。
         </p>
@@ -1994,7 +2013,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">入学前に必ず確認すべき7つのポイント</h2>
+        <h2 id="7" className="text-xl font-bold text-gray-900 mb-4">入学前に必ず確認すべき7つのポイント</h2>
         <div className="space-y-2">
           {[
             { no: 1, check: '転職実績・転職率の具体的な数値を公開しているか', detail: '「転職率98%」などの数値が第三者機関による調査か、自社調査かを確認。対象期間・条件も重要。' },
@@ -2019,7 +2038,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">後悔しにくいスクールの特徴まとめ</h2>
+        <h2 id="後悔しにくいスクールの特徴まとめ" className="text-xl font-bold text-gray-900 mb-4">後悔しにくいスクールの特徴まとめ</h2>
         <ul className="space-y-2">
           {[
             '転職実績・合格率を具体的な数値で公開している（第三者調査が望ましい）',
@@ -2053,7 +2072,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: 'プログラミングスクールで後悔した人が再転職する場合、何をすればいいですか？', a: '転職先がエンジニア職でない場合は再度スクール入学よりも「現職でのスキルアップ機会」の確認が先です。エンジニアとして入社できたが環境が合わない場合は、1〜2年の経験を積んでから転職活動（経験者採用）が最も現実的。スクールへの再投資より、現在の環境を最大限活用して実績を作ることが優先です。' },
@@ -2075,7 +2094,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'programming-school-20dai-osusume': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">20代がプログラミングスクールを選ぶポイント</h2>
+        <h2 id="20" className="text-xl font-bold text-gray-900 mb-4">20代がプログラミングスクールを選ぶポイント</h2>
         <p className="text-sm text-gray-700 leading-relaxed mb-4">
           20代・大学生・新卒の方がスクールを選ぶ際は、転職サポートの充実度・費用と給付金の活用・就職後のキャリアパスの3点が重要です。
           30代以降と比べて「若さ」という武器があるため、スキルと意欲さえあれば未経験からでも大手IT企業への就職も十分に狙えます。
@@ -2100,7 +2119,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">20代・新卒向けスクールおすすめ3選</h2>
+        <h2 id="203" className="text-xl font-bold text-gray-900 mb-4">20代・新卒向けスクールおすすめ3選</h2>
         <div className="space-y-5">
           {[
             {
@@ -2161,7 +2180,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">20代でエンジニアになるメリット</h2>
+        <h2 id="20" className="text-xl font-bold text-gray-900 mb-4">20代でエンジニアになるメリット</h2>
         <div className="space-y-3">
           {[
             { title: '年収の伸びしろが大きい', body: '20代でエンジニアになれば30〜40代にかけてのキャリア設計の自由度が高くなります。スタートアップでのストックオプション・大手IT企業への転職・フリーランス独立など、選択肢が豊富です。' },
@@ -2193,7 +2212,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: '20代でプログラミングスクールに通うメリットは何ですか？', a: '最大のメリットは「若さ」という採用側から見た伸びしろです。20代は未経験転職でも採用されやすく、スクールのカリキュラムを全力で消化できる時間・体力もあります。転職後の給与成長率も高く、25歳でエンジニア転職→30歳で年収600万円以上というキャリアパスが現実的です。投資回収の観点でも若いほど有利です。' },
@@ -2215,7 +2234,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'web-frontend-school': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Webフロントエンドエンジニアに必要なスキルとは</h2>
+        <h2 id="web" className="text-xl font-bold text-gray-900 mb-4">Webフロントエンドエンジニアに必要なスキルとは</h2>
         <p className="text-sm text-gray-700 leading-relaxed mb-4">
           Webフロントエンドエンジニアは、ユーザーが実際に見て操作するWebサイト・Webアプリの表示部分（UI）を構築するエンジニアです。
           2026年現在、求人市場では以下のスキルセットが求められています。
@@ -2251,7 +2270,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Webフロントエンド対応スクール比較</h2>
+        <h2 id="web" className="text-xl font-bold text-gray-900 mb-4">Webフロントエンド対応スクール比較</h2>
         <div className="space-y-4">
           {[
             {
@@ -2311,7 +2330,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">フロントエンドエンジニアの就職・転職先</h2>
+        <h2 id="フロントエンドエンジニアの就職・転職先" className="text-xl font-bold text-gray-900 mb-4">フロントエンドエンジニアの就職・転職先</h2>
         <div className="space-y-3">
           {[
             { title: 'Web制作会社・システム開発会社', body: 'Webサイト・Webアプリの制作を請け負うSIer・Web制作会社は未経験・第二新卒の採用も多い。フロントエンドのポートフォリオを作成して実力をアピールすることが重要。' },
@@ -2343,7 +2362,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: 'Webフロントエンドエンジニアとバックエンドエンジニア、年収差はありますか？', a: '一般的にバックエンド・フルスタックエンジニアのほうが年収が高い傾向があります（平均50〜100万円程度）。ただしフロントエンド専門でも大手企業・スタートアップでは年収700〜1,000万円以上の求人も存在します。フロントエンドからバックエンドへスキルを広げる（フルスタック化）ことで年収上昇を狙う方も多いです。' },
@@ -2364,7 +2383,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   '30dai-40dai-programming-school-osoi': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">30代・40代のエンジニア転職は本当に遅い？現実データ</h2>
+        <h2 id="3040" className="text-xl font-bold text-gray-900 mb-4">30代・40代のエンジニア転職は本当に遅い？現実データ</h2>
         <p className="mb-4">「30代・40代からプログラミングスクールに通うのは遅すぎる」と思っている方は多いですが、実際のデータはどうでしょうか。ITエンジニアの転職市場は2026年現在も活況で、経済産業省の試算では2030年に最大79万人のIT人材が不足するとされています。</p>
         <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-4">
           <p className="font-bold text-blue-800 mb-2">年齢別・転職成功者の割合（主要スクール調べ）</p>
@@ -2378,7 +2397,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-sm text-gray-700">問題は年齢ではなく、「何を目指すか」と「どのスクールを選ぶか」です。</p>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">年齢を強みに変える転職戦略</h2>
+        <h2 id="年齢を強みに変える転職戦略" className="text-xl font-bold text-gray-900 mb-4">年齢を強みに変える転職戦略</h2>
         <p className="mb-4">30代・40代がエンジニア転職で若者と差別化できるポイントは3つあります。</p>
         <div className="space-y-3">
           {[
@@ -2394,7 +2413,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">30代・40代に向いているプログラミングスクールの選び方</h2>
+        <h2 id="3040" className="text-xl font-bold text-gray-900 mb-4">30代・40代に向いているプログラミングスクールの選び方</h2>
         <p className="mb-4">30代・40代がスクール選びで重視すべきポイントは、若い世代とは異なります。</p>
         <ul className="space-y-3 text-sm">
           <li className="flex gap-3 items-start"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0 mt-0.5">1</span><span><strong>転職支援の対象年齢を確認：</strong>スクールによっては「転職保証は35歳まで」などの年齢制限がある場合があります。入学前に上限年齢を必ず確認しましょう。</span></li>
@@ -2404,7 +2423,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ul>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">おすすめスクールと注意点</h2>
+        <h2 id="おすすめスクールと注意点" className="text-xl font-bold text-gray-900 mb-4">おすすめスクールと注意点</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             { name: 'DMM WEBCAMP', slug: 'dmm-webcamp', badge: '40代転職実績あり', point: '給付金活用で実質13万円〜。40代の転職成功事例も公開。オンライン完結で働きながら学べる。転職保証付きで年齢リスクを軽減できる。' },
@@ -2425,7 +2444,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある不安と解決策</h2>
+        <h2 id="よくある不安と解決策" className="text-xl font-bold text-gray-900 mb-4">よくある不安と解決策</h2>
         <div className="space-y-3">
           {[
             { q: '40代でエンジニア転職は現実的ですか？', a: '40代でのエンジニア転職は難易度は上がりますが、不可能ではありません。重要なのは「純粋な開発エンジニア」だけを目指すのではなく、前職の業界知識を活かした業界特化型エンジニア・ITコンサル・テクニカルPMなど幅広い職種を視野に入れることです。実際に40代でIT業界に転職し年収アップした事例は複数あります。' },
@@ -2446,7 +2465,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'bunkei-engineer-tenshoku-benkyo': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">文系出身でもエンジニアになれる？現実を確認</h2>
+        <h2 id="文系出身でもエンジニアになれる？現実を確" className="text-xl font-bold text-gray-900 mb-4">文系出身でもエンジニアになれる？現実を確認</h2>
         <p className="mb-4">「文系だからプログラミングは無理」という思い込みは根拠がありません。現役エンジニアの約40%は文系出身との調査もあり、理系・文系の差よりも「継続して学べるか」「論理的に考えられるか」の方が重要です。</p>
         <div className="bg-green-50 border border-green-200 rounded-xl p-4 mb-4">
           <p className="font-bold text-green-800 mb-2">文系エンジニアの強み</p>
@@ -2460,7 +2479,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-sm text-gray-700">文系出身者がエンジニア転職で成功するカギは「自分の文系スキルをどのエンジニア職に活かすか」を明確にすることです。</p>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">文系が活かせるエンジニア職種</h2>
+        <h2 id="文系が活かせるエンジニア職種" className="text-xl font-bold text-gray-900 mb-4">文系が活かせるエンジニア職種</h2>
         <div className="space-y-3">
           {[
             { title: 'Webエンジニア（フロントエンド）', body: 'HTMLやCSS・JavaScriptでWebサイトやアプリの見た目・ユーザー体験を構築する職種。デザイン感覚やコミュニケーション能力が重視され、文系出身者に多い職種の一つ。' },
@@ -2476,7 +2495,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">文系向けプログラミング学習ロードマップ</h2>
+        <h2 id="文系向けプログラミング学習ロードマップ" className="text-xl font-bold text-gray-900 mb-4">文系向けプログラミング学習ロードマップ</h2>
         <ol className="space-y-3 text-sm">
           <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">1</span><span><strong>まずHTMLとCSSで「動くものを作る体験」：</strong>Progateなどの無料ツールで1〜2週間試す。向いているかどうかを確認する。</span></li>
           <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">2</span><span><strong>目的を決めてスクールに入学：</strong>Webエンジニア・バックエンド・AIなど方向性を絞る。文系はWebフロントエンドまたはRuby on Railsのバックエンドが定番ルート。</span></li>
@@ -2485,7 +2504,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ol>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">スクール選びのポイント（文系視点）</h2>
+        <h2 id="スクール選びのポイント（文系視点）" className="text-xl font-bold text-gray-900 mb-4">スクール選びのポイント（文系視点）</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             { name: 'RUNTEQ', slug: 'runteq', badge: 'ポートフォリオ重視', point: '9ヶ月かけて実務水準のポートフォリオを作成。文系出身者でも「作品で勝負できる」スキルが身につく。文系出身エンジニアの転職事例も豊富。' },
@@ -2506,7 +2525,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">転職成功のための差別化戦略</h2>
+        <h2 id="転職成功のための差別化戦略" className="text-xl font-bold text-gray-900 mb-4">転職成功のための差別化戦略</h2>
         <div className="space-y-3">
           {[
             { q: '文系出身はエンジニア転職で不利ですか？', a: '採用担当者の多くは「文系か理系か」よりも「何ができるか」を重視します。文系出身のポイントは、前職の業界知識・コミュニケーション力・文章力を前面に出した自己PRです。特に顧客との折衝が多い受託開発会社・上流工程のSIer・Web系ベンチャーでは文系の強みが評価されやすい傾向があります。' },
@@ -2527,7 +2546,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'freelance-engineer-roadmap': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">フリーランスエンジニアの現状と収入</h2>
+        <h2 id="フリーランスエンジニアの現状と収入" className="text-xl font-bold text-gray-900 mb-4">フリーランスエンジニアの現状と収入</h2>
         <p className="mb-4">フリーランスエンジニアの平均年収は800〜1,200万円とされており、会社員エンジニアと比べて高収入を得やすい働き方です。ただし「スキルなしでいきなりフリーランス」は現実的ではなく、まず会社員として2〜3年の実務経験を積むことが一般的なルートです。</p>
         <div className="grid grid-cols-2 gap-4 text-center">
           {[
@@ -2544,7 +2563,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">フリーランス独立までの3ステップロードマップ</h2>
+        <h2 id="3" className="text-xl font-bold text-gray-900 mb-4">フリーランス独立までの3ステップロードマップ</h2>
         <div className="space-y-4">
           {[
             { step: 'STEP 1', title: 'スクールでスキルを習得する（0〜6ヶ月）', body: 'プログラミングスクールでWebアプリ開発のスキルを習得。フリーランス向けにはRuby on Rails・Python・React・TypeScriptのいずれかをメインに学ぶ。ポートフォリオを作成し、GitHub上で公開する。', color: 'blue' },
@@ -2562,7 +2581,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">必要なスキルセットと習得順序</h2>
+        <h2 id="必要なスキルセットと習得順序" className="text-xl font-bold text-gray-900 mb-4">必要なスキルセットと習得順序</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
@@ -2592,7 +2611,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">最初の案件を獲得する方法</h2>
+        <h2 id="最初の案件を獲得する方法" className="text-xl font-bold text-gray-900 mb-4">最初の案件を獲得する方法</h2>
         <div className="space-y-3">
           {[
             { title: 'フリーランスエージェントを活用', body: 'レバテックフリーランス・Midworks・クラウドテックなどのエージェントは、未経験フリーランスでも案件を紹介してもらえる場合があります。エージェントが企業との交渉を代行するため、初案件の獲得に最もおすすめの方法です。' },
@@ -2607,7 +2626,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">フリーランスになる前に準備すべきこと</h2>
+        <h2 id="フリーランスになる前に準備すべきこと" className="text-xl font-bold text-gray-900 mb-4">フリーランスになる前に準備すべきこと</h2>
         <div className="space-y-3">
           {[
             { q: 'フリーランスエンジニアに必要な実務経験は何年ですか？', a: '最低1〜2年の実務経験があれば案件を受注できるフリーランスが多いですが、安定して高単価（月60万円以上）を狙うには3年以上の経験が推奨されます。スキルセット・ポートフォリオ・GitHubの充実度によって実務年数の壁を低くすることも可能です。' },
@@ -2628,7 +2647,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'kyuufu-kin-kanzen-guide': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">教育訓練給付金の種類と違い</h2>
+        <h2 id="教育訓練給付金の種類と違い" className="text-xl font-bold text-gray-900 mb-4">教育訓練給付金の種類と違い</h2>
         <p className="mb-4">教育訓練給付金は厚生労働省が運営するスキルアップ支援制度です。大きく3種類あり、プログラミングスクールで使えるのは主に「特定一般教育訓練給付金」と「専門実践教育訓練給付金」の2種類です。</p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
@@ -2665,7 +2684,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="mt-3 text-sm text-gray-600">専門実践教育訓練給付金は受講費の50%が在学中に支給され、修了後1年以内に就職した場合はさらに20%（合計70%）が追加支給されます。</p>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">受給資格・条件を確認しよう</h2>
+        <h2 id="受給資格・条件を確認しよう" className="text-xl font-bold text-gray-900 mb-4">受給資格・条件を確認しよう</h2>
         <div className="space-y-3">
           {[
             { title: '在職者の場合', body: '雇用保険の被保険者期間が通算1年以上（2回目以降の利用は3年以上）あること。現在雇用保険に加入している正社員・派遣社員・パートタイム等が対象。' },
@@ -2680,7 +2699,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">給付金申請の手順ステップバイステップ</h2>
+        <h2 id="給付金申請の手順ステップバイステップ" className="text-xl font-bold text-gray-900 mb-4">給付金申請の手順ステップバイステップ</h2>
         <ol className="space-y-3 text-sm">
           <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">1</span><span><strong>厚労省の検索システムで対象講座を確認</strong>（「教育訓練給付制度 検索」で検索）</span></li>
           <li className="flex gap-3"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0">2</span><span><strong>ハローワークで「訓練前キャリアコンサルティング」を受ける</strong>（専門実践のみ必須・受講開始1ヶ月前まで）</span></li>
@@ -2691,7 +2710,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ol>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">給付金対応スクールの選び方</h2>
+        <h2 id="給付金対応スクールの選び方" className="text-xl font-bold text-gray-900 mb-4">給付金対応スクールの選び方</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             { name: 'DMM WEBCAMP', slug: 'dmm-webcamp', badge: '専門実践・最大70%', point: '専門実践教育訓練給付金（最大70%）対象。受講費437,800円が実質130,000円程度に。転職保証も合わせて安心して受講できる給付金最大活用スクール。' },
@@ -2712,7 +2731,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある失敗と注意点</h2>
+        <h2 id="よくある失敗と注意点" className="text-xl font-bold text-gray-900 mb-4">よくある失敗と注意点</h2>
         <div className="space-y-3">
           {[
             { q: '受講開始後に給付金の申請はできますか？', a: '専門実践教育訓練給付金は、受講開始前にハローワークで手続きをすることが必須要件です。受講を開始した後から申請しても給付を受けることができません。受講を検討し始めたら、まず最寄りのハローワークに相談することを強くおすすめします。' },
@@ -2733,7 +2752,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'web-design-vs-programming-school': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Webデザインスクールとプログラミングスクールの基本的な違い</h2>
+        <h2 id="web" className="text-xl font-bold text-gray-900 mb-4">Webデザインスクールとプログラミングスクールの基本的な違い</h2>
         <p className="mb-4">Webデザインスクールとプログラミングスクールは、学ぶ内容・目指すキャリア・費用が大きく異なります。どちらを選ぶかは「何を仕事にしたいか」によって決まります。</p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
@@ -2764,7 +2783,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">学べるスキルと就職先の比較</h2>
+        <h2 id="学べるスキルと就職先の比較" className="text-xl font-bold text-gray-900 mb-4">学べるスキルと就職先の比較</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="border border-pink-200 bg-pink-50 rounded-xl p-4">
             <h3 className="font-bold text-pink-800 mb-3">Webデザインスクール</h3>
@@ -2791,7 +2810,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">費用・期間の比較</h2>
+        <h2 id="費用・期間の比較" className="text-xl font-bold text-gray-900 mb-4">費用・期間の比較</h2>
         <p className="mb-3 text-sm text-gray-700">費用面では、Webデザインスクールの方が若干安い傾向がありますが、プログラミングスクールは教育訓練給付金（最大70%）を活用できるコースが多く、実質負担を大幅に下げられる点が大きな違いです。</p>
         <div className="bg-slate-50 rounded-xl p-4 text-sm">
           <p className="font-bold text-slate-800 mb-2">給付金活用時の実質費用比較</p>
@@ -2802,7 +2821,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">どちらを選ぶべきか：目的別診断</h2>
+        <h2 id="どちらを選ぶべきか：目的別診断" className="text-xl font-bold text-gray-900 mb-4">どちらを選ぶべきか：目的別診断</h2>
         <div className="space-y-3">
           {[
             { title: 'Webデザインスクールが向いている人', body: 'デザインやビジュアルクリエイティブが好きな人・美術系の経験がある人・コーディングよりデザインツールで作ることが楽しいと感じる人。副業でバナー制作・LP制作をしたい人にもおすすめ。' },
@@ -2816,7 +2835,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">どちらも学べるスクールの紹介</h2>
+        <h2 id="どちらも学べるスクールの紹介" className="text-xl font-bold text-gray-900 mb-4">どちらも学べるスクールの紹介</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             { name: 'TechAcademy', slug: 'techacademy', badge: 'デザイン+コーディング', point: 'WebデザインコースとWebアプリコースを持つ。デザインとプログラミング両方の基礎を学べる。副業・転職いずれも対応した現役エンジニアによるメンタリング。' },
@@ -2836,7 +2855,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
+        <h2 id="よくある質問" className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">
           {[
             { q: 'WebデザイナーとWebエンジニアの年収差はありますか？', a: '一般的にWebエンジニア（バックエンド・フルスタック）の方がWebデザイナーより年収が高い傾向があります。未経験転職の初年度で比較すると、Webデザイナー300〜380万円、Webエンジニア350〜450万円程度が相場です。ただしシニアUIデザイナー・UXデザイナーとして大手IT企業で活躍すれば年収600〜900万円も可能です。' },
@@ -2857,7 +2876,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'ruby-python-javascript-hikaku-shoshinsha': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Ruby・Python・JavaScriptの基本的な特徴</h2>
+        <h2 id="rubypythonjavascript" className="text-xl font-bold text-gray-900 mb-4">Ruby・Python・JavaScriptの基本的な特徴</h2>
         <p className="mb-4">プログラミングを学び始める際に多くの人が悩む「最初に何の言語を学ぶべきか」という問いに対して、Ruby・Python・JavaScriptはいずれも人気の高い選択肢です。目的に合った言語を選ぶことが学習効率と転職成功の鍵です。</p>
         <div className="space-y-3">
           {[
@@ -2873,7 +2892,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">学習難易度と習得期間の比較</h2>
+        <h2 id="学習難易度と習得期間の比較" className="text-xl font-bold text-gray-900 mb-4">学習難易度と習得期間の比較</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
@@ -2902,7 +2921,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">就職先・年収・需要の比較</h2>
+        <h2 id="就職先・年収・需要の比較" className="text-xl font-bold text-gray-900 mb-4">就職先・年収・需要の比較</h2>
         <div className="space-y-3">
           {[
             { title: 'Ruby：Web系スタートアップへの転職に強い', body: '国内のWeb系スタートアップ・メガベンチャーはRuby on Railsを採用しているケースが多い。転職後の初年度年収は350〜500万円が相場。技術コミュニティが活発でスキルアップの機会が多い。スクールのカリキュラムも充実しており、学習リソースが豊富。' },
@@ -2917,7 +2936,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">目的別おすすめ言語の選び方</h2>
+        <h2 id="目的別おすすめ言語の選び方" className="text-xl font-bold text-gray-900 mb-4">目的別おすすめ言語の選び方</h2>
         <ul className="space-y-2 text-sm">
           <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">Webエンジニアに転職したい：</span><span>RubyまたはJavaScript（React）。転職市場での求人数が多く、スクールのカリキュラムも充実している。</span></li>
           <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">AIエンジニア・データ分析を目指す：</span><span>Python一択。機械学習ライブラリ（NumPy・Pandas・TensorFlow）もPythonで動く。</span></li>
@@ -2926,7 +2945,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ul>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">各言語を学べるスクール紹介</h2>
+        <h2 id="各言語を学べるスクール紹介" className="text-xl font-bold text-gray-900 mb-4">各言語を学べるスクール紹介</h2>
         <div className="space-y-3">
           {[
             { q: 'Rubyを学べるスクールはどこがおすすめですか？', a: 'RUNTEQはRuby on Rails特化スクールとして業界内で高評価を得ています。9ヶ月間の充実したカリキュラムで実務水準のスキルが身につきます。DMM WEBCAMPもRubyコースを提供しており、給付金と合わせてコスパよく学べます。' },
@@ -2947,7 +2966,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'programming-school-sotsugyogo-tenshoku': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">卒業後すぐに始める転職活動の準備</h2>
+        <h2 id="卒業後すぐに始める転職活動の準備" className="text-xl font-bold text-gray-900 mb-4">卒業後すぐに始める転職活動の準備</h2>
         <p className="mb-4">プログラミングスクールを卒業した後、多くの人が「何から始めればいいかわからない」という状態に陥ります。卒業後の転職活動は、在籍中から準備を始めることが成功の鍵です。スクール在籍の最終1ヶ月から並行してポートフォリオ完成・職務経歴書作成を進めましょう。</p>
         <div className="bg-slate-50 rounded-xl p-4 mb-4">
           <p className="font-bold text-slate-800 mb-2">転職活動のタイムライン目安</p>
@@ -2960,7 +2979,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">エンジニア転職に必要なポートフォリオの作り方</h2>
+        <h2 id="エンジニア転職に必要なポートフォリオの作" className="text-xl font-bold text-gray-900 mb-4">エンジニア転職に必要なポートフォリオの作り方</h2>
         <div className="space-y-3">
           {[
             { title: 'オリジナルWebアプリを1〜2個作る', body: 'チュートリアルのコピーではなく、自分が「欲しい」と思うオリジナルのWebアプリを作ることが重要です。シンプルでも機能が動くものを完成させ、GitHubで公開しましょう。READMEには使用技術・工夫した点・苦労した点を記載します。' },
@@ -2975,7 +2994,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">求人サイト・エージェントの使い分け方</h2>
+        <h2 id="求人サイト・エージェントの使い分け方" className="text-xl font-bold text-gray-900 mb-4">求人サイト・エージェントの使い分け方</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
@@ -3004,7 +3023,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">面接対策と技術テストの準備</h2>
+        <h2 id="面接対策と技術テストの準備" className="text-xl font-bold text-gray-900 mb-4">面接対策と技術テストの準備</h2>
         <div className="space-y-3">
           {[
             { title: 'コーディングテストの対策', body: 'LeetCode・AtCoder・Paizaなどのプラットフォームでアルゴリズム問題を練習しましょう。特にB〜Cランク相当の基礎問題を解けるようにすることが最初の目標です。多くの未経験転職向け企業ではそこまで難易度の高い問題は出ません。' },
@@ -3018,7 +3037,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">内定後の交渉・入社準備</h2>
+        <h2 id="内定後の交渉・入社準備" className="text-xl font-bold text-gray-900 mb-4">内定後の交渉・入社準備</h2>
         <div className="space-y-3">
           {[
             { q: 'スクール卒業後どのくらいで内定が出ますか？', a: '平均的には卒業後1〜2ヶ月で内定が出るケースが多いです。ただし応募数・ポートフォリオの質・面接準備の充実度によって大きく異なります。スクールの転職支援を最大限活用し、エージェント経由の応募も並行して行うことで内定までの期間を短縮できます。' },
@@ -3039,7 +3058,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'remote-work-engineer-shokushu': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">リモートワーク可能なエンジニア職種一覧</h2>
+        <h2 id="リモートワーク可能なエンジニア職種一覧" className="text-xl font-bold text-gray-900 mb-4">リモートワーク可能なエンジニア職種一覧</h2>
         <p className="mb-4">IT・エンジニア職はリモートワーク対応率が高い職種の代表です。2026年現在、エンジニア求人の約60〜70%がリモートワーク可能とされており、フルリモート・週数回出社など柔軟な働き方が実現しやすい職種です。</p>
         <div className="space-y-3">
           {[
@@ -3064,7 +3083,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">職種別の平均年収と需要</h2>
+        <h2 id="職種別の平均年収と需要" className="text-xl font-bold text-gray-900 mb-4">職種別の平均年収と需要</h2>
         <p className="mb-3 text-sm text-gray-700">リモートワーク対応のエンジニア職の中でも、AI・クラウド系の需要が特に急増しています。2026年に向けてDX推進・生成AI活用が企業課題となっており、これらのスキルを持つエンジニアの市場価値は高まっています。</p>
         <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
           <p className="font-bold text-yellow-800 mb-2">2026年需要急増中のリモートエンジニア職</p>
@@ -3076,7 +3095,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">リモート求人を獲得するための必要スキル</h2>
+        <h2 id="リモート求人を獲得するための必要スキル" className="text-xl font-bold text-gray-900 mb-4">リモート求人を獲得するための必要スキル</h2>
         <ul className="space-y-3 text-sm">
           <li className="flex gap-3 items-start"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0 mt-0.5">1</span><span><strong>非同期コミュニケーション能力：</strong>Slack・Notionなどのツールで文章で意図を伝える能力が必須。テキストで明確に質問・報告できることがリモートワーク成功の鍵。</span></li>
           <li className="flex gap-3 items-start"><span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shrink-0 mt-0.5">2</span><span><strong>GitHubでの自己管理能力：</strong>コミット履歴・Issue管理・PR作成など、Gitワークフローを自律的に回せる経験。スクールのチーム開発で実践経験を積むと有利。</span></li>
@@ -3084,7 +3103,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ul>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">リモートワーク転職に強いスクール</h2>
+        <h2 id="リモートワーク転職に強いスクール" className="text-xl font-bold text-gray-900 mb-4">リモートワーク転職に強いスクール</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
             { name: 'RUNTEQ', slug: 'runteq', badge: 'リモート転職実績', point: '実務水準のスキルで自社開発・Web系スタートアップへの転職に強い。リモート対応企業への転職実績も豊富。GitHubを使ったチーム開発を学べるカリキュラム。' },
@@ -3104,7 +3123,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">リモートエンジニアとして働くための準備</h2>
+        <h2 id="リモートエンジニアとして働くための準備" className="text-xl font-bold text-gray-900 mb-4">リモートエンジニアとして働くための準備</h2>
         <div className="space-y-3">
           {[
             { q: '未経験エンジニアでもフルリモートで働けますか？', a: '未経験転職の直後はフルリモートの求人は少なめです。多くの企業は最初の3〜6ヶ月を試用期間とし、出社またはハイブリッドで業務を覚えた後にリモートを認める場合があります。ただし自社開発のWeb系スタートアップや、もともとフルリモートが標準の企業では入社直後からリモートのケースもあります。' },
@@ -3125,7 +3144,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'programming-school-kuchikomi-mikata': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">口コミ・評判が信頼できないケースとは</h2>
+        <h2 id="口コミ・評判が信頼できないケースとは" className="text-xl font-bold text-gray-900 mb-4">口コミ・評判が信頼できないケースとは</h2>
         <p className="mb-4">プログラミングスクールを選ぶ際に口コミを参考にする方は多いですが、インターネット上の口コミには注意が必要なものも含まれています。以下のようなケースは信頼性が低い可能性があります。</p>
         <div className="space-y-2">
           {[
@@ -3141,7 +3160,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">信頼できる口コミ情報源の見分け方</h2>
+        <h2 id="信頼できる口コミ情報源の見分け方" className="text-xl font-bold text-gray-900 mb-4">信頼できる口コミ情報源の見分け方</h2>
         <div className="space-y-3">
           {[
             { title: '転職・就活プラットフォームの口コミ', body: 'OpenWork（旧Vorkers）・転職会議・Glassdoorなどは実際の受講者・社員が匿名で投稿するレビューサイトです。スクールの口コミより転職先の企業評判調査に向いていますが、スクール卒業生の声も参考になります。' },
@@ -3156,7 +3175,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">スクール公式情報と口コミの照合ポイント</h2>
+        <h2 id="スクール公式情報と口コミの照合ポイント" className="text-xl font-bold text-gray-900 mb-4">スクール公式情報と口コミの照合ポイント</h2>
         <ul className="space-y-2 text-sm">
           <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">転職成功率：</span><span>「転職成功率99%」などの数字は「どの期間のデータか」「分母は何か」を確認。卒業生全員なのか、転職活動した人だけなのかで意味が変わります。</span></li>
           <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">返金条件：</span><span>転職保証の「条件」が口コミと公式サイトで一致しているか確認。「全額返金」でも「提示された求人を断ったら対象外」などの細かい条件があります。</span></li>
@@ -3165,7 +3184,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ul>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">良い口コミ・悪い口コミの読み解き方</h2>
+        <h2 id="良い口コミ・悪い口コミの読み解き方" className="text-xl font-bold text-gray-900 mb-4">良い口コミ・悪い口コミの読み解き方</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="border border-green-200 bg-green-50 rounded-xl p-4">
             <h3 className="font-bold text-green-800 mb-3 text-sm">信頼できる良い口コミの特徴</h3>
@@ -3188,7 +3207,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">口コミ以外のスクール評価方法</h2>
+        <h2 id="口コミ以外のスクール評価方法" className="text-xl font-bold text-gray-900 mb-4">口コミ以外のスクール評価方法</h2>
         <div className="space-y-3">
           {[
             { q: '口コミだけを信じてスクールを選ぶのは危険ですか？', a: '口コミはあくまで参考情報であり、スクール選びの決定打にすべきではありません。最終的な判断は「無料カウンセリングでの実際の対応」「カリキュラムの詳細」「給付金・返金条件の公式情報」「転職支援の具体的な実績」を自分の目で確認した上で行いましょう。口コミは「気になる候補を絞り込む段階」で活用するのが正しい使い方です。' },
@@ -3209,7 +3228,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   'engineer-tenshoku-nenshu-career': (
     <div className="space-y-8">
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">エンジニア転職後の初年度年収の現実</h2>
+        <h2 id="エンジニア転職後の初年度年収の現実" className="text-xl font-bold text-gray-900 mb-4">エンジニア転職後の初年度年収の現実</h2>
         <p className="mb-4">未経験からプログラミングスクールを経てエンジニアに転職した場合、初年度の年収はどのくらいになるのでしょうか。職種・企業タイプ・地域によって異なりますが、一般的な相場を解説します。</p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
@@ -3239,7 +3258,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">職種別・経験年数別の年収推移</h2>
+        <h2 id="職種別・経験年数別の年収推移" className="text-xl font-bold text-gray-900 mb-4">職種別・経験年数別の年収推移</h2>
         <p className="mb-3 text-sm text-gray-700">エンジニアの年収は経験年数とスキルの掛け算で決まります。転職後1〜3年でスキルアップと実績を積むことが、年収を大きく引き上げる鍵です。</p>
         <div className="space-y-3">
           {[
@@ -3259,7 +3278,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">エンジニアのキャリアパス：3つのルート</h2>
+        <h2 id="3" className="text-xl font-bold text-gray-900 mb-4">エンジニアのキャリアパス：3つのルート</h2>
         <div className="space-y-3">
           {[
             { title: 'スペシャリスト（技術職）ルート', body: '特定の技術領域を深掘りし、業界トップレベルの技術者を目指すルート。AIエンジニア・セキュリティエンジニア・データベースエンジニアなどが該当。年収は高いが、継続的な学習が必要。' },
@@ -3274,7 +3293,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">年収を上げるための具体的な戦略</h2>
+        <h2 id="年収を上げるための具体的な戦略" className="text-xl font-bold text-gray-900 mb-4">年収を上げるための具体的な戦略</h2>
         <ul className="space-y-2 text-sm">
           <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">1〜2年目：</span><span>社内での実績を積みつつ、GitHubや技術ブログで外部への発信を開始。副業案件を取ることでスキルの市場価値を測る。</span></li>
           <li className="flex gap-2"><span className="font-bold text-slate-700 shrink-0">3年目以降：</span><span>転職活動を開始。同じスキルでも企業規模・職種によって年収は大きく変わる。エンジニア特化エージェント（レバテックキャリア等）を活用して市場価値を把握する。</span></li>
@@ -3283,7 +3302,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         </ul>
       </section>
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">スクール卒業後のキャリア相談先</h2>
+        <h2 id="スクール卒業後のキャリア相談先" className="text-xl font-bold text-gray-900 mb-4">スクール卒業後のキャリア相談先</h2>
         <div className="space-y-3">
           {[
             { q: 'エンジニア転職後に年収を上げるにはどうすればいいですか？', a: '最も効果的な方法は「転職」です。同じスキルレベルでも、企業・職種・業界が変わるだけで年収が50〜150万円上がることは珍しくありません。在籍2〜3年で技術力と実績が積み上がったら、転職市場で自分の価値を確認することをおすすめします。エンジニア特化の転職エージェント（レバテックキャリア・Geekly等）に相談するのが手軽です。' },

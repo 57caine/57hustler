@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { columns, getColumnBySlug, columnContent } from '@/lib/columns';
+import { columns, getColumnBySlug, columnContent, getHeadingId } from '@/lib/columns';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -98,7 +98,9 @@ export default async function ColumnArticlePage({ params }: Props) {
               {column.headings.map((h, i) => (
                 <li key={i} className="flex items-start gap-2.5 text-sm">
                   <span className="text-slate-400 font-mono text-xs mt-0.5 shrink-0 w-5">{i + 1}.</span>
-                  <span className="text-slate-700 leading-snug">{h}</span>
+                  <a href={`#${getHeadingId(h)}`} className="text-sky-600 hover:text-sky-700 hover:underline leading-snug">
+                    {h}
+                  </a>
                 </li>
               ))}
             </ol>
