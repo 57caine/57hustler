@@ -22,12 +22,80 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const BASE = 'https://school.lens-navi.jp';
 
 const categoryColors: Record<string, string> = {
-  '転職特化': 'bg-slate-50 text-slate-700 border-slate-200',
-  'スキルアップ': 'bg-emerald-50 text-emerald-700 border-emerald-200',
-  'フリーランス特化': 'bg-amber-50 text-amber-700 border-amber-200',
-  'AI特化': 'bg-violet-50 text-violet-700 border-violet-200',
-  '独学支援': 'bg-slate-50 text-slate-600 border-slate-200',
+  'プログラミング・IT転職': 'bg-sky-50 text-sky-700 border-sky-200',
+  '資格・オンライン学習': 'bg-blue-50 text-blue-700 border-blue-200',
+  'クリエイティブ・デザイン': 'bg-purple-50 text-purple-700 border-purple-200',
+  '音楽': 'bg-pink-50 text-pink-700 border-pink-200',
+  'ゴルフ・フィットネス': 'bg-green-50 text-green-700 border-green-200',
+  '投資・トレード': 'bg-amber-50 text-amber-700 border-amber-200',
 };
+
+// Generate skills based on category
+function getSkillsForCategory(category: string, languages: string[]): string[] {
+  if (category === 'プログラミング・IT転職') {
+    return ['HTML/CSS', 'JavaScript', 'React/Vue.js', 'Node.js/Python', 'Git/GitHub'];
+  } else if (category === 'ゴルフ・フィットネス') {
+    return ['スイング改善', 'コースマネジメント', '戦略的アプローチ', 'メンタル管理'];
+  } else if (category === '投資・トレード') {
+    return ['テクニカル分析', 'ファンダメンタル分析', 'リスク管理', '資金管理', 'エントリー・イグジット手法'];
+  }
+  return languages.slice(0, 5);
+}
+
+// Generate career paths based on category
+function getCareerPathsForCategory(category: string): { before: string; after: string }[] {
+  if (category === 'プログラミング・IT転職') {
+    return [
+      { before: '未経験の事務職', after: 'Webエンジニアとして転職、年収350〜500万円' },
+      { before: '副業ゼロのフリーター', after: 'フリーランスエンジニア、月収50〜80万円' },
+      { before: '営業職からの転職', after: 'インフラエンジニア、年収400〜600万円' },
+    ];
+  } else if (category === 'ゴルフ・フィットネス') {
+    return [
+      { before: 'ゴルフ歴5年で100切りが目標だったビジネスパーソン', after: '3ヶ月で安定して90台でプレー' },
+      { before: '接待ゴルフが苦手だった営業職', after: 'スコア85達成でビジネスが有利に' },
+      { before: 'コンペで毎回下位だった管理職', after: '6ヶ月で70台を達成、社内での評価UP' },
+    ];
+  } else if (category === '投資・トレード') {
+    return [
+      { before: '副業ゼロのサラリーマン', after: 'FXで月5〜10万円の安定収益' },
+      { before: 'FX初心者で自己流の投資', after: '自己流脱却・損失ゼロへの転換' },
+      { before: '投資知識ゼロのサラリーマン', after: '3ヶ月で独立したトレード判断が可能' },
+    ];
+  }
+  return [];
+}
+
+// Generate FAQ based on category
+function getFAQForCategory(category: string, schoolName: string, price: number, period: string): { q: string; a: string }[] {
+  const basePrice = price === 0 ? '無料（転職成功報酬型など）' : `${formatPrice(price)}円〜`;
+
+  if (category === 'プログラミング・IT転職') {
+    return [
+      { q: `${schoolName}の受講後、本当に転職できますか？`, a: `${schoolName}では転職保証やキャリアサポートが充実しています。ただし、転職成功には受講完了・ポートフォリオ作成・面接対策への主体的な取り組みが必要です。スクールは環境・サポートを提供し、最終的な成功は本人の努力次第です。` },
+      { q: '給付金を使ったら実際の支払額はどのくらい？', a: `給付金対象コースなら最大70%還付されます。例えば受講料${basePrice}の場合、給付金適用で実質負担は数万〜10万円程度に抑えられます。ただし、受講前のハローワーク申請が必須で、受給にはいくつかの条件があります。` },
+      { q: '働きながら受講できますか？', a: `${schoolName}はオンライン完結・自分のペースで学習できるため、働きながらの受講が可能です。ただし、平均的には週30時間程度の学習時間が必要です。本業との両立を考慮して、カリキュラムの期間を検討することをお勧めします。` },
+      { q: '卒業後のキャリアサポートはありますか？', a: `${schoolName}では転職活動中のサポート・求人紹介が充実しています。卒業後3〜6ヶ月間のキャリアサポート期間が設けられているスクールがほとんどです。サポート期限を確認した上で、計画的に転職活動を進めることが大事です。` },
+      { q: 'ポートフォリオ制作のサポートはありますか？', a: `${schoolName}ではポートフォリオ制作を含むカリキュラムが用意されています。実務に近いプロジェクト課題・チーム開発経験を通じて、採用面接で評価される実績を作ることができます。` },
+    ];
+  } else if (category === 'ゴルフ・フィットネス') {
+    return [
+      { q: '初心者でもパーソナルレッスンに通えますか？', a: `${schoolName}は初心者向けカリキュラムが充実しています。基礎から応用まで、個人の能力レベルに合わせた指導が特徴です。むしろ初心者ほど、早期段階で正しいフォーム・スイング理論を習得することが上達の鍵になります。` },
+      { q: 'どのくらいの期間でスコア改善できますか？', a: `${schoolName}では最短3ヶ月でのスコア改善を目指します。多くの利用者は3-6ヶ月で10-20打のスコア改善を達成しています。ただし個人差があるため、初回カウンセリングで現状と目標に基づいた期間を確認することをお勧めします。` },
+      { q: '1回のレッスン時間はどのくらいですか？', a: `${schoolName}の1回のレッスン時間は、通常30分〜1時間程度です。レッスン頻度・内容はコースによって異なります。高頻度・短期集中型と無制限サポート型など複数の選択肢があります。` },
+      { q: 'レッスン以外に自主練習は必要ですか？', a: `レッスン以外にも、指導内容を定着させるための自主練習が効果的です。${schoolName}ではレッスン内容の復習・自主練習方法もアドバイスしており、多くの受講者がレッスン+自主練習で短期成果を達成しています。` },
+    ];
+  } else if (category === '投資・トレード') {
+    return [
+      { q: 'FX初心者でもスクールで学べますか？', a: `${schoolName}では初心者向けカリキュラムが充実しています。ただし、投資には常にリスクがあるため、資金管理・メンタル管理をしっかり学べるスクールを選ぶことが重要です。` },
+      { q: '安定した利益を出すには何を学べばいい？', a: `テクニカル分析・ファンダメンタル分析・リスク管理・資金管理の4本柱を習得することが基本です。${schoolName}では実践的なトレード手法を学ぶとともに、デモトレード→少額実践を通じた経験積みが大事です。` },
+      { q: 'スクール詐欺に注意するには？', a: `信頼できるスクールは「必ず儲かる」などの保証をしません。実績がある講師・評判が良いスクール・リスク説明が充実したスクールを選びましょう。無料セミナーで講師の信頼性を判断することが大切です。` },
+      { q: 'いくらから投資を始められますか？', a: `FXの最小単位は業者によって異なりますが、1,000通貨単位なら数千円から始められます。ただし、スクール受講後のデモトレード→少額実践（10,000円程度）の流れが安全です。リスク管理を徹底してください。` },
+    ];
+  }
+
+  return [];
+}
 
 export default async function SchoolPage({ params }: Props) {
   const { slug } = await params;
@@ -57,6 +125,7 @@ export default async function SchoolPage({ params }: Props) {
         ? `${school.name}は教育訓練給付金の対象講座を提供しています。雇用保険の加入期間など条件がありますので、受講前にハローワークでご確認ください。`
         : `${school.name}の給付金対象講座については公式サイトでご確認ください。給付金非対応の場合でも分割払いや奨学金制度を設けているケースがあります。`,
     },
+    ...getFAQForCategory(school.category, school.name, school.price, school.period),
   ];
 
   const jsonLd = {
@@ -209,17 +278,53 @@ export default async function SchoolPage({ params }: Props) {
         </div>
       </div>
 
-      {/* Languages */}
+      {/* Languages / Skills */}
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
-        <h2 className="text-lg font-bold text-gray-900 mb-3">学べる言語・技術</h2>
+        <h2 className="text-lg font-bold text-gray-900 mb-3">身につくスキル</h2>
         <div className="flex flex-wrap gap-2">
-          {school.languages.map((lang) => (
-            <span key={lang} className="text-sm bg-slate-50 text-slate-700 border border-slate-200 px-3 py-1 rounded font-medium">
-              {lang}
+          {getSkillsForCategory(school.category, school.languages).map((skill) => (
+            <span key={skill} className="text-sm bg-sky-50 text-sky-700 border border-sky-200 px-3 py-1.5 rounded font-medium">
+              {skill}
             </span>
           ))}
         </div>
       </div>
+
+      {/* Career Paths */}
+      {getCareerPathsForCategory(school.category).length > 0 && (
+        <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
+          <h2 className="text-lg font-bold text-gray-900 mb-4">卒業後のキャリアパス例</h2>
+          <div className="space-y-4">
+            {getCareerPathsForCategory(school.category).map((path, idx) => (
+              <div key={idx} className="flex flex-col sm:flex-row sm:items-center gap-3 pb-3 border-b border-gray-100 last:border-0">
+                <div className="flex-1">
+                  <p className="text-sm text-gray-600 mb-1">
+                    <span className="font-semibold text-gray-700">ビフォー:</span> {path.before}
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    <span className="font-semibold text-gray-700">アフター:</span> {path.after}
+                  </p>
+                </div>
+                <div className="shrink-0 text-lg text-sky-500">→</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* CTA After Skills */}
+      {(school.affiliate_url !== '#' || school.official_url) && (
+        <div className="mb-6">
+          <a
+            href={school.affiliate_url !== '#' ? school.affiliate_url : school.official_url!}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center bg-sky-600 text-white font-bold py-4 px-8 rounded-xl hover:opacity-90 transition-opacity text-lg no-underline"
+          >
+            {school.name}の公式サイトで詳細を確認する →
+          </a>
+        </div>
+      )}
 
       {/* CTA */}
       <div className="border border-gray-200 rounded-xl p-6 mb-6">
@@ -253,6 +358,20 @@ export default async function SchoolPage({ params }: Props) {
           ))}
         </div>
       </div>
+
+      {/* CTA After FAQ */}
+      {(school.affiliate_url !== '#' || school.official_url) && (
+        <div className="mb-6">
+          <a
+            href={school.affiliate_url !== '#' ? school.affiliate_url : school.official_url!}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center bg-sky-600 text-white font-bold py-4 px-8 rounded-xl hover:opacity-90 transition-opacity text-lg no-underline"
+          >
+            {school.name}の公式サイトで詳細を確認する →
+          </a>
+        </div>
+      )}
 
       <p className="text-xs text-gray-400 border border-gray-100 rounded-lg p-3 mb-10">
         ※ 当サイトはアフィリエイト広告を掲載しています。リンク経由で申し込まれた場合、当サイトに紹介料が発生することがあります。料金・内容は変更される場合があります。最新情報は公式サイトでご確認ください。

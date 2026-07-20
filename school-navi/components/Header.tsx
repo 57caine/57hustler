@@ -11,7 +11,7 @@ export default function Header() {
             </div>
             <div>
               <span className="text-lg font-bold text-slate-800 tracking-tight">スクールナビ</span>
-              <p className="text-xs text-gray-400 leading-none">プログラミングスクール比較</p>
+              <p className="text-xs text-gray-400 leading-none">スキルアップ・自己投資比較</p>
             </div>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">

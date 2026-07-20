@@ -4,8 +4,8 @@ import SchoolCard from '@/components/SchoolCard';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'プログラミングスクール一覧【2026年版・全14校】| スクールナビ',
-  description: 'プログラミングスクール14校を一覧で比較。転職特化・スキルアップ・フリーランス特化・AI特化など目的別に検索できます。料金・期間・給付金対応・転職成功率を掲載。',
+  title: 'スクール一覧【2026年版・全22校】| スキルアップ・自己投資スクール比較',
+  description: 'プログラミング・資格・デザイン・音楽・ゴルフ・投資など22校を一覧で比較。目的別に検索できます。料金・期間・実績を掲載。',
 };
 
 const listFaqs = [
@@ -45,8 +45,8 @@ export default function SchoolsPage() {
         <span className="text-gray-800">スクール一覧</span>
       </nav>
 
-      <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">プログラミングスクール一覧</h1>
-      <p className="text-gray-600 mb-8">全{schools.length}校を掲載。料金・転職成功率・給付金対応で比較できます。</p>
+      <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">スクール一覧</h1>
+      <p className="text-gray-600 mb-8">全{schools.length}校を掲載。プログラミング・資格・デザイン・音楽・ゴルフ・投資など、目的別に比較できます。</p>
 
       {categories.map((category) => {
         const catSchools = schools.filter((s) => s.category === category);

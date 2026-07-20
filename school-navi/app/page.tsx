@@ -5,8 +5,8 @@ import { columns } from '@/lib/columns';
 import SchoolCard from '@/components/SchoolCard';
 
 export const metadata: Metadata = {
-  title: 'プログラミングスクール比較ランキング2026年版｜おすすめ14校を徹底比較',
-  description: 'TECH CAMP・DMM WEBCAMP・侍エンジニア塾・RaiseTechなど人気プログラミングスクール14校を料金・転職実績・給付金対応で徹底比較。未経験からIT転職・副業・フリーランスを目指す方向け完全ガイド。',
+  title: 'スキルアップ・自己投資スクール比較2026年版｜全22校を徹底比較',
+  description: 'プログラミング・資格・デザイン・音楽・ゴルフ・投資など、スキルアップ向けスクール22校を料金・実績で徹底比較。自分の目的に合ったスクール選択をサポートします。',
 };
 
 const homeFaqs = [
@@ -45,13 +45,13 @@ export default function HomePage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-sky-500 to-blue-600 text-white py-14 px-4">
         <div className="max-w-4xl mx-auto">
-          <p className="text-sky-100 text-xs font-medium mb-3 uppercase tracking-widest">Programming School Navigator</p>
+          <p className="text-sky-100 text-xs font-medium mb-3 uppercase tracking-widest">Skill & Investment Navigator</p>
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-white">
-            プログラミングスクール<br />
-            <span className="text-sky-100">徹底比較ガイド 2026年版</span>
+            スキルアップ・<br />
+            <span className="text-sky-100">自己投資スクール比較 2026年版</span>
           </h1>
           <p className="text-sky-100 mb-8 max-w-xl text-sm leading-relaxed">
-            TECH CAMP・DMM WEBCAMP など{schools.length}校を料金・転職実績・給付金対応で客観的に比較。
+            プログラミング・資格・デザイン・音楽・ゴルフ・投資など{schools.length}校を料金・実績で客観的に比較。
             編集部が実際の情報を調査・検証して掲載しています。
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
@@ -94,12 +94,14 @@ export default function HomePage() {
       <section className="bg-gray-50 border-y border-gray-200 py-10 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-lg font-bold text-gray-900 mb-5">目的から探す</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {[
-              { label: '転職・就職を目指す', href: '/category/%E8%BB%A2%E8%81%B7%E7%89%B9%E5%8C%96', desc: '転職保証・内定サポートあり' },
-              { label: 'スキルアップ', href: '/category/%E3%82%B9%E3%82%AD%E3%83%AB%E3%82%A2%E3%83%83%E3%83%97', desc: '副業・現職スキル強化' },
-              { label: 'フリーランス独立', href: '/category/%E3%83%95%E3%83%AA%E3%83%BC%E3%83%A9%E3%83%B3%E3%82%B9%E7%89%B9%E5%8C%96', desc: '案件獲得サポートあり' },
-              { label: 'AI・機械学習', href: '/category/AI%E7%89%B9%E5%8C%96', desc: 'ChatGPT・DX人材育成' },
+              { label: 'プログラミング・IT転職 💻', href: '/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%EF%BC%8FIT%E8%BB%A2%E8%81%B7', desc: '転職・副業・フリーランス' },
+              { label: '資格・オンライン学習 📚', href: '/category/%E8%B3%87%E6%A0%BC%EF%BC%8F%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E5%AD%A6%E7%BF%92', desc: 'キャリアアップ・スキル習得' },
+              { label: 'クリエイティブ・デザイン 🎨', href: '/category/%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%83%86%E3%82%A3%E3%83%96%EF%BC%8F%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3', desc: '動画編集・グラフィック' },
+              { label: '音楽 🎵', href: '/category/%E9%9F%B3%E6%A5%BD', desc: 'ボーカル・楽器レッスン' },
+              { label: 'ゴルフ・フィットネス ⛳', href: '/category/%E3%82%B4%E3%83%AB%E3%83%95%EF%BC%8F%E3%83%95%E3%82%A3%E3%83%83%E3%83%88%E3%83%8D%E3%82%B9', desc: 'スコアアップ・健康' },
+              { label: '投資・トレード 📈', href: '/category/%E6%8A%95%E8%B3%87%EF%BC%8F%E3%83%88%E3%83%AC%E3%83%BC%E3%83%89', desc: 'FX・株式投資' },
             ].map((cat) => (
               <Link
                 key={cat.label}
