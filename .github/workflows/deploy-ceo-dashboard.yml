@@ -1,14 +1,16 @@
-name: Deploy CEO Dashboard to Vercel
+name: Build CEO Dashboard
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - claude/bold-brahmagupta-uc9Mu
     paths:
       - 'ceo-dashboard/**'
   workflow_dispatch:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,13 +18,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: ceo-dashboard/package-lock.json
 
-      - name: Deploy to Vercel
-        run: |
-          cd ceo-dashboard
-          npx vercel --yes --prod \
-            --token "$VERCEL_TOKEN" \
-            --env ANTHROPIC_API_KEY="$ANTHROPIC_API_KEY"
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Install dependencies
+        run: cd ceo-dashboard && npm ci
+
+      - name: Build
+        run: cd ceo-dashboard && npm run build
