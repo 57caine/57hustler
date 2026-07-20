@@ -43,9 +43,9 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
       href={rakutenUrl}
       target="_blank"
       rel="noopener noreferrer nofollow sponsored"
-      className="block relative bg-white rounded-2xl border border-gray-100 shadow-md hover:shadow-xl hover:border-red-200 transition-all duration-300 overflow-hidden transform hover:-translate-y-1"
+      className="block relative bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-300 overflow-hidden"
     >
-      <div className="p-6">
+      <div className="p-5">
         {/* Ranking Badge */}
         {rank != null && (
           <div className={`absolute top-4 right-4 ${rankColor.bg} ${rankColor.text} w-14 h-14 rounded-full flex flex-col items-center justify-center text-center font-bold shadow-lg`}>
@@ -56,10 +56,10 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
 
         {/* Category & Brand */}
         <div className="flex items-center gap-2 mb-3 flex-wrap">
-          <span className="text-xs bg-sky-100 text-sky-700 px-3 py-1 rounded-full font-semibold">{label}</span>
+          <span className="text-xs bg-sky-50 text-sky-700 px-3 py-1 rounded border border-sky-200 font-semibold">{label}</span>
           <span className="text-xs text-gray-600 font-medium">{product.brandName}</span>
           {product.isNew && (
-            <span className="text-xs bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-bold">NEW</span>
+            <span className="text-xs bg-emerald-50 text-emerald-700 px-3 py-1 rounded border border-emerald-200 font-bold">NEW</span>
           )}
         </div>
 
@@ -76,15 +76,15 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
           {product.lowestPrice != null ? (
             <div>
               <span className="text-xs text-gray-500 font-medium">参考最安値</span>
-              <p className="text-2xl font-bold text-red-600 mt-1">¥{product.lowestPrice.toLocaleString()}</p>
+              <p className="text-2xl font-bold text-gray-900 mt-1">¥{product.lowestPrice.toLocaleString()}</p>
             </div>
           ) : (
             <p className="text-gray-400 text-sm font-medium">価格情報なし</p>
           )}
         </div>
 
-        {/* CTA Button */}
-        <div className="bg-red-600 hover:bg-red-700 text-white text-sm font-bold text-center py-3 rounded-lg transition-colors w-full">
+        {/* CTA Button — Rakuten red (keep unchanged) */}
+        <div className="bg-[#bf0000] hover:opacity-90 text-white text-sm font-bold text-center py-3 rounded-lg transition-opacity w-full">
           楽天で購入 →
         </div>
       </div>
