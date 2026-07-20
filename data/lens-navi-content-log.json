@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-19",
+  "lastUpdated": "2026-07-20",
   "columns": [
     {
       "slug": "contact-lens-basic",
@@ -462,6 +462,12 @@
       "title": "ルテインサプリで目の健康を守る｜黄斑変性予防と効果的な選び方",
       "section": "eye-care",
       "publishedAt": "2026-07-19"
+    },
+    {
+      "slug": "myopia-prevention-children-atropine-orthokeratology",
+      "title": "子どもの近視進行を抑制する最新治療法｜アトロピン点眼とオルソケラトロジーの効果比較",
+      "section": "eye-care",
+      "publishedAt": "2026-07-20"
     }
   ]
 }

@@ -1,4 +1,16 @@
 {
-  "reports": [],
+  "reports": [
+    {
+      "weekOf": "2026-07-12",
+      "generatedAt": "2026-07-19T22:44:31.933Z",
+      "stats": {
+        "threadsPostsThisWeek": 2,
+        "lensNaviColumnsThisWeek": 70,
+        "henkutsuApprovedThisWeek": 0,
+        "noteArticles": 7,
+        "githubActionsSuccessRate": 100
+      }
+    }
+  ],
   "note": "weekly-report.ymlから毎週月曜7:00 JSTに自動更新されます"
 }
