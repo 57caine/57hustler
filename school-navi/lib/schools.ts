@@ -48,3 +48,11 @@ export function getTopSchoolsByRating(limit = 5): School[] {
 export function formatPrice(price: number): string {
   return `¥${price.toLocaleString()}`;
 }
+
+const CATEGORY_SLUG_MAP: Record<string, string> = {
+  '音楽': '/category/music',
+};
+
+export function getCategoryUrl(category: string): string {
+  return CATEGORY_SLUG_MAP[category] ?? `/category/${encodeURIComponent(category)}`;
+}

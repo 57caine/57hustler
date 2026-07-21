@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { schools, getAllCategories, getSchoolsByCategory } from '@/lib/schools';
+import { schools, getAllCategories, getSchoolsByCategory, getCategoryUrl } from '@/lib/schools';
 import { columns } from '@/lib/columns';
 import SchoolCard from '@/components/SchoolCard';
 
@@ -213,7 +213,7 @@ export default async function CategoryPage({ params }: Props) {
         <h2 className="text-lg font-bold text-gray-800 mb-4">他のカテゴリを見る</h2>
         <div className="flex flex-wrap gap-3">
           {getAllCategories().filter((c) => c !== decoded).map((c) => (
-            <Link key={c} href={`/category/${encodeURIComponent(c)}`} className="bg-white border border-gray-200 px-4 py-2 rounded-full text-sm hover:border-slate-300 hover:text-slate-700 transition-colors">
+            <Link key={c} href={getCategoryUrl(c)} className="bg-white border border-gray-200 px-4 py-2 rounded-full text-sm hover:border-slate-300 hover:text-slate-700 transition-colors">
               {c}
             </Link>
           ))}
