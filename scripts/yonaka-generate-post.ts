@@ -135,7 +135,7 @@ async function main() {
   }
 
   if (Math.random() < 0.4) {
-    text += '\n\nこの話、もう少し深いところまで書いた。\nhttps://note.com/westin_lab';
+    text += '\n\nこの話、もう少し深いところまで書いた。\nhttps://note.com/kobayashi_done';
   }
 
   console.log('--- 生成テキスト ---');
