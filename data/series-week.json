@@ -5,7 +5,7 @@
   "series_week_start": "2026-07-20",
   "posts_completed": {
     "monday": true,
-    "wednesday": false,
+    "wednesday": true,
     "friday": false,
     "sunday": false
   }
