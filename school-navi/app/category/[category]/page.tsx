@@ -115,12 +115,12 @@ const categoryGuide: Record<string, {
 };
 
 export async function generateStaticParams() {
-  return getAllCategories().map((c) => ({ category: encodeURIComponent(c) }));
+  return getAllCategories().map((c) => ({ category: c }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category } = await params;
-  const decoded = decodeURIComponent(category);
+  const decoded = category;
   const guide = categoryGuide[decoded];
   return {
     title: `${decoded}のプログラミングスクール比較【2026年版】`,
@@ -130,7 +130,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CategoryPage({ params }: Props) {
   const { category } = await params;
-  const decoded = decodeURIComponent(category);
+  const decoded = category;
   const catSchools = getSchoolsByCategory(decoded);
   if (catSchools.length === 0) notFound();
 
