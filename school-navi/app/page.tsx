@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { schools, getHighlightedSchools, formatPrice, getAllCategories } from '@/lib/schools';
+import { schools, getHighlightedSchools, formatPrice, getAllCategories, getCategoryUrl } from '@/lib/schools';
 import { columns } from '@/lib/columns';
 import SchoolCard from '@/components/SchoolCard';
 
@@ -109,7 +109,7 @@ export default function HomePage() {
                 return (
                   <Link
                     key={cat}
-                    href={`/category/${encodeURIComponent(cat)}`}
+                    href={getCategoryUrl(cat)}
                     className="bg-white border border-gray-200 rounded-xl p-4 hover:border-gray-400 hover:shadow-sm transition-all"
                   >
                     <p className="font-semibold text-gray-800 text-sm mb-1">{cat} {meta.emoji}</p>
