@@ -120,7 +120,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category } = await params;
-  const decoded = category;
+  const decoded = decodeURIComponent(category);
   const guide = categoryGuide[decoded];
   return {
     title: `${decoded}のプログラミングスクール比較【2026年版】`,
@@ -130,7 +130,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CategoryPage({ params }: Props) {
   const { category } = await params;
-  const decoded = category;
+  const decoded = decodeURIComponent(category);
   const catSchools = getSchoolsByCategory(decoded);
   if (catSchools.length === 0) notFound();
 
