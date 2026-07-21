@@ -29,24 +29,24 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
   const emoji = CATEGORY_EMOJI[product.category] ?? '👁';
   const rakutenUrl = RAKUTEN(product.name);
 
-  // Ranking colors: gold/silver/bronze for top 3
+  // 楽天以外の最安値A8ショップを取得
+  const a8Prices = product.prices.filter(
+    (p) => p.inStock && p.storeId !== 'rakuten' && p.store.url.includes('px.a8.net') && !p.url.startsWith('#')
+  );
+  const cheapestA8 = a8Prices.length > 0
+    ? a8Prices.reduce((min, p) => p.price < min.price ? p : min, a8Prices[0])
+    : null;
+
   const rankColors: Record<number, { bg: string; text: string; medal: string }> = {
     1: { bg: 'bg-yellow-400', text: 'text-yellow-900', medal: '🥇' },
     2: { bg: 'bg-gray-300', text: 'text-gray-900', medal: '🥈' },
     3: { bg: 'bg-orange-400', text: 'text-orange-900', medal: '🥉' },
   };
-
   const rankColor = rank && rankColors[rank] ? rankColors[rank] : { bg: 'bg-gray-100', text: 'text-gray-700', medal: '' };
 
   return (
-    <a
-      href={rakutenUrl}
-      target="_blank"
-      rel="noopener noreferrer nofollow sponsored"
-      className="block relative bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-300 overflow-hidden"
-    >
+    <div className="relative bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-300 overflow-hidden">
       <div className="p-5">
-        {/* Ranking Badge */}
         {rank != null && (
           <div className={`absolute top-4 right-4 ${rankColor.bg} ${rankColor.text} w-14 h-14 rounded-full flex flex-col items-center justify-center text-center font-bold shadow-lg`}>
             {rankColor.medal && <span className="text-xl">{rankColor.medal}</span>}
@@ -54,7 +54,6 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
           </div>
         )}
 
-        {/* Category & Brand */}
         <div className="flex items-center gap-2 mb-3 flex-wrap">
           <span className="text-xs bg-sky-50 text-sky-700 px-3 py-1 rounded border border-sky-200 font-semibold">{label}</span>
           <span className="text-xs text-gray-600 font-medium">{product.brandName}</span>
@@ -63,7 +62,6 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
           )}
         </div>
 
-        {/* Product Name */}
         <div className="flex items-start gap-3 mb-4">
           <span className="text-3xl flex-shrink-0">{emoji}</span>
           <h3 className="font-bold text-gray-900 text-base leading-snug flex-1">
@@ -71,9 +69,13 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
           </h3>
         </div>
 
-        {/* Price Section */}
         <div className="pt-4 border-t border-gray-100 mb-4">
-          {product.lowestPrice != null ? (
+          {cheapestA8 != null ? (
+            <div>
+              <span className="text-xs text-gray-500 font-medium">通販最安値（{cheapestA8.store.name}）</span>
+              <p className="text-2xl font-bold text-gray-900 mt-1">¥{cheapestA8.price.toLocaleString()}</p>
+            </div>
+          ) : product.lowestPrice != null ? (
             <div>
               <span className="text-xs text-gray-500 font-medium">参考最安値</span>
               <p className="text-2xl font-bold text-gray-900 mt-1">¥{product.lowestPrice.toLocaleString()}</p>
@@ -83,11 +85,27 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
           )}
         </div>
 
-        {/* CTA Button — Rakuten red (keep unchanged) */}
-        <div className="bg-[#bf0000] hover:opacity-90 text-white text-sm font-bold text-center py-3 rounded-lg transition-opacity w-full">
-          楽天で購入 →
+        <div className="flex flex-col gap-2">
+          {cheapestA8 && (
+            <a
+              href={cheapestA8.url}
+              target="_blank"
+              rel="noopener noreferrer nofollow sponsored"
+              className="block bg-sky-600 hover:bg-sky-500 text-white text-sm font-bold text-center py-3 rounded-lg transition-colors w-full"
+            >
+              {cheapestA8.store.name}で購入 →
+            </a>
+          )}
+          <a
+            href={rakutenUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            className="block bg-[#bf0000] hover:opacity-90 text-white text-sm font-bold text-center py-3 rounded-lg transition-opacity w-full"
+          >
+            楽天で購入 →
+          </a>
         </div>
       </div>
-    </a>
+    </div>
   );
 }
