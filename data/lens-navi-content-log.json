@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-20",
+  "lastUpdated": "2026-07-21",
   "columns": [
     {
       "slug": "contact-lens-basic",
@@ -468,6 +468,12 @@
       "title": "子どもの近視進行を抑制する最新治療法｜アトロピン点眼とオルソケラトロジーの効果比較",
       "section": "eye-care",
       "publishedAt": "2026-07-20"
+    },
+    {
+      "slug": "uv-sunglasses-eyecare-2026",
+      "title": "目の紫外線対策完全ガイド2026|UVカットサングラスと最新グッズの選び方",
+      "section": "eye-goods",
+      "publishedAt": "2026-07-21"
     }
   ]
 }
