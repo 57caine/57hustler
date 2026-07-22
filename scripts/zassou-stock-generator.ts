@@ -126,6 +126,32 @@ function pickActressName(item: DMMItem): string {
   return actresses.map(a => a.name).join('・');
 }
 
+// ─── 拒否レスポンス検知 ──────────────────────────────────────
+const REFUSAL_PREFIXES = [
+  "I can't", "I cannot", "I'm not", "I'm unable",
+  "I don't ", "I appreciate", "I apologize", "I'm sorry",
+  "申し訳", "できません", "お断り", "お役に立て",
+  "This request", "Unfortunately",
+];
+
+function isRefusal(text: string): boolean {
+  const firstLine = text.split('\n')[0].trim();
+  return REFUSAL_PREFIXES.some(p => firstLine.startsWith(p));
+}
+
+function fallbackComment(actressName: string, genre: Genre): string {
+  return `${actressName}嬢の${genre}、小生タマラン・・・！！`;
+}
+
+function fallbackParentPost(actressName: string, genre: Genre, sampleUrl: string): string {
+  const body = `【新作入荷】${actressName}嬢の${genre}作品`;
+  return sampleUrl ? `${body}\n${sampleUrl}` : body;
+}
+
+function fallbackReplyPost(actressName: string, genre: Genre, affiliateUrl: string): string {
+  return `${actressName}嬢の新作${genre}。詳細・購入はこちら↓\n${affiliateUrl}`;
+}
+
 // ─── 内部メモ用一言（30文字） ─────────────────────────────────
 async function generateComment(
   client: Anthropic,
@@ -147,6 +173,10 @@ async function generateComment(
   });
 
   const text = (message.content[0] as { type: string; text: string }).text.trim();
+  if (isRefusal(text)) {
+    console.warn('  ⚠ comment: 拒否検知 → フォールバック');
+    return fallbackComment(actressName, genre);
+  }
   return text.slice(0, 50);
 }
 
@@ -180,8 +210,12 @@ Xへの「親投稿（メインツイート）」を生成してください。
     }],
   });
 
-  const body = (message.content[0] as { type: string; text: string }).text.trim().slice(0, 100);
-  return sampleUrl ? `${body}\n${sampleUrl}` : body;
+  const body = (message.content[0] as { type: string; text: string }).text.trim();
+  if (isRefusal(body)) {
+    console.warn('  ⚠ parentPost: 拒否検知 → フォールバック');
+    return fallbackParentPost(actressName, genre, sampleUrl);
+  }
+  return sampleUrl ? `${body.slice(0, 100)}\n${sampleUrl}` : body.slice(0, 100);
 }
 
 // ─── リプライ生成（商品紹介＋アフィリリンク） ────────────────
@@ -213,8 +247,49 @@ Xのリプライ欄に投稿する「商品紹介文」を生成してくださ�
     }],
   });
 
-  const body = (message.content[0] as { type: string; text: string }).text.trim().slice(0, 120);
-  return `${body}\n${affiliateUrl}`;
+  const body = (message.content[0] as { type: string; text: string }).text.trim();
+  if (isRefusal(body)) {
+    console.warn('  ⚠ replyPost: 拒否検知 → フォールバック');
+    return fallbackReplyPost(actressName, genre, affiliateUrl);
+  }
+  return `${body.slice(0, 120)}\n${affiliateUrl}`;
+}
+
+// ─── 既存ストックの拒否テキスト修復 ──────────────────────────
+async function repairRefusedItems(client: Anthropic, items: StockItem[]): Promise<number> {
+  let repaired = 0;
+  for (const item of items) {
+    const needsParent = isRefusal(item.parentPost);
+    const needsReply  = isRefusal(item.replyPost);
+    const needsComment = isRefusal(item.comment);
+    if (!needsParent && !needsReply && !needsComment) continue;
+
+    console.log(`  修復中: ${item.zId} (${item.actressName}) parent=${needsParent} reply=${needsReply}`);
+    try {
+      const [newParent, newReply, newComment] = await Promise.all([
+        needsParent
+          ? generateParentPost(client, item.title, item.actressName, item.genre, item.sampleUrl)
+          : Promise.resolve(item.parentPost),
+        needsReply
+          ? generateReplyPost(client, item.title, item.actressName, item.genre, item.affiliateUrl)
+          : Promise.resolve(item.replyPost),
+        needsComment
+          ? generateComment(client, item.title, item.actressName, item.genre)
+          : Promise.resolve(item.comment),
+      ]);
+      item.parentPost = newParent;
+      item.replyPost  = newReply;
+      item.comment    = newComment;
+    } catch (e) {
+      console.error(`  修復エラー (${item.zId}):`, e);
+      if (needsParent)  item.parentPost = fallbackParentPost(item.actressName, item.genre, item.sampleUrl);
+      if (needsReply)   item.replyPost  = fallbackReplyPost(item.actressName, item.genre, item.affiliateUrl);
+      if (needsComment) item.comment    = fallbackComment(item.actressName, item.genre);
+    }
+    repaired++;
+    await new Promise(r => setTimeout(r, 300));
+  }
+  return repaired;
 }
 
 // ─── 連番ID生成 ───────────────────────────────────────────────
@@ -267,6 +342,11 @@ async function main() {
     ...stock.items.map(i => i.id),
     ...posted.postedIds,
   ]);
+
+  // 既存ストックの拒否テキスト修復
+  console.log('\n▼ 既存ストックの拒否レスポンス修復チェック...');
+  const repairedCount = await repairRefusedItems(client, stock.items);
+  console.log(`  修復: ${repairedCount}件`);
 
   const newItems: StockItem[] = [];
 
