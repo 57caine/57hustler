@@ -75,6 +75,16 @@ function getPostType(dow: number): PostType {
   return 'ikkouiku';                                            // 火・木・土
 }
 
+// ─── 禁止キーワードフィルター ────────────────────────────────
+const BANNED_KEYWORDS = [
+  '脳脊髄液', '逆行', '量子的跳躍', '時間を遡行',
+  '周波数に共鳴', '因果の逆流', '宇宙背景放射', '磁気共鳴',
+];
+
+function containsBannedKeyword(text: string): boolean {
+  return BANNED_KEYWORDS.some(kw => text.includes(kw));
+}
+
 // ─── 夜占い生成（月・水・金）─────────────────────────────────
 async function generateNightHoroscope(dailyStarNum: number, monthlyStarNum: number): Promise<Record<number, string>> {
   const client = new Anthropic();
@@ -197,11 +207,24 @@ async function generateShortPost(isSunday: boolean, dailyStarNum?: number): Prom
 
   const ABSOLUTE_BAN = `【絶対禁止ルール・最優先】
 以下は絶対に生成してはいけない。
-・科学用語（量子・磁気共鳴・脳脊髄液・宇宙背景放射・因果の逆流・時間軸を逆行等）を
-　組み合わせた存在しない説・現象の創作
+・科学用語を組み合わせた存在しない説・現象の創作
 ・「という説がある」「とも言われている」を使いながら実際には存在しない説を作ること
 ・根拠のないスピリチュアル的主張を事実のように書くこと
 ・「それっぽく聞こえる」だけで裏付けのない文章
+
+【使用禁止ワード（以下を含む文章は出力禁止）】
+脳脊髄液 / 逆行 / 量子的跳躍 / 時間を遡行 / 周波数に共鳴 / 因果の逆流 / 宇宙背景放射 / 磁気共鳴
+
+【許可テーマ】
+- 歴史的記録・史料に基づく神事・民俗・伝承
+- 実在する神話・説話・民間伝承の解説
+- 査読済み研究・学術的知見
+- 神社・神事・易経・九星気学の伝統的解釈
+
+【禁止テーマ】
+- 科学用語を組み合わせた創作理論
+- 存在しない儀式・作法・効果の説明
+- 根拠のない行為と結果の因果関係
 
 【「という説がある」が使える条件（いずれかのみ）】
 1. 実際に研究者・学者が発表した説
@@ -211,7 +234,7 @@ async function generateShortPost(isSunday: boolean, dailyStarNum?: number): Prom
 
 【出力前の自己チェック（内部処理）】
 □ この投稿に書いた「説」は実在するか
-□ 科学用語を創作のために使っていないか
+□ 禁止ワードが含まれていないか
 □ 「という説がある」の根拠は何か
 　→ 引っかかった場合は生成し直す。`;
 
@@ -324,8 +347,22 @@ async function main() {
     const dailyStarNum = getDailyStar();
     const trigramLabel = STAR_TO_TRIGRAM[dailyStarNum];
     console.log(`日盤中宮: ${KYUSEI[dailyStarNum].short}（${trigramLabel}）`);
-    console.log(`Claude API で${isSunday ? '問いかけ' : '一文考察（易経）'}を生成中...`);
-    text = await generateShortPost(isSunday, dailyStarNum);
+    const MAX_RETRIES = 3;
+    let generated: string | null = null;
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+      console.log(`Claude API で${isSunday ? '問いかけ' : '一文考察（易経）'}を生成中...（試行${attempt}/${MAX_RETRIES}）`);
+      const candidate = await generateShortPost(isSunday, dailyStarNum);
+      if (!containsBannedKeyword(candidate)) {
+        generated = candidate;
+        break;
+      }
+      console.warn(`⚠️ 試行${attempt}回目: 禁止キーワード検出 → 再生成`);
+    }
+    if (generated === null) {
+      console.warn('⚠️ 3回連続で禁止キーワード検出。今回の投稿をスキップします');
+      return;
+    }
+    text = generated;
   }
 
   console.log('--- 生成テキスト ---');

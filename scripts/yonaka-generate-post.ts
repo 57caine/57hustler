@@ -20,6 +20,15 @@ const HISTORY_KEEP = 100;
 
 interface HistoryEntry { date: string; text: string; }
 
+const BANNED_KEYWORDS = [
+  '脳脊髄液', '逆行', '量子的跳躍', '時間を遡行',
+  '周波数に共鳴', '因果の逆流', '宇宙背景放射', '磁気共鳴',
+];
+
+function containsBannedKeyword(text: string): boolean {
+  return BANNED_KEYWORDS.some(kw => text.includes(kw));
+}
+
 function loadHistory(): HistoryEntry[] {
   try {
     if (!fs.existsSync(HISTORY_PATH)) return [];
@@ -49,21 +58,31 @@ async function generatePost(history: HistoryEntry[]): Promise<string> {
 
 【絶対禁止ルール・最優先】
 以下の投稿は絶対に生成してはいけない。
-・科学用語（量子・磁気共鳴・脳脊髄液・宇宙背景放射・因果の逆流・時間軸を逆行等）を
-　組み合わせて存在しない説・現象を作り出すこと
+・科学用語を組み合わせて存在しない説・現象を作り出すこと
 ・「という説がある」「とも言われている」を使いながら実際には存在しない説を作ること
 ・それっぽく聞こえるだけで根拠のない文章
 ・引き寄せ・スピリチュアル的主張を事実として書くこと
+
+【使用禁止ワード（以下を含む文章は出力禁止）】
+脳脊髄液 / 逆行 / 量子的跳躍 / 時間を遡行 / 周波数に共鳴 / 因果の逆流 / 宇宙背景放射 / 磁気共鳴
+
+【許可テーマ】
+- 歴史的記録・史料に基づく神事・民俗・伝承
+- 実在する神話・説話・民間伝承の解説
+- 査読済み研究・学術的知見
+- 神社・神事・易経・九星気学の伝統的解釈
+- 宗教間に共通する思想・歴史的事実
+
+【禁止テーマ】
+- 科学用語を組み合わせた創作理論
+- 存在しない儀式・作法・効果の説明
+- 根拠のない行為と結果の因果関係
 
 【「という説がある」が使える条件（いずれかに該当する場合のみ）】
 1. 実際に研究者・学者が発表した説
 2. 歴史的記録・史料に残っている伝承
 3. 査読済みの論文・研究報告
 4. 民間伝承として記録されているもの
-
-【科学用語の使用ルール】
-量子・磁気・脳波・周波数などの科学用語を使う場合は、
-実際の研究・現象に基づくものに限る。組み合わせて「それっぽい説」を作ることは絶対禁止。
 
 テーマ：日本神事・神話・民俗・伝承・歴史的事実・宗教共通項
 ルール：
@@ -124,10 +143,26 @@ async function main() {
 
   let text: string;
   let fromStock = false;
+  const MAX_RETRIES = 3;
 
   try {
-    console.log('Claude API でネタ生成中...');
-    text = await generatePost(history);
+    let generated: string | null = null;
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+      console.log(`Claude API でネタ生成中...（試行${attempt}/${MAX_RETRIES}）`);
+      const candidate = await generatePost(history);
+      if (!containsBannedKeyword(candidate)) {
+        generated = candidate;
+        break;
+      }
+      console.warn(`⚠️ 試行${attempt}回目: 禁止キーワード検出 → 再生成`);
+    }
+    if (generated === null) {
+      console.warn('⚠️ 3回連続で禁止キーワード検出。ストックへフォールバック');
+      text = pickStockPost(history);
+      fromStock = true;
+    } else {
+      text = generated;
+    }
   } catch (e) {
     console.warn('⚠️ API生成失敗。ストックからフォールバック:', (e as Error).message);
     text = pickStockPost(history);
