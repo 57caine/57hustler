@@ -27,7 +27,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: Install dependencies
@@ -40,9 +40,9 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
-            npx ts-node scripts/zassou-stock-generator.ts --dry-run
+            npx tsx scripts/zassou-stock-generator.ts --dry-run
           else
-            npx ts-node scripts/zassou-stock-generator.ts
+            npx tsx scripts/zassou-stock-generator.ts
           fi
 
       - name: Commit and push
