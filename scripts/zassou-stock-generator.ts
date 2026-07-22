@@ -12,7 +12,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import fs from 'fs';
 import path from 'path';
 
-const ROOT = path.resolve(__dirname, '..');
+const ROOT = process.cwd();
 
 // ─── 環境変数 ────────────────────────────────────────────────
 const DMM_API_ID       = process.env.DMM_API_ID!;
