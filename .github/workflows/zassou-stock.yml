@@ -21,8 +21,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: claude/bold-brahmagupta-uc9Mu
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -58,4 +58,4 @@ jobs:
           fi
           ITEM_COUNT=$(node -e "const d=require('./data/zassou-stock.json'); console.log(d.totalCount)")
           git commit -m "auto: 雑草ストック更新 $(date +%Y-%m-%d) 合計${ITEM_COUNT}件"
-          git push origin claude/bold-brahmagupta-uc9Mu
+          git push
