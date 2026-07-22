@@ -16,8 +16,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: claude/bold-brahmagupta-uc9Mu
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -155,4 +155,4 @@ jobs:
             exit 0
           fi
           git commit -m "auto: morning brief $(date -u +%Y-%m-%d)"
-          git push origin claude/bold-brahmagupta-uc9Mu
+          git push
