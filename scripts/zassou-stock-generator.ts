@@ -54,10 +54,12 @@ interface DMMResponse {
 
 // ─── ストックデータ型 ─────────────────────────────────────────
 interface StockItem {
-  id: string;
+  zId: string;        // Z001, Z002... 連番ID
+  id: string;         // DMMのcontent_id（重複チェック用）
   genre: Genre;
   title: string;
   actressName: string;
+  imageUrl: string;   // 商品サムネイル（大）
   comment: string;
   sampleUrl: string;
   affiliateUrl: string;
@@ -157,13 +159,25 @@ async function generateComment(
   return text.slice(0, 50);
 }
 
+// ─── 連番ID生成 ───────────────────────────────────────────────
+function nextZId(existingItems: StockItem[]): string {
+  const maxNum = existingItems.reduce((max, item) => {
+    const n = parseInt(item.zId?.replace('Z', '') ?? '0', 10);
+    return isNaN(n) ? max : Math.max(max, n);
+  }, 0);
+  return `Z${String(maxNum + 1).padStart(3, '0')}`;
+}
+
 // ─── CSV行生成 ────────────────────────────────────────────────
 function toCsvRow(item: StockItem): string {
   const escape = (s: string) => `"${s.replace(/"/g, '""')}"`;
   return [
+    escape(item.zId),
     escape(item.genre),
     escape(item.title),
+    escape(item.actressName),
     escape(item.comment),
+    escape(item.imageUrl),
     escape(item.sampleUrl),
     escape(item.affiliateUrl),
     item.posted ? '済' : '',
@@ -229,11 +243,14 @@ async function main() {
         comment = `${actressName}嬢の${genre}、小生タマラン・・・！！`;
       }
 
+      const allSoFar = [...stock.items, ...newItems];
       const stockItem: StockItem = {
+        zId:          nextZId(allSoFar),
         id:           item.content_id,
         genre,
         title:        item.title,
         actressName,
+        imageUrl:     item.imageURL.large,
         comment,
         sampleUrl,
         affiliateUrl: item.affiliateURL,
@@ -269,7 +286,7 @@ async function main() {
   console.log(`✓ ${STOCK_PATH} を更新（合計 ${stock.totalCount}件）`);
 
   // CSV更新
-  const csvHeader = 'ジャンル,作品名,一言コメント,サンプルURL,アフィリリンク,投稿済み';
+  const csvHeader = 'ID,ジャンル,作品名,出演者,一言コメント,画像URL,サンプルURL,アフィリリンク,投稿済み';
   const csvRows   = stock.items.map(toCsvRow);
   fs.writeFileSync(CSV_PATH, [csvHeader, ...csvRows].join('\n'), 'utf-8');
   console.log(`✓ ${CSV_PATH} を更新`);
