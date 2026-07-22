@@ -2,10 +2,10 @@
  * 雑草おじさん DMMアフィリ自動ストックジェネレーター
  *
  * DMMアフィリエイトAPIから売れ筋商品を取得し、
- * 昭和スポーツ新聞風コメントを生成してストックする。
+ * 昭和スポーツ新聞風の2段投稿（親投稿＋リプライ）テキストを生成してストックする。
  *
  * 実行: npx ts-node scripts/zassou-stock-generator.ts [--dry-run]
- * 環境変数: DMM_API_ID, DMM_AFFILIATE_ID, ANTHROPIC_API_KEY
+ * 環境変数: DMM_API_ID, DMM_AFFILIATE_ID(=nsplot-003), ANTHROPIC_API_KEY
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -16,7 +16,7 @@ const ROOT = path.resolve(__dirname, '..');
 
 // ─── 環境変数 ────────────────────────────────────────────────
 const DMM_API_ID       = process.env.DMM_API_ID!;
-const DMM_AFFILIATE_ID = process.env.DMM_AFFILIATE_ID!;
+const DMM_AFFILIATE_ID = process.env.DMM_AFFILIATE_ID!; // nsplot-003
 
 const GENRES = ['熟女', '人妻', 'NTR', '若妻', 'フェラ'] as const;
 type Genre = typeof GENRES[number];
@@ -54,15 +54,17 @@ interface DMMResponse {
 
 // ─── ストックデータ型 ─────────────────────────────────────────
 interface StockItem {
-  zId: string;        // Z001, Z002... 連番ID
-  id: string;         // DMMのcontent_id（重複チェック用）
+  zId: string;          // Z001, Z002... 連番ID
+  id: string;           // DMMのcontent_id（重複チェック用）
   genre: Genre;
   title: string;
   actressName: string;
-  imageUrl: string;   // 商品サムネイル（大）
-  comment: string;
-  sampleUrl: string;
-  affiliateUrl: string;
+  imageUrl: string;     // 商品サムネイル（大）
+  sampleUrl: string;    // サンプル動画URL（720x480優先）
+  affiliateUrl: string; // アフィリエイトリンク（nsplot-003）
+  comment: string;      // 内部メモ用一言（30文字）
+  parentPost: string;   // 親投稿本文（sampleUrl末尾付き）
+  replyPost: string;    // リプライ本文（affiliateUrl末尾付き）
   posted: boolean;
   addedAt: string;
 }
@@ -103,7 +105,6 @@ async function fetchDMMItems(genre: Genre): Promise<DMMItem[]> {
   if (!res.ok) throw new Error(`DMM API error: ${res.status} ${await res.text()}`);
 
   const data = (await res.json()) as DMMResponse;
-
   if (data.result.status !== 200) {
     throw new Error(`DMM API status error: ${data.result.status} ${data.result.message ?? ''}`);
   }
@@ -111,7 +112,7 @@ async function fetchDMMItems(genre: Genre): Promise<DMMItem[]> {
   return data.result.items ?? [];
 }
 
-// ─── サンプルURL取得 ──────────────────────────────────────────
+// ─── サンプルURL取得（高解像度優先） ──────────────────────────
 function pickSampleUrl(item: DMMItem): string {
   const s = item.sampleMovieURL;
   if (!s) return '';
@@ -125,7 +126,7 @@ function pickActressName(item: DMMItem): string {
   return actresses.map(a => a.name).join('・');
 }
 
-// ─── 昭和コメント生成 ─────────────────────────────────────────
+// ─── 内部メモ用一言（30文字） ─────────────────────────────────
 async function generateComment(
   client: Anthropic,
   title: string,
@@ -134,29 +135,86 @@ async function generateComment(
 ): Promise<string> {
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
-    max_tokens: 100,
+    max_tokens: 80,
     system: `あなたは「雑草おじさん」というキャラクターです。
-元AV業界勤務・業界経験者の目利きという設定。
-昭和平成のスポーツ新聞風俗ページのライターの文体で一言コメントを生成してください。
-
-ルール：
-- 「〇〇嬢の演技、小生の愚息も辛抱タマラン・・・！！」のスタイル
-- 作品・出演者の特徴を一言で表現
-- 昭和レトロな表現を使う（タマラン・小生・嬢・一品・絶品・貫禄 など）
-- 30文字以内
-- ハッシュタグなし
-- コメントのみ出力（前置き不要）`,
+昭和平成のスポーツ新聞風俗ページのライターの文体で一言メモを30文字以内で生成してください。
+「〇〇嬢の演技、小生の愚息も辛抱タマラン・・・！！」のスタイル。
+コメントのみ出力。`,
     messages: [{
       role: 'user',
-      content: `以下の作品に一言コメントをつけてください。
-ジャンル：${genre}
-タイトル：${title}
-出演者：${actressName}`,
+      content: `ジャンル：${genre} / 出演者：${actressName} / タイトル（抜粋）：${title.slice(0, 30)}`,
     }],
   });
 
   const text = (message.content[0] as { type: string; text: string }).text.trim();
   return text.slice(0, 50);
+}
+
+// ─── 親投稿生成（サンプル動画への誘導煽り文） ────────────────
+async function generateParentPost(
+  client: Anthropic,
+  title: string,
+  actressName: string,
+  genre: Genre,
+  sampleUrl: string,
+): Promise<string> {
+  const message = await client.messages.create({
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 150,
+    system: `あなたは「雑草おじさん」というキャラクターです。
+元AV業界勤務・業界経験者の目利きという設定。
+Xへの「親投稿（メインツイート）」を生成してください。
+
+ルール：
+- サンプル動画への誘導を意識した煽り文。「これは観ておけ・・・！！」「小生が太鼓判」系
+- 女優名・ジャンルを自然に絡める
+- 80文字以内（URLを末尾に追加するためスペースが必要）
+- 絵文字・ハッシュタグなし
+- 本文のみ出力（前置き・説明一切不要）`,
+    messages: [{
+      role: 'user',
+      content: `ジャンル：${genre}
+出演者：${actressName}
+タイトル（抜粋）：${title.slice(0, 40)}
+サンプル動画：${sampleUrl ? 'あり' : 'なし'}`,
+    }],
+  });
+
+  const body = (message.content[0] as { type: string; text: string }).text.trim().slice(0, 100);
+  return sampleUrl ? `${body}\n${sampleUrl}` : body;
+}
+
+// ─── リプライ生成（商品紹介＋アフィリリンク） ────────────────
+async function generateReplyPost(
+  client: Anthropic,
+  title: string,
+  actressName: string,
+  genre: Genre,
+  affiliateUrl: string,
+): Promise<string> {
+  const message = await client.messages.create({
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 150,
+    system: `あなたは「雑草おじさん」というキャラクターです。
+元AV業界勤務・業界経験者の目利きという設定。
+Xのリプライ欄に投稿する「商品紹介文」を生成してください。
+
+ルール：
+- 作品の魅力・特徴・見どころを具体的に紹介
+- 最後は購入リンクへの誘導文（「全編・詳細はこちら↓」「お買い求めはこちら↓」系）
+- 100文字以内（URLを末尾に追加するためスペースが必要）
+- 絵文字・ハッシュタグなし
+- 本文のみ出力（前置き・説明一切不要）`,
+    messages: [{
+      role: 'user',
+      content: `ジャンル：${genre}
+出演者：${actressName}
+タイトル（抜粋）：${title.slice(0, 40)}`,
+    }],
+  });
+
+  const body = (message.content[0] as { type: string; text: string }).text.trim().slice(0, 120);
+  return `${body}\n${affiliateUrl}`;
 }
 
 // ─── 連番ID生成 ───────────────────────────────────────────────
@@ -180,6 +238,8 @@ function toCsvRow(item: StockItem): string {
     escape(item.imageUrl),
     escape(item.sampleUrl),
     escape(item.affiliateUrl),
+    escape(item.parentPost),
+    escape(item.replyPost),
     item.posted ? '済' : '',
   ].join(',');
 }
@@ -195,7 +255,6 @@ async function main() {
 
   const client = new Anthropic();
 
-  // 既存ストック読み込み
   const stock: StockFile = fs.existsSync(STOCK_PATH)
     ? JSON.parse(fs.readFileSync(STOCK_PATH, 'utf-8'))
     : { updatedAt: '', totalCount: 0, items: [], note: '' };
@@ -230,17 +289,27 @@ async function main() {
         continue;
       }
 
-      const sampleUrl  = pickSampleUrl(item);
+      const sampleUrl   = pickSampleUrl(item);
       const actressName = pickActressName(item);
 
       console.log(`  生成中: ${item.title.slice(0, 30)}...`);
 
-      let comment = '';
+      let comment    = '';
+      let parentPost = '';
+      let replyPost  = '';
+
       try {
-        comment = await generateComment(client, item.title, actressName, genre);
+        // 3つのテキストを並列生成
+        [comment, parentPost, replyPost] = await Promise.all([
+          generateComment(client, item.title, actressName, genre),
+          generateParentPost(client, item.title, actressName, genre, sampleUrl),
+          generateReplyPost(client, item.title, actressName, genre, item.affiliateURL),
+        ]);
       } catch (e) {
-        console.error('  コメント生成エラー:', e);
-        comment = `${actressName}嬢の${genre}、小生タマラン・・・！！`;
+        console.error('  テキスト生成エラー:', e);
+        comment    = `${actressName}嬢の${genre}、小生タマラン・・・！！`;
+        parentPost = `${actressName}嬢の${genre}作品、これは観ておけ・・・！！${sampleUrl ? '\n' + sampleUrl : ''}`;
+        replyPost  = `${actressName}嬢の新作。全編・詳細はこちら↓\n${item.affiliateURL}`;
       }
 
       const allSoFar = [...stock.items, ...newItems];
@@ -251,9 +320,11 @@ async function main() {
         title:        item.title,
         actressName,
         imageUrl:     item.imageURL.large,
-        comment,
         sampleUrl,
         affiliateUrl: item.affiliateURL,
+        comment,
+        parentPost,
+        replyPost,
         posted:       false,
         addedAt:      new Date().toISOString(),
       };
@@ -262,9 +333,10 @@ async function main() {
       existingIds.add(item.content_id);
 
       console.log(`  ✓ [${genre}] ${comment}`);
+      console.log(`    親: ${parentPost.slice(0, 40)}...`);
+      console.log(`    返: ${replyPost.slice(0, 40)}...`);
 
-      // APIレート制限対策
-      await new Promise(r => setTimeout(r, 500));
+      await new Promise(r => setTimeout(r, 300));
     }
   }
 
@@ -272,21 +344,19 @@ async function main() {
 
   if (dryRun) {
     console.log('--- DRY RUN: ファイル書き込みスキップ ---');
-    console.log(JSON.stringify(newItems.slice(0, 2), null, 2));
+    console.log(JSON.stringify(newItems.slice(0, 3), null, 2));
     return;
   }
 
-  // ストックに追記
   stock.items.unshift(...newItems);
   stock.totalCount = stock.items.length;
   stock.updatedAt  = new Date().toISOString();
-  stock.note       = 'zassou-stock-generator.tsにより毎日9:00 JSTに自動更新';
+  stock.note       = 'zassou-stock-generator.tsにより1日3回(9:00/15:00/21:00 JST)自動更新';
 
   fs.writeFileSync(STOCK_PATH, JSON.stringify(stock, null, 2));
   console.log(`✓ ${STOCK_PATH} を更新（合計 ${stock.totalCount}件）`);
 
-  // CSV更新
-  const csvHeader = 'ID,ジャンル,作品名,出演者,一言コメント,画像URL,サンプルURL,アフィリリンク,投稿済み';
+  const csvHeader = 'ID,ジャンル,作品名,出演者,内部メモ,画像URL,サンプル動画URL,アフィリリンク,親投稿本文,リプライ本文,投稿済み';
   const csvRows   = stock.items.map(toCsvRow);
   fs.writeFileSync(CSV_PATH, [csvHeader, ...csvRows].join('\n'), 'utf-8');
   console.log(`✓ ${CSV_PATH} を更新`);
