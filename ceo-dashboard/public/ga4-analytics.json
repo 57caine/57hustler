@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-07-23T02:33:09.058Z",
+  "generatedAt": "2026-07-23T15:36:09.351Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-07-23T02:33:08.558Z",
+      "fetchedAt": "2026-07-23T15:36:08.734Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 184,
-      "totalPageviews": 520,
+      "totalSessions": 189,
+      "totalPageviews": 527,
       "topPages": [
         {
           "path": "/",
-          "sessions": 98,
-          "pageviews": 325,
-          "avgSessionDuration": 142.77500678571428,
-          "bounceRate": 0.32653061224489793
+          "sessions": 100,
+          "pageviews": 328,
+          "avgSessionDuration": 139.91950665000002,
+          "bounceRate": 0.34
         },
         {
           "path": "/category/1day",
@@ -35,18 +35,18 @@
           "bounceRate": 0.2
         },
         {
-          "path": "/ranking",
+          "path": "/column/meta-quest-3-review-2026",
           "sessions": 9,
-          "pageviews": 23,
-          "avgSessionDuration": 169.99011422222222,
+          "pageviews": 9,
+          "avgSessionDuration": 85.144879,
           "bounceRate": 0.2222222222222222
         },
         {
-          "path": "/column/meta-quest-3-review-2026",
-          "sessions": 8,
-          "pageviews": 8,
-          "avgSessionDuration": 95.787988875,
-          "bounceRate": 0.125
+          "path": "/ranking",
+          "sessions": 9,
+          "pageviews": 24,
+          "avgSessionDuration": 329.52994466666667,
+          "bounceRate": 0.2222222222222222
         },
         {
           "path": "/karakon",
@@ -56,24 +56,24 @@
           "bounceRate": 0.16666666666666666
         },
         {
+          "path": "/column/lasik-hiyo-risk",
+          "sessions": 5,
+          "pageviews": 7,
+          "avgSessionDuration": 317.8360714,
+          "bounceRate": 0.4
+        },
+        {
+          "path": "/column/megane-kaomikata",
+          "sessions": 5,
+          "pageviews": 5,
+          "avgSessionDuration": 338.836125,
+          "bounceRate": 0.2
+        },
+        {
           "path": "/column/karakon-osusume-ranking-2026",
           "sessions": 4,
           "pageviews": 45,
           "avgSessionDuration": 1102.894222,
-          "bounceRate": 0
-        },
-        {
-          "path": "/column/lasik-hiyo-risk",
-          "sessions": 4,
-          "pageviews": 6,
-          "avgSessionDuration": 397.29508925,
-          "bounceRate": 0.25
-        },
-        {
-          "path": "/column/megane-kaomikata",
-          "sessions": 4,
-          "pageviews": 4,
-          "avgSessionDuration": 410.26215275,
           "bounceRate": 0
         },
         {
@@ -249,7 +249,7 @@
         },
         {
           "date": "2026-07-23",
-          "sessions": 2
+          "sessions": 8
         }
       ]
     },
@@ -257,15 +257,28 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-07-23T02:33:09.058Z",
+      "fetchedAt": "2026-07-23T15:36:09.351Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 0,
-      "totalPageviews": 0,
-      "topPages": [],
-      "weeklyTrend": []
+      "totalSessions": 2,
+      "totalPageviews": 3,
+      "topPages": [
+        {
+          "path": "/",
+          "sessions": 2,
+          "pageviews": 3,
+          "avgSessionDuration": 3.007127,
+          "bounceRate": 1
+        }
+      ],
+      "weeklyTrend": [
+        {
+          "date": "2026-07-23",
+          "sessions": 2
+        }
+      ]
     }
   ]
 }
