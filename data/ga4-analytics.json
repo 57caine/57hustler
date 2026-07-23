@@ -1,4 +1,271 @@
 {
-  "generatedAt": "pending",
-  "sites": []
+  "generatedAt": "2026-07-23T02:33:09.058Z",
+  "sites": [
+    {
+      "propertyId": "520238223",
+      "siteName": "lens-navi",
+      "label": "lens-navi.jp",
+      "fetchedAt": "2026-07-23T02:33:08.558Z",
+      "dateRange": {
+        "start": "28daysAgo",
+        "end": "today"
+      },
+      "totalSessions": 184,
+      "totalPageviews": 520,
+      "topPages": [
+        {
+          "path": "/",
+          "sessions": 98,
+          "pageviews": 325,
+          "avgSessionDuration": 142.77500678571428,
+          "bounceRate": 0.32653061224489793
+        },
+        {
+          "path": "/category/1day",
+          "sessions": 11,
+          "pageviews": 16,
+          "avgSessionDuration": 180.0245669090909,
+          "bounceRate": 0.09090909090909091
+        },
+        {
+          "path": "/product/acuvue-moist-1day",
+          "sessions": 10,
+          "pageviews": 41,
+          "avgSessionDuration": 282.7589183,
+          "bounceRate": 0.2
+        },
+        {
+          "path": "/ranking",
+          "sessions": 9,
+          "pageviews": 23,
+          "avgSessionDuration": 169.99011422222222,
+          "bounceRate": 0.2222222222222222
+        },
+        {
+          "path": "/column/meta-quest-3-review-2026",
+          "sessions": 8,
+          "pageviews": 8,
+          "avgSessionDuration": 95.787988875,
+          "bounceRate": 0.125
+        },
+        {
+          "path": "/karakon",
+          "sessions": 6,
+          "pageviews": 15,
+          "avgSessionDuration": 94.92700500000001,
+          "bounceRate": 0.16666666666666666
+        },
+        {
+          "path": "/column/karakon-osusume-ranking-2026",
+          "sessions": 4,
+          "pageviews": 45,
+          "avgSessionDuration": 1102.894222,
+          "bounceRate": 0
+        },
+        {
+          "path": "/column/lasik-hiyo-risk",
+          "sessions": 4,
+          "pageviews": 6,
+          "avgSessionDuration": 397.29508925,
+          "bounceRate": 0.25
+        },
+        {
+          "path": "/column/megane-kaomikata",
+          "sessions": 4,
+          "pageviews": 4,
+          "avgSessionDuration": 410.26215275,
+          "bounceRate": 0
+        },
+        {
+          "path": "/column/smart-glass-2026",
+          "sessions": 4,
+          "pageviews": 3,
+          "avgSessionDuration": 2.3875175,
+          "bounceRate": 0.5
+        },
+        {
+          "path": "/column/vr-shiryoku-warui",
+          "sessions": 4,
+          "pageviews": 7,
+          "avgSessionDuration": 16.01597775,
+          "bounceRate": 0
+        },
+        {
+          "path": "/brand/seed",
+          "sessions": 3,
+          "pageviews": 2,
+          "avgSessionDuration": 28.15549366666667,
+          "bounceRate": 0.3333333333333333
+        },
+        {
+          "path": "/column/megane-online-shopping",
+          "sessions": 3,
+          "pageviews": 3,
+          "avgSessionDuration": 2.138493,
+          "bounceRate": 0.6666666666666666
+        },
+        {
+          "path": "/eye-care",
+          "sessions": 3,
+          "pageviews": 4,
+          "avgSessionDuration": 2.7303033333333335,
+          "bounceRate": 0.3333333333333333
+        },
+        {
+          "path": "/megane",
+          "sessions": 3,
+          "pageviews": 2,
+          "avgSessionDuration": 2.2419366666666667,
+          "bounceRate": 0
+        },
+        {
+          "path": "/column",
+          "sessions": 2,
+          "pageviews": 8,
+          "avgSessionDuration": 156.0834775,
+          "bounceRate": 0
+        },
+        {
+          "path": "/column/blue-light-megane-kouka",
+          "sessions": 2,
+          "pageviews": 1,
+          "avgSessionDuration": 3.8853605,
+          "bounceRate": 0
+        },
+        {
+          "path": "/column/eyestrain-stretching-massage-guide",
+          "sessions": 2,
+          "pageviews": 1,
+          "avgSessionDuration": 3.774578,
+          "bounceRate": 1
+        },
+        {
+          "path": "/column/ranshi-contact-erabikata",
+          "sessions": 2,
+          "pageviews": 2,
+          "avgSessionDuration": 17.754520499999998,
+          "bounceRate": 0.5
+        },
+        {
+          "path": "/lasik",
+          "sessions": 2,
+          "pageviews": 4,
+          "avgSessionDuration": 1177.7719225,
+          "bounceRate": 0
+        }
+      ],
+      "weeklyTrend": [
+        {
+          "date": "2026-06-26",
+          "sessions": 4
+        },
+        {
+          "date": "2026-06-28",
+          "sessions": 5
+        },
+        {
+          "date": "2026-06-29",
+          "sessions": 3
+        },
+        {
+          "date": "2026-07-01",
+          "sessions": 3
+        },
+        {
+          "date": "2026-07-02",
+          "sessions": 4
+        },
+        {
+          "date": "2026-07-03",
+          "sessions": 2
+        },
+        {
+          "date": "2026-07-04",
+          "sessions": 5
+        },
+        {
+          "date": "2026-07-06",
+          "sessions": 5
+        },
+        {
+          "date": "2026-07-07",
+          "sessions": 6
+        },
+        {
+          "date": "2026-07-08",
+          "sessions": 1
+        },
+        {
+          "date": "2026-07-09",
+          "sessions": 1
+        },
+        {
+          "date": "2026-07-10",
+          "sessions": 1
+        },
+        {
+          "date": "2026-07-11",
+          "sessions": 2
+        },
+        {
+          "date": "2026-07-12",
+          "sessions": 2
+        },
+        {
+          "date": "2026-07-14",
+          "sessions": 4
+        },
+        {
+          "date": "2026-07-15",
+          "sessions": 8
+        },
+        {
+          "date": "2026-07-16",
+          "sessions": 1
+        },
+        {
+          "date": "2026-07-17",
+          "sessions": 7
+        },
+        {
+          "date": "2026-07-18",
+          "sessions": 13
+        },
+        {
+          "date": "2026-07-19",
+          "sessions": 16
+        },
+        {
+          "date": "2026-07-20",
+          "sessions": 15
+        },
+        {
+          "date": "2026-07-21",
+          "sessions": 22
+        },
+        {
+          "date": "2026-07-22",
+          "sessions": 8
+        },
+        {
+          "date": "2026-07-23",
+          "sessions": 2
+        }
+      ]
+    },
+    {
+      "propertyId": "539527147",
+      "siteName": "school-navi",
+      "label": "school.lens-navi.jp",
+      "fetchedAt": "2026-07-23T02:33:09.058Z",
+      "dateRange": {
+        "start": "28daysAgo",
+        "end": "today"
+      },
+      "totalSessions": 0,
+      "totalPageviews": 0,
+      "topPages": [],
+      "weeklyTrend": []
+    }
+  ]
 }
