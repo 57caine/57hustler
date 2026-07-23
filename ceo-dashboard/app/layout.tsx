@@ -1,3 +1,4 @@
+// CEO Dashboard layout
 import type { Metadata } from 'next';
 import './globals.css';
 import Nav from '@/components/Nav';
