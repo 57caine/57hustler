@@ -62,3 +62,10 @@ jobs:
           ITEM_COUNT=$(node -e "const d=require('./data/zassou-stock.json'); console.log(d.totalCount)")
           git commit -m "auto: 雑草ストック更新 $(date +%Y-%m-%d) 合計${ITEM_COUNT}件"
           git push
+
+      - name: Sync to Google Sheets
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        env:
+          GA4_SERVICE_ACCOUNT_KEY: ${{ secrets.GA4_SERVICE_ACCOUNT_KEY }}
+          ZASSOU_SHEET_ID:         ${{ secrets.ZASSOU_SHEET_ID }}
+        run: npx ts-node scripts/sync-zassou-to-sheets.ts
