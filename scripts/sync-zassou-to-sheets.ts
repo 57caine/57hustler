@@ -7,6 +7,8 @@
  * 環境変数:
  *   GA4_SERVICE_ACCOUNT_KEY  - サービスアカウントJSONキー（文字列）
  *   ZASSOU_SHEET_ID          - 書き込み先スプレッドシートID
+ *
+ * 列構成: ID / ジャンル / 作品名 / 出演者 / アフィリリンク / 親投稿本文 / リプライ本文 / 投稿済み
  */
 
 import { google } from 'googleapis';
@@ -16,8 +18,10 @@ import * as path from 'path';
 const ROOT = process.cwd();
 const STOCK_PATH = path.join(ROOT, 'data/zassou-stock.json');
 
-const SHEET_NAME  = 'Stock';
-const HEADER_ROW  = ['ID', 'ジャンル', '作品名', '出演者', '内部メモ', '画像URL', 'サンプル動画URL', 'アフィリリンク', '親投稿本文', 'リプライ本文', '投稿済み'];
+const SHEET_NAME = 'Stock';
+const HEADER_ROW = ['ID', 'ジャンル', '作品名', '出演者', 'アフィリリンク', '親投稿本文', 'リプライ本文', '投稿済み'];
+const COL_COUNT  = HEADER_ROW.length; // 8
+const LAST_COL   = 'H';
 
 interface StockItem {
   zId: string;
@@ -37,6 +41,19 @@ interface StockFile {
   updatedAt: string;
   totalCount: number;
   items: StockItem[];
+}
+
+/**
+ * parentPost を「キャッチコピー本文 + sampleUrl 1本」に正規化する。
+ * - テキスト部分（非URL行）を抽出
+ * - 既存のURLをすべて除去し、sampleUrl のみ末尾に付与
+ * - sampleUrl が空の場合はテキストのみ
+ */
+function normalizeParentPost(parentPost: string, sampleUrl: string): string {
+  const lines = parentPost.split('\n');
+  const textLines = lines.filter(l => !l.trim().match(/^https?:\/\//));
+  const text = textLines.join('\n').trim();
+  return sampleUrl ? `${text}\n${sampleUrl}` : text;
 }
 
 async function main() {
@@ -71,11 +88,7 @@ async function main() {
     const addResp = await sheets.spreadsheets.batchUpdate({
       spreadsheetId: sheetId,
       requestBody: {
-        requests: [{
-          addSheet: {
-            properties: { title: SHEET_NAME },
-          },
-        }],
+        requests: [{ addSheet: { properties: { title: SHEET_NAME } } }],
       },
     });
     sheetGid = addResp.data.replies?.[0]?.addSheet?.properties?.sheetId ?? 0;
@@ -84,30 +97,26 @@ async function main() {
     console.log(`シート「${SHEET_NAME}」に書き込み (gid=${sheetGid})`);
   }
 
-  // ── データ行生成（親投稿・リプライ本文は改行を \\n に変換してセル内に収める） ──
+  // ── データ行生成 ──────────────────────────────────────────────
   const dataRows = items.map(item => [
     item.zId,
     item.genre,
     item.title,
     item.actressName,
-    item.comment,
-    item.imageUrl,
-    item.sampleUrl,
     item.affiliateUrl,
-    item.parentPost,
+    normalizeParentPost(item.parentPost, item.sampleUrl),
     item.replyPost,
-    item.posted,           // boolean: TRUEでチェックボックスON
+    item.posted,  // boolean → チェックボックス
   ]);
 
   const allRows = [HEADER_ROW, ...dataRows];
   const lastRow = allRows.length;
-  const lastCol = 'K';  // 11列
-  const range = `${SHEET_NAME}!A1:${lastCol}${lastRow}`;
+  const range = `${SHEET_NAME}!A1:${LAST_COL}${lastRow}`;
 
-  // ── シートをクリアして書き込み ─────────────────────────────────
+  // ── クリア → 書き込み ─────────────────────────────────────────
   await sheets.spreadsheets.values.clear({
     spreadsheetId: sheetId,
-    range: `${SHEET_NAME}!A:K`,
+    range: `${SHEET_NAME}!A:${LAST_COL}`,
   });
   console.log('既存データをクリア');
 
@@ -119,12 +128,12 @@ async function main() {
   });
   console.log(`データ書き込み完了: ${items.length}行`);
 
-  // ── 書式設定リクエストをまとめて実行 ─────────────────────────
+  // ── 書式設定 ─────────────────────────────────────────────────
   const formatRequests: object[] = [
-    // ヘッダー行: 太字・背景色（薄いグレー）・テキスト折り返しなし
+    // ヘッダー: 太字・灰色背景
     {
       repeatCell: {
-        range: { sheetId: sheetGid, startRowIndex: 0, endRowIndex: 1, startColumnIndex: 0, endColumnIndex: 11 },
+        range: { sheetId: sheetGid, startRowIndex: 0, endRowIndex: 1, startColumnIndex: 0, endColumnIndex: COL_COUNT },
         cell: {
           userEnteredFormat: {
             backgroundColor: { red: 0.85, green: 0.85, blue: 0.85 },
@@ -135,39 +144,34 @@ async function main() {
         fields: 'userEnteredFormat(backgroundColor,textFormat,wrapStrategy)',
       },
     },
-    // データ行: 折り返し（WRAP）
+    // データ行: 折り返し（投稿済み列除く）
     {
       repeatCell: {
-        range: { sheetId: sheetGid, startRowIndex: 1, endRowIndex: lastRow, startColumnIndex: 0, endColumnIndex: 10 },
-        cell: {
-          userEnteredFormat: { wrapStrategy: 'WRAP' },
-        },
+        range: { sheetId: sheetGid, startRowIndex: 1, endRowIndex: lastRow, startColumnIndex: 0, endColumnIndex: COL_COUNT - 1 },
+        cell: { userEnteredFormat: { wrapStrategy: 'WRAP' } },
         fields: 'userEnteredFormat(wrapStrategy)',
       },
     },
-    // 「投稿済み」列（K列=index10）をチェックボックスにする
+    // 「投稿済み」列（H列=index7）をチェックボックスにする
     {
       setDataValidation: {
-        range: { sheetId: sheetGid, startRowIndex: 1, endRowIndex: lastRow, startColumnIndex: 10, endColumnIndex: 11 },
+        range: { sheetId: sheetGid, startRowIndex: 1, endRowIndex: lastRow, startColumnIndex: 7, endColumnIndex: 8 },
         rule: {
           condition: { type: 'BOOLEAN' },
           showCustomUi: true,
         },
       },
     },
-    // 列幅設定（ピクセル）
+    // 列幅設定
     ...[
-      { col: 0,  width: 70  },  // ID
-      { col: 1,  width: 80  },  // ジャンル
-      { col: 2,  width: 250 },  // 作品名
-      { col: 3,  width: 120 },  // 出演者
-      { col: 4,  width: 180 },  // 内部メモ
-      { col: 5,  width: 80  },  // 画像URL
-      { col: 6,  width: 80  },  // サンプル動画URL
-      { col: 7,  width: 80  },  // アフィリリンク
-      { col: 8,  width: 280 },  // 親投稿本文
-      { col: 9,  width: 280 },  // リプライ本文
-      { col: 10, width: 80  },  // 投稿済み
+      { col: 0, width: 70  },  // ID
+      { col: 1, width: 80  },  // ジャンル
+      { col: 2, width: 260 },  // 作品名
+      { col: 3, width: 120 },  // 出演者
+      { col: 4, width: 80  },  // アフィリリンク
+      { col: 5, width: 300 },  // 親投稿本文
+      { col: 6, width: 300 },  // リプライ本文
+      { col: 7, width: 80  },  // 投稿済み
     ].map(({ col, width }) => ({
       updateDimensionProperties: {
         range: { sheetId: sheetGid, dimension: 'COLUMNS', startIndex: col, endIndex: col + 1 },
@@ -194,10 +198,12 @@ async function main() {
   console.log('書式設定完了（ヘッダー太字・チェックボックス・列幅・行固定）');
 
   const url = `https://docs.google.com/spreadsheets/d/${sheetId}`;
-  console.log(`\n✅ 同期完了`);
+  console.log('\n✅ 同期完了');
   console.log(`   件数: ${items.length}件`);
   console.log(`   更新日時: ${stock.updatedAt}`);
   console.log(`   シートURL: ${url}`);
+  console.log(`   列構成: ${HEADER_ROW.join(' / ')}`);
+  console.log(`   A1セル: ${HEADER_ROW[0]}`);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
