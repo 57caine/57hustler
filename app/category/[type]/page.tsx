@@ -179,16 +179,16 @@ export default async function CategoryPage({ params }: Props) {
 
       {guide && (
         <div className="bg-slate-50 rounded-xl border border-slate-200 p-5 mb-8">
-          <h2 className="text-base font-bold text-slate-800 mb-3">{guide.heading}</h2>
+          <h2 className="text-base font-bold text-gray-900 mb-3">{guide.heading}</h2>
           <ul className="space-y-2 mb-4">
             {guide.points.map((point) => (
-              <li key={point} className="flex gap-2 text-sm text-gray-700">
-                <span className="text-slate-400 shrink-0 mt-0.5">▸</span>
+              <li key={point} className="flex gap-2 text-sm text-gray-800">
+                <span className="text-slate-600 shrink-0 mt-0.5">▸</span>
                 <span>{point}</span>
               </li>
             ))}
           </ul>
-          <p className="text-xs text-gray-600 bg-white rounded-lg p-3 border border-slate-200">{guide.note}</p>
+          <p className="text-xs text-gray-800 bg-white rounded-lg p-3 border border-slate-200">{guide.note}</p>
         </div>
       )}
 
