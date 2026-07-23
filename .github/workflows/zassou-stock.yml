@@ -10,6 +10,10 @@ on:
         description: 'DRY RUN（ファイル書き込みなし）'
         required: false
         default: 'false'
+      repair_parents:
+        description: '親投稿を全件新プロンプトで再生成する'
+        required: false
+        default: 'false'
 
 jobs:
   generate-stock:
@@ -39,11 +43,10 @@ jobs:
           DMM_AFFILIATE_ID:  ${{ secrets.DMM_AFFILIATE_ID }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
-            npx ts-node scripts/zassou-stock-generator.ts --dry-run
-          else
-            npx ts-node scripts/zassou-stock-generator.ts
-          fi
+          ARGS=""
+          [ "${{ github.event.inputs.dry_run }}" = "true" ]      && ARGS="$ARGS --dry-run"
+          [ "${{ github.event.inputs.repair_parents }}" = "true" ] && ARGS="$ARGS --repair-parents"
+          npx ts-node scripts/zassou-stock-generator.ts $ARGS
 
       - name: Commit and push
         run: |

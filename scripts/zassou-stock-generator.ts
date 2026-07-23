@@ -180,7 +180,7 @@ async function generateComment(
   return text.slice(0, 50);
 }
 
-// ─── 親投稿生成（サンプル動画への誘導煽り文） ────────────────
+// ─── 親投稿生成（1行キャッチコピー） ────────────────────────
 async function generateParentPost(
   client: Anthropic,
   title: string,
@@ -190,23 +190,28 @@ async function generateParentPost(
 ): Promise<string> {
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
-    max_tokens: 150,
+    max_tokens: 60,
     system: `あなたは「雑草おじさん」というキャラクターです。
 元AV業界勤務・業界経験者の目利きという設定。
 Xへの「親投稿（メインツイート）」を生成してください。
 
 ルール：
-- サンプル動画への誘導を意識した煽り文。「これは観ておけ・・・！！」「小生が太鼓判」系
-- 女優名・ジャンルを自然に絡める
-- 80文字以内（URLを末尾に追加するためスペースが必要）
+- 1行・20〜25文字のキャッチコピーのみ。それ以上書かない
+- 「〇〇の〇〇、これは観ておけ。」の形を基本とする
+- 女優名か作品の特徴を1つだけ絡める
+- 説明・煽り文句の重ね書き禁止（1文で完結）
 - 絵文字・ハッシュタグなし
-- 本文のみ出力（前置き・説明一切不要）`,
+- キャッチコピーのみ出力（前置き・説明一切不要）
+
+良い例：
+「篠田ゆうの16時間ベスト、これは観ておけ。」
+「小沢菜穂の8K初VR、これは観ておけ。」
+「長澤史華の熟女ボディ、これは観ておけ。」`,
     messages: [{
       role: 'user',
       content: `ジャンル：${genre}
 出演者：${actressName}
-タイトル（抜粋）：${title.slice(0, 40)}
-サンプル動画：${sampleUrl ? 'あり' : 'なし'}`,
+タイトル（抜粋）：${title.slice(0, 40)}`,
     }],
   });
 
@@ -215,7 +220,9 @@ Xへの「親投稿（メインツイート）」を生成してください。
     console.warn('  ⚠ parentPost: 拒否検知 → フォールバック');
     return fallbackParentPost(actressName, genre, sampleUrl);
   }
-  return sampleUrl ? `${body.slice(0, 100)}\n${sampleUrl}` : body.slice(0, 100);
+  // 1行目のみ抽出して25文字上限（URL別）
+  const oneLine = body.split('\n')[0].slice(0, 30);
+  return sampleUrl ? `${oneLine}\n${sampleUrl}` : oneLine;
 }
 
 // ─── リプライ生成（商品紹介＋アフィリリンク） ────────────────
@@ -253,6 +260,25 @@ Xのリプライ欄に投稿する「商品紹介文」を生成してくださ�
     return fallbackReplyPost(actressName, genre, affiliateUrl);
   }
   return `${body.slice(0, 120)}\n${affiliateUrl}`;
+}
+
+// ─── 既存ストックの親投稿を全件再生成 ────────────────────────
+async function repairParentPosts(client: Anthropic, items: StockItem[]): Promise<void> {
+  console.log(`\n▼ 全${items.length}件の親投稿を新プロンプトで再生成中...`);
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
+    console.log(`  [${i + 1}/${items.length}] ${item.zId} ${item.actressName}`);
+    try {
+      item.parentPost = await generateParentPost(
+        client, item.title, item.actressName, item.genre, item.sampleUrl
+      );
+      console.log(`    → ${item.parentPost.split('\n')[0]}`);
+    } catch (e) {
+      console.error(`  エラー (${item.zId}):`, e);
+      item.parentPost = fallbackParentPost(item.actressName, item.genre, item.sampleUrl);
+    }
+    await new Promise(r => setTimeout(r, 300));
+  }
 }
 
 // ─── 既存ストックの拒否テキスト修復 ──────────────────────────
@@ -321,10 +347,11 @@ function toCsvRow(item: StockItem): string {
 
 // ─── メイン ──────────────────────────────────────────────────
 async function main() {
-  const dryRun = process.argv.includes('--dry-run');
-  console.log(`=== 雑草おじさん ストックジェネレーター${dryRun ? ' [DRY RUN]' : ''} ===`);
+  const dryRun        = process.argv.includes('--dry-run');
+  const repairParents = process.argv.includes('--repair-parents');
+  console.log(`=== 雑草おじさん ストックジェネレーター${dryRun ? ' [DRY RUN]' : ''}${repairParents ? ' [REPAIR PARENTS]' : ''} ===`);
 
-  if (!DMM_API_ID || !DMM_AFFILIATE_ID) {
+  if (!repairParents && (!DMM_API_ID || !DMM_AFFILIATE_ID)) {
     throw new Error('DMM_API_ID と DMM_AFFILIATE_ID を環境変数に設定してください');
   }
 
@@ -333,6 +360,23 @@ async function main() {
   const stock: StockFile = fs.existsSync(STOCK_PATH)
     ? JSON.parse(fs.readFileSync(STOCK_PATH, 'utf-8'))
     : { updatedAt: '', totalCount: 0, items: [], note: '' };
+
+  // --repair-parents: 親投稿のみ全件再生成して終了
+  if (repairParents) {
+    await repairParentPosts(client, stock.items);
+    stock.updatedAt = new Date().toISOString();
+    if (!dryRun) {
+      fs.writeFileSync(STOCK_PATH, JSON.stringify(stock, null, 2));
+      const csvHeader = 'ID,ジャンル,作品名,出演者,内部メモ,画像URL,サンプル動画URL,アフィリリンク,親投稿本文,リプライ本文,投稿済み';
+      const csvRows = stock.items.map(toCsvRow);
+      fs.writeFileSync(CSV_PATH, [csvHeader, ...csvRows].join('\n'), 'utf-8');
+      console.log(`\n✓ ${STOCK_PATH} を更新`);
+    } else {
+      console.log('\n--- DRY RUN: ファイル書き込みスキップ ---');
+      stock.items.slice(0, 3).forEach(i => console.log(`${i.zId}: ${i.parentPost.split('\n')[0]}`));
+    }
+    return;
+  }
 
   const posted: PostedFile = fs.existsSync(POSTED_PATH)
     ? JSON.parse(fs.readFileSync(POSTED_PATH, 'utf-8'))
