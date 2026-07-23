@@ -41,5 +41,6 @@ yarn-error.log*
 next-env.d.ts
 school-navi/node_modules/
 school-navi/.next/
-/ceo-dashboard/
+ceo-dashboard/node_modules/
+ceo-dashboard/.next/
 # note-drafts/*.md はコミット対象（自動生成記事）
