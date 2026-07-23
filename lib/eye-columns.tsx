@@ -1124,7 +1124,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
               { shop: 'JINS オンライン', price: '¥5,500〜', feat: 'バーチャル試着あり・全国で調整可能' },
               { shop: 'Zoff オンライン', price: '¥5,500〜', feat: '豊富なデザイン・店舗でのアフターケアあり' },
               { shop: '楽天市場 眼鏡', price: '¥1,000〜', feat: '激安フレームが豊富・ポイント還元' },
-              { shop: '楽天市場 眼鏡', price: '¥1,000〜', feat: 'ポイント還元・セール多数・レビュー豊富' },
+              { shop: 'Amazon 眼鏡フレーム', price: '¥500〜', feat: '最安値が出やすい・即日配送対応あり' },
             ].map(r => (
               <tr key={r.shop} className="border-b border-gray-100">
                 <td className="p-3 border border-gray-200 font-medium">{r.shop}</td>
@@ -3511,7 +3511,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">はじめに</h2>
       <p className="text-gray-700 mb-4">デジタルデバイスの普及により、眼精疲労に悩む人は年々増加しています。調査によると、日本国内でPC作業に従事する働き手の約60%が眼精疲労を経験しており、その症状は頭痛や肩こりへと発展することもあります。眼精疲労は単なる「目の疲れ」ではなく、生活の質に大きな影響を与える深刻な問題です。</p>
       <p className="text-gray-700 mb-4">一方で、眼精疲労を緩和する方法として注目されているのが「ストレッチ」と「マッサージ」です。これらは医療の現場でも推奨される手法で、特別な器具や費用を必要としません。本記事では、眼精疲労のメカニズムから、実践的なストレッチ・マッサージテクニックまで、科学的根拠に基づいた情報をお届けします。</p>
-      <p className="text-gray-700 mb-4">---</p>
+      <hr className="my-6 border-gray-200" />
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">第1章：眼精疲労が起こるメカニズム</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">現代人が眼精疲労になる理由</h3>
       <p className="text-gray-700 mb-4">眼精疲労は、目のピント調整機能である「毛様体筋」が過度に緊張することで発生します。PC画面を見続けると、ブルーライトの刺激を受け、この筋肉が硬直し続ける状態に陥ります。</p>
@@ -3521,7 +3521,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">1. <strong>毛様体筋の緊張緩和</strong>：目の周辺筋肉をほぐすことで、硬直した毛様体筋がリラックス状態に戻ります</p>
       <p className="text-gray-700 mb-4">2. <strong>血流改善</strong>：マッサージによる物理的刺激により、目周辺の血液循環が向上。酸素と栄養が目に供給されやすくなります</p>
       <p className="text-gray-700 mb-4">3. <strong>涙液分泌促進</strong>：目周辺のマッサージにより、涙液を分泌する腺が刺激され、ドライアイ改善につながります</p>
-      <p className="text-gray-700 mb-4">---</p>
+      <hr className="my-6 border-gray-200" />
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">第2章：仕事中にできるストレッチ5選</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ストレッチ①：眼球運動（オキュロモーター）</h3>
       <p className="text-gray-700 mb-4"><strong>実施時間</strong>：1～2分</p>
@@ -3562,7 +3562,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">3. ゆっくり首を回す（時計回り・反時計回り各5回）</p>
       <p className="text-gray-700 mb-4">4. 肩を上げて3秒間キープ、力を抜く（5回繰り返す）</p>
       <p className="text-gray-700 mb-4"><strong>効果</strong>：首・肩の緊張が目の筋肉を圧迫していることが多いため、この部分をほぐすことで間接的に眼精疲労を軽減できます。</p>
-      <p className="text-gray-700 mb-4">---</p>
+      <hr className="my-6 border-gray-200" />
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">第3章：効果的なマッサージテクニック</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">マッサージ①：眉毛周辺マッサージ</h3>
       <p className="text-gray-700 mb-4"><strong>実施時間</strong>：2～3分</p>
@@ -3604,7 +3604,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">3. 眉毛の上から生え際まで、上下に移動させながら実施</p>
       <p className="text-gray-700 mb-4">4. 2～3分間継続</p>
       <p className="text-gray-700 mb-4"><strong>効果</strong>：額の筋肉緊張を緩和し、脳への血流を改善。眼精疲労に伴う頭重感を軽減します。</p>
-      <p className="text-gray-700 mb-4">---</p>
+      <hr className="my-6 border-gray-200" />
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">第4章：より効果を高めるための実践ガイド</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">マッサージクリーム・オイルの活用</h3>
       <p className="text-gray-700 mb-4">マッサージ時に適切なクリームやオイルを使用することで、摩擦を減らし、効果を最大化できます。以下のような製品を活用するのがおすすめです：</p>
@@ -3646,7 +3646,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>全体的なマッサージ：5分</li>
         <li>首・肩周辺ストレッチ：3分</li>
       </ul>
-      <p className="text-gray-700 mb-4">---</p>
+      <hr className="my-6 border-gray-200" />
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">第5章：避けるべき行為と注意点</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">NG行為</h3>
       <p className="text-gray-700 mb-4">1. <strong>強すぎる力加減</strong>：目周辺の皮膚は非常にデリケートです。爪を立てたり、強く押しすぎたりすると、皮膚損傷や逆に眼精疲労を悪化させる可能性があります</p>
@@ -3660,7 +3660,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>PC環境の改善</strong>：モニターの高さ、ブルーライトカット対策、照度調整なども同時に実施することで、効果が高まります</li>
         <li><strong>眼科受診</strong>：症状が続く場合は、眼科医の診察を受けることをおすすめします。隠れた目の疾患が存在する可能性もあります</li>
       </ul>
-      <p className="text-gray-700 mb-4">---</p>
+      <hr className="my-6 border-gray-200" />
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">第6章：専門家が推奨する補助手段</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ドライアイ対策</h3>
       <p className="text-gray-700 mb-4">眼精疲労の多くはドライアイを伴っています。目薬の活用がストレッチ・マッサージの効果を高めます：</p>
@@ -3676,12 +3676,25 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>アントシアニン</strong>：ブルーベリー、黒い野菜に含まれる</li>
         <li><strong>ゼアキサンチン</strong>：とうもろこし、卵黄に含まれる</li>
       </ul>
-      <p className="text-gray-700 mb-4">---</p>
+      <hr className="my-6 border-gray-200" />
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
       <p className="text-gray-700 mb-4">眼精疲労は現代人にとって避けがたい問題ですが、正しい知識と実践により、大幅に症状を軽減できます。本記事で紹介したストレッチとマッサージテクニックは、すべて自宅や職場で実施できる簡単な方法です。</p>
       <p className="text-gray-700 mb-4">重要なのは「継続」です。1日だけの実施では効果が見込めません。毎日5～10分程度の時間を確保し、習慣化することが眼精疲労克服の鍵となります。</p>
       <p className="text-gray-700 mb-4">また、ストレッチ・マッサージだけでなく、PC環境の改善、定期的な目薬の使用、栄養管理など、複合的なアプローチにより、さらに効果を高めることができます。自分に合った方法を見つけ、快適なデジタルライフを実現してください。</p>
       <p className="text-gray-700 mb-4">症状が強い場合や、改善が見られない場合は、必ず眼科医に相談することをおすすめします。目の健康は全身の健康につながる重要な要素です。</p>
+
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-4">
+        <p className="font-bold text-gray-800 mb-3">ドライアイ・疲れ目対策グッズを探す</p>
+        <AffiliateBtns rakuten="ドライアイ 目薬 疲れ目" />
+      </div>
+
+      <div className="bg-sky-50 border border-sky-200 rounded-xl p-4">
+        <p className="text-sm font-bold text-gray-800 mb-1">コンタクトレンズを使っている方へ</p>
+        <p className="text-xs text-gray-500 mb-3">コンタクト装用は眼精疲労を悪化させる場合も。最安値で購入して交換頻度を上げることも対策のひとつです。</p>
+        <Link href="/ranking" className="block w-full text-center text-sm font-bold bg-sky-600 hover:bg-sky-500 text-white px-4 py-2.5 rounded-lg transition-colors">
+          コンタクトレンズ 最安値ランキングを見る →
+        </Link>
+      </div>
     </article>
   ),
     "floaters-causes-when-to-see-doctor": (
@@ -6892,9 +6905,9 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>価格帯：1,500～2,500円</li>
         <li>用途：外出先での使用に最適</li>
       </ul>
-      <p className="text-gray-700 mb-4">> <strong>楽天での拡大鏡・ルーペ商品一覧</strong></p>
-      <p className="text-gray-700 mb-4">> 様々な種類のスマホ対応拡大鏡が揃っています。レビュー評価が高い商品から選ぶことで、失敗を避けられます。</p>
-      <p className="text-gray-700 mb-4">> <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で拡大鏡をチェック</a></p>
+      <p className="text-gray-700 mb-4"><strong>楽天での拡大鏡・ルーペ商品一覧</strong></p>
+      <p className="text-gray-700 mb-4">様々な種類のスマホ対応拡大鏡が揃っています。レビュー評価が高い商品から選ぶことで、失敗を避けられます。</p>
+      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で拡大鏡をチェック</a></p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">老眼鏡・ブルーライトカット眼鏡のおすすめ</h3>
       <p className="text-gray-700 mb-4"><strong>スマートフォン専用老眼鏡</strong></p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">

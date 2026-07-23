@@ -45,6 +45,12 @@ const categoryColors: Record<string, string> = {
   'アイケア・目薬': 'bg-cyan-100 text-cyan-700',
   '目の雑貨・グッズ': 'bg-orange-100 text-orange-700',
   'カラコン': 'bg-pink-100 text-pink-700',
+  megane: 'bg-indigo-100 text-indigo-700',
+  vr: 'bg-violet-100 text-violet-700',
+  lasik: 'bg-emerald-100 text-emerald-700',
+  'eye-care': 'bg-cyan-100 text-cyan-700',
+  'eye-goods': 'bg-orange-100 text-orange-700',
+  karakon: 'bg-pink-100 text-pink-700',
 };
 
 export default async function ColumnPage({ params }: Props) {
@@ -177,6 +183,12 @@ export default async function ColumnPage({ params }: Props) {
                   className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
                   楽天市場で見る →
                 </a>
+                <div className="mt-3 pt-3 border-t border-red-100 flex items-center justify-between gap-3">
+                  <p className="text-xs text-gray-500">コンタクトレンズの最安値も比較</p>
+                  <Link href="/ranking" className="shrink-0 text-xs font-bold text-sky-600 hover:underline whitespace-nowrap">
+                    コンタクト最安値を見る →
+                  </Link>
+                </div>
               </div>
             );
           }
