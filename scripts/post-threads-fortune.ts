@@ -130,8 +130,9 @@ function buildPostText(dailyStarNum: number, oneLiners: Record<number, string>):
   return lines.join('\n');
 }
 
-async function createThreadsContainer(text: string): Promise<string> {
+async function createThreadsContainer(text: string, topicTag?: string): Promise<string> {
   const params = new URLSearchParams({ media_type: 'TEXT', text, access_token: ACCESS_TOKEN });
+  if (topicTag) params.set('topic_tag', topicTag);
   const res = await fetch(`${THREADS_API_BASE}/${USER_ID}/threads`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -176,8 +177,8 @@ async function main() {
   }
 
   console.log('Threads コンテナ作成中...');
-  const creationId = await createThreadsContainer(text);
-  console.log(`コンテナID: ${creationId}`);
+  const creationId = await createThreadsContainer(text, '九星気学');
+  console.log(`コンテナID: ${creationId}（topic_tag: 九星気学）`);
 
   console.log('30秒待機中...');
   await new Promise(r => setTimeout(r, 30000));

@@ -294,8 +294,9 @@ async function trySeriesPost(
   return { text, series };
 }
 
-async function createThreadsContainer(text: string): Promise<string> {
+async function createThreadsContainer(text: string, topicTag?: string): Promise<string> {
   const params = new URLSearchParams({ media_type: 'TEXT', text, access_token: ACCESS_TOKEN });
+  if (topicTag) params.set('topic_tag', topicTag);
   const res = await fetch(`${THREADS_API_BASE}/${USER_ID}/threads`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -371,9 +372,12 @@ async function main() {
     return;
   }
 
+  // 一文考察（金曜: 一文考察・掛け合わせ系）→ 都市伝説、それ以外 → スピリチュアル
+  const topicTag = (dayOfWeek === 5 && postLabel !== '連作week') ? '都市伝説' : 'スピリチュアル';
+
   console.log('Threads コンテナ作成中...');
-  const creationId = await createThreadsContainer(text);
-  console.log(`コンテナID: ${creationId}`);
+  const creationId = await createThreadsContainer(text, topicTag);
+  console.log(`コンテナID: ${creationId}（topic_tag: ${topicTag}）`);
 
   console.log('30秒待機中...');
   await new Promise(r => setTimeout(r, 30000));
