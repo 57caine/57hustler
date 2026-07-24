@@ -865,6 +865,24 @@ export const eyeColumns: EyeColumnMeta[] = [
     { q: "天然由来ルテインと合成ルテインに違いはありますか？", a: "吸収率の観点から、マリーゴールド花由来の天然ルテイン（フリー体）は合成品（エステル体）より約1.5倍吸収しやすいとされています。ただし両者の最終的な効果差は臨床試験で有意差がないと報告されています。一般的に天然由来製品の方が価格は高めですが、より純粋性を求める人に好まれます。" }
     ],
   },
+    {
+    slug: "eye-cream-under-eye-care-selection-guide-2026",
+    title: "アイクリーム目元ケア選び方・おすすめ2026|たるみ・クマ・シワ対策完全ガイド",
+    description: "目元ケアの専門家が解説するアイクリーム選び方ガイド。2026年最新のたるみ・クマ・シワ対策成分、選ぶポイント、おすすめ商品を厳選紹介します。",
+    section: "eye-goods",
+    category: "eye-goods",
+    readingTime: 8,
+    publishedAt: "2026-07-24",
+    updatedAt: "2026-07-24",
+    keywords: ["アイクリーム選び方","目元ケア おすすめ","クマ対策","目元シワ"],
+    faqs: [
+    { q: "アイクリームとアイシャドウベースの違いは何ですか？", a: "アイクリームは目元の保湿・エイジングケア目的の医部外品または化粧品で、有効成分を配合しています。アイシャドウベースはメイク下地として密着度を高めるもので、成分設計が異なります。目元ケアならアイクリーム、メイク持ちならベースを選びましょう。" },
+    { q: "敏感肌でも使えるアイクリームはありますか？", a: "敏感肌向けアイクリームは無香料・無着色・界面活性剤フリーのものがおすすめです。成分表示を確認し、パラベンやアルコール不使用のものを選びましょう。パッチテストを必ず実施してから本格使用することをお勧めします。" },
+    { q: "アイクリームの効果が出るまでの期間はどのくらい？", a: "一般的に目元の肌ターンオーバーは約4週間なため、継続使用で効果を実感するには最低でも4～8週間必要です。クマやシワは複数の原因が重なっているため、個人差が大きいです。3ヶ月継続使用をめどに効果判定することをお勧めします。" },
+    { q: "アイクリームの塗る量はどのくらいが目安ですか？", a: "米粒大（約0.5g）～小豆大（約1g）が適量です。目の下・上・こめかみに少量ずつのせ、薬指で優しくなじませます。塗りすぎると吸収されず、かえってベタつきやアイメイク崩れの原因になります。" },
+    { q: "朝と夜でアイクリームを変えるべきですか？", a: "特に変える必要はありませんが、夜用は濃厚でリッチなテクスチャー、朝用は軽くてみずみずしいものを選ぶと使用感が良いです。同じ製品を朝夜兼用で使用する人も多いので、自分の好みと肌質に合わせて選択しましょう。" }
+    ],
+  },
 ];
 
 const AffiliateBtns = ({ rakuten }: { rakuten: string }) => (
@@ -7061,6 +7079,150 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">5. 最低3ヶ月継続を目標に摂取開始</p>
       <p className="text-gray-700 mb-4">6. 1ヶ月ごとの効果実感度を記録</p>
       <p className="text-gray-700 mb-4">ルテインは継続摂取により確実な効果が期待できる成分です。早期の対策が加齢黄斑変性などの目の疾患予防につながります。</p>
+    </article>
+  ),
+    "eye-cream-under-eye-care-selection-guide-2026": (
+    <article className="prose prose-sm max-w-none">
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目元ケアの重要性：なぜアイクリームが必要なのか</h2>
+      <p className="text-gray-700 mb-4">目元は顔全体の肌の中でも特に敏感で、老化が目立ちやすい部分です。目の周りの皮膚の厚さは0.6mm程度で、他の顔の皮膚（平均1.5～2.0mm）と比べて<strong>3分の1程度</strong>しかありません。皮脂腺や汗腺が少なく、水分保持力が低いため、乾燥しやすく、シワ・クマ・たるみなどの悩みが生じやすいのです。</p>
+      <p className="text-gray-700 mb-4">日本人女性の約72%が目元の悩みを抱えており、クマが最も多く挙げられる問題です。その次にシワ、たるみと続きます。専用のアイクリームを使用することで、より効果的なケアができることが、複数の研究機関の実験で実証されています。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年アイクリーム選びの3つのポイント</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1. 目元の悩みに合わせた成分選択</h3>
+      <p className="text-gray-700 mb-4">アイクリームを選ぶ際、最も大切なのは「あなたの目元悩みに対応する成分が配合されているか」です。</p>
+      <p className="text-gray-700 mb-4"><strong>クマ対策成分</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>ビタミンK：血流改善で青クマ対策に効果的</li>
+        <li>アルニカ抽出物：むくみ改善で黒クマ対策</li>
+        <li>レチノール：色素沈着の茶クマに有効</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>シワ対策成分</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>レチノール・レチノイド：コラーゲン生成を促進</li>
+        <li>ペプチド：肌のハリ感を向上</li>
+        <li>ヒアルロン酸：保湿でシワの目立ちを軽減</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>たるみ対策成分</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>コエンザイムQ10：抗酸化作用で肌の弾力向上</li>
+        <li>プラセンタ：肌の再生能力をサポート</li>
+      </ul>
+      <p className="text-gray-700 mb-4">2026年の最新アイクリームは、これら複数の有効成分をバランスよく配合した「マルチターゲット」タイプが主流になっています。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2. テクスチャーと肌質のマッチング</h3>
+      <p className="text-gray-700 mb-4">アイクリームのテクスチャーは大きく3タイプに分類されます：</p>
+      <p className="text-gray-700 mb-4">| テクスチャータイプ | 特徴 | 適した肌質 |</p>
+      <p className="text-gray-700 mb-4">|---|---|---|</p>
+      <p className="text-gray-700 mb-4">| ジェル状 | さっぱりした使用感、即座に肌に浸透 | 脂性肌、混合肌、敏感肌 |</p>
+      <p className="text-gray-700 mb-4">| クリーム状 | バランスの取れたテクスチャー、伸びが良い | 普通肌、乾燥肌 |</p>
+      <p className="text-gray-700 mb-4">| アイバーム | 濃厚でリッチ、密閉性が高い | 乾燥肌、エイジング肌 |</p>
+      <p className="text-gray-700 mb-4">脂性肌がアイバームを使用するとベタつきが生じ、逆に乾燥肌がジェル状を使うと物足りなさを感じます。サンプルやトラベルサイズで実際に試してから本購入することがおすすめです。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3. 肌刺激指数の確認</h3>
+      <p className="text-gray-700 mb-4">敏感肌の人は必ず以下の成分をチェックしてください：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>パラベン・フェノキシエタノール</strong>：防腐剤として使用</li>
+        <li><strong>香料・着色料</strong>：不要な添加物</li>
+        <li><strong>アルコール（エタノール）</strong>：揮発性が高く、乾燥を招く</li>
+      </ul>
+      <p className="text-gray-700 mb-4">特にビタミンC誘導体やレチノールを使用する場合、初期段階では肌刺激が生じることがあります。夜間使用から始める、週2～3回から段階的に増やすなどの工夫が必要です。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アイクリームの効果的な使い方</h2>
+      <p className="text-gray-700 mb-4">正しい使用方法で、成分の効果を最大限に引き出しましょう。</p>
+      <p className="text-gray-700 mb-4"><strong>基本的な使用ステップ</strong></p>
+      <p className="text-gray-700 mb-4">1. <strong>化粧水で肌を整える</strong>（使用後1～2分待機）</p>
+      <p className="text-gray-700 mb-4">2. <strong>美容液を使用する場合は適用</strong></p>
+      <p className="text-gray-700 mb-4">3. <strong>薬指でアイクリームを取る</strong>（米粒大が目安）</p>
+      <p className="text-gray-700 mb-4">4. <strong>目の下に優しくのせ、軽くなじませる</strong></p>
+      <p className="text-gray-700 mb-4">5. <strong>上まぶたにも適用</strong>（まぶたが重い場合）</p>
+      <p className="text-gray-700 mb-4">6. <strong>こめかみまで伸ばす</strong>（リンパマッサージ効果）</p>
+      <p className="text-gray-700 mb-4">使用量はメーカー指定量を確認してください。一般的に米粒大で十分です。過剰な使用は吸収されず、かえってベタつきやニキビの原因になります。</p>
+      <p className="text-gray-700 mb-4">夜間使用の場合、就寝の15～30分前に塗布し、完全に肌に馴染ませてからベッドに入ることをお勧めします。朝間使用の場合は、塗布後5分以上待ってからアイメイクを開始してください。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年注目のアイクリーム成分トレンド</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">バイオテクノロジー由来成分</h3>
+      <p className="text-gray-700 mb-4">2026年のアイクリーム市場では、バイオテクノロジーで開発された新規成分が注目されています。</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>ペプチドカクテル</strong>：複数の短鎖ペプチドを組み合わせ、シワ改善効果を向上</li>
+        <li><strong>幹細胞培養液</strong>：肌の再生能力を自然な形でサポート</li>
+        <li><strong>発酵成分</strong>：乳酸菌の代謝産物がセラミド生成を促進</li>
+      </ul>
+      <p className="text-gray-700 mb-4">これら成分は、従来の化学合成成分よりも肌への親和性が高く、刺激が少ないのが特徴です。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">自然由来成分の科学的検証</h3>
+      <p className="text-gray-700 mb-4">従来まで「自然派」と「医学派」は対立していましたが、2026年は統合がすすんでいます。</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>ツバキオイル</strong>：日本由来で、実験で目元のシワ軽減効果を確認</li>
+        <li><strong>マロウエキス</strong>：抗炎症作用で敏感肌向けクリームに配合増加</li>
+        <li><strong>セージ抽出物</strong>：抗酸化力がビタミンEの20倍以上という研究結果</li>
+      </ul>
+      <p className="text-gray-700 mb-4">科学的検証をベースに、自然由来成分の機能性が明確化されたことで、信頼度が向上しています。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方別：おすすめアイクリームの選定基準</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">クマが気になる人向け</h3>
+      <p className="text-gray-700 mb-4">目の下の青黒いクマはビタミンK、むくみ由来の黒クマはアルニカ抽出物やカリウムを含む製品を優先します。</p>
+      <p className="text-gray-700 mb-4">血流改善を期待するなら、ビタミンK（フィロキノン）を<strong>0.5%以上</strong>含むものが目安です。ただし、色素沈着の茶クマがある場合は、同時にビタミンC誘導体やアルブチンなどの美白成分も必要です。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">シワが気になる人向け</h3>
+      <p className="text-gray-700 mb-4">目元のシワ改善には、レチノール・レチノイドが最も効果的です。ただし、濃度が重要：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>初心者</strong>：レチノール 0.1～0.3%</li>
+        <li><strong>中級者</strong>：レチノール 0.3～0.5%または低濃度レチノイド</li>
+        <li><strong>上級者</strong>：レチノイド含有またはレチノール 0.5%以上</li>
+      </ul>
+      <p className="text-gray-700 mb-4">また、ヒアルロン酸やセラミドなどの保湿成分も同時配合されていることが大切です。レチノールは乾燥を招くため、保湿とセットが必須です。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">たるみが気になる人向け</h3>
+      <p className="text-gray-700 mb-4">目元のたるみには、肌のハリと弾力を向上させるペプチド系成分が最適です。アルギレリン（アセチルヘキサペプチド）を含む製品が多数販売されています。</p>
+      <p className="text-gray-700 mb-4">同時に、コエンザイムQ10やセサミンなどの抗酸化成分も配合されていると、肌老化の根本原因（活性酸素）に対するアプローチができます。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">敏感肌・乾燥肌向け</h3>
+      <p className="text-gray-700 mb-4">敏感肌の場合、使用成分は最小限に留めることが重要です。セラミド、スクワラン、グリセリンなどの基本的な保湿成分のみで構成された「シンプル処方」アイクリームをお勧めします。</p>
+      <p className="text-gray-700 mb-4">パッチテストは必須です。首の裏側などで48時間の試験パッチを実施し、赤みやかゆみがないか確認してください。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アイクリーム使用時の注意点と禁忌</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">使用を避けるべき場合</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>眼球に直接接触</strong>：結膜炎などの炎症のリスク</li>
+        <li><strong>化粧品かぶれが現れた場合</strong>：即座に中止し、医師に相談</li>
+        <li><strong>眼科治療中</strong>：医師の指示を仰ぐ</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">他の製品との相互作用</h3>
+      <p className="text-gray-700 mb-4">複数のレチノール製品を同時使用すると、過剰な刺激となります。目元用に1つ、フェイス用に1つと分けるか、時間帯を分けて使用してください。</p>
+      <p className="text-gray-700 mb-4">AHA・BHA含有の角質除去製品とも相互作用リスクがあるため、同時使用は避けましょう。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年アイクリーム購入時のチェックリスト</h2>
+      <p className="text-gray-700 mb-4">購入前に確認すべき項目をまとめました：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>[ ] 自分の目元悩み（クマ/シワ/たるみ）に対応する成分が配合されているか</li>
+        <li>[ ] テクスチャーが自分の肌質に適しているか</li>
+        <li>[ ] 敏感肌の場合、刺激成分が含まれていないか</li>
+        <li>[ ] 有効成分の濃度が記載されているか（透明性の指標）</li>
+        <li>[ ] 医部外品か一般化粧品か確認したか</li>
+        <li>[ ] 返品・交換保証があるか</li>
+        <li>[ ] 使用期限と保管方法が明記されているか</li>
+        <li>[ ] 複合成分（相互作用）を確認したか</li>
+      </ul>
+      <p className="text-gray-700 mb-4">特に、濃度が不明な製品や、うたい文句が過剰な製品は避けることが無難です。「シワが完全に消える」などの誇張表現のある製品は、景表法違反の可能性があります。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アイクリーム選びで失敗しないためのコツ</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">サンプル・トラベルサイズの活用</h3>
+      <p className="text-gray-700 mb-4">フルサイズ（通常20g程度で3,000～10,000円）を購入する前に、サンプルサイズ（2～5g）で2～4週間試用することをお勧めします。多くのブランドが公式サイトで無料サンプル配布をしています。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">成分表示の見方</h3>
+      <p className="text-gray-700 mb-4">化粧品表示では、配合量の多い順に記載されます。最初に「水」が記載される場合は水溶性ベース、最初に「ジメチコン」などのシリコンが記載される場合はシリコンベースです。</p>
+      <p className="text-gray-700 mb-4">有効成分は通常5～15番目に記載されることが多いので、成分表示の上位20項目をチェックすることが重要です。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ブランド選びのポイント</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>医療機関開発品</strong>：皮膚科医のバックアップあり</li>
+        <li><strong>大手化粧品メーカー品</strong>：品質管理が厳格</li>
+        <li><strong>オーガニック認証品</strong>：第三者機関の検証あり</li>
+      </ul>
+      <p className="text-gray-700 mb-4">特に新興ブランドの場合、臨床試験データの有無を確認することが大切です。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アイクリームを最大限活用するスキンケアルーチン</h2>
+      <p className="text-gray-700 mb-4">アイクリームの効果を引き出すには、全体的なスキンケアルーチンの構築が不可欠です。</p>
+      <p className="text-gray-700 mb-4"><strong>推奨される基本ステップ</strong></p>
+      <p className="text-gray-700 mb-4">1. <strong>クレンジング</strong>（30秒～1分）</p>
+      <p className="text-gray-700 mb-4">2. <strong>洗顔</strong>（30秒）</p>
+      <p className="text-gray-700 mb-4">3. <strong>化粧水</strong>（1～2分待機）</p>
+      <p className="text-gray-700 mb-4">4. <strong>美容液</strong>（1～2分待機）</p>
+      <p className="text-gray-700 mb-4">5. <strong>アイクリーム</strong>（1～2分待機）</p>
+      <p className="text-gray-700 mb-4">6. <strong>乳液またはクリーム</strong>（蓋をする）</p>
+      <p className="text-gray-700 mb-4">特に注目すべきは、スキンケア前の準備です。アイクリーム塗布前に肌をしっかり整えることで、有効成分の浸透率が<strong>30～50%向上</strong>することが複数の研究で報告されています。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目元ケア商品を楽天で探す</h2>
+      <p className="text-gray-700 mb-4">アイクリーム以外の目元ケア関連商品も楽天で豊富に取り揃えられています。</p>
+      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">アイクリーム・目元ケア商品を楽天で検索する</a></p>
+      <p className="text-gray-700 mb-4">目元シート、アイローラー、マッサージクリーム、保湿マスクなども組み合わせることで、より効果的なケアが実現できます。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ：2026年アイクリーム選びの最終チェック</h2>
+      <p className="text-gray-700 mb-4">目元ケアは「継続が最大の効果」という原則を忘れずに。短期間で効果を期待するのではなく、3～6ヶ月の継続使用を前提に製品選択することが成功の鍵です。</p>
+      <p className="text-gray-700 mb-4">自分の目元悩みを正確に把握し、それに対応する有効成分を含むアイクリームを、肌質に合ったテクスチャーで選ぶこと。そして、正しい使い方と適切なスキンケアルーチンの組み込みで、理想の目元を手に入れることができるでしょう。</p>
+      <p className="text-gray-700 mb-4">2026年は、バイオテクノロジーと自然由来成分が融合した、より優れたアイクリームが多数登場しています。この完全ガイドを参考に、あなたに最適な製品を見つけてください。</p>
     </article>
   ),
 };
