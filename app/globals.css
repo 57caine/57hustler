@@ -114,6 +114,8 @@ body {
   .bg-white { background-color: #1e293b !important; }
   .bg-gray-50 { background-color: #1e293b !important; }
   .bg-gray-100 { background-color: #1e293b !important; }
+  .bg-slate-50 { background-color: #1e293b !important; }
+  .bg-slate-100 { background-color: #1e293b !important; }
 
   /* Text */
   .text-gray-900 { color: #f1f5f9 !important; }
@@ -126,6 +128,8 @@ body {
   /* Borders */
   .border-gray-200 { border-color: #334155 !important; }
   .border-gray-100 { border-color: #334155 !important; }
+  .border-slate-200 { border-color: #334155 !important; }
+  .border-slate-100 { border-color: #334155 !important; }
 
   /* Article prose */
   article p { color: #cbd5e1; }
