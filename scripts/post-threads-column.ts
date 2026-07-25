@@ -26,9 +26,10 @@ const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
 const USER_ID  = process.env.THREADS_USER_ID!;
 const ACCESS_TOKEN = process.env.THREADS_ACCESS_TOKEN!;
 
-const HISTORY_PATH = path.join(process.cwd(), 'data', 'column-history.json');
-const SERIES_PATH  = path.join(process.cwd(), 'data', 'series-week.json');
-const HISTORY_KEEP = 14;
+const HISTORY_PATH        = path.join(process.cwd(), 'data', 'column-history.json');
+const YONAKA_HISTORY_PATH = path.join(process.cwd(), 'data', 'yonaka-post-history.json');
+const SERIES_PATH         = path.join(process.cwd(), 'data', 'series-week.json');
+const HISTORY_KEEP = 100;
 
 const SLOT: 'noon' | 'evening' = process.argv.includes('--slot=noon') ? 'noon' : 'evening';
 
@@ -43,6 +44,18 @@ const CATEGORIES = [
   '科学・化学のふしぎ',
 ];
 
+// 月間目標比率（%）
+const CATEGORY_TARGETS: Record<string, number> = {
+  '気学・易経':                               0.20,
+  '日本の妖怪・神々':                          0.15,
+  '日常の結界・しきたり（箸・敷居・塩などの所作）': 0.15,
+  '古代ミステリー（シュメール、ピラミッド等）':    0.15,
+  '量子力学・宇宙論':                           0.15,
+  '宗教の共通項（黄金律、因果応報など）':          0.10,
+  '科学・化学のふしぎ':                          0.10,
+  '都市伝説・スピリチュアル':                    0.00, // 他スクリプトで担当
+};
+
 // 0=日 1=月 2=火 3=水 4=木 5=金 6=土
 const DAY_THEMES: Record<number, string | null> = {
   0: null,
@@ -54,7 +67,7 @@ const DAY_THEMES: Record<number, string | null> = {
   6: null,
 };
 
-interface ColumnPost { date: string; text: string; }
+interface ColumnPost { date: string; text: string; category?: string; keywords?: string[]; }
 interface SeriesWeek {
   current_month: string;
   theme: string;
@@ -83,10 +96,87 @@ function loadHistory(): ColumnPost[] {
   } catch { return []; }
 }
 
-function saveHistory(existing: ColumnPost[], newText: string): void {
+function saveHistory(existing: ColumnPost[], newText: string, category?: string, keywords?: string[]): void {
   const today = getJstDateSlug();
-  const posts = [{ date: today, text: newText.slice(0, 200) }, ...existing].slice(0, HISTORY_KEEP);
+  const entry: ColumnPost = { date: today, text: newText.slice(0, 200), ...(category ? { category } : {}), ...(keywords?.length ? { keywords } : {}) };
+  const posts = [entry, ...existing].slice(0, HISTORY_KEEP);
   fs.writeFileSync(HISTORY_PATH, JSON.stringify({ posts }, null, 2), 'utf-8');
+}
+
+function appendToYonakaHistory(text: string, category?: string, keywords?: string[]): void {
+  try {
+    const today = getJstDateSlug();
+    const data = fs.existsSync(YONAKA_HISTORY_PATH)
+      ? JSON.parse(fs.readFileSync(YONAKA_HISTORY_PATH, 'utf-8')) as { posts: object[] }
+      : { posts: [] };
+    const entry: object = { date: today, text: text.slice(0, 300), ...(category ? { category } : {}), ...(keywords?.length ? { keywords } : {}) };
+    data.posts = [entry, ...data.posts].slice(0, 100);
+    fs.writeFileSync(YONAKA_HISTORY_PATH, JSON.stringify(data, null, 2), 'utf-8');
+  } catch { /* 履歴保存失敗は投稿に影響させない */ }
+}
+
+// 直近30日のカテゴリ不足を分析し、最も優先すべきカテゴリを返す
+function selectCategoryByBalance(history: ColumnPost[], todayPosts: ColumnPost[]): string {
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - 30);
+  const cutoffStr = cutoff.toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
+
+  const recent = history.filter(p => p.date >= cutoffStr && p.category);
+  const total = recent.length;
+
+  // 今日すでに投稿したカテゴリは除外候補
+  const todayCategories = new Set(todayPosts.map(p => p.category).filter(Boolean));
+
+  if (total === 0) {
+    // 履歴なし → 最初は気学・易経から
+    return '気学・易経';
+  }
+
+  const counts: Record<string, number> = {};
+  for (const cat of CATEGORIES) counts[cat] = 0;
+  for (const post of recent) {
+    if (post.category && counts[post.category] !== undefined) counts[post.category]++;
+  }
+
+  // 目標比率との差分（不足が大きいほど優先）
+  const deficits = CATEGORIES
+    .filter(cat => CATEGORY_TARGETS[cat] > 0)                    // 目標0%は除外
+    .filter(cat => !todayCategories.has(cat))                    // 当日使用済みは除外（あれば）
+    .map(cat => ({ cat, deficit: CATEGORY_TARGETS[cat]! - (counts[cat]! / total) }))
+    .sort((a, b) => b.deficit - a.deficit);
+
+  // 除外後に候補がなければ当日フィルターを外す
+  if (deficits.length === 0) {
+    return CATEGORIES.filter(cat => CATEGORY_TARGETS[cat] > 0)[0] ?? CATEGORIES[0];
+  }
+
+  // 上位3候補から疑似ランダム選択（毎回同じにならないよう）
+  const topN = deficits.slice(0, 3);
+  const idx = new Date().getMinutes() % topN.length;
+  return topN[idx]!.cat;
+}
+
+// 生成テキストと直近投稿の類似度を軽量チェック（LLMに判定させる）
+async function checkSimilarity(client: Anthropic, newText: string, recentTexts: string[]): Promise<boolean> {
+  if (recentTexts.length === 0) return false;
+  const context = recentTexts.slice(0, 10).map((t, i) => `${i + 1}. ${t.slice(0, 150)}`).join('\n');
+  const message = await client.messages.create({
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 10,
+    system: '類似判定専門家。JSONのみ返す。',
+    messages: [{
+      role: 'user',
+      content: `新しい投稿と直近投稿の類似度が70%以上か判定してください。
+新しい投稿：「${newText.slice(0, 200)}」
+直近投稿：
+${context}
+{"similar": true} または {"similar": false} のみ返してください。`,
+    }],
+  });
+  try {
+    const raw = (message.content[0] as { type: string; text: string }).text;
+    return (JSON.parse(raw.replace(/```json\n?|\n?```/g, '').trim()) as { similar: boolean }).similar;
+  } catch { return false; }
 }
 
 function loadSeriesWeek(): SeriesWeek | null {
@@ -206,21 +296,32 @@ async function generateQuestionPost(client: Anthropic): Promise<string> {
 async function generateColumnText(
   client: Anthropic,
   recentPosts: ColumnPost[],
+  todayPosts: ColumnPost[],
   dayOfWeek: number,
+  forcedCategory?: string,
 ): Promise<string> {
   const dayTheme = DAY_THEMES[dayOfWeek];
   const themeInstruction = dayTheme
-    ? `今日の優先テーマ：「${dayTheme}」に関連する内容を選ぶこと。`
+    ? `今日の曜日テーマ：「${dayTheme}」に関連する内容を選ぶこと。`
     : '';
 
-  const historyContext = recentPosts.length > 0
-    ? `\n【直近の投稿内容（これと同じネタ・切り口は避けること）】\n` +
-      recentPosts.map((p, i) => `${i + 1}. ${p.date}: ${p.text}`).join('\n')
+  const categoryInstruction = forcedCategory
+    ? `【今回のカテゴリ（厳守）】${forcedCategory}\n上記カテゴリの内容のみで書くこと。`
+    : `【カテゴリ（上記から選ぶ）】過去30日間で使用頻度が低いカテゴリを優先すること。`;
+
+  const todayContext = todayPosts.length > 0
+    ? `\n【本日すでに投稿した内容（必須：これらと同じテーマ・書き出しフレーズを当日中に繰り返さない）】\n` +
+      todayPosts.map((p, i) => `${i + 1}. ${p.text}`).join('\n') + '\n'
     : '';
 
-  const prompt = `以下の8カテゴリから、過去14日間に使っていないテーマを1つ選んでください。たまに（3回に1回程度の頻度で）関連する別カテゴリの話題も1つ軽く絡めてThreadsコラムを書いてください。
+  const historyContext = recentPosts.filter(p => p.date < getJstDateSlug()).length > 0
+    ? `\n【直近30日の投稿（テーマ・キーワードが70%以上重複する場合は再生成が必要）】\n` +
+      recentPosts.filter(p => p.date < getJstDateSlug()).slice(0, 20).map((p, i) => `${i + 1}. ${p.date}: ${p.text}`).join('\n')
+    : '';
 
-【カテゴリ】
+  const prompt = `以下のカテゴリでThreadsコラムを書いてください。
+
+【カテゴリ一覧】
 1. 気学・易経
 2. 日本の妖怪・神々
 3. 日常の結界・しきたり（箸・敷居・塩などの所作）
@@ -230,7 +331,9 @@ async function generateColumnText(
 7. 宗教の共通項（黄金律、因果応報など）
 8. 科学・化学のふしぎ
 
+${categoryInstruction}
 ${themeInstruction}
+${todayContext}
 ${historyContext}
 
 【絶対守ること】
@@ -331,40 +434,43 @@ async function main() {
 
   const client = new Anthropic();
   const history = loadHistory();
-  console.log(`投稿履歴: 直近${history.length}件を参照`);
+
+  // 当日の投稿履歴を抽出（同日重複防止に使用）
+  const todayPosts = history.filter(p => p.date === today);
+  console.log(`投稿履歴: 全${history.length}件 / 本日${todayPosts.length}件`);
 
   let text: string;
   let updatedSeries: SeriesWeek | null = null;
   let postLabel = 'コラム';
+  let selectedCategory: string | undefined;
 
   if (isEvening) {
-    // 日曜夜 → 問いかけ投稿
     if (dayOfWeek === 0) {
       console.log('日曜夜 → 問いかけ投稿を生成');
       text = await generateQuestionPost(client);
       postLabel = '問いかけ';
     } else {
-      // 連作weekを試みる
       const seriesResult = await trySeriesPost(client, history, today, currentMonth, dayOfWeek);
       if (seriesResult) {
         text = seriesResult.text;
         updatedSeries = seriesResult.series;
         postLabel = '連作week';
+        selectedCategory = seriesResult.series.category;
       } else {
-        // 通常コラム
-        console.log('Claude API でコラムテキスト生成中...');
-        text = await generateColumnText(client, history, dayOfWeek);
+        selectedCategory = selectCategoryByBalance(history, todayPosts);
+        console.log(`カテゴリ選出（バランス補正）: ${selectedCategory}`);
+        text = await generateWithRetry(client, history, todayPosts, dayOfWeek, selectedCategory);
       }
     }
   } else {
-    // 昼枠 → 曜日テーマ通常コラム
-    console.log('Claude API でコラムテキスト生成中...');
-    text = await generateColumnText(client, history, dayOfWeek);
+    selectedCategory = selectCategoryByBalance(history, todayPosts);
+    console.log(`カテゴリ選出（バランス補正）: ${selectedCategory}`);
+    text = await generateWithRetry(client, history, todayPosts, dayOfWeek, selectedCategory);
   }
 
   console.log('--- 生成テキスト ---');
   console.log(text);
-  console.log(`文字数: ${text.length}（${postLabel}）`);
+  console.log(`文字数: ${text.length}（${postLabel}）${selectedCategory ? ` カテゴリ: ${selectedCategory}` : ''}`);
   console.log('-------------------');
 
   if (dryRun) {
@@ -386,9 +492,33 @@ async function main() {
   const postId = await publishThread(creationId);
   console.log(`✓ 投稿完了: ${postId}`);
 
-  saveHistory(history, text);
+  saveHistory(history, text, selectedCategory);
+  appendToYonakaHistory(text, selectedCategory);
   if (updatedSeries) saveSeriesWeek(updatedSeries);
-  console.log('✓ 投稿履歴を保存しました');
+  console.log('✓ 投稿履歴を保存しました（column-history + yonaka-post-history）');
+}
+
+// 最大3回リトライ付き生成（類似度70%超の場合は再生成）
+async function generateWithRetry(
+  client: Anthropic,
+  history: ColumnPost[],
+  todayPosts: ColumnPost[],
+  dayOfWeek: number,
+  forcedCategory?: string,
+): Promise<string> {
+  const recentTexts = history.slice(0, 30).map(p => p.text);
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    console.log(`Claude API でコラム生成中... (試行${attempt}/3)`);
+    const text = await generateColumnText(client, history, todayPosts, dayOfWeek, forcedCategory);
+    const isSimilar = await checkSimilarity(client, text, recentTexts);
+    if (!isSimilar) {
+      if (attempt > 1) console.log(`✓ 類似度OK（${attempt}回目で合格）`);
+      return text;
+    }
+    console.log(`類似度70%超のため再生成（試行${attempt}）`);
+  }
+  console.log('警告: 3回試行しても類似度が高め。最後の生成を使用します。');
+  return await generateColumnText(client, history, todayPosts, dayOfWeek, forcedCategory);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
