@@ -75,6 +75,21 @@ function getPostType(dow: number): PostType {
   return 'ikkouiku';                                            // 火・木・土
 }
 
+const STYLE_GUIDE = `投稿文は以下のスタイルで書くこと。
+
+【良い書き方】
+・日常的な疑問や気づきから入る
+・「〜じゃないでしょうか」「〜ですかね」「〜かもしれませんね」など、読者に問いかける形で終わる
+・難しい概念は身近な言葉に置き換える
+・読んだ人が「確かに」と思える切り口を選ぶ
+・短文・余白・改行を意識する
+
+【やってはいけない書き方】
+・主語が長い文
+・「証左」「沈積」「集積」など難解な表現
+・結論を押しつける断定文
+・読者が入り込む余地のない一方的な文章`;
+
 // ─── 禁止キーワードフィルター ────────────────────────────────
 const BANNED_KEYWORDS = [
   '脳脊髄液', '逆行', '量子的跳躍', '時間を遡行',
@@ -241,7 +256,8 @@ async function generateShortPost(isSunday: boolean, dailyStarNum?: number): Prom
   const [system, userPrompt] = isSunday
     ? [
         `あなたは「夜中のおじさん」です。Threadsに問いかけ投稿をします。
-${ABSOLUTE_BAN}`,
+${ABSOLUTE_BAN}
+${STYLE_GUIDE}`,
         `日本の神事・神話・伝承・民俗に関連した「問いかけ」を1本書いてください。
 
 【ルール】
@@ -265,7 +281,8 @@ ${ABSOLUTE_BAN}`,
 
         return [
           `あなたは「夜中のおじさん」です。Threadsに一文考察を投稿します。
-${ABSOLUTE_BAN}`,
+${ABSOLUTE_BAN}
+${STYLE_GUIDE}`,
           `今日の日盤中宮は${star}（${trigramLabel}に対応）です。
 易経の第${hex.num}卦「${hex.name}」を今日の卦として選びました。
 原文キーワード：「${hex.keyword}」

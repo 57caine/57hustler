@@ -67,6 +67,21 @@ const DAY_THEMES: Record<number, string | null> = {
   6: null,
 };
 
+const STYLE_GUIDE = `投稿文は以下のスタイルで書くこと。
+
+【良い書き方】
+・日常的な疑問や気づきから入る
+・「〜じゃないでしょうか」「〜ですかね」「〜かもしれませんね」など、読者に問いかける形で終わる
+・難しい概念は身近な言葉に置き換える
+・読んだ人が「確かに」と思える切り口を選ぶ
+・短文・余白・改行を意識する
+
+【やってはいけない書き方】
+・主語が長い文
+・「証左」「沈積」「集積」など難解な表現
+・結論を押しつける断定文
+・読者が入り込む余地のない一方的な文章`;
+
 interface ColumnPost { date: string; text: string; category?: string; keywords?: string[]; }
 interface SeriesWeek {
   current_month: string;
@@ -261,7 +276,7 @@ ${historyContext}
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 600,
-    system: 'あなたは「夜中のおじさん」です。Threadsに連作コラムを投稿します。',
+    system: `あなたは「夜中のおじさん」です。Threadsに連作コラムを投稿します。\n${STYLE_GUIDE}`,
     messages: [{ role: 'user', content: prompt }],
   });
 
@@ -273,7 +288,7 @@ async function generateQuestionPost(client: Anthropic): Promise<string> {
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 300,
-    system: 'あなたは「夜中のおじさん」です。Threadsに問いかけ投稿をします。',
+    system: `あなたは「夜中のおじさん」です。Threadsに問いかけ投稿をします。\n${STYLE_GUIDE}`,
     messages: [{
       role: 'user',
       content: `九星気学・妖怪・神話・結界・量子論・宗教などのテーマに関連した「問いかけ」を1本書いてください。
@@ -350,7 +365,7 @@ ${historyContext}
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 600,
-    system: 'あなたは「夜中のおじさん」というキャラクターで、Threadsにコラムを投稿します。30歳まで鳴かず飛ばず、九星気学の吉方位参拝で人生が逆転した経験を持つ、親しみやすいおじさんです。20〜50代の読者に向けて、専門用語を使わず「〜です」「〜ます」というですます調で丁寧に語りかけます。「〜ですよ」「〜ますよ」は使いません。怪しい表現は避け、知的好奇心を刺激する読み物を書きます。',
+    system: `あなたは「夜中のおじさん」というキャラクターで、Threadsにコラムを投稿します。30歳まで鳴かず飛ばず、九星気学の吉方位参拝で人生が逆転した経験を持つ、親しみやすいおじさんです。20〜50代の読者に向けて、専門用語を使わず「〜です」「〜ます」というですます調で丁寧に語りかけます。「〜ですよ」「〜ますよ」は使いません。怪しい表現は避け、知的好奇心を刺激する読み物を書きます。\n${STYLE_GUIDE}`,
     messages: [{ role: 'user', content: prompt }],
   });
 
