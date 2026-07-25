@@ -18,10 +18,26 @@ const ROOT = process.cwd();
 const DMM_API_ID       = process.env.DMM_API_ID!;
 const DMM_AFFILIATE_ID = process.env.DMM_AFFILIATE_ID!; // nsplot-003
 
+// VRは意図的に除外（フロア指定でも混入する場合はアイテム単位でフィルタ）
 const GENRES = ['熟女', '人妻', 'NTR', '若妻', 'フェラ'] as const;
-type Genre = typeof GENRES[number];
+type Genre = typeof GENRES[number] | 'サブスク';
 
-const HITS_PER_GENRE = 5;
+// 熟女を4〜5割に調整（10件 / 合計22件 ≒ 45%）
+const HITS_PER_GENRE: Record<typeof GENRES[number], number> = {
+  '熟女': 10,
+  '人妻': 3,
+  'NTR':  3,
+  '若妻': 3,
+  'フェラ': 3,
+};
+
+const SUBSCRIPTION_CTA_URL = 'https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fsvod%2F&af_id=nsplot-003&ch=toolbar&ch_id=link';
+
+const CTA_TEXTS = [
+  '小生、先月から月額見放題に切り替えた次第である。単品より圧倒的にコスパが良い。',
+  '月2000円足らずで見放題である。愚息の維持費より安いとは恐れ入った次第である。',
+  '小生、月額契約後は単品購入を一切やめた次第である。賢者タイムに学んだ合理性である。',
+];
 
 // ─── DMM API 型定義 ───────────────────────────────────────────
 interface DMMItem {
@@ -87,7 +103,7 @@ const POSTED_PATH = path.join(ROOT, 'data/zassou-posted.json');
 const CSV_PATH    = path.join(ROOT, 'data/zassou-stock.csv');
 
 // ─── DMM API 呼び出し ─────────────────────────────────────────
-async function fetchDMMItems(genre: Genre): Promise<DMMItem[]> {
+async function fetchDMMItems(genre: typeof GENRES[number], hits: number): Promise<DMMItem[]> {
   const params = new URLSearchParams({
     api_id:       DMM_API_ID,
     affiliate_id: DMM_AFFILIATE_ID,
@@ -96,7 +112,7 @@ async function fetchDMMItems(genre: Genre): Promise<DMMItem[]> {
     floor:        'videoa',
     keyword:      genre,
     sort:         'rank',
-    hits:         String(HITS_PER_GENRE),
+    hits:         String(hits),
     output:       'json',
   });
 
@@ -352,6 +368,26 @@ function toCsvRow(item: StockItem): string {
   ].join(',');
 }
 
+// ─── 月額サブスクCTA生成 ──────────────────────────────────────
+function buildSubscriptionCta(ctaIndex: number, allItems: StockItem[]): StockItem {
+  const body = CTA_TEXTS[ctaIndex % CTA_TEXTS.length];
+  return {
+    zId:          nextZId(allItems),
+    id:           `sub-cta-${ctaIndex}`,
+    genre:        'サブスク' as Genre,
+    title:        'FANZA動画見放題チャンネルライト',
+    actressName:  '',
+    imageUrl:     '',
+    sampleUrl:    '',
+    affiliateUrl: SUBSCRIPTION_CTA_URL,
+    comment:      '月額サブスク誘導',
+    parentPost:   body,
+    replyPost:    `FANZA動画見放題チャンネルライト 詳細・登録はこちら↓\n${SUBSCRIPTION_CTA_URL}`,
+    posted:       false,
+    addedAt:      new Date().toISOString(),
+  };
+}
+
 // ─── メイン ──────────────────────────────────────────────────
 async function main() {
   const dryRun        = process.argv.includes('--dry-run');
@@ -402,11 +438,12 @@ async function main() {
   const newItems: StockItem[] = [];
 
   for (const genre of GENRES) {
-    console.log(`\n▼ ${genre} の商品取得中...`);
+    const hitsForGenre = HITS_PER_GENRE[genre];
+    console.log(`\n▼ ${genre} の商品取得中（${hitsForGenre}件）...`);
 
     let items: DMMItem[];
     try {
-      items = await fetchDMMItems(genre);
+      items = await fetchDMMItems(genre, hitsForGenre);
     } catch (e) {
       console.error(`  DMM APIエラー（${genre}）:`, e);
       continue;
@@ -417,6 +454,13 @@ async function main() {
     for (const item of items) {
       if (existingIds.has(item.content_id)) {
         console.log(`  スキップ（重複）: ${item.content_id}`);
+        continue;
+      }
+
+      // VRジャンルを除外
+      const genreNames = item.iteminfo?.genre?.map(g => g.name) ?? [];
+      if (genreNames.some(n => n.includes('VR') || n.includes('バーチャルリアリティ'))) {
+        console.log(`  スキップ（VR）: ${item.content_id}`);
         continue;
       }
 
@@ -471,10 +515,34 @@ async function main() {
     }
   }
 
-  console.log(`\n新規追加: ${newItems.length}件`);
+  // サブスクCTAを10件に1件の割合で挿入
+  const ctaCount = Math.max(1, Math.floor(newItems.length / 10));
+  const existingCtaCount = stock.items.filter(i => i.genre === 'サブスク').length;
+  for (let i = 0; i < ctaCount; i++) {
+    const insertAt = (i + 1) * 10 + i; // 10, 21, 32... の位置に挿入
+    const cta = buildSubscriptionCta(existingCtaCount + i, [...stock.items, ...newItems]);
+    newItems.splice(Math.min(insertAt, newItems.length), 0, cta);
+  }
+
+  const regularCount = newItems.filter(i => i.genre !== 'サブスク').length;
+  const ctaAdded     = newItems.filter(i => i.genre === 'サブスク').length;
+  const joshiCount   = newItems.filter(i => i.genre === '熟女').length;
+  console.log(`\n新規追加: ${newItems.length}件（通常: ${regularCount}件, CTA: ${ctaAdded}件）`);
+  console.log(`ジャンル内訳: 熟女 ${joshiCount}件（${Math.round(joshiCount / regularCount * 100)}%）, CTA ${ctaAdded}件`);
+  GENRES.forEach(g => {
+    const c = newItems.filter(i => i.genre === g).length;
+    if (c > 0) console.log(`  ${g}: ${c}件`);
+  });
 
   if (dryRun) {
     console.log('--- DRY RUN: ファイル書き込みスキップ ---');
+    // CTA投稿サンプル表示
+    const ctaSample = newItems.find(i => i.genre === 'サブスク');
+    if (ctaSample) {
+      console.log('\n[サブスクCTAサンプル]');
+      console.log(`  親: ${ctaSample.parentPost}`);
+      console.log(`  返: ${ctaSample.replyPost}`);
+    }
     console.log(JSON.stringify(newItems.slice(0, 3), null, 2));
     return;
   }
