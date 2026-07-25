@@ -7142,13 +7142,13 @@ export const columnContent: Record<string, React.ReactNode> = {
   
   <p className="text-gray-700 mb-4">処方箋不要でコンタクトレンズを購入できる通販サイトは複数あります。ここでは、信頼性が高く人気のある主要サイトを比較します。各サイトの特徴を理解して、あなたに最適なサイトを選びましょう。</p>
 
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レンズゼロ</h3>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3"><a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">レンズゼロ</a></h3>
   <p className="text-gray-700 mb-4">レンズゼロは業界最大級の品揃えを誇るコンタクトレンズ専門通販サイトです。1,500種類以上のコンタクトレンズを取り扱っており、ワンデーからマンスリー、カラーレンズまで幅広い選択肢が揃っています。装用指示書があれば購入でき、配送も迅速です。クーポンや割引キャンペーンが頻繁に実施されており、コスト面でも優れています。</p>
 
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">アットレンズ</h3>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3"><a href="https://px.a8.net/svt/ejp?a8mat=4B4176+6D7XGA+20YY+TSBE9" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">アットレンズ</a></h3>
   <p className="text-gray-700 mb-4">アットレンズは老舗のコンタクトレンズ通販サイトで、安心感と信頼性で定評があります。会員登録をすることで、度数情報を事前に保存でき、リピート購入時には手間が減少します。また、ポイント還元制度が充実しており、購入金額に応じてポイントが貯まります。カスタマーサポートも丁寧で、初心者にもおすすめです。</p>
 
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">24Lens</h3>
+  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3"><a href="https://px.a8.net/svt/ejp?a8mat=4B4176+61WOYI+2GRU+HY7W1" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">24Lens</a></h3>
   <p className="text-gray-700 mb-4">24Lensは24時間いつでも注文でき、翌日配送に対応しているのが大きな特徴です。急遽コンタクトレンズが必要になった場合に重宝します。取り扱いブランド数も豊富で、海外ブランドも購入できます。ただし、送料がやや高めなので、まとめ買いする際はレンズゼロやアットレンズと比較検討することをおすすめします。</p>
 
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">楽天市場</h3>
@@ -7191,6 +7191,14 @@ export const columnContent: Record<string, React.ReactNode> = {
         </tr>
       </tbody>
     </table>
+  </div>
+
+  <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-3">
+    <div className="flex-1 min-w-0">
+      <p className="text-sm font-bold text-gray-800">最安値のコンタクトをいますぐ比較</p>
+      <p className="text-xs text-gray-500 mt-0.5">各サイトの価格・送料を一覧でチェック</p>
+    </div>
+    <a href="/ranking" className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors whitespace-nowrap">比較ランキングを見る →</a>
   </div>
 
   <h2 id="section5" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">通販で失敗しない度数確認方法</h2>
@@ -7268,6 +7276,14 @@ export const columnContent: Record<string, React.ReactNode> = {
   </ul>
 
   <p className="text-gray-700 mb-4">2026年時点で、レンズゼロは日本人の間でも信頼できる海外通販サイトとして認知されており、定期的に利用しているユーザーも増加しています。特に度数が強い、または珍しいカーブのレンズを探している方からの評判が高いです。</p>
+
+  <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-3">
+    <div className="flex-1 min-w-0">
+      <p className="text-sm font-bold text-gray-800">レンズゼロで最安値をチェック</p>
+      <p className="text-xs text-gray-500 mt-0.5">国内比30〜50%オフ・日本語サポートあり</p>
+    </div>
+    <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors whitespace-nowrap">レンズゼロで見る →</a>
+  </div>
 
   <h2 id="section2" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">価格比較：レンズゼロ vs 国内通販</h2>
   
@@ -7768,7 +7784,7 @@ export const columnContent: Record<string, React.ReactNode> = {
 
       <h2 id="detailed-review" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">各サイトの詳細レビュー</h2>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1位：レンズゼロ（最安値を目指す方向け）</h3>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1位：<a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">レンズゼロ</a>（最安値を目指す方向け）</h3>
       <p className="text-gray-700 mb-4">
         <strong>強み：</strong>業界最安値水準の価格設定が特徴。初回1,000円割引クーポンで初購入がお得。
         商品数55種類でワンデーから2weekまで幅広い品揃え。配送が早く、注文から2～3営業日で到着します。
@@ -7781,7 +7797,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <strong>おすすめ用途：</strong>初回購入、ワンデーの大量買い、送料無料狙い
       </p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2位：アットレンズ（品質と安さのバランス）</h3>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2位：<a href="https://px.a8.net/svt/ejp?a8mat=4B4176+6D7XGA+20YY+TSBE9" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">アットレンズ</a>（品質と安さのバランス）</h3>
       <p className="text-gray-700 mb-4">
         <strong>強み：</strong>品質重視で、取扱いレンズはすべて医療機器承認取得品。
         顧客サポートが充実しており、眼科医による無料相談サービスがあります。
@@ -7793,7 +7809,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <strong>おすすめ用途：</strong>初めてコンタクトを購入する方、サポート重視の方
       </p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3位：24Lens（最大割引を狙う方向け）</h3>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3位：<a href="https://px.a8.net/svt/ejp?a8mat=4B4176+61WOYI+2GRU+HY7W1" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">24Lens</a>（最大割引を狙う方向け）</h3>
       <p className="text-gray-700 mb-4">
         <strong>強み：</strong>初回割引が業界最大の1,500円。商品数も50種類と豊富です。
         会員向けの定期配送割引で、リピート購入時もお得。
@@ -7806,7 +7822,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <strong>おすすめ用途：</strong>大量買い、まとめ購入、初回割引を最大活用
       </p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">4位：レンズクイック（バランス型）</h3>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">4位：<a href="https://px.a8.net/svt/ejp?a8mat=4B4176+6GSIB6+20YY+ZTFR6" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">レンズクイック</a>（バランス型）</h3>
       <p className="text-gray-700 mb-4">
         <strong>強み：</strong>価格と送料無料条件のバランスが良好。商品のスペック表示が詳しく、BC選びで失敗しにくい。
       </p>
@@ -7817,7 +7833,7 @@ export const columnContent: Record<string, React.ReactNode> = {
         <strong>おすすめ用途：</strong>BC選びに悩んでいる方、定期購入
       </p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">5位：レンズモード（小ロット購入）</h3>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">5位：<a href="https://px.a8.net/svt/ejp?a8mat=4B8454+FEAMIQ+76W+65U41" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">レンズモード</a>（小ロット購入）</h3>
       <p className="text-gray-700 mb-4">
         <strong>強み：</strong>送料無料条件が4,500円以上と最も低い。
         複数のレンズを試す方に最適。返品対応が比較的柔軟。
@@ -7841,6 +7857,14 @@ export const columnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">
         <strong>おすすめ用途：</strong>楽天会員ランクが高い方、他の楽天購入でポイントが溜まっている方
       </p>
+
+      <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-3">
+        <div className="flex-1 min-w-0">
+          <p className="text-sm font-bold text-gray-800">各サイトの最安値を一覧比較する</p>
+          <p className="text-xs text-gray-500 mt-0.5">価格・送料・処方箋条件をまとめてチェック</p>
+        </div>
+        <a href="/ranking" className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors whitespace-nowrap">ランキングを見る →</a>
+      </div>
 
       <h2 id="initial-discount" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">初回割引・クーポン活用術</h2>
 

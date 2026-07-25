@@ -125,6 +125,12 @@ body {
   .text-gray-500 { color: #64748b !important; }
   .text-gray-400 { color: #475569 !important; }
 
+  /* Slate text overrides (needed since bg-slate-50/100 are dark-overridden) */
+  .text-slate-900 { color: #f1f5f9 !important; }
+  .text-slate-800 { color: #e2e8f0 !important; }
+  .text-slate-700 { color: #cbd5e1 !important; }
+  .text-slate-600 { color: #94a3b8 !important; }
+
   /* Borders */
   .border-gray-200 { border-color: #334155 !important; }
   .border-gray-100 { border-color: #334155 !important; }
