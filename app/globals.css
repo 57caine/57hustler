@@ -95,71 +95,13 @@
 }
 
 /* ─── Base ─── */
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  color-scheme: light; /* force light mode — OS dark mode must not invert site colors */
+}
 
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-/* ─── Dark mode: simplified ─── */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1e293b;
-    --foreground: #f1f5f9;
-  }
-
-  /* Backgrounds */
-  .bg-white { background-color: #1e293b !important; }
-  .bg-gray-50 { background-color: #1e293b !important; }
-  .bg-gray-100 { background-color: #1e293b !important; }
-  .bg-slate-50 { background-color: #1e293b !important; }
-  .bg-slate-100 { background-color: #1e293b !important; }
-
-  /* Text */
-  .text-gray-900 { color: #f1f5f9 !important; }
-  .text-gray-800 { color: #e2e8f0 !important; }
-  .text-gray-700 { color: #cbd5e1 !important; }
-  .text-gray-600 { color: #94a3b8 !important; }
-  .text-gray-500 { color: #64748b !important; }
-  .text-gray-400 { color: #475569 !important; }
-
-  /* Slate text overrides (needed since bg-slate-50/100 are dark-overridden) */
-  .text-slate-900 { color: #f1f5f9 !important; }
-  .text-slate-800 { color: #e2e8f0 !important; }
-  .text-slate-700 { color: #cbd5e1 !important; }
-  .text-slate-600 { color: #94a3b8 !important; }
-
-  /* Borders */
-  .border-gray-200 { border-color: #334155 !important; }
-  .border-gray-100 { border-color: #334155 !important; }
-  .border-slate-200 { border-color: #334155 !important; }
-  .border-slate-100 { border-color: #334155 !important; }
-
-  /* Article prose */
-  article p { color: #cbd5e1; }
-  article li { color: #cbd5e1; }
-  article h2 { color: #e2e8f0; }
-  article h3 { color: #e2e8f0; background-color: #0c2138; }
-  article strong { color: #f1f5f9; }
-  article td, article th { color: #cbd5e1; }
-
-  /* Tables */
-  table thead tr { background-color: #1e293b !important; }
-  table th { color: #e2e8f0 !important; border-color: #334155 !important; }
-  table td { border-color: #334155 !important; }
-  table tbody tr:hover { background-color: #1e293b !important; }
-
-  /* Details/summary (FAQ) */
-  details { border-color: #334155 !important; }
-  details summary:hover { background-color: #0c2138 !important; }
-  details > div { border-top-color: #334155 !important; }
-
-  /* Input/form elements */
-  input, select, textarea {
-    background-color: #1e293b;
-    color: #e2e8f0;
-    border-color: #334155;
-  }
 }
