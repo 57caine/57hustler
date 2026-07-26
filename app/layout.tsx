@@ -77,7 +77,6 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
-        <meta name="color-scheme" content="light" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
