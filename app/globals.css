@@ -15,19 +15,19 @@
   font-size: 1.2rem;
   font-weight: 700;
   margin: 2.25rem 0 1rem;
-  color: #111827;
+  color: #f1f5f9;
   line-height: 1.4;
 }
 
-/* H3: light sky bg */
+/* H3: dark bg, light text */
 #article-body h3 {
-  background-color: #f0f9ff;
+  background-color: #1e293b;
   border-radius: 6px;
   padding: 8px 14px;
   font-size: 1.05rem;
   font-weight: 600;
   margin: 1.75rem 0 0.75rem;
-  color: #0c4a6e;
+  color: #f1f5f9;
 }
 
 /* Affiliate CTA button — Rakuten red */
