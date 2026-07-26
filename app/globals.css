@@ -103,9 +103,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ─── Dark mode: all 22 Tailwind color families ─── */
-@media (prefers-color-scheme: dark) {
-  :root {
+/* ─── Color overrides: all 22 Tailwind color families (always applied, OS設定不問) ─── */
+:root {
     --background: #0f172a;
     --foreground: #f1f5f9;
   }
@@ -338,4 +337,3 @@ body {
 
   /* bg-white */
   .bg-white { background-color: #1e293b !important; }
-}
