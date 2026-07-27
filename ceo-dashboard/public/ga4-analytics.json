@@ -1,52 +1,80 @@
 {
-  "generatedAt": "2026-07-23T15:36:09.351Z",
+  "generatedAt": "2026-07-27T02:24:06.561Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-07-23T15:36:08.734Z",
+      "fetchedAt": "2026-07-27T02:24:05.750Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 189,
-      "totalPageviews": 527,
+      "totalSessions": 230,
+      "totalPageviews": 600,
       "topPages": [
         {
           "path": "/",
-          "sessions": 100,
-          "pageviews": 328,
-          "avgSessionDuration": 139.91950665000002,
-          "bounceRate": 0.34
+          "sessions": 105,
+          "pageviews": 334,
+          "avgSessionDuration": 129.9685826952381,
+          "bounceRate": 0.3047619047619048
         },
         {
           "path": "/category/1day",
-          "sessions": 11,
-          "pageviews": 16,
-          "avgSessionDuration": 180.0245669090909,
-          "bounceRate": 0.09090909090909091
-        },
-        {
-          "path": "/product/acuvue-moist-1day",
-          "sessions": 10,
-          "pageviews": 41,
-          "avgSessionDuration": 282.7589183,
-          "bounceRate": 0.2
+          "sessions": 22,
+          "pageviews": 32,
+          "avgSessionDuration": 265.39427613636366,
+          "bounceRate": 0.2727272727272727
         },
         {
           "path": "/column/meta-quest-3-review-2026",
-          "sessions": 9,
-          "pageviews": 9,
-          "avgSessionDuration": 85.144879,
-          "bounceRate": 0.2222222222222222
+          "sessions": 15,
+          "pageviews": 15,
+          "avgSessionDuration": 63.32655606666667,
+          "bounceRate": 0.3333333333333333
+        },
+        {
+          "path": "/column/lenszero-kaigai-tsuuhan-guide-2026",
+          "sessions": 10,
+          "pageviews": 24,
+          "avgSessionDuration": 228.5103386,
+          "bounceRate": 0.4
         },
         {
           "path": "/ranking",
+          "sessions": 10,
+          "pageviews": 25,
+          "avgSessionDuration": 297.1162966,
+          "bounceRate": 0.1
+        },
+        {
+          "path": "/product/acuvue-moist-1day",
           "sessions": 9,
-          "pageviews": 24,
-          "avgSessionDuration": 329.52994466666667,
+          "pageviews": 39,
+          "avgSessionDuration": 313.7465538888889,
           "bounceRate": 0.2222222222222222
+        },
+        {
+          "path": "/column/vr-game-osusume-2026",
+          "sessions": 8,
+          "pageviews": 7,
+          "avgSessionDuration": 33.966804625,
+          "bounceRate": 0.5
+        },
+        {
+          "path": "/column",
+          "sessions": 6,
+          "pageviews": 28,
+          "avgSessionDuration": 190.4538706666667,
+          "bounceRate": 0.3333333333333333
+        },
+        {
+          "path": "/column/lasik-hiyo-risk",
+          "sessions": 6,
+          "pageviews": 8,
+          "avgSessionDuration": 264.8633928333333,
+          "bounceRate": 0.5
         },
         {
           "path": "/karakon",
@@ -56,18 +84,11 @@
           "bounceRate": 0.16666666666666666
         },
         {
-          "path": "/column/lasik-hiyo-risk",
-          "sessions": 5,
-          "pageviews": 7,
-          "avgSessionDuration": 317.8360714,
-          "bounceRate": 0.4
-        },
-        {
           "path": "/column/megane-kaomikata",
           "sessions": 5,
           "pageviews": 5,
           "avgSessionDuration": 338.836125,
-          "bounceRate": 0.2
+          "bounceRate": 0
         },
         {
           "path": "/column/karakon-osusume-ranking-2026",
@@ -119,13 +140,6 @@
           "bounceRate": 0
         },
         {
-          "path": "/column",
-          "sessions": 2,
-          "pageviews": 8,
-          "avgSessionDuration": 156.0834775,
-          "bounceRate": 0
-        },
-        {
           "path": "/column/blue-light-megane-kouka",
           "sessions": 2,
           "pageviews": 1,
@@ -138,31 +152,9 @@
           "pageviews": 1,
           "avgSessionDuration": 3.774578,
           "bounceRate": 1
-        },
-        {
-          "path": "/column/ranshi-contact-erabikata",
-          "sessions": 2,
-          "pageviews": 2,
-          "avgSessionDuration": 17.754520499999998,
-          "bounceRate": 0.5
-        },
-        {
-          "path": "/lasik",
-          "sessions": 2,
-          "pageviews": 4,
-          "avgSessionDuration": 1177.7719225,
-          "bounceRate": 0
         }
       ],
       "weeklyTrend": [
-        {
-          "date": "2026-06-26",
-          "sessions": 4
-        },
-        {
-          "date": "2026-06-28",
-          "sessions": 5
-        },
         {
           "date": "2026-06-29",
           "sessions": 3
@@ -249,7 +241,23 @@
         },
         {
           "date": "2026-07-23",
+          "sessions": 10
+        },
+        {
+          "date": "2026-07-24",
+          "sessions": 15
+        },
+        {
+          "date": "2026-07-25",
           "sessions": 8
+        },
+        {
+          "date": "2026-07-26",
+          "sessions": 15
+        },
+        {
+          "date": "2026-07-27",
+          "sessions": 5
         }
       ]
     },
@@ -257,26 +265,34 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-07-23T15:36:09.351Z",
+      "fetchedAt": "2026-07-27T02:24:06.561Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 2,
-      "totalPageviews": 3,
+      "totalSessions": 4,
+      "totalPageviews": 6,
       "topPages": [
         {
           "path": "/",
-          "sessions": 2,
-          "pageviews": 3,
-          "avgSessionDuration": 3.007127,
-          "bounceRate": 1
+          "sessions": 4,
+          "pageviews": 6,
+          "avgSessionDuration": 5.382913,
+          "bounceRate": 0.5
         }
       ],
       "weeklyTrend": [
         {
           "date": "2026-07-23",
           "sessions": 2
+        },
+        {
+          "date": "2026-07-24",
+          "sessions": 1
+        },
+        {
+          "date": "2026-07-27",
+          "sessions": 1
         }
       ]
     }
