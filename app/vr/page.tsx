@@ -50,7 +50,7 @@ export default function VRPage() {
       </nav>
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-violet-50 to-purple-50 border border-violet-100 rounded-2xl p-8 mb-10">
+      <div className="bg-gradient-to-br from-violet-950 to-purple-950 border border-violet-800 rounded-2xl p-8 mb-10">
         <div className="text-4xl mb-3">🥽</div>
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">VR・スマートグラス</h1>
         <p className="text-gray-600 text-sm leading-relaxed max-w-xl">

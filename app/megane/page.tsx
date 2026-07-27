@@ -50,7 +50,7 @@ export default function MeganePage() {
       </nav>
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-100 rounded-2xl p-8 mb-10">
+      <div className="bg-gradient-to-br from-indigo-950 to-blue-950 border border-indigo-800 rounded-2xl p-8 mb-10">
         <div className="text-4xl mb-3">👓</div>
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">眼鏡・サングラス</h1>
         <p className="text-gray-600 text-sm leading-relaxed max-w-xl">

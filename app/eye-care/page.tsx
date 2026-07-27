@@ -50,7 +50,7 @@ export default function EyeCarePage() {
       </nav>
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-cyan-50 to-teal-50 border border-cyan-100 rounded-2xl p-8 mb-10">
+      <div className="bg-gradient-to-br from-cyan-950 to-teal-950 border border-cyan-800 rounded-2xl p-8 mb-10">
         <div className="text-4xl mb-3">💊</div>
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">アイケア・目薬</h1>
         <p className="text-gray-600 text-sm leading-relaxed max-w-xl">
