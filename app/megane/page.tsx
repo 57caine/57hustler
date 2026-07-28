@@ -22,16 +22,6 @@ const products = [
   { emoji: '🎒', label: '眼鏡ケース', rakuten: '眼鏡ケース' },
 ];
 
-const eyeCareCards = [
-  { label: 'La Luna アイウォーマー（ホワイト）', shop: 't-pro', tag: 'アイウォーマー', url: 'https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
-  { label: 'Bodyplus アイウォーマー 4580657302', shop: 'bodyplus', tag: 'アイウォーマー', url: 'https://hb.afl.rakuten.co.jp/ichiba/56237db3.a916904a.56237db4.bd5b1f1c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbodyplus%2F4580657302%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
-  { label: 'RelxEye アイリラクサー RE-001', shop: 'excitech', tag: 'アイリラクサー', url: 'https://hb.afl.rakuten.co.jp/ichiba/56237d7f.33f4cbd3.56237d80.df2babe8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcitech%2Frelx-eye-001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
-  { label: 'Leapgrow アイウォーマー MT-IRM21', shop: 'leapgrow', tag: 'アイウォーマー', url: 'https://hb.afl.rakuten.co.jp/ichiba/56237d75.6a00e946.56237d76.0969a7c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fleapgrow%2Fmt-irm21%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
-  { label: 'MyGear リリースアイ', shop: 'mygear', tag: '目もとケア', url: 'https://hb.afl.rakuten.co.jp/ichiba/56237d71.e1be5ab2.56237d72.e7946a18/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmygear%2Freleaseeye%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
-  { label: 'Nissoplus アイウォーマー NP-EEM23', shop: 'nissoplus', tag: 'アイウォーマー', url: 'https://hb.afl.rakuten.co.jp/ichiba/56237d51.c785194a.56237d52.f8562009/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnissoplus%2Fnp-eem23%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
-  { label: 'Nissoplus アイリフレッシャー NP-ER23', shop: 'nissoplus', tag: '目もとリラックス', url: 'https://hb.afl.rakuten.co.jp/ichiba/56237d51.c785194a.56237d52.f8562009/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnissoplus%2Fnp-er23%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
-];
-
 const itemCards = [
   { label: 'Wavecontact メガネフレーム MGN_BASIC', shop: 'Wavecontact', tag: '眼鏡フレーム', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
   { label: 'Hodopus メガネフレーム', shop: 'Hodopus', tag: '眼鏡フレーム', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
@@ -102,21 +92,6 @@ export default function MeganePage() {
           <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
             <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">{p.tag}</span>
-            <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">{p.label}</p>
-            <p className="text-xs text-gray-400 mb-3">{p.shop}</p>
-            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">{p.label}を楽天で見る →</div>
-          </a>
-        ))}
-      </div>
-
-      {/* Eye Care Product Cards */}
-      <h2 className="text-xl font-bold text-gray-800 mb-4">アイウォーマー・目もとリラックスグッズ</h2>
-      <p className="text-xs text-gray-400 mb-4">※当サイトはアフィリエイト広告を掲載しています。価格・仕様は変更される場合があります。</p>
-      <div className="grid sm:grid-cols-3 gap-3 mb-10">
-        {eyeCareCards.map(p => (
-          <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-teal-300 transition-all">
-            <span className="text-xs bg-teal-50 text-teal-700 px-2 py-0.5 rounded font-medium">{p.tag}</span>
             <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">{p.label}</p>
             <p className="text-xs text-gray-400 mb-3">{p.shop}</p>
             <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">{p.label}を楽天で見る →</div>

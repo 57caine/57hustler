@@ -22,6 +22,16 @@ const products = [
   { emoji: '🦐', label: 'アスタキサンチンサプリ', rakuten: 'アスタキサンチン サプリ' },
 ];
 
+const eyeCareCards = [
+  { label: 'La Luna アイウォーマー（ホワイト）', shop: 't-pro', tag: 'アイウォーマー', url: 'https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'Bodyplus アイウォーマー 4580657302', shop: 'bodyplus', tag: 'アイウォーマー', url: 'https://hb.afl.rakuten.co.jp/ichiba/56237db3.a916904a.56237db4.bd5b1f1c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbodyplus%2F4580657302%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'RelxEye アイリラクサー RE-001', shop: 'excitech', tag: 'アイリラクサー', url: 'https://hb.afl.rakuten.co.jp/ichiba/56237d7f.33f4cbd3.56237d80.df2babe8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcitech%2Frelx-eye-001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'Leapgrow アイウォーマー MT-IRM21', shop: 'leapgrow', tag: 'アイウォーマー', url: 'https://hb.afl.rakuten.co.jp/ichiba/56237d75.6a00e946.56237d76.0969a7c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fleapgrow%2Fmt-irm21%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'MyGear リリースアイ', shop: 'mygear', tag: '目もとケア', url: 'https://hb.afl.rakuten.co.jp/ichiba/56237d71.e1be5ab2.56237d72.e7946a18/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmygear%2Freleaseeye%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'Nissoplus アイウォーマー NP-EEM23', shop: 'nissoplus', tag: 'アイウォーマー', url: 'https://hb.afl.rakuten.co.jp/ichiba/56237d51.c785194a.56237d52.f8562009/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnissoplus%2Fnp-eem23%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'Nissoplus アイリフレッシャー NP-ER23', shop: 'nissoplus', tag: '目もとリラックス', url: 'https://hb.afl.rakuten.co.jp/ichiba/56237d51.c785194a.56237d52.f8562009/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnissoplus%2Fnp-er23%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+];
+
 const faqs = [
   { q: 'コンタクトを付けたまま目薬をさしても大丈夫ですか？', a: 'コンタクトレンズ対応と明記されている目薬であれば装用中に使用できます。パッケージに「コンタクトレンズ装用中に使えます」と記載されているか確認してください。防腐剤（塩化ベンザルコニウム）が含まれる目薬はコンタクト装用中は使用できません。' },
   { q: 'ドライアイに最も効果的な目薬は何ですか？', a: '主成分として「ヒアルロン酸Na」「ポリビニルアルコール」「カルボキシメチルセルロース」を含む目薬が保湿効果に優れています。コンタクト装用者は「ソフトサンティア」「ロートモイストアイ」などの防腐剤フリー目薬がおすすめです。' },
@@ -84,6 +94,21 @@ export default function EyeCarePage() {
             <p className="font-bold text-gray-800 text-sm mb-1">{t.title}</p>
             <p className="text-xs text-gray-500">{t.tip}</p>
           </div>
+        ))}
+      </div>
+
+      {/* Eye Care Product Cards */}
+      <h2 className="text-xl font-bold text-gray-800 mb-4">おすすめアイケアグッズ</h2>
+      <p className="text-xs text-gray-400 mb-4">※当サイトはアフィリエイト広告を掲載しています。価格・仕様は変更される場合があります。</p>
+      <div className="grid sm:grid-cols-3 gap-3 mb-10">
+        {eyeCareCards.map(p => (
+          <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">{p.tag}</span>
+            <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">{p.label}</p>
+            <p className="text-xs text-gray-400 mb-3">{p.shop}</p>
+            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">{p.label}を楽天で見る →</div>
+          </a>
         ))}
       </div>
 

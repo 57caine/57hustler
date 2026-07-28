@@ -3779,6 +3779,67 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">また、ストレッチ・マッサージだけでなく、PC環境の改善、定期的な目薬の使用、栄養管理など、複合的なアプローチにより、さらに効果を高めることができます。自分に合った方法を見つけ、快適なデジタルライフを実現してください。</p>
       <p className="text-gray-700 mb-4">症状が強い場合や、改善が見られない場合は、必ず眼科医に相談することをおすすめします。目の健康は全身の健康につながる重要な要素です。</p>
 
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめアイウォーマー・目もとリラックスグッズ</h2>
+      <p className="text-sm text-gray-500 mb-4">マッサージと組み合わせると効果的な温熱ケアグッズをご紹介します。※当サイトはアフィリエイト広告を掲載しています。</p>
+      <div className="grid sm:grid-cols-3 gap-3 mb-6">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+          target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アイウォーマー</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">La Luna アイウォーマー（ホワイト）</p>
+          <p className="text-xs text-gray-400 mb-3">t-pro</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">La Luna アイウォーマー（ホワイト）を楽天で見る →</div>
+        </a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237db3.a916904a.56237db4.bd5b1f1c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbodyplus%2F4580657302%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+          target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アイウォーマー</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Bodyplus アイウォーマー 4580657302</p>
+          <p className="text-xs text-gray-400 mb-3">bodyplus</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Bodyplus アイウォーマー 4580657302を楽天で見る →</div>
+        </a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d7f.33f4cbd3.56237d80.df2babe8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcitech%2Frelx-eye-001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+          target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アイリラクサー</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">RelxEye アイリラクサー RE-001</p>
+          <p className="text-xs text-gray-400 mb-3">excitech</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">RelxEye アイリラクサー RE-001を楽天で見る →</div>
+        </a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d75.6a00e946.56237d76.0969a7c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fleapgrow%2Fmt-irm21%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+          target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アイウォーマー</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Leapgrow アイウォーマー MT-IRM21</p>
+          <p className="text-xs text-gray-400 mb-3">leapgrow</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Leapgrow アイウォーマー MT-IRM21を楽天で見る →</div>
+        </a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d71.e1be5ab2.56237d72.e7946a18/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmygear%2Freleaseeye%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+          target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">目もとケア</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">MyGear リリースアイ</p>
+          <p className="text-xs text-gray-400 mb-3">mygear</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">MyGear リリースアイを楽天で見る →</div>
+        </a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d51.c785194a.56237d52.f8562009/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnissoplus%2Fnp-eem23%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+          target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アイウォーマー</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Nissoplus アイウォーマー NP-EEM23</p>
+          <p className="text-xs text-gray-400 mb-3">nissoplus</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Nissoplus アイウォーマー NP-EEM23を楽天で見る →</div>
+        </a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d51.c785194a.56237d52.f8562009/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnissoplus%2Fnp-er23%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+          target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">目もとリラックス</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Nissoplus アイリフレッシャー NP-ER23</p>
+          <p className="text-xs text-gray-400 mb-3">nissoplus</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Nissoplus アイリフレッシャー NP-ER23を楽天で見る →</div>
+        </a>
+      </div>
+
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-4">
         <p className="font-bold text-gray-800 mb-3">ドライアイ・疲れ目対策グッズを探す</p>
         <AffiliateBtns rakuten="ドライアイ 目薬 疲れ目" />
