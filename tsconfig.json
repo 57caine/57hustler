@@ -30,7 +30,7 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "school-navi", "shikaku-navi", "apps", "ceo-dashboard"],
+  "exclude": ["node_modules", "school-navi", "shikaku-navi", "yonaka-uranai", "apps", "ceo-dashboard"],
   "ts-node": {
     "transpileOnly": true,
     "compilerOptions": {
