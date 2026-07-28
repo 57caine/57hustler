@@ -123,6 +123,25 @@ export default function RankingPage() {
         </section>
       ))}
 
+      {/* New Shops */}
+      <section className="mb-10">
+        <h2 className="text-lg font-bold text-gray-900 mb-2">注目の新規ショップ</h2>
+        <p className="text-xs text-gray-400 mb-4">※当サイトはアフィリエイト広告を掲載しています。</p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {[
+            { name: 'レンズスマイル', desc: 'コンタクトレンズ通販', url: 'https://px.a8.net/svt/ejp?a8mat=4B8454+ESV0QQ+3SZ4+BXIYP' },
+            { name: 'レンズラボ', desc: '全品処方箋不要・コンタクト通販', url: 'https://px.a8.net/svt/ejp?a8mat=4B8454+F4ROUA+3SZ4+5ZMCH' },
+          ].map(s => (
+            <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer nofollow sponsored"
+              className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+              <p className="font-bold text-gray-800 text-sm mb-1">{s.name}</p>
+              <p className="text-xs text-gray-500 mb-3">{s.desc}</p>
+              <div className="bg-sky-600 text-white text-xs font-bold text-center py-2 rounded-lg">公式サイトで見る →</div>
+            </a>
+          ))}
+        </div>
+      </section>
+
       <section className="mb-8">
         <h2 className="text-lg font-bold text-gray-900 mb-4">よくある質問</h2>
         <div className="space-y-3">

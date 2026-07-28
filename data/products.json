@@ -2394,6 +2394,42 @@
       "prescriptionFree": true
     },
     {
+      "id": "lens-smile",
+      "name": "レンズスマイル",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B8454+ESV0QQ+3SZ4+BXIYP",
+      "affiliateParam": "",
+      "shipping": 330,
+      "freeShippingMin": 3300,
+      "prescriptionFree": true
+    },
+    {
+      "id": "lenslab",
+      "name": "レンズラボ",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B8454+F4ROUA+3SZ4+5ZMCH",
+      "affiliateParam": "",
+      "shipping": 0,
+      "freeShippingMin": 0,
+      "prescriptionFree": true
+    },
+    {
+      "id": "dicon",
+      "name": "dicon（通常レンズ・定額）",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B8454+ES9L4Y+47VI+5YRHE",
+      "affiliateParam": "",
+      "shipping": 0,
+      "freeShippingMin": 0,
+      "prescriptionFree": false
+    },
+    {
+      "id": "dicon-ranshi",
+      "name": "dicon（乱視レンズ・定額）",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B8454+F5YK1U+47VI+BWVTE",
+      "affiliateParam": "",
+      "shipping": 0,
+      "freeShippingMin": 0,
+      "prescriptionFree": false
+    },
+    {
       "id": "rakuten",
       "name": "楽天市場",
       "url": "https://www.rakuten.co.jp",

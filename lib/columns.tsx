@@ -5327,6 +5327,25 @@ export const columnContent: Record<string, React.ReactNode> = {
         <p className="text-sm mt-1">まとめ買いは経済的ですが、コンタクトレンズには使用期限（外箱に記載）があります。まとめ買いしすぎて期限切れになった場合は使用禁止。ライフスタイルに合わせた量を購入しましょう。</p>
       </div>
 
+      <div className="bg-sky-50 border border-sky-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-sky-800 mb-2">📦 定額サブスクという選択肢：dicon</p>
+        <p className="text-sm text-gray-700 mb-3">
+          diconは月額定額制でコンタクトレンズが届くサービスです。毎月の購入手続きが不要で、在庫切れの心配もありません。通常レンズと乱視用レンズの2プランがあります。
+        </p>
+        <div className="flex flex-col sm:flex-row gap-2">
+          <a href="https://px.a8.net/svt/ejp?a8mat=4B8454+ES9L4Y+47VI+5YRHE"
+            target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="flex-1 text-center bg-sky-600 text-white text-xs font-bold py-2.5 px-4 rounded-lg hover:bg-sky-500 transition-colors">
+            dicon 通常レンズ（定額）を見る →
+          </a>
+          <a href="https://px.a8.net/svt/ejp?a8mat=4B8454+F5YK1U+47VI+BWVTE"
+            target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="flex-1 text-center bg-sky-600 text-white text-xs font-bold py-2.5 px-4 rounded-lg hover:bg-sky-500 transition-colors">
+            dicon 乱視用レンズ（定額）を見る →
+          </a>
+        </div>
+      </div>
+
       <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">学生・主婦におすすめのコスパ重視商品</h2>
       <div className="space-y-4 mb-6">
         {[

@@ -22,6 +22,23 @@ const products = [
   { emoji: '📦', label: 'VRメガネスペーサー', rakuten: 'VR メガネスペーサー' },
 ];
 
+const vrItemCards = [
+  { label: 'VRゴーグル（スマートフォン対応）', shop: 'Hompart', tag: 'VRゴーグル', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622f10a.00c27bf4.5622f10b.e63b1f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhompart%2Fus02-3c77-203%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'VRコントローラー/アクセサリ', shop: 'iDoga Gadget', tag: 'アクセサリ', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622ee0c.0230af00.5622ee0d.c8b1b9d6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fidoga-gadget%2Fgs-zyi1-t25v%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjEwMHgxMDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'BoboVR S3 Pro ヘッドストラップ', shop: 'VR Electronics', tag: 'アクセサリ', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622edfb.fb2e30e0.5622edfc.afa105c5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fvr-electronicsten%2Fbobovr-s3pro%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'Homido Prime VRヘッドセット（セット）', shop: 'iDoga Gadget', tag: 'VRゴーグル', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622ee0c.0230af00.5622ee0d.c8b1b9d6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fidoga-gadget%2Fhomido-prime-deal%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjEwMHgxMDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'Homido Prime VRヘッドセット', shop: 'iDoga Gadget', tag: 'VRゴーグル', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622ee0c.0230af00.5622ee0d.c8b1b9d6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fidoga-gadget%2Fhomido-prime%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjEwMHgxMDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'Meta Quest（公式ストア）', shop: 'Meta 公式', tag: 'Meta Quest', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224114424%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'Meta Quest 別モデル（公式）', shop: 'Meta 公式', tag: 'Meta Quest', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224147192%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'VRヘッドセット（ビックカメラ）', shop: 'ビックカメラ', tag: 'VRゴーグル', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622ef0e.8cb27bcc.5622ef0f.7dbedade/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F6970214573901%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'Meta Quest Pro アクセサリ', shop: 'The Arts', tag: 'アクセサリ', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622ef04.50de429c.5622ef05.12ad6574/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fthe-arts%2Fmeta-pro-rsl%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'ELECOM VRアクセサリ', shop: 'ELECOM', tag: 'アクセサリ', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622ee81.8194db97.5622ee82.cf9670fe/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felecom%2F4549550230469%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'Yakia VRゴーグル H-VR-C20', shop: 'Yakia', tag: 'VRゴーグル', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622ee5f.ac61384d.5622ee60.d16df839/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyakia%2Fh-vr-c20%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'HMD Mini VRヘッドセット', shop: 'iDoga Gadget', tag: 'VRゴーグル', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622ee0c.0230af00.5622ee0d.c8b1b9d6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fidoga-gadget%2Fidg-hmd-mini0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjEwMHgxMDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'VRゲームグラス', shop: 'Superdeal', tag: 'VRゴーグル', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622ee3d.087aeb05.5622ee3e.19380709/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsuperdeal%2F13414vrgm02r240210%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+  { label: 'VRヘッドセット', shop: 'Relief10', tag: 'VRゴーグル', url: 'https://hb.afl.rakuten.co.jp/ichiba/5622edf7.cbfb550b.5622edf8.b19a4c20/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frelief10%2Fb0bsf34r5r%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9' },
+];
+
 const faqs = [
   { q: 'コンタクトレンズを付けたままVRゴーグルを使っても大丈夫ですか？', a: 'ソフトコンタクトレンズであれば基本的に問題ありません。ただし、VR使用中は瞬きが減少してドライアイになりやすいため、装用時間に注意し目薬を準備することをおすすめします。ハードコンタクトはVR使用時の圧迫でズレやすいため注意が必要です。' },
   { q: 'Meta Quest 3は視力が悪くても使えますか？', a: 'Meta Quest 3にはメガネスペーサー（アダプター）が付属しており、多くの眼鏡が装着可能です。また、VR用の度付きインサートレンズ（prescription lenses）を購入してヘッドセットに装着することで、眼鏡なしで使用できます。' },
@@ -82,6 +99,21 @@ export default function VRPage() {
         <Link href="/category/1day" className="inline-block bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors">
           ワンデーコンタクトを比較する →
         </Link>
+      </div>
+
+      {/* Specific VR Product Cards */}
+      <h2 className="text-xl font-bold text-gray-800 mb-4">おすすめVR機器・アクセサリ</h2>
+      <p className="text-xs text-gray-400 mb-4">※当サイトはアフィリエイト広告を掲載しています。価格・仕様は変更される場合があります。</p>
+      <div className="grid sm:grid-cols-3 gap-3 mb-10">
+        {vrItemCards.map(p => (
+          <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-violet-300 transition-all">
+            <span className="text-xs bg-violet-50 text-violet-700 px-2 py-0.5 rounded font-medium">{p.tag}</span>
+            <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">{p.label}</p>
+            <p className="text-xs text-gray-400 mb-3">{p.shop}</p>
+            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+          </a>
+        ))}
       </div>
 
       {/* Products / Affiliate */}

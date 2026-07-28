@@ -51,6 +51,22 @@ export const eyeColumns: EyeColumnMeta[] = [
     ],
   },
   {
+    slug: 'pc-megane-bluelight-hikaku-2026',
+    title: 'PCメガネ・ブルーライトカットメガネ徹底比較2026【選び方・mujina・度なし】',
+    description: 'PCメガネ・ブルーライトカットメガネの選び方と2026年おすすめ商品を紹介。カット率・フレーム素材・度なし/度ありの違い、mujina製品の特徴も解説。',
+    category: '眼鏡・サングラス',
+    section: 'megane',
+    publishedAt: '2026-07-28',
+    readingTime: 7,
+    headings: ['PCメガネとブルーライトカットの違い', '選び方3つのポイント', 'フレーム素材と価格帯', 'おすすめ商品', '使い方・注意点'],
+    keywords: ['PCメガネ', 'ブルーライトカット眼鏡', 'mujina', 'PCメガネ 選び方', 'ブルーライト対策 2026'],
+    faqs: [
+      { q: 'PCメガネとブルーライトカット眼鏡は同じですか？', a: 'ほぼ同義で使われます。PCメガネはPC作業に特化した眼鏡全般を指し、ブルーライトカット眼鏡はレンズにブルーライト低減コーティングを施したものです。度なしタイプは視力が正常な方が手軽に試せます。' },
+      { q: 'ブルーライトカット率は高いほど良いですか？', a: 'カット率30〜40%が日常使いには適しています。カット率が高くなるとレンズが黄みがかり、色の見え方が変わります。デザイン作業・映像鑑賞が多い方は色再現性の高いクリアタイプをお勧めします。' },
+      { q: '度なしPCメガネは誰でも使えますか？', a: '視力が正常な方（またはコンタクトで矯正済みの方）が主な対象です。裸眼で度なしレンズを使用すると視界がぼやける場合があります。眼科でご自身の視力を確認したうえでご使用ください。' },
+    ],
+  },
+  {
     slug: 'megane-online-shopping',
     title: '眼鏡をオンラインで買う方法【Zoff・JINS・Warby Parker】失敗しない選び方',
     description: 'JINSやZoff、楽天眼鏡など主要オンラインショップの比較。度数入力の方法、フィッティング、返品対応まで解説。',
@@ -1129,8 +1145,33 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>価格：</strong>度なしなら安価なもので十分。度ありなら眼鏡店での処方が安心</li>
       </ul>
 
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめ商品</h2>
+      <p className="text-sm text-gray-500 mb-4">※価格・仕様は変更される場合があります。購入前に各商品ページで最新情報をご確認ください。当サイトはアフィリエイト広告を掲載しています。</p>
+      <div className="grid sm:grid-cols-3 gap-4 mb-6">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmujina0008%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+          target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
+          <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">PCメガネ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">mujina ブルーライトカットPCメガネ</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+        </a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmujina0023%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+          target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
+          <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">PCメガネ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">mujina ブルーライトカットPCメガネ（別モデル）</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+        </a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmj-1092%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+          target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
+          <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">PCメガネ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">mujina PCメガネ MJ-1092</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+        </a>
+      </div>
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
-        <p className="font-bold text-gray-800 mb-3">ブルーライトカット眼鏡を探す</p>
+        <p className="font-bold text-gray-800 mb-3">他のブルーライトカット眼鏡も探す</p>
         <AffiliateBtns rakuten="ブルーライトカット眼鏡" />
       </div>
     </article>
@@ -7489,6 +7530,131 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
       <p className="text-gray-700 mb-4">目のストレッチ・ツボ押しグッズは、現代人の眼精疲労対策において重要な役割を果たします。複数の選択肢から自分に合ったものを選ぶことで、眼の健康を維持し、生活の質を向上させることができます。</p>
       <p className="text-gray-700 mb-4">購入の際には、振動数、温熱機能、装着感などの複数の要素を総合的に判断し、自分のライフスタイルに最も適した製品を選択することをお勧めします。定期的な使用により、眼精疲労の緩和と目の健康維持が期待できます。</p>
+    </article>
+  ),
+
+  'pc-megane-bluelight-hikaku-2026': (
+    <article className="prose prose-sm max-w-none">
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        PC作業が日常になった今、PCメガネ（ブルーライトカットメガネ）を選ぶ機会が増えています。カット率・レンズの色・フレーム素材など、選び方のポイントを整理し、実際の商品も紹介します。
+      </p>
+
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6">
+        <p className="text-sm text-amber-800"><strong>景品表示法に関する注記：</strong>本記事内の商品紹介は情報提供を目的としています。効果・効能には個人差があり、すべての方に同様の結果が得られるとは限りません。</p>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">PCメガネとブルーライトカットの違い</h2>
+      <p className="text-gray-700 mb-4">
+        「PCメガネ」と「ブルーライトカット眼鏡」はほぼ同義で使われますが、厳密には以下の違いがあります：
+      </p>
+      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+        <div className="bg-white border border-gray-200 rounded-xl p-4">
+          <p className="font-bold text-gray-800 mb-2">PCメガネ</p>
+          <ul className="text-xs text-gray-600 space-y-1">
+            <li>• PC作業全般を快適にする眼鏡の総称</li>
+            <li>• 反射防止・UVカット機能なども含む</li>
+            <li>• 度なし・度ありどちらも存在する</li>
+          </ul>
+        </div>
+        <div className="bg-white border border-gray-200 rounded-xl p-4">
+          <p className="font-bold text-gray-800 mb-2">ブルーライトカット眼鏡</p>
+          <ul className="text-xs text-gray-600 space-y-1">
+            <li>• 380〜500nm帯の青色光を低減するレンズ</li>
+            <li>• カット率10〜50%の製品が流通</li>
+            <li>• 夜間使用で睡眠への影響を抑える可能性あり</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方3つのポイント</h2>
+      <div className="space-y-4 mb-6">
+        <div className="bg-white border border-l-4 border-l-indigo-400 border-gray-200 rounded-xl p-4">
+          <p className="font-bold text-gray-800 mb-1">① カット率：30〜40%が使いやすい</p>
+          <p className="text-sm text-gray-600">50%超になるとレンズが黄みがかり、色の見え方に影響が出ます。デザイン・映像作業が多い方はクリアレンズのものを選ぶと快適です。</p>
+        </div>
+        <div className="bg-white border border-l-4 border-l-indigo-400 border-gray-200 rounded-xl p-4">
+          <p className="font-bold text-gray-800 mb-1">② フレーム素材：長時間使用なら軽量素材を</p>
+          <p className="text-sm text-gray-600">TR-90（超軽量プラスチック）やチタン製は装用感が軽く、長時間のPC作業でも疲れにくい傾向があります。重いフレームは頭部・鼻への負担になります。</p>
+        </div>
+        <div className="bg-white border border-l-4 border-l-indigo-400 border-gray-200 rounded-xl p-4">
+          <p className="font-bold text-gray-800 mb-1">③ 度なし vs 度あり：視力に合わせて選択</p>
+          <p className="text-sm text-gray-600">視力が正常な方やコンタクト着用者は度なしタイプで十分です。近視・遠視がある裸眼の方は度入りを眼科で処方してもらうか、オンライン眼鏡店で度数入りを注文しましょう。</p>
+        </div>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">フレーム素材と価格帯</h2>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-indigo-50">
+              <th className="text-left p-3 border border-gray-200">素材</th>
+              <th className="text-left p-3 border border-gray-200">重さ</th>
+              <th className="text-left p-3 border border-gray-200">価格目安</th>
+              <th className="text-left p-3 border border-gray-200">特徴</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { mat: 'プラスチック（アセテート）', w: '普通', p: '¥1,000〜', feat: 'デザイン豊富・カラー展開が多い' },
+              { mat: 'TR-90', w: '軽量', p: '¥2,000〜', feat: '柔軟性・耐久性が高い・長時間使用向き' },
+              { mat: 'チタン・合金', w: '軽量', p: '¥5,000〜', feat: '耐久性・サビに強い・アレルギー対応' },
+            ].map(r => (
+              <tr key={r.mat} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.mat}</td>
+                <td className="p-3 border border-gray-200 text-center">{r.w}</td>
+                <td className="p-3 border border-gray-200 text-indigo-700 font-bold">{r.p}</td>
+                <td className="p-3 border border-gray-200 text-gray-600 text-xs">{r.feat}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめ商品</h2>
+      <p className="text-sm text-gray-500 mb-4">※価格・仕様は変更される場合があります。購入前に各商品ページで最新情報をご確認ください。当サイトはアフィリエイト広告を掲載しています。</p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">mujina ブルーライトカットPCメガネ</h3>
+      <p className="text-gray-700 mb-4 text-sm">
+        mujinaはブルーライトカット専門のアイウェアブランドです。軽量フレームとクリア系レンズで色の見え方への影響を抑えたい方に向いています。度なしモデルのため、コンタクト着用中・視力が正常な方が対象です。
+      </p>
+      <div className="grid sm:grid-cols-3 gap-4 mb-6">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmujina0008%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+          target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
+          <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">mujina</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">ブルーライトカットPCメガネ</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+        </a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmujina0023%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+          target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
+          <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">mujina</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">ブルーライトカットPCメガネ（別モデル）</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+        </a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmj-1092%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+          target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
+          <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">mujina</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">PCメガネ MJ-1092</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">使い方・注意点</h2>
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
+        <ul className="text-sm text-blue-800 space-y-2">
+          <li>• 度なしPCメガネは視力が正常な方向けです。裸眼で使うと視界がぼける場合があります</li>
+          <li>• ブルーライトカット単体で眼精疲労が解決するとは限りません。20分おきの休憩・画面輝度の調整も合わせて行いましょう</li>
+          <li>• 夜間のスクリーン使用時には、ブルーライト低減機能が睡眠への影響を抑える可能性があります</li>
+          <li>• 効果・効能には個人差があります。視力の変化を感じたら眼科を受診してください</li>
+        </ul>
+      </div>
+
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-gray-800 mb-3">他のブルーライトカット眼鏡も探す</p>
+        <AffiliateBtns rakuten="ブルーライトカット眼鏡" />
+      </div>
     </article>
   ),
 };
