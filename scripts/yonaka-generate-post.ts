@@ -1,9 +1,12 @@
 /**
- * 夜中のおじさん Threads自動投稿スクリプト
+ * 夜中のおじさん Threads自動投稿スクリプト（全面見直し版）
  *
- * Anthropic APIで1文を動的生成してThreadsに投稿する。
- * API失敗時はdata/yonaka-posts.jsonのストックからフォールバック。
- * 投稿後はdata/yonaka-post-history.jsonに履歴を保存（最大100件）。
+ * 変更点:
+ * - 8カテゴリから毎回異なるカテゴリを選出（3日間クールダウン）
+ * - 新キーワードブラックリスト追加（夜間参詣・集積・沈積 等）
+ * - 文体を「日常の疑問→じゃないでしょうか/ですかね」スタイルに統一
+ * - 4段階チェック（カテゴリ重複・禁止キーワード・文体・類似度）
+ * - 3回失敗でスキップ（ストックへのフォールバック廃止）
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -15,20 +18,58 @@ const USER_ID = process.env.THREADS_USER_ID!;
 const ACCESS_TOKEN = process.env.THREADS_ACCESS_TOKEN!;
 
 const HISTORY_PATH = path.join(process.cwd(), 'data', 'yonaka-post-history.json');
-const STOCK_PATH   = path.join(process.cwd(), 'data', 'yonaka-posts.json');
-const HISTORY_KEEP = 100;
+const HISTORY_KEEP = 200; // 6投稿/日 × 30日超をカバー
 
-interface HistoryEntry { date: string; text: string; }
+// ────── 8カテゴリ定義 ──────
+const CATEGORIES = [
+  '気学・易経の豆知識',
+  '日本の妖怪・神々',
+  '結界・日常のしきたり',
+  '古代ミステリー',
+  '量子・宇宙論',
+  '宗教の共通項',
+  '科学・化学のふしぎ',
+  '日月神事・神道の祭祀',
+] as const;
+type Category = typeof CATEGORIES[number];
 
-const BANNED_KEYWORDS = [
-  '脳脊髄液', '逆行', '量子的跳躍', '時間を遡行',
-  '周波数に共鳴', '因果の逆流', '宇宙背景放射', '磁気共鳴',
-];
+const CATEGORY_HINTS: Record<Category, string> = {
+  '気学・易経の豆知識':
+    '九星気学・方位・易経・陰陽五行・干支の豆知識・気づき',
+  '日本の妖怪・神々':
+    '日本の神話・妖怪・八百万の神々・古事記・日本書紀の話',
+  '結界・日常のしきたり':
+    '箸・塩・敷居・節分・お守り・数字の縁起など日常に溶け込む結界・しきたり',
+  '古代ミステリー':
+    'シュメール文明・ピラミッド・古代の天文学・未解明の遺跡・古代数学',
+  '量子・宇宙論':
+    '量子力学・相対性理論・宇宙の構造・素粒子・ダークマター・多世界解釈',
+  '宗教の共通項':
+    '黄金律・因果応報・業・カルマ・慈悲など宗教を横断する共通テーマ',
+  '科学・化学のふしぎ':
+    '日常に潜む化学・物理現象・人体の不思議・生物の進化・脳の仕組み',
+  '日月神事・神道の祭祀':
+    '日本の祭祀・神道の儀式・神社の作法・天皇祭祀・季節の神事',
+};
 
-function containsBannedKeyword(text: string): boolean {
-  return BANNED_KEYWORDS.some(kw => text.includes(kw));
+// ────── 型定義 ──────
+interface HistoryEntry {
+  date: string;
+  text: string;
+  category?: string;
 }
 
+// ────── 禁止キーワード ──────
+// 永久禁止（既存）＋30日再利用禁止対象キーワード（今回追加）
+const BANNED_KEYWORDS = [
+  // 既存禁止
+  '脳脊髄液', '逆行', '量子的跳躍', '時間を遡行',
+  '周波数に共鳴', '因果の逆流', '宇宙背景放射', '磁気共鳴',
+  // 今回追加（繰り返し生成の元凶）
+  '夜間参詣', '叶った事例', '集積', '沈積', '地誌に記録', '石段を踏んだ痕跡',
+];
+
+// ────── ヒストリ管理 ──────
 function loadHistory(): HistoryEntry[] {
   try {
     if (!fs.existsSync(HISTORY_PATH)) return [];
@@ -37,80 +78,109 @@ function loadHistory(): HistoryEntry[] {
   } catch { return []; }
 }
 
-function saveHistory(existing: HistoryEntry[], newText: string): void {
-  const today = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
-  const posts = [{ date: today, text: newText }, ...existing].slice(0, HISTORY_KEEP);
+function saveHistory(existing: HistoryEntry[], newEntry: HistoryEntry): void {
+  const posts = [newEntry, ...existing].slice(0, HISTORY_KEEP);
   fs.writeFileSync(HISTORY_PATH, JSON.stringify({ posts }, null, 2), 'utf-8');
 }
 
-async function generatePost(history: HistoryEntry[]): Promise<string> {
-  const client = new Anthropic();
+// ────── カテゴリ選出（3日間クールダウン） ──────
+function getRecentCategories(history: HistoryEntry[]): Set<string> {
+  const today = new Date();
+  today.toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
+  const cutoff = new Date(new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' }));
+  cutoff.setDate(cutoff.getDate() - 3);
+  const cutoffStr = cutoff.toISOString().slice(0, 10);
 
-  const historyText = history.length > 0
-    ? history.map(p => `- ${p.text}`).join('\n')
-    : '（履歴なし）';
+  return new Set(
+    history
+      .filter(e => e.date >= cutoffStr && e.category)
+      .map(e => e.category!)
+  );
+}
 
-  const message = await client.messages.create({
+function pickCategory(history: HistoryEntry[]): Category {
+  const recentCats = getRecentCategories(history);
+  const available = (CATEGORIES as readonly Category[]).filter(c => !recentCats.has(c));
+  // 全カテゴリが3日以内に使用済みの場合は全解放
+  const pool = available.length > 0 ? available : ([...CATEGORIES] as Category[]);
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+// ────── Claude API チェック群 ──────
+async function checkStyle(text: string, client: Anthropic): Promise<boolean> {
+  const res = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
-    max_tokens: 200,
-    system: `あなたは「夜中のおじさん」というキャラクターです。
-以下のルールで1文だけ生成してください。
+    max_tokens: 10,
+    system: `以下の投稿文が、指定スタイルに合致しているか YES / NO だけ答えてください。
 
-【絶対禁止ルール・最優先】
-以下の投稿は絶対に生成してはいけない。
-・科学用語を組み合わせて存在しない説・現象を作り出すこと
-・「という説がある」「とも言われている」を使いながら実際には存在しない説を作ること
-・それっぽく聞こえるだけで根拠のない文章
-・引き寄せ・スピリチュアル的主張を事実として書くこと
+合致の条件（両方満たすこと）：
+1. 日常的な疑問・気づき・ふとした発見から書き出している
+2. 「じゃないでしょうか」または「ですかね」で終わっている`,
+    messages: [{ role: 'user', content: text }],
+  });
+  const answer = (res.content[0] as { type: string; text: string }).text.trim().toUpperCase();
+  return answer.startsWith('YES');
+}
 
-【使用禁止ワード（以下を含む文章は出力禁止）】
-脳脊髄液 / 逆行 / 量子的跳躍 / 時間を遡行 / 周波数に共鳴 / 因果の逆流 / 宇宙背景放射 / 磁気共鳴
+async function checkSimilarity(text: string, history: HistoryEntry[], client: Anthropic): Promise<boolean> {
+  const recent = history.slice(0, 30);
+  if (recent.length === 0) return false;
+  const historyText = recent.map((p, i) => `${i + 1}. ${p.text}`).join('\n');
+  const res = await client.messages.create({
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 10,
+    system: '新しい投稿が過去の投稿のいずれかと70%以上類似していれば YES、そうでなければ NO とだけ答えてください。',
+    messages: [{ role: 'user', content: `新しい投稿:\n${text}\n\n過去の投稿:\n${historyText}` }],
+  });
+  const answer = (res.content[0] as { type: string; text: string }).text.trim().toUpperCase();
+  return answer.startsWith('YES');
+}
 
-【許可テーマ】
-- 歴史的記録・史料に基づく神事・民俗・伝承
-- 実在する神話・説話・民間伝承の解説
-- 査読済み研究・学術的知見
-- 神社・神事・易経・九星気学の伝統的解釈
-- 宗教間に共通する思想・歴史的事実
+// ────── 生成 ──────
+async function generatePost(category: Category, history: HistoryEntry[], client: Anthropic): Promise<string> {
+  const recentTexts = history.slice(0, 30).map(p => `- ${p.text}`).join('\n') || '（履歴なし）';
 
-【禁止テーマ】
-- 科学用語を組み合わせた創作理論
-- 存在しない儀式・作法・効果の説明
-- 根拠のない行為と結果の因果関係
+  const res = await client.messages.create({
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 300,
+    system: `あなたは「夜中のおじさん」です。知的好奇心旺盛な中年男性が、ふと思ったことをつぶやくスタイルで投稿を書いてください。
 
-【「という説がある」が使える条件（いずれかに該当する場合のみ）】
-1. 実際に研究者・学者が発表した説
-2. 歴史的記録・史料に残っている伝承
-3. 査読済みの論文・研究報告
-4. 民間伝承として記録されているもの
+【必須スタイル — 以下の良い例と同じ形式で書くこと】
 
-テーマ：日本神事・神話・民俗・伝承・歴史的事実・宗教共通項
-ルール：
-- 1文のみ。余計な説明不要
-- 事実に基づくものは断言
-- 「という説がある」「とも言われている」は上記条件を満たす場合のみ
-- 一人称は使わない
-- 短文・体言止め・余韻重視
-- ですます調禁止
-- ハッシュタグなし
-- 過去に投稿した文と重複しない
+良い例：
+「九星気学で言う『気』と量子論の『波動』って、
+結局同じものを違う言語で説明してるんじゃないでしょうか。
+もし本当にそうなら、古い結界の配置と量子の確率分布って
+関係あるんですかね。」
 
-過去の投稿履歴：
-${historyText}`,
-    messages: [{ role: 'user', content: '1文を生成してください。' }],
+スタイルルール：
+・日常的な疑問・気づき・ふとした発見から書き始める
+・「じゃないでしょうか」か「ですかね」のどちらかで必ず締める
+・100〜200字程度。短く・わかりやすく・余白がある
+・難解な専門用語は使わない。読んだ人が「確かに…」と思える内容
+
+【絶対禁止】
+・主語が長い文
+・「証左」「沈積」「集積」「夜間参詣」「地誌に記録」「叶った事例」などの繰り返しテーマ・難語
+・事実として断言する科学的に根拠のない主張
+・ハッシュタグ
+・ですます調以外の一人称禁止（私は〜ではなく、客観的な問いかけスタイルで）
+
+【今回のカテゴリ】
+${category}
+
+【テーマヒント】
+${CATEGORY_HINTS[category]}
+
+【過去30日の投稿（これと被らないこと）】
+${recentTexts}`,
+    messages: [{ role: 'user', content: `【${category}】で投稿を1件生成してください。` }],
   });
 
-  return (message.content[0] as { type: string; text: string }).text.trim();
+  return (res.content[0] as { type: string; text: string }).text.trim();
 }
 
-function pickStockPost(history: HistoryEntry[]): string {
-  const stock = JSON.parse(fs.readFileSync(STOCK_PATH, 'utf-8')) as { posts: string[] };
-  const used = new Set(history.map(p => p.text));
-  const pool = stock.posts.filter(p => !used.has(p));
-  const source = pool.length > 0 ? pool : stock.posts;
-  return source[Math.floor(Math.random() * source.length)];
-}
-
+// ────── Threads API ──────
 async function createThreadsContainer(text: string): Promise<string> {
   const params = new URLSearchParams({ media_type: 'TEXT', text, access_token: ACCESS_TOKEN });
   const res = await fetch(`${THREADS_API_BASE}/${USER_ID}/threads`, {
@@ -133,49 +203,80 @@ async function publishThread(creationId: string): Promise<string> {
   return ((await res.json()) as { id: string }).id;
 }
 
+// ────── メイン ──────
 async function main() {
   const dryRun = process.argv.includes('--dry-run');
   console.log(`=== 夜中のおじさん投稿開始${dryRun ? '（DRY RUN）' : ''} ===`);
-  if (!dryRun && (!USER_ID || !ACCESS_TOKEN)) throw new Error('THREADS_USER_ID と THREADS_ACCESS_TOKEN を設定してください');
+  if (!dryRun && (!USER_ID || !ACCESS_TOKEN)) {
+    throw new Error('THREADS_USER_ID と THREADS_ACCESS_TOKEN を設定してください');
+  }
 
   const history = loadHistory();
   console.log(`投稿履歴: 直近${history.length}件を参照`);
 
-  let text: string;
-  let fromStock = false;
+  const client = new Anthropic();
   const MAX_RETRIES = 3;
+  let finalText: string | null = null;
+  let finalCategory: Category | null = null;
 
-  try {
-    let generated: string | null = null;
-    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-      console.log(`Claude API でネタ生成中...（試行${attempt}/${MAX_RETRIES}）`);
-      const candidate = await generatePost(history);
-      if (!containsBannedKeyword(candidate)) {
-        generated = candidate;
-        break;
-      }
-      console.warn(`⚠️ 試行${attempt}回目: 禁止キーワード検出 → 再生成`);
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    // カテゴリ選出（3日間クールダウン適用）
+    const category = pickCategory(history);
+    console.log(`\n試行${attempt}/${MAX_RETRIES}: カテゴリ「${category}」で生成中...`);
+
+    // 生成
+    let candidate: string;
+    try {
+      candidate = await generatePost(category, history, client);
+    } catch (e) {
+      console.warn(`⚠️ 試行${attempt}: API生成失敗 → ${(e as Error).message}`);
+      continue;
     }
-    if (generated === null) {
-      console.warn('⚠️ 3回連続で禁止キーワード検出。ストックへフォールバック');
-      text = pickStockPost(history);
-      fromStock = true;
-    } else {
-      text = generated;
+    console.log(`生成テキスト:\n${candidate}`);
+
+    // チェック②: キーワードブラックリスト
+    if (BANNED_KEYWORDS.some(kw => candidate.includes(kw))) {
+      const hit = BANNED_KEYWORDS.find(kw => candidate.includes(kw));
+      console.warn(`⚠️ チェック②失敗: 禁止キーワード「${hit}」検出 → 再生成`);
+      continue;
     }
-  } catch (e) {
-    console.warn('⚠️ API生成失敗。ストックからフォールバック:', (e as Error).message);
-    text = pickStockPost(history);
-    fromStock = true;
+
+    // チェック③: 文体チェック（Claude判定）
+    const styleOk = await checkStyle(candidate, client);
+    if (!styleOk) {
+      console.warn(`⚠️ チェック③失敗: 「じゃないでしょうか/ですかね」スタイルに合致しない → 再生成`);
+      continue;
+    }
+
+    // チェック④: 類似度チェック（Claude判定 vs 直近30投稿）
+    const tooSimilar = await checkSimilarity(candidate, history, client);
+    if (tooSimilar) {
+      console.warn(`⚠️ チェック④失敗: 直近30投稿と70%以上類似 → 再生成`);
+      continue;
+    }
+
+    // 全チェック通過
+    finalText = candidate;
+    finalCategory = category;
+    console.log(`\n✓ 全チェック通過（試行${attempt}）カテゴリ:「${category}」`);
+    break;
   }
 
+  // 3回失敗 → スキップ（ストックにフォールバックしない）
+  if (finalText === null) {
+    console.warn('\n⚠️ 3回試行後も全チェックを通過できなかったため、今回の投稿をスキップします');
+    process.exit(0);
+  }
+
+  // 40%の確率でnote.comリンクを追加（チェック通過後に付与）
+  let postText = finalText;
   if (Math.random() < 0.4) {
-    text += '\n\nこの話、もう少し深いところまで書いた。\nhttps://note.com/kobayashi_done';
+    postText += '\n\nこの話、もう少し深いところまで書いた。\nhttps://note.com/kobayashi_done';
   }
 
-  console.log('--- 生成テキスト ---');
-  console.log(text);
-  console.log(`文字数: ${text.length}${fromStock ? '（ストックから）' : ''}`);
+  console.log('\n--- 最終テキスト ---');
+  console.log(postText);
+  console.log(`文字数: ${postText.length}`);
   console.log('-------------------');
 
   if (dryRun) {
@@ -184,7 +285,7 @@ async function main() {
   }
 
   console.log('Threads コンテナ作成中...');
-  const creationId = await createThreadsContainer(text);
+  const creationId = await createThreadsContainer(postText);
   console.log(`コンテナID: ${creationId}`);
 
   console.log('30秒待機中...');
@@ -194,7 +295,8 @@ async function main() {
   const postId = await publishThread(creationId);
   console.log(`✓ 投稿完了: ${postId}`);
 
-  saveHistory(history, text);
+  const today = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
+  saveHistory(history, { date: today, text: finalText, category: finalCategory! });
   console.log('✓ 投稿履歴を保存しました');
 }
 
