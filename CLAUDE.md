@@ -14,6 +14,17 @@
 
 # プロジェクトルール（抜け漏れ防止）
 
+## GA4 affiliate_clickイベント計測ルール（2026-07-28実装）
+
+- lens-navi.jp・school.lens-navi.jp の全アフィリエイトリンクに `rel="sponsored"` を必須属性として付与する
+- `rel="sponsored"` が付いたリンクのクリック時に GA4イベント `affiliate_click` を自動送信する
+- イベントパラメータ: `affiliate_platform`（rakuten/a8）, `link_url`, `link_text`, `page_path`, `category`
+- 実装ファイル: `components/AffiliateClickTracker.tsx`（lens-navi）/ `school-navi/components/AffiliateClickTracker.tsx`（school-navi）
+- 今後追加するアフィリエイトリンクにも必ず `rel="noopener noreferrer nofollow sponsored"` を付けること（sponsored必須）
+- GA4で確認: `affiliate_click` がカスタムイベントとして認識される（GA4管理画面 > レポート > リアルタイム）
+- lens-navi GA4 Property ID: 520238223（測定ID: G-HQG2DVFTZG）
+- school-navi GA4 Property ID: 539527147（測定ID: G-CPMBND5884）
+
 ## 収益化提案の大原則
 
 - **オーナーは手を動かさない。自動化が前提。オーナーの役割は判断のみ。**

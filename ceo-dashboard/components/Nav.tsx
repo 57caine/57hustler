@@ -13,7 +13,8 @@ const links = [
   { href: '/systems',    label: '⚙️ 仕組み'      },
   { href: '/evaluation', label: '🏆 評価'        },
   { href: '/henkutsu',   label: '🌍 henkutsu'   },
-  { href: '/memo',       label: '📝 メモ'        },
+  { href: '/memo',          label: '📝 メモ'        },
+  { href: '/column-review', label: '📉 改善レビュー' },
 ];
 
 export default function Nav() {

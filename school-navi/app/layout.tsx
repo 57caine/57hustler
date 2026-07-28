@@ -4,6 +4,7 @@ import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import AffiliateClickTracker from '@/components/AffiliateClickTracker';
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           gtag('js', new Date());
           gtag('config', 'G-CPMBND5884', { page_path: window.location.pathname });
         `}</Script>
+        <AffiliateClickTracker />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
