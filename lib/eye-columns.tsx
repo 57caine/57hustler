@@ -1153,21 +1153,21 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
           <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">PCメガネ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">mujina ブルーライトカットPCメガネ</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina ブルーライトカットPCメガネを楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmujina0023%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
           <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">PCメガネ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">mujina ブルーライトカットPCメガネ（別モデル）</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina ブルーライトカットPCメガネ（別モデル）を楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmj-1092%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
           <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">PCメガネ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">mujina PCメガネ MJ-1092</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina PCメガネ MJ-1092 を楽天で見る →</div>
         </a>
       </div>
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
@@ -7622,22 +7622,22 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
           <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">mujina</span>
-          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">ブルーライトカットPCメガネ</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">mujina ブルーライトカットPCメガネ</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina ブルーライトカットPCメガネを楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmujina0023%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
           <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">mujina</span>
-          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">ブルーライトカットPCメガネ（別モデル）</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">mujina ブルーライトカットPCメガネ（別モデル）</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina ブルーライトカットPCメガネ（別モデル）を楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmj-1092%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
           <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">mujina</span>
-          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">PCメガネ MJ-1092</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">mujina PCメガネ MJ-1092</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina PCメガネ MJ-1092 を楽天で見る →</div>
         </a>
       </div>
 
