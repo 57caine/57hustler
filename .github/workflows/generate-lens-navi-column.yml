@@ -1,13 +1,13 @@
 name: Generate Lens-Navi Column
 
 on:
-  # schedule: # 一時停止中（品質確認のため）
-  #   # JST 9:00 (00:00 UTC) — 3本生成: contact / karakon / eye-goods
-  #   - cron: '0 0 * * *'
-  #   # JST 13:00 (04:00 UTC) — 2本生成: vr / megane
-  #   - cron: '0 4 * * *'
-  #   # JST 19:00 (10:00 UTC) — 2本生成: lasik / eye-care
-  #   - cron: '0 10 * * *'
+  schedule:
+    # JST 9:00 (00:00 UTC) — 3本生成: contact / karakon / eye-goods
+    - cron: '0 0 * * *'
+    # JST 13:00 (04:00 UTC) — 2本生成: vr / megane
+    - cron: '0 4 * * *'
+    # JST 19:00 (10:00 UTC) — 2本生成: lasik / eye-care
+    - cron: '0 10 * * *'
   workflow_dispatch:
     inputs:
       section:

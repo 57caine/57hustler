@@ -7164,10 +7164,10 @@ export const columnContent: Record<string, React.ReactNode> = {
   <p className="text-gray-700 mb-4">処方箋不要でコンタクトレンズを購入できる通販サイトは複数あります。ここでは、信頼性が高く人気のある主要サイトを比較します。各サイトの特徴を理解して、あなたに最適なサイトを選びましょう。</p>
 
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3"><a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">レンズゼロ</a></h3>
-  <p className="text-gray-700 mb-4">レンズゼロは業界最大級の品揃えを誇るコンタクトレンズ専門通販サイトです。1,500種類以上のコンタクトレンズを取り扱っており、ワンデーからマンスリー、カラーレンズまで幅広い選択肢が揃っています。装用指示書があれば購入でき、配送も迅速です。クーポンや割引キャンペーンが頻繁に実施されており、コスト面でも優れています。</p>
+  <p className="text-gray-700 mb-4">レンズゼロはコンタクトレンズ専門の通販サイトです。ワンデーからマンスリー、カラーレンズまで幅広い選択肢が揃っており、装用指示書があれば購入できます。クーポンや割引キャンペーンも実施されています。</p>
 
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3"><a href="https://px.a8.net/svt/ejp?a8mat=4B4176+6D7XGA+20YY+TSBE9" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">アットレンズ</a></h3>
-  <p className="text-gray-700 mb-4">アットレンズは老舗のコンタクトレンズ通販サイトで、安心感と信頼性で定評があります。会員登録をすることで、度数情報を事前に保存でき、リピート購入時には手間が減少します。また、ポイント還元制度が充実しており、購入金額に応じてポイントが貯まります。カスタマーサポートも丁寧で、初心者にもおすすめです。</p>
+  <p className="text-gray-700 mb-4">アットレンズはコンタクトレンズ専門の通販サイトです。会員登録をすることで度数情報を事前に保存でき、リピート購入時の手間を減らせます。ポイント還元制度があり、購入金額に応じてポイントが貯まります。</p>
 
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3"><a href="https://px.a8.net/svt/ejp?a8mat=4B4176+61WOYI+2GRU+HY7W1" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">24Lens</a></h3>
   <p className="text-gray-700 mb-4">24Lensは24時間いつでも注文でき、翌日配送に対応しているのが大きな特徴です。急遽コンタクトレンズが必要になった場合に重宝します。取り扱いブランド数も豊富で、海外ブランドも購入できます。ただし、送料がやや高めなので、まとめ買いする際はレンズゼロやアットレンズと比較検討することをおすすめします。</p>
@@ -7284,20 +7284,20 @@ export const columnContent: Record<string, React.ReactNode> = {
 
   <h2 id="section1" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">レンズゼロとは</h2>
   
-  <p className="text-gray-700 mb-4">レンズゼロ（Lens Zero）は、香港に拠点を置く世界最大級のコンタクトレンズオンライン販売企業です。世界100以上の国で利用されており、日本からのアクセスも非常に多くなっています。</p>
+  <p className="text-gray-700 mb-4">レンズゼロ（Lens Zero）は、香港に拠点を置くコンタクトレンズのオンライン販売サイトです。日本語サポートにも対応しており、海外通販ながら日本からも利用しやすい環境が整っています。</p>
   
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レンズゼロの特徴</h3>
   
   <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
     <li>日本語対応のカスタマーサポートが充実している</li>
-    <li>取り扱い商品数が豊富（ブランド数500以上）</li>
+    <li>取り扱い商品数が豊富で、幅広いブランド・タイプを扱っている</li>
     <li>常時セールやクーポン企画を実施している</li>
     <li>初回購入時に割引コードが提供されることが多い</li>
-    <li>正規品のみを販売しており、偽造品の心配がない</li>
-    <li>返品・交換対応が充実している</li>
+    <li>正規品の取り扱いを謳っている（購入前に販売元を確認推奨）</li>
+    <li>返品・交換対応がある</li>
   </ul>
 
-  <p className="text-gray-700 mb-4">2026年時点で、レンズゼロは日本人の間でも信頼できる海外通販サイトとして認知されており、定期的に利用しているユーザーも増加しています。特に度数が強い、または珍しいカーブのレンズを探している方からの評判が高いです。</p>
+  <p className="text-gray-700 mb-4">特に度数が強い、または珍しいカーブのレンズを探している方にとっては、国内ショップでは見つかりにくい商品を取り扱っていることがある点が魅力のひとつです。初めて利用する際は必ず公式サイトで最新情報を確認してください。</p>
 
   <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-3">
     <div className="flex-1 min-w-0">
