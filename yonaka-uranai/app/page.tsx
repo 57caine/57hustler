@@ -6,6 +6,8 @@ import type { KyuseiResult } from '@/lib/kyusei';
 interface DiagnoseResponse {
   result: KyuseiResult;
   diagnosis: string;
+  error?: string;
+  detail?: string;
 }
 
 const STAR_COLORS: Record<number, string> = {
@@ -61,14 +63,17 @@ export default function Home() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ year: Number(year), month: Number(month), day: Number(day) }),
       });
-      if (!res.ok) throw new Error('診断に失敗しました');
       const json: DiagnoseResponse = await res.json();
+      if (!res.ok || json.error) {
+        setError(json.detail ? `${json.error}: ${json.detail}` : (json.error ?? '診断に失敗しました'));
+        return;
+      }
       setData(json);
       setTimeout(() => {
         document.getElementById('result')?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
     } catch {
-      setError('エラーが発生しました。もう一度お試しください。');
+      setError('通信エラーが発生しました。もう一度お試しください。');
     } finally {
       setLoading(false);
     }
@@ -87,11 +92,11 @@ export default function Home() {
       <div className="text-center mb-10">
         <div className="text-5xl mb-4">🌙</div>
         <h1 className="text-2xl font-bold text-amber-200 mb-2">
-          夜中のおじさんの<br className="sm:hidden" />九星気学 AI占い
+          夜中のおじさんの<br className="sm:hidden" />九星気学占い
         </h1>
         <p className="text-slate-400 text-sm leading-relaxed">
           生年月日を入力するだけ。<br />
-          あなたの<span className="text-amber-300">本命星</span>を算出して、AIが独自の視点で診断します。
+          あなたの<span className="text-amber-300">本命星</span>を算出して、独自の視点で診断します。
         </p>
       </div>
 
@@ -142,7 +147,7 @@ export default function Home() {
         </div>
 
         {error && (
-          <p className="text-red-400 text-xs text-center mb-3">{error}</p>
+          <p className="text-red-400 text-xs text-center mb-3 break-all">{error}</p>
         )}
 
         <button
@@ -178,7 +183,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* AI診断文 */}
+          {/* 診断文 */}
           <div className="bg-slate-900 border border-slate-700 rounded-2xl p-6 mb-6">
             <p className="text-xs text-amber-400 mb-4 text-center">🌙 夜中のおじさんからの診断</p>
             <div className="space-y-4 text-slate-200 text-sm leading-relaxed">
@@ -226,7 +231,7 @@ export default function Home() {
 
       {/* フッター */}
       <footer className="mt-12 text-center text-xs text-slate-600">
-        <p>九星気学に基づくAI診断です。占いは参考程度にどうぞ。</p>
+        <p>九星気学に基づく診断です。占いは参考程度にどうぞ。</p>
         <p className="mt-1">© 夜中のおじさん</p>
       </footer>
     </main>

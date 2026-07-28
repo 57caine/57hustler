@@ -2,18 +2,18 @@ import { NextRequest, NextResponse } from 'next/server';
 import Anthropic from '@anthropic-ai/sdk';
 import { calcKyusei } from '@/lib/kyusei';
 
-const client = new Anthropic();
-
 export async function POST(req: NextRequest) {
-  const { year, month, day } = await req.json() as { year: number; month: number; day: number };
+  try {
+    const body = await req.json() as { year?: number; month?: number; day?: number };
+    const { year, month, day } = body;
 
-  if (!year || !month || !day) {
-    return NextResponse.json({ error: '生年月日を入力してください' }, { status: 400 });
-  }
+    if (!year || !month || !day) {
+      return NextResponse.json({ error: '生年月日を入力してください' }, { status: 400 });
+    }
 
-  const result = calcKyusei(year, month, day);
+    const result = calcKyusei(year, month, day);
 
-  const prompt = `
+    const prompt = `
 以下の九星気学データをもとに、占い文を書いてください。
 
 【本命星】${result.starName}（${result.element}の気）
@@ -36,14 +36,23 @@ export async function POST(req: NextRequest) {
 - 段落の前に「■全体運」「■性格傾向」「■ワンポイント」の見出しをつける
 `;
 
-  const response = await client.messages.create({
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 600,
-    system: `あなたは「夜中のおじさん」です。知的好奇心旺盛な中年男性が、ふとした気づきをつぶやくスタイルで語りかけます。占い師ではなく、九星気学に詳しい「おじさん」として、親しみやすく、少し哲学的に語ってください。`,
-    messages: [{ role: 'user', content: prompt }],
-  });
+    const client = new Anthropic();
+    const response = await client.messages.create({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 600,
+      system: `あなたは「夜中のおじさん」です。知的好奇心旺盛な中年男性が、ふとした気づきをつぶやくスタイルで語りかけます。占い師ではなく、九星気学に詳しい「おじさん」として、親しみやすく、少し哲学的に語ってください。`,
+      messages: [{ role: 'user', content: prompt }],
+    });
 
-  const diagnosis = (response.content[0] as { type: string; text: string }).text.trim();
+    const diagnosis = (response.content[0] as { type: string; text: string }).text.trim();
 
-  return NextResponse.json({ result, diagnosis });
+    return NextResponse.json({ result, diagnosis });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    console.error('[/api/diagnose] error:', message);
+    return NextResponse.json(
+      { error: '診断に失敗しました', detail: message },
+      { status: 500 }
+    );
+  }
 }
