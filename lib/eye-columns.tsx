@@ -2456,7 +2456,19 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">
         コントローラーはTouch Plus（Quest 3付属）を使用。Quest 2よりも軽量化され、指輪状のリングが廃止されてすっきりしたデザインです。ハンドトラッキングの精度も向上しており、一部ゲームはコントローラーなしで手の動作だけでプレイ可能です。
       </p>
-      <AffiliateBtns rakuten="Meta Quest 3" />
+      <div className="my-6 p-4 bg-violet-50 border border-violet-200 rounded-xl">
+        <p className="text-sm font-bold text-violet-900 mb-3">🛒 Meta Quest 3を楽天市場で購入する</p>
+        <div className="space-y-2">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224114424%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Meta Quest 3（128GB・公式ストア）を楽天で見る →
+          </a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224147192%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Meta Quest 3（512GB・別モデル・公式）を楽天で見る →
+          </a>
+        </div>
+      </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">映画・動画視聴の体験</h2>
       <p className="text-gray-700 mb-4">
@@ -2487,6 +2499,24 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
             </ul>
           </div>
         ))}
+      </div>
+
+      <div className="my-6 p-4 bg-violet-50 border border-violet-200 rounded-xl">
+        <p className="text-sm font-bold text-violet-900 mb-3">🛒 Meta Quest 3・関連アクセサリを購入する</p>
+        <div className="space-y-2">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224114424%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Meta Quest 3（128GB・公式ストア）を楽天で見る →
+          </a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224147192%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Meta Quest 3（512GB・別モデル・公式）を楽天で見る →
+          </a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622edfb.fb2e30e0.5622edfc.afa105c5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fvr-electronicsten%2Fbobovr-s3pro%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-gray-700 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            BoboVR S3 Pro ヘッドストラップ（長時間装用アクセサリ）を楽天で見る →
+          </a>
+        </div>
       </div>
     </article>
   ),
