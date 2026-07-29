@@ -997,15 +997,19 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <div className="my-6 p-4 bg-indigo-50 border border-indigo-200 rounded-xl">
         <p className="text-sm font-bold text-indigo-900 mb-1">👓 顔型別のフレーム例（楽天市場）</p>
         <p className="text-xs text-gray-600 mb-3">顔型に合ったスタイルをイメージしながらフレームを選んでみましょう。</p>
-        <div className="space-y-2">
+        <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
             Wavecontact メガネフレーム MGN_BASIC（スクエア・丸顔向き）を楽天で見る →
           </a>
+        </div>
+        <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
             merry39 メガネフレーム No.2854（ウェリントン・卵型・面長向き）を楽天で見る →
           </a>
+        </div>
+        <div>
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4ee.c25ab11d.5622e4ef.2987dd69/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Florelife%2Fu1908c-059%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
             Lorelife メガネフレーム U1908C（細め・ベース型向き）を楽天で見る →
@@ -1103,16 +1107,20 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-3">おすすめ眼鏡フレームを楽天市場でチェック</p>
         <p className="text-xs text-gray-500 mb-3">オンラインで手軽に購入できる人気フレームをご紹介します。</p>
-        <div className="space-y-2">
+        <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
             Hodopus メガネフレームを楽天で見る →
           </a>
+        </div>
+        <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e16c.d190f4a9.5622e16d.a64e1d5d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmegane-style%2Fcf5043%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
             メガネスタイル メガネフレーム CF5043 を楽天で見る →
           </a>
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4ee.c25ab11d.5622e4ef.2987dd69/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Florelife%2Ff2006c-106%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+        </div>
+        <div>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4ee.c25ab11d.5622e4ef.2987dd69/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Florelife%2Ff2006c-106%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwc2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
             Lorelife メガネフレーム F2006C（おしゃれフレーム）を楽天で見る →
           </a>
@@ -1268,15 +1276,19 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <div className="my-6 p-4 bg-indigo-50 border border-indigo-200 rounded-xl">
         <p className="text-sm font-bold text-indigo-900 mb-1">👓 楽天市場で人気の眼鏡フレームをチェック</p>
         <p className="text-xs text-gray-600 mb-3">実店舗より安く、自宅でじっくり選べるオンライン購入に人気の商品です。</p>
-        <div className="space-y-2">
+        <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4c6.0ff9348e.5622e4c7.74cd653f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fre-colle%2Fc111055-pc%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
             Re-COLLE PCメガネ C111055（ブルーライトカット対応）を楽天で見る →
           </a>
+        </div>
+        <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4ee.c25ab11d.5622e4ef.2987dd69/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Florelife%2Ff2006c-106%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
             Lorelife メガネフレーム F2006C（おしゃれ・軽量）を楽天で見る →
           </a>
+        </div>
+        <div>
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
             merry39 メガネフレーム No.2854（楽天人気）を楽天で見る →
@@ -1345,15 +1357,19 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-3">楽天市場で人気のオンライン眼鏡フレームを見る</p>
         <p className="text-xs text-gray-500 mb-3">返品対応・レビュー多数の実績あるショップからお選びください。</p>
-        <div className="space-y-2">
+        <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
             Wavecontact メガネフレーム MGN_BASIC を楽天で見る →
           </a>
+        </div>
+        <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e16c.d190f4a9.5622e16d.a64e1d5d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmegane-style%2Fcf5043%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
             メガネスタイル メガネフレーム CF5043 を楽天で見る →
           </a>
+        </div>
+        <div>
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
             Hodopus メガネフレームを楽天で見る →

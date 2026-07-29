@@ -35,7 +35,7 @@
 #article-body a[href*="search.rakuten.co.jp"],
 .affiliate-btn {
   display: inline-block;
-  background-color: #bf0000;
+  background-color: #bf0000 !important;
   color: #ffffff !important;
   padding: 10px 22px;
   border-radius: 8px;
