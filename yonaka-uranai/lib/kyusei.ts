@@ -54,11 +54,17 @@ function isBeforeRisshun(month: number, day: number): boolean {
   return month === 1 || (month === 2 && day <= 3);
 }
 
+// 各桁を1桁になるまで足し合わせた数（デジタルルート）。9の倍数は9とする。
+function digitalRoot(n: number): number {
+  const r = Math.abs(n) % 9;
+  return r === 0 ? 9 : r;
+}
+
 export function calcHonmeisei(year: number, month: number, day: number): StarNumber {
   const y = isBeforeRisshun(month, day) ? year - 1 : year;
-  // 2024年 = 一白水星(1)。年が1増えるごとに星番号が1減る（9→8→…→1→9）
-  const n = ((1 - (y - 2024)) % 9 + 9) % 9;
-  return (n === 0 ? 9 : n) as StarNumber;
+  const dr = digitalRoot(y);
+  const raw = 11 - dr; // 2〜10
+  return (raw === 10 ? 1 : raw) as StarNumber;
 }
 
 export function calcEto(year: number, month: number, day: number): {
