@@ -2116,9 +2116,25 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
 
   'vr-game-osusume-2026': (
     <article className="prose prose-sm max-w-none">
-      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+      <p className="lead text-gray-600 text-base leading-relaxed mb-5">
         Meta Quest 3でプレイできるVRゲーム・アプリのおすすめを2026年最新情報でランキング。ジャンル別・初心者向けに厳選しました。
       </p>
+
+      <div className="mb-8 p-4 bg-violet-50 border border-violet-200 rounded-xl">
+        <p className="text-xs text-violet-800 font-medium mb-3">
+          🥽 これらのVRゲームはMeta Quest 3本体があればPCなしでプレイできます。
+        </p>
+        <div className="space-y-2">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224114424%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Meta Quest 3（128GB・公式ストア）を楽天で見る →
+          </a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224147192%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Meta Quest 3（512GB・別モデル・公式）を楽天で見る →
+          </a>
+        </div>
+      </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VRゲームジャンル別おすすめ</h2>
       <div className="grid sm:grid-cols-2 gap-4 mb-6">
@@ -2182,7 +2198,27 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           </div>
         ))}
       </div>
-      <AffiliateBtns rakuten="Meta Quest 3" />
+
+      <div className="bg-violet-50 border border-violet-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-violet-800 mb-2">🎮 初心者が最初に買うべき1本は？</p>
+        <p className="text-sm text-gray-700">
+          VR初心者には<strong>Beat Saber</strong>（¥2,990）から始めることをおすすめします。操作がシンプルで酔いにくく、短時間でも達成感を得やすいのが特徴です。VRに慣れてきたら、RPG大作の<strong>Asgard&#39;s Wrath 2</strong>や映画感覚の<strong>Resident Evil 4 VR</strong>へ進むのが理想的な順番です。
+        </p>
+      </div>
+
+      <div className="my-6 p-4 bg-violet-50 border border-violet-200 rounded-xl">
+        <p className="text-sm font-bold text-violet-900 mb-3">🛒 Meta Quest 3を楽天市場で購入する</p>
+        <div className="space-y-2">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224114424%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Meta Quest 3（128GB・公式ストア）を楽天で見る →
+          </a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224147192%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Meta Quest 3（512GB・別モデル・公式）を楽天で見る →
+          </a>
+        </div>
+      </div>
     </article>
   ),
 
