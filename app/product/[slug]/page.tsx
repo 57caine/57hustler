@@ -61,19 +61,6 @@ export default async function ProductPage({ params }: Props) {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'Product',
-        name: product.name,
-        description: product.description,
-        brand: { '@type': 'Brand', name: product.brandName },
-        offers: product.lowestPrice != null ? {
-          '@type': 'AggregateOffer',
-          lowPrice: product.lowestPrice,
-          priceCurrency: 'JPY',
-          offerCount: product.prices.length,
-          availability: 'https://schema.org/InStock',
-        } : undefined,
-      },
-      {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'ホーム', item: BASE },
