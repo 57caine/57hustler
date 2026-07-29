@@ -1458,7 +1458,16 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           2023年発売。カラーパススルーで現実とVRをシームレスに切り替えられるミックスリアリティ対応。
           度付きインサートレンズはZendure等が対応品を販売。眼鏡スペーサーも付属。
         </p>
-        <AffiliateBtns rakuten="Meta Quest 3" />
+        <div className="space-y-2">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224114424%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-violet-700 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Meta Quest 3（128GB・公式ストア）を楽天で見る →
+          </a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224147192%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-violet-700 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Meta Quest 3（512GB）を楽天で見る →
+          </a>
+        </div>
       </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Ray-Ban Meta Smart Glasses</h2>
@@ -1472,7 +1481,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           Ray-BanのサングラスにカメラとスピーカーとAIを内蔵。度付きレンズへの交換が可能なため、視力が悪い方も使いやすい。
           Meta AIとの連携でリアルタイム翻訳・情報取得も可能。
         </p>
-        <AffiliateBtns rakuten="Ray-Ban Meta スマートグラス" />
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FRay-Ban%20Meta%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9%2F" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-violet-700 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Ray-Ban Meta スマートグラスを楽天市場で探す →
+        </a>
       </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Apple Vision Pro</h2>
@@ -1536,7 +1548,21 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         </table>
       </div>
       <p className="text-sm text-gray-500 mb-6">「VR体験 [都市名]」で検索すると近くの施設を見つけられます。大型モールやゲームセンターに設置されていることが多いです。</p>
-      <AffiliateBtns rakuten="Meta Quest 3" />
+
+      <div className="my-6 p-4 bg-violet-50 border border-violet-200 rounded-xl">
+        <p className="text-sm font-bold text-violet-900 mb-1">🥽 まずはMeta Quest 3を試してみる</p>
+        <p className="text-xs text-gray-600 mb-3">入門機として最もコスパが高く、ゲーム・映画・仕事の幅広い用途に対応します。</p>
+        <div className="space-y-2">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224114424%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-violet-700 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Meta Quest 3（128GB・公式ストア）を楽天で見る →
+          </a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224147192%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-violet-700 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Meta Quest 3（512GB・大容量モデル）を楽天で見る →
+          </a>
+        </div>
+      </div>
     </article>
   ),
 
