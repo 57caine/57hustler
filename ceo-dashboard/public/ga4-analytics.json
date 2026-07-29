@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-29T15:47:44.347Z",
+  "generatedAt": "2026-07-29T22:05:16.507Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-07-29T15:47:43.218Z",
+      "fetchedAt": "2026-07-29T22:05:15.123Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 274,
+      "totalSessions": 276,
       "totalPageviews": 665,
       "topPages": [
         {
@@ -77,6 +77,13 @@
           "bounceRate": 0.25
         },
         {
+          "path": "/column/megane-online-shopping",
+          "sessions": 7,
+          "pageviews": 7,
+          "avgSessionDuration": 42.00213128571429,
+          "bounceRate": 0.7142857142857143
+        },
+        {
           "path": "/megane",
           "sessions": 7,
           "pageviews": 13,
@@ -98,10 +105,10 @@
           "bounceRate": 0
         },
         {
-          "path": "/column/megane-online-shopping",
+          "path": "/column/smart-glass-2026",
           "sessions": 6,
-          "pageviews": 7,
-          "avgSessionDuration": 49.0024865,
+          "pageviews": 4,
+          "avgSessionDuration": 62.63587416666667,
           "bounceRate": 0.6666666666666666
         },
         {
@@ -124,13 +131,6 @@
           "pageviews": 46,
           "avgSessionDuration": 883.2516966,
           "bounceRate": 0
-        },
-        {
-          "path": "/column/smart-glass-2026",
-          "sessions": 5,
-          "pageviews": 4,
-          "avgSessionDuration": 75.163049,
-          "bounceRate": 0.6
         },
         {
           "path": "/column/vr-shiryoku-warui",
@@ -258,6 +258,10 @@
         {
           "date": "2026-07-29",
           "sessions": 14
+        },
+        {
+          "date": "2026-07-30",
+          "sessions": 1
         }
       ],
       "affiliateClicksByPage": {
@@ -290,7 +294,7 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-07-29T15:47:44.347Z",
+      "fetchedAt": "2026-07-29T22:05:16.507Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"

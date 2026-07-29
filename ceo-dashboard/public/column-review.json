@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-29T15:47:44.361Z",
+  "generatedAt": "2026-07-29T22:05:16.520Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -42,16 +42,16 @@
       "slug": "megane-online-shopping",
       "title": "オンラインで眼鏡を安く買う方法【JINS・Zoff・楽天・Amazon完全ガイド】",
       "metrics": {
-        "sessions": 6,
-        "bounceRate": 0.6666666666666666,
-        "avgSessionDuration": 49.0024865,
+        "sessions": 7,
+        "bounceRate": 0.7142857142857143,
+        "avgSessionDuration": 42.00213128571429,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション6件・affiliate_clickゼロ"
+        "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
