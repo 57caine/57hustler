@@ -1,8 +1,8 @@
-name: GA4アナリティクス週次取得
+name: GA4アナリティクス日次取得
 
 on:
   schedule:
-    - cron: '0 0 * * 1'  # 毎週月曜 9:00 JST (UTC 0:00)
+    - cron: '0 21 * * *'  # 毎日 6:00 JST (UTC 21:00 前日)
   workflow_dispatch:
 
 jobs:
