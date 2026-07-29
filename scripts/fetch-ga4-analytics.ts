@@ -28,6 +28,7 @@ interface FlaggedColumn {
   analysis: ColumnAnalysis;
   causes: string[];
   suggestions: string[];
+  status: '未対応' | '対応済み' | '様子見';
 }
 
 interface ContentLogEntry {
@@ -109,6 +110,7 @@ export function detectFlaggedColumns(
   pages: PageMetrics[],
   contentLog: { columns: ContentLogEntry[] },
   affiliateClicksByPage: Record<string, number> = {},
+  existingStatuses: Record<string, string> = {},
 ): FlaggedColumn[] {
   const columnPages = pages.filter(p => p.path.startsWith('/column/'));
   const flagged: FlaggedColumn[] = [];
@@ -147,6 +149,17 @@ export function detectFlaggedColumns(
       suggestions.push('GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する');
     }
 
+    // ステータス判定:
+    //   対応済み = 既存JSONで手動設定済みのもの（再生成でも引き継ぐ）
+    //   様子見   = no_affiliate_clicksフラグのみ かつ AFFリンク実装済み（データ蓄積待ち）
+    //   未対応   = それ以外
+    let status: '未対応' | '対応済み' | '様子見' = '未対応';
+    if (existingStatuses[slug] === '対応済み') {
+      status = '対応済み';
+    } else if (flags.length === 1 && flags[0] === 'no_affiliate_clicks' && analysis.hasAffiliateLinks) {
+      status = '様子見';
+    }
+
     flagged.push({
       path: page.path,
       slug,
@@ -162,6 +175,7 @@ export function detectFlaggedColumns(
       analysis,
       causes,
       suggestions,
+      status,
     });
   }
 
@@ -319,21 +333,33 @@ async function main() {
   const contentLogPath = path.join(process.cwd(), 'data', 'lens-navi-content-log.json');
   const contentLog = JSON.parse(fs.readFileSync(contentLogPath, 'utf-8'));
   const lensNaviSite = results.find(s => s.siteName === 'lens-navi');
-  const flaggedArticles = lensNaviSite
-    ? detectFlaggedColumns(lensNaviSite.topPages, contentLog, lensNaviSite.affiliateClicksByPage)
-    : [];
-
-  const columnReview = {
-    generatedAt: new Date().toISOString(),
-    dataDateRange: lensNaviSite?.dateRange ?? null,
-    flaggedCount: flaggedArticles.length,
-    flaggedArticles,
-  };
 
   const reviewPaths = [
     path.join(process.cwd(), 'data', 'column-review.json'),
     path.join(process.cwd(), 'ceo-dashboard', 'public', 'column-review.json'),
   ];
+
+  // 対応済みステータスを既存JSONから引き継ぐ（手動マークが再生成で消えないよう）
+  const existingStatuses: Record<string, string> = {};
+  if (fs.existsSync(reviewPaths[0])) {
+    try {
+      const existing = JSON.parse(fs.readFileSync(reviewPaths[0], 'utf-8'));
+      for (const article of (existing.flaggedArticles ?? [])) {
+        if (article.status === '対応済み') existingStatuses[article.slug] = '対応済み';
+      }
+    } catch { /* 既存ファイルが壊れていても続行 */ }
+  }
+
+  const flaggedArticles = lensNaviSite
+    ? detectFlaggedColumns(lensNaviSite.topPages, contentLog, lensNaviSite.affiliateClicksByPage, existingStatuses)
+    : [];
+
+  const columnReview = {
+    generatedAt: new Date().toISOString(),
+    dataDateRange: lensNaviSite?.dateRange ?? null,
+    flaggedCount: flaggedArticles.filter(a => a.status === '未対応').length,
+    flaggedArticles,
+  };
   for (const rp of reviewPaths) {
     fs.mkdirSync(path.dirname(rp), { recursive: true });
     fs.writeFileSync(rp, JSON.stringify(columnReview, null, 2), 'utf-8');
