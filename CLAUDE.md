@@ -14,6 +14,15 @@
 
 # プロジェクトルール（抜け漏れ防止）
 
+## 構造化データ（JSON-LD）ルール（2026-07-29対応）
+
+- **schema.org/Product の JSON-LD は出力禁止**（`app/product/[slug]/page.tsx` から削除済み）
+- 理由：当サイトはアフィリエイト紹介のみで直販ではなく、`offers`・`review`・`aggregateRating` を継続的に正確に保守できないため、Google Search Consoleで「商品スニペット」エラーが発生した
+- 商品カード（画像・商品名・価格表・リンク）はそのまま残してよい。構造化データのみ除去する
+- 今後、商品カードを新規実装・改修する際も `'@type': 'Product'` は追加しない
+- `BreadcrumbList`・`FAQPage`・`Article`・`Organization` の JSON-LD は引き続き使用可
+- GSCの「商品スニペット」問題は次回Googlebotクロール時（通常数日〜数週間）に自動解消される見込み
+
 ## GA4 affiliate_clickイベント計測ルール（2026-07-28実装）
 
 - lens-navi.jp・school.lens-navi.jp の全アフィリエイトリンクに `rel="sponsored"` を必須属性として付与する
