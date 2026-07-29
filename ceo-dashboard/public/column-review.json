@@ -4,7 +4,7 @@
     "start": "28daysAgo",
     "end": "today"
   },
-  "flaggedCount": 5,
+  "flaggedCount": 4,
   "flaggedArticles": [
     {
       "path": "/column/meta-quest-3-review-2026",
@@ -159,7 +159,7 @@
       "suggestions": [
         "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
       ],
-      "status": "未対応"
+      "status": "対応済み"
     },
     {
       "path": "/column/smart-glass-2026",
