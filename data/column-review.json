@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T15:19:57.500Z",
+  "generatedAt": "2026-07-29T15:47:44.361Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -7,51 +7,20 @@
   "flaggedCount": 0,
   "flaggedArticles": [
     {
-      "path": "/column/meta-quest-3-review-2026",
-      "slug": "meta-quest-3-review-2026",
-      "title": "Meta Quest 3レビュー2026【スペック・できること・買うべき人を徹底解説】",
-      "metrics": {
-        "sessions": 15,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 63.32655606666667,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション15件・affiliate_clickゼロ（計測開始前）"
-      ],
-      "analysis": {
-        "h2Count": 6,
-        "h3Count": 0,
-        "hasAffiliateLinks": false,
-        "ctaCount": 0,
-        "contentChars": 6020
-      },
-      "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
-      ],
-      "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
-      ],
-      "status": "対応済み"
-    },
-    {
       "path": "/column/lenszero-kaigai-tsuuhan-guide-2026",
       "slug": "lenszero-kaigai-tsuuhan-guide-2026",
       "title": "lenszero-kaigai-tsuuhan-guide-2026",
       "metrics": {
         "sessions": 10,
-        "bounceRate": 0.4,
-        "avgSessionDuration": 228.5103386,
+        "bounceRate": 0.2,
+        "avgSessionDuration": 216.799127,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション10件・affiliate_clickゼロ（計測開始前）"
+        "セッション10件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 9,
@@ -69,229 +38,35 @@
       "status": "様子見"
     },
     {
-      "path": "/column/vr-game-osusume-2026",
-      "slug": "vr-game-osusume-2026",
-      "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
-      "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 33.966804625,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション8件・affiliate_clickゼロ（計測開始前）"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 0,
-        "hasAffiliateLinks": false,
-        "ctaCount": 0,
-        "contentChars": 4002
-      },
-      "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
-      ],
-      "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
-      ],
-      "status": "対応済み"
-    },
-    {
-      "path": "/column/lasik-hiyo-risk",
-      "slug": "lasik-hiyo-risk",
-      "title": "レーシックとは？費用・リスク・メリット・デメリット完全解説【2026年版】",
-      "metrics": {
-        "sessions": 6,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 264.8633928333333,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション6件・affiliate_clickゼロ（計測開始前）"
-      ],
-      "analysis": {
-        "h2Count": 10,
-        "h3Count": 0,
-        "hasAffiliateLinks": false,
-        "ctaCount": 0,
-        "contentChars": 12277
-      },
-      "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
-      ],
-      "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
-      ],
-      "status": "対応済み"
-    },
-    {
-      "path": "/column/megane-kaomikata",
-      "slug": "megane-kaomikata",
-      "title": "眼鏡の選び方【顔型別ガイド2026】丸顔・面長・卵型・ベース型別おすすめフレーム",
-      "metrics": {
-        "sessions": 5,
-        "bounceRate": 0,
-        "avgSessionDuration": 338.836125,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション5件・affiliate_clickゼロ（計測開始前）"
-      ],
-      "analysis": {
-        "h2Count": 6,
-        "h3Count": 0,
-        "hasAffiliateLinks": false,
-        "ctaCount": 0,
-        "contentChars": 8271
-      },
-      "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
-      ],
-      "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
-      ],
-      "status": "対応済み"
-    },
-    {
-      "path": "/column/smart-glass-2026",
-      "slug": "smart-glass-2026",
-      "title": "スマートグラス・VRゴーグル おすすめ2026【Meta Quest 3・Ray-Ban Meta・Vision Pro比較】",
-      "metrics": {
-        "sessions": 4,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 2.3875175,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "avg_session_under_10s"
-      ],
-      "flagLabels": [
-        "平均滞在2.4秒（閾値10秒）"
-      ],
-      "analysis": {
-        "h2Count": 8,
-        "h3Count": 0,
-        "hasAffiliateLinks": false,
-        "ctaCount": 0,
-        "contentChars": 10389
-      },
-      "causes": [
-        "ページが正常にレンダリングされていない可能性（JSXエラー・白画面等）",
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
-      ],
-      "suggestions": [
-        "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する",
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
-      ],
-      "status": "対応済み"
-    },
-    {
       "path": "/column/megane-online-shopping",
       "slug": "megane-online-shopping",
       "title": "オンラインで眼鏡を安く買う方法【JINS・Zoff・楽天・Amazon完全ガイド】",
       "metrics": {
-        "sessions": 3,
+        "sessions": 6,
         "bounceRate": 0.6666666666666666,
-        "avgSessionDuration": 2.138493,
+        "avgSessionDuration": 49.0024865,
         "affiliateClicks": 0
       },
       "flags": [
-        "avg_session_under_10s"
+        "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "平均滞在2.1秒（閾値10秒）"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 0,
-        "hasAffiliateLinks": false,
-        "ctaCount": 0,
-        "contentChars": 3386
-      },
-      "causes": [
-        "ページが正常にレンダリングされていない可能性（JSXエラー・白画面等）",
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
-      ],
-      "suggestions": [
-        "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する",
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
-      ],
-      "status": "対応済み"
-    },
-    {
-      "path": "/column/blue-light-megane-kouka",
-      "slug": "blue-light-megane-kouka",
-      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
-      "metrics": {
-        "sessions": 2,
-        "bounceRate": 0,
-        "avgSessionDuration": 3.8853605,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "avg_session_under_10s"
-      ],
-      "flagLabels": [
-        "平均滞在3.9秒（閾値10秒）"
+        "セッション6件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
         "h3Count": 0,
         "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 5972
+        "ctaCount": 6,
+        "contentChars": 10250
       },
       "causes": [
-        "ページが正常にレンダリングされていない可能性（JSXエラー・白画面等）"
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
-        "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する"
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
-      "status": "様子見"
-    },
-    {
-      "path": "/column/eyestrain-stretching-massage-guide",
-      "slug": "eyestrain-stretching-massage-guide",
-      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
-      "metrics": {
-        "sessions": 2,
-        "bounceRate": 1,
-        "avgSessionDuration": 3.774578,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "bounce_rate_over_90pct",
-        "avg_session_under_10s"
-      ],
-      "flagLabels": [
-        "直帰率100%（閾値90%）",
-        "平均滞在3.8秒（閾値10秒）"
-      ],
-      "analysis": {
-        "h2Count": 9,
-        "h3Count": 19,
-        "hasAffiliateLinks": true,
-        "ctaCount": 7,
-        "contentChars": 21187
-      },
-      "causes": [
-        "ページが正常にレンダリングされていない可能性（JSXエラー・白画面等）",
-        "検索意図とコンテンツのミスマッチ（期待した情報が冒頭にない）"
-      ],
-      "suggestions": [
-        "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する",
-        "冒頭3〜4行で結論・要点を先出しし、読者の疑問に即答する構成にする"
-      ],
-      "status": "様子見"
+      "status": "対応済み"
     }
   ]
 }
