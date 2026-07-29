@@ -1646,6 +1646,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
+      <div className="my-6 p-4 bg-sky-50 border border-sky-200 rounded-xl">
+        <p className="text-sm font-bold text-sky-900 mb-1">📌 レーシックを検討中の間も、コンタクトレンズで快適な視生活を</p>
+        <p className="text-xs text-gray-600 mb-3">クリニック選び・術前検査の期間も、見え方を妥協しないために。</p>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%201%E6%97%A5%E4%BD%BF%E3%81%84%E6%8D%A8%E3%81%A6%2F" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-sky-600 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          1日使い捨てコンタクトレンズを楽天市場で探す →
+        </a>
+      </div>
+
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">メリット・デメリット</h2>
       <div className="grid sm:grid-cols-2 gap-4 mb-6">
         <div className="bg-green-50 border border-green-200 rounded-xl p-4">
@@ -1738,7 +1747,17 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-3">術後の目薬・アイケアグッズ</p>
-        <AffiliateBtns rakuten="防腐剤フリー 目薬" />
+        <p className="text-xs text-gray-500 mb-3">術後のドライアイ対策・紫外線ケアにおすすめのアイテムを楽天市場でチェックできます。</p>
+        <div className="space-y-2">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E9%98%B2%E8%85%90%E5%89%A4%E3%83%95%E3%83%AA%E3%83%BC%20%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-sky-600 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            防腐剤フリー目薬（術後ドライアイケア）を楽天市場で探す →
+          </a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B5%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%B9%20UV%E3%82%AB%E3%83%83%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-sky-600 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            UVカットサングラス（術後3〜6ヶ月の日差し対策）を楽天市場で探す →
+          </a>
+        </div>
       </div>
     </article>
   ),
