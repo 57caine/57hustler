@@ -4,7 +4,7 @@
     "start": "28daysAgo",
     "end": "today"
   },
-  "flaggedCount": 3,
+  "flaggedCount": 0,
   "flaggedArticles": [
     {
       "path": "/column/meta-quest-3-review-2026",
@@ -225,7 +225,7 @@
         "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する",
         "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
       ],
-      "status": "未対応"
+      "status": "対応済み"
     },
     {
       "path": "/column/blue-light-megane-kouka",
@@ -256,7 +256,7 @@
       "suggestions": [
         "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する"
       ],
-      "status": "未対応"
+      "status": "様子見"
     },
     {
       "path": "/column/eyestrain-stretching-massage-guide",
@@ -291,7 +291,7 @@
         "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する",
         "冒頭3〜4行で結論・要点を先出しし、読者の疑問に即答する構成にする"
       ],
-      "status": "未対応"
+      "status": "様子見"
     }
   ]
 }

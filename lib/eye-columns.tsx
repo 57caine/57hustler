@@ -1265,13 +1265,44 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         </table>
       </div>
 
+      <div className="my-6 p-4 bg-indigo-50 border border-indigo-200 rounded-xl">
+        <p className="text-sm font-bold text-indigo-900 mb-1">👓 楽天市場で人気の眼鏡フレームをチェック</p>
+        <p className="text-xs text-gray-600 mb-3">実店舗より安く、自宅でじっくり選べるオンライン購入に人気の商品です。</p>
+        <div className="space-y-2">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4c6.0ff9348e.5622e4c7.74cd653f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fre-colle%2Fc111055-pc%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Re-COLLE PCメガネ C111055（ブルーライトカット対応）を楽天で見る →
+          </a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4ee.c25ab11d.5622e4ef.2987dd69/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Florelife%2Ff2006c-106%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Lorelife メガネフレーム F2006C（おしゃれ・軽量）を楽天で見る →
+          </a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            merry39 メガネフレーム No.2854（楽天人気）を楽天で見る →
+          </a>
+        </div>
+      </div>
+
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">PDの入力方法</h2>
       <p className="text-gray-700 mb-4">
         PD（瞳孔間距離）はオンライン購入で最も重要な数値です。眼科処方箋に記載されているか、眼鏡店で無料測定できます。通常60〜70mmが成人の平均値です。
       </p>
+      <div className="space-y-3 mb-6">
+        {[
+          { step: '方法①（最確実）', detail: '眼科で処方箋を発行してもらう際にPD記載をお願いする。処方箋にR（右目）とL（左目）が別々に書かれている場合もある。' },
+          { step: '方法②（無料・手軽）', detail: 'JINS・Zoff・眼鏡市場などの眼鏡店で無料測定。レンズメーターで2〜3分で計測してもらえる。購入義務なし。' },
+          { step: '方法③（概算・自己計測）', detail: '定規を目の前に当て、鏡を見ながら右目の瞳孔中心から左目の瞳孔中心までの距離を測る。誤差±2mmが目安。精度が低いため、重要度が高い場合は方法①②を推奨。' },
+        ].map(s => (
+          <div key={s.step} className="bg-white border border-gray-200 rounded-xl p-4 flex gap-3">
+            <span className="shrink-0 text-xs font-bold bg-indigo-100 text-indigo-700 px-2 py-1 rounded h-fit">{s.step}</span>
+            <p className="text-sm text-gray-700 leading-relaxed">{s.detail}</p>
+          </div>
+        ))}
+      </div>
       <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-4 mb-6">
         <p className="text-sm text-indigo-800">
-          <strong>PDを自分で測る方法：</strong>定規を目の前に当て、鏡を見ながら右目の瞳孔の中心から左目の瞳孔の中心までの距離を測ります。誤差±2mm以内が理想的です。
+          <strong>💡 片目PDについて：</strong>左右で瞳孔位置がずれている方はR/L別々の値（例：R32mm / L33mm）を使います。オンラインショップ入力欄に「片眼PD」欄がある場合はこちらを使用してください。
         </p>
       </div>
 
@@ -1279,10 +1310,55 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">
         JINSやZoffのアプリでは、スマートフォンのカメラを使ったバーチャル試着が可能です。顔の輪郭に合わせてフレームがリアルタイムで表示されるため、大まかなイメージを確認できます。
       </p>
+      <div className="space-y-3 mb-6">
+        {[
+          { tip: '顔の正面をまっすぐ向く', detail: '横を向いたり角度がつくと輪郭が正しく認識されない。明るい場所で正面の顔を映す。' },
+          { tip: 'フレームサイズの数字を確認する', detail: 'フレーム横幅（レンズ幅+ブリッジ+テンプル）が表示されている場合は、現在の眼鏡と比較して±3mm以内を目安にする。' },
+          { tip: '複数フレームをスクショして比較', detail: 'バーチャル試着のスクリーンショットを撮って並べると、印象の違いが客観的に見える。家族や友人に意見を聞くのも効果的。' },
+          { tip: '楽天市場でも試着なしで購入できる', detail: '楽天の眼鏡ショップは返品・交換対応が充実しているショップも多い。商品ページの「返品ポリシー」を必ず確認してから注文する。' },
+        ].map(t => (
+          <div key={t.tip} className="bg-white border border-gray-200 rounded-xl p-4">
+            <p className="font-bold text-gray-800 text-sm mb-1">✓ {t.tip}</p>
+            <p className="text-xs text-gray-600 leading-relaxed">{t.detail}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">失敗しないための5つのチェックポイント</h2>
+      <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-5 mb-6">
+        <ul className="space-y-2 text-sm text-gray-700">
+          {[
+            'PDを正確に測定・記録してから注文する（眼鏡店で無料測定可）',
+            'フレームのサイズ表記（lens width / bridge / temple）を現在の眼鏡と比較する',
+            '度数（S・C・AX・PD）を処方箋から正確にコピーする。入力ミスが最大の失敗原因',
+            '返品・交換ポリシーを購入前に必ず確認する（レンズ加工後は不可なショップが多い）',
+            'カラーは商品ページの複数写真を見る。モニターの色は実物と異なる場合がある',
+          ].map((item, i) => (
+            <li key={i} className="flex items-start gap-2">
+              <span className="shrink-0 font-bold text-indigo-600 text-xs mt-0.5 w-5 text-center">{i + 1}</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
-        <p className="font-bold text-gray-800 mb-3">オンラインで眼鏡を探す</p>
-        <AffiliateBtns rakuten="眼鏡フレーム おしゃれ" />
+        <p className="font-bold text-gray-800 mb-3">楽天市場で人気のオンライン眼鏡フレームを見る</p>
+        <p className="text-xs text-gray-500 mb-3">返品対応・レビュー多数の実績あるショップからお選びください。</p>
+        <div className="space-y-2">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Wavecontact メガネフレーム MGN_BASIC を楽天で見る →
+          </a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e16c.d190f4a9.5622e16d.a64e1d5d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmegane-style%2Fcf5043%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            メガネスタイル メガネフレーム CF5043 を楽天で見る →
+          </a>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Hodopus メガネフレームを楽天で見る →
+          </a>
+        </div>
       </div>
     </article>
   ),
