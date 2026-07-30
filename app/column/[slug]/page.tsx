@@ -41,16 +41,10 @@ const categoryColors: Record<string, string> = {
   'BC選び方': 'bg-sky-100 text-sky-700',
   '眼鏡・サングラス': 'bg-indigo-100 text-indigo-700',
   'VR・スマートグラス': 'bg-violet-100 text-violet-700',
-  'レーシック・視力矯正': 'bg-emerald-100 text-emerald-700',
+  'レーシック': 'bg-emerald-100 text-emerald-700',
   'アイケア・目薬': 'bg-cyan-100 text-cyan-700',
-  '目の雑貨・グッズ': 'bg-orange-100 text-orange-700',
+  '目のグッズ': 'bg-orange-100 text-orange-700',
   'カラコン': 'bg-pink-100 text-pink-700',
-  megane: 'bg-indigo-100 text-indigo-700',
-  vr: 'bg-violet-100 text-violet-700',
-  lasik: 'bg-emerald-100 text-emerald-700',
-  'eye-care': 'bg-cyan-100 text-cyan-700',
-  'eye-goods': 'bg-orange-100 text-orange-700',
-  karakon: 'bg-pink-100 text-pink-700',
 };
 
 export default async function ColumnPage({ params }: Props) {

@@ -14,11 +14,10 @@ const categoryColors: Record<string, string> = {
   'BC選び方': 'bg-sky-100 text-sky-700',
   '眼鏡・サングラス': 'bg-indigo-100 text-indigo-700',
   'VR・スマートグラス': 'bg-violet-100 text-violet-700',
-  'レーシック・視力矯正': 'bg-emerald-100 text-emerald-700',
+  'レーシック': 'bg-emerald-100 text-emerald-700',
   'アイケア・目薬': 'bg-cyan-100 text-cyan-700',
-  '目の雑貨・グッズ': 'bg-orange-100 text-orange-700',
+  '目のグッズ': 'bg-orange-100 text-orange-700',
   'カラコン': 'bg-pink-100 text-pink-700',
-  'karakon': 'bg-pink-100 text-pink-700',
 };
 
 const categoryThemes: Record<string, { startColor: string; endColor: string; icon: string }> = {
@@ -27,10 +26,10 @@ const categoryThemes: Record<string, { startColor: string; endColor: string; ico
   '商品比較': { startColor: '#4527a0', endColor: '#512da8', icon: '⚖️' },
   'カラコン': { startColor: '#ad1457', endColor: '#c2185b', icon: '✨' },
   'アイケア・目薬': { startColor: '#2e7d32', endColor: '#388e3c', icon: '🛡️' },
-  'レーシック・視力矯正': { startColor: '#00695c', endColor: '#00897b', icon: '👁️' },
+  'レーシック': { startColor: '#00695c', endColor: '#00897b', icon: '👁️' },
   'VR・スマートグラス': { startColor: '#4527a0', endColor: '#512da8', icon: '🥽' },
   '眼鏡・サングラス': { startColor: '#37474f', endColor: '#455a64', icon: '👓' },
-  '目の雑貨・グッズ': { startColor: '#e65100', endColor: '#f57c00', icon: '🛍️' },
+  '目のグッズ': { startColor: '#e65100', endColor: '#f57c00', icon: '🛍️' },
   'BC選び方': { startColor: '#1565c0', endColor: '#1976d2', icon: '🛒' },
 };
 

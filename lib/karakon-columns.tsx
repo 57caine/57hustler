@@ -140,7 +140,7 @@ export const karakonColumns: EyeColumnMeta[] = [
     title: "ハーフ系カラコン ブラウン・グレーのおすすめ2024｜選び方と人気商品を徹底比較",
     description: "ハーフ系カラコンでブラウン・グレーのおすすめ商品を比較。瞳の透明感を引き出すハーフ系カラコンの選び方、着色直径、含水率などの選定基準を解説します。",
     section: "karakon",
-    category: "karakon",
+    category: "カラコン",
     readingTime: 8,
     publishedAt: "2026-07-17",
     keywords: ["ハーフ系カラコン","ブラウンカラコン","グレーカラコン","おすすめ"],
