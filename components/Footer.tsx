@@ -12,7 +12,6 @@ const CATEGORIES = [
 ];
 
 const POPULAR_COLUMNS = [
-  { href: '/column/bc-to-ha',                      label: 'BCとは？正しい選び方ガイド' },
   { href: '/column/karakon-shoshinsha-guide',       label: 'カラコン初心者完全ガイド' },
   { href: '/column/korea-karakon-ranking-2026',     label: '韓国カラコン人気ランキング2026' },
   { href: '/column/lasik-hiyo-risk',                label: 'レーシックの費用・リスク解説' },

@@ -198,22 +198,6 @@ export default async function BCValuePage({ params }: Props) {
         </p>
       </div>
 
-      {/* BC記事リンク */}
-      <div className="mt-6 bg-slate-50 border border-slate-200 rounded-xl p-4">
-        <p className="text-sm font-bold text-gray-700 mb-2">BCについてもっと詳しく</p>
-        <ul className="space-y-1 text-sm">
-          <li>
-            <Link href="/column/bc-to-ha" className="text-sky-700 hover:underline">
-              ベースカーブ（BC）とは？選び方完全ガイド
-            </Link>
-          </li>
-          <li>
-            <Link href="/column/maker-bc-hyou" className="text-sky-700 hover:underline">
-              メーカー別BC対応表
-            </Link>
-          </li>
-        </ul>
-      </div>
     </div>
   );
 }

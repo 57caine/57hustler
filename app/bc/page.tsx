@@ -53,9 +53,6 @@ export default function BCIndexPage() {
           眼科の処方箋に記載されているBCに合った商品を選ぶことが重要です。
           自己判断でBCを変えると、ずれやすさ・不快感・角膜への負担につながります。
         </p>
-        <Link href="/column/bc-to-ha" className="inline-block mt-3 text-sm text-sky-700 font-medium hover:underline">
-          BC選び方の詳細記事を読む →
-        </Link>
       </div>
 
       {/* BC別一覧 */}
@@ -86,16 +83,6 @@ export default function BCIndexPage() {
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-5">
         <h2 className="font-bold text-gray-800 mb-3">BC関連コラム</h2>
         <ul className="space-y-2 text-sm">
-          <li>
-            <Link href="/column/bc-to-ha" className="text-sky-700 hover:underline">
-              ベースカーブ（BC）とは？コンタクトレンズのBC選び方完全ガイド
-            </Link>
-          </li>
-          <li>
-            <Link href="/column/maker-bc-hyou" className="text-sky-700 hover:underline">
-              メーカー別BC対応表【アキュビュー・シード・アルコン・メニコン】
-            </Link>
-          </li>
           <li>
             <Link href="/column/dosu-mikata" className="text-sky-700 hover:underline">
               コンタクトレンズの度数（PWR）の見方・読み方を徹底解説
