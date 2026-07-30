@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-29T22:05:16.520Z",
+  "generatedAt": "2026-07-30T22:11:31.635Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
   },
-  "flaggedCount": 0,
+  "flaggedCount": 1,
   "flaggedArticles": [
     {
       "path": "/column/lenszero-kaigai-tsuuhan-guide-2026",
@@ -43,14 +43,16 @@
       "title": "オンラインで眼鏡を安く買う方法【JINS・Zoff・楽天・Amazon完全ガイド】",
       "metrics": {
         "sessions": 7,
-        "bounceRate": 0.7142857142857143,
-        "avgSessionDuration": 42.00213128571429,
+        "bounceRate": 0.42857142857142855,
+        "avgSessionDuration": 6.991333571428571,
         "affiliateClicks": 0
       },
       "flags": [
+        "avg_session_under_10s",
         "no_affiliate_clicks"
       ],
       "flagLabels": [
+        "平均滞在7.0秒（閾値10秒）",
         "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
@@ -67,6 +69,39 @@
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "対応済み"
+    },
+    {
+      "path": "/column/eye-roller-fatigue-puffiness",
+      "slug": "eye-roller-fatigue-puffiness",
+      "title": "アイローラーの効果検証：目の疲れとむくみ解消グッズの選び方ガイド",
+      "metrics": {
+        "sessions": 4,
+        "bounceRate": 0.75,
+        "avgSessionDuration": 0.1078765,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "avg_session_under_10s"
+      ],
+      "flagLabels": [
+        "平均滞在0.1秒（閾値10秒）"
+      ],
+      "analysis": {
+        "h2Count": 10,
+        "h3Count": 16,
+        "hasAffiliateLinks": true,
+        "ctaCount": 0,
+        "contentChars": 11309
+      },
+      "causes": [
+        "ページが正常にレンダリングされていない可能性（JSXエラー・白画面等）",
+        "リンクはあるがCTAボタンが設置されていない（クリック導線が弱い）"
+      ],
+      "suggestions": [
+        "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する",
+        "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
+      ],
+      "status": "未対応"
     }
   ]
 }
