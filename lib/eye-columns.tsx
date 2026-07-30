@@ -3807,6 +3807,14 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">はじめに</h2>
       <p className="text-gray-700 mb-4">デジタルデバイスの普及により、眼精疲労に悩む人は年々増加しています。調査によると、日本国内でPC作業に従事する働き手の約60%が眼精疲労を経験しており、その症状は頭痛や肩こりへと発展することもあります。眼精疲労は単なる「目の疲れ」ではなく、生活の質に大きな影響を与える深刻な問題です。</p>
       <p className="text-gray-700 mb-4">一方で、眼精疲労を緩和する方法として注目されているのが「ストレッチ」と「マッサージ」です。これらは医療の現場でも推奨される手法で、特別な器具や費用を必要としません。本記事では、眼精疲労のメカニズムから、実践的なストレッチ・マッサージテクニックまで、科学的根拠に基づいた情報をお届けします。</p>
+
+      <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-4 mb-6">
+        <p className="text-sm font-bold text-cyan-900 mb-3">ストレッチと組み合わせたい温熱ケアグッズ</p>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          La Luna アイウォーマー（ホワイト）を楽天で見る →
+        </a>
+      </div>
       <hr className="my-6 border-gray-200" />
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">第1章：眼精疲労が起こるメカニズム</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">現代人が眼精疲労になる理由</h3>
@@ -5235,6 +5243,14 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">LASIK（レーザー角膜屈折矯正手術）は、世界中で年間約300万件以上が実施される一般的な視力矯正方法です。しかし、患者が術後に直面する最も一般的な合併症の一つが<strong>ドライアイ症状</strong>です。</p>
       <p className="text-gray-700 mb-4">2023年の大規模臨床研究によると、LASIK術後6ヶ月以内に患者の約60%がドライアイ症状を経験することが報告されています。この数字は医学界でも注視すべき課題として認識されており、適切な術前評価と術後ケアが極めて重要になります。</p>
       <p className="text-gray-700 mb-4">本記事では、LASIK手術とドライアイの関係性、リスク評価方法、科学的根拠に基づいた対策、および術後ケアの実践的な方法について、詳細に解説します。</p>
+
+      <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-6">
+        <p className="text-sm font-bold text-emerald-900 mb-3">術後のドライアイケアを始める</p>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E9%98%B2%E8%85%90%E5%89%A4%E3%83%95%E3%83%AA%E3%83%BC%20%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          防腐剤フリー目薬（術後ドライアイケア）を楽天市場で探す →
+        </a>
+      </div>
       <p className="text-gray-700 mb-4">---</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">LASIK手術がドライアイを引き起こすメカニズム</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">角膜神経の障害</h3>
@@ -5675,6 +5691,14 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">2. <strong>利便性の向上</strong>：自宅にいながら豊富な品揃えから選択できる</p>
       <p className="text-gray-700 mb-4">3. <strong>スマートフォン対応の進化</strong>：AR機能でバーチャル試着ができるショップが増加</p>
       <p className="text-gray-700 mb-4">本記事では、2025年最新のオンラインメガネ通販ショップを徹底比較し、あなたに最適なサービスを見つけるための完全ガイドを提供します。</p>
+
+      <div className="my-6 p-4 bg-indigo-50 border border-indigo-200 rounded-xl">
+        <p className="text-sm font-bold text-indigo-900 mb-3">👓 楽天市場で人気の眼鏡フレームを先にチェック</p>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e16c.d190f4a9.5622e16d.a64e1d5d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmegane-style%2Fcf5043%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          メガネスタイル メガネフレーム CF5043 を楽天で見る →
+        </a>
+      </div>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">主要オンラインメガネショップの比較表</h2>
       <p className="text-gray-700 mb-4">| ショップ名 | 価格帯 | 配送速度 | 保証期間 | 特徴 |</p>
       <p className="text-gray-700 mb-4">|-----------|------|--------|--------|------|</p>

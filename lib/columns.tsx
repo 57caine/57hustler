@@ -8349,6 +8349,14 @@ export const columnContent: Record<string, React.ReactNode> = {
     この記事では、初心者の方が安心して使い始められるよう、コンタクトレンズ選びから、正しい付け外し、ケア方法、トラブル対処まで、すべてを分かりやすく解説します。
   </p>
 
+  <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 mb-6">
+    <p className="text-sm font-bold text-gray-800 mb-3">初心者向けワンデーコンタクトを探すなら</p>
+    <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored"
+      className="block w-full text-center text-sm font-bold bg-sky-600 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+      レンズゼロで見る →
+    </a>
+  </div>
+
   <h2 id="erabikata" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">初めてのコンタクト選び─1dayか2weekか</h2>
   <p className="mb-4">
     コンタクトレンズは大きく分けて3種類あります。初心者の方には<strong>ワンデー（1day）</strong>をおすすめします。理由は以下の通りです。
