@@ -6,6 +6,13 @@ import PriceTable from '@/components/PriceTable';
 
 type Props = { params: Promise<{ slug: string }> };
 
+const relatedColumnByCategory: Record<string, { slug: string; title: string }> = {
+  '1day': { slug: 'shoshinsha-contact-guide', title: 'コンタクトレンズ初心者が失敗しない購入ガイド【眼科・種類・通販の選び方】' },
+  '2week': { slug: 'contact-2week-osusume', title: '2weekコンタクトレンズ おすすめランキング2026年版【コスパ・乾きにくさ別】' },
+  monthly: { slug: 'monthly-contact-hikaku', title: 'マンスリーコンタクトレンズ比較【2025年版・1枚あたりの最安値ランキング】' },
+  color: { slug: 'karakon-shoshinsha-guide', title: 'カラコン初心者完全ガイド2026【度数・着色直径・DIA・ケア方法をわかりやすく解説】' },
+};
+
 export async function generateStaticParams() {
   return getAllProducts().map((p) => ({ slug: p.slug }));
 }
@@ -39,6 +46,7 @@ export default async function ProductPage({ params }: Props) {
     .filter((p) => p.slug !== product.slug)
     .sort((a, b) => b.popularity - a.popularity)
     .slice(0, 3);
+  const relatedColumn = relatedColumnByCategory[product.category];
 
   const productFaqs = [
     {
@@ -173,6 +181,15 @@ export default async function ProductPage({ params }: Props) {
         </div>
         <PriceTable prices={product.prices} productName={product.name} />
       </div>
+
+      {/* Related Column */}
+      {relatedColumn && (
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-8">
+          <Link href={`/column/${relatedColumn.slug}`} className="text-sm text-sky-700 font-medium hover:underline">
+            📖 {relatedColumn.title} →
+          </Link>
+        </div>
+      )}
 
       {/* Related Products */}
       {relatedProducts.length > 0 && (

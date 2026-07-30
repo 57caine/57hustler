@@ -69,6 +69,29 @@ const categoryFaqs: Record<string, { q: string; a: string }[]> = {
   ],
 };
 
+const relatedColumns: Record<string, { slug: string; title: string }[]> = {
+  '1day': [
+    { slug: 'shoshinsha-contact-guide', title: 'コンタクトレンズ初心者が失敗しない購入ガイド【眼科・種類・通販の選び方】' },
+    { slug: 'contact-shoshinsha-tsukehazushi-care-2026', title: 'コンタクトレンズ初心者ガイド【付け方・外し方・ケア用品選び・トラブル予防】' },
+    { slug: '1day-vs-2week-dotchiga-otoku', title: '使い捨てコンタクト1dayと2weekどっちがお得？年間コスト・手間を徹底比較' },
+  ],
+  '2week': [
+    { slug: 'contact-2week-osusume', title: '2weekコンタクトレンズ おすすめランキング2026年版【コスパ・乾きにくさ別】' },
+    { slug: '1day-vs-2week-dotchiga-otoku', title: '使い捨てコンタクト1dayと2weekどっちがお得？年間コスト・手間を徹底比較' },
+    { slug: 'contact-care-guide-yohin-hikaku', title: 'コンタクトレンズの正しいケア方法とケア用品比較【2weekマンスリー向け完全解説】' },
+  ],
+  monthly: [
+    { slug: 'monthly-contact-hikaku', title: 'マンスリーコンタクトレンズ比較【2025年版・1枚あたりの最安値ランキング】' },
+    { slug: 'silicon-hydrogel-merit', title: 'シリコーンハイドロゲルコンタクトとは？通常素材との違いと選ぶメリット' },
+    { slug: 'contact-care-guide-yohin-hikaku', title: 'コンタクトレンズの正しいケア方法とケア用品比較【2weekマンスリー向け完全解説】' },
+  ],
+  color: [
+    { slug: 'karakon-osusume-ranking-2026', title: 'カラコンおすすめランキング2026【度あり・度なし別】安全・ナチュラルな選び方' },
+    { slug: 'karakon-shoshinsha-guide', title: 'カラコン初心者完全ガイド2026【度数・着色直径・DIA・ケア方法をわかりやすく解説】' },
+    { slug: 'karakon-anzen-erabikata', title: 'カラコンの安全な選び方【厚生労働省承認マーク・薬機法・危険な並行輸入品の見分け方】' },
+  ],
+};
+
 const categoryGuide: Record<string, { heading: string; points: string[]; note: string }> = {
   '1day': {
     heading: 'ワンデーコンタクトを選ぶポイント',
@@ -141,6 +164,7 @@ export default async function CategoryPage({ params }: Props) {
   const label = categoryLabel[type] ?? category.name;
 
   const faqs = categoryFaqs[type] ?? [];
+  const relatedCols = relatedColumns[type] ?? [];
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -214,6 +238,20 @@ export default async function CategoryPage({ params }: Props) {
                 <p className="font-bold text-gray-900 text-sm mb-2">Q. {q}</p>
                 <p className="text-sm text-gray-700 leading-relaxed">A. {a}</p>
               </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {relatedCols.length > 0 && (
+        <section className="mt-10 mb-6">
+          <h2 className="text-lg font-bold text-gray-900 mb-4">関連コラム</h2>
+          <div className="grid sm:grid-cols-3 gap-3">
+            {relatedCols.map((c) => (
+              <Link key={c.slug} href={`/column/${c.slug}`}
+                className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+                <p className="font-medium text-gray-800 text-sm leading-snug hover:text-sky-700">{c.title}</p>
+              </Link>
             ))}
           </div>
         </section>
