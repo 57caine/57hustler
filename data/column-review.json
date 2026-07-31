@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T22:11:31.635Z",
+  "generatedAt": "2026-07-31T22:10:14.212Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -44,7 +44,7 @@
       "metrics": {
         "sessions": 7,
         "bounceRate": 0.42857142857142855,
-        "avgSessionDuration": 6.991333571428571,
+        "avgSessionDuration": 7.155302142857143,
         "affiliateClicks": 0
       },
       "flags": [
@@ -52,7 +52,7 @@
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "平均滞在7.0秒（閾値10秒）",
+        "平均滞在7.2秒（閾値10秒）",
         "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
