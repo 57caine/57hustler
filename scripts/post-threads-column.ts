@@ -44,6 +44,24 @@ const CATEGORIES = [
   '科学・化学のふしぎ',
 ];
 
+// ────── トピック自動判定（キーワード判定） ──────
+// 一般層への露出を優先するため、配列の並び順＝優先順位（複数キーワードが該当する場合は先頭が優先）
+const TOPIC_KEYWORDS: { topic: string; keywords: string[] }[] = [
+  { topic: '暮らし', keywords: ['大安', '仏滅', '六曜', '日取り', '結婚式', '引っ越し'] },
+  { topic: '雑学', keywords: ['妖怪', '河童', '天狗', '鬼', '神話', '古事記'] },
+  { topic: '日本文化', keywords: ['神社', '神事', 'お祓い', '祭祀'] },
+  { topic: 'サイエンス', keywords: ['量子', '宇宙', 'ホログラム', '科学'] },
+  { topic: '哲学', keywords: ['宗教', 'キリスト', '仏教', 'イスラム', '因果', '黄金律'] },
+  { topic: '九星気学', keywords: ['九星気学', '本命星', '吉方位', '運勢'] },
+  { topic: '易経', keywords: ['易経', '卦', '陰陽'] },
+];
+
+// 該当キーワードがない場合は従来通りの曜日ベースのフォールバックに委ねる（呼び出し側で処理）
+function determineTopicTag(text: string): string | undefined {
+  const matched = TOPIC_KEYWORDS.find(({ keywords }) => keywords.some(kw => text.includes(kw)));
+  return matched?.topic;
+}
+
 // 月間目標比率（%）
 const CATEGORY_TARGETS: Record<string, number> = {
   '気学・易経':                               0.20,
@@ -526,8 +544,10 @@ async function main() {
     return;
   }
 
-  // 一文考察（金曜: 一文考察・掛け合わせ系）→ 都市伝説、それ以外 → スピリチュアル
-  const topicTag = (dayOfWeek === 5 && postLabel !== '連作week') ? '都市伝説' : 'スピリチュアル';
+  // キーワード判定を優先。該当なしの場合のみ曜日ベースのフォールバック
+  // （一文考察＝金曜・非連作week → 都市伝説、それ以外 → スピリチュアル）
+  const fallbackTopicTag = (dayOfWeek === 5 && postLabel !== '連作week') ? '都市伝説' : 'スピリチュアル';
+  const topicTag = determineTopicTag(text) ?? fallbackTopicTag;
 
   console.log('Threads コンテナ作成中...');
   const creationId = await createThreadsContainer(text, topicTag);

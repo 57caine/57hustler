@@ -59,6 +59,24 @@ interface HistoryEntry {
   category?: string;
 }
 
+// ────── トピック自動判定（キーワード判定） ──────
+// 一般層への露出を優先するため、配列の並び順＝優先順位（複数キーワードが該当する場合は先頭が優先）
+const TOPIC_KEYWORDS: { topic: string; keywords: string[] }[] = [
+  { topic: '暮らし', keywords: ['大安', '仏滅', '六曜', '日取り', '結婚式', '引っ越し'] },
+  { topic: '雑学', keywords: ['妖怪', '河童', '天狗', '鬼', '神話', '古事記'] },
+  { topic: '日本文化', keywords: ['神社', '神事', 'お祓い', '祭祀'] },
+  { topic: 'サイエンス', keywords: ['量子', '宇宙', 'ホログラム', '科学'] },
+  { topic: '哲学', keywords: ['宗教', 'キリスト', '仏教', 'イスラム', '因果', '黄金律'] },
+  { topic: '九星気学', keywords: ['九星気学', '本命星', '吉方位', '運勢'] },
+  { topic: '易経', keywords: ['易経', '卦', '陰陽'] },
+];
+
+// 該当キーワードがない場合は topic_tag を付けず、従来通りThreads側の自動分類に委ねる
+function determineTopicTag(text: string): string | undefined {
+  const matched = TOPIC_KEYWORDS.find(({ keywords }) => keywords.some(kw => text.includes(kw)));
+  return matched?.topic;
+}
+
 // ────── 禁止キーワード ──────
 // 永久禁止（既存）＋30日再利用禁止対象キーワード（今回追加）
 const BANNED_KEYWORDS = [
@@ -181,8 +199,9 @@ ${recentTexts}`,
 }
 
 // ────── Threads API ──────
-async function createThreadsContainer(text: string): Promise<string> {
+async function createThreadsContainer(text: string, topicTag?: string): Promise<string> {
   const params = new URLSearchParams({ media_type: 'TEXT', text, access_token: ACCESS_TOKEN });
+  if (topicTag) params.set('topic_tag', topicTag);
   const res = await fetch(`${THREADS_API_BASE}/${USER_ID}/threads`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -274,9 +293,12 @@ async function main() {
     postText += '\n\nこの話、もう少し深いところまで書いた。\nhttps://note.com/kobayashi_done';
   }
 
+  const topicTag = determineTopicTag(finalText);
+
   console.log('\n--- 最終テキスト ---');
   console.log(postText);
   console.log(`文字数: ${postText.length}`);
+  console.log(`topic_tag: ${topicTag ?? '（該当キーワードなし → Threads側の自動分類）'}`);
   console.log('-------------------');
 
   if (dryRun) {
@@ -285,7 +307,7 @@ async function main() {
   }
 
   console.log('Threads コンテナ作成中...');
-  const creationId = await createThreadsContainer(postText);
+  const creationId = await createThreadsContainer(postText, topicTag);
   console.log(`コンテナID: ${creationId}`);
 
   console.log('30秒待機中...');
