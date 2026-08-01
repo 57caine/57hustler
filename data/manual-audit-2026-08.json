@@ -1,0 +1,312 @@
+{
+  "month": "2026-08",
+  "generatedAt": "2026-08-01T04:20:54.553Z",
+  "summary": {
+    "total": 42,
+    "high": 9,
+    "medium": 23,
+    "low": 10
+  },
+  "issues": {
+    "high": [
+      {
+        "severity": "high",
+        "type": "存在しないディレクトリへの参照",
+        "detail": "ワークフローが 'ceo-dashboard' ディレクトリを参照していますが、提供されたファイル一覧に 'ceo-dashboard' ディレクトリが存在しません。package.json や package-lock.json も確認できません。",
+        "suggestion": "1) ceo-dashboard ディレクトリが実際に存在するか確認してください。2) 存在しない場合、このワークフロー定義は削除するか、正しいパスに修正してください。",
+        "file": ".github/workflows/deploy-ceo-dashboard.yml"
+      },
+      {
+        "severity": "high",
+        "type": "ビルド対象の欠落",
+        "detail": "npm run build を実行していますが、ceo-dashboard/package.json にビルドスクリプトが定義されているか不明です。定義されていない場合、ワークフローは失敗します。",
+        "suggestion": "ceo-dashboard/package.json の存在と、build スクリプトが定義されていることを確認してください。",
+        "file": ".github/workflows/deploy-ceo-dashboard.yml"
+      },
+      {
+        "severity": "high",
+        "type": "構文エラー",
+        "detail": "ファイルの最後が不完全。Manual dispatchセクションの最後の行で閉じ括弧がなく、シェルスクリプトが途中で終了している。",
+        "suggestion": "最終行を `done` に修正して、ループを正しく閉じる必要があります。\n現在: `                d`\n修正: `                done`",
+        "file": ".github/workflows/generate-lens-navi-column.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローで実行している `scripts/post-threads-fortune.ts` は存在ファイル一覧に含まれています（確認済み）。ただし、同様のThreads投稿スクリプトとして `post-threads-column.ts` と `post-threads-short.ts` が存在し、3つのスクリプトの役割分担が不明確です。",
+        "suggestion": "各スクリプトの役割を明確にしたドキュメントを作成するか、スクリプトのREADMEコメントで目的を記載してください。",
+        "file": ".github/workflows/post-threads-fortune.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないスクリプトファイルへの参照",
+        "detail": "ワークフローが実行する `scripts/post-threads-short.ts` がファイル一覧に存在しません。存在するのは `scripts/post-threads-column.ts` と `scripts/post-threads-fortune.ts` のみです。",
+        "suggestion": "実際に実行すべきスクリプトを確認してください。月・水・金は占い投稿、火・木・土・日は一文考察という説明から、既存スクリプトの組み合わせまたは統合されたスクリプトを指すと考えられます。正しいスクリプト名を特定するか、スクリプトファイルを作成してください。",
+        "file": ".github/workflows/post-threads-short.yml"
+      },
+      {
+        "severity": "high",
+        "type": "コード不完全",
+        "detail": "getStarPositionIndex関数が途中で切れている。先頭3000字制限により、関数実装が不完全",
+        "suggestion": "ファイル全体を確認して、関数の完全な実装を検証する必要がある",
+        "file": "scripts/post-threads-fortune.ts"
+      },
+      {
+        "severity": "high",
+        "type": "ファイル不完全",
+        "detail": "ファイルが途中で切れている。getPostType()関数の定義が不完全（'t' で途切れている）。このままではスクリプトが実行できない",
+        "suggestion": "完全なファイル内容を確認し、関数定義を完成させる",
+        "file": "scripts/post-threads-short.ts"
+      },
+      {
+        "severity": "high",
+        "type": "類似スクリプトの二重管理",
+        "detail": "同様の機能を持つスクリプトが複数存在：\n- post-threads-short.ts（本ファイル・夜21時投稿）\n- post-threads-fortune.ts（占い関連）\n- post-threads-column.ts（コラム関連）\n役割分担が明確でなく、メンテナンス時の混乱リスク",
+        "suggestion": "各スクリプトの役割を明確に文書化するか、共通処理を関数化して統一する",
+        "file": "scripts/post-threads-short.ts"
+      },
+      {
+        "severity": "high",
+        "type": "ファイル参照エラー",
+        "detail": "スクリプトは data/zassou-stock.json を読み込む設計ですが、存在するファイル一覧に data/zassou-stock.csv のみが存在し、JSON ファイルが存在しません",
+        "suggestion": "①data/zassou-stock.csv を JSON に変換するか、②STOCK_PATH の参照先を .csv に変更するか、③zassou-stock.json を新規作成する必要があります",
+        "file": "scripts/sync-zassou-to-sheets.ts"
+      }
+    ],
+    "medium": [
+      {
+        "severity": "medium",
+        "type": "デプロイステップの欠落",
+        "detail": "ワークフロー名は 'Build CEO Dashboard' でビルド後の動作は定義されていません。ビルド成果物をどこにデプロイするのか不明です。",
+        "suggestion": "ビルド後のデプロイ先（GitHub Pages、S3、本番環境など）を明確にし、デプロイステップを追加してください。",
+        "file": ".github/workflows/deploy-ceo-dashboard.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "テストステップの欠落",
+        "detail": "npm run build の前後でテストを実行していません。品質保証プロセスが不十分です。",
+        "suggestion": "npm run lint や npm run test などのテストステップを build の前に追加することを検討してください。",
+        "file": ".github/workflows/deploy-ceo-dashboard.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "存在しないパスへの参照",
+        "detail": "ワークフロー内で 'shikaku-navi/**' をトリガーパスとして指定していますが、存在するファイル一覧に shikaku-navi ディレクトリが見当たりません。一方、build-school-navi と build-yonaka-uranai ジョブは存在します。",
+        "suggestion": "paths セクションから 'shikaku-navi/**' を削除するか、該当ディレクトリが実際に存在するか確認してください。",
+        "file": ".github/workflows/deploy-lens-navi.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "ジョブの不一致",
+        "detail": "ワークフロー名に 'school-navi / yonaka-uranai' と記載されており、build-school-navi と build-yonaka-uranai ジョブが存在しますが、paths に 'shikaku-navi/**' が含まれているのに対応するジョブがありません。",
+        "suggestion": "ワークフロー名を更新するか、build-shikaku-navi ジョブを追加するか、paths から 'shikaku-navi/**' を削除してください。",
+        "file": ".github/workflows/deploy-lens-navi.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "存在しないファイルパスへの参照",
+        "detail": "ワークフローが `ceo-dashboard/public/ga4-analytics.json` と `ceo-dashboard/public/column-review.json` へのコミットを試みていますが、存在するファイル一覧に `ceo-dashboard/` ディレクトリが含まれていません。",
+        "suggestion": "以下のいずれかの対応が必要です：\n1. 実際にこれらのファイルが存在する場合は、ファイル一覧に追加\n2. これらのファイルが不要な場合は、git addコマンドから削除\n3. 別のビルドステップでこれらのファイルを生成する場合は、その処理をワークフローに追加",
+        "file": ".github/workflows/fetch-ga4-analytics.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "エラーハンドリングの不足",
+        "detail": "Fetch GA4 dataステップが失敗した場合、Commit analytics dataステップが実行されますが、存在しないファイルへのアクセスでエラーになる可能性があります。",
+        "suggestion": "`Commit analytics data`ステップに `if: success()` 条件を追加するか、または前述のファイルパス問題を解決してください。",
+        "file": ".github/workflows/fetch-ga4-analytics.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "設定の矛盾",
+        "detail": "workflow_dispatchのinputsで `section` のデフォルト値が 'contact' ですが、説明文に 'all' オプションが実装されており、ユーザーが 'all' を入力可能であることが不明確です。",
+        "suggestion": "description を更新して 'all' オプションを明記するか、スクリプト内で 'all' をサポートしない場合は削除してください。\n推奨: `description: 'Section: contact / eye-care / lasik / megane / vr / karakon / eye-goods / all'`",
+        "file": ".github/workflows/generate-lens-navi-column.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "エラーハンドリング不足",
+        "detail": "Manual dispatchセクション内のループで `|| true` が使用されていますが、Morning/Noon/Eveningのバッチではエラーハンドリングがありません。一貫性がありません。",
+        "suggestion": "すべてのbatch stepで `|| true` を追加するか、エラーが発生した場合の動作を明確にしてください。",
+        "file": ".github/workflows/generate-lens-navi-column.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "存在しないファイル参照",
+        "detail": "ワークフローは `data/column-history.json` をコミット対象としていますが、このファイルが存在するファイル一覧に含まれていません",
+        "suggestion": "ファイル一覧に `data/column-history.json` が実際に存在することを確認するか、存在しない場合は初期化処理を追加してください",
+        "file": ".github/workflows/post-threads-column-noon.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "スクリプト実行の依存性確認不足",
+        "detail": "`scripts/post-threads-column.ts` が実際に `--slot=noon` パラメータをサポートしているか、また必要な環境変数をすべて受け取っているか不明",
+        "suggestion": "スクリプトの実装を確認し、パラメータと環境変数の対応を検証してください",
+        "file": ".github/workflows/post-threads-column-noon.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "ファイル参照の確認",
+        "detail": "scripts/post-threads-column.ts は存在ファイル一覧に含まれていますが、このスクリプトが実際に data/column-history.json と data/series-week.json を更新するかどうか不明です。スクリプト実装との整合性確認が必要です。",
+        "suggestion": "scripts/post-threads-column.ts の実装を確認し、投稿履歴ファイルの更新処理が適切に行われているかを検証してください。",
+        "file": ".github/workflows/post-threads-column.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "環境変数・シークレット",
+        "detail": "THREADS_USER_ID と THREADS_ACCESS_TOKEN を使用していますが、これらのシークレットが実際に GitHub リポジトリに設定されているかの確認ができません。設定なしで実行するとスクリプトが失敗します。",
+        "suggestion": "CI/CD 実行ログを確認し、これらのシークレットが適切に設定されていることを検証してください。また、シークレット設定ドキュメントを整備してください。",
+        "file": ".github/workflows/post-threads-column.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "環境変数の一貫性",
+        "detail": "本ワークフローで使用している環境変数（ANTHROPIC_API_KEY, THREADS_USER_ID, THREADS_ACCESS_TOKEN）が、他のThreads投稿ワークフロー（post-threads-column.yml, post-threads-short.yml など推測される）と同じか異なるかが不明確です。",
+        "suggestion": "他のThreads投稿ワークフローと環境変数の使用状況を比較し、整合性を確認してください。必要に応じて環境変数の使用方針を統一してください。",
+        "file": ".github/workflows/post-threads-fortune.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "スクリプト機能の曖昧性",
+        "detail": "ステップ名では「月・水・金：夜占い／火・木・土・日：一文考察」と条件分岐を示唆していますが、参照先の単一スクリプト内でその判定ロジックが実装されているかが不明です。",
+        "suggestion": "`scripts/post-threads-short.ts` ファイル内で曜日判定と条件分岐処理が実装されていることを確認するか、複数のワークフロージョブに分割することを検討してください。",
+        "file": ".github/workflows/post-threads-short.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "存在しないスクリプトへの参照",
+        "detail": "workflow内で `scripts/post-threads-fortune.ts` と `scripts/post-threads-column.ts` を実行しているが、存在するファイル一覧に `scripts/post-threads-short.ts` がある一方で、fortune/columnの2つのスクリプトが一般的な命名パターンとしては検証が必要。特にfortuneスクリプトについて、他のworkflowで定期実行されているスクリプトとの役割分担が不明確。",
+        "suggestion": "存在するスクリプト一覧を確認し、実際に存在するファイルのみを参照していることを確認してください。また、post-threads-*.tsスクリプト群（fortune, column, short）の役割分担を整理してください。",
+        "file": ".github/workflows/preview-post.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "条件分岐の論理エラー",
+        "detail": "Commit and pushステップで、dry_runが'true'の場合でもgit addとgit commitが実行される。workflow_dispatchのdry_runオプションの意図に反している。",
+        "suggestion": "条件分岐を追加: if [ \"${{ github.event.inputs.dry_run }}\" != \"true\" ] の前にチェックを入れるか、そもそもdry-runフラグが立った場合はCommit and pushステップ全体をスキップする",
+        "file": ".github/workflows/zassou-stock.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "潜在的なレース条件",
+        "detail": "Commit and pushステップで git pull --rebase を実行しているが、スケジュール実行と手動実行が同時に発生した場合、コンフリクトの可能性がある。",
+        "suggestion": "git pull --rebase の前に再度 git diff --cached を確認するか、エラーハンドリングを追加する",
+        "file": ".github/workflows/zassou-stock.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "環境変数依存",
+        "detail": "THREADS_USER_IDとTHREADS_ACCESS_TOKENが環境変数から取得されているが、設定方法がドキュメント化されていない可能性がある",
+        "suggestion": ".env.exampleファイルを作成するか、README.mdで環境変数の設定方法を明記する",
+        "file": "scripts/post-threads-fortune.ts"
+      },
+      {
+        "severity": "medium",
+        "type": "ハードコードされた基準日",
+        "detail": "getDailyStar関数で2024-01-06が基準日としてハードコードされている。このスクリプトが長期運用される場合、この日付の根拠と有効期限を確認する必要がある",
+        "suggestion": "基準日とその根拠をコメントで明記するか、設定ファイル化を検討する",
+        "file": "scripts/post-threads-fortune.ts"
+      },
+      {
+        "severity": "medium",
+        "type": "ハードコードされた日付基準",
+        "detail": "getDailyStar() の計算で '2024-01-06' がハードコードされている。これは現在から乖離する可能性あり",
+        "suggestion": "九星気学の基準日を設定ファイル化するか、より汎用的な計算ロジックに変更",
+        "file": "scripts/post-threads-short.ts"
+      },
+      {
+        "severity": "medium",
+        "type": "環境変数の依存性",
+        "detail": "THREADS_USER_ID と THREADS_ACCESS_TOKEN が環境変数に依存。これらが設定されていない場合の エラーハンドリングが不明確",
+        "suggestion": "起動時のバリデーション関数を追加し、不足時は明確なエラーメッセージを出力",
+        "file": "scripts/post-threads-short.ts"
+      },
+      {
+        "severity": "medium",
+        "type": "コード不完全",
+        "detail": "ファイル内容が 3000 字で切断されており、main() 関数が不完全です。`console.log(` の行で途中で終わっています",
+        "suggestion": "全文を確認してください。特にシート更新処理、エラーハンドリング、main() の戻り値や終了処理が実装されているか確認が必要です",
+        "file": "scripts/sync-zassou-to-sheets.ts"
+      },
+      {
+        "severity": "medium",
+        "type": "依存関係の確認不足",
+        "detail": "環境変数 GA4_SERVICE_ACCOUNT_KEY で Google サービスアカウント認証を使用していますが、このキーが GA4（アナリティクス）用ではなく、Sheets API 用であることが明記されていません",
+        "suggestion": "コメントを「GA4_SERVICE_ACCOUNT_KEY - サービスアカウントJSON（Google Sheets API 用）」に修正するか、環境変数名を SHEETS_SERVICE_ACCOUNT_KEY に変更してください",
+        "file": "scripts/sync-zassou-to-sheets.ts"
+      }
+    ],
+    "low": [
+      {
+        "severity": "low",
+        "type": "ワークフロー設定の冗長性",
+        "detail": "build-school-navi と build-yonaka-uranai ジョブで同じパターンが繰り返されており、アクション実行前に cd コマンドで各ディレクトリに移動する構造になっています。",
+        "suggestion": "ワークフローを DRY（Don't Repeat Yourself）の原則に従って整理するか、共通ステップを抽出することを検討してください。",
+        "file": ".github/workflows/deploy-lens-navi.yml"
+      },
+      {
+        "severity": "low",
+        "type": "リベース戦略の潜在的な問題",
+        "detail": "`git pull --rebase` の後に `git push` を実行していますが、rebaseが失敗した場合のエラーハンドリングがありません。",
+        "suggestion": "`set -e` をシェルスクリプトの先頭に追加するか、各コマンドのエラー処理を明示的に追加してください。",
+        "file": ".github/workflows/fetch-ga4-analytics.yml"
+      },
+      {
+        "severity": "low",
+        "type": "情報の冗長性",
+        "detail": "スケジュール（cron）の説明がコメントにハードコードされており、タイムゾーン変更時に手動更新が必要です。",
+        "suggestion": "cron値とJST時刻の対応関係をドキュメント化するか、環境変数で管理することを検討してください。",
+        "file": ".github/workflows/generate-lens-navi-column.yml"
+      },
+      {
+        "severity": "low",
+        "type": "git操作の潜在的な競合リスク",
+        "detail": "`git pull --rebase` の後に `git push` を実行しており、リベース中に競合が発生した場合、ワークフロー全体が失敗します。失敗時の明示的なハンドリングがない",
+        "suggestion": "git push失敗時のエラーハンドリングを追加するか、`git pull --rebase` を実行前に最新状態の確認を強化してください。あるいは `git push --force-with-lease` の使用を検討",
+        "file": ".github/workflows/post-threads-column-noon.yml"
+      },
+      {
+        "severity": "low",
+        "type": "スケジュール設定",
+        "detail": "cron: '0 14 * * *' は UTC 14:00（JST 23:00）とコメント記載されていますが、サマータイム対応が考慮されていません。年間を通じて正確な時刻実行が必要な場合、問題になる可能性があります。",
+        "suggestion": "UTC タイムゾーンを使用するため、JST との時差表記を明確にするか、より詳細なドキュメント記載をしてください。サマータイム地域への対応が不要であれば、その旨を記載してください。",
+        "file": ".github/workflows/post-threads-column.yml"
+      },
+      {
+        "severity": "low",
+        "type": "スケジュールの明確性",
+        "detail": "毎日7:00 JST実行という占い投稿スクリプトのスケジュールが、他のThreads投稿スクリプトとの実行時刻の重複・競合可能性が確認できません。",
+        "suggestion": "複数のThreads投稿ワークフローがある場合、実行スケジュール一覧を作成し、タイミングの重複がないか確認してください。",
+        "file": ".github/workflows/post-threads-fortune.yml"
+      },
+      {
+        "severity": "low",
+        "type": "workflowの完全性",
+        "detail": "preview-post.ymlは2つのタイプ（fortune/column）のみをサポートしているが、scripts配下には`post-threads-short.ts`も存在している。このshortタイプのプレビュー手段がない。",
+        "suggestion": "post-threads-shortについても、必要に応じてこのworkflowにオプションを追加することを検討してください。または、shortが別の目的であれば、その理由をドキュメント化してください。",
+        "file": ".github/workflows/preview-post.yml"
+      },
+      {
+        "severity": "low",
+        "type": "環境依存の潜在的問題",
+        "detail": "Generate DMM stockステップで、ARGSが空の場合も npx ts-node が実行される。スクリプトの引数なし実行挙動に依存している。",
+        "suggestion": "スクリプト側の引数チェックが適切に実装されているか確認、または --help 等で動作検証を明示する",
+        "file": ".github/workflows/zassou-stock.yml"
+      },
+      {
+        "severity": "low",
+        "type": "エラーハンドリング不足",
+        "detail": "Claude APIの呼び出しやThreads APIのレスポンス処理に対するエラーハンドリングが見えない（ファイル途中までの確認のため、全体実装を要確認）",
+        "suggestion": "try-catch文でAPI呼び出しをラップし、具体的なエラーログを出力する",
+        "file": "scripts/post-threads-fortune.ts"
+      },
+      {
+        "severity": "low",
+        "type": "ファイル形式の二重管理",
+        "detail": "同じデータが data/zassou-stock.csv と data/zassou-stock.json の 2 形式で管理される可能性があり、同期管理が必要です",
+        "suggestion": "どちらかを正式形式として統一するか、相互変換スクリプトで一元管理してください",
+        "file": "scripts/sync-zassou-to-sheets.ts"
+      }
+    ]
+  }
+}
