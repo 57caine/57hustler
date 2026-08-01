@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T22:10:14.212Z",
+  "generatedAt": "2026-08-01T22:03:07.467Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -56,17 +56,19 @@
         "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 5,
+        "h2Count": 0,
         "h3Count": 0,
-        "hasAffiliateLinks": true,
-        "ctaCount": 6,
-        "contentChars": 10250
+        "hasAffiliateLinks": false,
+        "ctaCount": 0,
+        "contentChars": 0
       },
       "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+        "アフィリエイトリンク（楽天・A8）が記事に存在しない",
+        "見出し構造が不足しており、読者が記事構成を把握しにくい"
       ],
       "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する",
+        "H2見出しを3〜5個設定し、スキャン読みしやすい構造に改善する"
       ],
       "status": "対応済み"
     },

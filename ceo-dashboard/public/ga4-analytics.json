@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-07-31T22:10:14.192Z",
+  "generatedAt": "2026-08-01T22:03:07.316Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-07-31T22:10:12.801Z",
+      "fetchedAt": "2026-08-01T22:03:06.086Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 278,
-      "totalPageviews": 666,
+      "totalSessions": 276,
+      "totalPageviews": 653,
       "topPages": [
         {
           "path": "/",
-          "sessions": 105,
-          "pageviews": 331,
-          "avgSessionDuration": 125.37847194285715,
-          "bounceRate": 0.29523809523809524
+          "sessions": 101,
+          "pageviews": 316,
+          "avgSessionDuration": 125.18213154455445,
+          "bounceRate": 0.31683168316831684
         },
         {
           "path": "/category/1day",
@@ -29,10 +29,10 @@
         },
         {
           "path": "/column/meta-quest-3-review-2026",
-          "sessions": 23,
-          "pageviews": 23,
-          "avgSessionDuration": 85.40459552173913,
-          "bounceRate": 0.30434782608695654
+          "sessions": 25,
+          "pageviews": 25,
+          "avgSessionDuration": 100.51849732000001,
+          "bounceRate": 0.32
         },
         {
           "path": "/column",
@@ -88,7 +88,7 @@
           "sessions": 7,
           "pageviews": 13,
           "avgSessionDuration": 291.27647842857147,
-          "bounceRate": 0.14285714285714285
+          "bounceRate": 0
         },
         {
           "path": "/column/megane-kaomikata",
@@ -122,7 +122,7 @@
           "path": "/brand/seed",
           "sessions": 5,
           "pageviews": 4,
-          "avgSessionDuration": 18.4724352,
+          "avgSessionDuration": 19.6499788,
           "bounceRate": 0.6
         },
         {
@@ -155,10 +155,6 @@
         }
       ],
       "weeklyTrend": [
-        {
-          "date": "2026-07-04",
-          "sessions": 5
-        },
         {
           "date": "2026-07-06",
           "sessions": 5
@@ -261,7 +257,7 @@
         },
         {
           "date": "2026-08-01",
-          "sessions": 1
+          "sessions": 6
         }
       ],
       "affiliateClicksByPage": {
@@ -272,6 +268,7 @@
         "/column/dryeye-taisaku": 2,
         "/column/karakon-osusume-ranking-2026": 2,
         "/column/megane-kaomikata": 2,
+        "/column/meta-quest-3-review-2026": 2,
         "/column/smart-glass-2026": 2,
         "/brand/seed": 1,
         "/column/blue-light-megane-kouka": 1,
@@ -280,7 +277,6 @@
         "/column/karakon-shoshinsha-guide": 1,
         "/column/lasik-dry-eye-management-postoperative-care-2026": 1,
         "/column/lasik-hiyo-risk": 1,
-        "/column/meta-quest-3-review-2026": 1,
         "/column/orthokeratology-guide-2026": 1,
         "/column/vr-fitness-app-2026": 1,
         "/column/vr-game-osusume-2026": 1,
@@ -295,7 +291,7 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-07-31T22:10:14.192Z",
+      "fetchedAt": "2026-08-01T22:03:07.315Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
@@ -307,8 +303,8 @@
           "path": "/",
           "sessions": 15,
           "pageviews": 21,
-          "avgSessionDuration": 34.4286236,
-          "bounceRate": 0.4666666666666667
+          "avgSessionDuration": 35.29984653333334,
+          "bounceRate": 0.4
         }
       ],
       "weeklyTrend": [
