@@ -67,22 +67,6 @@ export const eyeColumns: EyeColumnMeta[] = [
     ],
   },
   {
-    slug: 'megane-online-shopping',
-    title: '眼鏡をオンラインで買う方法【Zoff・JINS・Warby Parker】失敗しない選び方',
-    description: 'JINSやZoff、楽天眼鏡など主要オンラインショップの比較。度数入力の方法、フィッティング、返品対応まで解説。',
-    category: '眼鏡・サングラス',
-    section: 'megane',
-    publishedAt: '2026-07-13',
-    updatedAt: '2026-07-14',
-    readingTime: 7,
-    headings: ['オンライン購入のメリット・デメリット', '主要ショップ比較', '度数の入力方法', 'バーチャル試着の使い方', '返品・調整サービス'],
-    faqs: [
-      { q: 'オンラインで購入した眼鏡が合わなかった場合は返品できますか？', a: 'JINS・Zoffのオンラインショップは度なしフレームは返品可能（未使用の場合）ですが、度入りレンズは作成後の返品不可が一般的です。購入前に各ショップの返品ポリシーを確認してください。' },
-      { q: 'フレームだけ購入してレンズだけ近くの眼鏡店で入れてもらえますか？', a: '可能なショップもありますが、フレームとレンズのメーカーが異なると対応を断られることもあります。フレーム購入先と同じショップでレンズを入れるか、対応可能かを事前に確認することをおすすめします。' },
-      { q: 'オンライン眼鏡の平均価格はいくらですか？', a: 'フレーム＋単焦点レンズで5,500〜15,000円が相場です。JINSやZoffは5,500円均一のレンズが多く、プレミアムコーティング追加で+3,300〜5,500円。楽天・Amazonでは度なしフレーム単体で1,000〜5,000円のものも豊富です。' },
-    ],
-  },
-  {
     slug: 'vr-shiryoku-warui',
     title: '視力が悪い人のVRゴーグル対策【コンタクト・度付きインサート・メガネスペーサー完全ガイド】',
     description: '近視・乱視があってもVRを快適に楽しむ3つの方法を解説。Meta Quest対応の度付きインサートレンズも紹介。',
@@ -377,41 +361,6 @@ export const eyeColumns: EyeColumnMeta[] = [
     ],
   },
     {
-    slug: "vr-movie-video-service-2026",
-    title: "VR映画・動画視聴のおすすめサービス2026|360度体験で映画館が家に",
-    description: "2026年最新のVR映画・動画視聴サービスを徹底比較。YouTube VR、Netflix、Disney+など主要プラットフォームの特徴と料金を解説します。",
-    section: "vr",
-    category: "VR・スマートグラス",
-    readingTime: 8,
-    publishedAt: "2026-07-17",
-    keywords: ["VR映画","VR動画視聴","VRサービス2026","360度動画","メタバース映画館"],
-    faqs: [
-    { q: "VR映画視聴に必要な機器は何ですか？", a: "Meta Quest 3、Apple Vision Pro、PlayStation VRなどのVRヘッドセット、またはスマートフォンとVRゴーグルがあれば視聴可能です。2026年現在、Meta Quest 3が最もコストパフォーマンスに優れており、初心者におすすめです。アマゾンと楽天では様々なVRゴーグルが購入できます。" },
-    { q: "VR映画とは普通の映画と何が違いますか？", a: "VR映画は360度カメラで撮影された映像で、視線を動かすことで好きな方向の映像を見ることができます。普通の映画は画面枠が決まっていますが、VR映画は没入感が極めて高く、映画館にいるよりもリアルな体験が得られます。" },
-    { q: "2026年のVR動画視聴サービスで最も無料コンテンツが充実しているのはどれですか？", a: "YouTube VRが最も充実しています。無料で数千本のVR動画・360度動画を視聴でき、有料配信もYouTube Premium加入で広告なしで楽しめます。月額1,180円で膨大なコンテンツにアクセスできます。" },
-    { q: "VRで映画館と同じクオリティで映画は見られますか？", a: "はい、むしろ超える体験が可能です。Meta Quest 3やApple Vision Proなら8K相当の解像度で映画を視聴でき、バーチャル映画館で複数人での鑑賞も可能です。自宅が高級プライベートシアターに変わります。" },
-    { q: "VR酔いが心配なのですが、映画視聴で酔いやすいですか？", a: "映画視聴はカメラが動かない作品が多いため、ゲームと比べて酔いにくいです。最初は30分程度から始め、徐々に時間を延ばすことをおすすめします。酔いやすい場合は、リフレッシュレート90Hz以上のデバイスを選びましょう。" }
-    ],
-  },
-    {
-    slug: "vr-movie-video-service-recommend-2026",
-    title: "VR映画・動画視聴おすすめサービス2026｜没入感溢れるコンテンツを楽しむ",
-    description: "2026年最新のVR映画・動画視聴サービス完全ガイド。Netflix VR、YouTube VRなど人気プラットフォームの比較と選び方を徹底解説。VRゴーグルと組み合わせた最高の視聴体験をご紹介します。",
-    section: "vr",
-    category: "VR・スマートグラス",
-    readingTime: 12,
-    publishedAt: "2026-07-17",
-    keywords: ["VR映画視聴","VR動画サービス","VRコンテンツ","VRゴーグル"],
-    faqs: [
-    { q: "VR映画とは通常の映画と何が違うのですか？", a: "VR映画は360度の全方向映像を提供し、視聴者が能動的に視点を選択できるのが特徴です。頭部の動きに応じて映像が変わり、映画の中に「入り込んだ」ような没入感を体験できます。通常の映画は固定された視点から一方向の映像を見るだけですが、VR映画は自分の視線で周囲の環境を自由に探索する体験が可能です。" },
-    { q: "2026年現在、最も推奨されるVRゴーグルはどれですか？", a: "2026年時点では、Meta Quest 3S、Apple Vision Pro、Sony PlayStationVR2が主流です。初心者向けにはMeta Quest 3Sがコストパフォーマンスに優れており、高品質な体験を求めるならApple Vision ProやPlayStationVR2がおすすめです。各ヘッドセットは互換性が異なるため、視聴したいサービスとの相性を確認することが重要です。" },
-    { q: "VR映画を視聴するために必要な機器は何ですか？", a: "基本的にはVRゴーグル（ヘッドセット）が必須です。スタンドアロン型なら単体で動作しますが、PC/スマートフォン接続型の場合は対応デバイスも必要です。また、快適な視聴のためには広い視野角のゴーグル、高速インターネット接続、オーディオシステムなどがあるとより良い体験ができます。2026年のヘッドセットの平均価格は30,000円～650,000円の幅があります。" },
-    { q: "VR映画・動画サービスはサブスクリプション方式ですか？", a: "多くのVRコンテンツプラットフォームはサブスクリプション方式を採用しています。Netflix VRは月額990円～1,980円、YouTube Premiumは月額1,180円など、従来のストリーミング料金と同等またはやや高めの価格設定が一般的です。また、買い切り型のコンテンツや無料コンテンツも存在するため、複数のプラットフォームを組み合わせて利用するのが効果的です。" },
-    { q: "VR動画視聴で酔い（VR酔い）を防ぐ方法はありますか？", a: "VR酔いを防ぐため、以下のポイントが重要です：①最初は短時間（15～20分程度）からスタート②高いフレームレート（90fps以上）のコンテンツを選ぶ③ゴーグルの装着位置を正確に調整④動きの激しいコンテンツは避ける⑤十分な睡眠と体調管理。また、VR対応アプリの多くは快適性設定を備えており、モーションコントロールの感度を調整することも効果的です。" },
-    { q: "4K/8KのVR動画コンテンツは2026年にどのくらい利用できますか？", a: "2026年時点で、4K VRコンテンツは一部のプレミアムプラットフォームで増加していますが、実装はまだ限定的です。YouTube、Netflix、Apple TV+などは4K対応コンテンツを提供していますが、通信速度要件が高く（100Mbps以上推奨）、対応ゴーグルも限定されています。8K VRはまだ実験段階で、一般向け配信はほぼないのが実状です。" }
-    ],
-  },
-    {
     slug: "vr-movie-streaming-service-recommend-2026",
     title: "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
     description: "2026年最新のVR映画・動画視聴サービスを徹底比較。Meta Quest3、Apple Vision Pro対応の人気プラットフォームと選び方をご紹介。",
@@ -481,23 +430,6 @@ export const eyeColumns: EyeColumnMeta[] = [
     ],
   },
     {
-    slug: "lasik-dry-eye-prevention-2026",
-    title: "LASIK手術後のドライアイ対策完全ガイド｜リスク軽減と効果的なケア方法",
-    description: "LASIK手術後のドライアイリスクと対策方法を徹底解説。術後ケアの実践的な方法、点眼液選びから予防策まで、安全で快適な視力回復をサポートします。",
-    section: "lasik",
-    category: "レーシック",
-    readingTime: 8,
-    publishedAt: "2026-07-17",
-    keywords: ["LASIK ドライアイ","LASIK術後ケア","視力矯正 ドライアイ対策"],
-    faqs: [
-    { q: "LASIK手術後、なぜドライアイが起こるのですか？", a: "LASIK手術では角膜上皮を切除して形状を変えるため、角膜の知覚神経が一時的に損傷します。これにより涙液分泌が低下し、ドライアイが発生します。通常は3～6ヶ月で改善されますが、術前から乾燥体質だった方は症状が長引く場合があります。個人差はありますが、約50～60%の患者が術後3ヶ月以内に何らかのドライアイ症状を経験します。" },
-    { q: "LASIK術後のドライアイは永続的に続きますか？", a: "ほとんどの場合、LASIK術後のドライアイは一時的です。3～6ヶ月で自然に改善される患者が大多数です。ただし、術前から重度のドライアイがあった方や、加齢とともに涙液分泌が低下した患者では、長期間症状が続くことがあります。重症化した場合は、医師の指導下で涙点プラグなどの治療を検討することもあります。" },
-    { q: "術後のドライアイ予防で最も効果的な方法は何ですか？", a: "術前診断で乾燥リスクを評価し、術後の定期的な点眼液使用と生活習慣改善が最も効果的です。シュルマー試験やOcular Surface Disease Index（OSDI）で術前スクリーニングを行い、リスク患者には予防的な治療を施します。術後は医師推奨の人工涙液を1日4～6回使用し、画面時間を制限し、加湿器の利用や目への強い刺激を避けることが重要です。" },
-    { q: "LASIK術後、どのような点眼液を使うべきですか？", a: "保存料無添加の人工涙液が推奨されます。防腐剤が含まれた点眼液は長期使用で角膜障害を引き起こす可能性があります。市販の製品であれば、1回使い切りタイプや無菌個別包装のものを選びましょう。医師の処方する薬用点眼液（ジクアス、レバミピドなど）も効果的です。症状に応じて、ゲル状の点眼液や夜間用の軟膏も組み合わせて使用できます。" },
-    { q: "LASIK術後、ドライアイが悪化した場合の対処法は？", a: "症状が悪化した場合は、医師に相談してください。一般的な対処法として、涙点プラグ（涙を目に留める器具）の装着、ステロイド点眼液の短期使用、オメガ3サプリメント補給などが行われます。さらに重症な場合は、自己血清点眼液や羊膜移植などの高度な治療も選択肢となります。いずれの場合も自己判断での市販薬使用は避け、必ず眼科医の診断を受けてください。" }
-    ],
-  },
-    {
     slug: "megane-facial-shape-frame-2026",
     title: "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
     description: "2026年最新版！顔型別（丸顔・四角顔・菱形・逆三角形）に合わせたメガネフレーム選びのコツを解説。似合う眼鏡を見つける方法とおすすめブランドを紹介します。",
@@ -512,24 +444,6 @@ export const eyeColumns: EyeColumnMeta[] = [
     { q: "菱形顔に合わせるメガネ選びはどうすればいい？", a: "菱形顔は頬が出ていることが特徴です。ボストン型やティアドロップ型のフレームで、頬付近を覆うタイプがおすすめです。フレームのサイズは中程度で、奥行きのあるデザインを選ぶと、顔の幅を調整できます。" },
     { q: "逆三角形顔の人はどのフレーム形を選ぶべき？", a: "逆三角形顔は額が広く顎が小さいことが特徴です。下部に幅のあるウェリントン型やボストン型が、顎の狭さをカバーできます。フレームの色を濃くすると、さらに引き締まった印象になります。" },
     { q: "フレームの色選びに顔型は関係ありますか？", a: "顔型によってフレームの色選びも重要です。丸顔はシルバーやメタル、四角顔はゴールドやウォームトーン、菱形顔はニュアンスカラー、逆三角形顔はダーク系がそれぞれ似合いやすいとされています。肌色や髪色との調和も考慮しましょう。" }
-    ],
-  },
-    {
-    slug: "vr-movie-video-service-osusume-2026",
-    title: "VR映画・動画視聴おすすめサービス2026|最新プラットフォーム比較",
-    description: "2026年最新のVR映画・動画視聴サービスを徹底比較。動画配信プラットフォーム、推奨デバイス、料金プランを解説します。",
-    section: "vr",
-    category: "VR・スマートグラス",
-    readingTime: 8,
-    publishedAt: "2026-07-18",
-    keywords: ["VR映画","VR動画視聴","動画配信サービス","VRストリーミング","2026"],
-    faqs: [
-    { q: "VR映画を視聴するのに必要な機材は何ですか？", a: "VRヘッドセット（Meta Quest 3s、Apple Vision Pro、PlayStation VRなど）、安定したインターネット接続（5Mbps以上推奨）、スマートフォンまたはPC、対応アプリです。デバイスによって対応形式が異なるため、事前に確認が必要です。" },
-    { q: "VR映画とHD映画の主な違いは何ですか？", a: "VR映画は360度の映像体験と3D立体表示で、視聴者が作品世界に没入できるのが特徴です。一方HD映画は2D平面映像で、テレビやモニター視聴に限定されます。没入感と体験の質が大きく異なります。" },
-    { q: "VR動画視聴サービスの月額料金の相場は？", a: "2026年現在、主要サービスの月額料金は500円～2,000円程度が相場です。Netflix VRは無料～1,000円、Amazon Prime Videoは650円～1,000円、専門VRプラットフォームは月額980円～1,500円となっています。" },
-    { q: "無料でVR映画を視聴することは可能ですか？", a: "YouTube VRやTikTok、一部メタバース内のコンテンツで無料VR動画が視聴可能です。ただし、映画作品の本編は有料配信が主流です。無料トライアル期間を活用する方法もあります。" },
-    { q: "VR映画視聴で必要な通信速度はどのくらいですか？", a: "4K VR動画は最低5Mbps、8K VR動画は25Mbps以上の通信速度が推奨されています。Wi-Fi 6（WiFi AX）以上の安定した接続環境があると、快適に視聴できます。" },
-    { q: "VR酔いを防ぐための視聴方法のコツはありますか？", a: "フレームレートが高い（90fps以上）デバイスを選択し、姿勢を正して視聴してください。短時間の視聴から始め、30分ごとに10分程度の休憩を取ることが効果的です。目の疲れを感じたら無理に続けず中断しましょう。" }
     ],
   },
     {
@@ -1182,166 +1096,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
     </article>
   ),
 
-  'megane-online-shopping': (
-    <article className="prose prose-sm max-w-none">
-      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
-        眼鏡のオンライン購入は、店頭より安く多くの選択肢から選べるメリットがあります。失敗しないためのポイントを解説します。
-      </p>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">オンライン購入のメリット・デメリット</h2>
-      <div className="grid sm:grid-cols-2 gap-4 mb-6">
-        <div className="bg-green-50 border border-green-200 rounded-xl p-4">
-          <p className="font-bold text-green-800 mb-2">メリット</p>
-          <ul className="text-sm text-gray-700 space-y-1">
-            <li>✓ 実店舗より30〜50%安い</li>
-            <li>✓ デザインの選択肢が豊富</li>
-            <li>✓ 24時間注文可能</li>
-            <li>✓ 海外ブランドも購入しやすい</li>
-          </ul>
-        </div>
-        <div className="bg-red-50 border border-red-200 rounded-xl p-4">
-          <p className="font-bold text-red-800 mb-2">デメリット</p>
-          <ul className="text-sm text-gray-700 space-y-1">
-            <li>✗ フィッティング調整が難しい</li>
-            <li>✗ 実際の色味が異なる場合も</li>
-            <li>✗ PD測定が必要</li>
-            <li>✗ 返品・交換に時間がかかる</li>
-          </ul>
-        </div>
-      </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">主要ショップ比較</h2>
-      <div className="overflow-x-auto mb-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-indigo-50">
-              <th className="text-left p-3 border border-gray-200">ショップ</th>
-              <th className="text-left p-3 border border-gray-200">価格帯</th>
-              <th className="text-left p-3 border border-gray-200">特徴</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              { shop: 'JINS オンライン', price: '¥5,500〜', feat: 'バーチャル試着あり・全国で調整可能' },
-              { shop: 'Zoff オンライン', price: '¥5,500〜', feat: '豊富なデザイン・店舗でのアフターケアあり' },
-              { shop: '楽天市場 眼鏡', price: '¥1,000〜', feat: '激安フレームが豊富・ポイント還元' },
-              { shop: 'Amazon 眼鏡フレーム', price: '¥500〜', feat: '最安値が出やすい・即日配送対応あり' },
-            ].map(r => (
-              <tr key={r.shop} className="border-b border-gray-100">
-                <td className="p-3 border border-gray-200 font-medium">{r.shop}</td>
-                <td className="p-3 border border-gray-200 text-indigo-700 font-bold">{r.price}</td>
-                <td className="p-3 border border-gray-200 text-gray-600 text-xs">{r.feat}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <div className="my-6 p-4 bg-indigo-50 border border-indigo-200 rounded-xl">
-        <p className="text-sm font-bold text-indigo-900 mb-1">👓 楽天市場で人気の眼鏡フレームをチェック</p>
-        <p className="text-xs text-gray-600 mb-3">実店舗より安く、自宅でじっくり選べるオンライン購入に人気の商品です。</p>
-        <div className="mb-2">
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4c6.0ff9348e.5622e4c7.74cd653f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fre-colle%2Fc111055-pc%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
-            Re-COLLE PCメガネ C111055（ブルーライトカット対応）を楽天で見る →
-          </a>
-        </div>
-        <div className="mb-2">
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4ee.c25ab11d.5622e4ef.2987dd69/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Florelife%2Ff2006c-106%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
-            Lorelife メガネフレーム F2006C（おしゃれ・軽量）を楽天で見る →
-          </a>
-        </div>
-        <div>
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
-            merry39 メガネフレーム No.2854（楽天人気）を楽天で見る →
-          </a>
-        </div>
-      </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">PDの入力方法</h2>
-      <p className="text-gray-700 mb-4">
-        PD（瞳孔間距離）はオンライン購入で最も重要な数値です。眼科処方箋に記載されているか、眼鏡店で無料測定できます。通常60〜70mmが成人の平均値です。
-      </p>
-      <div className="space-y-3 mb-6">
-        {[
-          { step: '方法①（最確実）', detail: '眼科で処方箋を発行してもらう際にPD記載をお願いする。処方箋にR（右目）とL（左目）が別々に書かれている場合もある。' },
-          { step: '方法②（無料・手軽）', detail: 'JINS・Zoff・眼鏡市場などの眼鏡店で無料測定。レンズメーターで2〜3分で計測してもらえる。購入義務なし。' },
-          { step: '方法③（概算・自己計測）', detail: '定規を目の前に当て、鏡を見ながら右目の瞳孔中心から左目の瞳孔中心までの距離を測る。誤差±2mmが目安。精度が低いため、重要度が高い場合は方法①②を推奨。' },
-        ].map(s => (
-          <div key={s.step} className="bg-white border border-gray-200 rounded-xl p-4 flex gap-3">
-            <span className="shrink-0 text-xs font-bold bg-indigo-100 text-indigo-700 px-2 py-1 rounded h-fit">{s.step}</span>
-            <p className="text-sm text-gray-700 leading-relaxed">{s.detail}</p>
-          </div>
-        ))}
-      </div>
-      <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-4 mb-6">
-        <p className="text-sm text-indigo-800">
-          <strong>💡 片目PDについて：</strong>左右で瞳孔位置がずれている方はR/L別々の値（例：R32mm / L33mm）を使います。オンラインショップ入力欄に「片眼PD」欄がある場合はこちらを使用してください。
-        </p>
-      </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">バーチャル試着の使い方</h2>
-      <p className="text-gray-700 mb-4">
-        JINSやZoffのアプリでは、スマートフォンのカメラを使ったバーチャル試着が可能です。顔の輪郭に合わせてフレームがリアルタイムで表示されるため、大まかなイメージを確認できます。
-      </p>
-      <div className="space-y-3 mb-6">
-        {[
-          { tip: '顔の正面をまっすぐ向く', detail: '横を向いたり角度がつくと輪郭が正しく認識されない。明るい場所で正面の顔を映す。' },
-          { tip: 'フレームサイズの数字を確認する', detail: 'フレーム横幅（レンズ幅+ブリッジ+テンプル）が表示されている場合は、現在の眼鏡と比較して±3mm以内を目安にする。' },
-          { tip: '複数フレームをスクショして比較', detail: 'バーチャル試着のスクリーンショットを撮って並べると、印象の違いが客観的に見える。家族や友人に意見を聞くのも効果的。' },
-          { tip: '楽天市場でも試着なしで購入できる', detail: '楽天の眼鏡ショップは返品・交換対応が充実しているショップも多い。商品ページの「返品ポリシー」を必ず確認してから注文する。' },
-        ].map(t => (
-          <div key={t.tip} className="bg-white border border-gray-200 rounded-xl p-4">
-            <p className="font-bold text-gray-800 text-sm mb-1">✓ {t.tip}</p>
-            <p className="text-xs text-gray-600 leading-relaxed">{t.detail}</p>
-          </div>
-        ))}
-      </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">失敗しないための5つのチェックポイント</h2>
-      <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-5 mb-6">
-        <ul className="space-y-2 text-sm text-gray-700">
-          {[
-            'PDを正確に測定・記録してから注文する（眼鏡店で無料測定可）',
-            'フレームのサイズ表記（lens width / bridge / temple）を現在の眼鏡と比較する',
-            '度数（S・C・AX・PD）を処方箋から正確にコピーする。入力ミスが最大の失敗原因',
-            '返品・交換ポリシーを購入前に必ず確認する（レンズ加工後は不可なショップが多い）',
-            'カラーは商品ページの複数写真を見る。モニターの色は実物と異なる場合がある',
-          ].map((item, i) => (
-            <li key={i} className="flex items-start gap-2">
-              <span className="shrink-0 font-bold text-indigo-600 text-xs mt-0.5 w-5 text-center">{i + 1}</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
-        <p className="font-bold text-gray-800 mb-3">楽天市場で人気のオンライン眼鏡フレームを見る</p>
-        <p className="text-xs text-gray-500 mb-3">返品対応・レビュー多数の実績あるショップからお選びください。</p>
-        <div className="mb-2">
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
-            Wavecontact メガネフレーム MGN_BASIC を楽天で見る →
-          </a>
-        </div>
-        <div className="mb-2">
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e16c.d190f4a9.5622e16d.a64e1d5d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmegane-style%2Fcf5043%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
-            メガネスタイル メガネフレーム CF5043 を楽天で見る →
-          </a>
-        </div>
-        <div>
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
-            Hodopus メガネフレームを楽天で見る →
-          </a>
-        </div>
-      </div>
-    </article>
-  ),
 
   'vr-shiryoku-warui': (
     <article className="prose prose-sm max-w-none">
@@ -3282,318 +3036,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">導入検討段階での疑問点や技術相談については、各企業のカスタマーサクセスチームへお問い合わせいただくことで、無料の診断サービスが受けられる場合も多くあります。</p>
     </article>
   ),
-    "vr-movie-video-service-2026": (
-    <article className="prose prose-sm max-w-none">
-      <p className="text-gray-700 mb-4"># VR映画・動画視聴のおすすめサービス2026|360度体験で映画館が家に</p>
-      <p className="text-gray-700 mb-4">2026年、VR映画・動画視聴のサービスは大きく進化しました。自宅にいながら映画館以上の没入感で映画やドキュメンタリーを楽しめる時代が到来しています。本記事では、2026年の最新VRサービスを徹底比較し、あなたに最適なプラットフォームを提案します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画視聴が人気を集める理由</h2>
-      <p className="text-gray-700 mb-4">VR映画視聴は、単なるエンターテイメントではなく、映像体験の革命です。従来の平面スクリーンから360度の立体映像へと進化することで、視聴者の没入感が劇的に向上しています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">没入感の向上</h3>
-      <p className="text-gray-700 mb-4">2026年時点で、Meta Quest 3やApple Vision Proなどの最新VRヘッドセットは、4K～8K相当の解像度を実現しています。映画館の大画面(約20メートル相当)を自宅で体験できます。統計によると、VR映画視聴ユーザーの約87%が「従来の映画視聴より満足度が高い」と回答しています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">プライバシーと快適性</h3>
-      <p className="text-gray-700 mb-4">自宅でのプライベート視聴なら、他人の視線を気にせず、好きな時間に好きな格好で映画を楽しめます。これはストレス軽減にもつながり、映画の内容への集中力も20～30%向上することが研究で示されています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年の主要VR動画視聴サービス比較</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1. YouTube VR（YouTube Premium）</h3>
-      <p className="text-gray-700 mb-4"><strong>月額料金</strong>: 1,180円（YouTube Premium）</p>
-      <p className="text-gray-700 mb-4"><strong>対応デバイス</strong>: Meta Quest、Apple Vision Pro、PlayStation VR2、Android端末</p>
-      <p className="text-gray-700 mb-4">YouTube VRは、2026年現在最も充実したコンテンツ数を誇ります。プロダクション映画、ドキュメンタリー、ライブコンサート、スポーツ映像が数千本以上配信されています。</p>
-      <p className="text-gray-700 mb-4"><strong>メリット：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>無料動画も豊富（基本機能は無料）</li>
-        <li>毎週新作が追加される</li>
-        <li>クリエイターによる多様なコンテンツ</li>
-        <li>YouTube Premiumなら広告なしで視聴可能</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>デメリット：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>有料映画作品は別途購入が必要な場合がある</li>
-        <li>字幕の自動翻訳精度は混在</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2. Netflix VR</h3>
-      <p className="text-gray-700 mb-4"><strong>月額料金</strong>: 790円～1,980円（プランによる）</p>
-      <p className="text-gray-700 mb-4"><strong>対応デバイス</strong>: Meta Quest 3、Apple Vision Pro</p>
-      <p className="text-gray-700 mb-4">Netflixは2025年にVR専用プラットフォームを大幅拡張し、2026年には映画とシリーズの両方をVRで提供しています。オリジナルドキュメンタリーと映画作品が充実しており、月平均50～60本の新作が追加されています。</p>
-      <p className="text-gray-700 mb-4"><strong>メリット：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>高品質なオリジナルコンテンツ</li>
-        <li>字幕・吹き替えの充実度が高い（25言語以上対応）</li>
-        <li>ダウンロード視聴対応（オフライン再生可能）</li>
-        <li>複数プロフィール管理可能</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>デメリット：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>VR機器が必須（スマートフォンVRゴーグルでは不可）</li>
-        <li>一部旧作の配信終了あり</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3. Apple TV+ VR Experience</h3>
-      <p className="text-gray-700 mb-4"><strong>月額料金</strong>: 900円</p>
-      <p className="text-gray-700 mb-4"><strong>対応デバイス</strong>: Apple Vision Pro（専用）</p>
-      <p className="text-gray-700 mb-4">Apple TV+はVR専用機「Apple Vision Pro」での視聴に特化しています。映画館と同等の視聴環境が実現でき、2026年現在、450本以上の映画とシリーズがVR対応となっています。</p>
-      <p className="text-gray-700 mb-4"><strong>メリット：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>Apple Vision Proの圧倒的な画質性能を活かした体験</li>
-        <li>シネマティックモード（映画館風）での視聴が標準</li>
-        <li>Appleエコシステムとの連携</li>
-        <li>家族向けコンテンツが充実</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>デメリット：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>Apple Vision Proの購入必須（本体価格35万円～）</li>
-        <li>コンテンツ数ではYouTubeやNetflixに劣る</li>
-        <li>初期投資が高額</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">4. Amazon Prime Video VR</h3>
-      <p className="text-gray-700 mb-4"><strong>月額料金</strong>: 600円（年間5,900円）</p>
-      <p className="text-gray-700 mb-4"><strong>対応デバイス</strong>: Meta Quest、Fire TV Cube with VR</p>
-      <p className="text-gray-700 mb-4">Amazon Prime Video VRは、アマゾンのエコシステムを活かしたサービスです。2026年版では、4K映画500本以上がVR対応となり、Prime会員なら追加料金なしでアクセス可能です。</p>
-      <p className="text-gray-700 mb-4"><strong>メリット：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>コストパフォーマンスが優秀</li>
-        <li>Prime会員特典で利用可能</li>
-        <li>日本語字幕・吹き替えが充実</li>
-        <li>FireStickデバイスとの連携がシームレス</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>デメリット：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>VR特化のコンテンツが限定的</li>
-        <li>新作追加の頻度がやや低い</li>
-      </ul>
-      <p className="text-gray-700 mb-4">アマゾンで対応デバイスをチェック：</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画視聴に最適なデバイス選択ガイド</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">予算別おすすめデバイス</h3>
-      <p className="text-gray-700 mb-4"><strong>予算10万円以下</strong></p>
-      <p className="text-gray-700 mb-4">Meta Quest 3s（39,800円～）が最適です。十分な性能で、VR映画館体験に必要な機能を全て備えています。初心者にはコストパフォーマンスが最高です。</p>
-      <p className="text-gray-700 mb-4"><strong>予算20万円前後</strong></p>
-      <p className="text-gray-700 mb-4">Meta Quest Pro（229,000円）またはPlayStation VR2（599ドル相当）がおすすめ。4K解像度対応で、映画の細部まで美しく表現されます。</p>
-      <p className="text-gray-700 mb-4"><strong>予算30万円以上</strong></p>
-      <p className="text-gray-700 mb-4">Apple Vision Pro（352,800円）が最高級選択肢です。8K相当の解像度と、Appleの最新技術により、最高のVR映画体験が得られます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">楽天での購入も検討を</h3>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FVR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天でVRゴーグルを検索</a></p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年イチオシVR映画作品・コンテンツ</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Netflix VR独占配信作品</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>「Cosmos VR」シリーズ（宇宙ドキュメンタリー）：体験型の宇宙探検が可能</li>
-        <li>「The Wonder Years - VR Edition」：懐かしの名作をVRで再体験</li>
-        <li>「Wildlife in 360°」：野生動物のドキュメンタリー。動物の目線での世界が体験できます</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">YouTube VRの人気コンテンツ</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>NASAのMars Rover footage：火星表面を360度で探索</li>
-        <li>BBC Natural History：自然界の驚異をVRで体験</li>
-        <li>世界の名舞台ライブコンサート：数百本のコンサート映像が無料公開中</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Apple TV+ VR専用作品</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>「Prehistoric Planet VR」：恐竜時代への没入体験</li>
-        <li>「The Playwright」（360度劇場映像）：舞台演劇をVRで鑑賞</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画視聴における注意点と対策</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">VR酔い対策</h3>
-      <p className="text-gray-700 mb-4">VR動画視聴でVR酔いが起こる場合は以下の対策を取りましょう：</p>
-      <p className="text-gray-700 mb-4">1. <strong>初回は30分から開始</strong>：慣れるまで徐々に時間を延ばす</p>
-      <p className="text-gray-700 mb-4">2. <strong>リフレッシュレートが高いデバイスを選ぶ</strong>：90Hz以上推奨</p>
-      <p className="text-gray-700 mb-4">3. <strong>動きが少ない作品から始める</strong>：ドキュメンタリーから映画へ段階的に進める</p>
-      <p className="text-gray-700 mb-4">4. <strong>暗い環境での視聴を避ける</strong>：室内照明は適度に点ける</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">目の疲労軽減</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>1時間ごとに5～10分の休憩を取る</li>
-        <li>瞬きを意識的に多くする</li>
-        <li>ピント調整機能が搭載されたデバイスを選ぶ</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年のVR映画市場トレンド</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">市場規模の拡大</h3>
-      <p className="text-gray-700 mb-4">2026年のVR映画・動画配信市場は、全世界で約2,400億円規模に達しており、年平均成長率(CAGR)は23%です。日本市場単体でも290億円を超える規模に成長しています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">コンテンツの多様化</h3>
-      <p className="text-gray-700 mb-4">従来の映画作品だけでなく、以下のコンテンツが急速に拡大しています：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>教育コンテンツ</strong>：学校向けVR授業が全国で導入加速</li>
-        <li><strong>医療VR</strong>：瞑想や心理療法向けVRコンテンツ</li>
-        <li><strong>スポーツ観戦</strong>：オリンピック、ワールドカップをVRで体験</li>
-        <li><strong>ライブパフォーマンス</strong>：コンサートや舞台をVRで配信</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">スマートグラスの台頭</h3>
-      <p className="text-gray-700 mb-4">Apple Vision Proなどのスマートグラスが普及により、VR映画視聴がより日常的になりつつあります。2026年末までに、スマートグラス市場は全世界で800万台を超えると予測されています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめサービス選択のまとめ</h2>
-      <p className="text-gray-700 mb-4">| サービス | 月額料金 | コンテンツ数 | おすすめ度 |</p>
-      <p className="text-gray-700 mb-4">|---------|---------|-----------|----------|</p>
-      <p className="text-gray-700 mb-4">| YouTube VR | 1,180円 | 5,000本以上 | ★★★★★ |</p>
-      <p className="text-gray-700 mb-4">| Netflix VR | 790円～ | 450本 | ★★★★☆ |</p>
-      <p className="text-gray-700 mb-4">| Apple TV+ VR | 900円 | 450本 | ★★★★☆ |</p>
-      <p className="text-gray-700 mb-4">| Amazon Prime Video VR | 600円 | 300本以上 | ★★★☆☆ |</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">最終的なおすすめ</h3>
-      <p className="text-gray-700 mb-4"><strong>総合最強：YouTube VR（YouTube Premium）</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>無料コンテンツが豊富で、有料でも1,180円と安い</li>
-        <li>コンテンツ数が圧倒的</li>
-        <li>デバイスの選択肢が最も多い</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>映画メインなら：Netflix VR</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>オリジナル映画の品質が高い</li>
-        <li>字幕・吹き替えの充実度が最高</li>
-        <li>ダウンロード視聴対応</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>最高の体験を求めるなら：Apple TV+ VR on Vision Pro</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>画質・音質が業界最高水準</li>
-        <li>Appleエコシステムとの連携が秀逸</li>
-        <li>初期投資が必要</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画視聴で映画の見方が変わる</h2>
-      <p className="text-gray-700 mb-4">VR映画・動画視聴サービスは、単なる映画鑑賞の選択肢ではなく、映像体験そのものを再定義しています。2026年の今、最新デバイスと充実したコンテンツプラットフォームにより、映画館よりも優れた体験が自宅で実現できる時代になりました。</p>
-      <p className="text-gray-700 mb-4">あなたの予算と好みに応じて、ぜひ一度VR映画の世界に足を踏み入れてみてください。従来の映画視聴に戻れなくなるほどの没入感を体験できるでしょう。</p>
-    </article>
-  ),
-    "vr-movie-video-service-recommend-2026": (
-    <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画・動画視聴サービスの現状と2026年のトレンド</h2>
-      <p className="text-gray-700 mb-4">VR技術の急速な進化に伴い、映画や動画コンテンツの視聴体験も大きく変わっています。従来の画面越しの映画鑑賞から、映画の世界に「入り込む」没入感溢れる体験へと進化しているのです。2026年現在、複数の大型プラットフォームがVRコンテンツに力を入れており、ユーザーはかつてないレベルのコンテンツ選択肢を手にしています。</p>
-      <p className="text-gray-700 mb-4">本記事では、2026年で最もおすすめできるVR映画・動画視聴サービスを詳細に解説し、各プラットフォームの特徴、料金体系、利用可能なコンテンツについて包括的に紹介します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">主要VRコンテンツプラットフォーム比較</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Netflix VR – クオリティ重視ユーザー向け</h3>
-      <p className="text-gray-700 mb-4">Netflixは2025年からVR専用チャンネルを本格化させ、2026年には映画とドラマシリーズの両方で充実したVRコンテンツラインナップを展開しています。特に注目すべき点は、従来のNetflixオリジナルコンテンツをVR化する戦略です。</p>
-      <p className="text-gray-700 mb-4"><strong>料金体系：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ベーシックプラン：990円/月</li>
-        <li>スタンダード（VR対応）：1,490円/月</li>
-        <li>プレミアム（4K VR対応）：1,980円/月</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>主なVRコンテンツ（2026年）：</strong></p>
-      <p className="text-gray-700 mb-4">2026年のNetflix VRでは、「Stranger Things」のVRスピンオフシリーズ、映画「The Platform 2」のVRアダプテーション、オリジナルドキュメンタリー「Deep Ocean VR」など、大型作品が次々とリリースされています。月間アクティブユーザー数は2026年6月時点で850万人を突破しており、このプラットフォームへの投資が著しい成果をあげていることがわかります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">YouTube VR – アクセス性とコンテンツ量が魅力</h3>
-      <p className="text-gray-700 mb-4">YouTubeはVR動画の最大の配信プラットフォームであり、2026年時点で約230万本のVR対応動画がアップロードされています。プロフェッショナルな映像制作物から、ユーザー生成コンテンツまで、圧倒的な多様性が特徴です。</p>
-      <p className="text-gray-700 mb-4"><strong>料金体系：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>YouTube無料版：広告あり</li>
-        <li>YouTube Premium：1,180円/月（VR対応）</li>
-        <li>YouTube Premium Family：1,680円/月（最大6ユーザー）</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>コンテンツの特徴：</strong></p>
-      <p className="text-gray-700 mb-4">教育系VRコンテンツが充実しており、国立科学博物館、NASA、世界的な美術館がVR体験動画を配信しています。また、ライブイベント配信のVR対応も進み、コンサート、スポーツ、ニュースイベントなどをVR視点で体験できるようになっています。</p>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FVR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">VR視聴に最適なゴーグルを楽天で探す</a></p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Apple TV+ VR Edition – プレミアムシネマティック体験</h3>
-      <p className="text-gray-700 mb-4">AppleはApple Vision Proの登場とともに、Apple TV+をVRプラットフォームとして展開しています。映画館品質の映像処理とサウンドデザインが特徴で、高品質な視聴体験を求めるユーザーに最適です。</p>
-      <p className="text-gray-700 mb-4"><strong>料金体系：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>Apple TV+単体：900円/月</li>
-        <li>Apple One Bundle（複数サービス）：1,100円/月～</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>技術仕様と特徴：</strong></p>
-      <p className="text-gray-700 mb-4">Apple TV+ VRコンテンツは、2026年時点で4K解像度で提供され、空間オーディオ対応のコンテンツが全体の78%に達しています。映像フレームレートは90fps、フィールド・オブ・ビューは110度以上という業界最高水準です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Disney+ VR – ファミリー向けコンテンツの充実</h3>
-      <p className="text-gray-700 mb-4">DisneyはプレミアムなファミリーコンテンツのVR化に注力しており、ピクサー、マーベル、スターウォーズのVRコンテンツが豊富です。</p>
-      <p className="text-gray-700 mb-4"><strong>提供内容：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>映画作品のVRバージョン：メジャー映画の30～40%</li>
-        <li>オリジナルVRシリーズ：月3～4作品のペース</li>
-        <li>インタラクティブコンテンツ：約50タイトル</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VRコンテンツ視聴に必要なデバイス選択ガイド</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ハイエンドVRゴーグル</h3>
-      <p className="text-gray-700 mb-4"><strong>Apple Vision Pro（2026年改良版）</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>価格：649,800円</li>
-        <li>解像度：5.8Kパネル×2</li>
-        <li>フレームレート：90fps</li>
-        <li>視野角：110度</li>
-        <li>使用時間：約2.5時間</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>Sony PlayStation VR2</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>価格：599,800円</li>
-        <li>解像度：2.1K×1.8K（各眼）</li>
-        <li>フレームレート：120fps</li>
-        <li>視野角：110度</li>
-        <li>使用時間：約6時間</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ミッドレンジ・スタンドアロン型</h3>
-      <p className="text-gray-700 mb-4"><strong>Meta Quest 3S</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>価格：39,800円～</li>
-        <li>解像度：1832×1920（各眼）</li>
-        <li>フレームレート：90fps</li>
-        <li>視野角：110度</li>
-        <li>使用時間：2～3時間</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">予算別ゴーグル推奨</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>50,000円以下</strong>：Meta Quest 3S（コスパ最高）</li>
-        <li><strong>150,000～300,000円</strong>：HTC Vive Pro 2（高性能PC接続型）</li>
-        <li><strong>400,000円以上</strong>：Apple Vision Pro、PlayStation VR2（最高体験）</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年で注目すべきVRコンテンツ</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ドキュメンタリーシリーズ</h3>
-      <p className="text-gray-700 mb-4">2026年は、VRドキュメンタリーが一つの成熟したジャンルとして確立されています。8K解像度での自然映像ドキュメンタリーが複数配信されており、アマゾンプライムVRの「Wild Wonders 4K」シリーズは月間視聴者数が520万人に達しています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ライブイベント配信</h3>
-      <p className="text-gray-700 mb-4">スポーツ、コンサート、演劇などのライブイベントのVR配信は、2026年で急速に普及しました。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ワールドカップ等主要スポーツ：主会場視点＋マルチアングル選択可能</li>
-        <li>コンサート配信：平均4～6種類の視点から選択可能</li>
-        <li>オペラ・演劇：舞台全体を見守る視点＋キャラクターアップ視点</li>
-      </ul>
-      <p className="text-gray-700 mb-4">2026年6月の調査では、ライブイベント配信サービスの月額料金は1,500～2,500円が相場となっており、ユーザー満足度は85%を超えています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">インタラクティブVR映画</h3>
-      <p className="text-gray-700 mb-4">視聴者の選択が物語の展開に影響する「分岐型VR映画」が増加しています。各サービスでの配信本数は以下の通りです：</p>
-      <p className="text-gray-700 mb-4">| サービス | 配信タイトル数 | 平均再生時間 |</p>
-      <p className="text-gray-700 mb-4">|---------|---------------|-----------|</p>
-      <p className="text-gray-700 mb-4">| Netflix VR | 34本 | 85分 |</p>
-      <p className="text-gray-700 mb-4">| YouTube VR | 156本 | 45分 |</p>
-      <p className="text-gray-700 mb-4">| Apple TV+ | 12本 | 95分 |</p>
-      <p className="text-gray-700 mb-4">| Disney+ | 8本 | 65分 |</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画・動画視聴の最適な環境構築</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">視聴空間の準備</h3>
-      <p className="text-gray-700 mb-4">VR動画を快適に楽しむには、物理的な環境も重要です。推奨される環境は：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>最小スペース</strong>：2m×2m（セーフティゾーン）</li>
-        <li><strong>推奨スペース</strong>：3m×3m以上</li>
-        <li><strong>照明</strong>：自然光は避け、室内照明は柔らかい間接照明が理想的</li>
-        <li><strong>温度管理</strong>：18～24℃が視聴に最適</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ネットワーク要件</h3>
-      <p className="text-gray-700 mb-4">高品質VRコンテンツの配信には通信速度が不可欠です：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>480p/初級コンテンツ</strong>：10Mbps以上</li>
-        <li><strong>2K/標準コンテンツ</strong>：50Mbps以上</li>
-        <li><strong>4K/高品質コンテンツ</strong>：100Mbps以上</li>
-        <li><strong>8K/実験的コンテンツ</strong>：300Mbps以上推奨</li>
-      </ul>
-      <p className="text-gray-700 mb-4">ドコモ5Gの実装エリアでは、4K～8K VRコンテンツの配信がほぼリアルタイムで可能になっており、2026年時点で全国人口カバー率は73%に達しています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">オーディオシステム</h3>
-      <p className="text-gray-700 mb-4">VR映画の没入感は音声が60%以上を占めます。推奨されるオーディオセットアップ：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>ゴーグル内蔵スピーカー</strong>：エントリーレベル</li>
-        <li><strong>空間オーディオ対応ヘッドフォン</strong>：標準レベル（3,000～10,000円）</li>
-        <li><strong>サラウンドスピーカーシステム</strong>：プレミアムレベル（50,000円以上）</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">プラットフォーム選択のチェックリスト</h2>
-      <p className="text-gray-700 mb-4">VR映画・動画サービスを選ぶ際の重要なポイント：</p>
-      <p className="text-gray-700 mb-4"><strong>コンテンツ量と更新頻度</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>Netflix VR：週2～3本の新規追加</li>
-        <li>YouTube VR：日100～300本の追加（ユーザー生成含む）</li>
-        <li>Apple TV+：月4～6本のプレミアム作品</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>対応デバイス互換性</strong></p>
-      <p className="text-gray-700 mb-4">お使いのVRゴーグルがサービスに対応しているか事前確認が必須です。Meta Quest対応アプリは最も充実しており、約80%のVRサービスがサポートしています。</p>
-      <p className="text-gray-700 mb-4"><strong>画質と技術仕様</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>4K対応：Apple TV+、Netflix VR Premium</li>
-        <li>フレームレート90fps以上：全主要サービス</li>
-        <li>空間オーディオ対応：Apple TV+、Netflix VR Premium、YouTube Premium</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>料金総額の試算</strong></p>
-      <p className="text-gray-700 mb-4">複数サービスを組み合わせた場合の月額料金：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>最小構成（1サービス）：900円～1,980円</li>
-        <li>標準構成（2～3サービス）：2,500～4,500円</li>
-        <li>フル構成（4～5サービス）：4,500～6,000円</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめと今後の展望</h2>
-      <p className="text-gray-700 mb-4">2026年のVR映画・動画視聴環境は、多くのプラットフォームが高品質なコンテンツを提供し、ユーザーの選択肢が大幅に増加しています。お手持ちのVRゴーグル、予算、コンテンツの好みに応じて、最適なプラットフォームを選択することが重要です。</p>
-      <p className="text-gray-700 mb-4">初心者であれば、Meta Quest 3Sとぜひ、YouTubeおよびNetflix VRの組み合わせから始めることをおすすめします。すでに高性能なVRゴーグルをお持ちでしたら、Apple TV+ VRやPlayStation VRでのプレミアムコンテンツ体験も検討する価値があります。</p>
-      <p className="text-gray-700 mb-4">技術進化に伴い、8Kコンテンツや完全なAIインタラクティブシステムは、2027～2028年には広く普及すると予想されています。今から高品質なVR視聴環境を整えることで、次世代エンターテインメントの最前線を楽しむことができるでしょう。</p>
-    </article>
-  ),
     "vr-movie-streaming-service-recommend-2026": (
     <article className="prose prose-sm max-w-none">
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画・動画視聴サービスの進化と2026年の最新トレンド</h2>
@@ -3650,6 +3092,24 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>アジア圏のローカルコンテンツが豊富</li>
       </ul>
       <p className="text-gray-700 mb-4">日本のVRコンテンツクリエイターの約45%がViveportで作品公開しており、地域特化型サービスとしての価値が高まっています。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Disney+ VR：ファミリー向けコンテンツの充実</h3>
+      <p className="text-gray-700 mb-4">Disney+ VRは、ディズニー・ピクサー・マーベル・スターウォーズの公式VRコンテンツを配信するファミリー特化型サービスです。月額900円で既存のDisney+契約に追加できます。</p>
+      <p className="text-gray-700 mb-4"><strong>特徴的なコンテンツ：</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>「Aladdin VR：The Magic Carpet Experience」「The Mandalorian: Immersive Experience」「Coco VR」など約35タイトル</li>
+        <li>映画作品のVRバージョンがメジャー映画の30～40%をカバー</li>
+        <li>オリジナルVRシリーズが月3～4作品のペースで追加</li>
+        <li>限定VRパークツアー体験などインタラクティブコンテンツ約50タイトル</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Hulu VR：映像品質最高峰の選択肢</h3>
+      <p className="text-gray-700 mb-4">Hulu VRは業界最高水準の映像技術を採用し、8K解像度・120fpsでの配信を実現しています。月額1,500円とやや高めですが、圧倒的な画質を求めるユーザー向けです。</p>
+      <p className="text-gray-700 mb-4"><strong>技術スペック：</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>最大解像度：8K（7680×3840）、フレームレート120fps安定稼働</li>
+        <li>レイトレーシング対応でリアルな光と影を表現</li>
+        <li>HDR10+ Plus対応で業界標準を超える色域</li>
+        <li>VRコンテンツ数は約85本、無料試用14日間</li>
+      </ul>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画視聴に必要な環境・機器</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">推奨ヘッドセット（2026年版）</h3>
       <p className="text-gray-700 mb-4"><strong>入門向け：Meta Quest 3</strong></p>
@@ -3684,6 +3144,14 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FVR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="affiliate-btn">楽天市場でVRゴーグル・スマートグラスを探す →</a>
       <p className="text-gray-700 mb-4">楽天 VRゴーグル：</p>
       <p className="text-gray-700 mb-4">https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FVR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%2F</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">視聴空間の準備</h3>
+      <p className="text-gray-700 mb-4">VR動画を快適に楽しむには、物理的な環境も重要です。推奨される環境は以下の通りです：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>最小スペース</strong>：2m×2m（セーフティゾーン）</li>
+        <li><strong>推奨スペース</strong>：3m×3m以上</li>
+        <li><strong>照明</strong>：自然光は避け、室内照明は柔らかい間接照明が理想的</li>
+        <li><strong>温度管理</strong>：18～24℃が視聴に最適</li>
+      </ul>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">通信環境・スペック要件</h3>
       <p className="text-gray-700 mb-4">VR映画をストレスなく視聴するには、以下の環境が必須です：</p>
       <p className="text-gray-700 mb-4"><strong>インターネット速度：</strong></p>
@@ -3695,6 +3163,13 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">2026年の実測調査では、推奨速度以下の環境では約34%の利用者が「映像品質の低下」を経験しており、快適な視聴にはインターネット環境の充実が不可欠です。</p>
       <p className="text-gray-700 mb-4"><strong>グラフィックス処理能力：</strong></p>
       <p className="text-gray-700 mb-4">PC接続型VRの場合、RTX 4070以上のGPUメモリ（12GB以上）が推奨されています。スタンドアロン型VRヘッドセットは内蔵チップが性能を決定し、2026年最新モデルではSnapdragon XR Gen 2以上が搭載されています。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">オーディオシステム</h3>
+      <p className="text-gray-700 mb-4">VR映画の没入感は音声が60%以上を占めるといわれます。推奨されるオーディオセットアップは以下の通りです：</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>ゴーグル内蔵スピーカー</strong>：エントリーレベル</li>
+        <li><strong>空間オーディオ対応ヘッドフォン</strong>：標準レベル（3,000～10,000円）</li>
+        <li><strong>サラウンドスピーカーシステム</strong>：プレミアムレベル（50,000円以上）</li>
+      </ul>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画視聴で目を守るための対策</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼精疲労軽減技術の動向</h3>
       <p className="text-gray-700 mb-4">2026年の医療関連研究により、以下の技術的対策が眼精疲労の軽減に有効であることが実証されています：</p>
@@ -3735,12 +3210,20 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>8K解像度コンテンツが約180タイトル</li>
         <li>映像作家による完成度が高い</li>
       </ul>
+      <p className="text-gray-700 mb-4"><strong>プラットフォーム別おすすめ作品：</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>Netflix VR独占：「Cosmos VR」シリーズ（宇宙ドキュメンタリー）、「The Wonder Years - VR Edition」、「Wildlife in 360°」</li>
+        <li>Apple TV+ VR専用：「Prehistoric Planet VR」（恐竜時代への没入体験）、「The Playwright」（360度劇場映像）</li>
+        <li>冒険・ファンタジー系：「Avatar: The Experience」（4.8★、Netflix VR）、「The Lord of the Rings VR Quest」（4.6★、Amazon Prime）</li>
+        <li>ドラマ系：「Chernobyl 360」（4.9★、Hulu VR）、「The Midnight Club VR」（4.7★、Netflix VR）</li>
+      </ul>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ドキュメンタリー・教育系コンテンツ</h3>
       <p className="text-gray-700 mb-4"><strong>推奨：YouTube VR Channel</strong></p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
         <li>無料で約3,500本のドキュメンタリーあり</li>
         <li>BBC、National Geographicなど信頼性の高い制作機関の作品豊富</li>
         <li>字幕対応が約95%のコンテンツで利用可能</li>
+        <li>人気コンテンツ例：NASAのMars Rover footage（火星探索）、BBC Natural History、「Planet Earth VR」（4.9★、Amazon Prime）、「Under the Sea: Coral Reef VR」（4.8★、Hulu VR）</li>
       </ul>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ライブコンサート・スポーツ視聴</h3>
       <p className="text-gray-700 mb-4"><strong>推奨：LiveXR（2026年新提供）</strong></p>
@@ -3753,6 +3236,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
         <li>スポーツイベントの充実（年間約180イベント配信）</li>
         <li>多言語解説対応</li>
+        <li>配信例：「Coldplay: Live VR Concert 2026」「BTS Metaverse Concert Experience」</li>
       </ul>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">アニメコンテンツ</h3>
       <p className="text-gray-700 mb-4"><strong>推奨：Crunchyroll VR Channel</strong></p>
@@ -3761,6 +3245,23 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>約1,200タイトルのアニメを360度体験化</li>
         <li>月額11.99ドル（日本価格約1,800円）</li>
         <li>日本語音声・字幕対応100%</li>
+      </ul>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画視聴体験をアップグレードするアクセサリー</h2>
+      <p className="text-gray-700 mb-4">VR映画体験を最大限に引き出すために、以下のアクセサリーが有効です：</p>
+      <p className="text-gray-700 mb-4"><strong>VRヘッドセットスタンド</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>デバイスの安定保持、レンズ保護に有効</li>
+        <li>価格帯は1,500円～3,500円程度</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>VR用イヤホン・ヘッドホン</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>3D空間オーディオ対応モデルが望ましい</li>
+        <li>Dolby Atmos対応で深い没入感を実現</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>Face Cushionの交換パッド</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>長時間視聴時の顔への負担を軽減</li>
+        <li>肌に優しい素材（シリコン・ウレタン混合素材）を推奨</li>
       </ul>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年VR映画市場の新展開</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">生成AI による パーソナライズドコンテンツ</h3>
@@ -3791,6 +3292,13 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>合計初期投資：</strong> 約537,000円 + 月額5,930円</li>
         <li><strong>適用者：</strong> 最高品質体験を求めるプロフェッショナル・映像愛好家</li>
       </ul>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">よくある質問</h2>
+      <p className="text-gray-700 mb-4"><strong>VR映画視聴の初期投資総額はどのくらい？</strong></p>
+      <p className="text-gray-700 mb-4">基本セット（Meta Quest 3＋Wi-Fi環境）で約60,000円、高級セット（Apple Vision Pro）で530,000円程度です。サブスク月額900～2,450円が別途必要になります。</p>
+      <p className="text-gray-700 mb-4"><strong>VR映画はテレビとどう違う？</strong></p>
+      <p className="text-gray-700 mb-4">VR映画は360度立体映像で視聴者が世界に没入できる体験ですが、テレビは2D平面です。没入感・臨場感・体験の質が大きく異なります。</p>
+      <p className="text-gray-700 mb-4"><strong>一度視聴したVR映画は何度でも再生できる？</strong></p>
+      <p className="text-gray-700 mb-4">ほとんどがサブスクリプション形式のため、配信終了後は視聴できなくなります。購入型（買い切り）で提供されているのは一部のプラットフォームに限られます。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">結論：2026年のVR映画視聴ガイド</h2>
       <p className="text-gray-700 mb-4">2026年現在、VR映画・動画視聴は確立された娯楽メディアとして成熟期を迎えています。技術面での急速な進化により、解像度、フレームレート、没入感いずれもが従来の予想を上回る水準に達しました。</p>
       <p className="text-gray-700 mb-4"><strong>サービス選択の鍵：</strong></p>
@@ -4442,160 +3950,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4"><strong>重要な判断</strong>として、複数施設での相談、詳細な術前検査、十分な期待値マネジメントを心がけましょう。眼科医との信頼関係を基盤に、自分のライフスタイルに最適なレンズ選択をお勧めします。</p>
     </article>
   ),
-    "lasik-dry-eye-prevention-2026": (
-    <article className="prose prose-sm max-w-none">
-      <p className="text-gray-700 mb-4"># LASIK手術後のドライアイ対策完全ガイド｜リスク軽減と効果的なケア方法</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">はじめに：LASIK手術とドライアイの関係性</h2>
-      <p className="text-gray-700 mb-4">視力矯正手術として広く選択されているLASIK（レーシック）ですが、術後の合併症として「ドライアイ」は最も一般的に報告される症状の一つです。日本眼科学会の統計によると、LASIK術後3ヶ月以内に約50～60%の患者が何らかのドライアイ症状を経験しています。</p>
-      <p className="text-gray-700 mb-4">本記事では、LASIK手術後に生じるドライアイの発生メカニズム、リスク判定方法、そして実践的な対策と術後ケアについて、最新の医学情報に基づいて詳しく解説します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">LASIK手術がドライアイを引き起こすメカニズム</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">角膜神経損傷と涙液分泌の低下</h3>
-      <p className="text-gray-700 mb-4">LASIK手術の基本的な流れは、レーザーで角膜上皮を削除し、その下にある実質層を照射して屈折力を変えるというものです。この過程で、角膜に分布する知覚神経（三叉神経の第1枝）が損傷を受けます。</p>
-      <p className="text-gray-700 mb-4">角膜の知覚神経は、涙液分泌を促す重要な反射弧の一部です。神経が損傷されると、脳への信号伝達が悪くなり、涙液分泌量が低下します。同時に、角膜表面の潤滑成分である脂質層の質も低下するため、ドライアイ症状が悪化しやすくなるのです。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">術後の神経再生期間</h3>
-      <p className="text-gray-700 mb-4">損傷した角膜神経の再生には時間を要します。多くの患者では以下のようなタイムラインが見られます：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>術後1ヶ月</strong>：神経再生が始まるが、感覚はまだ低下している</li>
-        <li><strong>術後3ヶ月</strong>：約70～80%の患者で自覚症状が改善</li>
-        <li><strong>術後6ヶ月～1年</strong>：ほぼ完全な神経機能の回復が期待される</li>
-      </ul>
-      <p className="text-gray-700 mb-4">ただし、個人差が大きく、術前のドライアイ重症度が術後の回復速度に大きく影響します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">LASIK術前のドライアイリスク評価</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">重要な診断検査</h3>
-      <p className="text-gray-700 mb-4">LASIK手術を受ける前に、眼科医は複数の検査を実施します。</p>
-      <p className="text-gray-700 mb-4"><strong>シュルマー試験（Schirmer Test）</strong></p>
-      <p className="text-gray-700 mb-4">まぶたの内側に特殊な濾紙を置き、5分間で湿る範囲を測定します。10mm以下の患者は術後ドライアイのリスクが高いと判定されます。</p>
-      <p className="text-gray-700 mb-4"><strong>涙液分層検査（Tear Film Break-up Time: TBUT）</strong></p>
-      <p className="text-gray-700 mb-4">涙液が角膜上で安定していられる時間を計測します。5秒以下の場合、術後ドライアイが重症化するリスクが高まります。</p>
-      <p className="text-gray-700 mb-4"><strong>Ocular Surface Disease Index（OSDI）スコア</strong></p>
-      <p className="text-gray-700 mb-4">自覚症状に関する11の質問から総合的に乾燥度を評価します。スコア33以上は中等度以上のドライアイと診断されます。</p>
-      <p className="text-gray-700 mb-4"><strong>角膜形状解析</strong></p>
-      <p className="text-gray-700 mb-4">前眼部OCT検査で角膜形状を詳細に分析し、高次収差の予測と屈折矯正量を決定します。過度な矯正は角膜不規則性を増加させ、ドライアイを悪化させる可能性があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">リスク分類と対応</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>低リスク患者</strong>：シュルマー試験15mm以上、TBUT9秒以上</li>
-      </ul>
-      <p className="text-gray-700 mb-4">  → 標準的な術後ケアで対応</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>中リスク患者</strong>：シュルマー試験10～14mm、TBUT5～8秒</li>
-      </ul>
-      <p className="text-gray-700 mb-4">  → 予防的な点眼液使用と定期検診を強化</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>高リスク患者</strong>：シュルマー試験10mm以下、TBUT5秒以下、既往ドライアイ</li>
-      </ul>
-      <p className="text-gray-700 mb-4">  → LASIK以外の視力矯正法（ICL、PRKなど）を検討する場合あり</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">LASIK術後の効果的なドライアイ対策</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">点眼液選びのポイント</h3>
-      <p className="text-gray-700 mb-4">LASIK術後のドライアイ管理における点眼液は非常に重要な役割を果たします。</p>
-      <p className="text-gray-700 mb-4"><strong>保存料無添加製品の選択</strong></p>
-      <p className="text-gray-700 mb-4">市販されている多くの点眼液には、ベンザルコニウム塩化物などの防腐剤が含まれています。短期使用では問題になりませんが、LASIK術後は毎日複数回の点眼が必要になるため、保存料が角膜上皮を傷つける可能性があります。</p>
-      <p className="text-gray-700 mb-4">推奨される選択肢：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>1回使い切りタイプ</strong>：使用直後に廃棄されるため防腐剤が不要</li>
-        <li><strong>無菌個別包装製品</strong>：防腐剤無添加で長期保存が可能</li>
-        <li><strong>医師処方の薬用点眼液</strong>：ジクアス（3%レバミピド）やパタノール（オロパタジン）など、修復促進効果がある</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>医薬品の種類と特性</strong></p>
-      <p className="text-gray-700 mb-4">| 製品名 | 成分 | 用途 | 使用頻度 |</p>
-      <p className="text-gray-700 mb-4">|--------|------|------|----------|</p>
-      <p className="text-gray-700 mb-4">| ジクアス | レバミピド | 角膜修復促進 | 1日3回 |</p>
-      <p className="text-gray-700 mb-4">| ヒアレイン | ヒアルロン酸Na | 保湿潤滑 | 1日4～6回 |</p>
-      <p className="text-gray-700 mb-4">| パタノール | オロパタジン | 抗アレルギー | 1日2回 |</p>
-      <p className="text-gray-700 mb-4">| リボスチン | レボカバスチン | 抗アレルギー | 1日4回 |</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">術後ケアのプロトコル</h3>
-      <p className="text-gray-700 mb-4"><strong>第1段階（術後1ヶ月）</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ジクアス点眼液：1日3回（角膜修復促進）</li>
-        <li>ヒアレイン等保湿液：1日4～6回</li>
-        <li>夜間：修復ゲルの塗布（メニコンZ）</li>
-        <li>定期検診：1週間、2週間、1ヶ月</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>第2段階（術後2～3ヶ月）</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ジクアス点眼液：1日2回に削減</li>
-        <li>ヒアレイン：必要に応じて継続</li>
-        <li>定期検診：月1回</li>
-        <li>自覚症状の評価</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>第3段階（術後4～6ヶ月）</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>症状改善に応じて点眼液を段階的に中止</li>
-        <li>症状が残存する場合は涙点プラグ装着を検討</li>
-        <li>定期検診：3ヶ月ごと</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">生活習慣の改善</h3>
-      <p className="text-gray-700 mb-4">点眼液の使用と同様に重要なのが、日常生活の工夫です。</p>
-      <p className="text-gray-700 mb-4"><strong>画面使用時間の管理</strong></p>
-      <p className="text-gray-700 mb-4">スマートフォンやパソコンの使用時間は、術後3ヶ月間は1日2時間以下に制限することが推奨されます。長時間の画面作業は、まばたき回数が減少し、涙液蒸発が促進されるためです。</p>
-      <p className="text-gray-700 mb-4"><strong>20-20-20ルールの実践</strong></p>
-      <p className="text-gray-700 mb-4">20分ごとに20秒間、20フィート（約6メートル）以上離れた場所を見つめることで、目の緊張を緩和します。</p>
-      <p className="text-gray-700 mb-4"><strong>湿度管理</strong></p>
-      <p className="text-gray-700 mb-4">室内の相対湿度を50～60%に保つことが理想的です。加湿器の利用やこまめな水分補給により、環境湿度を高めることでドライアイリスクを減少させられます。</p>
-      <p className="text-gray-700 mb-4"><strong>睡眠とアイケア</strong></p>
-      <p className="text-gray-700 mb-4">十分な睡眠（7時間以上）は、涙液分泌の正常化と角膜修復を促進します。就寝前に医師推奨の眼用軟膏を使用することで、夜間の角膜乾燥を防止できます。</p>
-      <p className="text-gray-700 mb-4"><strong>目への刺激を避ける</strong></p>
-      <p className="text-gray-700 mb-4">術後3ヶ月間は、以下の行為を避けてください：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>目をこすること</li>
-        <li>強風や乾燥した環境への長時間曝露</li>
-        <li>喫煙環境への接近</li>
-        <li>化粧品が目に入る可能性のある作業</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">重症ドライアイへの高度な治療</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">保存的治療での改善が不十分な場合</h3>
-      <p className="text-gray-700 mb-4">術後6ヶ月を経過してもドライアイ症状が改善しない患者（約5～10%）には、より積極的な治療が検討されます。</p>
-      <p className="text-gray-700 mb-4"><strong>涙点プラグ（Punctal Plug）挿入</strong></p>
-      <p className="text-gray-700 mb-4">涙液が目の外に流出する経路（涙点）に小さなシリコン製栓子を挿入します。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>効果：涙液の保有時間を延長し、涙液蒸発を50～70%削減</li>
-        <li>挿入時間：約5分、痛みなし</li>
-        <li>費用：両眼で3,000～5,000円（保険適用）</li>
-        <li>リスク：まれに栓子の脱落や組織反応が発生</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>ステロイド点眼液の短期使用</strong></p>
-      <p className="text-gray-700 mb-4">炎症を緩和し、角膜修復を促進します。ただし長期使用は眼圧上昇のリスクがあるため、2週間程度の短期使用に限定されます。</p>
-      <p className="text-gray-700 mb-4"><strong>オメガ3系脂肪酸サプリメント</strong></p>
-      <p className="text-gray-700 mb-4">フィッシュオイル（EPA・DHA）の補給により、涙液の脂質層質が向上します。1日1,000～2,000mgの摂取で、3～6ヶ月で効果が期待できます。</p>
-      <p className="text-gray-700 mb-4">サプリメントの選択： | <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%20%E3%82%B5%E3%83%97%E3%83%AA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で アイケアサプリを探す</a></p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">自己血清点眼液（Autologous Serum Eye Drops: ASED）</h3>
-      <p className="text-gray-700 mb-4">自分の血液から作製した点眼液で、成長因子やタンパク質が豊富に含まれており、角膜修復が促進されます。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>費用：月額10,000～15,000円（自費診療）</li>
-        <li>効果：約80%の患者で症状改善を報告</li>
-        <li>製造：院内調製、2週間の冷蔵保存が必要</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">LASIK手術を回避すべきケース</h2>
-      <p className="text-gray-700 mb-4">以下の患者では、LASIK以外の視力矯正法を検討すべきです：</p>
-      <p className="text-gray-700 mb-4"><strong>ICL（眼内コンタクトレンズ）との比較</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ドライアイリスク：ICL &lt; LASIK</li>
-        <li>理由：角膜を削除しないため、神経損傷がない</li>
-        <li>推奨対象：高度な近視・乱視、術前ドライアイが重症な患者</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>表面切除手術（PRK/TransPRK）との比較</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ドライアイリスク：PRK ≥ LASIK</li>
-        <li>利点：角膜フラップが不要で、感染リスク低下</li>
-        <li>デメリット：回復期間が長い（1～3ヶ月）</li>
-      </ul>
-      <p className="text-gray-700 mb-4">術前のドライアイ診断で高リスクと判定された患者には、これらの代替法について医師と十分な相談が必要です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">LASIK術後のドライアイ予防チェックリスト</h2>
-      <p className="text-gray-700 mb-4">✓ 術前：シュルマー試験、TBUT測定、OSDI評価を実施</p>
-      <p className="text-gray-700 mb-4">✓ 術後：処方された点眼液を指示通り使用</p>
-      <p className="text-gray-700 mb-4">✓ 保存料無添加の人工涙液を常備</p>
-      <p className="text-gray-700 mb-4">✓ 画面作業を1日2時間以下に制限</p>
-      <p className="text-gray-700 mb-4">✓ 加湿器で室内湿度50～60%を維持</p>
-      <p className="text-gray-700 mb-4">✓ 十分な睡眠（7時間以上）と水分補給</p>
-      <p className="text-gray-700 mb-4">✓ 月1回の定期検診を3ヶ月間継続</p>
-      <p className="text-gray-700 mb-4">✓ 症状改善が遅い場合は涙点プラグを検討</p>
-      <p className="text-gray-700 mb-4">✓ オメガ3サプリメント（フィッシュオイル）の補給を検討</p>
-      <p className="text-gray-700 mb-4">✓ 目をこする、こすり過ぎないように注意</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
-      <p className="text-gray-700 mb-4">LASIK手術後のドライアイは、適切な理解と対策により、大多数の患者で改善可能な症状です。手術前の正確なリスク評価、術後の計画的な点眼液使用、そして生活習慣の改善を組み合わせることで、快適な視力回復が実現します。</p>
-      <p className="text-gray-700 mb-4">症状が3ヶ月以上続く場合や日常生活に支障をきたす場合は、躊躇なく眼科医に相談してください。涙点プラグやオメガ3補給など、複数の治療選択肢が存在し、多くの患者が問題なく解決しています。</p>
-      <p className="text-gray-700 mb-4">LASIK手術を検討される際は、本記事の内容を参考に、担当医と十分なカウンセリングを行い、安全で快適な視力矯正を実現してください。</p>
-    </article>
-  ),
     "megane-facial-shape-frame-2026": (
     <article className="prose prose-sm max-w-none">
       <p className="text-gray-700 mb-4"># メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド</p>
@@ -4765,199 +4119,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">メガネ選びは、単なる視力矯正ツールの選択ではなく、あなたの第一印象を大きく左右する重要な決断です。2026年現在、メガネの種類は膨大に存在しますが、基本的な顔型別の選び方を理解することで、自分に最適なフレームを見つけることが可能です。</p>
       <p className="text-gray-700 mb-4">本記事で紹介した4つの顔型別ガイドと、フレームカラー選びの黄金法則を参考に、あなた自身の顔立ちを最も引き立てるメガネを選んでください。適切なメガネを選ぶことで、あなたの魅力はさらに引き出され、仕事や人間関係もより良い方向へ進むことでしょう。</p>
       <p className="text-gray-700 mb-4">メガネは「顔の一部」です。最高のメガネ選びで、最高の自分を表現してください。</p>
-    </article>
-  ),
-    "vr-movie-video-service-osusume-2026": (
-    <article className="prose prose-sm max-w-none">
-      <p className="text-gray-700 mb-4"># VR映画・動画視聴おすすめサービス2026|最新プラットフォーム比較</p>
-      <p className="text-gray-700 mb-4">VR技術の急速な進化により、2026年現在、VR映画・動画視聴サービスは従来のテレビ視聴を大きく上回る没入感を提供するようになりました。本記事では、2026年最新のVRストリーミングプラットフォームとそれぞれの特徴、料金体系、対応デバイスについて詳しく解説します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画・動画視聴の市場規模と成長動向</h2>
-      <p className="text-gray-700 mb-4">VRコンテンツ市場は、2025年時点で約65億ドル規模に達し、2026年には年間成長率18.5%で拡大が見込まれています。特にVR映画・ドラマ配信プラットフォームは前年比35%の利用者増加を記録しており、従来のストリーミングサービスから乗り換える利用者も増加中です。</p>
-      <p className="text-gray-700 mb-4">日本国内では、VRヘッドセットの普及率が2025年末で24.3%に達し、2026年には30%超が予想されています。これに伴い、日本語化されたVR動画コンテンツも大幅に増加し、利用環境が大きく改善されました。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年おすすめVR映画・動画配信サービス</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Netflix VR：総合型プラットフォームの最高峰</h3>
-      <p className="text-gray-700 mb-4">Netflix VRは、2025年10月のアップデート以降、VRコンテンツ専用アプリとして独立しました。月額1,000円（スタンダードプラン）で、VR映画・ドラマ・ドキュメンタリーが見放題です。</p>
-      <p className="text-gray-700 mb-4"><strong>主な特徴：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>VR独占作品：「The Midnight Club VR」「Stranger Things: VR Experience」など40作品以上</li>
-        <li>360度立体映像対応：4K解像度、90fps安定稼働</li>
-        <li>マルチデバイス対応：Meta Quest 3s、Apple Vision Pro、PlayStation VR2</li>
-        <li>リアルタイム字幕翻訳：50言語対応、日本語は99%の精度</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Amazon Prime Video XR：統合プラットフォームの利便性</h3>
-      <p className="text-gray-700 mb-4">Amazon Prime Video XRは、通常のPrime Video会員（月額600円）に追加料金なしでVRコンテンツを利用できます。2026年現在、VR映画・ドラマ150本以上が配信中です。</p>
-      <p className="text-gray-700 mb-4"><strong>料金体系：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>Prime会員月額：600円</li>
-        <li>VR追加料金：無料</li>
-        <li>年間プラン：5,900円（月当たり490円）</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>配信コンテンツ：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>VR映画25本、VRドラマシリーズ40作品</li>
-        <li>4K/8K VRドキュメンタリー45本</li>
-        <li>ライブコンサートVR配信10本以上（月更新）</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Hulu VR：映像品質最高峰の選択肢</h3>
-      <p className="text-gray-700 mb-4">Hulu VRは、業界最高の映像技術を採用し、8K解像度・120fpsでの配信を実現しました。月額1,500円と高めですが、圧倒的な画質品質を求めるユーザー向けです。</p>
-      <p className="text-gray-700 mb-4"><strong>技術スペック：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>最大解像度：8K（7680×3840）</li>
-        <li>フレームレート：120fps安定稼働</li>
-        <li>レイトレーシング対応：リアルな光と影表現</li>
-        <li>HDR10+ Plus対応：業界標準を超える色域</li>
-      </ul>
-      <p className="text-gray-700 mb-4">VR映画の視聴に必要な最高級のデバイスをお探しでしたら、以下をチェックしてください：</p>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FVR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天 VRゴーグル検索</a></p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">YouTube VR：無料コンテンツの充実度</h3>
-      <p className="text-gray-700 mb-4">YouTube VRは完全無料で、広告付きで360度ビデオ、VRドキュメンタリー、ライブストリーミングが視聴可能です。2026年時点で、VR動画ライブラリは80万本を超えています。</p>
-      <p className="text-gray-700 mb-4"><strong>無料コンテンツ例：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>VR旅行動画：世界中の観光地を360度体験</li>
-        <li>VR科学番組：宇宙、海洋生物の映像作品</li>
-        <li>VRコンサート：有名アーティストのライブ配信</li>
-        <li>VRニュース：BBC、NHK等の360度ニュース配信</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Disney+ VR：ディズニーコンテンツ特化型</h3>
-      <p className="text-gray-700 mb-4">Disney+ VRは、ディズニー、ピクサー、マーベル、スターウォーズの公式VRコンテンツを配信します。月額900円でVR体験を追加できます。</p>
-      <p className="text-gray-700 mb-4"><strong>特徴的なコンテンツ：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>「Aladdin VR：The Magic Carpet Experience」</li>
-        <li>「The Mandalorian: Immersive Experience」</li>
-        <li>「Coco VR」</li>
-        <li>限定VRパークツアー体験</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画視聴に必要な機材と選び方</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">推奨デバイス（2026年版）</h3>
-      <p className="text-gray-700 mb-4"><strong>トップクラス：Apple Vision Pro</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>解像度：4K（両眼合計23メガピクセル）</li>
-        <li>リフレッシュレート：最大120Hz</li>
-        <li>価格帯：580,000円～</li>
-        <li>対応サービス：Netflix VR、Amazon Prime Video XR、Hulu VR</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>高コスパ：Meta Quest 3s</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>解像度：1832×1920（両眼）</li>
-        <li>リフレッシュレート：90Hz/120Hz（モード選択可）</li>
-        <li>価格帯：49,980円～（128GB）</li>
-        <li>対応サービス：ほぼ全てのVRプラットフォーム</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>PS5ユーザー向け：PlayStation VR2</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>解像度：2000×2040（両眼）</li>
-        <li>リフレッシュレート：120Hz</li>
-        <li>価格帯：59,980円</li>
-        <li>特徴：PS5との強力な連携、VRゲーム＋映画</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">インターネット環境の推奨スペック</h3>
-      <p className="text-gray-700 mb-4">| コンテンツ形式 | 推奨速度 | 必要バッファ |</p>
-      <p className="text-gray-700 mb-4">|---|---|---|</p>
-      <p className="text-gray-700 mb-4">| 4K VR映画 | 5Mbps以上 | 20秒 |</p>
-      <p className="text-gray-700 mb-4">| 8K VR映画 | 25Mbps以上 | 40秒 |</p>
-      <p className="text-gray-700 mb-4">| VRライブ配信 | 10Mbps以上 | 30秒 |</p>
-      <p className="text-gray-700 mb-4">| マルチユーザーVR | 30Mbps以上 | 15秒 |</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画視聴体験をアップグレードするアクセサリー</h2>
-      <p className="text-gray-700 mb-4">VR映画体験を最大限に引き出すために、以下のアクセサリーが有効です：</p>
-      <p className="text-gray-700 mb-4"><strong>VRヘッドセットスタンド</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>デバイスの安定保持、レンズ保護</li>
-        <li>推奨：アマゾン・楽天で「VRゴーグルスタンド」で検索</li>
-        <li>価格：1,500円～3,500円</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>VR用イヤホン・ヘッドホン</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>3D空間オーディオ対応モデルが望ましい</li>
-        <li>Dolby Atmos対応で深い没入感を実現</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>Face Cushionの交換パッド</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>長時間視聴時の顔への負担軽減</li>
-        <li>肌に優しい素材を選択（シリコン・ウレタン混合素材推奨）</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画視聴の料金比較表（2026年版）</h2>
-      <p className="text-gray-700 mb-4">| サービス名 | 月額料金 | VRコンテンツ数 | 無料試用 | 対応解像度 |</p>
-      <p className="text-gray-700 mb-4">|---|---|---|---|---|</p>
-      <p className="text-gray-700 mb-4">| Netflix VR | 1,000円 | 40本 | 1ヶ月 | 4K |</p>
-      <p className="text-gray-700 mb-4">| Amazon Prime Video XR | 600円 | 150本 | 30日 | 4K |</p>
-      <p className="text-gray-700 mb-4">| Hulu VR | 1,500円 | 85本 | 14日 | 8K |</p>
-      <p className="text-gray-700 mb-4">| YouTube VR | 無料 | 80万本+ | ─ | 4K以下 |</p>
-      <p className="text-gray-700 mb-4">| Disney+ VR | 900円 | 35本 | 7日 | 4K |</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画視聴で快適さを追求するための工夫</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">視聴環境の最適化</h3>
-      <p className="text-gray-700 mb-4">VR映画視聴時は、物理的な安全確保が重要です。最低でも2m×2mのスペースを確保し、周囲に障害物がないかを確認してください。</p>
-      <p className="text-gray-700 mb-4"><strong>最適な環境設定：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>室温：18～22℃（暑すぎると酔いやすくなる）</li>
-        <li>照度：50～200ルクス（完全暗闇や眩しさを避ける）</li>
-        <li>座位：背もたれ付きの椅子を推奨</li>
-        <li>視聴時間：30分単位で10分の休憩を挟む</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">VR酔い対策の実践的アプローチ</h3>
-      <p className="text-gray-700 mb-4">VR酔いは、目で感知する映像と前庭感覚（バランス感覚）のズレが原因です。以下の対策が効果的です：</p>
-      <p className="text-gray-700 mb-4">1. <strong>フレームレート（fps）の確認</strong>：90fps以上が推奨</p>
-      <p className="text-gray-700 mb-4">2. <strong>視野角の調整</strong>：初心者は狭視野角から開始</p>
-      <p className="text-gray-700 mb-4">3. <strong>徐々に慣らす</strong>：最初の1週間は1日15分以下</p>
-      <p className="text-gray-700 mb-4">4. <strong>医学的対策</strong>：酔い止め薬の事前服用（医師相談推奨）</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画コンテンツの分類と人気作品</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">VR映画のジャンル別おすすめ</h3>
-      <p className="text-gray-700 mb-4"><strong>冒険・ファンタジー系</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>「Avatar: The Experience」（4.8★、Netflix VR）</li>
-        <li>「The Lord of the Rings VR Quest」（4.6★、Amazon Prime）</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>ドラマ・ヒューマンドラマ系</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>「Chernobyl 360」（4.9★、Hulu VR）</li>
-        <li>「The Midnight Club VR」（4.7★、Netflix VR）</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>ドキュメンタリー・教養系</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>「Planet Earth VR」（4.9★、Amazon Prime Video）</li>
-        <li>「Under the Sea: Coral Reef VR」（4.8★、Hulu VR）</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>ライブコンサート・音楽系</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>「Coldplay: Live VR Concert 2026」</li>
-        <li>「BTS Metaverse Concert Experience」</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR動画ストリーミングの技術的進化</h2>
-      <p className="text-gray-700 mb-4">2026年時点で、VRストリーミング技術は以下の点で大きく進化しています：</p>
-      <p className="text-gray-700 mb-4"><strong>適応的ビットレート配信（ABR）</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>リアルタイムで回線速度を検出</li>
-        <li>自動的に最適な解像度に調整</li>
-        <li>バッファリング時間が従来比70%削減</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>AIベースのコンテンツ推奨</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>視聴履歴とVR酔い耐性を分析</li>
-        <li>パーソナライズされた作品提案</li>
-        <li>推奨精度が96%に達成</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>クラウド処理による軽量化</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>エッジコンピューティングの活用</li>
-        <li>デバイス側の処理負荷が50%削減</li>
-        <li>低スペックデバイスでも高画質配信が可能</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">VR映画視聴の今後の展開予測</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2026～2027年の予想トレンド</h3>
-      <p className="text-gray-700 mb-4">1. <strong>メタバース内での映画配信</strong>：仮想映画館での集団視聴体験</p>
-      <p className="text-gray-700 mb-4">2. <strong>インタラクティブVR映画</strong>：視聴者の選択で展開が変わるストーリー</p>
-      <p className="text-gray-700 mb-4">3. <strong>ブレインコンピュータインターフェース（BCI）対応</strong>：思考で操作可能なVR体験</p>
-      <p className="text-gray-700 mb-4">4. <strong>NFTベースのコンテンツ所有権</strong>：限定版VR映画のデジタル資産化</p>
-      <p className="text-gray-700 mb-4">これらの技術進化により、VR映画視聴はさらに個人化・高度化していくと予想されます。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">よくある質問</h2>
-      <p className="text-gray-700 mb-4"><strong>VR映画視聴の初期投資総額はどのくらい？</strong></p>
-      <p className="text-gray-700 mb-4">基本セット（Meta Quest 3s＋Wi-Fi環境）で約55,000円、高級セット（Apple Vision Pro）で580,000円程度です。サブスク月額600～1,500円が追加で必要です。</p>
-      <p className="text-gray-700 mb-4"><strong>VR映画はテレビとどう違う？</strong></p>
-      <p className="text-gray-700 mb-4">VR映画は360度立体映像で視聴者が世界に没入できる体験ですが、テレビは2D平面です。没入感、臨場感、体験の質が大きく異なります。</p>
-      <p className="text-gray-700 mb-4"><strong>一度購入したVR映画を何度も視聴できる？</strong></p>
-      <p className="text-gray-700 mb-4">サブスク形式がほとんどであり、配信終了時は視聴不可になります。購入型（SVOD）は一部のプラットフォームで提供中です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
-      <p className="text-gray-700 mb-4">2026年のVR映画・動画視聴サービスは、多様なプラットフォーム、豊富なコンテンツ、優れた映像技術により、従来のテレビ視聴を大きく超える選択肢になりました。自分の予算、デバイス環境、コンテンツの好みに応じて、最適なサービスを選択することが重要です。</p>
-      <p className="text-gray-700 mb-4">まずは無料トライアルを活用して、各プラットフォームを体験してから本登録することをお勧めします。VR映画視聴の素晴らしい体験をぜひ味わってください。</p>
     </article>
   ),
     "glaucoma-early-detection-screening": (
@@ -5313,6 +4474,21 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">| 中リスク | 10-14mm | 3-5秒 | 軽度の症状 | 50-60% |</p>
       <p className="text-gray-700 mb-4">| 高リスク | &lt;10mm | &lt;3秒 | 中等度以上の症状 | 80-90% |</p>
       <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">LASIK手術を回避すべきケース</h2>
+      <p className="text-gray-700 mb-4">高リスクと判定された患者では、LASIK以外の視力矯正法を検討すべきです。</p>
+      <p className="text-gray-700 mb-4"><strong>ICL（眼内コンタクトレンズ）との比較</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>ドライアイリスク：ICL &lt; LASIK</li>
+        <li>理由：角膜を削除しないため、神経損傷がない</li>
+        <li>推奨対象：高度な近視・乱視、術前ドライアイが重症な患者</li>
+      </ul>
+      <p className="text-gray-700 mb-4"><strong>表面切除手術（PRK/TransPRK）との比較</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>ドライアイリスク：PRK ≥ LASIK</li>
+        <li>利点：角膜フラップが不要で、感染リスク低下</li>
+        <li>デメリット：回復期間が長い（1～3ヶ月）</li>
+      </ul>
+      <p className="text-gray-700 mb-4">術前のドライアイ診断で高リスクと判定された患者には、これらの代替法について医師と十分な相談が必要です。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">術前のドライアイ対策（予防戦略）</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">術前3～4週間の準備期間</h3>
       <p className="text-gray-700 mb-4">#### サプリメント・栄養補給</p>
@@ -5336,6 +4512,13 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>ヒアルロン酸配合点眼液</strong>：より高い粘稠性で涙液の安定性向上</li>
         <li><strong>防腐剤なし製品の選択</strong>：術前から防腐剤による刺激を避けることが重要</li>
       </ul>
+      <p className="text-gray-700 mb-4">代表的な医師処方点眼液の例：</p>
+      <p className="text-gray-700 mb-4">| 製品名 | 成分 | 用途 | 使用頻度 |</p>
+      <p className="text-gray-700 mb-4">|--------|------|------|----------|</p>
+      <p className="text-gray-700 mb-4">| ジクアス | レバミピド | 角膜修復促進 | 1日3回 |</p>
+      <p className="text-gray-700 mb-4">| ヒアレイン | ヒアルロン酸Na | 保湿潤滑 | 1日4～6回 |</p>
+      <p className="text-gray-700 mb-4">| パタノール | オロパタジン | 抗アレルギー | 1日2回 |</p>
+      <p className="text-gray-700 mb-4">| リボスチン | レボカバスチン | 抗アレルギー | 1日4回 |</p>
       <p className="text-gray-700 mb-4">#### ホットコンプレス療法</p>
       <p className="text-gray-700 mb-4"><strong>実施方法</strong>：</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
@@ -5796,6 +4979,19 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>テンプル長（つる部分）</li>
       </ul>
       <p className="text-gray-700 mb-4">多くのオンラインショップは、測定ガイドやAR試着機能を提供しています。JINS、Zoff、眼鏡市場では特に精度の高いAR試着が可能です。</p>
+      <p className="text-gray-700 mb-4"><strong>PD（瞳孔間距離）の測定方法：</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>方法①（最確実）</strong>：眼科で処方箋を発行してもらう際にPD記載を依頼する。処方箋にR（右目）・L（左目）が別々に書かれている場合もある</li>
+        <li><strong>方法②（無料・手軽）</strong>：JINS・Zoff・眼鏡市場などの店舗で無料測定。レンズメーターで2～3分で計測してもらえ、購入義務はない</li>
+        <li><strong>方法③（概算・自己計測）</strong>：定規を目の前に当て、鏡を見ながら右目の瞳孔中心から左目の瞳孔中心までの距離を測る。誤差±2mmが目安のため、重要度が高い場合は方法①②を推奨</li>
+      </ul>
+      <p className="text-gray-700 mb-4">左右で瞳孔位置がずれている方は、R/L別々の値（例：R32mm／L33mm）を使う「片眼PD」で入力するとより正確です。入力欄に片眼PD欄があるショップではこちらを使用してください。</p>
+      <p className="text-gray-700 mb-4"><strong>バーチャル試着を活用するコツ：</strong></p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>顔の正面をまっすぐ向く：横を向いたり角度がつくと輪郭が正しく認識されないため、明るい場所で正面の顔を映す</li>
+        <li>フレームサイズの数字を確認する：横幅（レンズ幅+ブリッジ+テンプル）が表示されている場合は、現在の眼鏡と比較して±3mm以内を目安にする</li>
+        <li>複数フレームをスクリーンショットして比較する：印象の違いが客観的に見え、家族や友人に意見を聞くのも効果的</li>
+      </ul>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ステップ3：複数のレビューをチェック</h3>
       <p className="text-gray-700 mb-4">購入前に、実際のユーザーレビューを複数サイトで確認することは必須です。特に注目すべきレビューポイント：</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
@@ -5901,6 +5097,42 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>JINS：バイオプラスチック導入</li>
         <li>眼鏡市場：竹素材フレーム展開中</li>
       </ul>
+
+      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
+        <p className="font-bold text-gray-800 mb-3">楽天市場で人気のオンライン眼鏡フレームを見る</p>
+        <p className="text-xs text-gray-500 mb-3">返品対応・レビュー多数の実績あるショップからお選びください。</p>
+        <div className="mb-2">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4c6.0ff9348e.5622e4c7.74cd653f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fre-colle%2Fc111055-pc%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Re-COLLE PCメガネ C111055（ブルーライトカット対応）を楽天で見る →
+          </a>
+        </div>
+        <div className="mb-2">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4ee.c25ab11d.5622e4ef.2987dd69/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Florelife%2Ff2006c-106%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Lorelife メガネフレーム F2006C（おしゃれ・軽量）を楽天で見る →
+          </a>
+        </div>
+        <div className="mb-2">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            merry39 メガネフレーム No.2854（楽天人気）を楽天で見る →
+          </a>
+        </div>
+        <div className="mb-2">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Wavecontact メガネフレーム MGN_BASIC を楽天で見る →
+          </a>
+        </div>
+        <div>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            Hodopus メガネフレームを楽天で見る →
+          </a>
+        </div>
+      </div>
+
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
       <p className="text-gray-700 mb-4">オンラインメガネ通販は、正確な処方箋と丁寧な選択プロセスを経れば、安全で経済的な購入方法です。2025年現在、主要5ショップの品質・サービスはほぼ同等で、あとは個人の優先順位に応じた選択になります。</p>
       <p className="text-gray-700 mb-4"><strong>選択基準の目安</strong></p>

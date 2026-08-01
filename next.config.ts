@@ -21,6 +21,57 @@ const nextConfig: NextConfig = {
         destination: '/column/karakon-do-ari-erabikata',
         permanent: true,
       },
+      // 重複記事の統合（2026-07-30）
+      {
+        source: '/column/vr-movie-video-service-2026',
+        destination: '/column/vr-movie-streaming-service-recommend-2026',
+        permanent: true,
+      },
+      {
+        source: '/column/vr-movie-video-service-recommend-2026',
+        destination: '/column/vr-movie-streaming-service-recommend-2026',
+        permanent: true,
+      },
+      {
+        source: '/column/vr-movie-video-service-osusume-2026',
+        destination: '/column/vr-movie-streaming-service-recommend-2026',
+        permanent: true,
+      },
+      {
+        source: '/column/megane-online-shopping',
+        destination: '/column/megane-online-shopping-compare-2025',
+        permanent: true,
+      },
+      {
+        source: '/column/contact-2week-osusume',
+        destination: '/column/2week-contact-osusume',
+        permanent: true,
+      },
+      {
+        source: '/column/ranshi-contact-erabikata',
+        destination: '/column/ranshi-contact-ranking-2025',
+        permanent: true,
+      },
+      {
+        source: '/column/ranshi-contact-ranking-erabikata',
+        destination: '/column/ranshi-contact-ranking-2025',
+        permanent: true,
+      },
+      {
+        source: '/column/astigmatism-contact-guide-2026',
+        destination: '/column/ranshi-contact-ranking-2025',
+        permanent: true,
+      },
+      {
+        source: '/column/lasik-dry-eye-prevention-2026',
+        destination: '/column/lasik-dry-eye-management-postoperative-care-2026',
+        permanent: true,
+      },
+      {
+        source: '/column/shohosen-nashi-tsuuhan',
+        destination: '/column/contact-tsuuhan-shohosen-nashi-kanzen-guide',
+        permanent: true,
+      },
     ];
   },
 };

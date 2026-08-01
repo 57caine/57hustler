@@ -76,7 +76,7 @@ const relatedColumns: Record<string, { slug: string; title: string }[]> = {
     { slug: '1day-vs-2week-dotchiga-otoku', title: '使い捨てコンタクト1dayと2weekどっちがお得？年間コスト・手間を徹底比較' },
   ],
   '2week': [
-    { slug: 'contact-2week-osusume', title: '2weekコンタクトレンズ おすすめランキング2026年版【コスパ・乾きにくさ別】' },
+    { slug: '2week-contact-osusume', title: '2ウィークコンタクトおすすめ5選【2025年版・コスパ最強を徹底比較】' },
     { slug: '1day-vs-2week-dotchiga-otoku', title: '使い捨てコンタクト1dayと2weekどっちがお得？年間コスト・手間を徹底比較' },
     { slug: 'contact-care-guide-yohin-hikaku', title: 'コンタクトレンズの正しいケア方法とケア用品比較【2weekマンスリー向け完全解説】' },
   ],

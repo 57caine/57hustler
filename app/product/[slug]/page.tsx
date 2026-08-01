@@ -8,7 +8,7 @@ type Props = { params: Promise<{ slug: string }> };
 
 const relatedColumnByCategory: Record<string, { slug: string; title: string }> = {
   '1day': { slug: 'shoshinsha-contact-guide', title: 'コンタクトレンズ初心者が失敗しない購入ガイド【眼科・種類・通販の選び方】' },
-  '2week': { slug: 'contact-2week-osusume', title: '2weekコンタクトレンズ おすすめランキング2026年版【コスパ・乾きにくさ別】' },
+  '2week': { slug: '2week-contact-osusume', title: '2ウィークコンタクトおすすめ5選【2025年版・コスパ最強を徹底比較】' },
   monthly: { slug: 'monthly-contact-hikaku', title: 'マンスリーコンタクトレンズ比較【2025年版・1枚あたりの最安値ランキング】' },
   color: { slug: 'karakon-shoshinsha-guide', title: 'カラコン初心者完全ガイド2026【度数・着色直径・DIA・ケア方法をわかりやすく解説】' },
 };

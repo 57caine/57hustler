@@ -26,16 +26,6 @@ export const columns: ColumnMeta[] = [
     headings: ['PWR（度数）とは？', 'BC（ベースカーブ）とは？', 'DIA（直径）とは？', '乱視用のパラメータ（CYL・AXIS）', '処方箋の右目・左目の見分け方'],
   },
   {
-    slug: 'shohosen-nashi-tsuuhan',
-    title: '処方箋なしでコンタクトレンズを通販購入できる？正しい買い方ガイド',
-    description: '「処方箋なしでネット購入できるの？」という疑問に回答。法律上の扱いと安全な購入方法、おすすめ通販ショップを紹介。',
-    category: '購入ガイド',
-    publishedAt: '2026-05-05',
-    updatedAt: '2026-05-28',
-    readingTime: 6,
-    headings: ['コンタクトレンズは「高度管理医療機器」', '通販で安全に購入するための3条件', '通販ショップの選び方', 'おすすめ通販ショップの比較'],
-  },
-  {
     slug: 'hajimete-erabikata',
     title: '初めてコンタクトレンズを選ぶ方法【種類・価格・手順を全解説】',
     description: '1day・2week・monthlyの違い、初心者におすすめの種類、価格の目安、購入手順まで。コンタクト初心者向け完全ガイド。',
@@ -54,16 +44,6 @@ export const columns: ColumnMeta[] = [
     updatedAt: '2026-05-28',
     readingTime: 7,
     headings: ['コンタクトで目が乾く原因', '乾きにくいレンズの選び方', '乾きにくいコンタクトおすすめ7選', '乾燥対策のその他のポイント'],
-  },
-  {
-    slug: 'ranshi-contact-erabikata',
-    title: '乱視用コンタクトレンズの選び方【軽度・中等度別おすすめ】',
-    description: '乱視の度数（CYL）・軸度（AXIS）の意味から、乱視用ワンデー・2weekの選び方まで徹底解説。軽度・中等度別におすすめ商品も紹介。',
-    category: '商品比較',
-    publishedAt: '2026-05-18',
-    updatedAt: '2026-05-28',
-    readingTime: 7,
-    headings: ['乱視とは？CYL・AXISの意味', '乱視用コンタクトの仕組み', '軽度・中等度別おすすめ乱視用コンタクト', '乱視用コンタクトを選ぶ際の注意点'],
   },
   {
     slug: 'contact-kakaku-hikaku-2024',
@@ -256,16 +236,6 @@ export const columns: ColumnMeta[] = [
     headings: ['アキュビュー モイストとオアシスの基本スペック比較', 'モイストとオアシス 4つの違い', 'どちらを選べばいい？', '最安値を確認する'],
   },
   {
-    slug: 'contact-2week-osusume',
-    title: '2weekコンタクトレンズ おすすめランキング2026年版【コスパ・乾きにくさ別】',
-    description: 'アキュビュー オアシス・シード 2ウィークピュア・バイオフィニティなど人気2weekコンタクト7選を比較。コスパ重視・乾きにくさ重視・乱視用など目的別のおすすめをランキング形式で解説。',
-    category: '商品比較',
-    publishedAt: '2026-05-30',
-    updatedAt: '2026-05-30',
-    readingTime: 8,
-    headings: ['2weekコンタクトのメリット・デメリット', 'おすすめ2weekコンタクト ランキング', '2weekコンタクトの最安値を比較する'],
-  },
-  {
     slug: 'menicon-contact-osusume',
     title: 'メニコン コンタクトレンズ おすすめ比較【1day・2week・マンスリー対応】',
     description: 'メニコンの人気コンタクトレンズを1day・2week・マンスリー別に比較。1monthメニコン・めにサポなど各シリーズの違い、特徴、最安値の調べ方を解説します。',
@@ -284,16 +254,6 @@ export const columns: ColumnMeta[] = [
     updatedAt: '2026-05-31',
     readingTime: 7,
     headings: ['ソフトとハード、根本的な違いとは', 'ソフトコンタクトのメリット・デメリット', 'ハードコンタクトのメリット・デメリット', '費用と維持コストの比較', '乱視・高度近視への適性', 'どちらを選べばいい？タイプ別おすすめ'],
-  },
-  {
-    slug: 'ranshi-contact-ranking-erabikata',
-    title: '乱視用コンタクトレンズの選び方と人気ランキング2026【トーリックレンズ完全ガイド】',
-    description: '乱視の程度（CYL）・軸度（AXIS）別に最適なトーリックコンタクトを選ぶ方法と、ワンデー・2week・マンスリー別人気ランキングを徹底解説。',
-    category: '商品比較',
-    publishedAt: '2026-05-31',
-    updatedAt: '2026-05-31',
-    readingTime: 8,
-    headings: ['乱視とは何か？トーリックレンズが必要な理由', '乱視の度数（CYL）・軸度（AXIS）の読み方', '装用スタイル別おすすめ乱視用コンタクト', '人気乱視用コンタクトランキング2026', '乱視用レンズを選ぶ際の注意点', 'よくある質問'],
   },
   {
     slug: 'shoshinsha-contact-guide',
@@ -434,22 +394,6 @@ export const columns: ColumnMeta[] = [
     updatedAt: '2026-07-17',
     readingTime: 8,
     headings: ['老眼とコンタクトの関係', '遠近両用コンタクトの仕組み', 'ワンデーvs月ケア型の比較', 'おすすめブランド・シリーズ比較', '慣れるまでのコツと注意点'],
-  },
-    {
-    slug: "astigmatism-contact-guide-2026",
-    title: "乱視用コンタクトレンズの選び方完全ガイド｜おすすめ商品2026",
-    description: "乱視用コンタクトレンズの選び方を徹底解説。2026年最新のおすすめ商品、処方箋の見方、装用時の注意点まで、乱視ユーザーが知るべき全知識を網羅",
-    category: "商品比較",
-    readingTime: 10,
-    publishedAt: "2026-07-17",
-    keywords: ["乱視用コンタクト","トーリック","乱視矯正"],
-    faqs: [
-    { q: "乱視用コンタクトレンズはなぜ普通のコンタクトより高い？", a: "乱視用（トーリック）レンズは、角膜の複数の方向で異なる屈折力を矯正するため、設計・製造が複雑になります。複数の度数とシリンダー軸の組み合わせが必要なため、在庫が増え、製造コストが上乗せされるためです。" },
-    { q: "乱視の度数（シリンダー度数）がマイナス表記なのはなぜ？", a: "乱視は角膜の歪みで光が2つの焦点に分散する状態です。これを矯正するには、逆向きの屈折力（マイナス）を加える必要があります。そのため処方箋ではシリンダー度数がマイナス値で記載されるのが標準です。" },
-    { q: "処方箋なしで乱視用コンタクトを買えるか？", a: "眼科の受診と処方箋の取得が法律で義務付けられています。乱視矯正には複雑な度数計算が必要なため、眼科医による検査が必須です。オンライン処方サービスでも初回は検査が必要になります。" },
-    { q: "乱視用と通常のコンタクトで視力が変わることはある？", a: "あります。正しく矯正されていない乱視は、眼精疲労や視力低下を招きます。乱視用レンズで適切に矯正されると、見える範囲が広がり、コントラストがはっきりし、眼の疲れも軽減される傾向です。" },
-    { q: "1DAYとバイウィークリーで乱視矯正の精度に違いはある？", a: "基本的に同じ製造技術で製造されているため、精度の大きな差はありません。ただし、使用期間が長いバイウィークリーはレンズの変形や汚れが蓄積しやすいため、装用感は1DAYが優れていることが多いです。" }
-    ],
   },
     {
     slug: "contact-first-choice-children-highschool",
@@ -704,97 +648,6 @@ export const columnContent: Record<string, React.ReactNode> = {
     </div>
   ),
 
-  'shohosen-nashi-tsuuhan': (
-    <div className="prose prose-gray max-w-none">
-      <p className="lead text-lg text-gray-700 mb-6">
-        「コンタクトレンズって処方箋がないと通販で買えないの？」という疑問を持つ方は多いです。
-        結論から言うと、<strong>薬機法上はコンタクトレンズの購入に処方箋の提示義務はありません</strong>が、眼科での検査を強く推奨します。この記事で詳しく解説します。
-      </p>
-
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">コンタクトレンズは「高度管理医療機器」</h2>
-      <p className="mb-4">
-        コンタクトレンズは<strong>高度管理医療機器（クラスIII）</strong>に分類されており、目に直接触れる医療器具です。
-        眼科での処方・定期検査が推奨されていますが、法律上は処方箋の提示なしに購入できます。
-      </p>
-      <div className="bg-yellow-50 border-l-4 border-yellow-400 pl-4 py-3 mb-6">
-        <p className="font-bold text-yellow-800">重要なポイント</p>
-        <p className="text-sm mt-1">初めてコンタクトを使う場合や、度数を変更する場合は、必ず眼科を受診してください。目に合わない度数のコンタクトを使い続けると、視力低下や目のトラブルを引き起こす可能性があります。</p>
-      </div>
-
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">通販で安全に購入するための3条件</h2>
-      <div className="space-y-4 mb-6">
-        <div className="flex gap-4 bg-green-50 rounded-xl p-4">
-          <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">1</div>
-          <div>
-            <h3 className="font-bold text-gray-800">初回は眼科で処方を受けている</h3>
-            <p className="text-sm text-gray-600 mt-1">初めてコンタクトを作る場合は必ず眼科へ。BC（ベースカーブ）や度数の正確な数値を確認しましょう。</p>
-          </div>
-        </div>
-        <div className="flex gap-4 bg-green-50 rounded-xl p-4">
-          <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">2</div>
-          <div>
-            <h3 className="font-bold text-gray-800">同じ種類・同じ度数を継続購入している</h3>
-            <p className="text-sm text-gray-600 mt-1">以前に処方された同一商品を再購入する場合は、通販が便利で経済的です。</p>
-          </div>
-        </div>
-        <div className="flex gap-4 bg-green-50 rounded-xl p-4">
-          <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">3</div>
-          <div>
-            <h3 className="font-bold text-gray-800">定期的に眼科で検査を受けている</h3>
-            <p className="text-sm text-gray-600 mt-1">年に1〜2回の定期検査を受けながら通販購入するのが理想的なスタイルです。</p>
-          </div>
-        </div>
-      </div>
-
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">通販ショップの選び方</h2>
-      <p className="mb-4">通販でコンタクトを買う場合は、以下のポイントを確認しましょう。</p>
-      <ul className="list-disc list-inside mb-4 space-y-2 text-gray-700">
-        <li><strong>高度管理医療機器販売許可を取得しているか</strong>（正規ショップの証）</li>
-        <li><strong>日本の正規品を販売しているか</strong>（並行輸入品は注意）</li>
-        <li><strong>送料込みの価格で比較する</strong>（送料無料のショップがお得）</li>
-        <li><strong>まとめ買い割引があるか</strong>（6箱・8箱セットが安い場合が多い）</li>
-      </ul>
-
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">おすすめ通販ショップの比較</h2>
-      <p className="mb-4">
-        当サイトでは24店舗のコンタクト通販ショップの価格を毎日比較しています。
-        商品によって最安値ショップが異なるため、購入前に必ず比較することをおすすめします。
-      </p>
-      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-6">
-        <h3 className="text-xl font-bold mb-2">今すぐ最安値を比較する</h3>
-        <p className="text-slate-300 mb-4">アキュビュー、デイリーズ、シードなど人気商品の価格を一括比較。</p>
-        <div className="flex flex-wrap gap-3">
-          <Link href="/category/1day" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">
-            ワンデーを比較
-          </Link>
-          <Link href="/category/2week" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">
-            2週間を比較
-          </Link>
-          <Link href="/ranking" className="inline-block bg-yellow-400 text-gray-900 font-bold px-4 py-2 rounded-xl hover:bg-yellow-300 transition-colors text-sm">
-            人気ランキングを見る
-          </Link>
-        </div>
-      </div>
-
-      <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
-        <div className="space-y-3">
-          {[
-            { q: '初めてコンタクトを使う場合も処方箋なしで通販購入できますか？', a: '初めての方は必ず眼科を受診してください。BC（ベースカーブ）・度数・DIA（直径）は人によって異なり、目に合わないレンズを使い続けると角膜障害などのリスクがあります。処方箋なし通販は「すでに使用中の同じ商品を継続購入する方」が前提です。' },
-            { q: '処方箋の有効期限はどれくらいですか？', a: '一般的に処方箋の有効期限は発行から1年以内とされています（法律で定められているわけではありませんが、多くの眼科・ショップがこの基準を採用）。視力・角膜の状態は変化するため、1年ごとの定期検査と処方箋更新を推奨します。' },
-            { q: '並行輸入品（海外品）と国内正規品の違いは何ですか？', a: '国内正規品は日本の薬機法基準をクリアし、品質・情報表示（日本語添付文書）が保証されています。並行輸入品は価格が安いケースもありますが、品質管理や適切な情報が保証されません。万が一トラブルがあった際のサポートも受けにくいため、信頼できる国内正規代理店のショップで購入することを強くおすすめします。' },
-          ].map(({ q, a }) => (
-            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
-              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
-                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
-              </summary>
-              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
-            </details>
-          ))}
-        </div>
-      </section>
-    </div>
-  ),
 
   'hajimete-erabikata': (
     <div className="prose prose-gray max-w-none">
@@ -1166,132 +1019,6 @@ export const columnContent: Record<string, React.ReactNode> = {
     </div>
   ),
 
-  'ranshi-contact-erabikata': (
-    <div className="prose prose-gray max-w-none">
-      <p className="lead text-lg text-gray-700 mb-6">
-        「乱視があるとコンタクトは使えない？」「乱視用って普通のと何が違うの？」という疑問を持つ方のために、
-        乱視用コンタクトレンズの選び方を、軽度・中等度別に詳しく解説します。
-      </p>
-
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">乱視とは？CYL・AXISの意味</h2>
-      <p className="mb-4">
-        乱視とは、角膜や水晶体の形が球面ではなく楕円形に歪んでいるために、焦点が一点に集まらず像がぼやけたり二重に見える状態です。
-        乱視用コンタクトの処方箋には、通常の度数（PWR）に加えて以下のパラメータが記載されます。
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        <div className="bg-purple-50 rounded-xl p-4">
-          <h3 className="font-bold text-purple-800 mb-2">CYL（シリンダー・乱視度数）</h3>
-          <p className="text-sm text-gray-700">乱視の強さを表す数値。マイナスで表記され、数値が大きいほど乱視が強いことを意味します。</p>
-          <p className="text-sm text-gray-600 mt-2"><strong>一般的な範囲：</strong>-0.75 〜 -2.25</p>
-        </div>
-        <div className="bg-purple-50 rounded-xl p-4">
-          <h3 className="font-bold text-purple-800 mb-2">AXIS（アクシス・軸度）</h3>
-          <p className="text-sm text-gray-700">乱視の方向（軸の角度）を1〜180度で表します。この数値が違うと矯正効果が出ません。</p>
-          <p className="text-sm text-gray-600 mt-2"><strong>重要：</strong>AXISは±5度以内が望ましい</p>
-        </div>
-      </div>
-      <div className="bg-yellow-50 border-l-4 border-yellow-400 pl-4 py-3 mb-6">
-        <p className="font-bold text-yellow-800">乱視用を選ぶ目安</p>
-        <p className="text-sm mt-1">CYL（乱視度数）が-0.75以上ある場合は、乱視用コンタクトの使用を検討してください。-0.50以下の軽度乱視は、普通の球面コンタクトで十分なことも多いです。</p>
-      </div>
-
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">乱視用コンタクトの仕組み</h2>
-      <p className="mb-4">
-        乱視用コンタクトは「トーリックレンズ」とも呼ばれ、レンズに方向性を持たせることで乱視を矯正します。
-        通常のコンタクトと異なり、<strong>レンズが目の上で回転しない</strong>ように設計されています。
-      </p>
-      <p className="mb-4">主な安定化方式：</p>
-      <ul className="list-disc list-inside mb-6 space-y-1 text-sm text-gray-700">
-        <li><strong>プリズムバラスト方式：</strong>レンズの下部を厚くして重力で安定化</li>
-        <li><strong>ダブルスラブオフ方式：</strong>上下を削って安定化（まばたきに強い）</li>
-        <li><strong>Eyelid Stabilization方式（アキュビュー）：</strong>まぶたの動きを利用して安定化</li>
-      </ul>
-
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">軽度・中等度別おすすめ乱視用コンタクト</h2>
-      <h3 className="text-xl font-bold text-gray-800 mb-3">軽度乱視（CYL -0.75〜-1.25）向け</h3>
-      <div className="space-y-4 mb-6">
-        <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="bg-yellow-400 text-white text-xs px-2 py-0.5 rounded-full font-bold">人気No.1</span>
-            <span className="text-xs text-gray-500">ワンデー乱視用</span>
-          </div>
-          <h4 className="font-bold text-gray-800 mb-1">1デイ アキュビュー モイスト 乱視用</h4>
-          <p className="text-xs text-gray-600 mb-2">LACREON技術で乾きにくく、乱視もしっかり矯正。軽度〜中等度乱視の方に人気No.1のワンデー。</p>
-          <Link href="/product/acuvue-moist-1day-astig" className="text-slate-700 text-sm font-medium hover:underline">最安値を確認 →</Link>
-        </div>
-        <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="bg-green-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">コスパ最強</span>
-            <span className="text-xs text-gray-500">ワンデー乱視用</span>
-          </div>
-          <h4 className="font-bold text-gray-800 mb-1">ワンデーピュア うるおいプラス 乱視用</h4>
-          <p className="text-xs text-gray-600 mb-2">国産品質で価格が安い。コスパ重視の方に最適な乱視用ワンデー。</p>
-          <Link href="/product/seed-1day-pure-astig" className="text-slate-700 text-sm font-medium hover:underline">最安値を確認 →</Link>
-        </div>
-      </div>
-
-      <h3 className="text-xl font-bold text-gray-800 mb-3">中等度乱視（CYL -1.50〜-2.25）向け</h3>
-      <div className="space-y-4 mb-6">
-        <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="bg-slate-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">安定性No.1</span>
-            <span className="text-xs text-gray-500">2ウィーク乱視用</span>
-          </div>
-          <h4 className="font-bold text-gray-800 mb-1">アキュビュー オアシス 乱視用</h4>
-          <p className="text-xs text-gray-600 mb-2">HYDRACLEAR PLUS技術で乾燥に強く、乱視の安定矯正力も抜群。中等度乱視の方に強くおすすめ。</p>
-          <Link href="/product/acuvue-oasys-2week-astig" className="text-slate-700 text-sm font-medium hover:underline">最安値を確認 →</Link>
-        </div>
-        <div className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="bg-purple-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">マンスリー</span>
-            <span className="text-xs text-gray-500">マンスリー乱視用</span>
-          </div>
-          <h4 className="font-bold text-gray-800 mb-1">バイオフィニティ トーリック</h4>
-          <p className="text-xs text-gray-600 mb-2">Aquaform技術搭載。コスパ重視でマンスリー乱視用を探している方に最適。</p>
-          <Link href="/product/biofinity-toric" className="text-slate-700 text-sm font-medium hover:underline">最安値を確認 →</Link>
-        </div>
-      </div>
-
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">乱視用コンタクトを選ぶ際の注意点</h2>
-      <ul className="list-disc list-inside mb-6 space-y-2 text-gray-700">
-        <li>必ず眼科でCYL・AXIS・BCを正確に処方してもらう</li>
-        <li>通販購入時はCYLとAXISの入力ミスに注意（左右間違えやすい）</li>
-        <li>装用感に違和感がある場合はすぐに外して眼科へ</li>
-        <li>乱視用は普通のコンタクトより割高だが眼の健康のために適切なものを選ぶ</li>
-      </ul>
-
-      <div className="bg-slate-800 text-white rounded-2xl p-6 mt-8">
-        <h3 className="text-xl font-bold mb-2">乱視用コンタクトの最安値を比較する</h3>
-        <p className="text-slate-300 mb-4">アキュビュー・シード・クーパービジョンなど主要ブランドの乱視用コンタクトを一括比較。</p>
-        <div className="flex flex-wrap gap-3">
-          <Link href="/category/1day" className="inline-block bg-white text-slate-800 font-bold px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm">
-            ワンデー乱視用を見る
-          </Link>
-          <Link href="/ranking" className="inline-block bg-yellow-400 text-gray-900 font-bold px-4 py-2 rounded-xl hover:bg-yellow-300 transition-colors text-sm">
-            人気ランキングを見る
-          </Link>
-        </div>
-      </div>
-
-      <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
-        <div className="space-y-3">
-          {[
-            { q: '乱視用コンタクトのパラメータにはどんな数字がありますか？', a: '通常の球面レンズの度数（PWR）に加え、CYL（円柱度数：-0.75、-1.25、-1.75など）とAXIS（乱視軸：0〜180度）が追加されます。自分の乱視の種類・軸・度数は眼科で検査してもらう必要があります。ショッピングサイトでは商品ページで選択できる項目として表示されます。' },
-            { q: '乱視が軽い場合、普通の球面レンズでもいいですか？', a: '乱視が軽微（0.50D以下）の場合、球面レンズでもそれほど不自由を感じない方もいます。ただし、夜間の光がにじむ・長時間使用で目が疲れやすいなどの症状がある場合は乱視用を試してみる価値があります。眼科でどちらが合うかフィッティングしてもらうのが最善です。' },
-            { q: '乱視用コンタクトは値段が高いですか？', a: '球面レンズに比べて1箱あたり500〜1,500円程度高いのが一般的です。ただし通販での最安値を比較すると、眼科処方価格より30〜50%程度安く購入できることが多いです。乱視があるのに球面レンズを使い続けて目を酷使するより、正確に矯正するほうが長期的に目の健康を守れます。' },
-          ].map(({ q, a }) => (
-            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
-              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
-                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
-              </summary>
-              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
-            </details>
-          ))}
-        </div>
-      </section>
-    </div>
-  ),
 
   'contact-kakaku-hikaku-2024': (
     <div className="prose prose-gray max-w-none">
@@ -2554,6 +2281,18 @@ export const columnContent: Record<string, React.ReactNode> = {
               feature: '国内メーカー（シード）製のシリコーンハイドロゲル2weekレンズ。UV保護機能付きで日常使いに最適。価格がやや抑えめで長期コストを抑えたい方に。',
               specs: [['素材', 'シリコーンハイドロゲル'], ['含水率', '35%'], ['Dk/t', '129'], ['UV保護', 'あり']],
             },
+            {
+              rank: 6, name: 'シード ツーウィークピュア', brand: 'シード',
+              slug: 'seed-2week-pure', badge: '国産・高含水率',
+              feature: '国産品質の2週間交換タイプ。含水率57%と高く、うるおいを重視する方に選ばれている。エタフィルコン系のハイドロゲル素材で、初期のみずみずしい装用感が特徴。',
+              specs: [['含水率', '57%'], ['BC', '8.8'], ['DIA', '14.2'], ['UV保護', 'あり']],
+            },
+            {
+              rank: 7, name: 'メニコン 2ウィーク プレミオ', brand: 'メニコン',
+              slug: 'menicon-2week', badge: '日本人設計・高酸素',
+              feature: '国内最大手メニコンが手がけるシリコーンハイドロゲル2weekレンズ。高い酸素透過率と、日本人の眼形状に合わせた設計で連続装用にも対応。',
+              specs: [['素材', 'シリコーンハイドロゲル'], ['含水率', '40%'], ['BC', '8.6'], ['DIA', '14.0']],
+            },
           ].map(({ rank, name, brand, slug: productSlug, badge, feature, specs }) => (
             <div key={rank} className="border border-gray-200 rounded-xl p-4">
               <div className="flex items-center gap-2 mb-2 flex-wrap">
@@ -2599,6 +2338,9 @@ export const columnContent: Record<string, React.ReactNode> = {
             { q: '2ウィークコンタクトのケア用品代はいくらかかりますか？', a: 'MPS（マルチパーパスソリューション）の場合、1本（360ml）で1,200〜2,000円程度。2週間に1本消費するとすると、月額600〜1,000円程度のケア用品代がかかります。年間7,000〜12,000円程度。ケア用品代を含めても、ワンデーより年間コストが安くなるケースがほとんどです。' },
             { q: 'アキュビューオアシス2weekとバイオフィニティ、どちらが乾きにくいですか？', a: '乾燥感の点では多くのユーザーがアキュビューオアシスをやや上と評価します。HYDRACLEAR Plusという独自の保湿技術が特徴で、終日の装用快適性が高評価。バイオフィニティはAquaformテクノロジーで高い酸素透過率（Dk/t 160）が売りで、長時間装用での目への負担軽減が強み。乾燥感重視ならオアシス、酸素透過率重視ならバイオフィニティという選び方が目安です。' },
             { q: '2ウィークコンタクトを期限（14日）過ぎて使い続けるのは危険ですか？', a: 'はい、危険です。14日を超えるとタンパク質・脂質汚れが蓄積し、レンズが劣化して酸素透過率が下がります。眼科での角膜潰瘍・感染症リスクが高まり、最悪の場合は視力障害につながることも。「まだ汚れてない」と感じても、必ず14日で交換してください。' },
+            { q: 'アキュビューオアシス2weekに乱視用・遠近両用はありますか？', a: 'あります。乱視用は「アキュビューオアシス トーリック（2week）」、遠近両用は「アキュビューオアシス マルチフォーカル（2week）」があります。いずれも同じシリコーンハイドロゲル素材・HYDRACLEAR Plus技術を採用。乱視や老視がある方でも乾きにくいオアシスシリーズを選べます。' },
+            { q: 'コンタクトのケアにミネラルウォーターを使っても大丈夫ですか？', a: '絶対に使用しないでください。ミネラルウォーターや水道水には「アカントアメーバ」などの微生物が含まれており、コンタクトを介して目に感染すると重篤な角膜炎を引き起こすことがあります。視力を失う恐れもある非常に危険な感染症です。ケアは必ず専用のMPS・ケア液のみを使用してください。' },
+            { q: '2weekコンタクトをワンデーとして使い捨てにしてもいいですか？', a: '2weekレンズをワンデーとして使い捨てること自体は物理的には可能ですが、コストが高くなるだけです。また2weekレンズはワンデーと素材設計が異なり、1日使用後は適切なケアを前提に設計されています。「コスト節約のためにワンデーを2日以上使い回す」のは逆方向で絶対NG。指定の交換サイクルを守ることが目の健康を守る基本です。' },
           ].map(({ q, a }) => (
             <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
               <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
@@ -2892,9 +2634,32 @@ export const columnContent: Record<string, React.ReactNode> = {
             </table>
           </div>
         </div>
-        <p className="text-sm text-gray-700 leading-relaxed">
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
           乱視用レンズは回転しないよう設計されており（プリズムバラスト方式など）、装用後に見え方が安定するまで数秒〜数十秒かかることがあります。これは仕様で、異常ではありません。
         </p>
+        <div className="bg-purple-50 rounded-xl p-4">
+          <p className="text-xs font-semibold text-purple-800 mb-2">主な安定化方式</p>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>・<strong>プリズムバラスト方式：</strong>レンズの下部を厚くして重力で安定化</li>
+            <li>・<strong>ダブルスラブオフ方式：</strong>上下を削って安定化（まばたきに強い）</li>
+            <li>・<strong>Eyelid Stabilization方式（アキュビュー）：</strong>まぶたの動きを利用して安定化</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">乱視の症状チェックリスト</h2>
+        <div className="bg-purple-50 rounded-xl p-4">
+          <p className="text-sm text-gray-700 space-y-1">
+            日本人の約6〜7割が何らかの乱視を持っているとされます。以下に当てはまる場合は眼科での検査をおすすめします。
+          </p>
+          <ul className="text-sm text-gray-700 space-y-1 mt-2">
+            <li>・遠くの文字がぼやけたり二重に見える</li>
+            <li>・夜間の光が滲んで見える（ハロー・グレア）</li>
+            <li>・眼精疲労・頭痛が起きやすい</li>
+            <li>・ものが歪んで見える</li>
+          </ul>
+        </div>
       </section>
 
       <section>
@@ -3054,6 +2819,56 @@ export const columnContent: Record<string, React.ReactNode> = {
             </div>
           ))}
         </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">装用スタイル別の選び方</h2>
+        <div className="space-y-3">
+          {[
+            { style: 'ワンデー（1日使い捨て）', merit: 'ケア不要で衛生的。週数回だけ使う方や旅行・外出時に便利。', cost: '年間コスト高め' },
+            { style: '2week（2週間交換）', merit: 'ワンデーより経済的で、毎日使う方に向く。毎日のケアが必要。', cost: '年間コスト中程度' },
+            { style: 'マンスリー（月1交換）', merit: '最もコストが安い。しっかりしたケアが必要。毎日使用する方向け。', cost: '年間コスト安め' },
+          ].map(({ style, merit, cost }) => (
+            <div key={style} className="bg-white border border-gray-200 rounded-xl p-4">
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <p className="font-bold text-gray-900 text-sm">{style}</p>
+                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full">{cost}</span>
+              </div>
+              <p className="text-sm text-gray-700">{merit}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">含水率・レンズ素材で選ぶ</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          含水率はレンズ内の水分含有量を示す指標です。数値が高いほど装用初期のうるおいは強く感じますが、乾燥時には逆にレンズが目から水分を奪う傾向があるため、自分の目の状態に合わせて選ぶことが重要です。
+        </p>
+        <ul className="text-sm text-gray-700 space-y-1 mb-3">
+          <li>・<strong>高含水率（45%以上）</strong>：酸素透過性が高いが、レンズが乾きやすい</li>
+          <li>・<strong>標準含水率（38〜44%）</strong>：バランスが良く、多くのユーザーに推奨</li>
+          <li>・<strong>低含水率（35%以下）</strong>：長時間装用でもドライアイが起きにくい</li>
+        </ul>
+        <p className="text-sm text-gray-700 leading-relaxed">
+          また、水分保持のしやすさから「イオン性レンズ（水分保持率38〜45%、ドライアイ気味の方に有効）」と「非イオン性レンズ（水分保持率35〜40%、目ヤニが付きにくく高タンパク環境に強い）」に分類されることもあります。迷った場合は眼科で自分の目の状態に合わせて相談するのが確実です。
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">正しい装用方法とケア・定期受診</h2>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3"><strong>正しい装用方法：</strong></p>
+        <ul className="text-sm text-gray-700 space-y-1 mb-3">
+          <li>1. レンズの向き確認：トーリックレンズにはマーキング表示があり、正しい向きが重要</li>
+          <li>2. 軽い瞬き：レンズが正位置に落ち着くまで数秒待つ</li>
+          <li>3. レンズの動き確認：横を向いてもレンズが一緒に動くことを確認</li>
+        </ul>
+        <p className="text-sm text-gray-700 leading-relaxed mb-3">
+          乱視用レンズは通常レンズより複雑な形状のため、毎日のレンズケア液での洗浄、2weekタイプは週1回の酵素クリーニング、レンズケースの月1回の交換など、より丁寧なケアが重要です。
+        </p>
+        <p className="text-sm text-gray-700 leading-relaxed">
+          <strong>定期受診の目安：</strong>新しいレンズを開始してから1週間後、その後は3ヶ月ごと、年1回の屈折検査を受けることが推奨されます。乱視の強さは年単位で変化することがあるため、定期的な検査で最適な処方を維持しましょう。
+        </p>
       </section>
 
       <section>
@@ -3962,137 +3777,6 @@ export const columnContent: Record<string, React.ReactNode> = {
     </div>
   ),
 
-  'contact-2week-osusume': (
-    <div className="space-y-8">
-      <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">2weekコンタクトのメリット・デメリット</h2>
-        <p className="text-sm text-gray-700 leading-relaxed mb-4">
-          2週間使い捨てコンタクトレンズは、ワンデーと比べてコストを抑えつつ、毎日のレンズケア（洗浄・保存）を前提にした設計です。
-          毎日使う方には経済的な選択肢ですが、ケア用品代と手間もかかります。
-        </p>
-        <div className="grid sm:grid-cols-2 gap-4 mb-4">
-          <div className="bg-emerald-50 border border-emerald-100 rounded-xl p-4">
-            <p className="font-bold text-emerald-800 text-sm mb-2">メリット</p>
-            <ul className="space-y-1 text-sm text-gray-700">
-              {['ワンデーより1日あたりのコストが安い', '多くのシリーズがシリコーンHG素材で酸素透過率が高い', '乱視用・遠近両用のラインナップが豊富', 'まとめ買いでさらにコスト削減可能'].map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <span className="text-emerald-500 mt-0.5 shrink-0">+</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="bg-slate-50 border border-slate-100 rounded-xl p-4">
-            <p className="font-bold text-slate-700 text-sm mb-2">デメリット</p>
-            <ul className="space-y-1 text-sm text-gray-700">
-              {['毎日のレンズケアが必要（洗浄・保存液代も発生）', '水道水洗浄は厳禁（感染リスクあり）', 'ケア不足だとタンパク汚れが蓄積しやすい', '旅行・外泊時はケア用品も持ち歩く必要がある'].map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <span className="text-slate-400 mt-0.5 shrink-0">-</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">おすすめ2weekコンタクト ランキング</h2>
-        <div className="space-y-4">
-          {[
-            {
-              rank: 1,
-              name: 'アキュビュー オアシス（2week）',
-              maker: 'ジョンソン＆ジョンソン',
-              material: 'セノフィルコン A（SiHy）',
-              dk: '147',
-              price: '2,500〜3,800円/箱（6枚）',
-              point: '2weekレンズの中で最高クラスの乾きにくさ。HYDRACLEAR Plusがレンズ全体に保湿成分を届け、12〜14時間の長時間装用でも快適さを維持。PC・デスクワーク・コンタクト中心の生活の方に最適。',
-            },
-            {
-              rank: 2,
-              name: 'バイオフィニティ',
-              maker: 'クーパービジョン',
-              material: 'コメットフィルコン A（SiHy）',
-              dk: '160',
-              price: '2,200〜3,200円/箱（6枚）',
-              point: 'Dk/t値160と業界最高水準の酸素透過率を誇るマンスリー・2weekシリーズの主力。Aquaformテクノロジーで保水性も高い。長時間・高酸素環境を求める方に支持されている。',
-            },
-            {
-              rank: 3,
-              name: 'シード 2ウィーク ピュア EDOF',
-              maker: 'シード',
-              material: 'エタフィルコン A',
-              dk: '28',
-              price: '1,500〜2,400円/箱（6枚）',
-              point: '国産ブランドのシードが提供するコスパ重視の2weekレンズ。EDOF（拡張焦点深度）技術採用で手元から遠方まで見やすい。価格を抑えながらも安定した品質を重視する方に。',
-            },
-            {
-              rank: 4,
-              name: 'メニコン 2week Menicon Premio',
-              maker: 'メニコン',
-              material: 'シリコーンハイドロゲル',
-              dk: '161',
-              price: '1,800〜2,800円/箱（6枚）',
-              point: '国内最大コンタクトメーカーのメニコンが提供する高スペック2weekレンズ。酸素透過率が高く、日本人の眼形状に合わせた設計で安定した装用感。',
-            },
-          ].map(({ rank, name, maker, material, dk, price, point }) => (
-            <div key={name} className="bg-white border border-gray-200 rounded-xl p-4">
-              <div className="flex items-start gap-3">
-                <span className="bg-slate-800 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shrink-0">{rank}</span>
-                <div className="flex-1">
-                  <p className="font-bold text-gray-900 mb-1">{name}</p>
-                  <p className="text-xs text-gray-500 mb-2">{maker}</p>
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    <span className="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full">{material}</span>
-                    <span className="text-xs bg-slate-50 text-slate-700 px-2 py-0.5 rounded-full">Dk/t: {dk}</span>
-                    <span className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">{price}</span>
-                  </div>
-                  <p className="text-sm text-gray-700 leading-relaxed">{point}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">2weekコンタクトの最安値を比較する</h2>
-        <div className="flex flex-wrap gap-3">
-          <Link href="/category/2week" className="inline-block bg-slate-800 text-white text-sm font-bold px-5 py-2 rounded-lg hover:bg-slate-700 transition-colors">
-            2week商品一覧で最安値を見る
-          </Link>
-          <Link href="/ranking" className="inline-block border border-slate-300 text-slate-700 text-sm font-medium px-5 py-2 rounded-lg hover:bg-slate-50 transition-colors">
-            全商品ランキングを見る
-          </Link>
-        </div>
-      </section>
-
-      <section>
-        <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3">
-          ※ 掲載しているスペック・価格は参考値です。最新の製品情報は各メーカー公式サイトでご確認ください。コンタクトレンズは医療機器のため、初めてご使用の方は必ず眼科を受診してください。
-        </p>
-      </section>
-
-      <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
-        <div className="space-y-3">
-          {[
-            { q: 'アキュビューオアシス2weekに乱視用・遠近両用はありますか？', a: 'あります。乱視用は「アキュビューオアシス トーリック（2week）」、遠近両用は「アキュビューオアシス マルチフォーカル（2week）」があります。いずれも同じシリコーンハイドロゲル素材・HYDRACLEAR Plus技術を採用。乱視や老視がある方でも乾きにくいオアシスシリーズを選べます。' },
-            { q: 'コンタクトのケアにミネラルウォーターを使っても大丈夫ですか？', a: '絶対に使用しないでください。ミネラルウォーターや水道水には「アカントアメーバ」などの微生物が含まれており、コンタクトを介して目に感染すると重篤な角膜炎を引き起こすことがあります。視力を失う恐れもある非常に危険な感染症です。ケアは必ず専用のMPS・ケア液のみを使用してください。' },
-            { q: '2weekコンタクトをワンデーとして使い捨てにしてもいいですか？', a: '2weekレンズをワンデーとして使い捨てること自体は物理的には可能ですが、コストが高くなるだけです。また2weekレンズはワンデーと素材設計が異なり、1日使用後は適切なケアを前提に設計されています。「コスト節約のためにワンデーを2日以上使い回す」のは逆方向で絶対NG。指定の交換サイクルを守ることが目の健康を守る基本です。' },
-          ].map(({ q, a }) => (
-            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
-              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
-                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
-              </summary>
-              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
-            </details>
-          ))}
-        </div>
-      </section>
-    </div>
-  ),
 
   'menicon-contact-osusume': (
     <div className="space-y-8">
@@ -4362,145 +4046,6 @@ export const columnContent: Record<string, React.ReactNode> = {
     </div>
   ),
 
-  'ranshi-contact-ranking-erabikata': (
-    <div className="space-y-8">
-      <section>
-        <p className="lead text-lg text-gray-700 mb-6">
-          乱視用コンタクトレンズ（トーリックレンズ）は、通常の近視・遠視矯正に加えて乱視も同時に補正できる特殊なレンズです。この記事では乱視の基礎知識から、自分に合ったレンズの選び方、2026年版の人気ランキングまで徹底解説します。
-        </p>
-      </section>
-
-      <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">乱視とは何か？トーリックレンズが必要な理由</h2>
-        <p className="text-sm text-gray-700 leading-relaxed mb-3">
-          乱視は角膜または水晶体の形が球面ではなく楕円形（ラグビーボール形）になっているため、光が一点に集まらず像がぼやけたり二重に見えたりする状態です。日本人の約6〜7割が何らかの乱視を持っているとされており、軽度の乱視は通常の球面レンズでも問題ない場合がありますが、中等度以上（CYL -0.75以上）では乱視用レンズの使用が推奨されます。
-        </p>
-        <div className="bg-purple-50 rounded-xl p-4 mb-4">
-          <p className="font-bold text-purple-800 mb-2 text-sm">乱視の症状チェックリスト</p>
-          <ul className="text-sm text-gray-700 space-y-1">
-            <li>・遠くの文字がぼやけたり二重に見える</li>
-            <li>・夜間の光が滲んで見える（ハロー・グレア）</li>
-            <li>・眼精疲労・頭痛が起きやすい</li>
-            <li>・ものが歪んで見える</li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">乱視の度数（CYL）・軸度（AXIS）の読み方</h2>
-        <p className="text-sm text-gray-700 leading-relaxed mb-3">
-          処方箋に記載される乱視関連のパラメータは主に2つです。
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-          <div className="bg-slate-50 rounded-xl p-4">
-            <h3 className="font-bold text-slate-800 mb-2 text-sm">CYL（乱視度数）</h3>
-            <p className="text-xs text-gray-700 leading-relaxed">乱視の強さを表す。マイナスで表記され、数値が大きいほど乱視が強い。一般的な範囲は -0.75〜-2.25。</p>
-            <div className="mt-2 text-xs text-gray-600">
-              <p>-0.75：軽度乱視</p>
-              <p>-1.25：中等度乱視</p>
-              <p>-1.75以上：やや強い乱視</p>
-            </div>
-          </div>
-          <div className="bg-slate-50 rounded-xl p-4">
-            <h3 className="font-bold text-slate-800 mb-2 text-sm">AXIS（軸度）</h3>
-            <p className="text-xs text-gray-700 leading-relaxed">乱視の方向（軸の角度）を1〜180度で表す。この数値が異なると矯正効果が得られないため、必ず正確に入力する必要がある。</p>
-            <div className="mt-2 text-xs text-gray-600">
-              <p>10度刻み（10・20・30…）で設定されることが多い</p>
-              <p>製品によって選択できるAXISの数が異なる</p>
-            </div>
-          </div>
-        </div>
-        <div className="bg-yellow-50 border-l-4 border-yellow-400 pl-4 py-3">
-          <p className="text-sm font-bold text-yellow-800">重要：AXISは製品によって対応範囲が異なります</p>
-          <p className="text-xs text-gray-700 mt-1">処方箋のAXIS値が購入したいレンズで選択できない場合、別の商品を選ぶ必要があります。通販で購入する際は必ず対応AXISを確認してください。</p>
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">装用スタイル別おすすめ乱視用コンタクト</h2>
-        <div className="space-y-3">
-          {[
-            { style: 'ワンデー（1日使い捨て）', merit: 'ケア不要で衛生的。週数回だけ使う方や旅行・外出時に便利。', cost: '年間コスト高め', rec: 'デイリーズ トータルワン乱視用、ワンデーアキュビュー モイスト乱視用' },
-            { style: '2week（2週間交換）', merit: 'ワンデーより経済的で、毎日使う方に向く。毎日のケアが必要。', cost: '年間コスト中程度', rec: 'アキュビュー オアシス乱視用、メダリスト乱視用' },
-            { style: 'マンスリー（月1交換）', merit: '最もコストが安い。しっかりしたケアが必要。毎日使用する方向け。', cost: '年間コスト安め', rec: 'バイオフィニティ トーリック、エアオプティクスプラス乱視用' },
-          ].map(({ style, merit, cost, rec }) => (
-            <div key={style} className="bg-white border border-gray-200 rounded-xl p-4">
-              <div className="flex flex-wrap items-center gap-2 mb-2">
-                <p className="font-bold text-gray-900 text-sm">{style}</p>
-                <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full">{cost}</span>
-              </div>
-              <p className="text-sm text-gray-700 mb-2">{merit}</p>
-              <p className="text-xs text-gray-500">おすすめ：{rec}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">人気乱視用コンタクトランキング2026</h2>
-        <div className="space-y-4">
-          {[
-            { rank: 1, name: 'デイリーズ トータルワン 乱視用', maker: 'アルコン', type: 'ワンデー', feature: '水分保持96%のウォーターグラジェント素材。1日中快適な装用感でドライアイ気味の方にも最適。CYL -0.75〜-2.25対応。' },
-            { rank: 2, name: 'アキュビュー オアシス 乱視用', maker: 'ジョンソン&ジョンソン', type: '2week', feature: 'HYDRACLEAR PLUSテクノロジーで涙液の安定膜を形成。乾きにくさと視力安定性を両立。BC 8.6mm。' },
-            { rank: 3, name: 'ワンデーアキュビュー モイスト 乱視用', maker: 'ジョンソン&ジョンソン', type: 'ワンデー', feature: 'LACREON配合でうるおい持続。10度刻みのAXIS設定で日本人の細かい乱視軸に対応。' },
-            { rank: 4, name: 'バイオフィニティ トーリック', maker: 'クーパービジョン', type: 'マンスリー', feature: 'Aquaform技術で含水率48%を自然に維持。BC 8.5/8.7の2種類から選べるフィット性。' },
-          ].map(({ rank, name, maker, type, feature }) => (
-            <div key={name} className="bg-white border border-gray-200 rounded-xl p-4">
-              <div className="flex items-start gap-3">
-                <span className="bg-slate-800 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">{rank}</span>
-                <div className="flex-1">
-                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <p className="font-bold text-gray-900 text-sm">{name}</p>
-                    <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">{type}</span>
-                  </div>
-                  <p className="text-xs text-gray-500 mb-2">{maker}</p>
-                  <p className="text-sm text-gray-700 leading-relaxed">{feature}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">乱視用レンズを選ぶ際の注意点</h2>
-        <ul className="space-y-2 text-sm text-gray-700">
-          <li className="flex items-start gap-2"><span className="text-red-500 font-bold shrink-0">!</span>必ず眼科で乱視の度数（CYL）と軸度（AXIS）を処方してもらう</li>
-          <li className="flex items-start gap-2"><span className="text-red-500 font-bold shrink-0">!</span>購入する商品のAXIS選択肢に自分の軸度が含まれているか確認する</li>
-          <li className="flex items-start gap-2"><span className="text-red-500 font-bold shrink-0">!</span>装用直後に見え方が安定しない場合は数秒待つ（レンズが回転して安定する）</li>
-          <li className="flex items-start gap-2"><span className="text-red-500 font-bold shrink-0">!</span>通販で購入する際は左右のCYL・AXISを正確に入力する</li>
-        </ul>
-      </section>
-
-      <section>
-        <div className="bg-slate-800 text-white rounded-2xl p-6">
-          <h3 className="text-xl font-bold mb-2">乱視用コンタクトの最安値を比較する</h3>
-          <p className="text-slate-300 mb-4">主要ショップの価格を毎日更新。送料込みで最安値を探せます。</p>
-          <Link href="/ranking" className="inline-block bg-white text-slate-800 font-bold px-6 py-3 rounded-xl hover:bg-slate-50 transition-colors">
-            ランキングで最安値を見る →
-          </Link>
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">よくある質問</h2>
-        <div className="space-y-3">
-          {[
-            { q: '軽い乱視（CYL -0.75）でも乱視用コンタクトは必要ですか？', a: '個人差があります。CYL -0.75の軽度乱視では通常の球面レンズで十分見えると感じる方も多いです。ただし眼精疲労や夜間の見えにくさが気になる場合は乱視用を試す価値があります。眼科医に相談してください。' },
-            { q: '乱視用コンタクトは通常のコンタクトより高価ですか？', a: '一般的に同じブランド・シリーズの乱視用は通常品より1〜2割程度高い傾向があります。ただし通販を利用することで大幅に安く購入できます。' },
-            { q: 'AXIS（軸度）が少しずれても問題ありませんか？', a: '軸度のずれは視力矯正効果に大きく影響します。処方通りのAXISを選ぶことが重要です。製品のAXISラインナップに合わない場合は眼科医に相談して近い数値での処方を検討してください。' },
-          ].map(({ q, a }) => (
-            <details key={q} className="border border-gray-200 rounded-xl overflow-hidden">
-              <summary className="flex items-center justify-between px-4 py-3 cursor-pointer bg-white hover:bg-slate-50 font-medium text-gray-800 text-sm list-none">
-                {q}<span className="text-slate-400 shrink-0 ml-2 text-xs">▾</span>
-              </summary>
-              <div className="px-4 pb-4 pt-2 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">{a}</div>
-            </details>
-          ))}
-        </div>
-      </section>
-    </div>
-  ),
 
   'shoshinsha-contact-guide': (
     <div className="space-y-8">
@@ -6365,189 +5910,6 @@ export const columnContent: Record<string, React.ReactNode> = {
       </section>
     </div>
   ),
-    "astigmatism-contact-guide-2026": (
-    <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">乱視用コンタクトレンズとは｜基本知識から選び方まで</h2>
-      <p className="text-gray-700 mb-4">乱視用コンタクトレンズ（トーリックレンズ）は、通常のコンタクトレンズとは異なり、角膜の複数方向の屈折異常を同時に矯正する設計になっています。日本人の約60～70%が何らかの乱視を有しており、その中から適切なレンズを選ぶことが、快適な視生活の鍵となります。</p>
-      <p className="text-gray-700 mb-4">本記事では、2026年現在の乱視用コンタクト選びの完全ガイドを提供します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">乱視とは｜なぜコンタクトの選択が重要なのか</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">乱視の種類と発症率</h3>
-      <p className="text-gray-700 mb-4">乱視は角膜または水晶体の形状の歪みにより、複数の焦点を形成する屈折異常です。</p>
-      <p className="text-gray-700 mb-4"><strong>主な乱視の種類：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>正乱視：角膜の歪み（全体の約90%）</li>
-        <li>不正乱視：手術後の傷跡やケラトコーナスなど（特殊なケース）</li>
-      </ul>
-      <p className="text-gray-700 mb-4">日本眼科学会の2023年調査によれば、<strong>外来患者の約35～40%が乱視を伴う屈折異常を持つ</strong>とされており、適切な矯正の必要性が高まっています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">乱視が矯正されないとどうなるか</h3>
-      <p className="text-gray-700 mb-4">乱視を放置した場合、以下のような症状が発生します：</p>
-      <p className="text-gray-700 mb-4">1. <strong>眼精疲労</strong>：ピント調整に余分な力が必要</p>
-      <p className="text-gray-700 mb-4">2. <strong>見え方の歪み</strong>：看板の文字がぼやけて見える</p>
-      <p className="text-gray-700 mb-4">3. <strong>頭痛</strong>：持続的な眼の緊張から誘発</p>
-      <p className="text-gray-700 mb-4">4. <strong>夜間視力の低下</strong>：暗い環境での見え方が悪化</p>
-      <p className="text-gray-700 mb-4">乱視用レンズでの矯正により、これらの症状は平均40～60%軽減されることが報告されています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">処方箋の読み方｜S・C・AXISを理解する</h2>
-      <p className="text-gray-700 mb-4">乱視用コンタクトレンズの選択には、処方箋の理解が不可欠です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">処方箋の3つの重要項目</h3>
-      <p className="text-gray-700 mb-4">```</p>
-      <p className="text-gray-700 mb-4">【処方例】</p>
-      <p className="text-gray-700 mb-4">S（球面度数）: -3.50D</p>
-      <p className="text-gray-700 mb-4">C（シリンダー度数）: -1.00D</p>
-      <p className="text-gray-700 mb-4">AXIS（軸方向）: 180°</p>
-      <p className="text-gray-700 mb-4">```</p>
-      <p className="text-gray-700 mb-4"><strong>S（球面度数）</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>近視または遠視の強さを示します</li>
-        <li>単位はディオプター（D）</li>
-        <li>マイナスは近視、プラスは遠視を表記</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>C（シリンダー度数）</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>乱視の強さを示します</li>
-        <li>常にマイナス値（標準記法）</li>
-        <li>0.25D刻みで処方されることが多い</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>AXIS（軸方向）</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>乱視軸の方向を示します</li>
-        <li>0～180°の範囲で記載</li>
-        <li>この角度がズレると矯正効果が大きく低下</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">シリンダー度数による見え方の変化</h3>
-      <p className="text-gray-700 mb-4">| シリンダー度数 | 症状の程度 | 必要な矯正方法 |</p>
-      <p className="text-gray-700 mb-4">|---|---|---|</p>
-      <p className="text-gray-700 mb-4">| -0.50D以下 | 軽度 | 通常のレンズでも対応可能なケースあり |</p>
-      <p className="text-gray-700 mb-4">| -0.75～-1.50D | 中程度 | 確実に乱視用レンズが必要 |</p>
-      <p className="text-gray-700 mb-4">| -1.75D以上 | 強度 | トーリックレンズ必須、眼科の定期受診推奨 |</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">乱視用コンタクトレンズの選び方｜2026年版</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1.使用タイプの選択</h3>
-      <p className="text-gray-700 mb-4"><strong>1日使い捨てタイプ（1DAY）</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>メリット：毎日清潔、装用感が良い、ケアが簡単</li>
-        <li>デメリット：コストが高い（月額4,000～6,000円）</li>
-        <li>推奨者：品質重視、毎日長時間装用する方</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>2週間交換タイプ</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>メリット：コストが低い（月額2,000～3,500円）</li>
-        <li>デメリット：ケアが必要、定期的な交換が必須</li>
-        <li>推奨者：コスト重視、自宅中心の生活</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>月交換・3ヶ月交換タイプ</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>メリット：最もコスト効率が良い（月額1,500～2,500円）</li>
-        <li>デメリット：ケアの手間が多い、定期交換の管理が必要</li>
-        <li>推奨者：コスト最小化したい、きちんとケアできる方</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2.製造方法による選択</h3>
-      <p className="text-gray-700 mb-4"><strong>イオン性レンズ</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>水分保持率が高い（38～45%）</li>
-        <li>ドライアイ気味の方に有効</li>
-        <li>長時間装用でもレンズが乾きにくい</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>非イオン性レンズ</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>水分保持率が低い（35～40%）</li>
-        <li>目ヤニが付きにくい</li>
-        <li>高タンパク環境に強い</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3.含水率の選択ポイント</h3>
-      <p className="text-gray-700 mb-4">含水率は、レンズ内の水分含有量を示します。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>高含水率（45%以上）</strong>：酸素透過性が高い、レンズが乾きやすい</li>
-        <li><strong>標準含水率（38～44%）</strong>：バランスが良い、多くのユーザーに推奨</li>
-        <li><strong>低含水率（35%以下）</strong>：長時間装用でもドライアイが起きにくい</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>2026年のトレンド</strong>：酸素透過性と保湿性の両立が実現され、高含水率でも装用感が向上しています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年おすすめ乱視用コンタクトレンズ</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">高機能・プレミアム層</h3>
-      <p className="text-gray-700 mb-4"><strong>アキュビュー オアシス トーリック（Johnson & Johnson）</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>シリンダー度数：-0.75D～-2.25D</li>
-        <li>装用時間：最大16時間推奨</li>
-        <li>特徴：業界最高クラスの酸素透過率（161Dk/t）、スムースサーフェステクノロジー採用</li>
-        <li>価格帯：月額5,500～6,500円</li>
-        <li>対象者：長時間装用、ドライアイが気になる方</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>メニコン Z トーリック</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>シリンダー度数：-0.75D～-2.25D</li>
-        <li>特徴：シリコーンハイドロゲル素材、レンズが動きにくい設計</li>
-        <li>価格帯：月額4,500～5,500円</li>
-        <li>対象者：運動時に装用する方、レンズのズレが気になる方</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">中価格・バランス層</h3>
-      <p className="text-gray-700 mb-4"><strong>デイリーズ トータル ワン トーリック（Alcon）</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>シリンダー度数：-0.75D～-2.25D</li>
-        <li>含水率：40%</li>
-        <li>特徴：360度デジタル光学設計、スマートモーニスチャー技術</li>
-        <li>価格帯：月額4,000～5,000円</li>
-        <li>対象者：日中の多くを室内で過ごす方、コスパ重視</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">低価格・経済層</h3>
-      <p className="text-gray-700 mb-4"><strong>クリアデュー トーリック（Alcon）</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>シリンダー度数：-0.75D～-2.25D</li>
-        <li>特徴：標準的な設計、十分な矯正精度</li>
-        <li>価格帯：月額2,500～3,500円</li>
-        <li>対象者：コスト優先、週末装用の方</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">乱視用コンタクト購入ガイド</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">オンライン購入との比較</h3>
-      <p className="text-gray-700 mb-4">| 購入方法 | メリット | デメリット | 処方箋の有効期限内での購入|</p>
-      <p className="text-gray-700 mb-4">|---|---|---|---|</p>
-      <p className="text-gray-700 mb-4">| 眼科併設店舗 | 装用相談が丁寧、その場で交換可 | 価格がやや高い | 必須（店舗で確認） |</p>
-      <p className="text-gray-700 mb-4">| オンラインショップ | 価格が安い、24時間購入可能 | 返品対応が限定的 | 有効期限内の処方箋が必須 |</p>
-      <p className="text-gray-700 mb-4">| 大型チェーン店 | 価格が比較的安い、在庫が豊富 | 専門知識がばらつく場合がある | 必須 |</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">アフィリエイトリンク経由での購入</h3>
-      <p className="text-gray-700 mb-4">大手オンラインショップでの乱視用コンタクトレンズ購入は以下から：</p>
-      <p className="text-gray-700 mb-4"><strong>楽天での検索：</strong> <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">乱視用コンタクトレンズをお得に</a></p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">乱視用コンタクト装用時の注意点</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">正しい装用方法</h3>
-      <p className="text-gray-700 mb-4">1. <strong>レンズの向き確認</strong>：トーリックレンズはマーキング表示があり、正しい向きが重要</p>
-      <p className="text-gray-700 mb-4">2. <strong>軽い瞬き</strong>：レンズが正位置に落ち着くまで数秒待つ</p>
-      <p className="text-gray-700 mb-4">3. <strong>レンズの動き確認</strong>：横を向いてもレンズが一緒に動くことを確認</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ケアの重要性</h3>
-      <p className="text-gray-700 mb-4">乱視用レンズは通常レンズより複雑な形状のため、<strong>定期的なクリーニングがより重要</strong>です：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>毎日のレンズ交換液での洗浄</li>
-        <li>週1回の酵素クリーニング（バイウィークリーの場合）</li>
-        <li>レンズケースの月1回の交換</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">定期受診の必須性</h3>
-      <p className="text-gray-700 mb-4"><strong>眼科受診の推奨間隔：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>新しいレンズ開始後：1週間</li>
-        <li>その後：3ヶ月ごと</li>
-        <li>年1回の屈折検査</li>
-      </ul>
-      <p className="text-gray-700 mb-4">乱視の強さは年単位で変化することがあり、定期的な検査により<strong>最適な処方の維持</strong>が可能です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年の乱視矯正技術トレンド</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">AI/機械学習による度数計算の精密化</h3>
-      <p className="text-gray-700 mb-4">2026年現在、眼科医の診断を支援する<strong>AI診断補助システム</strong>が導入され始めており、より個人の眼に合った度数を算出できるようになってきました。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">シリコーンハイドロゲル素材の進化</h3>
-      <p className="text-gray-700 mb-4">従来のハイドロゲル素材と比較し、酸素透過率が2倍以上に改善され、長時間装用がさらに快適になっています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">モイスチャー技術の向上</h3>
-      <p className="text-gray-700 mb-4">2025～2026年に複数メーカーが新開発した<strong>24時間モイスチャー保持技術</strong>により、朝から夜まで乾燥しないレンズが実現されています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">よくある質問と回答</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">乱視用レンズのコスト問題への対策</h3>
-      <p className="text-gray-700 mb-4">コスト削減方法としては：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>1DAYから2週間交換への変更（月額2,000～3,000円削減）</li>
-        <li>セール期間での一括購入（年間10～20%の割引）</li>
-        <li>処方箋の有効期限を最大限活用（通常1年）</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ：自分に最適な乱視用レンズ選びのステップ</h2>
-      <p className="text-gray-700 mb-4">1. <strong>眼科で正確な処方箋を取得</strong>（S・C・AXIS全て確認）</p>
-      <p className="text-gray-700 mb-4">2. <strong>使用タイプを決定</strong>（1DAY/バイウィークリー）</p>
-      <p className="text-gray-700 mb-4">3. <strong>試着・装用テスト</strong>（眼科で数日間の試着が推奨）</p>
-      <p className="text-gray-700 mb-4">4. <strong>定期受診の習慣化</strong>（3ヶ月ごと）</p>
-      <p className="text-gray-700 mb-4">5. <strong>オンラインショップで定期購入</strong>（コスト効率化）</p>
-      <p className="text-gray-700 mb-4">乱視は矯正されると劇的に生活の質が向上します。適切なレンズ選択と定期的なケアにより、快適で安全な視生活を実現してください。</p>
-    </article>
-  ),
     "contact-first-choice-children-highschool": (
     <article className="prose prose-sm max-w-none">
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">子どもや高校生がコンタクトレンズを選ぶ際の重要性</h2>
@@ -7021,6 +6383,15 @@ export const columnContent: Record<string, React.ReactNode> = {
 
   <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でコンタクトレンズを探す →</a>
   <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-0 mb-8 no-underline">レンズゼロで見る →</a>
+
+  <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-8">
+    <p className="font-bold text-emerald-900 mb-2">安全に継続購入するための3条件（まずはここだけ押さえればOK）</p>
+    <ul className="text-sm text-gray-700 space-y-1">
+      <li>① 初回は必ず眼科で処方を受ける</li>
+      <li>② 同一商品を継続購入する場合に限り処方箋不要で購入できる</li>
+      <li>③ 定期的に眼科で検査を受け、度数・眼の状態に変化がないか確認する</li>
+    </ul>
+  </div>
 
   <h2 id="section1" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">処方箋不要で購入できる法的理由</h2>
   
