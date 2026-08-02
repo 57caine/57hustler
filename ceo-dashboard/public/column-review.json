@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-01T22:03:07.467Z",
+  "generatedAt": "2026-08-02T22:00:15.585Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -73,35 +73,33 @@
       "status": "対応済み"
     },
     {
-      "path": "/column/eye-roller-fatigue-puffiness",
-      "slug": "eye-roller-fatigue-puffiness",
-      "title": "アイローラーの効果検証：目の疲れとむくみ解消グッズの選び方ガイド",
+      "path": "/column/sunglass-polarized-guide",
+      "slug": "sunglass-polarized-guide",
+      "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
       "metrics": {
-        "sessions": 4,
-        "bounceRate": 0.75,
-        "avgSessionDuration": 0.1078765,
+        "sessions": 5,
+        "bounceRate": 0.6,
+        "avgSessionDuration": 46.564468600000005,
         "affiliateClicks": 0
       },
       "flags": [
-        "avg_session_under_10s"
+        "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "平均滞在0.1秒（閾値10秒）"
+        "セッション5件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 10,
-        "h3Count": 16,
-        "hasAffiliateLinks": true,
+        "h2Count": 5,
+        "h3Count": 0,
+        "hasAffiliateLinks": false,
         "ctaCount": 0,
-        "contentChars": 11309
+        "contentChars": 5374
       },
       "causes": [
-        "ページが正常にレンダリングされていない可能性（JSXエラー・白画面等）",
-        "リンクはあるがCTAボタンが設置されていない（クリック導線が弱い）"
+        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
       ],
       "suggestions": [
-        "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する",
-        "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
+        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
       ],
       "status": "未対応"
     }
