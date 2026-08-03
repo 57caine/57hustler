@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-08-02T22:00:15.585Z",
+  "generatedAt": "2026-08-03T22:13:07.918Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
   },
-  "flaggedCount": 1,
+  "flaggedCount": 2,
   "flaggedArticles": [
     {
       "path": "/column/lenszero-kaigai-tsuuhan-guide-2026",
       "slug": "lenszero-kaigai-tsuuhan-guide-2026",
       "title": "lenszero-kaigai-tsuuhan-guide-2026",
       "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.2,
-        "avgSessionDuration": 216.799127,
+        "sessions": 11,
+        "bounceRate": 0.2727272727272727,
+        "avgSessionDuration": 197.09011545454544,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
+        "セッション11件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 9,
@@ -100,6 +100,39 @@
       ],
       "suggestions": [
         "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+      ],
+      "status": "未対応"
+    },
+    {
+      "path": "/column/eye-roller-fatigue-puffiness",
+      "slug": "eye-roller-fatigue-puffiness",
+      "title": "アイローラーの効果検証：目の疲れとむくみ解消グッズの選び方ガイド",
+      "metrics": {
+        "sessions": 4,
+        "bounceRate": 0.75,
+        "avgSessionDuration": 0.1078765,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "avg_session_under_10s"
+      ],
+      "flagLabels": [
+        "平均滞在0.1秒（閾値10秒）"
+      ],
+      "analysis": {
+        "h2Count": 10,
+        "h3Count": 16,
+        "hasAffiliateLinks": true,
+        "ctaCount": 0,
+        "contentChars": 11230
+      },
+      "causes": [
+        "ページが正常にレンダリングされていない可能性（JSXエラー・白画面等）",
+        "リンクはあるがCTAボタンが設置されていない（クリック導線が弱い）"
+      ],
+      "suggestions": [
+        "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する",
+        "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
       ],
       "status": "未対応"
     }
