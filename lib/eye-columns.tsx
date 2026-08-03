@@ -1757,8 +1757,23 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
-        <p className="font-bold text-gray-800 mb-3">コンタクト用目薬を探す</p>
-        <AffiliateBtns rakuten="コンタクト用 目薬 防腐剤なし" />
+        <p className="font-bold text-gray-800 mb-3">コンタクト対応目薬を探す</p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ドライアイ・防腐剤フリー</span>
+            <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
+            <p className="text-xs text-gray-500 mb-3">参天製薬／第3類医薬品。防腐剤無添加でソフト・ハード問わず全レンズタイプに対応</p>
+            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
+          </a>
+          <a href={RAKUTEN('サンテFXネオ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">疲れ目・眼精疲労</span>
+            <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテFXネオ</p>
+            <p className="text-xs text-gray-500 mb-3">参天製薬／ビタミンB12・タウリン配合。コンタクト装用時は装用前後の使用可否を表示で確認</p>
+            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">サンテFXネオを楽天で見る →</div>
+          </a>
+        </div>
       </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目薬の正しい使い方</h2>
@@ -1810,19 +1825,43 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           <strong>油分不足型（MGD）：</strong>ホットアイマスクでマイボーム腺を温めることが有効
         </p>
       </div>
-      <AffiliateBtns rakuten="ドライアイ 目薬 コンタクト" />
+      <div className="my-4">
+        <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ドライアイ・コンタクト対応</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
+          <p className="text-xs text-gray-500 mb-3">参天製薬／第3類医薬品。防腐剤無添加でコンタクト装用中でも使用可能</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
+        </a>
+      </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスクの効果</h2>
       <p className="text-gray-700 mb-3">
         ホットアイマスクは40〜45℃の温熱でまぶたを温め、マイボーム腺から油分の分泌を促進します。油分不足型のドライアイに特に効果的です。1回10〜15分が目安。
       </p>
-      <AffiliateBtns rakuten="ホットアイマスク ドライアイ" />
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">油分不足型（MGD）対策</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">La Luna アイウォーマー（ホワイト）</p>
+          <p className="text-xs text-gray-500 mb-3">まぶたを温めてマイボーム腺の油分分泌を促進するホットアイマスク</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">La Luna アイウォーマー（ホワイト）を楽天で見る →</div>
+        </a>
+      </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインサプリの活用</h2>
       <p className="text-gray-700 mb-3">
         ルテイン・ゼアキサンチンは目の黄斑部に集中する天然色素で、光ダメージから目を守ります。食事（ほうれん草・ケール等）からの摂取が難しい場合はサプリメントが有効です。1日10mg以上が目安。
       </p>
-      <AffiliateBtns rakuten="ルテイン アスタキサンチン サプリ" />
+      <div className="my-4">
+        <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ルテインサプリ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
+          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。1日の目安量を続けやすい価格帯</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
+        </a>
+      </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">生活習慣の改善</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
@@ -2264,20 +2303,39 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-gray-800 mb-2">BenQ ScreenBar（最もおすすめ）</p>
         <p className="text-sm text-gray-600 mb-3">モニタークリップ式・非対称光学設計でグレアなし・自動照度調節・USB給電。PC作業のモニターライトとして世界シェアNo.1。</p>
-        <AffiliateBtns rakuten="BenQ ScreenBar" />
+        <a href={RAKUTEN('BenQ ScreenBar モニターライト')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          BenQ ScreenBarを楽天で見る →
+        </a>
       </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ブルーライトカット眼鏡</h2>
       <p className="text-gray-700 mb-3">
         PC作業専用の度なしブルーライトカット眼鏡は、夜間の作業での睡眠への影響を軽減します。度ありの場合はJINSやZoffで「PC用度数（弱度数設計）」のオプションも検討を。
       </p>
-      <AffiliateBtns rakuten="ブルーライトカット 眼鏡 PC" />
+      <div className="my-4">
+        <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
+          <p className="text-xs text-gray-500 mb-3">度なし・度付き両対応。PC作業向けの弱度数設計も選べる</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">JINS SCREENを楽天で見る →</div>
+        </a>
+      </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">モニターフィルター・アンチグレアフィルム</h2>
       <p className="text-gray-700 mb-3">
         モニターに貼るアンチグレア（非光沢）フィルムは、照明の映り込みを防ぎ目への負担を軽減します。プライバシーフィルターと兼用のものも人気です。
       </p>
-      <AffiliateBtns rakuten="モニターフィルター アンチグレア" />
+      <div className="my-4">
+        <a href={RAKUTEN('エレコム のぞき見防止フィルター')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アンチグレア・のぞき見防止</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">エレコム のぞき見防止フィルター</p>
+          <p className="text-xs text-gray-500 mb-3">映り込み軽減とプライバシー保護を両立するモニターフィルム</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">エレコム のぞき見防止フィルターを楽天で見る →</div>
+        </a>
+      </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">PC作業の目疲れ対策まとめ</h2>
       <div className="grid sm:grid-cols-2 gap-4 mb-6">
@@ -2296,10 +2354,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         ))}
       </div>
 
-      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
-        <p className="font-bold text-gray-800 mb-3">目疲れ対策グッズをまとめて探す</p>
-        <AffiliateBtns rakuten="目疲れ PC 対策 グッズ" />
-      </div>
     </article>
   ),
 
@@ -2790,7 +2844,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">
         コンタクト装用中に充血が始まったら、まずレンズを外して休憩しましょう。充血が収まったら再装用できますが、再度充血する場合はその日は眼鏡で過ごすことをおすすめします。
       </p>
-      <AffiliateBtns rakuten="目薬 充血除去 コンタクト OK" />
+      <div className="my-4">
+        <a href={RAKUTEN('ロートVアクティブ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">充血除去</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ロートVアクティブ</p>
+          <p className="text-xs text-gray-500 mb-3">血管収縮成分配合で赤みを素早くケア。連用は週2〜3回以内が目安</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ロートVアクティブを楽天で見る →</div>
+        </a>
+      </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">疲れ目・ドライアイによる充血</h2>
       <p className="text-gray-700 mb-4">
@@ -3665,7 +3727,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>ブルーライトカットメガネの使用</strong>：PC作業が多い場合、専用メガネが眼への負担を約30%軽減します</li>
         <li><strong>目薬の活用</strong>：涙の質を改善する目薬を使用。以下のリンクから眼に優しい目薬を探せます</li>
       </ul>
-      <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4%20%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="affiliate-btn">楽天市場でドライアイ目薬を探す →</a>
+      <div className="my-4">
+        <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ドライアイ・防腐剤フリー</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
+          <p className="text-xs text-gray-500 mb-3">参天製薬／第3類医薬品。涙の質を補い、コンタクト装用中でも使用可能</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
+        </a>
+      </div>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">栄養補給による予防</h3>
       <p className="text-gray-700 mb-4">抗酸化物質の摂取が、硝子体の健康維持に役立ちます：</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
@@ -3673,7 +3743,16 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>アスタキサンチン</strong>：鮭、エビ、カニに含まれるカロテノイド。網膜への酸化ストレスを軽減</li>
         <li><strong>アントシアニン</strong>：ブルーベリーに含まれ、眼の疲労を回復する効果があります</li>
       </ul>
-      <p className="text-gray-700 mb-4">栄養補給の他、サプリメントの活用も有効です。ルテイン配合のサプリメントは、AmazonおよびAmazon販売ページから入手できます。</p>
+      <p className="text-gray-700 mb-4">栄養補給の他、サプリメントの活用も有効です。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ルテインサプリ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
+          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。続けやすい価格帯のサプリメント</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
+        </a>
+      </div>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">定期的な眼科検査</h3>
       <p className="text-gray-700 mb-4">何も症状がない人でも、<strong>40歳以上は年1回の眼科検査が推奨されています</strong>。これにより、飛蚊症以外の眼疾患（緑内障、加齢黄斑変性など）の早期発見が可能になります。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">医師の診断プロセス</h2>
@@ -4208,9 +4287,17 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>瞬きの意識</strong>：ドライアイは眼圧上昇につながります</li>
         <li><strong>運動習慣</strong>：適度な運動により眼圧低下が期待できます</li>
       </ul>
-      <p className="text-gray-700 mb-4">目薬を使用する場合は、緑内障の進行を抑える効果的な目薬があります。医師の処方に従い、正しく使用することが重要です。</p>
-      <p className="text-gray-700 mb-4">緑内障専用の目薬（プロスタグランジン関連薬など）について詳しく知りたい場合は、以下で最新製品をチェックできます。</p>
-      <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4%20%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="affiliate-btn">楽天市場でドライアイ目薬を探す →</a>
+      <p className="text-gray-700 mb-4">緑内障の治療目薬（プロスタグランジン関連薬など）は医師の処方が必須で、市販・通販での購入はできません。処方された目薬は指示通りに正しく使用することが重要です。</p>
+      <p className="text-gray-700 mb-4">処方薬とは別に、日常的な目の健康維持を補う一般用サプリメントを併用する方もいます（治療の代わりにはなりません）。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">目の健康維持サプリ（処方薬の代替ではありません）</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
+          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。あくまで日常の目の健康維持を目的とした栄養補助食品</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
+        </a>
+      </div>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">各検査の利点と限界を理解する</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼圧検査の限界</h3>
       <p className="text-gray-700 mb-4">眼圧検査は簡便で重要ですが、眼圧値だけでは十分ではありません。正常眼圧緑内障という、眼圧が正常範囲内でも緑内障が進行する患者が全体の30～40%を占めます。そのため、複数の検査を組み合わせることが診断精度を高めます。</p>
@@ -4276,6 +4363,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4"><strong>ガラス製</strong>：光学特性に優れ、色の再現性が正確。ただし重く、割れる可能性がある。</p>
       <p className="text-gray-700 mb-4"><strong>CR-39樹脂製</strong>：軽量で、カスタマイズが容易。日常用に適している。</p>
       <p className="text-gray-700 mb-4">最も推奨されるのはポリカーボネート製で、耐久性と安全性のバランスが最も優れています。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('Isabell 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">UVカット・偏光サングラス</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Isabell 偏光サングラス</p>
+          <p className="text-xs text-gray-500 mb-3">UV99%以上カット・ポリカーボネートレンズ。日常使いしやすい価格帯</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Isabell 偏光サングラスを楽天で見る →</div>
+        </a>
+      </div>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">UV目薬の選び方と使用方法</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">UV目薬の役割の理解</h3>
       <p className="text-gray-700 mb-4">UV目薬は、紫外線による目のダメージを<strong>事後的にケアする</strong>製品です。予防効果はサングラスほど高くないため、「UV目薬を使えば紫外線対策は完全」という認識は避けてください。</p>
@@ -4303,8 +4399,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>複合成分タイプ</strong>：ビタミンC＋タウリン＋グリチルリチン酸が同時配合</li>
         <li><strong>防腐剤フリー</strong>：単回使用パックタイプもおすすめ</li>
       </ul>
-      <p className="text-gray-700 mb-4">👉 </p>
-      <p className="text-gray-700 mb-4">👉 <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で目薬・ドライアイ商品を見る</a></p>
+      <div className="my-4">
+        <a href={RAKUTEN('サンテメディカル12')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">UV・紫外線対応目薬</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテメディカル12</p>
+          <p className="text-xs text-gray-500 mb-3">参天製薬／紫外線その他の光線による眼炎（雪目など）に対応。ビタミンB12配合で目の疲れ・充血にも</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">サンテメディカル12を楽天で見る →</div>
+        </a>
+      </div>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">季節別・状況別の対策方法</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">春夏の強紫外線対策</h3>
       <p className="text-gray-700 mb-4">春分から秋分までが紫外線の多い時期ですが、特に<strong>5月～7月</strong>は年間最高のUV指数に達します。気象庁の発表では、この時期のUV指数は11以上（非常に強い）に分類されます。</p>
@@ -5493,6 +5596,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>マッサージ機能を併備した製品も登場</li>
       </ul>
       <p className="text-gray-700 mb-4">このクラスの製品は、毎日使用する人や複数家族での使用を想定した選択です。初期投資は高いですが、月間コストは100円以下に収まります。</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d51.c785194a.56237d52.f8562009/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnissoplus%2Fnp-eem23%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">高機能タイプ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Nissoplus アイウォーマー NP-EEM23</p>
+          <p className="text-xs text-gray-500 mb-3">温度・時間管理機能付きの高機能ホットアイマスク</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Nissoplus アイウォーマー NP-EEM23を楽天で見る →</div>
+        </a>
+      </div>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">スタンダードタイプ（5,000～8,000円）</h3>
       <p className="text-gray-700 mb-4"><strong>特徴</strong>：</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
@@ -5501,6 +5613,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>デザイン性が高く、ギフトに適している</li>
       </ul>
       <p className="text-gray-700 mb-4">最も需要が高いカテゴリで、コストと機能のバランスが優れています。</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">スタンダードタイプ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">La Luna アイウォーマー（ホワイト）</p>
+          <p className="text-xs text-gray-500 mb-3">USB充電式・シンプルな温度調節機能でコストと機能のバランスが良好</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">La Luna アイウォーマー（ホワイト）を楽天で見る →</div>
+        </a>
+      </div>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">低価格タイプ（2,000～3,000円）</h3>
       <p className="text-gray-700 mb-4"><strong>特徴</strong>：</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
@@ -5509,6 +5630,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>初心者向け</li>
       </ul>
       <p className="text-gray-700 mb-4">試しに使ってみたい方や、旅行用途に適しています。</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237db3.a916904a.56237db4.bd5b1f1c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbodyplus%2F4580657302%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">低価格タイプ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Bodyplus アイウォーマー 4580657302</p>
+          <p className="text-xs text-gray-500 mb-3">軽量・コンパクトな基本機能モデル。初めての方や旅行用にも</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Bodyplus アイウォーマー 4580657302を楽天で見る →</div>
+        </a>
+      </div>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスクの正しい使用方法</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">効果を最大化する使用頻度</h3>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
@@ -5545,8 +5675,16 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <p className="text-gray-700 mb-4">症状が続く場合は、眼科医に相談してください。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスク関連製品の楽天ショップ紹介</h2>
-      <p className="text-gray-700 mb-4">疲れ目やドライアイ対策として、ホットアイマスクと合わせて使用する関連製品も重要です。以下の楽天リンクから、豊富な目薬・アイケア製品を探すことができます：</p>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">目薬・アイケア製品を楽天で探す</a></p>
+      <p className="text-gray-700 mb-4">疲れ目やドライアイ対策として、ホットアイマスクと合わせて使用する関連製品も重要です。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">併用におすすめの目薬</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
+          <p className="text-xs text-gray-500 mb-3">防腐剤フリーの人工涙液。ホットアイマスク使用後の保湿ケアに</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
+        </a>
+      </div>
       <p className="text-gray-700 mb-4">ホットアイマスク使用後は、保湿成分配合の目薬を組み合わせることで、さらにドライアイ改善効果が高まります。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスクの経済効果</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">月間コスト比較</h3>
@@ -5715,9 +5853,16 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">4. <strong>過度な力での使用</strong></p>
       <p className="text-gray-700 mb-4">   - 目周囲の皮膚は厚さ0.6mmと非常に薄く、デリケートです</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめアイローラーグッズ</h2>
-      <p className="text-gray-700 mb-4">目の疲れ・むくみ解消に効果的なアイローラーを探されている方は、以下のリンクからお探しください。各種タイプが揃っており、口コミと比較検討ができます：</p>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天でホットアイマスク・アイケアグッズを検索</a></p>
-      <p className="text-gray-700 mb-4">楽天では様々な価格帯のアイローラーが提供されており、初心者向けの手頃な商品から、高機能な電動タイプまで幅広い選択肢があります。ユーザーレビューを参考にすることで、自分に最適な製品を見つけやすいです。</p>
+      <p className="text-gray-700 mb-4">目の疲れ・むくみ解消に効果的なアイローラーを1点ご紹介します：</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d7f.33f4cbd3.56237d80.df2babe8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcitech%2Frelx-eye-001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アイローラー・電動タイプ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">RelxEye アイリラクサー RE-001</p>
+          <p className="text-xs text-gray-500 mb-3">振動によるマッサージ機能で血流促進効果を高める電動アイローラー</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">RelxEye アイリラクサー RE-001を楽天で見る →</div>
+        </a>
+      </div>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アイローラーと他のアイケアグッズの組み合わせ</h2>
       <p className="text-gray-700 mb-4">アイローラーの効果をさらに高めるために、他のアイケア商品との組み合わせをおすすめします：</p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ホットアイマスクとの併用</h3>
@@ -5869,7 +6014,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>第三者検査実施：</strong> 含有量が正確に記載されているか確認</li>
         <li><strong>原材料：</strong> マリゴールドなどの植物由来が一般的</li>
       </ul>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で目薬・サプリメントをチェック</a></p>
+      <div className="my-4">
+        <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ルテインサプリ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
+          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。続けやすい価格帯で毎日の栄養補給に</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
+        </a>
+      </div>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">配合成分の相乗効果</h3>
       <p className="text-gray-700 mb-4">ルテインの効果を最大限に発揮するため、他の目に良い成分との配合も重要です。</p>
       <p className="text-gray-700 mb-4"><strong>相乗効果が期待できる成分：</strong></p>
@@ -5968,7 +6121,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>帽子やサンバイザーの使用：</strong> 特に昼間の外出時</li>
         <li><strong>紫外線対策目薬の活用：</strong> ルテイン含有タイプもあります</li>
       </ul>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で目薬・サプリメントをチェック</a></p>
+      <div className="my-4">
+        <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ルテインサプリ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
+          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。続けやすい価格帯で毎日の栄養補給に</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
+        </a>
+      </div>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ：ルテインサプリで目の未来を守る</h2>
       <p className="text-gray-700 mb-4">ルテインサプリは、科学的根拠に基づいた黄斑変性予防手段です。AREDS研究をはじめとする多くの臨床研究で、その有効性が証明されています。</p>
       <p className="text-gray-700 mb-4"><strong>重要なポイント：</strong></p>
@@ -6124,8 +6285,16 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">20-20-20ルール（20分ごとに、20秒間、20フィート（約6m）先を見る）の実践により、調節疲労を軽減し、近視進行を遅延させる効果が期待できます。</p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">栄養学的アプローチ：ルテインとアストキサンチン</h3>
       <p className="text-gray-700 mb-4">ルテインやアストキサンチンなどのカロテノイドが眼組織の健康維持に有用であることが報告されています。網膜の周辺部機能が向上することで、間接的に近視進行を抑制する可能性があります。</p>
-      <p className="text-gray-700 mb-4">眼の健康維持のための栄養補給に関心のある方は、以下の楽天商品検索をご参照ください：</p>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">目に関する栄養補助食品を楽天で探す</a></p>
+      <p className="text-gray-700 mb-4">眼の健康維持のための栄養補給に関心のある方向けに、代表的な製品を1点紹介します（近視進行抑制治療の代わりにはなりません）：</p>
+      <div className="my-4">
+        <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">目の健康維持サプリ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
+          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。あくまで日常の栄養補給を目的とした食品です</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
+        </a>
+      </div>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">子どもの近視進行抑制治療を始める前のチェックリスト</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼科医に確認すべき項目</h3>
       <p className="text-gray-700 mb-4">1. <strong>現在の度数と進行速度</strong>：3～6ヶ月ごとの視力測定記録を確認</p>
@@ -6259,7 +6428,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <p className="text-gray-700 mb-4">実測データでは、屋外で8時間以上従事する労働者が包括的なUV対策を実施した場合、10年後の眼病発症率が非対策者比で42%低下することが報告されています。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">楽天でのおすすめUV対策グッズ購入ガイド</h2>
-      <p className="text-gray-700 mb-4">最新のUVカットサングラス、眼鏡、帽子などは<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天市場</a>で豊富に取り揃えられています。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('Isabell 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">UVカット・偏光サングラス</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Isabell 偏光サングラス</p>
+          <p className="text-xs text-gray-500 mb-3">UV99%以上カット。映り込みを軽減する偏光レンズで日常使いしやすい価格帯</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Isabell 偏光サングラスを楽天で見る →</div>
+        </a>
+      </div>
       <p className="text-gray-700 mb-4">楽天市場ではレビュー件数が多い商品を選ぶことで、実際のユーザー評価を参考にできます。特に「紫外線透過率」「装用感」「デザイン」についてのコメントをチェックし、自分のニーズに合った製品を見つけましょう。</p>
       <p className="text-gray-700 mb-4"><strong>購入時のポイント：</strong></p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
@@ -6512,9 +6689,16 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>価格帯：1,500～2,500円</li>
         <li>用途：外出先での使用に最適</li>
       </ul>
-      <p className="text-gray-700 mb-4"><strong>楽天での拡大鏡・ルーペ商品一覧</strong></p>
-      <p className="text-gray-700 mb-4">様々な種類のスマホ対応拡大鏡が揃っています。レビュー評価が高い商品から選ぶことで、失敗を避けられます。</p>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で拡大鏡をチェック</a></p>
+      <p className="text-gray-700 mb-4"><strong>拡大鏡・ルーペのおすすめ製品</strong></p>
+      <div className="my-4">
+        <a href={RAKUTEN('ハズキルーペ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">拡大鏡・老眼鏡タイプ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ハズキルーペ</p>
+          <p className="text-xs text-gray-500 mb-3">かけたまま近くも遠くも見える拡大めがね。軽量フレームで長時間の装用にも対応</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ハズキルーペを楽天で見る →</div>
+        </a>
+      </div>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">老眼鏡・ブルーライトカット眼鏡のおすすめ</h3>
       <p className="text-gray-700 mb-4"><strong>スマートフォン専用老眼鏡</strong></p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
@@ -6805,9 +6989,23 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">6. <strong>乳液またはクリーム</strong>（蓋をする）</p>
       <p className="text-gray-700 mb-4">特に注目すべきは、スキンケア前の準備です。アイクリーム塗布前に肌をしっかり整えることで、有効成分の浸透率が<strong>30～50%向上</strong>することが複数の研究で報告されています。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目元ケア商品を楽天で探す</h2>
-      <p className="text-gray-700 mb-4">アイクリーム以外の目元ケア関連商品も楽天で豊富に取り揃えられています。</p>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">アイクリーム・目元ケア商品を楽天で検索する</a></p>
-      <p className="text-gray-700 mb-4">目元シート、アイローラー、マッサージクリーム、保湿マスクなども組み合わせることで、より効果的なケアが実現できます。</p>
+      <p className="text-gray-700 mb-4">価格帯・成分の傾向が異なる2製品を紹介します。まずはご自身の目元悩みと予算に近い方から試してみてください。</p>
+      <div className="grid sm:grid-cols-2 gap-3 mb-4">
+        <a href={RAKUTEN('肌ラボ 極潤プレミアムヒアルロンアイクリーム')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-slate-400 transition-all">
+          <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-medium">プチプラ・保湿重視</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">肌ラボ 極潤プレミアムヒアルロンアイクリーム</p>
+          <p className="text-xs text-gray-500 mb-3">ロート製薬／7種のヒアルロン酸配合。乾燥によるシワ・小ジワが気になる方の入門用に</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">肌ラボ 極潤プレミアムヒアルロンアイクリームを楽天で見る →</div>
+        </a>
+        <a href={RAKUTEN('POLA B.A アイゾーンクリーム N')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-slate-400 transition-all">
+          <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-medium">デパコス・多機能</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">POLA B.A アイゾーンクリーム N</p>
+          <p className="text-xs text-gray-500 mb-3">クマ・シワ・たるみの複合ケアを重視する方向けのハイエンドライン</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">POLA B.A アイゾーンクリーム Nを楽天で見る →</div>
+        </a>
+      </div>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ：2026年アイクリーム選びの最終チェック</h2>
       <p className="text-gray-700 mb-4">目元ケアは「継続が最大の効果」という原則を忘れずに。短期間で効果を期待するのではなく、3～6ヶ月の継続使用を前提に製品選択することが成功の鍵です。</p>
       <p className="text-gray-700 mb-4">自分の目元悩みを正確に把握し、それに対応する有効成分を含むアイクリームを、肌質に合ったテクスチャーで選ぶこと。そして、正しい使い方と適切なスキンケアルーチンの組み込みで、理想の目元を手に入れることができるでしょう。</p>
@@ -6870,21 +7068,21 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">調節ラグが低く保たれることで、目の疲労が大幅に軽減され、また眼軸長の伸長（近視進行）を抑制することができます。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">機能性グッズの選び方ガイド</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">用途別の選択基準</h3>
-      <p className="text-gray-700 mb-4">#### PC作業が多い場合</p>
+      <h4 className="text-base font-bold text-gray-800 mt-4 mb-2">PC作業が多い場合</h4>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
         <li><strong>推奨ブルーライトカット率</strong>：45～55%</li>
         <li><strong>可視光透過率</strong>：90%以上</li>
         <li><strong>AI搭載の有無</strong>：あるとなお良い</li>
         <li><strong>予算目安</strong>：8,000～15,000円</li>
       </ul>
-      <p className="text-gray-700 mb-4">#### スマートフォン利用が中心</p>
+      <h4 className="text-base font-bold text-gray-800 mt-4 mb-2">スマートフォン利用が中心</h4>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
         <li><strong>推奨ブルーライトカット率</strong>：40～50%</li>
         <li><strong>レンズサイズ</strong>：やや小さめ（顔全体をカバーしすぎないもの）</li>
         <li><strong>フレーム重量</strong>：軽量（4g以下が理想）</li>
         <li><strong>予算目安</strong>：5,000～10,000円</li>
       </ul>
-      <p className="text-gray-700 mb-4">#### 夜間の使用が多い場合</p>
+      <h4 className="text-base font-bold text-gray-800 mt-4 mb-2">夜間の使用が多い場合</h4>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
         <li><strong>推奨ブルーライトカット率</strong>：55～65%</li>
         <li><strong>調光機能</strong>：あると便利</li>
@@ -6901,8 +7099,16 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>可変デザイン</strong>：度数交換可能で将来対応できるもの</li>
       </ul>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">楽天での機能性グッズ購入ガイド</h2>
-      <p className="text-gray-700 mb-4">スマートアイウェアや機能性グッズの購入は、信頼できるオンラインストアの利用をお勧めします。</p>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天でホットアイマスクやアイケア関連グッズを探す</a></p>
+      <p className="text-gray-700 mb-4">スマートアイウェアや機能性グッズの購入は、信頼できるオンラインストアの利用をお勧めします。ここでは実際に流通している製品を例に紹介します。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
+          <p className="text-xs text-gray-500 mb-3">JINSのブルーライトカット専用ライン。度なし・度付き両対応で日常使いしやすい価格帯</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">JINS SCREENを楽天で見る →</div>
+        </a>
+      </div>
       <p className="text-gray-700 mb-4">楽天では、多数のスマートアイウェア関連製品が取り扱われており、レビュー数が豊富なため、実際のユーザーの声を参考に選択できます。特にポイント還元率が高いタイミングでの購入がお得です。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スマートアイウェアのメンテナンスと寿命</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レンズの手入れ方法</h3>
@@ -6929,7 +7135,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年の注目製品・ブランド</h2>
       <p className="text-gray-700 mb-4">2026年のスマートアイウェア市場では、従来の眼鏡メーカーに加え、テクノロジー企業や新興スタートアップが参入し、競争が激化しています。</p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">大手メーカーの最新動向</h3>
-      <p className="text-gray-700 mb-4">従来の眼鏡メーカー（老舗ブランド）は、100年以上の光学技術を活かしながら、AI技術を融合させた新製品を展開しています。これらの製品は、品質保証が充実しており、長期的なサポートが期待できます。</p>
+      <p className="text-gray-700 mb-4">従来の眼鏡メーカー（老舗ブランド）は、100年以上の光学技術を活かしながら、AI技術を融合させた新製品を展開しています。例えば<strong>JINS</strong>の「JINS SCREEN」はブルーライトカット専用ラインとして長年展開されており、度なし・度付きの両対応で購入しやすい価格帯が特徴です。これらの製品は、品質保証が充実しており、長期的なサポートが期待できます。</p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">テクノロジー企業の参入</h3>
       <p className="text-gray-700 mb-4">スマートフォンメーカーやウェアラブル機器メーカーは、自社エコシステムと統合されたスマートアイウェアを開発しています。スマートフォンとの連携精度が高く、ユーザーデータの一元管理が可能な点が特徴です。</p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">新興メーカーの特徴</h3>
