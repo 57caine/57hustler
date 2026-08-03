@@ -3666,8 +3666,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>目薬の活用</strong>：涙の質を改善する目薬を使用。以下のリンクから眼に優しい目薬を探せます</li>
       </ul>
       <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4%20%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="affiliate-btn">楽天市場でドライアイ目薬を探す →</a>
-      <p className="text-gray-700 mb-4">【楽天目薬検索】</p>
-      <p className="text-gray-700 mb-4">https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F</p>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">栄養補給による予防</h3>
       <p className="text-gray-700 mb-4">抗酸化物質の摂取が、硝子体の健康維持に役立ちます：</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
@@ -4213,8 +4211,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">目薬を使用する場合は、緑内障の進行を抑える効果的な目薬があります。医師の処方に従い、正しく使用することが重要です。</p>
       <p className="text-gray-700 mb-4">緑内障専用の目薬（プロスタグランジン関連薬など）について詳しく知りたい場合は、以下で最新製品をチェックできます。</p>
       <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4%20%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="affiliate-btn">楽天市場でドライアイ目薬を探す →</a>
-      <p className="text-gray-700 mb-4"><strong>楽天</strong>では目薬の幅広い品揃えから選べます：</p>
-      <p className="text-gray-700 mb-4">https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">各検査の利点と限界を理解する</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼圧検査の限界</h3>
       <p className="text-gray-700 mb-4">眼圧検査は簡便で重要ですが、眼圧値だけでは十分ではありません。正常眼圧緑内障という、眼圧が正常範囲内でも緑内障が進行する患者が全体の30～40%を占めます。そのため、複数の検査を組み合わせることが診断精度を高めます。</p>
@@ -5573,7 +5569,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   ),
     "eye-roller-fatigue-puffiness": (
     <article className="prose prose-sm max-w-none">
-      <p className="text-gray-700 mb-4"># アイローラーの効果検証：目の疲れとむくみ解消グッズの選び方ガイド</p>
       <p className="text-gray-700 mb-4">現代人の多くが経験している目の疲れと朝のむくみ。パソコンやスマートフォンの長時間使用により、眼精疲労は深刻化しています。このような悩みに対して、アイローラーは手軽で効果的なソリューションとして注目を集めています。本記事では、アイローラーの科学的根拠に基づいた効果と、正しい選び方・使用方法について詳しく解説します。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アイローラーとは：基本的な仕組みと特徴</h2>
       <p className="text-gray-700 mb-4">アイローラーは、目の周囲をマッサージするために設計された美容グッズです。ローラー型の先端が複数の小さな球体で構成されており、肌に優しく転がしながら使用します。</p>
@@ -5990,7 +5985,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   ),
     "myopia-prevention-children-atropine-orthokeratology": (
     <article className="prose prose-sm max-w-none">
-      <p className="text-gray-700 mb-4"># 子どもの近視進行を抑制する最新治療法｜アトロピン点眼とオルソケラトロジーの効果比較</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">はじめに：子どもの近視進行が急増する背景</h2>
       <p className="text-gray-700 mb-4">近年、日本の子どもたちの近視進行が国際的に見ても加速度的に増加しています。日本眼光学会のデータによれば、2000年代初頭の小学生の近視有病率は約30%でしたが、2020年代には約50%を超えるまで増加しています。この急速な進行は、スマートフォンやタブレット端末の普及、学習環境の変化、屋外活動時間の減少など、複合的な要因が関係しています。</p>
       <p className="text-gray-700 mb-4">特に懸念されるのが、成長期の子どもにおける近視の進行速度です。大人では年間0.25～0.5D（ジオプター：屈折度数の単位）程度の進行が一般的ですが、10代の子どもでは年間1～2D以上の急速な進行が報告されており、放置すると高度近視に至る危険性が高まります。</p>
