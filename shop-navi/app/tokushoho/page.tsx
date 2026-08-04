@@ -18,9 +18,9 @@ export default function TokushohoPage() {
       <div className="border-2 border-red-400 rounded-lg p-4 mb-8 text-sm text-red-700">
         <p className="font-bold mb-1">⚠️ このページは未確定のドラフトです</p>
         <p>
-          実在の事業者情報が反映されるまで、本ページをNETSEAの審査提出物として使用したり、
-          本番公開・決済導線の稼働に使用しないでください。[要確認] の項目はすべて事業者からの
-          正式情報の提供が必要です。
+          事業者名・運営統括責任者名・お問い合わせメールアドレスが未確定のため、本ページをNETSEAの審査提出物として使用したり、
+          本番公開・決済導線の稼働に使用しないでください。事業形態（個人事業主／法人）が確定し、これらの項目が正式情報に
+          差し替わるまでこの警告は残してください。
         </p>
       </div>
 
@@ -30,27 +30,24 @@ export default function TokushohoPage() {
         <tbody>
           <tr className="border-b border-gray-200">
             <th className="text-left py-3 pr-6 text-gray-600 font-medium w-40 align-top">販売業者</th>
-            <td className="py-3">[要確認：事業者名（屋号／会社名）]</td>
+            <td className="py-3">[事業者名：確定次第記載]</td>
           </tr>
           <tr className="border-b border-gray-200">
             <th className="text-left py-3 pr-6 text-gray-600 font-medium align-top">運営統括責任者</th>
-            <td className="py-3">[要確認：代表者名]</td>
+            <td className="py-3">[氏名：確定次第記載]</td>
           </tr>
           <tr className="border-b border-gray-200">
             <th className="text-left py-3 pr-6 text-gray-600 font-medium align-top">所在地</th>
-            <td className="py-3">
-              [要確認：個人事業主の場合は「請求があれば遅滞なく開示いたします」表記が可能な場合があります。法人の場合は登記住所の記載が必要です。]
-            </td>
+            <td className="py-3">ご請求をいただいた場合、遅滞なく開示いたします。</td>
           </tr>
           <tr className="border-b border-gray-200">
             <th className="text-left py-3 pr-6 text-gray-600 font-medium align-top">電話番号</th>
-            <td className="py-3">
-              [要確認：同上。非公開とする場合も「請求があれば遅滞なく開示」の一文が必要です。]
-            </td>
+            <td className="py-3">ご請求をいただいた場合、遅滞なく開示いたします。</td>
           </tr>
           <tr className="border-b border-gray-200">
             <th className="text-left py-3 pr-6 text-gray-600 font-medium align-top">メールアドレス</th>
-            <td className="py-3">[要確認：問い合わせ用メールアドレス]</td>
+            {/* [要確認] お問い合わせ用メールアドレスが確定次第、下記を差し替える */}
+            <td className="py-3">[メールアドレス：確定次第記載]</td>
           </tr>
           <tr className="border-b border-gray-200">
             <th className="text-left py-3 pr-6 text-gray-600 font-medium align-top">販売価格</th>
@@ -58,23 +55,24 @@ export default function TokushohoPage() {
           </tr>
           <tr className="border-b border-gray-200">
             <th className="text-left py-3 pr-6 text-gray-600 font-medium align-top">商品代金以外の必要料金</th>
-            <td className="py-3">[要確認：送料・振込手数料等の金額または算出方法]</td>
+            <td className="py-3">送料は仕入先（NETSEA提携先サプライヤー）の規定に準じます。商品ページまたはご注文手続き時に金額を表示します。</td>
           </tr>
           <tr className="border-b border-gray-200">
             <th className="text-left py-3 pr-6 text-gray-600 font-medium align-top">支払方法</th>
-            <td className="py-3">[要確認：クレジットカード等、対応予定の決済手段]</td>
+            <td className="py-3">クレジットカード決済（Stripe）※実装予定・現時点では未稼働です</td>
           </tr>
           <tr className="border-b border-gray-200">
             <th className="text-left py-3 pr-6 text-gray-600 font-medium align-top">支払時期</th>
-            <td className="py-3">[要確認：例）ご注文確定時にお支払いが確定します]</td>
+            <td className="py-3">ご注文確定時にクレジットカード決済が確定します。</td>
           </tr>
           <tr className="border-b border-gray-200">
             <th className="text-left py-3 pr-6 text-gray-600 font-medium align-top">商品の引渡時期</th>
-            <td className="py-3">[要確認：発送元（サプライヤー）からの標準的な発送目安日数]</td>
+            {/* [要調整] 仮の日数。NETSEA提携サプライヤーの標準発送目安が確定次第、正式な日数に差し替える */}
+            <td className="py-3">ご注文確認後、通常3営業日以内に発送いたします。</td>
           </tr>
           <tr className="border-b border-gray-200">
             <th className="text-left py-3 pr-6 text-gray-600 font-medium align-top">返品・交換について</th>
-            <td className="py-3">[要確認：無在庫・消費者直送モデルのため、サプライヤーの返品規定に準じます。具体的な条件の確定が必要です。]</td>
+            <td className="py-3">仕入先（NETSEA提携先サプライヤー）の返品・交換規定に準じます。</td>
           </tr>
         </tbody>
       </table>
