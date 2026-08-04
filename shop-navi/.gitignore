@@ -39,10 +39,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-school-navi/node_modules/
-school-navi/.next/
-ceo-dashboard/node_modules/
-ceo-dashboard/.next/
-shop-navi/node_modules/
-shop-navi/.next/
-# note-drafts/*.md はコミット対象（自動生成記事）
