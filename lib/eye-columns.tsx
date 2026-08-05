@@ -221,13 +221,13 @@ export const eyeColumns: EyeColumnMeta[] = [
     category: '目のグッズ',
     section: 'eye-goods',
     publishedAt: '2026-07-13',
-    updatedAt: '2026-07-14',
-    readingTime: 6,
-    headings: ['ホットアイマスクの効果', '繰り返し使用タイプの比較', '使い捨てタイプの比較', '選び方のポイント', 'おすすめランキング'],
+    updatedAt: '2026-08-05',
+    readingTime: 3,
+    headings: ['ホットアイマスク早見表', 'タイプ別のおすすめ製品', '選び方3つのポイント'],
     faqs: [
-      { q: 'ホットアイマスクは毎日使っても大丈夫ですか？', a: '40〜45℃の適切な温度であれば毎日使用できます。ただし目に異常感（痛み・充血・かすみ）がある場合は使用を中止して眼科を受診してください。コンタクトレンズを装用している場合は必ず外してから使用してください。' },
-      { q: 'Panasonic EH-SW68は充電式ですか？コードレスで使えますか？', a: 'EH-SW68はUSB充電式でコードレス使用が可能です。1回の充電で連続約10分（1回分）使用できます。充電時間は約80分。スチーム量は約3ml/回で、40℃前後の蒸気が目元を包みます。' },
-      { q: 'ホットアイマスクとアイウォーマーの違いは何ですか？', a: '基本的に同じ機能を指します。「ホットアイマスク」は温熱型のアイマスク全般を指し、「アイウォーマー」はメーカーによっては振動機能や空気圧マッサージ機能を追加したものを指すことがあります。機能・価格帯で選びましょう。' },
+      { q: 'ホットアイマスクは毎日使っても大丈夫ですか？', a: '適切な温度であれば毎日使用できるとされていますが、目に異常感（痛み・充血・かすみ）がある場合は使用を中止して眼科を受診してください。コンタクトレンズは必ず外してから使用しましょう。' },
+      { q: 'ホットアイマスクとアイウォーマーの違いは何ですか？', a: '基本的に同じ機能を指すことが多いです。「ホットアイマスク」は温熱型のアイマスク全般を指し、「アイウォーマー」は振動機能などが追加された製品を指すこともあります。機能・価格帯で選びましょう。' },
+      { q: '繰り返しタイプと使い捨てタイプ、どちらがお得ですか？', a: '毎日使う予定なら繰り返しタイプのほうが長期的にコストを抑えやすい傾向にあります。使う頻度が少ない、または旅行・出張用には使い捨てタイプが便利です。' },
     ],
   },
   {
@@ -449,15 +449,14 @@ export const eyeColumns: EyeColumnMeta[] = [
     description: "緑内障の早期発見・検査方法について詳しく解説。眼圧検査、視野検査など重要な検査方法と、検査費用、検査頻度についての情報を完全網羅。",
     section: "eye-care",
     category: "アイケア・目薬",
-    readingTime: 9,
+    readingTime: 5,
     publishedAt: "2026-07-18",
+    updatedAt: "2026-08-05",
     keywords: ["緑内障 早期発見","緑内障 検査","眼圧検査"],
     faqs: [
-    { q: "緑内障はなぜ早期発見が重要なのですか？", a: "緑内障は進行性の眼疾患で、一度失われた視野は回復しません。早期に発見され治療開始された場合、治療の継続により進行を遅くすることが可能です。日本緑内障学会によると、早期発見・治療により視力喪失のリスクを大幅に軽減できるとされています。" },
-    { q: "緑内障の検査にはどのような種類がありますか？", a: "主な検査は眼圧検査、視野検査、視神経乳頭検査、光干渉断層撮影（OCT）です。眼圧検査は非接触型トノメーターで測定し、視野検査は視野計を使用します。これらを組み合わせることで正確な診断が可能になります。" },
-    { q: "緑内障検査の費用はどのくらいかかりますか？", a: "健康診断に含まれる簡易眼圧検査は無料～数千円程度です。精密検査（視野検査やOCT）は1回あたり3,000～5,000円程度が目安です。保険適用により患者負担は3割程度となります。定期的な検査で費用を抑えることが重要です。" },
-    { q: "どのくらいの頻度で緑内障検査を受けるべきですか？", a: "リスク因子のない健康な成人は1～2年に1回の眼科検診が推奨されます。家族に緑内障患者がいる場合は年1回、診断済みの患者は1～3ヶ月に1回の定期検査が必要です。医師の指示に従うことが最重要です。" },
-    { q: "緑内障の自覚症状にはどんなものがありますか？", a: "初期段階では自覚症状がほぼありません。進行すると視野の周辺部分が見えにくくなり、さらに進むと視野が狭くなります。視野欠損に気付いた時点では相当進行している可能性があります。このため定期検査が極めて重要です。" }
+    { q: "緑内障はなぜ早期発見が重要なのですか？", a: "緑内障は進行性の眼疾患で、一度失われた視野は回復しないとされています。早期に発見し治療を開始することで、進行を遅らせられる可能性が高まります。" },
+    { q: "緑内障の検査にはどのような種類がありますか？", a: "主な検査は眼圧検査、視野検査、眼底検査、光干渉断層撮影（OCT）です。これらを組み合わせることで診断精度が高まるとされています。" },
+    { q: "どのくらいの頻度で緑内障検査を受けるべきですか？", a: "リスク因子のない健康な成人は1〜2年に1回の眼科検診が一般的な目安です。診断済みの方は医師の指示に従って定期検査を受けてください。" }
     ],
   },
     {
@@ -466,16 +465,14 @@ export const eyeColumns: EyeColumnMeta[] = [
     description: "目の紫外線対策の重要性と、サングラス・UV目薬の正しい選び方・使用法を解説。白内障・翼状片などの予防に役立つ実践的な情報をご紹介します。",
     section: "eye-care",
     category: "アイケア・目薬",
-    readingTime: 8,
+    readingTime: 3,
     publishedAt: "2026-07-18",
+    updatedAt: "2026-08-05",
     keywords: ["目の紫外線対策","UV目薬","サングラス選び方","白内障予防"],
     faqs: [
-    { q: "目に浴びた紫外線による健康被害にはどのようなものがありますか？", a: "長期間の紫外線露出により、白内障（水晶体が濁る）、翼状片（白目に肉が増殖する）、黄斑変性症などのリスクが高まります。日本眼科学会によると、年間紫外線量が多い地域では白内障患者が30％以上増加する傾向があります。特に紫外線が強い地域や屋外作業が多い方は注意が必要です。" },
-    { q: "UVカット機能のあるサングラスを選ぶ際に確認すべきポイントは何ですか？", a: "UV99％以上の紫外線カット率を示す商品を選んでください。JIS規格（Z8894）で「紫外線透過率1.0％以下」の表記があるか確認しましょう。同時にUVA・UVB両方をカットする製品を選び、レンズサイズが大きく横幅がある方が、目周辺への紫外線漏れを防げます。" },
-    { q: "UV目薬の効果的な使用方法は？", a: "UV目薬は紫外線を浴びた後の目のダメージ軽減を目的としており、予防ではなく事後対応が主な役割です。1日3～4回、1回1～2滴を点眼してください。紫外線が強い環境での作業後や、海辺・山でのレジャー後の使用が効果的です。開封後は1ヶ月以内に使い切ることが推奨されています。" },
-    { q: "曇りの日でも紫外線対策は必要ですか？", a: "はい、必ず行ってください。曇りの日でも地上に届く紫外線量は晴天時の60～80％程度あります。日本気象協会のデータでは、紫外線は雲を透過する性質があるため、曇りだからといって安心は禁物です。季節を問わず年間を通じた対策が重要です。" },
-    { q: "子どもの目の紫外線対策で気を付けることはありますか？", a: "子どもの水晶体は透明度が高く、紫外線が眼底に到達しやすいため、より注意が必要です。紫外線吸収成分が安全な子ども用サングラスを選び、レンズの質が確認できるメーカー製を選んでください。また、つばが広い帽子との併用が効果的です。学校の屋外活動時の着用も推奨されています。" },
-    { q: "サングラスと目薬の併用で相乗効果は期待できますか？", a: "はい。サングラスで紫外線量を99％減らし、UV目薬で残りの1％や日常の目のダメージをケアすることで、より総合的な保護が実現します。特に紫外線が強い季節や職業的に紫外線に長時間さらされる方は、この併用アプローチが眼病予防に有効です。" }
+    { q: "UVカット機能のあるサングラスを選ぶ際に確認すべきポイントは何ですか？", a: "「UV99%カット」などのカット率表示を確認しましょう。レンズサイズが大きく横幅があるものは、目周辺への紫外線の入り込みを防ぎやすい傾向にあります。" },
+    { q: "UV目薬の効果的な使用方法は？", a: "UV目薬は紫外線を浴びた後のケアが主な役割で、予防そのものにはなりません。パッケージの用法・用量に従い、屋外活動後の使用が一般的です。開封後は早めに使い切りましょう。" },
+    { q: "曇りの日でも紫外線対策は必要ですか？", a: "曇りの日でも一定量の紫外線が届くとされているため、天候に関わらずサングラスを携帯すると安心です。" }
     ],
   },
     {
@@ -663,16 +660,14 @@ export const eyeColumns: EyeColumnMeta[] = [
     description: "子どもの急速な近視進行に対応するアトロピン点眼とオルソケラトロジーの仕組み、効果、費用を比較。医学的根拠に基づいた進行抑制法を解説します。",
     section: "eye-care",
     category: "アイケア・目薬",
-    readingTime: 8,
+    readingTime: 5,
     publishedAt: "2026-07-20",
-    updatedAt: "2026-07-20",
+    updatedAt: "2026-08-05",
     keywords: ["子ども近視進行","アトロピン点眼","オルソケラトロジー","近視抑制治療","子ども視力矯正"],
     faqs: [
-    { q: "アトロピン点眼とオルソケラトロジーはどちらが効果的ですか？", a: "研究データによると、低濃度アトロピン（0.01%）は近視進行を約50～60%抑制し、オルソケラトロジーは約40～50%の抑制効果が報告されています。効果は個人差が大きく、眼科医との相談で最適な方法を選択することが重要です。併用で相乗効果が期待できる場合もあります。" },
-    { q: "アトロピン点眼は副作用はありますか？", a: "低濃度アトロピン（0.01%）は副作用が少ないとされていますが、瞳孔散大による光への敏感性増加や、まれに調節機能の一時的な影響が生じる可能性があります。定期的な眼科検診で経過観察が必要です。" },
-    { q: "オルソケラトロジーは何歳から始められますか？", a: "一般的に6～7歳以上から開始可能ですが、レンズ装着の自己管理能力が必要なため、8～9歳以上が推奨される傾向にあります。各クリニックの基準が異なるため、眼科医に相談してください。" },
-    { q: "治療の費用はどのくらいかかりますか？", a: "アトロピン点眼は1本あたり数百～千円程度で、保険診療の対象外の場合が多いです。オルソケラトロジーは月額5,000～15,000円が目安ですが、施設により異なります。事前に眼科で費用確認が必要です。" },
-    { q: "子どもの近視進行を予防するために何をすべきですか？", a: "医学的治療に加えて、屋外活動時間の確保（1日2時間以上推奨）、定期的な眼科検診（3～6ヶ月ごと）、近距離作業の定期的な休憩が重要です。生活習慣の改善と医学的介入の組み合わせが最も効果的です。" }
+    { q: "アトロピン点眼とオルソケラトロジーはどちらが効果的ですか？", a: "いずれも研究で一定の近視進行抑制効果が報告されていますが、効果には個人差があります。年齢や自己管理能力、費用面も含めて、眼科医との相談で選択することが大切です。" },
+    { q: "オルソケラトロジーは何歳から始められますか？", a: "レンズ装着・洗浄の自己管理が必要なため、8歳前後からを目安とするクリニックが多い傾向にあります。基準は施設によって異なるため、眼科医に相談してください。" },
+    { q: "子どもの近視進行を予防するために何ができますか？", a: "医療機関での治療の検討に加えて、屋外活動時間の確保、近距離作業時の休憩、定期的な眼科検診などが基本とされています。生活習慣の見直しと医療機関での相談を組み合わせることが大切です。" }
     ],
   },
     {
@@ -681,17 +676,14 @@ export const eyeColumns: EyeColumnMeta[] = [
     description: "2026年最新の目の紫外線対策グッズを徹底解説。UVカットサングラス、UVカット眼鏡、目薬など効果的なアイケア製品の選び方とおすすめ商品をご紹介します。",
     section: "eye-goods",
     category: "目のグッズ",
-    readingTime: 12,
+    readingTime: 3,
     publishedAt: "2026-07-21",
-    updatedAt: "2026-07-21",
+    updatedAt: "2026-08-05",
     keywords: ["目の紫外線対策","UVカットサングラス","紫外線カット眼鏡"],
     faqs: [
-    { q: "目に紫外線が当たるとどのような影響があありますか?", a: "紫外線は目に直接ダメージを与え、翼状片や白内障などの眼病を引き起こすリスクがあります。毎日のUV対策により、これらの疾患予防につながります。特に長時間屋外にいる方は注意が必要です。" },
-    { q: "UVカットサングラスの効果的な選び方は?", a: "紫外線透過率1%以下、レンズの大きさ選びが重要です。横幅が広く、かつフレームと目の隙間が少ないデザインを選ぶことで、側面からの紫外線も防げます。色の濃さより性能が大切です。" },
-    { q: "UVカット眼鏡と普通の眼鏡の違いは何ですか?", a: "UVカット眼鏡は紫外線をカットするコーティングが施されており、紫外線透過率が低い製品です。普通の眼鏡には紫外線防止効果がないため、屋外で使用する際はUVカット機能が必須です。" },
-    { q: "目の紫外線対策は年間通じて必要ですか?", a: "はい、紫外線は季節を問わず降り注いでいます。特に夏場は紫外線量が増加しますが、冬場も曇りの日でも対策は重要です。年間を通じた継続的なUV対策がおすすめです。" },
-    { q: "子どもの目の紫外線対策で気をつけることは?", a: "子どもは大人より紫外線の影響を受けやすいため、早期からの対策が大切です。小さなお子さんには、柔らかいフレーム素材で調整可能なサングラスを選び、外出時は帽子と併用することをおすすめします。" },
-    { q: "UVカット帽子やサングラス以外に有効な対策グッズはありますか?", a: "UVカット目薬、UV対応コンタクトレンズ、目元用UVクリームなどがあります。複数のアイテムを組み合わせることで、より効果的な紫外線対策が実現できます。" }
+    { q: "UVカットサングラスの効果的な選び方は？", a: "紫外線透過率の表示（「UV99%カット」など）を確認することが基本です。横幅が広く、フレームと目の隙間が少ないデザインだと、側面からの紫外線も防ぎやすいとされています。色の濃さより性能表示を優先しましょう。" },
+    { q: "目の紫外線対策は年間通じて必要ですか？", a: "紫外線は季節を問わず降り注いでいます。夏場は特に紫外線量が増えますが、冬場や曇りの日でも一定量は届くとされているため、継続的な対策がおすすめです。" },
+    { q: "サングラス以外に有効な対策グッズはありますか？", a: "UVカット成分配合の目薬や、UVカット帽子との併用があります。複数のアイテムを組み合わせることで、より対策しやすくなります。" }
     ],
   },
     {
@@ -730,20 +722,18 @@ export const eyeColumns: EyeColumnMeta[] = [
   },
     {
     slug: "lutein-supplement-ranking-2026",
-    title: "ルテインサプリおすすめランキング2026│目の健康維持に最適な製品比較",
-    description: "2026年最新のルテインサプリメント徹底比較。含有量、吸収率、コストパフォーマンスを検証。目の疲れや加齢黄斑変性対策に効果的な厳選商品をランキング形式で紹介。",
+    title: "ルテインサプリおすすめ比較2026│DHC・ディアナチュラ・ファンケルなど実在製品で選ぶ",
+    description: "実在するルテインサプリメントを比較。含有量や機能性表示の有無、価格帯から、目の健康維持に役立つ製品の選び方を紹介します。",
     section: "eye-goods",
     category: "目のグッズ",
-    readingTime: 8,
+    readingTime: 3,
     publishedAt: "2026-07-23",
-    updatedAt: "2026-07-23",
-    keywords: ["ルテインサプリ","ルテイン おすすめ","目の健康サプリ","ルテイン ランキング 2026","加齢黄斑変性予防"],
+    updatedAt: "2026-08-05",
+    keywords: ["ルテインサプリ","ルテイン おすすめ","目の健康サプリ","DHC ルテイン","ディアナチュラ"],
     faqs: [
-    { q: "ルテインサプリメントはいつから飲み始めるのが良いですか？", a: "眼科医の一般的な推奨では、40代からの摂取開始が理想的です。加齢黄斑変性は50代以降に発症リスクが高まるため、予防的な観点から40代での対策が有効です。ただし目の疲れがある場合は年代に関わらず摂取を開始して良いでしょう。" },
-    { q: "ルテインサプリメントの1日摂取量はどのくらいが適切ですか？", a: "AREDS研究に基づく推奨量は1日10mgです。ただし眼の状態によって医師は10～20mgの摂取を勧める場合があります。製品の用量指示に従い、不安な場合は眼科医に相談してください。過剰摂取による重篤な副作用報告はありませんが、適切な量の継続が重要です。" },
-    { q: "ルテインサプリメントと医薬品の相互作用はありますか？", a: "ルテインは脂溶性成分であるため、ワルファリンなどの抗凝固薬との相互作用の可能性があります。また脂肪吸収阻害薬はルテイン吸収を低下させます。処方薬を服用中の場合は、必ず薬剤師に相談してから摂取を開始してください。一般的に食品由来成分であり安全性は高いです。" },
-    { q: "ルテインサプリメントの効果を感じるまでどのくらい時間がかかりますか？", a: "個人差がありますが、眼精疲労の軽減は2週間～1ヶ月で約30%の人が実感します。一方、網膜へのルテイン蓄積と加齢黄斑変性リスク低下の医学的効果は3～6ヶ月の継続が必要です。医学的根拠に基づく効果発現には最低3ヶ月の継続摂取をお勧めします。" },
-    { q: "天然由来ルテインと合成ルテインに違いはありますか？", a: "吸収率の観点から、マリーゴールド花由来の天然ルテイン（フリー体）は合成品（エステル体）より約1.5倍吸収しやすいとされています。ただし両者の最終的な効果差は臨床試験で有意差がないと報告されています。一般的に天然由来製品の方が価格は高めですが、より純粋性を求める人に好まれます。" }
+    { q: "ルテインサプリメントの1日摂取量はどのくらいが適切ですか？", a: "製品によって異なりますが、一般的な目安として1日6〜10mg程度とされています。パッケージの用量指示に従い、不安な場合は医師や薬剤師に相談してください。" },
+    { q: "ルテインサプリメントと医薬品の相互作用はありますか？", a: "ルテインは脂溶性成分のため、一部の薬と相互作用する可能性が指摘されています。処方薬を服用中の場合は、摂取前に薬剤師に相談することをおすすめします。" },
+    { q: "機能性表示食品とそうでない製品の違いは何ですか？", a: "機能性表示食品は、消費者庁への届出情報として科学的根拠の概要が公開されています。届出のない製品でも同じ成分を配合している場合がありますが、情報の透明性という点で違いがあります。" }
     ],
   },
     {
@@ -780,20 +770,18 @@ export const eyeColumns: EyeColumnMeta[] = [
   },
     {
     slug: "eye-stretch-acupoint-massage-goods",
-    title: "目のストレッチ ツボ押しグッズ おすすめ | 眼精疲労を緩和する最新アイテム2026",
-    description: "目のストレッチやツボ押しに特化したグッズを厳選紹介。眼精疲労の緩和に効果的なマッサージ器、ローラー、マスクなどをランキング形式で比較。",
+    title: "目もとマッサージ・ツボ押しグッズおすすめ比較2026｜RelxEye・Leapgrowなど実在製品",
+    description: "実在する目もとマッサージ・ツボ押しグッズを比較。振動タイプ・温熱タイプなど目的別の選び方を紹介します。",
     section: "eye-goods",
     category: "目のグッズ",
-    readingTime: 8,
+    readingTime: 3,
     publishedAt: "2026-07-26",
-    updatedAt: "2026-07-26",
-    keywords: ["目のストレッチグッズ","ツボ押し アイマッサージャー","眼精疲労 ケア"],
+    updatedAt: "2026-08-05",
+    keywords: ["目もとマッサージグッズ","ツボ押し アイマッサージャー","眼精疲労 ケア"],
     faqs: [
-    { q: "目のツボ押しグッズで眼精疲労は本当に改善される？", a: "目の周辺には複数の重要なツボが存在し、適切にマッサージすることで血流改善と筋肉の緊張緩和が期待できます。日本眼科医会の研究によると、1日15分のツボマッサージにより眼精疲労スコアが平均26%改善したという報告があります。ただし個人差があるため、継続的な使用が重要です。" },
-    { q: "目のストレッチグッズ選びの際に最も重要なポイントは？", a: "振動数、温熱機能、装着感の3点が最重要です。振動数は3,000～8,000回/分の範囲が効果的とされており、温熱機能は42～45℃で血流改善効果が最大になります。また長時間装着するため、頭部への圧迫感が少ないものを選ぶことが継続使用の鍵となります。" },
-    { q: "毎日使用しても安全なアイマッサージャーの使用時間は？", a: "目のツボ押しグッズは1回あたり10～20分、1日2回までの使用が推奨されています。過度な使用は眼圧上昇や違和感につながる可能性があります。厚生労働省のガイドラインでも、1日の使用時間を30分以内に留めることが推奨されています。" },
-    { q: "ツボ押しグッズとホットマスク、どちらが眼精疲労に効果的？", a: "両者は異なるアプローチで眼精疲労を緩和します。ツボ押しグッズはマッサージで筋肉の緊張をほぐし、ホットマスクは温熱で血流を促進します。医学的には併用することで相乗効果が期待でき、仕事中の疲労にはホットマスク、就寝前にはツボ押しグッズという使い分けが効果的です。" },
-    { q: "スマートフォンやPC使用時間が長い人にはどのグッズがおすすめ？", a: "PC作業中に使用する場合は、装着後そのまま作業を続けられるハンズフリータイプが便利です。1日8時間以上の作業者には、温熱+振動の複合機能を持つものが効果的です。また定期的に遠くを見たり、定期的なストレッチを組み合わせることで眼精疲労の予防効果が65%向上するという研究結果があります。" }
+    { q: "目のツボ押しグッズで眼精疲労は改善されますか？", a: "目の周辺のマッサージにより血流改善や筋肉の緊張緩和が期待できるとされていますが、効果には個人差があります。継続的な使用と、休憩習慣との組み合わせが大切です。" },
+    { q: "毎日使用しても大丈夫ですか？", a: "1回あたり10〜20分程度、朝や就寝前の使用が一般的な目安です。強い力で押しすぎず、違和感がある場合は使用を中止してください。" },
+    { q: "ツボ押しグッズとホットアイマスク、どちらがいいですか？", a: "アプローチが異なるため、目的に応じて使い分けるのがおすすめです。マッサージでコリをほぐしたいなら振動タイプ、じっくり温めたいなら温熱タイプが向いています。" }
     ],
   },
 ];
@@ -1969,93 +1957,102 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   'hot-eye-mask-osusume': (
     <article className="prose prose-sm max-w-none">
       <p className="lead text-gray-600 text-base leading-relaxed mb-6">
-        疲れ目・ドライアイ・肩こりに効果的なホットアイマスク。繰り返し使えるタイプから使い捨てまで、2026年のおすすめランキングを紹介します。
+        疲れ目やドライアイのケアに人気のホットアイマスク。繰り返し使えるタイプから使い捨てまで、実在する定番製品を比較しながら紹介します。
       </p>
 
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスクの効果</h2>
-      <div className="grid sm:grid-cols-3 gap-3 mb-6">
-        {[
-          { effect: 'ドライアイ改善', desc: 'マイボーム腺を温めて油分分泌を促進' },
-          { effect: '疲れ目・眼精疲労', desc: '血行促進でピント調節筋の疲労回復' },
-          { effect: '睡眠の質向上', desc: '就寝前の使用でリラックス効果' },
-        ].map(e => (
-          <div key={e.effect} className="bg-orange-50 border border-orange-200 rounded-xl p-4 text-center">
-            <p className="font-bold text-orange-700 text-sm mb-1">{e.effect}</p>
-            <p className="text-xs text-gray-600">{e.desc}</p>
-          </div>
-        ))}
-      </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">繰り返し使用タイプの比較</h2>
-      <div className="space-y-4 mb-6">
-        {[
-          {
-            name: 'Panasonic EH-SW68',
-            price: '¥7,000〜10,000',
-            features: ['スチーム式・潤いが高い', '温度4段階調節', '充電式コードレス', '連続使用約10分'],
-            verdict: '総合最高峰。スチームで目元に潤いを与えたい方に',
-          },
-          {
-            name: 'アイリスオーヤマ HOT17',
-            price: '¥3,000〜4,000',
-            features: ['USB充電式', '温度3段階', '振動機能付き', '軽量180g'],
-            verdict: 'コスパ最強。初めてのホットアイマスクに最適',
-          },
-        ].map(p => (
-          <div key={p.name} className="bg-white border border-gray-200 rounded-xl p-5">
-            <div className="flex justify-between items-start mb-2">
-              <p className="font-bold text-gray-800">{p.name}</p>
-              <p className="text-sm font-bold text-orange-600">{p.price}</p>
-            </div>
-            <ul className="text-xs text-gray-600 grid grid-cols-2 gap-1 mb-2">
-              {p.features.map(f => <li key={f}>• {f}</li>)}
-            </ul>
-            <p className="text-xs text-gray-500 italic">{p.verdict}</p>
-          </div>
-        ))}
-      </div>
-      <AffiliateBtns rakuten="ホットアイマスク 繰り返し おすすめ" />
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">使い捨てタイプの比較</h2>
-      <div className="space-y-3 mb-6">
-        {[
-          { name: '花王 めぐりズム 蒸気でホットアイマスク', price: '14枚 ¥700〜', feat: '約40℃・約10分持続。ラベンダー・ローズ等5種の香り。旅行・出張に最適' },
-          { name: 'バブ メディキュア ホットアイマスク', price: '5枚 ¥500〜', feat: '45℃の高温で強力なホット感。寝る前の集中ケアに' },
-        ].map(p => (
-          <div key={p.name} className="bg-white border border-gray-200 rounded-xl p-4">
-            <div className="flex justify-between items-start mb-1">
-              <p className="font-bold text-gray-800 text-sm">{p.name}</p>
-              <p className="text-xs font-bold text-orange-600">{p.price}</p>
-            </div>
-            <p className="text-xs text-gray-600">{p.feat}</p>
-          </div>
-        ))}
-      </div>
-      <AffiliateBtns rakuten="めぐりズム アイマスク ホット" />
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方のポイント</h2>
-      <div className="overflow-x-auto mb-6">
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスク早見表</h2>
+      <div className="overflow-x-auto mb-4">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-orange-50">
-              <th className="text-left p-3 border border-gray-200">こんな方に</th>
-              <th className="text-left p-3 border border-gray-200">おすすめタイプ</th>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-left p-3 border border-gray-200">タイプ</th>
+              <th className="text-left p-3 border border-gray-200">価格帯</th>
+              <th className="text-left p-3 border border-gray-200">おすすめ度</th>
             </tr>
           </thead>
           <tbody>
             {[
-              { user: '毎日使いたい・コスパ重視', rec: '繰り返し使用タイプ（アイリスオーヤマ等）' },
-              { user: '潤い・スチーム効果を求める', rec: 'Panasonic EH-SW68' },
-              { user: '出張・旅行が多い', rec: '使い捨て（花王めぐりズム）' },
-              { user: '香りでリラックスしたい', rec: '使い捨て（各種香りバリエーション）' },
+              { name: 'Panasonic EH-SW68', type: '繰り返し・スチーム式', price: '7,000〜10,000円', rating: '★★★★★' },
+              { name: 'アイリスオーヤマ HOT17', type: '繰り返し・USB充電式', price: '3,000〜4,000円', rating: '★★★★☆' },
+              { name: '花王 めぐりズム 蒸気でホットアイマスク', type: '使い捨て', price: '14枚 700円〜', rating: '★★★★☆' },
             ].map(r => (
-              <tr key={r.user} className="border-b border-gray-100">
-                <td className="p-3 border border-gray-200 text-gray-700">{r.user}</td>
-                <td className="p-3 border border-gray-200 font-medium text-orange-700">{r.rec}</td>
+              <tr key={r.name} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.type}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.price}</td>
+                <td className="p-3 border border-gray-200 text-amber-500">{r.rating}</td>
               </tr>
             ))}
           </tbody>
         </table>
+      </div>
+      <div className="my-4">
+        <a href={RAKUTEN('Panasonic EH-SW68')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">総合力No.1</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Panasonic EH-SW68</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">Panasonic EH-SW68を楽天で見る →</div>
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">タイプ別のおすすめ製品</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">潤い重視・毎日じっくり使いたい方に：Panasonic EH-SW68</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>スチーム式で目元に潤いを与える設計。温度4段階調節で好みに合わせやすい</li>
+        <li>USB充電式のコードレスタイプで、繰り返し使えて経済的</li>
+        <li className="text-gray-500">気になる点：7,000〜10,000円台と初期投資がやや高め</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">コスパ重視で試したい方に：アイリスオーヤマ HOT17</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>USB充電式で温度3段階調節、振動機能も付いた多機能モデル</li>
+        <li>3,000〜4,000円台と手に取りやすく、軽量（約180g）で扱いやすい</li>
+        <li className="text-gray-500">気になる点：スチーム機能はないため、潤い効果はPanasonic製品に劣る</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">出張・旅行用や香りも楽しみたい方に：花王 めぐりズム 蒸気でホットアイマスク</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>使い捨てタイプで準備不要。約40℃の蒸気が約10分持続する</li>
+        <li>ラベンダー・ローズなど香りのバリエーションがあり、リラックス目的にも向く</li>
+        <li className="text-gray-500">気になる点：1枚あたりのコストがかかるため、毎日使うと繰り返しタイプより割高になる</li>
+      </ul>
+      <div className="grid sm:grid-cols-3 gap-3 mb-4">
+        <a href={RAKUTEN('Panasonic EH-SW68')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">スチーム式・繰り返し</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Panasonic EH-SW68</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href={RAKUTEN('アイリスオーヤマ HOT17 アイマスク')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">コスパ・繰り返し</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">アイリスオーヤマ HOT17</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href={RAKUTEN('花王 めぐりズム 蒸気でホットアイマスク')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">使い捨て・香り付き</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">花王 めぐりズム</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方3つのポイント</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>使用頻度で選ぶ：</strong>毎日使うなら繰り返しタイプ、たまに使うなら使い捨てタイプがコスト面で合いやすいです</li>
+        <li><strong>スチームの有無を確認する：</strong>潤いを重視するならスチーム式、手軽さ重視なら乾式タイプが選びやすい傾向にあります</li>
+        <li><strong>温度調節機能を確認する：</strong>敏感肌の方は温度を下げられるタイプが安心です</li>
+      </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">ホットアイマスクは、使用頻度と求める効果に合わせて選ぶことが大切です。潤い重視ならPanasonic EH-SW68、コスパ重視ならアイリスオーヤマ HOT17、出張・旅行用なら花王めぐりズムが選びやすい傾向にあります。</p>
+      <p className="text-gray-700 mb-4">目に異常感がある場合や、コンタクトレンズ装用中は必ず外してから使用してください。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('アイリスオーヤマ HOT17 アイマスク')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">コスパ重視の方に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">アイリスオーヤマ HOT17</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">アイリスオーヤマ HOT17を楽天で見る →</div>
+        </a>
       </div>
     </article>
   ),
@@ -3516,6 +3513,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">3. ゆっくり首を回す（時計回り・反時計回り各5回）</p>
       <p className="text-gray-700 mb-4">4. 肩を上げて3秒間キープ、力を抜く（5回繰り返す）</p>
       <p className="text-gray-700 mb-4"><strong>効果</strong>：首・肩の緊張が目の筋肉を圧迫していることが多いため、この部分をほぐすことで間接的に眼精疲労を軽減できます。</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237db3.a916904a.56237db4.bd5b1f1c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbodyplus%2F4580657302%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ストレッチ後の仕上げに</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Bodyplus アイウォーマー 4580657302</p>
+          <p className="text-xs text-gray-500 mb-3">ストレッチ後の血行促進・リラックスに使いやすい軽量モデル</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Bodyplus アイウォーマー 4580657302を楽天で見る →</div>
+        </a>
+      </div>
       <hr className="my-6 border-gray-200" />
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">第3章：効果的なマッサージテクニック</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">マッサージ①：眉毛周辺マッサージ</h3>
@@ -3558,6 +3564,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">3. 眉毛の上から生え際まで、上下に移動させながら実施</p>
       <p className="text-gray-700 mb-4">4. 2～3分間継続</p>
       <p className="text-gray-700 mb-4"><strong>効果</strong>：額の筋肉緊張を緩和し、脳への血流を改善。眼精疲労に伴う頭重感を軽減します。</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d7f.33f4cbd3.56237d80.df2babe8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcitech%2Frelx-eye-001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">手動マッサージの代わりに</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">RelxEye アイリラクサー RE-001</p>
+          <p className="text-xs text-gray-500 mb-3">振動マッサージ機能で、ここまで紹介したマッサージを効率的にサポート</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">RelxEye アイリラクサー RE-001を楽天で見る →</div>
+        </a>
+      </div>
       <hr className="my-6 border-gray-200" />
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">第4章：より効果を高めるための実践ガイド</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">マッサージクリーム・オイルの活用</h3>
@@ -3567,7 +3582,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>マッサージオイル</strong>：適度な滑りやすさで、目周辺の繊細な皮膚に負担をかけません</li>
         <li><strong>薬用クリーム</strong>：血行促進成分を含む製品を選ぶと、マッサージ効果が高まります</li>
       </ul>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で疲れ目対策製品を見る</a></p>
+      <div className="my-4">
+        <a href={RAKUTEN('肌ラボ 極潤プレミアムヒアルロンアイクリーム')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">マッサージ前の保湿に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">肌ラボ 極潤プレミアムヒアルロンアイクリーム</p>
+          <p className="text-xs text-gray-500 mb-3">マッサージ前に塗布することで滑りが良くなり、保湿効果も得やすくなります</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">肌ラボ 極潤プレミアムヒアルロンアイクリームを楽天で見る →</div>
+        </a>
+      </div>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">温冷療法の組み合わせ</h3>
       <p className="text-gray-700 mb-4">ストレッチ・マッサージの効果を高めるために、温冷療法との組み合わせが推奨されています：</p>
       <p className="text-gray-700 mb-4"><strong>温熱療法</strong>（マッサージ前）：</p>
@@ -3614,6 +3637,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>PC環境の改善</strong>：モニターの高さ、ブルーライトカット対策、照度調整なども同時に実施することで、効果が高まります</li>
         <li><strong>眼科受診</strong>：症状が続く場合は、眼科医の診察を受けることをおすすめします。隠れた目の疾患が存在する可能性もあります</li>
       </ul>
+      <div className="my-4">
+        <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">コンタクト装用中でも使える目薬</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
+          <p className="text-xs text-gray-500 mb-3">防腐剤無添加。コンタクト装用中のマッサージ前後のケアに</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
+        </a>
+      </div>
       <hr className="my-6 border-gray-200" />
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">第6章：専門家が推奨する補助手段</h2>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ドライアイ対策</h3>
@@ -3630,6 +3662,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>アントシアニン</strong>：ブルーベリー、黒い野菜に含まれる</li>
         <li><strong>ゼアキサンチン</strong>：とうもろこし、卵黄に含まれる</li>
       </ul>
+      <div className="my-4">
+        <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">食事で摂りきれない分の補給に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
+          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。続けやすい価格帯</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
+        </a>
+      </div>
       <hr className="my-6 border-gray-200" />
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
       <p className="text-gray-700 mb-4">眼精疲労は現代人にとって避けがたい問題ですが、正しい知識と実践により、大幅に症状を軽減できます。本記事で紹介したストレッチとマッサージテクニックは、すべて自宅や職場で実施できる簡単な方法です。</p>
@@ -3700,7 +3741,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-4">
         <p className="font-bold text-gray-800 mb-3">ドライアイ・疲れ目対策グッズを探す</p>
-        <AffiliateBtns rakuten="ドライアイ 目薬 疲れ目" />
+        <a href={RAKUTEN('サンテFXネオ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          サンテFXネオを楽天で見る →
+        </a>
       </div>
 
       <div className="bg-sky-50 border border-sky-200 rounded-xl p-4">
@@ -4235,300 +4279,197 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   ),
     "glaucoma-early-detection-screening": (
     <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">緑内障とは何か？早期発見が視力保全の鍵</h2>
-      <p className="text-gray-700 mb-4">緑内障は、眼球内の圧力（眼圧）が高まることで視神経が障害される疾患です。世界的には失明の主要原因の一つであり、日本でも約120万人が罹患していると推定されています。最も恐ろしい点は、<strong>初期段階ではほぼ自覚症状がない</strong>ということです。そのため、定期的な検査による早期発見が極めて重要となります。</p>
-      <p className="text-gray-700 mb-4">緑内障は進行性の疾患であり、一度失われた視野は現在の医学では回復できません。しかし、早期に発見され適切な治療を開始すれば、進行を遅くすることが可能です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">緑内障のリスク因子を知る</h2>
-      <p className="text-gray-700 mb-4">すべての人が緑内障になるわけではありません。以下のようなリスク因子がある人は特に注意が必要です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">主なリスク因子</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>眼圧が高い</strong>：21mmHg以上は要注意です</li>
-        <li><strong>年齢40歳以上</strong>：加齢とともにリスクが上昇します</li>
-        <li><strong>緑内障の家族歴</strong>：遺伝的要素があります</li>
-        <li><strong>近視</strong>：特に近視が強い場合はリスクが高まります</li>
-        <li><strong>糖尿病や高血圧</strong>：全身疾患との関連性があります</li>
-        <li><strong>ステロイド薬の長期使用</strong>：眼圧上昇の原因になります</li>
-      </ul>
-      <p className="text-gray-700 mb-4">日本緑内障学会の統計によると、40歳以上の日本人の約20人に1人が緑内障であると言われています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">緑内障検査の種類と方法</h2>
-      <p className="text-gray-700 mb-4">早期発見のためには、複数の検査を組み合わせた正確な診断が必要です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1. 眼圧検査（トノメトリー）</h3>
-      <p className="text-gray-700 mb-4">眼圧検査は最も基本的な検査です。</p>
-      <p className="text-gray-700 mb-4"><strong>非接触型トノメーター</strong>：空気を吹きかけて眼圧を測定する方法で、最も一般的です。接触しないため感染リスクがなく、患者の負担も最小限です。測定時間は数秒で完了します。</p>
-      <p className="text-gray-700 mb-4"><strong>アプラネーション・トノメーター</strong>：接触型で、より正確な測定が可能です。ゴールドマンアプラネーション・トノメーターは診断の金標準とされています。</p>
-      <p className="text-gray-700 mb-4">正常な眼圧は10～21mmHgとされていますが、個人差があります。同じ眼圧でも視神経がダメージを受ける人とそうでない人がいるため、眼圧値だけでの診断は不十分です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2. 視野検査（ペリメトリー）</h3>
-      <p className="text-gray-700 mb-4">視野検査は、視神経がどの程度ダメージを受けているかを調べる重要な検査です。</p>
-      <p className="text-gray-700 mb-4"><strong>静的視野検査</strong>：視野計という機器を使用し、様々な位置で光の見え方を測定します。検査時間は約5～15分で、両眼で30分程度かかります。初期の視野欠損を検出できる精密な検査です。</p>
-      <p className="text-gray-700 mb-4"><strong>動的視野検査</strong>：動く光を追いながら視野の範囲を測定する方法です。患者の協力度に左右される傾向があります。</p>
-      <p className="text-gray-700 mb-4">視野検査は患者の集中力や理解度に左右されやすいため、複数回の検査が必要な場合もあります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3. 視神経乳頭検査（眼底検査）</h3>
-      <p className="text-gray-700 mb-4">眼科医が直接眼底を観察する検査です。視神経乳頭の陥凹（いんおう）の深さや形状を評価します。</p>
-      <p className="text-gray-700 mb-4"><strong>直接検眼鏡</strong>：小さなハンディタイプの機器で、高い倍率で観察できます。</p>
-      <p className="text-gray-700 mb-4"><strong>間接検眼鏡</strong>：より広い視野が得られます。</p>
-      <p className="text-gray-700 mb-4"><strong>散瞳検査</strong>：瞳孔を拡大して検査すると、より詳細な観察が可能です。</p>
-      <p className="text-gray-700 mb-4">経験豊富な眼科医による視神経乳頭の評価は診断精度を大幅に向上させます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">4. 光干渉断層撮影（OCT：Optical Coherence Tomography）</h3>
-      <p className="text-gray-700 mb-4">OCTは視神経繊維層の厚さを画像化する最新技術です。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>高速で正確</strong>：検査時間は数秒で完了</li>
-        <li><strong>客観的評価</strong>：視神経の構造的変化を定量的に測定可能</li>
-        <li><strong>経過観察に有用</strong>：治療効果の判定に優れています</li>
-      </ul>
-      <p className="text-gray-700 mb-4">スペクトラルドメインOCT（SD-OCT）が標準となり、より高解像度の画像が得られるようになりました。OCTの導入により、早期緑内障の検出精度が大幅に向上しています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">5. 隅角検査（ゴニオスコピー）</h3>
-      <p className="text-gray-700 mb-4">緑内障のタイプを判定するため、虹彩と角膜の間の隅角を観察します。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>開放隅角緑内障</strong>：最も一般的なタイプで、隅角は開いています</li>
-        <li><strong>閉塞隅角緑内障</strong>：隅角が狭く、急性発作のリスクがあります</li>
-      </ul>
-      <p className="text-gray-700 mb-4">このタイプ判定は治療方針の決定に重要です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">緑内障検査にかかる費用と保険適用</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">検査費用の目安</h3>
-      <p className="text-gray-700 mb-4">健康診断での簡易眼圧検査は基本的に無料です。眼科での詳しい検査では以下が目安です。</p>
-      <p className="text-gray-700 mb-4">| 検査項目 | 自己負担額（3割負担時） |</p>
-      <p className="text-gray-700 mb-4">|---------|------------------------|</p>
-      <p className="text-gray-700 mb-4">| 眼圧検査 | 200～300円 |</p>
-      <p className="text-gray-700 mb-4">| 視野検査 | 1,000～1,500円 |</p>
-      <p className="text-gray-700 mb-4">| 眼底検査 | 200～300円 |</p>
-      <p className="text-gray-700 mb-4">| OCT検査 | 500～800円 |</p>
-      <p className="text-gray-700 mb-4">| 全検査合計 | 2,000～3,000円 |</p>
-      <p className="text-gray-700 mb-4">初診時や診断確定時は検査が多くなり、5,000円程度かかる場合もあります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">保険適用について</h3>
-      <p className="text-gray-700 mb-4">緑内障が疑われる場合や診断済みの場合、通常は健康保険が適用され、患者負担は3割となります。自由診療のクリニックもありますが、確認してから受診することをお勧めします。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">検査頻度と定期受診の重要性</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">検査頻度の目安</h3>
-      <p className="text-gray-700 mb-4"><strong>リスク因子のない健康な成人</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>40歳以上：1～2年に1回の眼科検診</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>眼圧が高い、または疑い段階</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>半年～1年に1回の詳しい検査</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>緑内障と診断された患者</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>治療開始直後：1～3ヶ月に1回</li>
-        <li>安定後：3～6ヶ月に1回</li>
-        <li>進行が見られる場合：1～2ヶ月に1回</li>
-      </ul>
-      <p className="text-gray-700 mb-4">医師の指示に従い、定期的に検査を受けることが進行を最小限に抑える鍵となります。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">日常生活での目の健康管理</h2>
-      <p className="text-gray-700 mb-4">定期検査と同時に、日常生活での健康管理も重要です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">目の負担を軽減するポイント</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>PC作業時の休憩</strong>：1時間に10分程度の休憩を取る</li>
-        <li><strong>適切な照明</strong>：暗すぎる、まぶしすぎる環境を避ける</li>
-        <li><strong>瞬きの意識</strong>：ドライアイは眼圧上昇につながります</li>
-        <li><strong>運動習慣</strong>：適度な運動により眼圧低下が期待できます</li>
-      </ul>
-      <p className="text-gray-700 mb-4">緑内障の治療目薬（プロスタグランジン関連薬など）は医師の処方が必須で、市販・通販での購入はできません。処方された目薬は指示通りに正しく使用することが重要です。</p>
-      <p className="text-gray-700 mb-4">処方薬とは別に、日常的な目の健康維持を補う一般用サプリメントを併用する方もいます（治療の代わりにはなりません）。</p>
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        緑内障は初期段階でほぼ自覚症状がなく、気づいたときには視野の一部が失われていることも少なくありません。「様子を見る」という選択肢が通用しにくい病気だからこそ、定期検査によるセルフチェックが重要です。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">緑内障リスクチェックリスト</h2>
+      <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-4 mb-6">
+        <p className="font-bold text-cyan-800 mb-2">当てはまる項目が多いほど、定期検査の優先度が高くなります</p>
+        <ul className="text-sm text-gray-700 space-y-1">
+          <li>□ 眼圧が高いと言われたことがある（目安：21mmHg以上）</li>
+          <li>□ 40歳以上である</li>
+          <li>□ 緑内障の家族歴がある</li>
+          <li>□ 近視が強い</li>
+          <li>□ 糖尿病・高血圧がある</li>
+          <li>□ ステロイド薬を長期使用している</li>
+        </ul>
+      </div>
       <div className="my-4">
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">目の健康維持サプリ（処方薬の代替ではありません）</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
-          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。あくまで日常の目の健康維持を目的とした栄養補助食品</p>
+          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。日常の目の健康維持を目的とした栄養補助食品</p>
           <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
         </a>
       </div>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">各検査の利点と限界を理解する</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼圧検査の限界</h3>
-      <p className="text-gray-700 mb-4">眼圧検査は簡便で重要ですが、眼圧値だけでは十分ではありません。正常眼圧緑内障という、眼圧が正常範囲内でも緑内障が進行する患者が全体の30～40%を占めます。そのため、複数の検査を組み合わせることが診断精度を高めます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">視野検査の限界</h3>
-      <p className="text-gray-700 mb-4">視野検査は患者の集中力や理解度に大きく影響され、信頼度の低い結果が出ることがあります。そのため、同じ施設で定期的に検査を受けることが望ましいです。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">OCTの優位性</h3>
-      <p className="text-gray-700 mb-4">OCTは客観的で再現性が高く、初期の微細な変化も検出できます。ただし、医学的知識のある医師の解釈が必要です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">緑内障と診断された場合</h2>
-      <p className="text-gray-700 mb-4">緑内障と診断されても、適切な治療により進行を遅くすることは十分可能です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">治療の基本方針</h3>
-      <p className="text-gray-700 mb-4">1. <strong>眼圧低下が主な治療目標</strong>：目薬が第一選択肢です</p>
-      <p className="text-gray-700 mb-4">2. <strong>複数の薬剤の組み合わせ</strong>：効果が不十分な場合は併用します</p>
-      <p className="text-gray-700 mb-4">3. <strong>定期的な効果判定</strong>：視野検査やOCTで進行を監視します</p>
-      <p className="text-gray-700 mb-4">4. <strong>ライフスタイルの改善</strong>：運動、ストレス管理、食生活改善</p>
-      <p className="text-gray-700 mb-4">目薬による治療で十分な眼圧低下が得られない場合は、レーザー治療や手術が検討されます。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ：緑内障検査で人生の質を守る</h2>
-      <p className="text-gray-700 mb-4">緑内障は早期発見により、失明を防ぐことができる疾患です。自覚症状がほぼないため、定期的な検査が唯一の早期発見手段となります。</p>
-      <p className="text-gray-700 mb-4">特に40歳以上の方、また家族に緑内障患者がいる方は、積極的に眼科検診を受けることをお勧めします。複数の検査方法を組み合わせることで、より正確な診断が可能になります。</p>
-      <p className="text-gray-700 mb-4">今からできることは：</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">緑内障検査の種類・費用</h2>
+      <p className="text-gray-700 mb-4">緑内障は、眼球内の圧力（眼圧）の上昇などにより視神経が障害される進行性の疾患です。一度失われた視野は現在の医学では回復できませんが、早期に発見し治療を開始すれば進行を遅らせることが可能とされています。早期発見のためには、複数の検査を組み合わせた診断が必要です。</p>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">検査</th>
+              <th className="text-left p-3 border border-gray-200">内容</th>
+              <th className="text-left p-3 border border-gray-200">自己負担額目安（3割負担）</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: '眼圧検査', desc: '空気を吹きかけて眼圧を測定。最も基本的な検査', cost: '200〜300円' },
+              { name: '視野検査', desc: '視神経のダメージ度合いを調べる。5〜15分程度', cost: '1,000〜1,500円' },
+              { name: '眼底検査', desc: '視神経乳頭の形状を医師が直接観察', cost: '200〜300円' },
+              { name: 'OCT検査', desc: '視神経繊維層の厚さを画像化する精密検査', cost: '500〜800円' },
+            ].map(r => (
+              <tr key={r.name} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.desc}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.cost}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-gray-700 mb-4">眼圧検査だけでは十分ではありません。正常眼圧でも緑内障が進行するケース（正常眼圧緑内障）が一定数あるとされているため、複数の検査を組み合わせることが診断精度を高めます。緑内障が疑われる場合や診断済みの場合は、通常健康保険が適用されます。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">日常生活でのセルフケア</h2>
+      <p className="text-gray-700 mb-4">定期検査と並行して、日常生活での目の健康管理も大切です。</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>定期的な眼科検診の習慣化</li>
-        <li>リスク因子の管理（血糖値、血圧等）</li>
-        <li>目に優しい生活習慣の実践</li>
-        <li>医師の指示に従った治療継続</li>
+        <li><strong>PC作業時の休憩：</strong>1時間に10分程度の休憩を取りましょう</li>
+        <li><strong>適切な照明：</strong>暗すぎる、まぶしすぎる環境は避けましょう</li>
+        <li><strong>ドライアイ対策：</strong>ドライアイは眼圧上昇につながる可能性が指摘されています</li>
+        <li><strong>適度な運動習慣：</strong>眼圧に良い影響があるとされています</li>
       </ul>
-      <p className="text-gray-700 mb-4">視力は一度失うと取り戻せません。今のうちから定期検査を始めることが、生涯の視力保全につながるのです。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">日常のドライアイ対策に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
+          <p className="text-xs text-gray-500 mb-3">防腐剤無添加の人工涙液。緑内障治療薬の代わりにはなりません</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
+        </a>
+      </div>
+      <p className="text-gray-700 mb-4">緑内障の治療目薬（プロスタグランジン関連薬など）は医師の処方が必須で、市販・通販での購入はできません。処方された目薬は指示通りに正しく使用することが重要です。処方薬とは別に、日常的な目の健康維持を補う一般用サプリメントを併用する方もいますが、あくまで治療の代わりにはなりません。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">受診の目安・検査頻度</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>リスク因子のない健康な成人：</strong>40歳以上は1〜2年に1回の眼科検診が一般的な目安です</li>
+        <li><strong>眼圧が高い、または疑いがある段階：</strong>半年〜1年に1回の詳しい検査が推奨されます</li>
+        <li><strong>緑内障と診断された場合：</strong>治療開始直後は1〜3ヶ月に1回、安定後は3〜6ヶ月に1回など、医師の指示に従って定期受診します</li>
+      </ul>
+      <p className="text-gray-700 mb-4">緑内障と診断されても、適切な治療により進行を遅くすることは可能とされています。眼圧低下を目的とした目薬による治療が基本方針で、効果が不十分な場合はレーザー治療や手術が検討されます。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">緑内障は自覚症状がほぼないため、定期的な検査が早期発見の主な手段となります。特に40歳以上の方、家族に緑内障患者がいる方は、積極的に眼科検診を受けることをおすすめします。</p>
+      <p className="text-gray-700 mb-4">視力は一度失うと取り戻せません。リスク因子に当てはまる方は、今のうちから定期検査を習慣にしてみてください。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">日常の目の健康維持に（処方薬の代替ではありません）</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">DHC ルテイン光対策を楽天で見る →</div>
+        </a>
+      </div>
     </article>
   ),
     "uv-eye-care-sunglasses-uv-drops": (
     <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目の紫外線対策が重要な理由</h2>
-      <p className="text-gray-700 mb-4">日本国内の紫外線量は、年々増加傾向にあります。気象庁のデータによると、2023年の紫外線量は過去10年間で最高レベルに達しており、特に春から夏にかけて最大値を記録しました。目に対する紫外線の影響は、肌と異なり、直後の症状がないため見落とされやすい傾向があります。</p>
-      <p className="text-gray-700 mb-4">しかし、長期的な紫外線曝露は確実に目にダメージを蓄積させます。日本眼科学会の調査によると、紫外線対策を全く行わない人は、適切な対策を行う人と比べて<strong>白内障発症率が3倍以上高い</strong>という結果が出ています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">紫外線による主な目の病気</h3>
-      <p className="text-gray-700 mb-4"><strong>白内障</strong>：水晶体が白く濁る疾患で、加齢だけでなく紫外線が主要な原因の一つです。50代で30～40％、70代で90％以上が発症するとされていますが、紫外線対策により発症年齢を5～10年遅延させることが可能です。</p>
-      <p className="text-gray-700 mb-4"><strong>翼状片</strong>：白目に肉が増殖し、進行すると視力低下をきたす疾患。屋外作業が多い方に多く見られ、紫外線量が多い地域での発症率が高いことが明らかになっています。</p>
-      <p className="text-gray-700 mb-4"><strong>黄斑変性症</strong>：網膜の中心部が傷む疾患で、進行すると視力低下や視野の変形が生じます。紫外線は加齢黄斑変性症のリスク要因の一つとして指摘されています。</p>
-      <p className="text-gray-700 mb-4"><strong>瞼裂斑</strong>：白目が黄褐色に変色する疾患で、外観の悪化だけでなく、ドライアイの原因にもなります。</p>
-      <p className="text-gray-700 mb-4">これらの疾患はいずれも、初期段階では自覚症状がないため、予防的対策が極めて重要です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">サングラス選びの正しい基準</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">UVカット率の確認方法</h3>
-      <p className="text-gray-700 mb-4">サングラス購入時に最初に確認すべきは、<strong>UV99％以上のカット率</strong>です。JIS規格（Z8894）では、以下の2つの基準が定められています。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>紫外線透過率1.0％以下</strong>：UV99％以上カット</li>
-        <li><strong>紫外線透過率0.5％以下</strong>：UV99.5％以上カット</li>
-      </ul>
-      <p className="text-gray-700 mb-4">商品パッケージやタグに「UV99％カット」「紫外線カット99.9％」などの表記がある場合、これらの基準をクリアしています。ただし、「UVカット機能付き」と書かれているだけの製品は、カット率が不明瞭な場合が多いため避けることをお勧めします。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レンズの色と濃度の選択</h3>
-      <p className="text-gray-700 mb-4">一般的には、レンズが濃いほど紫外線カット性能が高いと誤解されていますが、これは間違いです。UVカット性能はレンズの色ではなく、紫外線吸収成分の配合で決まります。</p>
-      <p className="text-gray-700 mb-4"><strong>用途別のレンズ色選択</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>茶色・琥珀色：コントラストが強調され、運転時や日常使用に適している</li>
-        <li>グレー：色再現が自然で、最も汎用的</li>
-        <li>緑色：目の疲労軽減に効果的</li>
-        <li>青紫色：UVAカット性能が特に強い</li>
-      </ul>
-      <p className="text-gray-700 mb-4">重要なのは、濃すぎるレンズは瞳孔が開き、レンズの周囲からの紫外線漏れが増加する点です。日中の屋外使用で<strong>レンズの透光率30～50％程度</strong>が目安です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レンズ面積とフィッティング</h3>
-      <p className="text-gray-700 mb-4">紫外線は光の散乱特性により、正面だけでなく側面からも目に到達します。したがって、<strong>横幅がある大きめのレンズ</strong>を選ぶことが重要です。目尻から1cm以上、レンズが外側に広がっている製品を選んでください。</p>
-      <p className="text-gray-700 mb-4">さらに、顔にしっかりフィットする設計であることも確認しましょう。隙間が多いサングラスは、紫外線がレンズの周囲から侵入するため、UV99％カット率の効果が減少します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">素材の選択</h3>
-      <p className="text-gray-700 mb-4"><strong>ポリカーボネート製</strong>：耐衝撃性が高く、紫外線カット成分が内部に含まれているため、傷が入ってもカット率が低下しにくい。スポーツ用途に最適。</p>
-      <p className="text-gray-700 mb-4"><strong>ガラス製</strong>：光学特性に優れ、色の再現性が正確。ただし重く、割れる可能性がある。</p>
-      <p className="text-gray-700 mb-4"><strong>CR-39樹脂製</strong>：軽量で、カスタマイズが容易。日常用に適している。</p>
-      <p className="text-gray-700 mb-4">最も推奨されるのはポリカーボネート製で、耐久性と安全性のバランスが最も優れています。</p>
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        目の紫外線ダメージは自覚症状がないまま蓄積されるとされています。この記事では、サングラスとUV目薬それぞれの選び方と、実在する製品を比較しながら紹介します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">サングラス・UV目薬 早見表</h2>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-left p-3 border border-gray-200">役割</th>
+              <th className="text-left p-3 border border-gray-200">価格帯</th>
+              <th className="text-left p-3 border border-gray-200">おすすめ度</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'Isabell 偏光サングラス', role: '予防（第一次防御）：UV99%以上カット', price: '3,280円〜', rating: '★★★★★' },
+              { name: 'サンテメディカル12', role: '事後ケア：紫外線による眼炎対応の目薬', price: '1,500円前後', rating: '★★★★☆' },
+            ].map(r => (
+              <tr key={r.name} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.role}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.price}</td>
+                <td className="p-3 border border-gray-200 text-amber-500">{r.rating}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="my-4">
+        <a href={RAKUTEN('Isabell 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Isabell 偏光サングラス</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">Isabell 偏光サングラスを楽天で見る →</div>
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">紫外線が目に与える影響</h2>
+      <p className="text-gray-700 mb-4">紫外線は肌と違い、目への影響は直後の自覚症状がないため見落とされやすい傾向があります。長期的な紫外線曝露は、白内障・翼状片・瞼裂斑・黄斑変性症などのリスク要因の一つとして知られており、いずれも初期段階では自覚症状がほとんどありません。だからこそ、日々の予防的対策が重要です。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">サングラス・UV目薬の選び方</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">サングラス：予防の基盤</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>UVカット率を確認：</strong>「UV99%カット」などの表記があるかをタグや商品説明で確認しましょう</li>
+        <li><strong>レンズの色の濃さでは判断しない：</strong>UVカット性能はレンズの色ではなく、紫外線吸収成分の配合で決まります</li>
+        <li><strong>レンズサイズとフィット感：</strong>紫外線は側面からも入り込むため、顔にフィットする大きめのレンズが選びやすい傾向にあります</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">UV目薬：事後ケアの補助</h3>
+      <p className="text-gray-700 mb-4">UV目薬は、紫外線による目のダメージを事後的にケアする製品で、サングラスの代わりにはなりません。ビタミンC（アスコルビン酸）やタウリンなどの成分が配合された製品が一般的です。屋外活動から室内に戻った際のケアとして活用してみてください。</p>
+      <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href={RAKUTEN('Isabell 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">UVカット・偏光サングラス</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Isabell 偏光サングラス</p>
-          <p className="text-xs text-gray-500 mb-3">UV99%以上カット・ポリカーボネートレンズ。日常使いしやすい価格帯</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Isabell 偏光サングラスを楽天で見る →</div>
+          <p className="text-xs text-gray-500 mb-3">UV99%以上カット・ポリカーボネートレンズ</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
-      </div>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">UV目薬の選び方と使用方法</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">UV目薬の役割の理解</h3>
-      <p className="text-gray-700 mb-4">UV目薬は、紫外線による目のダメージを<strong>事後的にケアする</strong>製品です。予防効果はサングラスほど高くないため、「UV目薬を使えば紫外線対策は完全」という認識は避けてください。</p>
-      <p className="text-gray-700 mb-4">市販されているUV目薬の主な有効成分は以下の通りです。</p>
-      <p className="text-gray-700 mb-4">| 成分名 | 効果 | 特徴 |</p>
-      <p className="text-gray-700 mb-4">|--------|------|------|</p>
-      <p className="text-gray-700 mb-4">| アスコルビン酸（ビタミンC） | 抗酸化作用、目の疲労軽減 | 紫外線ダメージの修復 |</p>
-      <p className="text-gray-700 mb-4">| クロラムフェニコール | 炎症抑制 | 充血や違和感を軽減 |</p>
-      <p className="text-gray-700 mb-4">| グリチルリチン酸 | 抗炎症作用 | アレルギー症状の緩和 |</p>
-      <p className="text-gray-700 mb-4">| タウリン | 目の代謝促進 | 疲労回復 |</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">効果的な使用方法</h3>
-      <p className="text-gray-700 mb-4"><strong>使用タイミング</strong>：紫外線の強い環境から室内に戻った直後、就寝前の2回使用が推奨されます。特に海水浴や山登り、屋外スポーツ後は積極的な使用をお勧めします。</p>
-      <p className="text-gray-700 mb-4"><strong>用量</strong>：1回につき1～2滴を下眼瞼結膜嚢内に点眼してください。多く入れても効果が高まるわけではなく、1日4～5回の使用が目安です。</p>
-      <p className="text-gray-700 mb-4"><strong>保存方法</strong>：開封後は1ヶ月以内に使い切ることが重要です。多くのUV目薬は防腐剤を最小限に抑えているため、開封後の劣化が進みやすくなっています。冷暗所に保存し、変色・混濁がないことを確認してから使用してください。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">市販UV目薬の選び方</h3>
-      <p className="text-gray-700 mb-4"><strong>確認すべき情報</strong>：</p>
-      <p className="text-gray-700 mb-4">1. JIS規格をクリアしているか</p>
-      <p className="text-gray-700 mb-4">2. アスコルビン酸が配合されているか</p>
-      <p className="text-gray-700 mb-4">3. 防腐剤の種類（ベンザルコニウム塩化物よりもホウ酸が推奨）</p>
-      <p className="text-gray-700 mb-4">4. 使用期限と開封期間</p>
-      <p className="text-gray-700 mb-4">5. アレルギー症状がある場合は、対応するグレードの商品選択</p>
-      <p className="text-gray-700 mb-4">おすすめの選択肢としては、以下のような特徴を持つ製品が挙げられます：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>高濃度アスコルビン酸配合</strong>：3.5～5.0%程度が目安</li>
-        <li><strong>複合成分タイプ</strong>：ビタミンC＋タウリン＋グリチルリチン酸が同時配合</li>
-        <li><strong>防腐剤フリー</strong>：単回使用パックタイプもおすすめ</li>
-      </ul>
-      <div className="my-4">
         <a href={RAKUTEN('サンテメディカル12')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">UV・紫外線対応目薬</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテメディカル12</p>
-          <p className="text-xs text-gray-500 mb-3">参天製薬／紫外線その他の光線による眼炎（雪目など）に対応。ビタミンB12配合で目の疲れ・充血にも</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">サンテメディカル12を楽天で見る →</div>
+          <p className="text-xs text-gray-500 mb-3">紫外線による眼炎に対応。ビタミンB12配合</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">季節別・状況別の対策方法</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">春夏の強紫外線対策</h3>
-      <p className="text-gray-700 mb-4">春分から秋分までが紫外線の多い時期ですが、特に<strong>5月～7月</strong>は年間最高のUV指数に達します。気象庁の発表では、この時期のUV指数は11以上（非常に強い）に分類されます。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">季節・シーン別の対策ポイント</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>午前10時～午後4時の屋外活動を避ける</li>
-        <li>継続的な屋外活動の場合は、2時間ごとにUV目薬を使用</li>
-        <li>サングラスと帽子（つば7cm以上）の併用</li>
-        <li>長袖・長ズボンの着用を検討</li>
+        <li><strong>春夏：</strong>紫外線量が最も多い時期です。日中の屋外活動時はサングラスと帽子を併用しましょう</li>
+        <li><strong>秋冬：</strong>「冬は安心」は誤りです。雪面の反射率は高く、雪山では夏以上の対策が必要な場合もあります</li>
+        <li><strong>曇りの日：</strong>晴天時より少ないものの、紫外線は届いています。天候に関わらずサングラスを携帯すると安心です</li>
+        <li><strong>屋外活動が多い方：</strong>UVカットサングラスを毎日使用し、屋外活動後はUV目薬でのケアを習慣化しましょう</li>
       </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">秋冬の紫外線対策</h3>
-      <p className="text-gray-700 mb-4">冬季のUV指数は夏季の50～60％程度ですが、「冬だから安心」という誤認は危険です。雪面の反射率は<strong>80～90%</strong>と高く、雪スポーツ時には逆に危険が増します。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">よくある誤解</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>スキー・スノーボード時は必ずUVカットゴーグルを装着</li>
-        <li>冬の日中の散歩時でもサングラス使用</li>
-        <li>反射光が多い場所（海辺、砂浜）での対策強化</li>
+        <li>「濃いレンズ＝UV性能が高い」は誤りです。暗いレンズは瞳孔が開き、レンズ周囲からの紫外線が入りやすくなる可能性があります</li>
+        <li>UV目薬はあくまで事後ケアで、サングラスの代わりにはなりません</li>
+        <li>開封後のUV目薬は劣化が進みやすいため、使用期限を守りましょう</li>
       </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">屋内・曇りの日対策</h3>
-      <p className="text-gray-700 mb-4">曇りの日の紫外線量は晴天時の<strong>60～80%</strong>程度です。紫外線はガラスを透過するため、室内にいても窓際は注意が必要です。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>定期的な窓際でのUV目薬使用</li>
-        <li>長時間の外出時は天候に関わらずサングラス着用</li>
-        <li>屋内勤務でも午後の時間帯は窓際を避ける</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">高リスク職業と対策</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">屋外作業従事者</h3>
-      <p className="text-gray-700 mb-4">農業、建設業、運送業など、屋外での作業時間が年間2000時間以上の職業では、<strong>白内障発症率が一般業務従事者の3～5倍</strong>に跳ね上がります。</p>
-      <p className="text-gray-700 mb-4">対策ポイント：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>毎日のサングラス使用（UV99%以上）</li>
-        <li>作業後の毎日のUV目薬使用（アスコルビン酸3.5%以上）</li>
-        <li>定期的な眼科検診（年2回以上）</li>
-        <li>帽子併用</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">マリンスポーツ愛好者</h3>
-      <p className="text-gray-700 mb-4">海水の反射率は<strong>10～20%</strong>で、砂浜は<strong>15～25%</strong>です。これにより眼底への紫外線到達量が増加します。</p>
-      <p className="text-gray-700 mb-4">対策ポイント：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ポリカーボネート製の高性能UVサングラス着用</li>
-        <li>水に強いストラップ付きモデルの選択</li>
-        <li>スポーツ用UV目薬の常備</li>
-        <li>マリンスポーツ後は冷たい水で目を洗浄（清潔な水に限定）</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">高地登山者</h3>
-      <p className="text-gray-700 mb-4">標高が1000m高くなるごとに、紫外線量は約<strong>10～12%増加</strong>します。富士山頂（3776m）では麓の紫外線量の2倍以上に達します。</p>
-      <p className="text-gray-700 mb-4">対策ポイント：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>登頂前1週間からのUV目薬事前使用</li>
-        <li>高性能なマウンテンスポーツ用サングラス着用</li>
-        <li>こまめなUV目薬補給（2時間ごと）</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">サングラスとUV目薬の相乗効果</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">併用のメカニズム</h3>
-      <p className="text-gray-700 mb-4">紫外線対策において、サングラスとUV目薬は<strong>異なるレベルで作用</strong>します。</p>
-      <p className="text-gray-700 mb-4">1. <strong>第一次防御（サングラス）</strong>：99%の紫外線をカット</p>
-      <p className="text-gray-700 mb-4">2. <strong>第二次対応（UV目薬）</strong>：残存する1%の紫外線と、環境ストレスのダメージをケア</p>
-      <p className="text-gray-700 mb-4">この組み合わせにより、最大限の目保護が実現します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">長期使用による効果検証</h3>
-      <p className="text-gray-700 mb-4">日本眼科学会が実施した追跡調査（10年間）では、サングラスとUV目薬を毎日併用した被験者群は、対策なし群と比べて：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>白内障発症率：65%低減</li>
-        <li>翼状片発症率：73%低減</li>
-        <li>目の疲労感：58%低減</li>
-      </ul>
-      <p className="text-gray-700 mb-4">という顕著な成果が報告されています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">製品選択の統合的アプローチ</h3>
-      <p className="text-gray-700 mb-4">最適な紫外線対策には、単なる「高性能製品の購入」ではなく、<strong>体系的な戦略</strong>が必要です。</p>
-      <p className="text-gray-700 mb-4"><strong>推奨される選択フロー</strong>：</p>
-      <p className="text-gray-700 mb-4">1. UV99%以上のサングラスを基盤とする</p>
-      <p className="text-gray-700 mb-4">2. アスコルビン酸3.5%以上のUV目薬を追加</p>
-      <p className="text-gray-700 mb-4">3. 職業・環境に応じた使用頻度の調整</p>
-      <p className="text-gray-700 mb-4">4. 3年ごとのサングラス取り替え（レンズ劣化対策）</p>
-      <p className="text-gray-700 mb-4">5. 年1回の眼科検診で進捗確認</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">注意すべき落とし穴</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">暗いレンズの誤認</h3>
-      <p className="text-gray-700 mb-4">「濃いレンズ＝UV性能が高い」という誤認は非常に危険です。暗いレンズは瞳孔を開かせ、レンズ周囲からの紫外線漏入が増加します。<strong>UV性能とレンズの濃さは全く別物</strong>であることを理解してください。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">使用期限の過ぎたUV目薬の使用</h3>
-      <p className="text-gray-700 mb-4">開封後1ヶ月を超えたUV目薬は、有効成分の劣化や防腐剤の効力低下により、かえって目に悪影響を及ぼす可能性があります。毎月新しい製品に交換する習慣をつけましょう。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">過信による対策の中断</h3>
-      <p className="text-gray-700 mb-4">サングラスの使用感が良いと、UV目薬を使用しなくなる傾向が見られます。しかし、わずかな紫外線漏入と環境ストレスは継続的に蓄積されます。<strong>併用の習慣化</strong>が長期的な眼病予防につながります。</p>
+
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
-      <p className="text-gray-700 mb-4">目の紫外線対策は、肌のUV対策と異なり、初期段階では自覚症状がないため見落とされやすい分野です。しかし、白内障・翼状片・黄斑変性症などの深刻な眼病は、予防可能な疾患です。</p>
-      <p className="text-gray-700 mb-4"><strong>効果的な対策の3本柱</strong>：</p>
-      <p className="text-gray-700 mb-4">1. <strong>UV99%以上のサングラス</strong>を日常的に使用</p>
-      <p className="text-gray-700 mb-4">2. <strong>アスコルビン酸配合のUV目薬</strong>を毎日補給</p>
-      <p className="text-gray-700 mb-4">3. <strong>年1回の眼科検診</strong>で早期発見</p>
-      <p className="text-gray-700 mb-4">これらを組み合わせることで、50年後60年後も健康な視力を保つことができます。特に屋外活動が多い方や、高紫外線地域にお住まいの方は、今から対策を開始することをお勧めします。</p>
+      <p className="text-gray-700 mb-4">目の紫外線対策は、UVカットサングラスによる日常的な予防と、UV目薬による事後ケアを組み合わせることが基本です。</p>
+      <p className="text-gray-700 mb-4">自覚症状が出にくい分野だからこそ、日々の習慣として無理なく続けることが大切です。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('サンテメディカル12')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">屋外活動後のケアに</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテメディカル12</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">サンテメディカル12を楽天で見る →</div>
+        </a>
+      </div>
     </article>
   ),
     "lasik-dry-eye-management-postoperative-care-2026": (
@@ -5986,314 +5927,193 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   ),
     "myopia-prevention-children-atropine-orthokeratology": (
     <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">はじめに：子どもの近視進行が急増する背景</h2>
-      <p className="text-gray-700 mb-4">近年、日本の子どもたちの近視進行が国際的に見ても加速度的に増加しています。日本眼光学会のデータによれば、2000年代初頭の小学生の近視有病率は約30%でしたが、2020年代には約50%を超えるまで増加しています。この急速な進行は、スマートフォンやタブレット端末の普及、学習環境の変化、屋外活動時間の減少など、複合的な要因が関係しています。</p>
-      <p className="text-gray-700 mb-4">特に懸念されるのが、成長期の子どもにおける近視の進行速度です。大人では年間0.25～0.5D（ジオプター：屈折度数の単位）程度の進行が一般的ですが、10代の子どもでは年間1～2D以上の急速な進行が報告されており、放置すると高度近視に至る危険性が高まります。</p>
-      <p className="text-gray-700 mb-4">高度近視は単なる視力低下にとどまらず、網膜剥離や緑内障など、将来的に失明につながる眼疾患のリスク因子となるため、早期からの進行抑制が極めて重要です。本記事では、医学的根拠に基づいた最新の近視進行抑制治療法である「アトロピン点眼」と「オルソケラトロジー」について、その仕組み、効果、費用、使い分けを詳しく解説します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">近視進行の仕組み：なぜ子どもの近視は進むのか</h2>
-      <p className="text-gray-700 mb-4">近視のメカニズムを理解することは、進行抑制治療を選択する際に非常に重要です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼球伸長と近視の発症</h3>
-      <p className="text-gray-700 mb-4">正常な眼は、光が網膜の表面でピントを結ぶように設計されています。しかし、何らかの原因で眼球が前後方向に伸長すると、光が網膜の手前でピントを結ぶようになり、これが近視です。子どもの成長期には眼球も発育段階にあり、特に眼軸長（眼球の前後方向の長さ）が伸長しやすい状態にあります。</p>
-      <p className="text-gray-700 mb-4">眼軸長は生まれた時点では約16～17mmですが、成人では約24mm程度に伸長します。この過程で適切にコントロールされないと、過度な伸長が発生し、近視が進行するのです。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">アセチルコリン仮説と調節</h3>
-      <p className="text-gray-700 mb-4">眼球伸長のメカニズムとして、アセチルコリンという神経伝達物質が重要な役割を果たすと考えられています。アセチルコリンは、眼球の後部にある強膜（眼球の外壁）に作用し、眼球伸長を促進する可能性があります。</p>
-      <p className="text-gray-700 mb-4">近距離作業（スマートフォンやパソコン使用）を長時間続けると、眼の調節機能が刺激され、アセチルコリンが過剰に産生され、これが眼球伸長を加速させるという仮説が有力です。つまり、「近い距離のものばかり見ていると、眼が眼球を伸長させて対応しようとする」という悪循環が生じるのです。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アトロピン点眼：近視進行抑制の新しいスタンダード</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">アトロピンの作用メカニズム</h3>
-      <p className="text-gray-700 mb-4">アトロピンは、抗コリン薬（アセチルコリンの作用を阻害する薬物）です。アセチルコリンが眼球伸長を促進するなら、その作用を阻害することで伸長を抑制できるという考えに基づいています。</p>
-      <p className="text-gray-700 mb-4">従来、近視矯正のためにアトロピンが使用されてきましたが、高濃度アトロピン（1%）では以下の副作用が問題でした：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>調節麻痺</strong>：瞳孔が常に散大し、ピント調節機能が失われる</li>
-        <li><strong>光過敏症</strong>：光への感受性が極度に高まり、日中の外出が困難になる</li>
-        <li><strong>眼圧上昇</strong>：緑内障のリスク増加</li>
-      </ul>
-      <p className="text-gray-700 mb-4">これらの問題から、従来は小児への使用が制限されていました。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">低濃度アトロピン（0.01%）の登場と臨床成績</h3>
-      <p className="text-gray-700 mb-4">2019年にシンガポール国立眼科センターが発表した画期的な研究が、治療法を大きく変えました。低濃度アトロピン（0.01%）を使用した場合、以下の成績が報告されました：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>近視進行抑制率：約50～60%</strong></li>
-        <li><strong>眼軸長伸長の抑制率：約50～60%</strong></li>
-        <li><strong>副作用の大幅な軽減</strong></li>
-      </ul>
-      <p className="text-gray-700 mb-4">具体的には、1年間の観察期間において：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>高濃度アトロピン群：眼軸長延長 0.30mm</li>
-        <li>低濃度アトロピン群：眼軸長延長 0.15mm</li>
-      </ul>
-      <p className="text-gray-700 mb-4">つまり、低濃度アトロピンは約50%の眼軸伸長を抑制したことになります。さらに重要なのは、治療中止後も抑制効果が持続する傾向が見られた点です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">使用方法と実際の運用</h3>
-      <p className="text-gray-700 mb-4">低濃度アトロピン0.01%は、通常1日1回、就寝前に点眼します。主な利点は以下の通りです：</p>
-      <p className="text-gray-700 mb-4">1. <strong>使用が簡単</strong>：毎日1滴の点眼のみで、特別な手技が不要</p>
-      <p className="text-gray-700 mb-4">2. <strong>可逆性</strong>：中止すれば通常の視機能に戻る</p>
-      <p className="text-gray-700 mb-4">3. <strong>コスト効率的</strong>：治療費用が相対的に低い</p>
-      <p className="text-gray-700 mb-4">4. <strong>副作用が少ない</strong>：低濃度のため調節麻痺がほぼない</p>
-      <p className="text-gray-700 mb-4">ただし、日本では現在、低濃度アトロピン0.01%が医療用医薬品として正式承認されていません。そのため、眼科医が自費診療として「院内製造」する形で処方している施設が多くあります。費用は月額500～1,500円程度が一般的です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">アトロピン治療の注意点</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>定期的な眼科検診が必須</strong>：3～6ヶ月ごとの受診で進行状況を確認</li>
-        <li><strong>他の屋外活動推奨と併用</strong>：点眼のみでは不十分で、生活習慣改善が必須</li>
-        <li><strong>個人差</strong>：すべての子どもに同等の効果があるわけではなく、20～30%の子どもでは効果が限定的</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">オルソケラトロジー：就寝中の視力矯正と近視進行抑制</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">オルソケラトロジーの原理</h3>
-      <p className="text-gray-700 mb-4">オルソケラトロジー（Orthokeratology、OK）は、高酸素透過性の特殊なコンタクトレンズを就寝中に装着することで、角膜の形状を一時的に変形させ、昼間の視力を矯正する治療法です。「Ortho（矯正）」「Kerato（角膜）「Logy（学問）」の造語で、1960年代に開発されました。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">視力矯正のメカニズム</h3>
-      <p className="text-gray-700 mb-4">通常のコンタクトレンズとは異なり、OKレンズは：</p>
-      <p className="text-gray-700 mb-4">1. <strong>特殊な光学デザイン</strong>：複数のカーブを組み合わせた精密な設計</p>
-      <p className="text-gray-700 mb-4">2. <strong>逆幾何学的形状</strong>：角膜より平坦な中央部と、急勾配の周辺部</p>
-      <p className="text-gray-700 mb-4">3. <strong>眼球運動との相互作用</strong>：まばたきの圧力により角膜が徐々に平坦化</p>
-      <p className="text-gray-700 mb-4">就寝中（約6～8時間）レンズを装着することで、角膜表面が緩やかに平坦化され、朝レンズを外した後も数時間は矯正効果が持続します。多くの場合、昼間の矯正視力は0.8～1.2程度まで回復します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">近視進行抑制メカニズム</h3>
-      <p className="text-gray-700 mb-4">OKが近視進行を抑制するメカニズムについては、複数の仮説があります：</p>
-      <p className="text-gray-700 mb-4"><strong>仮説1：周辺網膜の離焦</strong></p>
-      <p className="text-gray-700 mb-4">角膜を平坦化させることで、中央部のピント位置が変わり、周辺網膜での焦点が網膜後方にシフトします。この「後方離焦」が眼球伸長を抑制するシグナルになると考えられています。</p>
-      <p className="text-gray-700 mb-4"><strong>仮説2：眼球表面の張力変化</strong></p>
-      <p className="text-gray-700 mb-4">OKレンズの物理的な圧力により、眼球表面の張力が変化し、強膜のリモデリング（再構築）が促進される可能性があります。</p>
-      <p className="text-gray-700 mb-4"><strong>仮説3：角膜内皮細胞の活性化</strong></p>
-      <p className="text-gray-700 mb-4">レンズによる微小な機械刺激が、角膜内皮細胞を活性化させ、生物学的なシグナルが発生する可能性があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">臨床成績と有効性</h3>
-      <p className="text-gray-700 mb-4">複数の大規模臨床試験データから：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>近視進行抑制率：約40～50%</strong></li>
-        <li><strong>眼軸長伸長抑制率：約43～50%</strong></li>
-        <li><strong>矯正視力の回復率：約90%が0.8以上に達成</strong></li>
-      </ul>
-      <p className="text-gray-700 mb-4">2年間の観察研究では、OKレンズ装用者の眼軸延長が0.3mmであったのに対し、対照群（通常のメガネ使用者）は0.8mmであり、約62%の抑制効果が確認されています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">OKレンズの実用的な特徴</h3>
-      <p className="text-gray-700 mb-4"><strong>利点：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>昼間の视力が矯正される（眼鏡やコンタクトレンズが不要）</li>
-        <li>スポーツなど活動的なライフスタイルに適している</li>
-        <li>近視進行抑制効果が比較的安定</li>
-        <li>可逆的（中止後、2～4週間で角膜が元の形状に戻る）</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>欠点：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>毎晩のレンズ装着・洗浄が必須（手技の習得が必要）</li>
-        <li>費用が高い（月額5,000～15,000円）</li>
-        <li>すべての度数に対応できない（強度近視では効果限定的）</li>
-        <li>コンタクトレンズのトラブル（感染症など）リスク</li>
-        <li>小児での自己管理が困難な場合がある</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">OKレンズ使用上の注意点</h3>
-      <p className="text-gray-700 mb-4">1. <strong>眼科医の指導が必須</strong>：装着方法、洗浄方法、トラブル時の対応を習得する必要があります</p>
-      <p className="text-gray-700 mb-4">2. <strong>定期的な受診</strong>：月1回程度の受診で角膜の状態を確認</p>
-      <p className="text-gray-700 mb-4">3. <strong>衛生管理が重要</strong>：感染症予防のため、レンズケースの洗浄・交換、手指衛生が徹底必須</p>
-      <p className="text-gray-700 mb-4">4. <strong>就寝時間の確保</strong>：効果を維持するために毎晩6～8時間の装着が必要</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アトロピン点眼とオルソケラトロジーの比較</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">効果の比較</h3>
-      <p className="text-gray-700 mb-4">| 項目 | アトロピン0.01% | オルソケラトロジー |</p>
-      <p className="text-gray-700 mb-4">|------|-----------------|-------------------|</p>
-      <p className="text-gray-700 mb-4">| 近視進行抑制率 | 約50～60% | 約40～50% |</p>
-      <p className="text-gray-700 mb-4">| 眼軸伸長抑制 | 約50～60% | 約43～50% |</p>
-      <p className="text-gray-700 mb-4">| 初期効果発現 | 緩やか（3～6ヶ月） | 迅速（数日～2週間） |</p>
-      <p className="text-gray-700 mb-4">| 矯正視力 | 日常生活に影響なし | 昼間の視力が回復 |</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">費用比較</h3>
-      <p className="text-gray-700 mb-4">| 項目 | アトロピン0.01% | オルソケラトロジー |</p>
-      <p className="text-gray-700 mb-4">|------|-----------------|-------------------|</p>
-      <p className="text-gray-700 mb-4">| 初期費用 | 500～1,000円 | 10,000～30,000円（初回) |</p>
-      <p className="text-gray-700 mb-4">| 月額費用 | 500～1,500円 | 5,000～15,000円 |</p>
-      <p className="text-gray-700 mb-4">| 年間費用 | 約6,000～18,000円 | 約60,000～180,000円 |</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">使い分けのポイント</h3>
-      <p className="text-gray-700 mb-4"><strong>アトロピン0.01%が向いている子ども：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>毎日のレンズ管理が難しい低年齢児</li>
-        <li>スポーツをしていない、または視力矯正が不要な場合</li>
-        <li>自己管理能力がまだ十分でない場合</li>
-        <li>費用をできるだけ抑えたい場合</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>オルソケラトロジーが向いている子ども：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>スポーツなどで昼間の視力矯正が必要な場合</li>
-        <li>十分な自己管理能力がある（8歳以上が目安）</li>
-        <li>レンズの洗浄などの手技を習得できる</li>
-        <li>迅速な視力回復を望む場合</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>併用が有効な場合：</strong></p>
-      <p className="text-gray-700 mb-4">研究によれば、アトロピン点眼とOKレンズの併用で、単独使用より約60～70%の近視進行抑制が報告されています。より強力な進行抑制が必要な高度近視予備群には、併用療法の検討価値があります。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">その他の補助的な近視進行抑制法</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">屋外活動時間の確保</h3>
-      <p className="text-gray-700 mb-4">複数の大規模疫学研究において、屋外活動時間が長い子どもほど近視進行が遅いことが報告されています。特に、1日2時間以上の屋外活動が推奨されています。</p>
-      <p className="text-gray-700 mb-4">屋外環境は：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>自然光（紫外線を含む）が多いため、網膜の周辺部に「焦点ぼけ」が生じにくい</li>
-        <li>動く風景を見ることで、眼の調節が動的に変化する</li>
-        <li>ドーパミン産生が促進される（動物実験で眼球伸長を抑制する効果が確認）</li>
-      </ul>
-      <p className="text-gray-700 mb-4">費用ゼロで実施可能な、最も基本的な進行抑制法です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">近距離作業時の定期的な休憩</h3>
-      <p className="text-gray-700 mb-4">20-20-20ルール（20分ごとに、20秒間、20フィート（約6m）先を見る）の実践により、調節疲労を軽減し、近視進行を遅延させる効果が期待できます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">栄養学的アプローチ：ルテインとアストキサンチン</h3>
-      <p className="text-gray-700 mb-4">ルテインやアストキサンチンなどのカロテノイドが眼組織の健康維持に有用であることが報告されています。網膜の周辺部機能が向上することで、間接的に近視進行を抑制する可能性があります。</p>
-      <p className="text-gray-700 mb-4">眼の健康維持のための栄養補給に関心のある方向けに、代表的な製品を1点紹介します（近視進行抑制治療の代わりにはなりません）：</p>
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        子どもの近視進行は、家庭での様子見だけでは進行速度を把握しにくいものです。低濃度アトロピン点眼やオルソケラトロジーといった進行抑制治療は、いずれも眼科医の診断と処方が必要な医療行為です。まずはチェックリストで受診の目安を確認しましょう。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">受診を検討すべきチェックリスト</h2>
+      <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-4 mb-6">
+        <p className="font-bold text-cyan-800 mb-2">当てはまる項目が多いほど、眼科での相談を検討する目安になります</p>
+        <ul className="text-sm text-gray-700 space-y-1">
+          <li>□ 半年〜1年で急に度数が進んでいる</li>
+          <li>□ 両親のどちらかが強い近視である</li>
+          <li>□ スマホ・タブレットの近距離作業時間が長い</li>
+          <li>□ 屋外で過ごす時間が1日2時間未満である</li>
+          <li>□ 黒板の文字が見えにくいなど、学校生活で支障が出ている</li>
+        </ul>
+      </div>
       <div className="my-4">
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">目の健康維持サプリ</span>
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">目の健康維持サプリ（治療の代替ではありません）</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
-          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。あくまで日常の栄養補給を目的とした食品です</p>
+          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。日常の栄養補給を目的とした食品です</p>
           <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
         </a>
       </div>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">子どもの近視進行抑制治療を始める前のチェックリスト</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼科医に確認すべき項目</h3>
-      <p className="text-gray-700 mb-4">1. <strong>現在の度数と進行速度</strong>：3～6ヶ月ごとの視力測定記録を確認</p>
-      <p className="text-gray-700 mb-4">2. <strong>眼軸長の測定</strong>：光学的眼軸長測定（OCT-A）で正確な眼軸長を把握</p>
-      <p className="text-gray-700 mb-4">3. <strong>角膜やレンズの異常</strong>：OKレンズ装用の適否判定に必須</p>
-      <p className="text-gray-700 mb-4">4. <strong>眼圧測定</strong>：治療開始前のベースライン測定が重要</p>
-      <p className="text-gray-700 mb-4">5. <strong>家族歴</strong>：両親の近視度数が強い場合、より積極的な対応が必要</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">治療選択前の生活習慣チェック</h3>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">近視進行の仕組みと治療の選択肢</h2>
+      <p className="text-gray-700 mb-4">近視は、眼球の前後方向の長さ（眼軸長）が伸長することで、光が網膜の手前でピントを結ぶようになる状態です。成長期の子どもは眼軸長が伸びやすく、近距離作業の多さなどが進行に関わるとされています。現在、医療機関で提供される主な進行抑制治療は次の2つです。</p>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">治療法</th>
+              <th className="text-left p-3 border border-gray-200">内容</th>
+              <th className="text-left p-3 border border-gray-200">月額費用目安</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: '低濃度アトロピン点眼（0.01%）', desc: '就寝前に1日1回点眼。国内では医療用医薬品として未承認のため、自費診療で処方する施設が中心', cost: '500〜1,500円' },
+              { name: 'オルソケラトロジー（OK）', desc: '特殊なコンタクトレンズを就寝中に装着し、角膜形状を一時的に矯正する', cost: '5,000〜15,000円' },
+            ].map(r => (
+              <tr key={r.name} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.desc}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.cost}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-gray-700 mb-4">複数の研究で、いずれの治療法も一定の近視進行抑制効果が報告されています。ただし効果には個人差があり、両者を併用することでさらなる抑制効果が報告されている研究もあります。どちらが適しているかは、お子さんの年齢や自己管理能力、ライフスタイルによって異なるため、眼科医との相談が前提になります。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">家庭でできるセルフケア</h2>
+      <p className="text-gray-700 mb-4">医療機関での治療と並行して、生活習慣の見直しも近視進行対策の一つとされています。</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>屋外活動時間は1日2時間以上か？</li>
-        <li>スマートフォン使用時間を制限できるか？</li>
-        <li>読書姿勢は正しいか？（目から30cm以上離す）</li>
-        <li>就寝時間は十分か？（7～9時間以上が目安）</li>
-        <li>栄養バランスは良好か？</li>
+        <li><strong>屋外活動時間の確保：</strong>1日2時間程度の屋外活動が、近視進行の抑制と関連するという報告があります</li>
+        <li><strong>近距離作業時の休憩：</strong>20-20-20ルール（20分ごとに20秒、遠くを見る）を習慣にしましょう</li>
+        <li><strong>読書姿勢の見直し：</strong>目から30cm以上離す、正しい姿勢を意識しましょう</li>
+        <li><strong>十分な睡眠時間の確保</strong></li>
       </ul>
-      <p className="text-gray-700 mb-4">生活習慣の改善なしに、薬物療法やOKレンズだけに頼ることは有効ではありません。医学的治療と生活改善の両輪が不可欠です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめと今後の展開</h2>
-      <p className="text-gray-700 mb-4">子どもの近視進行抑制は、単なる視力矯正から、眼球伸長そのものを制御する時代へ移行しています。アトロピン点眼とオルソケラトロジーは、いずれも医学的根拠に基づいた有効な治療法であり、個々の子どもの年齢、ライフスタイル、自己管理能力に応じて、最適な方法を選択することが重要です。</p>
-      <p className="text-gray-700 mb-4">重要なのは、治療開始と同時に、屋外活動時間の確保、近距離作業の適切な管理、定期的な眼科検診を継続することです。早期からの総合的なアプローチにより、子どもの高度近視化を予防し、生涯の眼健康を守ることができます。</p>
-      <p className="text-gray-700 mb-4">お子さんの視力に不安を感じられたら、まずは眼科医に相談され、本記事の情報を基に、最適な治療戦略を立てることをお勧めします。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">スマホ・タブレット使用時の負担軽減に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
+          <p className="text-xs text-gray-500 mb-3">近視進行抑制治療の代わりにはなりません。あくまで生活面のサポートとして</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">JINS SCREENを楽天で見る →</div>
+        </a>
+      </div>
+      <p className="text-gray-700 mb-4">生活習慣の改善だけで進行が止まるとは限りません。治療を検討している場合は、生活改善と併せて眼科医に相談することが基本です。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">受診の目安・医師に相談すべきサイン</h2>
+      <p className="text-gray-700 mb-4">以下のような場合は、早めに眼科を受診することをおすすめします。</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>視力検査で急激な低下が見られた</li>
+        <li>黒板や遠くの文字が見えにくいと本人が訴えている</li>
+        <li>両親のどちらかが強度近視で、遺伝的なリスクが気になる</li>
+        <li>治療（アトロピン点眼・OKレンズ）を検討したい</li>
+      </ul>
+      <p className="text-gray-700 mb-4">治療を開始した場合も、3〜6ヶ月ごとの定期受診で進行状況を確認することが基本です。眼科医の指導のもとで、正しく継続することが大切です。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">子どもの近視進行抑制には、低濃度アトロピン点眼とオルソケラトロジーという2つの医療的選択肢があります。いずれも眼科医の診断・処方が前提の治療であり、家庭だけで判断するものではありません。</p>
+      <p className="text-gray-700 mb-4">屋外活動の確保など生活習慣の見直しと合わせて、気になる症状があれば早めに眼科医に相談してみてください。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">日常の栄養補給に（治療の代替ではありません）</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">DHC ルテイン光対策を楽天で見る →</div>
+        </a>
+      </div>
     </article>
   ),
     "uv-sunglasses-eyecare-2026": (
     <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目の紫外線対策が重要な理由</h2>
-      <p className="text-gray-700 mb-4">紫外線は肌だけでなく、目にも深刻なダメージを与えます。日本眼科医会によると、紫外線による眼病のリスクは増年とともに高まり、特に40代以降で白内障の発症率が急増することが報告されています。</p>
-      <p className="text-gray-700 mb-4"><strong>紫外線が目に与える具体的な影響：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>翼状片</strong>：紫外線が原因で結膜が異常増殖し、角膜に向かって広がる病気。屋外労働者に多く見られます</li>
-        <li><strong>白内障</strong>：レンズが白く濁る疾患。紫外線の長期浴露が主な原因の一つです</li>
-        <li><strong>瞼裂斑</strong>：まぶたの開きが大きい部分に黄色い班ができる症状</li>
-        <li><strong>光角膜炎</strong>：紫外線による急性炎症で、目の痛みや充血を引き起こします</li>
-      </ul>
-      <p className="text-gray-700 mb-4">世界保健機関（WHO）では、毎年300万人以上が紫外線による目の損傷で視覚障害を抱えていると指摘しており、予防的なUV対策の重要性が強調されています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年推奨のUVカットサングラス選び方</h2>
-      <p className="text-gray-700 mb-4">UVカットサングラスを選ぶ際には、見た目のおしゃれさだけでなく、以下の性能指標に注目することが大切です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">紫外線透過率の確認</h3>
-      <p className="text-gray-700 mb-4">最も重要なのは「紫外線透過率」です。この数値は低いほど良く、<strong>1%以下が理想的</strong>とされています。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>日本工業規格（JIS）による分類では、紫外線透過率1%以下が「UV カット」の定義</li>
-        <li>サングラス購入時には、タグや説明書に記載された透過率を必ず確認してください</li>
-        <li>「99%カット」と表記されているものは、透過率1%以下を意味し、基準を満たしています</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レンズサイズと形状</h3>
-      <p className="text-gray-700 mb-4">紫外線は横からも入り込むため、レンズサイズが重要です。</p>
-      <p className="text-gray-700 mb-4"><strong>最適なレンズ選び：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>幅広レンズ（最低でも幅4cm以上が目安）</li>
-        <li>顔にぴったりフィットするデザイン</li>
-        <li>顔の輪郭に合わせた形状（側面からの光漏れを防止）</li>
-        <li>大きめサイズは側面からの紫外線カット率が40%向上します</li>
-      </ul>
-      <p className="text-gray-700 mb-4">実際に、オーストラリアの眼科学会が行った調査では、大きなサングラスを使用した場合、側面からの紫外線カット率が57%だったのに対し、小さいサングラスでは17%にとどまったことが明らかになっています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レンズの色選び</h3>
-      <p className="text-gray-700 mb-4"><strong>一般的な色による特性：</strong></p>
-      <p className="text-gray-700 mb-4">| 色      | 特徴                          | 用途             |</p>
-      <p className="text-gray-700 mb-4">|--------|-------------------------------|-----------------|</p>
-      <p className="text-gray-700 mb-4">| グレー  | 光の吸収バランスが良い、目が疲れにくい | 日常使用（推奨） |</p>
-      <p className="text-gray-700 mb-4">| ブラウン| コントラストが強く、見やすい      | ドライブ、スポーツ |</p>
-      <p className="text-gray-700 mb-4">| グリーン| 目にやさしく、長時間の使用に適す | 長時間着用      |</p>
-      <p className="text-gray-700 mb-4">| ブルー  | ファッション性が高いが視認性は落ちる | カジュアル      |</p>
-      <p className="text-gray-700 mb-4">濃い色=紫外線カット率が高いわけではないため、必ず製品の仕様を確認してください。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">UVカット眼鏡の最新トレンド2026</h2>
-      <p className="text-gray-700 mb-4">通常の眼鏡では紫外線カットできないため、度付きが必要な方は<strong>UVカットコーティング眼鏡</strong>がおすすめです。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">UVカット眼鏡の種類</h3>
-      <p className="text-gray-700 mb-4"><strong>1. UVカットコーティングタイプ</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>レンズ表面にUVカット膜を施加</li>
-        <li>既存の眼鏡にも後付け可能な場合がある</li>
-        <li>コストが比較的低い（3,000円～8,000円程度）</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>2. UV遮断素材タイプ</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>レンズそのものが紫外線をカットする素材</li>
-        <li>表面コーティングより耐久性が高い</li>
-        <li>価格帯：8,000円～15,000円</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>3. 調光レンズ型</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>光の強さにより色が自動調整</li>
-        <li>室内外の移動が多い人向け</li>
-        <li>価格帯：12,000円～25,000円</li>
-      </ul>
-      <p className="text-gray-700 mb-4">2026年の調査では、UVカット眼鏡の購入者の68%が「日中屋外で1時間以上過ごす」と答えており、予防意識の向上が明らかです。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">UV対策グッズの多角的アプローチ</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">UVカット帽子</h3>
-      <p className="text-gray-700 mb-4">帽子はサングラスと併用することで、さらに効果的な紫外線対策になります。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>効果的な帽子の選び方</strong>：つばが7cm以上の帽子により、目周辺の紫外線量は60%削減</li>
-        <li><strong>素材選び</strong>：UV加工されたポリエステル製や麻混紡素材が紫外線カット率が高い</li>
-        <li><strong>つば付きキャップ</strong>：前つばだけでなく、側面カバー付きがより効果的</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">UVカット目薬</h3>
-      <p className="text-gray-700 mb-4">長時間の屋外活動後は、UVカット成分配合の目薬で目をケアします。</p>
-      <p className="text-gray-700 mb-4"><strong>配合成分と効果：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ビタミンE：抗酸化作用で紫外線ダメージから目を保護</li>
-        <li>ルテイン：目の黄斑部に蓄積し、紫外線吸収機能を担う</li>
-        <li>アスタキサンチン：強力な抗酸化成分で、紫外線によるフリーラジカル生成を抑制</li>
-      </ul>
-      <p className="text-gray-700 mb-4">医学論文によると、ルテイン配合目薬の継続使用により、目の紫外線感受性が3週間で18%低下することが報告されています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">UV対応コンタクトレンズ</h3>
-      <p className="text-gray-700 mb-4">コンタクトレンズユーザーは、UV対応製品の選択が重要です。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>現在、市場に流通するソフトコンタクトレンズの約85%がUVカット機能を備えている</li>
-        <li>ただし、<strong>コンタクトレンズだけでは完全な紫外線防止ができない</strong>ため、サングラス併用が推奨される</li>
-        <li>白内障リスク低減には、サングラス使用者でUV対応コンタクト使用者が最も有効</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">年代別・生活スタイル別選び方ガイド</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">20～30代の方</h3>
-      <p className="text-gray-700 mb-4">外出機会が多く、ファッション性も重視される世代です。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>選択肢</strong>：おしゃれなデザインのUVカットサングラス＋UVカット帽子</li>
-        <li><strong>推奨項目</strong>：紫外線透過率1%以下、UV400カット（波長400nm以下をカット）</li>
-        <li><strong>価格帯の目安</strong>：3,000円～10,000円</li>
-      </ul>
-      <p className="text-gray-700 mb-4">この年代から紫外線対策を始めることで、40代以降の白内障発症リスクを25～30%削減できます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">40～50代の方</h3>
-      <p className="text-gray-700 mb-4">既に紫外線の蓄積がある世代です。より徹底的なUV対策が必要です。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>選択肢</strong>：UVカット眼鏡＋UVカット帽子＋UVカット目薬の3点セット</li>
-        <li><strong>重視点</strong>：度数調整の容易さ、長時間装用時の快適性</li>
-        <li><strong>おすすめグッズ</strong>：偏光レンズ入りUVカットサングラス（映り込み軽減で見やすさ向上）</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">スポーツ・屋外労働者</h3>
-      <p className="text-gray-700 mb-4">最も紫外線浴露量が多い層です。特別な対策が必要です。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>選択肢</strong>：スポーツ用UVカットサングラス＋UVカット帽子＋日焼け止め＋UVカット目薬</li>
-        <li><strong>必須機能</strong>：曇り防止機能、汗耐性、ズレにくい設計</li>
-        <li><strong>追加対策</strong>：UV対応コンタクトレンズ、目元用UVクリーム</li>
-      </ul>
-      <p className="text-gray-700 mb-4">実測データでは、屋外で8時間以上従事する労働者が包括的なUV対策を実施した場合、10年後の眼病発症率が非対策者比で42%低下することが報告されています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">楽天でのおすすめUV対策グッズ購入ガイド</h2>
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        紫外線は肌だけでなく目にもダメージを与えるとされています。この記事では、サングラス・UV目薬など実在する対策グッズを比較しながら紹介します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">UV対策グッズ早見表</h2>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-left p-3 border border-gray-200">特徴</th>
+              <th className="text-left p-3 border border-gray-200">価格帯</th>
+              <th className="text-left p-3 border border-gray-200">おすすめ度</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'Isabell 偏光サングラス', feature: 'UV99%以上カット。映り込みを軽減する偏光レンズ', price: '3,280円〜', rating: '★★★★★' },
+              { name: 'サンテメディカル12', feature: '紫外線その他の光線による眼炎（雪目など）に対応', price: '1,500円前後', rating: '★★★★☆' },
+            ].map(r => (
+              <tr key={r.name} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.feature}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.price}</td>
+                <td className="p-3 border border-gray-200 text-amber-500">{r.rating}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="my-4">
+        <a href={RAKUTEN('Isabell 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Isabell 偏光サングラス</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">Isabell 偏光サングラスを楽天で見る →</div>
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">紫外線が目に与える影響</h2>
+      <p className="text-gray-700 mb-4">紫外線は肌だけでなく、目にもダメージを与えるとされています。長期的な紫外線曝露は、白内障・翼状片・瞼裂斑・光角膜炎などのリスク要因の一つとして知られています。目のダメージは蓄積型であり、日々の対策の積み重ねが大切です。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">タイプ別のおすすめグッズ</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">日常使いのサングラスを探している方に：Isabell 偏光サングラス</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>UV99%以上カットで、偏光レンズにより水面や路面の映り込みを軽減します</li>
+        <li>3,280円前後と手に取りやすい価格帯で、日常使いしやすいデザインです</li>
+        <li className="text-gray-500">気になる点：度付きが必要な方は、別途度付き対応の眼鏡店での相談が必要です</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">屋外活動後のケアも重視する方に：サンテメディカル12</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>紫外線その他の光線による眼炎（雪目など）に対応した目薬です</li>
+        <li>ビタミンB12配合で、目の疲れ・充血のケアにも使えます</li>
+        <li className="text-gray-500">気になる点：目薬はあくまで事後的なケアで、サングラスによる予防が基本です</li>
+      </ul>
+      <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href={RAKUTEN('Isabell 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">UVカット・偏光サングラス</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Isabell 偏光サングラス</p>
-          <p className="text-xs text-gray-500 mb-3">UV99%以上カット。映り込みを軽減する偏光レンズで日常使いしやすい価格帯</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Isabell 偏光サングラスを楽天で見る →</div>
+          <p className="text-xs text-gray-500 mb-3">UV99%以上カット。日常使いしやすい価格帯</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href={RAKUTEN('サンテメディカル12')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">UV・紫外線対応目薬</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテメディカル12</p>
+          <p className="text-xs text-gray-500 mb-3">紫外線による眼炎に対応。ビタミンB12配合</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
-      <p className="text-gray-700 mb-4">楽天市場ではレビュー件数が多い商品を選ぶことで、実際のユーザー評価を参考にできます。特に「紫外線透過率」「装用感」「デザイン」についてのコメントをチェックし、自分のニーズに合った製品を見つけましょう。</p>
-      <p className="text-gray-700 mb-4"><strong>購入時のポイント：</strong></p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方4つのポイント</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>返品・交換可能な商品を選ぶ（サイズやフィット感の確認のため）</li>
-        <li>セット購入でお得になるキャンペーンを活用</li>
-        <li>ポイント還元率の高いタイミングでの購入がおすすめ</li>
+        <li><strong>紫外線透過率を確認する：</strong>「UV99%カット」などの表記があるか、タグや商品説明で確認しましょう</li>
+        <li><strong>レンズサイズにも注目：</strong>紫外線は横からも入り込むため、顔にフィットする大きめのレンズが選びやすい傾向にあります</li>
+        <li><strong>色の濃さだけで判断しない：</strong>レンズの色の濃さと紫外線カット率は必ずしも比例しないため、仕様表示を確認しましょう</li>
+        <li><strong>度付きが必要な方：</strong>UVカットコーティングやUV遮断素材のレンズを、眼鏡店で相談してみてください</li>
       </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">紫外線対策の継続が重要</h2>
-      <p className="text-gray-700 mb-4">目の紫外線ダメージは蓄積型であり、一度の対策では不十分です。毎日のUV対策習慣が、将来の眼病予防に直結します。</p>
-      <p className="text-gray-700 mb-4"><strong>実行すべき対策チェックリスト：</strong></p>
-      <p className="text-gray-700 mb-4">✓ 毎日のUVカットサングラス着用（外出時は必須）</p>
-      <p className="text-gray-700 mb-4">✓ 帽子との併用で側面からの紫外線を防止</p>
-      <p className="text-gray-700 mb-4">✓ 屋外活動後のUVカット目薬でのケア</p>
-      <p className="text-gray-700 mb-4">✓ 度付きメガネユーザーはUVカット眼鏡への切り替え</p>
-      <p className="text-gray-700 mb-4">✓ 年1回の眼科検診で紫外線ダメージをチェック</p>
-      <p className="text-gray-700 mb-4">2026年の最新データによると、継続的にUV対策を実施している40歳以上の成人は、非対策者比で目の健康寿命が平均4.2年延伸することが報告されています。</p>
-      <p className="text-gray-700 mb-4">お手頃価格から高機能製品まで、豊富な選択肢がある現在、自分の生活スタイルに合ったUV対策グッズを見つけて、今から始める習慣が大切です。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">目の紫外線対策は、サングラスによる日常的な予防と、屋外活動後の目薬によるケアを組み合わせることが基本です。</p>
+      <p className="text-gray-700 mb-4">帽子との併用や、こまめな休息も合わせて、無理のない範囲で習慣化してみてください。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('サンテメディカル12')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">屋外活動後のケアに</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテメディカル12</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">サンテメディカル12を楽天で見る →</div>
+        </a>
+      </div>
     </article>
   ),
     "reading-glasses-presbyopia-choose-2026": (
@@ -6566,118 +6386,113 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   ),
     "lutein-supplement-ranking-2026": (
     <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインサプリメントの選び方と2026年おすすめランキング</h2>
-      <p className="text-gray-700 mb-4">目の健康維持を考える多くの人々が注目しているのがルテインサプリメントです。スマートフォンやパソコンの長時間使用による眼精疲労、加齢に伴う視力低下の予防として、ルテインは科学的根拠に基づいた有効成分として認識されています。本記事では2026年現在、市場で最も評価の高いルテインサプリメント製品を厳選し、含有量、吸収率、価格などの観点から詳細に比較します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインとは│なぜ目の健康に必要か</h2>
-      <p className="text-gray-700 mb-4">ルテインはカロテノイドの一種で、ほうれん草やブロッコリーなどの緑色野菜に多く含まれる天然色素です。人間の目、特に黄斑変性部分に高濃度で蓄積される栄養素として知られています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ルテインの主要機能</h3>
-      <p className="text-gray-700 mb-4">日本眼科学会によると、ルテインは以下の機能を果たします：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>光酸化ストレスからの保護</strong>：紫外線やブルーライトによる活性酸素から網膜を守る</li>
-        <li><strong>抗酸化作用</strong>：加齢黄斑変性（AMD）の進行を遅延させる可能性</li>
-        <li><strong>眼圧低下作用</strong>：一部の研究では眼圧の低下傾向を示唆</li>
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        目の健康維持のために注目されるルテインサプリメント。この記事では実在する3製品を比較しながら、含有量や価格帯から選び方を紹介します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインサプリ早見表</h2>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-left p-3 border border-gray-200">特徴</th>
+              <th className="text-left p-3 border border-gray-200">価格帯</th>
+              <th className="text-left p-3 border border-gray-200">おすすめ度</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'DHC ルテイン光対策', feature: 'ルテイン・ゼアキサンチン配合。シンプルな処方で続けやすい', price: '1,000円前後', rating: '★★★★☆' },
+              { name: 'ディアナチュラゴールド ルテイン&ゼアキサンチン', feature: 'ルテイン10mg・ゼアキサンチン2mg配合の機能性表示食品', price: '2,000円前後（60日分）', rating: '★★★★★' },
+              { name: 'ファンケル えんきん', feature: 'ルテイン・ゼアキサンチンに加えアスタキサンチンも配合', price: '3,000円前後', rating: '★★★★☆' },
+            ].map(r => (
+              <tr key={r.name} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.feature}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.price}</td>
+                <td className="p-3 border border-gray-200 text-amber-500">{r.rating}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="my-4">
+        <a href={RAKUTEN('ディアナチュラゴールド ルテイン ゼアキサンチン')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">機能性表示食品</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ディアナチュラゴールド ルテイン&ゼアキサンチン</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">ディアナチュラゴールドを楽天で見る →</div>
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">タイプ別のおすすめルテインサプリ</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">まずは続けやすい価格で試したい方に：DHC ルテイン光対策</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>ルテイン・ゼアキサンチンを配合したシンプルな処方で、1,000円前後と続けやすい価格帯です</li>
+        <li>日々の栄養補給として、無理なく長期間続けやすい設計です</li>
+        <li className="text-gray-500">気になる点：機能性表示の届出はなく、追加成分もないシンプルな処方です</li>
       </ul>
-      <p className="text-gray-700 mb-4">2024年の国際眼科学誌に掲載された研究では、1日あたり10mg以上のルテイン摂取により、加齢黄斑変性の相対リスクが26%低下したと報告されています。また、ルテイン含有量が高い人ほど、黄斑部の光学的密度が有意に高いことが確認されました。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年最新ルテインサプリメントランキング</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">第1位：ルテイン20mg高含有フォーミュラ</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ルテイン含有量：20mg（1日分）</li>
-        <li>ゼアキサンチン配合：4mg</li>
-        <li>吸収率強化技術：脂溶性キャリア採用</li>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">機能性の裏付けを重視する方に：ディアナチュラゴールド ルテイン&ゼアキサンチン</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>ルテイン10mg・ゼアキサンチン2mgを配合した機能性表示食品で、届出情報が公開されています</li>
+        <li>2,000円前後（60日分）とDHC製品よりやや高いものの、続けやすい価格帯です</li>
+        <li className="text-gray-500">気になる点：アスタキサンチンなど追加成分は配合されていません</li>
       </ul>
-      <p className="text-gray-700 mb-4">このカテゴリーのサプリメントは、2025年に海外の臨床試験で実施された研究において、従来製品比で1.8倍の生物学的利用能を示しました。脂溶性キャリアシステムにより、腸での吸収効率が大幅に改善されています。</p>
-      <p className="text-gray-700 mb-4">3ヶ月継続摂取で、眼精疲労スコアが平均34%改善した報告もあります。価格は月額2,500円～3,200円が目安です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">第2位：ルテイン15mg＋ビルベリーエキス配合</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ルテイン含有量：15mg</li>
-        <li>ビルベリーエキス：160mg</li>
-        <li>アントシアニン含有：36%以上</li>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">複合的なケアを重視する方に：ファンケル えんきん</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>ルテイン・ゼアキサンチンに加え、アスタキサンチンも配合された機能性表示食品です</li>
+        <li>手元のピント調節や目の疲労感のケアを目的とした届出情報が公開されています</li>
+        <li className="text-gray-500">気になる点：3,000円前後と3製品の中では価格が高めです</li>
       </ul>
-      <p className="text-gray-700 mb-4">ビルベリーに含まれるアントシアニンは、眼疲労回復を促進する別のルートで機能します。ルテイン単体より幅広い効果が期待できる設計です。2024年の日本内科学会では、ルテイン＋アントシアニン併用により、VDT作業従事者の視覚機能改善が有意に認められたと発表されました。</p>
-      <p className="text-gray-700 mb-4">月額1,800円～2,400円とコストパフォーマンスに優れています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">第3位：ルテイン12mg＋アスタキサンチン配合</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
+      <div className="grid sm:grid-cols-3 gap-3 mb-4">
+        <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">シンプル処方</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href={RAKUTEN('ディアナチュラゴールド ルテイン ゼアキサンチン')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">機能性表示食品</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ディアナチュラゴールド</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href={RAKUTEN('ファンケル えんきん')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">複合ケア</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ファンケル えんきん</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方4つのポイント</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ルテイン含有量：12mg</li>
-        <li>アスタキサンチン：3mg</li>
-        <li>医薬品級の品質管理</li>
+        <li><strong>含有量を確認する：</strong>製品ごとにルテイン・ゼアキサンチンの配合量が異なるため、パッケージ表示を確認しましょう</li>
+        <li><strong>機能性表示の有無：</strong>機能性表示食品は消費者庁に届出された科学的根拠の情報が公開されています</li>
+        <li><strong>脂肪分と一緒に摂取する：</strong>ルテインは脂溶性のため、食事と一緒に摂取すると吸収されやすいとされています</li>
+        <li><strong>継続しやすい価格帯か：</strong>効果の実感には継続摂取が前提となるため、無理なく続けられる製品を選びましょう</li>
       </ul>
-      <p className="text-gray-700 mb-4">アスタキサンチンはヘマトコッカス藻由来の強力な抗酸化物質で、ルテインの効果をさらに増強します。国際誌への掲載論文では、この組み合わせにより眼のピント調節機能が13%改善したことが報告されています。</p>
-      <p className="text-gray-700 mb-4">価格帯は月額2,000円～2,800円。医薬品GMP認定施設での製造が特徴です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">第4位：ルテイン10mg＋ルテオリン配合エントリーモデル</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
+      <p className="text-gray-700 mb-4">ルテインはほうれん草やケールなど緑黄色野菜にも含まれています。サプリメントと食事を組み合わせて摂取するのもひとつの方法です。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">安全性と注意点</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ルテイン含有量：10mg</li>
-        <li>ルテオリン：50mg</li>
-        <li>継続しやすい低価格設定</li>
+        <li>ルテインは食品由来の成分で、一般的な摂取量での重篤な副作用は報告されていません</li>
+        <li>持病があり薬を服用中の方は、念のため摂取前に医師や薬剤師に相談することをおすすめします</li>
+        <li>サプリメントは治療薬ではありません。視力の変化を感じた場合は眼科を受診してください</li>
       </ul>
-      <p className="text-gray-700 mb-4">ルテオリンはフラボノイド系の成分で、炎症抑制作用があります。初心者向けとして設計されており、月額1,200円～1,800円と手頃です。栄養補助食品としての基本的なスペックを満たしています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">第5位：ルテイン8mg＋マリーゴールド花由来フォーミュラ</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ルテイン含有量：8mg</li>
-        <li>マリーゴールド花エキス：100mg</li>
-        <li>天然由来成分100%</li>
-      </ul>
-      <p className="text-gray-700 mb-4">最もシンプルな処方で、添加物最小限の製品です。月額980円～1,500円で継続購入しやすい価格帯です。基礎的な目の保健補助には十分なスペックを有しています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインサプリメント選定時の重要ポイント</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1. 含有量の確認</h3>
-      <p className="text-gray-700 mb-4">ルテイン含有量は製品によって8mgから25mgまで大きく異なります。AREDS（Age-Related Eye Disease Study）の後続研究では、1日10mgのルテイン摂取が標準的な推奨量とされています。ただし個人の目の状態により、15mg～20mgの摂取を勧める眼科医もいます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2. 吸収率と相乗成分</h3>
-      <p className="text-gray-700 mb-4">ルテイン単体の吸収率は脂肪食と一緒の摂取で5～10倍向上します。ゼアキサンチンやアントシアニンなど相乗成分の配合も重要です。これらの成分は異なるメカニズムで眼の保護機能を発揮します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3. 品質保証と製造基準</h3>
-      <p className="text-gray-700 mb-4">医薬品GMP認定施設での製造、第三者機関による品質検査、放射能検査の実施状況を確認しましょう。これらの項目が明示されている製品ほど信頼性が高いです。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">4. 継続性とコストバランス</h3>
-      <p className="text-gray-700 mb-4">ルテインの効果発現には通常3～6ヶ月の継続摂取が必要です。月額3,000円を超える製品では、継続が困難な場合があります。自身の予算に合わせて選択することが重要です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインサプリメント購入時の注意点</h2>
-      <p className="text-gray-700 mb-4">目の健康維持に役立つルテインサプリメントを購入する際は、信頼できる販売チャネルの選択が重要です。以下のリンクから多くのルテインサプリメント製品を比較検討できます：</p>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天でルテインサプリメント製品を見る</a></p>
-      <p className="text-gray-700 mb-4">大手通販サイトなら、口コミ数が豊富で、実際の使用者の感想を参考にしやすいメリットがあります。また返品対応や保証制度が整備されている点も重要です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテイン摂取時の効果を高めるコツ</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">食事との組み合わせ</h3>
-      <p className="text-gray-700 mb-4">ルテインは脂溶性ビタミンなため、油脂と一緒に摂取すると吸収率が向上します。朝食時にサプリメントを摂取し、卵やアボカドなどの油脂を含む食事と組み合わせると効果的です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">毎日同じ時間に摂取</h3>
-      <p className="text-gray-700 mb-4">サプリメントの効果を最大化するには、毎日同じ時間の摂取習慣が重要です。朝食後など日々のルーティンに組み込むことで、飲み忘れを防げます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">医師や薬剤師への相談</h3>
-      <p className="text-gray-700 mb-4">既往症がある、処方薬を服用中の場合は、必ず医師や薬剤師に相談してください。ワルファリンなどの抗凝固薬との相互作用の可能性があります。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">医学的根拠に基づくルテインの効果期間</h2>
-      <p className="text-gray-700 mb-4">ルテインサプリメントの効果発現には個人差がありますが、医学的には以下のタイムラインが一般的です：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>2週間～1ヶ月</strong>：眼精疲労の軽減を感じ始める人が約30%</li>
-        <li><strong>2～3ヶ月</strong>：黄斑部へのルテイン蓄積開始、約60%が改善を実感</li>
-        <li><strong>6ヶ月以上</strong>：加齢黄斑変性リスク低下の医学的根拠が確立される段階</li>
-      </ul>
-      <p className="text-gray-700 mb-4">継続摂取が重要理由は、ルテインが網膜に蓄積される過程に時間を要するためです。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインサプリメントと食事の関係性</h2>
-      <p className="text-gray-700 mb-4">サプリメントだけに頼らず、食事からのルテイン摂取も同時に進めることが理想的です。ルテイン含有食品と1日の含有量目安：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ほうれん草（加熱）100g：6.0mg</li>
-        <li>ケール100g：10.2mg</li>
-        <li>ブロッコリー100g：1.9mg</li>
-        <li>パセリ100g：5.4mg</li>
-      </ul>
-      <p className="text-gray-700 mb-4">これらを週に3～4回摂取に加えて、サプリメント10mg程度を追加すれば、推奨摂取量を確実にクリアできます。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年のルテイン市場トレンド</h2>
-      <p className="text-gray-700 mb-4">2026年現在、ルテインサプリメント市場は以下のトレンドを示しています：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>個別化栄養への移行</strong>：遺伝子検査に基づいた個別処方の提供開始</li>
-        <li><strong>複合機能サプリメント</strong>：ルテイン＋ビタミンD＋DHA等の配合製品の増加</li>
-        <li><strong>透明性の強化</strong>：原産地、製造過程の完全公開が標準化</li>
-        <li><strong>サステナビリティ重視</strong>：天然由来成分の採用拡大</li>
-      </ul>
-      <p className="text-gray-700 mb-4">これらの動向に対応した新製品が次々と上市されています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめと実行ステップ</h2>
-      <p className="text-gray-700 mb-4">ルテインサプリメントによる目の健康維持は、予防医学の観点から極めて重要です。本記事で紹介したランキング上位5製品は、全て科学的根拠に基づいた配合設計となっています。</p>
-      <p className="text-gray-700 mb-4">実行ステップ：</p>
-      <p className="text-gray-700 mb-4">1. 現在の目の健康状態を自己評価</p>
-      <p className="text-gray-700 mb-4">2. 本記事のランキングから3製品をピックアップ</p>
-      <p className="text-gray-700 mb-4">3. 楽天などの通販サイトで詳細をチェック、口コミ確認</p>
-      <p className="text-gray-700 mb-4">4. コストと含有量のバランスから1製品を選定</p>
-      <p className="text-gray-700 mb-4">5. 最低3ヶ月継続を目標に摂取開始</p>
-      <p className="text-gray-700 mb-4">6. 1ヶ月ごとの効果実感度を記録</p>
-      <p className="text-gray-700 mb-4">ルテインは継続摂取により確実な効果が期待できる成分です。早期の対策が加齢黄斑変性などの目の疾患予防につながります。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">ルテインサプリは、価格帯や機能性表示の有無で選び方が変わります。まずは続けやすい価格の製品から試し、ご自身の予算や求める機能性に合わせて検討してみてください。</p>
+      <p className="text-gray-700 mb-4">効果の実感には個人差があり、継続摂取が前提となる成分です。焦らず、無理なく続けられる製品を選びましょう。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('ファンケル えんきん')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">複合ケアをしたい方に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ファンケル えんきん</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">ファンケル えんきんを楽天で見る →</div>
+        </a>
+      </div>
     </article>
   ),
     "eye-cream-under-eye-care-selection-guide-2026": (
@@ -6940,95 +6755,138 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   ),
     "eye-stretch-acupoint-massage-goods": (
     <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目のストレッチ・ツボ押しグッズの重要性</h2>
-      <p className="text-gray-700 mb-4">現代社会において、スマートフォンやパソコンの使用時間は急速に増加しています。総務省の統計によると、日本人の平均的なスクリーン接触時間は1日8時間を超えており、眼精疲労を訴える人口は全体の約72%に達しています。</p>
-      <p className="text-gray-700 mb-4">このような環境下で、目のストレッチやツボ押しグッズが注目を集めています。目の周辺にはツボが集中しており、適切なマッサージにより血流改善、筋肉緊張の緩和、眼圧低下などが期待できます。実際に日本眼科医会の調査では、定期的なツボ押しによる眼精疲労の改善率は76%に上るとされています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目のツボの位置と効果</h2>
-      <p className="text-gray-700 mb-4">目のストレッチグッズを選ぶ前に、主要なツボの位置を理解することが重要です。目の周辺には複数の重要なツボが存在し、それぞれ異なる効果を持っています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">睛明（せいめい）</h3>
-      <p className="text-gray-700 mb-4">目の内側、鼻の付け根の上部にあるツボです。目の疲労感軽減、ドライアイの改善に効果的とされています。このツボへのアプローチは多くのアイマッサージャーに組み込まれており、最も一般的なマッサージ箇所となっています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">太陽（たいよう）</h3>
-      <p className="text-gray-700 mb-4">こめかみ部分にあるツボで、偏頭痛の緩和と目の奥の疲労感軽減に有効です。血流改善効果が特に高く、ストレスによる眼精疲労の軽減に役立ちます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">承泣（しょうきゅう）</h3>
-      <p className="text-gray-700 mb-4">目の下、黒目の真下にあるツボです。眼圧低下と眼球の疲労感軽減に効果があります。目のツボ押しグッズの中でも、この部位へのアプローチが重要とされています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめ目のストレッチ・ツボ押しグッズの選び方</h2>
-      <p className="text-gray-700 mb-4">目のストレッチグッズを選ぶ際には、複数の重要な判断基準があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">振動数と周波数</h3>
-      <p className="text-gray-700 mb-4">効果的なマッサージの振動数は3,000～8,000回/分の範囲とされています。この範囲内の振動により、筋肉の緊張がほぐれ、血流が促進されます。振動数が少なすぎると効果が薄れ、多すぎると眼球への刺激が強くなりすぎる可能性があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">温熱機能</h3>
-      <p className="text-gray-700 mb-4">温熱は眼精疲労の緩和に重要な役割を果たします。最適な温度は42～45℃で、この温度範囲で血流改善効果が最大化されます。医学研究によると、温熱機能付きのグッズは温熱なしのグッズと比べて43%高い効果を示しています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">装着感と圧迫度</h3>
-      <p className="text-gray-700 mb-4">目の周辺は非常にデリケートな部位です。装着時の圧迫感が強すぎると、眼圧上昇につながる可能性があります。選ぶ際には、調整可能なベルトシステムを備えたものを優先することをお勧めします。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">耐久性と素材</h3>
-      <p className="text-gray-700 mb-4">目の周辺に常時接触するため、素材の品質は極めて重要です。シリコンやゲル素材は通気性に優れ、肌への刺激が少ないとされています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめ商品ランキング</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1位：高機能アイマッサージャー（複合機能型）</h3>
-      <p className="text-gray-700 mb-4">複数の機能を備えた高機能型のアイマッサージャーは、最も人気があります。これらは通常、振動とともに温熱機能、気圧マッサージを組み合わせています。</p>
-      <p className="text-gray-700 mb-4">仕様：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>振動数：6,000回/分</li>
-        <li>温度調整：37～45℃（5段階）</li>
-        <li>使用時間：15分自動オフ機能</li>
-        <li>充電時間：2時間</li>
-        <li>連続使用時間：8～10時間</li>
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        スマホやPCで酷使した目には、ツボ押し・マッサージグッズが手軽なセルフケアになります。この記事では実在する製品を比較しながら、選び方を紹介します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目もとマッサージグッズ早見表</h2>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-left p-3 border border-gray-200">特徴</th>
+              <th className="text-left p-3 border border-gray-200">価格帯</th>
+              <th className="text-left p-3 border border-gray-200">おすすめ度</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'RelxEye アイリラクサー RE-001', feature: '振動マッサージ機能を備えた電動アイローラー', price: '3,000〜8,000円', rating: '★★★★★' },
+              { name: 'Leapgrow アイウォーマー MT-IRM21', feature: '温熱でツボ周辺をじんわり温めるタイプ', price: '3,000〜6,000円', rating: '★★★★☆' },
+              { name: 'MyGear リリースアイ', feature: '目もとのリラックスケアに特化したグッズ', price: '2,000〜5,000円', rating: '★★★★☆' },
+            ].map(r => (
+              <tr key={r.name} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.feature}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.price}</td>
+                <td className="p-3 border border-gray-200 text-amber-500">{r.rating}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d7f.33f4cbd3.56237d80.df2babe8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcitech%2Frelx-eye-001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">RelxEye アイリラクサー RE-001</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">RelxEye アイリラクサー RE-001を楽天で見る →</div>
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目のツボの位置と基礎知識</h2>
+      <p className="text-gray-700 mb-4">目の周辺には複数のツボがあるとされ、東洋医学ではそれぞれ異なる働きが伝えられています。マッサージグッズの多くはこれらのツボ周辺にアプローチする設計になっています。</p>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">ツボ</th>
+              <th className="text-left p-3 border border-gray-200">位置</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: '睛明（せいめい）', pos: '目の内側、鼻の付け根の上部' },
+              { name: '太陽（たいよう）', pos: 'こめかみ部分' },
+              { name: '承泣（しょうきゅう）', pos: '目の下、黒目の真下' },
+            ].map(r => (
+              <tr key={r.name} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.pos}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">タイプ別のおすすめグッズ</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">効率よくマッサージしたい方に：RelxEye アイリラクサー RE-001</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>振動機能を搭載した電動アイローラーで、手動タイプより効率的にマッサージできます</li>
+        <li>USB充電式で繰り返し使え、朝晩のケアに取り入れやすい設計です</li>
+        <li className="text-gray-500">気になる点：3,000〜8,000円と手動タイプに比べて価格が高めです</li>
       </ul>
-      <p className="text-gray-700 mb-4">このタイプのグッズは、睛明から承泣、太陽までの複数のツボに同時にアプローチできる設計が特徴です。また、多くのモデルが複数の自動マッサージモード（リラックスモード、活力モード、睡眠準備モード）を備えており、時間帯や用途に応じて選択が可能です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2位：目元ローラー型ツボ押し器</h3>
-      <p className="text-gray-700 mb-4">より手軽で携帯性に優れたタイプです。コンパクトながら効果的なマッサージが可能です。</p>
-      <p className="text-gray-700 mb-4">特徴：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>金属製のローラー（ステンレス鋼）</li>
-        <li>冷却効果により浮腫みも軽減</li>
-        <li>重量：約80～120g</li>
-        <li>価格帯：3,000～8,000円</li>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">温熱でじっくりケアしたい方に：Leapgrow アイウォーマー MT-IRM21</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>温熱機能でツボ周辺をじんわりと温め、リラックスしながらケアできます</li>
+        <li>就寝前のルーティンとして取り入れやすいタイプです</li>
+        <li className="text-gray-500">気になる点：振動によるマッサージ機能はないため、コリをほぐす目的にはRelxEyeのほうが向いています</li>
       </ul>
-      <p className="text-gray-700 mb-4">金属ローラーは天然の冷却効果を持ち、朝起床時の目の浮腫み軽減に特に効果的です。冷蔵庫で冷やしてから使用することで、さらに冷却効果が強化されます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3位：ホットアイマスク（温熱グッズ）</h3>
-      <p className="text-gray-700 mb-4">温熱機能に特化したタイプで、血流改善に最適です。職場やオフィスでの使用に適しています。</p>
-      <p className="text-gray-700 mb-4">仕様：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>温度：38～52℃自動調整</li>
-        <li>使用時間：10～20分</li>
-        <li>素材：シルク混綿素材</li>
-        <li>一度の充電で8～12回使用可能</li>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">手軽なリラックスケアを求める方に：MyGear リリースアイ</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>目もとのリラックスケアに特化した設計で、2,000〜5,000円台と比較的手に取りやすい価格です</li>
+        <li>シンプルな操作で、初めてのマッサージグッズとしても選びやすいです</li>
+        <li className="text-gray-500">気になる点：高機能タイプと比べると搭載機能はシンプルです</li>
       </ul>
-      <p className="text-gray-700 mb-4">このタイプは振動がないため、静かで周囲に迷惑をかけません。オフィスや公共の場での使用に適しており、特にPC作業が多い職業の人から高い評価を受けています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目のストレッチ・ツボ押しグッズと他の対策の組み合わせ</h2>
-      <p className="text-gray-700 mb-4">グッズの単独使用よりも、他の対策との組み合わせが効果的です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ブルーライト対策との併用</h3>
-      <p className="text-gray-700 mb-4">スマートフォンやPC使用中のブルーライト対策と、ツボ押しグッズの使用を組み合わせることで、相乗効果が期待できます。目のストレスを軽減しながら定期的なケアを行うことで、眼精疲労の改善効果は単独使用と比べて54%向上します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">目のストレッチ体操との組み合わせ</h3>
-      <p className="text-gray-700 mb-4">ツボ押しグッズの使用と同時に、定期的な目のストレッチ体操を取り入れることが推奨されます。20分ごとに1分間の遠くを見つめる時間を設ける「20-20-20ルール」と組み合わせると、眼精疲労の予防効果が著しく向上します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ルテインサプリメントとの併用</h3>
-      <p className="text-gray-700 mb-4">ルテインは目の健康を支援する栄養素です。グッズでのマッサージと、栄養補給を組み合わせることで、内外からの総合的なケアが実現します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目のストレッチグッズ購入時の注意点</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">医学的根拠の確認</h3>
-      <p className="text-gray-700 mb-4">購入前に、そのグッズが医学的根拠に基づいて設計されているか確認することが重要です。多くの有名メーカー製品は、臨床試験を経ており、その結果が製品情報に記載されています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">返金保証の有無</h3>
-      <p className="text-gray-700 mb-4">高額な製品については、返金保証制度の有無を確認することをお勧めします。個人差が大きいため、自分に合わない可能性も考慮に入れる必要があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">サポート体制</h3>
-      <p className="text-gray-700 mb-4">使い方や効果について、メーカーサポートが充実しているか確認することも重要です。特に初めて使用する場合は、丁寧な説明が必要です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめの購入先と商品比較</h2>
-      <p className="text-gray-700 mb-4">目のストレッチ・ツボ押しグッズは、複数の販売チャネルで購入可能です。楽天市場では、様々なメーカーの製品が比較しやすい形式で展示されており、ユーザーレビューも豊富です。</p>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で目のマッサージグッズを探す</a></p>
-      <p className="text-gray-700 mb-4">楽天市場では、毎週のようにセール対象商品が更新されるため、タイミング次第で20～40%の割引を受けることが可能です。また、楽天ポイントの還元により、実質的な購入価格がさらに低下します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目のストレッチグッズの使用時間と頻度</h2>
-      <p className="text-gray-700 mb-4">最大の効果を得るためには、適切な使用時間と頻度が重要です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">推奨使用時間</h3>
+      <div className="grid sm:grid-cols-3 gap-3 mb-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d7f.33f4cbd3.56237d80.df2babe8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcitech%2Frelx-eye-001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">電動・振動タイプ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">RelxEye アイリラクサー RE-001</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d75.6a00e946.56237d76.0969a7c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fleapgrow%2Fmt-irm21%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">温熱タイプ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Leapgrow アイウォーマー MT-IRM21</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d71.e1be5ab2.56237d72.e7946a18/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmygear%2Freleaseeye%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">手軽なリラックスケア</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">MyGear リリースアイ</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方4つのポイント</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>1回あたり：10～20分</li>
-        <li>1日の使用回数：1～2回</li>
-        <li>推奨使用時間帯：朝起床後、就寝前</li>
+        <li><strong>目的で選ぶ：</strong>効率よくマッサージしたいなら振動タイプ、じっくり温めたいなら温熱タイプが合いやすいです</li>
+        <li><strong>装着感を確認する：</strong>目の周辺はデリケートな部位のため、調整可能なベルトなど圧迫感を調節できるものを選びましょう</li>
+        <li><strong>使用時間の目安：</strong>1回10〜20分程度、朝または就寝前の使用が一般的な目安とされています</li>
+        <li><strong>衛生管理のしやすさ：</strong>直接肌に触れるため、お手入れしやすい素材かどうかも確認しましょう</li>
       </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">使用頻度</h3>
-      <p className="text-gray-700 mb-4">毎日の使用が推奨されます。眼精疲労は継続的なスクリーン使用により蓄積するため、定期的なケアが必要です。週3回程度の使用でも効果は得られますが、毎日使用することで最大の効果が期待できます。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目のストレッチグッズの科学的根拠</h2>
-      <p className="text-gray-700 mb-4">複数の医学的研究により、ツボ押しグッズの効果が実証されています。</p>
-      <p className="text-gray-700 mb-4">2024年の日本眼科学会の研究では、12週間のアイマッサージャー使用により、眼精疲労指数が平均32%低下したと報告されています。また、同期間での眼圧低下も平均1.8mmHgと、臨床的に有意な改善が確認されました。</p>
-      <p className="text-gray-700 mb-4">さらに、温熱機能付きグッズについては、眼球周辺の血流が約28%増加することが超音波検査により確認されています。</p>
+      <p className="text-gray-700 mb-4">マッサージグッズは、20-20-20ルール（20分ごとに20秒、遠くを見る）などの休憩習慣や、ブルーライトカット眼鏡と組み合わせることで、より効果を感じやすくなります。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">使用時の注意点</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>結膜炎など眼病がある場合や、目の周りに肌トラブルがある場合は使用を控えてください</li>
+        <li>強い力で押しすぎると眼圧上昇などのリスクにつながる可能性があります。優しい力加減を心がけましょう</li>
+        <li>毎日の使用が基本ですが、違和感がある場合は無理に続けず使用を中止してください</li>
+      </ul>
+
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
-      <p className="text-gray-700 mb-4">目のストレッチ・ツボ押しグッズは、現代人の眼精疲労対策において重要な役割を果たします。複数の選択肢から自分に合ったものを選ぶことで、眼の健康を維持し、生活の質を向上させることができます。</p>
-      <p className="text-gray-700 mb-4">購入の際には、振動数、温熱機能、装着感などの複数の要素を総合的に判断し、自分のライフスタイルに最も適した製品を選択することをお勧めします。定期的な使用により、眼精疲労の緩和と目の健康維持が期待できます。</p>
+      <p className="text-gray-700 mb-4">目もとマッサージグッズは、目的（効率重視・温熱重視・手軽さ重視）に合わせて選ぶことが大切です。今回紹介した3製品を参考に、ご自身の生活スタイルに合うものを検討してみてください。</p>
+      <p className="text-gray-700 mb-4">正しい力加減と適度な頻度を守り、無理のない範囲でセルフケアを続けましょう。</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d71.e1be5ab2.56237d72.e7946a18/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmygear%2Freleaseeye%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">手軽に始めたい方に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">MyGear リリースアイ</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">MyGear リリースアイを楽天で見る →</div>
+        </a>
+      </div>
     </article>
   ),
 
