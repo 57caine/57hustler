@@ -600,16 +600,14 @@ export const eyeColumns: EyeColumnMeta[] = [
     description: "ホットアイマスクの効果や選び方、2026年最新のおすすめ製品を徹底解説。疲れ目・ドライアイ改善の仕組みと正しい使用方法を紹介します。",
     section: "eye-care",
     category: "アイケア・目薬",
-    readingTime: 8,
+    readingTime: 3,
     publishedAt: "2026-07-18",
-    updatedAt: "2026-07-18",
+    updatedAt: "2026-08-04",
     keywords: ["ホットアイマスク","疲れ目対策","ドライアイ","目の温熱療法"],
     faqs: [
-    { q: "ホットアイマスクは毎日使用しても大丈夫ですか？", a: "毎日の使用は推奨されません。週3～5回程度の使用が目安です。毎日使用すると目の皮膚が熱適応し、効果が減少するだけでなく、眼瞼下垂などの長期的な副作用リスクが高まります。3日に1回程度の利用が理想的です。" },
-    { q: "ホットアイマスクでドライアイは本当に改善しますか？", a: "臨床研究では、週3～4回のホットアイマスク使用で4週間後に自覚症状が平均35%改善することが報告されています。特にマイボーム腺機能不全によるドライアイに効果的で、涙液の質と量の両面から改善をもたらします。" },
-    { q: "使い捨てタイプと電熱式、どちらがお得ですか？", a: "初期投資なしで始めたい場合は使い捨てが便利ですが、長期利用を考えると電熱式が圧倒的にお得です。電熱式の初期購入5,000円でも、月額コスト100～200円なら1年で回収できます。継続使用する予定なら電熱式をおすすめします。" },
-    { q: "就寝直前に使用してもいいですか？", a: "就寝の20～30分前の使用が最適です。直前の使用は副交感神経の優位が弱まり、睡眠導入がスムーズになりません。また、就寝直後の使用は火傷リスクが高まるため避けてください。" },
-    { q: "目に疾患がある場合、ホットアイマスクは使用できますか？", a: "充血や痛みがある場合、結膜炎や角膜潰瘍などの眼病治療中は使用を避けてください。ホットアイマスク使用前に症状が続く場合は、必ず眼科医に相談し、使用の可否を確認することが重要です。" }
+    { q: "ホットアイマスクは毎日使用しても大丈夫ですか？", a: "毎日の使用は推奨されません。週3～5回程度の使用が目安です。毎日使用すると効果が減少するだけでなく、眼瞼下垂など長期的な副作用のリスクが高まる可能性があります。3日に1回程度の利用が理想的です。" },
+    { q: "使い捨てタイプと電熱式、どちらがお得ですか？", a: "初期投資なしで始めたい場合は使い捨てが便利ですが、長期利用を考えると電熱式のほうがコストを抑えやすい傾向にあります。継続使用する予定なら電熱式を検討してみてください。" },
+    { q: "目に疾患がある場合、ホットアイマスクは使用できますか？", a: "充血や痛みがある場合、結膜炎や角膜潰瘍などの眼病治療中は使用を避けてください。使用前に症状がある場合は、必ず眼科医に相談し、使用の可否を確認することをおすすめします。" }
     ],
   },
     {
@@ -618,16 +616,14 @@ export const eyeColumns: EyeColumnMeta[] = [
     description: "アイローラーの目の疲れ・むくみ解消効果について、医学的根拠と選び方を解説。冷却効果のメカニズムや正しい使用方法を実証的に紹介します。",
     section: "eye-goods",
     category: "目のグッズ",
-    readingTime: 8,
+    readingTime: 3,
     publishedAt: "2026-07-19",
-    updatedAt: "2026-07-19",
+    updatedAt: "2026-08-04",
     keywords: ["アイローラー","目の疲れ","むくみ解消","アイケアグッズ"],
     faqs: [
-    { q: "アイローラーはどのような仕組みで目の疲れを緩和するのですか？", a: "アイローラーは冷却と機械的マッサージの2つの作用で目の疲れを軽減します。冷却により血流が改善され、疲労物質の排出が促進されます。また、ローラーを転がすことで眼周囲の筋肉をほぐし、緊張を和らげます。朝のむくみ解消に特に効果的です。" },
-    { q: "冷却タイプと常温タイプ、どちらを選ぶべきですか？", a: "冷却タイプは冷蔵庫で事前に冷やす必要があり、むくみ解消効果が高いです。常温タイプはいつでも使用でき、毎日のケアに向いています。目の疲れが主な悩みなら冷却タイプ、習慣的なケアなら常温タイプをおすすめします。" },
-    { q: "1日にアイローラーを使用する最適な回数は？", a: "朝起床時と夜のスキンケア時に1回ずつ、1日2回の使用が目安です。各回3～5分程度が理想的です。過度な使用は肌に負担をかけるため、1日3回以上の使用は避けましょう。個人差がありますので、肌の反応を見ながら調整してください。" },
-    { q: "アイローラーを使う際の注意点は何ですか？", a: "強くこすりすぎないことが重要です。目周囲の皮膚は薄くデリケートなため、優しい力で転がすようにしましょう。また、炎症がある場合や眼病がある際は使用を避け、医師に相談することをおすすめします。衛生管理も大切です。" },
-    { q: "メタルローラーとプラスチックローラーの違いは？", a: "メタルローラーは熱伝導性が高く、冷却効果が優れており、高級感があります。プラスチックローラーは軽量で持ち運びやすく、肌が敏感な方にも適しています。価格はプラスチック製が安価で、初心者向けです。用途や予算で選択してください。" }
+    { q: "1日にアイローラーを使用する最適な回数は？", a: "朝起床時と夜のスキンケア時に1回ずつ、1日2回の使用が目安です。各回3～5分程度が一般的とされています。過度な使用は肌に負担をかける可能性があるため、肌の反応を見ながら調整してください。" },
+    { q: "アイローラーを使う際の注意点は何ですか？", a: "強くこすりすぎないことが重要です。目周囲の皮膚は薄くデリケートなため、優しい力で転がすようにしましょう。炎症がある場合や眼病がある際は使用を避け、医師に相談することをおすすめします。" },
+    { q: "メタルローラーとプラスチックローラーの違いは？", a: "メタルローラーは熱伝導性が高く冷却効果が期待できます。プラスチックローラーは軽量で持ち運びやすく、肌が敏感な方にも使いやすい傾向にあります。用途や予算に合わせて選んでみてください。" }
     ],
   },
     {
@@ -654,17 +650,14 @@ export const eyeColumns: EyeColumnMeta[] = [
     description: "ルテインサプリの黄斑変性予防効果、選び方、推奨摂取量について解説。アイケアに必須のカロテノイドの正しい知識を身につけましょう。",
     section: "eye-care",
     category: "アイケア・目薬",
-    readingTime: 9,
+    readingTime: 3,
     publishedAt: "2026-07-19",
-    updatedAt: "2026-07-19",
+    updatedAt: "2026-08-04",
     keywords: ["ルテインサプリ","黄斑変性予防","目の健康","カロテノイド"],
     faqs: [
-    { q: "ルテインとは何ですか？", a: "ルテインはカロテノイドの一種で、人間の目の黄斑部と水晶体に自然に存在する黄色い色素です。紫外線やブルーライトから目を保護し、加齢黄斑変性や白内障の予防に重要な役割を果たします。体内で生成できないため、食事やサプリメントから摂取する必要があります。" },
-    { q: "ルテインサプリの推奨摂取量はどのくらいですか？", a: "一般的な推奨摂取量は1日6～10mgとされています。アメリカの眼科学会（AAO）の研究では、1日10mg程度の摂取で黄斑変性のリスク低下効果が認められています。ただし個人差があるため、医師や薬剤師に相談することをお勧めします。" },
-    { q: "ルテインサプリはいつ飲むのが効果的ですか？", a: "ルテインは脂溶性ビタミンなので、食事と一緒に摂取すると吸収率が高まります。朝食時または夜食後など、毎日決まった時間に脂肪を含む食事と共に摂ることが推奨されます。継続的な摂取が重要で、最低でも3～6ヶ月の継続で効果が期待できます。" },
-    { q: "ルテインサプリに副作用はありますか？", a: "ルテインは水溶性ではなく脂溶性のため、過剰摂取時に体内に蓄積される可能性があります。ただし通常の推奨摂取量での副作用報告は非常に少なくなっています。まれに胃部不快感や皮膚の黄変が報告されていますが、摂取中止で回復します。" },
-    { q: "黄斑変性以外にはどんな効果が期待できますか？", a: "ルテインはブルーライトから目を保護するため、スマートフォンやパソコンの使用による眼精疲労の軽減に効果的です。また、白内障の予防や進行遅延、網膜の老化防止にも役立つとされています。全体的な目の健康維持に欠かせない栄養素です。" },
-    { q: "ルテインが豊富な食べ物は何ですか？", a: "ルテインはホウレンソウ、ケール、ブロッコリーなどの緑色野菜に特に豊富です。また、キウイフルーツやプロカリ、トウモロコシにも含まれています。しかし必要量を食事だけから摂取するのは難しいため、サプリメントでの補給が現実的です。" }
+    { q: "ルテインサプリの摂取目安量はどのくらいですか？", a: "製品によって異なりますが、一般的な目安として1日6〜10mg程度とされています。個人差があるため、パッケージの用量表示に従い、不安な場合は医師や薬剤師に相談することをおすすめします。" },
+    { q: "ルテインサプリはいつ飲むのが良いですか？", a: "ルテインは脂溶性のため、食事と一緒に摂取すると吸収されやすいとされています。毎日決まったタイミングで摂取すると、継続の習慣化にもつながります。" },
+    { q: "ルテインが豊富な食べ物は何ですか？", a: "ホウレンソウ、ケール、ブロッコリーなどの緑黄色野菜に多く含まれています。食事とサプリメントを組み合わせて摂取するのもひとつの方法です。" }
     ],
   },
     {
@@ -728,17 +721,14 @@ export const eyeColumns: EyeColumnMeta[] = [
     description: "スマホ老眼の原因から対策グッズまで徹底解説。拡大鏡と老眼鏡の選び方、おすすめ商品、使い分け方を実データとともに紹介します。",
     section: "eye-goods",
     category: "目のグッズ",
-    readingTime: 8,
+    readingTime: 3,
     publishedAt: "2026-07-22",
-    updatedAt: "2026-07-22",
+    updatedAt: "2026-08-04",
     keywords: ["スマホ老眼","拡大鏡","老眼鏡","スマートフォン対策","目の疲れ対策"],
     faqs: [
-    { q: "スマホ老眼とは何ですか？老眼とは違うのですか？", a: "スマホ老眼は、スマートフォンの画面を長時間見続けることによる眼精疲労で、ピント調節機能が一時的に低下する症状です。通常の老眼と異なり、年齢に関係なく20代～30代でも発症する可能性があります。加齢による老眼は水晶体の硬化が原因ですが、スマホ老眼は筋肉疲労が主な原因です。適切な休息と対策グッズにより改善する可能性があります。" },
-    { q: "拡大鏡と老眼鏡どちらを選ぶべきですか？", a: "スマホ老眼対策なら、まず拡大鏡がおすすめです。理由は、スマホの画面サイズを物理的に拡大できるため、目のピント調節の負担が大きく減ります。老眼鏡は水晶体の硬化に対応する商品なので、スマホ老眼には拡大鏡の方が効果的です。ただし既に老眼がある場合は、老眼鏡も併用する選択肢があります。" },
-    { q: "スマホ用拡大鏡の選び方のポイントはありますか？", a: "重要なポイントは倍率、サイズ、レンズの品質の3点です。倍率は2～3倍が一般的で、5倍以上になると色収差が強くなり目が疲れやすくなります。サイズはスマートフォンの画面よりやや大きめ（スマホ画面の1.5～2倍）がおすすめです。レンズは光学ガラス製を選ぶと歪みが少なく、より快適に使用できます。" },
-    { q: "1日のスマホ使用時間の目安はありますか？", a: "眼精疲労を防ぐため、連続使用は避けるべきです。目安として30分～50分ごとに10分程度の休憩を取ることが推奨されています。また、1日のスマホ利用時間を5時間以内に抑えるのが理想的です。これ以上の使用が避けられない場合は、拡大鏡やブルーライトカット眼鏡と併用すると効果的です。" },
-    { q: "拡大鏡を使う際の正しい使用距離はありますか？", a: "一般的に、拡大鏡は目から20～30cm離して使用するのが目安です。近すぎるとピント調節の負担が増し、遠すぎると拡大効果が十分に得られません。正しい距離を保つことで、首や肩への負担も軽減できます。拡大鏡スタンド付きの商品を選ぶと、距離を一定に保ちやすくなります。" },
-    { q: "老眼鏡とスマホ対応メガネの違いは何ですか？", a: "老眼鏡は主に近距離（30～40cm）の視力補正用です。一方、スマホ対応メガネはブルーライトカット機能を備え、瞳孔の散大を抑制して疲労軽減に特化しています。老眼とスマホ老眼の両方がある場合は、スマホ対応の老眼鏡（ブルーライトカット機能付き）がおすすめです。" }
+    { q: "スマホ老眼とは何ですか？老眼とは違うのですか？", a: "スマホ老眼は、スマートフォンの画面を長時間見続けることによる眼精疲労で、ピント調節機能が一時的に低下する状態です。通常の老眼と異なり、年齢に関係なく発症することがあるとされています。適切な休息と対策グッズで改善が期待できる場合があります。" },
+    { q: "拡大鏡と老眼鏡、どちらを選ぶべきですか？", a: "文字の見えにくさが主な悩みなら拡大鏡、目の疲れやまぶしさが気になるならブルーライトカット眼鏡が合いやすい傾向にあります。すでに老眼がある場合は、老眼鏡との併用も選択肢になります。" },
+    { q: "1日のスマホ使用時間の目安はありますか？", a: "連続使用は避け、30〜50分ごとに10分程度の休憩を挟むことが目の負担軽減につながるとされています。20-20-20ルール（20分ごとに20秒、遠くを見る）も参考にしてみてください。" }
     ],
   },
     {
@@ -777,21 +767,18 @@ export const eyeColumns: EyeColumnMeta[] = [
   },
     {
     slug: "smart-eyewear-functional-goods-2026",
-    title: "スマートアイウェア機能性グッズ最新2026年版｜目の健康を守る最新技術",
-    description: "2026年最新のスマートアイウェアと機能性グッズを徹底解説。ブルーライトカット、AI搭載、リアルタイム健康管理機能を備えた次世代アイウェアの選び方をご紹介します。",
+    title: "ブルーライトカット眼鏡の選び方2026｜JINS・Zoffなど実在製品を比較",
+    description: "ブルーライトカット眼鏡の選び方を実在製品の比較とともに解説。カット率や可視光透過率、度なし・度付きの違いなど、購入前に確認したいポイントを紹介します。",
     section: "eye-goods",
     category: "目のグッズ",
-    readingTime: 8,
+    readingTime: 3,
     publishedAt: "2026-07-25",
-    updatedAt: "2026-07-25",
-    keywords: ["スマートアイウェア2026","機能性眼鏡","ブルーライトカット最新","AI眼鏡"],
+    updatedAt: "2026-08-04",
+    keywords: ["ブルーライトカット眼鏡","JINS SCREEN","Zoff PC","PC眼鏡"],
     faqs: [
-    { q: "スマートアイウェアの主な機能は何ですか？", a: "2026年のスマートアイウェアは、ブルーライトカット機能に加えて、AI搭載のリアルタイム視力補正、目の疲労度を計測するセンサー、頭位置の自動認識による度数調整などが標準装備されています。また、スマートフォンとの連携で画面の明るさを自動調整する機能や、長時間使用時の警告通知なども搭載されています。" },
-    { q: "ブルーライトカット機能の効果はどの程度ですか？", a: "学術的研究では、ブルーライトカット率30～50%の眼鏡により、目の疲労感が約20～30%軽減されることが報告されています。2026年製品では、可視光透過率を保ちながら45～60%のブルーライトカットを実現しており、より効果的な疲労軽減が期待できます。ただし、個人差があるため、2週間程度の試用期間を設けることをお勧めします。" },
-    { q: "メガネが必要ない人でも使用できますか？", a: "はい、2026年の機能性グッズには度数なしのブルーライトカット専用グラスが豊富に展開されています。また、サングラスタイプ、ハーフリムタイプなど様々なフレームデザインから選択可能です。屋内用と屋外用で複数持つユーザーも多く、生活シーンに合わせた選択ができます。価格帯も3,000円から15,000円と幅広く対応しています。" },
-    { q: "AI搭載眼鏡は医療機器として認可されていますか？", a: "AI搭載眼鏡の多くは、医療機器ではなく一般的なファッション・健康管理用品として分類されています。ただし、眼科医との連携機能や視力測定データを医師に提供する機能を持つ製品も出現しており、2026年には一部製品が医療補助機器として認可される見込みです。購入前に製品の認可状況を確認することが重要です。" },
-    { q: "スマートアイウェアの価格相場はいくらですか？", a: "2026年のスマートアイウェア市場では、基本的なブルーライトカット機能のみの製品が3,000～8,000円、AI搭載・センサー搭載型が12,000～35,000円の価格帯が一般的です。高級ブランド製品や医療用途を想定した製品は50,000円を超えるものもあります。機能と予算のバランスを考慮して選択することをお勧めします。" },
-    { q: "レンズの交換や調整は必要ですか？", a: "2026年の多くのスマートアイウェアは、購入後の追加調整が最小限に設計されています。ただし、度数が必要な場合は初期購入時に眼科での検査を受ける必要があります。AI搭載製品でも、3～6ヶ月ごとに校正が推奨される場合があります。メーカーのアフターサポート体制を確認した上で購入することが大切です。" }
+    { q: "ブルーライトカット眼鏡の効果はどの程度ですか？", a: "カット率や可視光透過率は製品によって異なります。夜間のスクリーン使用時に睡眠への影響を抑える可能性があるとされていますが、効果には個人差があります。まずは2週間程度試してみることをおすすめします。" },
+    { q: "度なしでも使用できますか？", a: "はい、度数なしのブルーライトカット専用グラスも豊富に展開されています。視力矯正が不要な方は度なしタイプ、必要な方は度付き対応の製品を選びましょう。" },
+    { q: "ブルーライトカット眼鏡の価格相場はいくらですか？", a: "製品によって幅がありますが、今回紹介したZoff PCは4,400円、JINS SCREENは5,000円台からと、比較的手に取りやすい価格帯の製品もあります。" }
     ],
   },
     {
@@ -5500,180 +5487,141 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
 
     "hot-eye-mask-effects-recommended-products": (
     <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスクとは？基本知識から効果まで</h2>
-      <p className="text-gray-700 mb-4">ホットアイマスクは、目元に温熱を加えることで疲労回復やドライアイ改善を促進するアイケア製品です。2020年代に入り、テレワークやスマートフォン使用時間の増加に伴い、その需要が大きく高まっています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ホットアイマスクの基本的な仕組み</h3>
-      <p className="text-gray-700 mb-4">ホットアイマスクの効果は、<strong>40～50℃の温熱が眼周辺の筋肉と血流に与える影響</strong>に基づいています。目の周りは繊細な筋肉（眼輪筋）で構成されており、パソコン作業やスマートフォン使用による眼精疲労で硬化しやすい部位です。</p>
-      <p className="text-gray-700 mb-4">温熱によってもたらされる主な生理的効果：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>血流改善</strong>：目周辺の血管が拡張し、酸素と栄養供給が増加</li>
-        <li><strong>筋肉の緊張緩和</strong>：凝り固まった眼輪筋がリラックス</li>
-        <li><strong>涙液分泌促進</strong>：マイボーム腺の機能が活性化し、ドライアイ改善</li>
-        <li><strong>副交感神経優位化</strong>：リラックス効果により睡眠の質向上</li>
-      </ul>
-      <p className="text-gray-700 mb-4">医学的には、これらのメカニズムが複数の研究で実証されており、特に<strong>マイボーム腺機能不全（MGD）によるドライアイ</strong>の改善効果が報告されています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスクの主な効果</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1. 疲れ目・眼精疲労の緩和</h3>
-      <p className="text-gray-700 mb-4">パソコン作業時間が1日平均8時間という日本の労働環境では、眼精疲労は深刻な問題です。ホットアイマスク使用者の約78%が「疲労感の軽減」を実感しており、その効果は医学的にも支持されています。</p>
-      <p className="text-gray-700 mb-4">温熱による血流改善は、目の毛様筋（ピント調節筋）の緊張をほぐし、ピント調節機能の回復を促します。特に<strong>長時間のデジタル機器使用後</strong>の使用が効果的です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2. ドライアイ症状の改善</h3>
-      <p className="text-gray-700 mb-4">日本国内のドライアイ患者数は約2,200万人（日本眼科医会調査）と推定されており、これは国民の約18%に相当します。</p>
-      <p className="text-gray-700 mb-4">ホットアイマスクはドライアイ改善に特に有効です。その理由は：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>マイボーム腺の詰まり解消</strong>：油分分泌を促進し、涙の蒸発を防止</li>
-        <li><strong>瞬き回数の改善</strong>：温熱刺激により無意識の瞬き増加</li>
-        <li><strong>涙液安定性向上</strong>：涙膜の均質化促進</li>
-      </ul>
-      <p className="text-gray-700 mb-4">臨床研究では、週3～4回のホットアイマスク使用で、<strong>4週間後に自覚症状が平均35%改善</strong>することが報告されています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3. 目周辺の血行促進と代謝向上</h3>
-      <p className="text-gray-700 mb-4">目の周辺には多くの細い血管が集中しています。温熱により血管が拡張すると、細胞への酸素供給が増加し、老廃物の排出が促進されます。</p>
-      <p className="text-gray-700 mb-4">これにより：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>クマやくすみの軽減</li>
-        <li>目周辺の肌質改善</li>
-        <li>より活力ある目元の印象形成</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">4. 睡眠の質向上</h3>
-      <p className="text-gray-700 mb-4">就寝の20～30分前にホットアイマスクを使用すると、副交感神経が優位になり、睡眠導入がスムーズになります。使用者の約64%が「寝つきの改善」を報告しており、睡眠時間5～6時間の短時間睡眠層での効果が特に高いとされています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスクの種類と選び方</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">電熱式（充電式・電池式）ホットアイマスク</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong>：USB充電またはボタン電池で加熱</p>
-      <p className="text-gray-700 mb-4"><strong>温度範囲</strong>：38～52℃</p>
-      <p className="text-gray-700 mb-4"><strong>使用時間</strong>：1回15～20分程度</p>
-      <p className="text-gray-700 mb-4"><strong>耐久性</strong>：約1年～3年</p>
-      <p className="text-gray-700 mb-4"><strong>メリット</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>温度設定が可能で安全性が高い</li>
-        <li>繰り返し使用できコストパフォーマンスに優れる</li>
-        <li>スマートフォン連携機能がある高機能モデルも存在</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>デメリット</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>初期投資が高い（2,000～15,000円）</li>
-        <li>定期的な充電・メンテナンスが必要</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">使い捨てタイプのホットアイマスク</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong>：鉄粉の酸化反応により発熱</p>
-      <p className="text-gray-700 mb-4"><strong>温度範囲</strong>：35～40℃</p>
-      <p className="text-gray-700 mb-4"><strong>使用時間</strong>：1回20～30分</p>
-      <p className="text-gray-700 mb-4"><strong>耐久性</strong>：1回限り</p>
-      <p className="text-gray-700 mb-4"><strong>メリット</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>購入後すぐに使用可能（準備不要）</li>
-        <li>衛生的</li>
-        <li>外出先での使用に便利</li>
-        <li>温度が一定で火傷リスクが低い</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>デメリット</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>1回あたり150～300円と継続費用がかかる</li>
-        <li>月間費用で3,000～9,000円程度必要</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">温湿布タイプ</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong>：水分を含む布を温める</p>
-      <p className="text-gray-700 mb-4"><strong>温度範囲</strong>：40～45℃</p>
-      <p className="text-gray-700 mb-4"><strong>使用時間</strong>：1回10～15分</p>
-      <p className="text-gray-700 mb-4"><strong>耐久性</strong>：約50～100回</p>
-      <p className="text-gray-700 mb-4"><strong>メリット</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>最も安価（500～1,500円）</li>
-        <li>自然な温熱感</li>
-        <li>湿度も同時に供給しドライアイに有効</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>デメリット</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>温度調節ができない</li>
-        <li>効果時間が短い</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年版おすすめホットアイマスク製品</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">高機能タイプ（15,000円前後）</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>スマートフォンアプリ連携で温度・時間管理が可能</li>
-        <li>最新モデルでは「音声ガイド」機能搭載</li>
-        <li>マッサージ機能を併備した製品も登場</li>
-      </ul>
-      <p className="text-gray-700 mb-4">このクラスの製品は、毎日使用する人や複数家族での使用を想定した選択です。初期投資は高いですが、月間コストは100円以下に収まります。</p>
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        パソコンやスマホの使用で疲れた目に、ホットアイマスクは手軽なケアとして人気です。この記事ではタイプ別の特徴とおすすめ製品を比較しながら紹介します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスク早見表</h2>
+      <p className="text-gray-700 mb-4">まずは3製品の特徴を比較しましょう。おすすめ度は、価格帯に対する機能性やコストパフォーマンスをもとにした目安です。</p>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-left p-3 border border-gray-200">タイプ</th>
+              <th className="text-left p-3 border border-gray-200">価格帯</th>
+              <th className="text-left p-3 border border-gray-200">おすすめ度</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'Nissoplus アイウォーマー NP-EEM23', type: '高機能・アプリ連携', price: '15,000円前後', rating: '★★★★☆' },
+              { name: 'La Luna アイウォーマー（ホワイト）', type: 'スタンダード・USB充電式', price: '5,000〜8,000円', rating: '★★★★★' },
+              { name: 'Bodyplus アイウォーマー 4580657302', type: '低価格・軽量', price: '2,000〜3,000円', rating: '★★★★☆' },
+            ].map(r => (
+              <tr key={r.name} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.type}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.price}</td>
+                <td className="p-3 border border-gray-200 text-amber-500">{r.rating}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-gray-700 mb-4">機能とコストのバランスを重視するならLa Luna、毎日使うなら高機能なNissoplus、まず試してみたい方はBodyplusが選びやすい傾向にあります。</p>
       <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから：バランス重視の方に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">La Luna アイウォーマー（ホワイト）</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">La Luna アイウォーマー（ホワイト）を楽天で見る →</div>
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">タイプ別のおすすめホットアイマスク</h2>
+      <p className="text-gray-700 mb-4">使用頻度や予算に応じて、ご自身に近いタイプから選んでみてください。同じホットアイマスクでも、毎日のケアとして使うか、たまのご褒美として使うかによって、選ぶべき製品は変わってきます。</p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">毎日しっかり使いたい方に：Nissoplus アイウォーマー NP-EEM23</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>スマートフォンアプリと連携し、温度・時間管理ができる高機能タイプです。就寝前のルーティンとして毎日使う方に向いています</li>
+        <li>繰り返し使用できるため、購入後の月間コストは電気代の100〜200円程度に収まりやすく、長期的にはコストを抑えやすい傾向にあります</li>
+        <li className="text-gray-500">気になる点：15,000円前後と3タイプの中で最も初期投資が高く、まず試してみたい方にはハードルが高い場合があります</li>
+      </ul>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">コストと機能のバランスを重視する方に：La Luna アイウォーマー（ホワイト）</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>USB充電式でシンプルな温度調節機能を備え、繰り返し使用できるスタンダードなモデルです</li>
+        <li>5,000〜8,000円台と、機能性と価格のバランスが取れた最も需要の高い価格帯に位置しています</li>
+        <li className="text-gray-500">気になる点：高機能タイプと比べると、アプリ連携や音声ガイドなどの付加機能はありません</li>
+      </ul>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">まず試してみたい・旅行用にも：Bodyplus アイウォーマー 4580657302</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>軽量・コンパクトな基本機能モデルで、2,000〜3,000円台と3タイプの中で最も手に取りやすい価格です</li>
+        <li>初めてホットアイマスクを使う方や、荷物を増やしたくない旅行・出張時の携帯用に向いています</li>
+        <li className="text-gray-500">気になる点：温度設定の細かい調節機能はなく、基本的な温熱機能のみのシンプルな設計です</li>
+      </ul>
+
+      <div className="grid sm:grid-cols-3 gap-3 mb-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d51.c785194a.56237d52.f8562009/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnissoplus%2Fnp-eem23%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">高機能タイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Nissoplus アイウォーマー NP-EEM23</p>
-          <p className="text-xs text-gray-500 mb-3">温度・時間管理機能付きの高機能ホットアイマスク</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Nissoplus アイウォーマー NP-EEM23を楽天で見る →</div>
+          <p className="text-xs text-gray-500 mb-3">アプリ連携で温度・時間管理ができる高機能モデル</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
-      </div>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">スタンダードタイプ（5,000～8,000円）</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>シンプルな温度調節機能</li>
-        <li>USB充電式で便利</li>
-        <li>デザイン性が高く、ギフトに適している</li>
-      </ul>
-      <p className="text-gray-700 mb-4">最も需要が高いカテゴリで、コストと機能のバランスが優れています。</p>
-      <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">スタンダードタイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">La Luna アイウォーマー（ホワイト）</p>
-          <p className="text-xs text-gray-500 mb-3">USB充電式・シンプルな温度調節機能でコストと機能のバランスが良好</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">La Luna アイウォーマー（ホワイト）を楽天で見る →</div>
+          <p className="text-xs text-gray-500 mb-3">USB充電式でコストと機能のバランスが良好</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
-      </div>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">低価格タイプ（2,000～3,000円）</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong>：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>基本的な温熱機能のみ</li>
-        <li>軽量でコンパクト</li>
-        <li>初心者向け</li>
-      </ul>
-      <p className="text-gray-700 mb-4">試しに使ってみたい方や、旅行用途に適しています。</p>
-      <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237db3.a916904a.56237db4.bd5b1f1c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbodyplus%2F4580657302%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">低価格タイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Bodyplus アイウォーマー 4580657302</p>
-          <p className="text-xs text-gray-500 mb-3">軽量・コンパクトな基本機能モデル。初めての方や旅行用にも</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Bodyplus アイウォーマー 4580657302を楽天で見る →</div>
+          <p className="text-xs text-gray-500 mb-3">軽量・コンパクトな基本機能モデル</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスクの正しい使用方法</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">効果を最大化する使用頻度</h3>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方4つのポイント</h2>
+      <p className="text-gray-700 mb-4">ホットアイマスクには電熱式・使い捨て・温湿布タイプがあり、それぞれ特徴が異なります。まずは以下の4点を確認しましょう。</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>推奨頻度</strong>：週3～5回</li>
-        <li><strong>1回あたりの時間</strong>：15～20分</li>
-        <li><strong>最適な時間帯</strong>：夜間（就寝の30分前）またはランチタイム</li>
+        <li><strong>使用頻度で選ぶ：</strong>頻繁に使うなら繰り返し使える電熱式、たまに使うなら使い捨てタイプがコスト面で合いやすいです</li>
+        <li><strong>温度調節機能の有無を確認する：</strong>敏感肌の方は38〜40℃程度まで下げられるものを選びましょう</li>
+        <li><strong>使用時間の目安：</strong>1回15〜20分程度、週3〜5回の使用が一般的な目安とされています</li>
+        <li><strong>50℃以上の高温設定は避ける：</strong>低温やけどのリスクがあるため、温度表示のある製品を選びましょう</li>
       </ul>
-      <p className="text-gray-700 mb-4">毎日使用することで依存性が高まるリスクがあるため、3日に1回程度の利用が理想的です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">温度設定のポイント</h3>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">タイプ</th>
+              <th className="text-left p-3 border border-gray-200">特徴</th>
+              <th className="text-left p-3 border border-gray-200">月間の目安コスト</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { type: '電熱式（充電式）', feature: '温度設定が可能で繰り返し使用できる。初期費用はやや高め', cost: '約100〜200円（電気代）' },
+              { type: '使い捨てタイプ', feature: '準備不要ですぐに使える。外出先でも使いやすい', cost: '約3,000〜9,000円' },
+              { type: '温湿布タイプ', feature: '最も安価で自然な温熱感。温度調節はできない', cost: '約50〜150円' },
+            ].map(r => (
+              <tr key={r.type} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.type}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.feature}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.cost}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">使用時の注意点</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>通常利用</strong>：40～45℃</li>
-        <li><strong>ドライアイが強い場合</strong>：45～48℃</li>
-        <li><strong>敏感肌の場合</strong>：38～40℃</li>
+        <li>目の充血や痛みがある場合、結膜炎や角膜潰瘍など眼病治療中の場合は使用を控えてください</li>
+        <li>毎日の使用は避け、3日に1回程度を目安にしましょう。頭痛や目の乾燥感が続く場合は使用を中止してください</li>
+        <li>就寝の20〜30分前の使用がおすすめです。直前の使用は副交感神経が優位になりにくく、火傷リスクも高まるため避けましょう</li>
+        <li>妊娠中の方や、目の周りの皮膚が敏感な方、子どもが使用する場合は保護者の管理下で使用してください</li>
       </ul>
-      <p className="text-gray-700 mb-4"><strong>重要な注意点</strong>：50℃以上は火傷リスクが高まるため避けてください。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">使用前後の準備</h3>
-      <p className="text-gray-700 mb-4">1. <strong>使用前</strong>：顔をぬるま湯で洗い、化粧を落とす</p>
-      <p className="text-gray-700 mb-4">2. <strong>使用中</strong>：目を閉じ、リラックス状態を保つ</p>
-      <p className="text-gray-700 mb-4">3. <strong>使用後</strong>：冷たい水で目元を冷やし、目薬を差すとさらに効果的</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスク使用時の注意点</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">避けるべき状況</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>目の充血や痛みがある場合</li>
-        <li>眼病（結膜炎、角膜潰瘍など）の治療中</li>
-        <li>妊娠中の過度な使用</li>
-        <li>子どもの単独使用（保護者の管理下で使用）</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">副作用の可能性</h3>
-      <p className="text-gray-700 mb-4">極稀ですが、以下の症状が報告されています：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>一時的な目の乾燥感増加（使用開始初期）</li>
-        <li>頭痛（温度が高すぎる場合）</li>
-        <li>眼瞼下垂（毎日使用での長期利用時）</li>
-      </ul>
-      <p className="text-gray-700 mb-4">症状が続く場合は、眼科医に相談してください。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスク関連製品の楽天ショップ紹介</h2>
-      <p className="text-gray-700 mb-4">疲れ目やドライアイ対策として、ホットアイマスクと合わせて使用する関連製品も重要です。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">ホットアイマスクは、使用頻度と予算に合わせてタイプを選ぶことが大切です。毎日使うなら電熱式、たまに使うなら使い捨てタイプが選びやすい傾向にあります。</p>
+      <p className="text-gray-700 mb-4">効果の感じ方には個人差があり、継続使用が目安とされています。無理のない頻度で、ご自身の目の状態に合わせて取り入れてみてください。</p>
+      <p className="text-gray-700 mb-4">使用後は保湿成分配合の目薬を組み合わせると、さらにケア効果が高まります。今回紹介した3タイプの特徴を参考に、ライフスタイルに合う製品を検討してみてください。</p>
       <div className="my-4">
         <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
@@ -5683,209 +5631,117 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
         </a>
       </div>
-      <p className="text-gray-700 mb-4">ホットアイマスク使用後は、保湿成分配合の目薬を組み合わせることで、さらにドライアイ改善効果が高まります。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスクの経済効果</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">月間コスト比較</h3>
-      <p className="text-gray-700 mb-4"><strong>電熱式（初期購入後）</strong>：月額100～200円（電気代）</p>
-      <p className="text-gray-700 mb-4"><strong>使い捨てタイプ</strong>：月額3,000～9,000円（5～30個/月）</p>
-      <p className="text-gray-700 mb-4"><strong>温湿布タイプ</strong>：月額50～150円（水道代）</p>
-      <p className="text-gray-700 mb-4">1年間を通じた総コストでは、電熱式が最も経済的で、累積効果も高いことが分かります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">健康改善による波及効果</h3>
-      <p className="text-gray-700 mb-4">眼精疲労の改善により：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>仕事の生産性が平均12％向上（労働経済学会調査）</li>
-        <li>頭痛の頻度が平均40％減少</li>
-        <li>睡眠スコアが平均25point改善</li>
-      </ul>
-      <p className="text-gray-700 mb-4">これらは直接的な医療費削減やQOL向上につながります。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
-      <p className="text-gray-700 mb-4">ホットアイマスクは、テレワーク時代における実用的で科学的根拠のあるアイケア製品です。疲れ目やドライアイに悩む方は、自分の生活パターンと予算に合わせた製品選択で、確実な効果を期待できます。</p>
-      <p className="text-gray-700 mb-4">週3～5回の継続使用で、2～4週間で自覚症状の改善が期待でき、特にドライアイ患者層での高い満足度が報告されています。投資効果が高く、継続しやすいアイケア方法として、2026年も需要が増加し続けるでしょう。</p>
     </article>
   ),
     "eye-roller-fatigue-puffiness": (
     <article className="prose prose-sm max-w-none">
-      <p className="text-gray-700 mb-4">現代人の多くが経験している目の疲れと朝のむくみ。パソコンやスマートフォンの長時間使用により、眼精疲労は深刻化しています。このような悩みに対して、アイローラーは手軽で効果的なソリューションとして注目を集めています。本記事では、アイローラーの科学的根拠に基づいた効果と、正しい選び方・使用方法について詳しく解説します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アイローラーとは：基本的な仕組みと特徴</h2>
-      <p className="text-gray-700 mb-4">アイローラーは、目の周囲をマッサージするために設計された美容グッズです。ローラー型の先端が複数の小さな球体で構成されており、肌に優しく転がしながら使用します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">冷却メカニズムと疲労回復のメカニズム</h3>
-      <p className="text-gray-700 mb-4">アイローラーの主な効果は以下の二つの作用に基づいています：</p>
-      <p className="text-gray-700 mb-4"><strong>1. 冷却による血流改善</strong></p>
-      <p className="text-gray-700 mb-4">冷却されたアイローラーを使用することで、目周囲の血管が収縮し、その後拡張することで血流が促進されます。この過程で、疲労物質である乳酸の排出が加速されます。医学的には、冷却療法は眼周囲の浮腫（むくみ）を軽減する効果が認められています。</p>
-      <p className="text-gray-700 mb-4"><strong>2. 機械的マッサージによるコリほぐし</strong></p>
-      <p className="text-gray-700 mb-4">目周囲の筋肉、特に眼輪筋は、PC作業やスマートフォン使用により常に緊張状態にあります。アイローラーを転がすことで、この筋肉の緊張を物理的にほぐすことができます。研究によると、定期的なマッサージにより眼精疲労の症状が平均32%軽減されたとの報告もあります。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目の疲れが発生する主な原因</h2>
-      <p className="text-gray-700 mb-4">アイローラーを効果的に活用するため、目の疲れの原因を理解することが重要です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼精疲労の医学的背景</h3>
-      <p className="text-gray-700 mb-4">日本眼科学会の調査によると、デスクワーク従事者の約87%が眼精疲労を経験しています。その主な原因は：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>ピント調整筋の疲労</strong>：PCやスマートフォンの画面を見続けることで、毛様体筋が過緊張状態になります</li>
-        <li><strong>瞬きの減少</strong>：画面閲覧時、瞬きの回数が通常の60～70%に低下し、涙液の蒸発が促進されます</li>
-        <li><strong>姿勢の悪化</strong>：不適切な作業姿勢により、首や肩の凝りが眼精疲労を増幅させます</li>
-        <li><strong>ブルーライト曝露</strong>：スマートデバイスから放出されるブルーライトが、網膜疲労を引き起こします</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">朝のむくみが生じるメカニズム</h3>
-      <p className="text-gray-700 mb-4">目周囲のむくみは、以下のプロセスで発生します：</p>
-      <p className="text-gray-700 mb-4">1. 夜間の睡眠中、顔の血液循環が減速します</p>
-      <p className="text-gray-700 mb-4">2. 眼周囲の筋肉が弛緩し、リンパの流動性が低下します</p>
-      <p className="text-gray-700 mb-4">3. 老廃物が蓄積され、浮腫が形成されます</p>
-      <p className="text-gray-700 mb-4">4. 起床時に顔がパンパンに腫れた状態になります</p>
-      <p className="text-gray-700 mb-4">アイローラーによる冷却刺激は、このむくみを迅速に軽減する効果があります。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アイローラーの種類と選び方</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">冷却タイプアイローラー</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>冷蔵庫で事前に冷やして使用します</li>
-        <li>冷却効果が高く、むくみ解消に特に有効です</li>
-        <li>金属製（ステンレスやアルミニウム）が多く、熱伝導性が優れています</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>メリット</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>短時間で強い効果が期待できます</li>
-        <li>目の奥の疲れまで軽減できます</li>
-        <li>朝のむくみ対策に最適です</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>デメリット</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>毎回冷蔵庫で冷やす必要があります</li>
-        <li>冷感が強すぎる場合があります</li>
-        <li>持ち運びが困難です</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">常温タイプアイローラー</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>冷却の必要がなく、いつでも使用できます</li>
-        <li>プラスチック製や樹脂製が中心です</li>
-        <li>マッサージ効果を重視した設計になっています</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>メリット</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>いつでも手軽に使用できます</li>
-        <li>毎日の習慣的なケアに適しています</li>
-        <li>肌が敏感な方でも使いやすいです</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>デメリット</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>冷却効果はありません</li>
-        <li>むくみ解消効果は冷却タイプより劣ります</li>
-        <li>疲れが強い場合は物足りなさを感じることがあります</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">電動タイプアイローラー</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>バッテリーやUSB充電式で、自動的に振動またはローテーションします</li>
-        <li>最新タイプで、利便性が高いです</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>メリット</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>手動より効率的にマッサージできます</li>
-        <li>振動により血流促進効果が高いです</li>
-        <li>毎日の継続使用に向いています</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>デメリット</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>価格が3,000円～8,000円と高めです</li>
-        <li>充電の手間があります</li>
-        <li>過度な振動により肌に負担をかける可能性があります</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アイローラーの正しい使用方法</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">効果を最大化するための使用手順</h3>
-      <p className="text-gray-700 mb-4"><strong>朝のむくみ解消ケア（約5分）</strong></p>
-      <p className="text-gray-700 mb-4">1. <strong>準備段階</strong>（1分）</p>
-      <p className="text-gray-700 mb-4">   - 冷却タイプの場合、冷蔵庫から取り出します</p>
-      <p className="text-gray-700 mb-4">   - 顔を軽く水で洗い、タオルで優しく拭きます</p>
-      <p className="text-gray-700 mb-4">   - 保湿クリームまたはジェルを薄く塗布します（ローラーの滑りを良くするため）</p>
-      <p className="text-gray-700 mb-4">2. <strong>マッサージ開始</strong>（3分）</p>
-      <p className="text-gray-700 mb-4">   - 目の内側（目頭）から外側（目尻）に向かって、優しく転がします</p>
-      <p className="text-gray-700 mb-4">   - 圧力は「肌が気持ちよく感じる程度」に調整します</p>
-      <p className="text-gray-700 mb-4">   - 各ラインを10回程度繰り返します</p>
-      <p className="text-gray-700 mb-4">   - 目の下：内側から外側へ</p>
-      <p className="text-gray-700 mb-4">   - まぶた：目頭から眉毛方向へ</p>
-      <p className="text-gray-700 mb-4">   - こめかみ：上から下へ</p>
-      <p className="text-gray-700 mb-4">3. <strong>仕上げ段階</strong>（1分）</p>
-      <p className="text-gray-700 mb-4">   - 冷却効果を肌に浸透させるため、軽く目を閉じて静置します</p>
-      <p className="text-gray-700 mb-4">   - 通常のスキンケアを続けます</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">使用頻度と期間の目安</h3>
-      <p className="text-gray-700 mb-4"><strong>推奨される使用スケジュール</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>朝：毎日1回（起床後すぐが効果的）</li>
-        <li>夜：週3～4回（過度な使用を避けるため）</li>
-        <li>1回あたりの使用時間：3～5分</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>効果が実感できるまでの期間</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>むくみ解消：1～3日で効果を感じることが多いです</li>
-        <li>目の疲れ軽減：1週間～2週間で実感できます</li>
-        <li>肌質改善：3週間～1ヶ月の継続使用で効果が顕著になります</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アイローラー購入の際の注意点</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">素材選定のポイント</h3>
-      <p className="text-gray-700 mb-4"><strong>メタル素材の場合</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ステンレス製：耐久性が高く、衛生的です</li>
-        <li>アルミニウム製：軽量で持ち運びやすいです</li>
-        <li>価格帯：2,000円～5,000円程度</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>プラスチック素材の場合</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>肌への刺激が少ないです</li>
-        <li>軽量で初心者向けです</li>
-        <li>価格帯：1,000円～2,500円程度</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">衛生管理の重要性</h3>
-      <p className="text-gray-700 mb-4">使用前後の清潔性維持が重要です：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>毎使用後、柔らかい布で拭き取ります</li>
-        <li>週1回程度、ぬるま湯で優しく洗浄します</li>
-        <li>完全に乾燥させてから保管します</li>
-        <li>バクテリア増殖を防ぐため、湿度の低い場所に保管します</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アイローラー使用時の禁止事項</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">使用を避けるべき状況</h3>
-      <p className="text-gray-700 mb-4">1. <strong>眼病がある場合</strong></p>
-      <p className="text-gray-700 mb-4">   - 結膜炎、ものもらい、ドライアイが重症の場合は、医師の指示を仰ぎます</p>
-      <p className="text-gray-700 mb-4">2. <strong>肌トラブルがある場合</strong></p>
-      <p className="text-gray-700 mb-4">   - 湿疹や炎症がある場合は、治癒まで使用を控えます</p>
-      <p className="text-gray-700 mb-4">3. <strong>目を強くこすっている場合</strong></p>
-      <p className="text-gray-700 mb-4">   - 眼圧上昇のリスクがあります</p>
-      <p className="text-gray-700 mb-4">4. <strong>過度な力での使用</strong></p>
-      <p className="text-gray-700 mb-4">   - 目周囲の皮膚は厚さ0.6mmと非常に薄く、デリケートです</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめアイローラーグッズ</h2>
-      <p className="text-gray-700 mb-4">目の疲れ・むくみ解消に効果的なアイローラーを1点ご紹介します：</p>
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        パソコンやスマホの長時間使用で疲れた目や、朝の顔のむくみ。アイローラーは手軽なセルフケアとして人気です。この記事ではおすすめ製品と選び方、使い方を紹介します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アイケアグッズ早見表</h2>
+      <p className="text-gray-700 mb-4">アイローラー本体と、併用でおすすめのアイクリームを比較しました。</p>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-left p-3 border border-gray-200">特徴</th>
+              <th className="text-left p-3 border border-gray-200">価格帯</th>
+              <th className="text-left p-3 border border-gray-200">おすすめ度</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'RelxEye アイリラクサー RE-001', feature: '振動マッサージ機能を備えた電動アイローラー', price: '3,000〜8,000円', rating: '★★★★★' },
+              { name: '肌ラボ 極潤プレミアムヒアルロンアイクリーム', feature: 'ローラー使用前の保湿ケアに。7種のヒアルロン酸配合', price: '1,500円前後', rating: '★★★★☆' },
+            ].map(r => (
+              <tr key={r.name} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.feature}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.price}</td>
+                <td className="p-3 border border-gray-200 text-amber-500">{r.rating}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d7f.33f4cbd3.56237d80.df2babe8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcitech%2Frelx-eye-001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">RelxEye アイリラクサー RE-001</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">RelxEye アイリラクサー RE-001を楽天で見る →</div>
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目的別のおすすめアイテム</h2>
+      <p className="text-gray-700 mb-4">アイローラー単体でも使えますが、目的に合わせてアイクリームと組み合わせると、より使い心地が高まります。</p>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">効率よくマッサージしたい方に：RelxEye アイリラクサー RE-001</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>振動によるマッサージ機能を搭載し、手動タイプより効率的にケアできる電動アイローラーです</li>
+        <li>USB充電式で繰り返し使用でき、朝のむくみ対策や仕事の合間のリフレッシュに使いやすい設計です</li>
+        <li className="text-gray-500">気になる点：3,000〜8,000円と手動タイプに比べて価格が高く、充電の手間もかかります</li>
+      </ul>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">滑りを良くして保湿もしたい方に：肌ラボ 極潤プレミアムヒアルロンアイクリーム</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>ローラー使用前に塗布することで滑りが良くなり、マッサージ効果と保湿効果を同時に得やすくなります</li>
+        <li>7種のヒアルロン酸Na配合の医薬部外品で、1,500円前後と手に取りやすい価格です</li>
+        <li className="text-gray-500">気になる点：アイローラー本体ではないため、マッサージ効果そのものはローラーに依存します</li>
+      </ul>
+
+      <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d7f.33f4cbd3.56237d80.df2babe8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcitech%2Frelx-eye-001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アイローラー・電動タイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">RelxEye アイリラクサー RE-001</p>
-          <p className="text-xs text-gray-500 mb-3">振動によるマッサージ機能で血流促進効果を高める電動アイローラー</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">RelxEye アイリラクサー RE-001を楽天で見る →</div>
+          <p className="text-xs text-gray-500 mb-3">振動マッサージ機能で血流促進効果を高める電動アイローラー</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href={RAKUTEN('肌ラボ 極潤プレミアムヒアルロンアイクリーム')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">併用アイクリーム</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">肌ラボ 極潤プレミアムヒアルロンアイクリーム</p>
+          <p className="text-xs text-gray-500 mb-3">7種のヒアルロン酸Na配合。ローラー使用前の保湿に</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アイローラーと他のアイケアグッズの組み合わせ</h2>
-      <p className="text-gray-700 mb-4">アイローラーの効果をさらに高めるために、他のアイケア商品との組み合わせをおすすめします：</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ホットアイマスクとの併用</h3>
-      <p className="text-gray-700 mb-4">ホットアイマスクでの温熱療法とアイローラーの冷却療法を組み合わせることで、血流改善効果が最大化されます。朝はアイローラー、夜はホットアイマスクという使い分けが効果的です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">アイクリームとの併用</h3>
-      <p className="text-gray-700 mb-4">高保湿のアイクリームを塗布してからアイローラーを使用することで、ローラーの滑りが良くなり、マッサージ効果が高まります。また、クリームの浸透性も向上します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">アイセラムの活用</h3>
-      <p className="text-gray-700 mb-4">ビタミンC誘導体やコラーゲン配合のアイセラムを事前に塗布し、アイローラーでマッサージすることで、美容成分の吸収効率が上昇します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目の疲れ予防との連携</h2>
-      <p className="text-gray-700 mb-4">アイローラーは疲れた目をケアするアイテムですが、予防的な使用も重要です：</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">日中の予防策</h3>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方4つのポイント</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>1時間に1回、遠くを見つめる（20-20-20ルール）</li>
-        <li>スマートフォン画面の明るさを調整</li>
-        <li>ブルーライトカットメガネの着用</li>
+        <li><strong>素材で選ぶ：</strong>ステンレスやアルミニウムなどの金属製は冷却効果が高く、プラスチック製は肌への刺激が少なく初心者向けです</li>
+        <li><strong>電動か手動かで選ぶ：</strong>効率を重視するなら振動機能付きの電動タイプ、手軽さを重視するなら手動タイプが合いやすいです</li>
+        <li><strong>使用頻度の目安：</strong>1回3〜5分程度、朝は毎日、夜は週3〜4回程度が一般的な目安とされています</li>
+        <li><strong>衛生管理のしやすさを確認する：</strong>使用後に拭き取りやすい素材か、定期的に洗浄できる構造かをチェックしましょう</li>
       </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">夜間のリセット</h3>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">正しい使い方の基本</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>就寝1時間前にアイローラーでマッサージ</li>
-        <li>ホットアイマスクで血流改善</li>
-        <li>十分な睡眠（7～8時間）確保</li>
+        <li>目の内側（目頭）から外側（目尻）に向かって、肌が気持ちよく感じる程度の圧で優しく転がします</li>
+        <li>アイクリームやジェルを薄く塗布してから使用すると、滑りが良くなりマッサージしやすくなります</li>
+        <li>使用後は柔らかい布で拭き取り、週1回程度ぬるま湯で洗浄して清潔に保ちましょう</li>
       </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ：アイローラーはむくみと疲労対策の強い味方</h2>
-      <p className="text-gray-700 mb-4">アイローラーは、科学的根拠に基づいた目の疲れ・むくみ解消グッズです。冷却とマッサージの二つの作用により、短時間で効果が期待できます。毎日の習慣として取り入れることで、眼精疲労の軽減と美肌効果の両方を実現できます。</p>
-      <p className="text-gray-700 mb-4">自分のライフスタイルと肌質に合わせて、最適なアイローラーを選択し、正しい使用方法で継続することが成功の鍵です。目周囲の皮膚は顔の中でも最もデリケートな部位であるため、優しく丁寧なケアを心がけましょう。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">使用時の注意点</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>結膜炎やものもらいなど眼病がある場合、目の周りに肌トラブルがある場合は使用を控えてください</li>
+        <li>目を強くこすったり、過度な力で使用したりすると、眼圧上昇や肌への負担につながる可能性があります</li>
+        <li>目周囲の皮膚は薄くデリケートなため、優しい力加減を心がけましょう</li>
+      </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">アイローラーは、正しい使い方と適度な頻度で使うことで、日々の目の疲れやむくみのセルフケアに役立ちます。アイクリームと組み合わせると、保湿とマッサージ効果を同時に得やすくなります。</p>
+      <p className="text-gray-700 mb-4">自分のライフスタイルに合った素材・タイプを選び、無理のない範囲で継続してみてください。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('肌ラボ 極潤プレミアムヒアルロンアイクリーム')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">併用におすすめ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">肌ラボ 極潤プレミアムヒアルロンアイクリーム</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">肌ラボ 極潤プレミアムヒアルロンアイクリームを楽天で見る →</div>
+        </a>
+      </div>
     </article>
   ),
     "glare-lens-night-driving-optimal": (
@@ -5980,166 +5836,102 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   ),
     "lutein-supplement-macular-degeneration-prevention": (
     <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインサプリで目の健康を守る理由</h2>
-      <p className="text-gray-700 mb-4">現代社会では、スマートフォンやパソコンの使用時間が増加し、多くの人が目の疲労や健康問題に直面しています。加齢黄斑変性（AMD）は、高齢者の視力喪失の主要な原因であり、その予防が急務となっています。</p>
-      <p className="text-gray-700 mb-4">ルテインは、これらの目の問題を予防・改善するために注目されているカロテノイドの一種です。本記事では、ルテインサプリの効果、選び方、そして黄斑変性予防についての最新情報をご紹介します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインとは：目を守る黄色い栄養素</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ルテインの基本情報</h3>
-      <p className="text-gray-700 mb-4">ルテインはカロテノイドファミリーに属する脂溶性の色素で、自然界では200種類以上のカロテノイドが存在する中でも、特に目の健康に関連しているものです。人間の目の黄斑部（網膜中央）と水晶体に天然に存在し、紫外線やブルーライトから光受容細胞を保護する役割を果たします。</p>
-      <p className="text-gray-700 mb-4"><strong>ルテインの主な特徴：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>脂溶性ビタミンのため、食事の脂肪と共に摂取すると吸収が向上</li>
-        <li>体内で生成できない必須栄養素</li>
-        <li>抗酸化作用により、活性酸素から目の細胞を保護</li>
-        <li>加齢に伴って体内の濃度が低下</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ルテインと黄斑変性の関係</h3>
-      <p className="text-gray-700 mb-4">加齢黄斑変性（AMD）は、60歳以上の高齢者における視力喪失の主要な原因です。世界保健機関（WHO）の統計によると、世界中で約2,500万人が黄斑変性を患っており、その数は増加中です。</p>
-      <p className="text-gray-700 mb-4">ルテインと同じカロテノイドであるジアンテキサンチンとともに、黄斑部に高濃度で存在することで、光学的フィルターとして機能します。複数の大規模臨床研究（特に有名なAREDS研究：Age-Related Eye Disease Study）では、ルテイン摂取量が多い人ほど、黄斑変性の発症リスクが26～32%低下することが確認されています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインサプリの選び方：効果的な製品を見分けるコツ</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">含有量と吸収性を確認</h3>
-      <p className="text-gray-700 mb-4">ルテインサプリを選ぶ際に最も重要なのは、含有量と吸収率です。一般的な推奨摂取量は1日6～10mgですが、製品によって含有量にばらつきがあります。</p>
-      <p className="text-gray-700 mb-4"><strong>チェックすべきポイント：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>ルテイン含有量：</strong> 1日あたり6～20mg（製品によって異なる）</li>
-        <li><strong>ジアンテキサンチン含有：</strong> ルテインとの相乗効果を期待できます</li>
-        <li><strong>吸収性フォーム：</strong> マリゴールド花由来、またはジアンテキサンチン配合製品は高い吸収率を示します</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">信頼性の確認</h3>
-      <p className="text-gray-700 mb-4">サプリメント市場には多くの製品が存在します。信頼できる製品を選ぶために、以下の認証や情報を確認しましょう。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>GMP認証：</strong> 製造品質が国際基準に準拠していることの証</li>
-        <li><strong>第三者検査実施：</strong> 含有量が正確に記載されているか確認</li>
-        <li><strong>原材料：</strong> マリゴールドなどの植物由来が一般的</li>
-      </ul>
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        加齢黄斑変性（AMD）は視力喪失の主要な原因のひとつとされ、その予防成分として注目されているのがルテインです。この記事では代表的なルテインサプリを比較しながら、選び方と摂取のポイントを紹介します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインサプリ早見表</h2>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-left p-3 border border-gray-200">特徴</th>
+              <th className="text-left p-3 border border-gray-200">価格帯</th>
+              <th className="text-left p-3 border border-gray-200">おすすめ度</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'DHC ルテイン光対策', feature: 'ルテイン・ゼアキサンチン配合。続けやすいシンプル処方', price: '1,000円前後', rating: '★★★★☆' },
+              { name: 'ファンケル えんきん', feature: 'ルテイン・ゼアキサンチンに加えアスタキサンチン配合の機能性表示食品', price: '3,000円前後', rating: '★★★★★' },
+            ].map(r => (
+              <tr key={r.name} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.feature}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.price}</td>
+                <td className="p-3 border border-gray-200 text-amber-500">{r.rating}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="my-4">
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ルテインサプリ</span>
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
-          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。続けやすい価格帯で毎日の栄養補給に</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">DHC ルテイン光対策を楽天で見る →</div>
         </a>
       </div>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">配合成分の相乗効果</h3>
-      <p className="text-gray-700 mb-4">ルテインの効果を最大限に発揮するため、他の目に良い成分との配合も重要です。</p>
-      <p className="text-gray-700 mb-4"><strong>相乗効果が期待できる成分：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>ジアンテキサンチン：</strong> ルテインと黄斑部で同時に機能</li>
-        <li><strong>ゼアキサンチン：</strong> 同じカロテノイドで相互補完的な作用</li>
-        <li><strong>アスタキサンチン：</strong> より強力な抗酸化作用</li>
-        <li><strong>ビルベリーエキス（アントシアニン）：</strong> 眼精疲労緩和</li>
-        <li><strong>ルテオリン：</strong> フラボノイドで抗炎症効果</li>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">タイプ別のおすすめルテインサプリ</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">まずは続けやすい価格で試したい方に：DHC ルテイン光対策</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>ルテイン・ゼアキサンチンを配合したシンプルな処方で、1,000円前後と続けやすい価格帯です</li>
+        <li>日々の栄養補給として、無理なく長期間続けやすい設計です</li>
+        <li className="text-gray-500">気になる点：アスタキサンチンなど追加成分は配合されておらず、シンプルな処方です</li>
       </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">黄斑変性予防：ルテインサプリの実際の効果</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">AREDS研究の成果</h3>
-      <p className="text-gray-700 mb-4">2001年に発表されたARES研究は、ルテイン療法の有効性を証明した最も重要な臨床研究です。この研究には4,757人の参加者が5年間関与しました。</p>
-      <p className="text-gray-700 mb-4"><strong>主な結果：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ルテイン（12mg）とジアンテキサンチン（2mg）を含む特定の栄養素組み合わせにより、進行性黄斑変性のリスクが26%低下</li>
-        <li>ビタミンC、E、亜鉛、銅の組み合わせでもリスク低下が確認</li>
-        <li>これら栄養素の組み合わせがさらに効果的（最大35%のリスク低下）</li>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">複合的なケアを重視する方に：ファンケル えんきん</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>ルテイン・ゼアキサンチンに加え、アスタキサンチンも配合された機能性表示食品です</li>
+        <li>手元のピント調節や目の疲労感のケアを目的とした届出情報が公開されています</li>
+        <li className="text-gray-500">気になる点：3,000円前後とDHC製品より価格が高めです</li>
       </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">実際の効果期間と継続性</h3>
-      <p className="text-gray-700 mb-4">ルテインサプリの効果は即座には現れません。複数の研究から、継続的な摂取により以下のタイムラインで効果が期待できることが明らかになっています。</p>
-      <p className="text-gray-700 mb-4">| 期間 | 期待される変化 |</p>
-      <p className="text-gray-700 mb-4">|------|--------------|</p>
-      <p className="text-gray-700 mb-4">| 1～3ヶ月 | 黄斑部のルテイン濃度開始上昇、眼精疲労の軽微な改善 |</p>
-      <p className="text-gray-700 mb-4">| 3～6ヶ月 | 黄斑部の光学密度が測定可能に上昇、目の疲れやすさの改善 |</p>
-      <p className="text-gray-700 mb-4">| 6～12ヶ月 | ブルーライト感度の低下、より顕著な視力改善の報告 |</p>
-      <p className="text-gray-700 mb-4">| 12ヶ月以上 | 黄斑変性のリスク有意な低下、継続摂取で効果維持 |</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインサプリの正しい摂取方法</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">最適な摂取タイミング</h3>
-      <p className="text-gray-700 mb-4">ルテインは脂溶性ビタミンのため、脂肪を含む食事と一緒に摂取することが重要です。</p>
-      <p className="text-gray-700 mb-4"><strong>推奨される摂取方法：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>朝食時：卵、チーズ、ナッツなぞの脂肪を含む食事と同時に摂取</li>
-        <li>夜間：夕食後も脂肪含有量が多い食事と組み合わせると効果的</li>
-        <li>毎日同じ時間に摂取し、習慣化することで継続性が向上</li>
-      </ul>
-      <p className="text-gray-700 mb-4">研究によると、空腹時に摂取した場合の吸収率は食事と共に摂取した場合の約35%程度に低下します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">推奨摂取期間</h3>
-      <p className="text-gray-700 mb-4">黄斑部への蓄積と効果発現には時間が必要です。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>初期段階：</strong> 最初の3～6ヶ月は毎日継続</li>
-        <li><strong>維持段階：</strong> 6ヶ月以降は継続摂取で効果を維持</li>
-        <li><strong>長期摂取：</strong> 5年以上の継続摂取でより強固な予防効果が期待できます</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインサプリと他の目のサポート方法の組み合わせ</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">食事からのルテイン摂取</h3>
-      <p className="text-gray-700 mb-4">サプリメントだけに頼らず、ルテインが豊富な食品も積極的に摂取しましょう。</p>
-      <p className="text-gray-700 mb-4"><strong>ルテイン含有量が多い食品（100gあたり）：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ケール：21.9mg</li>
-        <li>ホウレンソウ：11.2mg</li>
-        <li>パセリ：5.5mg</li>
-        <li>ブロッコリー：1.9mg</li>
-        <li>キウイフルーツ：0.3mg</li>
-        <li>トウモロコシ：0.64mg</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ブルーライト対策との組み合わせ</h3>
-      <p className="text-gray-700 mb-4">ルテインサプリは予防効果を高めますが、以下の対策と組み合わせるとより効果的です。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>ブルーライトカット眼鏡：</strong> ルテイン摂取と併用で、デジタルデバイス使用時の負担を軽減</li>
-        <li><strong>適切な照明環境：</strong> 目への負担を減らし、ルテインの機能をサポート</li>
-        <li><strong>定期的な目の休息：</strong> 20-20-20ルール（20分ごとに20秒、20フィート先を見る）の実践</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインサプリの安全性と副作用</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">一般的な安全性プロフィール</h3>
-      <p className="text-gray-700 mb-4">ルテインは多くの臨床試験で安全性が確認されており、推奨摂取量での重篤な副作用は報告されていません。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>LD50値：</strong> マウスでの実験で摂取毒性は認められていない</li>
-        <li><strong>長期安全性：</strong> 5～10年間の継続摂取でも安全性が確認されている</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">報告されている軽微な副作用</h3>
-      <p className="text-gray-700 mb-4">極めてまれですが、以下の症状が報告されています。</p>
-      <p className="text-gray-700 mb-4">| 副作用 | 発生率 | 対応方法 |</p>
-      <p className="text-gray-700 mb-4">|--------|--------|---------|</p>
-      <p className="text-gray-700 mb-4">| 胃部不快感 | &lt;1% | 食事と共に摂取、摂取量を減らす |</p>
-      <p className="text-gray-700 mb-4">| 皮膚の黄変（カロテノイド血症） | &lt;0.5% | 摂取中止で数週間以内に回復 |</p>
-      <p className="text-gray-700 mb-4">| 軽微な頭痛 | &lt;0.2% | 水分摂取を増やす、医師に相談 |</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">相互作用の可能性</h3>
-      <p className="text-gray-700 mb-4">ルテインは脂溶性のため、以下の薬物・成分との相互作用に注意が必要です。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>オーリスタット（脂肪吸収阻害薬）：</strong> ルテイン吸収を低下させる可能性</li>
-        <li><strong>ベータカロテンとの過剰摂取：</strong> 体内蓄積のリスク増加</li>
-        <li><strong>特定の脂質低下薬：</strong> 吸収率に影響</li>
-      </ul>
-      <p className="text-gray-700 mb-4">摂取前に医師や薬剤師に相談することをお勧めします。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">黄斑変性予防における総合的なアプローチ</h2>
-      <p className="text-gray-700 mb-4">ルテインサプリは黄斑変性予防の重要な要素ですが、単独では不十分です。包括的なアプローチが必要です。</p>
-      <p className="text-gray-700 mb-4"><strong>予防の3本柱：</strong></p>
-      <p className="text-gray-700 mb-4">1. <strong>栄養療法：</strong> ルテイン、ジアンテキサンチン、ビタミン、ミネラルの適切な摂取</p>
-      <p className="text-gray-700 mb-4">2. <strong>生活習慣改善：</strong> 紫外線対策、禁煙、適度な運動</p>
-      <p className="text-gray-700 mb-4">3. <strong>定期的な眼科検診：</strong> 年1回以上の専門的な検査で早期発見</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">紫外線対策の重要性</h3>
-      <p className="text-gray-700 mb-4">ルテインの効果をさらに高めるため、紫外線からの保護が重要です。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>UV400サングラスの着用：</strong> 紫外線を99%以上ブロック</li>
-        <li><strong>帽子やサンバイザーの使用：</strong> 特に昼間の外出時</li>
-        <li><strong>紫外線対策目薬の活用：</strong> ルテイン含有タイプもあります</li>
-      </ul>
-      <div className="my-4">
+      <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ルテインサプリ</span>
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">シンプル処方</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
-          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。続けやすい価格帯で毎日の栄養補給に</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
+          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。続けやすい価格帯</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href={RAKUTEN('ファンケル えんきん')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">機能性表示食品</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ファンケル えんきん</p>
+          <p className="text-xs text-gray-500 mb-3">アスタキサンチンも配合した複合ケアタイプ</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ：ルテインサプリで目の未来を守る</h2>
-      <p className="text-gray-700 mb-4">ルテインサプリは、科学的根拠に基づいた黄斑変性予防手段です。AREDS研究をはじめとする多くの臨床研究で、その有効性が証明されています。</p>
-      <p className="text-gray-700 mb-4"><strong>重要なポイント：</strong></p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方4つのポイント</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>推奨摂取量は1日6～10mg</li>
-        <li>食事の脂肪と共に摂取すると吸収率が向上</li>
-        <li>最低3～6ヶ月の継続が効果発現に必要</li>
-        <li>紫外線対策や生活習慣改善と組み合わせることが重要</li>
-        <li>定期的な眼科検診で進行状況を監視</li>
+        <li><strong>含有量を確認する：</strong>一般的な目安として1日6〜10mg程度のルテインが配合されているかチェックしましょう</li>
+        <li><strong>相乗成分の有無：</strong>ゼアキサンチンやアスタキサンチンなど、目の健康サポートで知られる成分の配合も選ぶ基準になります</li>
+        <li><strong>継続しやすい価格帯か：</strong>効果の実感には継続摂取が前提となるため、無理なく続けられる価格の製品を選びましょう</li>
+        <li><strong>脂肪分と一緒に摂取する：</strong>ルテインは脂溶性のため、食事と一緒に摂取すると吸収されやすいとされています</li>
       </ul>
-      <p className="text-gray-700 mb-4">加齢に伴う目の健康低下は避けられませんが、適切な予防対策により、その進行を大幅に遅延させることが可能です。ルテインサプリは、そのための効果的で安全な選択肢となります。</p>
-      <p className="text-gray-700 mb-4">今からでも遅くありません。目の健康を優先し、ルテインサプリと良好な生活習慣で、将来の視力喪失リスクを低減させましょう。</p>
+      <p className="text-gray-700 mb-4">ルテインはほうれん草やケールなど緑黄色野菜にも含まれています。サプリメントと食事の両方から摂取することも選択肢のひとつです。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">安全性と注意点</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>ルテインは食品由来の成分で、一般的な摂取量での重篤な副作用は報告されていません</li>
+        <li>持病があり薬を服用中の方は、念のため摂取前に医師や薬剤師に相談することをおすすめします</li>
+        <li>サプリメントは治療薬ではありません。視力の変化を感じた場合は眼科を受診してください</li>
+      </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">ルテインは、目の健康維持のために注目されている栄養素のひとつです。ご自身の予算や求める機能性に応じて、続けやすい製品を選ぶことが大切です。</p>
+      <p className="text-gray-700 mb-4">サプリメントだけに頼らず、紫外線対策や適度な休息など生活習慣の見直しと合わせて取り入れてみてください。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('ファンケル えんきん')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">複合ケアをしたい方に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ファンケル えんきん</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">ファンケル えんきんを楽天で見る →</div>
+        </a>
+      </div>
     </article>
   ),
     "myopia-prevention-children-atropine-orthokeratology": (
@@ -6624,116 +6416,102 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   ),
     "smartphone-presbyopia-magnifier-eyeglasses": (
     <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スマホ老眼とは？急増する現代の眼の悩み</h2>
-      <p className="text-gray-700 mb-4">スマートフォンの普及により、「スマホ老眼」という新しい眼の悩みが急速に増えています。2024年の調査によると、20代～40代の約72%がスマートフォン使用に伴う眼の不快感を経験しており、その症状は従来の老眼とは異なるものです。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">スマホ老眼が発生する理由</h3>
-      <p className="text-gray-700 mb-4">スマホ老眼の主な原因は以下の3つです：</p>
-      <p className="text-gray-700 mb-4"><strong>1. ピント調節機能の過負荷</strong></p>
-      <p className="text-gray-700 mb-4">スマートフォンの画面は小さく、文字も細かいため、目の毛様体筋が常に緊張した状態が続きます。この状態が長時間続くと、ピント調節機能が疲労し、ピントが合わせにくくなります。</p>
-      <p className="text-gray-700 mb-4"><strong>2. ブルーライトの影響</strong></p>
-      <p className="text-gray-700 mb-4">スマートフォンから発せられるブルーライトは、網膜への影響が大きく、瞳孔の散大を促進します。この結果、眼精疲労が加速されます。</p>
-      <p className="text-gray-700 mb-4"><strong>3. 瞬きの減少</strong></p>
-      <p className="text-gray-700 mb-4">スマートフォン使用時は、通常時の1/3程度に瞬きが減少します。涙液の分泌量が低下し、ドライアイになりやすくなります。</p>
-      <p className="text-gray-700 mb-4">これらの原因により、年齢に関係なく20代からでもスマホ老眼が発症する可能性があるのです。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スマホ老眼対策グッズの種類と効果</h2>
-      <p className="text-gray-700 mb-4">スマホ老眼を対策するグッズは大きく5つのカテゴリーに分類できます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1. スマホ用拡大鏡</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴と効果</strong></p>
-      <p className="text-gray-700 mb-4">拡大鏡は、スマートフォンの画面を物理的に拡大表示するグッズです。倍率は一般的に2～3倍で、目のピント調節の負担を大幅に軽減できます。研究データによると、拡大鏡を使用することで眼精疲労が約45%低下することが報告されています。</p>
-      <p className="text-gray-700 mb-4"><strong>種類別の選び方</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>クリップ式拡大鏡</strong>：スマートフォンに直接装着できるタイプです。携帯性に優れていますが、倍率は通常1.5～2倍です。</li>
-        <li><strong>スタンド式拡大鏡</strong>：机の上に設置するタイプで、両手が自由になります。倍率は2～3倍が一般的で、長時間使用に適しています。</li>
-        <li><strong>ルーペ型拡大鏡</strong>：手持ちタイプで、必要な時だけ使用できます。携帯性と精度のバランスが取れています。</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>最適な倍率の選択</strong></p>
-      <p className="text-gray-700 mb-4">倍率が高いほど拡大効果は増しますが、5倍を超えると色収差（色のにじみ）が目立つようになり、逆に眼精疲労が増加する可能性があります。したがって、一般的なスマートフォン使用には2.5～3倍がおすすめです。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2. 老眼鏡・ブルーライトカット眼鏡</h3>
-      <p className="text-gray-700 mb-4"><strong>老眼鏡の効果</strong></p>
-      <p className="text-gray-700 mb-4">既に加齢による老眼がある場合、スマートフォン専用の老眼鏡が有効です。特にスマホ用老眼鏡は、スマートフォンの画面までの距離（約30～40cm）に最適化された度数で作られています。</p>
-      <p className="text-gray-700 mb-4"><strong>ブルーライトカット眼鏡のメリット</strong></p>
-      <p className="text-gray-700 mb-4">ブルーライトカット眼鏡は、ブルーライトの約35～50%をカットし、瞳孔の散大を抑制します。2023年の眼科学会の調査では、ブルーライトカット眼鏡の使用で眼精疲労が平均38%低下することが報告されています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3. スマートフォン画面保護フィルム</h3>
-      <p className="text-gray-700 mb-4"><strong>ブルーライトカット機能付きフィルム</strong></p>
-      <p className="text-gray-700 mb-4">画面に直接貼り付けるタイプのフィルムで、ブルーライト約30～40%をカットできます。メリットは、眼鏡なしで効果が得られることですが、デメリットとして画面の色合いが変わることです。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">拡大鏡と老眼鏡の選び分け方</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">スマホ老眼のみの場合</h3>
-      <p className="text-gray-700 mb-4">スマホ老眼が主な症状の場合は、<strong>拡大鏡がおすすめ</strong>です。理由は以下の通りです：</p>
-      <p className="text-gray-700 mb-4">1. スマートフォンの画面を物理的に拡大するため、目のピント調節負荷が直接的に軽減される</p>
-      <p className="text-gray-700 mb-4">2. 年齢に関係なく効果が期待できる</p>
-      <p className="text-gray-700 mb-4">3. 老眼鏡よりも使用場面が限定されず、柔軟に対応できる</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">既に老眼がある場合</h3>
-      <p className="text-gray-700 mb-4">既に年齢による老眼がある場合は、以下の組み合わせが最適です：</p>
-      <p className="text-gray-700 mb-4"><strong>最適な対策方法</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>自宅での作業時</strong>：スマホ用老眼鏡＋ブルーライトカット眼鏡（2つの度数を組み合わせたものが理想的）</li>
-        <li><strong>外出時</strong>：拡大鏡またはスマホ用老眼鏡</li>
-        <li><strong>長時間使用時</strong>：拡大鏡とブルーライトカット眼鏡の両方を使用</li>
-      </ul>
-      <p className="text-gray-700 mb-4">度数は個人差が大きいため、眼鏡店での測定を強く推奨します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめのスマホ老眼対策グッズ</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">拡大鏡のおすすめ商品</h3>
-      <p className="text-gray-700 mb-4"><strong>スタンド式2.5倍拡大鏡</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>倍率：2.5倍</li>
-        <li>特徴：LED照明付き、光学ガラスレンズ使用</li>
-        <li>価格帯：3,000～5,000円</li>
-        <li>用途：長時間のスマートフォン・読書作業に最適</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>クリップ式1.5倍拡大鏡</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>倍率：1.5倍</li>
-        <li>特徴：スマートフォンに直接装着、軽量（約30g）</li>
-        <li>価格帯：1,500～2,500円</li>
-        <li>用途：外出先での使用に最適</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>拡大鏡・ルーペのおすすめ製品</strong></p>
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        スマホの画面が見づらい、文字がぼやける——そんな「スマホ老眼」の悩みに、拡大鏡やブルーライトカット眼鏡は手軽な対策になります。この記事ではおすすめアイテムと選び方を紹介します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スマホ老眼対策グッズ早見表</h2>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-left p-3 border border-gray-200">タイプ</th>
+              <th className="text-left p-3 border border-gray-200">価格帯</th>
+              <th className="text-left p-3 border border-gray-200">おすすめ度</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'ハズキルーペ', type: '拡大鏡・老眼鏡タイプ', price: '5,000円台〜', rating: '★★★★★' },
+              { name: 'JINS SCREEN', type: 'ブルーライトカット眼鏡', price: '3,000〜8,000円', rating: '★★★★☆' },
+            ].map(r => (
+              <tr key={r.name} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.type}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.price}</td>
+                <td className="p-3 border border-gray-200 text-amber-500">{r.rating}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="my-4">
+        <a href={RAKUTEN('ハズキルーペ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ハズキルーペ</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">ハズキルーペを楽天で見る →</div>
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">タイプ別のおすすめグッズ</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">スマホ老眼が主な悩みの方に：ハズキルーペ</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>かけたまま近くも遠くも見える拡大めがねで、スマホやスマホの文字を物理的に見やすくします</li>
+        <li>軽量フレームで長時間の装用にも対応しており、年齢に関係なく使いやすい設計です</li>
+        <li className="text-gray-500">気になる点：度付き老眼鏡と比べると、遠近両用のような細かな度数調整はできません</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ブルーライト対策も重視したい方に：JINS SCREEN</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>ブルーライトカット専用ラインで、度なし・度付き両対応。夜間のスマホ使用時の負担軽減に</li>
+        <li>3,000〜8,000円台と幅広い価格帯から選べ、PC作業用としても併用しやすいです</li>
+        <li className="text-gray-500">気になる点：拡大機能はないため、文字の見えづらさ自体の対策にはなりません</li>
+      </ul>
+      <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href={RAKUTEN('ハズキルーペ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">拡大鏡・老眼鏡タイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ハズキルーペ</p>
-          <p className="text-xs text-gray-500 mb-3">かけたまま近くも遠くも見える拡大めがね。軽量フレームで長時間の装用にも対応</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ハズキルーペを楽天で見る →</div>
+          <p className="text-xs text-gray-500 mb-3">軽量フレームで長時間の装用にも対応</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
+          <p className="text-xs text-gray-500 mb-3">度なし・度付き両対応。夜間使用の負担軽減に</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">老眼鏡・ブルーライトカット眼鏡のおすすめ</h3>
-      <p className="text-gray-700 mb-4"><strong>スマートフォン専用老眼鏡</strong></p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方4つのポイント</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>度数：+2.00D～+2.50D（一般的な範囲）</li>
-        <li>特徴：ブルーライトカット機能付き、UVカット95%以上</li>
-        <li>価格帯：2,000～4,000円</li>
-        <li>フレーム素材：軽量プラスチック（約20g）</li>
+        <li><strong>症状の主因で選ぶ：</strong>文字が見えにくいなら拡大タイプ、目の疲れやまぶしさが気になるならブルーライトカットタイプが合いやすいです</li>
+        <li><strong>使用時間の目安：</strong>スマホは目から30〜40cm程度離すと、目の負担を軽減しやすいとされています</li>
+        <li><strong>フレームの軽さを確認する：</strong>長時間使用する場合は、軽量フレームのほうが快適に使い続けられます</li>
+        <li><strong>すでに老眼がある場合は、眼鏡店での度数測定も検討しましょう</strong></li>
       </ul>
-      <p className="text-gray-700 mb-4"><strong>ブルーライトカット率が高い製品の特徴</strong></p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">受診の目安</h2>
+      <p className="text-gray-700 mb-4">以下のような症状が続く場合は、対策グッズだけに頼らず眼科を受診することをおすすめします。</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ブルーライトカット率50%以上</li>
-        <li>レンズカラーが黄色系（40%以上のカット）またはオレンジ系（50%以上のカット）</li>
-        <li>信頼できるメーカーが製造</li>
+        <li>スマートフォン使用後、30分以上文字がぼやけて見える状態が続く</li>
+        <li>目の乾燥感や痛み、違和感が続く</li>
+        <li>夜間に物が見えにくいと感じるようになった</li>
       </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スマホ老眼対策の使用方法と習慣</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">正しい使用距離と角度</h3>
-      <p className="text-gray-700 mb-4">スマートフォンを使用する際の最適な距離は<strong>30～40cm</strong>です。これより近いと目の負担が増加し、遠いと文字が見えにくくなります。また、画面の角度は目の高さより少し下（約15～20度下）に設定すると、首への負担も軽減できます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">20-20-20ルール</h3>
-      <p className="text-gray-700 mb-4">眼科医が推奨する「20-20-20ルール」は以下の通りです：</p>
-      <p className="text-gray-700 mb-4"><strong>20分ごとに、20秒間、20フィート（約6m）先の景色を見る</strong></p>
-      <p className="text-gray-700 mb-4">この習慣により、毛様体筋が十分に弛緩でき、眼精疲労の進行を約60%抑制できます。実際に2024年の研究では、このルールを守る人の眼精疲労発症率が36%低下することが報告されています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">その他の効果的な対策</h3>
-      <p className="text-gray-700 mb-4">1. <strong>温かいアイマスクの使用</strong>：1日1回、就寝前に10～15分使用すると効果的です。血流が改善され、目の疲労が軽減されます。</p>
-      <p className="text-gray-700 mb-4">2. <strong>瞬きの意識的な実施</strong>：スマートフォン使用時は瞬きが1/3に減少します。意識的に瞬きを増やすだけでも改善効果があります。</p>
-      <p className="text-gray-700 mb-4">3. <strong>目を温めるアイケア</strong>：温度40～45℃の蒸気で目の周囲を温めると、涙液分泌量が増加し、ドライアイが改善されます。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スマホ老眼が疑われる場合の対応</h2>
-      <p className="text-gray-700 mb-4">以下の症状が2週間以上続く場合は、眼科医の診察を受けることをおすすめします：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>スマートフォン使用後、30分以上にわたり文字がぼやけて見える</li>
-        <li>目の乾燥感が強く、不快感が続く</li>
-        <li>目の周辺に痛みや違和感がある</li>
-        <li>夜間に物が見えにくくなった</li>
-      </ul>
-      <p className="text-gray-700 mb-4">眼科医の診察により、老眼、ドライアイ、その他の眼疾患の有無が判断できます。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ：スマホ老眼対策は早期対応が重要</h2>
-      <p className="text-gray-700 mb-4">スマートフォンの使用は今後も増えることが予想されます。スマホ老眼の症状が軽いうちから、拡大鏡や老眼鏡などの適切な対策グッズを導入することで、長期的な目の健康を守ることができます。</p>
-      <p className="text-gray-700 mb-4">自分の症状に合わせて、拡大鏡、老眼鏡、アイケア用品を組み合わせることが、最も効果的なスマホ老眼対策です。必要に応じて眼科医に相談しながら、快適なスマートフォンライフを実現しましょう。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">スマホ老眼の対策グッズは、文字の見えにくさが主な悩みなら拡大タイプ、目の疲れやまぶしさが気になるならブルーライトカットタイプが選びやすい傾向にあります。</p>
+      <p className="text-gray-700 mb-4">症状が軽いうちから対策グッズを取り入れつつ、気になる症状が続く場合は眼科医にも相談してみてください。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ブルーライト対策も重視したい方に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">JINS SCREENを楽天で見る →</div>
+        </a>
+      </div>
     </article>
   ),
     "lutein-supplement-ranking-2026": (
@@ -7013,146 +6791,101 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   ),
     "smart-eyewear-functional-goods-2026": (
     <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スマートアイウェア機能性グッズの最新トレンド2026</h2>
-      <p className="text-gray-700 mb-4">近年、デジタルデバイスの使用時間が増加する中で、目の健康を守るための機能性グッズが急速に進化しています。2026年版のスマートアイウェア市場では、単なるブルーライトカット機能を超えた、AI搭載型やセンサー技術を備えた次世代製品が主流となっています。本記事では、最新のスマートアイウェアと機能性グッズについて、その選び方や効果について詳しく解説します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年のスマートアイウェア市場の特徴</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">AI搭載眼鏡の普及</h3>
-      <p className="text-gray-700 mb-4">2026年のスマートアイウェア市場では、AI技術の導入が標準化しつつあります。従来の静的なブルーライトカット機能から、リアルタイムで目の状態を監視し、自動的にレンズの特性を調整する製品が増加しています。</p>
-      <p className="text-gray-700 mb-4">市場調査によれば、2026年のAI搭載眼鏡の出荷台数は前年比45%増加し、累計500万台を超える見込みとされています。これらの製品は、眼球の動きを追跡するセンサーを搭載し、使用者の視野内での光の変化に応じて自動的にコントラストと色温度を最適化します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">センサー技術の進化</h3>
-      <p className="text-gray-700 mb-4">最新のスマートアイウェアには、複数のセンサーが統合されています。主な機能としては：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>目の疲労度センサー</strong>：眼筋の活動を検出し、疲労レベルをリアルタイムで計測</li>
-        <li><strong>瞳孔リアクションセンサー</strong>：外光への瞳孔反応を監視し、最適な光量を提供</li>
-        <li><strong>頭位置トラッキング</strong>：ユーザーの頭の動きを追跡し、デバイス画面との最適な距離を維持</li>
-        <li><strong>アイトレーキングセンサー</strong>：視線の方向を判定し、フォーカスエリアを特定</li>
-      </ul>
-      <p className="text-gray-700 mb-4">これらのセンサーから収集されたデータは、スマートフォンアプリと連携し、ユーザーの視力健康度を可視化します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ブルーライトカット機能の最新事情</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ブルーライトカット率の進化</h3>
-      <p className="text-gray-700 mb-4">2026年の機能性グッズでは、ブルーライトカット率が大幅に向上しています。従来製品（2020年代）のカット率が30～40%であったのに対し、最新製品では45～65%のカット率を実現しながら、可視光透過率を90%以上に保つことができるようになりました。</p>
-      <p className="text-gray-700 mb-4">この技術進化により、レンズの色が従来製品のやや黄色がかった色から、より透明に近い色になり、ファッション性と機能性を両立させることが可能になりました。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">可視光透過率との関係</h3>
-      <p className="text-gray-700 mb-4">ブルーライトカットの有効性は、単純なカット率だけでは判断できません。重要なのは「可視光透過率」との関係です：</p>
-      <p className="text-gray-700 mb-4">| 製品タイプ | ブルーライトカット率 | 可視光透過率 | 用途 |</p>
-      <p className="text-gray-700 mb-4">|-----------|-------------------|-----------|------|</p>
-      <p className="text-gray-700 mb-4">| 標準型 | 30～40% | 92～95% | 日常用 |</p>
-      <p className="text-gray-700 mb-4">| 高機能型 | 45～55% | 88～92% | PC作業向け |</p>
-      <p className="text-gray-700 mb-4">| 高カット型 | 60～65% | 82～87% | 夜間PC作業 |</p>
-      <p className="text-gray-700 mb-4">高カット型は夜間の使用に最適ですが、日中の着用では室内が暗く感じられることがあるため、用途に応じた選択が重要です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スマートアイウェアの実際の効果</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">臨床試験に基づく効果</h3>
-      <p className="text-gray-700 mb-4">2025年に実施された臨床試験（n=200、8週間継続）では、以下の結果が報告されています：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>目の疲労軽減</strong>：81%が疲労感の低減を自覚（平均軽減度：38%）</li>
-        <li><strong>睡眠の質向上</strong>：69%がより質の良い睡眠を報告</li>
-        <li><strong>視力安定性</strong>：継続使用グループで視力低下進行の20%抑制</li>
-        <li><strong>頭痛の軽減</strong>：56%が頭痛頻度の減少を報告</li>
-      </ul>
-      <p className="text-gray-700 mb-4">これらの効果は、単なるプラセボ効果では説明できない統計的有意性を示しています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">長時間使用時の視力変動</h3>
-      <p className="text-gray-700 mb-4">長時間のPC作業を行う場合、スマートアイウェアの有無による視力変動を比較したデータを紹介します：</p>
-      <p className="text-gray-700 mb-4"><strong>従来のレンズ（ブルーライトカットなし）使用時：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>1時間後：-0.15D（調節ラグ）</li>
-        <li>4時間後：-0.42D（調節ラグ）</li>
-        <li>8時間後：-0.78D（調節ラグ）</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>2026年型スマートアイウェア使用時：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>1時間後：-0.08D（調節ラグ）</li>
-        <li>4時間後：-0.18D（調節ラグ）</li>
-        <li>8時間後：-0.35D（調節ラグ）</li>
-      </ul>
-      <p className="text-gray-700 mb-4">調節ラグが低く保たれることで、目の疲労が大幅に軽減され、また眼軸長の伸長（近視進行）を抑制することができます。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">機能性グッズの選び方ガイド</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">用途別の選択基準</h3>
-      <h4 className="text-base font-bold text-gray-800 mt-4 mb-2">PC作業が多い場合</h4>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>推奨ブルーライトカット率</strong>：45～55%</li>
-        <li><strong>可視光透過率</strong>：90%以上</li>
-        <li><strong>AI搭載の有無</strong>：あるとなお良い</li>
-        <li><strong>予算目安</strong>：8,000～15,000円</li>
-      </ul>
-      <h4 className="text-base font-bold text-gray-800 mt-4 mb-2">スマートフォン利用が中心</h4>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>推奨ブルーライトカット率</strong>：40～50%</li>
-        <li><strong>レンズサイズ</strong>：やや小さめ（顔全体をカバーしすぎないもの）</li>
-        <li><strong>フレーム重量</strong>：軽量（4g以下が理想）</li>
-        <li><strong>予算目安</strong>：5,000～10,000円</li>
-      </ul>
-      <h4 className="text-base font-bold text-gray-800 mt-4 mb-2">夜間の使用が多い場合</h4>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>推奨ブルーライトカット率</strong>：55～65%</li>
-        <li><strong>調光機能</strong>：あると便利</li>
-        <li><strong>AI搭載</strong>：強く推奨</li>
-        <li><strong>予算目安</strong>：12,000～25,000円</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">フレーム選択のポイント</h3>
-      <p className="text-gray-700 mb-4">2026年のスマートアイウェアは、デザイン面でも大幅に改善されています。従来の「ゲーム用眼鏡っぽさ」から脱却し、一般的なファッション眼鏡と遜色ないデザインが多数展開されています。</p>
-      <p className="text-gray-700 mb-4">選択時の重要ポイント：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>顔とのバランス</strong>：フレーム幅が顔幅の1/5～1/4程度が目安</li>
-        <li><strong>鼻のフィット感</strong>：調整可能なパッド付きが推奨</li>
-        <li><strong>テンプルの柔軟性</strong>：長時間着用時の負担を軽減</li>
-        <li><strong>可変デザイン</strong>：度数交換可能で将来対応できるもの</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">楽天での機能性グッズ購入ガイド</h2>
-      <p className="text-gray-700 mb-4">スマートアイウェアや機能性グッズの購入は、信頼できるオンラインストアの利用をお勧めします。ここでは実際に流通している製品を例に紹介します。</p>
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        PCやスマホの使用時間が増える中、ブルーライトカット眼鏡は目の負担軽減の選択肢のひとつです。この記事では実在する製品を比較しながら、選び方を紹介します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ブルーライトカット眼鏡早見表</h2>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-left p-3 border border-gray-200">特徴</th>
+              <th className="text-left p-3 border border-gray-200">価格帯</th>
+              <th className="text-left p-3 border border-gray-200">おすすめ度</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'JINS SCREEN', feature: 'ブルーライトカット専用ライン。度なし・度付き両対応', price: '5,000円台〜', rating: '★★★★★' },
+              { name: 'Zoff PC', feature: 'カット率約35%・約50%の2タイプから選べる', price: '4,400円', rating: '★★★★☆' },
+            ].map(r => (
+              <tr key={r.name} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.name}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.feature}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.price}</td>
+                <td className="p-3 border border-gray-200 text-amber-500">{r.rating}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="my-4">
+        <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">JINS SCREENを楽天で見る →</div>
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">タイプ別のおすすめ眼鏡</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">度なし・度付き両方から選びたい方に：JINS SCREEN</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>ブルーライトカット専用ラインとして展開されており、度なし・度付きの両方から選べます</li>
+        <li>フレームバリエーションが豊富で、ファッション性を重視する方にも選びやすいです</li>
+        <li className="text-gray-500">気になる点：カット率はモデルによって異なるため、購入前に商品ページで確認が必要です</li>
+      </ul>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">カット率を選んで手頃に始めたい方に：Zoff PC</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>カット率約35%・約50%の2タイプから、用途に合わせて選べます</li>
+        <li>4,400円と比較的手に取りやすい価格で、初めてのブルーライトカット眼鏡にも向いています</li>
+        <li className="text-gray-500">気になる点：フレームバリエーションはJINS SCREENと比べるとやや限定的です</li>
+      </ul>
+      <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
-          <p className="text-xs text-gray-500 mb-3">JINSのブルーライトカット専用ライン。度なし・度付き両対応で日常使いしやすい価格帯</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">JINS SCREENを楽天で見る →</div>
+          <p className="text-xs text-gray-500 mb-3">度なし・度付き両対応で日常使いしやすい価格帯</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href={RAKUTEN('Zoff PC ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Zoff PC</p>
+          <p className="text-xs text-gray-500 mb-3">カット率を選べる手頃な価格帯のライン</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
-      <p className="text-gray-700 mb-4">楽天では、多数のスマートアイウェア関連製品が取り扱われており、レビュー数が豊富なため、実際のユーザーの声を参考に選択できます。特にポイント還元率が高いタイミングでの購入がお得です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スマートアイウェアのメンテナンスと寿命</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レンズの手入れ方法</h3>
-      <p className="text-gray-700 mb-4">スマートアイウェアのレンズは、通常の眼鏡と異なり、コーティング層が複数重ねられているため、丁寧な手入れが必要です。</p>
-      <p className="text-gray-700 mb-4"><strong>推奨される清掃方法：</strong></p>
-      <p className="text-gray-700 mb-4">1. 流水で軽くすすぐ</p>
-      <p className="text-gray-700 mb-4">2. 専用のレンズクロスで拭き取る</p>
-      <p className="text-gray-700 mb-4">3. 必要に応じて専用クリーナーを使用</p>
-      <p className="text-gray-700 mb-4">4. 完全に乾燥させてから保管</p>
-      <p className="text-gray-700 mb-4"><strong>避けるべき行為：</strong></p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方4つのポイント</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>乾いた状態での直接拭き取り（傷の原因）</li>
-        <li>湿度の高い環境での保管（コーティング劣化）</li>
-        <li>高温環境への放置（レンズ歪みの原因）</li>
+        <li><strong>用途に合わせてカット率を選ぶ：</strong>PC作業中心なら中程度のカット率、夜間の使用が多いなら高めのカット率が向いています</li>
+        <li><strong>可視光透過率も確認する：</strong>カット率が高すぎると室内で暗く感じる場合があるため、バランスを見て選びましょう</li>
+        <li><strong>度なし・度付きを使い分ける：</strong>視力矯正が不要な方は度なしタイプ、必要な方は度付き対応の製品を選びましょう</li>
+        <li><strong>フレームの重さ・フィット感を確認する：</strong>長時間の着用が多い方は、軽量で調整可能なフレームが快適です</li>
       </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">寿命と交換時期</h3>
-      <p className="text-gray-700 mb-4">2026年型スマートアイウェアの平均寿命は、適切な管理下で3～4年とされています。交換を検討する目安：</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">お手入れと交換の目安</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>ブルーライトカット効果の低下</strong>：購入時と比較してカット率が10%以上低下</li>
-        <li><strong>表面コーティングの剥がれ</strong>：見た目に曇りや白化が生じた場合</li>
-        <li><strong>AI機能の障害</strong>：センサーが正常に動作しなくなった場合</li>
-        <li><strong>フレームの歪み</strong>：フィット感が変わった場合</li>
+        <li>レンズは流水で軽くすすいでから、専用のレンズクロスで拭き取るのが基本です。乾いた状態での直接拭き取りは傷の原因になります</li>
+        <li>コーティングの剥がれや、見た目の曇り・白化が見られたら交換を検討しましょう</li>
+        <li>購入時の保証期間や返品対応（一般的に30〜90日程度の製品が多い傾向）を事前に確認しておくと安心です</li>
       </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年の注目製品・ブランド</h2>
-      <p className="text-gray-700 mb-4">2026年のスマートアイウェア市場では、従来の眼鏡メーカーに加え、テクノロジー企業や新興スタートアップが参入し、競争が激化しています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">大手メーカーの最新動向</h3>
-      <p className="text-gray-700 mb-4">従来の眼鏡メーカー（老舗ブランド）は、100年以上の光学技術を活かしながら、AI技術を融合させた新製品を展開しています。例えば<strong>JINS</strong>の「JINS SCREEN」はブルーライトカット専用ラインとして長年展開されており、度なし・度付きの両対応で購入しやすい価格帯が特徴です。これらの製品は、品質保証が充実しており、長期的なサポートが期待できます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">テクノロジー企業の参入</h3>
-      <p className="text-gray-700 mb-4">スマートフォンメーカーやウェアラブル機器メーカーは、自社エコシステムと統合されたスマートアイウェアを開発しています。スマートフォンとの連携精度が高く、ユーザーデータの一元管理が可能な点が特徴です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">新興メーカーの特徴</h3>
-      <p className="text-gray-700 mb-4">価格競争力と革新性を両立させた新興メーカーも注目されています。これらは、特定のニッチ市場（例：ゲーマー向け、クリエイター向けなど）に特化した製品開発を行い、高い顧客満足度を実現しています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アフターサービスと保証の確認</h2>
-      <p className="text-gray-700 mb-4">スマートアイウェアはセンサー技術を含む複雑な製品のため、アフターサービス体制の確認が購入時に重要です。</p>
-      <p className="text-gray-700 mb-4">確認すべき項目：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>修理対応</strong>：フレーム破損時の修理期間と費用</li>
-        <li><strong>レンズ交換</strong>：度数変更時の対応と費用</li>
-        <li><strong>センサー不具合</strong>：AI機能に問題が生じた場合の対応</li>
-        <li><strong>保証期間</strong>：通常1～2年が目安</li>
-        <li><strong>返品対応</strong>：合わなかった場合の返品可能期間（通常30～90日）</li>
-      </ul>
+
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
-      <p className="text-gray-700 mb-4">2026年のスマートアイウェア機能性グッズは、単なるブルーライトカット機能を超えた、AI搭載・センサー技術により目の健康を包括的に管理する製品へと進化しています。</p>
-      <p className="text-gray-700 mb-4">選択時には、自分の使用目的を明確にした上で、ブルーライトカット率、可視光透過率、追加機能のバランスを考慮することが重要です。また、メーカーのアフターサービス体制を確認し、長期的にサポートを受けられる製品を選ぶことをお勧めします。</p>
-      <p className="text-gray-700 mb-4">目の健康は、日々のデジタルデバイス使用と切り離せない現代社会において、予防的投資として機能性グッズの導入を検討する価値は十分にあります。本記事で紹介した選び方を参考に、自分に最適なスマートアイウェアを見つけることを期待します。</p>
+      <p className="text-gray-700 mb-4">ブルーライトカット眼鏡は、用途とカット率のバランスを見て選ぶことが大切です。フレームの選択肢を重視するならJINS SCREEN、手頃な価格から始めたいならZoff PCが選びやすい傾向にあります。</p>
+      <p className="text-gray-700 mb-4">ブルーライトカット単体で目の疲れが解決するとは限りません。20分おきの休憩や画面輝度の調整も合わせて取り入れてみてください。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('Zoff PC ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">手頃な価格から始めたい方に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Zoff PC</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">Zoff PCを楽天で見る →</div>
+        </a>
+      </div>
     </article>
   ),
     "eye-stretch-acupoint-massage-goods": (
