@@ -190,13 +190,12 @@ export const eyeColumns: EyeColumnMeta[] = [
     section: 'eye-care',
     publishedAt: '2026-07-13',
     updatedAt: '2026-07-14',
-    readingTime: 7,
-    headings: ['コンタクト対応目薬の見分け方', '防腐剤フリーが重要な理由', 'ソフト・ハード別おすすめ', 'ドライアイ向け目薬', '目薬の正しい使い方'],
+    readingTime: 5,
+    headings: ['目薬選びチェックリスト', 'コンタクト装用中に目薬選びが重要な理由', '症状別のセルフケア・おすすめ目薬', '目薬の正しい使い方', '受診の目安・医師に相談すべきサイン'],
     faqs: [
-      { q: 'コンタクトを付けたまま目薬をさしても大丈夫ですか？', a: 'パッケージに「コンタクトレンズ装用中に使えます」と記載されている目薬であれば使用できます。ただし「塩化ベンザルコニウム」を含む目薬はコンタクトに吸収されて角膜に影響するため、装用中は使用不可です。防腐剤フリー（ソフトサンティア等）が最も安心です。' },
-      { q: 'ドライアイに最も効果的なコンタクト用目薬は何ですか？', a: '水分補給には「ヒアルロン酸Na」配合のものが効果的です。おすすめはソフトサンティア（防腐剤フリー）、ロートモイストアイ。ドライアイが重度の場合は処方薬のヒアレイン点眼液（0.1%・0.3%）が有効です。眼科で相談してみてください。' },
-      { q: '目薬は何本まで同時に使えますか？', a: '複数の目薬を使う場合は5分以上間隔を空けることが重要です。同時にさすと先の目薬が流れてしまいます。また1回にさす量は1〜2滴で十分です。たくさんさしても効果は上がりません（あふれるだけです）。' },
-      { q: '防腐剤フリーの目薬はどこが違うのですか？', a: '従来の目薬は開封後の細菌繁殖を防ぐため防腐剤（塩化ベンザルコニウム等）を使用します。防腐剤フリーは使い捨て容器か特殊なバリア容器で除菌しています。コンタクト装用者・アレルギーがある方・長期使用する方には防腐剤フリーが推奨されます。' },
+      { q: 'コンタクトを付けたまま目薬をさしても大丈夫ですか？', a: 'パッケージに「コンタクトレンズ装用中に使えます」と記載されている目薬であれば使用できます。防腐剤（塩化ベンザルコニウム等）を含む目薬はコンタクトに吸収される可能性があるため、装用中は防腐剤フリーのものが安心です。' },
+      { q: '目薬は何本まで同時に使えますか？', a: '複数の目薬を使う場合は5分以上間隔を空けることが一般的です。同時にさすと先の目薬が流れてしまいます。1回にさす量は1〜2滴で十分とされています。' },
+      { q: '市販の目薬を使っても改善しない場合は？', a: '1週間程度使用しても改善しない場合や、強い痛み・充血がある場合は、自己判断で使い続けず眼科を受診してください。' },
     ],
   },
   {
@@ -207,12 +206,12 @@ export const eyeColumns: EyeColumnMeta[] = [
     section: 'eye-care',
     publishedAt: '2026-07-13',
     updatedAt: '2026-07-14',
-    readingTime: 8,
-    headings: ['ドライアイの原因', '目薬で改善する方法', 'ホットアイマスクの効果', 'ルテインサプリの活用', '生活習慣の改善'],
+    readingTime: 6,
+    headings: ['ドライアイ タイプ判定チェックリスト', 'ドライアイの原因', 'セルフケア・対策商品', '受診の目安・医師に相談すべきサイン'],
     faqs: [
-      { q: 'ドライアイはコンタクトレンズを外せば治りますか？', a: '一時的には改善することが多いです。ただし慢性化したドライアイはコンタクトを外しても完全には改善しません。根本的な治療には眼科での検査と適切な目薬（ヒアレイン等）の処方が有効です。コンタクトの種類を「低含水率」や「シリコーンハイドロゲル素材」に変えることも有効です。' },
-      { q: 'ドライアイのコンタクトレンズはどの素材がおすすめですか？', a: 'シリコーンハイドロゲル素材（例：アキュビューオアシス、デイリーズトータル1）は酸素透過率が高く含水率が安定しているためドライアイに向いています。従来の含水率50〜70%のコンタクトは乾燥すると角膜から涙液を吸収してしまうため、低含水率（40%以下）のものも選択肢です。' },
-      { q: '「マイボーム腺機能不全（MGD）」とはどんな状態ですか？', a: 'まぶたの縁にある脂質（油分）を分泌するマイボーム腺が詰まった状態です。涙の油層が不安定になり蒸発性ドライアイを起こします。ホットアイマスクで温めて詰まりをほぐすことが有効で、眼科ではIPL治療やリピフロー治療が行われます。' },
+      { q: 'ドライアイはコンタクトレンズを外せば治りますか？', a: '一時的には改善することが多いとされています。ただし慢性化している場合は、眼科での検査と適切な目薬の処方が必要になることがあります。' },
+      { q: '「マイボーム腺機能不全（MGD）」とはどんな状態ですか？', a: 'まぶたの縁にある脂質（油分）を分泌するマイボーム腺が詰まった状態です。涙の油層が不安定になり、蒸発しやすいドライアイにつながるとされています。ホットアイマスクで温めることがセルフケアの一つです。' },
+      { q: '市販の目薬でどのくらい様子を見ていいですか？', a: '1〜2週間使用しても改善しない場合や、痛み・充血を伴う場合は、市販薬に頼らず眼科を受診することをおすすめします。' },
     ],
   },
   {
@@ -240,11 +239,11 @@ export const eyeColumns: EyeColumnMeta[] = [
     publishedAt: '2026-07-13',
     updatedAt: '2026-07-14',
     readingTime: 6,
-    headings: ['PC作業で目が疲れる原因', 'モニターライトの効果', 'ブルーライトカット眼鏡', 'モニターフィルター', '目薬・サプリの活用'],
+    headings: ['PC疲れ目セルフチェック', 'PC作業で目が疲れる原因', 'セルフケア・対策商品', '受診の目安・医師に相談すべきサイン'],
     faqs: [
-      { q: 'BenQ ScreenBarはどのモニターにも取り付けられますか？', a: 'ScreenBarはモニター上部のベゼル（枠）に引っかけて固定するクリップ式です。ベゼル厚が1〜30mm程度のモニターに対応しています。超薄型ベゼルやフレームレスモニターは対応外のことがあります。BenQ公式サイトで互換性チェックが可能です。' },
-      { q: 'モニターライトの適切な明るさはいくつですか？', a: '一般的なPCデスク作業では500lux程度が目安です。BenQ ScreenBar Plusは最大1000luxに対応し、周囲の明るさに応じて自動調整する「オートディマー」機能があります。モニターと手元の明るさの差が少ないほど目の疲労が軽減されます。' },
-      { q: 'PC用目薬は何時間おきにさすのがよいですか？', a: 'コンタクト装用中は2〜3時間おき、裸眼の場合は疲れを感じたときにさすのが基本です。1日の使用回数制限（多くは5〜6回まで）がある目薬もあるため、パッケージの指示に従ってください。防腐剤フリーの目薬は比較的回数制限が緩いものが多いです。' },
+      { q: 'BenQ ScreenBarはどのモニターにも取り付けられますか？', a: 'モニター上部のベゼル（枠）に引っかけて固定するクリップ式です。ベゼル厚が対応範囲外のモニターや、フレームレスモニターは取り付けられない場合があるため、購入前に商品ページで対応可否をご確認ください。' },
+      { q: 'PC用目薬は何時間おきにさすのがよいですか？', a: '疲れを感じたときにさすのが基本ですが、1日の使用回数制限（製品によって異なる）があるため、パッケージの指示に従ってください。防腐剤フリーの目薬は比較的使いやすい傾向にあります。' },
+      { q: '対策グッズを使っても改善しない場合は？', a: '1〜2週間ほど対策を続けても改善しない場合や、視力低下・強い痛みを伴う場合は、眼科の受診を検討してください。' },
     ],
   },
   {
@@ -319,12 +318,12 @@ export const eyeColumns: EyeColumnMeta[] = [
     section: 'eye-care',
     publishedAt: '2026-07-17',
     updatedAt: '2026-07-17',
-    readingTime: 7,
-    headings: ['充血の種類と主な原因', 'コンタクト装用中の充血対策', '疲れ目・ドライアイによる充血', '充血に効く目薬の選び方', '眼科受診が必要なサイン'],
+    readingTime: 5,
+    headings: ['充血タイプ判定チェックリスト', '充血の主な原因', '充血に効く目薬の選び方', '眼科受診が必要なサイン'],
     faqs: [
-      { q: '目の充血が続く場合、眼科に行くべき目安はありますか？', a: '以下の場合はすぐに眼科を受診してください：①痛みや激しい異物感がある ②視力が低下している ③分泌物が多い（目やに） ④1週間以上充血が続く ⑤コンタクト装用中に突然の充血と痛み（感染性角膜炎の可能性）。' },
-      { q: 'コンタクト装用中に使える充血目薬はありますか？', a: '「コンタクト装用中OK」と明記された目薬は装用中に使えます。ただし充血除去成分（塩酸テトラヒドロゾリン等）は血管収縮作用があり、依存性や反跳充血のリスクがあります。日常的な充血対策には人工涙液（防腐剤フリー）が安全です。' },
-      { q: '目の充血を予防するにはどうすればいいですか？', a: '①コンタクトの装用時間を守る（1日8〜10時間以内）②PCやスマホ使用中は20分ごとに遠くを見る（20-20-20ルール） ③十分な睡眠をとる ④加湿器や目薬で乾燥対策 ⑤アルコールを控える ⑥紫外線対策（サングラス着用）が基本です。' },
+      { q: '目の充血が続く場合、眼科に行くべき目安はありますか？', a: '痛みや異物感が強い、視力が低下している、目やにが多い、1週間以上充血が続く、コンタクト装用中に突然の充血と痛みがある場合は、すぐに眼科を受診してください。' },
+      { q: 'コンタクト装用中に使える充血目薬はありますか？', a: '「コンタクト装用中OK」と明記された目薬は装用中に使えます。ただし充血除去成分は血管収縮作用があり、連用すると反跳充血のリスクがあるとされています。日常的な対策には人工涙液（防腐剤フリー）が使いやすい傾向にあります。' },
+      { q: '目の充血を予防するにはどうすればいいですか？', a: 'コンタクトの装用時間を守る、20-20-20ルールで目を休める、十分な睡眠をとる、乾燥対策をするなどが基本的な予防策とされています。' },
     ],
   },
   {
@@ -400,16 +399,14 @@ export const eyeColumns: EyeColumnMeta[] = [
     description: "飛蚊症の原因は生理的なものから網膜剥離などの疾患まで様々です。危険な受診サインと安全な症状の判別方法を具体的に解説。いつ眼科を受診すべきかの判断基準を提供します。",
     section: "eye-care",
     category: "アイケア・目薬",
-    readingTime: 8,
+    readingTime: 6,
     publishedAt: "2026-07-17",
+    updatedAt: "2026-08-05",
     keywords: ["飛蚊症","黒い点","眼科受診","網膜剥離"],
     faqs: [
-    { q: "飛蚊症の原因は何ですか？", a: "飛蚊症の主な原因は加齢による硝子体の変性です。硝子体は眼の内部を満たすゲル状の物質で、加齢とともに液化し、混濁や濁りが生じます。また、高度近視、糖尿病、眼炎などの疾患が原因になることもあります。急に数が増えたり、暗い中で多く見える場合は眼科受診が必要です。" },
-    { q: "飛蚊症で受診すべきタイミングはいつですか？", a: "黒い点が急に増えた場合、光の閃光が見える場合、視野に影が出た場合、目の痛みがある場合は、すぐに眼科を受診してください。これらは網膜剥離や他の重篤な眼疾患の兆候の可能性があります。症状が数ヶ月変わらない場合は、様子を見ながら定期検査を受けることをお勧めします。" },
-    { q: "飛蚊症は治療できますか？", a: "生理的な飛蚊症は完全に治療する必要がない場合がほとんどです。脳が慣れ、次第に症状を感じなくなります。ただし、病的な飛蚊症の場合は、原因となっている疾患を治療する必要があります。レーザー治療や硝子体手術が必要な場合もあります。" },
-    { q: "飛蚊症の症状を緩和する方法はありますか？", a: "症状を完全に消す方法はありませんが、眼精疲労を減らすことで気になりやすさを軽減できます。定期的な目の休息、適切な照明、ブルーライトカットメガネの使用が有効です。また、抗酸化作用のあるサプリメント（ルテイン、アスタキサンチンなど）の摂取も予防的効果があります。" },
-    { q: "飛蚊症と他の眼疾患の見分け方は？", a: "飛蚊症のみでは光の閃光、視野欠損、眼痛は起こりません。これらの症状が併発する場合は網膜剥離など危険な疾患の可能性があります。症状の変化、新しい点の出現、増加速度なども判断材料になります。不安な場合は迷わず眼科医に相談してください。" },
-    { q: "定期的な眼科検査はどのくらいの頻度が必要ですか？", a: "飛蚊症の経過観察は、初回診断後3ヶ月～6ヶ月後に再検査することが推奨されます。その後、症状に変化がなければ年1回の定期検査で十分です。ただし、糖尿病などの眼疾患リスク因子がある場合は、3～4ヶ月ごとの検査が必要な場合があります。" }
+    { q: "飛蚊症で受診すべきタイミングはいつですか？", a: "黒い点が急に増えた場合、光の閃光が見える場合、視野に影が出た場合、目の痛みがある場合は、すぐに眼科を受診してください。これらは網膜剥離など重篤な眼疾患のサインである可能性があります。" },
+    { q: "飛蚊症は治療できますか？", a: "生理的な飛蚊症は、時間とともに気にならなくなることが多いとされています。ただし、病的な飛蚊症の場合は原因疾患の治療が必要で、レーザー治療や手術が検討される場合もあります。" },
+    { q: "飛蚊症と他の眼疾患の見分け方は？", a: "光の閃光・視野欠損・眼痛を伴う場合は、生理的な飛蚊症とは異なる可能性があります。不安な場合は自己判断せず、眼科医に相談してください。" }
     ],
   },
     {
@@ -1703,62 +1700,82 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   'contact-megusuri-erabikata': (
     <article className="prose prose-sm max-w-none">
       <p className="lead text-gray-600 text-base leading-relaxed mb-6">
-        コンタクトレンズ装用中でも使える目薬の選び方を解説します。「防腐剤フリー」が重要な理由と、症状別のおすすめを紹介します。
+        コンタクト装用中の目の乾燥・疲れ・充血は、目薬選びを間違えると悪化することもあります。市販の目薬で様子を見てよいケースと、眼科受診が必要なケースの見分け方も含めて解説します。
       </p>
 
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">コンタクト対応目薬の見分け方</h2>
-      <p className="text-gray-700 mb-4">
-        コンタクト装用中に使える目薬かどうかは、パッケージの表示で確認できます。「コンタクトレンズ装用中に使えます」という表示があるものを選びましょう。
-      </p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目薬選びチェックリスト</h2>
       <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-4 mb-6">
-        <p className="font-bold text-cyan-800 mb-2">必ず確認すること</p>
+        <p className="font-bold text-cyan-800 mb-2">購入前に必ず確認すること</p>
         <ul className="text-sm text-gray-700 space-y-1">
-          <li>• パッケージの「コンタクトレンズ装用中に使えます」表示</li>
-          <li>• 防腐剤（塩化ベンザルコニウム）の有無</li>
-          <li>• ソフト・ハード・O2（ハード）対応か</li>
+          <li>□ パッケージに「コンタクトレンズ装用中に使えます」の表示があるか</li>
+          <li>□ 防腐剤（塩化ベンザルコニウム）が含まれていないか</li>
+          <li>□ ソフト・ハード・O2（酸素透過性ハード）のどのタイプに対応しているか</li>
+          <li>□ 自分の症状（乾燥・疲れ目・充血）に合った成分が配合されているか</li>
         </ul>
       </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">防腐剤フリーが重要な理由</h2>
-      <p className="text-gray-700 mb-4">
-        多くの一般的な目薬に含まれる「塩化ベンザルコニウム」はコンタクトレンズに吸収・蓄積し、角膜を傷める可能性があります。コンタクト装用者には防腐剤フリー（無防腐剤）または防腐剤不使用の目薬が推奨されます。
-      </p>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">症状別おすすめ目薬</h2>
-      <div className="space-y-4 mb-6">
-        {[
-          { symptom: 'ドライアイ・乾燥', recs: ['ソフトサンティア（防腐剤フリー）', 'ロートモイストアイ', 'ヒアレイン点眼液（処方薬）'], key: 'ヒアルロン酸Na配合を選ぶ' },
-          { symptom: '疲れ目・眼精疲労', recs: ['ロートビタ40α', 'サンテFXネオ', 'ロートデジアイ'], key: 'ビタミンB12・タウリン配合を選ぶ' },
-          { symptom: '充血', recs: ['サンテボーティエ', 'ロートクール40α'], key: '血管収縮剤入りは連用注意' },
-        ].map(s => (
-          <div key={s.symptom} className="bg-white border border-gray-200 rounded-xl p-4">
-            <p className="font-bold text-gray-800 mb-1">{s.symptom}</p>
-            <p className="text-xs text-cyan-600 mb-2">選び方：{s.key}</p>
-            <ul className="text-sm text-gray-600 space-y-0.5">
-              {s.recs.map(r => <li key={r}>• {r}</li>)}
-            </ul>
-          </div>
-        ))}
+      <div className="my-4">
+        <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">迷ったらまずこれ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
+          <p className="text-xs text-gray-500 mb-3">参天製薬／第3類医薬品。防腐剤無添加でソフト・ハード問わず全レンズタイプに対応</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
+        </a>
       </div>
 
-      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
-        <p className="font-bold text-gray-800 mb-3">コンタクト対応目薬を探す</p>
-        <div className="grid sm:grid-cols-2 gap-3">
-          <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ドライアイ・防腐剤フリー</span>
-            <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
-            <p className="text-xs text-gray-500 mb-3">参天製薬／第3類医薬品。防腐剤無添加でソフト・ハード問わず全レンズタイプに対応</p>
-            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
-          </a>
-          <a href={RAKUTEN('サンテFXネオ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">疲れ目・眼精疲労</span>
-            <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテFXネオ</p>
-            <p className="text-xs text-gray-500 mb-3">参天製薬／ビタミンB12・タウリン配合。コンタクト装用時は装用前後の使用可否を表示で確認</p>
-            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">サンテFXネオを楽天で見る →</div>
-          </a>
-        </div>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">コンタクト装用中に目薬選びが重要な理由</h2>
+      <p className="text-gray-700 mb-4">
+        多くの一般的な目薬に含まれる「塩化ベンザルコニウム」という防腐剤は、コンタクトレンズ（特にソフトレンズ）に吸収・蓄積されやすい性質があります。レンズに蓄積した防腐剤が角膜に触れ続けることで、角膜を傷つける可能性があるため、コンタクト装用者には防腐剤フリー（無防腐剤）または防腐剤不使用の目薬が推奨されます。
+      </p>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">症状</th>
+              <th className="text-left p-3 border border-gray-200">主な原因</th>
+              <th className="text-left p-3 border border-gray-200">選ぶときの目安成分</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { symptom: 'ドライアイ・乾燥', cause: '瞬き減少、レンズの含水率、エアコンなどの乾燥環境', ingredient: 'ヒアルロン酸Na（防腐剤フリー）' },
+              { symptom: '疲れ目・眼精疲労', cause: 'PC・スマホ使用によるピント調節筋の酷使', ingredient: 'ビタミンB12、タウリン' },
+              { symptom: '充血', cause: '酸素不足、こすり洗い不足によるタンパク汚れ、アレルギー', ingredient: '血管収縮剤（連用は要注意）' },
+            ].map(r => (
+              <tr key={r.symptom} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.symptom}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.cause}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.ingredient}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">症状別のセルフケア・おすすめ目薬</h2>
+      <p className="text-gray-700 mb-4">市販薬で様子を見てよいのは、軽い乾燥感や一時的な疲れ目など、装用時間の見直しや休息で改善が見込める症状です。以下は症状別の目安です。</p>
+      <div className="grid sm:grid-cols-3 gap-3 mb-4">
+        <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ドライアイ・防腐剤フリー</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
+          <p className="text-xs text-gray-500 mb-3">防腐剤無添加でコンタクト装用中でも使用可能</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href={RAKUTEN('サンテFXネオ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">疲れ目・眼精疲労</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテFXネオ</p>
+          <p className="text-xs text-gray-500 mb-3">ビタミンB12・タウリン配合。装用前後の使用可否は表示で確認を</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href={RAKUTEN('ロートVアクティブ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">充血</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ロートVアクティブ</p>
+          <p className="text-xs text-gray-500 mb-3">血管収縮成分配合。連用は週2〜3回以内が目安</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
       </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目薬の正しい使い方</h2>
@@ -1767,16 +1784,76 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>容器の先が目やまつ毛に触れないように1滴さす</li>
         <li>1〜2分間は目頭を軽く押さえて涙点からの流出を防ぐ</li>
         <li>複数の目薬は5分以上間隔をあける</li>
-        <li>コンタクトを装用している場合は15分後に装用が目安（防腐剤フリーでも）</li>
+        <li>コンタクトを装用している場合は、防腐剤フリーの目薬でも装用後15分程度を目安にする（製品の表示に従う）</li>
       </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">受診の目安・医師に相談すべきサイン</h2>
+      <p className="text-gray-700 mb-4">以下のような症状がある場合は、市販の目薬で様子を見ず、眼科を受診することをおすすめします。</p>
+      <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
+        <ul className="text-sm text-gray-700 space-y-1">
+          <li>🚨 強い痛み・異物感がある</li>
+          <li>🚨 市販の目薬を1週間ほど使用しても改善しない</li>
+          <li>🚨 目やにが多い、まぶたが腫れている</li>
+          <li>🚨 視力が急に低下した、光がまぶしく感じる</li>
+          <li>🚨 コンタクト装用中に突然の強い充血・痛みが出た（角膜炎など感染症の可能性）</li>
+        </ul>
+      </div>
+      <p className="text-gray-700 mb-4">特にコンタクト装用中の「突然の強い痛み＋充血」は、レンズを外してすぐに眼科を受診してください。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">コンタクト装用中の目薬は、まず「コンタクトレンズ装用中に使えます」の表示と防腐剤の有無を確認することが第一歩です。症状に合った成分を選び、正しい使い方を守りましょう。</p>
+      <p className="text-gray-700 mb-4">市販薬で改善しない場合や、強い痛み・充血がある場合は、自己判断で使い続けず眼科を受診してください。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('サンテFXネオ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">疲れ目対策に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテFXネオ</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">サンテFXネオを楽天で見る →</div>
+        </a>
+      </div>
     </article>
   ),
 
   'dryeye-taisaku': (
     <article className="prose prose-sm max-w-none">
       <p className="lead text-gray-600 text-base leading-relaxed mb-6">
-        ドライアイは日本で推定800万人以上が悩む症状です。原因から効果的な対処法まで、コンタクト装用者向けの情報を中心に解説します。
+        ドライアイは多くの人が経験する身近な症状です。軽い乾燥感ならセルフケアで様子を見てよいことが多い一方、痛みや充血を伴う場合は眼科受診が必要です。まずはタイプ判定から始めましょう。
       </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ドライアイ タイプ判定チェックリスト</h2>
+      <p className="text-gray-700 mb-3">ドライアイは大きく2種類に分類され、対処法が異なります。当てはまる項目が多い方が、あなたのタイプの可能性があります。</p>
+      <div className="grid sm:grid-cols-2 gap-4 mb-4">
+        <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-4">
+          <p className="font-bold text-cyan-800 mb-2">① 水分不足型（涙液分泌減少型）</p>
+          <ul className="text-sm text-gray-700 space-y-1 mb-3">
+            <li>□ 涙の分泌量が少ないと感じる</li>
+            <li>□ 加齢・シェーグレン症候群・薬の副作用がある</li>
+            <li>□ 目薬で涙を補うと楽になる</li>
+          </ul>
+          <p className="text-xs text-cyan-700 font-medium">対処：ヒアルロン酸Na配合の目薬</p>
+        </div>
+        <div className="bg-orange-50 border border-orange-200 rounded-xl p-4">
+          <p className="font-bold text-orange-800 mb-2">② 蒸発亢進型（油分不足型）</p>
+          <ul className="text-sm text-gray-700 space-y-1 mb-3">
+            <li>□ 涙の油層が不安定で蒸発しやすい</li>
+            <li>□ マイボーム腺機能不全（MGD）の傾向がある</li>
+            <li>□ PC使用者・コンタクト装用者である</li>
+          </ul>
+          <p className="text-xs text-orange-700 font-medium">対処：ホットアイマスクでまぶたを温める</p>
+        </div>
+      </div>
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-6">
+        <p className="text-sm text-amber-800">📌 ドライアイは蒸発亢進型（油分不足）が多いとされています。市販目薬で改善しない場合はMGDを疑い、ホットアイマスクの併用や眼科での相談を検討してください。</p>
+      </div>
+      <div className="my-4">
+        <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">迷ったらまずこれ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
+          <p className="text-xs text-gray-500 mb-3">防腐剤無添加でコンタクト装用中でも使用可能</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
+        </a>
+      </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ドライアイの原因</h2>
       <div className="grid sm:grid-cols-2 gap-4 mb-6">
@@ -1799,100 +1876,12 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           </ul>
         </div>
       </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目薬で改善する方法</h2>
-      <p className="text-gray-700 mb-3">
-        ドライアイの種類（水分不足型・油分不足型）によって適切な目薬が異なります。
-      </p>
-      <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-4 mb-6">
-        <p className="text-sm text-cyan-800">
-          <strong>水分不足型：</strong>ヒアルロン酸Na・ポリビニルアルコール配合の目薬が効果的<br />
-          <strong>油分不足型（MGD）：</strong>ホットアイマスクでマイボーム腺を温めることが有効
-        </p>
-      </div>
-      <div className="my-4">
-        <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ドライアイ・コンタクト対応</span>
-          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
-          <p className="text-xs text-gray-500 mb-3">参天製薬／第3類医薬品。防腐剤無添加でコンタクト装用中でも使用可能</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
-        </a>
-      </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ホットアイマスクの効果</h2>
-      <p className="text-gray-700 mb-3">
-        ホットアイマスクは40〜45℃の温熱でまぶたを温め、マイボーム腺から油分の分泌を促進します。油分不足型のドライアイに特に効果的です。1回10〜15分が目安。
-      </p>
-      <div className="my-4">
-        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">油分不足型（MGD）対策</span>
-          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">La Luna アイウォーマー（ホワイト）</p>
-          <p className="text-xs text-gray-500 mb-3">まぶたを温めてマイボーム腺の油分分泌を促進するホットアイマスク</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">La Luna アイウォーマー（ホワイト）を楽天で見る →</div>
-        </a>
-      </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ルテインサプリの活用</h2>
-      <p className="text-gray-700 mb-3">
-        ルテイン・ゼアキサンチンは目の黄斑部に集中する天然色素で、光ダメージから目を守ります。食事（ほうれん草・ケール等）からの摂取が難しい場合はサプリメントが有効です。1日10mg以上が目安。
-      </p>
-      <div className="my-4">
-        <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ルテインサプリ</span>
-          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
-          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。1日の目安量を続けやすい価格帯</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
-        </a>
-      </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">生活習慣の改善</h2>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>20-20-20ルール：</strong>20分に1度、20フィート（約6m）先を20秒間見る</li>
-        <li><strong>意識的な瞬き：</strong>PC作業中は意識的に瞬きを増やす</li>
-        <li><strong>加湿器の使用：</strong>室内湿度を50〜60%に保つ</li>
-        <li><strong>スクリーンの位置：</strong>目線より少し下に調整し、まぶたの開きを小さくする</li>
-        <li><strong>オメガ3脂肪酸：</strong>青魚・亜麻仁油の摂取でドライアイ改善の報告あり</li>
-      </ul>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ドライアイの種類：水分不足型 vs 蒸発型</h2>
-      <p className="text-gray-700 mb-3">ドライアイは大きく2種類に分類され、対処法が異なります。自分のタイプを知ることが改善の第一歩です。</p>
-      <div className="grid sm:grid-cols-2 gap-4 mb-4">
-        <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-4">
-          <p className="font-bold text-cyan-800 mb-2">① 水分不足型（涙液分泌減少型）</p>
-          <ul className="text-sm text-gray-700 space-y-1 mb-3">
-            <li>・涙の分泌量が少ない</li>
-            <li>・シェーグレン症候群・加齢・薬の副作用が原因</li>
-            <li>・目薬で涙を補う治療が中心</li>
-          </ul>
-          <p className="text-xs text-cyan-700 font-medium">対処：ヒアルロン酸Na配合の目薬・処方薬ヒアレイン</p>
-        </div>
-        <div className="bg-orange-50 border border-orange-200 rounded-xl p-4">
-          <p className="font-bold text-orange-800 mb-2">② 蒸発亢進型（油分不足型）</p>
-          <ul className="text-sm text-gray-700 space-y-1 mb-3">
-            <li>・涙の油層が不安定で蒸発しやすい</li>
-            <li>・マイボーム腺機能不全（MGD）が主因</li>
-            <li>・PC使用者・コンタクト装用者に多い</li>
-          </ul>
-          <p className="text-xs text-orange-700 font-medium">対処：ホットアイマスクでマイボーム腺を温める</p>
-        </div>
-      </div>
-      <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-6">
-        <p className="text-sm text-amber-800">📌 日本のドライアイ患者の<strong>約80%が蒸発亢進型（油分不足）</strong>と言われています。市販目薬で改善しない場合はMGDを疑い、ホットアイマスク+眼科での治療を検討してください。</p>
-      </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">目薬の成分の読み方</h2>
-      <p className="text-gray-700 mb-3">市販目薬の成分表示をざっくり読める知識を身につけると、症状に合った目薬を選べるようになります。</p>
+      <p className="text-gray-700 mb-3">市販目薬の主な成分は以下の通りです。症状に合った成分を選ぶ参考にしてください。</p>
       <div className="space-y-3 mb-6">
         {[
-          { ingredient: 'ヒアルロン酸Na', type: '保湿・潤い', detail: '涙膜を安定させる。処方薬「ヒアレイン」の市販版も登場。ドライアイ・コンタクトの乾燥対策に最も使われる成分。' },
-          { ingredient: 'コンドロイチン硫酸エステルNa', type: '保湿・角膜保護', detail: '角膜表面を保護するムチン様の成分。ヒアルロン酸と組み合わせることで保湿効果が高まる。' },
-          { ingredient: 'ビタミンB12（シアノコバラミン）', type: '疲れ目・視力回復', detail: 'ピント調節筋（毛様体筋）の疲労を回復。デジタル眼精疲労に有効。' },
-          { ingredient: 'タウリン', type: '目の新陳代謝', detail: '細胞内の浸透圧調整・疲労回復を助ける。目薬に含まれる量では臨床的な効果は限定的だが疲れ目対策に多用される。' },
-          { ingredient: 'ネオスチグミンメチル硫酸塩', type: 'ピント調節', detail: '毛様体筋のコリをほぐし、ピント調節力を助ける成分。近業（近くを見る作業）後の疲れに有効。' },
-          { ingredient: '塩化ベンザルコニウム（BAK）', type: '防腐剤', detail: 'ほとんどの目薬に含まれる防腐剤。コンタクトレンズに吸収されて角膜にダメージを与える可能性があるため、コンタクト装用者は「防腐剤フリー」を選ぶべき。' },
+          { ingredient: 'ヒアルロン酸Na', type: '保湿・潤い', detail: '涙膜を安定させる。ドライアイ・コンタクトの乾燥対策に最も使われる成分。' },
+          { ingredient: 'ビタミンB12（シアノコバラミン）', type: '疲れ目・視力回復', detail: 'ピント調節筋（毛様体筋）の疲労を回復。デジタル眼精疲労に使われる。' },
+          { ingredient: '塩化ベンザルコニウム（BAK）', type: '防腐剤', detail: 'コンタクトレンズに吸収され角膜に影響する可能性があるため、装用者は「防腐剤フリー」を選ぶ。' },
         ].map(s => (
           <div key={s.ingredient} className="flex gap-3 items-start">
             <div className="w-36 shrink-0">
@@ -1904,7 +1893,40 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         ))}
       </div>
 
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">眼科に行くべきタイミング</h2>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">セルフケア・対策商品</h2>
+      <p className="text-gray-700 mb-3">目薬・ホットアイマスク・ルテインサプリを、タイプや目的に合わせて組み合わせるのがおすすめです。</p>
+      <div className="grid sm:grid-cols-3 gap-3 mb-4">
+        <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">水分不足型に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
+          <p className="text-xs text-gray-500 mb-3">防腐剤無添加。コンタクト装用中でも使用可能</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">油分不足型（MGD）に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">La Luna アイウォーマー（ホワイト）</p>
+          <p className="text-xs text-gray-500 mb-3">まぶたを温めてマイボーム腺の油分分泌を促進</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">日々の栄養補給に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
+          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+      </div>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">生活習慣の見直しも重要です</h3>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li><strong>20-20-20ルール：</strong>20分に1度、20フィート（約6m）先を20秒間見る</li>
+        <li><strong>意識的な瞬き：</strong>PC作業中は意識的に瞬きを増やす</li>
+        <li><strong>加湿器の使用：</strong>室内湿度を50〜60%程度に保つ</li>
+        <li><strong>スクリーンの位置：</strong>目線より少し下に調整し、まぶたの開きを小さくする</li>
+      </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">受診の目安・医師に相談すべきサイン</h2>
       <div className="bg-red-50 border border-red-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-red-800 mb-3">⚠️ 以下に当てはまる場合は市販薬でなく眼科を受診してください</p>
         <ul className="space-y-2 text-sm text-gray-700">
@@ -1926,8 +1948,20 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-4">
         <p className="text-sm text-amber-800">
-          <strong>眼科での処方薬について：</strong>市販のヒアルロン酸目薬の濃度は0.1%程度ですが、処方薬のヒアレインは0.1%と0.3%があります。重症ドライアイには保険診療で0.3%のヒアレインを処方してもらえます（3割負担で月500〜1,000円程度）。市販品より確実に有効です。
+          <strong>眼科での処方薬について：</strong>市販のヒアルロン酸目薬に対し、眼科では濃度の異なる処方薬（ヒアレイン等）を処方してもらえる場合があります。重症のドライアイは、市販品より処方薬のほうが効果的なケースがあります。
         </p>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">ドライアイは水分不足型と油分不足型で対処法が異なります。まずはご自身のタイプを確認し、目薬・ホットアイマスク・生活習慣の見直しを組み合わせてみてください。</p>
+      <p className="text-gray-700 mb-4">セルフケアで改善しない場合や、痛み・充血を伴う場合は、自己判断を続けず眼科を受診しましょう。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">日々のケアの一つに</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">DHC ルテイン光対策を楽天で見る →</div>
+        </a>
       </div>
     </article>
   ),
@@ -2270,75 +2304,120 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   'eye-goods-pc': (
     <article className="prose prose-sm max-w-none">
       <p className="lead text-gray-600 text-base leading-relaxed mb-6">
-        長時間のPC作業で目が疲れる方向けに、疲れ目対策グッズを厳選。モニターライトからブルーライトカット眼鏡まで、効果的なアイテムを紹介します。
+        長時間のPC作業による目の疲れは、多くの場合グッズと休憩の工夫で軽減できます。ただし、痛みや視力低下を伴う場合はセルフケアで様子を見ず、眼科の受診を検討してください。
       </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">PC疲れ目セルフチェック</h2>
+      <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-4 mb-6">
+        <p className="font-bold text-cyan-800 mb-2">当てはまる項目が多いほど、対策グッズの効果を実感しやすい傾向にあります</p>
+        <ul className="text-sm text-gray-700 space-y-1">
+          <li>□ 1日4時間以上PC画面を見続けている</li>
+          <li>□ 目の乾き・かすみを感じることが多い</li>
+          <li>□ 画面の映り込みやまぶしさが気になる</li>
+          <li>□ 夕方になると目の奥が重く感じる</li>
+          <li>□ 就寝前もスマホ・PCを見ることが多い</li>
+        </ul>
+      </div>
+      <div className="my-4">
+        <a href={RAKUTEN('BenQ ScreenBar モニターライト')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">BenQ ScreenBar</p>
+          <p className="text-xs text-gray-500 mb-3">モニタークリップ式・非対称光学設計でグレアなし</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">BenQ ScreenBarを楽天で見る →</div>
+        </a>
+      </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">PC作業で目が疲れる原因</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
-        <li><strong>瞬きの減少：</strong>通常の1/3程度に減少しドライアイになる</li>
-        <li><strong>ピント調節の酷使：</strong>同じ距離を見続けることで毛様体筋が疲労</li>
+        <li><strong>瞬きの減少：</strong>画面注視中は瞬きが減り、ドライアイになりやすい</li>
+        <li><strong>ピント調節の酷使：</strong>同じ距離を見続けることで毛様体筋が疲労する</li>
         <li><strong>モニターの反射・グレア：</strong>余計な明暗差で目に負荷がかかる</li>
         <li><strong>室内照明との明暗差：</strong>画面が明るすぎる・暗すぎると目が疲れやすい</li>
       </ul>
 
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">モニターライトの効果</h2>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">セルフケア・対策商品</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">モニターライトで照明環境を整える</h3>
       <p className="text-gray-700 mb-3">
-        モニター上部に設置するモニターライトは、画面に反射しない設計で手元を照らします。デスクライトより省スペースで、PC作業に最適な照明環境を作れます。
+        モニター上部に設置するモニターライトは、画面に反射しない設計で手元を照らします。デスクライトより省スペースで、PC作業に適した照明環境を作れます。
       </p>
-      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
-        <p className="font-bold text-gray-800 mb-2">BenQ ScreenBar（最もおすすめ）</p>
-        <p className="text-sm text-gray-600 mb-3">モニタークリップ式・非対称光学設計でグレアなし・自動照度調節・USB給電。PC作業のモニターライトとして世界シェアNo.1。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ブルーライトカット眼鏡</h3>
+      <p className="text-gray-700 mb-3">
+        PC作業用の度なしブルーライトカット眼鏡は、夜間作業時の睡眠への影響を抑える選択肢の一つです。度ありの場合はメーカーの「PC用度数（弱度数設計）」のオプションも検討してみてください。
+      </p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">アンチグレアフィルター</h3>
+      <p className="text-gray-700 mb-3">
+        モニターに貼るアンチグレア（非光沢）フィルムは、照明の映り込みを防ぎ目への負担を軽減します。プライバシーフィルターと兼用のものも人気です。
+      </p>
+      <div className="grid sm:grid-cols-3 gap-3 mb-4">
         <a href={RAKUTEN('BenQ ScreenBar モニターライト')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
-          BenQ ScreenBarを楽天で見る →
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">モニターライト</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">BenQ ScreenBar</p>
+          <p className="text-xs text-gray-500 mb-3">グレアなし・自動照度調節</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
-      </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ブルーライトカット眼鏡</h2>
-      <p className="text-gray-700 mb-3">
-        PC作業専用の度なしブルーライトカット眼鏡は、夜間の作業での睡眠への影響を軽減します。度ありの場合はJINSやZoffで「PC用度数（弱度数設計）」のオプションも検討を。
-      </p>
-      <div className="my-4">
         <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
-          <p className="text-xs text-gray-500 mb-3">度なし・度付き両対応。PC作業向けの弱度数設計も選べる</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">JINS SCREENを楽天で見る →</div>
+          <p className="text-xs text-gray-500 mb-3">度なし・度付き両対応</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
-      </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">モニターフィルター・アンチグレアフィルム</h2>
-      <p className="text-gray-700 mb-3">
-        モニターに貼るアンチグレア（非光沢）フィルムは、照明の映り込みを防ぎ目への負担を軽減します。プライバシーフィルターと兼用のものも人気です。
-      </p>
-      <div className="my-4">
         <a href={RAKUTEN('エレコム のぞき見防止フィルター')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アンチグレア・のぞき見防止</span>
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アンチグレア</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">エレコム のぞき見防止フィルター</p>
-          <p className="text-xs text-gray-500 mb-3">映り込み軽減とプライバシー保護を両立するモニターフィルム</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">エレコム のぞき見防止フィルターを楽天で見る →</div>
+          <p className="text-xs text-gray-500 mb-3">映り込み軽減とプライバシー保護</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">PC作業の目疲れ対策まとめ</h2>
-      <div className="grid sm:grid-cols-2 gap-4 mb-6">
-        {[
-          { title: 'モニターライト', effect: '手元の照度改善・グレア軽減', cost: '¥8,000〜15,000', recommend: 'BenQ ScreenBar / Plus' },
-          { title: 'ブルーライトカット眼鏡', effect: '夜間の睡眠への影響を軽減', cost: '¥1,000〜5,000', recommend: 'JINSのPC GLASSES' },
-          { title: 'コンタクト対応目薬', effect: 'ドライアイ・疲れ目をケア', cost: '¥500〜2,000', recommend: 'ソフトサンティア（防腐剤フリー）' },
-          { title: 'ホットアイマスク', effect: '仕事後の目の回復を促進', cost: '¥3,000〜10,000', recommend: 'Panasonic EH-SW68' },
-        ].map(g => (
-          <div key={g.title} className="bg-white border border-gray-200 rounded-xl p-4">
-            <p className="font-bold text-gray-800 text-sm mb-1">{g.title}</p>
-            <p className="text-xs text-green-700 mb-1">{g.effect}</p>
-            <p className="text-xs text-gray-500 mb-1">参考価格：{g.cost}</p>
-            <p className="text-xs text-orange-600">おすすめ：{g.recommend}</p>
-          </div>
-        ))}
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">対策グッズ</th>
+              <th className="text-left p-3 border border-gray-200">効果</th>
+              <th className="text-left p-3 border border-gray-200">参考価格</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { title: 'モニターライト', effect: '手元の照度改善・グレア軽減', cost: '¥8,000〜15,000' },
+              { title: 'ブルーライトカット眼鏡', effect: '夜間の睡眠への影響を軽減', cost: '¥5,000円台〜' },
+              { title: 'アンチグレアフィルター', effect: '画面の映り込み軽減', cost: '¥1,500〜3,000' },
+              { title: 'コンタクト対応目薬', effect: 'ドライアイ・疲れ目をケア', cost: '¥500〜2,000' },
+            ].map(g => (
+              <tr key={g.title} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{g.title}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{g.effect}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{g.cost}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">受診の目安・医師に相談すべきサイン</h2>
+      <p className="text-gray-700 mb-4">グッズや休憩の工夫で改善しない場合や、以下のような症状がある場合は、単なる疲れ目ではない可能性があります。眼科の受診を検討してください。</p>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+        <li>対策を続けても目の痛み・かすみが1〜2週間以上改善しない</li>
+        <li>視力が急に低下した、物が二重に見える</li>
+        <li>目の奥の強い痛みや頭痛を伴う</li>
+        <li>光がまぶしく感じる、充血が続く</li>
+      </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">PC作業による目の疲れは、モニターライト・ブルーライトカット眼鏡・アンチグレアフィルターなどのグッズと、休憩の工夫を組み合わせることで軽減しやすくなります。</p>
+      <p className="text-gray-700 mb-4">セルフケアを続けても改善しない場合や、視力低下・強い痛みを伴う場合は、自己判断を続けず眼科を受診しましょう。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">日々のPC作業に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">JINS SCREENを楽天で見る →</div>
+        </a>
+      </div>
     </article>
   ),
 
@@ -2792,10 +2871,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   'me-juketsu-taisaku-guide': (
     <article className="prose prose-sm max-w-none">
       <p className="text-gray-600 text-base leading-relaxed mb-6">
-        目の充血は「白目の部分が赤くなる」症状で、多くの人が経験します。原因は多岐にわたり、単純な疲れ目から重篤な疾患のサインまで様々です。特にコンタクトレンズ装用者は充血が起きやすいため、正しい対処法を知っておくことが重要です。この記事では充血の種類・原因・対策と目薬の選び方を詳しく解説します。
+        目の充血の多くは疲れ目やドライアイなど休息と目薬で改善しますが、強い痛みや視力低下を伴う場合はすぐに眼科を受診すべきサインです。まずはチェックリストで状態を確認しましょう。
       </p>
 
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">充血の種類と主な原因</h2>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">充血タイプ判定チェックリスト</h2>
       <p className="text-gray-700 mb-4">
         目の充血は大きく「結膜充血」と「毛様充血」の2種類に分けられます。一般的な充血（疲れ目・ドライアイ・アレルギー）の多くは結膜充血です。
       </p>
@@ -2814,48 +2893,36 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           </div>
         ))}
       </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">コンタクト装用中の充血対策</h2>
-      <p className="text-gray-700 mb-4">
-        コンタクト装用中の充血は「低酸素状態」と「機械的刺激」が主な原因です。角膜は空気から直接酸素を取り込んでいるため、酸素透過率の低いレンズを長時間使用すると角膜が酸素不足になり充血が起きます。
-      </p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
-        <li><strong>装用時間を守る：</strong>1日8〜10時間を目安に、就寝時は必ず外す</li>
-        <li><strong>シリコーンハイドロゲルレンズに変更：</strong>酸素透過性が高く充血しにくい</li>
-        <li><strong>2weekやマンスリーはこすり洗い徹底：</strong>タンパク汚れが充血を引き起こす</li>
-        <li><strong>ドライアイ対策：</strong>コンタクト対応人工涙液でこまめに潤す</li>
-        <li><strong>装用日数をカレンダーで管理：</strong>2weekを3週間使うのは厳禁</li>
-      </ul>
-      <p className="text-gray-700 mb-4">
-        コンタクト装用中に充血が始まったら、まずレンズを外して休憩しましょう。充血が収まったら再装用できますが、再度充血する場合はその日は眼鏡で過ごすことをおすすめします。
-      </p>
       <div className="my-4">
         <a href={RAKUTEN('ロートVアクティブ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">充血除去</span>
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">結膜充血のセルフケアに</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ロートVアクティブ</p>
           <p className="text-xs text-gray-500 mb-3">血管収縮成分配合で赤みを素早くケア。連用は週2〜3回以内が目安</p>
           <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ロートVアクティブを楽天で見る →</div>
         </a>
       </div>
 
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">疲れ目・ドライアイによる充血</h2>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">充血の主な原因</h2>
       <p className="text-gray-700 mb-4">
-        現代人の充血の最多原因は「デジタル眼疲労（デジタルアイストレイン）」です。スマートフォン・PC作業中は瞬きが通常の1/3程度に減り、涙液が蒸発してドライアイ→充血が起きます。
+        コンタクト装用中の充血は「低酸素状態」と「機械的刺激」が主な原因です。角膜は空気から直接酸素を取り込んでいるため、酸素透過率の低いレンズを長時間使用すると角膜が酸素不足になり充血が起きやすくなります。また、現代人の充血の主な原因の一つが「デジタル眼疲労」です。スマートフォン・PC作業中は瞬きが減り、涙液が蒸発してドライアイ・充血につながります。
       </p>
-      <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-5 mb-6">
-        <p className="font-bold text-cyan-800 mb-3">疲れ目充血の予防法（20-20-20ルール）</p>
-        <p className="text-sm text-gray-700">PCやスマホを<strong>20分</strong>使ったら、<strong>20フィート（約6m）</strong>先を<strong>20秒間</strong>見る。</p>
-        <p className="text-sm text-gray-700 mt-2">この習慣で毛様体筋の緊張がほぐれ、ドライアイや眼精疲労による充血を予防できます。</p>
-      </div>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+        <li><strong>装用時間を守る：</strong>就寝時は必ずコンタクトを外す</li>
+        <li><strong>シリコーンハイドロゲルレンズに変更：</strong>酸素透過性が高く充血しにくい傾向にある</li>
+        <li><strong>こすり洗いを徹底：</strong>タンパク汚れが充血を引き起こすことがある</li>
+        <li><strong>20-20-20ルール：</strong>20分ごとに20フィート（約6m）先を20秒見て、毛様体筋の緊張をほぐす</li>
+      </ul>
+      <p className="text-gray-700 mb-4">
+        コンタクト装用中に充血が始まったら、まずレンズを外して休憩しましょう。充血が収まったら再装用できますが、再度充血する場合はその日は眼鏡で過ごすことをおすすめします。
+      </p>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">充血に効く目薬の選び方</h2>
       <div className="space-y-4 mb-6">
         {[
-          { type: '充血除去成分入り目薬', eg: 'ロートVアクティブ・アイリスCT', effect: '即効性あり・血管を収縮させて赤みを取る', caution: '連続使用で反跳充血（かえって悪化）リスク。週2〜3回以内が目安' },
-          { type: '抗アレルギー目薬', eg: 'アレジオン点眼液（処方）・ロートアルガード', effect: '花粉症・アレルギー性結膜炎の充血に◎', caution: '定期的に1日数回さして予防効果を維持' },
-          { type: '人工涙液（防腐剤フリー）', eg: 'ソフトサンティア・ヒアレイン点眼液（処方）', effect: 'ドライアイ由来の充血に◎・安全性が高く何度でも使える', caution: 'コンタクト装用中でも使いやすい。即効性は低め' },
-          { type: 'ビタミン入り疲れ目目薬', eg: 'サンテFX・ロートアイサプリ', effect: '疲れ目全般に。充血除去成分との組み合わせ商品も', caution: 'コンタクト装用中は「コンタクト対応」表示のものを選ぶ' },
+          { type: '充血除去成分入り目薬', eg: 'ロートVアクティブなど', effect: '即効性あり・血管を収縮させて赤みを取る', caution: '連続使用で反跳充血（かえって悪化）のリスク。週2〜3回以内が目安' },
+          { type: '人工涙液（防腐剤フリー）', eg: 'ソフトサンティアなど', effect: 'ドライアイ由来の充血に。安全性が高く繰り返し使いやすい', caution: 'コンタクト装用中でも使いやすいが、即効性は低め' },
+          { type: 'ビタミン入り疲れ目目薬', eg: 'サンテFXネオなど', effect: '疲れ目全般に', caution: 'コンタクト装用中は「コンタクト対応」表示のものを選ぶ' },
         ].map(t => (
           <div key={t.type} className="bg-white border border-gray-200 rounded-xl p-4">
             <p className="font-bold text-gray-800 text-sm">{t.type}</p>
@@ -2864,6 +2931,22 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
             <p className="text-xs text-red-600">注意：{t.caution}</p>
           </div>
         ))}
+      </div>
+      <div className="grid sm:grid-cols-2 gap-3 mb-4">
+        <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ドライアイ由来の充血に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
+          <p className="text-xs text-gray-500 mb-3">防腐剤無添加でコンタクト装用中でも使用可能</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href={RAKUTEN('サンテFXネオ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">疲れ目由来の充血に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテFXネオ</p>
+          <p className="text-xs text-gray-500 mb-3">ビタミンB12・タウリン配合</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
       </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">眼科受診が必要なサイン</h2>
@@ -2875,12 +2958,24 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           <li>🚨 大量の目やに・分泌物（感染症）</li>
           <li>🚨 光がまぶしくて目を開けられない（虹彩炎等）</li>
           <li>🚨 1週間以上充血が続く・悪化している</li>
-          <li>🚨 コンタクト装用中に突然の充血と激しい痛み（緑膿菌感染等のリスク）</li>
+          <li>🚨 コンタクト装用中に突然の充血と激しい痛み（感染症のリスク）</li>
         </ul>
       </div>
       <p className="text-gray-700 mb-4">
-        特にコンタクト装用中の「突然の激しい痛み＋充血」は角膜炎の緊急サインです。放置すると角膜潰瘍・最悪の場合失明につながるリスクがあります。すぐにコンタクトを外して眼科または救急眼科外来を受診してください。
+        特にコンタクト装用中の「突然の激しい痛み＋充血」は角膜炎の緊急サインの可能性があります。放置すると重症化するリスクがあるため、すぐにコンタクトを外して眼科または救急眼科外来を受診してください。
       </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">目の充血は、まず結膜充血か毛様充血かを見分け、症状に合った目薬とセルフケアを選ぶことが大切です。</p>
+      <p className="text-gray-700 mb-4">1週間以上続く・強い痛みを伴うなど、上記のサインに当てはまる場合は自己判断を続けず眼科を受診しましょう。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('サンテFXネオ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">疲れ目対策に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテFXネオ</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">サンテFXネオを楽天で見る →</div>
+        </a>
+      </div>
     </article>
   ),
 
@@ -3619,164 +3714,119 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   ),
     "floaters-causes-when-to-see-doctor": (
     <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">飛蚊症とは何か</h2>
-      <p className="text-gray-700 mb-4">視界に黒い点や線のようなものが見える「飛蚊症」は、多くの人が経験する一般的な眼の症状です。飛蚊症は医学用語では「floaters（フローター）」と呼ばれ、眼の内部を満たしている硝子体の変化が主な原因です。</p>
-      <p className="text-gray-700 mb-4">実は、飛蚊症は決して稀な症状ではありません。日本の眼科学会の調査によると、50代以上の成人の約60～70%が何らかの飛蚊症を経験したことがあると報告されています。ただし、すべての飛蚊症が治療を必要とするわけではなく、その原因を正確に理解することが重要です。</p>
-      <p className="text-gray-700 mb-4">本記事では、飛蚊症の原因、危険な受診サイン、正しい受診タイミングについて、医学的根拠に基づいて解説します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">飛蚊症の原因：生理的原因と病的原因</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">加齢による硝子体の変性（最も一般的）</h3>
-      <p className="text-gray-700 mb-4">飛蚊症の原因の大部分（約80%）は、硝子体の加齢変化です。硝子体は眼の内部を満たすゲル状の物質で、次のようなプロセスで変化します：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>年代別の発症率</strong>：30代で約15%、40代で約30%、50代で約50%、60代以上で約70%と、加齢とともに急速に増加します</li>
-        <li><strong>硝子体の液化</strong>：加齢により、ゲル状の硝子体が徐々に液体に変わります</li>
-        <li><strong>後部硝子体剥離（PVD）</strong>：硝子体が眼の奥の網膜から剥離する現象。これに伴い、濁りが視界に映ります</li>
-      </ul>
-      <p className="text-gray-700 mb-4">この加齢による硝子体変性は、視力低下や眼疾患を引き起こさない「生理的」な変化であり、時間とともに脳が適応し、症状を感じなくなることが多いです。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">高度近視に関連する飛蚊症</h3>
-      <p className="text-gray-700 mb-4">高度近視（-6.0D以上の近視）がある場合、飛蚊症のリスクが大幅に増加します：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>発症年齢が低い</strong>：20～30代でも飛蚊症が起こり得ます</li>
-        <li><strong>強膜が薄くなる</strong>：高度近視では眼の強膜が伸長し、薄くなります。その結果、硝子体の変化が生じやすくなります</li>
-        <li><strong>複数の点が見える</strong>：単一の点だけでなく、複数の点や線のような濁りが見えることが多いです</li>
-      </ul>
-      <p className="text-gray-700 mb-4">高度近視を持つ人は、定期的な眼科検査（年1～2回）を推奨されます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">糖尿病による飛蚊症</h3>
-      <p className="text-gray-700 mb-4">糖尿病患者の飛蚊症は注意が必要です：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>硝子体出血の可能性</strong>：血管が脆くなり、硝子体内へ出血することがあります</li>
-        <li><strong>見える症状</strong>：赤褐色、または黒い点が急に増える、雨のようなパターンが見える</li>
-        <li><strong>治療の緊急性</strong>：糖尿病による飛蚊症は放置すると、網膜症や網膜剥離に進行する可能性があります</li>
-      </ul>
-      <p className="text-gray-700 mb-4">糖尿病診断を受けている場合は、血糖コントロールと定期的な眼科検査が不可欠です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼の炎症（ぶどう膜炎）による飛蚊症</h3>
-      <p className="text-gray-700 mb-4">眼の内部に炎症が生じた場合：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>見える症状</strong>：浮遊物に加えて、眼痛や目の充血、光がまぶしく感じられます</li>
-        <li><strong>原因</strong>：自己免疫疾患、感染症、またはベーチェット病などが関連することがあります</li>
-        <li><strong>治療が必要</strong>：炎症を抑える薬物療法が必要になります</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">危険な飛蚊症：網膜剥離と他の重篤な疾患</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">網膜剥離の兆候</h3>
-      <p className="text-gray-700 mb-4">飛蚊症が以下の症状を伴う場合、<strong>網膜剥離の可能性があり、直ちに眼科を受診する必要があります</strong>：</p>
-      <p className="text-gray-700 mb-4">1. <strong>黒い点が急に増える</strong>：数時間～数日で浮遊物が10倍以上に増える</p>
-      <p className="text-gray-700 mb-4">2. <strong>光の閃光が見える</strong>（photopsia）：特に視野の周辺で、フラッシュのような光が見える</p>
-      <p className="text-gray-700 mb-4">3. <strong>視野が欠ける</strong>：視界の一部が暗くなったり、カーテンがかかったようになる</p>
-      <p className="text-gray-700 mb-4">4. <strong>飛ぶような大きな浮遊物</strong>：蚊のような大きな塊や影が見える</p>
-      <p className="text-gray-700 mb-4"><strong>統計情報</strong>：網膜剥離の患者の約90%が、症状の初期段階で飛蚊症や光視症を経験しています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">硝子体出血</h3>
-      <p className="text-gray-700 mb-4">硝子体内への出血が起きると：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>見える症状</strong>：赤茶色、または黒い霧状の浮遊物、または視界全体が暗くなる</li>
-        <li><strong>原因</strong>：糖尿病網膜症、網膜血管破裂、眼外傷</li>
-        <li><strong>対応</strong>：直ちに眼科受診が必要です</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">その他の病的原因</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>ぶどう膜炎</strong>：眼痛と充血を伴う</li>
-        <li><strong>眼内レンズの異常</strong>（眼内レンズ挿入後）：人工レンズの濁りが見える</li>
-        <li><strong>網膜裂孔</strong>：網膜剥離の前段階</li>
-      </ul>
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        視界に黒い点や糸くずのようなものが見える「飛蚊症」。加齢による生理的な変化であることが多い一方、光の閃光や急激な増加を伴う場合は網膜剥離のサインのことがあり、緊急の受診が必要です。まずはチェックリストで確認しましょう。
+      </p>
+
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">受診すべきタイミング：チェックリスト</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">【直ちに眼科を受診すべき症状】</h3>
-      <p className="text-gray-700 mb-4">以下の症状がある場合は、<strong>本日中に眼科を受診してください</strong>。夜間の場合は、翌日の早朝受診が重要です：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>□ 黒い点が急に数倍～10倍に増えた</li>
-        <li>□ 光の閃光（フラッシュのような光）が見える</li>
-        <li>□ 視野の一部が黒くなった、または暗くなった</li>
-        <li>□ 目の痛みがある</li>
-        <li>□ 視力が急に低下した</li>
-        <li>□ 大きな浮遊物が見える（蚊のような形）</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">【1～2週間以内に受診すべき症状】</h3>
-      <p className="text-gray-700 mb-4">以下の場合は、急いではいませんが、1～2週間以内に眼科を受診してください：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>□ 過去1ヶ月で飛蚊症の症状が明らかに増えた</li>
-        <li>□ 初めて飛蚊症に気づいた（これまで見えなかった）</li>
-        <li>□ 眼外傷を受けた直後に飛蚊症が出現した</li>
-        <li>□ 糖尿病があり、新たに飛蚊症が出現した</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">【定期検査で十分な場合】</h3>
-      <p className="text-gray-700 mb-4">以下の条件をすべて満たす場合は、眼科で「問題なし」と診断されれば、定期検査（年1回程度）で十分です：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>□ 飛蚊症の数や形が数ヶ月変わっていない</li>
-        <li>□ 光の閃光や視野欠損がない</li>
-        <li>□ 眼痛がない</li>
-        <li>□ 過去の眼科検査で網膜に問題がないと診断されている</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">飛蚊症のセルフケアと生活習慣</h2>
-      <p className="text-gray-700 mb-4">生理的な飛蚊症の場合、症状を緩和するための生活習慣の工夫があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼精疲労の軽減</h3>
-      <p className="text-gray-700 mb-4">眼精疲労が増すと、飛蚊症がより気になりやすくなります：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>20-20-20ルール</strong>：20分ごとに、20秒間、20フィート（約6m）先を見つめる</li>
-        <li><strong>ブルーライトカットメガネの使用</strong>：PC作業が多い場合、専用メガネが眼への負担を約30%軽減します</li>
-        <li><strong>目薬の活用</strong>：涙の質を改善する目薬を使用。以下のリンクから眼に優しい目薬を探せます</li>
-      </ul>
+      <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-4">
+        <p className="font-bold text-red-800 mb-2">🚨 本日中に眼科を受診（夜間は翌朝一番で）</p>
+        <ul className="text-sm text-gray-700 space-y-1">
+          <li>□ 黒い点が急に数倍〜10倍に増えた</li>
+          <li>□ 光の閃光（フラッシュのような光）が見える</li>
+          <li>□ 視野の一部が黒くなった、または暗くなった</li>
+          <li>□ 目の痛みがある、または視力が急に低下した</li>
+          <li>□ 大きな浮遊物が見える（蚊のような形）</li>
+        </ul>
+      </div>
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-4">
+        <p className="font-bold text-amber-800 mb-2">📅 1〜2週間以内に受診</p>
+        <ul className="text-sm text-gray-700 space-y-1">
+          <li>□ 過去1ヶ月で飛蚊症の症状が明らかに増えた</li>
+          <li>□ 初めて飛蚊症に気づいた</li>
+          <li>□ 眼外傷の直後、または糖尿病があり新たに出現した</li>
+        </ul>
+      </div>
+      <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-4 mb-6">
+        <p className="font-bold text-cyan-800 mb-2">🗓️ 定期検査で経過観察でよい場合</p>
+        <ul className="text-sm text-gray-700 space-y-1">
+          <li>□ 症状の数や形が数ヶ月変わっていない</li>
+          <li>□ 光の閃光や視野欠損、眼痛がない</li>
+          <li>□ 過去の眼科検査で網膜に問題がないと診断されている</li>
+        </ul>
+      </div>
       <div className="my-4">
         <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ドライアイ・防腐剤フリー</span>
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">日々の眼精疲労ケアに</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
-          <p className="text-xs text-gray-500 mb-3">参天製薬／第3類医薬品。涙の質を補い、コンタクト装用中でも使用可能</p>
+          <p className="text-xs text-gray-500 mb-3">防腐剤無添加でコンタクト装用中でも使用可能</p>
           <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
         </a>
       </div>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">栄養補給による予防</h3>
-      <p className="text-gray-700 mb-4">抗酸化物質の摂取が、硝子体の健康維持に役立ちます：</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">飛蚊症の主な原因</h2>
+      <p className="text-gray-700 mb-4">飛蚊症は医学用語で「floaters」と呼ばれ、眼の内部を満たす硝子体の変化が主な原因です。多くの人が経験する一般的な症状ですが、原因によって緊急度が異なります。</p>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">原因</th>
+              <th className="text-left p-3 border border-gray-200">特徴</th>
+              <th className="text-left p-3 border border-gray-200">緊急度</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { cause: '加齢による硝子体の変化（後部硝子体剥離）', feature: '最も一般的な原因。加齢とともに増加する傾向がある', urgency: '生理的な変化のことが多い' },
+              { cause: '高度近視に伴うもの', feature: '強膜が薄くなり、比較的若い年代でも起こりうる', urgency: '定期検査を推奨' },
+              { cause: '糖尿病網膜症・硝子体出血', feature: '血管が脆くなり出血することがある。黒い点が急に増える', urgency: '早めの受診が必要' },
+              { cause: '網膜剥離・網膜裂孔', feature: '光の閃光、急激な増加、視野の一部が欠けるなどを伴う', urgency: '緊急受診が必要' },
+              { cause: 'ぶどう膜炎（眼の炎症）', feature: '眼痛や充血、まぶしさを伴う', urgency: '治療が必要' },
+            ].map(r => (
+              <tr key={r.cause} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.cause}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.feature}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.urgency}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-gray-700 mb-4">生理的な飛蚊症の場合、視力低下や眼疾患を引き起こすものではなく、時間とともに気にならなくなることが多いとされています。ただし、自己判断で「生理的なもの」と決めつけず、初めて症状が出た際は一度眼科で確認してもらうことをおすすめします。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">セルフケア・対策商品</h2>
+      <p className="text-gray-700 mb-4">生理的な飛蚊症の場合、気になりやすさを軽減するための工夫があります。眼精疲労が増すと、飛蚊症がより気になりやすくなる傾向があるとされています。</p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>ルテイン・ジアンタキサンチン</strong>：ほうれん草、ケール、ブロッコリーに豊富</li>
-        <li><strong>アスタキサンチン</strong>：鮭、エビ、カニに含まれるカロテノイド。網膜への酸化ストレスを軽減</li>
-        <li><strong>アントシアニン</strong>：ブルーベリーに含まれ、眼の疲労を回復する効果があります</li>
+        <li><strong>20-20-20ルール：</strong>20分ごとに20秒間、20フィート（約6m）先を見つめて目を休める</li>
+        <li><strong>ブルーライトカットメガネ：</strong>PC作業が多い場合、目への負担軽減の選択肢の一つ</li>
+        <li><strong>抗酸化成分の摂取：</strong>ルテイン・ゼアキサンチンなどが硝子体・網膜の健康維持に役立つとされる</li>
       </ul>
-      <p className="text-gray-700 mb-4">栄養補給の他、サプリメントの活用も有効です。</p>
-      <div className="my-4">
+      <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ルテインサプリ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
-          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。続けやすい価格帯のサプリメント</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
+          <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+        </a>
+        <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
+          <p className="text-xs text-gray-500 mb-3">度なし・度付き両対応</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">定期的な眼科検査</h3>
-      <p className="text-gray-700 mb-4">何も症状がない人でも、<strong>40歳以上は年1回の眼科検査が推奨されています</strong>。これにより、飛蚊症以外の眼疾患（緑内障、加齢黄斑変性など）の早期発見が可能になります。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">医師の診断プロセス</h2>
-      <p className="text-gray-700 mb-4">眼科を受診した際、医師は以下のプロセスで飛蚊症の原因を特定します：</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">問診</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>いつから症状が起きたか</li>
-        <li>点の数や位置は変わっているか</li>
-        <li>光の閃光を感じるか</li>
-        <li>視力の変化があるか</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">検査機器による診察</h3>
-      <p className="text-gray-700 mb-4">1. <strong>スリット灯顕微鏡検査</strong>：眼の前部（角膜、水晶体）と硝子体を観察</p>
-      <p className="text-gray-700 mb-4">2. <strong>眼底検査</strong>：拡大瞳孔薬を使用し、網膜と視神経乳頭を詳細に観察</p>
-      <p className="text-gray-700 mb-4">3. <strong>光干渉断層撮影（OCT）</strong>：網膜の層状構造を高解像度で撮影</p>
-      <p className="text-gray-700 mb-4">これらの検査により、飛蚊症が生理的なものか、網膜剥離や他の疾患が原因かを判定します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">飛蚊症の予後と適応</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">自然経過</h3>
-      <p className="text-gray-700 mb-4">生理的な飛蚊症の場合：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>適応期間</strong>：通常3～6ヶ月で脳が浮遊物に適応し、意識しなくなります</li>
-        <li><strong>完全な消失</strong>：完全に消える場合は少なく（約10～20%）、多くの人が「気にならなくなる」という形で改善します</li>
-        <li><strong>長期経過</strong>：10年単位で見ると、さらに新たな浮遊物が出現することもありますが、やはり適応します</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">治療の選択肢（医学的アプローチ）</h3>
-      <p className="text-gray-700 mb-4">ごく限定的ですが、症状が日常生活に支障をきたす場合の治療法があります：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>YAGレーザー治療</strong>：浮遊物をレーザーで破壊します。ただし、成功率は50～75%で、網膜損傷のリスクがあるため、限定的に使用されます</li>
-        <li><strong>硝子体手術</strong>：重篤な場合に、硝子体を人工液に置き換えます。侵襲的であり、白内障発症などの合併症リスクがあるため、適応は極めて限定的です</li>
-      </ul>
-      <p className="text-gray-700 mb-4">一般的には、まず「経過観察」がスタンダードな対応です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ：飛蚊症との付き合い方</h2>
-      <p className="text-gray-700 mb-4">飛蚊症は非常に一般的な症状で、ほとんどの場合は加齢による生理的な変化です。ただし、その原因を正確に判定することが重要です：</p>
-      <p className="text-gray-700 mb-4"><strong>重要なポイント：</strong></p>
-      <p className="text-gray-700 mb-4">1. <strong>初回の飛蚊症出現時は眼科受診を推奨</strong>：生理的か病的かの判定が必須</p>
-      <p className="text-gray-700 mb-4">2. <strong>光の閃光、視野欠損などは直ちに受診</strong>：網膜剥離の可能性</p>
-      <p className="text-gray-700 mb-4">3. <strong>定期検査で経過観察</strong>：初診後3～6ヶ月、その後は年1回程度</p>
-      <p className="text-gray-700 mb-4">4. <strong>眼精疲労軽減と栄養補給</strong>：症状の気になりやすさを低下させます</p>
-      <p className="text-gray-700 mb-4">飛蚊症は不安になりやすい症状ですが、正しい知識と適切な医学的対応により、安心して日常生活を送ることができます。不安な場合や症状が変化した場合は、迷わず眼科医に相談してください。</p>
+      <p className="text-gray-700 mb-4">何も症状がない人でも、40歳以上は年1回程度の眼科検査が一般的な目安とされています。飛蚊症以外の眼疾患（緑内障、加齢黄斑変性など）の早期発見にもつながります。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">医師に相談すべき理由・診断プロセス</h2>
+      <p className="text-gray-700 mb-4">
+        飛蚊症が「光の閃光」「急激な増加」「視野の一部が欠ける」といった症状を伴う場合、網膜剥離やその前段階である網膜裂孔のサインである可能性があります。網膜剥離は自然治癒しない疾患で、放置すると視力に重大な影響を及ぼすことがあるため、自己判断せず速やかな受診が重要です。
+      </p>
+      <p className="text-gray-700 mb-4">眼科では、問診（症状の経過・光視症の有無など）に加え、スリット灯顕微鏡検査・眼底検査・光干渉断層撮影（OCT）などにより、飛蚊症が生理的なものか、網膜剥離など治療を要するものかを判定します。生理的な飛蚊症と診断された場合は、経過観察が基本的な対応です。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">飛蚊症の多くは加齢による生理的な変化ですが、光の閃光や急激な増加を伴う場合は網膜剥離のサインである可能性があるため、迷わず眼科を受診してください。</p>
+      <p className="text-gray-700 mb-4">初めて症状に気づいたときは一度眼科で原因を確認し、その後は定期検査で経過を見守るという流れが基本になります。</p>
+      <div className="my-4">
+        <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">目の乾燥・疲れ対策に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">ソフトサンティアを楽天で見る →</div>
+        </a>
+      </div>
     </article>
   ),
     "multifocal-iol-presbyopia-surgery-2026": (
