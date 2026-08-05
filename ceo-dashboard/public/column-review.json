@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-04T22:17:53.647Z",
+  "generatedAt": "2026-08-05T22:16:15.747Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
   },
-  "flaggedCount": 1,
+  "flaggedCount": 2,
   "flaggedArticles": [
     {
       "path": "/column/lenszero-kaigai-tsuuhan-guide-2026",
@@ -92,8 +92,8 @@
         "h2Count": 9,
         "h3Count": 19,
         "hasAffiliateLinks": true,
-        "ctaCount": 8,
-        "contentChars": 22005
+        "ctaCount": 14,
+        "contentChars": 26224
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -104,64 +104,72 @@
       "status": "様子見"
     },
     {
-      "path": "/column/pc-megane-bluelight-hikaku-2026",
-      "slug": "pc-megane-bluelight-hikaku-2026",
-      "title": "pc-megane-bluelight-hikaku-2026",
+      "path": "/column/eye-roller-fatigue-puffiness",
+      "slug": "eye-roller-fatigue-puffiness",
+      "title": "アイローラーの効果検証：目の疲れとむくみ解消グッズの選び方ガイド",
       "metrics": {
         "sessions": 5,
-        "bounceRate": 0.2,
-        "avgSessionDuration": 21.25096,
+        "bounceRate": 0.8,
+        "avgSessionDuration": 1.0838645999999998,
         "affiliateClicks": 0
       },
       "flags": [
+        "avg_session_under_10s",
         "no_affiliate_clicks"
       ],
       "flagLabels": [
+        "平均滞在1.1秒（閾値10秒）",
         "セッション5件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 5,
-        "h3Count": 1,
+        "h2Count": 6,
+        "h3Count": 2,
         "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 8101
+        "ctaCount": 4,
+        "contentChars": 7592
       },
       "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+        "ページが正常にレンダリングされていない可能性（JSXエラー・白画面等）"
       ],
       "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+        "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する"
       ],
-      "status": "様子見"
+      "status": "未対応"
     },
     {
-      "path": "/column/sunglass-polarized-guide",
-      "slug": "sunglass-polarized-guide",
-      "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
+      "path": "/column/megane-facial-shape-frame-2026",
+      "slug": "megane-facial-shape-frame-2026",
+      "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
       "metrics": {
         "sessions": 5,
-        "bounceRate": 0.6,
-        "avgSessionDuration": 46.564468600000005,
+        "bounceRate": 1,
+        "avgSessionDuration": 9.256522,
         "affiliateClicks": 0
       },
       "flags": [
+        "bounce_rate_over_90pct",
+        "avg_session_under_10s",
         "no_affiliate_clicks"
       ],
       "flagLabels": [
+        "直帰率100%（閾値90%）",
+        "平均滞在9.3秒（閾値10秒）",
         "セッション5件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 5,
-        "h3Count": 0,
-        "hasAffiliateLinks": false,
+        "h2Count": 12,
+        "h3Count": 22,
+        "hasAffiliateLinks": true,
         "ctaCount": 0,
-        "contentChars": 5374
+        "contentChars": 12575
       },
       "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+        "検索意図とコンテンツのミスマッチ（期待した情報が冒頭にない）",
+        "リンクはあるがCTAボタンが設置されていない（クリック導線が弱い）"
       ],
       "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+        "冒頭3〜4行で結論・要点を先出しし、読者の疑問に即答する構成にする",
+        "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
       ],
       "status": "未対応"
     }
