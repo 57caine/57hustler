@@ -2,11 +2,15 @@
  * 夜中のおじさん Threads自動投稿スクリプト（全面見直し版）
  *
  * 変更点:
- * - 8カテゴリから毎回異なるカテゴリを選出（3日間クールダウン）
+ * - 8カテゴリから毎回異なるカテゴリを選出（3日間クールダウン＋重み付け抽選）
  * - 新キーワードブラックリスト追加（夜間参詣・集積・沈積 等）
- * - 文体を「日常の疑問→じゃないでしょうか/ですかね」スタイルに統一
- * - 4段階チェック（カテゴリ重複・禁止キーワード・文体・類似度）
+ * - 文体を「日常の疑問→じゃないでしょうか/ですかね」＋断定回避時の柔らかい言い回しに統一
+ * - 5段階チェック（カテゴリ重複・禁止キーワード・文体・事実ベース断定チェック・類似度）
  * - 3回失敗でスキップ（ストックへのフォールバック廃止）
+ *
+ * カテゴリ優先度調整（品質安定化・優先カテゴリ調整指示）:
+ * - 科学・化学のふしぎ / 宗教の共通項 を重み付けで優先選出
+ * - 日月神事・神道の祭祀（神社・夜間参詣系）は重みを下げ、週1回以下の頻度目安に抑制
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -50,6 +54,21 @@ const CATEGORY_HINTS: Record<Category, string> = {
     '日常に潜む化学・物理現象・人体の不思議・生物の進化・脳の仕組み',
   '日月神事・神道の祭祀':
     '日本の祭祀・神道の儀式・神社の作法・天皇祭祀・季節の神事',
+};
+
+// ────── カテゴリ優先度（重み付け抽選） ──────
+// 反応の良いカテゴリ（科学・化学のふしぎ／宗教の共通項）を優先選出し、
+// 反応が薄く突っ込まれやすい神社・夜間参詣系（日月神事・神道の祭祀）は
+// 週1回以下程度の頻度に抑える。数値は相対的な重み（絶対数ではない）。
+const CATEGORY_WEIGHTS: Record<Category, number> = {
+  '科学・化学のふしぎ': 3,
+  '宗教の共通項': 2,
+  '気学・易経の豆知識': 1,
+  '日本の妖怪・神々': 1,
+  '結界・日常のしきたり': 1,
+  '古代ミステリー': 1,
+  '量子・宇宙論': 1,
+  '日月神事・神道の祭祀': 0.2,
 };
 
 // ────── 型定義 ──────
@@ -116,12 +135,22 @@ function getRecentCategories(history: HistoryEntry[]): Set<string> {
   );
 }
 
+function weightedPick(pool: Category[]): Category {
+  const totalWeight = pool.reduce((sum, c) => sum + CATEGORY_WEIGHTS[c], 0);
+  let r = Math.random() * totalWeight;
+  for (const c of pool) {
+    r -= CATEGORY_WEIGHTS[c];
+    if (r <= 0) return c;
+  }
+  return pool[pool.length - 1];
+}
+
 function pickCategory(history: HistoryEntry[]): Category {
   const recentCats = getRecentCategories(history);
   const available = (CATEGORIES as readonly Category[]).filter(c => !recentCats.has(c));
   // 全カテゴリが3日以内に使用済みの場合は全解放
   const pool = available.length > 0 ? available : ([...CATEGORIES] as Category[]);
-  return pool[Math.floor(Math.random() * pool.length)];
+  return weightedPick(pool);
 }
 
 // ────── Claude API チェック群 ──────
@@ -133,7 +162,28 @@ async function checkStyle(text: string, client: Anthropic): Promise<boolean> {
 
 合致の条件（両方満たすこと）：
 1. 日常的な疑問・気づき・ふとした発見から書き出している
-2. 「じゃないでしょうか」または「ですかね」で終わっている`,
+2. 以下のいずれかの言い回しで終わっている：
+   「じゃないでしょうか」「ですかね」
+   「という見方もできるかもしれません」
+   「と感じるのは私だけでしょうか」
+   「なのかな、とふと思いました」`,
+    messages: [{ role: 'user', content: text }],
+  });
+  const answer = (res.content[0] as { type: string; text: string }).text.trim().toUpperCase();
+  return answer.startsWith('YES');
+}
+
+async function checkFactSafety(text: string, client: Anthropic): Promise<boolean> {
+  const res = await client.messages.create({
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 10,
+    system: `以下の投稿文について判定してください。
+
+「この投稿は事実として断定的すぎる表現を含んでおり、
+専門家が読んだら『それは違います』と指摘できる余地があるか？」
+
+該当する場合は YES、該当しない（事実ベースであるか、
+断定ではなく問いかけ・考察のトーンに収まっている）場合は NO とだけ答えてください。`,
     messages: [{ role: 'user', content: text }],
   });
   const answer = (res.content[0] as { type: string; text: string }).text.trim().toUpperCase();
@@ -173,14 +223,23 @@ async function generatePost(category: Category, history: HistoryEntry[], client:
 
 スタイルルール：
 ・日常的な疑問・気づき・ふとした発見から書き始める
-・「じゃないでしょうか」か「ですかね」のどちらかで必ず締める
 ・100〜200字程度。短く・わかりやすく・余白がある
 ・難解な専門用語は使わない。読んだ人が「確かに…」と思える内容
+
+【文末表現】
+基本は「じゃないでしょうか」「ですかね」で締める。
+ただし、内容が断定に近い言い切りになりそうな場合は、
+必ず以下のいずれかに置き換えて、表現を柔らかくすること：
+・「〜という見方もできるかもしれません」
+・「〜と感じるのは私だけでしょうか」
+・「〜なのかな、とふと思いました」
 
 【絶対禁止】
 ・主語が長い文
 ・「証左」「沈積」「集積」「夜間参詣」「地誌に記録」「叶った事例」などの繰り返しテーマ・難語
 ・事実として断言する科学的に根拠のない主張
+・専門家が読んで「それは違います」と指摘できるような断定表現
+（該当しそうな内容は、上記の柔らかい文末表現を使って言い切りを避けること）
 ・ハッシュタグ
 ・ですます調以外の一人称禁止（私は〜ではなく、客観的な問いかけスタイルで）
 
@@ -263,14 +322,21 @@ async function main() {
     // チェック③: 文体チェック（Claude判定）
     const styleOk = await checkStyle(candidate, client);
     if (!styleOk) {
-      console.warn(`⚠️ チェック③失敗: 「じゃないでしょうか/ですかね」スタイルに合致しない → 再生成`);
+      console.warn(`⚠️ チェック③失敗: 指定の文末表現スタイルに合致しない → 再生成`);
       continue;
     }
 
-    // チェック④: 類似度チェック（Claude判定 vs 直近30投稿）
+    // チェック④: 事実ベース・断定表現チェック（専門家に指摘される余地がないか）
+    const tooAssertive = await checkFactSafety(candidate, client);
+    if (tooAssertive) {
+      console.warn(`⚠️ チェック④失敗: 専門家に指摘される余地のある断定表現を検出 → 再生成`);
+      continue;
+    }
+
+    // チェック⑤: 類似度チェック（Claude判定 vs 直近30投稿）
     const tooSimilar = await checkSimilarity(candidate, history, client);
     if (tooSimilar) {
-      console.warn(`⚠️ チェック④失敗: 直近30投稿と70%以上類似 → 再生成`);
+      console.warn(`⚠️ チェック⑤失敗: 直近30投稿と70%以上類似 → 再生成`);
       continue;
     }
 
