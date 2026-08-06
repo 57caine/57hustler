@@ -4904,7 +4904,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>レビュー数が豊富で、使用者の実際の評価が参考になる</li>
       </ul>
       <p className="text-gray-700 mb-4"><strong>楽天市場</strong></p>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9B%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%82%B1%E3%82%A2%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天でまつ毛美容液を検索</a></p>
+      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E8%80%81%E7%9C%BC%E9%8F%A1%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">楽天で老眼鏡を探す →</a></p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
         <li>ポイント還元率が高い</li>
         <li>定期便で割引購入可能</li>
@@ -4914,30 +4914,14 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li>即座に入手可能</li>
         <li>店員のアドバイスが受けられる</li>
       </ul>
-      <p className="text-gray-700 mb-4">---</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年のトレンド：今注目の新成分</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">EGF（上皮成長因子）</h3>
-      <p className="text-gray-700 mb-4">再生医療で注目されているEGFがまつ毛美容液に配合され始めました。毛根の細胞分裂を促進し、育毛効果が従来品の1.5倍以上という報告もあります。ただし、高価な成分のため配合量が限定的な製品が多いです。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">幹細胞培養液</h3>
-      <p className="text-gray-700 mb-4">植物由来の幹細胞培養液が2025年から急速に注目されています。細胞活性化による自然な育毛促進が特徴で、医薬部外品ではなく一般化粧品扱いながら、従来の医薬部外品に匹敵する効果を報告する製品も出現しています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ナノ粒子技術</h3>
-      <p className="text-gray-700 mb-4">成分を極小ナノ粒子化により、通常の100倍の浸透率を実現する技術が登場。従来は浸透しにくかった有効成分も、確実に毛根に届くようになってきました。</p>
-      <p className="text-gray-700 mb-4">---</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">よくある質問（FAQ）</h2>
-      <p className="text-gray-700 mb-4"><strong>Q1: まつ毛美容液はどのくらいで効果が出ますか？</strong></p>
-      <p className="text-gray-700 mb-4">個人差がありますが、一般的には3～4週間の継続使用で初期段階の変化が見られます。目に見える効果は約8～12週間（2～3ヶ月）の使用で実感できることが多いです。まつ毛の成長サイクルが約30日のため、複数のサイクルを経ることが重要です。</p>
-      <p className="text-gray-700 mb-4"><strong>Q2: まつ毛美容液と育毛剤の違いは何ですか？</strong></p>
-      <p className="text-gray-700 mb-4">まつ毛美容液は主に保湿・栄養補給を目的とした製品で、一般化粧品に分類されます。一方、育毛剤は医薬品または医薬部外品で、より強い効果を謳うことができますが、副作用のリスクもあります。安全性重視なら美容液、効果重視なら医薬部外品を選ぶと良いでしょう。</p>
-      <p className="text-gray-700 mb-4"><strong>Q3: 妊娠中・授乳中でも使用できますか？</strong></p>
-      <p className="text-gray-700 mb-4">ほとんどのまつ毛美容液は妊娠中・授乳中でも使用可能ですが、個別差があります。必ず製品の成分表を確認し、不安な場合は皮膚科医に相談してください。配合成分によっては避けた方が無難な成分もあるため、一般化粧品でも確認が重要です。</p>
-      <p className="text-gray-700 mb-4"><strong>Q4: 敏感肌でも使えるまつ毛美容液はありますか？</strong></p>
-      <p className="text-gray-700 mb-4">敏感肌向けのまつ毛美容液は多数存在します。無添加・低刺激配合の製品を選び、アルコール・香料・防腐剤無配合のものが目安です。パッチテストを事前に行い、目の周りは特にデリケートエリアのため、慎重に導入することをお勧めします。</p>
-      <p className="text-gray-700 mb-4"><strong>Q5: まつ毛美容液の正しい使い方は？</strong></p>
-      <p className="text-gray-700 mb-4">朝晩1日2回、クレンジング後の清潔な目元に使用します。チップまたはブラシで根元からまつ毛全体に塗布し、1～2分乾燥させます。他のスキンケア製品との併用時は、油分の多い製品の後は避け、テクスチャーの軽いものから使うのがポイントです。</p>
-      <p className="text-gray-700 mb-4">---</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">老眼鏡のお手入れと買い替えの目安</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">日常のお手入れ方法</h3>
+      <p className="text-gray-700 mb-4">レンズは乾いた布で拭くと細かい傷がつきやすいため、水またはレンズクリーナーで汚れを流してから、専用のクロスで水分を拭き取るのが基本です。フレームのネジは緩みやすいため、月に一度は増し締めを確認しましょう。</p>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">買い替えのタイミング</h3>
+      <p className="text-gray-700 mb-4">老眼は進行性のため、度数は数年単位で変化します。「以前より近くが見えにくくなった」「度数を上げても疲れが取れない」と感じたら、買い替えのサインです。フレームの変形やコーティングの剥がれも、見え方の低下につながるため交換の目安になります。</p>
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
-      <p className="text-gray-700 mb-4">まつ毛美容液は、正しい選択と継続使用により、確実な効果が期待できる製品です。2026年は新成分（EGF、幹細胞培養液、ナノ粒子技術）が続々と登場し、市場がさらに活性化する年になると予想されます。</p>
-      <p className="text-gray-700 mb-4">あなたの肌質・ニーズ・予算に合わせて、今回紹介したランキングから最適な一品を選んでください。まつ毛ケアは「今日から始める美容投資」です。美しい目元は、自信と輝きをもたらします。</p>
+      <p className="text-gray-700 mb-4">老眼鏡選びは、正しい度数・レンズタイプ・フレームの3点を押さえることで失敗を防げます。初めての場合は弱めの度数から始め、見え方の変化に合わせて買い替えていくのが基本です。</p>
+      <p className="text-gray-700 mb-4">ご自身の年代・用途・予算に合わせて、今回紹介したポイントを参考に、快適な老眼鏡を見つけてください。</p>
     </article>
   ),
     "megane-online-shopping-compare-2025": (
@@ -5297,7 +5281,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%20%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で術後ケア用品を見る</a>
       </p>
-      <div className="lasik-affiliate-placeholder">※ レーシック・ICLクリニックのアフィリエイトリンクをここに設置予定（A8.net承認後）</div>
     </div>
   ),
 
@@ -5395,7 +5378,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
       <p className="text-gray-700 mb-4">レーシック手術で後悔しないためには、<strong>クリニック選びが何よりも重要</strong>です。5つのポイント（手術実績・医療機器・医師の資格・アフターケア・料金の透明性）をしっかり確認し、複数クリニックでカウンセリングを受けることが成功への近道です。最安値ではなく、信頼でき、安心して任せられるクリニックを選んでください。</p>
       <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%20%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で術前・術後ケア用品を見る</a></p>
-      <div className="lasik-affiliate-placeholder">※ レーシッククリニックのアフィリエイトリンクをここに設置予定（A8.net承認後）</div>
     </div>
   ),
 
@@ -5472,7 +5454,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
       <p className="text-gray-700 mb-4"><strong>手術の成功は、術後の過ごし方で決まります。</strong>最初の数週間を慎重に過ごすことで、その後の数十年の快適な視力生活が約束されます。5つのルール・目薬管理・運動再開のタイミング・異常信号の見分け方・定期検査のスケジュールをすべて守ることが、あなたの新しい視力を守るための投資です。</p>
-      <div className="lasik-affiliate-placeholder">※ レーシッククリニックのアフィリエイトリンクをここに設置予定（A8.net承認後）</div>
+      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E7%9B%AE%E8%96%AC%20%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow" className="text-sky-600 hover:underline">楽天で術後ケア用品を見る</a></p>
     </div>
   ),
 
