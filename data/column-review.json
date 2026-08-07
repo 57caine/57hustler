@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T22:16:15.747Z",
+  "generatedAt": "2026-08-07T01:01:52.428Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -28,6 +28,37 @@
         "hasAffiliateLinks": true,
         "ctaCount": 4,
         "contentChars": 12782
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
+    },
+    {
+      "path": "/column/eyestrain-stretching-massage-guide",
+      "slug": "eyestrain-stretching-massage-guide",
+      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
+      "metrics": {
+        "sessions": 7,
+        "bounceRate": 0.7142857142857143,
+        "avgSessionDuration": 161.17800057142858,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション7件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 9,
+        "h3Count": 19,
+        "hasAffiliateLinks": true,
+        "ctaCount": 14,
+        "contentChars": 26224
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -73,37 +104,6 @@
       "status": "対応済み"
     },
     {
-      "path": "/column/eyestrain-stretching-massage-guide",
-      "slug": "eyestrain-stretching-massage-guide",
-      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
-      "metrics": {
-        "sessions": 6,
-        "bounceRate": 0.6666666666666666,
-        "avgSessionDuration": 181.0056281666667,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション6件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 9,
-        "h3Count": 19,
-        "hasAffiliateLinks": true,
-        "ctaCount": 14,
-        "contentChars": 26224
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見"
-    },
-    {
       "path": "/column/eye-roller-fatigue-puffiness",
       "slug": "eye-roller-fatigue-puffiness",
       "title": "アイローラーの効果検証：目の疲れとむくみ解消グッズの選び方ガイド",
@@ -142,17 +142,15 @@
       "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
       "metrics": {
         "sessions": 5,
-        "bounceRate": 1,
+        "bounceRate": 0.8,
         "avgSessionDuration": 9.256522,
         "affiliateClicks": 0
       },
       "flags": [
-        "bounce_rate_over_90pct",
         "avg_session_under_10s",
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "直帰率100%（閾値90%）",
         "平均滞在9.3秒（閾値10秒）",
         "セッション5件・affiliate_clickゼロ"
       ],
@@ -164,11 +162,9 @@
         "contentChars": 12575
       },
       "causes": [
-        "検索意図とコンテンツのミスマッチ（期待した情報が冒頭にない）",
         "リンクはあるがCTAボタンが設置されていない（クリック導線が弱い）"
       ],
       "suggestions": [
-        "冒頭3〜4行で結論・要点を先出しし、読者の疑問に即答する構成にする",
         "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
       ],
       "status": "未対応"

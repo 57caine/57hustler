@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-08-05T22:16:15.722Z",
+  "generatedAt": "2026-08-07T01:01:52.398Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-08-05T22:16:14.293Z",
+      "fetchedAt": "2026-08-07T01:01:50.712Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 279,
-      "totalPageviews": 618,
+      "totalSessions": 281,
+      "totalPageviews": 617,
       "topPages": [
         {
           "path": "/",
           "sessions": 92,
-          "pageviews": 298,
-          "avgSessionDuration": 130.59301360869566,
-          "bounceRate": 0.32608695652173914
+          "pageviews": 296,
+          "avgSessionDuration": 130.39612518478262,
+          "bounceRate": 0.33695652173913043
         },
         {
           "path": "/category/1day",
@@ -64,10 +64,10 @@
         },
         {
           "path": "/column/blue-light-megane-kouka",
-          "sessions": 9,
+          "sessions": 10,
           "pageviews": 9,
-          "avgSessionDuration": 94.576122,
-          "bounceRate": 0.3333333333333333
+          "avgSessionDuration": 85.1185098,
+          "bounceRate": 0.3
         },
         {
           "path": "/karakon",
@@ -88,7 +88,7 @@
           "sessions": 8,
           "pageviews": 8,
           "avgSessionDuration": 336.802756875,
-          "bounceRate": 0.25
+          "bounceRate": 0.125
         },
         {
           "path": "/vr",
@@ -98,18 +98,18 @@
           "bounceRate": 0
         },
         {
+          "path": "/column/eyestrain-stretching-massage-guide",
+          "sessions": 7,
+          "pageviews": 5,
+          "avgSessionDuration": 161.17800057142858,
+          "bounceRate": 0.7142857142857143
+        },
+        {
           "path": "/column/megane-online-shopping",
           "sessions": 7,
           "pageviews": 7,
           "avgSessionDuration": 7.155302142857143,
           "bounceRate": 0.42857142857142855
-        },
-        {
-          "path": "/column/eyestrain-stretching-massage-guide",
-          "sessions": 6,
-          "pageviews": 4,
-          "avgSessionDuration": 181.0056281666667,
-          "bounceRate": 0.6666666666666666
         },
         {
           "path": "/column/smart-glass-2026",
@@ -151,14 +151,10 @@
           "sessions": 5,
           "pageviews": 5,
           "avgSessionDuration": 9.256522,
-          "bounceRate": 1
+          "bounceRate": 0.8
         }
       ],
       "weeklyTrend": [
-        {
-          "date": "2026-07-09",
-          "sessions": 1
-        },
         {
           "date": "2026-07-10",
           "sessions": 1
@@ -265,7 +261,7 @@
         },
         {
           "date": "2026-08-06",
-          "sessions": 3
+          "sessions": 12
         }
       ],
       "affiliateClicksByPage": {
@@ -278,10 +274,12 @@
         "/column/megane-kaomikata": 2,
         "/column/meta-quest-3-review-2026": 2,
         "/column/smart-glass-2026": 2,
+        "/column/vr-movie-streaming-service-recommend-2026": 2,
         "/brand/seed": 1,
         "/column/blue-light-megane-kouka": 1,
         "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide": 1,
         "/column/hot-eye-mask-osusume": 1,
+        "/column/icl-vs-lasik-2026": 1,
         "/column/karakon-shoshinsha-guide": 1,
         "/column/lasik-dry-eye-management-postoperative-care-2026": 1,
         "/column/lasik-hiyo-risk": 1,
@@ -300,20 +298,20 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-08-05T22:16:15.721Z",
+      "fetchedAt": "2026-08-07T01:01:52.398Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 17,
-      "totalPageviews": 23,
+      "totalSessions": 19,
+      "totalPageviews": 25,
       "topPages": [
         {
           "path": "/",
-          "sessions": 17,
-          "pageviews": 23,
-          "avgSessionDuration": 41.876310000000004,
-          "bounceRate": 0.47058823529411764
+          "sessions": 19,
+          "pageviews": 25,
+          "avgSessionDuration": 55.41588184210526,
+          "bounceRate": 0.47368421052631576
         }
       ],
       "weeklyTrend": [
@@ -351,6 +349,14 @@
         },
         {
           "date": "2026-08-05",
+          "sessions": 1
+        },
+        {
+          "date": "2026-08-06",
+          "sessions": 1
+        },
+        {
+          "date": "2026-08-07",
           "sessions": 1
         }
       ],
