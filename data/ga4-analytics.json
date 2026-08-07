@@ -1,24 +1,31 @@
 {
-  "generatedAt": "2026-08-07T01:01:52.398Z",
+  "generatedAt": "2026-08-07T21:45:13.496Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-08-07T01:01:50.712Z",
+      "fetchedAt": "2026-08-07T21:45:11.860Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 281,
-      "totalPageviews": 617,
+      "totalSessions": 287,
+      "totalPageviews": 623,
       "topPages": [
         {
           "path": "/",
-          "sessions": 92,
-          "pageviews": 296,
-          "avgSessionDuration": 130.39612518478262,
-          "bounceRate": 0.33695652173913043
+          "sessions": 91,
+          "pageviews": 293,
+          "avgSessionDuration": 131.6930555934066,
+          "bounceRate": 0.34065934065934067
+        },
+        {
+          "path": "/column/meta-quest-3-review-2026",
+          "sessions": 28,
+          "pageviews": 28,
+          "avgSessionDuration": 94.11157285714285,
+          "bounceRate": 0.32142857142857145
         },
         {
           "path": "/category/1day",
@@ -26,13 +33,6 @@
           "pageviews": 37,
           "avgSessionDuration": 226.68066496153844,
           "bounceRate": 0.15384615384615385
-        },
-        {
-          "path": "/column/meta-quest-3-review-2026",
-          "sessions": 26,
-          "pageviews": 26,
-          "avgSessionDuration": 96.44765050000001,
-          "bounceRate": 0.3076923076923077
         },
         {
           "path": "/column/vr-game-osusume-2026",
@@ -49,6 +49,13 @@
           "bounceRate": 0.16666666666666666
         },
         {
+          "path": "/column/blue-light-megane-kouka",
+          "sessions": 12,
+          "pageviews": 12,
+          "avgSessionDuration": 80.63561241666666,
+          "bounceRate": 0.3333333333333333
+        },
+        {
           "path": "/ranking",
           "sessions": 12,
           "pageviews": 27,
@@ -63,11 +70,11 @@
           "bounceRate": 0.18181818181818182
         },
         {
-          "path": "/column/blue-light-megane-kouka",
+          "path": "/vr",
           "sessions": 10,
-          "pageviews": 9,
-          "avgSessionDuration": 85.1185098,
-          "bounceRate": 0.3
+          "pageviews": 19,
+          "avgSessionDuration": 206.807042,
+          "bounceRate": 0.2
         },
         {
           "path": "/karakon",
@@ -75,6 +82,13 @@
           "pageviews": 21,
           "avgSessionDuration": 73.568849,
           "bounceRate": 0.1111111111111111
+        },
+        {
+          "path": "/column/eyestrain-stretching-massage-guide",
+          "sessions": 8,
+          "pageviews": 6,
+          "avgSessionDuration": 219.63322512500002,
+          "bounceRate": 0.625
         },
         {
           "path": "/column/lasik-hiyo-risk",
@@ -89,20 +103,6 @@
           "pageviews": 8,
           "avgSessionDuration": 336.802756875,
           "bounceRate": 0.125
-        },
-        {
-          "path": "/vr",
-          "sessions": 8,
-          "pageviews": 16,
-          "avgSessionDuration": 258.5088025,
-          "bounceRate": 0
-        },
-        {
-          "path": "/column/eyestrain-stretching-massage-guide",
-          "sessions": 7,
-          "pageviews": 5,
-          "avgSessionDuration": 161.17800057142858,
-          "bounceRate": 0.7142857142857143
         },
         {
           "path": "/column/megane-online-shopping",
@@ -155,10 +155,6 @@
         }
       ],
       "weeklyTrend": [
-        {
-          "date": "2026-07-10",
-          "sessions": 1
-        },
         {
           "date": "2026-07-11",
           "sessions": 2
@@ -262,6 +258,14 @@
         {
           "date": "2026-08-06",
           "sessions": 12
+        },
+        {
+          "date": "2026-08-07",
+          "sessions": 8
+        },
+        {
+          "date": "2026-08-08",
+          "sessions": 2
         }
       ],
       "affiliateClicksByPage": {
@@ -298,7 +302,7 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-08-07T01:01:52.398Z",
+      "fetchedAt": "2026-08-07T21:45:13.496Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
