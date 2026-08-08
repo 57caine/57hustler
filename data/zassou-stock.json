@@ -1,7 +1,22 @@
 {
-  "updatedAt": "2026-08-08T06:34:31.841Z",
-  "totalCount": 237,
+  "updatedAt": "2026-08-08T12:26:27.110Z",
+  "totalCount": 238,
   "items": [
+    {
+      "zId": "Z238",
+      "id": "sub-cta-42",
+      "genre": "サブスク",
+      "title": "FANZA動画見放題チャンネルライト",
+      "actressName": "",
+      "imageUrl": "",
+      "sampleUrl": "",
+      "affiliateUrl": "https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fsvod%2F&af_id=nsplot-003&ch=toolbar&ch_id=link",
+      "comment": "月額サブスク誘導",
+      "parentPost": "小生、先月から月額見放題に切り替えた次第である。単品より圧倒的にコスパが良い。",
+      "replyPost": "FANZA動画見放題チャンネルライト 詳細・登録はこちら↓\nhttps://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fsvod%2F&af_id=nsplot-003&ch=toolbar&ch_id=link",
+      "posted": false,
+      "addedAt": "2026-08-08T12:26:27.109Z"
+    },
     {
       "zId": "Z236",
       "id": "h_1133pako00081",
