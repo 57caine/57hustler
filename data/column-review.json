@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T21:45:13.525Z",
+  "generatedAt": "2026-08-08T21:36:03.996Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -43,8 +43,8 @@
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
         "sessions": 8,
-        "bounceRate": 0.625,
-        "avgSessionDuration": 219.63322512500002,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 219.633225125,
         "affiliateClicks": 0
       },
       "flags": [

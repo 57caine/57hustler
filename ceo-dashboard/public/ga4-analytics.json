@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-07T21:45:13.496Z",
+  "generatedAt": "2026-08-08T21:36:03.966Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-08-07T21:45:11.860Z",
+      "fetchedAt": "2026-08-08T21:36:02.667Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
@@ -15,10 +15,10 @@
       "topPages": [
         {
           "path": "/",
-          "sessions": 91,
-          "pageviews": 293,
-          "avgSessionDuration": 131.6930555934066,
-          "bounceRate": 0.34065934065934067
+          "sessions": 89,
+          "pageviews": 291,
+          "avgSessionDuration": 134.6524501011236,
+          "bounceRate": 0.3258426966292135
         },
         {
           "path": "/column/meta-quest-3-review-2026",
@@ -36,10 +36,17 @@
         },
         {
           "path": "/column/vr-game-osusume-2026",
+          "sessions": 14,
+          "pageviews": 12,
+          "avgSessionDuration": 27.58162307142857,
+          "bounceRate": 0.5
+        },
+        {
+          "path": "/column/blue-light-megane-kouka",
           "sessions": 13,
-          "pageviews": 11,
-          "avgSessionDuration": 29.42411115384615,
-          "bounceRate": 0.46153846153846156
+          "pageviews": 13,
+          "avgSessionDuration": 75.5994396923077,
+          "bounceRate": 0.38461538461538464
         },
         {
           "path": "/column",
@@ -47,13 +54,6 @@
           "pageviews": 44,
           "avgSessionDuration": 95.90125975000001,
           "bounceRate": 0.16666666666666666
-        },
-        {
-          "path": "/column/blue-light-megane-kouka",
-          "sessions": 12,
-          "pageviews": 12,
-          "avgSessionDuration": 80.63561241666666,
-          "bounceRate": 0.3333333333333333
         },
         {
           "path": "/ranking",
@@ -73,7 +73,7 @@
           "path": "/vr",
           "sessions": 10,
           "pageviews": 19,
-          "avgSessionDuration": 206.807042,
+          "avgSessionDuration": 207.7132725,
           "bounceRate": 0.2
         },
         {
@@ -87,8 +87,8 @@
           "path": "/column/eyestrain-stretching-massage-guide",
           "sessions": 8,
           "pageviews": 6,
-          "avgSessionDuration": 219.63322512500002,
-          "bounceRate": 0.625
+          "avgSessionDuration": 219.633225125,
+          "bounceRate": 0.5
         },
         {
           "path": "/column/lasik-hiyo-risk",
@@ -155,10 +155,6 @@
         }
       ],
       "weeklyTrend": [
-        {
-          "date": "2026-07-11",
-          "sessions": 2
-        },
         {
           "date": "2026-07-12",
           "sessions": 2
@@ -265,7 +261,7 @@
         },
         {
           "date": "2026-08-08",
-          "sessions": 2
+          "sessions": 7
         }
       ],
       "affiliateClicksByPage": {
@@ -302,7 +298,7 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-08-07T21:45:13.496Z",
+      "fetchedAt": "2026-08-08T21:36:03.966Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
