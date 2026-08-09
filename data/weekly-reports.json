@@ -1,6 +1,17 @@
 {
   "reports": [
     {
+      "weekOf": "2026-08-02",
+      "generatedAt": "2026-08-09T22:23:22.266Z",
+      "stats": {
+        "threadsPostsThisWeek": 26,
+        "lensNaviColumnsThisWeek": 0,
+        "henkutsuApprovedThisWeek": 0,
+        "noteArticles": 7,
+        "githubActionsSuccessRate": 100
+      }
+    },
+    {
       "weekOf": "2026-07-26",
       "generatedAt": "2026-08-02T22:50:25.263Z",
       "stats": {
