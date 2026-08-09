@@ -1,31 +1,31 @@
 {
-  "generatedAt": "2026-08-08T21:36:03.966Z",
+  "generatedAt": "2026-08-09T21:38:23.367Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-08-08T21:36:02.667Z",
+      "fetchedAt": "2026-08-09T21:38:22.113Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 287,
-      "totalPageviews": 623,
+      "totalSessions": 291,
+      "totalPageviews": 626,
       "topPages": [
         {
           "path": "/",
-          "sessions": 89,
-          "pageviews": 291,
-          "avgSessionDuration": 134.6524501011236,
-          "bounceRate": 0.3258426966292135
+          "sessions": 87,
+          "pageviews": 289,
+          "avgSessionDuration": 137.62211266666668,
+          "bounceRate": 0.3218390804597701
         },
         {
           "path": "/column/meta-quest-3-review-2026",
-          "sessions": 28,
-          "pageviews": 28,
-          "avgSessionDuration": 94.11157285714285,
-          "bounceRate": 0.32142857142857145
+          "sessions": 29,
+          "pageviews": 29,
+          "avgSessionDuration": 96.30630203448274,
+          "bounceRate": 0.3448275862068966
         },
         {
           "path": "/category/1day",
@@ -36,10 +36,10 @@
         },
         {
           "path": "/column/vr-game-osusume-2026",
-          "sessions": 14,
-          "pageviews": 12,
-          "avgSessionDuration": 27.58162307142857,
-          "bounceRate": 0.5
+          "sessions": 15,
+          "pageviews": 13,
+          "avgSessionDuration": 30.420701,
+          "bounceRate": 0.5333333333333333
         },
         {
           "path": "/column/blue-light-megane-kouka",
@@ -70,6 +70,13 @@
           "bounceRate": 0.18181818181818182
         },
         {
+          "path": "/column/megane-kaomikata",
+          "sessions": 11,
+          "pageviews": 10,
+          "avgSessionDuration": 244.94745954545454,
+          "bounceRate": 0.36363636363636365
+        },
+        {
           "path": "/vr",
           "sessions": 10,
           "pageviews": 19,
@@ -98,18 +105,18 @@
           "bounceRate": 0.625
         },
         {
-          "path": "/column/megane-kaomikata",
-          "sessions": 8,
-          "pageviews": 8,
-          "avgSessionDuration": 336.802756875,
-          "bounceRate": 0.125
-        },
-        {
           "path": "/column/megane-online-shopping",
           "sessions": 7,
           "pageviews": 7,
           "avgSessionDuration": 7.155302142857143,
           "bounceRate": 0.42857142857142855
+        },
+        {
+          "path": "/column/megane-facial-shape-frame-2026",
+          "sessions": 6,
+          "pageviews": 6,
+          "avgSessionDuration": 12.127353833333336,
+          "bounceRate": 0.8333333333333334
         },
         {
           "path": "/column/smart-glass-2026",
@@ -145,20 +152,9 @@
           "pageviews": 46,
           "avgSessionDuration": 883.2516966,
           "bounceRate": 0
-        },
-        {
-          "path": "/column/megane-facial-shape-frame-2026",
-          "sessions": 5,
-          "pageviews": 5,
-          "avgSessionDuration": 9.256522,
-          "bounceRate": 0.8
         }
       ],
       "weeklyTrend": [
-        {
-          "date": "2026-07-12",
-          "sessions": 2
-        },
         {
           "date": "2026-07-14",
           "sessions": 4
@@ -262,6 +258,10 @@
         {
           "date": "2026-08-08",
           "sessions": 7
+        },
+        {
+          "date": "2026-08-09",
+          "sessions": 9
         }
       ],
       "affiliateClicksByPage": {
@@ -298,7 +298,7 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-08-08T21:36:03.966Z",
+      "fetchedAt": "2026-08-09T21:38:23.367Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
@@ -311,7 +311,7 @@
           "sessions": 19,
           "pageviews": 25,
           "avgSessionDuration": 55.41588184210526,
-          "bounceRate": 0.47368421052631576
+          "bounceRate": 0.42105263157894735
         }
       ],
       "weeklyTrend": [
