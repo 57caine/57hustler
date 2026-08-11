@@ -11,6 +11,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.100.1",
     "googleapis": "^173.0.0",
+    "libsodium-wrappers": "^0.7.16",
     "next": "16.2.6",
     "react": "19.2.4",
     "react-dom": "19.2.4"
@@ -19,6 +20,7 @@
     "@google-analytics/data": "^6.1.0",
     "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4",
+    "@types/libsodium-wrappers": "^0.7.14",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
