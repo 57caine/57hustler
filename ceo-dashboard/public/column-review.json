@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T21:53:28.436Z",
+  "generatedAt": "2026-08-13T21:52:38.993Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -44,7 +44,7 @@
       "metrics": {
         "sessions": 9,
         "bounceRate": 0.6666666666666666,
-        "avgSessionDuration": 12.659786,
+        "avgSessionDuration": 13.707698666666666,
         "affiliateClicks": 0
       },
       "flags": [
@@ -204,7 +204,7 @@
       "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
       "metrics": {
         "sessions": 6,
-        "bounceRate": 0.5,
+        "bounceRate": 0.3333333333333333,
         "avgSessionDuration": 68.63380099999999,
         "affiliateClicks": 0
       },
