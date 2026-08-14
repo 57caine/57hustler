@@ -1,9 +1,12 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
+import { Sparkles, Headset, Stethoscope } from 'lucide-react';
 import { getAllProductsWithPrices, getAllCategories, getPricesUpdatedAt, getAllBCValues, getProductsByBC } from '@/lib/products';
 import { columns } from '@/lib/columns';
 import { eyeColumns } from '@/lib/eye-columns';
 import ProductCard from '@/components/ProductCard';
+import { getHeroImage } from '@/lib/unsplash';
 
 export const metadata: Metadata = {
   title: '目のことなら、レンズナビ。コンタクト・眼鏡・アイケア・レーシック総合情報 | レンズナビ',
@@ -33,7 +36,8 @@ const homeFaqs = [
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const heroImage = await getHeroImage('contact lens eye close up macro');
   const allProducts = getAllProductsWithPrices();
   const categories = getAllCategories();
   const updatedAt = getPricesUpdatedAt();
@@ -58,22 +62,37 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-sky-500 to-blue-600 py-20 px-4 text-center">
-        <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-          目のことなら、レンズナビ。
-        </h1>
-        <p className="text-sky-100 text-base md:text-lg mb-8">
-          コンタクト・カラコン・VR・レーシック・アイケア
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-sm mx-auto">
-          <a href="/ranking"
-             className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity no-underline">
-            人気ランキングを見る
-          </a>
-          <a href="/column"
-             className="block w-full text-center border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-sky-600 transition-colors no-underline">
-            コラムを読む
-          </a>
+      <section className="relative overflow-hidden bg-gradient-to-br from-sky-500 to-blue-600 py-20 px-4 text-center">
+        {heroImage && (
+          <>
+            <Image
+              src={heroImage}
+              alt="コンタクトレンズと目のケア"
+              fill
+              priority
+              sizes="100vw"
+              className="absolute inset-0 object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-sky-600/90 to-blue-700/85" />
+          </>
+        )}
+        <div className="relative z-10">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            目のことなら、レンズナビ。
+          </h1>
+          <p className="text-sky-100 text-base md:text-lg mb-8">
+            コンタクト・カラコン・VR・レーシック・アイケア
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-sm mx-auto">
+            <a href="/ranking"
+               className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity no-underline">
+              人気ランキングを見る
+            </a>
+            <a href="/column"
+               className="block w-full text-center border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-sky-600 transition-colors no-underline">
+              コラムを読む
+            </a>
+          </div>
         </div>
       </section>
 
@@ -158,7 +177,7 @@ export default function HomePage() {
               style={{ background: 'linear-gradient(135deg, #ad1457, #c2185b)' }}
             >
               <div className="p-6 text-white">
-                <div className="text-3xl mb-2">✨</div>
+                <Sparkles className="w-8 h-8 mb-2" />
                 <div className="font-bold text-lg mb-1">カラコン特集2026</div>
                 <div className="text-sm opacity-80 mb-3">人気ブランド徹底比較</div>
                 <div className="text-sm font-bold">詳しく見る →</div>
@@ -171,7 +190,7 @@ export default function HomePage() {
               style={{ background: 'linear-gradient(135deg, #4527a0, #512da8)' }}
             >
               <div className="p-6 text-white">
-                <div className="text-3xl mb-2">🥽</div>
+                <Headset className="w-8 h-8 mb-2" />
                 <div className="font-bold text-lg mb-1">VRゴーグル完全ガイド</div>
                 <div className="text-sm opacity-80 mb-3">Quest・Vision Pro比較</div>
                 <div className="text-sm font-bold">詳しく見る →</div>
@@ -184,7 +203,7 @@ export default function HomePage() {
               style={{ background: 'linear-gradient(135deg, #00695c, #00897b)' }}
             >
               <div className="p-6 text-white">
-                <div className="text-3xl mb-2">👁️</div>
+                <Stethoscope className="w-8 h-8 mb-2" />
                 <div className="font-bold text-lg mb-1">レーシック無料相談</div>
                 <div className="text-sm opacity-80 mb-3">費用・リスク・クリニック選び</div>
                 <div className="text-sm font-bold">詳しく見る →</div>

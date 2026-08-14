@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { TriangleAlert, BookOpen } from 'lucide-react';
 import { getAllProducts, getProductWithPrices, getProductsByCategory } from '@/lib/products';
 import PriceTable from '@/components/PriceTable';
 
@@ -169,7 +170,10 @@ export default async function ProductPage({ params }: Props) {
           </div>
         </div>
         <div className="bg-white rounded-lg p-3 text-xs text-gray-700 space-y-1">
-          <p className="text-amber-700 font-medium">⚠ 処方箋について</p>
+          <p className="text-amber-700 font-medium flex items-center gap-1.5">
+            <TriangleAlert className="w-4 h-4 flex-shrink-0" />
+            処方箋について
+          </p>
           <p>処方箋がない場合は眼科で発行してもらう必要があります。ただし、<strong>既に同じ商品を使用中の方は処方箋不要で購入できるショップが多く</strong>、下表で「処方箋不要」と表示されているショップがその対象です。</p>
         </div>
       </div>
@@ -185,8 +189,9 @@ export default async function ProductPage({ params }: Props) {
       {/* Related Column */}
       {relatedColumn && (
         <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-8">
-          <Link href={`/column/${relatedColumn.slug}`} className="text-sm text-sky-700 font-medium hover:underline">
-            📖 {relatedColumn.title} →
+          <Link href={`/column/${relatedColumn.slug}`} className="text-sm text-sky-700 font-medium hover:underline inline-flex items-center gap-1.5">
+            <BookOpen className="w-4 h-4 flex-shrink-0" />
+            {relatedColumn.title} →
           </Link>
         </div>
       )}

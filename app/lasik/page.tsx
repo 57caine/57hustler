@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { Stethoscope, Droplet, ShieldCheck, Bandage, Pill } from 'lucide-react';
 import { eyeColumns } from '@/lib/eye-columns';
+import { getHeroImage } from '@/lib/unsplash';
+import HeroBanner from '@/components/HeroBanner';
 
 const articles = eyeColumns
   .filter(c => c.section === 'lasik')
@@ -32,7 +35,8 @@ const jsonLd = {
   })),
 };
 
-export default function LasikPage() {
+export default async function LasikPage() {
+  const heroImage = await getHeroImage('eye exam ophthalmology clinic');
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -44,17 +48,22 @@ export default function LasikPage() {
       </nav>
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-emerald-950 to-teal-950 border border-emerald-800 rounded-2xl p-8 mb-10">
-        <div className="text-4xl mb-3">👁️</div>
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">レーシック・視力矯正</h1>
-        <p className="text-gray-600 text-sm leading-relaxed max-w-xl">
-          レーシック・ICL・オルソケラトロジーなど視力矯正手術の費用・リスク・クリニック選びを解説。
-          手術を検討している方向けの総合情報サイトです。
-        </p>
-        <div className="mt-4 bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 inline-block">
-          <p className="text-xs text-amber-700">※ 当サイトは医療情報を提供しますが、最終的な判断は必ず眼科専門医にご相談ください。</p>
-        </div>
-      </div>
+      <HeroBanner
+        icon={<Stethoscope className="w-9 h-9 text-white" />}
+        title="レーシック・視力矯正"
+        description="レーシック・ICL・オルソケラトロジーなど視力矯正手術の費用・リスク・クリニック選びを解説。手術を検討している方向けの総合情報サイトです。"
+        imageUrl={heroImage}
+        imageAlt="眼科診療"
+        gradient="from-emerald-950 to-teal-950"
+        borderColor="border-emerald-800"
+        overlayFrom="from-emerald-950/85"
+        overlayTo="to-teal-950/70"
+        disclaimer={
+          <div className="mt-4 bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 inline-block">
+            <p className="text-xs text-amber-700">※ 当サイトは医療情報を提供しますが、最終的な判断は必ず眼科専門医にご相談ください。</p>
+          </div>
+        }
+      />
 
       {/* Articles */}
       <h2 className="text-xl font-bold text-gray-800 mb-4">レーシック・視力矯正 ガイド記事</h2>
@@ -104,14 +113,14 @@ export default function LasikPage() {
       <h2 className="text-xl font-bold text-gray-800 mb-4">手術前後のアイケアグッズ</h2>
       <div className="grid sm:grid-cols-2 gap-3 mb-10">
         {[
-          { emoji: '💧', label: '防腐剤フリー目薬（術後ケア）', rakuten: '防腐剤フリー 目薬' },
-          { emoji: '🥽', label: '保護メガネ（術後使用）', rakuten: '保護ゴーグル 目薬' },
-          { emoji: '🩹', label: '眼帯・アイシールド', rakuten: '眼帯 手術' },
-          { emoji: '🌿', label: 'アイケアサプリ（ルテイン）', rakuten: 'ルテイン サプリ' },
+          { Icon: Droplet, label: '防腐剤フリー目薬（術後ケア）', rakuten: '防腐剤フリー 目薬' },
+          { Icon: ShieldCheck, label: '保護メガネ（術後使用）', rakuten: '保護ゴーグル 目薬' },
+          { Icon: Bandage, label: '眼帯・アイシールド', rakuten: '眼帯 手術' },
+          { Icon: Pill, label: 'アイケアサプリ（ルテイン）', rakuten: 'ルテイン サプリ' },
         ].map(p => (
           <a key={p.label} href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-red-300 transition-all">
-            <div className="text-3xl mb-2">{p.emoji}</div>
+            <p.Icon className="w-8 h-8 text-emerald-700 mb-2" />
             <p className="font-bold text-gray-800 text-sm mb-1">{p.label}</p>
             <div className="mt-2 bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
           </a>

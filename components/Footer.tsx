@@ -1,14 +1,15 @@
 import Link from 'next/link';
+import { Eye, Sparkles, Glasses, Headset, Stethoscope, Droplet, ShoppingBag, Trophy } from 'lucide-react';
 
 const CATEGORIES = [
-  { href: '/category/1day',  label: 'コンタクトレンズ', icon: '👁' },
-  { href: '/karakon',        label: 'カラコン',          icon: '👁‍🗨' },
-  { href: '/megane',         label: '眼鏡・サングラス',  icon: '👓' },
-  { href: '/vr',             label: 'VR・スマートグラス', icon: '🥽' },
-  { href: '/lasik',          label: 'レーシック',        icon: '✨' },
-  { href: '/eye-care',       label: 'アイケア・目薬',    icon: '💊' },
-  { href: '/eye-goods',      label: '目のグッズ',        icon: '🛍' },
-  { href: '/ranking',        label: '人気ランキング',    icon: '🏆' },
+  { href: '/category/1day',  label: 'コンタクトレンズ', Icon: Eye },
+  { href: '/karakon',        label: 'カラコン',          Icon: Sparkles },
+  { href: '/megane',         label: '眼鏡・サングラス',  Icon: Glasses },
+  { href: '/vr',             label: 'VR・スマートグラス', Icon: Headset },
+  { href: '/lasik',          label: 'レーシック',        Icon: Stethoscope },
+  { href: '/eye-care',       label: 'アイケア・目薬',    Icon: Droplet },
+  { href: '/eye-goods',      label: '目のグッズ',        Icon: ShoppingBag },
+  { href: '/ranking',        label: '人気ランキング',    Icon: Trophy },
 ];
 
 const POPULAR_COLUMNS = [
@@ -37,8 +38,9 @@ export default function Footer() {
             <ul className="space-y-2 text-xs">
               {CATEGORIES.map((c) => (
                 <li key={c.href}>
-                  <Link href={c.href} className="hover:text-sky-600 transition-colors">
-                    {c.icon} {c.label}
+                  <Link href={c.href} className="hover:text-sky-600 transition-colors inline-flex items-center gap-1.5">
+                    <c.Icon className="w-3.5 h-3.5" />
+                    {c.label}
                   </Link>
                 </li>
               ))}

@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { Headset, Glasses, ScanEye, Package, Eye } from 'lucide-react';
 import { eyeColumns } from '@/lib/eye-columns';
+import { getHeroImage } from '@/lib/unsplash';
+import HeroBanner from '@/components/HeroBanner';
 
 const articles = eyeColumns
   .filter(c => c.section === 'vr')
@@ -16,10 +19,10 @@ const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a8
 
 
 const products = [
-  { emoji: '🥽', label: 'Meta Quest 3', rakuten: 'Meta Quest 3' },
-  { emoji: '😎', label: 'Ray-Ban Meta Smart Glasses', rakuten: 'Ray-Ban Meta' },
-  { emoji: '🔭', label: 'VR度付きインサートレンズ', rakuten: 'VR インサートレンズ' },
-  { emoji: '📦', label: 'VRメガネスペーサー', rakuten: 'VR メガネスペーサー' },
+  { Icon: Headset, label: 'Meta Quest 3', rakuten: 'Meta Quest 3' },
+  { Icon: Glasses, label: 'Ray-Ban Meta Smart Glasses', rakuten: 'Ray-Ban Meta' },
+  { Icon: ScanEye, label: 'VR度付きインサートレンズ', rakuten: 'VR インサートレンズ' },
+  { Icon: Package, label: 'VRメガネスペーサー', rakuten: 'VR メガネスペーサー' },
 ];
 
 const vrItemCards = [
@@ -55,7 +58,8 @@ const jsonLd = {
   })),
 };
 
-export default function VRPage() {
+export default async function VRPage() {
+  const heroImage = await getHeroImage('vr headset virtual reality');
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -67,14 +71,17 @@ export default function VRPage() {
       </nav>
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-violet-950 to-purple-950 border border-violet-800 rounded-2xl p-8 mb-10">
-        <div className="text-4xl mb-3">🥽</div>
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">VR・スマートグラス</h1>
-        <p className="text-gray-600 text-sm leading-relaxed max-w-xl">
-          視力が悪い方向けのVR対策から最新デバイスの比較まで。
-          Meta Quest・Ray-Ban Meta・Apple Vision Proを徹底解説します。
-        </p>
-      </div>
+      <HeroBanner
+        icon={<Headset className="w-9 h-9 text-white" />}
+        title="VR・スマートグラス"
+        description="視力が悪い方向けのVR対策から最新デバイスの比較まで。Meta Quest・Ray-Ban Meta・Apple Vision Proを徹底解説します。"
+        imageUrl={heroImage}
+        imageAlt="VRヘッドセット"
+        gradient="from-violet-950 to-purple-950"
+        borderColor="border-violet-800"
+        overlayFrom="from-violet-950/85"
+        overlayTo="to-purple-950/70"
+      />
 
       {/* Articles */}
       <h2 className="text-xl font-bold text-gray-800 mb-4">VR・スマートグラス ガイド記事</h2>
@@ -91,7 +98,10 @@ export default function VRPage() {
 
       {/* 視力対策ボックス */}
       <div className="bg-sky-50 border border-sky-200 rounded-xl p-5 mb-10">
-        <h2 className="font-bold text-sky-800 mb-2">👁 視力が悪い方へ：まずコンタクトを検討</h2>
+        <h2 className="font-bold text-sky-800 mb-2 flex items-center gap-2">
+          <Eye className="w-5 h-5 flex-shrink-0" />
+          視力が悪い方へ：まずコンタクトを検討
+        </h2>
         <p className="text-sm text-gray-700 mb-3">
           VRゴーグルをコンタクトレンズ装用で使うのが最もシンプルな解決策です。
           ワンデーコンタクトはVR使用時の衛生面でも安心です。
@@ -122,7 +132,7 @@ export default function VRPage() {
         {products.map(p => (
           <a key={p.label} href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-red-300 transition-all">
-            <div className="text-3xl mb-2">{p.emoji}</div>
+            <p.Icon className="w-8 h-8 text-violet-700 mb-2" />
             <p className="font-bold text-gray-800 text-sm mb-1">{p.label}</p>
             <div className="mt-2 bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
           </a>

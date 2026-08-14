@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { TriangleAlert } from 'lucide-react';
 import { getAllBCValues, getProductsByBC, getProductWithPrices } from '@/lib/products';
 import { calcTotalPrice } from '@/lib/products';
 
@@ -191,7 +192,10 @@ export default async function BCValuePage({ params }: Props) {
 
       {/* 注意事項 */}
       <div className="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-4">
-        <p className="text-sm text-amber-800 font-bold mb-1">⚠️ BCは必ず処方箋に従って選んでください</p>
+        <p className="text-sm text-amber-800 font-bold mb-1 flex items-center gap-1.5">
+          <TriangleAlert className="w-4 h-4 flex-shrink-0" />
+          BCは必ず処方箋に従って選んでください
+        </p>
         <p className="text-xs text-amber-700 leading-relaxed">
           BCは眼科での検査・処方が必要です。自己判断でBCを変えるとレンズのずれ・不快感・角膜への負担につながります。
           初めてコンタクトを購入する方は必ず眼科を受診してください。

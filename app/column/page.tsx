@@ -1,5 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import {
+  ShoppingCart, Eye, Scale, Sparkles, Droplet, Stethoscope,
+  Headset, Glasses, ShoppingBag, Newspaper, type LucideIcon,
+} from 'lucide-react';
 import { allColumns } from '@/lib/all-columns';
 
 export const metadata: Metadata = {
@@ -20,23 +24,24 @@ const categoryColors: Record<string, string> = {
   'カラコン': 'bg-pink-100 text-pink-700',
 };
 
-const categoryThemes: Record<string, { startColor: string; endColor: string; icon: string }> = {
-  '購入ガイド': { startColor: '#1565c0', endColor: '#1976d2', icon: '🛒' },
-  '度数・処方箋': { startColor: '#00695c', endColor: '#00897b', icon: '👁️' },
-  '商品比較': { startColor: '#4527a0', endColor: '#512da8', icon: '⚖️' },
-  'カラコン': { startColor: '#ad1457', endColor: '#c2185b', icon: '✨' },
-  'アイケア・目薬': { startColor: '#2e7d32', endColor: '#388e3c', icon: '🛡️' },
-  'レーシック': { startColor: '#00695c', endColor: '#00897b', icon: '👁️' },
-  'VR・スマートグラス': { startColor: '#4527a0', endColor: '#512da8', icon: '🥽' },
-  '眼鏡・サングラス': { startColor: '#37474f', endColor: '#455a64', icon: '👓' },
-  '目のグッズ': { startColor: '#e65100', endColor: '#f57c00', icon: '🛍️' },
-  'BC選び方': { startColor: '#1565c0', endColor: '#1976d2', icon: '🛒' },
+const categoryThemes: Record<string, { startColor: string; endColor: string; Icon: LucideIcon }> = {
+  '購入ガイド': { startColor: '#1565c0', endColor: '#1976d2', Icon: ShoppingCart },
+  '度数・処方箋': { startColor: '#00695c', endColor: '#00897b', Icon: Eye },
+  '商品比較': { startColor: '#4527a0', endColor: '#512da8', Icon: Scale },
+  'カラコン': { startColor: '#ad1457', endColor: '#c2185b', Icon: Sparkles },
+  'アイケア・目薬': { startColor: '#2e7d32', endColor: '#388e3c', Icon: Droplet },
+  'レーシック': { startColor: '#00695c', endColor: '#00897b', Icon: Stethoscope },
+  'VR・スマートグラス': { startColor: '#4527a0', endColor: '#512da8', Icon: Headset },
+  '眼鏡・サングラス': { startColor: '#37474f', endColor: '#455a64', Icon: Glasses },
+  '目のグッズ': { startColor: '#e65100', endColor: '#f57c00', Icon: ShoppingBag },
+  'BC選び方': { startColor: '#1565c0', endColor: '#1976d2', Icon: ShoppingCart },
 };
 
 const SECTIONS = [
   {
     key: 'karakon',
-    label: '👁‍🗨 カラコン',
+    label: 'カラコン',
+    Icon: Sparkles,
     href: '/karakon',
     bg: 'bg-gradient-to-r from-pink-950 to-rose-950',
     border: 'border-pink-800',
@@ -46,7 +51,8 @@ const SECTIONS = [
   },
   {
     key: 'eye',
-    label: '👓 眼鏡・VR・レーシック・アイケア',
+    label: '眼鏡・VR・レーシック・アイケア',
+    Icon: Glasses,
     href: '/megane',
     bg: 'bg-gradient-to-r from-indigo-950 to-violet-950',
     border: 'border-indigo-800',
@@ -58,7 +64,8 @@ const SECTIONS = [
   },
   {
     key: 'contact',
-    label: '👁 コンタクトレンズ',
+    label: 'コンタクトレンズ',
+    Icon: Eye,
     href: '/category/1day',
     bg: 'bg-gradient-to-r from-sky-950 to-blue-950',
     border: 'border-sky-800',
@@ -73,17 +80,17 @@ const SECTIONS = [
 
 function ArticleCard({ column }: { column: (typeof allColumns)[0] }) {
   const cat = column.category ?? '';
-  const theme = categoryThemes[cat] ?? { startColor: '#37474f', endColor: '#455a64', icon: '📰' };
+  const theme = categoryThemes[cat] ?? { startColor: '#37474f', endColor: '#455a64', Icon: Newspaper };
 
   return (
     <Link href={`/column/${column.slug}`} className="group block">
       <div className="bg-white rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 transition-transform duration-200 h-full flex flex-col">
         {/* Thumbnail */}
         <div
-          className="h-[120px] flex items-center justify-center text-5xl"
+          className="h-[120px] flex items-center justify-center"
           style={{ background: `linear-gradient(135deg, ${theme.startColor}, ${theme.endColor})` }}
         >
-          {theme.icon}
+          <theme.Icon className="w-12 h-12 text-white" />
         </div>
         {/* Content */}
         <div className="p-4 flex-1 flex flex-col">
@@ -123,7 +130,10 @@ export default function ColumnListPage() {
         return (
           <section key={section.key} className="mb-12">
             <div className={`flex items-center justify-between ${section.bg} border ${section.border} rounded-2xl px-5 py-4 mb-5`}>
-              <h2 className="text-lg font-bold text-gray-800">{section.label}</h2>
+              <h2 className="text-lg font-bold text-white flex items-center gap-2">
+                <section.Icon className="w-5 h-5 flex-shrink-0" />
+                {section.label}
+              </h2>
               <Link href={section.href}
                 className={`text-xs font-bold px-3 py-1.5 rounded-lg ${section.badge} hover:opacity-90 transition-opacity`}>
                 特集ページ →
