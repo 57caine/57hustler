@@ -1,11 +1,42 @@
 {
-  "generatedAt": "2026-08-13T21:52:38.993Z",
+  "generatedAt": "2026-08-14T21:30:17.523Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
   },
   "flaggedCount": 3,
   "flaggedArticles": [
+    {
+      "path": "/column/blue-light-megane-kouka",
+      "slug": "blue-light-megane-kouka",
+      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
+      "metrics": {
+        "sessions": 12,
+        "bounceRate": 0.3333333333333333,
+        "avgSessionDuration": 86.00425591666668,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション12件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 5,
+        "h3Count": 0,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 5973
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
+    },
     {
       "path": "/column/lenszero-kaigai-tsuuhan-guide-2026",
       "slug": "lenszero-kaigai-tsuuhan-guide-2026",
@@ -168,6 +199,37 @@
       "status": "未対応"
     },
     {
+      "path": "/column/reading-glasses-presbyopia-choose-2026",
+      "slug": "reading-glasses-presbyopia-choose-2026",
+      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
+      "metrics": {
+        "sessions": 7,
+        "bounceRate": 0.42857142857142855,
+        "avgSessionDuration": 58.82897228571428,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション7件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 10,
+        "h3Count": 21,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 12280
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見"
+    },
+    {
       "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
@@ -195,37 +257,6 @@
       ],
       "suggestions": [
         "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
-      ],
-      "status": "様子見"
-    },
-    {
-      "path": "/column/reading-glasses-presbyopia-choose-2026",
-      "slug": "reading-glasses-presbyopia-choose-2026",
-      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
-      "metrics": {
-        "sessions": 6,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 68.63380099999999,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション6件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 10,
-        "h3Count": 21,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 12280
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見"
     },
