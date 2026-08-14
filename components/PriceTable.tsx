@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { TriangleAlert } from 'lucide-react';
 import { Price, Store } from '@/lib/products';
 
 type SortKey = 'store' | 'prescription';
@@ -42,7 +43,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
   return (
     <div>
       <div className="flex items-start gap-2 bg-yellow-50 border border-yellow-200 rounded-lg px-4 py-3 mb-3 text-sm text-yellow-800">
-        <span className="flex-shrink-0 mt-0.5">⚠️</span>
+        <TriangleAlert className="w-4 h-4 flex-shrink-0 mt-0.5" />
         <span>
           価格はショップにより随時変動します。最新価格・送料・クーポンは必ずリンク先でご確認ください。
         </span>

@@ -1,3 +1,4 @@
+import { Eye, Repeat, Calendar, Rainbow, Medal, type LucideIcon } from 'lucide-react';
 import { ProductWithPrices } from '@/lib/products';
 
 const RAKUTEN = (kw: string) =>
@@ -5,11 +6,11 @@ const RAKUTEN = (kw: string) =>
     'https://search.rakuten.co.jp/search/mall/' + kw + '/'
   )}`;
 
-const CATEGORY_EMOJI: Record<string, string> = {
-  '1day': '👁',
-  '2week': '🔁',
-  'monthly': '📅',
-  'color': '🌈',
+const CATEGORY_ICON: Record<string, LucideIcon> = {
+  '1day': Eye,
+  '2week': Repeat,
+  'monthly': Calendar,
+  'color': Rainbow,
 };
 
 const CATEGORY_LABEL: Record<string, string> = {
@@ -26,7 +27,7 @@ type ProductCardProps = {
 
 export default function ProductCard({ product, rank }: ProductCardProps) {
   const label = CATEGORY_LABEL[product.category] ?? product.category;
-  const emoji = CATEGORY_EMOJI[product.category] ?? '👁';
+  const CategoryIcon = CATEGORY_ICON[product.category] ?? Eye;
   const rakutenUrl = RAKUTEN(product.name);
 
   // 楽天以外の最安値A8ショップを取得
@@ -37,19 +38,19 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
     ? a8Prices.reduce((min, p) => p.price < min.price ? p : min, a8Prices[0])
     : null;
 
-  const rankColors: Record<number, { bg: string; text: string; medal: string }> = {
-    1: { bg: 'bg-yellow-400', text: 'text-yellow-900', medal: '🥇' },
-    2: { bg: 'bg-gray-300', text: 'text-gray-900', medal: '🥈' },
-    3: { bg: 'bg-orange-400', text: 'text-orange-900', medal: '🥉' },
+  const rankColors: Record<number, { bg: string; text: string; hasMedal: boolean }> = {
+    1: { bg: 'bg-yellow-400', text: 'text-yellow-900', hasMedal: true },
+    2: { bg: 'bg-gray-300', text: 'text-gray-900', hasMedal: true },
+    3: { bg: 'bg-orange-400', text: 'text-orange-900', hasMedal: true },
   };
-  const rankColor = rank && rankColors[rank] ? rankColors[rank] : { bg: 'bg-gray-100', text: 'text-gray-700', medal: '' };
+  const rankColor = rank && rankColors[rank] ? rankColors[rank] : { bg: 'bg-gray-100', text: 'text-gray-700', hasMedal: false };
 
   return (
     <div className="relative bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-300 overflow-hidden">
       <div className="p-5">
         {rank != null && (
           <div className={`absolute top-4 right-4 ${rankColor.bg} ${rankColor.text} w-14 h-14 rounded-full flex flex-col items-center justify-center text-center font-bold shadow-lg`}>
-            {rankColor.medal && <span className="text-xl">{rankColor.medal}</span>}
+            {rankColor.hasMedal && <Medal className="w-5 h-5" />}
             <span className="text-lg">{rank}</span>
           </div>
         )}
@@ -63,7 +64,9 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
         </div>
 
         <div className="flex items-start gap-3 mb-4">
-          <span className="text-3xl flex-shrink-0">{emoji}</span>
+          <span className="flex-shrink-0 w-9 h-9 rounded-lg bg-sky-50 flex items-center justify-center">
+            <CategoryIcon className="w-5 h-5 text-sky-700" />
+          </span>
           <h3 className="font-bold text-gray-900 text-base leading-snug flex-1">
             {product.name}
           </h3>

@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { Droplet, Eye, Leaf, Shrimp, Thermometer } from 'lucide-react';
 import { eyeColumns } from '@/lib/eye-columns';
+import { getHeroImage } from '@/lib/unsplash';
+import HeroBanner from '@/components/HeroBanner';
 
 const articles = eyeColumns
   .filter(c => c.section === 'eye-care')
@@ -16,10 +19,10 @@ const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a8
 
 
 const products = [
-  { emoji: '💧', label: 'コンタクト用目薬', rakuten: 'コンタクト用目薬 防腐剤フリー' },
-  { emoji: '👁', label: 'ドライアイ目薬', rakuten: 'ドライアイ 目薬' },
-  { emoji: '🌿', label: 'ルテインサプリ', rakuten: 'ルテイン サプリ' },
-  { emoji: '🦐', label: 'アスタキサンチンサプリ', rakuten: 'アスタキサンチン サプリ' },
+  { Icon: Droplet, label: 'コンタクト用目薬', rakuten: 'コンタクト用目薬 防腐剤フリー' },
+  { Icon: Eye, label: 'ドライアイ目薬', rakuten: 'ドライアイ 目薬' },
+  { Icon: Leaf, label: 'ルテインサプリ', rakuten: 'ルテイン サプリ' },
+  { Icon: Shrimp, label: 'アスタキサンチンサプリ', rakuten: 'アスタキサンチン サプリ' },
 ];
 
 const eyeCareCards = [
@@ -48,7 +51,8 @@ const jsonLd = {
   })),
 };
 
-export default function EyeCarePage() {
+export default async function EyeCarePage() {
+  const heroImage = await getHeroImage('eye drops eye care');
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -60,14 +64,17 @@ export default function EyeCarePage() {
       </nav>
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-cyan-950 to-teal-950 border border-cyan-800 rounded-2xl p-8 mb-10">
-        <div className="text-4xl mb-3">💊</div>
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">アイケア・目薬</h1>
-        <p className="text-gray-600 text-sm leading-relaxed max-w-xl">
-          コンタクト対応目薬の選び方からドライアイ対策、ルテインサプリまで。
-          目の健康を守るためのアイケア情報を網羅します。
-        </p>
-      </div>
+      <HeroBanner
+        icon={<Droplet className="w-9 h-9 text-white" />}
+        title="アイケア・目薬"
+        description="コンタクト対応目薬の選び方からドライアイ対策、ルテインサプリまで。目の健康を守るためのアイケア情報を網羅します。"
+        imageUrl={heroImage}
+        imageAlt="目薬とアイケア"
+        gradient="from-cyan-950 to-teal-950"
+        borderColor="border-cyan-800"
+        overlayFrom="from-cyan-950/85"
+        overlayTo="to-teal-950/70"
+      />
 
       {/* Articles */}
       <h2 className="text-xl font-bold text-gray-800 mb-4">アイケア・目薬 ガイド記事</h2>
@@ -85,12 +92,12 @@ export default function EyeCarePage() {
       {/* Quick tips */}
       <div className="grid sm:grid-cols-3 gap-4 mb-10">
         {[
-          { icon: '💧', title: 'コンタクト用目薬', tip: '防腐剤フリーを選ぼう。「コンタクト対応」の表示を必ず確認。' },
-          { icon: '🌿', title: 'ルテインサプリ', tip: '1日10mg以上を目安に。食事（ほうれん草等）でも補える。' },
-          { icon: '🌡', title: 'ホットアイマスク', tip: '温熱効果でドライアイ・疲れ目を即効ケア。' },
+          { Icon: Droplet, title: 'コンタクト用目薬', tip: '防腐剤フリーを選ぼう。「コンタクト対応」の表示を必ず確認。' },
+          { Icon: Leaf, title: 'ルテインサプリ', tip: '1日10mg以上を目安に。食事（ほうれん草等）でも補える。' },
+          { Icon: Thermometer, title: 'ホットアイマスク', tip: '温熱効果でドライアイ・疲れ目を即効ケア。' },
         ].map(t => (
           <div key={t.title} className="bg-white border border-gray-200 rounded-xl p-4 text-center">
-            <div className="text-2xl mb-2">{t.icon}</div>
+            <t.Icon className="w-7 h-7 text-cyan-700 mb-2 mx-auto" />
             <p className="font-bold text-gray-800 text-sm mb-1">{t.title}</p>
             <p className="text-xs text-gray-500">{t.tip}</p>
           </div>
@@ -118,7 +125,7 @@ export default function EyeCarePage() {
         {products.map(p => (
           <a key={p.label} href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-red-300 transition-all">
-            <div className="text-3xl mb-2">{p.emoji}</div>
+            <p.Icon className="w-8 h-8 text-cyan-700 mb-2" />
             <p className="font-bold text-gray-800 text-sm mb-1">{p.label}</p>
             <div className="mt-2 bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
           </a>

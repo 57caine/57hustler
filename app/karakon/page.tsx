@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { Sparkles, TriangleAlert, Eye } from 'lucide-react';
 import { karakonColumns } from '@/lib/karakon-columns';
+import { getHeroImage } from '@/lib/unsplash';
+import HeroBanner from '@/components/HeroBanner';
 
 export const metadata: Metadata = {
   title: 'カラコンのおすすめ・選び方【度あり・度なし・ナチュラル・韓国ブランド】2026年版 | レンズナビ',
@@ -16,7 +19,7 @@ const articles = karakonColumns.map(c => ({
   title: c.title,
   desc: c.description,
   readingTime: c.readingTime,
-  badge: '👁‍🗨 カラコン',
+  badge: 'カラコン',
 }));
 
 const quickBuys = [
@@ -51,7 +54,8 @@ const jsonLd = {
   })),
 };
 
-export default function KarakonPage() {
+export default async function KarakonPage() {
+  const heroImage = await getHeroImage('colored contact lens eye closeup');
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -63,19 +67,24 @@ export default function KarakonPage() {
       </nav>
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-pink-950 to-rose-950 border border-pink-800 rounded-2xl p-8 mb-10">
-        <div className="text-4xl mb-3">👁‍🗨</div>
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">カラコン完全ガイド2026</h1>
-        <p className="text-gray-600 text-sm leading-relaxed max-w-xl">
-          度あり・度なし別おすすめランキングから、安全な選び方・韓国ブランド・公式アンバサダー情報まで。
-          薬機法承認済みの安心カラコンを紹介します。
-        </p>
-        <div className="flex flex-wrap gap-2 mt-4">
-          {['薬機法承認品のみ紹介', '楽天で購入可能', '初心者ガイドあり'].map(t => (
-            <span key={t} className="text-xs bg-white border border-pink-200 text-pink-700 px-3 py-1 rounded-full">{t}</span>
-          ))}
-        </div>
-      </div>
+      <HeroBanner
+        icon={<Sparkles className="w-9 h-9 text-white" />}
+        title="カラコン完全ガイド2026"
+        description="度あり・度なし別おすすめランキングから、安全な選び方・韓国ブランド・公式アンバサダー情報まで。薬機法承認済みの安心カラコンを紹介します。"
+        imageUrl={heroImage}
+        imageAlt="カラーコンタクトレンズ"
+        gradient="from-pink-950 to-rose-950"
+        borderColor="border-pink-800"
+        overlayFrom="from-pink-950/85"
+        overlayTo="to-rose-950/70"
+        disclaimer={
+          <div className="flex flex-wrap gap-2 mt-4">
+            {['薬機法承認品のみ紹介', '楽天で購入可能', '初心者ガイドあり'].map(t => (
+              <span key={t} className="text-xs bg-white border border-pink-200 text-pink-700 px-3 py-1 rounded-full">{t}</span>
+            ))}
+          </div>
+        }
+      />
 
       {/* Articles */}
       <h2 className="text-xl font-bold text-gray-800 mb-4">カラコン ガイド記事</h2>
@@ -95,7 +104,10 @@ export default function KarakonPage() {
 
       {/* Safety box */}
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-10">
-        <h2 className="font-bold text-amber-800 mb-2">⚠️ カラコン購入前に必ず確認</h2>
+        <h2 className="font-bold text-amber-800 mb-2 flex items-center gap-2">
+          <TriangleAlert className="w-5 h-5 flex-shrink-0" />
+          カラコン購入前に必ず確認
+        </h2>
         <ul className="text-sm text-amber-700 space-y-1">
           <li>• 初めてのカラコンは眼科でBC（ベースカーブ）を測定してから購入する</li>
           <li>• パッケージに「高度管理医療機器」「承認番号」の記載があることを確認する</li>
@@ -158,7 +170,10 @@ export default function KarakonPage() {
 
       {/* Cross-link */}
       <div className="bg-sky-50 border border-sky-200 rounded-xl p-5">
-        <h2 className="font-bold text-sky-800 mb-2">👁 コンタクトレンズも比較する</h2>
+        <h2 className="font-bold text-sky-800 mb-2 flex items-center gap-2">
+          <Eye className="w-5 h-5 flex-shrink-0" />
+          コンタクトレンズも比較する
+        </h2>
         <p className="text-sm text-gray-700 mb-3">
           透明コンタクトレンズのBC別最安値比較はこちら。カラコンと並行してコンタクトレンズの価格もチェックできます。
         </p>

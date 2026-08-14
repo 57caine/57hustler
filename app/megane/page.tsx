@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { Glasses, Monitor, Sun, Backpack } from 'lucide-react';
 import { eyeColumns } from '@/lib/eye-columns';
+import { getHeroImage } from '@/lib/unsplash';
+import HeroBanner from '@/components/HeroBanner';
 
 const articles = eyeColumns
   .filter(c => c.section === 'megane')
@@ -16,10 +19,10 @@ const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a8
 
 
 const products = [
-  { emoji: '👓', label: '眼鏡フレーム', rakuten: '眼鏡フレーム' },
-  { emoji: '💙', label: 'ブルーライトカット眼鏡', rakuten: 'ブルーライトカット眼鏡' },
-  { emoji: '🕶️', label: 'サングラス', rakuten: 'サングラス おすすめ' },
-  { emoji: '🎒', label: '眼鏡ケース', rakuten: '眼鏡ケース' },
+  { Icon: Glasses, label: '眼鏡フレーム', rakuten: '眼鏡フレーム' },
+  { Icon: Monitor, label: 'ブルーライトカット眼鏡', rakuten: 'ブルーライトカット眼鏡' },
+  { Icon: Sun, label: 'サングラス', rakuten: 'サングラス おすすめ' },
+  { Icon: Backpack, label: '眼鏡ケース', rakuten: '眼鏡ケース' },
 ];
 
 const itemCards = [
@@ -50,7 +53,8 @@ const jsonLd = {
   })),
 };
 
-export default function MeganePage() {
+export default async function MeganePage() {
+  const heroImage = await getHeroImage('eyeglasses frame fashion');
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -62,14 +66,17 @@ export default function MeganePage() {
       </nav>
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-indigo-950 to-blue-950 border border-indigo-800 rounded-2xl p-8 mb-10">
-        <div className="text-4xl mb-3">👓</div>
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">眼鏡・サングラス</h1>
-        <p className="text-gray-600 text-sm leading-relaxed max-w-xl">
-          顔型別フレームの選び方からブルーライトカット眼鏡の効果、オンライン購入のコツまで。
-          眼鏡に関する疑問をすべてカバーします。
-        </p>
-      </div>
+      <HeroBanner
+        icon={<Glasses className="w-9 h-9 text-white" />}
+        title="眼鏡・サングラス"
+        description="顔型別フレームの選び方からブルーライトカット眼鏡の効果、オンライン購入のコツまで。眼鏡に関する疑問をすべてカバーします。"
+        imageUrl={heroImage}
+        imageAlt="眼鏡フレーム"
+        gradient="from-indigo-950 to-blue-950"
+        borderColor="border-indigo-800"
+        overlayFrom="from-indigo-950/85"
+        overlayTo="to-blue-950/70"
+      />
 
       {/* Articles */}
       <h2 className="text-xl font-bold text-gray-800 mb-4">眼鏡ガイド記事</h2>
@@ -105,7 +112,7 @@ export default function MeganePage() {
         {products.map(p => (
           <a key={p.label} href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-red-300 transition-all">
-            <div className="text-3xl mb-2">{p.emoji}</div>
+            <p.Icon className="w-8 h-8 text-indigo-700 mb-2" />
             <p className="font-bold text-gray-800 text-sm mb-1">{p.label}</p>
             <div className="mt-2 bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
           </a>

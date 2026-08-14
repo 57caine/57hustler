@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { ShoppingBag, Thermometer, Moon, Lightbulb, ZoomIn } from 'lucide-react';
 import { eyeColumns } from '@/lib/eye-columns';
+import { getHeroImage } from '@/lib/unsplash';
+import HeroBanner from '@/components/HeroBanner';
 
 const articles = eyeColumns
   .filter(c => c.section === 'eye-goods')
@@ -16,10 +19,10 @@ const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a8
 
 
 const products = [
-  { emoji: '♨️', label: 'ホットアイマスク', rakuten: 'ホットアイマスク おすすめ' },
-  { emoji: '😴', label: '使い捨てアイマスク（めぐりズム等）', rakuten: 'めぐりズム アイマスク' },
-  { emoji: '💡', label: 'モニターライト（BenQ ScreenBar等）', rakuten: 'モニターライト デスク' },
-  { emoji: '🔍', label: '拡大鏡・ルーペ', rakuten: '拡大鏡 ルーペ' },
+  { Icon: Thermometer, label: 'ホットアイマスク', rakuten: 'ホットアイマスク おすすめ' },
+  { Icon: Moon, label: '使い捨てアイマスク（めぐりズム等）', rakuten: 'めぐりズム アイマスク' },
+  { Icon: Lightbulb, label: 'モニターライト（BenQ ScreenBar等）', rakuten: 'モニターライト デスク' },
+  { Icon: ZoomIn, label: '拡大鏡・ルーペ', rakuten: '拡大鏡 ルーペ' },
 ];
 
 const faqs = [
@@ -38,7 +41,8 @@ const jsonLd = {
   })),
 };
 
-export default function EyeGoodsPage() {
+export default async function EyeGoodsPage() {
+  const heroImage = await getHeroImage('desk relaxation eye mask');
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -50,14 +54,17 @@ export default function EyeGoodsPage() {
       </nav>
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-orange-950 to-amber-950 border border-orange-800 rounded-2xl p-8 mb-10">
-        <div className="text-4xl mb-3">🛍️</div>
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">目の雑貨・グッズ</h1>
-        <p className="text-gray-600 text-sm leading-relaxed max-w-xl">
-          ホットアイマスク・モニターライト・ブルーライトカット眼鏡など、目を労わるグッズを厳選紹介。
-          楽天で購入できるおすすめアイテムをまとめました。
-        </p>
-      </div>
+      <HeroBanner
+        icon={<ShoppingBag className="w-9 h-9 text-white" />}
+        title="目の雑貨・グッズ"
+        description="ホットアイマスク・モニターライト・ブルーライトカット眼鏡など、目を労わるグッズを厳選紹介。楽天で購入できるおすすめアイテムをまとめました。"
+        imageUrl={heroImage}
+        imageAlt="目のケアグッズ"
+        gradient="from-orange-950 to-amber-950"
+        borderColor="border-orange-800"
+        overlayFrom="from-orange-950/85"
+        overlayTo="to-amber-950/70"
+      />
 
       {/* Articles */}
       <h2 className="text-xl font-bold text-gray-800 mb-4">目のグッズ ガイド記事</h2>
@@ -75,13 +82,13 @@ export default function EyeGoodsPage() {
       {/* Popular items grid */}
       <div className="grid sm:grid-cols-3 gap-4 mb-10">
         {[
-          { emoji: '♨️', name: 'ホットアイマスク', desc: 'Panasonic・花王など繰り返し使用タイプが人気', rakuten: 'ホットアイマスク おすすめ' },
-          { emoji: '💡', name: 'モニターライト', desc: 'BenQ ScreenBarが最人気。PC作業の目疲れを軽減', rakuten: 'モニターライト デスク' },
-          { emoji: '🔍', name: '拡大鏡・ルーペ', desc: '細かい作業・読書に。スタンド型・手持ち型を比較', rakuten: '拡大鏡 ルーペ' },
+          { Icon: Thermometer, name: 'ホットアイマスク', desc: 'Panasonic・花王など繰り返し使用タイプが人気', rakuten: 'ホットアイマスク おすすめ' },
+          { Icon: Lightbulb, name: 'モニターライト', desc: 'BenQ ScreenBarが最人気。PC作業の目疲れを軽減', rakuten: 'モニターライト デスク' },
+          { Icon: ZoomIn, name: '拡大鏡・ルーペ', desc: '細かい作業・読書に。スタンド型・手持ち型を比較', rakuten: '拡大鏡 ルーペ' },
         ].map(item => (
           <a key={item.name} href={RAKUTEN(item.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-red-300 transition-all">
-            <div className="text-3xl mb-2">{item.emoji}</div>
+            <item.Icon className="w-8 h-8 text-orange-700 mb-2" />
             <p className="font-bold text-gray-800 text-sm mb-1">{item.name}</p>
             <p className="text-xs text-gray-500 mb-2">{item.desc}</p>
             <div className="mt-2 bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
@@ -95,7 +102,7 @@ export default function EyeGoodsPage() {
         {products.map(p => (
           <a key={p.label} href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
             className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-red-300 transition-all">
-            <div className="text-3xl mb-2">{p.emoji}</div>
+            <p.Icon className="w-8 h-8 text-orange-700 mb-2" />
             <p className="font-bold text-gray-800 text-sm mb-1">{p.label}</p>
             <div className="mt-2 bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
           </a>
