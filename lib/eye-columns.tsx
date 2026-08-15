@@ -335,7 +335,7 @@ export const eyeColumns: EyeColumnMeta[] = [
     publishedAt: '2026-07-17',
     updatedAt: '2026-07-17',
     readingTime: 8,
-    headings: ['偏光レンズの仕組み', '通常サングラスとの違い', '用途別おすすめ（釣り・ドライブ・アウトドア）', '偏光サングラスの選び方', '度付き偏光サングラスという選択肢'],
+    headings: ['偏光サングラス早見表', '用途別おすすめ偏光サングラス', '偏光サングラスの選び方4つのポイント', 'まとめ'],
     faqs: [
       { q: '偏光サングラスをかけるとスマホ画面が見えなくなることがありますか？', a: 'スマートフォンの液晶はある角度で偏光フィルターの影響を受けます。画面を縦向きで使うと暗く見えることがあります（反時計回りに45度傾けると改善することも）。有機EL（AMOLED）ディスプレイでは影響が出にくいです。カーナビも角度によって見づらくなる場合があります。' },
       { q: '偏光レンズと普通のUVカットレンズはどちらが目に優しいですか？', a: '偏光レンズは反射光（眩しさの主因）を特異的にカットするため、目の疲れ軽減効果が高いです。普通のUVカットレンズはUV遮断はするものの乱反射は遮断しません。長時間の屋外使用には偏光レンズの方が目への負担が少ないとされています。' },
@@ -2978,21 +2978,24 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   'sunglass-polarized-guide': (
     <article className="prose prose-sm max-w-none">
       <p className="text-gray-600 text-base leading-relaxed mb-6">
-        サングラスを選ぶとき「偏光レンズ」という言葉を見かけたことはありませんか？価格が通常品より高い偏光サングラスには、釣り・ドライブ・スキーなど特定の用途で圧倒的な効果があります。この記事では偏光レンズの仕組み・通常サングラスとの違い・用途別のおすすめを徹底解説します。
+        「偏光サングラスは普通のサングラスと何が違うの？」と迷っていませんか。この記事では、用途別のおすすめ偏光サングラスと選び方のポイントをまとめて解説します。
       </p>
 
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">偏光レンズの仕組み</h2>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">偏光サングラス早見表</h2>
       <p className="text-gray-700 mb-4">
-        光は空気中では様々な方向に振動しながら進みますが、水面・道路・雪・ガラス等のなめらかな面に当たると「水平方向に振動する光」として反射されます。これが「グレア（眩しい反射光）」です。偏光レンズは水平方向に振動する光だけをカットする特殊フィルターが内蔵されており、反射光（グレア）を選択的に除去します。
+        光は水面・路面・雪面・ガラスなど滑らかな面に当たると、特定の方向にそろって反射しやすくなります。これが「グレア（眩しい反射光）」です。偏光レンズは、この特定方向の反射光だけを選択的にカットする特殊フィルターを内蔵しており、全体を暗くするのではなく「眩しさだけを抑える」独特の効果があります。「サングラスをかけているのにまだ眩しい」と感じたことがある方ほど、その違いを体感しやすい傾向にあります。
+      </p>
+      <p className="text-gray-700 mb-4">
+        通常のUVカットサングラスは光の量を全体的に減らすことはできますが、反射光だけを選んでカットすることはできません。偏光レンズは価格が通常品より高めになる傾向がありますが、反射光の強い場面では視界のクリアさが大きく変わります。
       </p>
       <div className="bg-sky-50 border border-sky-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-sky-800 mb-3">偏光レンズが特に効果を発揮する場面</p>
         <div className="grid grid-cols-2 gap-3">
           {[
-            { scene: '水面（釣り・マリンスポーツ）', effect: '水面の反射をカット→水中が透けて見える' },
-            { scene: '雨濡れた道路（ドライブ）', effect: 'アスファルトの反射光を除去→眩しさ激減' },
-            { scene: '雪山（スキー・スノーボード）', effect: '雪からの強烈な反射光をカット' },
-            { scene: 'ガラス越し（釣り堀・水族館）', effect: 'ガラス反射を減らして内側が見やすい' },
+            { scene: '水面（釣り・マリンスポーツ）', effect: '水面の反射をカットし水中が見やすくなる' },
+            { scene: '濡れた路面（ドライブ）', effect: 'アスファルトの反射光を抑え、眩しさを軽減' },
+            { scene: '雪山（スキー・スノーボード）', effect: '雪面からの強い反射光をカット' },
+            { scene: 'ガラス越し（釣り堀・水族館）', effect: 'ガラスの反射を減らし内側が見やすくなる' },
           ].map(s => (
             <div key={s.scene} className="bg-white rounded-lg p-3 border border-sky-100">
               <p className="font-bold text-gray-800 text-xs mb-1">{s.scene}</p>
@@ -3001,11 +3004,6 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           ))}
         </div>
       </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">通常サングラスとの違い</h2>
-      <p className="text-gray-700 mb-4">
-        通常のサングラスは「光の量を全体的に減らす」機能があります。UV（紫外線）カットや可視光線透過率の調整はできますが、反射光だけを選択的に除去することはできません。一方、偏光レンズは反射光を選択的にカットするため、全体的に暗くなるのではなく「眩しさだけが消える」という独特の効果があります。
-      </p>
       <div className="overflow-x-auto mb-6">
         <table className="w-full text-sm border-collapse">
           <thead>
@@ -3017,12 +3015,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           </thead>
           <tbody>
             {[
-              { k: 'UVカット', normal: '○（UVカット品）', polar: '◎（ほぼ全品）' },
               { k: '反射光（グレア）カット', normal: '✗', polar: '◎' },
-              { k: '水中・路面が見やすい', normal: '✗', polar: '◎' },
-              { k: '価格', normal: '1,000〜20,000円', polar: '5,000〜80,000円' },
-              { k: 'スマホ画面との相性', normal: '○', polar: '△（角度によって暗くなる）' },
-              { k: '日常使い（街中）', normal: '◎', polar: '○' },
+              { k: '水中・路面の見やすさ', normal: '✗', polar: '◎' },
+              { k: 'スマホ・カーナビとの相性', normal: '○', polar: '△（角度によって暗くなることがある）' },
+              { k: '日常使い・ファッション用途', normal: '◎', polar: '○' },
             ].map(r => (
               <tr key={r.k} className="border-b border-gray-100">
                 <td className="p-3 border border-gray-200 font-medium text-gray-700">{r.k}</td>
@@ -3033,44 +3029,135 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           </tbody>
         </table>
       </div>
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">用途別おすすめ（釣り・ドライブ・アウトドア）</h2>
-      <div className="space-y-4 mb-6">
-        {[
-          { use: '🎣 釣り', lens: 'グリーン系偏光・コパー（銅色）系', brands: 'ZEAL OPTICS（ジールオプティクス）・Oakley・DAIWA', note: '水中の魚・底の地形が見える。グリーンは自然光で視認性が高く、コパーは曇り日に効果的。' },
-          { use: '🚗 ドライブ・長距離運転', lens: 'グレー系・ブラウン系偏光', brands: 'Ray-Ban偏光・Maui Jim・SWANS', note: '雨の路面・対向車のヘッドライトが眩しくない。色の見え方が自然なグレーが人気。' },
-          { use: '⛷ スキー・スノーボード', lens: '偏光+オレンジ or ローズ系', brands: 'OAKLEY PRIZM Snow・Smith・Giro', note: '雪の白さを和らげつつコントラストを強調。吹雪でも視界が確保しやすい。' },
-          { use: '🏃 ランニング・サイクリング', lens: 'ライトグレー偏光・イエロー偏光', brands: 'OAKLEY・adidas Sport・100% Speedcraft', note: '速い動きに対応するフレームの安定性も重要。鼻パッドのフィット感を確認。' },
-        ].map(u => (
-          <div key={u.use} className="bg-white border border-gray-200 rounded-xl p-4">
-            <p className="font-bold text-gray-800 mb-1">{u.use}</p>
-            <p className="text-xs text-sky-700 mb-1">おすすめレンズカラー：{u.lens}</p>
-            <p className="text-xs text-violet-700 mb-1">代表ブランド：{u.brands}</p>
-            <p className="text-xs text-gray-600">{u.note}</p>
-          </div>
-        ))}
-      </div>
-      <AffiliateBtns rakuten="偏光サングラス 釣り スポーツ" />
-
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">偏光サングラスの選び方</h2>
       <p className="text-gray-700 mb-4">
-        偏光サングラスを選ぶ際は「偏光度」を確認しましょう。偏光度は99%以上が理想で、一般的な偏光サングラスは偏光度98〜99.9%です。安価な商品では偏光フィルターが薄く、グレアカット効果が不十分な場合があります。
+        まずは用途別の代表的な偏光サングラスを一覧で見てみましょう。
+      </p>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-sky-50">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-left p-3 border border-gray-200">主な用途</th>
+              <th className="text-left p-3 border border-gray-200">レンズカラー系統</th>
+              <th className="text-left p-3 border border-gray-200">特徴</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'DAIWA 偏光サングラス', use: '釣り・水上', color: 'グリーン/コパー系', note: '水面反射を抑え水中が見やすい' },
+              { name: 'Oakley Holbrook 偏光レンズモデル', use: 'ドライブ・普段使い', color: 'グレー系', note: '自然な見え方でクラシックなデザイン' },
+              { name: 'OAKLEY PRIZM Snow 偏光レンズ', use: 'スキー・スノーボード', color: 'オレンジ/ローズ系', note: '雪面のコントラストを強調' },
+              { name: '100% Speedcraft 偏光レンズモデル', use: 'サイクリング・ランニング', color: 'ライトグレー/イエロー系', note: '軽量フィットでズレにくい' },
+            ].map(r => (
+              <tr key={r.name} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-gray-700">{r.name}</td>
+                <td className="p-3 border border-gray-200">{r.use}</td>
+                <td className="p-3 border border-gray-200">{r.color}</td>
+                <td className="p-3 border border-gray-200 text-sky-700">{r.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="my-4">
+        <a href={RAKUTEN('Oakley Holbrook 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Oakley Holbrook 偏光レンズモデルを楽天で見る →
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">用途別おすすめ偏光サングラス</h2>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">釣り向け：DAIWA 偏光サングラス</h3>
+      <p className="text-gray-700 mb-2">水面のギラつきを抑えて水中の様子を確認したい方向けです。渓流・堤防・オフショアなど、釣りのスタイルを問わず使いやすいレンズカラー展開があります。</p>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>水面の反射を抑えて水中の魚・底の地形が見やすくなる</li>
+        <li>グリーン系・コパー系などフィッシング向けのレンズカラー展開が中心</li>
+        <li>釣り具メーカーならではの、長時間の屋外使用を想定したフレーム設計</li>
+      </ul>
+      <p className="text-gray-500 text-sm mb-3">気になる点：フレームのサイズ・カラー展開が他ジャンルのモデルより限られる場合がある。購入前にサイズ表示を確認しておくと安心</p>
+      <div className="my-4">
+        <a href={RAKUTEN('DAIWA 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          DAIWA 偏光サングラスを楽天で見る →
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ドライブ向け：Oakley Holbrook 偏光レンズモデル</h3>
+      <p className="text-gray-700 mb-2">長距離運転や通勤で対向車のライト・濡れた路面の反射が気になる方向けです。デザインの汎用性が高く、初めての偏光サングラスとしても選びやすいモデルです。</p>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>雨に濡れた路面や対向車のヘッドライトの反射光を抑えられる</li>
+        <li>グレー系レンズで色の見え方が自然、普段使いとも兼用しやすい</li>
+        <li>クラシックなフレームデザインで、運転以外の日常シーンにも合わせやすい</li>
+      </ul>
+      <p className="text-gray-500 text-sm mb-3">気になる点：用途特化モデルと比べると本体価格はやや高めになりやすい。長く使う前提であれば、初期投資として捉えると選びやすい</p>
+      <div className="my-4">
+        <a href={RAKUTEN('Oakley Holbrook 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Oakley Holbrook 偏光レンズモデルを楽天で見る →
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">スキー・スノーボード向け：OAKLEY PRIZM Snow 偏光レンズ</h3>
+      <p className="text-gray-700 mb-2">雪面からの強い照り返しで目が疲れやすい方向けです。ウィンタースポーツ専用に開発されたレンズ技術で、コース状況の変化にも対応しやすくなっています。</p>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>雪面の白さを和らげつつコントラストを強調するレンズ設計</li>
+        <li>曇りの日でも視界を確保しやすいオレンジ・ローズ系カラー展開</li>
+        <li>ゴーグルタイプ・サングラスタイプなど滑走スタイルに合わせた選択肢がある</li>
+      </ul>
+      <p className="text-gray-500 text-sm mb-3">気になる点：ウィンタースポーツに特化した設計のため通年での使用には向かない。オフシーズンは別途1本用意しておくのがおすすめ</p>
+      <div className="my-4">
+        <a href={RAKUTEN('OAKLEY PRIZM Snow 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          OAKLEY PRIZM Snow 偏光レンズを楽天で見る →
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">サイクリング・ランニング向け：100% Speedcraft 偏光レンズモデル</h3>
+      <p className="text-gray-700 mb-2">屋外での運動中、汗や振動でサングラスがズレるのが気になる方向けです。スポーツ用途向けに設計されたフレームで、長時間の使用でも快適さを保ちやすくなっています。</p>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>顔にフィットする軽量フレームで運動中でもズレにくい</li>
+        <li>通気性を重視したデザインでレンズが曇りにくい</li>
+        <li>ライトグレー系・イエロー系など、天候に合わせたレンズカラーを選びやすい</li>
+      </ul>
+      <p className="text-gray-500 text-sm mb-3">気になる点：スポーツ特化のデザインのため、街着など普段のコーディネートには合わせづらい場合がある。運動用と割り切って使うのがおすすめ</p>
+      <div className="my-4">
+        <a href={RAKUTEN('100% Speedcraft 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          100% Speedcraft 偏光レンズモデルを楽天で見る →
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">偏光サングラスの選び方4つのポイント</h2>
+      <p className="text-gray-700 mb-4">
+        用途別のおすすめを見た上で、実際に商品を選ぶ際に確認しておきたいポイントをまとめました。同じ「偏光サングラス」でも、偏光度やレンズカラーによって体感できる効果は変わってきます。
       </p>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
-        <li><strong>偏光度99%以上：</strong>グレアカット効果が高い（5,000円以上の製品で多い）</li>
-        <li><strong>UVカット：</strong>UV400（400nm以下の紫外線を99%以上カット）表示を確認</li>
-        <li><strong>レンズカラー：</strong>グレー（色の歪みなし）、ブラウン/コパー（コントラスト強調）、グリーン（自然な視界）から用途で選ぶ</li>
-        <li><strong>フレームの安定性：</strong>スポーツ用途はラバーノーズパッドや滑り止めが付いているものを</li>
-        <li><strong>度付き対応：</strong>近視の方は度付き偏光レンズへの交換サービスがあるショップを選ぶ</li>
+        <li><strong>偏光度：</strong>偏光度99%以上のものはグレアカット効果が高い傾向にある。安価な商品では偏光フィルターが薄く、効果が不十分な場合もあるため、商品説明で数値を確認しておきたい</li>
+        <li><strong>UVカット：</strong>UV400（400nm以下の紫外線をほぼカットする基準）表示のあるものを選ぶ。偏光効果とUVカット効果は別の機能なので、両方の表示を確認する</li>
+        <li><strong>レンズカラー：</strong>グレー（色の歪みが少なく自然な見え方）、ブラウン/コパー（コントラスト強調で曇りの日に有利）、グリーン（自然光での視認性が高い）から用途で選ぶ</li>
+        <li><strong>フレームの安定性：</strong>釣り・スポーツ用途はラバーノーズパッドや滑り止めが付いているものを選ぶと、汗や水濡れでもズレにくい。長時間の装用ではフレームの重さも確認しておくと安心</li>
       </ul>
 
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">度付き偏光サングラスという選択肢</h2>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
       <p className="text-gray-700 mb-4">
-        近視・乱視がある方も、度付き偏光レンズを使うことでコンタクトなしで偏光サングラスの恩恵を受けられます。JINS・Zoff・眼鏡市場では度付き偏光レンズへの交換サービスを行っており、5,000〜15,000円程度でレンズ交換が可能です。
+        偏光サングラスは、反射光（グレア）を選択的にカットできる点が通常のサングラスとの大きな違いです。釣り・ドライブ・ウィンタースポーツ・サイクリングなど、用途に合わせてレンズカラーとフレームを選ぶことで効果を実感しやすくなります。まずは自分の主な使用シーンに近いタイプから検討してみてください。
       </p>
       <p className="text-gray-700 mb-4">
-        コンタクトを装用して通常サングラスをかけるのが最もシンプルですが、海・プール・マリンスポーツではコンタクトの流失リスクがあります。このような場面では度付き偏光サングラスが最も安全で快適な選択肢です。
+        複数の用途で使いたい場合は、無理に1本で兼用しようとせず、メインの用途に合わせて1本目を選び、必要に応じて用途別に買い足していく方が満足度は高くなりやすいです。特に釣りやウィンタースポーツのように反射光の強さが際立つ場面では、専用設計のモデルとの違いを感じやすいでしょう。
       </p>
+      <p className="text-gray-700 mb-4">
+        近視・乱視がある方も、度付き偏光レンズを選べばコンタクトなしで偏光サングラスの恩恵を受けられます。JINS・Zoff・眼鏡市場など、度付き偏光レンズへの交換サービスを行っているショップを利用するのが一般的な方法です。コンタクトを装用したまま通常のサングラスをかけるという選択肢もありますが、海・プール・マリンスポーツのようにコンタクトの流失が心配な場面では、度付き偏光サングラスの方が安心して楽しめます。
+      </p>
+      <p className="text-gray-700 mb-4">
+        逆に、普段使い・ドライブ用途で1本目の偏光サングラスを探している場合は、クラシックなデザインで用途を選ばないOakley Holbrookのような定番モデルから試すのがおすすめです。
+      </p>
+      <div className="my-4">
+        <a href={RAKUTEN('Oakley Holbrook 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Oakley Holbrook 偏光レンズモデルを楽天で見る →
+        </a>
+      </div>
     </article>
   ),
     "xr-headset-corporate-adoption": (
