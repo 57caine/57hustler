@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T21:30:17.523Z",
+  "generatedAt": "2026-08-15T21:26:18.801Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -100,37 +100,6 @@
       "status": "様子見"
     },
     {
-      "path": "/column/eyestrain-stretching-massage-guide",
-      "slug": "eyestrain-stretching-massage-guide",
-      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
-      "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 219.633225125,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 9,
-        "h3Count": 19,
-        "hasAffiliateLinks": true,
-        "ctaCount": 14,
-        "contentChars": 26224
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見"
-    },
-    {
       "path": "/column/megane-online-shopping",
       "slug": "megane-online-shopping",
       "title": "オンラインで眼鏡を安く買う方法【JINS・Zoff・楽天・Amazon完全ガイド】",
@@ -166,37 +135,35 @@
       "status": "対応済み"
     },
     {
-      "path": "/column/lasik-hiyo-risk",
-      "slug": "lasik-hiyo-risk",
-      "title": "レーシックとは？費用・リスク・メリット・デメリット完全解説【2026年版】",
+      "path": "/column/eyestrain-stretching-massage-guide",
+      "slug": "eyestrain-stretching-massage-guide",
+      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
         "sessions": 7,
-        "bounceRate": 0.7142857142857143,
-        "avgSessionDuration": 2.592331857142857,
-        "affiliateClicks": 1
+        "bounceRate": 0.42857142857142855,
+        "avgSessionDuration": 249.93094928571426,
+        "affiliateClicks": 0
       },
       "flags": [
-        "avg_session_under_10s"
+        "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "平均滞在2.6秒（閾値10秒）"
+        "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 10,
-        "h3Count": 0,
+        "h2Count": 9,
+        "h3Count": 19,
         "hasAffiliateLinks": true,
-        "ctaCount": 0,
-        "contentChars": 14169
+        "ctaCount": 14,
+        "contentChars": 26224
       },
       "causes": [
-        "ページが正常にレンダリングされていない可能性（JSXエラー・白画面等）",
-        "リンクはあるがCTAボタンが設置されていない（クリック導線が弱い）"
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
-        "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する",
-        "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
-      "status": "未対応"
+      "status": "様子見"
     },
     {
       "path": "/column/reading-glasses-presbyopia-choose-2026",
@@ -204,8 +171,8 @@
       "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
       "metrics": {
         "sessions": 7,
-        "bounceRate": 0.42857142857142855,
-        "avgSessionDuration": 58.82897228571428,
+        "bounceRate": 0.2857142857142857,
+        "avgSessionDuration": 64.91359714285714,
         "affiliateClicks": 0
       },
       "flags": [
@@ -228,6 +195,37 @@
         "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見"
+    },
+    {
+      "path": "/column/sunglass-polarized-guide",
+      "slug": "sunglass-polarized-guide",
+      "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
+      "metrics": {
+        "sessions": 7,
+        "bounceRate": 0.5714285714285714,
+        "avgSessionDuration": 35.00183657142857,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション7件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 4,
+        "hasAffiliateLinks": false,
+        "ctaCount": 6,
+        "contentChars": 10468
+      },
+      "causes": [
+        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+      ],
+      "suggestions": [
+        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+      ],
+      "status": "未対応"
     },
     {
       "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
@@ -261,33 +259,35 @@
       "status": "様子見"
     },
     {
-      "path": "/column/sunglass-polarized-guide",
-      "slug": "sunglass-polarized-guide",
-      "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
+      "path": "/column/lasik-hiyo-risk",
+      "slug": "lasik-hiyo-risk",
+      "title": "レーシックとは？費用・リスク・メリット・デメリット完全解説【2026年版】",
       "metrics": {
         "sessions": 6,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 40.835476,
-        "affiliateClicks": 0
+        "bounceRate": 0.8333333333333334,
+        "avgSessionDuration": 0.8470418333333334,
+        "affiliateClicks": 1
       },
       "flags": [
-        "no_affiliate_clicks"
+        "avg_session_under_10s"
       ],
       "flagLabels": [
-        "セッション6件・affiliate_clickゼロ"
+        "平均滞在0.8秒（閾値10秒）"
       ],
       "analysis": {
-        "h2Count": 5,
+        "h2Count": 10,
         "h3Count": 0,
-        "hasAffiliateLinks": false,
+        "hasAffiliateLinks": true,
         "ctaCount": 0,
-        "contentChars": 5374
+        "contentChars": 14169
       },
       "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+        "ページが正常にレンダリングされていない可能性（JSXエラー・白画面等）",
+        "リンクはあるがCTAボタンが設置されていない（クリック導線が弱い）"
       ],
       "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+        "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する",
+        "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
       ],
       "status": "未対応"
     },
@@ -323,6 +323,37 @@
         "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する"
       ],
       "status": "未対応"
+    },
+    {
+      "path": "/column/pc-megane-bluelight-hikaku-2026",
+      "slug": "pc-megane-bluelight-hikaku-2026",
+      "title": "pc-megane-bluelight-hikaku-2026",
+      "metrics": {
+        "sessions": 5,
+        "bounceRate": 0,
+        "avgSessionDuration": 29.413663200000002,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション5件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 5,
+        "h3Count": 1,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 8101
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
     }
   ]
 }
