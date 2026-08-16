@@ -44,8 +44,8 @@ export default function ArticleTOC({ bodyId }: { bodyId: string }) {
 
   return (
     <nav aria-label="この記事の目次"
-      className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 mb-8">
-      <p className="text-xs font-bold text-slate-500 dark:text-slate-400 tracking-widest mb-3 uppercase">
+      className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
+      <p className="text-xs font-bold text-slate-500 tracking-widest mb-3 uppercase">
         この記事の目次
       </p>
       <ol className="space-y-1">
@@ -57,11 +57,11 @@ export default function ArticleTOC({ bodyId }: { bodyId: string }) {
               className={[
                 'flex items-start gap-2 text-sm transition-colors leading-snug py-0.5',
                 activeId === item.id
-                  ? 'text-sky-600 dark:text-sky-400 font-semibold'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400',
+                  ? 'text-sky-600 font-semibold'
+                  : 'text-slate-600 hover:text-sky-600',
               ].join(' ')}
             >
-              <span className="shrink-0 text-slate-400 dark:text-slate-500 font-mono text-xs mt-0.5 w-5 text-right">
+              <span className="shrink-0 text-slate-400 font-mono text-xs mt-0.5 w-5 text-right">
                 {i + 1}.
               </span>
               <span>{item.text}</span>

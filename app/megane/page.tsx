@@ -56,7 +56,7 @@ const jsonLd = {
 export default async function MeganePage() {
   const heroImage = await getHeroImage('eyeglasses frame fashion');
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="light-preview max-w-4xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <nav className="text-sm text-gray-500 mb-6">
@@ -72,10 +72,10 @@ export default async function MeganePage() {
         description="顔型別フレームの選び方からブルーライトカット眼鏡の効果、オンライン購入のコツまで。眼鏡に関する疑問をすべてカバーします。"
         imageUrl={heroImage}
         imageAlt="眼鏡フレーム"
-        gradient="from-indigo-950 to-blue-950"
-        borderColor="border-indigo-800"
-        overlayFrom="from-indigo-950/85"
-        overlayTo="to-blue-950/70"
+        gradient="from-indigo-600 to-sky-600"
+        borderColor="border-indigo-200"
+        overlayFrom="from-indigo-900/80"
+        overlayTo="to-sky-700/60"
       />
 
       {/* Articles */}
