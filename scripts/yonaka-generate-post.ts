@@ -15,6 +15,10 @@
  * 最高反応投稿の型強化（2026-08-15）:
  * - 科学・化学のふしぎ / 量子・宇宙論 カテゴリは「視点反転4ステップ」の型を必須化
  * - 上記2カテゴリの重みをさらに引き上げ（科学・化学5、量子・宇宙論4）
+ *
+ * 投稿品質強化（2026-08-16）:
+ * - 「全てはバランス・陰陽である」という基本思想をシステムプロンプトに追加
+ * - チェックを5段階化（禁止キーワード→文体→類似度→事実安全→わかりやすさ）
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -241,6 +245,23 @@ async function checkSimilarity(text: string, history: HistoryEntry[], client: An
   return answer.startsWith('YES');
 }
 
+async function checkReadability(text: string, client: Anthropic): Promise<boolean> {
+  const res = await client.messages.create({
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 10,
+    system: `以下の投稿文について判定してください。
+
+「この投稿は、専門知識のない読者が初見で一度読んだだけで意味がわかるか？」
+
+わかる場合は YES、専門用語が説明なく使われている・
+文の構造が複雑で読み返さないと意味が取れない、
+などでわかりにくい場合は NO とだけ答えてください。`,
+    messages: [{ role: 'user', content: text }],
+  });
+  const answer = (res.content[0] as { type: string; text: string }).text.trim().toUpperCase();
+  return answer.startsWith('YES');
+}
+
 // ────── 生成 ──────
 async function generatePost(category: Category, history: HistoryEntry[], client: Anthropic): Promise<string> {
   const recentTexts = history.slice(0, 30).map(p => `- ${p.text}`).join('\n') || '（履歴なし）';
@@ -250,6 +271,12 @@ async function generatePost(category: Category, history: HistoryEntry[], client:
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 300,
     system: `あなたは「夜中のおじさん」です。知的好奇心旺盛な中年男性が、ふと思ったことをつぶやくスタイルで投稿を書いてください。
+
+【コンテンツの根底にある思想】
+「全てはバランス・陰陽である」
+良いものも悪いものもどちらも必要で、重要なのはそのバランス。
+どちらかが10割ではいけない。
+この思想を投稿の随所に自然に混ぜること（毎回明示的に語る必要はない。断定を避け、両面を意識した視点として滲ませる程度でよい）。
 
 【必須スタイル — 以下の良い例と同じ形式で書くこと】
 
@@ -350,31 +377,38 @@ async function main() {
     }
     console.log(`生成テキスト:\n${candidate}`);
 
-    // チェック②: キーワードブラックリスト
+    // チェック1: キーワードブラックリスト
     if (BANNED_KEYWORDS.some(kw => candidate.includes(kw))) {
       const hit = BANNED_KEYWORDS.find(kw => candidate.includes(kw));
-      console.warn(`⚠️ チェック②失敗: 禁止キーワード「${hit}」検出 → 再生成`);
+      console.warn(`⚠️ チェック1失敗: 禁止キーワード「${hit}」検出 → 再生成`);
       continue;
     }
 
-    // チェック③: 文体チェック（Claude判定）
+    // チェック2: 文体チェック（Claude判定）
     const styleOk = await checkStyle(candidate, client);
     if (!styleOk) {
-      console.warn(`⚠️ チェック③失敗: 指定の文末表現スタイルに合致しない → 再生成`);
+      console.warn(`⚠️ チェック2失敗: 指定の文末表現スタイルに合致しない → 再生成`);
       continue;
     }
 
-    // チェック④: 事実ベース・断定表現チェック（専門家に指摘される余地がないか）
-    const tooAssertive = await checkFactSafety(candidate, client);
-    if (tooAssertive) {
-      console.warn(`⚠️ チェック④失敗: 専門家に指摘される余地のある断定表現を検出 → 再生成`);
-      continue;
-    }
-
-    // チェック⑤: 類似度チェック（Claude判定 vs 直近30投稿）
+    // チェック3: 類似度チェック（Claude判定 vs 直近30投稿・70%以上類似でNG）
     const tooSimilar = await checkSimilarity(candidate, history, client);
     if (tooSimilar) {
-      console.warn(`⚠️ チェック⑤失敗: 直近30投稿と70%以上類似 → 再生成`);
+      console.warn(`⚠️ チェック3失敗: 直近30投稿と70%以上類似 → 再生成`);
+      continue;
+    }
+
+    // チェック4: 事実ベース・断定表現チェック（専門家に指摘される余地がないか）
+    const tooAssertive = await checkFactSafety(candidate, client);
+    if (tooAssertive) {
+      console.warn(`⚠️ チェック4失敗: 専門家に指摘される余地のある断定表現を検出 → 再生成`);
+      continue;
+    }
+
+    // チェック5: わかりやすさチェック（初見で一度読んで意味がわかるか）
+    const readable = await checkReadability(candidate, client);
+    if (!readable) {
+      console.warn(`⚠️ チェック5失敗: 初見でわかりにくい表現を検出 → 再生成`);
       continue;
     }
 

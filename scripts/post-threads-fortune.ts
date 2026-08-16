@@ -42,7 +42,8 @@ function getDailyStar(): number {
 }
 
 function getYearlyStar(year: number): number {
-  return ((4 - 1 - (year - 2024) % 9 + 900) % 9) + 1;
+  // 2024年＝三碧木星年が起点（複数の気学サイトで確認済み。旧実装は四緑木星年を起点にしており1年ずれていた）
+  return ((3 - 1 - (year - 2024) % 9 + 900) % 9) + 1;
 }
 
 function getMonthlyStar(): number {
@@ -61,6 +62,19 @@ function getStarPositionIndex(k: number, dailyStar: number): number {
   return ((k - dailyStar + 13) % 9) + 1;
 }
 
+// 月盤中宮星ごとの象意・対応卦（月替わりで随時追加していく想定。未登録の月は象意なしで生成する）
+const MONTHLY_MEANING: Partial<Record<number, { hexagram: string; keywords: string[] }>> = {
+  2: {
+    hexagram: '坤為地（易経 第2卦）',
+    keywords: [
+      '大地・土・受け取る・養育・地道な積み上げ',
+      '焦らず、じっくり、根を張る月',
+      '新しいことを始めるより積み上げを固める時期',
+      '人を助けることで流れが開ける',
+    ],
+  },
+};
+
 async function generateOneLiners(dailyStarNum: number, monthlyStarNum: number): Promise<Record<number, string>> {
   const client = new Anthropic();
   const dailyStar   = KYUSEI[dailyStarNum];
@@ -76,6 +90,11 @@ async function generateOneLiners(dailyStarNum: number, monthlyStarNum: number): 
     return `  ${KYUSEI[k].short}（${KYUSEI[k].element}）→ ${pos.name}（${pos.direction}）: ${pos.meaning}`;
   }).join('\n');
 
+  const monthlyMeaning = MONTHLY_MEANING[monthlyStarNum];
+  const monthlyMeaningBlock = monthlyMeaning
+    ? `\n今月「${monthlyStar.name}」の象意（対応卦：${monthlyMeaning.hexagram}）：\n${monthlyMeaning.keywords.map(k => `  ・${k}`).join('\n')}\n`
+    : '';
+
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 400,
@@ -85,7 +104,7 @@ async function generateOneLiners(dailyStarNum: number, monthlyStarNum: number): 
       content: `今日（${dateStr}）
 月盤中宮：${monthlyStar.name}
 日盤中宮：${dailyStar.name}
-
+${monthlyMeaningBlock}
 各星の本日の日盤回座宮：
 ${positionInfo}
 
