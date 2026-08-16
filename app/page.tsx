@@ -58,7 +58,7 @@ export default async function HomePage() {
   };
 
   return (
-    <div className="light-preview">
+    <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}

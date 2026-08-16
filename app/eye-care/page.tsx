@@ -70,10 +70,10 @@ export default async function EyeCarePage() {
         description="コンタクト対応目薬の選び方からドライアイ対策、ルテインサプリまで。目の健康を守るためのアイケア情報を網羅します。"
         imageUrl={heroImage}
         imageAlt="目薬とアイケア"
-        gradient="from-cyan-950 to-teal-950"
-        borderColor="border-cyan-800"
-        overlayFrom="from-cyan-950/85"
-        overlayTo="to-teal-950/70"
+        gradient="from-cyan-600 to-teal-600"
+        borderColor="border-cyan-200"
+        overlayFrom="from-cyan-900/80"
+        overlayTo="to-teal-700/60"
       />
 
       {/* Articles */}

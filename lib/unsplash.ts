@@ -13,12 +13,14 @@ interface UnsplashSearchResponse {
   results: UnsplashPhoto[];
 }
 
-export async function getHeroImage(query: string): Promise<string | null> {
+// page: 同じqueryでも複数記事で使い回す際に、Unsplashの検索結果ページを
+// ずらして取得するための指定（1始まり）。同じ写真の量産感を避けるために使う。
+export async function getHeroImage(query: string, page: number = 1): Promise<string | null> {
   const accessKey = process.env.UNSPLASH_ACCESS_KEY;
   if (!accessKey) return null;
 
   try {
-    const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=1&orientation=landscape&content_filter=high`;
+    const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=1&page=${page}&orientation=landscape&content_filter=high`;
     const res = await fetch(url, {
       headers: { Authorization: `Client-ID ${accessKey}` },
       // ビルド時に一度取得すれば十分。サイトの再デプロイごとに更新される。
@@ -31,4 +33,13 @@ export async function getHeroImage(query: string): Promise<string | null> {
   } catch {
     return null;
   }
+}
+
+// slug文字列から安定した小さな整数を作る（写真バリエーション選択に使用）
+export function stableIndex(slug: string, mod: number): number {
+  let hash = 0;
+  for (let i = 0; i < slug.length; i++) {
+    hash = (hash * 31 + slug.charCodeAt(i)) >>> 0;
+  }
+  return (hash % mod) + 1;
 }

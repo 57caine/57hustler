@@ -56,7 +56,7 @@ const jsonLd = {
 export default async function MeganePage() {
   const heroImage = await getHeroImage('eyeglasses frame fashion');
   return (
-    <div className="light-preview max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-4xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <nav className="text-sm text-gray-500 mb-6">

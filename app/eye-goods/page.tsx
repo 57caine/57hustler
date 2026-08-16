@@ -60,10 +60,10 @@ export default async function EyeGoodsPage() {
         description="ホットアイマスク・モニターライト・ブルーライトカット眼鏡など、目を労わるグッズを厳選紹介。楽天で購入できるおすすめアイテムをまとめました。"
         imageUrl={heroImage}
         imageAlt="目のケアグッズ"
-        gradient="from-orange-950 to-amber-950"
-        borderColor="border-orange-800"
-        overlayFrom="from-orange-950/85"
-        overlayTo="to-amber-950/70"
+        gradient="from-orange-500 to-amber-600"
+        borderColor="border-orange-200"
+        overlayFrom="from-orange-900/80"
+        overlayTo="to-amber-700/60"
       />
 
       {/* Articles */}

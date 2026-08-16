@@ -77,10 +77,10 @@ export default async function VRPage() {
         description="視力が悪い方向けのVR対策から最新デバイスの比較まで。Meta Quest・Ray-Ban Meta・Apple Vision Proを徹底解説します。"
         imageUrl={heroImage}
         imageAlt="VRヘッドセット"
-        gradient="from-violet-950 to-purple-950"
-        borderColor="border-violet-800"
-        overlayFrom="from-violet-950/85"
-        overlayTo="to-purple-950/70"
+        gradient="from-violet-600 to-purple-600"
+        borderColor="border-violet-200"
+        overlayFrom="from-violet-900/80"
+        overlayTo="to-purple-700/60"
       />
 
       {/* Articles */}
