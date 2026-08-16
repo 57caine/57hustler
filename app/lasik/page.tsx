@@ -54,10 +54,10 @@ export default async function LasikPage() {
         description="レーシック・ICL・オルソケラトロジーなど視力矯正手術の費用・リスク・クリニック選びを解説。手術を検討している方向けの総合情報サイトです。"
         imageUrl={heroImage}
         imageAlt="眼科診療"
-        gradient="from-emerald-950 to-teal-950"
-        borderColor="border-emerald-800"
-        overlayFrom="from-emerald-950/85"
-        overlayTo="to-teal-950/70"
+        gradient="from-emerald-600 to-teal-600"
+        borderColor="border-emerald-200"
+        overlayFrom="from-emerald-900/80"
+        overlayTo="to-teal-700/60"
         disclaimer={
           <div className="mt-4 bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 inline-block">
             <p className="text-xs text-amber-700">※ 当サイトは医療情報を提供しますが、最終的な判断は必ず眼科専門医にご相談ください。</p>

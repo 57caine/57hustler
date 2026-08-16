@@ -73,10 +73,10 @@ export default async function KarakonPage() {
         description="度あり・度なし別おすすめランキングから、安全な選び方・韓国ブランド・公式アンバサダー情報まで。薬機法承認済みの安心カラコンを紹介します。"
         imageUrl={heroImage}
         imageAlt="カラーコンタクトレンズ"
-        gradient="from-pink-950 to-rose-950"
-        borderColor="border-pink-800"
-        overlayFrom="from-pink-950/85"
-        overlayTo="to-rose-950/70"
+        gradient="from-pink-500 to-rose-600"
+        borderColor="border-pink-200"
+        overlayFrom="from-pink-900/80"
+        overlayTo="to-rose-700/60"
         disclaimer={
           <div className="flex flex-wrap gap-2 mt-4">
             {['薬機法承認品のみ紹介', '楽天で購入可能', '初心者ガイドあり'].map(t => (

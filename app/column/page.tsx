@@ -43,8 +43,8 @@ const SECTIONS = [
     label: 'カラコン',
     Icon: Sparkles,
     href: '/karakon',
-    bg: 'bg-gradient-to-r from-pink-950 to-rose-950',
-    border: 'border-pink-800',
+    bg: 'bg-gradient-to-r from-pink-500 to-rose-600',
+    border: 'border-pink-200',
     badge: 'bg-pink-600 text-white',
     filter: (c: { category?: string; section?: string }) =>
       c.category === 'カラコン' || c.category === 'karakon' || (c as { section?: string }).section === 'karakon',
@@ -54,8 +54,8 @@ const SECTIONS = [
     label: '眼鏡・VR・レーシック・アイケア',
     Icon: Glasses,
     href: '/megane',
-    bg: 'bg-gradient-to-r from-indigo-950 to-violet-950',
-    border: 'border-indigo-800',
+    bg: 'bg-gradient-to-r from-indigo-500 to-violet-600',
+    border: 'border-indigo-200',
     badge: 'bg-indigo-600 text-white',
     filter: (c: { category?: string; section?: string }) => {
       const s = (c as { section?: string }).section;
@@ -67,8 +67,8 @@ const SECTIONS = [
     label: 'コンタクトレンズ',
     Icon: Eye,
     href: '/category/1day',
-    bg: 'bg-gradient-to-r from-sky-950 to-blue-950',
-    border: 'border-sky-800',
+    bg: 'bg-gradient-to-r from-sky-500 to-blue-600',
+    border: 'border-sky-200',
     badge: 'bg-sky-600 text-white',
     filter: (c: { category?: string; section?: string }) => {
       const s = (c as { section?: string }).section;

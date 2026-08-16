@@ -7,13 +7,24 @@ import { eyeColumns, eyeColumnContent, type EyeColumnMeta } from '@/lib/eye-colu
 import { karakonColumnContent } from '@/lib/karakon-columns';
 import { allColumns, getAnyColumnBySlug } from '@/lib/all-columns';
 import ArticleTOC from '@/components/ArticleTOC';
-import { getHeroImage } from '@/lib/unsplash';
+import { getHeroImage, stableIndex } from '@/lib/unsplash';
 
-// 白基調デザインのモデルケース対象記事（承認後、全体展開時にこの判定は撤去する）
-const LIGHT_PREVIEW_SLUGS = new Set(['sunglass-polarized-guide']);
-const LIGHT_PREVIEW_HERO_QUERY: Record<string, string> = {
-  'sunglass-polarized-guide': 'polarized sunglasses fashion outdoor',
+// 記事セクション別のUnsplash検索クエリ（英語）。カテゴリーページのヒーロー画像と統一トーン。
+const SECTION_HERO_QUERY: Record<string, string> = {
+  megane: 'eyeglasses frame fashion',
+  vr: 'vr headset virtual reality',
+  lasik: 'eye surgery clinic medical',
+  'eye-care': 'eye care contact lens drops',
+  'eye-goods': 'eye mask relaxation care',
+  karakon: 'colored contact lens eye makeup',
 };
+const DEFAULT_HERO_QUERY = 'contact lens eye close up macro';
+
+function getHeroQuery(column: { category?: string; section?: string }): string {
+  if (column.section) return SECTION_HERO_QUERY[column.section] ?? DEFAULT_HERO_QUERY;
+  if (column.category === 'カラコン') return SECTION_HERO_QUERY.karakon;
+  return DEFAULT_HERO_QUERY;
+}
 
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
 
@@ -66,10 +77,7 @@ export default async function ColumnPage({ params }: Props) {
   const otherColumns = allColumns.filter((c) => c.slug !== slug).slice(0, 4);
   const BASE = 'https://lens-navi.jp';
 
-  const isLightPreview = LIGHT_PREVIEW_SLUGS.has(slug);
-  const heroImage = isLightPreview
-    ? await getHeroImage(LIGHT_PREVIEW_HERO_QUERY[slug] ?? column.title)
-    : null;
+  const heroImage = await getHeroImage(getHeroQuery(column), stableIndex(slug, 8));
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -95,7 +103,7 @@ export default async function ColumnPage({ params }: Props) {
   };
 
   return (
-    <div className={`${isLightPreview ? 'light-preview ' : ''}max-w-3xl mx-auto px-4 py-8`}>
+    <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <nav className="text-sm text-gray-500 mb-6">
         <Link href="/" className="hover:text-slate-700">ホーム</Link>
@@ -147,7 +155,7 @@ export default async function ColumnPage({ params }: Props) {
             return (
               <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-8">
                 <p className="text-sm font-bold text-gray-800 mb-3">{cta.label}</p>
-                <a href={RAKUTEN(cta.rakuten)} target="_blank" rel="noopener noreferrer nofollow"
+                <a href={RAKUTEN(cta.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
                   className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
                   楽天市場で見る →
                 </a>
@@ -198,7 +206,7 @@ export default async function ColumnPage({ params }: Props) {
             return (
               <div className="mt-10 p-5 bg-red-50 border border-red-200 rounded-xl">
                 <p className="text-sm font-bold text-gray-800 mb-3">この記事に関連する商品を楽天で探す</p>
-                <a href={RAKUTEN(cta.rakuten)} target="_blank" rel="noopener noreferrer nofollow"
+                <a href={RAKUTEN(cta.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
                   className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
                   楽天市場で見る →
                 </a>
@@ -216,7 +224,7 @@ export default async function ColumnPage({ params }: Props) {
               <p className="text-sm font-bold text-gray-800 mb-1">コンタクトレンズを楽天で購入する</p>
               <p className="text-xs text-gray-500 mb-3">楽天市場で最安値をチェック</p>
               <div className="flex flex-wrap gap-2">
-                <a href={RAKUTEN('コンタクトレンズ ワンデー')} target="_blank" rel="noopener noreferrer nofollow"
+                <a href={RAKUTEN('コンタクトレンズ ワンデー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
                   className="bg-[#bf0000] hover:opacity-90 text-white text-sm font-bold px-4 py-2.5 rounded-lg transition-opacity">
                   楽天で探す →
                 </a>
