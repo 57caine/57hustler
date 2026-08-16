@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T21:26:18.801Z",
+  "generatedAt": "2026-08-16T21:25:59.957Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -11,16 +11,16 @@
       "slug": "blue-light-megane-kouka",
       "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
-        "sessions": 12,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 86.00425591666668,
+        "sessions": 13,
+        "bounceRate": 0.38461538461538464,
+        "avgSessionDuration": 84.51848338461538,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション12件・affiliate_clickゼロ"
+        "セッション13件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
@@ -85,17 +85,17 @@
         "セッション9件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 12,
-        "h3Count": 22,
+        "h2Count": 4,
+        "h3Count": 4,
         "hasAffiliateLinks": true,
-        "ctaCount": 0,
-        "contentChars": 12575
+        "ctaCount": 6,
+        "contentChars": 9092
       },
       "causes": [
-        "リンクはあるがCTAボタンが設置されていない（クリック導線が弱い）"
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
-        "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見"
     },
@@ -135,27 +135,27 @@
       "status": "対応済み"
     },
     {
-      "path": "/column/eyestrain-stretching-massage-guide",
-      "slug": "eyestrain-stretching-massage-guide",
-      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
+      "path": "/column/reading-glasses-presbyopia-choose-2026",
+      "slug": "reading-glasses-presbyopia-choose-2026",
+      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
       "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.42857142857142855,
-        "avgSessionDuration": 249.93094928571426,
+        "sessions": 8,
+        "bounceRate": 0.375,
+        "avgSessionDuration": 101.0151415,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
+        "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 9,
-        "h3Count": 19,
+        "h2Count": 4,
+        "h3Count": 3,
         "hasAffiliateLinks": true,
-        "ctaCount": 14,
-        "contentChars": 26224
+        "ctaCount": 5,
+        "contentChars": 7056
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -166,51 +166,20 @@
       "status": "様子見"
     },
     {
-      "path": "/column/reading-glasses-presbyopia-choose-2026",
-      "slug": "reading-glasses-presbyopia-choose-2026",
-      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.2857142857142857,
-        "avgSessionDuration": 64.91359714285714,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 10,
-        "h3Count": 21,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 12280
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見"
-    },
-    {
       "path": "/column/sunglass-polarized-guide",
       "slug": "sunglass-polarized-guide",
       "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
       "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.5714285714285714,
-        "avgSessionDuration": 35.00183657142857,
+        "sessions": 8,
+        "bounceRate": 0.625,
+        "avgSessionDuration": 30.626607,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
+        "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -255,6 +224,37 @@
       ],
       "suggestions": [
         "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
+      ],
+      "status": "様子見"
+    },
+    {
+      "path": "/column/eyestrain-stretching-massage-guide",
+      "slug": "eyestrain-stretching-massage-guide",
+      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
+      "metrics": {
+        "sessions": 6,
+        "bounceRate": 0.3333333333333333,
+        "avgSessionDuration": 291.58610749999997,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション6件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 9,
+        "h3Count": 19,
+        "hasAffiliateLinks": true,
+        "ctaCount": 14,
+        "contentChars": 26224
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見"
     },
