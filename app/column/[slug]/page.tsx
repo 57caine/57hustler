@@ -1,11 +1,19 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { columns, getColumnBySlug, columnContent } from '@/lib/columns';
 import { eyeColumns, eyeColumnContent, type EyeColumnMeta } from '@/lib/eye-columns';
 import { karakonColumnContent } from '@/lib/karakon-columns';
 import { allColumns, getAnyColumnBySlug } from '@/lib/all-columns';
 import ArticleTOC from '@/components/ArticleTOC';
+import { getHeroImage } from '@/lib/unsplash';
+
+// 白基調デザインのモデルケース対象記事（承認後、全体展開時にこの判定は撤去する）
+const LIGHT_PREVIEW_SLUGS = new Set(['sunglass-polarized-guide']);
+const LIGHT_PREVIEW_HERO_QUERY: Record<string, string> = {
+  'sunglass-polarized-guide': 'polarized sunglasses fashion outdoor',
+};
 
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
 
@@ -58,6 +66,11 @@ export default async function ColumnPage({ params }: Props) {
   const otherColumns = allColumns.filter((c) => c.slug !== slug).slice(0, 4);
   const BASE = 'https://lens-navi.jp';
 
+  const isLightPreview = LIGHT_PREVIEW_SLUGS.has(slug);
+  const heroImage = isLightPreview
+    ? await getHeroImage(LIGHT_PREVIEW_HERO_QUERY[slug] ?? column.title)
+    : null;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -82,7 +95,7 @@ export default async function ColumnPage({ params }: Props) {
   };
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
+    <div className={`${isLightPreview ? 'light-preview ' : ''}max-w-3xl mx-auto px-4 py-8`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <nav className="text-sm text-gray-500 mb-6">
         <Link href="/" className="hover:text-slate-700">ホーム</Link>
@@ -104,6 +117,18 @@ export default async function ColumnPage({ params }: Props) {
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight mb-4">
             {column.title}
           </h1>
+          {heroImage && (
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-4 bg-gray-100">
+              <Image
+                src={heroImage}
+                alt={column.title}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="object-cover"
+              />
+            </div>
+          )}
           <div className="flex items-center gap-4 text-xs text-gray-400 pb-4 border-b border-gray-100">
             <span>公開: {column.publishedAt}</span>
             <span>更新: {column.updatedAt ?? column.publishedAt}</span>
