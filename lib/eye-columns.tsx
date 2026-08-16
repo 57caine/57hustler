@@ -502,7 +502,7 @@ export const eyeColumns: EyeColumnMeta[] = [
     publishedAt: "2026-07-18",
     keywords: ["スポーツ眼鏡","ズレ防止","スポーツフレーム"],
     faqs: [
-    { q: "スポーツ眼鏡がズレる主な原因は何ですか？", a: "スポーツ時の眼鏡ズレは、汗による鼻パッドの滑り（約65%の原因）、激しい動きによる遠心力、フレームサイズの不適合が主な要因です。特に野球やテニスなど動きが大きいスポーツで発生しやすく、適切なフィッティングと素材選択で防止できます。" },
+    { q: "スポーツ眼鏡がズレる主な原因は何ですか？", a: "スポーツ時の眼鏡ズレは、汗による鼻パッドの滑り、激しい動きによる遠心力、フレームサイズの不適合が主な要因とされています。特に野球やテニスなど動きが大きいスポーツで発生しやすく、適切なフィッティングと素材選択で防止できます。" },
     { q: "ズレ防止眼鏡に使われる素材の違いは？", a: "ズレ防止機能を持つスポーツ眼鏡の素材は、超軽量のTR90（トリアセテートセルロース）、耐久性に優れたβチタン、柔軟性が高いウルテム樹脂などがあります。これらの素材は汗や水に強く、汗で滑りにくい加工が施されているものが多いです。" },
     { q: "どのスポーツにはどんなフレーム形状が適していますか？", a: "野球やテニスはラップ型（顔に密着）が最適、バスケはスポーティーなウェリントン型、ランニングはハーフリム型が推奨されます。各スポーツの動きやすさと視野確保のバランスを考慮したフレーム設計が重要です。" },
     { q: "スポーツ眼鏡の度数は通常眼鏡と異なりますか？", a: "スポーツ眼鏡の度数決定は通常眼鏡より厳密です。運動時の視線の動きを考慮し、オプトメトリストが検査します。一般的に通常眼鏡と同じ度数ですが、スポーツの種類に応じて調整することもあります。" },
@@ -3924,173 +3924,125 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   ),
     "megane-facial-shape-frame-2026": (
     <article className="prose prose-sm max-w-none">
-      <p className="text-gray-700 mb-4"># メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド</p>
-      <p className="text-gray-700 mb-4">メガネ選びで最も大切なことは、自分の顔型を正確に理解し、それに合ったフレームを選ぶことです。2026年現在、メガネは単なる視力矯正ツールから、ファッションアイテムとしての地位を確立しており、適切なフレーム選びがあなたの顔立ちを大きく左右する重要な決断となっています。</p>
-      <p className="text-gray-700 mb-4">本記事では、日本人の顔型分類に基づいた、それぞれの顔型に最適なメガネフレームの選び方を詳しく解説します。あなたが今まで違うフレームを選んでいたとしたら、この情報が人生を変えるかもしれません。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">顔型別メガネ選びが重要な理由</h2>
-      <p className="text-gray-700 mb-4">メガネは顔の印象を大きく変える力を持っています。日本眼鏡工業会の調査によると、2025年の日本国内メガネ出荷数は約770万本に達し、多くの国民がメガネを日常的に使用しています。しかし、その多くの人が自分の顔型に合わないフレームを選んでいるのが実情です。</p>
-      <p className="text-gray-700 mb-4">顔型に適したメガネを選ぶ理由は以下の通りです：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>顔のバランスを整える</strong>：顔の弱点をカバーし、長所を引き出す</li>
-        <li><strong>顔を小さく見せる効果</strong>：適切なフレームサイズで横幅を調整</li>
-        <li><strong>年齢を若く見せる</strong>：フレーム形状で顔印象が5～10歳変わることも</li>
-        <li><strong>職業イメージを改善</strong>：知的感や親しみやすさを演出</li>
+      <p className="text-gray-600 text-base leading-relaxed mb-6">
+        「メガネを選んでも、なんだかしっくりこない」と感じていませんか。この記事では、顔型別のフレームの選び方と、おすすめのメガネフレームをまとめて解説します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">顔型診断チャート</h2>
+      <p className="text-gray-700 mb-4">
+        メガネのフレーム形状は、顔の印象を大きく左右します。一般的なスタイリングの考え方では、輪郭の特徴と「逆の形」のフレームを選ぶとバランスが取りやすいとされています。まずは自分の顔型に近いものを確認してみましょう。
+      </p>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-indigo-50">
+              <th className="text-left p-3 border border-gray-200">顔型</th>
+              <th className="text-left p-3 border border-gray-200">特徴</th>
+              <th className="text-left p-3 border border-gray-200">おすすめの方向性</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { face: '丸顔', feature: '縦横の長さが近く、輪郭に丸みがある', rec: '角のあるスクエア・ウェリントン型で引き締める' },
+              { face: '四角顔', feature: '顎がしっかりしており輪郭が直線的', rec: '丸みのあるボストン・オーバル型で柔らかく見せる' },
+              { face: '菱形顔', feature: '頬が最も幅広く、額と顎が比較的狭い', rec: '下部に幅のあるボストン・ウェリントン型で頬をカバー' },
+              { face: '逆三角形顔', feature: '額が広く、顎にかけて細くなる', rec: '下部に幅のあるウェリントン・台形フレームで顎をサポート' },
+            ].map(r => (
+              <tr key={r.face} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.face}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.feature}</td>
+                <td className="p-3 border border-gray-200 text-indigo-700">{r.rec}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Wavecontact メガネフレーム MGN_BASIC（スクエア型）を楽天で見る →
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">顔型別おすすめフレーム</h2>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">丸顔向け：Wavecontact メガネフレーム MGN_BASIC</h3>
+      <p className="text-gray-700 mb-2">頬に丸みがあり、縦横の長さが近い丸顔は、輪郭に沿った丸型フレームを選ぶとより丸さが強調されやすくなります。直線的なラインを持つフレームを合わせることで、顔全体の印象がすっきりまとまりやすくなります。</p>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>角のあるスクエアシルエットで、丸顔特有のやわらかい印象を引き締められる</li>
+        <li>クセの少ないベーシックなデザインで普段使いしやすい</li>
       </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">丸顔さん向けメガネフレーム選びガイド</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">丸顔の特徴と課題</h3>
-      <p className="text-gray-700 mb-4">丸顔は顔の横幅と縦幅がほぼ同じで、柔らかく優しい印象が特徴です。日本人女性の約35%、男性の約28%が丸顔に分類されており、最も一般的な顔型です。</p>
-      <p className="text-gray-700 mb-4">丸顔の課題は、そのやさしい雰囲気がときに「幼い」「甘い」という印象につながることです。メガネ選びでは、この丸さを引き締める必要があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">丸顔におすすめのフレーム形状</h3>
-      <p className="text-gray-700 mb-4"><strong>スクエア・ウェリントン型（推奨度：★★★★★）</strong></p>
-      <p className="text-gray-700 mb-4">角のあるフレーム形状が、丸顔の柔らかさを引き締めます。2026年トレンドの太めフレーム（フレーム幅：146mm以上）を選ぶと、より効果的です。</p>
-      <p className="text-gray-700 mb-4"><strong>キャットアイ・オーバル型（推奨度：★★★★）</strong></p>
-      <p className="text-gray-700 mb-4">全体的に丸みを帯びていますが、上部の角度が丸顔の印象を和らげます。クラシカルながらモダンな雰囲気を演出できます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">丸顔が避けるべきフレーム</h3>
-      <p className="text-gray-700 mb-4">丸フレーム、ボストン型（小さめサイズ）、ティアドロップ型などは、顔の丸さを強調してしまうため避けた方が無難です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">四角顔さん向けメガネフレーム選びガイド</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">四角顔の特徴と課題</h3>
-      <p className="text-gray-700 mb-4">四角顔は顎がしっかりしており、顔の輪郭が直線的で角張っているのが特徴です。日本人男性の約32%、女性の約25%が該当する顔型です。</p>
-      <p className="text-gray-700 mb-4">四角顔の課題は、その角張った特徴が「厳しい」「怖い」という印象につながることです。ビジネスシーンでは実は最も有利な顔型とも言えますが、プライベートではやや柔らかさを加える必要があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">四角顔におすすめのフレーム形状</h3>
-      <p className="text-gray-700 mb-4"><strong>ボストン・ラウンド型（推奨度：★★★★★）</strong></p>
-      <p className="text-gray-700 mb-4">丸みのあるフレームが、顔の角張った特徴を柔らかく見せます。2026年は小ぶりなボストン型（フレーム幅：130～140mm）がトレンドです。</p>
-      <p className="text-gray-700 mb-4"><strong>オーバル型（推奨度：★★★★）</strong></p>
-      <p className="text-gray-700 mb-4">楕円形のやさしい曲線が、四角顔の直線的なラインを調和させます。フレームの縦幅が大きいものを選ぶと、顔の幅を視覚的に狭く見せることができます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">四角顔が避けるべきフレーム</h3>
-      <p className="text-gray-700 mb-4">スクエア型の大きなフレーム、ウェリントン型（太めのもの）などは、角張った特徴を強調してしまいます。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">菱形顔さん向けメガネフレーム選びガイド</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">菱形顔の特徴と課題</h3>
-      <p className="text-gray-700 mb-4">菱形顔は頬が最も幅広く、額と顎が比較的狭いのが特徴です。日本人の約20%が菱形顔に分類されます。</p>
-      <p className="text-gray-700 mb-4">菱形顔の課題は、頬の幅が目立つことで、顔全体が「キツく」見えてしまうことです。また、スタイリングによっては「エキセントリック」な印象も与えることがあります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">菱形顔におすすめのフレーム形状</h3>
-      <p className="text-gray-700 mb-4"><strong>ボストン・ティアドロップ型（推奨度：★★★★★）</strong></p>
-      <p className="text-gray-700 mb-4">フレームの下部に幅があり、頬付近をしっかり覆うデザインが最適です。2026年トレンドの「ビンテージボストン」は、菱形顔の人には特におすすめです。</p>
-      <p className="text-gray-700 mb-4"><strong>ウェリントン型（推奨度：★★★★）</strong></p>
-      <p className="text-gray-700 mb-4">フレームの下部が広いため、頬の幅を適切に覆うことができます。フレーム色はニュアンスカラー（くすみピンク、くすみベージュなど）を選ぶと、さらに柔らかい印象になります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">菱形顔が避けるべきフレーム</h3>
-      <p className="text-gray-700 mb-4">キャットアイ型（頬が強調される）、極度に細いフレーム、フレーム幅が狭いものは避けましょう。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">逆三角形顔さん向けメガネフレーム選びガイド</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">逆三角形顔の特徴と課題</h3>
-      <p className="text-gray-700 mb-4">逆三角形顔は額が広く、顎が小さい特徴があります。日本人女性の約20%、男性の約15%が該当する顔型です。</p>
-      <p className="text-gray-700 mb-4">逆三角形顔の課題は、顎の狭さが「弱い印象」につながることです。また、額の広さが強調されると「知識人っぽい」というより「可愛らしい」という印象になりやすいです。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">逆三角形顔におすすめのフレーム形状</h3>
-      <p className="text-gray-700 mb-4"><strong>ウェリントン・台形フレーム（推奨度：★★★★★）</strong></p>
-      <p className="text-gray-700 mb-4">フレームの下部に幅がある形状が、顎の狭さをカバーします。2026年は下部がしっかり広いウェリントン型が最適です。</p>
-      <p className="text-gray-700 mb-4"><strong>ボストン型（推奨度：★★★★）</strong></p>
-      <p className="text-gray-700 mb-4">適度な下部の幅で、顎をサポートします。ただし、フレーム幅が140mm以上の比較的大きめサイズを選ぶことが重要です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">逆三角形顔が避けるべきフレーム</h3>
-      <p className="text-gray-700 mb-4">キャットアイ型（上が広くなり、顔の印象が悪くなる）、ティアドロップ型（小さめサイズ）は避けた方が無難です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">フレームカラー選びの黄金法則</h2>
-      <p className="text-gray-700 mb-4">顔型に合わせたフレーム色選びも、メガネの印象を大きく左右します。</p>
-      <p className="text-gray-700 mb-4">| 顔型 | 肌色がイエロー系の場合 | 肌色がピンク系の場合 |</p>
-      <p className="text-gray-700 mb-4">|------|----------------------|------------------|</p>
-      <p className="text-gray-700 mb-4">| 丸顔 | ゴールド、ベージュ | シルバー、黒、深青 |</p>
-      <p className="text-gray-700 mb-4">| 四角顔 | ゴールド、ローズゴールド | シルバー、グレー |</p>
-      <p className="text-gray-700 mb-4">| 菱形顔 | ニュアンスカラー、くすみ系 | くすみピンク、ラベンダー |</p>
-      <p className="text-gray-700 mb-4">| 逆三角形顔 | 濃いブラウン、ダークトーン | ダークネイビー、黒 |</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年最新トレンドフレーム情報</h2>
-      <p className="text-gray-700 mb-4">2026年のメガネフレームトレンドは「リトロミックス」です。これは、1970年代～90年代の懐かしさと現代的な洗練が融合したデザインです。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>ビンテージボストン</strong>：全ての顔型に対応可能（調整次第）</li>
-        <li><strong>太めクラシックウェリントン</strong>：四角顔・逆三角形顔に最適</li>
-        <li><strong>小ぶりスクエア</strong>：丸顔・菱形顔に最適</li>
-        <li><strong>アセテート素材</strong>：2026年は質感がより重視される</li>
+      <p className="text-gray-500 text-sm mb-3">気になる点：フレームが大きすぎると顔とのバランスが崩れやすいため、サイズ表示を確認してから選びたい</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Wavecontact メガネフレーム MGN_BASICを楽天で見る →
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">四角顔向け：Hodopus メガネフレーム</h3>
+      <p className="text-gray-700 mb-2">顎がしっかりしていて輪郭が直線的な四角顔は、同じく角のあるフレームを合わせると輪郭の硬さがより強調されやすくなります。オーバル・ボストン型など曲線を持つフレームを選ぶことで、印象をやわらげやすくなります。</p>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>丸みのあるシルエットで、輪郭の直線的な印象をやわらげやすい</li>
+        <li>シンプルなデザインでビジネス・プライベート問わず使いやすい</li>
       </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">メガネ選びの実践的なコツ</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1. 正確な顔型判定方法</h3>
-      <p className="text-gray-700 mb-4">自分の顔型を正確に判定することが、メガネ選びの第一歩です。</p>
-      <p className="text-gray-700 mb-4">以下の方法で判定できます：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>鏡の前でまっすぐ立ち、スマートフォンで正面から撮影</li>
-        <li>額の幅、頬の幅、顎の幅をそれぞれ測定</li>
-        <li>最も幅が広い部位によって顔型を判定</li>
+      <p className="text-gray-500 text-sm mb-3">気になる点：フレームカラーによって印象が変わるため、肌色や普段の服装との相性も確認したい</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Hodopus メガネフレームを楽天で見る →
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">菱形顔向け：Lorelife メガネフレーム F2006C</h3>
+      <p className="text-gray-700 mb-2">頬骨まわりが最も幅広く、額と顎が比較的狭い菱形顔は、フレーム下部に丸みや幅のあるデザインを合わせると頬の張りをカバーしやすくなります。眉のラインを目立たせるフレームは輪郭がより強調されやすいため注意したいポイントです。</p>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>おしゃれなデザインラインで、頬の張りが目立ちにくいバランスを作りやすい</li>
+        <li>個性的なデザインをアクセントとして楽しみたい方にも合わせやすい</li>
       </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2. フレームサイズの選び方</h3>
-      <p className="text-gray-700 mb-4">フレーム幅は、以下の基準で選びましょう：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>顔幅の測定方法</strong>：顔の最も幅広い部分（通常は頬の高さ）を定規で測定</li>
-        <li><strong>推奨フレーム幅</strong>：顔幅と同じか、顔幅より2～5mm小さいサイズ</li>
-        <li><strong>2026年トレンド</strong>：オーバーサイズ（顔幅より5～10mm大きい）も人気</li>
+      <p className="text-gray-500 text-sm mb-3">気になる点：デザイン性が高いぶん、普段の服装のテイストとの相性は事前にチェックしておきたい</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4ee.c25ab11d.5622e4ef.2987dd69/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Florelife%2Ff2006c-106%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Lorelife メガネフレーム F2006Cを楽天で見る →
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">逆三角形顔向け：merry39 メガネフレーム No.2854</h3>
+      <p className="text-gray-700 mb-2">額が広く顎にかけて細くなる逆三角形顔は、フレーム下部にボリュームのあるデザインを選ぶと顎まわりの印象を補いやすくなります。反対に上部の主張が強すぎるフレームは額の広さがより目立ちやすくなる点に注意したいところです。</p>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>ウェリントン型のクラシックなシルエットで、顎まわりの印象を補いやすい</li>
+        <li>卵型・面長の方にも合わせやすい汎用性の高いデザイン</li>
       </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3. 試着時のチェックポイント</h3>
-      <p className="text-gray-700 mb-4">メガネを選ぶ際は、必ず以下の点をチェックしましょう：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>フレームが顔の上下中央に位置しているか</li>
-        <li>鼻パッドが鼻にフィットしているか</li>
-        <li>つるが耳にあたっていないか</li>
-        <li>横幅が顔からはみ出していないか</li>
-        <li>装着時に目が不自然に見えていないか</li>
+      <p className="text-gray-500 text-sm mb-3">気になる点：フレーム上部の主張が強いデザインのため、フレーム幅は顔幅とのバランスを見て選びたい</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          merry39 メガネフレーム No.2854を楽天で見る →
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">メガネ選びの3つのポイント</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+        <li><strong>フレームサイズ：</strong>顔の最も幅広い部分と同じか、やや小さめのフレーム幅を選ぶと自然な印象になりやすい</li>
+        <li><strong>フレームカラー：</strong>肌色がイエロー系ならゴールド・ベージュ系、ピンク系ならシルバー・ダーク系が調和しやすいとされる</li>
+        <li><strong>フレーム素材：</strong>チタンは軽さ・耐久性に優れ、アセテートはカラーバリエーションが豊富。予算と用途で選ぶ</li>
+        <li><strong>レンズとの兼ね合い：</strong>強度近視の場合はレンズが厚くなりやすいため、フレームの縁の太さでレンズの厚みをカバーできるデザインを選ぶと仕上がりが安定しやすい</li>
       </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">初心者向けメガネ購入ガイド</h2>
-      <p className="text-gray-700 mb-4">メガネを購入する際は、以下の流れで進めることをおすすめします：</p>
-      <p className="text-gray-700 mb-4">1. <strong>眼科で視力検査と度数測定</strong>（1時間程度、費用3,000～5,000円）</p>
-      <p className="text-gray-700 mb-4">2. <strong>メガネ店でフレーム選び</strong>（専門スタッフに顔型を相談）</p>
-      <p className="text-gray-700 mb-4">3. <strong>レンズ加工と装着調整</strong>（1～2日）</p>
-      <p className="text-gray-700 mb-4">4. <strong>装着後の調整</strong>（必要に応じて）</p>
-      <p className="text-gray-700 mb-4">眼鏡選びに関しては、以下のリンクから多数のメガネフレームを比較検討できます。</p>
-      <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%82%AB%E3%83%83%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="affiliate-btn">楽天市場でメガネフレームを探す →</a>
-      <p className="text-gray-700 mb-4"><strong>楽天でメガネフレームを探す：</strong></p>
-      <p className="text-gray-700 mb-4">https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%2F</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">よくある質問と回答</h2>
-      <p className="text-gray-700 mb-4">多くの人が メガネ選びで疑問に思う点について、専門的な見地から回答します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">メガネの価格相場は？</h3>
-      <p className="text-gray-700 mb-4">一般的なメガネフレームの価格は以下の通りです：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>エントリーモデル</strong>：3,000～10,000円（プラスチック製）</li>
-        <li><strong>スタンダード</strong>：10,000～30,000円（チタン製、アセテート製）</li>
-        <li><strong>プレミアム</strong>：30,000円～（ブランドもの、高級素材）</li>
-      </ul>
-      <p className="text-gray-700 mb-4">2026年現在、オンラインメガネ販売の普及により、高品質なメガネがより手頃な価格で入手可能になっています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">メガネのレンズ代は？</h3>
-      <p className="text-gray-700 mb-4">レンズ代は視力矯正の難易度によって異なります：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>基本レンズ（単焦点）</strong>：5,000～15,000円</li>
-        <li><strong>高機能レンズ（ブルーライトカット付き）</strong>：10,000～25,000円</li>
-        <li><strong>多焦点レンズ（累進多焦点）</strong>：20,000～50,000円</li>
-      </ul>
-      <p className="text-gray-700 mb-4">2026年は、ブルーライトカット機能がほぼ標準装備されているレンズが主流です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">メガネの買い替え時期は？</h3>
-      <p className="text-gray-700 mb-4">一般的なメガネの寿命は3～5年です。以下のタイミングで買い替えを検討しましょう：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>フレームが破損・変形した</li>
-        <li>視力が大きく変わった（度数変更）</li>
-        <li>流行のデザインに変えたい</li>
-        <li>日常用・職場用・カジュアル用など複数本を所有したい</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">顔型別フレーム選びの最終チェックリスト</h2>
-      <p className="text-gray-700 mb-4">購入前に、以下のチェックリストで確認しましょう：</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">丸顔の人：</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>[ ] スクエア型またはウェリントン型を選んでいるか</li>
-        <li>[ ] フレーム幅が146mm以上か</li>
-        <li>[ ] 色はシルバー系またはダーク系か</li>
-        <li>[ ] 角のあるデザインか</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">四角顔の人：</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>[ ] ボストン型またはラウンド型を選んでいるか</li>
-        <li>[ ] 丸みのある形状か</li>
-        <li>[ ] 色はゴールド系またはウォームトーン系か</li>
-        <li>[ ] フレームの縦幅が十分にあるか</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">菱形顔の人：</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>[ ] ボストン型またはティアドロップ型を選んでいるか</li>
-        <li>[ ] 下部に幅があるデザインか</li>
-        <li>[ ] 色はニュアンスカラーか</li>
-        <li>[ ] フレームが頬をしっかり覆うサイズか</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">逆三角形顔の人：</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>[ ] ウェリントン型または台形型を選んでいるか</li>
-        <li>[ ] 下部が広いデザインか</li>
-        <li>[ ] 色はダーク系またはニュアンスカラーか</li>
-        <li>[ ] フレーム幅が140mm以上か</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ：自分に似合うメガネで人生が変わる</h2>
-      <p className="text-gray-700 mb-4">メガネ選びは、単なる視力矯正ツールの選択ではなく、あなたの第一印象を大きく左右する重要な決断です。2026年現在、メガネの種類は膨大に存在しますが、基本的な顔型別の選び方を理解することで、自分に最適なフレームを見つけることが可能です。</p>
-      <p className="text-gray-700 mb-4">本記事で紹介した4つの顔型別ガイドと、フレームカラー選びの黄金法則を参考に、あなた自身の顔立ちを最も引き立てるメガネを選んでください。適切なメガネを選ぶことで、あなたの魅力はさらに引き出され、仕事や人間関係もより良い方向へ進むことでしょう。</p>
-      <p className="text-gray-700 mb-4">メガネは「顔の一部」です。最高のメガネ選びで、最高の自分を表現してください。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">
+        メガネのフレーム選びは、顔型と「逆の形」を意識するとバランスが取りやすくなります。丸顔ならスクエア系、四角顔ならボストン・オーバル系、菱形顔・逆三角形顔なら下部に幅のあるフレームが基本の考え方です。
+      </p>
+      <p className="text-gray-700 mb-4">
+        ただし、実際に似合うかどうかはフレームの大きさや色、普段のファッションとの相性にもよります。同じ顔型でも骨格の凹凸や肌の色によって印象は変わるため、あくまでチャートは目安として捉えるのがおすすめです。可能であれば試着したうえで、店頭スタッフに顔型を相談してみると、より自分に合った1本を見つけやすくなります。
+      </p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e16c.d190f4a9.5622e16d.a64e1d5d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmegane-style%2Fcf5043%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          メガネスタイル メガネフレーム CF5043を楽天で見る →
+        </a>
+      </div>
     </article>
   ),
     "glaucoma-early-detection-screening": (
@@ -4578,166 +4530,235 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   ),
     "sports-eyeglass-slip-prevention-frame": (
     <article className="prose prose-sm max-w-none">
-      <p className="text-gray-700 mb-4"># スポーツ眼鏡おすすめ選び方ガイド：ズレ防止フレームで快適プレー</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スポーツ時の眼鏡ズレが起こる理由</h2>
-      <p className="text-gray-700 mb-4">スポーツをしている最中に眼鏡がズレることは、多くの眼鏡ユーザーにとって大きなストレスです。激しい動きのあるスポーツでは、眼鏡ズレによって視界が曇ったり視野が狭くなったりし、パフォーマンスの低下につながります。</p>
-      <p className="text-gray-700 mb-4">スポーツ中の眼鏡ズレの主な原因は以下の通りです。</p>
-      <p className="text-gray-700 mb-4"><strong>汗による鼻パッドの滑り</strong>：スポーツ時に流れた汗は鼻パッドを滑りやすくし、これが全体のズレの約65%を占めています。特に夏場のテニスやランニング、野球などで顕著です。</p>
-      <p className="text-gray-700 mb-4"><strong>動きによる遠心力</strong>：ジャンプやターンなどの急激な動きが眼鏡に遠心力をかけ、フレームが流れてしまいます。バスケットボールやサッカーなど横方向の動きが多いスポーツで起こりやすい現象です。</p>
-      <p className="text-gray-700 mb-4"><strong>フレームサイズの不適合</strong>：通常の眼鏡は静止状態での装用を想定しているため、スポーツ時の動きに対応できないサイズになっていることがあります。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スポーツ眼鏡選びの最重要ポイント</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1. ズレ防止機能の確認</h3>
-      <p className="text-gray-700 mb-4">スポーツ眼鏡を選ぶ際、最初に確認すべきはズレ防止機能です。以下の3つの要素をチェックしましょう。</p>
-      <p className="text-gray-700 mb-4"><strong>鼻パッドの素材と形状</strong>：シリコン製やラバー製の鼻パッドは汗に強く、ズレを防ぎます。特に「アジャストノーズパッド」と呼ばれる形状記憶機能付きのものは、個人の鼻の形に適応して高いフィッティング性を実現します。</p>
-      <p className="text-gray-700 mb-4"><strong>テンプルの設計</strong>：スポーツ眼鏡のテンプル（つる）は、通常眼鏡より長めで、耳にしっかり引っかかる設計になっています。角度調整可能なテンプルを選ぶと、自分の顔形に合わせたカスタマイズが可能です。</p>
-      <p className="text-gray-700 mb-4"><strong>レンズとフレームの密着度</strong>：ラップ型と呼ばれる、レンズが顔に密着するデザインのスポーツ眼鏡は、動きに強い傾向があります。また、レンズが大きいほど視野が広くなり、スポーツパフォーマンスが向上します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2. 素材の特性を理解する</h3>
-      <p className="text-gray-700 mb-4">スポーツ眼鏡のフレーム素材は、耐久性と軽量性を両立する必要があります。以下が主流の素材です。</p>
-      <p className="text-gray-700 mb-4"><strong>TR90（トリアセテートセルロース）</strong>：約3.2gという超軽量性が特徴で、汗や水に強い加工が施されています。国内のスポーツ眼鏡の約40%で採用されており、コストパフォーマンスに優れています。</p>
-      <p className="text-gray-700 mb-4"><strong>βチタン</strong>：金属系素材の中では最も軽く（通常眼鏡の約70%の重量）、耐久性に優れています。価格は高めですが、頻繁にスポーツをする人には長期的にお得です。</p>
-      <p className="text-gray-700 mb-4"><strong>ウルテム樹脂</strong>：柔軟性が高く、落下時の衝撃に強いため、子どもや激しいスポーツをする人向けです。ただし、色の種類が限定的という欠点があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3. スポーツの種類に応じたフレーム形状</h3>
-      <p className="text-gray-700 mb-4">異なるスポーツは異なるフレーム形状を必要とします。</p>
-      <p className="text-gray-700 mb-4"><strong>野球・テニス</strong>：ラップ型（アグレッシブな曲線のあるデザイン）が最適です。顔全体を覆うように設計されており、ボールを見失う心配がありません。</p>
-      <p className="text-gray-700 mb-4"><strong>バスケットボール・バレーボール</strong>：視野の広さが重要なため、オーバルやウェリントン型が推奨されます。これらのスポーツでは横方向の動きが多いため、テンプルの安定性が特に重要です。</p>
-      <p className="text-gray-700 mb-4"><strong>ランニング・ジョギング</strong>：軽量性と通気性が最優先されます。ハーフリム型やリムレス型を選ぶと、通気性が向上し、汗による曇りを軽減できます。</p>
-      <p className="text-gray-700 mb-4"><strong>ゴルフ</strong>：遠距離の視認性が重要なため、偏光レンズとの組み合わせが効果的です。安定したフィッティングよりも、レンズの品質が優先される傾向があります。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめスポーツ眼鏡の選定基準</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">予算別選択肢</h3>
-      <p className="text-gray-700 mb-4"><strong>5,000円以下</strong>：国内ブランドのズレ防止ラバーパッド付きフレームが一般的です。基本的なズレ防止機能は備わっていますが、素材が限定的であることが多いです。</p>
-      <p className="text-gray-700 mb-4"><strong>5,000～15,000円</strong>：TR90やウルテム樹脂などの高機能素材を使用した製品が多く、ズレ防止機能も充実しています。この価格帯は、ほとんどのスポーツユーザーに適した選択肢といえます。</p>
-      <p className="text-gray-700 mb-4"><strong>15,000円以上</strong>：βチタンやアイロス（エアロゾルプロセス加工）を採用した高級ブランド製品です。最高レベルの軽量性と耐久性を備え、競技用途向けです。</p>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">楽天 で高機能スポーツ眼鏡フレームを探す</a></p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">レンズ選択のポイント</h3>
-      <p className="text-gray-700 mb-4">スポーツ眼鏡のレンズは、フレーム同様に重要な役割を果たします。</p>
-      <p className="text-gray-700 mb-4"><strong>偏光レンズ</strong>：水面や路面の反射を軽減し、釣りやテニス、ゴルフなどの屋外スポーツに最適です。紫外線カット率は99%以上が標準です。</p>
-      <p className="text-gray-700 mb-4"><strong>調光レンズ</strong>：屋内外を行き来するスポーツ（ラケットスポーツなど）では、屋外で自動的に濃くなり、屋内で透明に戻る調光レンズが便利です。</p>
-      <p className="text-gray-700 mb-4"><strong>撥水コーティング</strong>：汗や雨によるレンズの曇りを軽減します。スポーツ眼鏡には標準装備されていることがほとんどです。</p>
-      <p className="text-gray-700 mb-4"><strong>ブルーライトカット</strong>：室内でのトレーニングや屋内スポーツの練習時に目の疲労を軽減します。最近では、スポーツ眼鏡にも採用されるようになってきました。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スポーツ眼鏡のフィッティングと調整方法</h2>
-      <p className="text-gray-700 mb-4">購入後のフィッティングは、ズレ防止性能を大きく左右します。以下の手順でご自身に合わせて調整してください。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">フィッティングチェック項目</h3>
-      <p className="text-gray-700 mb-4">1. <strong>フレーム幅の確認</strong>：眼鏡をかけて正面を向いた時、フレームが顔から落ちずに、かつ耳が圧迫されていないか確認します。</p>
-      <p className="text-gray-700 mb-4">2. <strong>鼻パッドの位置</strong>：鼻パッドが鼻の両側に均等に接触しているか、また、鼻への圧力が適切か確認します。圧力が強すぎると痛く、弱すぎるとズレやすくなります。</p>
-      <p className="text-gray-700 mb-4">3. <strong>テンプルの角度</strong>：耳にテンプルがしっかり引っかかっているか、角度は90度以下（やや内向き）であるか確認します。</p>
-      <p className="text-gray-700 mb-4">4. <strong>動きのテスト</strong>：実際に軽く顔を動かして、眼鏡がズレないか確認します。上下左右の動き、ジャンプの動作などをシミュレートしてチェックしましょう。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">調整のコツ</h3>
-      <p className="text-gray-700 mb-4"><strong>鼻パッドの調整</strong>：店員に依頼するか、温めたお湯に浸してから形を整えることで、鼻の形に合わせることができます。</p>
-      <p className="text-gray-700 mb-4"><strong>テンプルの調整</strong>：やや温かいお湯に浸してから、耳の形に合わせて曲げることができます。無理に曲げるとフレームが破損するため注意が必要です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スポーツ眼鏡のメンテナンス</h2>
-      <p className="text-gray-700 mb-4">スポーツ眼鏡を長期間使用するには、適切なメンテナンスが必須です。</p>
-      <p className="text-gray-700 mb-4"><strong>毎回の清掃</strong>：スポーツ後は、微温湯で軽く洗い、柔らかい布で拭きます。汗や塩分が付着したままではレンズやフレームが劣化します。</p>
-      <p className="text-gray-700 mb-4"><strong>定期的な調整</strong>：3～4ヶ月ごとに、購入店で調整・点検を受けることをお勧めします。テンプルの緩みやネジの緩みは、ズレの原因になります。</p>
-      <p className="text-gray-700 mb-4"><strong>レンズの保護</strong>：レンズに傷が付くとズレが生じやすくなります。必ずケースに保管し、過度な圧力をかけないようにしましょう。</p>
-      <p className="text-gray-700 mb-4"><strong>紫外線対策</strong>：直射日光下での長時間放置は避け、UVカット機能が劣化するのを防ぎます。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ：自分に合ったスポーツ眼鏡の見つけ方</h2>
-      <p className="text-gray-700 mb-4">スポーツ眼鏡選びの成功は、以下の4ステップで実現できます。</p>
-      <p className="text-gray-700 mb-4">1. <strong>自分が行うスポーツの種類と強度を明確にする</strong></p>
-      <p className="text-gray-700 mb-4">2. <strong>ズレ防止機能（鼻パッド、テンプル設計）を優先する</strong></p>
-      <p className="text-gray-700 mb-4">3. <strong>軽量で耐久性のある素材を選択する</strong></p>
-      <p className="text-gray-700 mb-4">4. <strong>必ず店員による試着とフィッティングを受ける</strong></p>
-      <p className="text-gray-700 mb-4">これらのポイントを押さえることで、スポーツ時の眼鏡ズレから解放され、快適で集中力の高いパフォーマンスが実現できます。自分のスポーツスタイルに合った最適な一本を見つけてください。</p>
+      <p className="text-gray-600 text-base leading-relaxed mb-6">
+        スポーツ中に眼鏡がズレて集中できない、と感じたことはありませんか。この記事では、ズレにくいスポーツ眼鏡の選び方とおすすめ商品を競技別にまとめて解説します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スポーツ眼鏡 早見表</h2>
+      <p className="text-gray-700 mb-4">
+        スポーツ中の眼鏡ズレは、汗による鼻パッドの滑りや、ジャンプ・ターンなどの急な動きによる遠心力が主な原因です。通常の眼鏡は静止状態での装用を想定したサイズ設計になっていることが多く、スポーツ用に作られたフレームとは鼻パッドやテンプル（つる）の設計が異なります。
+      </p>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-indigo-50">
+              <th className="text-left p-3 border border-gray-200">商品名</th>
+              <th className="text-left p-3 border border-gray-200">向いている競技</th>
+              <th className="text-left p-3 border border-gray-200">フレーム形状</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { name: 'SWANS スポーツサングラス', use: '野球・テニス', shape: 'ラップ型' },
+              { name: 'OAKLEY スポーツアイウェア', use: 'バスケットボール・バレーボール', shape: 'ウェリントン/オーバル型' },
+              { name: 'JINS SPORT', use: 'ランニング・ジョギング', shape: 'ハーフリム型' },
+              { name: 'Zoff SPORT 偏光レンズモデル', use: 'ゴルフ・屋外競技', shape: 'ラップ型（偏光）' },
+            ].map(r => (
+              <tr key={r.name} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-gray-700">{r.name}</td>
+                <td className="p-3 border border-gray-200">{r.use}</td>
+                <td className="p-3 border border-gray-200 text-indigo-700">{r.shape}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="my-4">
+        <a href={RAKUTEN('SWANS スポーツサングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          SWANS スポーツサングラスを楽天で見る →
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">競技別おすすめスポーツ眼鏡</h2>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">野球・テニス向け：SWANS スポーツサングラス</h3>
+      <p className="text-gray-700 mb-2">打球や速いボールを瞬時に追う競技では、フレームが視界の端でズレると集中が途切れやすくなります。顔にフィットするラップ型のフレームを選ぶことで、視線移動が多い場面でもズレを抑えやすくなります。</p>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>顔に密着するラップ型デザインでボールを見失いにくい</li>
+        <li>汗に強いラバー製鼻パッドでズレを抑えやすい</li>
+      </ul>
+      <p className="text-gray-500 text-sm mb-3">気になる点：フィット感には個人差があるため、可能であれば試着してから選びたい</p>
+      <div className="my-4">
+        <a href={RAKUTEN('SWANS スポーツサングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          SWANS スポーツサングラスを楽天で見る →
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">バスケ・バレー向け：OAKLEY スポーツアイウェア</h3>
+      <p className="text-gray-700 mb-2">ジャンプや切り返しの動作が多い競技では、フレームが跳ねるようにズレることがあります。視野を広く確保できるウェリントン・オーバル系のデザインは、周辺視野を保ちながらズレにくいテンプル設計と組み合わせやすいのが特徴です。</p>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>広い視野を確保しやすいウェリントン・オーバル系デザイン</li>
+        <li>横方向の動きが多い競技でもズレにくいテンプル設計</li>
+      </ul>
+      <p className="text-gray-500 text-sm mb-3">気になる点：デザイン性の高いモデルほど価格帯は上がりやすい</p>
+      <div className="my-4">
+        <a href={RAKUTEN('OAKLEY スポーツアイウェア')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          OAKLEY スポーツアイウェアを楽天で見る →
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ランニング向け：JINS SPORT</h3>
+      <p className="text-gray-700 mb-2">上下動が続くランニングでは、フレームの重さそのものがズレの原因になりやすくなります。軽量なハーフリム設計を選ぶことで、汗をかいた状態でも鼻や耳への負担を抑えながら長時間装用しやすくなります。</p>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>軽量なハーフリム設計で長時間の使用でも負担になりにくい</li>
+        <li>通気性を意識したデザインで汗による曇りを抑えやすい</li>
+      </ul>
+      <p className="text-gray-500 text-sm mb-3">気になる点：度付きレンズへの対応可否は購入前に店舗・公式サイトで確認しておきたい</p>
+      <div className="my-4">
+        <a href={RAKUTEN('JINS SPORT')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          JINS SPORTを楽天で見る →
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ゴルフ向け：Zoff SPORT 偏光レンズモデル</h3>
+      <p className="text-gray-700 mb-2">ゴルフはランニングや球技ほど激しい動きは少ないものの、屋外で長時間過ごすため紫外線や照り返しへの対策が重要になります。偏光レンズ搭載モデルを選ぶことで、まぶしさを抑えながらプレーに集中しやすくなります。</p>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>偏光レンズで芝や水面の反射を抑え遠距離の視認性を確保しやすい</li>
+        <li>屋外の強い日差しの中でもコントラストを保ちやすい</li>
+      </ul>
+      <p className="text-gray-500 text-sm mb-3">気になる点：屋内競技との併用は想定されていないため、用途を分けて使うのがおすすめ</p>
+      <div className="my-4">
+        <a href={RAKUTEN('Zoff SPORT 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Zoff SPORT 偏光レンズモデルを楽天で見る →
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">スポーツ眼鏡の選び方4つのポイント</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+        <li><strong>鼻パッドの素材：</strong>シリコン・ラバー製は汗に強く、ズレを抑えやすい</li>
+        <li><strong>テンプルの設計：</strong>耳にしっかりかかる長めのテンプルや、角度調整できるタイプはフィット感を高めやすい</li>
+        <li><strong>フレーム素材：</strong>TR90やウルテム樹脂は軽量かつ柔軟性が高く、激しい動きにも対応しやすい</li>
+        <li><strong>試着・フィッティング：</strong>可能であれば購入前に試着し、実際に頭を動かしてズレを確認しておくと安心</li>
+      </ul>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">
+        スポーツ眼鏡は、競技の動き方によって適した形状が異なります。野球・テニスならラップ型、バスケ・バレーなら視野の広いウェリントン型、ランニングなら軽量なハーフリム型、ゴルフなら偏光レンズが基本の考え方です。まずは自分の競技に近いタイプから検討してみてください。
+      </p>
+      <p className="text-gray-700 mb-4">
+        度付きレンズが必要な場合は、フレームが対応しているかどうかを事前に確認しておくとスムーズです。コンタクトレンズと併用している方は、汗や乾燥によるコンタクトのズレ・不快感にも配慮しながら、競技の負荷に合ったタイプを選ぶとよいでしょう。
+      </p>
+      <p className="text-gray-700 mb-4">
+        購入後は鼻パッドとテンプルの調整、こまめな清掃といったメンテナンスも、ズレにくさを保つうえで大切です。
+      </p>
+      <div className="my-4">
+        <a href={RAKUTEN('SWANS スポーツサングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          SWANS スポーツサングラスを楽天で見る →
+        </a>
+      </div>
     </article>
   ),
     "reading-glasses-presbyopia-choose-recommend-2026": (
     <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">はじめに：老眼鏡選びの重要性</h2>
-      <p className="text-gray-700 mb-4">40代以降、細かい文字が見えにくくなる「老眼」は、ほぼすべての人に起こる加齢現象です。老眼鏡（リーディンググラス）は、読書やスマートフォン操作といった近距離作業を快適にするための必須アイテムです。しかし、度数やレンズの選び方、フレームの選択など、判断すべきポイントが多く、どれを選んでいいかわからないという人も多いでしょう。</p>
-      <p className="text-gray-700 mb-4">本記事では、自分に合った老眼鏡を見つけるための完全ガイドをお届けします。2026年最新情報も交えて、失敗しない選び方をご紹介します。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">老眼とは：年代別の症状と対策</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">老眼が起こるメカニズム</h3>
-      <p className="text-gray-700 mb-4">老眼は、眼の水晶体の弾力性が低下することで起こります。ピント調整機能が衰えるため、近距離にある物がぼやけて見えるようになります。</p>
-      <p className="text-gray-700 mb-4"><strong>年代別の老眼進行状況：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>40代前半</strong>：初期段階。明るい場所では気づかない程度</li>
-        <li><strong>45～49歳</strong>：症状が顕著に。読書に支障が出始める</li>
-        <li><strong>50～59歳</strong>：さらに度数が進む。日常生活で老眼鏡が必須</li>
-        <li><strong>60歳以上</strong>：度数が安定する傾向</li>
+      <p className="text-gray-600 text-base leading-relaxed mb-6">
+        老眼鏡は何を基準に選べばいいのか迷っていませんか。この記事では、度数の選び方の基本と、顔型に合わせたおすすめフレームをまとめて解説します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">年代別・度数の目安早見表</h2>
+      <p className="text-gray-700 mb-4">
+        老眼鏡の度数は、目から30cm離した位置で細かい文字が読める状態を基準に選びます。加齢とともに度数は進行する傾向があるため、以下はあくまで一般的な目安として参考にしてください。正確な度数は眼科・眼鏡店での検査をおすすめします。
+      </p>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-indigo-50">
+              <th className="text-left p-3 border border-gray-200">年代</th>
+              <th className="text-left p-3 border border-gray-200">度数の目安</th>
+              <th className="text-left p-3 border border-gray-200">用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { age: '40～44歳', power: '+0.75～+1.25', use: '初期老眼、補助的な使用' },
+              { age: '45～49歳', power: '+1.00～+1.50', use: '読書、スマートフォン使用' },
+              { age: '50～59歳', power: '+1.50～+2.00', use: '日常的な使用' },
+              { age: '60歳以上', power: '+2.00～+2.50前後', use: '細かい作業、長時間使用' },
+            ].map(r => (
+              <tr key={r.age} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-gray-700">{r.age}</td>
+                <td className="p-3 border border-gray-200">{r.power}</td>
+                <td className="p-3 border border-gray-200 text-indigo-700">{r.use}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-gray-700 mb-4">初めて老眼鏡を購入する場合は、弱めの度数から始めるのが基本です。強すぎる度数は目の疲れや頭痛につながりやすいため、段階的に上げていくと負担が少なくなります。</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Wavecontact メガネフレーム MGN_BASICを楽天で見る →
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">顔型別おすすめフレーム</h2>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">丸顔向け：Wavecontact メガネフレーム MGN_BASIC</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>角のあるスクエアシルエットで、丸顔のやわらかい印象を引き締められる</li>
+        <li>クセの少ないベーシックなデザインで毎日使いしやすい</li>
       </ul>
-      <p className="text-gray-700 mb-4">厚生労働省の調査によると、45歳以上の約80%が老眼の自覚症状を持っているとされています。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">老眼鏡の度数の選び方</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">度数決定の基本ルール</h3>
-      <p className="text-gray-700 mb-4">老眼鏡の度数は、目から30cm離した位置で新聞の細かい文字が読める状態を基準に決めます。この距離は「近点距離」と呼ばれ、快適な読書距離です。</p>
-      <p className="text-gray-700 mb-4"><strong>度数と年代の関係：</strong></p>
-      <p className="text-gray-700 mb-4">| 年代 | 推奨度数 | 用途 |</p>
-      <p className="text-gray-700 mb-4">|------|---------|------|</p>
-      <p className="text-gray-700 mb-4">| 40～44歳 | +0.75～+1.25 | 初期老眼、補助的な使用 |</p>
-      <p className="text-gray-700 mb-4">| 45～49歳 | +1.00～+1.50 | 読書、スマートフォン使用 |</p>
-      <p className="text-gray-700 mb-4">| 50～59歳 | +1.50～+2.00 | 日常的な使用 |</p>
-      <p className="text-gray-700 mb-4">| 60～69歳 | +2.00～+2.50 | 細かい作業、長時間使用 |</p>
-      <p className="text-gray-700 mb-4">| 70歳以上 | +2.50以上 | 多用途対応 |</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">初めての老眼鏡は弱めから</h3>
-      <p className="text-gray-700 mb-4">初めて老眼鏡を購入する場合、弱めの度数から始めることが重要です。強すぎる度数を選ぶと、目の疲れや頭痛の原因になります。段階的に度数を上げていく方が、目への負担が少なくなります。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">レンズタイプの比較</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">シングルレンズ（単焦点）</h3>
-      <p className="text-gray-700 mb-4">最も一般的なタイプで、近距離専用です。コストが低く、光学性能に優れています。読書やスマートフォン操作専用に使う人向けです。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">累進レンズ（遠近両用）</h3>
-      <p className="text-gray-700 mb-4">遠用から近用まで、複数の度数が1枚に配置されたレンズです。1本で複数の用途に対応できます。ただし、周辺部の歪みや適応期間が必要という欠点があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">中近両用レンズ</h3>
-      <p className="text-gray-700 mb-4">中距離（50～100cm）と近距離に最適化されたレンズです。最近のトレンドで、パソコン作業と手元作業を同時に行う人に人気です。</p>
-      <p className="text-gray-700 mb-4">2026年現在、<strong>ブルーライトカット機能付きのシングルレンズが最も売上が伸びている</strong>という調査結果が出ています。スマートフォン使用時間の増加に伴い、この機能を求める消費者が増えているためです。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">フレーム選びの重要なポイント</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">顔の形に合わせたフレーム選び</h3>
-      <p className="text-gray-700 mb-4">老眼鏡は毎日使用する可能性が高いため、顔に合ったフレーム選びが重要です。</p>
-      <p className="text-gray-700 mb-4"><strong>顔型別のおすすめフレーム：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>丸顔</strong>：角型やスクエア型フレームで、顔の柔らかさをバランスさせる</li>
-        <li><strong>四角顔</strong>：丸型やオーバル型フレームで、顔の強さを軽和させる</li>
-        <li><strong>ベース型</strong>：ウェリントン型やボストン型で、顔のバランスを整える</li>
-        <li><strong>菱形顔</strong>：ラウンド型やオーバル型で、幅広のデザイン</li>
+      <p className="text-gray-500 text-sm mb-3">気になる点：老眼鏡は毎日つけ外しする機会が多いため、蝶番の耐久性も含めて確認しておきたい</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Hodopus メガネフレームを楽天で見る →
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">四角顔向け：Hodopus メガネフレーム</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>丸みのあるシルエットで、輪郭の直線的な印象をやわらげやすい</li>
+        <li>シンプルな形状でビジネス・プライベート問わず使いやすい</li>
       </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">フレームサイズの確認</h3>
-      <p className="text-gray-700 mb-4">老眼鏡は近距離で見るため、フレームのサイズが小さすぎるとレンズの有効範囲が狭くなります。目幅が見えやすい大きさを選びましょう。目安としては、瞳孔間距離から両側5～8mm余裕があるサイズが理想的です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">素材と耐久性</h3>
-      <p className="text-gray-700 mb-4">2026年のトレンドは、<strong>軽量で耐久性の高い素材</strong>が主流です。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>チタン素材</strong>：軽く、アレルギーが少ない。高価だが長持ち</li>
-        <li><strong>アセテート素材</strong>：温かみがあり、カラバリが豊富。やや重い</li>
-        <li><strong>プラスチック素材</strong>：軽く、安価。初心者向け</li>
+      <p className="text-gray-500 text-sm mb-3">気になる点：フレームカラーによって印象が変わるため、肌色や普段の服装との相性も見ておきたい</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          merry39 メガネフレーム No.2854を楽天で見る →
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ベース型・卵型向け：メガネスタイル メガネフレーム CF5043</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>ウェリントン型に近い汎用性の高いシルエットで、幅広い輪郭に合わせやすい</li>
+        <li>PC作業用のブルーライトカットとの組み合わせも相談しやすい</li>
       </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">カラーレンズとコーティング</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ブルーライトカット</h3>
-      <p className="text-gray-700 mb-4">スマートフォンやパソコンから発せられるブルーライトは、目の疲れやメラトニン分泌の抑制につながるとされています。</p>
-      <p className="text-gray-700 mb-4"><strong>ブルーライトカット機能の効果（学研調べ）：</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>目の疲れ軽減：約65%の利用者が効果を実感</li>
-        <li>睡眠の質改善：約45%が改善を報告</li>
+      <p className="text-gray-500 text-sm mb-3">気になる点：機能を組み合わせるほど価格が上がりやすいため、優先順位を決めてから相談したい</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e16c.d190f4a9.5622e16d.a64e1d5d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmegane-style%2Fcf5043%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          メガネスタイル メガネフレーム CF5043を楽天で見る →
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">老眼鏡選び4つのポイント</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+        <li><strong>フレームサイズ：</strong>近距離作業ではレンズの有効範囲が重要なため、極端に小さすぎるフレームは避けたい</li>
+        <li><strong>素材：</strong>チタンは軽量でアレルギーが起きにくい一方で価格は高め、アセテートはカラー展開が豊富、プラスチックは手頃な価格で試しやすい</li>
+        <li><strong>コーティング：</strong>ブルーライトカットや撥水・防汚コートは、スマートフォン利用時間が長い方には検討する価値がある</li>
+        <li><strong>試着：</strong>老眼鏡は毎日使うものになりやすいため、可能であれば実際に装用してかけ心地を確認しておきたい</li>
       </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">その他のコーティング</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>撥水コート</strong>：水滴や汚れが付きにくく、手入れが簡単</li>
-        <li><strong>防汚コート</strong>：指紋や脂分が付きにくい</li>
-        <li><strong>UVカット</strong>：紫外線から眼を保護（屋外使用時）</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">2026年のおすすめ老眼鏡</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">トレンドの特徴</h3>
-      <p className="text-gray-700 mb-4">2026年の老眼鏡トレンドは、「上質なシンプルさ」と「機能性」の両立です。派手なデザインよりも、洗練されたクラシックデザインが人気を集めています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">価格帯別おすすめ</h3>
-      <p className="text-gray-700 mb-4"><strong>予算5,000円以下：</strong></p>
-      <p className="text-gray-700 mb-4">ネットショップで購入できるリーズナブルなモデルが充実しています。初期老眼や予備用に最適です。</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>プライム配送で最速翌日到着</li>
-        <li>レビュー数が豊富で、使用者の実際の評価が参考になる</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>楽天市場</strong></p>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E8%80%81%E7%9C%BC%E9%8F%A1%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">楽天で老眼鏡を探す →</a></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>ポイント還元率が高い</li>
-        <li>定期便で割引購入可能</li>
-      </ul>
-      <p className="text-gray-700 mb-4"><strong>ドラッグストア</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>即座に入手可能</li>
-        <li>店員のアドバイスが受けられる</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">老眼鏡のお手入れと買い替えの目安</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">日常のお手入れ方法</h3>
-      <p className="text-gray-700 mb-4">レンズは乾いた布で拭くと細かい傷がつきやすいため、水またはレンズクリーナーで汚れを流してから、専用のクロスで水分を拭き取るのが基本です。フレームのネジは緩みやすいため、月に一度は増し締めを確認しましょう。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">買い替えのタイミング</h3>
-      <p className="text-gray-700 mb-4">老眼は進行性のため、度数は数年単位で変化します。「以前より近くが見えにくくなった」「度数を上げても疲れが取れない」と感じたら、買い替えのサインです。フレームの変形やコーティングの剥がれも、見え方の低下につながるため交換の目安になります。</p>
+
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
-      <p className="text-gray-700 mb-4">老眼鏡選びは、正しい度数・レンズタイプ・フレームの3点を押さえることで失敗を防げます。初めての場合は弱めの度数から始め、見え方の変化に合わせて買い替えていくのが基本です。</p>
-      <p className="text-gray-700 mb-4">ご自身の年代・用途・予算に合わせて、今回紹介したポイントを参考に、快適な老眼鏡を見つけてください。</p>
+      <p className="text-gray-700 mb-4">
+        老眼鏡選びは、正しい度数の目安とフレームの相性を押さえることで失敗を防ぎやすくなります。初めての場合は弱めの度数から始め、見え方の変化に合わせて買い替えていくのが基本の考え方です。
+      </p>
+      <p className="text-gray-700 mb-4">
+        ご自身の年代・用途に合わせて、今回紹介したポイントを参考に検討してみてください。
+      </p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Wavecontact メガネフレーム MGN_BASICを楽天で見る →
+        </a>
+      </div>
     </article>
   ),
     "megane-online-shopping-compare-2025": (
@@ -5535,92 +5556,110 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   ),
     "glare-lens-night-driving-optimal": (
     <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">グレアレンズとは？眩しさ対策の基本知識</h2>
-      <p className="text-gray-700 mb-4">グレアレンズ（反射防止レンズ）とは、光の反射を最小限に抑えるコーティングが施されたメガネレンズです。特に夜間運転時に対向車のヘッドライトや街灯の光が眼に入るのを軽減し、視認性を大幅に向上させます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">グレアレンズの仕組み</h3>
-      <p className="text-gray-700 mb-4">通常のメガネレンズは、光が当たると表面と裏面で反射が発生します。この反射光が眼に入ることで、眩しさや視界のクリア感の低下につながります。</p>
-      <p className="text-gray-700 mb-4">グレアレンズのコーティングは、複数の層状構造で光の波長をコントロールし、反射を相殺する原理で機能します。<strong>最新のマルチコーティング技術により、反射率を2～3%程度にまで低減でき、透光率は98%以上に達します</strong>。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">夜間運転で眩しさを感じる理由</h2>
-      <p className="text-gray-700 mb-4">夜間運転中に眩しさを感じるのは、以下の3つの主要因があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1. 対向車のヘッドライト反射</h3>
-      <p className="text-gray-700 mb-4">対向車のヘッドライトは約1,200ルーメンの明るさを放ちます。普通のメガネレンズでは、この強力な光の一部がレンズ表面で反射してしまい、眼に直接入光します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2. 街灯や標識の反射</h3>
-      <p className="text-gray-700 mb-4">街灯や交差点の信号機、反射標識などからの反射光も眩しさの原因です。市街地での走行時に、これらの光源からの反射により、視認性が低下します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3. ウインドシールド越しの多重反射</h3>
-      <p className="text-gray-700 mb-4">車のウインドシールド経由で複数回反射した光が、メガネレンズでさらに反射することで、より強い眩しさが生じます。</p>
-      <p className="text-gray-700 mb-4">グレアレンズはこれらすべての光源に対して有効です。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">グレアレンズのコーティング種類と特徴</h2>
-      <p className="text-gray-700 mb-4">グレアレンズのコーティング方式は、主に3つのタイプに分類されます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">1. シングルコーティング</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>最も基本的なコーティング方式</li>
-        <li>反射率5～8%程度に低減</li>
-        <li>追加費用は1,500～3,000円程度</li>
+      <p className="text-gray-600 text-base leading-relaxed mb-6">
+        夜間運転で対向車のヘッドライトが眩しく感じることはありませんか。この記事では、眩しさを抑えるグレアレンズ（反射防止コーティング）の仕組みと、コーティング付きでおすすめのメガネフレームを解説します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">グレアレンズ早見表</h2>
+      <p className="text-gray-700 mb-4">
+        通常のメガネレンズは、光が当たるとレンズの表面・裏面で反射が発生します。この反射光が眼に入ることで、夜間運転中に対向車のヘッドライトや街灯が眩しく感じられます。グレアレンズ（反射防止コーティング）は、複数の薄膜層で反射光を抑えるコーティングをレンズに施したもので、既存のフレームにレンズ交換として追加することも、新規購入時にオプションとして選ぶこともできます。
+      </p>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-indigo-50">
+              <th className="text-left p-3 border border-gray-200">コーティングの種類</th>
+              <th className="text-left p-3 border border-gray-200">特徴</th>
+              <th className="text-left p-3 border border-gray-200">向いている人</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { type: 'シングルコーティング', feature: '1層構造で反射を抑える基本タイプ', who: 'まず試してみたい方' },
+              { type: 'マルチコーティング', feature: '複数層で反射をより抑えた標準的なタイプ', who: '毎日の運転で使いたい方' },
+              { type: '撥水・撥油加工付きコーティング', feature: '汚れがつきにくくクリーニングしやすい', who: '雨天走行が多い方・長く使いたい方' },
+            ].map(r => (
+              <tr key={r.type} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-gray-700">{r.type}</td>
+                <td className="p-3 border border-gray-200">{r.feature}</td>
+                <td className="p-3 border border-gray-200 text-indigo-700">{r.who}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Wavecontact メガネフレーム MGN_BASICを楽天で見る →
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">運転頻度別おすすめフレーム</h2>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">毎日運転する方向け：merry39 メガネフレーム No.2854</h3>
+      <p className="text-gray-700 mb-2">通勤・通学などで毎日運転する方は、コーティングの効果を日常的に実感しやすい反面、コーティングの劣化も早く進みやすい傾向があります。長く使う前提で、コーティングの追加・グレードアップに対応しやすい定番フレームを選んでおくと相談しやすくなります。</p>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>ウェリントン型で普段使いと兼用しやすいデザイン</li>
+        <li>眼鏡店でマルチコーティングや撥水加工を追加しやすい定番フレーム</li>
       </ul>
-      <p className="text-gray-700 mb-4">シングルコーティングは、1層のコーティング膜で反射を抑えます。基本的な眩しさ対策には十分ですが、高級な多層コーティングと比べるとやや効果が限定的です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">2. マルチコーティング</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>複数層（4～8層）のコーティング膜</li>
-        <li>反射率2～3%、透光率98%以上</li>
-        <li>追加費用は3,000～6,000円程度</li>
-        <li>最もポピュラーな選択</li>
+      <p className="text-gray-500 text-sm mb-3">気になる点：コーティングは店舗でのオプション追加が基本となるため、購入前に対応可否を確認したい</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          merry39 メガネフレーム No.2854を楽天で見る →
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">週に数回運転する方向け：Hodopus メガネフレーム</h3>
+      <p className="text-gray-700 mb-2">休日のドライブなど運転頻度がそれほど高くない方であれば、必ずしも高機能なコーティングにこだわらなくても、標準的なマルチコーティングで十分に効果を感じられる場合があります。価格を抑えたベーシックなフレームから試してみるのも選択肢の一つです。</p>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>シンプルなデザインで価格を抑えつつ標準的なコーティングを追加しやすい</li>
+        <li>普段使い・運転どちらにも合わせやすいベーシックな形状</li>
       </ul>
-      <p className="text-gray-700 mb-4">マルチコーティングは、現在の標準的なグレアレンズです。光の波長をより細かくコントロールでき、可視光線のほぼすべてを透過させながら反射を最小化します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">3. 高機能マルチコーティング（撥水・撥油加工付き）</h3>
-      <p className="text-gray-700 mb-4"><strong>特徴</strong></p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li>撥水・撥油機能を備えたマルチコーティング</li>
-        <li>汚れが付きにくく、クリーニングが容易</li>
-        <li>水滴や油膜による視界低下を防止</li>
-        <li>追加費用は5,000～12,000円程度</li>
-        <li>耐久性は通常のマルチコーティングより優れている</li>
+      <p className="text-gray-500 text-sm mb-3">気になる点：高機能な撥水・撥油加工が必要な場合は追加費用がかかる</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Hodopus メガネフレームを楽天で見る →
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">PC作業と兼用したい方向け：メガネスタイル メガネフレーム CF5043</h3>
+      <p className="text-gray-700 mb-2">日中はPC作業、夜間は運転というように用途を兼ねたい方は、反射防止コーティングとブルーライトカットを同じフレームでまとめて相談すると、レンズ選びの手間を減らしやすくなります。</p>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>ブルーライトカットとの組み合わせを相談しやすい汎用フレーム</li>
+        <li>日中のPC作業から夜間の運転まで1本で兼用しやすい</li>
       </ul>
-      <p className="text-gray-700 mb-4">このタイプは、雨天走行が多い方や、長期間の耐久性を重視する方に適しています。<strong>日本国内での統計では、グレアレンズ利用者の約65%がマルチコーティングを選択しており、次点で高機能マルチコーティング（30%）となっています</strong>。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">グレアレンズ選びの5つのポイント</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ポイント1：運転頻度と環境を考慮</h3>
-      <p className="text-gray-700 mb-4">毎日の通勤運転をする方は、高機能マルチコーティングの投資価値が高いです。週1～2回の運転なら、標準的なマルチコーティングで十分です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ポイント2：メガネ店での試着が重要</h3>
-      <p className="text-gray-700 mb-4">グレアレンズの効果は、実際に装用して感じることが大切です。複数のコーティング方式を試してから決定することをお勧めします。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ポイント3：既存メガネとの交換か新規購入か</h3>
-      <p className="text-gray-700 mb-4">既に度が合ったメガネを持っている場合は、レンズ交換で対応できます。交換費用は通常、フレーム代を除いて3,000～8,000円程度です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ポイント4：ブルーライトカット機能の検討</h3>
-      <p className="text-gray-700 mb-4">グレアレンズとブルーライトカット機能を組み合わせることで、より包括的な眼の疲労軽減が期待できます。ただし、機能の追加により価格は上昇します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ポイント5：メンテナンス方法の確認</h3>
-      <p className="text-gray-700 mb-4">高機能コーティング製品は、専用のクリーニング液やクロスでのメンテナンスが重要です。購入時に正しいお手入れ方法を眼鏡店で確認しましょう。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">グレアレンズで期待できる効果</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">視認性の向上</h3>
-      <p className="text-gray-700 mb-4"><strong>実測値として、グレアレンズ装用時の夜間視認距離は、非装用時と比べて約15～20%向上するという研究結果が報告されています</strong>。対向車のヘッドライトによる眩しさが軽減されることで、路面や前方の障害物をより早期に認識できます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼の疲労軽減</h3>
-      <p className="text-gray-700 mb-4">反射光による眼への刺激が減ることで、長時間の夜間運転でも眼の疲れを感じにくくなります。特に往復2時間以上の運転をされる方に効果的です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">運転安全性の向上</h3>
-      <p className="text-gray-700 mb-4">視認性の向上により、認識遅延による事故リスク低下が期待できます。夜間運転の安全性向上は、グレアレンズ最大のメリットです。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">グレアレンズの注意点と限界</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">限界1：完全な眩しさ除去はできない</h3>
-      <p className="text-gray-700 mb-4">グレアレンズは眩しさを大幅に軽減しますが、完全には除去できません。極端に強いヘッドライトには、ある程度の眩しさが残る場合があります。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">限界2：コーティング劣化への対応</h3>
-      <p className="text-gray-700 mb-4">3～5年経過するとコーティングが徐々に劣化し、効果が低下します。定期的な点検と必要に応じた交換が必要です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">限界3：価格と効果のバランス</h3>
-      <p className="text-gray-700 mb-4">高機能コーティングは高額ですが、効果の実感には個人差があります。コストパフォーマンスを慎重に検討する必要があります。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">グレアレンズの購入・選択ガイド</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼鏡店での相談</h3>
-      <p className="text-gray-700 mb-4">信頼できる眼鏡店では、複数のコーティング方式を試着させてくれます。必ず自分の眼で効果を確認してから購入決定をしましょう。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">処方箋眼鏡の場合</h3>
-      <p className="text-gray-700 mb-4">眼科処方箋をもとに新規作成する場合は、眼科受診時に「グレアレンズを希望する」と伝え、処方箋にその旨を記載してもらうとスムーズです。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">オンラインショップでの購入検討</h3>
-      <p className="text-gray-700 mb-4">オンラインショップでは、実店舗より低価格でメガネを購入できる場合があります。ただし、試着ができないため、既に度数が確定している方向けです。</p>
-      <p className="text-gray-700 mb-4"><strong><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">楽天でグレアレンズ対応メガネフレームを探す</a></strong></p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">グレアレンズのメンテナンス方法</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">日常のお手入れ</h3>
-      <p className="text-gray-700 mb-4">専用クリーニングクロスで優しく拭いてください。乾いた布での擦りは避け、必要に応じて眼鏡用クリーニング液を使用します。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">定期的な点検</h3>
-      <p className="text-gray-700 mb-4">3～6ヶ月ごとに眼鏡店での超音波洗浄と点検を受けることで、コーティング寿命を延ばせます。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">保管方法</h3>
-      <p className="text-gray-700 mb-4">直射日光を避け、温度変化の少ない場所に保管してください。高温環境はコーティング劣化を加速させます。</p>
+      <p className="text-gray-500 text-sm mb-3">気になる点：機能を組み合わせるほど価格は上がりやすいため、優先順位を決めてから相談したい</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e16c.d190f4a9.5622e16d.a64e1d5d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmegane-style%2Fcf5043%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          メガネスタイル メガネフレーム CF5043を楽天で見る →
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">グレアレンズ選び3つのポイント</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+        <li><strong>運転頻度：</strong>毎日運転する方は高機能タイプ、たまに運転する方は標準タイプから検討すると選びやすい</li>
+        <li><strong>試着・相談：</strong>コーティングの効果は個人差があるため、可能であれば眼鏡店で実際に装用して確認したい</li>
+        <li><strong>メンテナンス：</strong>専用クロスでの日常のお手入れと、定期的な眼鏡店での点検でコーティングを長持ちさせやすい</li>
+        <li><strong>予算配分：</strong>コーティングのグレードを上げるほど価格も上がるため、運転頻度に見合った予算配分を先に決めておくと選びやすい</li>
+      </ul>
+
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
-      <p className="text-gray-700 mb-4">グレアレンズは、夜間運転の眩しさを効果的に軽減し、運転安全性を向上させる実用的なメガネです。標準的なマルチコーティングで十分な効果が期待でき、追加費用も3,000～6,000円程度と手頃です。</p>
-      <p className="text-gray-700 mb-4">毎日の夜間運転に従事する方や、眩しさによる眼の疲労にお困りの方は、ぜひ眼鏡店で試着してから購入をご検討ください。自身の運転パターンと予算に合わせた最適なグレアレンズを選ぶことで、より快適で安全な運転環境が実現します。</p>
+      <p className="text-gray-700 mb-4">
+        グレアレンズは、レンズ表面の反射を抑えることで夜間運転時の眩しさを軽減する仕組みです。ただし、眩しさを完全に取り除けるわけではなく、コーティングは年数とともに徐々に劣化していきます。過度な期待をせず、運転頻度や予算に合わせて選ぶのがおすすめです。
+      </p>
+      <p className="text-gray-700 mb-4">
+        新規でメガネを作る場合は、眼科での処方時に「反射防止コーティングを希望する」と伝えるとスムーズです。すでに度数の合ったメガネをお持ちの場合は、レンズ交換で対応できる眼鏡店もあります。
+      </p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Wavecontact メガネフレーム MGN_BASICを楽天で見る →
+        </a>
+      </div>
     </article>
   ),
     "lutein-supplement-macular-degeneration-prevention": (
@@ -5916,170 +5955,106 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   ),
     "reading-glasses-presbyopia-choose-2026": (
     <article className="prose prose-sm max-w-none">
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">リーディンググラス・老眼鎖の選び方完全ガイド2026</h2>
-      <p className="text-gray-700 mb-4">加齢に伴い、目のピント調整機能は徐々に低下していきます。このため40代以降の多くの人が、リーディンググラス（老眼鏡）の必要性を感じるようになります。本記事では、2026年最新の情報を踏まえ、リーディンググラス選びの全てをお教えします。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">リーディンググラスとは：老眼鏡との違いを理解する</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">加齢による視機能変化の仕組み</h3>
-      <p className="text-gray-700 mb-4">人間の目は、カメラの絞りのような働きをする毛様体筋という筋肉でレンズ（水晶体）の厚さを調整し、ピント合わせを行っています。加齢に伴い、この調整機能は低下していきます。</p>
-      <p className="text-gray-700 mb-4">日本眼科学会の統計によると、40歳時点で約98%の日本人が老視（ろうし）の兆候を示し、50歳までにはほぼ全員が何らかのピント調整困難を経験します。特に40代前半から50代が最も変化が激しい期間です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">リーディンググラスの役割と定義</h3>
-      <p className="text-gray-700 mb-4">リーディンググラスは、加齢による調節機能低下を光学的に補助するための眼鏡です。以下の特徴があります：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>老視補正専用設計</strong>：近距離作業に最適化された度数設定</li>
-        <li><strong>読書・細かい作業向け</strong>：30～40cm程度の距離での作業に対応</li>
-        <li><strong>軽量設計</strong>：長時間の装用を想定した軽い素材採用</li>
+      <p className="text-gray-600 text-base leading-relaxed mb-6">
+        読書用・PC用・普段用でリーディンググラスを分けたいけれど、どう選べばいいかわからないという方へ。この記事では、使用シーン別のリーディンググラスの選び方とおすすめフレームを紹介します。
+      </p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">シーン別おすすめ早見表</h2>
+      <p className="text-gray-700 mb-4">
+        リーディンググラスは、使用する距離やシーンによって適した度数・機能が異なります。1本で全てをまかなおうとすると、どこかで妥協が必要になりやすいため、主な用途を軸に選ぶのがおすすめです。
+      </p>
+      <div className="overflow-x-auto mb-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-indigo-50">
+              <th className="text-left p-3 border border-gray-200">シーン</th>
+              <th className="text-left p-3 border border-gray-200">想定距離</th>
+              <th className="text-left p-3 border border-gray-200">重視したいポイント</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { scene: '読書・執筆', dist: '30～35cm', point: '視野の広さ・上下幅・歪みの少なさ' },
+              { scene: 'パソコン作業', dist: '40～50cm', point: '弱めの度数・ブルーライト対策' },
+              { scene: '日常の外出・兼用', dist: '複数距離', point: '中間度数・軽量フレーム' },
+            ].map(r => (
+              <tr key={r.scene} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium text-gray-700">{r.scene}</td>
+                <td className="p-3 border border-gray-200">{r.dist}</td>
+                <td className="p-3 border border-gray-200 text-indigo-700">{r.point}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          merry39 メガネフレーム No.2854を楽天で見る →
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">シーン別おすすめフレーム</h2>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">読書・執筆向け：merry39 メガネフレーム No.2854</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>ウェリントン型で上下幅にゆとりがあり、下方視の多い読書姿勢でも視野を確保しやすい</li>
+        <li>クラシックなデザインで長時間の使用でも飽きにくい</li>
       </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">リーディンググラスの度数決定方法</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">年齢別推奨度数の目安</h3>
-      <p className="text-gray-700 mb-4">正確な度数決定のためには眼科での検査が最適ですが、一般的な目安は以下の通りです：</p>
-      <p className="text-gray-700 mb-4">| 年代 | 推奨度数 | 活動特性 |</p>
-      <p className="text-gray-700 mb-4">|------|---------|--------|</p>
-      <p className="text-gray-700 mb-4">| 40-45歳 | +1.0～+1.5D | 初期老視、弱い補助で対応 |</p>
-      <p className="text-gray-700 mb-4">| 45-50歳 | +1.5～+2.0D | 急速な低下期、個人差が大きい |</p>
-      <p className="text-gray-700 mb-4">| 50-60歳 | +2.0～+2.5D | 安定期、ほぼ固定度数 |</p>
-      <p className="text-gray-700 mb-4">| 60歳以上 | +2.5～+3.5D | 高齢者用、さらに強い補助が必要 |</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼科検査での度数決定プロセス</h3>
-      <p className="text-gray-700 mb-4">眼科での検査では以下の項目を測定します：</p>
-      <p className="text-gray-700 mb-4">1. <strong>客観的屈折検査</strong>：自動屈折計での測定</p>
-      <p className="text-gray-700 mb-4">2. <strong>自覚的屈折検査</strong>：患者の感覚に基づく微調整</p>
-      <p className="text-gray-700 mb-4">3. <strong>近点距離測定</strong>：ピントの合う最短距離の確認</p>
-      <p className="text-gray-700 mb-4">4. <strong>調節力検査</strong>：実際のピント調整能力の測定</p>
-      <p className="text-gray-700 mb-4">この測定により、個人に最適な度数が決定されます。通常の眼科検査費用は保険診療で約1,500～3,000円程度です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">度数選択時の注意点</h3>
-      <p className="text-gray-700 mb-4">度数選択時には以下の注意が必要です：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>強すぎる度数は避ける</strong>：目の疲労や頭痛の原因となる</li>
-        <li><strong>使用距離に応じた選択</strong>：読書30cm、パソコン40～50cm、料理50～60cm</li>
-        <li><strong>段階的な度数上げ</strong>：急激な度数変更は目への負担が大きい</li>
-        <li><strong>複数度数の活用</strong>：用途に応じて2～3種類用意することをお勧め</li>
+      <p className="text-gray-500 text-sm mb-3">気になる点：屋外での使用も兼ねたい場合は、レンズのコーティングを別途相談したい</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          merry39 メガネフレーム No.2854を楽天で見る →
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">パソコン作業向け：メガネスタイル メガネフレーム CF5043</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>ブルーライトカットレンズとの組み合わせを相談しやすい汎用フレーム</li>
+        <li>横幅にゆとりがあり、画面全体を見渡しやすい</li>
       </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">用途別リーディンググラスの選び方</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">読書・執筆作業向けモデル</h3>
-      <p className="text-gray-700 mb-4">読書や執筆作業では、30～35cm程度の近距離に安定したピントが必要です。このため以下を重視します：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>視野の広さ</strong>：本の複数行を同時に視認可能な設計</li>
-        <li><strong>上下幅の大きさ</strong>：下方視が必要な作業のため、フレーム上下幅が重要</li>
-        <li><strong>歪みの少なさ</strong>：周辺部での光学歪みが少ない高品質レンズ</li>
-        <li><strong>推奨度数</strong>：+1.5～+2.5D（個人差大）</li>
+      <p className="text-gray-500 text-sm mb-3">気になる点：画面までの距離は環境によって差があるため、実際の作業距離を測ってから度数を相談したい</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e16c.d190f4a9.5622e16d.a64e1d5d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmegane-style%2Fcf5043%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          メガネスタイル メガネフレーム CF5043を楽天で見る →
+        </a>
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">日常の外出・兼用向け：Hodopus メガネフレーム</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
+        <li>軽量なシンプルフレームで、日中つけっぱなしにしても負担になりにくい</li>
+        <li>複数本を用意するほどではないという方が、まず1本で試すのに向いている</li>
       </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">パソコン作業・デスク作業向けモデル</h3>
-      <p className="text-gray-700 mb-4">パソコン画面は通常40～50cm程度に置かれます。この距離への対応では：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>弱めの度数設定</strong>：+0.5～+1.5D程度で十分な場合が多い</li>
-        <li><strong>ブルーライト対策</strong>：長時間作業による眼精疲労軽減</li>
-        <li><strong>横幅重視</strong>：画面全体を見渡すため、左右幅が広めが有利</li>
-        <li><strong>掛け心地</strong>：長時間装用のため、鼻当て部分の快適性が重要</li>
+      <p className="text-gray-500 text-sm mb-3">気になる点：複数のシーンを1本で兼用する場合、それぞれの用途に対して度数はやや妥協が必要になる</p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          Hodopus メガネフレームを楽天で見る →
+        </a>
+      </div>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方3つのポイント</h2>
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+        <li><strong>度数：</strong>正確な度数決定には眼科・眼鏡店での検査が確実。強すぎる度数は目の疲労につながりやすいため、迷ったら弱めから試したい</li>
+        <li><strong>複数本の使い分け：</strong>読書用・PC用など用途を分けられる場合は、それぞれに合った度数を選ぶ方が快適に使いやすい</li>
+        <li><strong>フレームサイズ：</strong>下方視が多い読書用は上下幅が広め、画面を見渡すPC用は横幅が広めのフレームが選びやすい</li>
       </ul>
-      <p className="text-gray-700 mb-4">2026年版では、ブルーライトカット機能付きモデルの選択肢が大幅に増加しています。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">日常生活全般向けモデル</h3>
-      <p className="text-gray-700 mb-4">複数度数の眼鏡を用意できない場合の選択方法：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>中間度数選択</strong>：+1.5～+2.0Dが最も使用範囲が広い</li>
-        <li><strong>軽量フレーム</strong>：日中ずっと掛けることを想定した軽さ</li>
-        <li><strong>デザイン性</strong>：出かけることが多い場合、外出に適したデザイン</li>
-        <li><strong>耐久性</strong>：毎日使用するため、傷に強いコーティング加工必須</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">フレーム選びの重要ポイント</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">フレーム素材の特性比較</h3>
-      <p className="text-gray-700 mb-4">| 素材 | 重さ | 耐久性 | 費用 | 特徴 |</p>
-      <p className="text-gray-700 mb-4">|------|------|--------|------|------|</p>
-      <p className="text-gray-700 mb-4">| プラスチック | 軽い | 中程度 | 低 | 初心者向け、色選択豊富 |</p>
-      <p className="text-gray-700 mb-4">| チタン | 最軽量 | 優秀 | 高 | 長時間装用向け、金属アレルギー対応 |</p>
-      <p className="text-gray-700 mb-4">| セル巻き | 標準 | 優秀 | 中～高 | クラシック、耐久性優良 |</p>
-      <p className="text-gray-700 mb-4">| 軽金属 | 軽い | 優秀 | 中 | バランス型、汎用性高 |</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">フレームサイズの重要性</h3>
-      <p className="text-gray-700 mb-4">フレームサイズは度数と同じくらい重要です：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>顔幅が広い場合</strong>：レンズ総幅が大きいものを選択し、視野確保</li>
-        <li><strong>顔幅が狭い場合</strong>：過度に大きいフレームは安定性低下</li>
-        <li><strong>鼻が低い場合</strong>：鼻当て部分の調整が可能な製品を選択</li>
-        <li><strong>長顔の場合</strong>：上下幅が大きめを選び、バランス調整</li>
-      </ul>
-      <p className="text-gray-700 mb-4">実際の装用試験なしでの購入は、後の不快感につながるため注意が必要です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">デザイン選択のコツ</h3>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>ビジネス場面</strong>：落ち着いた色（黒、こげ茶、濃紺）、シンプル設計</li>
-        <li><strong>日常・カジュアル</strong>：明るい色（べっこう、ワインレッド）、洗練設計</li>
-        <li><strong>スポーツ・アウトドア</strong>：機能性重視、スポーティな形状</li>
-        <li><strong>複数購入</strong>：用途に応じて3種類程度揃えることがおすすめ</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">リーディンググラス購入ガイド：2026年版</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼科処方メガネの購入プロセス</h3>
-      <p className="text-gray-700 mb-4">1. <strong>眼科で検査・処方箋取得</strong>（1,500～3,000円）</p>
-      <p className="text-gray-700 mb-4">2. <strong>メガネ店で試作試着</strong>（無料～5,000円）</p>
-      <p className="text-gray-700 mb-4">3. <strong>フレーム・レンズ選択</strong>（8,000～30,000円）</p>
-      <p className="text-gray-700 mb-4">4. <strong>加工・調整</strong>（1～2週間）</p>
-      <p className="text-gray-700 mb-4">5. <strong>微調整・最終確認</strong>（無料）</p>
-      <p className="text-gray-700 mb-4">眼科処方による購入は時間がかかるため、計画的な購入が必要です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">既製品リーディンググラスの活用</h3>
-      <p className="text-gray-700 mb-4">既製品（シニアグラス）は以下の場面で有効です：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>予備用・持ち歩き用</strong>：紛失時に備えた予備</li>
-        <li><strong>初心者向け</strong>：老眼の自覚が初期段階の人</li>
-        <li><strong>気軽な試用</strong>：度数合致するか確認する用途</li>
-        <li><strong>予算制限時</strong>：費用を低く抑えたい場合</li>
-      </ul>
-      <p className="text-gray-700 mb-4">既製品の相場は1,000～5,000円で、眼科処方品より安価です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">【楽天で探す】リーディンググラスとメガネフレーム</h3>
-      <p className="text-gray-700 mb-4">品質・種類ともに豊富なオンラインショッピングの活用もおすすめです。</p>
-      <p className="text-gray-700 mb-4"><a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A1%E3%82%AC%E3%83%8D%20%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">楽天でリーディンググラス・メガネフレームを探す</a></p>
-      <p className="text-gray-700 mb-4">オンラインでは以下のメリットがあります：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>商品数が豊富</strong>：実店舗では見られない品種が利用可能</li>
-        <li><strong>価格競争</strong>：複数店舗の比較購入が容易</li>
-        <li><strong>時間的自由度</strong>：24時間いつでも購入検討可能</li>
-        <li><strong>返品制度</strong>：多くのショップが返品対応している</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">最新トレンド：2026年のリーディンググラス機能</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ブルーライトカット機能</h3>
-      <p className="text-gray-700 mb-4">デジタルデバイスからのブルーライトは、眼精疲労の主要因です。2026年版では：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>カット率40～50%</strong>：実用的な効果が期待できる水準</li>
-        <li><strong>色味補正</strong>：若干の黄色系レンズながら色覚への影響が最小化</li>
-        <li><strong>コスト低下</strong>：2026年には+3,000～5,000円の追加費用が目安</li>
-      </ul>
-      <p className="text-gray-700 mb-4">実際の使用感を事前に試着確認することが重要です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">累進多焦点レンズの進化</h3>
-      <p className="text-gray-700 mb-4">複数の距離に対応するレンズ技術が進化しています：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>従来型</strong>：周辺部の歪みが大きかった</li>
-        <li><strong>2026年版</strong>：光学設計の最適化により歪みを大幅軽減</li>
-        <li><strong>費用</strong>：+10,000～20,000円（標準的な多焦点レンズ）</li>
-        <li><strong>適用基準</strong>：遠距離・中距離・近距離をバランスよく使う生活様式</li>
-      </ul>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">調光レンズの活用</h3>
-      <p className="text-gray-700 mb-4">紫外線に反応して濃淡が変わるレンズも選択肢です：</p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-        <li><strong>屋内外での移動が多い</strong>：スムーズな明るさ調整が可能</li>
-        <li><strong>紫外線カット</strong>：追加の防護効果</li>
-        <li><strong>反応速度向上</strong>：2026年版では高速化が進行中</li>
-        <li><strong>追加費用</strong>：+5,000～10,000円程度</li>
-      </ul>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">よくある質問と回答</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q1：度数が急に進むことはありますか？</h3>
-      <p className="text-gray-700 mb-4">A：老視の進行速度は個人差が大きいです。40代では急速に進行しますが、通常50代～60代で緩和します。3～5年ごとの定期検査により、度数変化を把握することが重要です。急激な変化を感じた場合は、眼科での検査をお勧めします。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q2：老眼鏡と遠近両用の使い分けは？</h3>
-      <p className="text-gray-700 mb-4">A：遠近両用（累進多焦点）は複数距離に対応しますが、光学的な妥協があります。リーディンググラスは単焦点で高い光学性能を持つため、用途が限定される場合は専用リーディンググラスが快適です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q3：コンタクトレンズとの併用は可能ですか？</h3>
-      <p className="text-gray-700 mb-4">A：もちろん可能です。遠視用コンタクトで遠距離を補正している場合、リーディンググラスで近距離を補正する「オーバー・ザ・トップ」という組み合わせが一般的です。</p>
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q4：初期老視でも必要ですか？</h3>
-      <p className="text-gray-700 mb-4">A：不快感や目の疲労を感じた時点での使用開始をお勧めします。早期から適切に対応することで、目への負担を軽減できます。</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方のまとめ：チェックリスト</h2>
-      <p className="text-gray-700 mb-4">リーディンググラス選びで最も重要な8つのポイント：</p>
-      <p className="text-gray-700 mb-4">1. <strong>眼科検査の実施</strong>：正確な度数決定が全てのスタート地点</p>
-      <p className="text-gray-700 mb-4">2. <strong>使用用途の明確化</strong>：読書、パソコン、日常生活など</p>
-      <p className="text-gray-700 mb-4">3. <strong>フレームサイズの確認</strong>：視野と装用感の最適化</p>
-      <p className="text-gray-700 mb-4">4. <strong>素材選択</strong>：軽さ、耐久性、予算のバランス</p>
-      <p className="text-gray-700 mb-4">5. <strong>試着試験</strong>：必ず実装用で確認</p>
-      <p className="text-gray-700 mb-4">6. <strong>複数度数の検討</strong>：用途に応じた複数購入の価値</p>
-      <p className="text-gray-700 mb-4">7. <strong>機能性オプション</strong>：ブルーライトカットなど必要性の検討</p>
-      <p className="text-gray-700 mb-4">8. <strong>定期的な度数見直し</strong>：3～5年ごとの眼科検査</p>
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">最後に：快適な視生活への投資</h2>
-      <p className="text-gray-700 mb-4">リーディンググラスは、加齢に伴う避けられない変化への対応です。適切に選択・使用することで、日々の生活の質が大きく向上します。</p>
-      <p className="text-gray-700 mb-4">2026年版では、光学性能、デザイン、価格帯ともにバリエーションが増加しており、個々のニーズに合わせた最適な選択が容易になっています。</p>
-      <p className="text-gray-700 mb-4">眼科での正確な検査に基づき、自分の生活様式に適したリーディンググラスを選択することが、快適で健康的な視生活の実現につながります。</p>
-      <p className="text-gray-700 mb-4">---</p>
-      <p className="text-gray-700 mb-4">※本記事の情報は2026年1月時点のものです。最新の製品情報については、眼科医やメガネ店でのご相談をお勧めします。</p>
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">
+        リーディンググラスは、用途に合わせて度数とフレームを選ぶことで、快適さが大きく変わります。1本で全てをまかなうよりも、主な使用シーンを軸に選ぶのがおすすめです。
+      </p>
+      <p className="text-gray-700 mb-4">
+        正確な度数を知りたい場合は、眼科や眼鏡店での検査を受けたうえで、今回紹介したポイントを参考にフレームを選んでみてください。
+      </p>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          merry39 メガネフレーム No.2854を楽天で見る →
+        </a>
+      </div>
     </article>
   ),
     "smartphone-presbyopia-magnifier-eyeglasses": (
