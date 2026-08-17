@@ -52,7 +52,7 @@
       "id": "tenmon",
       "category": "都市伝説・スピリチュアル",
       "hook": "星占いが生まれた場所。古代バビロニアの夜空の話",
-      "used": false
+      "used": true
     },
     {
       "id": "hashi-taboo",
