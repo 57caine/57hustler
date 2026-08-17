@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T21:25:59.957Z",
+  "generatedAt": "2026-08-17T21:30:55.690Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -12,8 +12,8 @@
       "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
         "sessions": 13,
-        "bounceRate": 0.38461538461538464,
-        "avgSessionDuration": 84.51848338461538,
+        "bounceRate": 0.3076923076923077,
+        "avgSessionDuration": 84.51860338461539,
         "affiliateClicks": 0
       },
       "flags": [
@@ -100,39 +100,66 @@
       "status": "様子見"
     },
     {
-      "path": "/column/megane-online-shopping",
-      "slug": "megane-online-shopping",
-      "title": "オンラインで眼鏡を安く買う方法【JINS・Zoff・楽天・Amazon完全ガイド】",
+      "path": "/column/megane-kaomikata",
+      "slug": "megane-kaomikata",
+      "title": "眼鏡の選び方【顔型別ガイド2026】丸顔・面長・卵型・ベース型別おすすめフレーム",
       "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.375,
-        "avgSessionDuration": 6.260889375,
+        "sessions": 9,
+        "bounceRate": 0.3333333333333333,
+        "avgSessionDuration": 134.742391,
         "affiliateClicks": 0
       },
       "flags": [
-        "avg_session_under_10s",
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "平均滞在6.3秒（閾値10秒）",
+        "セッション9件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 6,
+        "h3Count": 0,
+        "hasAffiliateLinks": true,
+        "ctaCount": 6,
+        "contentChars": 12795
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
+    },
+    {
+      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
+      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.875,
+        "avgSessionDuration": 57.919888625,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
         "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 0,
-        "h3Count": 0,
-        "hasAffiliateLinks": false,
+        "h2Count": 7,
+        "h3Count": 11,
+        "hasAffiliateLinks": true,
         "ctaCount": 0,
-        "contentChars": 0
+        "contentChars": 9163
       },
       "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない",
-        "見出し構造が不足しており、読者が記事構成を把握しにくい"
+        "リンクはあるがCTAボタンが設置されていない（クリック導線が弱い）"
       ],
       "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する",
-        "H2見出しを3〜5個設定し、スキャン読みしやすい構造に改善する"
+        "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
       ],
-      "status": "対応済み"
+      "status": "様子見"
     },
     {
       "path": "/column/reading-glasses-presbyopia-choose-2026",
@@ -140,7 +167,7 @@
       "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
       "metrics": {
         "sessions": 8,
-        "bounceRate": 0.375,
+        "bounceRate": 0.25,
         "avgSessionDuration": 101.0151415,
         "affiliateClicks": 0
       },
@@ -171,8 +198,8 @@
       "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
       "metrics": {
         "sessions": 8,
-        "bounceRate": 0.625,
-        "avgSessionDuration": 30.626607,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 44.326055125,
         "affiliateClicks": 0
       },
       "flags": [
@@ -195,37 +222,6 @@
         "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
       ],
       "status": "未対応"
-    },
-    {
-      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
-      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
-      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
-      "metrics": {
-        "sessions": 6,
-        "bounceRate": 0.8333333333333334,
-        "avgSessionDuration": 77.22651816666666,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション6件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 7,
-        "h3Count": 11,
-        "hasAffiliateLinks": true,
-        "ctaCount": 0,
-        "contentChars": 9163
-      },
-      "causes": [
-        "リンクはあるがCTAボタンが設置されていない（クリック導線が弱い）"
-      ],
-      "suggestions": [
-        "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
-      ],
-      "status": "様子見"
     },
     {
       "path": "/column/eyestrain-stretching-massage-guide",
@@ -290,6 +286,41 @@
         "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
       ],
       "status": "未対応"
+    },
+    {
+      "path": "/column/megane-online-shopping",
+      "slug": "megane-online-shopping",
+      "title": "オンラインで眼鏡を安く買う方法【JINS・Zoff・楽天・Amazon完全ガイド】",
+      "metrics": {
+        "sessions": 6,
+        "bounceRate": 0.3333333333333333,
+        "avgSessionDuration": 8.143869500000001,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "avg_session_under_10s",
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "平均滞在8.1秒（閾値10秒）",
+        "セッション6件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 0,
+        "h3Count": 0,
+        "hasAffiliateLinks": false,
+        "ctaCount": 0,
+        "contentChars": 0
+      },
+      "causes": [
+        "アフィリエイトリンク（楽天・A8）が記事に存在しない",
+        "見出し構造が不足しており、読者が記事構成を把握しにくい"
+      ],
+      "suggestions": [
+        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する",
+        "H2見出しを3〜5個設定し、スキャン読みしやすい構造に改善する"
+      ],
+      "status": "対応済み"
     },
     {
       "path": "/column/eye-roller-fatigue-puffiness",
