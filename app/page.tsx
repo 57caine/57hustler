@@ -37,7 +37,7 @@ const homeFaqs = [
 ];
 
 export default async function HomePage() {
-  const heroImage = await getHeroImage('contact lens eye close up macro');
+  const heroImage = await getHeroImage('eye close up');
   const allProducts = getAllProductsWithPrices();
   const categories = getAllCategories();
   const updatedAt = getPricesUpdatedAt();
@@ -73,14 +73,14 @@ export default async function HomePage() {
               sizes="100vw"
               className="absolute inset-0 object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-sky-600/90 to-blue-700/85" />
+            <div className="absolute inset-0 bg-gradient-to-br from-sky-600/45 to-blue-700/35" />
           </>
         )}
         <div className="relative z-10">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
             目のことなら、レンズナビ。
           </h1>
-          <p className="text-sky-100 text-base md:text-lg mb-8">
+          <p className="text-sky-100 text-base md:text-lg mb-8 drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
             コンタクト・カラコン・VR・レーシック・アイケア
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-sm mx-auto">
