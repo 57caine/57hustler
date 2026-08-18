@@ -20,10 +20,24 @@ const SECTION_HERO_QUERY: Record<string, string> = {
 };
 const DEFAULT_HERO_QUERY = 'contact lens eye close up macro';
 
-function getHeroQuery(column: { category?: string; section?: string }): string {
+// sectionを持たないコンタクトレンズ全般カテゴリ（47記事）は1クエリに集中しすぎて
+// 画像が量産感を持って重複するため、記事タイトルのキーワードでさらに細分化する。
+// 上から順に判定し、最初に一致したルールを採用する。
+const CONTACT_SUB_QUERY: { test: RegExp; query: string }[] = [
+  { test: /度数|処方箋|PWR|BC|DIA|CYL|AXIS|装用指示書/, query: 'contact lens prescription eye exam' },
+  { test: /乱視|遠近両用|老眼|老視/, query: 'contact lens presbyopia reading glasses' },
+  { test: /カラコン/, query: 'colored contact lens beauty makeup eye' },
+  { test: /ドライアイ|乾き|乾燥/, query: 'dry eye relief eye drops' },
+  { test: /ケア方法|ケア用品|洗浄|お手入れ/, query: 'contact lens case solution cleaning' },
+  { test: /アキュビュー|デイリーズ|メニコン|シリコーンハイドロゲル|vs |違い|徹底比較/, query: 'contact lens brand comparison box' },
+  { test: /通販|ネット購入|ショップ|レンズゼロ|レンズネット|購入ガイド|入門|初心者|節約|年間コスト|お得/, query: 'online shopping delivery package' },
+];
+
+function getHeroQuery(column: { category?: string; section?: string; title: string }): string {
   if (column.section) return SECTION_HERO_QUERY[column.section] ?? DEFAULT_HERO_QUERY;
   if (column.category === 'カラコン') return SECTION_HERO_QUERY.karakon;
-  return DEFAULT_HERO_QUERY;
+  const sub = CONTACT_SUB_QUERY.find(rule => rule.test.test(column.title));
+  return sub?.query ?? DEFAULT_HERO_QUERY;
 }
 
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
@@ -77,7 +91,7 @@ export default async function ColumnPage({ params }: Props) {
   const otherColumns = allColumns.filter((c) => c.slug !== slug).slice(0, 4);
   const BASE = 'https://lens-navi.jp';
 
-  const heroImage = await getHeroImage(getHeroQuery(column), stableIndex(slug, 8));
+  const heroImage = await getHeroImage(getHeroQuery(column), stableIndex(slug, 30));
 
   const jsonLd = {
     '@context': 'https://schema.org',
