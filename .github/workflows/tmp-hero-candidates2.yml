@@ -1,0 +1,23 @@
+name: 一時調査-トップページヒーロー画像候補2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch hero image candidates
+        run: npx tsx scripts/tmp-hero-candidates2.ts
+        env:
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
