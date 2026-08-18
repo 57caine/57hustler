@@ -37,7 +37,7 @@ const homeFaqs = [
 ];
 
 export default async function HomePage() {
-  const heroImage = await getHeroImage('eye close up');
+  const heroImage = await getHeroImage('woman smiling glasses');
   const allProducts = getAllProductsWithPrices();
   const categories = getAllCategories();
   const updatedAt = getPricesUpdatedAt();
@@ -67,13 +67,13 @@ export default async function HomePage() {
           <>
             <Image
               src={heroImage}
-              alt="コンタクトレンズと目のケア"
+              alt="メガネをかけて笑顔の女性"
               fill
               priority
               sizes="100vw"
               className="absolute inset-0 object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-sky-600/45 to-blue-700/35" />
+            <div className="absolute inset-0 bg-gradient-to-br from-sky-600/40 to-blue-700/30" />
           </>
         )}
         <div className="relative z-10">
