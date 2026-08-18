@@ -6,11 +6,48 @@
 interface UnsplashPhoto {
   urls: { regular: string; full: string };
   alt_description: string | null;
-  user: { name: string };
+  user: { name: string; links: { html: string } };
 }
 
 interface UnsplashSearchResponse {
   results: UnsplashPhoto[];
+}
+
+export interface UnsplashFixedPhoto {
+  url: string;
+  photographerName: string;
+  // Unsplash APIガイドライン準拠のクレジット表示用リンク（utm_source/utm_medium付き）
+  photographerCreditUrl: string;
+  unsplashCreditUrl: string;
+}
+
+// 特定のPhoto IDを指定して1枚を固定取得する（検索クエリと違い、ビルドごとに
+// 同じ写真が返る）。Unsplash APIガイドラインに従い、クレジット表示用のURLも返す。
+export async function getPhotoById(photoId: string): Promise<UnsplashFixedPhoto | null> {
+  const accessKey = process.env.UNSPLASH_ACCESS_KEY;
+  if (!accessKey) return null;
+
+  try {
+    const url = `https://api.unsplash.com/photos/${photoId}`;
+    const res = await fetch(url, {
+      headers: { Authorization: `Client-ID ${accessKey}` },
+      next: { revalidate: false },
+    });
+    if (!res.ok) return null;
+
+    const photo = (await res.json()) as UnsplashPhoto;
+    if (!photo.urls?.regular) return null;
+
+    const utm = 'utm_source=lens-navi&utm_medium=referral';
+    return {
+      url: photo.urls.regular,
+      photographerName: photo.user.name,
+      photographerCreditUrl: `${photo.user.links.html}?${utm}`,
+      unsplashCreditUrl: `https://unsplash.com/?${utm}`,
+    };
+  } catch {
+    return null;
+  }
 }
 
 // page: 同じqueryでも複数記事で使い回す際に、Unsplashの検索結果ページを

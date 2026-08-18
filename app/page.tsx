@@ -6,7 +6,11 @@ import { getAllProductsWithPrices, getAllCategories, getPricesUpdatedAt, getAllB
 import { columns } from '@/lib/columns';
 import { eyeColumns } from '@/lib/eye-columns';
 import ProductCard from '@/components/ProductCard';
-import { getHeroImage } from '@/lib/unsplash';
+import { getPhotoById } from '@/lib/unsplash';
+
+// トップページのヒーロー画像は、検索クエリではなくこの特定の1枚に固定する
+// （灰色背景の前で腕を組んで笑う眼鏡姿のビジネスウーマン）
+const HERO_PHOTO_ID = 'KFQRpw9Yfw4';
 
 export const metadata: Metadata = {
   title: '目のことなら、レンズナビ。コンタクト・眼鏡・アイケア・レーシック総合情報 | レンズナビ',
@@ -37,7 +41,7 @@ const homeFaqs = [
 ];
 
 export default async function HomePage() {
-  const heroImage = await getHeroImage('woman smiling glasses');
+  const heroPhoto = await getPhotoById(HERO_PHOTO_ID);
   const allProducts = getAllProductsWithPrices();
   const categories = getAllCategories();
   const updatedAt = getPricesUpdatedAt();
@@ -63,17 +67,25 @@ export default async function HomePage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-sky-500 to-blue-600 py-20 px-4 text-center">
-        {heroImage && (
+        {heroPhoto && (
           <>
             <Image
-              src={heroImage}
-              alt="メガネをかけて笑顔の女性"
+              src={heroPhoto.url}
+              alt="灰色の背景の前で腕を組んで立つ、眼鏡をかけた笑顔の若いビジネスウーマン"
               fill
               priority
               sizes="100vw"
               className="absolute inset-0 object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-sky-600/40 to-blue-700/30" />
+            <div className="absolute inset-0 bg-gradient-to-br from-sky-600/45 to-blue-700/38" />
+            <p className="absolute bottom-2 right-3 z-10 text-[10px] text-white/70 leading-none">
+              Photo by{' '}
+              <a href={heroPhoto.photographerCreditUrl} target="_blank" rel="noopener noreferrer"
+                 className="underline hover:text-white">{heroPhoto.photographerName}</a>{' '}
+              on{' '}
+              <a href={heroPhoto.unsplashCreditUrl} target="_blank" rel="noopener noreferrer"
+                 className="underline hover:text-white">Unsplash</a>
+            </p>
           </>
         )}
         <div className="relative z-10">
