@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T21:29:41.779Z",
+  "generatedAt": "2026-08-19T21:30:49.042Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -12,8 +12,8 @@
       "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
         "sessions": 14,
-        "bounceRate": 0.35714285714285715,
-        "avgSessionDuration": 78.4815602857143,
+        "bounceRate": 0.2857142857142857,
+        "avgSessionDuration": 79.9361132857143,
         "affiliateClicks": 0
       },
       "flags": [
@@ -28,6 +28,37 @@
         "hasAffiliateLinks": true,
         "ctaCount": 3,
         "contentChars": 5973
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
+    },
+    {
+      "path": "/column/megane-facial-shape-frame-2026",
+      "slug": "megane-facial-shape-frame-2026",
+      "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
+      "metrics": {
+        "sessions": 12,
+        "bounceRate": 0.6666666666666666,
+        "avgSessionDuration": 12.371438166666666,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション12件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 6,
+        "contentChars": 9092
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -69,44 +100,13 @@
       "status": "様子見"
     },
     {
-      "path": "/column/megane-facial-shape-frame-2026",
-      "slug": "megane-facial-shape-frame-2026",
-      "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
-      "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.7,
-        "avgSessionDuration": 12.336928799999999,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 4,
-        "hasAffiliateLinks": true,
-        "ctaCount": 6,
-        "contentChars": 9092
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見"
-    },
-    {
       "path": "/column/sunglass-polarized-guide",
       "slug": "sunglass-polarized-guide",
       "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
       "metrics": {
         "sessions": 9,
-        "bounceRate": 0.5555555555555556,
-        "avgSessionDuration": 47.920326888888894,
+        "bounceRate": 0.4444444444444444,
+        "avgSessionDuration": 47.92032688888889,
         "affiliateClicks": 0
       },
       "flags": [
@@ -167,8 +167,8 @@
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
         "sessions": 8,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 453.61682974999997,
+        "bounceRate": 0.25,
+        "avgSessionDuration": 600.809608125,
         "affiliateClicks": 0
       },
       "flags": [
@@ -257,45 +257,6 @@
       "status": "未対応"
     },
     {
-      "path": "/column/lasik-hiyo-risk",
-      "slug": "lasik-hiyo-risk",
-      "title": "レーシックとは？費用・リスク・メリット・デメリット完全解説【2026年版】",
-      "metrics": {
-        "sessions": 5,
-        "bounceRate": 1,
-        "avgSessionDuration": 0,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "bounce_rate_over_90pct",
-        "avg_session_under_10s",
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "直帰率100%（閾値90%）",
-        "平均滞在0.0秒（閾値10秒）",
-        "セッション5件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 10,
-        "h3Count": 0,
-        "hasAffiliateLinks": true,
-        "ctaCount": 0,
-        "contentChars": 14169
-      },
-      "causes": [
-        "ページが正常にレンダリングされていない可能性（JSXエラー・白画面等）",
-        "検索意図とコンテンツのミスマッチ（期待した情報が冒頭にない）",
-        "リンクはあるがCTAボタンが設置されていない（クリック導線が弱い）"
-      ],
-      "suggestions": [
-        "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する",
-        "冒頭3〜4行で結論・要点を先出しし、読者の疑問に即答する構成にする",
-        "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
-      ],
-      "status": "未対応"
-    },
-    {
       "path": "/column/megane-online-shopping",
       "slug": "megane-online-shopping",
       "title": "オンラインで眼鏡を安く買う方法【JINS・Zoff・楽天・Amazon完全ガイド】",
@@ -360,6 +321,37 @@
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見"
+    },
+    {
+      "path": "/column/ranshi-contact-ranking-2025",
+      "slug": "ranshi-contact-ranking-2025",
+      "title": "ranshi-contact-ranking-2025",
+      "metrics": {
+        "sessions": 5,
+        "bounceRate": 0.6,
+        "avgSessionDuration": 106.41117679999999,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション5件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 11,
+        "h3Count": 0,
+        "hasAffiliateLinks": false,
+        "ctaCount": 0,
+        "contentChars": 15784
+      },
+      "causes": [
+        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+      ],
+      "suggestions": [
+        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+      ],
+      "status": "未対応"
     }
   ]
 }
