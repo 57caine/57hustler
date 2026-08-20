@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import MoshimoProductCard from '@/components/MoshimoProductCard';
+import { parseMoshimoEmbedCode } from '@/lib/moshimo';
 
 export type EyeColumnMeta = {
   slug: string;
@@ -15,6 +17,9 @@ export type EyeColumnMeta = {
 };
 
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
+
+// もしもアフィリエイト「かんたんリンク」の埋め込みコード（画像付き商品カード用、試験実装）
+const EYE_WARMER_PRODUCT = parseMoshimoEmbedCode(`msmaflink({"n":"【LDK A評価受賞！】アイウォーマー 目元エステ アイケア アイマスク 安眠 快眠 ホット ギフト プレゼント 充電式 首 スマホ首 温め ホット アイリラックス アイピロー 目元ケア エステ 温熱 リリースアイ","b":"","t":"","d":"https://thumbnail.image.rakuten.co.jp","c_p":"/","p":["@0_mall/mygear/cabinet/item/mycomfort/releaseeye/banner_40.jpg","@0_gold/mygear/lpimg/releaseeye/squ_1.jpg","@0_gold/mygear/lpimg/releaseeye/squ_2.jpg"],"u":{"u":"https://item.rakuten.co.jp/mygear/releaseeye/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https://item.rakuten.co.jp/mygear/releaseeye/","a_id":5691842,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1}],"eid":"bFO58","s":"s"});`);
 
 export const eyeColumns: EyeColumnMeta[] = [
   {
@@ -2034,6 +2039,14 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">目元だけでなく首も一緒に温めたい方に</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>LDKの製品比較でA評価を受けた、目元と首をまとめて温められるUSB充電式アイウォーマー</li>
+        <li>繰り返し使えるため、使い捨てタイプより長期的なコストを抑えやすい</li>
+        <li className="text-gray-500">気になる点：デスクワークの合間に使う場合、充電の手間がかかる</li>
+      </ul>
+      {EYE_WARMER_PRODUCT && <MoshimoProductCard product={EYE_WARMER_PRODUCT} />}
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方3つのポイント</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
