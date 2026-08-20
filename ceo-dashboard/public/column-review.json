@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T21:30:49.042Z",
+  "generatedAt": "2026-08-20T21:33:13.603Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -100,37 +100,6 @@
       "status": "様子見"
     },
     {
-      "path": "/column/sunglass-polarized-guide",
-      "slug": "sunglass-polarized-guide",
-      "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
-      "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.4444444444444444,
-        "avgSessionDuration": 47.92032688888889,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 4,
-        "hasAffiliateLinks": false,
-        "ctaCount": 6,
-        "contentChars": 10468
-      },
-      "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
-      ],
-      "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
-      ],
-      "status": "未対応"
-    },
-    {
       "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
@@ -222,6 +191,37 @@
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見"
+    },
+    {
+      "path": "/column/sunglass-polarized-guide",
+      "slug": "sunglass-polarized-guide",
+      "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 27.39339275,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 4,
+        "hasAffiliateLinks": false,
+        "ctaCount": 6,
+        "contentChars": 10468
+      },
+      "causes": [
+        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+      ],
+      "suggestions": [
+        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+      ],
+      "status": "未対応"
     },
     {
       "path": "/column/eye-roller-fatigue-puffiness",
