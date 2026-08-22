@@ -57,8 +57,12 @@ export function parseMoshimoEmbedCode(embedCode: string): MoshimoProduct | null 
   const imageUrl = raw.p?.[0] ? `${raw.d}${raw.c_p}${raw.p[0]}` : null;
   const affiliateUrl = `https://af.moshimo.com/af/c/click?a_id=${link.a_id}&p_id=${link.p_id}&pc_id=${link.pc_id}&pl_id=${link.pl_id}`;
 
+  // 一部の商品フィードは商品名を "|...|" のように区切り記号で囲んでいるため、
+  // 表示上そのまま出さないよう先頭・末尾の記号と余分な空白を取り除く
+  const name = raw.n.trim().replace(/^\|+\s*/, '').replace(/\s*\|+$/, '');
+
   return {
-    name: raw.n,
+    name,
     imageUrl,
     affiliateUrl,
     buttonText: link.u_tx || `${raw.n}を見る`,
