@@ -5,6 +5,8 @@
  * かんたんリンクコードの発行は含まない（もしもアフィリエイト側で手動対応）。
  */
 
+import https from 'node:https';
+
 interface RakutenItem {
   Item: {
     itemName: string;
@@ -31,27 +33,39 @@ const CATEGORIES: { label: string; keywords: string[] }[] = [
 // 2026年2月の楽天ウェブサービスAPI仕様変更に対応（新ドメイン・accessKey必須・Refererヘッダー必須）。
 // 【注意】この環境からは楽天の公式ドキュメントに直接アクセスできず、Web検索のスニペット情報のみを
 // 根拠にしているため、正確性は保証できない。失敗した場合は具体的なエラー内容を報告する。
-async function searchItems(keyword: string, appId: string, accessKey: string, hits: number): Promise<RakutenItem[]> {
-  const url = `https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601?applicationId=${appId}&accessKey=${accessKey}&keyword=${encodeURIComponent(keyword)}&hits=${hits}&sort=-reviewCount&format=json`;
-  // 【重要】fetch()の headers に "Referer" を指定しても、Fetch仕様上の
-  // forbidden request header に該当するため実際には送信されない（Node.js の
-  // fetch実装＝undiciも仕様に準拠して黙って無視する）。今回サーバー側が
-  // "REQUEST_CONTEXT_BODY_HTTP_REFERRER_MISSING" を返したのはこれが原因。
-  // Refererを送るには RequestInit の referrer / referrerPolicy を使う必要がある。
-  const res = await fetch(url, {
-    referrer: 'https://lens-navi.jp/',
-    referrerPolicy: 'no-referrer-when-downgrade',
+//
+// 【重要】fetch()のheadersに"Referer"を指定しても、Fetch仕様上のforbidden
+// request headerに該当し実際には送信されない。RequestInitのreferrer/
+// referrerPolicyオプションを使っても、Node.jsのfetch実装（undici）は
+// ブラウジングコンテキストを持たないためReferer送信を行わず、同じエラーが
+// 再発した。この制限を回避するため、node:https で直接リクエストを組み立て、
+// 任意のヘッダーとしてRefererを設定する。
+function searchItems(keyword: string, appId: string, accessKey: string, hits: number): Promise<RakutenItem[]> {
+  return new Promise((resolve) => {
+    const url = `https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601?applicationId=${appId}&accessKey=${accessKey}&keyword=${encodeURIComponent(keyword)}&hits=${hits}&sort=-reviewCount&format=json`;
+    const req = https.get(url, { headers: { Referer: 'https://lens-navi.jp/' } }, (res) => {
+      let body = '';
+      res.on('data', (chunk) => { body += chunk; });
+      res.on('end', () => {
+        if (res.statusCode !== 200) {
+          console.log(`  ERROR (${keyword}): ${res.statusCode} ${body}`);
+          resolve([]);
+          return;
+        }
+        const data = JSON.parse(body) as RakutenSearchResponse;
+        if (data.error) {
+          console.log(`  API ERROR (${keyword}): ${data.error} - ${data.error_description}`);
+          resolve([]);
+          return;
+        }
+        resolve(data.Items ?? []);
+      });
+    });
+    req.on('error', (e) => {
+      console.log(`  REQUEST ERROR (${keyword}): ${e.message}`);
+      resolve([]);
+    });
   });
-  if (!res.ok) {
-    console.log(`  ERROR (${keyword}): ${res.status} ${await res.text()}`);
-    return [];
-  }
-  const data = (await res.json()) as RakutenSearchResponse;
-  if (data.error) {
-    console.log(`  API ERROR (${keyword}): ${data.error} - ${data.error_description}`);
-    return [];
-  }
-  return data.Items ?? [];
 }
 
 async function main() {
