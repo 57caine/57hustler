@@ -21,6 +21,9 @@ const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a8
 // もしもアフィリエイト「かんたんリンク」の埋め込みコード（画像付き商品カード用、試験実装）
 const EYE_WARMER_PRODUCT = parseMoshimoEmbedCode(`msmaflink({"n":"【LDK A評価受賞！】アイウォーマー 目元エステ アイケア アイマスク 安眠 快眠 ホット ギフト プレゼント 充電式 首 スマホ首 温め ホット アイリラックス アイピロー 目元ケア エステ 温熱 リリースアイ","b":"","t":"","d":"https://thumbnail.image.rakuten.co.jp","c_p":"/","p":["@0_mall/mygear/cabinet/item/mycomfort/releaseeye/banner_40.jpg","@0_gold/mygear/lpimg/releaseeye/squ_1.jpg","@0_gold/mygear/lpimg/releaseeye/squ_2.jpg"],"u":{"u":"https://item.rakuten.co.jp/mygear/releaseeye/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https://item.rakuten.co.jp/mygear/releaseeye/","a_id":5691842,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1}],"eid":"bFO58","s":"s"});`);
 
+// 丸顔向け：Zoff ウェリントン型メガネ（もしもアフィリエイト かんたんリンク、試験実装②）
+const MARUGAO_MEGANE_PRODUCT = parseMoshimoEmbedCode(`msmaflink({"n":"|ウェリントン型めがね CLASSIC（クラシック） Zoff ゾフ 度付きメガネ 度入りめがね ダテメガネ メンズ レディース おしゃれ メガネフレーム【ZA201012-14E1 ブラック】【46□24-145】|","b":"","t":"","d":"https://thumbnail.image.rakuten.co.jp","c_p":"/@0_mall/zoff/cabinet","p":["/top_2/za201012_14e1.jpg","/item2020_2/za201012_14e1.jpg","/item2020_2/za201012_14e1_2.jpg"],"u":{"u":"https://item.rakuten.co.jp/zoff/za201012_14e1/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https://item.rakuten.co.jp/zoff/za201012_14e1/","a_id":5691842,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1}],"eid":"fhpKK","s":"s"});`);
+
 export const eyeColumns: EyeColumnMeta[] = [
   {
     slug: 'megane-kaomikata',
@@ -3970,28 +3973,18 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           </tbody>
         </table>
       </div>
-      <div className="my-4">
-        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
-          Wavecontact メガネフレーム MGN_BASIC（スクエア型）を楽天で見る →
-        </a>
-      </div>
+      {MARUGAO_MEGANE_PRODUCT && <MoshimoProductCard product={MARUGAO_MEGANE_PRODUCT} />}
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">顔型別おすすめフレーム</h2>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">丸顔向け：Wavecontact メガネフレーム MGN_BASIC</h3>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">丸顔向け：Zoff メガネフレーム CLASSIC（ウェリントン型）</h3>
       <p className="text-gray-700 mb-2">頬に丸みがあり、縦横の長さが近い丸顔は、輪郭に沿った丸型フレームを選ぶとより丸さが強調されやすくなります。直線的なラインを持つフレームを合わせることで、顔全体の印象がすっきりまとまりやすくなります。</p>
       <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-2">
-        <li>角のあるスクエアシルエットで、丸顔特有のやわらかい印象を引き締められる</li>
+        <li>角のあるウェリントンシルエットで、丸顔特有のやわらかい印象を引き締められる</li>
         <li>クセの少ないベーシックなデザインで普段使いしやすい</li>
       </ul>
       <p className="text-gray-500 text-sm mb-3">気になる点：フレームが大きすぎると顔とのバランスが崩れやすいため、サイズ表示を確認してから選びたい</p>
-      <div className="my-4">
-        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
-          Wavecontact メガネフレーム MGN_BASICを楽天で見る →
-        </a>
-      </div>
+      {MARUGAO_MEGANE_PRODUCT && <MoshimoProductCard product={MARUGAO_MEGANE_PRODUCT} />}
 
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">四角顔向け：Hodopus メガネフレーム</h3>
       <p className="text-gray-700 mb-2">顎がしっかりしていて輪郭が直線的な四角顔は、同じく角のあるフレームを合わせると輪郭の硬さがより強調されやすくなります。オーバル・ボストン型など曲線を持つフレームを選ぶことで、印象をやわらげやすくなります。</p>
