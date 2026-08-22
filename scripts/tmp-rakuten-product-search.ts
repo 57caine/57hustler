@@ -33,8 +33,14 @@ const CATEGORIES: { label: string; keywords: string[] }[] = [
 // 根拠にしているため、正確性は保証できない。失敗した場合は具体的なエラー内容を報告する。
 async function searchItems(keyword: string, appId: string, accessKey: string, hits: number): Promise<RakutenItem[]> {
   const url = `https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601?applicationId=${appId}&accessKey=${accessKey}&keyword=${encodeURIComponent(keyword)}&hits=${hits}&sort=-reviewCount&format=json`;
+  // 【重要】fetch()の headers に "Referer" を指定しても、Fetch仕様上の
+  // forbidden request header に該当するため実際には送信されない（Node.js の
+  // fetch実装＝undiciも仕様に準拠して黙って無視する）。今回サーバー側が
+  // "REQUEST_CONTEXT_BODY_HTTP_REFERRER_MISSING" を返したのはこれが原因。
+  // Refererを送るには RequestInit の referrer / referrerPolicy を使う必要がある。
   const res = await fetch(url, {
-    headers: { Referer: 'https://lens-navi.jp/' },
+    referrer: 'https://lens-navi.jp/',
+    referrerPolicy: 'no-referrer-when-downgrade',
   });
   if (!res.ok) {
     console.log(`  ERROR (${keyword}): ${res.status} ${await res.text()}`);
