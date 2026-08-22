@@ -21,3 +21,4 @@ jobs:
         run: npx tsx scripts/tmp-rakuten-product-search.ts
         env:
           RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}

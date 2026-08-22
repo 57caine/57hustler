@@ -28,9 +28,14 @@ const CATEGORIES: { label: string; keywords: string[] }[] = [
   { label: 'まとめ用（汎用）', keywords: ['定番 メガネフレーム'] },
 ];
 
-async function searchItems(keyword: string, appId: string, hits: number): Promise<RakutenItem[]> {
-  const url = `https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?applicationId=${appId}&keyword=${encodeURIComponent(keyword)}&hits=${hits}&sort=-reviewCount&format=json`;
-  const res = await fetch(url);
+// 2026年2月の楽天ウェブサービスAPI仕様変更に対応（新ドメイン・accessKey必須・Refererヘッダー必須）。
+// 【注意】この環境からは楽天の公式ドキュメントに直接アクセスできず、Web検索のスニペット情報のみを
+// 根拠にしているため、正確性は保証できない。失敗した場合は具体的なエラー内容を報告する。
+async function searchItems(keyword: string, appId: string, accessKey: string, hits: number): Promise<RakutenItem[]> {
+  const url = `https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601?applicationId=${appId}&accessKey=${accessKey}&keyword=${encodeURIComponent(keyword)}&hits=${hits}&sort=-reviewCount&format=json`;
+  const res = await fetch(url, {
+    headers: { Referer: 'https://lens-navi.jp/' },
+  });
   if (!res.ok) {
     console.log(`  ERROR (${keyword}): ${res.status} ${await res.text()}`);
     return [];
@@ -45,13 +50,15 @@ async function searchItems(keyword: string, appId: string, hits: number): Promis
 
 async function main() {
   const appId = process.env.RAKUTEN_APP_ID;
+  const accessKey = process.env.RAKUTEN_ACCESS_KEY;
   if (!appId) throw new Error('RAKUTEN_APP_ID is not set');
+  if (!accessKey) throw new Error('RAKUTEN_ACCESS_KEY is not set');
 
   for (const category of CATEGORIES) {
     console.log(`\n\n========== ${category.label} ==========`);
     for (const keyword of category.keywords) {
       console.log(`\n--- キーワード: "${keyword}" ---`);
-      const items = await searchItems(keyword, appId, 5);
+      const items = await searchItems(keyword, appId, accessKey, 5);
       if (items.length === 0) {
         console.log('  結果なし');
         continue;
