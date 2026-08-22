@@ -54,9 +54,15 @@ async function main() {
   if (!appId) throw new Error('RAKUTEN_APP_ID is not set');
   if (!accessKey) throw new Error('RAKUTEN_ACCESS_KEY is not set');
 
+  let isFirst = true;
   for (const category of CATEGORIES) {
     console.log(`\n\n========== ${category.label} ==========`);
     for (const keyword of category.keywords) {
+      if (!isFirst) {
+        // レート制限回避のため、リクエスト間隔を空ける
+        await new Promise(r => setTimeout(r, 2000));
+      }
+      isFirst = false;
       console.log(`\n--- キーワード: "${keyword}" ---`);
       const items = await searchItems(keyword, appId, accessKey, 5);
       if (items.length === 0) {
