@@ -62,7 +62,7 @@ function requestOnce(url: string, headers: Record<string, string>): Promise<{ st
 // 複数のReferer/Origin候補を順番に試し、最初に成功した組み合わせで
 // 以降のリクエストも継続する。全て失敗した場合は各候補のエラーを報告する。
 async function findWorkingCombo(appId: string, accessKey: string): Promise<RefererCombo | null> {
-  const probeUrl = `https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601?applicationId=${appId}&accessKey=${accessKey}&keyword=${encodeURIComponent('ボストン メガネ')}&hits=1&format=json`;
+  const probeUrl = `https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701?applicationId=${appId}&accessKey=${accessKey}&keyword=${encodeURIComponent('ボストン メガネ')}&hits=1&format=json`;
   for (let i = 0; i < REFERER_COMBOS.length; i++) {
     const combo = REFERER_COMBOS[i];
     if (i > 0) await new Promise(r => setTimeout(r, 2000));
@@ -87,7 +87,7 @@ async function findWorkingCombo(appId: string, accessKey: string): Promise<Refer
 }
 
 function searchItems(keyword: string, appId: string, accessKey: string, hits: number, headers: Record<string, string>): Promise<RakutenItem[]> {
-  const url = `https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601?applicationId=${appId}&accessKey=${accessKey}&keyword=${encodeURIComponent(keyword)}&hits=${hits}&sort=-reviewCount&format=json`;
+  const url = `https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701?applicationId=${appId}&accessKey=${accessKey}&keyword=${encodeURIComponent(keyword)}&hits=${hits}&sort=-reviewCount&format=json`;
   return requestOnce(url, headers).then(({ statusCode, body }) => {
     if (statusCode !== 200) {
       console.log(`  ERROR (${keyword}): ${statusCode} ${body}`);
