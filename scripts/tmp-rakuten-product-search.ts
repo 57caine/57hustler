@@ -23,11 +23,11 @@ interface RakutenSearchResponse {
   error_description?: string;
 }
 
+// 四角顔向け・菱形顔向け・逆三角形顔向けは候補確定済みのため対象から除外。
+// まとめ用（汎用）は丸顔向け（Zoff）とブランドが被ったため、キーワードを
+// 変えて再検索する。
 const CATEGORIES: { label: string; keywords: string[] }[] = [
-  { label: '四角顔向け', keywords: ['ボストン メガネ', 'オーバル メガネ'] },
-  { label: '菱形顔向け', keywords: ['ボストン ウェリントン メガネ'] },
-  { label: '逆三角形顔向け', keywords: ['ウェリントン メガネ'] },
-  { label: 'まとめ用（汎用）', keywords: ['定番 メガネフレーム'] },
+  { label: 'まとめ用（汎用）', keywords: ['メガネフレーム 定番 メンズ レディース', 'スクエア メガネフレーム 定番'] },
 ];
 
 // 2026年2月の楽天ウェブサービスAPI仕様変更に対応（新ドメイン・accessKey必須・Refererヘッダー必須）。
