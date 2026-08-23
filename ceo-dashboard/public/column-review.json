@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T21:27:07.186Z",
+  "generatedAt": "2026-08-23T21:27:26.129Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -11,16 +11,16 @@
       "slug": "blue-light-megane-kouka",
       "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
-        "sessions": 16,
-        "bounceRate": 0.3125,
-        "avgSessionDuration": 75.62947975,
+        "sessions": 18,
+        "bounceRate": 0.3333333333333333,
+        "avgSessionDuration": 67.22620422222222,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション16件・affiliate_clickゼロ"
+        "セッション18件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
@@ -69,44 +69,13 @@
       "status": "様子見"
     },
     {
-      "path": "/column/lenszero-kaigai-tsuuhan-guide-2026",
-      "slug": "lenszero-kaigai-tsuuhan-guide-2026",
-      "title": "lenszero-kaigai-tsuuhan-guide-2026",
-      "metrics": {
-        "sessions": 11,
-        "bounceRate": 0.18181818181818182,
-        "avgSessionDuration": 197.77583354545456,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション11件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 9,
-        "h3Count": 24,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 12782
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見"
-    },
-    {
       "path": "/column/eyestrain-stretching-massage-guide",
       "slug": "eyestrain-stretching-massage-guide",
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
         "sessions": 10,
-        "bounceRate": 0.4,
-        "avgSessionDuration": 480.8138924,
+        "bounceRate": 0.3,
+        "avgSessionDuration": 489.7528668,
         "affiliateClicks": 0
       },
       "flags": [
@@ -228,16 +197,16 @@
       "slug": "ranshi-contact-ranking-2025",
       "title": "ranshi-contact-ranking-2025",
       "metrics": {
-        "sessions": 6,
-        "bounceRate": 0.6666666666666666,
-        "avgSessionDuration": 88.67598066666666,
+        "sessions": 7,
+        "bounceRate": 0.7142857142857143,
+        "avgSessionDuration": 76.00798342857142,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション6件・affiliate_clickゼロ"
+        "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 11,
@@ -352,6 +321,37 @@
         "H2見出しを3〜5個設定し、スキャン読みしやすい構造に改善する"
       ],
       "status": "対応済み"
+    },
+    {
+      "path": "/column/pc-megane-bluelight-hikaku-2026",
+      "slug": "pc-megane-bluelight-hikaku-2026",
+      "title": "pc-megane-bluelight-hikaku-2026",
+      "metrics": {
+        "sessions": 5,
+        "bounceRate": 0,
+        "avgSessionDuration": 29.413663200000002,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション5件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 5,
+        "h3Count": 1,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 8101
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
     }
   ]
 }
