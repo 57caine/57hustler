@@ -1,31 +1,31 @@
 {
-  "generatedAt": "2026-08-23T21:27:26.059Z",
+  "generatedAt": "2026-08-24T21:35:17.897Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-08-23T21:27:23.918Z",
+      "fetchedAt": "2026-08-24T21:35:16.457Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 224,
-      "totalPageviews": 280,
+      "totalSessions": 214,
+      "totalPageviews": 250,
       "topPages": [
         {
           "path": "/",
-          "sessions": 33,
-          "pageviews": 40,
-          "avgSessionDuration": 217.0040317878788,
-          "bounceRate": 0.6060606060606061
+          "sessions": 31,
+          "pageviews": 38,
+          "avgSessionDuration": 230.02623493548384,
+          "bounceRate": 0.6129032258064516
         },
         {
           "path": "/column/meta-quest-3-review-2026",
-          "sessions": 31,
-          "pageviews": 31,
-          "avgSessionDuration": 126.35946625806451,
-          "bounceRate": 0.3870967741935484
+          "sessions": 30,
+          "pageviews": 30,
+          "avgSessionDuration": 103.0624542,
+          "bounceRate": 0.43333333333333335
         },
         {
           "path": "/column/blue-light-megane-kouka",
@@ -56,13 +56,6 @@
           "bounceRate": 0.45454545454545453
         },
         {
-          "path": "/category/1day",
-          "sessions": 10,
-          "pageviews": 22,
-          "avgSessionDuration": 431.1485323,
-          "bounceRate": 0
-        },
-        {
           "path": "/column/eyestrain-stretching-massage-guide",
           "sessions": 10,
           "pageviews": 11,
@@ -84,18 +77,11 @@
           "bounceRate": 0.6
         },
         {
-          "path": "/karakon",
-          "sessions": 9,
-          "pageviews": 26,
-          "avgSessionDuration": 59.421090444444445,
-          "bounceRate": 0.1111111111111111
-        },
-        {
-          "path": "/column",
+          "path": "/category/1day",
           "sessions": 8,
-          "pageviews": 28,
-          "avgSessionDuration": 88.221259375,
-          "bounceRate": 0.25
+          "pageviews": 21,
+          "avgSessionDuration": 252.8976705,
+          "bounceRate": 0
         },
         {
           "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
@@ -105,11 +91,11 @@
           "bounceRate": 0.875
         },
         {
-          "path": "/column/reading-glasses-presbyopia-choose-2026",
+          "path": "/karakon",
           "sessions": 8,
-          "pageviews": 7,
-          "avgSessionDuration": 101.0151415,
-          "bounceRate": 0.25
+          "pageviews": 25,
+          "avgSessionDuration": 65.68005637499999,
+          "bounceRate": 0.125
         },
         {
           "path": "/column/ranshi-contact-ranking-2025",
@@ -117,6 +103,13 @@
           "pageviews": 7,
           "avgSessionDuration": 76.00798342857142,
           "bounceRate": 0.7142857142857143
+        },
+        {
+          "path": "/column/reading-glasses-presbyopia-choose-2026",
+          "sessions": 7,
+          "pageviews": 6,
+          "avgSessionDuration": 112.89406899999999,
+          "bounceRate": 0.2857142857142857
         },
         {
           "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
@@ -152,13 +145,16 @@
           "pageviews": 4,
           "avgSessionDuration": 29.413663200000002,
           "bounceRate": 0
+        },
+        {
+          "path": "/column/vr-movie-streaming-service-recommend-2026",
+          "sessions": 5,
+          "pageviews": 4,
+          "avgSessionDuration": 69.054338,
+          "bounceRate": 0.6
         }
       ],
       "weeklyTrend": [
-        {
-          "date": "2026-07-27",
-          "sessions": 11
-        },
         {
           "date": "2026-07-28",
           "sessions": 14
@@ -269,7 +265,7 @@
         },
         {
           "date": "2026-08-24",
-          "sessions": 2
+          "sessions": 5
         }
       ],
       "affiliateClicksByPage": {
@@ -279,14 +275,11 @@
         "/column/vr-movie-streaming-service-recommend-2026": 2,
         "/column/vr-shiryoku-warui": 2,
         "/product/acuvue-oasys-1day": 2,
-        "/": 1,
-        "/category/1day": 1,
         "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide": 1,
         "/column/glare-lens-night-driving-optimal": 1,
         "/column/icl-vs-lasik-2026": 1,
         "/column/karakon-do-ari-erabikata": 1,
         "/column/meta-quest-3-review-2026": 1,
-        "/column/orthokeratology-guide-2026": 1,
         "/column/vr-game-osusume-2026": 1,
         "/eye-care": 1,
         "/karakon": 1,
@@ -298,20 +291,20 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-08-23T21:27:26.059Z",
+      "fetchedAt": "2026-08-24T21:35:17.897Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 31,
-      "totalPageviews": 36,
+      "totalSessions": 29,
+      "totalPageviews": 34,
       "topPages": [
         {
           "path": "/",
-          "sessions": 27,
-          "pageviews": 31,
-          "avgSessionDuration": 72.71453377777777,
-          "bounceRate": 0.5925925925925926
+          "sessions": 25,
+          "pageviews": 29,
+          "avgSessionDuration": 77.64418744,
+          "bounceRate": 0.6
         },
         {
           "path": "/schools/takeru-fx-school",
@@ -336,10 +329,6 @@
         }
       ],
       "weeklyTrend": [
-        {
-          "date": "2026-07-27",
-          "sessions": 2
-        },
         {
           "date": "2026-07-28",
           "sessions": 4
