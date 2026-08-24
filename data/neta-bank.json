@@ -16,7 +16,7 @@
       "id": "shio-kekkai",
       "category": "日常の結界・しきたり",
       "hook": "玄関に塩を置く。そのルーツは1000年以上前にある",
-      "used": false
+      "used": true
     },
     {
       "id": "quantum-observer",
