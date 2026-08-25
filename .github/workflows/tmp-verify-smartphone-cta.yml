@@ -11,7 +11,7 @@ jobs:
         run: |
           URL="https://lens-navi.jp/column/smartphone-presbyopia-magnifier-eyeglasses"
           echo "Fetching: $URL"
-          HTTP_CODE=$(curl -s -o /tmp/page.html -w "%{http_code}" "$URL")
+          HTTP_CODE=$(curl -sL -o /tmp/page.html -w "%{http_code}" "$URL")
           echo "HTTP status: $HTTP_CODE"
           if [ "$HTTP_CODE" != "200" ]; then
             echo "ERROR: unexpected status code"
