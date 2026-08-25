@@ -6119,18 +6119,18 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href={RAKUTEN('ハズキルーペ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">拡大鏡・老眼鏡タイプ</span>
+          className="block bg-slate-50 border border-gray-200 rounded-lg p-3 hover:border-[#bf0000] transition-all">
+          <span className="text-xs bg-white text-gray-600 border border-gray-300 px-2 py-0.5 rounded font-medium">拡大鏡・老眼鏡タイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ハズキルーペ</p>
           <p className="text-xs text-gray-500 mb-3">軽量フレームで長時間の装用にも対応</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="border border-[#bf0000] text-[#bf0000] text-xs font-bold text-center py-1.5 rounded-md">ハズキルーペを楽天で見る →</div>
         </a>
         <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
+          className="block bg-slate-50 border border-gray-200 rounded-lg p-3 hover:border-[#bf0000] transition-all">
+          <span className="text-xs bg-white text-gray-600 border border-gray-300 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
           <p className="text-xs text-gray-500 mb-3">度なし・度付き両対応。夜間使用の負担軽減に</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="border border-[#bf0000] text-[#bf0000] text-xs font-bold text-center py-1.5 rounded-md">JINS SCREENを楽天で見る →</div>
         </a>
       </div>
 
