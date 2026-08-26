@@ -1,0 +1,32 @@
+name: 一時確認-CEOダッシュボードのライブ指標
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Poll /api/live-stats 3 times and check for dynamic updates
+        run: |
+          URL="https://ceo-dashboard-alpha-livid.vercel.app/api/live-stats"
+          for i in 1 2 3; do
+            echo "=== Poll $i ==="
+            HTTP_CODE=$(curl -sL -o /tmp/poll_$i.json -w "%{http_code}" "$URL")
+            echo "HTTP status: $HTTP_CODE"
+            cat /tmp/poll_$i.json
+            echo ""
+            if [ "$i" -lt 3 ]; then
+              sleep 30
+            fi
+          done
+
+          echo ""
+          echo "=== fetchedAt の変化チェック ==="
+          grep -o '"fetchedAt":"[^"]*"' /tmp/poll_1.json /tmp/poll_2.json /tmp/poll_3.json
+
+          echo ""
+          echo "=== ホームページの本番反映チェック ==="
+          HOME_CODE=$(curl -sL -o /tmp/home.html -w "%{http_code}" "https://ceo-dashboard-alpha-livid.vercel.app/")
+          echo "HTTP status: $HOME_CODE"
+          grep -o "本日のライブ指標" /tmp/home.html | sort | uniq -c || true
