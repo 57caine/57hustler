@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import DashboardClock from './DashboardClock';
+import LiveStatsSection from './LiveStatsSection';
 
 const RAW = 'https://raw.githubusercontent.com/57caine/57hustler/main/data';
 
@@ -172,6 +173,9 @@ export default async function Dashboard() {
           </div>
         </div>
       </div>
+
+      {/* 本日のライブ指標（30〜45秒ごとに自動更新） */}
+      <LiveStatsSection />
 
       {/* ① 朝の司令書 */}
       {brief && (
