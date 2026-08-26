@@ -1755,21 +1755,21 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ドライアイ・防腐剤フリー</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
           <p className="text-xs text-gray-500 mb-3">防腐剤無添加でコンタクト装用中でも使用可能</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
         </a>
         <a href={RAKUTEN('サンテFXネオ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">疲れ目・眼精疲労</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテFXネオ</p>
           <p className="text-xs text-gray-500 mb-3">ビタミンB12・タウリン配合。装用前後の使用可否は表示で確認を</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">サンテFXネオを楽天で見る →</div>
         </a>
         <a href={RAKUTEN('ロートVアクティブ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">充血</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ロートVアクティブ</p>
           <p className="text-xs text-gray-500 mb-3">血管収縮成分配合。連用は週2〜3回以内が目安</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ロートVアクティブを楽天で見る →</div>
         </a>
       </div>
 
@@ -5375,21 +5375,21 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">高機能タイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Nissoplus アイウォーマー NP-EEM23</p>
           <p className="text-xs text-gray-500 mb-3">アプリ連携で温度・時間管理ができる高機能モデル</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Nissoplus アイウォーマー NP-EEM23を楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">スタンダードタイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">La Luna アイウォーマー（ホワイト）</p>
           <p className="text-xs text-gray-500 mb-3">USB充電式でコストと機能のバランスが良好</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">La Luna アイウォーマー（ホワイト）を楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237db3.a916904a.56237db4.bd5b1f1c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbodyplus%2F4580657302%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
           <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">低価格タイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Bodyplus アイウォーマー 4580657302</p>
           <p className="text-xs text-gray-500 mb-3">軽量・コンパクトな基本機能モデル</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Bodyplus アイウォーマー 4580657302を楽天で見る →</div>
         </a>
       </div>
 
