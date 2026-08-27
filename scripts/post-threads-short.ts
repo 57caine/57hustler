@@ -129,9 +129,11 @@ ${positionInfo}
 - 朝の全体運投稿と内容が被らないようにする
 - 夜・就寝前という時間帯を意識した内容
   （今夜やること・明日の準備・眠りの前に意識すること）
-- 各星の一言は8文字以内・体言止め
+- 各星の一言は20文字以内で、意味が必ず完結する文にすること。途中で切れる文は絶対に生成しない
+- 体言止め・動詞終わりのどちらでもよい
 - 象意の言い換えは禁止（「地盤を固める」など不可）
-  良い例：「手帳を閉じて」「明日の服を決めて」「窓を開けて眠れ」
+  良い例：「手帳を閉じて明日の予定を確認して」「明日の服を決めてから眠って」「窓を開けて夜風を感じてから眠れ」
+- 20文字を超えそうな内容は、要素を削って短くまとめる（尻切れにしない）
 
 以下のJSONのみ出力（前置き不要）：
 {"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":"","9":""}`,
@@ -140,7 +142,7 @@ ${positionInfo}
 
   const raw = (message.content[0] as { type: string; text: string }).text;
   const json = JSON.parse(raw.replace(/```json\n?|\n?```/g, '').trim()) as Record<string, string>;
-  return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v).slice(0, 8)]));
+  return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v).slice(0, 20)]));
 }
 
 function buildHoroscopeText(oneLiners: Record<number, string>): string {
