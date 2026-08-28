@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
+
 export type ColumnMeta = {
   slug: string;
   title: string;
@@ -2710,6 +2712,15 @@ export const columnContent: Record<string, React.ReactNode> = {
             </div>
           ))}
         </div>
+        <div className="my-4">
+          <a href={RAKUTEN('デイリーズ トータルワン 乱視用')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ワンデー1位・乾きにくさ最強</span>
+            <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">デイリーズ トータルワン 乱視用</p>
+            <p className="text-xs text-gray-500 mb-3">水分保持96%・シリコーンHG素材。1日中快適な装用感でドライアイ傾向の方にも適合</p>
+            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">デイリーズ トータルワン 乱視用を楽天で見る →</div>
+          </a>
+        </div>
       </section>
 
       <section>
@@ -2760,6 +2771,15 @@ export const columnContent: Record<string, React.ReactNode> = {
             </div>
           ))}
         </div>
+        <div className="my-4">
+          <a href={RAKUTEN('アキュビュー オアシス 乱視用')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">2week1位・乾きにくい</span>
+            <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">アキュビュー オアシス 乱視用</p>
+            <p className="text-xs text-gray-500 mb-3">HYDRACLEAR PLUSテクノロジーで涙液の安定膜を形成。長時間装用でも快適</p>
+            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">アキュビュー オアシス 乱視用を楽天で見る →</div>
+          </a>
+        </div>
       </section>
 
       <section>
@@ -2801,6 +2821,15 @@ export const columnContent: Record<string, React.ReactNode> = {
               </div>
             </div>
           ))}
+        </div>
+        <div className="my-4">
+          <a href={RAKUTEN('バイオフィニティ トーリック')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">マンスリー1位・高酸素透過</span>
+            <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">バイオフィニティ トーリック</p>
+            <p className="text-xs text-gray-500 mb-3">Aquaform技術でレンズ自体が水分を保持。強度乱視にも豊富な選択肢</p>
+            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">バイオフィニティ トーリックを楽天で見る →</div>
+          </a>
         </div>
       </section>
 
