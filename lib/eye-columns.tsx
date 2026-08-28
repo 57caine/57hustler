@@ -3077,8 +3077,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('Oakley Holbrook 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
-          Oakley Holbrook 偏光レンズモデルを楽天で見る →
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから：定番モデル</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Oakley Holbrook 偏光レンズモデル</p>
+          <p className="text-xs text-gray-500 mb-3">グレー系レンズで自然な見え方。普段使いとも兼用しやすいクラシックデザイン</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Oakley Holbrook 偏光レンズモデルを楽天で見る →</div>
         </a>
       </div>
 
@@ -3094,8 +3097,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：フレームのサイズ・カラー展開が他ジャンルのモデルより限られる場合がある。購入前にサイズ表示を確認しておくと安心</p>
       <div className="my-4">
         <a href={RAKUTEN('DAIWA 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
-          DAIWA 偏光サングラスを楽天で見る →
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">釣り向け</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DAIWA 偏光サングラス</p>
+          <p className="text-xs text-gray-500 mb-3">水面の反射を抑えて水中の魚・底の地形が見やすくなる</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DAIWA 偏光サングラスを楽天で見る →</div>
         </a>
       </div>
 
@@ -3109,8 +3115,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：用途特化モデルと比べると本体価格はやや高めになりやすい。長く使う前提であれば、初期投資として捉えると選びやすい</p>
       <div className="my-4">
         <a href={RAKUTEN('Oakley Holbrook 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
-          Oakley Holbrook 偏光レンズモデルを楽天で見る →
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ドライブ向け</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Oakley Holbrook 偏光レンズモデル</p>
+          <p className="text-xs text-gray-500 mb-3">雨に濡れた路面や対向車のヘッドライトの反射光を抑えられる</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Oakley Holbrook 偏光レンズモデルを楽天で見る →</div>
         </a>
       </div>
 
@@ -3124,8 +3133,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：ウィンタースポーツに特化した設計のため通年での使用には向かない。オフシーズンは別途1本用意しておくのがおすすめ</p>
       <div className="my-4">
         <a href={RAKUTEN('OAKLEY PRIZM Snow 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
-          OAKLEY PRIZM Snow 偏光レンズを楽天で見る →
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">スキー・スノーボード向け</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">OAKLEY PRIZM Snow 偏光レンズ</p>
+          <p className="text-xs text-gray-500 mb-3">雪面の白さを和らげつつコントラストを強調するレンズ設計</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">OAKLEY PRIZM Snow 偏光レンズを楽天で見る →</div>
         </a>
       </div>
 
@@ -3139,8 +3151,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：スポーツ特化のデザインのため、街着など普段のコーディネートには合わせづらい場合がある。運動用と割り切って使うのがおすすめ</p>
       <div className="my-4">
         <a href={RAKUTEN('100% Speedcraft 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
-          100% Speedcraft 偏光レンズモデルを楽天で見る →
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">サイクリング・ランニング向け</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">100% Speedcraft 偏光レンズモデル</p>
+          <p className="text-xs text-gray-500 mb-3">顔にフィットする軽量フレームで運動中でもズレにくい</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">100% Speedcraft 偏光レンズモデルを楽天で見る →</div>
         </a>
       </div>
 
@@ -3170,8 +3185,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </p>
       <div className="my-4">
         <a href={RAKUTEN('Oakley Holbrook 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
-          Oakley Holbrook 偏光レンズモデルを楽天で見る →
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">普段使い・ドライブ用途に</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Oakley Holbrook 偏光レンズモデル</p>
+          <p className="text-xs text-gray-500 mb-3">クラシックなデザインで用途を選ばない定番モデル</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Oakley Holbrook 偏光レンズモデルを楽天で見る →</div>
         </a>
       </div>
     </article>
