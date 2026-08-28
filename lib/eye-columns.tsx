@@ -5470,7 +5470,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
     "eye-roller-fatigue-puffiness": (
     <article className="prose prose-sm max-w-none">
       <p className="lead text-gray-600 text-base leading-relaxed mb-6">
-        パソコンやスマホの長時間使用で疲れた目や、朝の顔のむくみ。アイローラーは手軽なセルフケアとして人気です。この記事ではおすすめ製品と選び方、使い方を紹介します。
+        結論から言うと、アイローラーは医療機器のような効果が証明されているわけではありませんが、金属製ローラーによる冷却効果と、転がす動作による血行促進で、目元のむくみ・疲れ感を一時的に和らげる仕組みとしては理にかなっています。効果を感じやすいのは「朝の顔のむくみ」と「PC作業後の目の疲れ」の2場面です。この記事では、効果のメカニズムを踏まえたうえで、目的別のおすすめ製品・選び方・正しい使い方を紹介します。
       </p>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">アイケアグッズ早見表</h2>
