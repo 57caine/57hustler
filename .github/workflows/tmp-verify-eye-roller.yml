@@ -1,0 +1,28 @@
+name: 一時確認-アイローラー記事の表示確認
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch production page and inspect
+        run: |
+          URL="https://lens-navi.jp/column/eye-roller-fatigue-puffiness"
+          echo "Fetching: $URL"
+          HTTP_CODE=$(curl -sL -o /tmp/page.html -w "%{http_code}" "$URL")
+          echo "HTTP status: $HTTP_CODE"
+          echo "File size: $(wc -c < /tmp/page.html) bytes"
+          echo ""
+          echo "=== リード文の出現確認 ==="
+          grep -o "パソコンやスマホの長時間使用で疲れた目や" /tmp/page.html | wc -l
+          echo ""
+          echo "=== H2見出しの出現確認 ==="
+          grep -o "アイケアグッズ早見表\|目的別のおすすめアイテム\|選び方4つのポイント\|正しい使い方の基本\|使用時の注意点\|まとめ" /tmp/page.html | sort | uniq -c
+          echo ""
+          echo "=== エラー兆候の確認 ==="
+          grep -o "Application error\|500 Internal\|This page could not be found\|__next_error__" /tmp/page.html || echo "エラー文言なし"
+          echo ""
+          echo "=== 先頭2000文字 ==="
+          head -c 2000 /tmp/page.html
