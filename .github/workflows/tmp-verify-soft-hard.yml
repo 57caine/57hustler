@@ -1,0 +1,21 @@
+name: 一時確認-ソフトハード比較記事の本番反映確認
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch production page and check CTAs
+        run: |
+          URL="https://lens-navi.jp/column/soft-vs-hard-contact-hikaku"
+          echo "Fetching: $URL"
+          HTTP_CODE=$(curl -sL -o /tmp/page.html -w "%{http_code}" "$URL")
+          echo "HTTP status: $HTTP_CODE"
+          echo ""
+          echo "=== 商品名入りCTAボタンの出現確認 ==="
+          grep -o "ワンデーアキュビュー モイストを楽天で見る\|バイオフィニティを楽天で見る" /tmp/page.html | sort | uniq -c
+          echo ""
+          echo "=== rel=sponsored確認 ==="
+          grep -o 'rel="noopener noreferrer nofollow sponsored"' /tmp/page.html | wc -l
