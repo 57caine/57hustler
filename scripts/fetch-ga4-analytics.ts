@@ -37,36 +37,30 @@ interface ContentLogEntry {
   section: string;
 }
 
-function readColumnContent(slug: string): string {
-  const files = [
-    path.join(process.cwd(), 'lib', 'columns.tsx'),
-    path.join(process.cwd(), 'lib', 'eye-columns.tsx'),
-    path.join(process.cwd(), 'lib', 'karakon-columns.tsx'),
-  ];
-  for (const file of files) {
-    if (!fs.existsSync(file)) continue;
-    const src = fs.readFileSync(file, 'utf-8');
-    // hand-written: `  'slug': (` | auto-generated: `    "slug": (`
-    let startIdx = src.indexOf(`  '${slug}': (`);
-    if (startIdx === -1) startIdx = src.indexOf(`    "${slug}": (`);
-    if (startIdx === -1) continue;
-    const searchFrom = startIdx + slug.length + 8;
-    const nextEntryRe = /\n  '[^']+': \(|\n    "[^"]+": \(/g;
-    nextEntryRe.lastIndex = searchFrom;
-    const nextMatch = nextEntryRe.exec(src);
-    const endIdx = nextMatch ? nextMatch.index : src.lastIndexOf('\n};');
-    return src.slice(startIdx, endIdx);
-  }
-  return '';
+// ソースコードの生文字列（hb.afl.rakuten等）を正規表現で検索する方式だと、
+// RAKUTEN()ヘルパー関数のように実行時に文字列を組み立てるリンク実装を
+// 「アフィリエイトリンクなし」と誤検知する。ビルド後の実HTML出力を検査する
+// ことで、実装方式に依存せず実際にレンダリングされたリンクを検知する。
+function readColumnBuiltHtml(slug: string): string {
+  const file = path.join(process.cwd(), '.next', 'server', 'app', 'column', `${slug}.html`);
+  if (!fs.existsSync(file)) return '';
+  return fs.readFileSync(file, 'utf-8');
 }
 
-function analyzeContent(content: string): ColumnAnalysis {
+function analyzeBuiltHtml(html: string): ColumnAnalysis {
+  if (!html) {
+    return { h2Count: 0, h3Count: 0, hasAffiliateLinks: false, ctaCount: 0, contentChars: 0 };
+  }
+  // ビルド出力にはレンダリング済みHTML本体とRSCペイロード（同じ内容がJSON文字列
+  // として再度埋め込まれる）が両方含まれるため、素朴なカウントは概ね2倍になる。
+  // 閾値判定にしか使わないため、四捨五入した近似値で十分とする。
+  const halved = (re: RegExp) => Math.round((html.match(re) ?? []).length / 2);
   return {
-    h2Count: (content.match(/<h2/g) ?? []).length,
-    h3Count: (content.match(/<h3/g) ?? []).length,
-    hasAffiliateLinks: /px\.a8\.net|hb\.afl\.rakuten/.test(content),
-    ctaCount: (content.match(/楽天(市場)?で見る|楽天で(購入|探す)|で見る\s*→|bg-sky-600[^>]*>[^<]*で見る/g) ?? []).length,
-    contentChars: content.length,
+    h2Count: halved(/<h2[\s>]/g),
+    h3Count: halved(/<h3[\s>]/g),
+    hasAffiliateLinks: /sponsored/.test(html),
+    ctaCount: halved(/sponsored/g),
+    contentChars: html.length,
   };
 }
 
@@ -138,8 +132,8 @@ export function detectFlaggedColumns(
     const slug = page.path.replace('/column/', '');
     const logEntry = contentLog.columns.find(c => c.slug === slug);
     const title = logEntry?.title ?? slug;
-    const content = readColumnContent(slug);
-    const analysis = analyzeContent(content);
+    const html = readColumnBuiltHtml(slug);
+    const analysis = analyzeBuiltHtml(html);
     const { causes, suggestions } = generateCausesAndSuggestions(
       { sessions: page.sessions, bounceRate: page.bounceRate, avgSessionDuration: page.avgSessionDuration },
       analysis,
