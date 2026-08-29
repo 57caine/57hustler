@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T03:07:23.346Z",
+  "generatedAt": "2026-08-29T18:02:14.511Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -23,11 +23,11 @@
         "セッション16件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 5,
-        "h3Count": 0,
+        "h2Count": 4,
+        "h3Count": 2,
         "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 5973
+        "ctaCount": 6,
+        "contentChars": 68310
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -43,7 +43,7 @@
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
         "sessions": 10,
-        "bounceRate": 0.4,
+        "bounceRate": 0.3,
         "avgSessionDuration": 417.2078647,
         "affiliateClicks": 0
       },
@@ -54,11 +54,11 @@
         "セッション10件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 9,
-        "h3Count": 19,
+        "h2Count": 6,
+        "h3Count": 12,
         "hasAffiliateLinks": true,
-        "ctaCount": 14,
-        "contentChars": 26224
+        "ctaCount": 16,
+        "contentChars": 118902
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -85,17 +85,48 @@
         "セッション9件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 7,
-        "h3Count": 11,
+        "h2Count": 4,
+        "h3Count": 8,
         "hasAffiliateLinks": true,
-        "ctaCount": 0,
-        "contentChars": 9163
+        "ctaCount": 4,
+        "contentChars": 73243
       },
       "causes": [
-        "リンクはあるがCTAボタンが設置されていない（クリック導線が弱い）"
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
-        "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
+    },
+    {
+      "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
+      "slug": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
+      "title": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 165.89216575,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 13,
+        "hasAffiliateLinks": true,
+        "ctaCount": 10,
+        "contentChars": 84255
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見"
     },
@@ -116,11 +147,11 @@
         "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 4,
-        "h3Count": 3,
+        "h2Count": 3,
+        "h3Count": 4,
         "hasAffiliateLinks": true,
-        "ctaCount": 5,
-        "contentChars": 7056
+        "ctaCount": 7,
+        "contentChars": 73415
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -147,17 +178,17 @@
         "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 4,
+        "h2Count": 3,
         "h3Count": 4,
-        "hasAffiliateLinks": false,
-        "ctaCount": 6,
-        "contentChars": 12739
+        "hasAffiliateLinks": true,
+        "ctaCount": 8,
+        "contentChars": 87594
       },
       "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "対応済み"
     },
@@ -179,41 +210,10 @@
       ],
       "analysis": {
         "h2Count": 3,
-        "h3Count": 0,
+        "h3Count": 2,
         "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 7541
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見"
-    },
-    {
-      "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
-      "slug": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
-      "title": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.5714285714285714,
-        "avgSessionDuration": 53.868895571428574,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 6,
-        "h3Count": 21,
-        "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 14498
+        "ctaCount": 6,
+        "contentChars": 78439
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -240,17 +240,17 @@
         "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 11,
-        "h3Count": 0,
-        "hasAffiliateLinks": false,
-        "ctaCount": 3,
-        "contentChars": 18023
+        "h2Count": 6,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 100236
       },
       "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "対応済み"
     },
@@ -271,17 +271,17 @@
         "セッション5件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 7,
+        "h2Count": 4,
         "h3Count": 5,
-        "hasAffiliateLinks": false,
-        "ctaCount": 0,
-        "contentChars": 8112
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 77135
       },
       "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "対応済み"
     }
