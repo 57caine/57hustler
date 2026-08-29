@@ -2,7 +2,7 @@
  * Threads 九星気学 9星まとめ日次投稿スクリプト
  *
  * 今日の日盤中宮星を表示しつつ、全9星の今日の一言をまとめて1投稿する。
- * 各星の一言はClaude APIで動的生成（20文字以内・意味が完結する文）。
+ * 各星の一言はClaude APIで動的生成（10文字以内・意味が完結する文。星名と改行で分けて表示）。
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -110,15 +110,17 @@ ${positionInfo}
 
 月盤「${monthlyStar.name}」＋ 各星の回座宮の組み合わせから、
 その星が今日「具体的にどんな状況・行動に置かれているか」を読み取り、
-各星の一言は20文字以内で、意味が必ず完結する文にすること。
-途中で切れる文は絶対に生成しない。
+各星の一言は10文字以内で、意味が必ず完結する文にすること。
+途中で切れる文は絶対に生成しない。助詞（「を」「に」「が」「の」など）で終えてはいけない。
+動詞か名詞で言い切ること。
 
 【厳守】
 - 象意の言い換えは絶対NG。「地盤を固める」「じっくり取り組む」などは禁止
 - 行動・場面・注意点で具体的に
-  良い例：「午後に動くと吉」「メモを惜しまず取っておくと後で役立つ」「頼む前に一度整理しておく」
+  良い例：「今日は発信が吉」「縁を大切に」「静かに根を張る」
+  NG例：「今日の変化を手帳」（助詞で切れている）「明日のリーダーシ」（単語の途中で切れている）
 - 体言止め・動詞終わりのどちらでもよい。ですます調不要
-- 20文字を超えそうな内容は、要素を削って短くまとめる（尻切れにしない）
+- 10文字に収まらない内容は、要素を削って短くまとめる（尻切れにしない）
 
 以下のJSONのみ出力（前置き不要）：
 {"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":"","9":""}`,
@@ -127,7 +129,7 @@ ${positionInfo}
 
   const raw = (message.content[0] as { type: string; text: string }).text;
   const json = JSON.parse(raw.replace(/```json\n?|\n?```/g, '').trim()) as Record<string, string>;
-  return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v).slice(0, 20)]));
+  return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v).slice(0, 10)]));
 }
 
 function buildPostText(dailyStarNum: number, oneLiners: Record<number, string>): string {
@@ -142,7 +144,7 @@ function buildPostText(dailyStarNum: number, oneLiners: Record<number, string>):
     ...Array.from({ length: 9 }, (_, i) => {
       const n = i + 1;
       const s = KYUSEI[n];
-      return `${s.emoji}${s.short}｜${oneLiners[n] ?? ''}`;
+      return `${s.emoji}${s.short}\n${oneLiners[n] ?? ''}`;
     }),
     '',
     '🌙 #九星気学 #今日の運勢 #夜中のおじさん',
