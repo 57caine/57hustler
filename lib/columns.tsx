@@ -3970,6 +3970,15 @@ export const columnContent: Record<string, React.ReactNode> = {
             </ul>
           </div>
         </div>
+        <div className="my-4">
+          <a href={RAKUTEN('ワンデーアキュビュー モイスト')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ソフト・初めての1日でも使いやすい</span>
+            <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ワンデーアキュビュー モイスト</p>
+            <p className="text-xs text-gray-500 mb-3">うるおい成分配合で、ソフト初心者でも装用感の慣れが不要なワンデータイプ</p>
+            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ワンデーアキュビュー モイストを楽天で見る →</div>
+          </a>
+        </div>
       </section>
 
       <section>
@@ -4011,6 +4020,15 @@ export const columnContent: Record<string, React.ReactNode> = {
             <li>マンスリーソフト：約1〜2万円（ケア用品含む）</li>
             <li>ハード：初年度1〜2万円＋ケア用品、2年目以降ケア用品のみ</li>
           </ul>
+        </div>
+        <div className="my-4">
+          <a href={RAKUTEN('バイオフィニティ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
+            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">コストを抑えたい方に・マンスリー</span>
+            <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">バイオフィニティ</p>
+            <p className="text-xs text-gray-500 mb-3">Aquaform技術で高酸素透過率。マンスリーの中でも人気の高い定番モデル</p>
+            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">バイオフィニティを楽天で見る →</div>
+          </a>
         </div>
       </section>
 
