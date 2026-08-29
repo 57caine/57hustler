@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-08-29T18:02:14.504Z",
+  "generatedAt": "2026-08-29T23:11:01.396Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-08-29T18:02:12.594Z",
+      "fetchedAt": "2026-08-29T23:10:59.596Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 196,
-      "totalPageviews": 227,
+      "totalSessions": 198,
+      "totalPageviews": 230,
       "topPages": [
         {
           "path": "/",
@@ -98,6 +98,20 @@
           "bounceRate": 0.375
         },
         {
+          "path": "/karakon",
+          "sessions": 8,
+          "pageviews": 24,
+          "avgSessionDuration": 66.22357199999999,
+          "bounceRate": 0.25
+        },
+        {
+          "path": "/category/1day",
+          "sessions": 7,
+          "pageviews": 18,
+          "avgSessionDuration": 293.98659428571426,
+          "bounceRate": 0.14285714285714285
+        },
+        {
           "path": "/column/ranshi-contact-ranking-2025",
           "sessions": 7,
           "pageviews": 7,
@@ -105,25 +119,11 @@
           "bounceRate": 0.5714285714285714
         },
         {
-          "path": "/karakon",
-          "sessions": 7,
-          "pageviews": 22,
-          "avgSessionDuration": 73.620261,
-          "bounceRate": 0.14285714285714285
-        },
-        {
           "path": "/vr",
           "sessions": 7,
           "pageviews": 9,
           "avgSessionDuration": 14.559657000000001,
           "bounceRate": 0.42857142857142855
-        },
-        {
-          "path": "/category/1day",
-          "sessions": 6,
-          "pageviews": 18,
-          "avgSessionDuration": 338.94475366666666,
-          "bounceRate": 0
         },
         {
           "path": "/column/soft-vs-hard-contact-hikaku",
@@ -147,11 +147,11 @@
           "bounceRate": 0.25
         },
         {
-          "path": "/column/vr-shiryoku-warui",
+          "path": "/column/hot-eye-mask-effects-recommended-products",
           "sessions": 4,
-          "pageviews": 4,
-          "avgSessionDuration": 294.72269425,
-          "bounceRate": 0.25
+          "pageviews": 5,
+          "avgSessionDuration": 22.437905999999998,
+          "bounceRate": 0.75
         }
       ],
       "weeklyTrend": [
@@ -266,6 +266,10 @@
         {
           "date": "2026-08-29",
           "sessions": 6
+        },
+        {
+          "date": "2026-08-30",
+          "sessions": 1
         }
       ],
       "affiliateClicksByPage": {
@@ -291,7 +295,7 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-08-29T18:02:14.504Z",
+      "fetchedAt": "2026-08-29T23:11:01.396Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
