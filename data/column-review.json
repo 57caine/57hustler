@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T00:36:14.472Z",
+  "generatedAt": "2026-08-29T03:07:23.346Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -42,16 +42,16 @@
       "slug": "eyestrain-stretching-massage-guide",
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 540.0374416666667,
+        "sessions": 10,
+        "bounceRate": 0.4,
+        "avgSessionDuration": 417.2078647,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
+        "セッション10件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 9,
@@ -73,16 +73,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.875,
-        "avgSessionDuration": 57.919888625,
+        "sessions": 9,
+        "bounceRate": 0.8888888888888888,
+        "avgSessionDuration": 51.48434544444444,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
+        "セッション9件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 7,
@@ -96,6 +96,130 @@
       ],
       "suggestions": [
         "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
+      ],
+      "status": "様子見"
+    },
+    {
+      "path": "/column/reading-glasses-presbyopia-choose-2026",
+      "slug": "reading-glasses-presbyopia-choose-2026",
+      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.375,
+        "avgSessionDuration": 99.582931125,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 3,
+        "hasAffiliateLinks": true,
+        "ctaCount": 5,
+        "contentChars": 7056
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
+    },
+    {
+      "path": "/column/sunglass-polarized-guide",
+      "slug": "sunglass-polarized-guide",
+      "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 27.097198625,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 4,
+        "hasAffiliateLinks": false,
+        "ctaCount": 6,
+        "contentChars": 12739
+      },
+      "causes": [
+        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+      ],
+      "suggestions": [
+        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+      ],
+      "status": "対応済み"
+    },
+    {
+      "path": "/column/vr-game-osusume-2026",
+      "slug": "vr-game-osusume-2026",
+      "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.375,
+        "avgSessionDuration": 43.677097625,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 0,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 7541
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
+    },
+    {
+      "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
+      "slug": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
+      "title": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
+      "metrics": {
+        "sessions": 7,
+        "bounceRate": 0.5714285714285714,
+        "avgSessionDuration": 53.868895571428574,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション7件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 6,
+        "h3Count": 21,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 14498
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見"
     },
@@ -119,180 +243,21 @@
         "h2Count": 11,
         "h3Count": 0,
         "hasAffiliateLinks": false,
-        "ctaCount": 0,
-        "contentChars": 15784
+        "ctaCount": 3,
+        "contentChars": 18023
       },
       "causes": [
         "アフィリエイトリンク（楽天・A8）が記事に存在しない"
       ],
       "suggestions": [
         "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
-      ],
-      "status": "対応済み"
-    },
-    {
-      "path": "/column/reading-glasses-presbyopia-choose-2026",
-      "slug": "reading-glasses-presbyopia-choose-2026",
-      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.2857142857142857,
-        "avgSessionDuration": 112.89406899999999,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 3,
-        "hasAffiliateLinks": true,
-        "ctaCount": 5,
-        "contentChars": 7056
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見"
-    },
-    {
-      "path": "/column/sunglass-polarized-guide",
-      "slug": "sunglass-polarized-guide",
-      "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.5714285714285714,
-        "avgSessionDuration": 28.351514142857145,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 4,
-        "hasAffiliateLinks": false,
-        "ctaCount": 6,
-        "contentChars": 10468
-      },
-      "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
-      ],
-      "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
-      ],
-      "status": "対応済み"
-    },
-    {
-      "path": "/column/vr-game-osusume-2026",
-      "slug": "vr-game-osusume-2026",
-      "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.42857142857142855,
-        "avgSessionDuration": 46.45192828571429,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 0,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 7541
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見"
-    },
-    {
-      "path": "/column/acuvue-medallist-days-hikaku-2026",
-      "slug": "acuvue-medallist-days-hikaku-2026",
-      "title": "acuvue-medallist-days-hikaku-2026",
-      "metrics": {
-        "sessions": 5,
-        "bounceRate": 0.6,
-        "avgSessionDuration": 60.992296599999996,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション5件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 7,
-        "h3Count": 13,
-        "hasAffiliateLinks": true,
-        "ctaCount": 0,
-        "contentChars": 9484
-      },
-      "causes": [
-        "リンクはあるがCTAボタンが設置されていない（クリック導線が弱い）"
-      ],
-      "suggestions": [
-        "「楽天市場で見る →」ボタンを記事の序盤または中盤に追加する"
-      ],
-      "status": "様子見"
-    },
-    {
-      "path": "/column/eye-roller-fatigue-puffiness",
-      "slug": "eye-roller-fatigue-puffiness",
-      "title": "アイローラーの効果検証：目の疲れとむくみ解消グッズの選び方ガイド",
-      "metrics": {
-        "sessions": 4,
-        "bounceRate": 1,
-        "avgSessionDuration": 1.24695425,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "bounce_rate_over_90pct",
-        "avg_session_under_10s"
-      ],
-      "flagLabels": [
-        "直帰率100%（閾値90%）",
-        "平均滞在1.2秒（閾値10秒）"
-      ],
-      "analysis": {
-        "h2Count": 6,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 7592
-      },
-      "causes": [
-        "ページが正常にレンダリングされていない可能性（JSXエラー・白画面等）",
-        "検索意図とコンテンツのミスマッチ（期待した情報が冒頭にない）"
-      ],
-      "suggestions": [
-        "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する",
-        "冒頭3〜4行で結論・要点を先出しし、読者の疑問に即答する構成にする"
       ],
       "status": "対応済み"
     },
     {
       "path": "/column/soft-vs-hard-contact-hikaku",
       "slug": "soft-vs-hard-contact-hikaku",
-      "title": "ソフトコンタクトレンズとハードコンタクトの違いを完全比較【どちらが自分に合う？】",
+      "title": "soft-vs-hard-contact-hikaku",
       "metrics": {
         "sessions": 5,
         "bounceRate": 0,
@@ -308,15 +273,15 @@
       "analysis": {
         "h2Count": 7,
         "h3Count": 5,
-        "hasAffiliateLinks": true,
-        "ctaCount": 2,
-        "contentChars": 9584
+        "hasAffiliateLinks": false,
+        "ctaCount": 0,
+        "contentChars": 8112
       },
       "causes": [
-        "affiliate_clickイベントが未計測。アフィリエイトリンク実装が最近のためデータ蓄積中の可能性がある"
+        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
       ],
       "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
       ],
       "status": "対応済み"
     }
