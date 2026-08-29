@@ -288,6 +288,37 @@
         "冒頭3〜4行で結論・要点を先出しし、読者の疑問に即答する構成にする"
       ],
       "status": "対応済み"
+    },
+    {
+      "path": "/column/soft-vs-hard-contact-hikaku",
+      "slug": "soft-vs-hard-contact-hikaku",
+      "title": "ソフトコンタクトレンズとハードコンタクトの違いを完全比較【どちらが自分に合う？】",
+      "metrics": {
+        "sessions": 5,
+        "bounceRate": 0,
+        "avgSessionDuration": 154.120892,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション5件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 7,
+        "h3Count": 5,
+        "hasAffiliateLinks": true,
+        "ctaCount": 2,
+        "contentChars": 9584
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。アフィリエイトリンク実装が最近のためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "対応済み"
     }
   ]
 }
