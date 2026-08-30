@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T23:11:01.403Z",
+  "generatedAt": "2026-08-30T23:20:19.632Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -11,16 +11,16 @@
       "slug": "blue-light-megane-kouka",
       "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
-        "sessions": 16,
-        "bounceRate": 0.375,
-        "avgSessionDuration": 72.87439206250001,
+        "sessions": 15,
+        "bounceRate": 0.4,
+        "avgSessionDuration": 69.41749113333334,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション16件・affiliate_clickゼロ"
+        "セッション15件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -69,13 +69,13 @@
       "status": "様子見"
     },
     {
-      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
-      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
-      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
+      "slug": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
+      "title": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "metrics": {
         "sessions": 9,
-        "bounceRate": 0.8888888888888888,
-        "avgSessionDuration": 51.48434544444444,
+        "bounceRate": 0.4444444444444444,
+        "avgSessionDuration": 127.06307822222223,
         "affiliateClicks": 0
       },
       "flags": [
@@ -83,37 +83,6 @@
       ],
       "flagLabels": [
         "セッション9件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 8,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 73243
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見"
-    },
-    {
-      "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
-      "slug": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
-      "title": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
-      "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 165.89216575,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -162,37 +131,6 @@
       "status": "様子見"
     },
     {
-      "path": "/column/sunglass-polarized-guide",
-      "slug": "sunglass-polarized-guide",
-      "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
-      "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 27.097198625,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 4,
-        "hasAffiliateLinks": true,
-        "ctaCount": 8,
-        "contentChars": 87594
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "対応済み"
-    },
-    {
       "path": "/column/vr-game-osusume-2026",
       "slug": "vr-game-osusume-2026",
       "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
@@ -214,6 +152,37 @@
         "hasAffiliateLinks": true,
         "ctaCount": 6,
         "contentChars": 78439
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
+    },
+    {
+      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
+      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "metrics": {
+        "sessions": 7,
+        "bounceRate": 0.7142857142857143,
+        "avgSessionDuration": 68.33871642857143,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション7件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 8,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 73243
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -259,16 +228,16 @@
       "slug": "soft-vs-hard-contact-hikaku",
       "title": "soft-vs-hard-contact-hikaku",
       "metrics": {
-        "sessions": 5,
-        "bounceRate": 0,
-        "avgSessionDuration": 154.120892,
+        "sessions": 7,
+        "bounceRate": 0.2857142857142857,
+        "avgSessionDuration": 112.65489642857143,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション5件・affiliate_clickゼロ"
+        "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -276,6 +245,37 @@
         "hasAffiliateLinks": true,
         "ctaCount": 3,
         "contentChars": 77135
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "対応済み"
+    },
+    {
+      "path": "/column/sunglass-polarized-guide",
+      "slug": "sunglass-polarized-guide",
+      "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
+      "metrics": {
+        "sessions": 7,
+        "bounceRate": 0.42857142857142855,
+        "avgSessionDuration": 30.968227000000002,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション7件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 8,
+        "contentChars": 87594
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
