@@ -1,6 +1,6 @@
 {
   "month": "2026-08",
-  "generatedAt": "2026-08-29T04:20:13.279Z",
+  "generatedAt": "2026-08-30T01:44:32.765Z",
   "metrics": {
     "period": "2026-08",
     "夜中のおじさん": {
@@ -22,36 +22,41 @@
       "failure": 0
     },
     "GitHubActions全体": {
-      "workflowCount": 20,
+      "workflowCount": 21,
       "totalRuns": 100,
       "successRuns": 89
     }
   },
-  "evaluation": "# 57hustler AI社員 2026年8月度評価\n\n## 🌙 夜中のおじさん\n**よくできた点**\n- 月43投稿と安定した稼働実績を維持\n- 継続的なコンテンツ供給で存在感を確保\n\n**改善点**\n- 重複投稿9%は改善の余地あり。フィルタリング強化が必要\n\n**来月への期待**\n- 重複率を5%以下に削減し、質の向上を期待\n\n---\n\n## 📝 コラムbot\n**よくできた点**\n- 特になし\n\n**改善点**\n- 0投稿。動作不具合またはロジック見直しが急務\n\n**来月への期待**\n- 即座の再起動・修復を求めます\n\n---\n\n## 💰 価格監視bot / ⭐ 九星気学bot\n**よくできた点**\n- 特になし\n\n**改善点**\n- 両者ともゼロ稼働。原因究明が必要\n\n**来月への期待**\n- 機能復旧を最優先で\n\n---\n\n## ⚙️ GitHubActions全体\n**よくできた点**\n- 89%の成功率で安定稼働\n\n**改善点**\n- 11%の失敗率削減が課題\n\n**来月への期待**\n- 95%以上の成功率達成を目指す",
+  "evaluation": "# 57hustler AI社員 月次評価（2026年8月）\n\n## 🌙 夜中のおじさん\n**よくできた点**\n- 月43投稿と安定した稼働を実現\n- 定期的なコンテンツ供給で読者エンゲージメント維持\n\n**改善点**\n- 重複投稿9%は改善の余地あり\n- コンテンツの多様性向上が必要\n\n**来月への期待**\n- 重複率を5%以下に削減\n- 創意工夫を加えた投稿品質向上\n\n---\n\n## 📰 コラムbot\n**現状**\n- 稼働停止状態が継続\n\n**来月への期待**\n- 運用再開の判断と実行\n\n---\n\n## 💰 価格監視bot / 🔮 九星気学bot\n**現状**\n- 両者とも稼働なし\n\n**来月への期待**\n- 機能復旧・再稼働の予定確認\n\n---\n\n## ⚙️ GitHubActions全体\n**よくできた点**\n- 100回中89回の成功率（89%）は良好\n\n**改善点**\n- 11回の失敗の原因分析と対策が必要\n\n**来月への期待**\n- 成功率90%以上の達成",
   "workflowBreakdown": {
     "AI社員 月次人事評価": {
-      "total": 1,
-      "success": 0,
+      "total": 2,
+      "success": 1,
       "failure": 0
     },
     "価格データ・アフィリエイトリンク自動更新": {
-      "total": 20,
-      "success": 20,
+      "total": 18,
+      "success": 18,
+      "failure": 0
+    },
+    "Threads 夜中のおじさん 自動投稿": {
+      "total": 8,
+      "success": 8,
       "failure": 0
     },
     "Morning Brief": {
-      "total": 4,
-      "success": 4,
+      "total": 3,
+      "success": 3,
       "failure": 0
     },
     "Instagram 自動投稿": {
-      "total": 6,
-      "success": 6,
+      "total": 4,
+      "success": 4,
       "failure": 0
     },
     "Threads 占い 日次自動投稿": {
-      "total": 4,
-      "success": 4,
+      "total": 3,
+      "success": 3,
       "failure": 0
     },
     "GA4アナリティクス日次取得": {
@@ -59,15 +64,40 @@
       "success": 4,
       "failure": 0
     },
-    "Threads 夜中のおじさん 自動投稿": {
+    "Build CEO Dashboard": {
+      "total": 8,
+      "success": 8,
+      "failure": 0
+    },
+    "Build lens-navi / school-navi / shop-navi / yonaka-uranai": {
+      "total": 13,
+      "success": 13,
+      "failure": 0
+    },
+    "仕組み名鑑 自動索引更新": {
       "total": 12,
-      "success": 12,
+      "success": 11,
+      "failure": 1
+    },
+    "一時取得-ソフトハード比較記事のGA4個別メトリクス": {
+      "total": 1,
+      "success": 1,
       "failure": 0
     },
     "Threads 夜間コラム自動投稿": {
       "total": 3,
       "success": 0,
       "failure": 3
+    },
+    "一時確認-ソフトハード比較記事の本番反映確認": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "一時確認-処方箋記事の表示確認": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
     },
     "Threads 夜21時 自動投稿（一文考察・夜占い）": {
       "total": 3,
@@ -90,23 +120,8 @@
       "failure": 3
     },
     "henkutsu 海外商品リサーチ": {
-      "total": 2,
-      "success": 2,
-      "failure": 0
-    },
-    "Build lens-navi / school-navi / shop-navi / yonaka-uranai": {
-      "total": 9,
-      "success": 9,
-      "failure": 0
-    },
-    "Build CEO Dashboard": {
-      "total": 5,
-      "success": 5,
-      "failure": 0
-    },
-    "仕組み名鑑 自動索引更新": {
-      "total": 9,
-      "success": 9,
+      "total": 1,
+      "success": 1,
       "failure": 0
     },
     "一時確認-コラム改善レビュー3件の本番反映確認": {
@@ -118,16 +133,6 @@
       "total": 1,
       "success": 1,
       "failure": 0
-    },
-    "一時確認-CEOダッシュボードのライブ指標": {
-      "total": 1,
-      "success": 1,
-      "failure": 0
-    },
-    "一時確認-スマホ老眼CTA本番反映確認": {
-      "total": 2,
-      "success": 1,
-      "failure": 1
     }
   }
 }
