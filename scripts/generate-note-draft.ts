@@ -9,6 +9,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import * as fs from 'fs';
 import * as path from 'path';
+import { getYearlyStar, monthlyStarFromYearly as getMonthlyStar } from './lib/kyusei-ban';
 
 // 九星データベース
 const KYUSEI: Record<number, { name: string; element: string; direction: string; color: string; theme: string; birthYears: string }> = {
@@ -91,28 +92,6 @@ function getWeeklyTrivia(): typeof TRIVIA_POOL[number] {
   const startOfYear = new Date(now.getFullYear(), 0, 1);
   const weekNum = Math.floor((now.getTime() - startOfYear.getTime()) / (7 * 24 * 60 * 60 * 1000));
   return TRIVIA_POOL[(weekNum + 3) % TRIVIA_POOL.length];
-}
-
-/** 年盤の中宮星（2024=四緑基準、逆行） */
-function getYearlyStar(year: number): number {
-  return ((4 - 1 - (year - 2024) % 9 + 900) % 9) + 1;
-}
-
-/** 月盤の中宮星 */
-function getMonthlyStar(yearStar: number, month: number): number {
-  const TABLE: number[][] = [
-    [8,7,6,5,4,3,2,1,9,8,7,6],
-    [5,4,3,2,1,9,8,7,6,5,4,3],
-    [2,1,9,8,7,6,5,4,3,2,1,9],
-    [8,7,6,5,4,3,2,1,9,8,7,6],
-    [5,4,3,2,1,9,8,7,6,5,4,3],
-    [2,1,9,8,7,6,5,4,3,2,1,9],
-    [8,7,6,5,4,3,2,1,9,8,7,6],
-    [5,4,3,2,1,9,8,7,6,5,4,3],
-    [2,1,9,8,7,6,5,4,3,2,1,9],
-  ];
-  const monthIdx = (month - 2 + 12) % 12;
-  return TABLE[yearStar - 1][monthIdx];
 }
 
 async function generateArticle(): Promise<string> {

@@ -1,0 +1,27 @@
+name: Threads 今日の吉方位 自動投稿
+
+on:
+  schedule:
+    # 毎日 JST 12:30 (UTC 3:30)。対象曜日（火・木・土）判定はスクリプト内部で実施
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: 今日の吉方位 投稿
+        run: npx ts-node scripts/post-threads-houi.ts
+        env:
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
