@@ -987,15 +987,42 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
   'blue-light-megane-kouka': (
     <article className="prose prose-sm max-w-none">
       <p className="lead text-gray-600 text-base leading-relaxed mb-6">
-        「ブルーライトカット眼鏡は本当に効果があるの？」という疑問を持つ方は多いです。科学的根拠をもとに、効果と正しい選び方を解説します。
+        結論から言うと、ブルーライトカット眼鏡が眼精疲労そのものを軽減するという科学的根拠はありません（2021年アメリカ眼科学会見解）。ただし、夜間のスマホ・PC使用による睡眠への影響を抑える効果は期待でき、度あり・度なしの選び方次第で実用性は変わります。この記事では根拠を踏まえたうえで、タイプ別のおすすめと選び方を紹介します。
       </p>
 
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ブルーライトとは</h2>
-      <p className="text-gray-700 mb-4">
-        ブルーライトは波長380〜500nmの青色光で、スマートフォンやPCのLEDディスプレイから多く放出されます。太陽光にも含まれており、人体への影響は昼間と夜間で大きく異なります。
-      </p>
-      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
-        <p className="text-sm text-blue-800"><strong>夜間のブルーライト：</strong>メラトニン（睡眠ホルモン）の分泌を抑制し、睡眠の質を低下させる可能性があります。</p>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">ブルーライトカット眼鏡 早見表</h2>
+      <div className="overflow-x-auto mb-4">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-slate-50">
+              <th className="text-left p-3 border border-gray-200">タイプ</th>
+              <th className="text-left p-3 border border-gray-200">向いている人</th>
+              <th className="text-left p-3 border border-gray-200">価格帯</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { type: '度なし', who: '視力が正常で、まず試してみたい方', price: '¥1,000〜3,000' },
+              { type: '度あり', who: '近視・遠視の矯正とPC作業対応を両立したい方', price: '¥3,000〜15,000' },
+            ].map(r => (
+              <tr key={r.type} className="border-b border-gray-100">
+                <td className="p-3 border border-gray-200 font-medium">{r.type}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.who}</td>
+                <td className="p-3 border border-gray-200 text-gray-600">{r.price}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmujina0008%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+          target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
+          <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">まずはこれから・度なしタイプ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">mujina ブルーライトカットPCメガネ</p>
+          <p className="text-xs text-gray-500 mb-3">度なしで手に取りやすい価格帯。まず試してみたい方に</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina ブルーライトカットPCメガネを楽天で見る →</div>
+        </a>
       </div>
 
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">科学的根拠の実態</h2>
@@ -1011,29 +1038,35 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <p className="text-sm text-amber-800"><strong>ポイント：</strong>ブルーライトカット眼鏡よりも「20-20-20ルール（20分おきに20フィート先を20秒見る）」の方が疲れ目に効果的とされています。</p>
       </div>
 
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">度なし vs 度あり</h2>
-      <div className="grid sm:grid-cols-2 gap-4 mb-6">
-        <div className="bg-white border border-gray-200 rounded-xl p-4">
-          <p className="font-bold text-gray-800 mb-2">度なしブルーライトカット眼鏡</p>
-          <ul className="text-xs text-gray-600 space-y-1">
-            <li>✓ 視力が正常な方に</li>
-            <li>✓ 価格が安い（¥1,000〜）</li>
-            <li>✓ 夜間のスマホ使用に効果的</li>
-            <li>✗ 疲れ目への効果は限定的</li>
-          </ul>
-        </div>
-        <div className="bg-white border border-gray-200 rounded-xl p-4">
-          <p className="font-bold text-gray-800 mb-2">度ありブルーライトカット眼鏡</p>
-          <ul className="text-xs text-gray-600 space-y-1">
-            <li>✓ 近視・遠視の矯正も同時に</li>
-            <li>✓ 長時間PC作業に最適</li>
-            <li>✓ 専用の度数設定も可能</li>
-            <li>✗ 価格が高い（¥15,000〜）</li>
-          </ul>
-        </div>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">タイプ別のおすすめブルーライトカット眼鏡</h2>
+
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">まず試したい・度なしタイプの方に：mujina PCメガネ MJ-1092</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>視力矯正が不要な方向けの、手に取りやすい価格帯のPCメガネです</li>
+        <li>夜間のスマホ・PC使用による睡眠への影響を抑えたい方に向いています</li>
+        <li className="text-gray-500">気になる点：疲れ目そのものへの効果は限定的とされています（AAO見解）</li>
+      </ul>
+      <div className="my-4">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmj-1092%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+          target="_blank" rel="noopener noreferrer nofollow sponsored"
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
+          <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">度なしタイプ</span>
+          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">mujina PCメガネ MJ-1092</p>
+          <p className="text-xs text-gray-500 mb-3">度なしで気軽に試せるスタンダードモデル</p>
+          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina PCメガネ MJ-1092を楽天で見る →</div>
+        </a>
       </div>
 
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方のポイント</h2>
+      <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">PC作業が多く度あり矯正も兼ねたい方に</h3>
+      <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+        <li>近視・遠視の矯正とブルーライトカットを同時に行いたい方に向いています</li>
+        <li>長時間のPC作業で、視力矯正と目の負担軽減を両立したい方におすすめです</li>
+        <li className="text-gray-500">気になる点：度なしタイプより価格が高くなる傾向があります</li>
+      </ul>
+      {/* TODO: 度あり商品（happytimes、メガネ レディース 度付き 近視 乱視対応 PCメガネ）のもしもアフィリエイト
+          かんたんリンクコード発行待ち。コード受領後、MoshimoProductCardでCTAを追加する。 */}
+
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">選び方4つのポイント</h2>
       <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
         <li><strong>カット率：</strong>30〜40%カットが一般的。高すぎると色が黄ばんで見える</li>
         <li><strong>レンズの色：</strong>クリアタイプがデザイン面で使いやすい</li>
@@ -1041,35 +1074,14 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <li><strong>価格：</strong>度なしなら安価なもので十分。度ありなら眼鏡店での処方が安心</li>
       </ul>
 
-      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">おすすめ商品</h2>
-      <p className="text-sm text-gray-500 mb-4">※価格・仕様は変更される場合があります。購入前に各商品ページで最新情報をご確認ください。当サイトはアフィリエイト広告を掲載しています。</p>
-      <div className="grid sm:grid-cols-3 gap-4 mb-6">
-        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmujina0008%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
-          target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
-          <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">PCメガネ</span>
-          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">mujina ブルーライトカットPCメガネ</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina ブルーライトカットPCメガネを楽天で見る →</div>
-        </a>
-        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmujina0023%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
-          target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
-          <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">PCメガネ</span>
-          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">mujina ブルーライトカットPCメガネ（別モデル）</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina ブルーライトカットPCメガネ（別モデル）を楽天で見る →</div>
-        </a>
-        <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmj-1092%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
-          target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
-          <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">PCメガネ</span>
-          <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">mujina PCメガネ MJ-1092</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina PCメガネ MJ-1092 を楽天で見る →</div>
-        </a>
-      </div>
-      <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
-        <p className="font-bold text-gray-800 mb-3">他のブルーライトカット眼鏡も探す</p>
-        <AffiliateBtns rakuten="ブルーライトカット眼鏡" />
-      </div>
+      <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">まとめ</h2>
+      <p className="text-gray-700 mb-4">
+        ブルーライトカット眼鏡は、疲れ目そのものへの科学的根拠は乏しいものの、夜間のスマホ・PC使用時の睡眠対策としては選択肢になります。まず試すなら度なしタイプ、近視・遠視の矯正も兼ねたい方は度ありタイプが選びやすい傾向にあります。
+      </p>
+      <p className="text-gray-700 mb-4">
+        疲れ目そのものへの対策は、ブルーライトカットよりも「20-20-20ルール」などの休憩習慣を優先しつつ、必要に応じて眼鏡を併用するのがおすすめです。
+      </p>
+      {/* TODO: まとめ末尾CTAとして度あり商品（happytimes）を配置予定。コード受領後に追加。 */}
     </article>
   ),
 
