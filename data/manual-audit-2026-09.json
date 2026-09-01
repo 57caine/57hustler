@@ -1,0 +1,354 @@
+{
+  "month": "2026-09",
+  "generatedAt": "2026-09-01T06:00:09.843Z",
+  "summary": {
+    "total": 48,
+    "high": 14,
+    "medium": 19,
+    "low": 15
+  },
+  "issues": {
+    "high": [
+      {
+        "severity": "high",
+        "type": "存在しないディレクトリへの参照",
+        "detail": "ワークフローは 'ceo-dashboard' ディレクトリを参照していますが、提供されたファイル一覧に 'ceo-dashboard' ディレクトリが存在しません。存在するのは 'scripts/' と 'data/' のみです。",
+        "suggestion": "1. 'ceo-dashboard' ディレクトリが実際に存在するか確認してください。2. 存在しない場合は、ワークフローを削除するか、正しいパスに修正してください。3. または、このワークフローは別のリポジトリ向けの可能性があります。",
+        "file": ".github/workflows/deploy-ceo-dashboard.yml"
+      },
+      {
+        "severity": "high",
+        "type": "ビルド成功の検証不足",
+        "detail": "ワークフローが 'npm run build' を実行しますが、ビルド成功後のアーティファクト保存やデプロイ処理がありません。ビルド完了後の処理が明記されていません。",
+        "suggestion": "ワークフローに以下を追加してください：1. ビルド成功時のアーティファクト保存（actions/upload-artifact）2. デプロイ先への転送処理3. デプロイ失敗時の通知機構",
+        "file": ".github/workflows/deploy-ceo-dashboard.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイル・パスへの参照",
+        "detail": "ワークフローで 'shikaku-navi/**' をpathsに指定していますが、存在するファイル一覧に shikaku-navi ディレクトリがありません。",
+        "suggestion": "shikaku-navi ディレクトリが存在しないため、paths から 'shikaku-navi/**' を削除するか、該当ディレクトリが実際に存在することを確認してください。",
+        "file": ".github/workflows/deploy-lens-navi.yml"
+      },
+      {
+        "severity": "high",
+        "type": "手順の抜け",
+        "detail": "ワークフロー名に 'shikaku-navi' が含まれていないのに（'Build lens-navi / school-navi / shop-navi / yonaka-uranai'）、paths に 'shikaku-navi/**' が指定されています。",
+        "suggestion": "shikaku-navi 用のビルドジョブを追加するか、paths から shikaku-navi を削除してください。",
+        "file": ".github/workflows/deploy-lens-navi.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルパスへの参照",
+        "detail": "ワークフロー内で `ceo-dashboard/public/ga4-analytics.json` と `ceo-dashboard/public/column-review.json` への git add が実行されていますが、ファイル一覧に `ceo-dashboard/` ディレクトリが存在しません。",
+        "suggestion": "実際に出力されるファイルパスを確認し、存在するパスのみを git add の対象にするか、ディレクトリ構造を修正してください。存在しないパスへの add は失敗する可能性があります。",
+        "file": ".github/workflows/fetch-ga4-analytics.yml"
+      },
+      {
+        "severity": "high",
+        "type": "構文エラー",
+        "detail": "ファイルの末尾が不完全。最後の for ループが閉じられていない。行 73 で 'd' のみが残っており、'done' が欠けている。",
+        "suggestion": "末尾を以下のように修正: 'done' に変更し、全ループを適切に閉じる",
+        "file": ".github/workflows/generate-lens-navi-column.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイル・パスへの参照",
+        "detail": "ワークフローが実行する `henkutsu/post.py` および `henkutsu/requirements.txt` が存在しないファイル一覧に存在しません。",
+        "suggestion": "ファイルが実際に存在するか確認してください。存在しない場合は、`scripts/` ディレクトリの該当スクリプトを参照するように修正するか、`henkutsu/` ディレクトリとファイルを作成してください。",
+        "file": ".github/workflows/henkutsu-x-post.yml"
+      },
+      {
+        "severity": "high",
+        "type": "手順の抜け・矛盾",
+        "detail": "ワークフローが入力値を `printf` + パイプで `post.py` に渡していますが、`y\n` による確認プロンプトの処理が明示されていません。スクリプトが対話的に動作する設計になっているかが不明確です。",
+        "suggestion": "スクリプトが非対話的に動作するよう修正するか、`-y` や `--yes` フラグのような非対話オプションを使用してください。または、ワークフロー実行ログで実際の動作を確認してください。",
+        "file": ".github/workflows/henkutsu-x-post.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローで実行する `scripts/post-threads-fortune.ts` はファイル一覧に存在します（確認済み）。ただし、このスクリプトが実際に機能するかの検証ができません。",
+        "suggestion": "スクリプトの内容を確認して、必要な環境変数（ANTHROPIC_API_KEY, THREADS_USER_ID, THREADS_ACCESS_TOKEN）がすべて正しく使用されているか検証してください。",
+        "file": ".github/workflows/post-threads-fortune.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローが実行しようとしている `scripts/post-threads-monthly-caution.ts` は存在するファイル一覧に含まれています。ただし、実際に存在することは確認できたため、このファイルが正常に動作することを前提とします。",
+        "suggestion": "ファイルが実際に存在し、必要な依存関係がすべて満たされていることを確認してください。",
+        "file": ".github/workflows/post-threads-monthly-caution.yml"
+      },
+      {
+        "severity": "high",
+        "type": "ファイル存在確認エラー",
+        "detail": "ワークフローで実行される scripts/post-threads-weekly-theme.ts は存在確認済みですが、このスクリプトが参照するデータファイルについて検証できません。data/ ディレクトリに関連する 'weekly-theme' または 'theme' 関連のJSONファイルが見当たりません。",
+        "suggestion": "scripts/post-threads-weekly-theme.ts の内容を確認し、実際に使用しているデータファイルが存在することを確認してください。例えば data/weekly-theme.json や data/series-week.json などが参照されているかどうか確認が必要です。",
+        "file": ".github/workflows/post-threads-weekly-theme.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローが実行しようとしているスクリプト 'scripts/tmp-rakuten-search-bluelight-prescription.ts' は存在するファイル一覧に記載されています。ただし、このスクリプトが実際に機能するかは確認が必要です。ファイル自体は存在するため、このチェックでは問題なしですが、スクリプト内容の検証が必要な状態です。",
+        "suggestion": "実際にスクリプトが存在し、実行可能であることを確認してください。内容が不明の場合はスクリプトの点検も合わせて実施してください。",
+        "file": ".github/workflows/tmp-rakuten-search-bluelight-prescription.yml"
+      },
+      {
+        "severity": "high",
+        "type": "ファイル内容の不完全性",
+        "detail": "ファイルが3000字で途中切断されており、完全な内容が確認できない。特にICHING_HEXAGRAMSの配列が未完了（最後が『兌為澤』のkanji定義で途切れている）",
+        "suggestion": "ファイル全体を確認し、配列定義やメイン処理ロジックが完全かどうかを検証する必要がある",
+        "file": "scripts/generate-note-draft.ts"
+      },
+      {
+        "severity": "high",
+        "type": "不完全なコード",
+        "detail": "ファイルの最後の行が不完全。main().catch(e => { console.error(e); の閉じ括弧と閉じ括弧がない",
+        "suggestion": "main().catch(e => { console.error(e); }); に修正",
+        "file": "scripts/tmp-rakuten-search-bluelight-prescription.ts"
+      }
+    ],
+    "medium": [
+      {
+        "severity": "medium",
+        "type": "ブランチ管理の問題",
+        "detail": "ワークフローが 'claude/bold-brahmagupta-uc9Mu' という開発用ブランチに対して自動実行されるよう設定されています。本番環境への誤デプロイのリスクがあります。",
+        "suggestion": "開発用ブランチをデプロイ対象から除外するか、別のワークフローで管理することを推奨します。本来は 'main' ブランチのみへの自動デプロイが適切です。",
+        "file": ".github/workflows/deploy-ceo-dashboard.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "一貫性の問題",
+        "detail": "build-lens-navi ジョブはルートディレクトリで実行されますが、他のジョブ（build-school-navi, build-shop-navi, build-yonaka-uranai）は各サブディレクトリで実行されています。lens-navi が実際にルートなのか確認が必要です。",
+        "suggestion": "プロジェクト構造を明確にし、必要に応じて build-lens-navi ジョブの実行ディレクトリを明示してください（例：`cd lens-navi` の追加）。",
+        "file": ".github/workflows/deploy-lens-navi.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "潜在的な競合状態",
+        "detail": "git pull --rebaseとgit pushの間に他のワークフローがpushした場合、競合が発生する可能性がある。特にscheduleトリガー（毎月1日）とpush トリガー（同一ファイル変更時）が同時実行されると問題となる可能性がある。",
+        "suggestion": "git pull --rebase前にfetch-depthを活用するか、コミット前のロック機構を検討。または、push トリガーの条件をより厳密に限定する（例：特定ブランチのみ）",
+        "file": ".github/workflows/distill-feedback.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "手順の矛盾",
+        "detail": "git add が失敗する場合、その後の `git diff --staged --quiet || git commit` は実行されず、サイレントで処理が終了します。エラーハンドリングが不十分です。",
+        "suggestion": "`git add` コマンドに失敗時の明示的なエラーハンドリングを追加するか、ファイルの存在確認を事前に行うようにしてください。例: `git add --force` や `git add -A` への変更検討。",
+        "file": ".github/workflows/fetch-ga4-analytics.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "スクリプト存在確認",
+        "detail": "参照しているスクリプト 'scripts/generate-lens-navi-column.ts' は存在リストに存在し確認できるが、ファイル内容が3000字で途中切断されているため、実装の完全性は確認できない",
+        "suggestion": "完全なファイル内容を確認し、スクリプトの実装状況を検証する",
+        "file": ".github/workflows/generate-lens-navi-column.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "エラーハンドリング",
+        "detail": "Manual generate ステップで '|| true' を使用してエラーを無視しているが、Morning/Noon/Evening batch ステップではエラーハンドリングがない。一貫性がない。",
+        "suggestion": "全バッチステップで統一した エラーハンドリング戦略を採用するか、意図的な差別化であれば コメントで明記する",
+        "file": ".github/workflows/generate-lens-navi-column.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "古い情報・終了したサービスへの参照",
+        "detail": "ワークフロー名が「henkutsu X投稿」となっていますが、存在するスクリプト一覧に `post-threads-*.ts` や `refresh-threads-token.ts` など、Threadsへの投稿スクリプトが複数あり、X（旧Twitter）投稿との役割分担が不明確です。",
+        "suggestion": "ワークフロー名を明確にするか、実装内容が Threads 投稿の場合は名前を修正してください。また、このワークフローの実装状況（実運用中か試験中か）を確認してください。",
+        "file": ".github/workflows/henkutsu-x-post.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "ファイル参照の確認不可",
+        "detail": "scripts/post-threads-column.ts は存在するファイル一覧に含まれていますが、このスクリプトが --slot=noon パラメータに対応しているか確認できません。同様に data/column-history.json への書き込みが想定されています。",
+        "suggestion": "scripts/post-threads-column.ts が --slot=noon オプションをサポートしており、data/column-history.json を正しく更新することを確認してください。",
+        "file": ".github/workflows/post-threads-column-noon.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "潜在的なrebaseエラーのリスク",
+        "detail": "git pullでrebaseを行った後にgit pushする構成ですが、複数の同時実行（朝・昼・夜など複数のスケジュール）がある場合、競合が発生する可能性があります。",
+        "suggestion": "同じブランチに複数のワークフローが並行して書き込む場合は、`git pull --rebase` の前に `git stash` してリトライロジックを追加するか、ブランチを分ける検討をしてください。",
+        "file": ".github/workflows/post-threads-column-noon.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "設定の一貫性確認",
+        "detail": "同様の Threads 投稿ワークフローが複数存在します（post-threads-column.ts, post-threads-ekikyo.ts, post-threads-houi.ts, post-threads-monthly-caution.ts, post-threads-short.ts, post-threads-weekly-theme.ts）。これらが同じスケジュール設定を使用している場合、実行時間の衝突の可能性があります。",
+        "suggestion": "`.github/workflows/` ディレクトリ内の他の Threads 投稿ワークフローを確認し、スケジュール実行時間を確認して、衝突がないか検証してください。",
+        "file": ".github/workflows/post-threads-fortune.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "スケジュール実行の明確性",
+        "detail": "cron式が `'15 22 * * *'` で毎日実行され、スクリプト内部で毎月1日判定を行う設計になっています。ただし、コメント内で「毎日 JST 07:15 (UTC 22:15、前日扱い)」と記載されていますが、UTC 22:15 は実際には JST 翌日07:15 です（前日扱いではなく）。",
+        "suggestion": "コメントを修正: `# 毎日 UTC 22:15 に実行 = JST 翌日 07:15（毎月1日にスクリプト内部で判定）`",
+        "file": ".github/workflows/post-threads-monthly-caution.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "スケジュール設定の透明性",
+        "detail": "cronで毎日 22:30 UTC (JST 07:30、前日扱い) に実行されるとコメントされていますが、月曜のみ投稿すべきかどうか、スクリプト内部での判定に依存しています。ワークフローレベルでは月曜判定が見えません。",
+        "suggestion": "cronを月曜のみに限定するか、スクリプト内部で月曜判定を行っている場合はその詳細をコメントに記載するか、ワークフローで条件を追加してください。例: `- cron: '30 22 * * 1'`",
+        "file": ".github/workflows/post-threads-weekly-theme.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "一時的なワークフロー",
+        "detail": "ワークフロー名に '一時調査' とあり、スクリプト名も 'tmp-' プレフィックスが付いています。これは一時的な処理を示唆していますが、ワークフロー定義は恒久的に保持されています。目的完了後の対応が不明確です。",
+        "suggestion": "このワークフローが一時的なものである場合は、完了日時や削除予定日をコメントで記載するか、不要になった時点で削除してください。恒久的なものなら名前から '一時' を削除し、スクリプト名も正式名に変更してください。",
+        "file": ".github/workflows/tmp-rakuten-search-bluelight-prescription.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "トリガー条件の不完全性",
+        "detail": "ワークフローは `scripts/**` と `.github/workflows/**` の変更時に実行されますが、`generate-index.ts` が参照するデータファイル（`data/**`）の変更では自動実行されません。新しいシステムが `data/` に追加されても索引が自動更新されない可能性があります。",
+        "suggestion": "`paths` に `'data/**'` を追加するか、データ生成スクリプトから常に索引生成を呼び出す構造を検討してください。",
+        "file": ".github/workflows/update-index.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "環境変数の参照エラーの可能性",
+        "detail": "GA4_SERVICE_ACCOUNT_KEYとZASSOU_SHEET_IDが設定されていない場合、sync-zassou-to-sheets.tsの実行時にエラーが発生する可能性があります。workflow_dispatchのinputsに対応する環境変数設定オプションがないため、手動実行時に制御できません。",
+        "suggestion": "workflow_dispatchのinputsに環境変数をスキップするオプション（例：skip_sync）を追加するか、スクリプト側でエラーハンドリングを強化してください。",
+        "file": ".github/workflows/zassou-stock.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "条件付き実行の不完全さ",
+        "detail": "「Sync to Google Sheets」ステップは `if: ${{ always() && github.event.inputs.dry_run != 'true' }}` という条件付きですが、workflow_dispatch以外の定期実行（schedule）時にはgithub.event.inputsが存在しないため、常に実行されます。これは意図した動作かどうか不明確です。",
+        "suggestion": "定期実行と手動実行を区別し、定期実行時の同期実行の必要性を明確にしてください。例：`if: ${{ always() && (github.event_name == 'schedule' || github.event.inputs.dry_run != 'true') }}`",
+        "file": ".github/workflows/zassou-stock.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "未使用の可能性がある関数インポート",
+        "detail": "lib/kyusei-ban から getYearlyStar と monthlyStarFromYearly がインポートされているが、提供されたコード内で使用されていない",
+        "suggestion": "実装完了後、実際に使用されているか確認し、不使用なら削除する",
+        "file": "scripts/generate-note-draft.ts"
+      },
+      {
+        "severity": "medium",
+        "type": "出力パスの未検証",
+        "detail": "コメント内で『出力: note-drafts/YYYY-MM-DD.md』と記載されているが、note-draftsディレクトリがファイル一覧に存在しない",
+        "suggestion": "note-draftsディレクトリの存在を確認するか、出力パスをdata/内など既存ディレクトリに変更する",
+        "file": "scripts/generate-note-draft.ts"
+      },
+      {
+        "severity": "medium",
+        "type": "APIエンドポイントの日付ハードコード",
+        "detail": "楽天APIのエンドポイントに '/20260701' という具体的な日付がハードコードされている。これは将来的に無効化される可能性がある",
+        "suggestion": "APIバージョンを環境変数化するか、ドキュメントにこの日付の意味を記載して定期的な確認計画を立てる",
+        "file": "scripts/tmp-rakuten-search-bluelight-prescription.ts"
+      }
+    ],
+    "low": [
+      {
+        "severity": "low",
+        "type": "エラーハンドリングの不足",
+        "detail": "npx ts-node scripts/distill-feedback.ts が失敗した場合、以降のステップも実行される。スクリプトが部分的に失敗してもコミットが進む可能性がある。",
+        "suggestion": "スクリプト実行後に出力ファイルの存在確認を追加するか、ts-nodeコマンドのエラーハンドリングを明示的に設定する",
+        "file": ".github/workflows/distill-feedback.yml"
+      },
+      {
+        "severity": "low",
+        "type": "日付フォーマットの依存性",
+        "detail": "コミットメッセージで `date '+%Y-%m-%d' --utc` を使用しているが、ubuntuのdate コマンドが存在することに暗黙的に依存している。",
+        "suggestion": "Node.js のビルトイン Date オブジェクトを使用するか、npm package で日付を生成する方が移植性が高い",
+        "file": ".github/workflows/distill-feedback.yml"
+      },
+      {
+        "severity": "low",
+        "type": "同じ内容の二重管理",
+        "detail": "GA4アナリティクスデータ(`ga4-analytics.json`)と列レビューデータ(`column-review.json`)が `data/` と `ceo-dashboard/public/` の両方の場所に出力される設計になっており、同期管理が必要です。",
+        "suggestion": "単一の source of truth を持つ設計に統一するか、同期メカニズムを明確にしてください。現在の design では、データ不整合のリスクがあります。",
+        "file": ".github/workflows/fetch-ga4-analytics.yml"
+      },
+      {
+        "severity": "low",
+        "type": "設定の明確性",
+        "detail": "workflow_dispatch の 'all' オプションが description に記載されていないが、スクリプト内では 'all' に対応している",
+        "suggestion": "description を 'Section: contact / eye-care / lasik / megane / vr / karakon / eye-goods / all' に更新する",
+        "file": ".github/workflows/generate-lens-navi-column.yml"
+      },
+      {
+        "severity": "low",
+        "type": "コミットメッセージの日本語",
+        "detail": "git commit メッセージが日本語で、一部のGitプラットフォームやツールで文字化けの可能性があります。",
+        "suggestion": "コミットメッセージを英語に統一するか、UTF-8の明示的なエンコーディング設定を確認してください。",
+        "file": ".github/workflows/post-threads-column-noon.yml"
+      },
+      {
+        "severity": "low",
+        "type": "Nodeキャッシュの有効性",
+        "detail": "cache: 'npm' が設定されていますが、package-lock.json の存在が確認できないため、キャッシュが正常に機能しているか不明です。",
+        "suggestion": "リポジトリに package-lock.json が存在することを確認してください。",
+        "file": ".github/workflows/post-threads-column-noon.yml"
+      },
+      {
+        "severity": "low",
+        "type": "ドキュメント欠落の可能性",
+        "detail": "占い投稿スクリプト（post-threads-fortune.ts）の実装詳細が確認できません。スクリプトがどのデータソースを使用しているか、データファイルは存在するか不明です。",
+        "suggestion": "スクリプトの内容を確認し、必要なデータファイルやライブラリがすべて揃っていることを確認してください。",
+        "file": ".github/workflows/post-threads-fortune.yml"
+      },
+      {
+        "severity": "low",
+        "type": "環境変数の確認",
+        "detail": "スクリプト実行に3つのシークレット（ANTHROPIC_API_KEY、THREADS_USER_ID、THREADS_ACCESS_TOKEN）が必要です。これらが適切に設定されていることを前提としています。",
+        "suggestion": "GitHub Secretsにこれら3つの値がすべて設定されていることを確認してください。特にTHREADS_ACCESS_TOKENの有効期限管理に注意してください。",
+        "file": ".github/workflows/post-threads-monthly-caution.yml"
+      },
+      {
+        "severity": "low",
+        "type": "環境変数の検証",
+        "detail": "RAKUTEN_APP_ID と RAKUTEN_ACCESS_KEY をシークレットから参照していますが、スクリプト内でこれらが適切に使用されているかの検証ができません。",
+        "suggestion": "スクリプト 'scripts/tmp-rakuten-search-bluelight-prescription.ts' の内容を点検して、環境変数が正しく読み込まれ使用されていることを確認してください。",
+        "file": ".github/workflows/tmp-rakuten-search-bluelight-prescription.yml"
+      },
+      {
+        "severity": "low",
+        "type": "潜在的な競合状態",
+        "detail": "`git pull --rebase` と `git push` の間に、別のワークフロー実行が同じブランチに push した場合、競合が発生する可能性があります。",
+        "suggestion": "並行実行を防ぐため `concurrency` グループを設定するか、`git push` 前の再確認ロジックを追加してください。",
+        "file": ".github/workflows/update-index.yml"
+      },
+      {
+        "severity": "low",
+        "type": "エラーハンドリングの不足",
+        "detail": "`git diff --staged --quiet` でコミット判定していますが、`generate-index.ts` の実行失敗時の処理が明示されていません。スクリプトエラー時もワークフローが継続される可能性があります。",
+        "suggestion": "`set -e` をシェルに追加するか、各ステップに明示的なエラーチェックを入れてください。",
+        "file": ".github/workflows/update-index.yml"
+      },
+      {
+        "severity": "low",
+        "type": "エラーハンドリングの不備",
+        "detail": "「Commit and push」ステップで`git pull --rebase`を実行していますが、コンフリクトが発生した場合の対応方法が定義されていません。",
+        "suggestion": "コンフリクト時の処理（中止、手動確認の通知など）を追加するか、ステップを分割して明確なエラーメッセージを表示してください。",
+        "file": ".github/workflows/zassou-stock.yml"
+      },
+      {
+        "severity": "low",
+        "type": "関連スクリプトの参照確認不足",
+        "detail": "post-threads-*.ts など複数のスクリプトが存在する中で、このスクリプトの役割分担が明確でない（Threads投稿との連動メカニズムが不明確）",
+        "suggestion": "他のスクリプト（post-threads-weekly-theme.ts等）との連携方法をドキュメント化する",
+        "file": "scripts/generate-note-draft.ts"
+      },
+      {
+        "severity": "low",
+        "type": "調査スクリプトの位置付け確認",
+        "detail": "コメントで『一時調査スクリプト（実装ではなく調査目的）』と記載されているが、本当に一時的なのか、あるいは定期実行される実装なのか不明確",
+        "suggestion": "README等で本スクリプトの運用方針を明記するか、実装完了時に削除・整理する予定を記載",
+        "file": "scripts/tmp-rakuten-search-bluelight-prescription.ts"
+      },
+      {
+        "severity": "low",
+        "type": "エラーハンドリングの一貫性",
+        "detail": "main()の.catch()でエラーはログされるが、プロセスの終了コードが設定されていない。スクリプト失敗時に外部からの判定が困難",
+        "suggestion": "process.exit(1)を追加して、エラー時の明示的な終了コード設定",
+        "file": "scripts/tmp-rakuten-search-bluelight-prescription.ts"
+      }
+    ]
+  }
+}
