@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T00:30:47.156Z",
+  "generatedAt": "2026-09-01T23:13:02.463Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -11,16 +11,16 @@
       "slug": "blue-light-megane-kouka",
       "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
-        "sessions": 14,
-        "bounceRate": 0.35714285714285715,
-        "avgSessionDuration": 74.18878471428572,
+        "sessions": 15,
+        "bounceRate": 0.4,
+        "avgSessionDuration": 72.44546933333332,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション14件・affiliate_clickゼロ"
+        "セッション15件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -38,43 +38,12 @@
       "status": "様子見"
     },
     {
-      "path": "/column/eyestrain-stretching-massage-guide",
-      "slug": "eyestrain-stretching-massage-guide",
-      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
-      "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.3,
-        "avgSessionDuration": 417.2078647,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 6,
-        "h3Count": 12,
-        "hasAffiliateLinks": true,
-        "ctaCount": 16,
-        "contentChars": 118902
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見"
-    },
-    {
       "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "slug": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "title": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "metrics": {
         "sessions": 9,
-        "bounceRate": 0.4444444444444444,
+        "bounceRate": 0.3333333333333333,
         "avgSessionDuration": 127.06307822222223,
         "affiliateClicks": 0
       },
@@ -90,6 +59,37 @@
         "hasAffiliateLinks": true,
         "ctaCount": 10,
         "contentChars": 84255
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
+    },
+    {
+      "path": "/column/eyestrain-stretching-massage-guide",
+      "slug": "eyestrain-stretching-massage-guide",
+      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.125,
+        "avgSessionDuration": 521.509830875,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 6,
+        "h3Count": 12,
+        "hasAffiliateLinks": true,
+        "ctaCount": 16,
+        "contentChars": 118902
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -136,8 +136,8 @@
       "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
       "metrics": {
         "sessions": 8,
-        "bounceRate": 0.375,
-        "avgSessionDuration": 43.677097625,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 34.211778875,
         "affiliateClicks": 0
       },
       "flags": [
@@ -193,44 +193,13 @@
       "status": "様子見"
     },
     {
-      "path": "/column/ranshi-contact-ranking-2025",
-      "slug": "ranshi-contact-ranking-2025",
-      "title": "ranshi-contact-ranking-2025",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.5714285714285714,
-        "avgSessionDuration": 111.70374357142857,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 6,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 100236
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "対応済み"
-    },
-    {
       "path": "/column/soft-vs-hard-contact-hikaku",
       "slug": "soft-vs-hard-contact-hikaku",
       "title": "soft-vs-hard-contact-hikaku",
       "metrics": {
         "sessions": 7,
-        "bounceRate": 0.2857142857142857,
-        "avgSessionDuration": 112.65489642857143,
+        "bounceRate": 0,
+        "avgSessionDuration": 133.70929157142857,
         "affiliateClicks": 0
       },
       "flags": [
@@ -276,6 +245,37 @@
         "hasAffiliateLinks": true,
         "ctaCount": 8,
         "contentChars": 87594
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "対応済み"
+    },
+    {
+      "path": "/column/ranshi-contact-ranking-2025",
+      "slug": "ranshi-contact-ranking-2025",
+      "title": "ranshi-contact-ranking-2025",
+      "metrics": {
+        "sessions": 6,
+        "bounceRate": 0.6666666666666666,
+        "avgSessionDuration": 53.9014085,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション6件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 6,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 100236
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
