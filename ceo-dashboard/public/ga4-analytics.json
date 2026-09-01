@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-08-30T23:20:19.624Z",
+  "generatedAt": "2026-09-01T00:30:47.149Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-08-30T23:20:17.994Z",
+      "fetchedAt": "2026-09-01T00:30:45.329Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 201,
-      "totalPageviews": 234,
+      "totalSessions": 199,
+      "totalPageviews": 232,
       "topPages": [
         {
           "path": "/",
           "sessions": 27,
           "pageviews": 33,
-          "avgSessionDuration": 288.9945118148148,
+          "avgSessionDuration": 288.8489142962963,
           "bounceRate": 0.6666666666666666
         },
         {
@@ -29,24 +29,24 @@
         },
         {
           "path": "/column/blue-light-megane-kouka",
-          "sessions": 15,
-          "pageviews": 13,
-          "avgSessionDuration": 69.41749113333334,
-          "bounceRate": 0.4
+          "sessions": 14,
+          "pageviews": 12,
+          "avgSessionDuration": 74.18878471428572,
+          "bounceRate": 0.35714285714285715
         },
         {
           "path": "/column/megane-facial-shape-frame-2026",
-          "sessions": 15,
-          "pageviews": 14,
-          "avgSessionDuration": 13.429956666666667,
-          "bounceRate": 0.6
+          "sessions": 14,
+          "pageviews": 13,
+          "avgSessionDuration": 13.955014571428572,
+          "bounceRate": 0.5714285714285714
         },
         {
           "path": "/column/megane-kaomikata",
-          "sessions": 11,
-          "pageviews": 10,
-          "avgSessionDuration": 45.310970636363635,
-          "bounceRate": 0.36363636363636365
+          "sessions": 12,
+          "pageviews": 11,
+          "avgSessionDuration": 41.53512033333333,
+          "bounceRate": 0.4166666666666667
         },
         {
           "path": "/column/eyestrain-stretching-massage-guide",
@@ -63,18 +63,18 @@
           "bounceRate": 0.5
         },
         {
-          "path": "/category/1day",
-          "sessions": 9,
-          "pageviews": 21,
-          "avgSessionDuration": 236.22289577777778,
-          "bounceRate": 0.3333333333333333
-        },
-        {
           "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
           "sessions": 9,
           "pageviews": 12,
           "avgSessionDuration": 127.06307822222223,
           "bounceRate": 0.4444444444444444
+        },
+        {
+          "path": "/category/1day",
+          "sessions": 8,
+          "pageviews": 20,
+          "avgSessionDuration": 265.41967,
+          "bounceRate": 0.375
         },
         {
           "path": "/column/reading-glasses-presbyopia-choose-2026",
@@ -155,10 +155,6 @@
         }
       ],
       "weeklyTrend": [
-        {
-          "date": "2026-08-03",
-          "sessions": 6
-        },
         {
           "date": "2026-08-04",
           "sessions": 14
@@ -266,6 +262,14 @@
         {
           "date": "2026-08-30",
           "sessions": 11
+        },
+        {
+          "date": "2026-08-31",
+          "sessions": 4
+        },
+        {
+          "date": "2026-09-01",
+          "sessions": 1
         }
       ],
       "affiliateClicksByPage": {
@@ -291,27 +295,27 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-08-30T23:20:19.624Z",
+      "fetchedAt": "2026-09-01T00:30:47.149Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 28,
-      "totalPageviews": 36,
+      "totalSessions": 30,
+      "totalPageviews": 38,
       "topPages": [
         {
           "path": "/",
-          "sessions": 20,
-          "pageviews": 27,
-          "avgSessionDuration": 97.60693590000001,
-          "bounceRate": 0.7
+          "sessions": 21,
+          "pageviews": 28,
+          "avgSessionDuration": 94.02996071428572,
+          "bounceRate": 0.7142857142857143
         },
         {
           "path": "/schools/takeru-fx-school",
-          "sessions": 5,
-          "pageviews": 5,
-          "avgSessionDuration": 133.75218420000002,
-          "bounceRate": 0.6
+          "sessions": 6,
+          "pageviews": 6,
+          "avgSessionDuration": 111.4601535,
+          "bounceRate": 0.6666666666666666
         },
         {
           "path": "/column/engineer-tenshoku-nenshu-career",
@@ -336,10 +340,6 @@
         }
       ],
       "weeklyTrend": [
-        {
-          "date": "2026-08-03",
-          "sessions": 1
-        },
         {
           "date": "2026-08-05",
           "sessions": 1
@@ -410,11 +410,15 @@
         },
         {
           "date": "2026-08-30",
-          "sessions": 1
+          "sessions": 2
         },
         {
           "date": "2026-08-31",
-          "sessions": 3
+          "sessions": 4
+        },
+        {
+          "date": "2026-09-01",
+          "sessions": 1
         }
       ],
       "affiliateClicksByPage": {
