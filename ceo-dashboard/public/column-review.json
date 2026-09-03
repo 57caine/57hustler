@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-02T23:12:26.145Z",
+  "generatedAt": "2026-09-03T23:10:33.708Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
   },
-  "flaggedCount": 0,
+  "flaggedCount": 1,
   "flaggedArticles": [
     {
       "path": "/column/blue-light-megane-kouka",
@@ -13,7 +13,7 @@
       "metrics": {
         "sessions": 14,
         "bounceRate": 0.35714285714285715,
-        "avgSessionDuration": 32.25826571428571,
+        "avgSessionDuration": 27.961552428571427,
         "affiliateClicks": 0
       },
       "flags": [
@@ -42,16 +42,16 @@
       "slug": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "title": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.4,
-        "avgSessionDuration": 114.3567704,
+        "sessions": 12,
+        "bounceRate": 0.4166666666666667,
+        "avgSessionDuration": 159.56367783333334,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
+        "セッション12件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -69,13 +69,13 @@
       "status": "様子見"
     },
     {
-      "path": "/column/eyestrain-stretching-massage-guide",
-      "slug": "eyestrain-stretching-massage-guide",
-      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
+      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
+      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
         "sessions": 8,
-        "bounceRate": 0.125,
-        "avgSessionDuration": 521.509830875,
+        "bounceRate": 0.75,
+        "avgSessionDuration": 59.796376875,
         "affiliateClicks": 0
       },
       "flags": [
@@ -85,11 +85,11 @@
         "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 6,
-        "h3Count": 12,
+        "h2Count": 4,
+        "h3Count": 8,
         "hasAffiliateLinks": true,
-        "ctaCount": 16,
-        "contentChars": 118902
+        "ctaCount": 4,
+        "contentChars": 73243
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -105,8 +105,8 @@
       "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
       "metrics": {
         "sessions": 8,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 27.097198625,
+        "bounceRate": 0.375,
+        "avgSessionDuration": 136.064381125,
         "affiliateClicks": 0
       },
       "flags": [
@@ -131,13 +131,13 @@
       "status": "対応済み"
     },
     {
-      "path": "/column/vr-game-osusume-2026",
-      "slug": "vr-game-osusume-2026",
-      "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
+      "path": "/column/vr-movie-streaming-service-recommend-2026",
+      "slug": "vr-movie-streaming-service-recommend-2026",
+      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
       "metrics": {
         "sessions": 8,
         "bounceRate": 0.375,
-        "avgSessionDuration": 39.929270375,
+        "avgSessionDuration": 64.97934012500001,
         "affiliateClicks": 0
       },
       "flags": [
@@ -147,42 +147,11 @@
         "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 3,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 6,
-        "contentChars": 78439
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見"
-    },
-    {
-      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
-      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
-      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.7142857142857143,
-        "avgSessionDuration": 68.33871642857143,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
         "h2Count": 4,
-        "h3Count": 8,
+        "h3Count": 6,
         "hasAffiliateLinks": true,
         "ctaCount": 4,
-        "contentChars": 73243
+        "contentChars": 67373
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -193,13 +162,13 @@
       "status": "様子見"
     },
     {
-      "path": "/column/reading-glasses-presbyopia-choose-2026",
-      "slug": "reading-glasses-presbyopia-choose-2026",
-      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
+      "path": "/column/eyestrain-stretching-massage-guide",
+      "slug": "eyestrain-stretching-massage-guide",
+      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
         "sessions": 7,
-        "bounceRate": 0.42857142857142855,
-        "avgSessionDuration": 87.054376,
+        "bounceRate": 0.14285714285714285,
+        "avgSessionDuration": 589.9809160000001,
         "affiliateClicks": 0
       },
       "flags": [
@@ -209,11 +178,11 @@
         "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 3,
-        "h3Count": 4,
+        "h2Count": 6,
+        "h3Count": 12,
         "hasAffiliateLinks": true,
-        "ctaCount": 7,
-        "contentChars": 73415
+        "ctaCount": 16,
+        "contentChars": 118902
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -255,13 +224,13 @@
       "status": "対応済み"
     },
     {
-      "path": "/column/ranshi-contact-ranking-2025",
-      "slug": "ranshi-contact-ranking-2025",
-      "title": "ranshi-contact-ranking-2025",
+      "path": "/column/reading-glasses-presbyopia-choose-2026",
+      "slug": "reading-glasses-presbyopia-choose-2026",
+      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
       "metrics": {
         "sessions": 6,
-        "bounceRate": 0.6666666666666666,
-        "avgSessionDuration": 53.9014085,
+        "bounceRate": 0.3333333333333333,
+        "avgSessionDuration": 100.25985266666665,
         "affiliateClicks": 0
       },
       "flags": [
@@ -271,11 +240,11 @@
         "セッション6件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 6,
-        "h3Count": 2,
+        "h2Count": 3,
+        "h3Count": 4,
         "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 100236
+        "ctaCount": 7,
+        "contentChars": 73415
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -283,7 +252,42 @@
       "suggestions": [
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
-      "status": "対応済み"
+      "status": "様子見"
+    },
+    {
+      "path": "/column/karakon-shoshinsha-guide",
+      "slug": "karakon-shoshinsha-guide",
+      "title": "カラコン初心者完全ガイド2026【度数・着色直径・DIA・ケア方法をわかりやすく解説】",
+      "metrics": {
+        "sessions": 4,
+        "bounceRate": 1,
+        "avgSessionDuration": 0,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "bounce_rate_over_90pct",
+        "avg_session_under_10s"
+      ],
+      "flagLabels": [
+        "直帰率100%（閾値90%）",
+        "平均滞在0.0秒（閾値10秒）"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 71081
+      },
+      "causes": [
+        "ページが正常にレンダリングされていない可能性（JSXエラー・白画面等）",
+        "検索意図とコンテンツのミスマッチ（期待した情報が冒頭にない）"
+      ],
+      "suggestions": [
+        "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する",
+        "冒頭3〜4行で結論・要点を先出しし、読者の疑問に即答する構成にする"
+      ],
+      "status": "未対応"
     }
   ]
 }
