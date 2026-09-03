@@ -1,0 +1,37 @@
+name: 一時テスト-Unsplashキャッシュ動作確認
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Check if UNSPLASH_ACCESS_KEY is set
+        run: |
+          if [ -z "${{ secrets.UNSPLASH_ACCESS_KEY }}" ]; then
+            echo "UNSPLASH_ACCESS_KEY is NOT set in GitHub Secrets"
+          else
+            echo "UNSPLASH_ACCESS_KEY is set (length: ${#UNSPLASH_ACCESS_KEY})"
+          fi
+        env:
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+      - name: Show cache file before build
+        run: cat data/unsplash-cache.json
+      - name: Build
+        run: npm run build
+        env:
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+      - name: Show cache file after build
+        run: |
+          echo "=== entries count ==="
+          node -e "const c = require('./data/unsplash-cache.json'); console.log('heroImages:', Object.keys(c.heroImages).length, 'photos:', Object.keys(c.photos).length);"
+          echo "=== sample entries ==="
+          node -e "const c = require('./data/unsplash-cache.json'); console.log(JSON.stringify(c, null, 2).slice(0, 1500));"
