@@ -316,6 +316,10 @@ export const karakonColumnContent: Record<string, React.ReactElement> = {
   // ─── 2. 初心者ガイド ──────────────────────────────────────
   'karakon-shoshinsha-guide': (
     <article className="prose-sm max-w-none text-gray-700 leading-relaxed" id="article-body">
+      <p className="lead text-gray-600 text-base leading-relaxed mb-6">
+        初めてカラコンを選ぶとき、BC・DIA・着色直径といった見慣れない用語や、正しい装着方法・ケアの仕方に戸惑う方は多いはずです。この記事では、初心者がつまずきやすいポイントを、用語の意味から正しい使い方まで順番に解説します。まずは基本用語から確認していきましょう。
+      </p>
+
       <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">カラコンの基本用語を押さえよう</h2>
       <div className="overflow-x-auto mb-6">
         <table className="w-full text-sm border-collapse">
