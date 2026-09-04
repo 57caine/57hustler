@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T23:10:33.708Z",
+  "generatedAt": "2026-09-04T22:56:38.646Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -7,51 +7,20 @@
   "flaggedCount": 1,
   "flaggedArticles": [
     {
-      "path": "/column/blue-light-megane-kouka",
-      "slug": "blue-light-megane-kouka",
-      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
-      "metrics": {
-        "sessions": 14,
-        "bounceRate": 0.35714285714285715,
-        "avgSessionDuration": 27.961552428571427,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション14件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 3,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 67334
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見"
-    },
-    {
       "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "slug": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "title": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "metrics": {
-        "sessions": 12,
-        "bounceRate": 0.4166666666666667,
-        "avgSessionDuration": 159.56367783333334,
+        "sessions": 17,
+        "bounceRate": 0.47058823529411764,
+        "avgSessionDuration": 195.47718129411766,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション12件・affiliate_clickゼロ"
+        "セッション17件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -69,13 +38,44 @@
       "status": "様子見"
     },
     {
+      "path": "/column/blue-light-megane-kouka",
+      "slug": "blue-light-megane-kouka",
+      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
+      "metrics": {
+        "sessions": 12,
+        "bounceRate": 0.16666666666666666,
+        "avgSessionDuration": 45.78802091666666,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション12件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 3,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 67334
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
+    },
+    {
       "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
         "sessions": 8,
         "bounceRate": 0.75,
-        "avgSessionDuration": 59.796376875,
+        "avgSessionDuration": 54.7966285,
         "affiliateClicks": 0
       },
       "flags": [
@@ -162,37 +162,6 @@
       "status": "様子見"
     },
     {
-      "path": "/column/eyestrain-stretching-massage-guide",
-      "slug": "eyestrain-stretching-massage-guide",
-      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.14285714285714285,
-        "avgSessionDuration": 589.9809160000001,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 6,
-        "h3Count": 12,
-        "hasAffiliateLinks": true,
-        "ctaCount": 16,
-        "contentChars": 118902
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見"
-    },
-    {
       "path": "/column/soft-vs-hard-contact-hikaku",
       "slug": "soft-vs-hard-contact-hikaku",
       "title": "soft-vs-hard-contact-hikaku",
@@ -222,6 +191,37 @@
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "対応済み"
+    },
+    {
+      "path": "/column/eyestrain-stretching-massage-guide",
+      "slug": "eyestrain-stretching-massage-guide",
+      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
+      "metrics": {
+        "sessions": 6,
+        "bounceRate": 0.16666666666666666,
+        "avgSessionDuration": 583.5077691666667,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション6件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 6,
+        "h3Count": 12,
+        "hasAffiliateLinks": true,
+        "ctaCount": 16,
+        "contentChars": 118902
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
     },
     {
       "path": "/column/reading-glasses-presbyopia-choose-2026",
@@ -260,33 +260,25 @@
       "title": "カラコン初心者完全ガイド2026【度数・着色直径・DIA・ケア方法をわかりやすく解説】",
       "metrics": {
         "sessions": 4,
-        "bounceRate": 1,
-        "avgSessionDuration": 0,
+        "bounceRate": 0.75,
+        "avgSessionDuration": 7.29101275,
         "affiliateClicks": 0
       },
       "flags": [
-        "bounce_rate_over_90pct",
         "avg_session_under_10s"
       ],
       "flagLabels": [
-        "直帰率100%（閾値90%）",
-        "平均滞在0.0秒（閾値10秒）"
+        "平均滞在7.3秒（閾値10秒）"
       ],
       "analysis": {
         "h2Count": 4,
         "h3Count": 2,
         "hasAffiliateLinks": true,
         "ctaCount": 3,
-        "contentChars": 71081
+        "contentChars": 71515
       },
-      "causes": [
-        "ページが正常にレンダリングされていない可能性（JSXエラー・白画面等）",
-        "検索意図とコンテンツのミスマッチ（期待した情報が冒頭にない）"
-      ],
-      "suggestions": [
-        "本番URLを実際に開いて表示確認をする。エラーがあればビルドログを確認する",
-        "冒頭3〜4行で結論・要点を先出しし、読者の疑問に即答する構成にする"
-      ],
+      "causes": [],
+      "suggestions": [],
       "status": "未対応"
     }
   ]
