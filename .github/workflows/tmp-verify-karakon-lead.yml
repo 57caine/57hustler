@@ -1,0 +1,18 @@
+name: 一時確認-カラコン初心者ガイドのリード文本番反映確認
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch production page and check for lead paragraph
+        run: |
+          URL="https://lens-navi.jp/column/karakon-shoshinsha-guide"
+          echo "Fetching: $URL"
+          HTTP_CODE=$(curl -sL -o /tmp/page.html -w "%{http_code}" "$URL")
+          echo "HTTP status: $HTTP_CODE"
+          echo ""
+          echo "=== リード文の出現確認 ==="
+          grep -o "初めてカラコンを選ぶとき" /tmp/page.html | wc -l
