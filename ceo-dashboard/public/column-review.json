@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T22:56:38.646Z",
+  "generatedAt": "2026-09-05T22:44:57.331Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -12,8 +12,8 @@
       "title": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "metrics": {
         "sessions": 17,
-        "bounceRate": 0.47058823529411764,
-        "avgSessionDuration": 195.47718129411766,
+        "bounceRate": 0.29411764705882354,
+        "avgSessionDuration": 230.42826394117648,
         "affiliateClicks": 0
       },
       "flags": [
@@ -42,16 +42,16 @@
       "slug": "blue-light-megane-kouka",
       "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
-        "sessions": 12,
-        "bounceRate": 0.16666666666666666,
-        "avgSessionDuration": 45.78802091666666,
+        "sessions": 11,
+        "bounceRate": 0.18181818181818182,
+        "avgSessionDuration": 48.77775218181819,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション12件・affiliate_clickゼロ"
+        "セッション11件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -69,13 +69,44 @@
       "status": "様子見"
     },
     {
+      "path": "/column/sunglass-polarized-guide",
+      "slug": "sunglass-polarized-guide",
+      "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
+      "metrics": {
+        "sessions": 9,
+        "bounceRate": 0.4444444444444444,
+        "avgSessionDuration": 120.94611655555556,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション9件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 8,
+        "contentChars": 87594
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "対応済み"
+    },
+    {
       "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
         "sessions": 8,
-        "bounceRate": 0.75,
-        "avgSessionDuration": 54.7966285,
+        "bounceRate": 0.625,
+        "avgSessionDuration": 65.1655825,
         "affiliateClicks": 0
       },
       "flags": [
@@ -100,37 +131,6 @@
       "status": "様子見"
     },
     {
-      "path": "/column/sunglass-polarized-guide",
-      "slug": "sunglass-polarized-guide",
-      "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
-      "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.375,
-        "avgSessionDuration": 136.064381125,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 4,
-        "hasAffiliateLinks": true,
-        "ctaCount": 8,
-        "contentChars": 87594
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "対応済み"
-    },
-    {
       "path": "/column/vr-movie-streaming-service-recommend-2026",
       "slug": "vr-movie-streaming-service-recommend-2026",
       "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
@@ -152,6 +152,68 @@
         "hasAffiliateLinks": true,
         "ctaCount": 4,
         "contentChars": 67373
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
+    },
+    {
+      "path": "/column/eyestrain-stretching-massage-guide",
+      "slug": "eyestrain-stretching-massage-guide",
+      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
+      "metrics": {
+        "sessions": 7,
+        "bounceRate": 0.2857142857142857,
+        "avgSessionDuration": 500.1495164285715,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション7件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 6,
+        "h3Count": 12,
+        "hasAffiliateLinks": true,
+        "ctaCount": 16,
+        "contentChars": 118902
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
+    },
+    {
+      "path": "/column/reading-glasses-presbyopia-choose-2026",
+      "slug": "reading-glasses-presbyopia-choose-2026",
+      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
+      "metrics": {
+        "sessions": 7,
+        "bounceRate": 0.42857142857142855,
+        "avgSessionDuration": 88.16299257142857,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション7件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 7,
+        "contentChars": 73415
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -193,13 +255,13 @@
       "status": "対応済み"
     },
     {
-      "path": "/column/eyestrain-stretching-massage-guide",
-      "slug": "eyestrain-stretching-massage-guide",
-      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
+      "path": "/column/ranshi-contact-ranking-2025",
+      "slug": "ranshi-contact-ranking-2025",
+      "title": "ranshi-contact-ranking-2025",
       "metrics": {
         "sessions": 6,
-        "bounceRate": 0.16666666666666666,
-        "avgSessionDuration": 583.5077691666667,
+        "bounceRate": 0.6666666666666666,
+        "avgSessionDuration": 163.61966800000002,
         "affiliateClicks": 0
       },
       "flags": [
@@ -210,41 +272,10 @@
       ],
       "analysis": {
         "h2Count": 6,
-        "h3Count": 12,
+        "h3Count": 2,
         "hasAffiliateLinks": true,
-        "ctaCount": 16,
-        "contentChars": 118902
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見"
-    },
-    {
-      "path": "/column/reading-glasses-presbyopia-choose-2026",
-      "slug": "reading-glasses-presbyopia-choose-2026",
-      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
-      "metrics": {
-        "sessions": 6,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 100.25985266666665,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション6件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 4,
-        "hasAffiliateLinks": true,
-        "ctaCount": 7,
-        "contentChars": 73415
+        "ctaCount": 4,
+        "contentChars": 100236
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -259,16 +290,18 @@
       "slug": "karakon-shoshinsha-guide",
       "title": "カラコン初心者完全ガイド2026【度数・着色直径・DIA・ケア方法をわかりやすく解説】",
       "metrics": {
-        "sessions": 4,
-        "bounceRate": 0.75,
-        "avgSessionDuration": 7.29101275,
+        "sessions": 5,
+        "bounceRate": 0.8,
+        "avgSessionDuration": 9.9430594,
         "affiliateClicks": 0
       },
       "flags": [
-        "avg_session_under_10s"
+        "avg_session_under_10s",
+        "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "平均滞在7.3秒（閾値10秒）"
+        "平均滞在9.9秒（閾値10秒）",
+        "セッション5件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -277,8 +310,12 @@
         "ctaCount": 3,
         "contentChars": 71515
       },
-      "causes": [],
-      "suggestions": [],
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
       "status": "未対応"
     }
   ]
