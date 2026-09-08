@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T23:22:52.840Z",
+  "generatedAt": "2026-09-08T23:17:43.950Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -11,16 +11,16 @@
       "slug": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "title": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "metrics": {
-        "sessions": 18,
-        "bounceRate": 0.2777777777777778,
-        "avgSessionDuration": 249.51437172222222,
+        "sessions": 19,
+        "bounceRate": 0.2631578947368421,
+        "avgSessionDuration": 236.38203636842104,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション18件・affiliate_clickゼロ"
+        "セッション19件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -42,16 +42,16 @@
       "slug": "blue-light-megane-kouka",
       "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
-        "sessions": 11,
-        "bounceRate": 0.18181818181818182,
-        "avgSessionDuration": 48.77775218181819,
+        "sessions": 14,
+        "bounceRate": 0.35714285714285715,
+        "avgSessionDuration": 40.43761557142857,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション11件・affiliate_clickゼロ"
+        "セッション14件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -135,16 +135,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.625,
-        "avgSessionDuration": 65.1655825,
+        "sessions": 7,
+        "bounceRate": 0.5714285714285714,
+        "avgSessionDuration": 74.47495142857143,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
+        "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
