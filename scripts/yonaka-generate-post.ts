@@ -19,6 +19,12 @@
  * 投稿品質強化（2026-08-16）:
  * - 「全てはバランス・陰陽である」という基本思想をシステムプロンプトに追加
  * - チェックを5段階化（禁止キーワード→文体→類似度→事実安全→わかりやすさ）
+ *
+ * カテゴリ拡張（2026-09-10）:
+ * - 占い系以外の一般層向けカテゴリが最も伸びる傾向が確認できたため、
+ *   日本神話・古事記／日本史の謎／言葉の語源／世界神話の共通点／地形と歴史 の5カテゴリを追加
+ * - 上記5カテゴリは「有名な話→でも実は反転→具体的根拠→人間の知恵で締める」の型を必須化
+ * - topic_tagは「雑学」を優先設定
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -32,7 +38,7 @@ const ACCESS_TOKEN = process.env.THREADS_ACCESS_TOKEN!;
 const HISTORY_PATH = path.join(process.cwd(), 'data', 'yonaka-post-history.json');
 const HISTORY_KEEP = 200; // 6投稿/日 × 30日超をカバー
 
-// ────── 8カテゴリ定義 ──────
+// ────── 13カテゴリ定義 ──────
 const CATEGORIES = [
   '気学・易経の豆知識',
   '日本の妖怪・神々',
@@ -42,6 +48,11 @@ const CATEGORIES = [
   '宗教の共通項',
   '科学・化学のふしぎ',
   '日月神事・神道の祭祀',
+  '日本神話・古事記',
+  '日本史の謎',
+  '言葉の語源',
+  '世界神話の共通点',
+  '地形と歴史',
 ] as const;
 type Category = typeof CATEGORIES[number];
 
@@ -62,15 +73,32 @@ const CATEGORY_HINTS: Record<Category, string> = {
     '日常に潜む化学・物理現象・人体の不思議・生物の進化・脳の仕組み',
   '日月神事・神道の祭祀':
     '日本の祭祀・神道の儀式・神社の作法・天皇祭祀・季節の神事',
+  '日本神話・古事記':
+    'ヤマタノオロチ・イザナギイザナミ・天照大神など古事記・日本書紀の有名な神話',
+  '日本史の謎':
+    '邪馬台国・縄文vs弥生・大和朝廷の起源など定説が定まっていない日本史のテーマ',
+  '言葉の語源':
+    '日本語の意外な由来・古語が現代語に残る形など言葉にまつわる豆知識',
+  '世界神話の共通点':
+    '洪水伝説・龍蛇信仰・太陽神話など世界各地の神話に共通するモチーフ',
+  '地形と歴史':
+    '地形が生んだ文化・信仰・妖怪など、土地の成り立ちと人の営みの関係',
 };
 
 // ────── カテゴリ優先度（重み付け抽選） ──────
 // 反応の良いカテゴリ（科学・化学のふしぎ／宗教の共通項）を優先選出し、
 // 反応が薄く突っ込まれやすい神社・夜間参詣系（日月神事・神道の祭祀）は
 // 週1回以下程度の頻度に抑える。数値は相対的な重み（絶対数ではない）。
+// 2026-09-10: 占い系以外の一般層向けカテゴリ（日本神話・古事記／地形と歴史／
+// 世界神話の共通点／日本史の謎／言葉の語源）が最も伸びたため高めの重みで追加。
 const CATEGORY_WEIGHTS: Record<Category, number> = {
   '科学・化学のふしぎ': 5,
+  '日本神話・古事記': 5,
   '量子・宇宙論': 4,
+  '地形と歴史': 4,
+  '世界神話の共通点': 4,
+  '日本史の謎': 3,
+  '言葉の語源': 3,
   '宗教の共通項': 2,
   '気学・易経の豆知識': 1,
   '日本の妖怪・神々': 1,
@@ -107,6 +135,38 @@ const SCIENCE_TEMPLATE_BLOCK = `
 ・専門家が補足コメントをしたくなる余白がある
 ・「確かに」と思わせる視点の反転がある
 ・難しい概念を日常の感覚に結びつけている
+
+この型を使う場合、4ステップをすべて含めるため150〜250字程度まで許容する
+（通常カテゴリの100〜200字ルールより多少長くてよい）。
+`;
+
+// ────── 有名な話→反転の型（神話・歴史・語源・地形系カテゴリ限定） ──────
+// 59いいね・14コメントを獲得した投稿の型を定型化したもの。
+// ①有名な事実→②「でも実は」で反転→③具体的根拠→④人間の知恵で締める、の4ステップ構成。
+const MYTHOLOGY_TEMPLATE_CATEGORIES: readonly Category[] = [
+  '日本神話・古事記', '日本史の謎', '言葉の語源', '世界神話の共通点', '地形と歴史',
+];
+
+const MYTHOLOGY_TEMPLATE_BLOCK = `
+【この投稿の型 — 神話・歴史・語源・地形系カテゴリでは必ずこの4ステップで書くこと】
+①誰でも知っている話・有名な事実から入る
+②「でも実は〜だったんじゃないでしょうか」で反転させる
+③具体的な根拠（地形・史料・記録）を入れる
+④「人間の知恵・発想の面白さ」で締める
+
+良い例（この型・トーンをそのまま参考にすること）：
+「古事記には『スサノオが出雲で蛇を退治した』
+という話が載っています。
+でも実は、この蛇というのは洪水のことだったんじゃないでしょうか。
+古い地形図を見ると、出雲は昔、大きな川の氾濫被害が多かった地域なんです。
+目に見えない危険を『怪物』として物語にしたのが、
+人間が危機から身を守る知恵だったんじゃないかという気がするんですよね。」
+
+この型が機能する理由：
+・誰もが知っている話から入るので読者を選ばない
+・「でも実は」の反転が「確かに」と思わせる意外性を生む
+・地形・史料など具体的根拠があることで単なる思いつきに見えない
+・「人間の知恵・発想の面白さ」で締めることで押しつけがましくならない
 
 この型を使う場合、4ステップをすべて含めるため150〜250字程度まで許容する
 （通常カテゴリの100〜200字ルールより多少長くてよい）。
@@ -265,7 +325,11 @@ async function checkReadability(text: string, client: Anthropic): Promise<boolea
 // ────── 生成 ──────
 async function generatePost(category: Category, history: HistoryEntry[], client: Anthropic): Promise<string> {
   const recentTexts = history.slice(0, 30).map(p => `- ${p.text}`).join('\n') || '（履歴なし）';
-  const templateBlock = SCIENCE_TEMPLATE_CATEGORIES.includes(category) ? SCIENCE_TEMPLATE_BLOCK : '';
+  const templateBlock = SCIENCE_TEMPLATE_CATEGORIES.includes(category)
+    ? SCIENCE_TEMPLATE_BLOCK
+    : MYTHOLOGY_TEMPLATE_CATEGORIES.includes(category)
+      ? MYTHOLOGY_TEMPLATE_BLOCK
+      : '';
 
   const res = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
@@ -431,7 +495,10 @@ async function main() {
     postText += '\n\nこの話、もう少し深いところまで書いた。\nhttps://note.com/kobayashi_done';
   }
 
-  const topicTag = determineTopicTag(finalText);
+  // 新カテゴリ（神話・歴史・語源・地形系）は「雑学」タグを優先設定する
+  const topicTag = MYTHOLOGY_TEMPLATE_CATEGORIES.includes(finalCategory!)
+    ? '雑学'
+    : determineTopicTag(finalText);
 
   console.log('\n--- 最終テキスト ---');
   console.log(postText);
