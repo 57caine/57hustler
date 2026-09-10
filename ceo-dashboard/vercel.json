@@ -3,5 +3,5 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "installCommand": "npm install",
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- yonaka-uranai"
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- ceo-dashboard"
 }
