@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T22:55:40.368Z",
+  "generatedAt": "2026-09-13T23:03:50.677Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -7,13 +7,13 @@
   "flaggedCount": 1,
   "flaggedArticles": [
     {
-      "path": "/column/blue-light-megane-kouka",
-      "slug": "blue-light-megane-kouka",
-      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
+      "path": "/column/eyestrain-stretching-massage-guide",
+      "slug": "eyestrain-stretching-massage-guide",
+      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
         "sessions": 15,
-        "bounceRate": 0.13333333333333333,
-        "avgSessionDuration": 55.54375493333334,
+        "bounceRate": 0.3333333333333333,
+        "avgSessionDuration": 351.29775333333333,
         "affiliateClicks": 0
       },
       "flags": [
@@ -21,37 +21,6 @@
       ],
       "flagLabels": [
         "セッション15件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 3,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 67334
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見"
-    },
-    {
-      "path": "/column/eyestrain-stretching-massage-guide",
-      "slug": "eyestrain-stretching-massage-guide",
-      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
-      "metrics": {
-        "sessions": 14,
-        "bounceRate": 0.2857142857142857,
-        "avgSessionDuration": 376.39045,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション14件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 6,
@@ -69,13 +38,44 @@
       "status": "様子見"
     },
     {
+      "path": "/column/blue-light-megane-kouka",
+      "slug": "blue-light-megane-kouka",
+      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
+      "metrics": {
+        "sessions": 14,
+        "bounceRate": 0.14285714285714285,
+        "avgSessionDuration": 54.747539357142855,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション14件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 3,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 67334
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
+    },
+    {
       "path": "/column/sunglass-polarized-guide",
       "slug": "sunglass-polarized-guide",
       "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
       "metrics": {
         "sessions": 10,
-        "bounceRate": 0.4,
-        "avgSessionDuration": 117.3234207,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 109.91434789999998,
         "affiliateClicks": 0
       },
       "flags": [
@@ -100,13 +100,44 @@
       "status": "対応済み"
     },
     {
+      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
+      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 93.17147337499999,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 8,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 73243
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
+    },
+    {
       "path": "/column/multifocal-iol-presbyopia-surgery-2026",
       "slug": "multifocal-iol-presbyopia-surgery-2026",
       "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
       "metrics": {
         "sessions": 8,
-        "bounceRate": 0.375,
-        "avgSessionDuration": 256.1884285,
+        "bounceRate": 0.25,
+        "avgSessionDuration": 268.63668725,
         "affiliateClicks": 0
       },
       "flags": [
@@ -131,51 +162,20 @@
       "status": "様子見"
     },
     {
-      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
-      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
-      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.42857142857142855,
-        "avgSessionDuration": 99.33231571428571,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 8,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 73243
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見"
-    },
-    {
       "path": "/column/ranshi-contact-ranking-2025",
       "slug": "ranshi-contact-ranking-2025",
       "title": "ranshi-contact-ranking-2025",
       "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.42857142857142855,
-        "avgSessionDuration": 127.54297057142857,
+        "sessions": 6,
+        "bounceRate": 0.3333333333333333,
+        "avgSessionDuration": 147.4760085,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
+        "セッション6件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 6,
@@ -229,8 +229,8 @@
       "title": "視力が悪い人のVRゴーグル対策【コンタクト・度付きインサート・メガネスペーサー完全ガイド】",
       "metrics": {
         "sessions": 6,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 189.9261005,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 186.22804283333335,
         "affiliateClicks": 0
       },
       "flags": [
