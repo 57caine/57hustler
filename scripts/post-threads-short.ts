@@ -9,7 +9,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import {
   KYUSEI, POSITION_MEANINGS, getDailyStar, getMonthlyStarForToday, getStarPositionIndex,
-  getJstDayOfWeek, STAR_TO_TRIGRAM, selectHexagram,
+  getJstDayOfWeek, STAR_TO_TRIGRAM, selectHexagram, validateOneLiners,
 } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
@@ -78,13 +78,12 @@ ${positionInfo}
 - 朝の全体運投稿と内容が被らないようにする
 - 夜・就寝前という時間帯を意識した内容
   （今夜やること・明日の準備・眠りの前に意識すること）
-- 各星の一言は10文字以内で、意味が必ず完結する文にすること。途中で切れる文は絶対に生成しない。
-  助詞（「を」「に」「が」「の」など）で終えてはいけない。動詞か名詞で言い切ること
-- 体言止め・動詞終わりのどちらでもよい
+- 各星の一言は8〜12文字で、意味が必ず完結する文にすること。途中で切れる文は絶対に生成しない。
+  助詞（「を」「に」「が」「の」など）で終えてはいけない。動詞か体言止めで言い切ること
 - 象意の言い換えは禁止（「地盤を固める」など不可）
   良い例：「手帳を閉じて眠る」「明日の服を決めて」「窓を開けて眠れ」
-  NG例：「今日の変化を手帳」（助詞で切れている）「明日のリーダーシ」（単語の途中で切れている）
-- 10文字に収まらない内容は、要素を削って短くまとめる（尻切れにしない）
+  NG例：「信用でコミュニケーシ」（単語の途中で切れている）「中央で変化の核心を動」（助詞で切れている）
+- 12文字を1文字でも超える内容は、要素を削って短くまとめる（尻切れにしない）
 
 以下のJSONのみ出力（前置き不要）：
 {"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":"","9":""}`,
@@ -93,7 +92,7 @@ ${positionInfo}
 
   const raw = (message.content[0] as { type: string; text: string }).text;
   const json = JSON.parse(raw.replace(/```json\n?|\n?```/g, '').trim()) as Record<string, string>;
-  return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v).slice(0, 10)]));
+  return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v)]));
 }
 
 function buildHoroscopeText(oneLiners: Record<number, string>): string {
@@ -102,7 +101,7 @@ function buildHoroscopeText(oneLiners: Record<number, string>): string {
     '',
     ...Array.from({ length: 9 }, (_, i) => {
       const n = i + 1;
-      return `${KYUSEI[n].emoji}${KYUSEI[n].short}\n${oneLiners[n] ?? ''}`;
+      return `${KYUSEI[n].emoji}${KYUSEI[n].short}｜${oneLiners[n] ?? ''}`;
     }),
     '',
     '#九星気学 #今夜の運勢 #夜中のおじさん',
@@ -251,8 +250,23 @@ async function main() {
     const dailyStarNum   = getDailyStar();
     const monthlyStarNum = getMonthlyStarForToday();
     console.log(`日盤中宮: ${KYUSEI[dailyStarNum].short} / 月盤中宮: ${KYUSEI[monthlyStarNum].short}`);
-    console.log('Claude API で夜占いを生成中...');
-    const oneLiners = await generateNightHoroscope(dailyStarNum, monthlyStarNum);
+
+    const MAX_RETRIES = 3;
+    let oneLiners: Record<number, string> | null = null;
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+      console.log(`Claude API で夜占いを生成中...（試行${attempt}/${MAX_RETRIES}）`);
+      const candidate = await generateNightHoroscope(dailyStarNum, monthlyStarNum);
+      if (validateOneLiners(candidate)) {
+        oneLiners = candidate;
+        break;
+      }
+      const tooLong = Object.entries(candidate).filter(([, v]) => v.length > 12);
+      console.warn(`⚠️ 試行${attempt}: 12文字を超える一言を検出（${tooLong.map(([k, v]) => `${k}:「${v}」`).join(', ')}） → 再生成`);
+    }
+    if (oneLiners === null) {
+      console.warn('⚠️ 3回試行しても文字数チェックを通過できなかったため、今回の投稿をスキップします');
+      return;
+    }
     text = buildHoroscopeText(oneLiners);
   } else {
     const isSunday = postType === 'toikake';

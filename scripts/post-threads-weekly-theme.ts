@@ -3,11 +3,14 @@
  *
  * 「週盤」は九星気学の古典的な概念ではないため、
  * このスクリプトが実行される月曜日の日盤中宮星を「今週の中宮星」として扱う。
- * 各星の一言はPR #3で確立した「10文字以内・完結文・助詞で終わらない・改行フォーマット」を踏襲する。
+ * 各星の一言は「⚪一白｜一言」の1行フォーマットで、8〜12文字・完結文・助詞で終わらないルール。
+ * 生成後に機械チェックし、超過があれば再生成する（slice等での強制切りはしない）。
  */
 
 import Anthropic from '@anthropic-ai/sdk';
-import { KYUSEI, POSITION_MEANINGS, getDailyStar, getStarPositionIndex, getJstDayOfWeek } from './lib/kyusei-ban';
+import {
+  KYUSEI, POSITION_MEANINGS, getDailyStar, getStarPositionIndex, getJstDayOfWeek, validateOneLiners,
+} from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
 const USER_ID = process.env.THREADS_USER_ID!;
@@ -36,16 +39,16 @@ ${positionInfo}
 
 週盤「${weekStar.name}」＋各星の回座宮の組み合わせから、
 その星にとって「この1週間、どんな行動指針・心がけで過ごすとよいか」を読み取り、
-各星のテーマを10文字以内で、意味が必ず完結する文にすること。
+各星のテーマを8〜12文字で、意味が必ず完結する文にすること。
 
 【厳守】
 - 象意の言い換えは絶対NG。「地盤を固める」「じっくり取り組む」などは禁止
-- 途中で切れる文は絶対に生成しない。助詞（「を」「に」「が」「の」など）で終えてはいけない。動詞か名詞で言い切ること
+- 途中で切れる文は絶対に生成しない。助詞（「を」「に」「が」「の」など）で終えてはいけない。動詞か体言止めで言い切ること
 - 1日単位ではなく「今週全体」のテーマとして書く
   良い例：「新しい縁を育てる週」「守りを固める週」「発信すると伸びる」
-  NG例：「今週の変化を手帳」（助詞で切れている）「明日のリーダーシ」（単語の途中で切れている）
+  NG例：「信用でコミュニケーシ」（単語の途中で切れている）「中央で変化の核心を動」（助詞で切れている）
 - 体言止め・動詞終わりのどちらでもよい。ですます調不要
-- 10文字に収まらない内容は、要素を削って短くまとめる（尻切れにしない）
+- 12文字を1文字でも超える内容は、要素を削って短くまとめる（尻切れにしない）
 
 以下のJSONのみ出力（前置き不要）：
 {"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":"","9":""}`,
@@ -54,7 +57,7 @@ ${positionInfo}
 
   const raw = (message.content[0] as { type: string; text: string }).text;
   const json = JSON.parse(raw.replace(/```json\n?|\n?```/g, '').trim()) as Record<string, string>;
-  return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v).slice(0, 10)]));
+  return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v)]));
 }
 
 function buildPostText(weekStarNum: number, themes: Record<number, string>): string {
@@ -70,7 +73,7 @@ function buildPostText(weekStarNum: number, themes: Record<number, string>): str
     ...Array.from({ length: 9 }, (_, i) => {
       const n = i + 1;
       const s = KYUSEI[n];
-      return `${s.emoji}${s.short}\n${themes[n] ?? ''}`;
+      return `${s.emoji}${s.short}｜${themes[n] ?? ''}`;
     }),
     '',
     '#九星気学 #今週の運勢 #夜中のおじさん',
@@ -117,8 +120,22 @@ async function main() {
   const weekStarNum = getDailyStar();
   console.log(`今週の中宮星: ${KYUSEI[weekStarNum].name}`);
 
-  console.log('Claude API で今週のテーマを生成中...');
-  const themes = await generateWeeklyThemes(weekStarNum);
+  const MAX_RETRIES = 3;
+  let themes: Record<number, string> | null = null;
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    console.log(`Claude API で今週のテーマを生成中...（試行${attempt}/${MAX_RETRIES}）`);
+    const candidate = await generateWeeklyThemes(weekStarNum);
+    if (validateOneLiners(candidate)) {
+      themes = candidate;
+      break;
+    }
+    const tooLong = Object.entries(candidate).filter(([, v]) => v.length > 12);
+    console.warn(`⚠️ 試行${attempt}: 12文字を超えるテーマを検出（${tooLong.map(([k, v]) => `${k}:「${v}」`).join(', ')}） → 再生成`);
+  }
+  if (themes === null) {
+    console.warn('⚠️ 3回試行しても文字数チェックを通過できなかったため、今回の投稿をスキップします');
+    return;
+  }
   const text = buildPostText(weekStarNum, themes);
 
   console.log('--- 生成テキスト ---');
