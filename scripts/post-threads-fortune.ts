@@ -2,11 +2,20 @@
  * Threads 九星気学 9星まとめ日次投稿スクリプト
  *
  * 今日の日盤中宮星を表示しつつ、全9星の今日の一言をまとめて1投稿する。
- * 各星の一言はClaude APIで動的生成（10文字以内・意味が完結する文。星名と改行で分けて表示）。
+ * 各星の一言はClaude APIで動的生成（8〜12文字・意味が完結する文。絵文字＋星名＋一言を1行に収める）。
+ *
+ * フォーマット全面変更（2026-09-15）:
+ * - 星名と一言を改行で分ける2行フォーマットは縦に長く読みづらいため、
+ *   「⚪一白｜一言」の1行フォーマットに戻す
+ * - 文字切れ対策として、生成後に各行の｜以降の文字数を機械的にチェックし、
+ *   12文字を超える場合はslice等で強制的に切らず、まるごと再生成する（最大3回）
  */
 
 import Anthropic from '@anthropic-ai/sdk';
-import { KYUSEI, POSITION_MEANINGS, getDailyStar, getMonthlyStarForToday, getStarPositionIndex } from './lib/kyusei-ban';
+import {
+  KYUSEI, POSITION_MEANINGS, getDailyStar, getMonthlyStarForToday, getStarPositionIndex,
+  MAX_ONELINER_LENGTH, validateOneLiners,
+} from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
 const USER_ID = process.env.THREADS_USER_ID!;
@@ -60,17 +69,17 @@ ${positionInfo}
 
 月盤「${monthlyStar.name}」＋ 各星の回座宮の組み合わせから、
 その星が今日「具体的にどんな状況・行動に置かれているか」を読み取り、
-各星の一言は10文字以内で、意味が必ず完結する文にすること。
+各星の一言は8〜12文字で、意味が必ず完結する文にすること。
 途中で切れる文は絶対に生成しない。助詞（「を」「に」「が」「の」など）で終えてはいけない。
-動詞か名詞で言い切ること。
+動詞か体言止めで言い切ること。
 
 【厳守】
 - 象意の言い換えは絶対NG。「地盤を固める」「じっくり取り組む」などは禁止
 - 行動・場面・注意点で具体的に
-  良い例：「今日は発信が吉」「縁を大切に」「静かに根を張る」
-  NG例：「今日の変化を手帳」（助詞で切れている）「明日のリーダーシ」（単語の途中で切れている）
+  良い例：「静かに受け取る日」「地道が実を結ぶ」「発信より傾聴を」「縁を大切に動く」
+  NG例：「信用でコミュニケーシ」（単語の途中で切れている）「中央で変化の核心を動」（助詞で切れている）
 - 体言止め・動詞終わりのどちらでもよい。ですます調不要
-- 10文字に収まらない内容は、要素を削って短くまとめる（尻切れにしない）
+- 12文字を1文字でも超える内容は、要素を削って短くまとめる（尻切れにしない）
 
 以下のJSONのみ出力（前置き不要）：
 {"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":"","9":""}`,
@@ -79,7 +88,7 @@ ${positionInfo}
 
   const raw = (message.content[0] as { type: string; text: string }).text;
   const json = JSON.parse(raw.replace(/```json\n?|\n?```/g, '').trim()) as Record<string, string>;
-  return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v).slice(0, 10)]));
+  return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v)]));
 }
 
 function buildPostText(dailyStarNum: number, oneLiners: Record<number, string>): string {
@@ -94,7 +103,7 @@ function buildPostText(dailyStarNum: number, oneLiners: Record<number, string>):
     ...Array.from({ length: 9 }, (_, i) => {
       const n = i + 1;
       const s = KYUSEI[n];
-      return `${s.emoji}${s.short}\n${oneLiners[n] ?? ''}`;
+      return `${s.emoji}${s.short}｜${oneLiners[n] ?? ''}`;
     }),
     '',
     '🌙 #九星気学 #今日の運勢 #夜中のおじさん',
@@ -135,8 +144,24 @@ async function main() {
   const monthlyStarNum = getMonthlyStarForToday();
   console.log(`本日の日盤中宮: ${KYUSEI[dailyStarNum].name} / 月盤中宮: ${KYUSEI[monthlyStarNum].name}`);
 
-  console.log('Claude API で各星の一言を生成中...');
-  const oneLiners = await generateOneLiners(dailyStarNum, monthlyStarNum);
+  const MAX_RETRIES = 3;
+  let oneLiners: Record<number, string> | null = null;
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    console.log(`Claude API で各星の一言を生成中...（試行${attempt}/${MAX_RETRIES}）`);
+    const candidate = await generateOneLiners(dailyStarNum, monthlyStarNum);
+    if (validateOneLiners(candidate)) {
+      oneLiners = candidate;
+      break;
+    }
+    const tooLong = Object.entries(candidate).filter(([, v]) => v.length > MAX_ONELINER_LENGTH);
+    console.warn(`⚠️ 試行${attempt}: ${MAX_ONELINER_LENGTH}文字を超える一言を検出（${tooLong.map(([k, v]) => `${k}:「${v}」`).join(', ')}） → 再生成`);
+  }
+
+  if (oneLiners === null) {
+    console.warn('⚠️ 3回試行しても文字数チェックを通過できなかったため、今回の投稿をスキップします');
+    return;
+  }
+
   const text = buildPostText(dailyStarNum, oneLiners);
 
   console.log('--- 生成テキスト ---');
