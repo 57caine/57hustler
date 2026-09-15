@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T23:48:24.013Z",
+  "generatedAt": "2026-09-15T23:29:14.688Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -11,16 +11,16 @@
       "slug": "blue-light-megane-kouka",
       "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
-        "sessions": 18,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 44.08954522222222,
+        "sessions": 17,
+        "bounceRate": 0.23529411764705882,
+        "avgSessionDuration": 49.23681005882353,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション18件・affiliate_clickゼロ"
+        "セッション17件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -42,16 +42,16 @@
       "slug": "eyestrain-stretching-massage-guide",
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
-        "sessions": 16,
-        "bounceRate": 0.375,
-        "avgSessionDuration": 329.34164375,
+        "sessions": 14,
+        "bounceRate": 0.35714285714285715,
+        "avgSessionDuration": 159.62274214285713,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション16件・affiliate_clickゼロ"
+        "セッション14件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 6,
@@ -73,16 +73,16 @@
       "slug": "sunglass-polarized-guide",
       "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
       "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.4,
-        "avgSessionDuration": 109.91434790000001,
+        "sessions": 9,
+        "bounceRate": 0.4444444444444444,
+        "avgSessionDuration": 113.60766422222223,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
+        "セッション9件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -286,6 +286,37 @@
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "未対応"
+    },
+    {
+      "path": "/column/reading-glasses-presbyopia-choose-2026",
+      "slug": "reading-glasses-presbyopia-choose-2026",
+      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
+      "metrics": {
+        "sessions": 5,
+        "bounceRate": 0.4,
+        "avgSessionDuration": 21.8092124,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション5件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 7,
+        "contentChars": 73415
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見"
     },
     {
       "path": "/column/vr-movie-streaming-service-recommend-2026",
