@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import DashboardClock from './DashboardClock';
-import LiveStatsSection from './LiveStatsSection';
 
 const RAW = 'https://raw.githubusercontent.com/57caine/57hustler/main/data';
 
@@ -118,15 +116,7 @@ interface MorningBrief {
 }
 
 export default async function Dashboard() {
-  const [yonaka, column, brief] = await Promise.all([
-    fetchJson<{ posts: { date: string }[] }>('yonaka-post-history.json'),
-    fetchJson<{ posts: { date: string }[] }>('column-history.json'),
-    fetchJson<MorningBrief>('morning-brief.json'),
-  ]);
-
-  const todayJST   = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
-  const todayPosts = (yonaka?.posts?.filter(p => p.date === todayJST).length ?? 0);
-  const totalPosts = (yonaka?.posts?.length ?? 0) + (column?.posts?.length ?? 0);
+  const brief = await fetchJson<MorningBrief>('morning-brief.json');
 
   // Roadmap progress: 2026-01-01 → 2032-12-31 = 7 years
   const START_MS    = new Date('2026-01-01').getTime();
@@ -146,36 +136,6 @@ export default async function Dashboard() {
 
   return (
     <div className="space-y-6">
-
-      {/* ① 朝の報告書 */}
-      <div className="rounded-2xl p-5"
-        style={{ background: 'linear-gradient(135deg, #0f0e1a 0%, #1c1040 100%)', border: '1px solid rgba(124,110,247,0.35)' }}>
-        <div className="flex items-start justify-between gap-3 mb-5">
-          <DashboardClock />
-          <div className="shrink-0 text-right">
-            <div className="text-[10px] uppercase tracking-widest mb-1" style={{ color: 'rgba(124,110,247,0.55)' }}>CEO Report</div>
-            <div className="text-xl font-bold" style={{ color: 'var(--accent)' }}>57hustler</div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-3 gap-3 pt-4" style={{ borderTop: '1px solid rgba(124,110,247,0.2)' }}>
-          <div className="text-center">
-            <div className="text-2xl font-bold font-mono" style={{ color: '#22c55e' }}>{todayPosts}</div>
-            <div className="text-[10px]" style={{ color: 'var(--muted)' }}>今日の投稿</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold font-mono" style={{ color: 'var(--accent)' }}>{totalPosts}</div>
-            <div className="text-[10px]" style={{ color: 'var(--muted)' }}>累計投稿数</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold font-mono" style={{ color: '#f59e0b' }}>7</div>
-            <div className="text-[10px]" style={{ color: 'var(--muted)' }}>note公開数</div>
-          </div>
-        </div>
-      </div>
-
-      {/* 本日のライブ指標（30〜45秒ごとに自動更新） */}
-      <LiveStatsSection />
 
       {/* ① 朝の司令書 */}
       {brief && (
