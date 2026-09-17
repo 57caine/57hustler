@@ -1,0 +1,30 @@
+{
+  "updatedAt": "2026-09-17T00:00:00+09:00",
+  "source": "手入力の種データ（公開情報の二次情報ベース）。自動スクレイピング未実装。詳細は CLAUDE.md 参照",
+  "campaigns": [
+    {
+      "id": "rakuten-marathon-2026-09b",
+      "platform": "rakuten",
+      "type": "marathon",
+      "name": "楽天お買い物マラソン",
+      "startAt": "2026-09-19T20:00:00+09:00",
+      "endAt": "2026-09-24T01:59:00+09:00",
+      "entryRequired": true,
+      "officialUrl": "https://event.rakuten.co.jp/marathon/",
+      "note": "税込1000円以上の買い物をしたショップ数に応じてポイント倍率が上がる（買いまわり）",
+      "confidence": "predicted"
+    },
+    {
+      "id": "rakuten-marathon-2026-10a",
+      "platform": "rakuten",
+      "type": "marathon",
+      "name": "楽天お買い物マラソン",
+      "startAt": "2026-10-04T20:00:00+09:00",
+      "endAt": "2026-10-09T01:59:00+09:00",
+      "entryRequired": true,
+      "officialUrl": "https://event.rakuten.co.jp/marathon/",
+      "note": "税込1000円以上の買い物をしたショップ数に応じてポイント倍率が上がる（買いまわり）",
+      "confidence": "predicted"
+    }
+  ]
+}
