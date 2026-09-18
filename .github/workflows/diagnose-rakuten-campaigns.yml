@@ -2,6 +2,10 @@ name: 楽天キャンペーン構造 診断（1回限りの手動実行用）
 
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/diagnose-rakuten-campaigns.ts'
+      - '.github/workflows/diagnose-rakuten-campaigns.yml'
 
 jobs:
   diagnose:
