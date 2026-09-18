@@ -9,9 +9,9 @@
 import { chromium, type Page } from 'playwright';
 
 const CANDIDATE_URLS = [
-  'https://www.rakuten.co.jp/',
-  'https://event.rakuten.co.jp/',
-  'https://calendar.rakuten.co.jp/cal/8607',
+  'https://event.rakuten.co.jp/campaign/point-up/marathon/',
+  'https://event.rakuten.co.jp/campaign/point-up/everyday/point/',
+  'https://event.rakuten.co.jp/campaign/regular/point-up/',
 ];
 
 const KEYWORDS = ['マラソン', 'スーパーSALE', 'スーパーセール', 'キャンペーン', '買いまわり', 'エントリー'];
@@ -112,7 +112,7 @@ async function inspectPage(page: Page, url: string) {
           href: el.tagName.toLowerCase() === 'a' ? (el as HTMLAnchorElement).href : null,
         });
       }
-      if (results.length >= 25) break;
+      if (results.length >= 40) break;
     }
     return results;
   }, KEYWORDS);
