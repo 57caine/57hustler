@@ -11,8 +11,6 @@ import { chromium, type Page } from 'playwright';
 const CANDIDATE_URLS = [
   'https://www.rakuten.co.jp/',
   'https://event.rakuten.co.jp/',
-  'https://event.rakuten.co.jp/marathon/',
-  'https://event.rakuten.co.jp/rakuten-super-sale/',
   'https://calendar.rakuten.co.jp/cal/8607',
 ];
 
@@ -44,7 +42,32 @@ async function inspectPage(page: Page, url: string) {
   console.log(`  最終URL(リダイレクト後): ${page.url()}`);
   console.log(`  title: ${await page.title()}`);
 
-  await page.waitForTimeout(1000);
+  // JSで遅延描画されるバナー等を拾うため長めに待つ
+  try {
+    await page.waitForLoadState('networkidle', { timeout: 8000 });
+  } catch {}
+  await page.waitForTimeout(2000);
+
+  // 「マラソン」「スーパー」「SALE」を含むリンクをページ全体から探索
+  const campaignLinks = await page.evaluate(() => {
+    const anchors = Array.from(document.querySelectorAll('a[href]'));
+    const seen = new Set<string>();
+    const out: { text: string; href: string }[] = [];
+    for (const a of anchors) {
+      const href = (a as HTMLAnchorElement).href;
+      const text = (a.textContent ?? '').trim().replace(/\s+/g, ' ');
+      const hay = `${href} ${text}`;
+      if (/marathon|super.?sale|マラソン|スーパー.?SALE|スーパーセール|買いまわり|point.?up|ポイントアップ/i.test(hay)) {
+        if (!seen.has(href)) {
+          seen.add(href);
+          out.push({ text: text.slice(0, 60), href });
+        }
+      }
+    }
+    return out.slice(0, 40);
+  });
+  console.log(`  キャンペーン関連リンク: ${campaignLinks.length}件`);
+  campaignLinks.forEach((l, i) => console.log(`    [${i}] ${l.text} -> ${l.href}`));
 
   // meta / link 要素からRSS・ICS・canonical等を検出
   const headInfo = await page.evaluate(() => {
