@@ -7,9 +7,11 @@ export interface Campaign {
   platform: 'rakuten';
   type: 'marathon' | 'super-sale' | 'other';
   name: string;
+  entryStartAt?: string;
   startAt: string;
   endAt: string;
   entryRequired: boolean;
+  entryUrl?: string;
   officialUrl: string;
   note: string;
   confidence: CampaignConfidence;

@@ -1,0 +1,48 @@
+name: point-calendar キャンペーンデータ自動更新
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'point-calendar/scripts/update-campaigns.ts'
+      - 'point-calendar/data/campaigns.json'
+      - '.github/workflows/update-point-calendar-campaigns.yml'
+  # TODO: mainマージ後、動作確認が取れ次第スケジュール実行を有効化する
+  # schedule:
+  #   - cron: '0 22 * * *'  # 07:00 JST
+  #   - cron: '0 6 * * *'   # 15:00 JST
+
+jobs:
+  update-campaigns:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Node.js セットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: point-calendar/package-lock.json
+
+      - name: 依存関係インストール
+        run: cd point-calendar && npm ci
+
+      - name: Playwright ブラウザをインストール
+        run: cd point-calendar && npx playwright install chromium --with-deps
+
+      - name: キャンペーンデータ更新（実スクレイピング）
+        run: cd point-calendar && npm run update-campaigns
+
+      - name: 差分を表示（動作確認用・現時点ではコミットしない）
+        run: git diff -- point-calendar/data/campaigns.json
+
+      # TODO: mainマージ後、スケジュール実行を有効化する際に
+      # scripts/update-prices.ts 用ワークフロー（.github/workflows/update-prices.yml）と
+      # 同様のコミット・プッシュ手順をここに追加する。
+      # pull_request イベントでのテスト実行時は actions/checkout がマージコミットを
+      # チェックアウトするため、このジョブでは意図せずbranchへpushしない。

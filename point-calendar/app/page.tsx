@@ -23,46 +23,64 @@ export default function HomePage() {
       )}
 
       <ul className="space-y-4">
-        {statuses.map(({ campaign, phase, daysUntilStart, daysUntilEnd }) => (
-          <li
-            key={campaign.id}
-            className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
-          >
-            <div className="flex items-center gap-2 mb-2 flex-wrap">
-              <span className="inline-block bg-sky-100 text-sky-700 text-xs font-bold px-2 py-0.5 rounded">
-                {TYPE_LABEL[campaign.type] ?? campaign.type}
-              </span>
-              {phase === 'ongoing' && (
-                <span className="inline-block bg-red-100 text-red-700 text-xs font-bold px-2 py-0.5 rounded">
-                  開催中・残り{daysUntilEnd}日
-                </span>
-              )}
-              {phase === 'upcoming' && (
-                <span className="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-2 py-0.5 rounded">
-                  あと{daysUntilStart}日で開始
-                </span>
-              )}
-              {campaign.confidence === 'predicted' && (
-                <span className="inline-block bg-gray-100 text-gray-500 text-xs px-2 py-0.5 rounded">
-                  日程は予想（未確定）
-                </span>
-              )}
-            </div>
+        {statuses.map(({ campaign, phase, daysUntilStart, daysUntilEnd }) => {
+          const now = new Date();
+          const entryOpen = campaign.entryStartAt ? now >= new Date(campaign.entryStartAt) : false;
+          const isEntryPeriod = entryOpen && phase === 'upcoming';
 
-            <h3 className="text-base font-bold mb-1">{campaign.name}</h3>
-            <p className="text-sm text-gray-600 mb-2">{formatDateRange(campaign.startAt, campaign.endAt)}</p>
-            <p className="text-sm text-gray-500 mb-3">{campaign.note}</p>
-
-            <a
-              href={campaign.officialUrl}
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              className="inline-block bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-700 transition-colors"
+          return (
+            <li
+              key={campaign.id}
+              className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
             >
-              楽天市場でエントリーする（※現在は非アフィリエイトの公式URL・要差し替え）
-            </a>
-          </li>
-        ))}
+              <div className="flex items-center gap-2 mb-2 flex-wrap">
+                <span className="inline-block bg-sky-100 text-sky-700 text-xs font-bold px-2 py-0.5 rounded">
+                  {TYPE_LABEL[campaign.type] ?? campaign.type}
+                </span>
+                {phase === 'ongoing' && (
+                  <span className="inline-block bg-red-100 text-red-700 text-xs font-bold px-2 py-0.5 rounded">
+                    開催中・残り{daysUntilEnd}日
+                  </span>
+                )}
+                {phase === 'upcoming' && (
+                  <span className="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-2 py-0.5 rounded">
+                    あと{daysUntilStart}日で開始
+                  </span>
+                )}
+                {isEntryPeriod && (
+                  <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded">
+                    エントリー受付中
+                  </span>
+                )}
+                {campaign.confidence === 'predicted' && (
+                  <span className="inline-block bg-gray-100 text-gray-500 text-xs px-2 py-0.5 rounded">
+                    日程は予想（未確定）
+                  </span>
+                )}
+              </div>
+
+              <h3 className="text-base font-bold mb-1">{campaign.name}</h3>
+              <p className="text-sm text-gray-600 mb-1">
+                ポイントアップ期間: {formatDateRange(campaign.startAt, campaign.endAt)}
+              </p>
+              {campaign.entryStartAt && (
+                <p className="text-sm text-gray-500 mb-2">
+                  エントリー開始: {formatDateRange(campaign.entryStartAt, campaign.entryStartAt).split(' 〜')[0]}〜
+                </p>
+              )}
+              <p className="text-sm text-gray-500 mb-3">{campaign.note}</p>
+
+              <a
+                href={campaign.entryUrl ?? campaign.officialUrl}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="inline-block bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-700 transition-colors"
+              >
+                楽天市場でエントリーする（※現在は非アフィリエイトのURL・要差し替え）
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
