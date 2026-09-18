@@ -2,11 +2,6 @@ name: point-calendar キャンペーンデータ自動更新
 
 on:
   workflow_dispatch:
-  pull_request:
-    paths:
-      - 'point-calendar/scripts/update-campaigns.ts'
-      - 'point-calendar/data/campaigns.json'
-      - '.github/workflows/update-point-calendar-campaigns.yml'
   # TODO: mainマージ後、動作確認が取れ次第スケジュール実行を有効化する
   # schedule:
   #   - cron: '0 22 * * *'  # 07:00 JST
@@ -38,11 +33,11 @@ jobs:
       - name: キャンペーンデータ更新（実スクレイピング）
         run: cd point-calendar && npm run update-campaigns
 
-      - name: 差分を表示（動作確認用・現時点ではコミットしない）
-        run: git diff -- point-calendar/data/campaigns.json
-
-      # TODO: mainマージ後、スケジュール実行を有効化する際に
-      # scripts/update-prices.ts 用ワークフロー（.github/workflows/update-prices.yml）と
-      # 同様のコミット・プッシュ手順をここに追加する。
-      # pull_request イベントでのテスト実行時は actions/checkout がマージコミットを
-      # チェックアウトするため、このジョブでは意図せずbranchへpushしない。
+      - name: 変更をコミット・プッシュ
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add point-calendar/data/campaigns.json
+          git diff --staged --quiet || git commit -m "chore: point-calendarキャンペーンデータ自動更新 $(date '+%Y-%m-%d %H:%M JST')"
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          git push
