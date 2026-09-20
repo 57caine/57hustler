@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T22:49:40.583Z",
+  "generatedAt": "2026-09-20T23:07:02.757Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -11,16 +11,16 @@
       "slug": "blue-light-megane-kouka",
       "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
-        "sessions": 16,
-        "bounceRate": 0.25,
-        "avgSessionDuration": 51.4195604375,
+        "sessions": 14,
+        "bounceRate": 0.14285714285714285,
+        "avgSessionDuration": 58.76521192857143,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション16件・affiliate_clickゼロ"
+        "セッション14件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
