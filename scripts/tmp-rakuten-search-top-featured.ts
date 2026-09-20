@@ -26,10 +26,8 @@ interface RakutenSearchResponse {
 }
 
 const CATEGORIES: { label: string; keywords: string[] }[] = [
-  { label: 'コンタクトレンズ', keywords: ['ワンデー コンタクトレンズ 人気'] },
-  { label: 'カラコン', keywords: ['カラコン 人気 ナチュラル ワンデー'] },
-  { label: 'サングラス', keywords: ['サングラス 偏光 人気'] },
-  { label: '目薬', keywords: ['目薬 ドライアイ 防腐剤フリー'] },
+  { label: 'コンタクトレンズ（ブランド名再検索）', keywords: ['ワンデーアキュビューモイスト', 'デイリーズトータルワン', 'ワンデーピュア'] },
+  { label: '目薬（別キーワード再検索）', keywords: ['目薬 コンタクト 人気', 'ロート 目薬 人気'] },
 ];
 
 function requestOnce(url: string, headers: Record<string, string>): Promise<{ statusCode: number; body: string }> {
