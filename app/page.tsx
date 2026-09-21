@@ -1,16 +1,11 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Sparkles, Headset, Stethoscope } from 'lucide-react';
 import { getAllProductsWithPrices, getAllCategories, getPricesUpdatedAt, getAllBCValues, getProductsByBC } from '@/lib/products';
 import { columns } from '@/lib/columns';
 import { eyeColumns } from '@/lib/eye-columns';
 import ProductCard from '@/components/ProductCard';
-import { getPhotoById } from '@/lib/unsplash';
-
-// トップページのヒーロー画像は、検索クエリではなくこの特定の1枚に固定する
-// （灰色背景の前で腕を組んで笑う眼鏡姿のビジネスウーマン）
-const HERO_PHOTO_ID = 'KFQRpw9Yfw4';
+import HeroSection from '@/components/home/HeroSection';
 
 export const metadata: Metadata = {
   title: '目のことなら、レンズナビ。コンタクト・眼鏡・アイケア・レーシック総合情報 | レンズナビ',
@@ -41,7 +36,6 @@ const homeFaqs = [
 ];
 
 export default async function HomePage() {
-  const heroPhoto = await getPhotoById(HERO_PHOTO_ID);
   const allProducts = getAllProductsWithPrices();
   const categories = getAllCategories();
   const updatedAt = getPricesUpdatedAt();
@@ -65,48 +59,7 @@ export default async function HomePage() {
     <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-sky-500 to-blue-600 py-20 px-4 text-center">
-        {heroPhoto && (
-          <>
-            <Image
-              src={heroPhoto.url}
-              alt="灰色の背景の前で腕を組んで立つ、眼鏡をかけた笑顔の若いビジネスウーマン"
-              fill
-              priority
-              sizes="100vw"
-              className="absolute inset-0 object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-sky-600/45 to-blue-700/38" />
-            <p className="absolute bottom-2 right-3 z-10 text-[10px] text-white/70 leading-none">
-              Photo by{' '}
-              <a href={heroPhoto.photographerCreditUrl} target="_blank" rel="noopener noreferrer"
-                 className="underline hover:text-white">{heroPhoto.photographerName}</a>{' '}
-              on{' '}
-              <a href={heroPhoto.unsplashCreditUrl} target="_blank" rel="noopener noreferrer"
-                 className="underline hover:text-white">Unsplash</a>
-            </p>
-          </>
-        )}
-        <div className="relative z-10">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
-            目のことなら、レンズナビ。
-          </h1>
-          <p className="text-sky-100 text-base md:text-lg mb-8 drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
-            コンタクト・カラコン・VR・レーシック・アイケア
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-sm mx-auto">
-            <a href="/ranking"
-               className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity no-underline">
-              人気ランキングを見る
-            </a>
-            <a href="/column"
-               className="block w-full text-center border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-sky-600 transition-colors no-underline">
-              コラムを読む
-            </a>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Category Cards */}
       <section className="py-10 px-4 bg-gray-50">
