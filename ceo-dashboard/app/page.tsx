@@ -77,6 +77,8 @@ const TASKS = [
 ];
 
 const LINKS = [
+  { label: '改善レビュー',   href: '/column-review',                               icon: '📉', ext: false },
+  { label: 'アナリティクス', href: '/analytics',                                   icon: '📊', ext: false },
   { label: 'GitHub Actions', href: 'https://github.com/57caine/57hustler/actions', icon: '⚙️', ext: true  },
   { label: 'Threads管理',    href: 'https://www.threads.net/',                     icon: '🧵', ext: true  },
   { label: 'lens-navi',     href: 'https://57hustler.vercel.app',                 icon: '👁️', ext: true  },
