@@ -76,6 +76,7 @@ const TASKS = [
   { label: 'Amazon Associates申請（売上3件後）', hi: false },
 ];
 
+// 改善レビュー・アナリティクスは別ページとして実装済みのため、ここから遷移できるようにする
 const LINKS = [
   { label: '改善レビュー',   href: '/column-review',                               icon: '📉', ext: false },
   { label: 'アナリティクス', href: '/analytics',                                   icon: '📊', ext: false },
