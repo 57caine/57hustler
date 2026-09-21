@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-09-20T23:07:02.747Z",
+  "generatedAt": "2026-09-21T23:58:47.163Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-09-20T23:07:01.314Z",
+      "fetchedAt": "2026-09-21T23:58:45.562Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 194,
-      "totalPageviews": 201,
+      "totalSessions": 192,
+      "totalPageviews": 199,
       "topPages": [
         {
           "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
@@ -21,18 +21,18 @@
           "bounceRate": 0.22727272727272727
         },
         {
-          "path": "/column/meta-quest-3-review-2026",
-          "sessions": 19,
-          "pageviews": 16,
-          "avgSessionDuration": 70.66194547368421,
-          "bounceRate": 0.47368421052631576
-        },
-        {
           "path": "/column/megane-kaomikata",
           "sessions": 17,
           "pageviews": 16,
           "avgSessionDuration": 57.96629682352941,
           "bounceRate": 0.23529411764705882
+        },
+        {
+          "path": "/column/meta-quest-3-review-2026",
+          "sessions": 17,
+          "pageviews": 14,
+          "avgSessionDuration": 41.26738847058824,
+          "bounceRate": 0.47058823529411764
         },
         {
           "path": "/",
@@ -126,13 +126,6 @@
           "bounceRate": 0.6
         },
         {
-          "path": "/column/ranshi-contact-ranking-2025",
-          "sessions": 5,
-          "pageviews": 8,
-          "avgSessionDuration": 176.9712102,
-          "bounceRate": 0.2
-        },
-        {
           "path": "/column/uv-eye-care-sunglasses-uv-drops",
           "sessions": 5,
           "pageviews": 5,
@@ -152,13 +145,16 @@
           "pageviews": 5,
           "avgSessionDuration": 56.0271606,
           "bounceRate": 0.2
+        },
+        {
+          "path": "/ranking",
+          "sessions": 5,
+          "pageviews": 8,
+          "avgSessionDuration": 21.2326812,
+          "bounceRate": 0.4
         }
       ],
       "weeklyTrend": [
-        {
-          "date": "2026-08-24",
-          "sessions": 6
-        },
         {
           "date": "2026-08-25",
           "sessions": 13
@@ -255,9 +251,9 @@
       "affiliateClicksByPage": {
         "/column/karakon-osusume-ranking-2026": 5,
         "/category/1day": 3,
-        "/column/meta-quest-3-review-2026": 3,
         "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide": 2,
         "/column/dryeye-taisaku": 2,
+        "/column/meta-quest-3-review-2026": 2,
         "/column/vr-game-osusume-2026": 2,
         "/product/dailies-total1-multifocal": 2,
         "/column/contact-tsuuhan-site-ranking-2026": 1,
@@ -274,7 +270,7 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-09-20T23:07:02.747Z",
+      "fetchedAt": "2026-09-21T23:58:47.163Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
