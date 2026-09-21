@@ -6,6 +6,8 @@ import { columns } from '@/lib/columns';
 import { eyeColumns } from '@/lib/eye-columns';
 import ProductCard from '@/components/ProductCard';
 import HeroSection from '@/components/home/HeroSection';
+import CategoryGrid from '@/components/home/CategoryGrid';
+import FeaturedProducts from '@/components/home/FeaturedProducts';
 
 export const metadata: Metadata = {
   title: '目のことなら、レンズナビ。コンタクト・眼鏡・アイケア・レーシック総合情報 | レンズナビ',
@@ -61,47 +63,9 @@ export default async function HomePage() {
 
       <HeroSection />
 
-      {/* Category Cards */}
-      <section className="py-10 px-4 bg-gray-50">
-        <h2 className="text-xl font-bold text-gray-900 mb-6 text-center">カテゴリから探す</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          {/* コンタクト */}
-          <a href="/category/1day" className="bg-white rounded-lg p-4 shadow-sm hover:-translate-y-1 transition-transform duration-200 no-underline border-l-4 border-[#1565c0] block">
-            <div className="font-bold text-gray-900 mb-1">コンタクト</div>
-            <div className="text-xs text-gray-500">処方箋・度数・通販</div>
-          </a>
-          {/* カラコン */}
-          <a href="/karakon" className="bg-white rounded-lg p-4 shadow-sm hover:-translate-y-1 transition-transform duration-200 no-underline border-l-4 border-[#ad1457] block">
-            <div className="font-bold text-gray-900 mb-1">カラコン</div>
-            <div className="text-xs text-gray-500">おしゃれ・デカ目</div>
-          </a>
-          {/* 眼鏡・サングラス */}
-          <a href="/megane" className="bg-white rounded-lg p-4 shadow-sm hover:-translate-y-1 transition-transform duration-200 no-underline border-l-4 border-[#37474f] block">
-            <div className="font-bold text-gray-900 mb-1">眼鏡・サングラス</div>
-            <div className="text-xs text-gray-500">フレーム・レンズ</div>
-          </a>
-          {/* VR */}
-          <a href="/vr" className="bg-white rounded-lg p-4 shadow-sm hover:-translate-y-1 transition-transform duration-200 no-underline border-l-4 border-[#4527a0] block">
-            <div className="font-bold text-gray-900 mb-1">VR・スマートグラス</div>
-            <div className="text-xs text-gray-500">ゴーグル比較</div>
-          </a>
-          {/* レーシック */}
-          <a href="/lasik" className="bg-white rounded-lg p-4 shadow-sm hover:-translate-y-1 transition-transform duration-200 no-underline border-l-4 border-[#00695c] block">
-            <div className="font-bold text-gray-900 mb-1">レーシック</div>
-            <div className="text-xs text-gray-500">費用・クリニック</div>
-          </a>
-          {/* アイケア */}
-          <a href="/eye-care" className="bg-white rounded-lg p-4 shadow-sm hover:-translate-y-1 transition-transform duration-200 no-underline border-l-4 border-[#2e7d32] block">
-            <div className="font-bold text-gray-900 mb-1">アイケア・目薬</div>
-            <div className="text-xs text-gray-500">目薬・疲れ目</div>
-          </a>
-          {/* 目のグッズ */}
-          <a href="/eye-goods" className="bg-white rounded-lg p-4 shadow-sm hover:-translate-y-1 transition-transform duration-200 no-underline border-l-4 border-[#e65100] block">
-            <div className="font-bold text-gray-900 mb-1">目のグッズ</div>
-            <div className="text-xs text-gray-500">ホットアイマスク等</div>
-          </a>
-        </div>
-      </section>
+      <CategoryGrid />
+
+      <FeaturedProducts />
 
       {/* Main content */}
       <div className="max-w-6xl mx-auto px-4 py-8">
