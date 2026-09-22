@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: 本番URLをcurlで確認
         run: |
-          curl -sS -D - -o /tmp/body.html https://lens-navi.jp/
+          curl -sSL -D - -o /tmp/body.html https://lens-navi.jp/
           echo "=== dpl-id ==="
           grep -o 'data-dpl-id="[^"]*"' /tmp/body.html || true
           echo "=== ヒーローの見出しテキスト ==="
