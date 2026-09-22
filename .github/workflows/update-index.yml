@@ -1,11 +1,15 @@
 name: 仕組み名鑑 自動索引更新
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/**'
-      - '.github/workflows/**'
+  # 2026-09-22 一時停止: scripts/・.github/workflows/への全pushで発火する仕様のため、
+  # 開発セッション中に高頻度の自動コミットが発生し、Vercelの同時ビルド枠を圧迫して
+  # CEOダッシュボード等のデプロイがBlocked状態で滞留する一因になっていた（オーナー承認済み）。
+  # 再開する場合はこのコメントを外し、push トリガーを復元すること。
+  # push:
+  #   branches: [main]
+  #   paths:
+  #     - 'scripts/**'
+  #     - '.github/workflows/**'
   workflow_dispatch:
 
 jobs:
