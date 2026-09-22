@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+// data/*.json はGitHub raw経由で取得する（ビルド時ではなくリクエスト時に最新化するため）
 const RAW = 'https://raw.githubusercontent.com/57caine/57hustler/main/data';
 
 async function fetchJson<T>(path: string): Promise<T | null> {
