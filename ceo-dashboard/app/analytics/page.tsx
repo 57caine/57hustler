@@ -1,6 +1,11 @@
 'use client';
 import { useEffect, useState } from 'react';
 
+// public/ga4-analytics.json はビルド時に固定されるため、デプロイが止まっていると
+// 古いデータのまま更新されなくなる。常に最新化するため、日次で更新される
+// GitHub上のdata/ga4-analytics.jsonをリクエスト時に直接取得する
+const RAW_URL = 'https://raw.githubusercontent.com/57caine/57hustler/main/data/ga4-analytics.json';
+
 interface PageMetrics {
   path: string;
   sessions: number;
@@ -31,7 +36,7 @@ export default function AnalyticsPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/ga4-analytics.json')
+    fetch(RAW_URL, { cache: 'no-store' })
       .then(r => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();
@@ -45,7 +50,7 @@ export default function AnalyticsPage() {
       <h1 className="text-xl font-bold mb-4">📊 Analytics</h1>
       <div className="bg-red-50 border border-red-200 rounded p-4 text-red-700">
         データ未取得: {error}<br />
-        <span className="text-sm">GitHub Actions「GA4アナリティクス週次取得」を手動実行してください。</span>
+        <span className="text-sm">GitHub Actions「GA4アナリティクス日次取得」を手動実行してください。</span>
       </div>
     </div>
   );

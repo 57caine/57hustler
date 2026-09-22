@@ -29,6 +29,9 @@ interface FlaggedColumn {
   causes: string[];
   suggestions: string[];
   status: '未対応' | '対応済み' | '様子見';
+  business: string;
+  priority: 'high' | 'medium' | 'low';
+  source: 'auto-ga4' | 'manual';
 }
 
 interface ContentLogEntry {
@@ -105,6 +108,7 @@ export function detectFlaggedColumns(
   contentLog: { columns: ContentLogEntry[] },
   affiliateClicksByPage: Record<string, number> = {},
   existingStatuses: Record<string, string> = {},
+  existingPriorities: Record<string, 'high' | 'medium' | 'low'> = {},
 ): FlaggedColumn[] {
   const columnPages = pages.filter(p => p.path.startsWith('/column/'));
   const flagged: FlaggedColumn[] = [];
@@ -154,6 +158,21 @@ export function detectFlaggedColumns(
       status = '様子見';
     }
 
+    // 優先度: 既存JSONで手動設定済みならそれを引き継ぐ（再生成で消えないよう）。
+    // 新規検知分のみ、フラグ内容から自動算出する
+    let priority: 'high' | 'medium' | 'low';
+    if (existingPriorities[slug]) {
+      priority = existingPriorities[slug];
+    } else if (status === '対応済み') {
+      priority = 'low';
+    } else if (flags.includes('avg_session_under_10s') || flags.includes('bounce_rate_over_90pct')) {
+      priority = 'high';
+    } else if (status === '未対応') {
+      priority = 'medium';
+    } else {
+      priority = 'low';
+    }
+
     flagged.push({
       path: page.path,
       slug,
@@ -170,6 +189,9 @@ export function detectFlaggedColumns(
       causes,
       suggestions,
       status,
+      business: 'lens-navi',
+      priority,
+      source: 'auto-ga4',
     });
   }
 
@@ -333,20 +355,28 @@ async function main() {
     path.join(process.cwd(), 'ceo-dashboard', 'public', 'column-review.json'),
   ];
 
-  // 対応済みステータスを既存JSONから引き継ぐ（手動マークが再生成で消えないよう）
+  // 対応済みステータス・優先度・手動追加課題（他事業分）を既存JSONから引き継ぐ
+  // （CEOダッシュボードからのマーク・追加が再生成で消えないよう）
   const existingStatuses: Record<string, string> = {};
+  const existingPriorities: Record<string, 'high' | 'medium' | 'low'> = {};
+  let manualArticles: FlaggedColumn[] = [];
   if (fs.existsSync(reviewPaths[0])) {
     try {
       const existing = JSON.parse(fs.readFileSync(reviewPaths[0], 'utf-8'));
       for (const article of (existing.flaggedArticles ?? [])) {
         if (article.status === '対応済み') existingStatuses[article.slug] = '対応済み';
+        if (article.priority) existingPriorities[article.slug] = article.priority;
       }
+      manualArticles = (existing.flaggedArticles ?? []).filter((a: FlaggedColumn) => a.source === 'manual');
     } catch { /* 既存ファイルが壊れていても続行 */ }
   }
 
-  const flaggedArticles = lensNaviSite
-    ? detectFlaggedColumns(lensNaviSite.topPages, contentLog, lensNaviSite.affiliateClicksByPage, existingStatuses)
+  const autoArticles = lensNaviSite
+    ? detectFlaggedColumns(lensNaviSite.topPages, contentLog, lensNaviSite.affiliateClicksByPage, existingStatuses, existingPriorities)
     : [];
+  // 手動追加分（school-navi・henkutsu等、自動検知の対象外の事業課題）は
+  // GA4自動検知では作られないため、既存ファイルからそのまま引き継ぐ
+  const flaggedArticles = [...autoArticles, ...manualArticles];
 
   const columnReview = {
     generatedAt: new Date().toISOString(),
