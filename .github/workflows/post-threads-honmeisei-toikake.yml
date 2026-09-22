@@ -1,0 +1,27 @@
+name: Threads あなたの本命星は？ 自動投稿
+
+on:
+  schedule:
+    # 毎日 JST 22:30 (UTC 13:30)。日曜判定はスクリプト内部で実施
+    - cron: '30 13 * * *'
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: あなたの本命星は？ 投稿
+        run: npx ts-node scripts/post-threads-honmeisei-toikake.ts
+        env:
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}

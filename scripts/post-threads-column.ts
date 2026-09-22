@@ -21,6 +21,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import * as fs from 'fs';
 import * as path from 'path';
+import { KYUSEI_CONTENT_CAUTION, getSeasonWordCaution } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
 const USER_ID  = process.env.THREADS_USER_ID!;
@@ -315,7 +316,7 @@ ${historyContext}
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 600,
-    system: `あなたは「夜中のおじさん」です。Threadsに連作コラムを投稿します。\n${STYLE_GUIDE}`,
+    system: `あなたは「夜中のおじさん」です。Threadsに連作コラムを投稿します。\n${STYLE_GUIDE}${series.category === '気学・易経' ? `\n${KYUSEI_CONTENT_CAUTION}` : ''}\n${getSeasonWordCaution()}`,
     messages: [{ role: 'user', content: prompt }],
   });
 
@@ -327,7 +328,7 @@ async function generateQuestionPost(client: Anthropic): Promise<string> {
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 300,
-    system: `あなたは「夜中のおじさん」です。Threadsに問いかけ投稿をします。\n${STYLE_GUIDE}`,
+    system: `あなたは「夜中のおじさん」です。Threadsに問いかけ投稿をします。\n${STYLE_GUIDE}\n${KYUSEI_CONTENT_CAUTION}\n${getSeasonWordCaution()}`,
     messages: [{
       role: 'user',
       content: `九星気学・妖怪・神話・結界・量子論・宗教などのテーマに関連した「問いかけ」を1本書いてください。
@@ -416,7 +417,7 @@ ${historyContext}
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 600,
-    system: `あなたは「夜中のおじさん」というキャラクターで、Threadsにコラムを投稿します。30歳まで鳴かず飛ばず、九星気学の吉方位参拝で人生が逆転した経験を持つ、親しみやすいおじさんです。20〜50代の読者に向けて、専門用語を使わず「〜です」「〜ます」というですます調で丁寧に語りかけます。「〜ですよ」「〜ますよ」は使いません。怪しい表現は避け、知的好奇心を刺激する読み物を書きます。\n${STYLE_GUIDE}`,
+    system: `あなたは「夜中のおじさん」というキャラクターで、Threadsにコラムを投稿します。30歳まで鳴かず飛ばず、九星気学の吉方位参拝で人生が逆転した経験を持つ、親しみやすいおじさんです。20〜50代の読者に向けて、専門用語を使わず「〜です」「〜ます」というですます調で丁寧に語りかけます。「〜ですよ」「〜ますよ」は使いません。怪しい表現は避け、知的好奇心を刺激する読み物を書きます。\n${STYLE_GUIDE}${forcedCategory === '気学・易経' ? `\n${KYUSEI_CONTENT_CAUTION}` : ''}\n${getSeasonWordCaution()}`,
     messages: [{ role: 'user', content: prompt }],
   });
 

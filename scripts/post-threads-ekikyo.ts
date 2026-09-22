@@ -7,7 +7,7 @@
  */
 
 import Anthropic from '@anthropic-ai/sdk';
-import { getDailyStar, getJstDayOfWeek, getJstDateSlug, selectHexagram } from './lib/kyusei-ban';
+import { getDailyStar, getJstDayOfWeek, getJstDateSlug, selectHexagram, KYUSEI_CONTENT_CAUTION, getSeasonWordCaution } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
 const USER_ID = process.env.THREADS_USER_ID!;
@@ -19,7 +19,7 @@ async function generateTodayLine(dailyStarNum: number, hex: { num: number; name:
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 200,
-    system: '易経に詳しいおじさんです。日盤の流れと卦の意味を結びつけた一言を生成します。',
+    system: `易経に詳しいおじさんです。日盤の流れと卦の意味を結びつけた一言を生成します。\n${KYUSEI_CONTENT_CAUTION}\n${getSeasonWordCaution()}`,
     messages: [{
       role: 'user',
       content: `今日の日盤中宮は${dailyStarNum}（${hex.trigram}に対応）です。
@@ -54,7 +54,7 @@ function buildPostText(dateStr: string, hex: { num: number; name: string; keywor
     '今日の一言：',
     todayLine,
     '',
-    '#易経 #九星気学 #夜中のおじさん',
+    '#易経 #九星気学 #占い #夜中のおじさん',
   ];
   return lines.join('\n');
 }
@@ -119,8 +119,8 @@ async function main() {
   }
 
   console.log('Threads コンテナ作成中...');
-  const creationId = await createThreadsContainer(text, '易経');
-  console.log(`コンテナID: ${creationId}（topic_tag: 易経）`);
+  const creationId = await createThreadsContainer(text, '占い');
+  console.log(`コンテナID: ${creationId}（topic_tag: 占い）`);
 
   console.log('30秒待機中...');
   await new Promise(r => setTimeout(r, 30000));

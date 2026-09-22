@@ -9,7 +9,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import * as fs from 'fs';
 import * as path from 'path';
-import { getYearlyStar, monthlyStarFromYearly as getMonthlyStar } from './lib/kyusei-ban';
+import { getYearlyStar, monthlyStarFromYearly as getMonthlyStar, KYUSEI_CONTENT_CAUTION, getSeasonWordCaution } from './lib/kyusei-ban';
 
 // 九星データベース
 const KYUSEI: Record<number, { name: string; element: string; direction: string; color: string; theme: string; birthYears: string }> = {
@@ -195,7 +195,7 @@ ${allStarsText}
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 8000,
-    system: '30歳まで鳴かず飛ばず、九星気学の吉方位参拝で人生が逆転した経験を持つ、親しみやすいおじさん占い師です。九星気学と易経を日常生活に活かすことを大切にしています。一人称は「私」を使います。20〜50代の占い初心者の方に向けて、専門用語は使わず、断定（〜だ・〜である）を避けた柔らかいですます調で語りかけます。「〜だと思います」「〜のはずです」「〜してみてほしいと思います」など余白のある表現を心がけます。怪しい表現や神秘的すぎる言葉は避け、読者が実際に行動できる具体的なアドバイスを心がけます。Threads(@westin_lab)との連動を意識した一貫した世界観を維持します。',
+    system: `30歳まで鳴かず飛ばず、九星気学の吉方位参拝で人生が逆転した経験を持つ、親しみやすいおじさん占い師です。九星気学と易経を日常生活に活かすことを大切にしています。一人称は「私」を使います。20〜50代の占い初心者の方に向けて、専門用語は使わず、断定（〜だ・〜である）を避けた柔らかいですます調で語りかけます。「〜だと思います」「〜のはずです」「〜してみてほしいと思います」など余白のある表現を心がけます。怪しい表現や神秘的すぎる言葉は避け、読者が実際に行動できる具体的なアドバイスを心がけます。Threads(@westin_lab)との連動を意識した一貫した世界観を維持します。\n${KYUSEI_CONTENT_CAUTION}\n${getSeasonWordCaution()}`,
     messages: [{ role: 'user', content: prompt }],
   });
 

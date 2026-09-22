@@ -14,7 +14,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import {
   KYUSEI, POSITION_MEANINGS, getDailyStar, getMonthlyStarForToday, getStarPositionIndex,
-  MAX_ONELINER_LENGTH, validateOneLiners,
+  MAX_ONELINER_LENGTH, validateOneLiners, KYUSEI_CONTENT_CAUTION, getSeasonWordCaution,
 } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
@@ -57,7 +57,7 @@ async function generateOneLiners(dailyStarNum: number, monthlyStarNum: number): 
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 400,
-    system: '九星気学に詳しいおじさんです。月盤・日盤の回座宮を踏まえた具体的なアドバイスを生成します。象意の言い換えは禁止。',
+    system: `九星気学に詳しいおじさんです。月盤・日盤の回座宮を踏まえた具体的なアドバイスを生成します。象意の言い換えは禁止。\n${KYUSEI_CONTENT_CAUTION}\n${getSeasonWordCaution()}`,
     messages: [{
       role: 'user',
       content: `今日（${dateStr}）
@@ -106,7 +106,8 @@ function buildPostText(dailyStarNum: number, oneLiners: Record<number, string>):
       return `${s.emoji}${s.short}｜${oneLiners[n] ?? ''}`;
     }),
     '',
-    '🌙 #九星気学 #今日の運勢 #夜中のおじさん',
+    '自分の本命星がわからない方はプロフィールのリンクから調べられます。',
+    '🌙 #九星気学 #今日の運勢 #夜中のおじさん #占い #運勢 #開運',
   ];
 
   return lines.join('\n');
@@ -175,8 +176,8 @@ async function main() {
   }
 
   console.log('Threads コンテナ作成中...');
-  const creationId = await createThreadsContainer(text, '九星気学');
-  console.log(`コンテナID: ${creationId}（topic_tag: 九星気学）`);
+  const creationId = await createThreadsContainer(text, '占い');
+  console.log(`コンテナID: ${creationId}（topic_tag: 占い）`);
 
   console.log('30秒待機中...');
   await new Promise(r => setTimeout(r, 30000));

@@ -40,7 +40,7 @@ function buildPostText(dateStr: string, dailyStarNum: number): string {
     }),
     '',
     '占いは参考程度にどうぞ。',
-    '🌙 #九星気学 #吉方位 #夜中のおじさん',
+    '🌙 #吉方位 #九星気学 #占い #開運 #夜中のおじさん',
   ];
   return lines.join('\n');
 }
@@ -100,8 +100,8 @@ async function main() {
   }
 
   console.log('Threads コンテナ作成中...');
-  const creationId = await createThreadsContainer(text, '九星気学');
-  console.log(`コンテナID: ${creationId}（topic_tag: 九星気学）`);
+  const creationId = await createThreadsContainer(text, '占い');
+  console.log(`コンテナID: ${creationId}（topic_tag: 占い）`);
 
   console.log('30秒待機中...');
   await new Promise(r => setTimeout(r, 30000));

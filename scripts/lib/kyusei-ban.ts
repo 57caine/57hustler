@@ -15,6 +15,46 @@ export function validateOneLiners(oneLiners: Record<number, string>, maxLength =
   return Object.values(oneLiners).every(v => v.length > 0 && v.length <= maxLength);
 }
 
+// 九星気学・占い系コンテンツを生成する全スクリプトのsystemプロンプトに付与する注意事項（2026-09-22追加）。
+// 後世に追加された俗説を古来からの伝統であるかのように断定してしまうリスクへの対策。
+export const KYUSEI_CONTENT_CAUTION = `九星気学・占い系の投稿で注意すること：
+・後世に追加された概念や俗説を、古来からの伝統であるかのように書かない
+・「古い気学では〜」「本来の気学では〜」という表現を使う場合は特に慎重に
+・専門家に指摘されるリスクのある断定表現は避ける
+・不確かな場合は『という説があります』で留める`;
+
+// 季節ワードと対応月（1〜12）。getSeasonWordCaution()が現在の月と併せてsystemプロンプトに埋め込む。
+const SEASON_WORDS: { words: string; months: string }[] = [
+  { words: '正月・門松・初詣・お年玉', months: '12月〜1月のみ' },
+  { words: '節分・豆まき', months: '1月〜2月のみ' },
+  { words: '桜・花見・お花見', months: '3月〜4月のみ' },
+  { words: '梅雨・紫陽花', months: '6月のみ' },
+  { words: 'お盆・盆踊り・迎え火', months: '8月のみ' },
+  { words: '紅葉・もみじ', months: '10月〜11月のみ' },
+  { words: 'クリスマス', months: '12月のみ' },
+  { words: '大晦日・除夜の鐘', months: '12月のみ' },
+];
+
+/**
+ * 季節ワードと現在の月（JST）を照合させるsystemプロンプト断片を生成する（2026-09-22追加）。
+ * 9月に「正月に門松を立てるとき」という季節がズレた投稿が出た事故への対策。
+ * 呼び出し時点のJSTの月を動的に埋め込むため、必ず生成直前に呼び出すこと（キャッシュしない）。
+ */
+export function getSeasonWordCaution(): string {
+  const month = parseInt(new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' }).slice(5, 7), 10);
+  const wordList = SEASON_WORDS.map(({ words, months }) => `・${words}：${months}`).join('\n');
+  return `投稿の季節・時期は必ず現在の月に合わせること。
+
+現在の月：${month}月
+
+以下の季節ワードは対応する月以外では使用禁止。
+
+${wordList}
+
+季節ワードを使う場合は必ず現在の月と照合し、
+ズレている場合は別のテーマで再生成する。`;
+}
+
 export const KYUSEI: Record<number, { name: string; short: string; emoji: string; element: string; keywords: string[] }> = {
   1: { name: '一白水星', short: '一白', emoji: '⚪', element: '水', keywords: ['知恵', '流れ', '柔軟', '人脈'] },
   2: { name: '二黒土星', short: '二黒', emoji: '🟤', element: '土', keywords: ['継続', '忍耐', '家庭', '蓄積'] },
