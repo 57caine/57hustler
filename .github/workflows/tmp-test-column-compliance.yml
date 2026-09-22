@@ -1,0 +1,42 @@
+name: 一時調査・コラム公開前チェック動作確認
+
+on:
+  workflow_dispatch:
+    inputs:
+      section:
+        description: 'Section to test-generate'
+        required: false
+        default: 'eye-care'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate 1 column (compliance check included, no commit)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          npx tsx scripts/generate-lens-navi-column.ts --section ${{ github.event.inputs.section || 'eye-care' }}
+
+      - name: Show what changed (not committed)
+        run: |
+          echo "=== git diff --stat ==="
+          git diff --stat
+          echo ""
+          echo "=== data/column-review-queue.json (if changed) ==="
+          git diff data/column-review-queue.json || true
+          echo ""
+          echo "=== data/lens-navi-content-log.json (if changed) ==="
+          git diff data/lens-navi-content-log.json || true
