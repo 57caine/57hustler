@@ -3,6 +3,7 @@ import Link from 'next/link';
 // data/*.json はGitHub raw経由で取得する（ビルド時ではなくリクエスト時に最新化するため）
 const RAW = 'https://raw.githubusercontent.com/57caine/57hustler/main/data';
 
+// fetch失敗時はnullを返し、呼び出し側で表示を出し分ける
 async function fetchJson<T>(path: string): Promise<T | null> {
   try {
     const res = await fetch(`${RAW}/${path}`, { next: { revalidate: 300 } });
