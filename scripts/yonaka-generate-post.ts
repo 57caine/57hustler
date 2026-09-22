@@ -30,6 +30,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import * as fs from 'fs';
 import * as path from 'path';
+import { KYUSEI_CONTENT_CAUTION } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
 const USER_ID = process.env.THREADS_USER_ID!;
@@ -330,6 +331,7 @@ async function generatePost(category: Category, history: HistoryEntry[], client:
     : MYTHOLOGY_TEMPLATE_CATEGORIES.includes(category)
       ? MYTHOLOGY_TEMPLATE_BLOCK
       : '';
+  const kyuseiCautionBlock = category === '気学・易経の豆知識' ? `\n${KYUSEI_CONTENT_CAUTION}\n` : '';
 
   const res = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
@@ -377,7 +379,7 @@ ${category}
 
 【テーマヒント】
 ${CATEGORY_HINTS[category]}
-${templateBlock}
+${templateBlock}${kyuseiCautionBlock}
 【過去30日の投稿（これと被らないこと）】
 ${recentTexts}`,
     messages: [{ role: 'user', content: `【${category}】で投稿を1件生成してください。` }],

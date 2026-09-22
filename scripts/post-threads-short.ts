@@ -9,7 +9,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import {
   KYUSEI, POSITION_MEANINGS, getDailyStar, getMonthlyStarForToday, getStarPositionIndex,
-  getJstDayOfWeek, STAR_TO_TRIGRAM, selectHexagram, validateOneLiners,
+  getJstDayOfWeek, STAR_TO_TRIGRAM, selectHexagram, validateOneLiners, KYUSEI_CONTENT_CAUTION,
 } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
@@ -62,7 +62,7 @@ async function generateNightHoroscope(dailyStarNum: number, monthlyStarNum: numb
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 400,
-    system: '九星気学に詳しいおじさんです。月盤・日盤の回座宮を踏まえた就寝前・夜の一言アドバイスを生成します。',
+    system: `九星気学に詳しいおじさんです。月盤・日盤の回座宮を踏まえた就寝前・夜の一言アドバイスを生成します。\n${KYUSEI_CONTENT_CAUTION}`,
     messages: [{
       role: 'user',
       content: `月盤中宮：${KYUSEI[monthlyStarNum].short}
@@ -175,7 +175,8 @@ ${STYLE_GUIDE}`,
         return [
           `あなたは「夜中のおじさん」です。Threadsに一文考察を投稿します。
 ${ABSOLUTE_BAN}
-${STYLE_GUIDE}`,
+${STYLE_GUIDE}
+${KYUSEI_CONTENT_CAUTION}`,
           `今日の日盤中宮は${star}（${trigramLabel}に対応）です。
 易経の第${hex.num}卦「${hex.name}」を今日の卦として選びました。
 原文キーワード：「${hex.keyword}」

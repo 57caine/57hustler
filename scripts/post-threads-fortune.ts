@@ -14,7 +14,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import {
   KYUSEI, POSITION_MEANINGS, getDailyStar, getMonthlyStarForToday, getStarPositionIndex,
-  MAX_ONELINER_LENGTH, validateOneLiners,
+  MAX_ONELINER_LENGTH, validateOneLiners, KYUSEI_CONTENT_CAUTION,
 } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
@@ -57,7 +57,7 @@ async function generateOneLiners(dailyStarNum: number, monthlyStarNum: number): 
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 400,
-    system: '九星気学に詳しいおじさんです。月盤・日盤の回座宮を踏まえた具体的なアドバイスを生成します。象意の言い換えは禁止。',
+    system: `九星気学に詳しいおじさんです。月盤・日盤の回座宮を踏まえた具体的なアドバイスを生成します。象意の言い換えは禁止。\n${KYUSEI_CONTENT_CAUTION}`,
     messages: [{
       role: 'user',
       content: `今日（${dateStr}）

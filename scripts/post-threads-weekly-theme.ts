@@ -9,7 +9,7 @@
 
 import Anthropic from '@anthropic-ai/sdk';
 import {
-  KYUSEI, POSITION_MEANINGS, getDailyStar, getStarPositionIndex, getJstDayOfWeek, validateOneLiners,
+  KYUSEI, POSITION_MEANINGS, getDailyStar, getStarPositionIndex, getJstDayOfWeek, validateOneLiners, KYUSEI_CONTENT_CAUTION,
 } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
@@ -29,7 +29,7 @@ async function generateWeeklyThemes(weekStarNum: number): Promise<Record<number,
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 400,
-    system: '九星気学に詳しいおじさんです。週の始まりの中宮星を踏まえた、1週間の行動指針・心がけを生成します。象意の言い換えは禁止。',
+    system: `九星気学に詳しいおじさんです。週の始まりの中宮星を踏まえた、1週間の行動指針・心がけを生成します。象意の言い換えは禁止。\n${KYUSEI_CONTENT_CAUTION}`,
     messages: [{
       role: 'user',
       content: `今週の中宮星：${weekStar.name}（月曜の日盤を週の起点として採用）

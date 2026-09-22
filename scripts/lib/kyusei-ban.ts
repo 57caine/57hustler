@@ -15,6 +15,14 @@ export function validateOneLiners(oneLiners: Record<number, string>, maxLength =
   return Object.values(oneLiners).every(v => v.length > 0 && v.length <= maxLength);
 }
 
+// 九星気学・占い系コンテンツを生成する全スクリプトのsystemプロンプトに付与する注意事項（2026-09-22追加）。
+// 後世に追加された俗説を古来からの伝統であるかのように断定してしまうリスクへの対策。
+export const KYUSEI_CONTENT_CAUTION = `九星気学・占い系の投稿で注意すること：
+・後世に追加された概念や俗説を、古来からの伝統であるかのように書かない
+・「古い気学では〜」「本来の気学では〜」という表現を使う場合は特に慎重に
+・専門家に指摘されるリスクのある断定表現は避ける
+・不確かな場合は『という説があります』で留める`;
+
 export const KYUSEI: Record<number, { name: string; short: string; emoji: string; element: string; keywords: string[] }> = {
   1: { name: '一白水星', short: '一白', emoji: '⚪', element: '水', keywords: ['知恵', '流れ', '柔軟', '人脈'] },
   2: { name: '二黒土星', short: '二黒', emoji: '🟤', element: '土', keywords: ['継続', '忍耐', '家庭', '蓄積'] },
