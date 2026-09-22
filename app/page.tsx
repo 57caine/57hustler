@@ -1,16 +1,13 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Sparkles, Headset, Stethoscope } from 'lucide-react';
 import { getAllProductsWithPrices, getAllCategories, getPricesUpdatedAt, getAllBCValues, getProductsByBC } from '@/lib/products';
 import { columns } from '@/lib/columns';
 import { eyeColumns } from '@/lib/eye-columns';
 import ProductCard from '@/components/ProductCard';
-import { getPhotoById } from '@/lib/unsplash';
-
-// トップページのヒーロー画像は、検索クエリではなくこの特定の1枚に固定する
-// （灰色背景の前で腕を組んで笑う眼鏡姿のビジネスウーマン）
-const HERO_PHOTO_ID = 'KFQRpw9Yfw4';
+import HeroSection from '@/components/home/HeroSection';
+import CategoryGrid from '@/components/home/CategoryGrid';
+import FeaturedProducts from '@/components/home/FeaturedProducts';
 
 export const metadata: Metadata = {
   title: '目のことなら、レンズナビ。コンタクト・眼鏡・アイケア・レーシック総合情報 | レンズナビ',
@@ -41,7 +38,6 @@ const homeFaqs = [
 ];
 
 export default async function HomePage() {
-  const heroPhoto = await getPhotoById(HERO_PHOTO_ID);
   const allProducts = getAllProductsWithPrices();
   const categories = getAllCategories();
   const updatedAt = getPricesUpdatedAt();
@@ -65,90 +61,11 @@ export default async function HomePage() {
     <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-sky-500 to-blue-600 py-20 px-4 text-center">
-        {heroPhoto && (
-          <>
-            <Image
-              src={heroPhoto.url}
-              alt="灰色の背景の前で腕を組んで立つ、眼鏡をかけた笑顔の若いビジネスウーマン"
-              fill
-              priority
-              sizes="100vw"
-              className="absolute inset-0 object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-sky-600/45 to-blue-700/38" />
-            <p className="absolute bottom-2 right-3 z-10 text-[10px] text-white/70 leading-none">
-              Photo by{' '}
-              <a href={heroPhoto.photographerCreditUrl} target="_blank" rel="noopener noreferrer"
-                 className="underline hover:text-white">{heroPhoto.photographerName}</a>{' '}
-              on{' '}
-              <a href={heroPhoto.unsplashCreditUrl} target="_blank" rel="noopener noreferrer"
-                 className="underline hover:text-white">Unsplash</a>
-            </p>
-          </>
-        )}
-        <div className="relative z-10">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
-            目のことなら、レンズナビ。
-          </h1>
-          <p className="text-sky-100 text-base md:text-lg mb-8 drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
-            コンタクト・カラコン・VR・レーシック・アイケア
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-sm mx-auto">
-            <a href="/ranking"
-               className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity no-underline">
-              人気ランキングを見る
-            </a>
-            <a href="/column"
-               className="block w-full text-center border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-sky-600 transition-colors no-underline">
-              コラムを読む
-            </a>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
-      {/* Category Cards */}
-      <section className="py-10 px-4 bg-gray-50">
-        <h2 className="text-xl font-bold text-gray-900 mb-6 text-center">カテゴリから探す</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          {/* コンタクト */}
-          <a href="/category/1day" className="bg-white rounded-lg p-4 shadow-sm hover:-translate-y-1 transition-transform duration-200 no-underline border-l-4 border-[#1565c0] block">
-            <div className="font-bold text-gray-900 mb-1">コンタクト</div>
-            <div className="text-xs text-gray-500">処方箋・度数・通販</div>
-          </a>
-          {/* カラコン */}
-          <a href="/karakon" className="bg-white rounded-lg p-4 shadow-sm hover:-translate-y-1 transition-transform duration-200 no-underline border-l-4 border-[#ad1457] block">
-            <div className="font-bold text-gray-900 mb-1">カラコン</div>
-            <div className="text-xs text-gray-500">おしゃれ・デカ目</div>
-          </a>
-          {/* 眼鏡・サングラス */}
-          <a href="/megane" className="bg-white rounded-lg p-4 shadow-sm hover:-translate-y-1 transition-transform duration-200 no-underline border-l-4 border-[#37474f] block">
-            <div className="font-bold text-gray-900 mb-1">眼鏡・サングラス</div>
-            <div className="text-xs text-gray-500">フレーム・レンズ</div>
-          </a>
-          {/* VR */}
-          <a href="/vr" className="bg-white rounded-lg p-4 shadow-sm hover:-translate-y-1 transition-transform duration-200 no-underline border-l-4 border-[#4527a0] block">
-            <div className="font-bold text-gray-900 mb-1">VR・スマートグラス</div>
-            <div className="text-xs text-gray-500">ゴーグル比較</div>
-          </a>
-          {/* レーシック */}
-          <a href="/lasik" className="bg-white rounded-lg p-4 shadow-sm hover:-translate-y-1 transition-transform duration-200 no-underline border-l-4 border-[#00695c] block">
-            <div className="font-bold text-gray-900 mb-1">レーシック</div>
-            <div className="text-xs text-gray-500">費用・クリニック</div>
-          </a>
-          {/* アイケア */}
-          <a href="/eye-care" className="bg-white rounded-lg p-4 shadow-sm hover:-translate-y-1 transition-transform duration-200 no-underline border-l-4 border-[#2e7d32] block">
-            <div className="font-bold text-gray-900 mb-1">アイケア・目薬</div>
-            <div className="text-xs text-gray-500">目薬・疲れ目</div>
-          </a>
-          {/* 目のグッズ */}
-          <a href="/eye-goods" className="bg-white rounded-lg p-4 shadow-sm hover:-translate-y-1 transition-transform duration-200 no-underline border-l-4 border-[#e65100] block">
-            <div className="font-bold text-gray-900 mb-1">目のグッズ</div>
-            <div className="text-xs text-gray-500">ホットアイマスク等</div>
-          </a>
-        </div>
-      </section>
+      <CategoryGrid />
+
+      <FeaturedProducts />
 
       {/* Main content */}
       <div className="max-w-6xl mx-auto px-4 py-8">
