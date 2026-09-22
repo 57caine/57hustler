@@ -205,6 +205,16 @@
 - **再生成時の上書き防止**: `scripts/fetch-ga4-analytics.ts`は日次で`data/column-review.json`を再生成するが、既存の`status`（対応済み）・`priority`（手動設定分）・`source: 'manual'`の項目は再生成時も引き継がれる（`existingStatuses`/`existingPriorities`/`manualArticles`として読み込み、上書きしない）
 - **前提条件**: `/api/column-review/*`・既存の`/api/memo/*`はいずれも`GITHUB_TOKEN`環境変数（GitHub Contents APIへの書き込み権限を持つトークン）が必要。Vercel側で未設定の場合、保存操作は失敗する
 
+## Vercel Ignored Build Step（vercel.json ignoreCommand）ルール（2026-09-22対応）
+
+- このリポジトリは実質6つの独立したVercelプロジェクトが同居するmonorepo。各プロジェクトのvercel.jsonに`ignoreCommand`を設定し、無関係な変更でのビルド発生を防いでいる
+- lens-navi本体（ルートの`vercel.json`）以外の5プロジェクト（school-navi/shikaku-navi/shop-navi/yonaka-uranai/ceo-dashboard）は、いずれも自分のディレクトリ配下の差分のみを見る設計（例: `git diff --quiet HEAD^ HEAD -- ceo-dashboard`）のため、ルート直下の`data/*.json`の変更では反応しない
+- **lens-navi本体だけは`.`（全体）を起点にしており、`data/`配下でlens-navi自身が使わないファイル（雑草ストック・仕組み名鑑・GA4・メモ・morning-brief等、自動bot生成の約26ファイル）の変更でも毎回フルビルドが発生していた**（2026-09-22発見・修正）
+  - 原因調査で判明: **gitのpathspecは`':!data'`のようにディレクトリ全体を除外すると、後から`'data/prices.json'`のように個別ファイルを追加指定しても再度含めることができない**（除外が常に優先される）。そのため「dataを除外して一部だけ再度含める」形の指定はできず、**lens-naviが実際に使うファイルだけを個別に除外リストから外す（＝使わないファイルを1つずつ`:!`で列挙する）方式**で実装している
+  - lens-navi本体が実際に使う`data/`配下のファイルは4つのみ: `prices.json`・`product-url-map.json`・`products.json`・`unsplash-cache.json`（`app/`・`components/`・`lib/`からの参照を`grep`で確認済み）
+  - **今後`data/`配下に新しい自動生成ファイルを追加する場合、lens-navi本体が使わないファイルなら、ルート`vercel.json`のignoreCommandに`':!data/新ファイル名'`を追加すること**。追加を忘れると、そのファイルの更新のたびに不要なlens-naviビルドが発生し、Vercelの同時ビルド枠（On-Demand Concurrent Builds設定次第では特に1枠のみ）を圧迫し、他プロジェクト（CEOダッシュボード等）のデプロイがBlocked状態で滞留する原因になる
+- 変更前後で実際の過去コミット5件（雑草ストック更新／価格更新／仕組み名鑑更新／GA4データ更新／トップページ刷新マージ）に対しignoreCommandを実行し、意図通りの判定（無視すべきものは無視、ビルドすべきものはビルド）になることを確認済み
+
 ## 完成前チェック（必須）
 
 成果物を「完成」として提示する前に、必ずchecklist.mdの全項目を確認すること。
