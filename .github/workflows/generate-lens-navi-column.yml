@@ -89,6 +89,20 @@ jobs:
             done
           fi
 
+      - name: Compliance check summary
+        if: always()
+        run: |
+          node -e "
+            const q = require('./data/column-review-queue.json');
+            const held = q.items.filter(i => i.flaggedAt === new Date().toISOString().slice(0,10));
+            if (held.length > 0) {
+              console.log('::warning::公開前チェックで ' + held.length + ' 件がレビュー待ちになりました（data/column-review-queue.json を確認してください）');
+              held.forEach(i => console.log(' - ' + i.slug + ': ' + i.title));
+            } else {
+              console.log('公開前チェックで保留になった記事はありません');
+            }
+          "
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -97,7 +111,8 @@ jobs:
             lib/columns.tsx \
             lib/eye-columns.tsx \
             lib/karakon-columns.tsx \
-            data/lens-navi-content-log.json
+            data/lens-navi-content-log.json \
+            data/column-review-queue.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
