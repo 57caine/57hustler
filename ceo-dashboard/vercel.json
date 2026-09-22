@@ -3,5 +3,5 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "installCommand": "npm install",
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- ceo-dashboard"
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- ceo-dashboard ':!ceo-dashboard/public/ga4-analytics.json' ':!ceo-dashboard/public/column-review.json'"
 }

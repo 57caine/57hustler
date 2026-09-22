@@ -214,6 +214,26 @@
   - lens-navi本体が実際に使う`data/`配下のファイルは4つのみ: `prices.json`・`product-url-map.json`・`products.json`・`unsplash-cache.json`（`app/`・`components/`・`lib/`からの参照を`grep`で確認済み）
   - **今後`data/`配下に新しい自動生成ファイルを追加する場合、lens-navi本体が使わないファイルなら、ルート`vercel.json`のignoreCommandに`':!data/新ファイル名'`を追加すること**。追加を忘れると、そのファイルの更新のたびに不要なlens-naviビルドが発生し、Vercelの同時ビルド枠（On-Demand Concurrent Builds設定次第では特に1枠のみ）を圧迫し、他プロジェクト（CEOダッシュボード等）のデプロイがBlocked状態で滞留する原因になる
 - 変更前後で実際の過去コミット5件（雑草ストック更新／価格更新／仕組み名鑑更新／GA4データ更新／トップページ刷新マージ）に対しignoreCommandを実行し、意図通りの判定（無視すべきものは無視、ビルドすべきものはビルド）になることを確認済み
+- **CEOダッシュボード専用の追加対応（2026-09-22）**: `fetch-ga4-analytics.yml`が書き込む`ceo-dashboard/public/ga4-analytics.json`・`ceo-dashboard/public/column-review.json`の2ファイルは、`column-review`・`analytics`ページがGitHub raw経由の取得に切り替わったことで実際には使われなくなっている（上記参照）。この2ファイルの更新だけでceo-dashboardの不要ビルドが発生しないよう、`ceo-dashboard/vercel.json`のignoreCommandにも個別除外を追加した
+
+## 自動コミットワークフローの一時停止（2026-09-22、オーナー承認済み）
+
+CEOダッシュボードのVercel Production デプロイが「Blocked」状態のまま滞留する問題の調査で、
+高頻度の自動コミットがVercelの同時ビルド枠（On-Demand Concurrent Builds: Disabled）を
+圧迫していることが一因と判明。以下2つを一時停止した（`on:`トリガーをコメントアウトし
+`workflow_dispatch`のみ残す形。再開時はコメントを外すだけで復元可能）。
+
+| ワークフロー | 停止内容 | 理由 |
+|---|---|---|
+| `update-index.yml`（仕組み名鑑自動更新） | `push`トリガー（scripts/・.github/workflows/への全push）を停止 | 事業運用に無関係な内部ドキュメント。開発セッション中は特に高頻度に発火していた |
+| `zassou-stock.yml`（雑草ストック更新） | `schedule`（1日3回）を停止 | 雑草おじさん事業の投稿ネタ在庫生成。既存在庫が尽きる前に再開を検討すること |
+
+**停止していないもの**: `update-prices.yml`（価格・アフィリエイトリンク自動更新、1日3回）は収益直結のため対象外。
+その他、実投稿処理そのもの（Threads/X/Instagram投稿系ワークフロー）も事業運用に必要なため停止していない。
+
+なお、lens-navi本体・CEOダッシュボードとも上記のignoreCommand修正により、これらの自動コミットで
+不要なVercelビルドは既に発生しなくなっているため、輻輳対策としての「停止」の必要性自体は
+低下している。今回の停止は主にGitHub Actions実行分・コミット数削減が目的。
 
 ## 完成前チェック（必須）
 
