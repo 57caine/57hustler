@@ -196,6 +196,15 @@
 - レビューは今のところ人がGitHub上で`data/column-review-queue.json`を直接確認する運用（ダッシュボード等のUIは未実装）。問題なしと判断したら、`column`フィールドの内容を手動で該当ファイルに反映する
 - ワークフロー（`.github/workflows/generate-lens-navi-column.yml`）の「Compliance check summary」ステップで、レビュー待ちが発生した場合はActionsログに`::warning::`として表示される
 
+## CEOダッシュボード「改善レビュー」「アナリティクス」強化（2026-09-22実装）
+
+- **常時最新データ表示**: `column-review`・`analytics`ページとも、`public/`配下のビルド時固定ファイルではなく`https://raw.githubusercontent.com/57caine/57hustler/main/data/*.json`を都度fetchする方式に変更。Vercelのデプロイが止まっていてもデータ自体は日次GitHub Actionsで更新され続けるため、ページ側は常に最新値を表示できる
+- **改善レビューのステータス管理**: `data/column-review.json`の各項目に`status`（未対応/様子見/対応済み）・`priority`（high/medium/low）・`business`（事業名）・`source`（auto-ga4/manual）フィールドを追加。ダッシュボード上のセレクトボックスから直接変更可能（`/api/column-review/update`がGitHub Contents APIで`data/column-review.json`と`ceo-dashboard/public/column-review.json`の両方を書き換え）
+- **事業ごとの分類**: 現状、自動検知（GA4ベース）はlens-naviのみ対応。school-navi・henkutsu・雑草おじさん・夜中のおじさん等、他事業の課題は「＋課題を手動追加」フォーム（`/api/column-review/add`）から手動登録する運用。自動検知の対象を広げる場合は別途対応が必要
+- **優先度の並べ替え**: 各ステータスのセクション内で「優先度順」「セッション数順」を切り替え可能
+- **再生成時の上書き防止**: `scripts/fetch-ga4-analytics.ts`は日次で`data/column-review.json`を再生成するが、既存の`status`（対応済み）・`priority`（手動設定分）・`source: 'manual'`の項目は再生成時も引き継がれる（`existingStatuses`/`existingPriorities`/`manualArticles`として読み込み、上書きしない）
+- **前提条件**: `/api/column-review/*`・既存の`/api/memo/*`はいずれも`GITHUB_TOKEN`環境変数（GitHub Contents APIへの書き込み権限を持つトークン）が必要。Vercel側で未設定の場合、保存操作は失敗する
+
 ## 完成前チェック（必須）
 
 成果物を「完成」として提示する前に、必ずchecklist.mdの全項目を確認すること。
