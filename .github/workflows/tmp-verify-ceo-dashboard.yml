@@ -1,0 +1,20 @@
+name: 一時調査・CEOダッシュボード本番確認
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 本番URLをcurlで確認（フル文脈）
+        run: |
+          curl -sS -D - -o /tmp/body.html https://ceo-dashboard-alpha-livid.vercel.app/
+          echo "=== dpl-id ==="
+          grep -o 'data-dpl-id="[^"]*"' /tmp/body.html
+          echo "=== ナビゲーション全リンク ==="
+          grep -oE 'href="/[a-z-]*"[^>]*>[^<]*<' /tmp/body.html | head -30
+          echo "=== 削除対象文字列 ==="
+          grep -o "累計投稿数\|note公開数\|雑草ストック\|次の投稿まで\|今日の投稿数" /tmp/body.html | sort -u || echo "該当なし"
+          echo "=== アナリティクス／改善レビュー（クイックリンク内） ==="
+          grep -o '.\{20\}クイックリンク.\{600\}' /tmp/body.html || true
