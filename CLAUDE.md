@@ -179,6 +179,22 @@
 | `scripts/fetch-a8-links.ts` | A8.netからコンタクトレンズストアのアフィリエイトURL自動取得 |
 | `scripts/fetch-school-links.ts` | A8.netからスクール・資格のアフィリエイトURL自動取得 |
 | `scripts/update-prices.ts` | Playwrightで各ショップの実価格をスクレイピング |
+| `scripts/generate-lens-navi-column.ts` | lens-naviコラム自動生成（Claude Haiku 4.5）。生成後、`column-compliance-check.ts`による公開前チェックを経て公開判定 |
+| `scripts/column-compliance-check.ts` | コラムの公開前チェック（校正）。生成本体とは独立したAPI呼び出しで、裏付けのない数値・誇張表現・無出典の統計/実績記載をチェック。lens-navi専用ではなく汎用実装（school-navi等への横展開を想定） |
+
+## コラム自動生成の公開前チェック（校正）ルール（2026-09-22実装）
+
+- **対象範囲**: 現在はlens-naviのみ。school-navi等への横展開は未実装（要望あり次第対応）
+- 生成（`generate-lens-navi-column.ts`／Claude Haiku 4.5）→ **公開前チェック（`column-compliance-check.ts`／同じくHaiku 4.5、独立したAPI呼び出し）** → 判定、の3段階
+  - チェックはコストを抑えるため生成と同じ軽量モデル（Haiku 4.5）を使用。現行ラインナップで最も軽量なため、これより軽くする余地は現状ない
+- チェック観点は以下の3点のみ（景品表示法の優良誤認・有利誤認リスク）:
+  1. 裏付けのない具体的な数値（例:「ブランド数500以上」「満足度98%」）
+  2. 「必ず」「絶対」等の断定的な誇張表現
+  3. 出典が明示されていない統計・実績の記載
+- **問題なし**: 従来通り`lib/columns.tsx`等に書き込み、自動公開（挙動は変更なし）
+- **問題あり**: `lib/columns.tsx`等への書き込みをスキップ（=本番に出ない）。指摘箇所・理由・修正案を`data/column-review-queue.json`に記録
+- レビューは今のところ人がGitHub上で`data/column-review-queue.json`を直接確認する運用（ダッシュボード等のUIは未実装）。問題なしと判断したら、`column`フィールドの内容を手動で該当ファイルに反映する
+- ワークフロー（`.github/workflows/generate-lens-navi-column.yml`）の「Compliance check summary」ステップで、レビュー待ちが発生した場合はActionsログに`::warning::`として表示される
 
 ## 完成前チェック（必須）
 

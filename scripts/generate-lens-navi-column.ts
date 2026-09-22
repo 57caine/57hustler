@@ -13,6 +13,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import * as fs from 'fs';
 import * as path from 'path';
+import { checkColumnCompliance, type ComplianceCheckResult } from './column-compliance-check';
 
 // ---- 型定義 ----
 
@@ -28,6 +29,20 @@ interface ContentLogEntry {
 interface ContentLog {
   lastUpdated: string;
   columns: ContentLogEntry[];
+}
+
+interface ReviewQueueItem {
+  slug: string;
+  title: string;
+  section: Section;
+  flaggedAt: string;
+  findings: ComplianceCheckResult['findings'];
+  column: GeneratedColumn;
+}
+
+interface ReviewQueue {
+  lastUpdated: string | null;
+  items: ReviewQueueItem[];
 }
 
 interface GeneratedColumn {
@@ -204,6 +219,25 @@ function appendToLog(entry: ContentLogEntry, log: ContentLog): void {
   fs.writeFileSync(logPath, JSON.stringify(log, null, 2), 'utf-8');
 }
 
+// ---- 公開前チェック（校正）用レビューキュー ----
+
+function reviewQueuePath(): string {
+  return path.join(__dirname, '../data/column-review-queue.json');
+}
+
+function loadReviewQueue(): ReviewQueue {
+  const p = reviewQueuePath();
+  if (!fs.existsSync(p)) return { lastUpdated: null, items: [] };
+  return JSON.parse(fs.readFileSync(p, 'utf-8')) as ReviewQueue;
+}
+
+function appendToReviewQueue(item: ReviewQueueItem): void {
+  const queue = loadReviewQueue();
+  queue.items.push(item);
+  queue.lastUpdated = new Date().toISOString().slice(0, 10);
+  fs.writeFileSync(reviewQueuePath(), JSON.stringify(queue, null, 2), 'utf-8');
+}
+
 // ---- Claude API 呼び出し ----
 
 async function generateColumn(
@@ -369,6 +403,57 @@ function appendToKarakonColumns(col: GeneratedColumn): void {
   console.log(`✓ Added to karakon-columns.tsx: ${col.slug}`);
 }
 
+function writeColumnToSection(col: GeneratedColumn): void {
+  if (['vr', 'eye-care', 'lasik', 'megane', 'eye-goods'].includes(col.section)) {
+    appendToEyeColumns(col);
+  } else if (col.section === 'karakon') {
+    appendToKarakonColumns(col);
+  } else {
+    appendToColumns(col);
+  }
+}
+
+/**
+ * 公開前チェック（校正）ゲート。
+ * 生成本体（Haiku）とは独立したAPI呼び出しで、裏付けのない数値・誇張表現・
+ * 無出典の統計/実績記載をチェックする。
+ * - 問題なし: 各section.tsxへ書き込み、content-logに記録して公開
+ * - 問題あり: section.tsxへの書き込みをスキップし、指摘事項と修正案を
+ *   column-review-queue.jsonに記録（公開しない。人が確認して手動反映する）
+ * 戻り値: 公開したかどうか
+ */
+async function runComplianceGateAndPublish(
+  col: GeneratedColumn,
+  apiKey: string,
+  log: ContentLog,
+): Promise<boolean> {
+  console.log(`Running compliance check: ${col.slug}`);
+  const result = await checkColumnCompliance(col.title, col.content, apiKey);
+
+  if (!result.passed) {
+    console.warn(`✗ Compliance check flagged issues: ${col.slug} (${result.findings.length}件)`);
+    appendToReviewQueue({
+      slug: col.slug,
+      title: col.title,
+      section: col.section,
+      flaggedAt: new Date().toISOString().slice(0, 10),
+      findings: result.findings,
+      column: col,
+    });
+    return false;
+  }
+
+  console.log(`✓ Compliance check passed: ${col.slug}`);
+  writeColumnToSection(col);
+  appendToLog({
+    slug: col.slug,
+    title: col.title,
+    section: col.section,
+    publishedAt: new Date().toISOString().slice(0, 10),
+  }, log);
+  return true;
+}
+
 // ---- メイン ----
 
 async function main() {
@@ -400,14 +485,22 @@ async function main() {
     });
     if (updated) {
       updated.slug = slugArg;
-      if (['vr', 'eye-care', 'lasik', 'megane', 'eye-goods'].includes(existing.section)) {
-        appendToEyeColumns(updated);
-      } else if (existing.section === 'karakon') {
-        appendToKarakonColumns(updated);
+      console.log(`Running compliance check: ${updated.slug}`);
+      const result = await checkColumnCompliance(updated.title, updated.content, apiKey);
+      if (!result.passed) {
+        console.warn(`✗ Compliance check flagged issues on update: ${updated.slug} (${result.findings.length}件)`);
+        appendToReviewQueue({
+          slug: updated.slug,
+          title: updated.title,
+          section: updated.section,
+          flaggedAt: new Date().toISOString().slice(0, 10),
+          findings: result.findings,
+          column: updated,
+        });
       } else {
-        appendToColumns(updated);
+        writeColumnToSection(updated);
+        console.log(`✓ Updated: ${slugArg}`);
       }
-      console.log(`✓ Updated: ${slugArg}`);
     }
     return;
   }
@@ -431,22 +524,12 @@ async function main() {
     process.exit(0);
   }
 
-  if (['vr', 'eye-care', 'lasik', 'megane', 'eye-goods'].includes(targetSection)) {
-    appendToEyeColumns(col);
-  } else if (targetSection === 'karakon') {
-    appendToKarakonColumns(col);
+  const published = await runComplianceGateAndPublish(col, apiKey, log);
+  if (published) {
+    console.log(`✓ Generated and logged: ${col.slug}`);
   } else {
-    appendToColumns(col);
+    console.log(`⏸ Held for review (not published): ${col.slug}`);
   }
-
-  appendToLog({
-    slug: col.slug,
-    title: col.title,
-    section: targetSection,
-    publishedAt: new Date().toISOString().slice(0, 10),
-  }, log);
-
-  console.log(`✓ Generated and logged: ${col.slug}`);
 }
 
 main().catch(e => {
