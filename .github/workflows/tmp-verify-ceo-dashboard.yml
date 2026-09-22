@@ -1,0 +1,17 @@
+name: 一時調査・CEOダッシュボード本番確認
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 本番URLをcurlで確認（詳細）
+        run: |
+          echo "=== HTTPステータス・ヘッダー ==="
+          curl -sS -D - -o /tmp/body.html https://ceo-dashboard-alpha-livid.vercel.app/ || echo "curl failed: $?"
+          echo "=== 削除対象の文字列が残っていないか ==="
+          grep -o "時計\|次の投稿まで\|雑草ストック\|今日の投稿数\|累計投稿数\|note公開数" /tmp/body.html || echo "該当なし（削除確認OK）"
+          echo "=== 残すべきクイックリンクの文字列があるか ==="
+          grep -o "改善レビュー\|アナリティクス" /tmp/body.html || echo "見つかりませんでした"
