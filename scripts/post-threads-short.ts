@@ -9,7 +9,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import {
   KYUSEI, POSITION_MEANINGS, getDailyStar, getMonthlyStarForToday, getStarPositionIndex,
-  getJstDayOfWeek, STAR_TO_TRIGRAM, selectHexagram, validateOneLiners, KYUSEI_CONTENT_CAUTION,
+  getJstDayOfWeek, STAR_TO_TRIGRAM, selectHexagram, validateOneLiners, KYUSEI_CONTENT_CAUTION, getSeasonWordCaution,
 } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
@@ -62,7 +62,7 @@ async function generateNightHoroscope(dailyStarNum: number, monthlyStarNum: numb
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 400,
-    system: `九星気学に詳しいおじさんです。月盤・日盤の回座宮を踏まえた就寝前・夜の一言アドバイスを生成します。\n${KYUSEI_CONTENT_CAUTION}`,
+    system: `九星気学に詳しいおじさんです。月盤・日盤の回座宮を踏まえた就寝前・夜の一言アドバイスを生成します。\n${KYUSEI_CONTENT_CAUTION}\n${getSeasonWordCaution()}`,
     messages: [{
       role: 'user',
       content: `月盤中宮：${KYUSEI[monthlyStarNum].short}
@@ -104,7 +104,7 @@ function buildHoroscopeText(oneLiners: Record<number, string>): string {
       return `${KYUSEI[n].emoji}${KYUSEI[n].short}｜${oneLiners[n] ?? ''}`;
     }),
     '',
-    '#九星気学 #今夜の運勢 #夜中のおじさん',
+    '#九星気学 #本命星 #夜中のおじさん #占い #スピリチュアル',
   ];
   return lines.join('\n');
 }
@@ -150,7 +150,8 @@ async function generateShortPost(isSunday: boolean, dailyStarNum?: number): Prom
     ? [
         `あなたは「夜中のおじさん」です。Threadsに問いかけ投稿をします。
 ${ABSOLUTE_BAN}
-${STYLE_GUIDE}`,
+${STYLE_GUIDE}
+${getSeasonWordCaution()}`,
         `日本の神事・神話・伝承・民俗に関連した「問いかけ」を1本書いてください。
 
 【ルール】
@@ -176,7 +177,8 @@ ${STYLE_GUIDE}`,
           `あなたは「夜中のおじさん」です。Threadsに一文考察を投稿します。
 ${ABSOLUTE_BAN}
 ${STYLE_GUIDE}
-${KYUSEI_CONTENT_CAUTION}`,
+${KYUSEI_CONTENT_CAUTION}
+${getSeasonWordCaution()}`,
           `今日の日盤中宮は${star}（${trigramLabel}に対応）です。
 易経の第${hex.num}卦「${hex.name}」を今日の卦として選びました。
 原文キーワード：「${hex.keyword}」
@@ -303,8 +305,8 @@ async function main() {
   }
 
   const TOPIC_TAG: Record<PostType, string> = {
-    horoscope: '九星気学',
-    ikkouiku:  '易経',
+    horoscope: '占い',
+    ikkouiku:  '占い',
     toikake:   'スピリチュアル',
   };
   const topicTag = TOPIC_TAG[postType];

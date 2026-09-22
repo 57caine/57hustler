@@ -9,7 +9,7 @@
 
 import Anthropic from '@anthropic-ai/sdk';
 import {
-  KYUSEI, POSITION_MEANINGS, getMonthlyStarForToday, getStarPositionIndex, getJstDateSlug, validateOneLiners, KYUSEI_CONTENT_CAUTION,
+  KYUSEI, POSITION_MEANINGS, getMonthlyStarForToday, getStarPositionIndex, getJstDateSlug, validateOneLiners, KYUSEI_CONTENT_CAUTION, getSeasonWordCaution,
 } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
@@ -32,7 +32,7 @@ async function generateMonthlyCaution(monthlyStarNum: number): Promise<MonthlyCo
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 500,
-    system: `九星気学に詳しいおじさんです。月盤中宮星を踏まえた、今月の注意点・避けるべきことを生成します。象意の言い換えは禁止。\n${KYUSEI_CONTENT_CAUTION}`,
+    system: `九星気学に詳しいおじさんです。月盤中宮星を踏まえた、今月の注意点・避けるべきことを生成します。象意の言い換えは禁止。\n${KYUSEI_CONTENT_CAUTION}\n${getSeasonWordCaution()}`,
     messages: [{
       role: 'user',
       content: `今月の月盤中宮：${monthlyStar.name}
