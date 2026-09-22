@@ -1,0 +1,14 @@
+name: 一時調査・CEOダッシュボード本番確認
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 本番URLをcurlで確認
+        run: |
+          curl -sS -D - -o /tmp/body.html https://ceo-dashboard-alpha-livid.vercel.app/
+          echo "=== dpl-id ==="
+          grep -o 'data-dpl-id="[^"]*"' /tmp/body.html || true
