@@ -181,6 +181,7 @@
 | `scripts/update-prices.ts` | Playwrightで各ショップの実価格をスクレイピング |
 | `scripts/generate-lens-navi-column.ts` | lens-naviコラム自動生成（Claude Haiku 4.5）。生成後、`column-compliance-check.ts`による公開前チェックを経て公開判定 |
 | `scripts/column-compliance-check.ts` | コラムの公開前チェック（校正）。生成本体とは独立したAPI呼び出しで、裏付けのない数値・誇張表現・無出典の統計/実績記載をチェック。lens-navi専用ではなく汎用実装（school-navi等への横展開を想定） |
+| `scripts/auto-fix-column-issues.ts` | 改善レビュー課題の自動修正案生成（詳細は下記「改善レビュー課題の自動修正」セクション参照）。mainへの直接pushは行わない |
 
 ## コラム自動生成の公開前チェック（校正）ルール（2026-09-22実装）
 
@@ -204,6 +205,59 @@
 - **優先度の並べ替え**: 各ステータスのセクション内で「優先度順」「セッション数順」を切り替え可能
 - **再生成時の上書き防止**: `scripts/fetch-ga4-analytics.ts`は日次で`data/column-review.json`を再生成するが、既存の`status`（対応済み）・`priority`（手動設定分）・`source: 'manual'`の項目は再生成時も引き継がれる（`existingStatuses`/`existingPriorities`/`manualArticles`として読み込み、上書きしない）
 - **前提条件**: `/api/column-review/*`は`GITHUB_TOKEN`環境変数（GitHub Contents APIへの書き込み権限を持つトークン）が必要。Vercel側で未設定の場合、保存操作は失敗する
+
+## 改善レビュー課題の自動修正（AI PR作成、2026-09-23実装）
+
+「改善レビュー」で未対応の課題のうち、機械的に安全と判断できるもの**だけ**をAIが自動で修正案を作成し、
+**mainに直接pushせずPRとして提示する**仕組み。マージ判断は必ずオーナーが行う。
+
+### 対象範囲（Tier B、意図的に狭い）
+
+自動修正PRの対象になるのは、以下を**すべて**満たす課題のみ（`scripts/lib/column-fix-eligibility.ts`）。
+
+- `status: '未対応'` かつ `source: 'auto-ga4'` かつ `business: 'lens-navi'`（手動追加課題・他事業はPhase 1では対象外）
+- `metrics.sessions >= 10`（セッション数が少なすぎる課題は統計的ノイズの可能性が高いため対象外）
+- `analysis.hasAffiliateLinks === true`（新規リンク追加・商品選定はAIの裁量が大きすぎるため対象外）
+- `analysis.h2Count < 3` または `analysis.ctaCount <= 1`（H2見出し不足・CTA不足という構造上の課題のみ）
+- 既に`pendingPr`が付いている（レビュー待ちのPRが既にある）場合は対象外
+
+**対象外（常に人間対応）**:
+- 直帰率対応の冒頭文章書き換え（Tier C）: 文章そのものの書き換えは景品表示法リスクの判定がTier Bより難しいため、Phase 1では見送り
+- レンダリング異常（`avgSessionDuration < 5秒`）の調査: 技術的なバグ調査が必要で、誤った推測でコードを壊すリスクがあるため対象外
+- `source: 'manual'`（school-navi・henkutsu・雑草おじさん・夜中のおじさん等の手動追加課題）: 自由記述でコード修正に落とし込めるか個別判断が必要なため常に人間対応
+- 「affiliate_clickイベント未計測」のみが原因のもの: そもそも直すコードが存在しない検証待ちタスクのため対象外
+
+### 安全装置（多重ゲート）
+
+1. AIへのプロンプトで新規の数値・統計・効果効能の主張の追加、新規アフィリエイトリンクの追加を明示的に禁止
+2. 生成結果が `<article` で始まり `</article>` で終わるか、元の50%未満に縮小していないか、既存の`rel="sponsored"`リンクが失われていないかを構造チェック
+3. `tsc --noEmit` でTypeScriptのコンパイル可否を確認（失敗時は変更を破棄）
+4. `column-compliance-check.ts`（既存のコラム生成公開前チェックと同じ仕組み）で景品表示法リスクを確認（不合格時は変更を破棄）
+5. 上記いずれかで弾かれた場合はPRを作らず、`column-review.json`の該当項目に`autoFixNote`として理由を記録（ダッシュボードに表示）。ステータスは`未対応`のまま変わらないため、翌日以降も検知・再試行され続ける
+6. 1回の実行で処理するのは1件のみ（`AUTO_FIX_MAX_ITEMS`環境変数、既定1）。1課題=1ブランチ=1PRの粒度を保つ
+
+### 技術構成
+
+| ファイル | 役割 |
+|---------|------|
+| `scripts/lib/column-fix-eligibility.ts` | Tier B対象判定ロジック |
+| `scripts/lib/column-content-locator.ts` | `lib/columns.tsx`・`lib/eye-columns.tsx`・`lib/karakon-columns.tsx`からスラッグ指定でJSX記事ブロックを抽出・置換（丸カッコの対応を文字列・コメントをスキップしながら数える方式。正規表現1発では`.map(...)`等のネストしたカッコを誤検知するため） |
+| `scripts/auto-fix-column-issues.ts` | 本体。対象抽出→Claude(Haiku 4.5)で修正案生成→上記ゲート→マニフェスト出力（mainへの直接pushは行わない） |
+| `.github/workflows/auto-fix-column-review.yml` | 毎日4:00 JST実行。スクリプト実行→`auto-fix/{slug}-{日付}`ブランチ作成→**修正対象ファイルのみ**をそのブランチにコミット・push→`gh pr create`でPR作成→mainに戻り`column-review.json`に`pendingPr`（URL・ブランチ名・作成日時）を記録して直接コミット |
+| `.github/workflows/auto-fix-pr-merged.yml` | `auto-fix/*`ブランチのPRがマージされたことを検知し、該当項目のステータスを`対応済み`に自動更新（`pendingPr`は削除、`autoFixMergedAt`を記録） |
+
+### ダッシュボードUI
+
+- `pendingPr`が付いている課題は「🔀 AI修正PRレビュー待ち →」バッジが表示され、クリックでPRを開ける
+- `autoFixNote`（自動修正を見送った理由）がある課題は詳細を開くと理由が表示される
+- 既存の「💡改善案（チャットで指示）」欄はTier C以降（文章書き換え等）の人間主導の改善のために引き続き残している
+
+### 動作確認（実装時点）
+
+- 現在の`column-review.json`の未対応2件（`karakon-shoshinsha-guide`・`uv-eye-care-sunglasses-uv-drops`）はいずれもセッション数5件で閾値（10件）未満のため、**実装時点では対象0件**（意図した保守的な挙動）
+- `column-fix-eligibility.ts`・`column-content-locator.ts`を実データに対して直接実行し、判定結果とJSXブロック抽出（現在flagged中の全11記事で照合成功）・置換の往復（挿入したマーカーが正しく読み戻せること）を確認済み
+- ルート・ceo-dashboard双方で`npm run build`が通ることを確認済み
+- 実際のPR作成・マージフローは対象0件のため本番ではまだ未実行（次回対象が発生し次第、実際にPRが作られる）
 
 ## CEOダッシュボードをナビゲーション2タブに縮小（2026-09-23対応）
 
