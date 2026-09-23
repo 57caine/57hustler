@@ -239,8 +239,30 @@ CEOダッシュボードのデプロイが何度pushしても「Blocked」のま
   （`VERCEL_GIT_PREVIOUS_SHA`が未設定の場合＝初回デプロイ等のみ`HEAD^`にフォールバック）
 - ローカルで実際に問題が起きたコミット（`d4bdb00`）に対し、`VERCEL_GIT_PREVIOUS_SHA`をその親コミットのSHAに
   設定した状態で新しいignoreCommandを実行し、`exit 1`（正しくビルド対象と判定）になることを確認済み
-- **今後、ignoreCommandを新規作成・変更する際は`HEAD^`を直接使わず、必ず`"${VERCEL_GIT_PREVIOUS_SHA:-HEAD^}"`
-  の形を使うこと**。`HEAD^`単体はマージコミット＋シャロークローンの組み合わせで信頼できない
+
+### 続報: `VERCEL_GIT_PREVIOUS_SHA`だけでも不十分だった（同日・追加修正）
+
+上記の修正をデプロイしたところ、**今度はデプロイが`ERROR`状態**になった。Vercel APIでエラー内容を確認すると
+`Command failed with exit code 128: ... fatal: bad object <SHA>`。
+
+- 原因: `VERCEL_GIT_PREVIOUS_SHA`（最後に成功したデプロイのコミットSHA）自体は正しいが、CEOダッシュボードは
+  ずっと同じ古いデプロイ（`dpl_F9gg...`）で止まっていたため、このSHAが**非常に古いコミット**を指しており、
+  **Vercelのシャロークローンがそこまで履歴を持っていなかった**（`fatal: bad object`）
+- ignoreCommandのシェルコマンド自体がエラー終了すると、Vercelは「ビルドを続行」ではなく**デプロイ全体をERROR扱い**にする
+  （非ゼロ終了コードなら常にビルドが進むわけではない）
+- **最終対処**: `git diff`の結果を明示的に判定し、**「差分なし」と確実に判定できた場合のみskip、それ以外
+  （差分あり・コマンドエラー含む）は常にbuildする**安全側フォールバックに変更:
+  ```
+  git diff --quiet "${VERCEL_GIT_PREVIOUS_SHA:-HEAD^}" HEAD -- <対象パス>; [ "$?" = "0" ] && exit 0 || exit 1
+  ```
+  - `git diff --quiet`の終了コードが`0`（差分なし）のときだけ明示的に`exit 0`（skip）
+  - `1`（差分あり）でも`128`等（bad object等のgitエラー）でも`exit 1`（build）に倒す
+- ローカルで3パターン（差分なし／差分あり／存在しないSHA指定によるbad objectエラー）すべてで
+  意図通りの終了コードになることを確認済み
+- **今後、ignoreCommandを新規作成・変更する際は`HEAD^`を直接使わず、`"${VERCEL_GIT_PREVIOUS_SHA:-HEAD^}"`を
+  使い、かつ`git diff`の終了コードを上記パターンで明示判定すること**。`HEAD^`単体はマージコミット＋
+  シャロークローンの組み合わせで信頼できず、`VERCEL_GIT_PREVIOUS_SHA`単体も参照先コミットがシャロークローンの
+  深度外だと`fatal: bad object`でデプロイごとERROR化するリスクがある
 
 ## 自動コミットワークフローの一時停止（2026-09-22、オーナー承認済み）
 
