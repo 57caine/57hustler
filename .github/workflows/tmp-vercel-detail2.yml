@@ -1,0 +1,28 @@
+name: 一時調査・cc1b72b0デプロイのv13詳細
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: v13詳細
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          curl -sS "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=5&target=production" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" > /tmp/deps.json
+          DEPID=$(jq -r '.deployments[0].uid' /tmp/deps.json)
+          echo "DEPID=$DEPID"
+          curl -sS "https://api.vercel.com/v13/deployments/$DEPID?teamId=team_3ZA38DTbe02rLyjHXAaNuCs5" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" > /tmp/detail.json
+          jq '{id, state, readyState, createdAt, buildingAt, ready, target, errorMessage, buildSkipped, checksState, aliasError}' /tmp/detail.json
+
+      - name: プロジェクト設定(concurrency/production branch)確認
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          curl -sS "https://api.vercel.com/v9/projects/prj_B033Bkfsk6LkJZNxS61Gc4Xvddva?teamId=team_3ZA38DTbe02rLyjHXAaNuCs5" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" | \
+            jq '{concurrencyLimit, resourceConfig, link: {productionBranch: .link.productionBranch}, ignoreCommand: .commandForIgnoringBuildStep}'
