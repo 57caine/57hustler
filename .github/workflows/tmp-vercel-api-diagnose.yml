@@ -7,20 +7,15 @@ jobs:
   diagnose:
     runs-on: ubuntu-latest
     steps:
-      - name: プロジェクト情報を取得
+      - name: デプロイ履歴一覧を取得
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
-          curl -sS "https://api.vercel.com/v9/projects?search=ceo-dashboard" -H "Authorization: Bearer $VERCEL_TOKEN" > /tmp/projects.json
-          echo "=== id / name / accountId ==="
-          jq -r '.projects[] | "id=\(.id) name=\(.name) accountId=\(.accountId)"' /tmp/projects.json
-          echo "=== link (Git連携情報) ==="
-          jq '.projects[] | {name, link}' /tmp/projects.json
-          echo "=== 最新デプロイ（1件） ==="
-          jq '.projects[] | {name, latestDeployment: .latestDeployments[0] | {uid, url, state, readyState, createdAt, source}}' /tmp/projects.json
-
-      - name: チーム一覧を確認
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: |
-          curl -sS "https://api.vercel.com/v2/teams" -H "Authorization: Bearer $VERCEL_TOKEN" | jq '.teams[] | {id, slug, name}'
+          curl -sS "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=15" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" > /tmp/deployments.json
+          echo "=== 件数 ==="
+          jq '.deployments | length' /tmp/deployments.json
+          echo "=== 一覧（新しい順） ==="
+          jq -r '.deployments[] | "\(.createdAt | tostring) uid=\(.uid) state=\(.state) readyState=\(.readyState) target=\(.target) meta_commit=\(.meta.githubCommitSha // "n/a") meta_msg=\(.meta.githubCommitMessage // "n/a")"' /tmp/deployments.json
+          echo "=== 生JSON（先頭3件） ==="
+          jq '.deployments[0:3]' /tmp/deployments.json
