@@ -1,0 +1,26 @@
+name: 一時調査・CEOダッシュボード本番確認
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vercel APIで最新デプロイ状況を確認
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          curl -sS "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=5" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" | \
+            jq -r '.deployments[] | "\(.createdAt) state=\(.state) target=\(.target) sha=\(.meta.githubCommitSha // "n/a" | .[0:8]) msg=\(.meta.githubCommitMessage // "n/a" | split("\n")[0]) error=\(.errorMessage // "n/a")"'
+
+      - name: 本番URLを直接確認
+        run: |
+          curl -sS -D - -o /tmp/body.html https://ceo-dashboard-alpha-livid.vercel.app/
+          echo "=== dpl-id ==="
+          grep -o 'data-dpl-id="[^"]*"' /tmp/body.html || true
+          echo "=== 削除対象文字列 ==="
+          grep -o "累計投稿数\|note公開数" /tmp/body.html | sort -u || echo "該当なし（削除確認OK）"
+          echo "=== クイックリンク ==="
+          grep -o '.\{20\}クイックリンク.\{700\}' /tmp/body.html || true
