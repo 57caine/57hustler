@@ -31,9 +31,10 @@ interface FlaggedArticle {
   business?: string;
   priority?: 'high' | 'medium' | 'low';
   source?: 'auto-ga4' | 'manual';
-  pendingPr?: { url: string; branch: string; createdAt: string };
+  pendingPr?: { url: string; branch: string; prNumber: number; title: string; body: string; createdAt: string };
   autoFixNote?: { at: string; reason: string };
   autoFixMergedAt?: string;
+  autoFixRejected?: { at: string; reason: string };
 }
 
 interface ColumnReviewData {
@@ -75,6 +76,120 @@ async function patchArticle(slug: string, patch: { status?: string; priority?: s
     body: JSON.stringify({ slug, ...patch }),
   });
   if (!res.ok) throw new Error(await res.text());
+}
+
+/** PRの説明文（Markdown寄り）を簡易的に見出し・箇条書きとして表示する。フルパーサーは使わない。 */
+function renderPrBodyLines(body: string) {
+  return body.split('\n').map((line, i) => {
+    if (line.startsWith('## ')) {
+      return <p key={i} className="text-xs font-bold mt-3 mb-1" style={{ color: 'var(--text)' }}>{line.slice(3)}</p>;
+    }
+    if (line.startsWith('- ')) {
+      return <p key={i} className="text-xs pl-3 leading-relaxed" style={{ color: 'var(--text)' }}>・{line.slice(2)}</p>;
+    }
+    if (line.trim() === '---') {
+      return <hr key={i} style={{ border: 'none', borderTop: '1px solid var(--border)', margin: '8px 0' }} />;
+    }
+    if (line.trim() === '') return <div key={i} style={{ height: 4 }} />;
+    return <p key={i} className="text-xs leading-relaxed" style={{ color: 'var(--text)' }}>{line}</p>;
+  });
+}
+
+function PrReviewPanel({ article, onChange }: { article: FlaggedArticle; onChange: (patch: Partial<FlaggedArticle>) => void }) {
+  const pr = article.pendingPr;
+  const [busy, setBusy] = useState<'approve' | 'reject' | null>(null);
+  const [rejecting, setRejecting] = useState(false);
+  const [reason, setReason] = useState('');
+  const [error, setError] = useState<string | null>(null);
+  if (!pr) return null;
+
+  async function handleApprove() {
+    if (!confirm('このPRをマージして本番反映します。よろしいですか？')) return;
+    setBusy('approve'); setError(null);
+    try {
+      const res = await fetch('/api/column-review/approve-fix', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug: article.slug, prNumber: pr!.prNumber }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || 'マージに失敗しました');
+      onChange({ status: '対応済み', pendingPr: undefined });
+    } catch (e) {
+      setError(e instanceof Error ? e.message : '失敗しました');
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  async function handleReject() {
+    setBusy('reject'); setError(null);
+    try {
+      const res = await fetch('/api/column-review/reject-fix', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug: article.slug, prNumber: pr!.prNumber, branch: pr!.branch, reason }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || '見送り処理に失敗しました');
+      onChange({ pendingPr: undefined, autoFixRejected: { at: new Date().toISOString(), reason: reason.trim() || '(理由の記載なし)' } });
+      setRejecting(false);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : '失敗しました');
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  return (
+    <div className="px-4 py-3" style={{ borderBottom: '1px solid var(--border)', background: 'rgba(124,110,247,0.06)' }}>
+      <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--accent)' }}>🔀 AIによる自動修正案（レビュー待ち）</div>
+
+      <div className="rounded-lg p-3 mb-3" style={{ background: 'var(--bg)', border: '1px solid var(--border)', maxHeight: 320, overflowY: 'auto' }}>
+        <p className="text-xs font-bold mb-2" style={{ color: 'var(--text)' }}>{pr.title}</p>
+        {renderPrBodyLines(pr.body)}
+      </div>
+
+      {error && <p className="text-[11px] mb-2" style={{ color: '#ef4444' }}>{error}</p>}
+
+      {!rejecting ? (
+        <div className="flex flex-wrap items-center gap-2">
+          <button onClick={handleApprove} disabled={busy !== null}
+            className="text-xs font-bold rounded-md px-3 py-1.5"
+            style={{ background: '#22c55e', color: '#fff', opacity: busy ? 0.6 : 1 }}>
+            {busy === 'approve' ? '承認・マージ中...' : '✅ 承認してマージ'}
+          </button>
+          <button onClick={() => setRejecting(true)} disabled={busy !== null}
+            className="text-xs font-bold rounded-md px-3 py-1.5"
+            style={{ background: 'var(--bg)', color: 'var(--muted)', border: '1px solid var(--border)' }}>
+            🚫 見送る
+          </button>
+          <a href={pr.url} target="_blank" rel="noopener noreferrer"
+            className="text-[11px] underline" style={{ color: 'var(--muted)' }}>
+            GitHubで見る
+          </a>
+        </div>
+      ) : (
+        <div className="space-y-2">
+          <textarea value={reason} onChange={e => setReason(e.target.value)} placeholder="見送る理由（任意）" rows={2}
+            className="w-full text-[12px] rounded-md px-2.5 py-1.5 resize-none"
+            style={{ background: 'var(--bg)', color: 'var(--text)', border: '1px solid var(--border)' }} />
+          <div className="flex gap-2">
+            <button onClick={handleReject} disabled={busy !== null}
+              className="text-xs font-bold rounded-md px-3 py-1.5"
+              style={{ background: '#ef4444', color: '#fff', opacity: busy ? 0.6 : 1 }}>
+              {busy === 'reject' ? '処理中...' : 'PRをクローズして見送る'}
+            </button>
+            <button onClick={() => setRejecting(false)} disabled={busy !== null}
+              className="text-xs rounded-md px-3 py-1.5"
+              style={{ background: 'var(--bg)', color: 'var(--muted)', border: '1px solid var(--border)' }}>
+              キャンセル
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
 
 function ArticleCard({ article, onChange }: { article: FlaggedArticle; onChange: (patch: Partial<FlaggedArticle>) => void }) {
@@ -137,11 +252,9 @@ function ArticleCard({ article, onChange }: { article: FlaggedArticle; onChange:
               </span>
               {article.pendingPr && (
                 <span
-                  role="link"
-                  onClick={e => { e.stopPropagation(); window.open(article.pendingPr!.url, '_blank', 'noopener,noreferrer'); }}
-                  className="text-[10px] px-2 py-0.5 rounded-full font-bold cursor-pointer"
+                  className="text-[10px] px-2 py-0.5 rounded-full font-bold"
                   style={{ background: 'rgba(124,110,247,0.15)', color: 'var(--accent)' }}>
-                  🔀 AI修正PRレビュー待ち →
+                  🔀 AI修正PRレビュー待ち（タップで確認）
                 </span>
               )}
               {article.flagLabels.map((label, i) => {
@@ -232,20 +345,17 @@ function ArticleCard({ article, onChange }: { article: FlaggedArticle; onChange:
             </div>
           )}
 
-          {article.pendingPr && (
-            <div className="px-4 py-3" style={{ borderBottom: '1px solid var(--border)', background: 'rgba(124,110,247,0.06)' }}>
-              <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--accent)' }}>🔀 AIによる自動修正PR</div>
-              <p className="text-xs leading-relaxed mb-2" style={{ color: 'var(--text)' }}>
-                AIが構造上の課題（H2見出し・CTA不足）に対する修正案を作成し、プルリクエストを作成しました。内容を確認し、問題なければGitHub上でマージしてください。マージすると自動的に「対応済み」になります。
-              </p>
-              <a href={article.pendingPr.url} target="_blank" rel="noopener noreferrer"
-                className="text-xs font-bold underline" style={{ color: 'var(--accent)' }}>
-                PRを開く（{article.pendingPr.branch}） →
-              </a>
+          {article.pendingPr && <PrReviewPanel article={article} onChange={onChange} />}
+
+          {article.autoFixRejected && !article.pendingPr && (
+            <div className="px-4 py-3" style={{ borderBottom: '1px solid var(--border)', background: 'rgba(107,107,138,0.06)' }}>
+              <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--muted)' }}>🚫 AI自動修正PRを見送りました</div>
+              <p className="text-xs leading-relaxed" style={{ color: 'var(--muted)' }}>{article.autoFixRejected.reason}</p>
+              <p className="text-[10px] mt-1" style={{ color: 'var(--muted)' }}>この課題は今後の自動修正の対象から外れます。</p>
             </div>
           )}
 
-          {article.autoFixNote && !article.pendingPr && (
+          {article.autoFixNote && !article.pendingPr && !article.autoFixRejected && (
             <div className="px-4 py-3" style={{ borderBottom: '1px solid var(--border)', background: 'rgba(107,107,138,0.06)' }}>
               <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--muted)' }}>🤖 自動修正は見送りました</div>
               <p className="text-xs leading-relaxed" style={{ color: 'var(--muted)' }}>{article.autoFixNote.reason}</p>
