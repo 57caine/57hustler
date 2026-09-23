@@ -1,0 +1,42 @@
+name: 一時調査・Vercel Ignored Build Stepログ確認
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: デプロイ一覧からID取得
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          curl -sS "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=10" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" > /tmp/deps.json
+          jq -r '.deployments[] | "\(.uid) sha=\(.meta.githubCommitSha // "n/a" | .[0:8]) state=\(.state) msg=\(.meta.githubCommitMessage // "n/a" | split("\n")[0])"' /tmp/deps.json
+
+      - name: 26b672d8のデプロイ詳細（v13）
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          UID=$(jq -r '.deployments[] | select(.meta.githubCommitSha=="26b672d8afbd7388465689606d2aa654114962c9") | .uid' /tmp/deps.json)
+          echo "UID=$UID"
+          curl -sS "https://api.vercel.com/v13/deployments/$UID?teamId=team_3ZA38DTbe02rLyjHXAaNuCs5" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" > /tmp/dep-detail.json
+          jq '{id, state, readyState, createdAt, buildingAt, ready, target, source, meta, gitSource, checksState, errorMessage: .errorMessage}' /tmp/dep-detail.json
+
+      - name: 26b672d8のビルドイベント/ログ
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          UID=$(jq -r '.deployments[] | select(.meta.githubCommitSha=="26b672d8afbd7388465689606d2aa654114962c9") | .uid' /tmp/deps.json)
+          curl -sS "https://api.vercel.com/v3/deployments/$UID/events?teamId=team_3ZA38DTbe02rLyjHXAaNuCs5" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" | jq '.' | head -c 4000
+
+      - name: 直前(901c8cbの成功デプロイ)の詳細
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          curl -sS "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=20&state=READY" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" | \
+            jq -r '.deployments[] | "\(.createdAt) uid=\(.uid) sha=\(.meta.githubCommitSha // "n/a" | .[0:8]) state=\(.state) msg=\(.meta.githubCommitMessage // "n/a" | split("\n")[0])"'
