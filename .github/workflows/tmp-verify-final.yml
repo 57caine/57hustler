@@ -1,0 +1,30 @@
+name: 一時調査・最終確認（デプロイ状態+本番curl）
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: デプロイ状態確認
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          curl -sS "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=5&target=production" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" | \
+            jq -r '.deployments[] | "\(.createdAt) state=\(.state) sha=\(.meta.githubCommitSha // "n/a" | .[0:8]) msg=\(.meta.githubCommitMessage // "n/a" | split("\n")[0]) error=\(.errorMessage // "n/a")"'
+
+      - name: 本番URL確認（ルート・ナビ・削除ルート404）
+        run: |
+          echo "=== root ==="
+          curl -sSL -D - -o /tmp/root.html https://ceo-dashboard-alpha-livid.vercel.app/
+          echo "=== dpl-id ==="
+          grep -o 'data-dpl-id="[^"]*"' /tmp/root.html || true
+          echo "=== ナビリンク ==="
+          grep -oE 'href="/[a-z-]*"[^>]*>[^<]*<' /tmp/root.html | sort -u
+          echo "=== 削除ルートの404確認 ==="
+          for path in yonaka fx office reports audit systems evaluation henkutsu memo; do
+            code=$(curl -sSL -o /dev/null -w "%{http_code}" "https://ceo-dashboard-alpha-livid.vercel.app/$path")
+            echo "/$path -> $code"
+          done
