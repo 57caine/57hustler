@@ -1,0 +1,42 @@
+name: 一時調査・Vercel API診断
+
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: プロジェクト一覧・Git連携状態を確認
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          echo "=== v9/projects (ceo-dashboard を検索) ==="
+          curl -sS "https://api.vercel.com/v9/projects?search=ceo-dashboard" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" | tee /tmp/projects.json | \
+            python3 -c "
+import json,sys
+d = json.load(sys.stdin)
+if 'error' in d:
+    print('ERROR:', d['error'])
+else:
+    for p in d.get('projects', []):
+        print('id:', p.get('id'))
+        print('name:', p.get('name'))
+        print('accountId:', p.get('accountId'))
+        print('link:', json.dumps(p.get('link'), indent=2))
+        print('latestDeployments:', json.dumps(p.get('latestDeployments', [])[:1], indent=2)[:1500])
+        print('---')
+"
+          echo ""
+          echo "=== v2/teams（このトークンが所属するチーム） ==="
+          curl -sS "https://api.vercel.com/v2/teams" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" | python3 -c "
+import json,sys
+d = json.load(sys.stdin)
+if 'error' in d:
+    print('ERROR:', d['error'])
+else:
+    for t in d.get('teams', []):
+        print('team id:', t.get('id'), 'slug:', t.get('slug'), 'name:', t.get('name'))
+"
