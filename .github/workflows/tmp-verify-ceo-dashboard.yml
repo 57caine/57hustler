@@ -1,0 +1,25 @@
+name: 一時調査・CEOダッシュボード本番確認
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 本番URLを直接確認（ルート）
+        run: |
+          curl -sSL -D - -o /tmp/root.html https://ceo-dashboard-alpha-livid.vercel.app/
+          echo "=== dpl-id ==="
+          grep -o 'data-dpl-id="[^"]*"' /tmp/root.html || true
+          echo "=== ナビゲーションのリンク一覧 ==="
+          grep -oE 'href="/[a-z-]*"[^>]*>[^<]*<' /tmp/root.html | head -20
+          echo "=== ページタイトル要素 ==="
+          grep -o "改善レビュー\|コラム改善レビュー" /tmp/root.html | sort -u
+
+      - name: 削除したルートが本番でも404になっているか確認
+        run: |
+          for path in yonaka fx office reports audit systems evaluation henkutsu memo; do
+            code=$(curl -sSL -o /dev/null -w "%{http_code}" "https://ceo-dashboard-alpha-livid.vercel.app/$path")
+            echo "/$path -> $code"
+          done
