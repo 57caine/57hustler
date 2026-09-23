@@ -31,6 +31,9 @@ interface FlaggedArticle {
   business?: string;
   priority?: 'high' | 'medium' | 'low';
   source?: 'auto-ga4' | 'manual';
+  pendingPr?: { url: string; branch: string; createdAt: string };
+  autoFixNote?: { at: string; reason: string };
+  autoFixMergedAt?: string;
 }
 
 interface ColumnReviewData {
@@ -132,6 +135,15 @@ function ArticleCard({ article, onChange }: { article: FlaggedArticle; onChange:
                 style={{ background: 'var(--bg)', color: 'var(--muted)', border: '1px solid var(--border)' }}>
                 {article.business ?? 'lens-navi'}
               </span>
+              {article.pendingPr && (
+                <span
+                  role="link"
+                  onClick={e => { e.stopPropagation(); window.open(article.pendingPr!.url, '_blank', 'noopener,noreferrer'); }}
+                  className="text-[10px] px-2 py-0.5 rounded-full font-bold cursor-pointer"
+                  style={{ background: 'rgba(124,110,247,0.15)', color: 'var(--accent)' }}>
+                  🔀 AI修正PRレビュー待ち →
+                </span>
+              )}
               {article.flagLabels.map((label, i) => {
                 const key = article.flags[i];
                 const cfg = FLAG_CONFIG[key] ?? { color: '#6b6b8a', bg: 'rgba(107,107,138,0.1)' };
@@ -217,6 +229,26 @@ function ArticleCard({ article, onChange }: { article: FlaggedArticle; onChange:
                   <div className="text-[9px]" style={{ color: 'var(--muted)' }}>{m.label}</div>
                 </div>
               ))}
+            </div>
+          )}
+
+          {article.pendingPr && (
+            <div className="px-4 py-3" style={{ borderBottom: '1px solid var(--border)', background: 'rgba(124,110,247,0.06)' }}>
+              <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--accent)' }}>🔀 AIによる自動修正PR</div>
+              <p className="text-xs leading-relaxed mb-2" style={{ color: 'var(--text)' }}>
+                AIが構造上の課題（H2見出し・CTA不足）に対する修正案を作成し、プルリクエストを作成しました。内容を確認し、問題なければGitHub上でマージしてください。マージすると自動的に「対応済み」になります。
+              </p>
+              <a href={article.pendingPr.url} target="_blank" rel="noopener noreferrer"
+                className="text-xs font-bold underline" style={{ color: 'var(--accent)' }}>
+                PRを開く（{article.pendingPr.branch}） →
+              </a>
+            </div>
+          )}
+
+          {article.autoFixNote && !article.pendingPr && (
+            <div className="px-4 py-3" style={{ borderBottom: '1px solid var(--border)', background: 'rgba(107,107,138,0.06)' }}>
+              <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--muted)' }}>🤖 自動修正は見送りました</div>
+              <p className="text-xs leading-relaxed" style={{ color: 'var(--muted)' }}>{article.autoFixNote.reason}</p>
             </div>
           )}
 
@@ -510,7 +542,8 @@ export default function ColumnReviewPage() {
 
       <div className="text-[10px] text-center" style={{ color: 'var(--muted)' }}>
         ※ lens-naviの自動検知はGA4データから日次で更新されます。ステータス・優先度はここで直接変更できます。<br />
-        ※ 改善の実施自体はCEOチャット経由で都度指示してください。
+        ※ 構造上の軽微な課題（H2見出し・CTA不足）はAIが自動でPRを作成することがあります（🔀バッジ表示）。マージ判断は必ずオーナーが行います。<br />
+        ※ それ以外の改善の実施はCEOチャット経由で都度指示してください。
       </div>
     </div>
   );

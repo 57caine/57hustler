@@ -1,0 +1,51 @@
+name: 改善レビュー自動修正PRのマージ検知
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  sync-status:
+    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'auto-fix/')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: column-review.jsonのステータスを「対応済み」に更新
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: |
+          node -e "
+            const fs = require('fs');
+            const prUrl = process.env.PR_URL;
+            const paths = ['data/column-review.json', 'ceo-dashboard/public/column-review.json'];
+            for (const p of paths) {
+              if (!fs.existsSync(p)) continue;
+              const data = JSON.parse(fs.readFileSync(p, 'utf-8'));
+              const article = (data.flaggedArticles || []).find(a => a.pendingPr && a.pendingPr.url === prUrl);
+              if (!article) continue;
+              article.status = '対応済み';
+              delete article.pendingPr;
+              article.autoFixMergedAt = new Date().toISOString();
+              data.flaggedCount = (data.flaggedArticles || []).filter(a => (a.status || '未対応') === '未対応').length;
+              fs.writeFileSync(p, JSON.stringify(data, null, 2), 'utf-8');
+              console.log('更新: ' + p);
+            }
+          "
+
+      - name: コミット・push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/column-review.json ceo-dashboard/public/column-review.json
+          if git diff --cached --quiet; then
+            echo "対象項目が見つからなかったため変更なし（手動でPRを作った場合等）"
+            exit 0
+          fi
+          git commit -m "auto: 改善レビュー自動修正PRマージに伴うステータス更新 (${{ github.event.pull_request.head.ref }})"
+          git push

@@ -1,0 +1,108 @@
+name: 改善レビュー課題の自動修正（Tier B・PR作成）
+
+on:
+  schedule:
+    # 毎日 4:00 JST (= 19:00 UTC 前日)
+    - cron: '0 19 * * *'
+  workflow_dispatch:
+
+jobs:
+  auto-fix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: 修正案を生成（対象がなければ何もしない）
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AUTO_FIX_MANIFEST_PATH: /tmp/auto-fix-manifest.json
+          AUTO_FIX_MAX_ITEMS: '1'
+        run: npx tsx scripts/auto-fix-column-issues.ts
+
+      - name: マニフェストの内容を確認
+        id: manifest
+        run: |
+          echo "--- manifest ---"
+          cat /tmp/auto-fix-manifest.json
+          OUTCOME=$(jq -r '.results[0].outcome // "no_eligible_items"' /tmp/auto-fix-manifest.json)
+          echo "outcome=$OUTCOME" >> "$GITHUB_OUTPUT"
+
+      - name: PRを作成（pr_readyの場合のみ）
+        if: steps.manifest.outputs.outcome == 'pr_ready'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          SLUG=$(jq -r '.results[0].slug' /tmp/auto-fix-manifest.json)
+          FILE_PATH=$(jq -r '.results[0].filePath' /tmp/auto-fix-manifest.json)
+          BRANCH=$(jq -r '.results[0].branch' /tmp/auto-fix-manifest.json)
+          PR_TITLE=$(jq -r '.results[0].prTitle' /tmp/auto-fix-manifest.json)
+          jq -r '.results[0].prBody' /tmp/auto-fix-manifest.json > /tmp/pr-body.md
+
+          # column-review.json側の変更（他件のblockedメモ等）はここでは触れず、
+          # 修正対象の記事ファイルのみをPRブランチにコミットする
+          git checkout -b "$BRANCH"
+          git add "$FILE_PATH"
+          if git diff --cached --quiet; then
+            echo "変更がないためPR作成をスキップします"
+            exit 0
+          fi
+          git commit -m "改善レビュー自動修正: $SLUG"
+          git push -u origin "$BRANCH"
+
+          PR_URL=$(gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "$PR_TITLE" \
+            --body-file /tmp/pr-body.md)
+          echo "PR作成: $PR_URL"
+
+          # mainに戻す（修正対象ファイルはmain側の元の内容に自動的に復元される）
+          git checkout main
+
+          SLUG="$SLUG" BRANCH="$BRANCH" PR_URL="$PR_URL" node -e "
+            const fs = require('fs');
+            const slug = process.env.SLUG;
+            const branch = process.env.BRANCH;
+            const prUrl = process.env.PR_URL;
+            const paths = ['data/column-review.json', 'ceo-dashboard/public/column-review.json'];
+            for (const p of paths) {
+              if (!fs.existsSync(p)) continue;
+              const data = JSON.parse(fs.readFileSync(p, 'utf-8'));
+              const article = (data.flaggedArticles || []).find(a => a.slug === slug);
+              if (!article) continue;
+              article.pendingPr = { url: prUrl, branch, createdAt: new Date().toISOString() };
+              fs.writeFileSync(p, JSON.stringify(data, null, 2), 'utf-8');
+            }
+          "
+
+      - name: mainへの変更（PR紐付け・blockedメモ）をコミット
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/column-review.json ceo-dashboard/public/column-review.json
+          if git diff --cached --quiet; then
+            echo "column-review.jsonに変更なし"
+            exit 0
+          fi
+          git commit -m "auto: 改善レビュー自動修正の結果を反映 $(date +%Y-%m-%d)"
+          git push
