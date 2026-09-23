@@ -44,6 +44,20 @@ jobs:
             -H "Authorization: Bearer $VERCEL_TOKEN"
           echo ""
 
+      - name: 新規APIルート（approve-fix / reject-fix）の疎通確認
+        run: |
+          echo "=== approve-fix（不正なslugで400/500系の構造化エラーが返るか） ==="
+          curl -sS -o /tmp/approve.json -w "HTTP_CODE:%{http_code}\n" \
+            -X POST https://ceo-dashboard-alpha-livid.vercel.app/api/column-review/approve-fix \
+            -H "Content-Type: application/json" -d '{"slug":"__no_such_slug__","prNumber":999999}'
+          cat /tmp/approve.json
+          echo ""
+          echo "=== reject-fix（同様） ==="
+          curl -sS -o /tmp/reject.json -w "HTTP_CODE:%{http_code}\n" \
+            -X POST https://ceo-dashboard-alpha-livid.vercel.app/api/column-review/reject-fix \
+            -H "Content-Type: application/json" -d '{"slug":"__no_such_slug__","prNumber":999999,"branch":"nope"}'
+          cat /tmp/reject.json
+
       - name: 本番URL確認（column-reviewページが正常に200を返すか）
         run: |
           echo "=== /column-review ==="
