@@ -7,36 +7,20 @@ jobs:
   diagnose:
     runs-on: ubuntu-latest
     steps:
-      - name: プロジェクト一覧・Git連携状態を確認
+      - name: プロジェクト情報を取得
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
-          echo "=== v9/projects (ceo-dashboard を検索) ==="
-          curl -sS "https://api.vercel.com/v9/projects?search=ceo-dashboard" \
-            -H "Authorization: Bearer $VERCEL_TOKEN" | tee /tmp/projects.json | \
-            python3 -c "
-import json,sys
-d = json.load(sys.stdin)
-if 'error' in d:
-    print('ERROR:', d['error'])
-else:
-    for p in d.get('projects', []):
-        print('id:', p.get('id'))
-        print('name:', p.get('name'))
-        print('accountId:', p.get('accountId'))
-        print('link:', json.dumps(p.get('link'), indent=2))
-        print('latestDeployments:', json.dumps(p.get('latestDeployments', [])[:1], indent=2)[:1500])
-        print('---')
-"
-          echo ""
-          echo "=== v2/teams（このトークンが所属するチーム） ==="
-          curl -sS "https://api.vercel.com/v2/teams" \
-            -H "Authorization: Bearer $VERCEL_TOKEN" | python3 -c "
-import json,sys
-d = json.load(sys.stdin)
-if 'error' in d:
-    print('ERROR:', d['error'])
-else:
-    for t in d.get('teams', []):
-        print('team id:', t.get('id'), 'slug:', t.get('slug'), 'name:', t.get('name'))
-"
+          curl -sS "https://api.vercel.com/v9/projects?search=ceo-dashboard" -H "Authorization: Bearer $VERCEL_TOKEN" > /tmp/projects.json
+          echo "=== id / name / accountId ==="
+          jq -r '.projects[] | "id=\(.id) name=\(.name) accountId=\(.accountId)"' /tmp/projects.json
+          echo "=== link (Git連携情報) ==="
+          jq '.projects[] | {name, link}' /tmp/projects.json
+          echo "=== 最新デプロイ（1件） ==="
+          jq '.projects[] | {name, latestDeployment: .latestDeployments[0] | {uid, url, state, readyState, createdAt, source}}' /tmp/projects.json
+
+      - name: チーム一覧を確認
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          curl -sS "https://api.vercel.com/v2/teams" -H "Authorization: Bearer $VERCEL_TOKEN" | jq '.teams[] | {id, slug, name}'
