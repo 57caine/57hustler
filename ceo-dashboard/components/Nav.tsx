@@ -3,18 +3,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const links = [
-  { href: '/',           label: '📊 ダッシュ'    },
-  { href: '/yonaka',     label: '🌙 夜中'        },
-  { href: '/fx',         label: '📈 FX'          },
-  { href: '/office',     label: '👔 社員'        },
-  { href: '/reports',    label: '📋 レポート'    },
-  { href: '/analytics',  label: '📊 Analytics'   },
-  { href: '/audit',      label: '🔍 棚卸し'      },
-  { href: '/systems',    label: '⚙️ 仕組み'      },
-  { href: '/evaluation', label: '🏆 評価'        },
-  { href: '/henkutsu',   label: '🌍 henkutsu'   },
-  { href: '/memo',          label: '📝 メモ'        },
   { href: '/column-review', label: '📉 改善レビュー' },
+  { href: '/analytics',     label: '📊 アナリティクス' },
 ];
 
 export default function Nav() {

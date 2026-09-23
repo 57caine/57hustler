@@ -203,7 +203,28 @@
 - **事業ごとの分類**: 現状、自動検知（GA4ベース）はlens-naviのみ対応。school-navi・henkutsu・雑草おじさん・夜中のおじさん等、他事業の課題は「＋課題を手動追加」フォーム（`/api/column-review/add`）から手動登録する運用。自動検知の対象を広げる場合は別途対応が必要
 - **優先度の並べ替え**: 各ステータスのセクション内で「優先度順」「セッション数順」を切り替え可能
 - **再生成時の上書き防止**: `scripts/fetch-ga4-analytics.ts`は日次で`data/column-review.json`を再生成するが、既存の`status`（対応済み）・`priority`（手動設定分）・`source: 'manual'`の項目は再生成時も引き継がれる（`existingStatuses`/`existingPriorities`/`manualArticles`として読み込み、上書きしない）
-- **前提条件**: `/api/column-review/*`・既存の`/api/memo/*`はいずれも`GITHUB_TOKEN`環境変数（GitHub Contents APIへの書き込み権限を持つトークン）が必要。Vercel側で未設定の場合、保存操作は失敗する
+- **前提条件**: `/api/column-review/*`は`GITHUB_TOKEN`環境変数（GitHub Contents APIへの書き込み権限を持つトークン）が必要。Vercel側で未設定の場合、保存操作は失敗する
+
+## CEOダッシュボードをナビゲーション2タブに縮小（2026-09-23対応）
+
+オーナー指示により、上部ナビゲーションを「改善レビュー」「アナリティクス」の2つのみに絞った。
+それ以外のページ・機能（ダッシュ/夜中/FX/社員/レポート/棚卸し/仕組み/評価/henkutsu/メモ）は
+**ページ・APIルートごと完全削除**した（非表示ではなく削除。オーナーから両方の選択肢を提示され、
+孤立ルートがURL直打ちで残る余地をなくすため削除を選択）。
+
+- 削除したルート: `app/yonaka` `app/fx`（+`journal`/`risk`） `app/office` `app/reports` `app/audit`
+  `app/systems` `app/evaluation` `app/henkutsu` `app/memo`
+- 削除したAPIルート: `app/api/fx-data` `app/api/generate` `app/api/henkutsu/approve` `app/api/memo/*`
+- ルート`/`（旧ダッシュボードトップ）は`redirect('/column-review')`に置き換え。サイトを直接開いた場合も
+  改善レビューが表示される
+- `components/Nav.tsx`のリンクを`改善レビュー`・`アナリティクス`の2件のみに変更
+- 残す2ページ（`column-review`・`analytics`）およびそのAPIルート（`api/column-review/*`）は無変更
+- **これらのページが読んでいたdata/*.jsonを更新する既存の自動化ワークフロー（morning-brief.yml等）は
+  今回停止していない**。ページ側で表示されなくなるだけで、データ自体は引き続き生成され続ける
+  （無害だが、恒久的に不要と判断すれば別途ワークフロー停止も検討可）
+- ビルド確認（`route (app)`一覧が`/`・`/analytics`・`/column-review`・`api/column-review/*`のみになることを確認）、
+  Playwrightで実レンダリング確認（ナビが2タブのみ・削除ルートが404・ルートが`/column-review`へリダイレクト
+  されることを確認済み）
 
 ## Vercel Ignored Build Step（vercel.json ignoreCommand）ルール（2026-09-22対応）
 
