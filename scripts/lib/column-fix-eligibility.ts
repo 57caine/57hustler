@@ -31,8 +31,9 @@ export interface FlaggedArticle {
   business?: string;
   priority?: 'high' | 'medium' | 'low';
   source?: 'auto-ga4' | 'manual';
-  pendingPr?: { url: string; branch: string; createdAt: string };
+  pendingPr?: { url: string; branch: string; prNumber: number; title: string; body: string; createdAt: string };
   autoFixNote?: { at: string; reason: string };
+  autoFixRejected?: { at: string; reason: string };
 }
 
 export type FixKind = 'add_h2_structure' | 'add_cta';
@@ -59,6 +60,9 @@ export function evaluateEligibility(article: FlaggedArticle): EligibilityResult 
   }
   if (article.pendingPr) {
     return { eligible: false, reason: '既にレビュー待ちのPRが存在する', fixKinds: [] };
+  }
+  if (article.autoFixRejected) {
+    return { eligible: false, reason: 'オーナーが過去にこの課題への自動修正PRを見送っているため対象外', fixKinds: [] };
   }
   if (article.metrics.sessions < MIN_SESSIONS_FOR_AUTOFIX) {
     return {

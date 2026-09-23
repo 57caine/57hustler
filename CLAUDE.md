@@ -204,7 +204,7 @@
 - **事業ごとの分類**: 現状、自動検知（GA4ベース）はlens-naviのみ対応。school-navi・henkutsu・雑草おじさん・夜中のおじさん等、他事業の課題は「＋課題を手動追加」フォーム（`/api/column-review/add`）から手動登録する運用。自動検知の対象を広げる場合は別途対応が必要
 - **優先度の並べ替え**: 各ステータスのセクション内で「優先度順」「セッション数順」を切り替え可能
 - **再生成時の上書き防止**: `scripts/fetch-ga4-analytics.ts`は日次で`data/column-review.json`を再生成するが、既存の`status`（対応済み）・`priority`（手動設定分）・`source: 'manual'`の項目は再生成時も引き継がれる（`existingStatuses`/`existingPriorities`/`manualArticles`として読み込み、上書きしない）
-- **前提条件**: `/api/column-review/*`は`GITHUB_TOKEN`環境変数（GitHub Contents APIへの書き込み権限を持つトークン）が必要。Vercel側で未設定の場合、保存操作は失敗する
+- **前提条件**: `/api/column-review/*`は`GITHUB_TOKEN`環境変数（GitHub Contents APIへの書き込み権限を持つトークン）が必要。Vercel側で未設定の場合、保存操作は失敗する。`approve-fix`・`reject-fix`はさらにPRのマージ・クローズ・ブランチ削除も行うため、このトークンに`pull_requests: write`相当の権限（classic PATの`repo`スコープ等）が含まれている必要がある
 
 ## 改善レビュー課題の自動修正（AI PR作成、2026-09-23実装）
 
@@ -243,13 +243,25 @@
 | `scripts/lib/column-fix-eligibility.ts` | Tier B対象判定ロジック |
 | `scripts/lib/column-content-locator.ts` | `lib/columns.tsx`・`lib/eye-columns.tsx`・`lib/karakon-columns.tsx`からスラッグ指定でJSX記事ブロックを抽出・置換（丸カッコの対応を文字列・コメントをスキップしながら数える方式。正規表現1発では`.map(...)`等のネストしたカッコを誤検知するため） |
 | `scripts/auto-fix-column-issues.ts` | 本体。対象抽出→Claude(Haiku 4.5)で修正案生成→上記ゲート→マニフェスト出力（mainへの直接pushは行わない） |
-| `.github/workflows/auto-fix-column-review.yml` | 毎日4:00 JST実行。スクリプト実行→`auto-fix/{slug}-{日付}`ブランチ作成→**修正対象ファイルのみ**をそのブランチにコミット・push→`gh pr create`でPR作成→mainに戻り`column-review.json`に`pendingPr`（URL・ブランチ名・作成日時）を記録して直接コミット |
-| `.github/workflows/auto-fix-pr-merged.yml` | `auto-fix/*`ブランチのPRがマージされたことを検知し、該当項目のステータスを`対応済み`に自動更新（`pendingPr`は削除、`autoFixMergedAt`を記録） |
+| `.github/workflows/auto-fix-column-review.yml` | 毎日4:00 JST実行。スクリプト実行→`auto-fix/{slug}-{日付}`ブランチ作成→**修正対象ファイルのみ**をそのブランチにコミット・push→`gh pr create`でPR作成→mainに戻り`column-review.json`に`pendingPr`（URL・ブランチ名・PR番号・**タイトル・本文もそのまま埋め込み**・作成日時）を記録して直接コミット |
+| `.github/workflows/auto-fix-pr-merged.yml` | `auto-fix/*`ブランチのPRがマージされたことを検知し、該当項目のステータスを`対応済み`に自動更新（`pendingPr`は削除、`autoFixMergedAt`を記録）。ダッシュボード上の「承認してマージ」ボタン経由でマージされた場合も同じWebhookが飛ぶため、二重更新されるが冪等なので問題ない |
+| `ceo-dashboard/app/api/column-review/approve-fix/route.ts` | ダッシュボードの「✅ 承認してマージ」ボタンから呼ばれる。GitHub PR Merge APIでそのPRをmainへマージし、column-review.jsonのステータスを即座に`対応済み`へ更新する |
+| `ceo-dashboard/app/api/column-review/reject-fix/route.ts` | ダッシュボードの「🚫 見送る」ボタンから呼ばれる。GitHub APIでPRをクローズ（ブランチも削除）し、column-review.jsonに`autoFixRejected`（理由込み）を記録。ステータスは`未対応`のまま据え置き、以後の自動修正の対象からは外れる |
 
-### ダッシュボードUI
+### 確認・承認はダッシュボード内で完結する（2026-09-23追加対応）
 
-- `pendingPr`が付いている課題は「🔀 AI修正PRレビュー待ち →」バッジが表示され、クリックでPRを開ける
-- `autoFixNote`（自動修正を見送った理由）がある課題は詳細を開くと理由が表示される
+オーナーがGitHubを直接開かなくても済むよう、PRのタイトル・本文（検知した課題・提案・変更内容・
+公開前チェック結果を含む）を生成時点で`column-review.json`の`pendingPr`にそのまま埋め込み、
+ダッシュボード側は追加のGitHub APIコールなしにその場で表示できるようにしている。
+
+- `pendingPr`が付いている課題は「🔀 AI修正PRレビュー待ち」バッジが表示される。カードを開くとPRの
+  タイトル・本文（検知した課題／修正内容／適用した修正種別／実施した安全チェック）がそのまま読める
+- **✅ 承認してマージ**: 確認ダイアログ後、`approve-fix` APIを呼びPRを実際にマージする。マージ後は
+  Vercelの通常デプロイフローで本番反映される（本番反映の確認は引き続き別途curl等で行うこと）
+- **🚫 見送る**: 理由（任意）を入力して`reject-fix` APIを呼ぶとPRがクローズされ、`autoFixRejected`に
+  理由が記録される。この課題は以後Tier B自動修正の対象から恒久的に外れる（`column-fix-eligibility.ts`）
+- GitHubのPR自体は裏側の実装として引き続き使用する（マージ操作の実体・レビュー履歴として）。
+  「GitHubで見る」リンクは補助的に残しているが、通常の運用はダッシュボード内で完結する
 - 既存の「💡改善案（チャットで指示）」欄はTier C以降（文章書き換え等）の人間主導の改善のために引き続き残している
 
 ### 動作確認（実装時点）

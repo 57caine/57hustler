@@ -75,22 +75,29 @@ jobs:
             --title "$PR_TITLE" \
             --body-file /tmp/pr-body.md)
           echo "PR作成: $PR_URL"
+          PR_NUMBER=$(echo "$PR_URL" | grep -oE '[0-9]+$')
 
           # mainに戻す（修正対象ファイルはmain側の元の内容に自動的に復元される）
           git checkout main
 
-          SLUG="$SLUG" BRANCH="$BRANCH" PR_URL="$PR_URL" node -e "
+          # ダッシュボード上でPRの内容をそのまま確認・承認・却下できるよう、
+          # GitHubへの都度アクセスを不要にするためtitle/bodyもcolumn-review.json側に埋め込む
+          SLUG="$SLUG" BRANCH="$BRANCH" PR_URL="$PR_URL" PR_NUMBER="$PR_NUMBER" PR_TITLE="$PR_TITLE" \
+          node -e "
             const fs = require('fs');
             const slug = process.env.SLUG;
             const branch = process.env.BRANCH;
             const prUrl = process.env.PR_URL;
+            const prNumber = parseInt(process.env.PR_NUMBER, 10);
+            const title = process.env.PR_TITLE;
+            const body = fs.readFileSync('/tmp/pr-body.md', 'utf-8');
             const paths = ['data/column-review.json', 'ceo-dashboard/public/column-review.json'];
             for (const p of paths) {
               if (!fs.existsSync(p)) continue;
               const data = JSON.parse(fs.readFileSync(p, 'utf-8'));
               const article = (data.flaggedArticles || []).find(a => a.slug === slug);
               if (!article) continue;
-              article.pendingPr = { url: prUrl, branch, createdAt: new Date().toISOString() };
+              article.pendingPr = { url: prUrl, branch, prNumber, title, body, createdAt: new Date().toISOString() };
               fs.writeFileSync(p, JSON.stringify(data, null, 2), 'utf-8');
             }
           "
