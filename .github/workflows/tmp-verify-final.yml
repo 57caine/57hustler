@@ -7,13 +7,23 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - name: デプロイ状態確認
+      - name: デプロイ状態確認（直近5件）
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
           curl -sS "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=5&target=production" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" > /tmp/deps.json
+          jq -r '.deployments[] | "\(.createdAt) state=\(.state) sha=\(.meta.githubCommitSha // "n/a" | .[0:8]) msg=\(.meta.githubCommitMessage // "n/a" | split("\n")[0]) error=\(.errorMessage // "n/a")"' /tmp/deps.json
+
+      - name: 最新デプロイのv13フル詳細（タイムスタンプ含む）
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          LATEST_ID=$(jq -r '.deployments[0].uid' /tmp/deps.json)
+          echo "LATEST_ID=$LATEST_ID"
+          curl -sS "https://api.vercel.com/v13/deployments/$LATEST_ID?teamId=team_3ZA38DTbe02rLyjHXAaNuCs5" \
             -H "Authorization: Bearer $VERCEL_TOKEN" | \
-            jq -r '.deployments[] | "\(.createdAt) state=\(.state) sha=\(.meta.githubCommitSha // "n/a" | .[0:8]) msg=\(.meta.githubCommitMessage // "n/a" | split("\n")[0]) error=\(.errorMessage // "n/a")"'
+            jq '{id, readyState, createdAt, buildingAt, ready, target, buildSkipped, errorMessage}'
 
       - name: 本番URL確認（ルート・ナビ・削除ルート404）
         run: |
