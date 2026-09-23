@@ -285,6 +285,36 @@ CEOダッシュボードのデプロイが何度pushしても「Blocked」のま
   シャロークローンの組み合わせで信頼できず、`VERCEL_GIT_PREVIOUS_SHA`単体も参照先コミットがシャロークローンの
   深度外だと`fatal: bad object`でデプロイごとERROR化するリスクがある
 
+### 続報2: 「Ignored Build Step command returned exit code 0」は実際のignoreCommand結果とは限らない（2026-09-23発見）
+
+上記のignoreCommand修正を全6プロジェクトにデプロイした後、CEOダッシュボードのナビ2タブ化コミット
+（`ceo-dashboard/`配下で3599行削除という明確な差分を持つコミット）が、何度pushしても同じ
+`"The deployment was canceled because the Ignored Build Step command returned exit code 0."`
+というエラーでキャンセルされ続ける事象が発生した。ローカルで同じコマンドを正しい引数
+（実際のコミットSHAを明示的に代入）で再現しても`exit 1`（ビルドすべき）が返り、矛盾していた。
+
+- **原因**: このエラーメッセージは、Vercel側の同時ビルド枠が1（On-Demand Concurrent Builds: Disabled）の
+  環境で、**後続のpushが先行のビルド中（またはビルド開始直後の）デプロイを横取り（supersede）してキャンセルした
+  場合にも同じ文言で表示される**、ということが判明した。Vercel API（`v13/deployments/{id}`）の
+  `buildSkipped`フィールドで確認したところ、キャンセルされたデプロイの多くが`buildSkipped: false`
+  （＝ignoreCommandによる本当のスキップではなく、実際にビルドが開始された後でキャンセルされた）だった
+  - 本セッションでの調査自体（検証用ワークフローの追加・削除を繰り返しpush）が、皮肉にも同じ問題を
+    自ら再発させていた。1つのpushをした後、結果を確認しようとしてすぐ次のpush（検証ワークフローの追加等）を
+    行うと、それ自体が前のデプロイをキューから追い出してキャンセルしてしまう
+- **教訓・今後の対応**:
+  1. **本番へのpushは連続させず、1つのデプロイが`READY`または確実に`CANCELED`（ignoreCommandによる
+     意図的なスキップ）で完結するまで、新たなpushを行わない**。目安として数分単位で間隔を空ける
+  2. デプロイ状態の確認そのものにpush（新規コミット）を使わない。確認用のGitHub Actions
+     ワークフローファイルは一度pushしたら`workflow_dispatch`で繰り返し再実行し、内容を使い回す
+     （ワークフローファイルの中身を毎回書き換えてpushし直すと、その一時調査push自体が本番デプロイの
+     キューを再度動かしてしまい、確認したい対象のデプロイを横取りしてしまう）
+  3. Vercel API（`v6/deployments`）の`errorMessage`だけで「ignoreCommandがおかしい」と判断せず、
+     `v13/deployments/{id}`の`buildSkipped`・`buildingAt`フィールドまで確認すること。
+     `buildSkipped: false`かつ`buildingAt`が設定されていれば、それはignoreCommandの問題ではなく
+     キュー詰まり（同時ビルド枠不足＋連続push）が原因である可能性が高い
+- この事象を機に、CEOダッシュボードのナビ2タブ化コミットは、pushを完全に止めて1つのデプロイが
+  完了するのを待つことで正常に本番反映された（`dpl_F3PZU8MWrdQVZbZGMLes977aoRji`で確認）
+
 ## 自動コミットワークフローの一時停止（2026-09-22、オーナー承認済み）
 
 CEOダッシュボードのVercel Production デプロイが「Blocked」状態のまま滞留する問題の調査で、
