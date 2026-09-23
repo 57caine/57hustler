@@ -216,6 +216,32 @@
 - 変更前後で実際の過去コミット5件（雑草ストック更新／価格更新／仕組み名鑑更新／GA4データ更新／トップページ刷新マージ）に対しignoreCommandを実行し、意図通りの判定（無視すべきものは無視、ビルドすべきものはビルド）になることを確認済み
 - **CEOダッシュボード専用の追加対応（2026-09-22）**: `fetch-ga4-analytics.yml`が書き込む`ceo-dashboard/public/ga4-analytics.json`・`ceo-dashboard/public/column-review.json`の2ファイルは、`column-review`・`analytics`ページがGitHub raw経由の取得に切り替わったことで実際には使われなくなっている（上記参照）。この2ファイルの更新だけでceo-dashboardの不要ビルドが発生しないよう、`ceo-dashboard/vercel.json`のignoreCommandにも個別除外を追加した
 
+### 【最重要】`HEAD^` はVercelのシャロークローン環境で信頼できない（2026-09-23発見・全6プロジェクト修正）
+
+CEOダッシュボードのデプロイが何度pushしても「Blocked」のまま更新されない問題を、Vercel API（`v6/deployments`）で
+直接デプロイ履歴を調査して根本原因を特定した。
+
+- **症状**: `data/`ファイル除外や自動コミット停止などの輻輳対策を行った後も、ceo-dashboardの実コード変更
+  （`ceo-dashboard/vercel.json`自体の変更を含む）が反映されなかった
+- **原因**: Vercel API上の実際のデプロイ記録を確認したところ、該当コミットは
+  `"errorMessage": "The deployment was canceled because the Ignored Build Step command returned exit code 0."`
+  として**Vercel側でスキップされていた**。ところが同じコミットに対して**ローカルで同じ`git diff --quiet HEAD^ HEAD`を
+  実行すると`exit 1`（差分あり＝ビルドすべき）が返る**——つまりVercel側とローカル側で判定結果が食い違っていた
+  - 原因は**マージコミット**。このセッションの全pushは`git merge --no-edit`で作られたマージコミットであり、
+    Vercelのビルド環境はシャロークローン（浅い履歴）でこのコマンドを実行するため、マージコミットに対する
+    `HEAD^`の解決がローカルのフル履歴環境と異なる結果になり、実際には差分があるのに「差分なし」と誤判定していた
+  - この結果、**mainへの通常のマージコミットpushによる本番反映が、該当ディレクトリに変更があっても
+    構造的に機能しない状態**になっていた（CEOダッシュボードに限らず、理論上は他5プロジェクトも同じ設計のため
+    同様のリスクがあった）
+- **対処**: 全6プロジェクトのvercel.jsonで、`HEAD^`を**Vercelが公式に提供する`$VERCEL_GIT_PREVIOUS_SHA`
+  環境変数**（実際に最後にデプロイされたコミットのSHA）に置き換えた:
+  `git diff --quiet "${VERCEL_GIT_PREVIOUS_SHA:-HEAD^}" HEAD -- ...`
+  （`VERCEL_GIT_PREVIOUS_SHA`が未設定の場合＝初回デプロイ等のみ`HEAD^`にフォールバック）
+- ローカルで実際に問題が起きたコミット（`d4bdb00`）に対し、`VERCEL_GIT_PREVIOUS_SHA`をその親コミットのSHAに
+  設定した状態で新しいignoreCommandを実行し、`exit 1`（正しくビルド対象と判定）になることを確認済み
+- **今後、ignoreCommandを新規作成・変更する際は`HEAD^`を直接使わず、必ず`"${VERCEL_GIT_PREVIOUS_SHA:-HEAD^}"`
+  の形を使うこと**。`HEAD^`単体はマージコミット＋シャロークローンの組み合わせで信頼できない
+
 ## 自動コミットワークフローの一時停止（2026-09-22、オーナー承認済み）
 
 CEOダッシュボードのVercel Production デプロイが「Blocked」状態のまま滞留する問題の調査で、
