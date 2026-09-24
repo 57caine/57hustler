@@ -1,31 +1,31 @@
 {
-  "generatedAt": "2026-09-23T23:31:41.841Z",
+  "generatedAt": "2026-09-24T23:49:37.514Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-09-23T23:31:40.528Z",
+      "fetchedAt": "2026-09-24T23:49:36.093Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 189,
-      "totalPageviews": 206,
+      "totalSessions": 190,
+      "totalPageviews": 209,
       "topPages": [
         {
           "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
-          "sessions": 22,
-          "pageviews": 31,
-          "avgSessionDuration": 339.1526543636364,
-          "bounceRate": 0.22727272727272727
+          "sessions": 23,
+          "pageviews": 32,
+          "avgSessionDuration": 324.4068867826087,
+          "bounceRate": 0.21739130434782608
         },
         {
           "path": "/column/megane-kaomikata",
-          "sessions": 17,
-          "pageviews": 16,
-          "avgSessionDuration": 58.27425264705883,
-          "bounceRate": 0.29411764705882354
+          "sessions": 18,
+          "pageviews": 17,
+          "avgSessionDuration": 63.409895111111105,
+          "bounceRate": 0.2777777777777778
         },
         {
           "path": "/column/meta-quest-3-review-2026",
@@ -42,6 +42,13 @@
           "bounceRate": 0.15384615384615385
         },
         {
+          "path": "/column/eyestrain-stretching-massage-guide",
+          "sessions": 13,
+          "pageviews": 12,
+          "avgSessionDuration": 144.0002133076923,
+          "bounceRate": 0.46153846153846156
+        },
+        {
           "path": "/",
           "sessions": 12,
           "pageviews": 26,
@@ -49,39 +56,32 @@
           "bounceRate": 0.5
         },
         {
-          "path": "/column/eyestrain-stretching-massage-guide",
-          "sessions": 12,
-          "pageviews": 13,
-          "avgSessionDuration": 178.63888225000002,
-          "bounceRate": 0.3333333333333333
-        },
-        {
           "path": "/category/1day",
           "sessions": 11,
-          "pageviews": 10,
-          "avgSessionDuration": 108.60374363636365,
-          "bounceRate": 0.2727272727272727
+          "pageviews": 11,
+          "avgSessionDuration": 105.85899754545454,
+          "bounceRate": 0.36363636363636365
         },
         {
           "path": "/column/megane-facial-shape-frame-2026",
-          "sessions": 11,
+          "sessions": 10,
           "pageviews": 11,
-          "avgSessionDuration": 60.94362027272728,
-          "bounceRate": 0.2727272727272727
+          "avgSessionDuration": 67.9710977,
+          "bounceRate": 0.2
         },
         {
           "path": "/column/sunglass-polarized-guide",
-          "sessions": 9,
-          "pageviews": 8,
-          "avgSessionDuration": 160.729242,
-          "bounceRate": 0.3333333333333333
+          "sessions": 10,
+          "pageviews": 9,
+          "avgSessionDuration": 149.0883612,
+          "bounceRate": 0.4
         },
         {
           "path": "/column/karakon-osusume-ranking-2026",
-          "sessions": 8,
-          "pageviews": 5,
-          "avgSessionDuration": 199.98417949999998,
-          "bounceRate": 0.5
+          "sessions": 9,
+          "pageviews": 6,
+          "avgSessionDuration": 172.90508000000003,
+          "bounceRate": 0.4444444444444444
         },
         {
           "path": "/column/multifocal-iol-presbyopia-surgery-2026",
@@ -115,7 +115,7 @@
           "path": "/ranking",
           "sessions": 6,
           "pageviews": 11,
-          "avgSessionDuration": 48.6807315,
+          "avgSessionDuration": 30.587429,
           "bounceRate": 0.3333333333333333
         },
         {
@@ -126,13 +126,6 @@
           "bounceRate": 0.6
         },
         {
-          "path": "/column/soft-vs-hard-contact-hikaku",
-          "sessions": 5,
-          "pageviews": 5,
-          "avgSessionDuration": 164.6908454,
-          "bounceRate": 0
-        },
-        {
           "path": "/column/uv-eye-care-sunglasses-uv-drops",
           "sessions": 5,
           "pageviews": 5,
@@ -140,25 +133,28 @@
           "bounceRate": 0.8
         },
         {
-          "path": "/column/vr-game-osusume-2026",
-          "sessions": 5,
-          "pageviews": 4,
-          "avgSessionDuration": 32.8641982,
-          "bounceRate": 0.2
+          "path": "/column/kanso-shinikui-contact",
+          "sessions": 4,
+          "pageviews": 3,
+          "avgSessionDuration": 15.597862,
+          "bounceRate": 0.25
         },
         {
-          "path": "/column/vr-movie-streaming-service-recommend-2026",
-          "sessions": 5,
-          "pageviews": 5,
-          "avgSessionDuration": 52.8812028,
-          "bounceRate": 0.4
+          "path": "/column/ranshi-contact-ranking-2025",
+          "sessions": 4,
+          "pageviews": 7,
+          "avgSessionDuration": 158.7464325,
+          "bounceRate": 0.25
+        },
+        {
+          "path": "/column/vr-game-osusume-2026",
+          "sessions": 4,
+          "pageviews": 3,
+          "avgSessionDuration": 35.016927,
+          "bounceRate": 0.25
         }
       ],
       "weeklyTrend": [
-        {
-          "date": "2026-08-27",
-          "sessions": 14
-        },
         {
           "date": "2026-08-28",
           "sessions": 12
@@ -249,7 +245,11 @@
         },
         {
           "date": "2026-09-24",
-          "sessions": 2
+          "sessions": 12
+        },
+        {
+          "date": "2026-09-25",
+          "sessions": 1
         }
       ],
       "affiliateClicksByPage": {
@@ -271,7 +271,7 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-09-23T23:31:41.841Z",
+      "fetchedAt": "2026-09-24T23:49:37.514Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
