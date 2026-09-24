@@ -7,24 +7,31 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - name: デプロイ状態確認（直近3件）
+      - name: 直近デプロイのv13フル詳細（buildSkipped確認）
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
-          curl -sS "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=3&target=production" \
+          curl -sS "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=1&target=production" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" > /tmp/deps.json
+          cat /tmp/deps.json | jq -r '.deployments[0] | "sha=\(.meta.githubCommitSha) msg=\(.meta.githubCommitMessage | split("\n")[0])"'
+          LATEST_ID=$(jq -r '.deployments[0].uid' /tmp/deps.json)
+          echo "LATEST_ID=$LATEST_ID"
+          curl -sS "https://api.vercel.com/v13/deployments/$LATEST_ID?teamId=team_3ZA38DTbe02rLyjHXAaNuCs5" \
             -H "Authorization: Bearer $VERCEL_TOKEN" | \
-            jq -r '.deployments[] | "\(.createdAt) state=\(.state) sha=\(.meta.githubCommitSha // "n/a" | .[0:8]) msg=\(.meta.githubCommitMessage // "n/a" | split("\n")[0]) error=\(.errorMessage // "n/a")"'
+            jq '{id, readyState, createdAt, buildingAt, ready, target, buildSkipped, errorMessage}'
 
-      - name: /tasks ページ確認
+      - name: ビルドイベントログ
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
-          echo "=== /tasks ==="
-          curl -sSL -D - -o /tmp/tasks.html https://ceo-dashboard-alpha-livid.vercel.app/tasks
-          echo "=== HTTPステータス行は上記のとおり。本文抜粋 ==="
-          echo "=== dpl-id ==="
-          grep -o 'data-dpl-id="[^"]*"' /tmp/tasks.html || true
-          echo "=== ナビにタスク一覧タブがあるか ==="
-          grep -o "タスク一覧" /tmp/tasks.html | sort -u
+          LATEST_ID=$(jq -r '.deployments[0].uid' /tmp/deps.json)
+          curl -sS "https://api.vercel.com/v3/deployments/$LATEST_ID/events?teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=200" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" | jq -r '.[] | "\(.created // .date // "") \(.type // "") \(.payload.text // .text // "")"'
 
-      - name: /api/tasks 実データ確認
+      - name: 全PRODUCTIONデプロイ直近10件（重複pushによる横取りが起きていないか俯瞰）
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
-          curl -sS -w "\nHTTP_CODE:%{http_code}\n" https://ceo-dashboard-alpha-livid.vercel.app/api/tasks
+          curl -sS "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=10&target=production" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" | \
+            jq -r '.deployments[] | "\(.createdAt) state=\(.state) sha=\(.meta.githubCommitSha // "n/a" | .[0:8])"'
