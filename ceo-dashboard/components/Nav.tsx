@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 const links = [
   { href: '/column-review', label: '📉 改善レビュー' },
   { href: '/analytics',     label: '📊 アナリティクス' },
+  { href: '/tasks',         label: '📋 タスク一覧' },
 ];
 
 export default function Nav() {
