@@ -418,3 +418,13 @@ CEOダッシュボードのVercel Production デプロイが「Blocked」状態�
 5. rel="sponsored"等の品質基準が守られているか
 
 検査結果は「問題なし」で終わらせず、疑って探した上で「見つからなかった」と明記する。
+
+## 保育士転職ナビ（shikaku-navi内 /hoiku、2026-09-24 骨格実装）
+
+- shikaku-naviのVercelプロジェクト内のサブルート`/hoiku`として実装（新規ドメイン・新規プロジェクトなし）。本番URLは`https://shikaku.lens-navi.jp/hoiku`
+- **本体とのレイアウト分離**: 資格ナビ本体のページは`shikaku-navi/app/(shikaku)/`（ルートグループ。URLは変わらない）へ移し、本体のヘッダー・フッター・WebSite/Organization JSON-LDは`app/(shikaku)/layout.tsx`で出す。`/hoiku`は`app/hoiku/layout.tsx`で専用ヘッダー・フッターを出す。ルート`app/layout.tsx`はhtml/body・フォント・GAのみ。404（`app/not-found.tsx`）は本体ヘッダー・フッターを自前で描画
+- **回遊導線は最小限**: `/hoiku`から本体へのリンク、本体から`/hoiku`へのリンクはどちらも置いていない
+- **インデックス制御**: `shikaku-navi/lib/hoiku/config.ts`の`HOIKU_INDEXABLE`（現在`false`）。falseの間は`/hoiku`がnoindex,nofollow、`/hoiku/sitemap.xml`は空、robots.txtにも載せない。本体`/sitemap.xml`には最初から`/hoiku`を含めない。コンテンツが揃い実アフィリエイトリンクに差し替えたらtrueにする
+- データ: `lib/hoiku/services.ts`（サービス・順位・affiliateUrl）、`lib/hoiku/cases.ts`（目的別）。`affiliateUrl`は現在すべてダミー`#`。「要確認」「【仮】」「【ダミー】」「【要記入】」の箇所は公開前に公式情報・出典つきで差し替える
+- 口コミ枠は出典つきの実データのみ掲載する方針（創作した口コミは載せない）
+- 比較表`components/hoiku/HoikuCompareTable.tsx`は全列ソート対応。リンクは`rel="noopener noreferrer nofollow sponsored"`
