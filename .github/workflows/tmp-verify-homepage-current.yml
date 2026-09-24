@@ -1,0 +1,16 @@
+name: 一時調査・lens-naviトップページ本番状態を現時点で再確認
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 本番URL確認
+        run: |
+          curl -sSL -D - -o /tmp/home.html https://lens-navi.jp/
+          echo "=== 新ヒーロー/カテゴリセクションの文言確認 ==="
+          grep -o "目の悩みに寄り添う\|人気のコンタクトレンズを見てみる\|カテゴリから探す\|あなたの「見える」を、もっと快適に" /tmp/home.html | sort -u
+          echo "=== カテゴリラベル確認 ==="
+          grep -o "コンタクト<\|カラコン<\|眼鏡・サングラス<\|VR・スマートグラス<\|レーシック<" /tmp/home.html | sort -u
