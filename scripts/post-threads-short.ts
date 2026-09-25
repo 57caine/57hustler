@@ -10,6 +10,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import {
   KYUSEI, POSITION_MEANINGS, getDailyStar, getMonthlyStarForToday, getStarPositionIndex,
   getJstDayOfWeek, STAR_TO_TRIGRAM, selectHexagram, validateOneLiners, KYUSEI_CONTENT_CAUTION, getSeasonWordCaution,
+  EKIKYO_THEME_GUIDANCE,
 } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
@@ -178,7 +179,8 @@ ${getSeasonWordCaution()}`,
 ${ABSOLUTE_BAN}
 ${STYLE_GUIDE}
 ${KYUSEI_CONTENT_CAUTION}
-${getSeasonWordCaution()}`,
+${getSeasonWordCaution()}
+${EKIKYO_THEME_GUIDANCE}`,
           `今日の日盤中宮は${star}（${trigramLabel}に対応）です。
 易経の第${hex.num}卦「${hex.name}」を今日の卦として選びました。
 原文キーワード：「${hex.keyword}」
