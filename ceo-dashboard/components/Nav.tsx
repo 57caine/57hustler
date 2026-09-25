@@ -6,6 +6,7 @@ const links = [
   { href: '/column-review', label: '📉 改善レビュー' },
   { href: '/analytics',     label: '📊 アナリティクス' },
   { href: '/tasks',         label: '📋 タスク一覧' },
+  { href: '/report-log',    label: '📮 報告一覧' },
 ];
 
 export default function Nav() {
