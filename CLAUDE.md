@@ -436,6 +436,77 @@ CEOダッシュボードのデプロイが何度pushしても「Blocked」のま
   exit code 0でキャンセルされ続ける」状態が数分待っても変わらない場合は、待つのをやめて
   **意図的に実ファイルへ小さな変更を加えたコミット**をpushすること
 
+### 【重大障害】`ignoreCommand`が256文字制限を超え、lens-navi本番デプロイが約2.5日間全滅していた（2026-09-25発見・修正）
+
+オーナーから「Vercelから2 deployments failed for main at cf384c0という通知が40件以上届いている」との
+緊急報告を受けて調査した結果、**lens-navi本体（lens-navi.jp・www.lens-navi.jp）の本番デプロイが
+2026-09-22 17:43 UTC（コミット`f58d047`、上記「【最重要】」セクションの最初の修正コミット）以降、
+一度も成功していなかった**ことが判明した。
+
+- **実際のエラーメッセージ**（Vercel API `v6/deployments`の`errorMessage`フィールドより、憶測ではなく
+  実際のログをそのまま引用）:
+  ```
+  The `vercel.json` schema validation failed with the following message: `ignoreCommand` should NOT be longer than 256 characters
+  ```
+- **原因**: 上記「【最重要】」〜「続報」で対応を重ねるたびに、ルート`vercel.json`の`ignoreCommand`へ
+  `data/`配下の除外ファイルを1つずつ`':!data/xxx.json'`の形で追加し続けた結果、文字列長が
+  最初の修正時点（`f58d047`）で既に960文字、最終的に1026文字に達し、**Vercelが定める`ignoreCommand`の
+  256文字制限を超過していた**。この制限は今回まで認識しておらず、CLAUDE.mdにも記載していなかった
+  - 制限超過は`vercel.json`自体のスキーマ検証エラーを引き起こし、`buildSkipped: true`のまま
+    即座に`ERROR`状態でデプロイ全体が失敗する。ignoreCommandの中身（git diffロジック）が評価される
+    前の段階で弾かれるため、これまで調査してきた「exit code 0でキャンセル」系の問題（続報〜続報3）
+    とは全く別の、より根本的な失敗モードだった
+  - 影響範囲はlens-navi本体を指す**2つのVercelプロジェクト**（後述）。他5プロジェクト
+    （school-navi/shikaku-navi/shop-navi/yonaka-uranai/ceo-dashboard）の`ignoreCommand`は
+    いずれも256文字未満（106〜198文字）で無事だった
+- **影響**: 該当コミット以降の全pushで本番デプロイが失敗し続けていたため、**価格・アフィリエイトリンクの
+  自動更新（`update-prices.yml`、1日3回）を含む全ての変更が約2.5日間、本番に一切反映されていなかった**。
+  本番は最後に成功した古いデプロイのまま表示され続けていたため、サイト自体の閲覧は可能だった
+  （オーナー報告の「サイトは見られるが更新が止まっている」という状況と一致）
+- **【新規発見】Vercelプロジェクトが想定より多い**: 今回の調査で、Vercelチーム内に想定の6プロジェクトに
+  加えて計7プロジェクトが存在することが判明した:
+  | プロジェクト名 | プロジェクトID | ドメイン |
+  |---|---|---|
+  | lens-navi | `prj_giumlnQKdnPBBAKU6l5t81ol54AV` | www.lens-navi.jp・lens-navi.jp・lens-navi.vercel.app（**本物の本番**） |
+  | 57hustler | `prj_4yiljvIq7aiIKcIc7HejavrAceH4` | 57hustler.vercel.app（カスタムドメインなし） |
+  | 57hustler-yma5 | `prj_M3Z3MdwHCp9PsYXBQifzcGdrHACm` | shop.lens-navi.jp・57hustler-yma5.vercel.app |
+  | 57hustler-4oh3 | `prj_wSM1NwSVfGmsRVNjALz1fBIR4GXB` | 57hustler-4oh3.vercel.app（カスタムドメインなし） |
+  | ceo-dashboard | `prj_B033Bkfsk6LkJZNxS61Gc4Xvddva` | （既知） |
+  | shikaku-navi | `prj_AzWHIJ0iEkoVl2doBTJggxTKKoZf` | （既知） |
+  | school-navi | `prj_eXhePTF281NwZL3AaBhK3uRqsiye` | （既知） |
+  - `lens-navi`と`57hustler`の2プロジェクトは**同じGitHubリポジトリ（ルート、vercel.json）を監視しており、
+    今回の障害では両方が同時に同じエラーで失敗していた**。オーナーが報告した「57hustler・lens-navi両プロジェクト」
+    はこの2つを指していたと考えられる
+  - `57hustler-yma5`はshop.lens-navi.jpのドメインを持っており、`shop-navi`プロジェクトとは別物である可能性が高い
+    （`shop-navi`という名前のプロジェクトは別に存在する）。`57hustler-4oh3`はカスタムドメインなしの
+    孤立プロジェクトに見える。**これらの重複・孤立プロジェクトが実際に何のために存在するのか、
+    今削除・整理してよいものかは未調査**。誤って本番に使われているプロジェクトを消さないよう、
+    対応する場合はオーナー確認の上で慎重に行うこと
+- **対処**: `ignoreCommand`の判定ロジックを`scripts/vercel-ignore-lens-navi.sh`という
+  リポジトリ内のスクリプトファイルへ切り出し、ルート`vercel.json`の`ignoreCommand`は
+  `"sh scripts/vercel-ignore-lens-navi.sh"`という37文字の固定文字列にした。判定ロジック自体は
+  スクリプトファイル側にあるため文字数制限を今後気にする必要がなくなる。ロジックの中身
+  （他事業ディレクトリ・data配下の無関係ファイルを除外し、lens-navi本体が実際に使う4ファイルのみ
+  反応する）は変更していないが、`CLAUDE.md`・`AGENTS.md`単体の更新でも不要な再ビルドが走っていた
+  漏れも合わせて修正した
+- **確認**: 実際の過去コミット8パターン（価格更新／GA4更新／ceo-dashboard変更／CLAUDE.md単独更新／
+  ヒーロー刷新／存在しないSHAでのエラーケース等）に対しローカルで判定ロジックを再現し、全て意図通りの
+  結果になることを確認。修正pushの結果、Vercel API上で`lens-navi`・`57hustler`両プロジェクトとも
+  該当コミットが`READY`（error=n/a）になったことを確認し、さらに`https://lens-navi.jp/`へ実際にcurlして
+  新しいデプロイID（`dpl_4x2pcomYyqVt5nqHMVPbjm9pgupi`）が配信されていることも確認済み
+- **今後の教訓**:
+  1. **`ignoreCommand`は256文字以内という制限がある**（Vercelのスキーマ検証、`vercel.json`全体が
+     無効になり即ERRORで失敗する）。除外リストが今後も伸びる可能性がある場合は、最初から
+     ロジックをリポジトリ内のスクリプトファイルに切り出し、`ignoreCommand`は「そのスクリプトを
+     呼ぶだけ」の短い固定文字列にしておくこと（`ceo-dashboard/vercel.json`等、他プロジェクトも
+     除外対象が増えてきたら同様の対応を検討する。現時点でceo-dashboardは198文字とまだ余裕があるが、
+     256文字にかなり近い）
+  2. **Vercel APIの`errorMessage`は必ず実際に取得して引用すること**。「デプロイが失敗している」という
+     報告を受けたら、`v6/deployments`の`errorMessage`フィールドを直接確認するのが最速の一次情報源
+  3. **このチームのVercelプロジェクト一覧は想定より多い可能性がある**。プロジェクトIDを決め打ちせず、
+     `v9/projects`で一覧を取り、`v9/projects/{id}/domains`でドメイン紐付けを確認してから
+     「どのプロジェクトが本当に問題の対象か」を特定すること
+
 ## 自動コミットワークフローの一時停止（2026-09-22、オーナー承認済み）
 
 CEOダッシュボードのVercel Production デプロイが「Blocked」状態のまま滞留する問題の調査で、
