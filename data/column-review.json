@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T23:31:41.850Z",
+  "generatedAt": "2026-09-24T23:49:37.522Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -45,16 +45,16 @@
       "slug": "eyestrain-stretching-massage-guide",
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
-        "sessions": 12,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 178.63888225000002,
+        "sessions": 13,
+        "bounceRate": 0.46153846153846156,
+        "avgSessionDuration": 144.0002133076923,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション12件・affiliate_clickゼロ"
+        "セッション13件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 6,
@@ -79,16 +79,16 @@
       "slug": "megane-facial-shape-frame-2026",
       "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
       "metrics": {
-        "sessions": 11,
-        "bounceRate": 0.2727272727272727,
-        "avgSessionDuration": 60.94362027272728,
+        "sessions": 10,
+        "bounceRate": 0.2,
+        "avgSessionDuration": 67.9710977,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション11件・affiliate_clickゼロ"
+        "セッション10件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -113,16 +113,16 @@
       "slug": "sunglass-polarized-guide",
       "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
       "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 160.729242,
+        "sessions": 10,
+        "bounceRate": 0.4,
+        "avgSessionDuration": 149.0883612,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
+        "セッション10件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -315,40 +315,6 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/soft-vs-hard-contact-hikaku",
-      "slug": "soft-vs-hard-contact-hikaku",
-      "title": "soft-vs-hard-contact-hikaku",
-      "metrics": {
-        "sessions": 5,
-        "bounceRate": 0,
-        "avgSessionDuration": 164.6908454,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション5件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 5,
-        "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 77135
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "対応済み",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/uv-eye-care-sunglasses-uv-drops",
       "slug": "uv-eye-care-sunglasses-uv-drops",
       "title": "目の紫外線対策完全ガイド｜サングラス・UV目薬の選び方と効果的な使用法",
@@ -382,40 +348,6 @@
       "status": "未対応",
       "business": "lens-navi",
       "priority": "high",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/vr-movie-streaming-service-recommend-2026",
-      "slug": "vr-movie-streaming-service-recommend-2026",
-      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
-      "metrics": {
-        "sessions": 5,
-        "bounceRate": 0.4,
-        "avgSessionDuration": 52.8812028,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション5件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 6,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 67373
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
       "source": "auto-ga4"
     }
   ]
