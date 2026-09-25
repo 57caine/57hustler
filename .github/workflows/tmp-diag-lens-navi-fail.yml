@@ -7,44 +7,15 @@ jobs:
   diag:
     runs-on: ubuntu-latest
     steps:
-      - name: 各プロジェクトのドメイン紐付けを確認（どれが本物のlens-navi.jpか特定）
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      - name: 本番URL確認（新デプロイが実際に配信されているか）
         run: |
-          for pid in prj_M3Z3MdwHCp9PsYXBQifzcGdrHACm prj_wSM1NwSVfGmsRVNjALz1fBIR4GXB prj_giumlnQKdnPBBAKU6l5t81ol54AV prj_4yiljvIq7aiIKcIc7HejavrAceH4; do
-            echo "=== $pid ==="
-            curl -sS "https://api.vercel.com/v9/projects/$pid/domains?teamId=team_3ZA38DTbe02rLyjHXAaNuCs5" \
-              -H "Authorization: Bearer $VERCEL_TOKEN" | jq -r '.domains[]?.name // "（ドメインなし）"'
-          done
+          curl -sSL -D - -o /tmp/home.html https://lens-navi.jp/ | head -30
+          echo "=== dpl-id ==="
+          grep -o 'data-dpl-id="[^"]*"' /tmp/home.html || true
 
-      - name: 各プロジェクトの直近デプロイ状態とcf384c0周辺のエラー確認
+      - name: lens-naviプロジェクトの最新production alias確認
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
-          for pid in prj_M3Z3MdwHCp9PsYXBQifzcGdrHACm prj_wSM1NwSVfGmsRVNjALz1fBIR4GXB prj_giumlnQKdnPBBAKU6l5t81ol54AV prj_4yiljvIq7aiIKcIc7HejavrAceH4; do
-            echo "=== $pid: 直近5件のproductionデプロイ ==="
-            curl -sS "https://api.vercel.com/v6/deployments?projectId=$pid&teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=5&target=production" \
-              -H "Authorization: Bearer $VERCEL_TOKEN" | \
-              jq -r '.deployments[] | "\(.createdAt) state=\(.state) sha=\(.meta.githubCommitSha // "n/a" | .[0:8]) msg=\(.meta.githubCommitMessage // "n/a" | split("\n")[0]) error=\(.errorMessage // "n/a")"'
-          done
-
-      - name: cf384c0のデプロイのビルドログ（失敗している場合のエラー詳細）
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: |
-          for pid in prj_M3Z3MdwHCp9PsYXBQifzcGdrHACm prj_wSM1NwSVfGmsRVNjALz1fBIR4GXB prj_giumlnQKdnPBBAKU6l5t81ol54AV prj_4yiljvIq7aiIKcIc7HejavrAceH4; do
-            echo "############ $pid ############"
-            DEPS=$(curl -sS "https://api.vercel.com/v6/deployments?projectId=$pid&teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=10&target=production" \
-              -H "Authorization: Bearer $VERCEL_TOKEN")
-            DEPID=$(echo "$DEPS" | jq -r '.deployments[] | select(.meta.githubCommitSha=="cf384c07ee61c89d66fdd2ef990d9f8599984f92") | .uid')
-            if [ -z "$DEPID" ]; then
-              echo "cf384c0のデプロイ記録が見つかりません（このプロジェクトはこのコミットに反応していない可能性）"
-              continue
-            fi
-            echo "DEPID=$DEPID"
-            curl -sS "https://api.vercel.com/v13/deployments/$DEPID?teamId=team_3ZA38DTbe02rLyjHXAaNuCs5" \
-              -H "Authorization: Bearer $VERCEL_TOKEN" | jq '{id, readyState, errorMessage, buildSkipped}'
-            echo "--- ビルドイベントログ（末尾100行） ---"
-            curl -sS "https://api.vercel.com/v3/deployments/$DEPID/events?teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=300" \
-              -H "Authorization: Bearer $VERCEL_TOKEN" | jq -r '.[] | "\(.created // .date // "") \(.type // "") \(.payload.text // .text // "")"' | tail -100
-          done
+          curl -sS "https://api.vercel.com/v6/deployments?projectId=prj_giumlnQKdnPBBAKU6l5t81ol54AV&teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=1&target=production" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" | jq -r '.deployments[0] | "\(.uid) state=\(.state) sha=\(.meta.githubCommitSha // "n/a" | .[0:8])"'
