@@ -1,0 +1,23 @@
+name: 一時調査・lens-naviデプロイ失敗の緊急調査
+
+on:
+  workflow_dispatch:
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 全Vercelプロジェクト一覧（57hustler/lens-navi関連を特定）
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          curl -sS "https://api.vercel.com/v9/projects?teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=50" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" | \
+            jq -r '.projects[] | "\(.id) name=\(.name) prodBranch=\(.link.productionBranch // "n/a")"'
+
+      - name: チーム一覧確認（team_idが正しいか念のため）
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          curl -sS "https://api.vercel.com/v2/teams" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" | jq '.teams[] | {id, slug, name}'
