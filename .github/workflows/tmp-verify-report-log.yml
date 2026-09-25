@@ -1,0 +1,36 @@
+name: 一時調査・報告一覧タブの本番反映確認
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: デプロイ状態確認（直近3件）
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          curl -sS "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&teamId=team_3ZA38DTbe02rLyjHXAaNuCs5&limit=3&target=production" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" | \
+            jq -r '.deployments[] | "\(.createdAt) state=\(.state) sha=\(.meta.githubCommitSha // "n/a" | .[0:8]) msg=\(.meta.githubCommitMessage // "n/a" | split("\n")[0]) error=\(.errorMessage // "n/a")"'
+
+      - name: /report-log ページ確認
+        run: |
+          echo "=== /report-log ==="
+          curl -sSL -D - -o /tmp/rl.html https://ceo-dashboard-alpha-livid.vercel.app/report-log
+          echo "=== dpl-id ==="
+          grep -o 'data-dpl-id="[^"]*"' /tmp/rl.html || true
+          echo "=== ナビに報告一覧タブがあるか ==="
+          grep -o "報告一覧" /tmp/rl.html | sort -u
+
+      - name: /api/reports/confirm 疎通確認（存在しないidで404相当のエラーが返るか）
+        run: |
+          curl -sS -o /tmp/confirm.json -w "HTTP_CODE:%{http_code}\n" \
+            -X POST https://ceo-dashboard-alpha-livid.vercel.app/api/reports/confirm \
+            -H "Content-Type: application/json" -d '{"id":"__no_such_id__"}'
+          cat /tmp/confirm.json
+
+      - name: data/report-log.json がGitHub raw経由で取得できるか
+        run: |
+          curl -sS -w "\nHTTP_CODE:%{http_code}\n" https://raw.githubusercontent.com/57caine/57hustler/main/data/report-log.json
