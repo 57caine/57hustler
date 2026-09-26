@@ -11,18 +11,6 @@
     "credit": "enkuu smile",
     "creditUrl": "https://unsplash.com/@enkuu?utm_source=rakutabi&utm_medium=referral"
   },
-  "theme-onsen": {
-    "url": "https://images.unsplash.com/photo-1624517607060-b0bfafdb19a9?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8amFwYW5lc2UlMjBob3QlMjBzcHJpbmd8ZW58MXwwfHx8MTc5MDQyMjc4NXww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
-    "alt": "brown and black house on rock formation near body of water",
-    "credit": "Tayawee Supan",
-    "creditUrl": "https://unsplash.com/@banktayawee?utm_source=rakutabi&utm_medium=referral"
-  },
-  "theme-family": {
-    "url": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8ZmFtaWx5JTIwdHJhdmVsJTIwamFwYW58ZW58MXwwfHx8MTc5MDQyMjc4NXww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
-    "alt": "two women in purple and pink kimono standing on street",
-    "credit": "Sorasak",
-    "creditUrl": "https://unsplash.com/@boontohhgraphy?utm_source=rakutabi&utm_medium=referral"
-  },
   "theme-couple": {
     "url": "https://images.unsplash.com/photo-1735382124934-bed617fb1adf?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8Y291cGxlJTIwc3Vuc2V0JTIwamFwYW58ZW58MXwwfHx8MTc5MDQyMjc4Nnww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
     "alt": "Two people standing next to each other near a tree",
@@ -40,12 +28,6 @@
     "alt": "pink flowers",
     "credit": "AJ",
     "creditUrl": "https://unsplash.com/@ajny?utm_source=rakutabi&utm_medium=referral"
-  },
-  "season-summer": {
-    "url": "https://images.unsplash.com/photo-1542211873-d7bbb32b7c07?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8dHJvcGljYWwlMjBiZWFjaCUyMGphcGFufGVufDF8MHx8fDE3OTA0MjI3ODd8MA&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
-    "alt": "man standing on body of water",
-    "credit": "Ramon Kagie",
-    "creditUrl": "https://unsplash.com/@ramonkagie?utm_source=rakutabi&utm_medium=referral"
   },
   "season-autumn": {
     "url": "https://images.unsplash.com/photo-1507967669805-c23336beea5b?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8amFwYW4lMjBhdXR1bW4lMjBsZWF2ZXN8ZW58MXwwfHx8MTc5MDQyMjc4N3ww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
@@ -76,12 +58,6 @@
     "alt": "Traditional japanese buildings nestled in a mountain valley",
     "credit": "waa towaw",
     "creditUrl": "https://unsplash.com/@toowaaw?utm_source=rakutabi&utm_medium=referral"
-  },
-  "region-kansai": {
-    "url": "https://images.unsplash.com/photo-1717649389730-ba6d16053b43?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8a3lvdG8lMjBwYWdvZGF8ZW58MXwwfHx8MTc5MDQyMjc4OXww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
-    "alt": "a tall building with a tower in the middle of it",
-    "credit": "Leo Bayard",
-    "creditUrl": "https://unsplash.com/@leob_photography?utm_source=rakutabi&utm_medium=referral"
   },
   "region-kyushu": {
     "url": "https://images.unsplash.com/photo-1624517608532-c6cd07c012eb?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8a3l1c2h1JTIwbmF0dXJlfGVufDF8MHx8fDE3OTA0MjI3ODl8MA&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
