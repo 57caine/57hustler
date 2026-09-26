@@ -10,13 +10,16 @@
 
 # Vercel公開の仕組み（2026-09-26）
 
-- Vercelプロジェクト名 `rakutabi`（team_3ZA38DTbe02rLyjHXAaNuCs5）。**GitHub連携はしていない**
+- **公開URL: https://rakutabi-nine.vercel.app**（2026-09-26 初回公開。`rakutabi.vercel.app` は他者が使用済みのため自動で `-nine` が付いた）
+- Vercelプロジェクト名 `rakutabi`（ID `prj_Qd9d5vrHyLJuWUG0HAg1J2gcQlKr`、team_3ZA38DTbe02rLyjHXAaNuCs5）。**GitHub連携はしていない**
   - 連携するとモノレポへの全pushでビルド判定が走り、同時ビルド枠1の環境で他事業のデプロイ待ち行列を圧迫するため
     （ルートCLAUDE.md「Vercel Ignored Build Step」の障害履歴参照）
 - 公開は `.github/workflows/rakutabi-hotels.yml` → `rakutabi/scripts/vercel-deploy.sh` で行う。
   GitHub Actions上で `vercel build` し、`vercel deploy --prebuilt --prod` で成果物だけをアップロードする（Vercel側のビルド枠を使わない）
   - `rakutabi/` ディレクトリから直接デプロイするため、Vercelプロジェクト設定上の Root Directory は空（＝rakutabi直下がルート）。
     実質的に「ルートディレクトリ: rakutabi」と同じ
+- 公開後、同ワークフロー内で `scripts/verify-production.sh` が全ページ（約750）を機械チェックする
+  （HTTP 200・h1・noindex・送客リンクのsponsored/計測属性・アフィリエイトなし楽天リンクが無いこと）
 - 起動条件：`rakutabi/**` の変更をpushしたとき（main・`claude/rakutabi-skeleton-impl-gzyecr`）、手動実行、毎日05:00 JST（mainにマージ後のみ有効）
   - **scheduleはmainにあるワークフローでしか動かない**。mainマージ前は、データ（次の土曜日の空室）は自動更新されない
 - 楽天APIはGitHub Actionsからのみ呼ぶ（閲覧者のブラウザ・Vercelからは呼ばない）ため、楽天ウェブサービスの

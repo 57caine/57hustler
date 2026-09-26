@@ -105,4 +105,6 @@ jobs:
             curl -sS -D - -o /dev/null -X POST "${url}/api/click" -d "{\"hotelNo\":${hotel},\"placement\":\"healthcheck\",\"page\":\"/deploy-check\"}" | grep -iE '^HTTP|x-click-recorded'
             curl -sS -o /tmp/stats.html -w "stats: HTTP %{http_code}\n" "${url}/stats"
             grep -o 'Vercel Blob）が未接続[^<]*\|[0-9,]*<span[^>]*>クリック（累計）' /tmp/stats.html | head -1
+            echo "--- 全ページの機械チェック ---"
+            bash scripts/verify-production.sh "${url}"
           done
