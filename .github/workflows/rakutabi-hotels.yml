@@ -1,0 +1,62 @@
+name: 落旅くん 楽天トラベルAPI接続確認・宿泊施設データ取得
+
+# 開発環境からは rakuten.co.jp に直接アクセスできないため、API接続確認とデータ取得はActions上で行う。
+# 現時点では「API連携コードを変更したpush時」と手動実行のみ。
+# 定期実行（schedule）は、ドメイン・Vercelプロジェクト・アフィリエイトIDが揃い、本公開の判断が出てから有効化する。
+on:
+  push:
+    paths:
+      - 'rakutabi/lib/rakuten-travel.ts'
+      - 'rakutabi/lib/site-config.ts'
+      - 'rakutabi/scripts/**'
+      - '.github/workflows/rakutabi-hotels.yml'
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '0 20 * * *'   # 05:00 JST
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    defaults:
+      run:
+        working-directory: rakutabi
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Node.js セットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: rakutabi/package-lock.json
+
+      - name: 依存関係インストール
+        run: npm ci
+
+      - name: 楽天トラベルAPI 接続確認（テスト取得）
+        run: npm run test:api
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+          RAKUTABI_RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTABI_RAKUTEN_AFFILIATE_ID }}
+
+      - name: 宿泊施設データ取得
+        run: npm run fetch:hotels
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+          RAKUTABI_RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTABI_RAKUTEN_AFFILIATE_ID }}
+
+      # push先は起動元のブランチ（明示指定なし）。data/hotels.json はトリガー対象外のため再実行ループにはならない
+      - name: 変更をコミット・プッシュ
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/hotels.json
+          git diff --staged --quiet || git commit -m "chore: 落旅くん 宿泊施設データ更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

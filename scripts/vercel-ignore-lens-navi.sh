@@ -18,7 +18,7 @@
 PREV="${VERCEL_GIT_PREVIOUS_SHA:-HEAD^}"
 
 git diff --quiet "$PREV" HEAD -- . \
-  :!school-navi :!shikaku-navi :!shop-navi :!yonaka-uranai :!ceo-dashboard :!.github :!data \
+  :!school-navi :!shikaku-navi :!shop-navi :!yonaka-uranai :!ceo-dashboard :!rakutabi :!.github :!data \
   :!CLAUDE.md :!AGENTS.md
 CODE_DIFF=$?
 

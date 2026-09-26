@@ -147,6 +147,7 @@
 | lens-navi（コンタクト） | `/`（ルート） | `main` |
 | school-navi（プログラミングスクール） | `school-navi/` | `main` |
 | shikaku-navi（資格） | `shikaku-navi/` | `main` |
+| 落旅くん（仮称・旅行比較、骨格実装段階。Vercelプロジェクト未作成） | `rakutabi/` | 未設定（詳細は`rakutabi/CLAUDE.md`） |
 
 ## データファイル構成（lens-navi）
 
