@@ -35,7 +35,7 @@ export default function FeaturedProducts() {
                 href={product.href}
                 target={product.isDummy ? undefined : '_blank'}
                 rel={product.isDummy ? undefined : 'noopener noreferrer nofollow sponsored'}
-                className="group block overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-shadow hover:shadow-md no-underline"
+                className="group block overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-md transition-shadow hover:shadow-lg no-underline"
               >
                 <div className={`flex aspect-square w-full items-center justify-center ${product.categoryColorClass.split(' ')[0]}`}>
                   {product.imageUrl ? (
