@@ -1,0 +1,29 @@
+name: tmp-verify
+on:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: curl column list and articles
+        run: |
+          for p in "column" "column/karakon-shoshinsha-guide" "column/2week-contact-osusume" "column/ranshi-contact-ranking-2025"; do
+            echo "=== /$p ==="
+            curl -s "https://www.lens-navi.jp/$p" -o /tmp/body.html
+            echo "bg-navy-900 count: $(grep -o 'bg-navy-900' /tmp/body.html | wc -l)"
+            echo "bg-sky-100 text-sky-700 badge count: $(grep -o 'bg-sky-100 text-sky-700' /tmp/body.html | wc -l)"
+            echo "bg-[#bf0000] count (should be 0): $(grep -o 'bg-\[#bf0000\]' /tmp/body.html | wc -l)"
+            echo "rainbow category badges (should be 0): $(grep -oE '(bg|text)-(pink|violet|purple|indigo|emerald|cyan|orange|rose)-(100|700) (text|px)' /tmp/body.html | wc -l)"
+          done
+
+      - name: check compiled CSS for the fixed selector
+        run: |
+          curl -s "https://www.lens-navi.jp/column/karakon-shoshinsha-guide" -o /tmp/page.html
+          CSS_URLS=$(grep -oE '/_next/static/chunks/[a-zA-Z0-9_.-]+\.css' /tmp/page.html | sort -u)
+          echo "CSS files: $CSS_URLS"
+          for url in $CSS_URLS; do
+            curl -s "https://www.lens-navi.jp$url" -o /tmp/style.css
+            echo "--- $url ---"
+            echo "old broad selector (hb.afl.rakuten as href attr selector, should be 0): $(grep -o 'a\[href\*=.hb\.afl\.rakuten' /tmp/style.css | wc -l)"
+            echo "affiliate-btn rule present: $(grep -o '.affiliate-btn' /tmp/style.css | wc -l)"
+          done
