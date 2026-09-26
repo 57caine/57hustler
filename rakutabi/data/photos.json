@@ -64,5 +64,35 @@
     "alt": "brown and white house near lake surrounded by green trees during daytime",
     "credit": "Tayawee Supan",
     "creditUrl": "https://unsplash.com/@banktayawee?utm_source=rakutabi&utm_medium=referral"
+  },
+  "hero": {
+    "url": "https://images.unsplash.com/photo-1560863244-387447ab62c4?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8NHx8bGFrZSUyMGFzaGklMjBoYWtvbmV8ZW58MXwwfHx8MTc5MDQyMzI5Mnww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "man standing on concrete dock",
+    "credit": "Mark Hang Fung So",
+    "creditUrl": "https://unsplash.com/@17somh1?utm_source=rakutabi&utm_medium=referral"
+  },
+  "theme-onsen": {
+    "url": "https://images.unsplash.com/photo-1644413638617-02369c89c156?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8b25zZW58ZW58MXwwfHx8MTc5MDQyMzI5Mnww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "a large pool of water next to a tall building",
+    "credit": "Roméo A.",
+    "creditUrl": "https://unsplash.com/@gronemo?utm_source=rakutabi&utm_medium=referral"
+  },
+  "theme-family": {
+    "url": "https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8ZmFtaWx5JTIwdmFjYXRpb258ZW58MXwwfHx8MTc5MDQyMzI5M3ww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "man, woman and child holding hands on seashore",
+    "credit": "Natalya Zaritskaya",
+    "creditUrl": "https://unsplash.com/@goodmood77?utm_source=rakutabi&utm_medium=referral"
+  },
+  "season-summer": {
+    "url": "https://images.unsplash.com/photo-1558497346-2668653247c7?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8NHx8b2tpbmF3YSUyMGJlYWNofGVufDF8MHx8fDE3OTA0MjMyOTN8MA&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "people walking in seashore near mountain",
+    "credit": "Roméo A.",
+    "creditUrl": "https://unsplash.com/@gronemo?utm_source=rakutabi&utm_medium=referral"
+  },
+  "region-kansai": {
+    "url": "https://images.unsplash.com/photo-1503640538573-148065ba4904?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8Mnx8a3lvdG8lMjB0ZW1wbGV8ZW58MXwwfHx8MTc5MDQyMzI5M3ww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "pagoda house near body of water during daytime",
+    "credit": "Erik Eastman",
+    "creditUrl": "https://unsplash.com/@erikeae?utm_source=rakutabi&utm_medium=referral"
   }
 }
