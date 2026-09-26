@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 落旅くんを Vercel に公開する（GitHub Actions から実行）。
+# 楽旅くんを Vercel に公開する（GitHub Actions から実行）。
 #
 # - Vercelプロジェクト「rakutabi」が無ければ作成する（GitHub連携はしない。
 #   連携するとモノレポへの全pushでビルド判定が走り、他事業のデプロイ待ち行列を圧迫するため。

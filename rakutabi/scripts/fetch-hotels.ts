@@ -235,6 +235,8 @@ async function main() {
     }
     if (h.conditions.includes('kids')) addUnique(h.themes, ['family']);
     if (COUPLE_KEYWORDS.test(h.special)) addUnique(h.themes, ['couple']);
+    // 素泊まり：朝食・夕食とも付かないプランが1つでもあれば該当（プランを6件に絞る前に判定する）
+    if (h.plans.some((p) => !p.withBreakfast && !p.withDinner)) addUnique(h.conditions, ['roomOnly']);
     h.plans = h.plans
       .sort((a, b) => a.adults - b.adults || (a.total ?? Infinity) - (b.total ?? Infinity))
       .slice(0, MAX_PLANS);

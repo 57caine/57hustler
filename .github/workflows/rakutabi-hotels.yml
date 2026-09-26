@@ -1,4 +1,4 @@
-name: 落旅くん 楽天トラベルAPI接続確認・宿泊施設データ取得・Vercel公開
+name: 楽旅くん 楽天トラベルAPI接続確認・宿泊施設データ取得・Vercel公開
 
 # 開発環境からは rakuten.co.jp / Vercel API に直接アクセスできないため、すべてActions上で行う。
 #   1. 楽天トラベルAPIの接続確認
@@ -73,7 +73,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Actions Bot"
           git add data/hotels.json
-          git diff --staged --quiet || git commit -m "chore: 落旅くん 宿泊施設データ更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
+          git diff --staged --quiet || git commit -m "chore: 楽旅くん 宿泊施設データ更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
 

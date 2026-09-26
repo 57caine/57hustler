@@ -147,7 +147,7 @@
 | lens-navi（コンタクト） | `/`（ルート） | `main` |
 | school-navi（プログラミングスクール） | `school-navi/` | `main` |
 | shikaku-navi（資格） | `shikaku-navi/` | `main` |
-| 落旅くん（仮称・旅行比較、vercel.appで需要検証中） | `rakutabi/` | GitHub連携なし。Actionsから公開（詳細は`rakutabi/CLAUDE.md`） |
+| 楽旅くん（仮称・旅行比較、vercel.appで需要検証中） | `rakutabi/` | GitHub連携なし。Actionsから公開（詳細は`rakutabi/CLAUDE.md`） |
 
 ## データファイル構成（lens-navi）
 

@@ -8,7 +8,7 @@
  * （エリア×テーマの掛け合わせページ /area/[area]/[theme]）を軸にする。
  */
 
-export const SITE_NAME = '落旅くん';
+export const SITE_NAME = '楽旅くん';
 export const SITE_CATCH = '知らない景色に、会いに行こう。';
 export const SITE_DESCRIPTION =
   '週末旅行・温泉旅行・子連れ旅行・カップル旅行・一人旅。エリアとテーマの組み合わせから、楽天トラベル掲載の宿を比較できます。';
@@ -206,7 +206,7 @@ export function getFeature(slug: string): Feature | undefined {
  * source: 'api' は楽天トラベルAPIの検索条件で確認できたもの、
  * source: 'text' は施設紹介文（API取得）のキーワードから判定したもの（目安）。
  */
-export type ConditionKey = 'onsen' | 'meal' | 'breakfast' | 'station' | 'room' | 'view' | 'kids';
+export type ConditionKey = 'onsen' | 'meal' | 'breakfast' | 'roomOnly' | 'station' | 'room' | 'view' | 'kids';
 export type ConditionGroup = '食事' | '温泉' | '客室' | '親子' | '立地・景色';
 
 export interface Condition {
@@ -220,6 +220,8 @@ export interface Condition {
 export const CONDITIONS: Condition[] = [
   { key: 'meal', label: '2食付きプランあり', group: '食事', source: 'api' },
   { key: 'breakfast', label: '朝食付きプランあり', group: '食事', source: 'api' },
+  // 楽天の空室検索に素泊まりの絞り込み条件は無いため、空室プランの食事フラグ（朝食なし・夕食なし）で判定する
+  { key: 'roomOnly', label: '素泊まりプランあり', group: '食事', source: 'api' },
   { key: 'onsen', label: '温泉あり', group: '温泉', source: 'api' },
   { key: 'room', label: '露天風呂付客室など', group: '客室', source: 'text', keywords: /露天風呂付|客室露天|スイート|和洋室|離れ/ },
   { key: 'kids', label: '子連れ向け', group: '親子', source: 'text', keywords: /キッズ|お子様|子供|子ども|ファミリー|赤ちゃん|ベビー/ },

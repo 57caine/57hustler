@@ -202,6 +202,7 @@ export function getHighlights(hotel: Hotel): string[] {
   if (hotel.conditions.includes('onsen')) points.push('温泉あり（楽天トラベルの検索条件で確認）');
   if (hotel.conditions.includes('meal')) points.push('夕食・朝食付きのプランあり');
   else if (hotel.conditions.includes('breakfast')) points.push('朝食付きのプランあり');
+  if (hotel.conditions.includes('roomOnly')) points.push('素泊まりのプランあり');
   if (hotel.nearestStation) points.push(`最寄り駅は${hotel.nearestStation}駅`);
   if (hotel.conditions.includes('kids')) points.push('施設紹介文に子ども向けの設備・サービスの記載あり');
   return points;

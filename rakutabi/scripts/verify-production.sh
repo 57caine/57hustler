@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 公開中の落旅くんの全ページを機械的に確認する（GitHub Actions から実行。rakutabi/ ディレクトリで実行）
+# 公開中の楽旅くんの全ページを機械的に確認する（GitHub Actions から実行。rakutabi/ ディレクトリで実行）
 #
 # 確認内容（1件でも不合格があれば exit 1）:
 #   - 全ページが HTTP 200 を返し、h1 と noindex が入っていること
@@ -17,7 +17,7 @@ const themes = pick(/slug: \x27(weekend|onsen|family|couple|solo)\x27/g);
 const regions = pick(/\{ slug: \x27([a-z]+)\x27, name: \x27[^\x27]+\x27, lead:/g);
 const areas = pick(/\{ key: \x27([a-z]+)\x27, name:/g);
 const features = pick(/slug: \x27([a-z]+-[a-z]+)\x27,\n    title:/g);
-const out = ["/", "/about", "/terms", "/privacy", "/contact", "/operator", "/search", "/search?q=%E7%AE%B1%E6%A0%B9"];
+const out = ["/", "/about", "/terms", "/privacy", "/contact", "/operator", "/search", "/search?q=%E7%AE%B1%E6%A0%B9", "/search?meal=roomOnly"];
 themes.forEach((t) => out.push(`/theme/${t}`));
 regions.forEach((r) => out.push(`/region/${r}`));
 features.forEach((f) => out.push(`/feature/${f}`));
