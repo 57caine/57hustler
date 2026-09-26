@@ -24,8 +24,15 @@ export const ENDPOINTS = {
   simpleHotelSearch: `${BASE}/SimpleHotelSearch/20260731`,
   vacantHotelSearch: `${BASE}/VacantHotelSearch/20170426`,
   hotelDetailSearch: `${BASE}/HotelDetailSearch/20260731`,
-  getAreaClass: `${BASE}/GetAreaClass/20131024`,
 } as const;
+
+/**
+ * 地区コードAPIは 20131024 だと「API Configuration not found」になった（2026-09-26 Actions上で確認）。
+ * 正しいバージョンが未確定のため、接続確認スクリプトで候補を順に試す。
+ */
+export const GET_AREA_CLASS_CANDIDATES = ['20260731', '20140210', '20131024'].map(
+  (v) => `${BASE}/GetAreaClass/${v}`,
+);
 
 export interface RakutenCredentials {
   applicationId: string;

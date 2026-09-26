@@ -13,7 +13,7 @@
  */
 
 import { AREAS } from '../lib/site-config';
-import { callApi, credentialsFromEnv, ENDPOINTS, flattenHotels, sleep } from '../lib/rakuten-travel';
+import { callApi, credentialsFromEnv, ENDPOINTS, flattenHotels, GET_AREA_CLASS_CANDIDATES, sleep, type ApiResult } from '../lib/rakuten-travel';
 import { nextSaturdayJst } from './lib/dates';
 
 type Row = { api: string; result: string; detail: string };
@@ -47,7 +47,13 @@ async function main() {
 
   // 1. GetAreaClass
   console.log('\n=== 1. 地区コードAPI (GetAreaClass) ===');
-  const area = await callApi(ENDPOINTS.getAreaClass, {}, cred);
+  let area: ApiResult = { ok: false, statusCode: 0, error: '未実行' };
+  for (const endpoint of GET_AREA_CLASS_CANDIDATES) {
+    area = await callApi(endpoint, {}, cred);
+    console.log(`  ${endpoint.split('/').pop()}: ${area.ok ? '成功' : `失敗 HTTP ${area.statusCode} ${area.error}`}`);
+    if (area.ok) break;
+    await sleep(1500);
+  }
   if (area.ok) {
     const codes = new Set<string>();
     collectAreaCodes(area.data, null, codes);
