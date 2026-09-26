@@ -3,13 +3,14 @@
  *
  * 「週盤」は九星気学の古典的な概念ではないため、
  * このスクリプトが実行される月曜日の日盤中宮星を「今週の中宮星」として扱う。
- * 各星の一言は「⚪一白｜一言」の1行フォーマットで、8〜12文字・完結文・助詞で終わらないルール。
+ * 各星の一言は「⚪一白｜一言」の1行フォーマットで、8〜18文字・完結文・助詞で終わらないルール。
  * 生成後に機械チェックし、超過があれば再生成する（slice等での強制切りはしない）。
  */
 
 import Anthropic from '@anthropic-ai/sdk';
 import {
   KYUSEI, POSITION_MEANINGS, getDailyStar, getStarPositionIndex, getJstDayOfWeek, validateOneLiners, KYUSEI_CONTENT_CAUTION, getSeasonWordCaution,
+  MAX_ONELINER_LENGTH,
 } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
@@ -39,7 +40,7 @@ ${positionInfo}
 
 週盤「${weekStar.name}」＋各星の回座宮の組み合わせから、
 その星にとって「この1週間、どんな行動指針・心がけで過ごすとよいか」を読み取り、
-各星のテーマを8〜12文字で、意味が必ず完結する文にすること。
+各星のテーマを8〜18文字で、意味が必ず完結する文にすること。
 
 【厳守】
 - 象意の言い換えは絶対NG。「地盤を固める」「じっくり取り組む」などは禁止
@@ -48,7 +49,7 @@ ${positionInfo}
   良い例：「新しい縁を育てる週」「守りを固める週」「発信すると伸びる」
   NG例：「信用でコミュニケーシ」（単語の途中で切れている）「中央で変化の核心を動」（助詞で切れている）
 - 体言止め・動詞終わりのどちらでもよい。ですます調不要
-- 12文字を1文字でも超える内容は、要素を削って短くまとめる（尻切れにしない）
+- 18文字を1文字でも超える内容は、要素を削って短くまとめる（尻切れにしない）
 
 以下のJSONのみ出力（前置き不要）：
 {"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":"","9":""}`,
@@ -129,8 +130,8 @@ async function main() {
       themes = candidate;
       break;
     }
-    const tooLong = Object.entries(candidate).filter(([, v]) => v.length > 12);
-    console.warn(`⚠️ 試行${attempt}: 12文字を超えるテーマを検出（${tooLong.map(([k, v]) => `${k}:「${v}」`).join(', ')}） → 再生成`);
+    const tooLong = Object.entries(candidate).filter(([, v]) => v.length > MAX_ONELINER_LENGTH);
+    console.warn(`⚠️ 試行${attempt}: ${MAX_ONELINER_LENGTH}文字を超えるテーマを検出（${tooLong.map(([k, v]) => `${k}:「${v}」`).join(', ')}） → 再生成`);
   }
   if (themes === null) {
     console.warn('⚠️ 3回試行しても文字数チェックを通過できなかったため、今回の投稿をスキップします');
