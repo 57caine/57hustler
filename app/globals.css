@@ -43,9 +43,15 @@
   color: #0f172a;
 }
 
-/* Affiliate CTA button — 深いネイビー（2026-09-26リブランディングでRakuten固定赤から変更） */
-#article-body a[href*="hb.afl.rakuten.co.jp"],
-#article-body a[href*="search.rakuten.co.jp"],
+/* Affiliate CTA button — 深いネイビー（2026-09-26リブランディングでRakuten固定赤から変更）。
+   .affiliate-btnクラスを明示的に付けたリンクのみに適用するopt-in方式。
+   以前は`#article-body a[href*="hb.afl.rakuten.co.jp"]`のような href全体一致セレクタで
+   全リンクを強制スタイル（!important）していたが、記事本文中のカード型リンク（自前で
+   bg-white等の背景を持つ商品カード）や単なる本文中の引用テキストリンクまで無差別に
+   navy背景の見た目に上書きしてしまうバグがあった（2026-09-26 Phase 3で発見・修正。
+   詳細はCLAUDE.md「サイト全体リブランディング」参照）。記事内の全楽天リンクは既に
+   自前でボタン相当のTailwindクラスを持っているため、このopt-inクラスは現状未使用だが、
+   今後ボタン化したい単純テキストリンクがあれば`.affiliate-btn`を明示的に付与すること。 */
 .affiliate-btn {
   display: inline-block;
   background-color: var(--color-navy-900) !important;
@@ -59,14 +65,10 @@
   transition: opacity 0.15s;
   line-height: 1.4;
 }
-#article-body a[href*="hb.afl.rakuten.co.jp"]:hover,
-#article-body a[href*="search.rakuten.co.jp"]:hover,
 .affiliate-btn:hover {
   opacity: 0.85;
 }
 @media (max-width: 640px) {
-  #article-body a[href*="hb.afl.rakuten.co.jp"],
-  #article-body a[href*="search.rakuten.co.jp"],
   .affiliate-btn {
     display: block;
     text-align: center;

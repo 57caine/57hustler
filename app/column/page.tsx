@@ -11,31 +11,25 @@ export const metadata: Metadata = {
   description: 'カラコンの選び方・韓国ブランドから、コンタクトレンズのBC解説、眼鏡の選び方、VRゴーグル・レーシック費用・ドライアイ対策まで。目に関する全記事一覧。',
 };
 
-const categoryColors: Record<string, string> = {
-  '度数・処方箋': 'bg-purple-100 text-purple-700',
-  '購入ガイド': 'bg-emerald-100 text-emerald-700',
-  '商品比較': 'bg-slate-100 text-slate-700',
-  'BC選び方': 'bg-sky-100 text-sky-700',
-  '眼鏡・サングラス': 'bg-indigo-100 text-indigo-700',
-  'VR・スマートグラス': 'bg-violet-100 text-violet-700',
-  'レーシック': 'bg-emerald-100 text-emerald-700',
-  'アイケア・目薬': 'bg-cyan-100 text-cyan-700',
-  '目のグッズ': 'bg-orange-100 text-orange-700',
-  'カラコン': 'bg-pink-100 text-pink-700',
+// カテゴリバッジは全カテゴリ共通のブルー単色に統一（2026-09-26リブランディング Phase 3）。
+// カテゴリ間の区別はラベルテキスト・サムネイルアイコンで行う。
+const CATEGORY_BADGE_CLASS = 'bg-sky-100 text-sky-700';
+
+const CATEGORY_ICON: Record<string, LucideIcon> = {
+  '購入ガイド': ShoppingCart,
+  '度数・処方箋': Eye,
+  '商品比較': Scale,
+  'カラコン': Sparkles,
+  'アイケア・目薬': Droplet,
+  'レーシック': Stethoscope,
+  'VR・スマートグラス': Headset,
+  '眼鏡・サングラス': Glasses,
+  '目のグッズ': ShoppingBag,
+  'BC選び方': ShoppingCart,
 };
 
-const categoryThemes: Record<string, { startColor: string; endColor: string; Icon: LucideIcon }> = {
-  '購入ガイド': { startColor: '#1565c0', endColor: '#1976d2', Icon: ShoppingCart },
-  '度数・処方箋': { startColor: '#00695c', endColor: '#00897b', Icon: Eye },
-  '商品比較': { startColor: '#4527a0', endColor: '#512da8', Icon: Scale },
-  'カラコン': { startColor: '#ad1457', endColor: '#c2185b', Icon: Sparkles },
-  'アイケア・目薬': { startColor: '#2e7d32', endColor: '#388e3c', Icon: Droplet },
-  'レーシック': { startColor: '#00695c', endColor: '#00897b', Icon: Stethoscope },
-  'VR・スマートグラス': { startColor: '#4527a0', endColor: '#512da8', Icon: Headset },
-  '眼鏡・サングラス': { startColor: '#37474f', endColor: '#455a64', Icon: Glasses },
-  '目のグッズ': { startColor: '#e65100', endColor: '#f57c00', Icon: ShoppingBag },
-  'BC選び方': { startColor: '#1565c0', endColor: '#1976d2', Icon: ShoppingCart },
-};
+const THUMBNAIL_START = '#0284c7'; // sky-600
+const THUMBNAIL_END = '#1d4ed8'; // blue-700
 
 const SECTIONS = [
   {
@@ -43,9 +37,9 @@ const SECTIONS = [
     label: 'カラコン',
     Icon: Sparkles,
     href: '/karakon',
-    bg: 'bg-gradient-to-r from-pink-500 to-rose-600',
-    border: 'border-pink-200',
-    badge: 'bg-pink-600 text-white',
+    bg: 'bg-gradient-to-r from-blue-500 to-blue-700',
+    border: 'border-blue-200',
+    badge: 'bg-blue-600 text-white',
     filter: (c: { category?: string; section?: string }) =>
       c.category === 'カラコン' || c.category === 'karakon' || (c as { section?: string }).section === 'karakon',
   },
@@ -54,9 +48,9 @@ const SECTIONS = [
     label: '眼鏡・VR・レーシック・アイケア',
     Icon: Glasses,
     href: '/megane',
-    bg: 'bg-gradient-to-r from-indigo-500 to-violet-600',
-    border: 'border-indigo-200',
-    badge: 'bg-indigo-600 text-white',
+    bg: 'bg-gradient-to-r from-sky-600 to-blue-700',
+    border: 'border-sky-200',
+    badge: 'bg-sky-700 text-white',
     filter: (c: { category?: string; section?: string }) => {
       const s = (c as { section?: string }).section;
       return s === 'megane' || s === 'vr' || s === 'lasik' || s === 'eye-care' || s === 'eye-goods';
@@ -80,7 +74,7 @@ const SECTIONS = [
 
 function ArticleCard({ column }: { column: (typeof allColumns)[0] }) {
   const cat = column.category ?? '';
-  const theme = categoryThemes[cat] ?? { startColor: '#37474f', endColor: '#455a64', Icon: Newspaper };
+  const Icon = CATEGORY_ICON[cat] ?? Newspaper;
 
   return (
     <Link href={`/column/${column.slug}`} className="group block">
@@ -88,9 +82,9 @@ function ArticleCard({ column }: { column: (typeof allColumns)[0] }) {
         {/* Thumbnail */}
         <div
           className="h-[120px] flex items-center justify-center"
-          style={{ background: `linear-gradient(135deg, ${theme.startColor}, ${theme.endColor})` }}
+          style={{ background: `linear-gradient(135deg, ${THUMBNAIL_START}, ${THUMBNAIL_END})` }}
         >
-          <theme.Icon className="w-12 h-12 text-white" />
+          <Icon className="w-12 h-12 text-white" />
         </div>
         {/* Content */}
         <div className="p-4 flex-1 flex flex-col">
@@ -99,7 +93,7 @@ function ArticleCard({ column }: { column: (typeof allColumns)[0] }) {
           </h3>
           <div className="flex items-center justify-between mt-auto">
             <span className="text-xs text-gray-500">約{column.readingTime}分</span>
-            <span className="text-xs px-2 py-1 rounded-full text-white" style={{ background: theme.startColor }}>
+            <span className={`text-xs px-2 py-1 rounded-full font-medium ${CATEGORY_BADGE_CLASS}`}>
               {cat}
             </span>
           </div>

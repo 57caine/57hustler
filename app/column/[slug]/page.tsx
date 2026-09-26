@@ -67,18 +67,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const categoryColors: Record<string, string> = {
-  '度数・処方箋': 'bg-purple-100 text-purple-700',
-  '購入ガイド': 'bg-emerald-100 text-emerald-700',
-  '商品比較': 'bg-slate-100 text-slate-700',
-  'BC選び方': 'bg-sky-100 text-sky-700',
-  '眼鏡・サングラス': 'bg-indigo-100 text-indigo-700',
-  'VR・スマートグラス': 'bg-violet-100 text-violet-700',
-  'レーシック': 'bg-emerald-100 text-emerald-700',
-  'アイケア・目薬': 'bg-cyan-100 text-cyan-700',
-  '目のグッズ': 'bg-orange-100 text-orange-700',
-  'カラコン': 'bg-pink-100 text-pink-700',
-};
+// カテゴリバッジは全カテゴリ共通のブルー単色に統一（2026-09-26リブランディング Phase 3）。
+const CATEGORY_BADGE_CLASS = 'bg-sky-100 text-sky-700';
 
 export default async function ColumnPage({ params }: Props) {
   const { slug } = await params;
@@ -131,7 +121,7 @@ export default async function ColumnPage({ params }: Props) {
         {/* ヘッダー */}
         <div className="mb-6">
           <div className="flex items-center gap-2 mb-3">
-            <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${categoryColors[column.category] ?? 'bg-gray-100 text-gray-600'}`}>
+            <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${CATEGORY_BADGE_CLASS}`}>
               {column.category}
             </span>
             <span className="text-xs text-gray-400">{column.readingTime}分で読める</span>
@@ -167,17 +157,17 @@ export default async function ColumnPage({ params }: Props) {
           const cta = eyeSection ? SECTION_CTA[eyeSection] : null;
           if (cta) {
             return (
-              <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-8">
+              <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 mb-8">
                 <p className="text-sm font-bold text-gray-800 mb-3">{cta.label}</p>
                 <a href={RAKUTEN(cta.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
-                  className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+                  className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-colors">
                   楽天市場で見る →
                 </a>
               </div>
             );
           }
           return (
-            <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-3">
+            <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-3">
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-bold text-gray-800">コンタクトレンズをお得に購入する</p>
                 <p className="text-xs text-gray-500 mt-0.5">楽天市場で最安値をチェック</p>
@@ -218,13 +208,13 @@ export default async function ColumnPage({ params }: Props) {
           const cta = eyeSection ? SECTION_CTA[eyeSection] : null;
           if (cta) {
             return (
-              <div className="mt-10 p-5 bg-red-50 border border-red-200 rounded-xl">
+              <div className="mt-10 p-5 bg-sky-50 border border-sky-200 rounded-xl">
                 <p className="text-sm font-bold text-gray-800 mb-3">この記事に関連する商品を楽天で探す</p>
                 <a href={RAKUTEN(cta.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
-                  className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+                  className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-colors">
                   楽天市場で見る →
                 </a>
-                <div className="mt-3 pt-3 border-t border-red-100 flex items-center justify-between gap-3">
+                <div className="mt-3 pt-3 border-t border-sky-100 flex items-center justify-between gap-3">
                   <p className="text-xs text-gray-500">コンタクトレンズの最安値も比較</p>
                   <Link href="/ranking" className="shrink-0 text-xs font-bold text-sky-600 hover:underline whitespace-nowrap">
                     コンタクト最安値を見る →
@@ -234,12 +224,12 @@ export default async function ColumnPage({ params }: Props) {
             );
           }
           return (
-            <div className="mt-10 p-5 bg-red-50 border border-red-200 rounded-xl">
+            <div className="mt-10 p-5 bg-sky-50 border border-sky-200 rounded-xl">
               <p className="text-sm font-bold text-gray-800 mb-1">コンタクトレンズを楽天で購入する</p>
               <p className="text-xs text-gray-500 mb-3">楽天市場で最安値をチェック</p>
               <div className="flex flex-wrap gap-2">
                 <a href={RAKUTEN('コンタクトレンズ ワンデー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-                  className="bg-[#bf0000] hover:opacity-90 text-white text-sm font-bold px-4 py-2.5 rounded-lg transition-opacity">
+                  className="bg-navy-900 hover:bg-navy-800 text-white text-sm font-bold px-4 py-2.5 rounded-lg transition-colors">
                   楽天で探す →
                 </a>
                 <Link href="/category/1day" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2.5 rounded-lg hover:border-slate-300 transition-colors">
@@ -268,7 +258,7 @@ export default async function ColumnPage({ params }: Props) {
             {otherColumns.map((c) => (
               <Link key={c.slug} href={`/column/${c.slug}`} className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md hover:border-slate-300 transition-all">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <span className={`text-xs px-2 py-0.5 rounded-full ${categoryColors[c.category] ?? 'bg-gray-100 text-gray-600'}`}>
+                  <span className={`text-xs px-2 py-0.5 rounded-full ${CATEGORY_BADGE_CLASS}`}>
                     {c.category}
                   </span>
                   <span className="text-xs text-gray-400">{c.readingTime}分</span>
