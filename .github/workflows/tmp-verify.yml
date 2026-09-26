@@ -1,0 +1,27 @@
+name: tmp-verify
+on:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: curl production homepage
+        run: |
+          curl -s "https://www.lens-navi.jp/" -o /tmp/body.html
+          echo "---HERO / SEARCH / BANNERS---"
+          grep -qF 'コラムを読む' /tmp/body.html && echo "FOUND: hero secondary CTA (コラムを読む)" || echo "MISSING: hero secondary CTA"
+          grep -qF '商品・コラムを検索' /tmp/body.html && echo "FOUND: search box placeholder" || echo "MISSING: search box placeholder"
+          echo "bg-navy-900 count: $(grep -o 'bg-navy-900' /tmp/body.html | wc -l)"
+          echo "bg-\\[#bf0000\\] count (should be 0 on homepage): $(grep -o 'bg-\[#bf0000\]' /tmp/body.html | wc -l)"
+          echo "---FOOTER---"
+          curl -s "https://www.lens-navi.jp/" | grep -o 'bg-navy-950' | wc -l | xargs -I{} echo "bg-navy-950 count: {}"
+
+      - name: Vercel usage lookup (best effort)
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          echo "--- teams ---"
+          curl -s -H "Authorization: Bearer $VERCEL_TOKEN" "https://api.vercel.com/v2/teams" | head -c 2000
+          echo
+          echo "--- user (fallback if no team) ---"
+          curl -s -H "Authorization: Bearer $VERCEL_TOKEN" "https://api.vercel.com/v2/user" | head -c 1000
