@@ -1,11 +1,86 @@
 @import "tailwindcss";
 
+/*
+ * 季節ごとの配色トークン。<html data-season="..."> で切り替える（ビルド時点の日本時間の月で決定）。
+ * 【注意】色コードは仮の値。オーナーのデザイン案の色コードが共有されたら、この4ブロックの値だけを差し替える。
+ * 各色の役割:
+ *   primary      見出し・リンク・アクセントの主色
+ *   primary-soft タグ・薄い背景
+ *   accent       補助色（季節のもう一つのモチーフ）
+ *   surface      ページ全体の背景
+ *   hero-from/to ヒーローのグラデーション
+ */
+:root,
+[data-season="spring"] {
+  /* 春：桜・新緑 */
+  --season-primary: #c24d72;
+  --season-primary-soft: #fbe6ed;
+  --season-accent: #5c9a58;
+  --season-surface: #fffafb;
+  --season-hero-from: #f4b8c9;
+  --season-hero-to: #9fcf98;
+}
+
+[data-season="summer"] {
+  /* 夏：海・空（青系統） */
+  --season-primary: #1a6ca3;
+  --season-primary-soft: #dcf0fb;
+  --season-accent: #22a7b8;
+  --season-surface: #f6fbfe;
+  --season-hero-from: #8fd3f4;
+  --season-hero-to: #1a6ca3;
+}
+
+[data-season="autumn"] {
+  /* 秋：紅葉 */
+  --season-primary: #a5401d;
+  --season-primary-soft: #f8e4d7;
+  --season-accent: #c9861c;
+  --season-surface: #fffaf5;
+  --season-hero-from: #eaa760;
+  --season-hero-to: #a5401d;
+}
+
+[data-season="winter"] {
+  /* 冬：雪・温泉 */
+  --season-primary: #2e5471;
+  --season-primary-soft: #e3edf4;
+  --season-accent: #8a6a4e;
+  --season-surface: #f8fafc;
+  --season-hero-from: #d3e1ec;
+  --season-hero-to: #2e5471;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #111827;
+  /* 予約ボタン：楽天トラベルのブランドカラー（赤）に寄せた色。季節に関係なく固定 */
+  --cta: #bf0000;
+  --cta-hover: #960000;
+  --ink: #1f2328;
+}
+
+@theme inline {
+  --color-season: var(--season-primary);
+  --color-season-soft: var(--season-primary-soft);
+  --color-season-accent: var(--season-accent);
+  --color-season-surface: var(--season-surface);
+  --color-season-hero-from: var(--season-hero-from);
+  --color-season-hero-to: var(--season-hero-to);
+  --color-cta: var(--cta);
+  --color-cta-hover: var(--cta-hover);
+  --color-ink: var(--ink);
+  --font-sans: var(--font-noto-sans-jp), system-ui, sans-serif;
+  --font-serif: var(--font-noto-serif-jp), "Hiragino Mincho ProN", serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--season-surface);
+  color: var(--ink);
+}
+
+/* 見出しは明朝体 */
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  letter-spacing: 0.02em;
 }

@@ -1,39 +1,30 @@
 import Link from 'next/link';
-import { AREA_FEATURES, SITE_NAME, THEMES } from '@/lib/site-config';
+import { FEATURES, REGIONS, SITE_NAME, THEMES } from '@/lib/site-config';
+
+const SITE_LINKS = [
+  { href: '/about', label: 'サイトについて' },
+  { href: '/terms', label: '利用規約' },
+  { href: '/privacy', label: 'プライバシーポリシー' },
+  { href: '/contact', label: 'お問い合わせ' },
+  { href: '/operator', label: '運営者情報' },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200 text-gray-500 mt-16">
+    <footer className="bg-white border-t border-black/5 text-gray-600 mt-20">
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-8">
-          <div>
-            <h3 className="font-medium text-gray-700 mb-3 text-sm">テーマから探す</h3>
-            <ul className="space-y-2 text-sm">
-              {THEMES.map((t) => (
-                <li key={t.slug}><Link href={`/theme/${t.slug}`} className="hover:text-sky-600">{t.name}</Link></li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-medium text-gray-700 mb-3 text-sm">地域から探す</h3>
-            <ul className="space-y-2 text-sm">
-              {AREA_FEATURES.map((f) => (
-                <li key={f.slug}><Link href={`/area/${f.slug}`} className="hover:text-sky-600">{f.title}</Link></li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-medium text-gray-700 mb-3 text-sm">サイト情報</h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/about" className="hover:text-sky-600">運営者情報・免責事項</Link></li>
-            </ul>
-          </div>
+        <p className="font-serif text-lg font-bold text-season mb-8">{SITE_NAME}</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10 text-sm">
+          <FooterCol title="テーマから探す" links={THEMES.map((t) => ({ href: `/theme/${t.slug}`, label: t.name }))} />
+          <FooterCol title="エリアから探す" links={REGIONS.map((r) => ({ href: `/region/${r.slug}`, label: r.name }))} />
+          <FooterCol title="特集" links={FEATURES.map((f) => ({ href: `/feature/${f.slug}`, label: f.title }))} />
+          <FooterCol title="サイト情報" links={SITE_LINKS} />
         </div>
 
-        <div className="border-t border-gray-200 pt-6 space-y-2 text-xs text-gray-500 leading-relaxed">
+        <div className="border-t border-black/5 pt-6 space-y-2 text-xs text-gray-500 leading-relaxed">
           <p>
-            当サイトは楽天アフィリエイトを利用しており、掲載している予約ボタン・リンクにはアフィリエイトリンクが含まれます。
-            リンク先で予約が成立した場合、運営者が紹介料を受け取ることがあります。
+            当サイトは楽天グループ株式会社の「楽天アフィリエイト」プログラムを利用し、楽天トラベルの宿泊施設を紹介しています。
+            掲載している予約ボタン・リンクにはアフィリエイトリンクが含まれ、リンク先で予約が成立した場合、運営者が紹介料を受け取ることがあります。
           </p>
           <p>
             宿泊施設の情報・料金は楽天トラベルAPIから自動取得したもので、実際の内容と異なる場合があります。
@@ -41,7 +32,7 @@ export default function Footer() {
           </p>
           {/* 楽天ウェブサービスの利用規約で求められているクレジット表記 */}
           <p>
-            <a href="https://webservice.rakuten.co.jp/" target="_blank" rel="noopener noreferrer nofollow">
+            <a href="https://webservice.rakuten.co.jp/" target="_blank" rel="noopener noreferrer nofollow" className="underline">
               Supported by Rakuten Developers
             </a>
           </p>
@@ -49,5 +40,18 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterCol({ title, links }: { title: string; links: { href: string; label: string }[] }) {
+  return (
+    <div>
+      <p className="font-medium text-gray-800 mb-3">{title}</p>
+      <ul className="space-y-2">
+        {links.map((l) => (
+          <li key={l.href}><Link href={l.href} className="hover:text-season">{l.label}</Link></li>
+        ))}
+      </ul>
+    </div>
   );
 }

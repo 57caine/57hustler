@@ -1,21 +1,29 @@
 import type { Metadata } from 'next';
-import { Noto_Sans_JP } from 'next/font/google';
+import { Noto_Sans_JP, Noto_Serif_JP } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site-config';
+import { getCurrentSeason, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site-config';
 
-const notoSansJP = Noto_Sans_JP({
+const notoSans = Noto_Sans_JP({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
   display: 'swap',
+  variable: '--font-noto-sans-jp',
+});
+
+const notoSerif = Noto_Serif_JP({
+  subsets: ['latin'],
+  weight: ['500', '700'],
+  display: 'swap',
+  variable: '--font-noto-serif-jp',
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | テーマで選ぶ宿泊予約ガイド`,
-    template: `%s | ${SITE_NAME}`,
+    default: `${SITE_NAME}｜エリアとテーマで選ぶ宿泊予約ガイド`,
+    template: `%s｜${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   // 骨格段階のため、ドメイン確定・本公開までは検索エンジンにインデックスさせない
@@ -32,11 +40,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="ja">
+    <html lang="ja" data-season={getCurrentSeason()} className={`${notoSans.variable} ${notoSerif.variable}`}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
-      <body className={`${notoSansJP.className} bg-white text-gray-900`}>
+      <body className="font-sans antialiased">
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

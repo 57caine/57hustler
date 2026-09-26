@@ -9,6 +9,7 @@ import {
   type Theme,
   type ThemeSlug,
 } from '@/lib/site-config';
+import { stripHtml } from '@/lib/hotel-text';
 
 export interface Plan {
   planName: string;
@@ -28,7 +29,9 @@ export interface Ratings {
   room: number | null;
   equipment: number | null;
   bath: number | null;
-  meal: number | null;
+  breakfast: number | null;
+  dinner: number | null;
+  cleanliness: number | null;
 }
 
 export interface DetailItem {
@@ -73,17 +76,22 @@ export interface HotelsFile {
   hotels: Hotel[];
 }
 
-// 旧形式のデータ（ratings/plans等が無い）でも表示が壊れないよう、欠けている項目を補う
+// JSONは取得スクリプトの版によって項目が欠けていることがあるため、欠けている項目を補ってから使う
+const raw = hotelsData as unknown as { fetchedAt: string | null; checkinDate: string | null; hotels: Partial<Hotel>[] };
+const EMPTY_RATINGS: Ratings = {
+  service: null, location: null, room: null, equipment: null, bath: null, breakfast: null, dinner: null, cleanliness: null,
+};
 const data: HotelsFile = {
-  ...(hotelsData as HotelsFile),
-  hotels: ((hotelsData as HotelsFile).hotels ?? []).map((h) => ({
-    kana: '',
-    reviewUrl: '',
-    userReview: '',
-    ratings: null,
-    details: [],
-    plans: [],
-    ...h,
+  fetchedAt: raw.fetchedAt,
+  checkinDate: raw.checkinDate,
+  hotels: (raw.hotels ?? []).map((h) => ({
+    ...(h as Hotel),
+    kana: h.kana ?? '',
+    reviewUrl: h.reviewUrl ?? '',
+    userReview: stripHtml(h.userReview ?? ''),
+    ratings: h.ratings ? { ...EMPTY_RATINGS, ...h.ratings } : null,
+    details: h.details ?? [],
+    plans: h.plans ?? [],
   })),
 };
 
@@ -182,7 +190,8 @@ export function getHighlights(hotel: Hotel): string[] {
   }
   if (hotel.ratings) {
     const labels: [keyof Ratings, string][] = [
-      ['bath', '風呂'], ['meal', '食事'], ['service', 'サービス'], ['room', '部屋'], ['location', '立地'], ['equipment', '設備・アメニティ'],
+      ['bath', '風呂'], ['dinner', '夕食'], ['breakfast', '朝食'], ['service', 'サービス'], ['room', '部屋'],
+      ['location', '立地'], ['equipment', '設備・アメニティ'], ['cleanliness', '清潔感'],
     ];
     const top = labels
       .map(([k, l]) => ({ l, v: hotel.ratings?.[k] ?? null }))

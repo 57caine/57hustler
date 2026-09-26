@@ -1,21 +1,26 @@
 import Link from 'next/link';
-import { SITE_NAME, THEMES } from '@/lib/site-config';
+import { SITE_NAME } from '@/lib/site-config';
+
+const NAV = [
+  { href: '/#themes', label: 'テーマから探す' },
+  { href: '/#areas', label: 'エリアから探す' },
+  { href: '/#features', label: '特集' },
+  { href: '/search', label: '宿を検索' },
+];
 
 export default function Header() {
   return (
-    <header className="border-b border-gray-200 bg-white">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-2">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="w-7 h-7 bg-sky-600 rounded-md flex items-center justify-center text-white text-sm font-bold">旅</span>
-          <span className="font-bold text-gray-900">{SITE_NAME}</span>
+    <header className="bg-white/95 border-b border-black/5 sticky top-0 z-30 backdrop-blur">
+      <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
+        <Link href="/" className="font-serif text-xl font-bold text-season tracking-wider">
+          {SITE_NAME}
         </Link>
-        <nav className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-600">
-          {THEMES.map((t) => (
-            <Link key={t.slug} href={`/theme/${t.slug}`} className="hover:text-sky-600">
-              {t.name}
-            </Link>
+        <nav className="hidden sm:flex gap-5 text-sm text-gray-600">
+          {NAV.map((n) => (
+            <Link key={n.href} href={n.href} className="hover:text-season">{n.label}</Link>
           ))}
         </nav>
+        <Link href="/search" className="sm:hidden text-sm text-season">検索</Link>
       </div>
     </header>
   );

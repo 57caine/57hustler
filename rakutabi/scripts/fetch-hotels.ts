@@ -20,6 +20,7 @@ import path from 'node:path';
 import { AREAS, CONDITIONS, COUPLE_KEYWORDS, type ConditionKey, type ThemeSlug } from '../lib/site-config';
 import { callApi, credentialsFromEnv, ENDPOINTS, flattenHotels, sleep, type RawHotel } from '../lib/rakuten-travel';
 import type { DetailItem, Hotel, HotelsFile, Plan, Ratings } from '../lib/hotels';
+import { stripHtml } from '../lib/hotel-text';
 import { nextSaturdayJst } from './lib/dates';
 
 const OUT = path.join(__dirname, '..', 'data', 'hotels.json');
@@ -66,7 +67,7 @@ function toHotel(raw: RawHotel, areaKey: string): Hotel | null {
     minCharge: num(b.hotelMinCharge),
     reviewAverage: num(b.reviewAverage),
     reviewCount: num(b.reviewCount),
-    userReview: str(b.userReview),
+    userReview: stripHtml(str(b.userReview)),
     ratings: null,
     details: [],
     plans: [],
@@ -101,7 +102,9 @@ function toRatings(r: Record<string, unknown> | undefined): Ratings | null {
     room: num(r.roomAverage),
     equipment: num(r.equipmentAverage),
     bath: num(r.bathAverage),
-    meal: num(r.mealAverage),
+    breakfast: num(r.breakfastAverage),
+    dinner: num(r.dinnerAverage),
+    cleanliness: num(r.cleanlinessAverage),
   };
 }
 
@@ -216,7 +219,7 @@ async function main() {
       h.ratings = toRatings(raw.hotelRatingInfo);
       h.details = toDetails(raw);
       const b = raw.hotelBasicInfo ?? {};
-      h.userReview ||= str(b.userReview);
+      h.userReview ||= stripHtml(str(b.userReview));
       h.reviewUrl ||= str(b.reviewUrl);
       h.kana ||= str(b.hotelKanaName);
       detailOk++;

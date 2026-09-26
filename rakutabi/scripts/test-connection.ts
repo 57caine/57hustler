@@ -44,7 +44,12 @@ function collectAreaCodes(node: unknown, middle: string | null, out: Set<string>
 function describeMiddleClass(data: unknown, middleCode: string): string[] {
   const json = JSON.stringify(data);
   const start = json.indexOf(`"middleClassCode":"${middleCode}"`);
-  if (start < 0) return [];
+  if (start < 0) {
+    // 都道府県コード自体が違う場合は、実在する都道府県コードと名称の一覧を出す
+    const all = [...json.matchAll(/"middleClassCode":"([^"]*)","middleClassName":"([^"]*)"|"middleClassName":"([^"]*)","middleClassCode":"([^"]*)"/g)]
+      .map((m) => `${m[1] ?? m[4]}:${m[2] ?? m[3]}`);
+    return [`都道府県コード「${middleCode}」は存在しません。実在する都道府県コード: ${all.join(', ')}`];
+  }
   const next = json.indexOf('"middleClassCode"', start + 1);
   const chunk = json.slice(start, next < 0 ? undefined : next);
   const lines: string[] = [];

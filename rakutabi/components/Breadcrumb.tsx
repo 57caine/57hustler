@@ -19,7 +19,7 @@ export default function Breadcrumb({ items }: { items: Crumb[] }) {
     })),
   };
   return (
-    <nav className="text-xs text-gray-500 mb-4">
+    <nav className="text-xs text-gray-500 mb-3">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {all.map((c, i) => (
         <span key={c.href}>
@@ -27,7 +27,7 @@ export default function Breadcrumb({ items }: { items: Crumb[] }) {
           {i === all.length - 1 ? (
             <span className="text-gray-700">{c.name}</span>
           ) : (
-            <Link href={c.href} className="hover:text-sky-600">{c.name}</Link>
+            <Link href={c.href} className="hover:text-season">{c.name}</Link>
           )}
         </span>
       ))}
