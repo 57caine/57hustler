@@ -35,7 +35,7 @@ export default function AreaIndexPage() {
               {AREAS.filter((a) => a.region === r.slug).map((a) => (
                 <Link key={a.key} href={`/area/${a.key}`} className="group">
                   <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-sm">
-                    <Photo photo={getAreaPhoto(a.key)} credit={false} className="group-hover:scale-105 transition-transform duration-500" />
+                    <Photo photo={getAreaPhoto(a.key)} credit="text" className="group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <p className="font-serif font-bold text-ink mt-2 group-hover:text-season">{a.name}</p>
                   <p className="text-[11px] text-gray-500">{a.prefecture}・{getHotelsByArea([a.key]).length}件</p>

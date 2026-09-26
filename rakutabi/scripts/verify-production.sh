@@ -31,7 +31,7 @@ echo "--- トップページの配信状態 ---"
 curl -sS -D /tmp/top-headers.txt -o /tmp/top-body.html "${BASE}/"
 grep -iE '^(x-vercel-cache|age|cache-control|x-vercel-id):' /tmp/top-headers.txt
 if grep -q 'tracking-widest' /tmp/top-body.html; then echo "トップ: 新デザインのHTML"; else echo "::warning::トップ: 旧デザインのHTMLが返っています"; fi
-total=0; ok=0; fail=0; skipped_combo=0; afl_links=0
+total=0; ok=0; fail=0; skipped_combo=0; afl_links=0; unsplash_pages=0; unsplash_imgs=0
 tmp=$(mktemp)
 for p in ${paths}; do
   total=$((total + 1))
@@ -50,6 +50,14 @@ for p in ${paths}; do
   [ "${bad_afl}" = "0" ] || problems+=" sponsored/計測属性なしの送客リンク${bad_afl}件"
   bare=$(grep -o '<a [^>]*href="https\?://[^"]*rakuten\.co\.jp[^"]*"' "${tmp}" | grep -v 'hb.afl.rakuten.co.jp' | grep -vc 'webservice.rakuten.co.jp')
   [ "${bare}" = "0" ] || problems+=" アフィリエイトなし楽天リンク${bare}件"
+  # Unsplashの写真には撮影者クレジット（利用規約で必須）が写真ごとに付いているか
+  u_img=$(grep -o '<img [^>]*src="https://images.unsplash.com[^"]*"' "${tmp}" | wc -l)
+  if [ "${u_img}" -gt 0 ]; then
+    unsplash_pages=$((unsplash_pages + 1)); unsplash_imgs=$((unsplash_imgs + u_img))
+    u_credit=$(grep -o 'Photo: <!-- -->[^<]*<!-- --> / Unsplash\|Photo: [^<]* / Unsplash' "${tmp}" | wc -l)
+    [ "${u_credit}" -ge "${u_img}" ] || problems+=" Unsplash写真${u_img}枚に対しクレジット${u_credit}件"
+    grep -q 'href="https://unsplash.com/@[^"]*utm_source=rakutabi' "${tmp}" || problems+=" 撮影者ページへのリンクなし"
+  fi
   if [ -z "${problems}" ]; then ok=$((ok + 1)); else fail=$((fail + 1)); echo "NG ${p}:${problems}"; fi
 done
 curl -sS "${BASE}/search?meal=roomOnly" -o "${tmp}"
@@ -59,5 +67,6 @@ top=$(grep -o 'href="https://hb.afl.rakuten.co.jp/hgc/[^"]*travel.rakuten.co.jp%
 echo "楽天トラベルトップへのアフィリエイトリンク: ${top:-（見つかりません）}"
 [ -n "${top}" ] && curl -sS -o /dev/null -w "  → 楽天側の応答: HTTP %{http_code} / 転送先 %{redirect_url}\n" "${top}"
 rm -f "${tmp}"
+echo "Unsplash写真を表示しているページ: ${unsplash_pages} / Unsplash写真の表示枚数(延べ): ${unsplash_imgs}"
 echo "確認ページ数: ${total} / 合格: ${ok} / 不合格: ${fail} / 生成対象外の掛け合わせページ(404): ${skipped_combo} / 送客リンク合計: ${afl_links}"
 [ "${fail}" = "0" ]

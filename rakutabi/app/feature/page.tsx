@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
 import Photo from '@/components/Photo';
+import PhotoCredits from '@/components/PhotoCredits';
 import { FEATURES, SEASONAL_FEATURES } from '@/lib/site-config';
 import { getHotelsByTheme } from '@/lib/hotels';
 import { getAreaPhoto, getPhoto } from '@/lib/photos';
@@ -28,7 +29,7 @@ export default function FeatureIndexPage() {
             {SEASONAL_FEATURES.map((f) => (
               <Link key={f.season} href={f.href} className="group bg-white rounded-2xl overflow-hidden shadow-sm ring-1 ring-black/5">
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <Photo photo={getPhoto(`season-${f.season}`)} credit={false} className="group-hover:scale-105 transition-transform duration-500" />
+                  <Photo photo={getPhoto(`season-${f.season}`)} credit="text" className="group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-4">
                   <p className="font-serif text-xl font-bold text-ink">{f.label}｜{f.title}</p>
@@ -43,7 +44,7 @@ export default function FeatureIndexPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {FEATURES.map((f) => (
               <Link key={f.slug} href={`/feature/${f.slug}`} className="group relative overflow-hidden rounded-2xl min-h-40 flex items-end">
-                <Photo photo={getAreaPhoto(f.areaKeys[0])} overlay credit={false} className="group-hover:scale-105 transition-transform duration-500" />
+                <Photo photo={getAreaPhoto(f.areaKeys[0])} overlay credit="text" className="group-hover:scale-105 transition-transform duration-500" />
                 <div className="relative p-5 text-white">
                   <p className="font-serif text-xl font-bold drop-shadow">{f.title}</p>
                   <p className="text-xs text-white/90 mt-1">{getHotelsByTheme(f.theme, f.areaKeys).length}件の宿</p>
@@ -53,6 +54,7 @@ export default function FeatureIndexPage() {
           </div>
         </section>
       </div>
+      <PhotoCredits photos={[getPhoto('banner'), ...SEASONAL_FEATURES.map((f) => getPhoto(`season-${f.season}`))]} />
     </div>
   );
 }
