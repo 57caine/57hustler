@@ -1,0 +1,16 @@
+name: tmp-verify
+on:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: curl category pages
+        run: |
+          for p in vr megane lasik karakon eye-care eye-goods; do
+            echo "=== $p ==="
+            curl -s "https://www.lens-navi.jp/$p" -o /tmp/body.html
+            echo "bg-navy-900 count: $(grep -o 'bg-navy-900' /tmp/body.html | wc -l)"
+            echo "bg-\\[#bf0000\\] count (should be 0): $(grep -o 'bg-\[#bf0000\]' /tmp/body.html | wc -l)"
+            echo "from-violet/purple/indigo/emerald/teal/cyan/orange/pink/rose count (should be 0): $(grep -oE 'from-(violet|purple|indigo|emerald|teal|cyan|orange|pink|rose)-[0-9]+' /tmp/body.html | wc -l)"
+          done
