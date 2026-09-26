@@ -73,14 +73,14 @@ export default async function KarakonPage() {
         description="度あり・度なし別おすすめランキングから、安全な選び方・韓国ブランド・公式アンバサダー情報まで。薬機法承認済みの安心カラコンを紹介します。"
         imageUrl={heroImage}
         imageAlt="カラーコンタクトレンズ"
-        gradient="from-pink-500 to-rose-600"
-        borderColor="border-pink-200"
-        overlayFrom="from-pink-900/80"
-        overlayTo="to-rose-700/60"
+        gradient="from-sky-500 to-blue-700"
+        borderColor="border-sky-200"
+        overlayFrom="from-sky-900/80"
+        overlayTo="to-blue-700/60"
         disclaimer={
           <div className="flex flex-wrap gap-2 mt-4">
             {['薬機法承認品のみ紹介', '楽天で購入可能', '初心者ガイドあり'].map(t => (
-              <span key={t} className="text-xs bg-white border border-pink-200 text-pink-700 px-3 py-1 rounded-full">{t}</span>
+              <span key={t} className="text-xs bg-white border border-sky-200 text-sky-700 px-3 py-1 rounded-full">{t}</span>
             ))}
           </div>
         }
@@ -91,13 +91,13 @@ export default async function KarakonPage() {
       <div className="grid md:grid-cols-2 gap-4 mb-10">
         {articles.map(a => (
           <Link key={a.slug} href={`/column/${a.slug}`}
-            className="group block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm hover:border-pink-300 transition-all">
+            className="group block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm hover:border-sky-300 transition-all">
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-xs bg-pink-50 text-pink-700 px-2 py-0.5 rounded font-medium">{a.badge}</span>
+              <span className="text-xs bg-sky-50 text-sky-700 px-2 py-0.5 rounded font-medium">{a.badge}</span>
             </div>
-            <h3 className="font-bold text-gray-800 text-sm leading-snug mb-1 group-hover:text-pink-700">{a.title}</h3>
+            <h3 className="font-bold text-gray-800 text-sm leading-snug mb-1 group-hover:text-sky-700">{a.title}</h3>
             <p className="text-xs text-gray-500 line-clamp-2">{a.desc}</p>
-            <p className="text-xs text-pink-600 mt-2">{a.readingTime}分で読める →</p>
+            <p className="text-xs text-sky-600 mt-2">{a.readingTime}分で読める →</p>
           </Link>
         ))}
       </div>
@@ -125,9 +125,9 @@ export default async function KarakonPage() {
       <div className="grid sm:grid-cols-2 gap-3 mb-10">
         {quickBuys.map(p => (
           <a key={p.label} href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="flex items-center justify-between bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-red-300 hover:shadow-sm transition-all">
+            className="flex items-center justify-between bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-sky-300 hover:shadow-sm transition-all">
             <span className="font-medium text-gray-800 text-sm">{p.label}</span>
-            <span className="text-xs text-red-600 font-bold">楽天で見る →</span>
+            <span className="text-xs text-navy-900 font-bold">楽天で見る →</span>
           </a>
         ))}
       </div>
@@ -136,22 +136,22 @@ export default async function KarakonPage() {
       <h2 className="text-xl font-bold text-gray-800 mb-4">カラコン専門ショップ</h2>
       <div className="grid sm:grid-cols-3 gap-3 mb-10">
         <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+6F089M+1PQI+NVP2P" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="bg-white border border-gray-200 rounded-xl p-4 hover:border-pink-300 hover:shadow-sm transition-all">
+          className="bg-white border border-gray-200 rounded-xl p-4 hover:border-sky-300 hover:shadow-sm transition-all">
           <div className="font-bold text-gray-800 text-sm mb-1">チャームカラー</div>
           <p className="text-xs text-gray-500 mb-3">豊富な色選びと品揃え。初心者から上級者まで満足できるカラコン専門店。</p>
-          <span className="text-xs text-pink-600 font-bold">詳しく見る →</span>
+          <span className="text-xs text-sky-600 font-bold">詳しく見る →</span>
         </a>
         <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+60PTQY+4XSA+5Z6WX" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="bg-white border border-gray-200 rounded-xl p-4 hover:border-pink-300 hover:shadow-sm transition-all">
+          className="bg-white border border-gray-200 rounded-xl p-4 hover:border-sky-300 hover:shadow-sm transition-all">
           <div className="font-bold text-gray-800 text-sm mb-1">OLENS</div>
           <p className="text-xs text-gray-500 mb-3">韓国の人気カラコンブランド。トレンドカラーと高い品質が評判。</p>
-          <span className="text-xs text-pink-600 font-bold">詳しく見る →</span>
+          <span className="text-xs text-sky-600 font-bold">詳しく見る →</span>
         </a>
         <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5XQNQ2+3S0E+639IP" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="bg-white border border-gray-200 rounded-xl p-4 hover:border-pink-300 hover:shadow-sm transition-all">
+          className="bg-white border border-gray-200 rounded-xl p-4 hover:border-sky-300 hover:shadow-sm transition-all">
           <div className="font-bold text-gray-800 text-sm mb-1">モアコン</div>
           <p className="text-xs text-gray-500 mb-3">最新トレンドのカラコンが揃う。季節限定カラーも充実。</p>
-          <span className="text-xs text-pink-600 font-bold">詳しく見る →</span>
+          <span className="text-xs text-sky-600 font-bold">詳しく見る →</span>
         </a>
       </div>
 

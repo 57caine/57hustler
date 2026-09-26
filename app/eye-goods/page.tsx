@@ -60,21 +60,21 @@ export default async function EyeGoodsPage() {
         description="ホットアイマスク・モニターライト・ブルーライトカット眼鏡など、目を労わるグッズを厳選紹介。楽天で購入できるおすすめアイテムをまとめました。"
         imageUrl={heroImage}
         imageAlt="目のケアグッズ"
-        gradient="from-orange-500 to-amber-600"
-        borderColor="border-orange-200"
-        overlayFrom="from-orange-900/80"
-        overlayTo="to-amber-700/60"
+        gradient="from-sky-600 to-navy-900"
+        borderColor="border-sky-200"
+        overlayFrom="from-sky-900/80"
+        overlayTo="to-navy-900/70"
       />
 
       {/* Articles */}
       <h2 className="text-xl font-bold text-gray-800 mb-4">目のグッズ ガイド記事</h2>
       <div className="grid md:grid-cols-2 gap-4 mb-10">
         {articles.map(a => (
-          <Link key={a.slug} href={`/column/${a.slug}`} className="group block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm hover:border-orange-300 transition-all">
-            <span className="text-xs bg-orange-50 text-orange-700 px-2 py-0.5 rounded font-medium">目の雑貨・グッズ</span>
-            <h3 className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1 group-hover:text-orange-700">{a.title}</h3>
+          <Link key={a.slug} href={`/column/${a.slug}`} className="group block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm hover:border-sky-300 transition-all">
+            <span className="text-xs bg-sky-50 text-sky-700 px-2 py-0.5 rounded font-medium">目の雑貨・グッズ</span>
+            <h3 className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1 group-hover:text-sky-700">{a.title}</h3>
             <p className="text-xs text-gray-500 line-clamp-2">{a.desc}</p>
-            <p className="text-xs text-orange-600 mt-2">{a.readingTime}分で読める →</p>
+            <p className="text-xs text-sky-600 mt-2">{a.readingTime}分で読める →</p>
           </Link>
         ))}
       </div>
@@ -87,11 +87,11 @@ export default async function EyeGoodsPage() {
           { Icon: ZoomIn, name: '拡大鏡・ルーペ', desc: '細かい作業・読書に。スタンド型・手持ち型を比較', rakuten: '拡大鏡 ルーペ' },
         ].map(item => (
           <a key={item.name} href={RAKUTEN(item.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-red-300 transition-all">
-            <item.Icon className="w-8 h-8 text-orange-700 mb-2" />
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+            <item.Icon className="w-8 h-8 text-sky-700 mb-2" />
             <p className="font-bold text-gray-800 text-sm mb-1">{item.name}</p>
             <p className="text-xs text-gray-500 mb-2">{item.desc}</p>
-            <div className="mt-2 bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+            <div className="mt-2 bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
           </a>
         ))}
       </div>
@@ -101,10 +101,10 @@ export default async function EyeGoodsPage() {
       <div className="grid sm:grid-cols-2 gap-3 mb-10">
         {products.map(p => (
           <a key={p.label} href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-red-300 transition-all">
-            <p.Icon className="w-8 h-8 text-orange-700 mb-2" />
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+            <p.Icon className="w-8 h-8 text-sky-700 mb-2" />
             <p className="font-bold text-gray-800 text-sm mb-1">{p.label}</p>
-            <div className="mt-2 bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+            <div className="mt-2 bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
           </a>
         ))}
       </div>

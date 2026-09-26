@@ -54,10 +54,10 @@ export default async function LasikPage() {
         description="レーシック・ICL・オルソケラトロジーなど視力矯正手術の費用・リスク・クリニック選びを解説。手術を検討している方向けの総合情報サイトです。"
         imageUrl={heroImage}
         imageAlt="眼科診療"
-        gradient="from-emerald-600 to-teal-600"
-        borderColor="border-emerald-200"
-        overlayFrom="from-emerald-900/80"
-        overlayTo="to-teal-700/60"
+        gradient="from-sky-700 to-blue-900"
+        borderColor="border-sky-200"
+        overlayFrom="from-sky-900/80"
+        overlayTo="to-blue-900/70"
         disclaimer={
           <div className="mt-4 bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 inline-block">
             <p className="text-xs text-amber-700">※ 当サイトは医療情報を提供しますが、最終的な判断は必ず眼科専門医にご相談ください。</p>
@@ -69,11 +69,11 @@ export default async function LasikPage() {
       <h2 className="text-xl font-bold text-gray-800 mb-4">レーシック・視力矯正 ガイド記事</h2>
       <div className="grid md:grid-cols-2 gap-4 mb-10">
         {articles.map(a => (
-          <Link key={a.slug} href={`/column/${a.slug}`} className="group block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm hover:border-emerald-300 transition-all">
-            <span className="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded font-medium">レーシック・視力矯正</span>
-            <h3 className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1 group-hover:text-emerald-700">{a.title}</h3>
+          <Link key={a.slug} href={`/column/${a.slug}`} className="group block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm hover:border-sky-300 transition-all">
+            <span className="text-xs bg-sky-50 text-sky-700 px-2 py-0.5 rounded font-medium">レーシック・視力矯正</span>
+            <h3 className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1 group-hover:text-sky-700">{a.title}</h3>
             <p className="text-xs text-gray-500 line-clamp-2">{a.desc}</p>
-            <p className="text-xs text-emerald-600 mt-2">{a.readingTime}分で読める →</p>
+            <p className="text-xs text-sky-600 mt-2">{a.readingTime}分で読める →</p>
           </Link>
         ))}
       </div>
@@ -99,7 +99,7 @@ export default async function LasikPage() {
               ].map(r => (
                 <tr key={r.name} className="border-b border-gray-100">
                   <td className="p-3 border border-gray-200 font-medium">{r.name}</td>
-                  <td className="p-3 border border-gray-200 text-emerald-700 font-bold">{r.cost}</td>
+                  <td className="p-3 border border-gray-200 text-sky-700 font-bold">{r.cost}</td>
                   <td className="p-3 border border-gray-200 text-gray-600 text-xs">{r.feature}</td>
                 </tr>
               ))}
@@ -119,10 +119,10 @@ export default async function LasikPage() {
           { Icon: Pill, label: 'アイケアサプリ（ルテイン）', rakuten: 'ルテイン サプリ' },
         ].map(p => (
           <a key={p.label} href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-red-300 transition-all">
-            <p.Icon className="w-8 h-8 text-emerald-700 mb-2" />
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+            <p.Icon className="w-8 h-8 text-sky-700 mb-2" />
             <p className="font-bold text-gray-800 text-sm mb-1">{p.label}</p>
-            <div className="mt-2 bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+            <div className="mt-2 bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
           </a>
         ))}
       </div>
