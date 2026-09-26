@@ -23,9 +23,9 @@ export default function CategoryGrid() {
             <a
               key={label}
               href={href}
-              className="group block rounded-2xl border border-slate-100 bg-white p-5 text-center shadow-sm transition-shadow hover:shadow-md no-underline"
+              className="group block rounded-2xl border border-slate-100 bg-white p-5 text-center shadow-md transition-shadow hover:shadow-lg no-underline"
             >
-              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-sky-50 text-sky-600 transition-colors group-hover:bg-sky-100">
+              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-sky-100 text-sky-600 transition-colors group-hover:bg-sky-200">
                 <Icon className="h-6 w-6" strokeWidth={1.75} />
               </div>
               <div className="font-bold text-slate-900">{label}</div>
