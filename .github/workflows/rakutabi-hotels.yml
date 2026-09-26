@@ -78,14 +78,18 @@ jobs:
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Vercelへ公開
-        run: bash scripts/vercel-deploy.sh | tee /tmp/deploy.log
+        run: |
+          set -o pipefail
+          bash scripts/vercel-deploy.sh | tee /tmp/deploy.log
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
       - name: 公開URLの表示確認
         run: |
           set -u
-          for host in $(sed -n '/=== 4/,$p' /tmp/deploy.log | grep -E '\.vercel\.app$'); do
+          hosts=$(sed -n '/=== 4/,$p' /tmp/deploy.log | grep -E '\.vercel\.app$' || true)
+          if [ -z "${hosts}" ]; then echo "::error::公開URLが取得できませんでした"; exit 1; fi
+          for host in ${hosts}; do
             url="https://${host}"
             echo "### ${url}"
             curl -sS -o /tmp/top.html -w 'HTTP %{http_code}\n' "${url}/"

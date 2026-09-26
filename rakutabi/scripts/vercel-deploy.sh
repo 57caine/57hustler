@@ -57,10 +57,30 @@ echo "=== 2. 送客クリック記録用 Vercel Blob ストア ==="
 echo "=== 3. ビルド・公開 ==="
 export VERCEL_ORG_ID="${TEAM_ID}"
 export VERCEL_PROJECT_ID="${PROJECT_ID}"
-npx --yes vercel@latest pull --yes --environment=production --token="${VERCEL_TOKEN}" >/dev/null
-npx --yes vercel@latest build --prod --token="${VERCEL_TOKEN}"
-DEPLOY_URL=$(npx --yes vercel@latest deploy --prebuilt --prod --yes --token="${VERCEL_TOKEN}")
-echo "deployment=${DEPLOY_URL}"
+
+production_domain() {
+  curl -sS "${API}/v9/projects/${PROJECT_ID}/domains?teamId=${TEAM_ID}" -H "${AUTH}" \
+    | jq -r '[.domains[]?.name | select(endswith(".vercel.app"))][0] // empty'
+}
+
+build_and_deploy() {
+  # Actions上のビルドではVercelのシステム環境変数が入らないため、本番URLを自分で渡す（lib/site-config.ts の SITE_URL）
+  export VERCEL_PROJECT_PRODUCTION_URL="$(production_domain)"
+  echo "VERCEL_PROJECT_PRODUCTION_URL=${VERCEL_PROJECT_PRODUCTION_URL:-（未割り当て）}"
+  npx --yes vercel@latest pull --yes --environment=production --token="${VERCEL_TOKEN}" >/dev/null
+  npx --yes vercel@latest build --prod --token="${VERCEL_TOKEN}"
+  # ページ数が多く15,000ファイルの上限を超えるため、まとめて圧縮してアップロードする
+  DEPLOY_URL=$(npx --yes vercel@latest deploy --prebuilt --prod --yes --archive=tgz --token="${VERCEL_TOKEN}")
+  echo "deployment=${DEPLOY_URL}"
+}
+
+had_domain="$(production_domain)"
+build_and_deploy
+if [ -z "${had_domain}" ]; then
+  # 初回は本番URLが公開後に割り当てられるため、URLが決まった状態でもう一度ビルド・公開する
+  echo "初回公開のため、本番URLを反映して再公開します"
+  build_and_deploy
+fi
 
 echo "=== 4. 公開URL（本番ドメイン） ==="
 curl -sS "${API}/v9/projects/${PROJECT_ID}/domains?teamId=${TEAM_ID}" -H "${AUTH}" | jq -r '.domains[]?.name'
