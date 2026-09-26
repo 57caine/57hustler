@@ -70,21 +70,21 @@ export default async function EyeCarePage() {
         description="コンタクト対応目薬の選び方からドライアイ対策、ルテインサプリまで。目の健康を守るためのアイケア情報を網羅します。"
         imageUrl={heroImage}
         imageAlt="目薬とアイケア"
-        gradient="from-cyan-600 to-teal-600"
-        borderColor="border-cyan-200"
-        overlayFrom="from-cyan-900/80"
-        overlayTo="to-teal-700/60"
+        gradient="from-blue-500 to-sky-700"
+        borderColor="border-blue-200"
+        overlayFrom="from-blue-900/80"
+        overlayTo="to-sky-700/60"
       />
 
       {/* Articles */}
       <h2 className="text-xl font-bold text-gray-800 mb-4">アイケア・目薬 ガイド記事</h2>
       <div className="grid md:grid-cols-2 gap-4 mb-10">
         {articles.map(a => (
-          <Link key={a.slug} href={`/column/${a.slug}`} className="group block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm hover:border-cyan-300 transition-all">
-            <span className="text-xs bg-cyan-50 text-cyan-700 px-2 py-0.5 rounded font-medium">アイケア・目薬</span>
-            <h3 className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1 group-hover:text-cyan-700">{a.title}</h3>
+          <Link key={a.slug} href={`/column/${a.slug}`} className="group block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm hover:border-blue-300 transition-all">
+            <span className="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-medium">アイケア・目薬</span>
+            <h3 className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1 group-hover:text-blue-700">{a.title}</h3>
             <p className="text-xs text-gray-500 line-clamp-2">{a.desc}</p>
-            <p className="text-xs text-cyan-600 mt-2">{a.readingTime}分で読める →</p>
+            <p className="text-xs text-blue-600 mt-2">{a.readingTime}分で読める →</p>
           </Link>
         ))}
       </div>
@@ -97,7 +97,7 @@ export default async function EyeCarePage() {
           { Icon: Thermometer, title: 'ホットアイマスク', tip: '温熱効果でドライアイ・疲れ目を即効ケア。' },
         ].map(t => (
           <div key={t.title} className="bg-white border border-gray-200 rounded-xl p-4 text-center">
-            <t.Icon className="w-7 h-7 text-cyan-700 mb-2 mx-auto" />
+            <t.Icon className="w-7 h-7 text-blue-700 mb-2 mx-auto" />
             <p className="font-bold text-gray-800 text-sm mb-1">{t.title}</p>
             <p className="text-xs text-gray-500">{t.tip}</p>
           </div>
@@ -110,11 +110,11 @@ export default async function EyeCarePage() {
       <div className="grid sm:grid-cols-3 gap-3 mb-10">
         {eyeCareCards.map(p => (
           <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">{p.tag}</span>
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-blue-600 transition-all">
+            <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">{p.tag}</span>
             <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">{p.label}</p>
             <p className="text-xs text-gray-400 mb-3">{p.shop}</p>
-            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">{p.label}を楽天で見る →</div>
+            <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">{p.label}を楽天で見る →</div>
           </a>
         ))}
       </div>
@@ -124,10 +124,10 @@ export default async function EyeCarePage() {
       <div className="grid sm:grid-cols-2 gap-3 mb-10">
         {products.map(p => (
           <a key={p.label} href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-red-300 transition-all">
-            <p.Icon className="w-8 h-8 text-cyan-700 mb-2" />
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-blue-300 transition-all">
+            <p.Icon className="w-8 h-8 text-blue-700 mb-2" />
             <p className="font-bold text-gray-800 text-sm mb-1">{p.label}</p>
-            <div className="mt-2 bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+            <div className="mt-2 bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
           </a>
         ))}
       </div>

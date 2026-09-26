@@ -77,21 +77,21 @@ export default async function VRPage() {
         description="視力が悪い方向けのVR対策から最新デバイスの比較まで。Meta Quest・Ray-Ban Meta・Apple Vision Proを徹底解説します。"
         imageUrl={heroImage}
         imageAlt="VRヘッドセット"
-        gradient="from-violet-600 to-purple-600"
-        borderColor="border-violet-200"
-        overlayFrom="from-violet-900/80"
-        overlayTo="to-purple-700/60"
+        gradient="from-blue-600 to-navy-900"
+        borderColor="border-blue-200"
+        overlayFrom="from-blue-900/80"
+        overlayTo="to-navy-900/70"
       />
 
       {/* Articles */}
       <h2 className="text-xl font-bold text-gray-800 mb-4">VR・スマートグラス ガイド記事</h2>
       <div className="grid md:grid-cols-2 gap-4 mb-10">
         {articles.map(a => (
-          <Link key={a.slug} href={`/column/${a.slug}`} className="group block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm hover:border-violet-300 transition-all">
-            <span className="text-xs bg-violet-50 text-violet-700 px-2 py-0.5 rounded font-medium">VR・スマートグラス</span>
-            <h3 className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1 group-hover:text-violet-700">{a.title}</h3>
+          <Link key={a.slug} href={`/column/${a.slug}`} className="group block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm hover:border-blue-300 transition-all">
+            <span className="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-medium">VR・スマートグラス</span>
+            <h3 className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1 group-hover:text-blue-700">{a.title}</h3>
             <p className="text-xs text-gray-500 line-clamp-2">{a.desc}</p>
-            <p className="text-xs text-violet-600 mt-2">{a.readingTime}分で読める →</p>
+            <p className="text-xs text-blue-600 mt-2">{a.readingTime}分で読める →</p>
           </Link>
         ))}
       </div>
@@ -117,11 +117,11 @@ export default async function VRPage() {
       <div className="grid sm:grid-cols-3 gap-3 mb-10">
         {vrItemCards.map(p => (
           <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-violet-300 transition-all">
-            <span className="text-xs bg-violet-50 text-violet-700 px-2 py-0.5 rounded font-medium">{p.tag}</span>
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-blue-300 transition-all">
+            <span className="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-medium">{p.tag}</span>
             <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">{p.label}</p>
             <p className="text-xs text-gray-400 mb-3">{p.shop}</p>
-            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">{p.label}を楽天で見る →</div>
+            <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">{p.label}を楽天で見る →</div>
           </a>
         ))}
       </div>
@@ -131,10 +131,10 @@ export default async function VRPage() {
       <div className="grid sm:grid-cols-2 gap-3 mb-10">
         {products.map(p => (
           <a key={p.label} href={RAKUTEN(p.rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-red-300 transition-all">
-            <p.Icon className="w-8 h-8 text-violet-700 mb-2" />
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-blue-300 transition-all">
+            <p.Icon className="w-8 h-8 text-blue-700 mb-2" />
             <p className="font-bold text-gray-800 text-sm mb-1">{p.label}</p>
-            <div className="mt-2 bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
+            <div className="mt-2 bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天市場で見る →</div>
           </a>
         ))}
       </div>
