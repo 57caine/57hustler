@@ -19,9 +19,16 @@ jobs:
       - name: Vercel usage lookup (best effort)
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          TEAM_ID: team_3ZA38DTbe02rLyjHXAaNuCs5
         run: |
-          echo "--- teams ---"
-          curl -s -H "Authorization: Bearer $VERCEL_TOKEN" "https://api.vercel.com/v2/teams" | head -c 2000
+          echo "--- v1/teams/{id}/usage ---"
+          curl -s -w "\nHTTP:%{http_code}\n" -H "Authorization: Bearer $VERCEL_TOKEN" "https://api.vercel.com/v1/teams/$TEAM_ID/usage" | head -c 3000
           echo
-          echo "--- user (fallback if no team) ---"
-          curl -s -H "Authorization: Bearer $VERCEL_TOKEN" "https://api.vercel.com/v2/user" | head -c 1000
+          echo "--- v1/billing/usage (team scoped) ---"
+          curl -s -w "\nHTTP:%{http_code}\n" -H "Authorization: Bearer $VERCEL_TOKEN" "https://api.vercel.com/v1/billing/usage?teamId=$TEAM_ID" | head -c 3000
+          echo
+          echo "--- v1/teams/{id}/billing ---"
+          curl -s -w "\nHTTP:%{http_code}\n" -H "Authorization: Bearer $VERCEL_TOKEN" "https://api.vercel.com/v1/teams/$TEAM_ID/billing" | head -c 3000
+          echo
+          echo "--- v1/teams/{id}/spend ---"
+          curl -s -w "\nHTTP:%{http_code}\n" -H "Authorization: Bearer $VERCEL_TOKEN" "https://api.vercel.com/v1/teams/$TEAM_ID/spend" | head -c 3000
