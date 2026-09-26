@@ -1,0 +1,22 @@
+name: tmp-verify
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'URL to curl'
+        required: true
+        default: 'https://lens-navi.jp/'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: curl
+        run: |
+          curl -s -D - "${{ inputs.url }}" -o /tmp/body.html
+          echo "---BODY GREP---"
+          grep -o '今、人気のおすすめ商品' /tmp/body.html || echo "NOT FOUND: heading"
+          for n in "ワンデーアキュビューモイスト" "エバーカラー ワンデー ナチュラル" "メガネの上から偏光サングラス クリップオン" "アイリスCL-I ネオ"; do
+            if grep -qF "$n" /tmp/body.html; then echo "FOUND: $n"; else echo "MISSING: $n"; fi
+          done
+          echo "af.moshimo.com count: $(grep -o 'af.moshimo.com/af/c/click' /tmp/body.html | wc -l)"
+          echo "href=\"#\" count in body: $(grep -o 'href=\\\"#\\\"' /tmp/body.html | wc -l)"
