@@ -798,7 +798,7 @@ export const eyeColumns: EyeColumnMeta[] = [
 const AffiliateBtns = ({ rakuten }: { rakuten: string }) => (
   <div className="my-4">
     <a href={RAKUTEN(rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
-      className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+      className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
       {rakuten}を楽天で見る →
     </a>
   </div>
@@ -856,19 +856,19 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <p className="text-xs text-gray-600 mb-3">顔型に合ったスタイルをイメージしながらフレームを選んでみましょう。</p>
         <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Wavecontact メガネフレーム MGN_BASIC（スクエア・丸顔向き）を楽天で見る →
           </a>
         </div>
         <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             merry39 メガネフレーム No.2854（ウェリントン・卵型・面長向き）を楽天で見る →
           </a>
         </div>
         <div>
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4ee.c25ab11d.5622e4ef.2987dd69/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Florelife%2Fu1908c-059%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Lorelife メガネフレーム U1908C（細め・ベース型向き）を楽天で見る →
           </a>
         </div>
@@ -966,19 +966,19 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <p className="text-xs text-gray-500 mb-3">オンラインで手軽に購入できる人気フレームをご紹介します。</p>
         <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Hodopus メガネフレームを楽天で見る →
           </a>
         </div>
         <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e16c.d190f4a9.5622e16d.a64e1d5d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmegane-style%2Fcf5043%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             メガネスタイル メガネフレーム CF5043 を楽天で見る →
           </a>
         </div>
         <div>
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4ee.c25ab11d.5622e4ef.2987dd69/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Florelife%2Ff2006c-106%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwc2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Lorelife メガネフレーム F2006C（おしゃれフレーム）を楽天で見る →
           </a>
         </div>
@@ -1019,11 +1019,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmujina0008%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
           <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">まずはこれから・度なしタイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">mujina ブルーライトカットPCメガネ</p>
           <p className="text-xs text-gray-500 mb-3">度なしで手に取りやすい価格帯。まず試してみたい方に</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina ブルーライトカットPCメガネを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">mujina ブルーライトカットPCメガネを楽天で見る →</div>
         </a>
       </div>
 
@@ -1051,11 +1051,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmj-1092%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
           <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">度なしタイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">mujina PCメガネ MJ-1092</p>
           <p className="text-xs text-gray-500 mb-3">度なしで気軽に試せるスタンダードモデル</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina PCメガネ MJ-1092を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">mujina PCメガネ MJ-1092を楽天で見る →</div>
         </a>
       </div>
 
@@ -1261,11 +1261,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         </p>
         <div className="space-y-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224114424%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-violet-700 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Meta Quest 3（128GB・公式ストア）を楽天で見る →
           </a>
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224147192%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-violet-700 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Meta Quest 3（512GB）を楽天で見る →
           </a>
         </div>
@@ -1283,7 +1283,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           Meta AIとの連携でリアルタイム翻訳・情報取得も可能。
         </p>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FRay-Ban%20Meta%20%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B0%E3%83%A9%E3%82%B9%2F" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-violet-700 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           Ray-Ban Meta スマートグラスを楽天市場で探す →
         </a>
       </div>
@@ -1355,11 +1355,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <p className="text-xs text-gray-600 mb-3">入門機として最もコスパが高く、ゲーム・映画・仕事の幅広い用途に対応します。</p>
         <div className="space-y-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224114424%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-violet-700 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Meta Quest 3（128GB・公式ストア）を楽天で見る →
           </a>
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224147192%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-violet-700 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Meta Quest 3（512GB・大容量モデル）を楽天で見る →
           </a>
         </div>
@@ -1724,11 +1724,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">迷ったらまずこれ</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">迷ったらまずこれ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
           <p className="text-xs text-gray-500 mb-3">参天製薬／第3類医薬品。防腐剤無添加でソフト・ハード問わず全レンズタイプに対応</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
         </a>
       </div>
 
@@ -1765,25 +1765,25 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">市販薬で様子を見てよいのは、軽い乾燥感や一時的な疲れ目など、装用時間の見直しや休息で改善が見込める症状です。以下は症状別の目安です。</p>
       <div className="grid sm:grid-cols-3 gap-3 mb-4">
         <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ドライアイ・防腐剤フリー</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">ドライアイ・防腐剤フリー</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
           <p className="text-xs text-gray-500 mb-3">防腐剤無添加でコンタクト装用中でも使用可能</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
         </a>
         <a href={RAKUTEN('サンテFXネオ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">疲れ目・眼精疲労</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">疲れ目・眼精疲労</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテFXネオ</p>
           <p className="text-xs text-gray-500 mb-3">ビタミンB12・タウリン配合。装用前後の使用可否は表示で確認を</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">サンテFXネオを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">サンテFXネオを楽天で見る →</div>
         </a>
         <a href={RAKUTEN('ロートVアクティブ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">充血</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">充血</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ロートVアクティブ</p>
           <p className="text-xs text-gray-500 mb-3">血管収縮成分配合。連用は週2〜3回以内が目安</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ロートVアクティブを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">ロートVアクティブを楽天で見る →</div>
         </a>
       </div>
 
@@ -1814,10 +1814,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">市販薬で改善しない場合や、強い痛み・充血がある場合は、自己判断で使い続けず眼科を受診してください。</p>
       <div className="my-4">
         <a href={RAKUTEN('サンテFXネオ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">疲れ目対策に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">疲れ目対策に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテFXネオ</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">サンテFXネオを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">サンテFXネオを楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -1856,11 +1856,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">迷ったらまずこれ</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">迷ったらまずこれ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
           <p className="text-xs text-gray-500 mb-3">防腐剤無添加でコンタクト装用中でも使用可能</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
         </a>
       </div>
 
@@ -1906,25 +1906,25 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-3">目薬・ホットアイマスク・ルテインサプリを、タイプや目的に合わせて組み合わせるのがおすすめです。</p>
       <div className="grid sm:grid-cols-3 gap-3 mb-4">
         <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">水分不足型に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">水分不足型に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
           <p className="text-xs text-gray-500 mb-3">防腐剤無添加。コンタクト装用中でも使用可能</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">油分不足型（MGD）に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">油分不足型（MGD）に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">La Luna アイウォーマー（ホワイト）</p>
           <p className="text-xs text-gray-500 mb-3">まぶたを温めてマイボーム腺の油分分泌を促進</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">日々の栄養補給に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">日々の栄養補給に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
           <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">生活習慣の見直しも重要です</h3>
@@ -1966,10 +1966,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">セルフケアで改善しない場合や、痛み・充血を伴う場合は、自己判断を続けず眼科を受診しましょう。</p>
       <div className="my-4">
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">日々のケアの一つに</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">日々のケアの一つに</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">DHC ルテイン光対策を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">DHC ルテイン光対策を楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -2010,10 +2010,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('Panasonic EH-SW68')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">総合力No.1</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">総合力No.1</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Panasonic EH-SW68</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">Panasonic EH-SW68を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">Panasonic EH-SW68を楽天で見る →</div>
         </a>
       </div>
 
@@ -2038,22 +2038,22 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <div className="grid sm:grid-cols-3 gap-3 mb-4">
         <a href={RAKUTEN('Panasonic EH-SW68')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">スチーム式・繰り返し</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">スチーム式・繰り返し</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Panasonic EH-SW68</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('アイリスオーヤマ HOT17 アイマスク')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">コスパ・繰り返し</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">コスパ・繰り返し</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">アイリスオーヤマ HOT17</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('花王 めぐりズム 蒸気でホットアイマスク')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">使い捨て・香り付き</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">使い捨て・香り付き</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">花王 めぐりズム</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
 
@@ -2077,10 +2077,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">目に異常感がある場合や、コンタクトレンズ装用中は必ず外してから使用してください。</p>
       <div className="my-4">
         <a href={RAKUTEN('アイリスオーヤマ HOT17 アイマスク')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">コスパ重視の方に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">コスパ重視の方に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">アイリスオーヤマ HOT17</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">アイリスオーヤマ HOT17を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">アイリスオーヤマ HOT17を楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -2098,11 +2098,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         </p>
         <div className="space-y-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224114424%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Meta Quest 3（128GB・公式ストア）を楽天で見る →
           </a>
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224147192%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Meta Quest 3（512GB・別モデル・公式）を楽天で見る →
           </a>
         </div>
@@ -2182,11 +2182,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <p className="text-sm font-bold text-violet-900 mb-3">🛒 Meta Quest 3を楽天市場で購入する</p>
         <div className="space-y-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224114424%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Meta Quest 3（128GB・公式ストア）を楽天で見る →
           </a>
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224147192%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Meta Quest 3（512GB・別モデル・公式）を楽天で見る →
           </a>
         </div>
@@ -2346,11 +2346,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('BenQ ScreenBar モニターライト')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">BenQ ScreenBar</p>
           <p className="text-xs text-gray-500 mb-3">モニタークリップ式・非対称光学設計でグレアなし</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">BenQ ScreenBarを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">BenQ ScreenBarを楽天で見る →</div>
         </a>
       </div>
 
@@ -2377,25 +2377,25 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </p>
       <div className="grid sm:grid-cols-3 gap-3 mb-4">
         <a href={RAKUTEN('BenQ ScreenBar モニターライト')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">モニターライト</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">モニターライト</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">BenQ ScreenBar</p>
           <p className="text-xs text-gray-500 mb-3">グレアなし・自動照度調節</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
           <p className="text-xs text-gray-500 mb-3">度なし・度付き両対応</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('エレコム のぞき見防止フィルター')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アンチグレア</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">アンチグレア</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">エレコム のぞき見防止フィルター</p>
           <p className="text-xs text-gray-500 mb-3">映り込み軽減とプライバシー保護</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
       <div className="overflow-x-auto mb-6">
@@ -2438,10 +2438,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">セルフケアを続けても改善しない場合や、視力低下・強い痛みを伴う場合は、自己判断を続けず眼科を受診しましょう。</p>
       <div className="my-4">
         <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">日々のPC作業に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">日々のPC作業に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">JINS SCREENを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">JINS SCREENを楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -2528,11 +2528,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <p className="text-sm font-bold text-violet-900 mb-3">🛒 Meta Quest 3を楽天市場で購入する</p>
         <div className="space-y-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224114424%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Meta Quest 3（128GB・公式ストア）を楽天で見る →
           </a>
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224147192%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Meta Quest 3（512GB・別モデル・公式）を楽天で見る →
           </a>
         </div>
@@ -2573,15 +2573,15 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <p className="text-sm font-bold text-violet-900 mb-3">🛒 Meta Quest 3・関連アクセサリを購入する</p>
         <div className="space-y-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224114424%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Meta Quest 3（128GB・公式ストア）を楽天で見る →
           </a>
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622ef30.e497d9a3.5622ef31.db809b25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmeta%2F9089224147192%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Meta Quest 3（512GB・別モデル・公式）を楽天で見る →
           </a>
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622edfb.fb2e30e0.5622edfc.afa105c5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fvr-electronicsten%2Fbobovr-s3pro%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-gray-700 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             BoboVR S3 Pro ヘッドストラップ（長時間装用アクセサリ）を楽天で見る →
           </a>
         </div>
@@ -2921,11 +2921,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('ロートVアクティブ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">結膜充血のセルフケアに</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">結膜充血のセルフケアに</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ロートVアクティブ</p>
           <p className="text-xs text-gray-500 mb-3">血管収縮成分配合で赤みを素早くケア。連用は週2〜3回以内が目安</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ロートVアクティブを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">ロートVアクティブを楽天で見る →</div>
         </a>
       </div>
 
@@ -2960,18 +2960,18 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ドライアイ由来の充血に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">ドライアイ由来の充血に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
           <p className="text-xs text-gray-500 mb-3">防腐剤無添加でコンタクト装用中でも使用可能</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('サンテFXネオ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">疲れ目由来の充血に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">疲れ目由来の充血に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテFXネオ</p>
           <p className="text-xs text-gray-500 mb-3">ビタミンB12・タウリン配合</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
 
@@ -2996,10 +2996,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">1週間以上続く・強い痛みを伴うなど、上記のサインに当てはまる場合は自己判断を続けず眼科を受診しましょう。</p>
       <div className="my-4">
         <a href={RAKUTEN('サンテFXネオ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">疲れ目対策に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">疲れ目対策に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテFXネオ</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">サンテFXネオを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">サンテFXネオを楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -3091,11 +3091,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('Oakley Holbrook 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから：定番モデル</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">まずはこれから：定番モデル</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Oakley Holbrook 偏光レンズモデル</p>
           <p className="text-xs text-gray-500 mb-3">グレー系レンズで自然な見え方。普段使いとも兼用しやすいクラシックデザイン</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Oakley Holbrook 偏光レンズモデルを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">Oakley Holbrook 偏光レンズモデルを楽天で見る →</div>
         </a>
       </div>
 
@@ -3111,11 +3111,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：フレームのサイズ・カラー展開が他ジャンルのモデルより限られる場合がある。購入前にサイズ表示を確認しておくと安心</p>
       <div className="my-4">
         <a href={RAKUTEN('DAIWA 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">釣り向け</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">釣り向け</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DAIWA 偏光サングラス</p>
           <p className="text-xs text-gray-500 mb-3">水面の反射を抑えて水中の魚・底の地形が見やすくなる</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DAIWA 偏光サングラスを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">DAIWA 偏光サングラスを楽天で見る →</div>
         </a>
       </div>
 
@@ -3129,11 +3129,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：用途特化モデルと比べると本体価格はやや高めになりやすい。長く使う前提であれば、初期投資として捉えると選びやすい</p>
       <div className="my-4">
         <a href={RAKUTEN('Oakley Holbrook 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ドライブ向け</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">ドライブ向け</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Oakley Holbrook 偏光レンズモデル</p>
           <p className="text-xs text-gray-500 mb-3">雨に濡れた路面や対向車のヘッドライトの反射光を抑えられる</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Oakley Holbrook 偏光レンズモデルを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">Oakley Holbrook 偏光レンズモデルを楽天で見る →</div>
         </a>
       </div>
 
@@ -3147,11 +3147,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：ウィンタースポーツに特化した設計のため通年での使用には向かない。オフシーズンは別途1本用意しておくのがおすすめ</p>
       <div className="my-4">
         <a href={RAKUTEN('OAKLEY PRIZM Snow 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">スキー・スノーボード向け</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">スキー・スノーボード向け</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">OAKLEY PRIZM Snow 偏光レンズ</p>
           <p className="text-xs text-gray-500 mb-3">雪面の白さを和らげつつコントラストを強調するレンズ設計</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">OAKLEY PRIZM Snow 偏光レンズを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">OAKLEY PRIZM Snow 偏光レンズを楽天で見る →</div>
         </a>
       </div>
 
@@ -3165,11 +3165,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：スポーツ特化のデザインのため、街着など普段のコーディネートには合わせづらい場合がある。運動用と割り切って使うのがおすすめ</p>
       <div className="my-4">
         <a href={RAKUTEN('100% Speedcraft 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">サイクリング・ランニング向け</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">サイクリング・ランニング向け</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">100% Speedcraft 偏光レンズモデル</p>
           <p className="text-xs text-gray-500 mb-3">顔にフィットする軽量フレームで運動中でもズレにくい</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">100% Speedcraft 偏光レンズモデルを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">100% Speedcraft 偏光レンズモデルを楽天で見る →</div>
         </a>
       </div>
 
@@ -3199,11 +3199,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </p>
       <div className="my-4">
         <a href={RAKUTEN('Oakley Holbrook 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">普段使い・ドライブ用途に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">普段使い・ドライブ用途に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Oakley Holbrook 偏光レンズモデル</p>
           <p className="text-xs text-gray-500 mb-3">クラシックなデザインで用途を選ばない定番モデル</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Oakley Holbrook 偏光レンズモデルを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">Oakley Holbrook 偏光レンズモデルを楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -3275,7 +3275,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">HTCが提供するViveportは、VRコンテンツに特化した配信プラットフォームです。対応ヘッドセットはVive系機種が中心ですが、一部コンテンツは他機種でも利用できる場合があります。</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FVR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%2F" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           VRゴーグル・ヘッドセットを楽天で見る →
         </a>
       </div>
@@ -3304,7 +3304,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FVR%E3%82%B4%E3%83%BC%E3%82%B0%E3%83%AB%20%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B5%E3%83%AA%E3%83%BC%2F" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           VRヘッドセット用アクセサリーを楽天で見る →
         </a>
       </div>
@@ -3322,7 +3322,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-4 mb-6">
         <p className="text-sm font-bold text-cyan-900 mb-3">ストレッチと組み合わせたい温熱ケアグッズ</p>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           La Luna アイウォーマー（ホワイト）を楽天で見る →
         </a>
       </div>
@@ -3379,11 +3379,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4"><strong>効果</strong>：首・肩の緊張が目の筋肉を圧迫していることが多いため、この部分をほぐすことで間接的に眼精疲労を軽減できます。</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237db3.a916904a.56237db4.bd5b1f1c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbodyplus%2F4580657302%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ストレッチ後の仕上げに</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">ストレッチ後の仕上げに</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Bodyplus アイウォーマー 4580657302</p>
           <p className="text-xs text-gray-500 mb-3">ストレッチ後の血行促進・リラックスに使いやすい軽量モデル</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Bodyplus アイウォーマー 4580657302を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">Bodyplus アイウォーマー 4580657302を楽天で見る →</div>
         </a>
       </div>
       <hr className="my-6 border-gray-200" />
@@ -3430,11 +3430,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4"><strong>効果</strong>：額の筋肉緊張を緩和し、脳への血流を改善。眼精疲労に伴う頭重感を軽減します。</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d7f.33f4cbd3.56237d80.df2babe8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcitech%2Frelx-eye-001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">手動マッサージの代わりに</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">手動マッサージの代わりに</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">RelxEye アイリラクサー RE-001</p>
           <p className="text-xs text-gray-500 mb-3">振動マッサージ機能で、ここまで紹介したマッサージを効率的にサポート</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">RelxEye アイリラクサー RE-001を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">RelxEye アイリラクサー RE-001を楽天で見る →</div>
         </a>
       </div>
       <hr className="my-6 border-gray-200" />
@@ -3448,11 +3448,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <div className="my-4">
         <a href={RAKUTEN('肌ラボ 極潤プレミアムヒアルロンアイクリーム')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">マッサージ前の保湿に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">マッサージ前の保湿に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">肌ラボ 極潤プレミアムヒアルロンアイクリーム</p>
           <p className="text-xs text-gray-500 mb-3">マッサージ前に塗布することで滑りが良くなり、保湿効果も得やすくなります</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">肌ラボ 極潤プレミアムヒアルロンアイクリームを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">肌ラボ 極潤プレミアムヒアルロンアイクリームを楽天で見る →</div>
         </a>
       </div>
       <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">温冷療法の組み合わせ</h3>
@@ -3503,11 +3503,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <div className="my-4">
         <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">コンタクト装用中でも使える目薬</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">コンタクト装用中でも使える目薬</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
           <p className="text-xs text-gray-500 mb-3">防腐剤無添加。コンタクト装用中のマッサージ前後のケアに</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
         </a>
       </div>
       <hr className="my-6 border-gray-200" />
@@ -3528,11 +3528,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <div className="my-4">
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">食事で摂りきれない分の補給に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">食事で摂りきれない分の補給に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
           <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。続けやすい価格帯</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
         </a>
       </div>
       <hr className="my-6 border-gray-200" />
@@ -3547,66 +3547,66 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <div className="grid sm:grid-cols-3 gap-3 mb-6">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アイウォーマー</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">アイウォーマー</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">La Luna アイウォーマー（ホワイト）</p>
           <p className="text-xs text-gray-400 mb-3">t-pro</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">La Luna アイウォーマー（ホワイト）を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">La Luna アイウォーマー（ホワイト）を楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237db3.a916904a.56237db4.bd5b1f1c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbodyplus%2F4580657302%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アイウォーマー</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">アイウォーマー</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Bodyplus アイウォーマー 4580657302</p>
           <p className="text-xs text-gray-400 mb-3">bodyplus</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Bodyplus アイウォーマー 4580657302を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">Bodyplus アイウォーマー 4580657302を楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d7f.33f4cbd3.56237d80.df2babe8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcitech%2Frelx-eye-001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アイリラクサー</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">アイリラクサー</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">RelxEye アイリラクサー RE-001</p>
           <p className="text-xs text-gray-400 mb-3">excitech</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">RelxEye アイリラクサー RE-001を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">RelxEye アイリラクサー RE-001を楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d75.6a00e946.56237d76.0969a7c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fleapgrow%2Fmt-irm21%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アイウォーマー</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">アイウォーマー</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Leapgrow アイウォーマー MT-IRM21</p>
           <p className="text-xs text-gray-400 mb-3">leapgrow</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Leapgrow アイウォーマー MT-IRM21を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">Leapgrow アイウォーマー MT-IRM21を楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d71.e1be5ab2.56237d72.e7946a18/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmygear%2Freleaseeye%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">目もとケア</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">目もとケア</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">MyGear リリースアイ</p>
           <p className="text-xs text-gray-400 mb-3">mygear</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">MyGear リリースアイを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">MyGear リリースアイを楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d51.c785194a.56237d52.f8562009/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnissoplus%2Fnp-eem23%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アイウォーマー</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">アイウォーマー</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Nissoplus アイウォーマー NP-EEM23</p>
           <p className="text-xs text-gray-400 mb-3">nissoplus</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Nissoplus アイウォーマー NP-EEM23を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">Nissoplus アイウォーマー NP-EEM23を楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d51.c785194a.56237d52.f8562009/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnissoplus%2Fnp-er23%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">目もとリラックス</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">目もとリラックス</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Nissoplus アイリフレッシャー NP-ER23</p>
           <p className="text-xs text-gray-400 mb-3">nissoplus</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Nissoplus アイリフレッシャー NP-ER23を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">Nissoplus アイリフレッシャー NP-ER23を楽天で見る →</div>
         </a>
       </div>
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-4">
         <p className="font-bold text-gray-800 mb-3">ドライアイ・疲れ目対策グッズを探す</p>
         <a href={RAKUTEN('サンテFXネオ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           サンテFXネオを楽天で見る →
         </a>
       </div>
@@ -3655,11 +3655,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">日々の眼精疲労ケアに</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">日々の眼精疲労ケアに</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
           <p className="text-xs text-gray-500 mb-3">防腐剤無添加でコンタクト装用中でも使用可能</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
         </a>
       </div>
 
@@ -3702,18 +3702,18 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ルテインサプリ</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">ルテインサプリ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
           <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
           <p className="text-xs text-gray-500 mb-3">度なし・度付き両対応</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
       <p className="text-gray-700 mb-4">何も症状がない人でも、40歳以上は年1回程度の眼科検査が一般的な目安とされています。飛蚊症以外の眼疾患（緑内障、加齢黄斑変性など）の早期発見にもつながります。</p>
@@ -3729,10 +3729,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">初めて症状に気づいたときは一度眼科で原因を確認し、その後は定期検査で経過を見守るという流れが基本になります。</p>
       <div className="my-4">
         <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">目の乾燥・疲れ対策に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">目の乾燥・疲れ対策に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">ソフトサンティアを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">ソフトサンティアを楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -4027,7 +4027,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：フレームカラーによって印象が変わるため、肌色や普段の服装との相性も確認したい</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           Hodopus メガネフレームを楽天で見る →
         </a>
       </div>
@@ -4041,7 +4041,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：デザイン性が高いぶん、普段の服装のテイストとの相性は事前にチェックしておきたい</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4ee.c25ab11d.5622e4ef.2987dd69/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Florelife%2Ff2006c-106%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           Lorelife メガネフレーム F2006Cを楽天で見る →
         </a>
       </div>
@@ -4055,7 +4055,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：フレーム上部の主張が強いデザインのため、フレーム幅は顔幅とのバランスを見て選びたい</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           merry39 メガネフレーム No.2854を楽天で見る →
         </a>
       </div>
@@ -4077,7 +4077,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e16c.d190f4a9.5622e16d.a64e1d5d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmegane-style%2Fcf5043%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           メガネスタイル メガネフレーム CF5043を楽天で見る →
         </a>
       </div>
@@ -4103,11 +4103,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">目の健康維持サプリ（処方薬の代替ではありません）</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">目の健康維持サプリ（処方薬の代替ではありません）</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
           <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。日常の目の健康維持を目的とした栄養補助食品</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
         </a>
       </div>
 
@@ -4150,11 +4150,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <div className="my-4">
         <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">日常のドライアイ対策に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">日常のドライアイ対策に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
           <p className="text-xs text-gray-500 mb-3">防腐剤無添加の人工涙液。緑内障治療薬の代わりにはなりません</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
         </a>
       </div>
       <p className="text-gray-700 mb-4">緑内障の治療目薬（プロスタグランジン関連薬など）は医師の処方が必須で、市販・通販での購入はできません。処方された目薬は指示通りに正しく使用することが重要です。処方薬とは別に、日常的な目の健康維持を補う一般用サプリメントを併用する方もいますが、あくまで治療の代わりにはなりません。</p>
@@ -4172,10 +4172,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">視力は一度失うと取り戻せません。リスク因子に当てはまる方は、今のうちから定期検査を習慣にしてみてください。</p>
       <div className="my-4">
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">日常の目の健康維持に（処方薬の代替ではありません）</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">日常の目の健康維持に（処方薬の代替ではありません）</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">DHC ルテイン光対策を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">DHC ルテイン光対策を楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -4214,10 +4214,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('Isabell 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Isabell 偏光サングラス</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">Isabell 偏光サングラスを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">Isabell 偏光サングラスを楽天で見る →</div>
         </a>
       </div>
 
@@ -4235,18 +4235,18 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">UV目薬は、紫外線による目のダメージを事後的にケアする製品で、サングラスの代わりにはなりません。ビタミンC（アスコルビン酸）やタウリンなどの成分が配合された製品が一般的です。屋外活動から室内に戻った際のケアとして活用してみてください。</p>
       <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href={RAKUTEN('Isabell 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">UVカット・偏光サングラス</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">UVカット・偏光サングラス</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Isabell 偏光サングラス</p>
           <p className="text-xs text-gray-500 mb-3">UV99%以上カット・ポリカーボネートレンズ</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('サンテメディカル12')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">UV・紫外線対応目薬</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">UV・紫外線対応目薬</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテメディカル12</p>
           <p className="text-xs text-gray-500 mb-3">紫外線による眼炎に対応。ビタミンB12配合</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
 
@@ -4270,10 +4270,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">自覚症状が出にくい分野だからこそ、日々の習慣として無理なく続けることが大切です。</p>
       <div className="my-4">
         <a href={RAKUTEN('サンテメディカル12')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">屋外活動後のケアに</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">屋外活動後のケアに</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテメディカル12</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">サンテメディカル12を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">サンテメディカル12を楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -4289,7 +4289,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-6">
         <p className="text-sm font-bold text-emerald-900 mb-3">術後のドライアイケアを始める</p>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E9%98%B2%E8%85%90%E5%89%A4%E3%83%95%E3%83%AA%E3%83%BC%20%E7%9B%AE%E8%96%AC%2F" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           防腐剤フリー目薬（術後ドライアイケア）を楽天市場で探す →
         </a>
       </div>
@@ -4603,7 +4603,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('SWANS スポーツサングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           SWANS スポーツサングラスを楽天で見る →
         </a>
       </div>
@@ -4619,7 +4619,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：フィット感には個人差があるため、可能であれば試着してから選びたい</p>
       <div className="my-4">
         <a href={RAKUTEN('SWANS スポーツサングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           SWANS スポーツサングラスを楽天で見る →
         </a>
       </div>
@@ -4633,7 +4633,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：デザイン性の高いモデルほど価格帯は上がりやすい</p>
       <div className="my-4">
         <a href={RAKUTEN('OAKLEY スポーツアイウェア')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           OAKLEY スポーツアイウェアを楽天で見る →
         </a>
       </div>
@@ -4647,7 +4647,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：度付きレンズへの対応可否は購入前に店舗・公式サイトで確認しておきたい</p>
       <div className="my-4">
         <a href={RAKUTEN('JINS SPORT')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           JINS SPORTを楽天で見る →
         </a>
       </div>
@@ -4661,7 +4661,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：屋内競技との併用は想定されていないため、用途を分けて使うのがおすすめ</p>
       <div className="my-4">
         <a href={RAKUTEN('Zoff SPORT 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           Zoff SPORT 偏光レンズモデルを楽天で見る →
         </a>
       </div>
@@ -4686,7 +4686,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </p>
       <div className="my-4">
         <a href={RAKUTEN('SWANS スポーツサングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           SWANS スポーツサングラスを楽天で見る →
         </a>
       </div>
@@ -4730,7 +4730,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">初めて老眼鏡を購入する場合は、弱めの度数から始めるのが基本です。強すぎる度数は目の疲れや頭痛につながりやすいため、段階的に上げていくと負担が少なくなります。</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           Wavecontact メガネフレーム MGN_BASICを楽天で見る →
         </a>
       </div>
@@ -4745,7 +4745,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：老眼鏡は毎日つけ外しする機会が多いため、蝶番の耐久性も含めて確認しておきたい</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           Hodopus メガネフレームを楽天で見る →
         </a>
       </div>
@@ -4758,7 +4758,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：フレームカラーによって印象が変わるため、肌色や普段の服装との相性も見ておきたい</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           merry39 メガネフレーム No.2854を楽天で見る →
         </a>
       </div>
@@ -4771,7 +4771,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：機能を組み合わせるほど価格が上がりやすいため、優先順位を決めてから相談したい</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e16c.d190f4a9.5622e16d.a64e1d5d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmegane-style%2Fcf5043%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           メガネスタイル メガネフレーム CF5043を楽天で見る →
         </a>
       </div>
@@ -4793,7 +4793,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           Wavecontact メガネフレーム MGN_BASICを楽天で見る →
         </a>
       </div>
@@ -4812,7 +4812,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <div className="my-6 p-4 bg-indigo-50 border border-indigo-200 rounded-xl">
         <p className="text-sm font-bold text-indigo-900 mb-3">👓 楽天市場で人気の眼鏡フレームを先にチェック</p>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e16c.d190f4a9.5622e16d.a64e1d5d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmegane-style%2Fcf5043%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           メガネスタイル メガネフレーム CF5043 を楽天で見る →
         </a>
       </div>
@@ -5037,31 +5037,31 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
         <p className="text-xs text-gray-500 mb-3">返品対応・レビュー多数の実績あるショップからお選びください。</p>
         <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4c6.0ff9348e.5622e4c7.74cd653f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fre-colle%2Fc111055-pc%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Re-COLLE PCメガネ C111055（ブルーライトカット対応）を楽天で見る →
           </a>
         </div>
         <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e4ee.c25ab11d.5622e4ef.2987dd69/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Florelife%2Ff2006c-106%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Lorelife メガネフレーム F2006C（おしゃれ・軽量）を楽天で見る →
           </a>
         </div>
         <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             merry39 メガネフレーム No.2854（楽天人気）を楽天で見る →
           </a>
         </div>
         <div className="mb-2">
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Wavecontact メガネフレーム MGN_BASIC を楽天で見る →
           </a>
         </div>
         <div>
           <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+            className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
             Hodopus メガネフレームを楽天で見る →
           </a>
         </div>
@@ -5370,10 +5370,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">機能とコストのバランスを重視するならLa Luna、毎日使うなら高機能なNissoplus、まず試してみたい方はBodyplusが選びやすい傾向にあります。</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから：バランス重視の方に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">まずはこれから：バランス重視の方に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">La Luna アイウォーマー（ホワイト）</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">La Luna アイウォーマー（ホワイト）を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">La Luna アイウォーマー（ホワイト）を楽天で見る →</div>
         </a>
       </div>
 
@@ -5403,25 +5403,25 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
 
       <div className="grid sm:grid-cols-3 gap-3 mb-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d51.c785194a.56237d52.f8562009/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnissoplus%2Fnp-eem23%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">高機能タイプ</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">高機能タイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Nissoplus アイウォーマー NP-EEM23</p>
           <p className="text-xs text-gray-500 mb-3">アプリ連携で温度・時間管理ができる高機能モデル</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Nissoplus アイウォーマー NP-EEM23を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">Nissoplus アイウォーマー NP-EEM23を楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237ce7.d10b0fe9.56237ce8.0c7596ff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-pro%2Fla_luna_wh%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">スタンダードタイプ</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">スタンダードタイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">La Luna アイウォーマー（ホワイト）</p>
           <p className="text-xs text-gray-500 mb-3">USB充電式でコストと機能のバランスが良好</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">La Luna アイウォーマー（ホワイト）を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">La Luna アイウォーマー（ホワイト）を楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237db3.a916904a.56237db4.bd5b1f1c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbodyplus%2F4580657302%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">低価格タイプ</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">低価格タイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Bodyplus アイウォーマー 4580657302</p>
           <p className="text-xs text-gray-500 mb-3">軽量・コンパクトな基本機能モデル</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">Bodyplus アイウォーマー 4580657302を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">Bodyplus アイウォーマー 4580657302を楽天で見る →</div>
         </a>
       </div>
 
@@ -5472,11 +5472,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">使用後は保湿成分配合の目薬を組み合わせると、さらにケア効果が高まります。今回紹介した3タイプの特徴を参考に、ライフスタイルに合う製品を検討してみてください。</p>
       <div className="my-4">
         <a href={RAKUTEN('ソフトサンティア 防腐剤フリー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">併用におすすめの目薬</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">併用におすすめの目薬</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ソフトサンティア</p>
           <p className="text-xs text-gray-500 mb-3">防腐剤フリーの人工涙液。ホットアイマスク使用後の保湿ケアに</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">ソフトサンティアを楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -5516,10 +5516,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d7f.33f4cbd3.56237d80.df2babe8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcitech%2Frelx-eye-001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">RelxEye アイリラクサー RE-001</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">RelxEye アイリラクサー RE-001を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">RelxEye アイリラクサー RE-001を楽天で見る →</div>
         </a>
       </div>
 
@@ -5542,18 +5542,18 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
 
       <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d7f.33f4cbd3.56237d80.df2babe8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcitech%2Frelx-eye-001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">アイローラー・電動タイプ</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">アイローラー・電動タイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">RelxEye アイリラクサー RE-001</p>
           <p className="text-xs text-gray-500 mb-3">振動マッサージ機能で血流促進効果を高める電動アイローラー</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('肌ラボ 極潤プレミアムヒアルロンアイクリーム')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">併用アイクリーム</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">併用アイクリーム</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">肌ラボ 極潤プレミアムヒアルロンアイクリーム</p>
           <p className="text-xs text-gray-500 mb-3">7種のヒアルロン酸Na配合。ローラー使用前の保湿に</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
 
@@ -5584,10 +5584,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">自分のライフスタイルに合った素材・タイプを選び、無理のない範囲で継続してみてください。</p>
       <div className="my-4">
         <a href={RAKUTEN('肌ラボ 極潤プレミアムヒアルロンアイクリーム')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">併用におすすめ</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">併用におすすめ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">肌ラボ 極潤プレミアムヒアルロンアイクリーム</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">肌ラボ 極潤プレミアムヒアルロンアイクリームを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">肌ラボ 極潤プレミアムヒアルロンアイクリームを楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -5628,7 +5628,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           Wavecontact メガネフレーム MGN_BASICを楽天で見る →
         </a>
       </div>
@@ -5644,7 +5644,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：コーティングは店舗でのオプション追加が基本となるため、購入前に対応可否を確認したい</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           merry39 メガネフレーム No.2854を楽天で見る →
         </a>
       </div>
@@ -5658,7 +5658,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：高機能な撥水・撥油加工が必要な場合は追加費用がかかる</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           Hodopus メガネフレームを楽天で見る →
         </a>
       </div>
@@ -5672,7 +5672,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：機能を組み合わせるほど価格は上がりやすいため、優先順位を決めてから相談したい</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e16c.d190f4a9.5622e16d.a64e1d5d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmegane-style%2Fcf5043%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           メガネスタイル メガネフレーム CF5043を楽天で見る →
         </a>
       </div>
@@ -5694,7 +5694,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e02a.71e3dd44.5622e02b.389edc30/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwavecontact%2Fmgn_basic%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           Wavecontact メガネフレーム MGN_BASICを楽天で見る →
         </a>
       </div>
@@ -5734,10 +5734,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">DHC ルテイン光対策を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">DHC ルテイン光対策を楽天で見る →</div>
         </a>
       </div>
 
@@ -5756,18 +5756,18 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">シンプル処方</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">シンプル処方</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
           <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。続けやすい価格帯</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('ファンケル えんきん')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">機能性表示食品</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">機能性表示食品</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ファンケル えんきん</p>
           <p className="text-xs text-gray-500 mb-3">アスタキサンチンも配合した複合ケアタイプ</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
 
@@ -5792,10 +5792,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">サプリメントだけに頼らず、紫外線対策や適度な休息など生活習慣の見直しと合わせて取り入れてみてください。</p>
       <div className="my-4">
         <a href={RAKUTEN('ファンケル えんきん')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">複合ケアをしたい方に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">複合ケアをしたい方に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ファンケル えんきん</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">ファンケル えんきんを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">ファンケル えんきんを楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -5819,11 +5819,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">目の健康維持サプリ（治療の代替ではありません）</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">目の健康維持サプリ（治療の代替ではありません）</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
           <p className="text-xs text-gray-500 mb-3">ルテイン・ゼアキサンチン配合。日常の栄養補給を目的とした食品です</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">DHC ルテイン光対策を楽天で見る →</div>
         </a>
       </div>
 
@@ -5864,11 +5864,11 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <div className="my-4">
         <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">スマホ・タブレット使用時の負担軽減に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">スマホ・タブレット使用時の負担軽減に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
           <p className="text-xs text-gray-500 mb-3">近視進行抑制治療の代わりにはなりません。あくまで生活面のサポートとして</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">JINS SCREENを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">JINS SCREENを楽天で見る →</div>
         </a>
       </div>
       <p className="text-gray-700 mb-4">生活習慣の改善だけで進行が止まるとは限りません。治療を検討している場合は、生活改善と併せて眼科医に相談することが基本です。</p>
@@ -5888,10 +5888,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">屋外活動の確保など生活習慣の見直しと合わせて、気になる症状があれば早めに眼科医に相談してみてください。</p>
       <div className="my-4">
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">日常の栄養補給に（治療の代替ではありません）</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">日常の栄養補給に（治療の代替ではありません）</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">DHC ルテイン光対策を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">DHC ルテイン光対策を楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -5930,10 +5930,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('Isabell 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Isabell 偏光サングラス</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">Isabell 偏光サングラスを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">Isabell 偏光サングラスを楽天で見る →</div>
         </a>
       </div>
 
@@ -5955,18 +5955,18 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href={RAKUTEN('Isabell 偏光サングラス')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">UVカット・偏光サングラス</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">UVカット・偏光サングラス</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Isabell 偏光サングラス</p>
           <p className="text-xs text-gray-500 mb-3">UV99%以上カット。日常使いしやすい価格帯</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('サンテメディカル12')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">UV・紫外線対応目薬</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">UV・紫外線対応目薬</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテメディカル12</p>
           <p className="text-xs text-gray-500 mb-3">紫外線による眼炎に対応。ビタミンB12配合</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
 
@@ -5983,10 +5983,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">帽子との併用や、こまめな休息も合わせて、無理のない範囲で習慣化してみてください。</p>
       <div className="my-4">
         <a href={RAKUTEN('サンテメディカル12')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">屋外活動後のケアに</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">屋外活動後のケアに</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">サンテメディカル12</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">サンテメディカル12を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">サンテメディカル12を楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -6027,7 +6027,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           merry39 メガネフレーム No.2854を楽天で見る →
         </a>
       </div>
@@ -6042,7 +6042,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：屋外での使用も兼ねたい場合は、レンズのコーティングを別途相談したい</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           merry39 メガネフレーム No.2854を楽天で見る →
         </a>
       </div>
@@ -6055,7 +6055,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：画面までの距離は環境によって差があるため、実際の作業距離を測ってから度数を相談したい</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e16c.d190f4a9.5622e16d.a64e1d5d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmegane-style%2Fcf5043%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           メガネスタイル メガネフレーム CF5043を楽天で見る →
         </a>
       </div>
@@ -6068,7 +6068,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-500 text-sm mb-3">気になる点：複数のシーンを1本で兼用する場合、それぞれの用途に対して度数はやや妥協が必要になる</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e211.f6ea6aba.5622e212.66574491/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhodopus%2Fhodopus-0001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           Hodopus メガネフレームを楽天で見る →
         </a>
       </div>
@@ -6089,7 +6089,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e546.0cf65a05.5622e547.f9ab9c2c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmerry39%2F2854%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity">
           merry39 メガネフレーム No.2854を楽天で見る →
         </a>
       </div>
@@ -6129,10 +6129,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('ハズキルーペ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ハズキルーペ</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">ハズキルーペを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">ハズキルーペを楽天で見る →</div>
         </a>
       </div>
 
@@ -6151,18 +6151,18 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href={RAKUTEN('ハズキルーペ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-slate-50 border border-gray-200 rounded-lg p-3 hover:border-[#bf0000] transition-all">
+          className="block bg-slate-50 border border-gray-200 rounded-lg p-3 hover:border-navy-900 transition-all">
           <span className="text-xs bg-white text-gray-600 border border-gray-300 px-2 py-0.5 rounded font-medium">拡大鏡・老眼鏡タイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ハズキルーペ</p>
           <p className="text-xs text-gray-500 mb-3">軽量フレームで長時間の装用にも対応</p>
-          <div className="border border-[#bf0000] text-[#bf0000] text-xs font-bold text-center py-1.5 rounded-md">ハズキルーペを楽天で見る →</div>
+          <div className="border border-navy-900 text-navy-900 text-xs font-bold text-center py-1.5 rounded-md">ハズキルーペを楽天で見る →</div>
         </a>
         <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-slate-50 border border-gray-200 rounded-lg p-3 hover:border-[#bf0000] transition-all">
+          className="block bg-slate-50 border border-gray-200 rounded-lg p-3 hover:border-navy-900 transition-all">
           <span className="text-xs bg-white text-gray-600 border border-gray-300 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
           <p className="text-xs text-gray-500 mb-3">度なし・度付き両対応。夜間使用の負担軽減に</p>
-          <div className="border border-[#bf0000] text-[#bf0000] text-xs font-bold text-center py-1.5 rounded-md">JINS SCREENを楽天で見る →</div>
+          <div className="border border-navy-900 text-navy-900 text-xs font-bold text-center py-1.5 rounded-md">JINS SCREENを楽天で見る →</div>
         </a>
       </div>
 
@@ -6187,10 +6187,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">症状が軽いうちから対策グッズを取り入れつつ、気になる症状が続く場合は眼科医にも相談してみてください。</p>
       <div className="my-4">
         <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ブルーライト対策も重視したい方に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">ブルーライト対策も重視したい方に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">JINS SCREENを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">JINS SCREENを楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -6230,10 +6230,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('ディアナチュラゴールド ルテイン ゼアキサンチン')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">機能性表示食品</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">機能性表示食品</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ディアナチュラゴールド ルテイン&ゼアキサンチン</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">ディアナチュラゴールドを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">ディアナチュラゴールドを楽天で見る →</div>
         </a>
       </div>
 
@@ -6258,22 +6258,22 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <div className="grid sm:grid-cols-3 gap-3 mb-4">
         <a href={RAKUTEN('DHC ルテイン光対策')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">シンプル処方</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">シンプル処方</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">DHC ルテイン光対策</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('ディアナチュラゴールド ルテイン ゼアキサンチン')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">機能性表示食品</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">機能性表示食品</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ディアナチュラゴールド</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('ファンケル えんきん')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">複合ケア</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">複合ケア</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ファンケル えんきん</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
 
@@ -6298,10 +6298,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">効果の実感には個人差があり、継続摂取が前提となる成分です。焦らず、無理なく続けられる製品を選びましょう。</p>
       <div className="my-4">
         <a href={RAKUTEN('ファンケル えんきん')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">複合ケアをしたい方に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">複合ケアをしたい方に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ファンケル えんきん</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">ファンケル えんきんを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">ファンケル えんきんを楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -6347,7 +6347,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-medium">まずはこれから試したい方に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">肌ラボ 極潤プレミアムヒアルロンアイクリーム</p>
           <p className="text-xs text-gray-500 mb-3">ロート製薬／7種のヒアルロン酸Na配合。乾燥による小ジワが気になる方の入門用に</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">肌ラボ 極潤プレミアムヒアルロンアイクリームを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">肌ラボ 極潤プレミアムヒアルロンアイクリームを楽天で見る →</div>
         </a>
       </div>
 
@@ -6381,21 +6381,21 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-medium">プチプラ・保湿重視</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">肌ラボ 極潤プレミアムヒアルロンアイクリーム</p>
           <p className="text-xs text-gray-500 mb-3">7種のヒアルロン酸Na配合。初めての一本に</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('POLA B.A アイゾーンクリーム N')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-slate-400 transition-all">
           <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-medium">デパコス・複合ケア</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">POLA B.A アイゾーンクリーム N</p>
           <p className="text-xs text-gray-500 mb-3">クマ・シワ・たるみを複合的にケア</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('エトヴォス バイタライジングリンクルクリーム')} target="_blank" rel="noopener noreferrer nofollow sponsored"
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-slate-400 transition-all">
           <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-medium">敏感肌向け</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">エトヴォス バイタライジングリンクルクリーム</p>
           <p className="text-xs text-gray-500 mb-3">パッチテスト済みの低刺激処方</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
 
@@ -6460,7 +6460,7 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-medium">複合的な目元ケアをしたい方に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">POLA B.A アイゾーンクリーム N</p>
           <p className="text-xs text-gray-500 mb-3">クマ・シワ・たるみの複合ケアを重視する方向けのハイエンドライン</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">POLA B.A アイゾーンクリーム Nを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">POLA B.A アイゾーンクリーム Nを楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -6499,10 +6499,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">JINS SCREENを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">JINS SCREENを楽天で見る →</div>
         </a>
       </div>
 
@@ -6521,18 +6521,18 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <a href={RAKUTEN('JINS SCREEN ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">JINS SCREEN</p>
           <p className="text-xs text-gray-500 mb-3">度なし・度付き両対応で日常使いしやすい価格帯</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href={RAKUTEN('Zoff PC ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">ブルーライトカット眼鏡</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Zoff PC</p>
           <p className="text-xs text-gray-500 mb-3">カット率を選べる手頃な価格帯のライン</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
 
@@ -6556,10 +6556,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">ブルーライトカット単体で目の疲れが解決するとは限りません。20分おきの休憩や画面輝度の調整も合わせて取り入れてみてください。</p>
       <div className="my-4">
         <a href={RAKUTEN('Zoff PC ブルーライトカットメガネ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">手頃な価格から始めたい方に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">手頃な価格から始めたい方に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Zoff PC</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">Zoff PCを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">Zoff PCを楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -6599,10 +6599,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </div>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d7f.33f4cbd3.56237d80.df2babe8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcitech%2Frelx-eye-001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">まずはこれから</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">RelxEye アイリラクサー RE-001</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">RelxEye アイリラクサー RE-001を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">RelxEye アイリラクサー RE-001を楽天で見る →</div>
         </a>
       </div>
 
@@ -6652,22 +6652,22 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       </ul>
       <div className="grid sm:grid-cols-3 gap-3 mb-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d7f.33f4cbd3.56237d80.df2babe8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcitech%2Frelx-eye-001%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">電動・振動タイプ</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">電動・振動タイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">RelxEye アイリラクサー RE-001</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d75.6a00e946.56237d76.0969a7c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fleapgrow%2Fmt-irm21%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">温熱タイプ</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">温熱タイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">Leapgrow アイウォーマー MT-IRM21</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d71.e1be5ab2.56237d72.e7946a18/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmygear%2Freleaseeye%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">手軽なリラックスケア</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">手軽なリラックスケア</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">MyGear リリースアイ</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">楽天で見る →</div>
         </a>
       </div>
 
@@ -6692,10 +6692,10 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <p className="text-gray-700 mb-4">正しい力加減と適度な頻度を守り、無理のない範囲でセルフケアを続けましょう。</p>
       <div className="my-4">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/56237d71.e1be5ab2.56237d72.e7946a18/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmygear%2Freleaseeye%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-          <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">手軽に始めたい方に</span>
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+          <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">手軽に始めたい方に</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">MyGear リリースアイ</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg mt-2">MyGear リリースアイを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg mt-2">MyGear リリースアイを楽天で見る →</div>
         </a>
       </div>
     </article>
@@ -6788,24 +6788,24 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
       <div className="grid sm:grid-cols-3 gap-4 mb-6">
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmujina0008%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
           <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">mujina</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">mujina ブルーライトカットPCメガネ</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina ブルーライトカットPCメガネを楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">mujina ブルーライトカットPCメガネを楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmujina0023%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
           <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">mujina</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">mujina ブルーライトカットPCメガネ（別モデル）</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina ブルーライトカットPCメガネ（別モデル）を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">mujina ブルーライトカットPCメガネ（別モデル）を楽天で見る →</div>
         </a>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5622e416.1124b78b.5622e417.145b08c9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujina%2Fmj-1092%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
           target="_blank" rel="noopener noreferrer nofollow sponsored"
-          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-indigo-300 transition-all">
+          className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
           <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">mujina</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-3">mujina PCメガネ MJ-1092</p>
-          <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">mujina PCメガネ MJ-1092 を楽天で見る →</div>
+          <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">mujina PCメガネ MJ-1092 を楽天で見る →</div>
         </a>
       </div>
 

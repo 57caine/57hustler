@@ -66,6 +66,6 @@ export function parseMoshimoEmbedCode(embedCode: string): MoshimoProduct | null 
     imageUrl,
     affiliateUrl,
     buttonText: link.u_tx || `${raw.n}を見る`,
-    buttonColor: link.u_bc || '#bf0000',
+    buttonColor: link.u_bc || '#16305a',
   };
 }

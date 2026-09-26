@@ -2714,11 +2714,11 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
         <div className="my-4">
           <a href={RAKUTEN('デイリーズ トータルワン 乱視用')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ワンデー1位・乾きにくさ最強</span>
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+            <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">ワンデー1位・乾きにくさ最強</span>
             <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">デイリーズ トータルワン 乱視用</p>
             <p className="text-xs text-gray-500 mb-3">水分保持96%・シリコーンHG素材。1日中快適な装用感でドライアイ傾向の方にも適合</p>
-            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">デイリーズ トータルワン 乱視用を楽天で見る →</div>
+            <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">デイリーズ トータルワン 乱視用を楽天で見る →</div>
           </a>
         </div>
       </section>
@@ -2773,11 +2773,11 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
         <div className="my-4">
           <a href={RAKUTEN('アキュビュー オアシス 乱視用')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">2week1位・乾きにくい</span>
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+            <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">2week1位・乾きにくい</span>
             <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">アキュビュー オアシス 乱視用</p>
             <p className="text-xs text-gray-500 mb-3">HYDRACLEAR PLUSテクノロジーで涙液の安定膜を形成。長時間装用でも快適</p>
-            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">アキュビュー オアシス 乱視用を楽天で見る →</div>
+            <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">アキュビュー オアシス 乱視用を楽天で見る →</div>
           </a>
         </div>
       </section>
@@ -2824,11 +2824,11 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
         <div className="my-4">
           <a href={RAKUTEN('バイオフィニティ トーリック')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">マンスリー1位・高酸素透過</span>
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+            <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">マンスリー1位・高酸素透過</span>
             <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">バイオフィニティ トーリック</p>
             <p className="text-xs text-gray-500 mb-3">Aquaform技術でレンズ自体が水分を保持。強度乱視にも豊富な選択肢</p>
-            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">バイオフィニティ トーリックを楽天で見る →</div>
+            <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">バイオフィニティ トーリックを楽天で見る →</div>
           </a>
         </div>
       </section>
@@ -3972,11 +3972,11 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
         <div className="my-4">
           <a href={RAKUTEN('ワンデーアキュビュー モイスト')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">ソフト・初めての1日でも使いやすい</span>
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+            <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">ソフト・初めての1日でも使いやすい</span>
             <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">ワンデーアキュビュー モイスト</p>
             <p className="text-xs text-gray-500 mb-3">うるおい成分配合で、ソフト初心者でも装用感の慣れが不要なワンデータイプ</p>
-            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">ワンデーアキュビュー モイストを楽天で見る →</div>
+            <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">ワンデーアキュビュー モイストを楽天で見る →</div>
           </a>
         </div>
       </section>
@@ -4023,11 +4023,11 @@ export const columnContent: Record<string, React.ReactNode> = {
         </div>
         <div className="my-4">
           <a href={RAKUTEN('バイオフィニティ')} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-cyan-600 transition-all">
-            <span className="text-xs bg-cyan-900 text-cyan-100 px-2 py-0.5 rounded font-medium">コストを抑えたい方に・マンスリー</span>
+            className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
+            <span className="text-xs bg-navy-900 text-blue-100 px-2 py-0.5 rounded font-medium">コストを抑えたい方に・マンスリー</span>
             <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">バイオフィニティ</p>
             <p className="text-xs text-gray-500 mb-3">Aquaform技術で高酸素透過率。マンスリーの中でも人気の高い定番モデル</p>
-            <div className="bg-[#bf0000] text-white text-xs font-bold text-center py-2 rounded-lg">バイオフィニティを楽天で見る →</div>
+            <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">バイオフィニティを楽天で見る →</div>
           </a>
         </div>
       </section>
@@ -6428,7 +6428,7 @@ export const columnContent: Record<string, React.ReactNode> = {
     <div className="prose prose-gray max-w-none">
   <p className="lead text-lg text-gray-700 mb-6">「コンタクトレンズって処方箋がないと買えないんじゃないの？」と思っていませんか？実は、日本の法律では処方箋がなくても、一定の条件を満たせばコンタクトレンズをネット通販で購入することが可能です。このガイドでは、処方箋不要で安全にコンタクトレンズを購入する方法、法的背景、そして失敗しないための実践的なチェックリストをご紹介します。</p>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でコンタクトレンズを探す →</a>
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でコンタクトレンズを探す →</a>
   <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-0 mb-8 no-underline">レンズゼロで見る →</a>
 
   <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-8">
@@ -6530,7 +6530,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">チェック5：衛生管理と配送方法</h3>
   <p className="text-gray-700 mb-4">コンタクトレンズは医療機器です。配送時の衛生管理や保存方法が適切か、商品が破損していないか、などを注意深く確認しましょう。届いたレンズをすぐに開封して、異物や破損がないことを確認することが重要です。</p>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%20%E9%80%9A%E8%B2%A9%20%E5%AE%89%E3%81%84%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でコンタクト通販 安いをチェック →</a>
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%20%E9%80%9A%E8%B2%A9%20%E5%AE%89%E3%81%84%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でコンタクト通販 安いをチェック →</a>
   <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-0 mb-8 no-underline">レンズゼロで見る →</a>
 
   <h2 id="section4" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">おすすめコンタクト通販サイト徹底比較</h2>
@@ -6627,7 +6627,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">定期的な眼科検査が重要</h3>
   <p className="text-gray-700 mb-4">度数は時間とともに変化します。厚生労働省のガイドラインでは、コンタクトレンズ使用者は最低でも年1回の眼科検査を受けることが推奨されています。数年間同じ度数でコンタクトレンズを使用していると、眼精疲労や視力低下につながるリスクがあります。通販を利用する際も、最低年1回は眼科を受診して、度数が合っているか確認することを強くおすすめします。</p>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でお得に購入する →</a>
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でお得に購入する →</a>
   <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-0 mb-8 no-underline">レンズゼロで見る →</a>
 
   <h2 id="section6" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">よくある質問5選</h2>
@@ -6691,7 +6691,7 @@ export const columnContent: Record<string, React.ReactNode> = {
 
   <p className="text-gray-700 mb-4">さらに、レンズゼロでは1回の注文で複数の商品を購入すると、送料がかからなくなるという利点があります。国内通販では送料で500〜1,000円上乗せされることが多いため、この差はかなり大きいのです。</p>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でコンタクトレンズを探す →</a>
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でコンタクトレンズを探す →</a>
   <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-0 mb-8 no-underline">レンズゼロで見る →</a>
 
   <h2 id="section3" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">注文方法のステップバイステップ</h2>
@@ -6785,7 +6785,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   
   <p className="text-gray-700 mb-4">レンズゼロで購入する際は、眼科の処方箋が必須です。処方箋の有効期限は通常1年間です。有効期限を過ぎた処方箋では注文できないため、定期的に眼科を受診する必要があります。</p>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でワンデーコンタクトを探す →</a>
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でワンデーコンタクトを探す →</a>
   <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-0 mb-8 no-underline">レンズゼロで見る →</a>
 
   <h2 id="section7" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">楽天市場との比較</h2>
@@ -6830,7 +6830,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   
   <p className="text-gray-700 mb-4">現在のストックがどのくらいの時間で到着するか、注文前に確認しておくと安心です。繁忙期は配送が遅れることがあります。</p>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でコンタクトレンズを比較する →</a>
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でコンタクトレンズを比較する →</a>
   <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-0 mb-8 no-underline">レンズゼロで見る →</a>
 
   <h2 id="section9" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">よくある質問と回答</h2>
@@ -6928,7 +6928,7 @@ export const columnContent: Record<string, React.ReactNode> = {
 
 <p className="text-gray-700 mb-4">表から明らかなように、レンズネットは確実に最安値クラスです。ただし、楽天市場ではポイント還元を考慮すると、実質的にレンズネットと同等かそれ以上に安くなるケースもあります。詳しくは、後述の「楽天市場との使い分けガイド」をご覧ください。</p>
 
-<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズを探す →</a>
+<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズを探す →</a>
 
 <h2 id="section3" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">注文手順から受け取りまで</h2>
 
@@ -6949,7 +6949,7 @@ export const columnContent: Record<string, React.ReactNode> = {
 <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">ステップ4：配送と受け取り</h3>
 <p className="text-gray-700 mb-4">支払い完了後、通常2～4営業日で配送されます。配送料は地域によって異なりますが、3,000円以上購入で送料無料になることが多いです。ヤマト運輸による配送が一般的で、追跡番号でリアルタイムに配送状況を確認できます。受け取り日時の指定もでき、都合のよい日に受け取ることが可能です。</p>
 
-<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%20%E9%80%9A%E8%B2%A9%20%E5%AE%89%E3%81%84%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天で安いコンタクトを探す →</a>
+<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%20%E9%80%9A%E8%B2%A9%20%E5%AE%89%E3%81%84%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天で安いコンタクトを探す →</a>
 
 <h2 id="section4" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">品質・安全性について（薬機法確認）</h2>
 
@@ -7007,7 +7007,7 @@ export const columnContent: Record<string, React.ReactNode> = {
 
 <p className="text-gray-700 mb-4"><strong>楽天市場を選ぶべき人：</strong><br/>• 楽天ポイント還元を最大化したい方<br/>• 楽天スーパーセール時の大型割引を狙いたい方<br/>• 他の商品とまとめ買いして送料を節約したい方<br/>• 楽天会員のステータスが高い方（プラチナ以上）<br/>• 楽天ペイなどで追加ポイントを獲得したい方</p>
 
-<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天のコンタクト特集を見る →</a>
+<a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天のコンタクト特集を見る →</a>
 
 <h2 id="section7" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">よくある質問5問</h2>
 
@@ -7057,7 +7057,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-8">
         <p className="text-sm font-bold text-gray-800 mb-3">コンタクトレンズをお得に購入する</p>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity mb-2">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity mb-2">
           楽天市場で探す →
         </a>
         <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center text-sm font-bold bg-sky-600 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">レンズゼロで見る →</a>
@@ -7110,7 +7110,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-8 mt-8">
         <p className="text-sm font-bold text-gray-800 mb-3">安いコンタクトを楽天で探す</p>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%20%E9%80%9A%E8%B2%A9%20%E5%AE%89%E3%81%84%2F" target="_blank" rel="noopener noreferrer nofollow"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity mb-2">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity mb-2">
           楽天市場で見る →
         </a>
         <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center text-sm font-bold bg-sky-600 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">レンズゼロで見る →</a>
@@ -7306,7 +7306,7 @@ export const columnContent: Record<string, React.ReactNode> = {
       <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-8 mt-8">
         <p className="text-sm font-bold text-gray-800 mb-3">ワンデーコンタクトをお得に購入</p>
         <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow"
-          className="block w-full text-center text-sm font-bold bg-[#bf0000] hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity mb-2">
+          className="block w-full text-center text-sm font-bold bg-navy-900 hover:bg-navy-800 text-white px-6 py-3 rounded-lg transition-opacity mb-2">
           楽天市場で見る →
         </a>
         <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center text-sm font-bold bg-sky-600 hover:opacity-90 text-white px-6 py-3 rounded-lg transition-opacity">レンズゼロで見る →</a>
@@ -7563,7 +7563,7 @@ export const columnContent: Record<string, React.ReactNode> = {
     <div className="prose prose-gray max-w-none">
   <p className="lead text-lg text-gray-700 mb-6">コンタクトレンズの処方箋に書かれた「PWR」「BC」「DIA」「CYL」「AXIS」……これらの記号の意味が分からず、通販での購入時に困ったことはありませんか？この記事では、処方箋のすべてのパラメータを初心者にも分かりやすく解説します。通販で度数ミスをしないための確認ポイントも紹介しますので、ぜひ最後までお読みください。</p>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズを探す →</a>
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズを探す →</a>
 
   <h2 id="params" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">処方箋のパラメータ一覧</h2>
   <p className="text-gray-700 mb-4">コンタクトレンズの処方箋には以下のパラメータが記載されています。それぞれの意味を正確に理解することが、通販での購入ミスを防ぐ最初のステップです。</p>
@@ -7616,7 +7616,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">DIAとは</h3>
   <p className="text-gray-700 mb-4">DIA（直径）はレンズ全体の大きさを表します。通常の透明コンタクトは13.8〜14.5mm、カラコンでは14.0〜14.5mm（デカ目効果のため大きめ）が一般的です。DIAは見え方には直接影響しませんが、装用感に関係します。</p>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズの価格を確認する →</a>
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズの価格を確認する →</a>
 
   <h2 id="cyl-axis" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">乱視用パラメータ CYL・AXIS</h2>
   <p className="text-gray-700 mb-4">乱視がある方には、通常の度数（PWR）に加えてCYLとAXISが処方されます。乱視がない方にはこれらのパラメータは不要です。</p>
@@ -7663,14 +7663,14 @@ export const columnContent: Record<string, React.ReactNode> = {
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. PWRが「Plano」と書かれています。度数は何ですか？</h3>
   <p className="text-gray-700 mb-4">A. 「Plano」は度数0.00（度なし）を意味します。カラコンやUVカットレンズなど、度数のないコンタクトに使われる表記です。</p>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズをお得に購入する →</a>
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズをお得に購入する →</a>
 </div>
   ),
   '1day-contact-nenkan-cost-tsuuhan-vs-store-2026': (
     <div className="prose prose-gray max-w-none">
   <p className="lead text-lg text-gray-700 mb-6">コンタクトレンズは毎日の必需品だからこそ、年間にかかる費用はバカになりません。「通販と眼科・ドラッグストア、どちらで買う方がお得？」という疑問を、実際の価格データを使って徹底計算します。この記事を読めば、あなたに最も合ったコンタクト購入方法が分かります。</p>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でワンデーコンタクトを探す →</a>
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でワンデーコンタクトを探す →</a>
 
   <h2 id="premise" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">年間コスト計算の前提条件</h2>
   <p className="text-gray-700 mb-4">以下の条件で年間コストを計算します。</p>
@@ -7726,7 +7726,7 @@ export const columnContent: Record<string, React.ReactNode> = {
     </table>
   </div>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でワンデーコンタクトの価格を比較する →</a>
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でワンデーコンタクトの価格を比較する →</a>
 
   <h2 id="rakuten" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">楽天市場でのポイント活用</h2>
   <p className="text-gray-700 mb-4">楽天市場でコンタクトレンズを購入する場合、ポイント還元率によっては実質的に専門通販より安くなることがあります。</p>
@@ -7757,7 +7757,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. どのタイミングで買うのが最も安いですか？</h3>
   <p className="text-gray-700 mb-4">A. 楽天市場の場合、お買い物マラソン×スーパーセール期間が最もポイントが多く貯まります。専門通販の場合は、各サイトのキャンペーン時にまとめ買いするのが効果的です。</p>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でワンデーコンタクトをお得に購入する →</a>
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でワンデーコンタクトをお得に購入する →</a>
 </div>
   ),
   'contact-shoshinsha-tsukehazushi-care-2026': (
@@ -7945,7 +7945,7 @@ export const columnContent: Record<string, React.ReactNode> = {
     <strong>初心者さんへ：</strong>最初はMPS１種類を選ぶだけで十分。ケアが簡単なことが何より大切です。
   </p>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%20%E3%82%B1%E3%82%A2%E7%94%A8%E5%93%81%2F" rel="noopener noreferrer nofollow" className="inline-block bg-red-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-red-700 transition-colors mb-6">
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%20%E3%82%B1%E3%82%A2%E7%94%A8%E5%93%81%2F" rel="noopener noreferrer nofollow" className="inline-block bg-navy-900 text-white font-bold px-6 py-3 rounded-lg hover:bg-navy-800 transition-colors mb-6">
     楽天でケア用品を探す →
   </a>
 
@@ -8099,7 +8099,7 @@ export const columnContent: Record<string, React.ReactNode> = {
     <p className="text-sm text-gray-700 mb-3">
       下のボタンから楽天市場でコンタクトレンズとケア用品を検索できます。ポイント還元キャンペーン対象商品も掲載されています。
     </p>
-    <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" rel="noopener noreferrer nofollow" className="inline-block bg-red-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-red-700 transition-colors">
+    <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" rel="noopener noreferrer nofollow" className="inline-block bg-navy-900 text-white font-bold px-6 py-3 rounded-lg hover:bg-navy-800 transition-colors">
       楽天でコンタクトを検索 →
     </a>
   </div>
@@ -8162,7 +8162,7 @@ export const columnContent: Record<string, React.ReactNode> = {
     </ul>
   </div>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" rel="noopener noreferrer nofollow" className="inline-block bg-red-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-red-700 transition-colors mb-6">
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%2F" rel="noopener noreferrer nofollow" className="inline-block bg-navy-900 text-white font-bold px-6 py-3 rounded-lg hover:bg-navy-800 transition-colors mb-6">
     楽天でワンデーコンタクトを検索 →
   </a>
 
@@ -8234,7 +8234,7 @@ export const columnContent: Record<string, React.ReactNode> = {
     <div className="prose prose-gray max-w-none">
   <p className="lead text-lg text-gray-700 mb-6">「アキュビュー、メダリスト、デイリーズ……どれが一番いいの？」そんな疑問にお答えします。コンタクトレンズ市場で人気を誇る3大ブランドを、価格・乾きにくさ・酸素透過率・素材・使いやすさの観点から徹底比較します。</p>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズを探す →</a>
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズを探す →</a>
 
   <h2 id="profiles" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">3大ブランドの基本プロフィール</h2>
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">アキュビュー（Johnson &amp; Johnson）</h3>
@@ -8282,7 +8282,7 @@ export const columnContent: Record<string, React.ReactNode> = {
     <li>モイストは含水率が高いため、長時間装用で乾きを感じる場合がある</li>
   </ul>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でアキュビューの価格を確認する →</a>
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でアキュビューの価格を確認する →</a>
 
   <h2 id="medallist" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">メダリストの特徴と評判</h2>
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">強み</h3>
@@ -8343,7 +8343,7 @@ export const columnContent: Record<string, React.ReactNode> = {
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q. 最もコスパがいいのはどのブランドですか？</h3>
   <p className="text-gray-700 mb-4">A. 通販での平均価格を考えると、1デイ アキュビュー モイストやバイオトゥルー ワンデー、デイリーズ アクアが1箱1,000〜1,400円台と価格帯が低く、コスパに優れます。高機能素材（シリコーンハイドロゲル）にこだわらなければ、これらがお得です。</p>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-[#bf0000] text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天で3大ブランドの価格を比較する →</a>
+  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天で3大ブランドの価格を比較する →</a>
 </div>
   ),
 

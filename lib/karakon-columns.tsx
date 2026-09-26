@@ -160,7 +160,7 @@ export const karakonColumns: EyeColumnMeta[] = [
 function AffiliateBtnR({ rakuten, label }: { rakuten: string; label?: string }) {
   return (
     <a href={RAKUTEN(rakuten)} target="_blank" rel="noopener noreferrer nofollow sponsored"
-      className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-colors">
+      className="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-colors">
       🛒 {label ?? '楽天で価格を確認する'} →
     </a>
   );
@@ -226,7 +226,7 @@ export const karakonColumnContent: Record<string, React.ReactElement> = {
               </div>
             </div>
             <p className="text-xs text-gray-700 mb-2">{p.point}</p>
-            <p className="text-xs text-red-600 font-bold mb-2">{p.price}</p>
+            <p className="text-xs text-sky-700 font-bold mb-2">{p.price}</p>
             <AffiliateBtnR rakuten={p.rakuten} label={`${p.name}を楽天で見る`} />
           </div>
         ))}
@@ -265,7 +265,7 @@ export const karakonColumnContent: Record<string, React.ReactElement> = {
               </div>
             </div>
             <p className="text-xs text-gray-700 mb-2">{p.point}</p>
-            <p className="text-xs text-red-600 font-bold mb-2">{p.price}</p>
+            <p className="text-xs text-sky-700 font-bold mb-2">{p.price}</p>
             <AffiliateBtnR rakuten={p.rakuten} label={`${p.name}を楽天で見る`} />
           </div>
         ))}
@@ -646,7 +646,7 @@ export const karakonColumnContent: Record<string, React.ReactElement> = {
             <ul className="text-xs text-gray-700 space-y-1 mb-3">
               {b.features.map(f => <li key={f} className="flex gap-1"><span className="text-rose-400">•</span>{f}</li>)}
             </ul>
-            <p className="text-xs text-red-600 font-bold mb-2">{b.price}</p>
+            <p className="text-xs text-sky-700 font-bold mb-2">{b.price}</p>
             <AffiliateBtnR rakuten={b.rakuten} label={`${b.name}を楽天で見る`} />
           </div>
         ))}
@@ -774,7 +774,7 @@ export const karakonColumnContent: Record<string, React.ReactElement> = {
               </div>
             </div>
             <p className="text-xs text-gray-700 mb-2">{p.point}</p>
-            <p className="text-xs text-red-600 font-bold mb-2">{p.price}</p>
+            <p className="text-xs text-sky-700 font-bold mb-2">{p.price}</p>
             <AffiliateBtnR rakuten={p.rakuten} label={`${p.name}を楽天で見る`} />
           </div>
         ))}
