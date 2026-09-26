@@ -37,6 +37,22 @@
 - アプリID・アクセスキーはGitHub Secretsの `RAKUTEN_APP_ID` / `RAKUTEN_ACCESS_KEY`（lens-naviと共用）
 - エンドポイントのバージョンはWeb検索結果ベースで設定。開発環境からは楽天の公式ドキュメントに直接アクセスできない
 
+## 接続確認結果（2026-09-26、GitHub Actions上で実施）
+
+| API | エンドポイント | 結果 |
+|---|---|---|
+| 施設検索 | `engine/api/Travel/SimpleHotelSearch/20260731` | OK |
+| 空室検索 | `engine/api/Travel/VacantHotelSearch/20170426` | OK |
+| 施設情報 | `engine/api/Travel/HotelDetailSearch/20260731` | OK |
+| 地区コード | `engine/api/Travel/GetAreaClass/20140210` | OK（20131024・20260731は `API Configuration not found`） |
+
+- Refererは `https://lens-navi.jp/`（既存の許可済みドメイン）で通った
+- アフィリエイトID未指定時の施設URL・プラン一覧URLは `img.travel.rakuten.co.jp/image/tr/api/...` という
+  楽天側の中継URLになる（hb.afl形式ではないため、現状の判定では予約ボタンは非表示）
+- 楽天の地区区分は温泉地単位とは限らない。有馬は `hyogo/kobe`（神戸・有馬温泉・六甲山）、城崎は
+  `hyogo/kita`（城崎温泉・豊岡・出石・神鍋）。エリア追加時は必ず接続確認の地区コード照合で実在を確認すること
+- 空室検索は1エリア1条件あたり最大30件（hits=30）。5エリア×4条件で252施設を取得できた
+
 # アフィリエイトID
 
 - 楽得くん（point-calendar）と同じく、**lens-navi用の楽天アフィリエイトIDは流用せず本事業専用を使う想定**（オーナー確認待ち）

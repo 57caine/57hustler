@@ -47,8 +47,10 @@ export const AREAS: Area[] = [
   { key: 'atami', name: '熱海', prefecture: '静岡県', middleClassCode: 'shizuoka', smallClassCode: 'atami' },
   { key: 'kusatsu', name: '草津', prefecture: '群馬県', middleClassCode: 'gunma', smallClassCode: 'kusatsu' },
   { key: 'kinugawa', name: '鬼怒川', prefecture: '栃木県', middleClassCode: 'tochigi', smallClassCode: 'kinugawa' },
-  { key: 'arima', name: '有馬', prefecture: '兵庫県', middleClassCode: 'hyogo', smallClassCode: 'arima' },
-  { key: 'kinosaki', name: '城崎', prefecture: '兵庫県', middleClassCode: 'hyogo', smallClassCode: 'kinosaki' },
+  // 楽天の地区区分では有馬単独の区分はなく「神戸・有馬温泉・六甲山」（kobe）にまとまっている（2026-09-26 GetAreaClassで確認）
+  { key: 'arima', name: '神戸・有馬', prefecture: '兵庫県', middleClassCode: 'hyogo', smallClassCode: 'kobe' },
+  // 同様に城崎は「城崎温泉・豊岡・出石・神鍋」（kita）
+  { key: 'kinosaki', name: '城崎・豊岡', prefecture: '兵庫県', middleClassCode: 'hyogo', smallClassCode: 'kita' },
   { key: 'shirahama', name: '白浜', prefecture: '和歌山県', middleClassCode: 'wakayama', smallClassCode: 'shirahama' },
 ];
 

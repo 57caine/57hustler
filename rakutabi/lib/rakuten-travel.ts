@@ -27,10 +27,10 @@ export const ENDPOINTS = {
 } as const;
 
 /**
- * 地区コードAPIは 20131024 だと「API Configuration not found」になった（2026-09-26 Actions上で確認）。
- * 正しいバージョンが未確定のため、接続確認スクリプトで候補を順に試す。
+ * 地区コードAPIは 20140210 で成功、20260731・20131024 は「API Configuration not found」（2026-09-26 Actions上で確認）。
+ * 今後のバージョン変更に備え、接続確認スクリプトでは候補を順に試す。
  */
-export const GET_AREA_CLASS_CANDIDATES = ['20260731', '20140210', '20131024'].map(
+export const GET_AREA_CLASS_CANDIDATES = ['20140210', '20260731'].map(
   (v) => `${BASE}/GetAreaClass/${v}`,
 );
 
