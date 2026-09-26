@@ -37,6 +37,8 @@ for p in ${paths}; do
   [ "${code}" = "200" ] || problems+=" HTTP${code}"
   grep -q '<h1' "${tmp}" || problems+=" h1なし"
   grep -q '<meta name="robots" content="noindex, nofollow"' "${tmp}" || problems+=" noindexなし"
+  grep -q '楽旅くん' "${tmp}" || problems+=" サイト名「楽旅くん」なし"
+  ! grep -q '落旅' "${tmp}" || problems+=" 旧表記「落旅」が残っている"
   n=$(grep -o '<a [^>]*href="https://hb.afl.rakuten.co.jp[^"]*"[^>]*>' "${tmp}" | wc -l)
   afl_links=$((afl_links + n))
   bad_afl=$(grep -o '<a [^>]*href="https://hb.afl.rakuten.co.jp[^"]*"[^>]*>' "${tmp}" | grep -vc 'rel="[^"]*sponsored[^"]*".*data-placement="[a-z-]*"')
@@ -45,6 +47,8 @@ for p in ${paths}; do
   [ "${bare}" = "0" ] || problems+=" アフィリエイトなし楽天リンク${bare}件"
   if [ -z "${problems}" ]; then ok=$((ok + 1)); else fail=$((fail + 1)); echo "NG ${p}:${problems}"; fi
 done
+curl -sS "${BASE}/search?meal=roomOnly" -o "${tmp}"
+echo "素泊まり検索（/search?meal=roomOnly）: $(grep -o '<h1[^>]*>[^<]*' "${tmp}" | sed 's/<[^>]*>//') ／ 表示件数 $(grep -o '<article' "${tmp}" | wc -l)"
 rm -f "${tmp}"
 echo "確認ページ数: ${total} / 合格: ${ok} / 不合格: ${fail} / 生成対象外の掛け合わせページ(404): ${skipped_combo} / 送客リンク合計: ${afl_links}"
 [ "${fail}" = "0" ]
