@@ -40,6 +40,28 @@ function collectAreaCodes(node: unknown, middle: string | null, out: Set<string>
   }
 }
 
+/** 指定した都道府県（middleClass）配下の小地区・詳細地区のコードと名称を列挙する */
+function describeMiddleClass(data: unknown, middleCode: string): string[] {
+  const lines: string[] = [];
+  const walk = (node: unknown, inTarget: boolean) => {
+    if (Array.isArray(node)) {
+      const holder = node.find((x) => x && typeof x === 'object' && 'middleClassCode' in (x as object)) as
+        | Record<string, unknown>
+        | undefined;
+      const target = holder ? holder.middleClassCode === middleCode : inTarget;
+      for (const n of node) walk(n, target);
+      return;
+    }
+    if (!node || typeof node !== 'object') return;
+    const obj = node as Record<string, unknown>;
+    if (inTarget && typeof obj.smallClassCode === 'string') lines.push(`${obj.smallClassCode}: ${obj.smallClassName}`);
+    if (inTarget && typeof obj.detailClassCode === 'string') lines.push(`  └ detail ${obj.detailClassCode}: ${obj.detailClassName}`);
+    for (const v of Object.values(obj)) walk(v, inTarget);
+  };
+  walk(data, false);
+  return [...new Set(lines)];
+}
+
 async function main() {
   const cred = credentialsFromEnv();
   console.log(`Referer: ${cred.referer}`);
@@ -67,6 +89,8 @@ async function main() {
         missing.push(a.name);
         const candidates = [...codes].filter((c) => c.startsWith(`${a.middleClassCode}/`));
         console.log(`      → ${a.middleClassCode} 配下の実在コード: ${candidates.join(', ')}`);
+        // 地区名・詳細地区（detailClass）も含めて表示し、正しいコードを選べるようにする
+        for (const line of describeMiddleClass(area.data, a.middleClassCode)) console.log(`        ${line}`);
       }
     }
     summary.push({ api: 'GetAreaClass', result: 'OK', detail: missing.length ? `コード不一致: ${missing.join('・')}` : '全エリアのコード一致' });
