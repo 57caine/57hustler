@@ -72,6 +72,7 @@
   楽天側の中継URLになる（hb.afl形式ではないため、現状の判定では予約ボタンは非表示）
 - 楽天の地区区分は温泉地単位とは限らない。有馬は `hyogo/kobe`（神戸・有馬温泉・六甲山）、城崎は
   `hyogo/kita`（城崎温泉・豊岡・出石・神鍋）。エリア追加時は必ず接続確認の地区コード照合で実在を確認すること
+- 都道府県コードも一般的なローマ字と違うものがある（岐阜=`gihu`、大分=`ooita`、福島=`hukushima`、千葉=`tiba`、福岡=`hukuoka`、島根=`simane` 等）
 - 空室検索は1エリア1条件あたり最大30件（hits=30）
 - 項目別評価のキーは serviceAverage / locationAverage / roomAverage / equipmentAverage / bathAverage /
   breakfastAverage / dinnerAverage / cleanlinessAverage（mealAverage は存在しない）

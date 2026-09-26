@@ -128,14 +128,14 @@ export const AREAS: Area[] = [
   { key: 'kinugawa', name: '鬼怒川', prefecture: '栃木県', region: 'kanto', middleClassCode: 'tochigi', smallClassCode: 'kinugawa' },
   { key: 'atami', name: '熱海', prefecture: '静岡県', region: 'tokai', middleClassCode: 'shizuoka', smallClassCode: 'atami' },
   { key: 'ito', name: '伊東', prefecture: '静岡県', region: 'tokai', middleClassCode: 'shizuoka', smallClassCode: 'ito' },
-  { key: 'gero', name: '下呂', prefecture: '岐阜県', region: 'tokai', middleClassCode: 'gifu', smallClassCode: 'gero' },
+  { key: 'gero', name: '下呂', prefecture: '岐阜県', region: 'tokai', middleClassCode: 'gihu', smallClassCode: 'gero' },
   // 楽天の地区区分では有馬単独の区分はなく「神戸・有馬温泉・六甲山」（kobe）にまとまっている（2026-09-26 GetAreaClassで確認）
   { key: 'arima', name: '神戸・有馬', prefecture: '兵庫県', region: 'kansai', middleClassCode: 'hyogo', smallClassCode: 'kobe' },
   // 同様に城崎は「城崎温泉・豊岡・出石・神鍋」（kita）
   { key: 'kinosaki', name: '城崎・豊岡', prefecture: '兵庫県', region: 'kansai', middleClassCode: 'hyogo', smallClassCode: 'kita' },
   { key: 'shirahama', name: '白浜', prefecture: '和歌山県', region: 'kansai', middleClassCode: 'wakayama', smallClassCode: 'shirahama' },
-  { key: 'beppu', name: '別府', prefecture: '大分県', region: 'kyushu', middleClassCode: 'oita', smallClassCode: 'beppu' },
-  { key: 'yufuin', name: '由布院', prefecture: '大分県', region: 'kyushu', middleClassCode: 'oita', smallClassCode: 'yufuin' },
+  { key: 'beppu', name: '別府', prefecture: '大分県', region: 'kyushu', middleClassCode: 'ooita', smallClassCode: 'beppu' },
+  { key: 'yufuin', name: '由布院', prefecture: '大分県', region: 'kyushu', middleClassCode: 'ooita', smallClassCode: 'yufuin' },
 ];
 
 export function getArea(key: string): Area | undefined {
