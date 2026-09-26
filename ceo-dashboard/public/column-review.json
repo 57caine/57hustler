@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T23:49:37.522Z",
+  "generatedAt": "2026-09-25T23:55:24.682Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -45,16 +45,16 @@
       "slug": "eyestrain-stretching-massage-guide",
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
-        "sessions": 13,
-        "bounceRate": 0.46153846153846156,
-        "avgSessionDuration": 144.0002133076923,
+        "sessions": 12,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 149.21933291666667,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション13件・affiliate_clickゼロ"
+        "セッション12件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 6,
@@ -70,6 +70,40 @@
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/sunglass-polarized-guide",
+      "slug": "sunglass-polarized-guide",
+      "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
+      "metrics": {
+        "sessions": 11,
+        "bounceRate": 0.18181818181818182,
+        "avgSessionDuration": 159.55198172727273,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション11件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 8,
+        "contentChars": 87594
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "対応済み",
       "business": "lens-navi",
       "priority": "low",
       "source": "auto-ga4"
@@ -109,13 +143,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/sunglass-polarized-guide",
-      "slug": "sunglass-polarized-guide",
-      "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
+      "path": "/column/multifocal-iol-presbyopia-surgery-2026",
+      "slug": "multifocal-iol-presbyopia-surgery-2026",
+      "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
       "metrics": {
         "sessions": 10,
         "bounceRate": 0.4,
-        "avgSessionDuration": 149.0883612,
+        "avgSessionDuration": 208.11025260000002,
         "affiliateClicks": 0
       },
       "flags": [
@@ -123,40 +157,6 @@
       ],
       "flagLabels": [
         "セッション10件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 4,
-        "hasAffiliateLinks": true,
-        "ctaCount": 8,
-        "contentChars": 87594
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "対応済み",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/multifocal-iol-presbyopia-surgery-2026",
-      "slug": "multifocal-iol-presbyopia-surgery-2026",
-      "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
-      "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.25,
-        "avgSessionDuration": 268.63668725,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 7,
@@ -181,16 +181,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 6,
-        "bounceRate": 0.16666666666666666,
-        "avgSessionDuration": 124.22863116666667,
+        "sessions": 7,
+        "bounceRate": 0.14285714285714285,
+        "avgSessionDuration": 142.98193157142856,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション6件・affiliate_clickゼロ"
+        "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -208,6 +208,42 @@
       "status": "様子見",
       "business": "lens-navi",
       "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/karakon-shoshinsha-guide",
+      "slug": "karakon-shoshinsha-guide",
+      "title": "カラコン初心者完全ガイド2026【度数・着色直径・DIA・ケア方法をわかりやすく解説】",
+      "metrics": {
+        "sessions": 6,
+        "bounceRate": 0.6666666666666666,
+        "avgSessionDuration": 9.633440666666667,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "avg_session_under_10s",
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "平均滞在9.6秒（閾値10秒）",
+        "セッション6件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 71515
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "未対応",
+      "business": "lens-navi",
+      "priority": "high",
       "source": "auto-ga4"
     },
     {
@@ -249,16 +285,16 @@
       "slug": "reading-glasses-presbyopia-choose-2026",
       "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
       "metrics": {
-        "sessions": 6,
-        "bounceRate": 0.16666666666666666,
-        "avgSessionDuration": 38.13420833333333,
+        "sessions": 5,
+        "bounceRate": 0,
+        "avgSessionDuration": 44.4800568,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション6件・affiliate_clickゼロ"
+        "セッション5件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -276,42 +312,6 @@
       "status": "様子見",
       "business": "lens-navi",
       "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/karakon-shoshinsha-guide",
-      "slug": "karakon-shoshinsha-guide",
-      "title": "カラコン初心者完全ガイド2026【度数・着色直径・DIA・ケア方法をわかりやすく解説】",
-      "metrics": {
-        "sessions": 5,
-        "bounceRate": 0.6,
-        "avgSessionDuration": 9.9430594,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "avg_session_under_10s",
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "平均滞在9.9秒（閾値10秒）",
-        "セッション5件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 71515
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "未対応",
-      "business": "lens-navi",
-      "priority": "high",
       "source": "auto-ga4"
     },
     {
@@ -348,6 +348,40 @@
       "status": "未対応",
       "business": "lens-navi",
       "priority": "high",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/vr-shiryoku-warui",
+      "slug": "vr-shiryoku-warui",
+      "title": "視力が悪い人のVRゴーグル対策【コンタクト・度付きインサート・メガネスペーサー完全ガイド】",
+      "metrics": {
+        "sessions": 5,
+        "bounceRate": 0.2,
+        "avgSessionDuration": 27.2187684,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション5件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 64384
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
       "source": "auto-ga4"
     }
   ]
