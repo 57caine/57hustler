@@ -7,7 +7,7 @@
  */
 
 import Anthropic from '@anthropic-ai/sdk';
-import { getDailyStar, getJstDayOfWeek, getJstDateSlug, selectHexagram, KYUSEI_CONTENT_CAUTION, getSeasonWordCaution } from './lib/kyusei-ban';
+import { getDailyStar, getJstDayOfWeek, getJstDateSlug, selectHexagram, KYUSEI_CONTENT_CAUTION, getSeasonWordCaution, EKIKYO_THEME_GUIDANCE } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
 const USER_ID = process.env.THREADS_USER_ID!;
@@ -19,7 +19,7 @@ async function generateTodayLine(dailyStarNum: number, hex: { num: number; name:
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 200,
-    system: `易経に詳しいおじさんです。日盤の流れと卦の意味を結びつけた一言を生成します。\n${KYUSEI_CONTENT_CAUTION}\n${getSeasonWordCaution()}`,
+    system: `易経に詳しいおじさんです。日盤の流れと卦の意味を結びつけた一言を生成します。\n${KYUSEI_CONTENT_CAUTION}\n${getSeasonWordCaution()}\n${EKIKYO_THEME_GUIDANCE}`,
     messages: [{
       role: 'user',
       content: `今日の日盤中宮は${dailyStarNum}（${hex.trigram}に対応）です。

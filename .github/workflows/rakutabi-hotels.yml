@@ -1,0 +1,116 @@
+name: 楽旅くん 楽天トラベルAPI接続確認・宿泊施設データ取得・Vercel公開
+
+# 開発環境からは rakuten.co.jp / Vercel API に直接アクセスできないため、すべてActions上で行う。
+#   1. 楽天トラベルAPIの接続確認
+#   2. 宿泊施設データ取得 → rakutabi/data/hotels.json をコミット
+#   3. Vercelプロジェクト「rakutabi」へ公開（rakutabi/scripts/vercel-deploy.sh）
+#   4. 公開URLに実際にアクセスして表示内容を確認
+#
+# 2026-09-26〜 vercel.app で需要検証中（独自ドメインは未取得、noindexのまま）。
+# 公開元ブランチは、オーナー指示により mainマージ前の claude/rakutabi-skeleton-impl-gzyecr。
+# mainにマージした後は main からも公開される（両方から公開されないよう、マージ後はブランチ側を更新しないこと）。
+on:
+  push:
+    branches:
+      - main
+      - claude/rakutabi-skeleton-impl-gzyecr
+    paths:
+      - 'rakutabi/**'
+      - '!rakutabi/data/hotels.json'
+      - '!rakutabi/data/photos.json'
+      - '!rakutabi/CLAUDE.md'
+      - '.github/workflows/rakutabi-hotels.yml'
+  workflow_dispatch:
+  # 「次の土曜日」の空室データを毎日更新する。scheduleはデフォルトブランチ（main）にあるワークフローでしか
+  # 動かないため、mainにマージされるまでは実行されない
+  schedule:
+    - cron: '0 20 * * *'   # 05:00 JST
+
+# 公開が同時に2本走らないようにする
+concurrency:
+  group: rakutabi-deploy
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    defaults:
+      run:
+        working-directory: rakutabi
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Node.js セットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: rakutabi/package-lock.json
+
+      - name: 依存関係インストール
+        run: npm ci
+
+      - name: 楽天トラベルAPI 接続確認（テスト取得）
+        run: npm run test:api
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+          RAKUTABI_RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTABI_RAKUTEN_AFFILIATE_ID }}
+
+      - name: 宿泊施設データ取得
+        run: npm run fetch:hotels
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+          RAKUTABI_RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTABI_RAKUTEN_AFFILIATE_ID }}
+
+      - name: 風景写真の取得（Unsplash。キーが無ければスキップし、楽天の宿の写真で代用表示）
+        run: npm run fetch:photos
+        env:
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+
+      # push先は起動元のブランチ（明示指定なし）。data/hotels.json はトリガー対象外のため再実行ループにはならない
+      - name: 変更をコミット・プッシュ
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/hotels.json data/photos.json
+          git diff --staged --quiet || git commit -m "chore: 楽旅くん 宿泊施設データ更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Vercelへ公開
+        run: |
+          set -o pipefail
+          bash scripts/vercel-deploy.sh | tee /tmp/deploy.log
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: 公開URLの表示確認
+        run: |
+          set -u
+          hosts=$(sed -n '/=== 4/,$p' /tmp/deploy.log | grep -E '\.vercel\.app$' || true)
+          if [ -z "${hosts}" ]; then echo "::error::公開URLが取得できませんでした"; exit 1; fi
+          for host in ${hosts}; do
+            url="https://${host}"
+            echo "### ${url}"
+            curl -sS -o /tmp/top.html -w 'HTTP %{http_code}\n' "${url}/"
+            grep -o '<h1[^>]*>[^<]*' /tmp/top.html | head -1
+            grep -o '<meta name="robots"[^>]*>' /tmp/top.html | head -1
+            hotel=$(jq -r '[.hotels[] | select(.planListUrl | startswith("https://hb.afl.rakuten.co.jp"))][0].hotelNo' data/hotels.json)
+            curl -sS -o /tmp/hotel.html -w "hotel/${hotel}: HTTP %{http_code}\n" "${url}/hotel/${hotel}"
+            grep -o '<h1[^>]*>[^<]*' /tmp/hotel.html | head -1
+            echo "予約ボタン(hb.afl)の数: $(grep -o 'href="https://hb.afl.rakuten.co.jp[^"]*"' /tmp/hotel.html | wc -l)"
+            grep -o 'href="https://hb.afl.rakuten.co.jp[^"]*" target="_blank" rel="[^"]*" data-hotel-no="[0-9]*" data-placement="[a-z-]*"' /tmp/hotel.html | head -1 | cut -c1-200
+            curl -sS -o /dev/null -w "api/click（不正な施設番号→400を期待）: HTTP %{http_code}\n" -X POST "${url}/api/click" -d '{"hotelNo":1,"placement":"card"}'
+            # 集計対象外の healthcheck を1件送り、Blobへの書き込みが実際に成功するか確認（X-Click-Recorded: 1 が期待値）
+            curl -sS -D - -o /dev/null -X POST "${url}/api/click" -d "{\"hotelNo\":${hotel},\"placement\":\"healthcheck\",\"page\":\"/deploy-check\"}" | grep -iE '^HTTP|x-click-recorded'
+            curl -sS -o /tmp/stats.html -w "stats: HTTP %{http_code}\n" "${url}/stats"
+            grep -o 'Vercel Blob）が未接続[^<]*\|[0-9,]*<span[^>]*>クリック（累計）' /tmp/stats.html | head -1
+            echo "--- 全ページの機械チェック ---"
+            bash scripts/verify-production.sh "${url}"
+          done

@@ -10,6 +10,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import {
   KYUSEI, POSITION_MEANINGS, getDailyStar, getMonthlyStarForToday, getStarPositionIndex,
   getJstDayOfWeek, STAR_TO_TRIGRAM, selectHexagram, validateOneLiners, KYUSEI_CONTENT_CAUTION, getSeasonWordCaution,
+  EKIKYO_THEME_GUIDANCE, MAX_ONELINER_LENGTH,
 } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
@@ -78,12 +79,12 @@ ${positionInfo}
 - 朝の全体運投稿と内容が被らないようにする
 - 夜・就寝前という時間帯を意識した内容
   （今夜やること・明日の準備・眠りの前に意識すること）
-- 各星の一言は8〜12文字で、意味が必ず完結する文にすること。途中で切れる文は絶対に生成しない。
+- 各星の一言は8〜18文字で、意味が必ず完結する文にすること。途中で切れる文は絶対に生成しない。
   助詞（「を」「に」「が」「の」など）で終えてはいけない。動詞か体言止めで言い切ること
 - 象意の言い換えは禁止（「地盤を固める」など不可）
   良い例：「手帳を閉じて眠る」「明日の服を決めて」「窓を開けて眠れ」
   NG例：「信用でコミュニケーシ」（単語の途中で切れている）「中央で変化の核心を動」（助詞で切れている）
-- 12文字を1文字でも超える内容は、要素を削って短くまとめる（尻切れにしない）
+- 18文字を1文字でも超える内容は、要素を削って短くまとめる（尻切れにしない）
 
 以下のJSONのみ出力（前置き不要）：
 {"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":"","9":""}`,
@@ -178,7 +179,8 @@ ${getSeasonWordCaution()}`,
 ${ABSOLUTE_BAN}
 ${STYLE_GUIDE}
 ${KYUSEI_CONTENT_CAUTION}
-${getSeasonWordCaution()}`,
+${getSeasonWordCaution()}
+${EKIKYO_THEME_GUIDANCE}`,
           `今日の日盤中宮は${star}（${trigramLabel}に対応）です。
 易経の第${hex.num}卦「${hex.name}」を今日の卦として選びました。
 原文キーワード：「${hex.keyword}」
@@ -263,8 +265,8 @@ async function main() {
         oneLiners = candidate;
         break;
       }
-      const tooLong = Object.entries(candidate).filter(([, v]) => v.length > 12);
-      console.warn(`⚠️ 試行${attempt}: 12文字を超える一言を検出（${tooLong.map(([k, v]) => `${k}:「${v}」`).join(', ')}） → 再生成`);
+      const tooLong = Object.entries(candidate).filter(([, v]) => v.length > MAX_ONELINER_LENGTH);
+      console.warn(`⚠️ 試行${attempt}: ${MAX_ONELINER_LENGTH}文字を超える一言を検出（${tooLong.map(([k, v]) => `${k}:「${v}」`).join(', ')}） → 再生成`);
     }
     if (oneLiners === null) {
       console.warn('⚠️ 3回試行しても文字数チェックを通過できなかったため、今回の投稿をスキップします');
