@@ -337,6 +337,40 @@ v4のデフォルトパレットをそのまま使用しており、`globals.css
 - 商品画像がプレースホルダー（アイコン+パステル背景）のままである点は別件（オーナー側でアフィリ
   リンク発行を進行中）として対象外にした
 
+## lens-naviトップページ「人気のおすすめ商品」4商品の実リンク反映（2026-09-26対応）
+
+上記のプレースホルダー4商品（ワンデーアキュビューモイスト・エバーカラー ワンデー ナチュラル・
+メガネの上から偏光サングラス クリップオン・アイリスCL-Iネオ）について、オーナーからもしも
+アフィリエイトの「かんたんリンク」発行済みコードが共有されたため、`lib/home-featured-products.ts`の
+ダミーデータ（`href: '#'`・`imageUrl: null`・`isDummy: true`）を実データに差し替えた。
+
+- 既存の`EYE_WARMER_PRODUCT`/`MARUGAO_MEGANE_PRODUCT`（`lib/eye-columns.tsx`）と同じ
+  `parseMoshimoEmbedCode()`（`lib/moshimo.ts`）パターンを再利用。生の`msmaflink({...})`埋め込み
+  コードを4件分`lib/home-featured-products.ts`内に直接定義し、`imageUrl`/`href`をそこから取得する形にした
+  （ユーザーからは埋め込み`<script>`/`<div>`をそのまま貼る形で共有されたが、コンポーネント側
+  （`components/home/FeaturedProducts.tsx`）は既に独自のカードレイアウトで`imageUrl`/`href`を
+  受け取る設計だったため、生マークアップの埋め込みではなく既存パターンでの統合を選択。指示内容と
+  実装が異なる可能性がある点として、この場で明記する）
+- 4件とも`isDummy: false`に変更（`FeaturedProducts.tsx`側の`rel={product.isDummy ? undefined :
+  'noopener noreferrer nofollow sponsored'}`分岐により、自動的に`rel="sponsored"`が付与される）
+- `TODO(DUMMY-LINK)`コメントは配列コメント含め全て削除（`grep -r "DUMMY-LINK"`で0件を確認）
+- 反対監査（商品名・画像・リンク先の一致確認）: ビルド後のレンダリング結果から6商品分の
+  `<a href="https://af.moshimo.com/af/c/click?...">`ブロックを機械的に抽出し、各ブロック内の
+  画像src・商品名テキストがそれぞれ正しいショップドメイン（lensamigo=アキュビュー、loook=エバー
+  カラー、andmagic=クリップオン、kenkocom=アイリス、zoff=Zoff、mygear=アイウォーマー）と対応して
+  いることを確認。6件とも齟齬なし
+- feature branch (`claude/bold-brahmagupta-uc9Mu`) 上でビルド成功・Playwrightで実レンダリング
+  （6商品の個別商品名が画像プレースホルダー下に表示されること）を確認後、上記の確立済みdual-branch
+  push手順でmainへ反映
+- 本番確認: 一時GitHub Actionsワークフロー（確認後削除）で`https://www.lens-navi.jp/`を実際にcurlし、
+  HTTP 200・`x-vercel-cache: PRERENDER`（デプロイ反映済みの静的キャッシュ）配信であることを確認した
+  上で、レスポンスボディに4商品名が全て`FOUND`、`af.moshimo.com/af/c/click`が12件（6商品×2箇所
+  ＝画像src組み立て元＋href）、`href="#"`が0件であることを確認済み
+  - 初回は`https://lens-navi.jp/`（apex）へ`-L`無しでcurlしたため308リダイレクト先
+    （`https://www.lens-navi.jp/`）の内容を見れておらず「MISSING」と誤判定した。URLを
+    `https://www.lens-navi.jp/`に変えて再実行し確認できた（本番側の問題ではなく確認スクリプト側の
+    ミス）
+
 ## CEOダッシュボードをナビゲーション2タブに縮小（2026-09-23対応、2026-09-24に3タブへ拡張）
 
 ※2026-09-24追記: この後「タスク一覧」タブが追加され、現在は3タブ構成（詳細は下記
