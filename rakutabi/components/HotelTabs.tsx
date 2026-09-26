@@ -25,6 +25,7 @@ const RATING_LABELS: [keyof Ratings, string][] = [
 
 /** 個別宿泊施設ページのタブ（施設の特徴／プラン料金／写真／口コミ） */
 export default function HotelTabs({
+  hotelNo,
   hotelName,
   special,
   access,
@@ -39,6 +40,7 @@ export default function HotelTabs({
   userReview,
   reviewUrl,
 }: {
+  hotelNo: number;
   hotelName: string;
   special: string;
   access: string;
@@ -122,7 +124,7 @@ export default function HotelTabs({
                       </div>
                       <p className="font-bold text-base whitespace-nowrap">{p.total != null ? `¥${p.total.toLocaleString('ja-JP')}` : '—'}</p>
                       {planUrls[i] && (
-                        <a href={planUrls[i]!} target="_blank" rel="noopener noreferrer nofollow sponsored" className="bg-cta hover:bg-cta-hover text-white font-bold rounded-lg px-4 py-2 text-center whitespace-nowrap">
+                        <a href={planUrls[i]!} target="_blank" rel="noopener noreferrer nofollow sponsored" data-hotel-no={hotelNo} data-placement="plan" className="bg-cta hover:bg-cta-hover text-white font-bold rounded-lg px-4 py-2 text-center whitespace-nowrap">
                           このプランを予約
                         </a>
                       )}
@@ -177,7 +179,7 @@ export default function HotelTabs({
               </blockquote>
             )}
             {reviewUrl && (
-              <a href={reviewUrl} target="_blank" rel="noopener noreferrer nofollow sponsored" className="inline-block text-season underline">
+              <a href={reviewUrl} target="_blank" rel="noopener noreferrer nofollow sponsored" data-hotel-no={hotelNo} data-placement="review" className="inline-block text-season underline">
                 {hotelName}の口コミをすべて見る（楽天トラベル）
               </a>
             )}

@@ -1,21 +1,37 @@
-name: 落旅くん 楽天トラベルAPI接続確認・宿泊施設データ取得
+name: 落旅くん 楽天トラベルAPI接続確認・宿泊施設データ取得・Vercel公開
 
-# 開発環境からは rakuten.co.jp に直接アクセスできないため、API接続確認とデータ取得はActions上で行う。
-# 現時点では「API連携コードを変更したpush時」と手動実行のみ。
-# 定期実行（schedule）は、ドメイン・Vercelプロジェクト・アフィリエイトIDが揃い、本公開の判断が出てから有効化する。
+# 開発環境からは rakuten.co.jp / Vercel API に直接アクセスできないため、すべてActions上で行う。
+#   1. 楽天トラベルAPIの接続確認
+#   2. 宿泊施設データ取得 → rakutabi/data/hotels.json をコミット
+#   3. Vercelプロジェクト「rakutabi」へ公開（rakutabi/scripts/vercel-deploy.sh）
+#   4. 公開URLに実際にアクセスして表示内容を確認
+#
+# 2026-09-26〜 vercel.app で需要検証中（独自ドメインは未取得、noindexのまま）。
+# 公開元ブランチは、オーナー指示により mainマージ前の claude/rakutabi-skeleton-impl-gzyecr。
+# mainにマージした後は main からも公開される（両方から公開されないよう、マージ後はブランチ側を更新しないこと）。
 on:
   push:
+    branches:
+      - main
+      - claude/rakutabi-skeleton-impl-gzyecr
     paths:
-      - 'rakutabi/lib/rakuten-travel.ts'
-      - 'rakutabi/lib/site-config.ts'
-      - 'rakutabi/scripts/**'
+      - 'rakutabi/**'
+      - '!rakutabi/data/hotels.json'
+      - '!rakutabi/CLAUDE.md'
       - '.github/workflows/rakutabi-hotels.yml'
   workflow_dispatch:
-  # schedule:
-  #   - cron: '0 20 * * *'   # 05:00 JST
+  # 「次の土曜日」の空室データを毎日更新する。scheduleはデフォルトブランチ（main）にあるワークフローでしか
+  # 動かないため、mainにマージされるまでは実行されない
+  schedule:
+    - cron: '0 20 * * *'   # 05:00 JST
+
+# 公開が同時に2本走らないようにする
+concurrency:
+  group: rakutabi-deploy
+  cancel-in-progress: false
 
 jobs:
-  fetch:
+  fetch-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -60,3 +76,29 @@ jobs:
           git diff --staged --quiet || git commit -m "chore: 落旅くん 宿泊施設データ更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Vercelへ公開
+        run: bash scripts/vercel-deploy.sh | tee /tmp/deploy.log
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: 公開URLの表示確認
+        run: |
+          set -u
+          for host in $(sed -n '/=== 4/,$p' /tmp/deploy.log | grep -E '\.vercel\.app$'); do
+            url="https://${host}"
+            echo "### ${url}"
+            curl -sS -o /tmp/top.html -w 'HTTP %{http_code}\n' "${url}/"
+            grep -o '<h1[^>]*>[^<]*' /tmp/top.html | head -1
+            grep -o '<meta name="robots"[^>]*>' /tmp/top.html | head -1
+            hotel=$(jq -r '[.hotels[] | select(.planListUrl | startswith("https://hb.afl.rakuten.co.jp"))][0].hotelNo' data/hotels.json)
+            curl -sS -o /tmp/hotel.html -w "hotel/${hotel}: HTTP %{http_code}\n" "${url}/hotel/${hotel}"
+            grep -o '<h1[^>]*>[^<]*' /tmp/hotel.html | head -1
+            echo "予約ボタン(hb.afl)の数: $(grep -o 'href="https://hb.afl.rakuten.co.jp[^"]*"' /tmp/hotel.html | wc -l)"
+            grep -o 'href="https://hb.afl.rakuten.co.jp[^"]*" target="_blank" rel="[^"]*" data-hotel-no="[0-9]*" data-placement="[a-z-]*"' /tmp/hotel.html | head -1 | cut -c1-200
+            curl -sS -o /dev/null -w "api/click（不正な施設番号→400を期待）: HTTP %{http_code}\n" -X POST "${url}/api/click" -d '{"hotelNo":1,"placement":"card"}'
+            # 集計対象外の healthcheck を1件送り、Blobへの書き込みが実際に成功するか確認（X-Click-Recorded: 1 が期待値）
+            curl -sS -D - -o /dev/null -X POST "${url}/api/click" -d "{\"hotelNo\":${hotel},\"placement\":\"healthcheck\",\"page\":\"/deploy-check\"}" | grep -iE '^HTTP|x-click-recorded'
+            curl -sS -o /tmp/stats.html -w "stats: HTTP %{http_code}\n" "${url}/stats"
+            grep -o 'Vercel Blob）が未接続[^<]*\|[0-9,]*<span[^>]*>クリック（累計）' /tmp/stats.html | head -1
+          done

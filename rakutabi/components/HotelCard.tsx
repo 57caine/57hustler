@@ -28,7 +28,7 @@ export default function HotelCard({ hotel }: { hotel: Hotel }) {
             1名あたり
             <span className="block text-lg font-bold text-ink font-sans">{formatYen(hotel.minCharge)}〜</span>
           </p>
-          <ReserveButton url={getReserveUrl(hotel)} label="楽天トラベルで予約" fallbackHref={href} />
+          <ReserveButton url={getReserveUrl(hotel)} label="楽天トラベルで予約" fallbackHref={href} hotelNo={hotel.hotelNo} placement="card" />
         </div>
       </div>
     </article>

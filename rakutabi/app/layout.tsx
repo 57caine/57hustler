@@ -3,6 +3,7 @@ import { Noto_Sans_JP, Noto_Serif_JP } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ClickTracker from '@/components/ClickTracker';
 import { getCurrentSeason, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site-config';
 
 const notoSans = Noto_Sans_JP({
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <ClickTracker />
       </body>
     </html>
   );

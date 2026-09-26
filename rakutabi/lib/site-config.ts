@@ -12,8 +12,11 @@ export const SITE_NAME = '落旅くん';
 export const SITE_CATCH = '知らない景色に、会いに行こう。';
 export const SITE_DESCRIPTION =
   '週末旅行・温泉旅行・子連れ旅行・カップル旅行・一人旅。エリアとテーマの組み合わせから、楽天トラベル掲載の宿を比較できます。';
-// 新ドメイン取得後に差し替える（未取得のため仮の値）
-export const SITE_URL = 'https://rakutabi.example.com';
+// 独自ドメインは未取得（2026-09-26時点、vercel.app で需要検証中）。
+// Vercel上では本番URL（VERCEL_PROJECT_PRODUCTION_URL、Vercelがビルド時に自動で設定）を使う
+export const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : 'http://localhost:3000';
 
 // ───────── テーマ ─────────
 

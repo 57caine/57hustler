@@ -41,17 +41,29 @@ export function ReserveButton({
   fallbackHref,
   fallbackLabel = '宿の詳細を見る',
   full,
+  hotelNo,
+  placement,
 }: {
   url: string | null;
   label: string;
   fallbackHref?: string;
   fallbackLabel?: string;
   full?: boolean;
+  /** 送客クリック計測用（components/ClickTracker.tsx） */
+  hotelNo?: number;
+  placement?: 'card' | 'hotel-main';
 }) {
   const base = `font-sans font-bold rounded-lg px-4 py-2.5 text-sm text-center transition-colors ${full ? 'block w-full' : 'inline-block'}`;
   if (url) {
     return (
-      <a href={url} target="_blank" rel="noopener noreferrer nofollow sponsored" className={`${base} bg-cta hover:bg-cta-hover text-white`}>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer nofollow sponsored"
+        data-hotel-no={hotelNo}
+        data-placement={placement}
+        className={`${base} bg-cta hover:bg-cta-hover text-white`}
+      >
         {label}
       </a>
     );

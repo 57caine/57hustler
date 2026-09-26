@@ -92,6 +92,7 @@ export default async function HotelPage({ params }: { params: Promise<{ hotelNo:
           )}
 
           <HotelTabs
+            hotelNo={hotel.hotelNo}
             hotelName={hotel.name}
             special={hotel.special}
             access={hotel.access}
@@ -119,7 +120,7 @@ export default async function HotelPage({ params }: { params: Promise<{ hotelNo:
               日程・人数で変わります。
             </p>
             {reserveUrl ? (
-              <ReserveButton url={reserveUrl} label={`${hotel.name}の空室・料金を見る`} full />
+              <ReserveButton url={reserveUrl} label={`${hotel.name}の空室・料金を見る`} full hotelNo={hotel.hotelNo} placement="hotel-main" />
             ) : (
               <p className="text-sm text-gray-500 bg-gray-50 rounded-lg p-3">予約ボタンは準備中です（楽天アフィリエイトIDの設定後に表示されます）。</p>
             )}

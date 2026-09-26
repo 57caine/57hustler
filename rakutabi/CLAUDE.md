@@ -3,9 +3,35 @@
 # 事業ステータス（2026-09-26時点）
 
 - 事業名は仮称「落旅くん」。ディレクトリ名 `rakutabi`。楽天トラベルへの送客（楽天アフィリエイト）がメインの旅行比較・案内サイト
-- **骨格実装の段階**。ドメイン未取得・Vercelプロジェクト未作成・本公開前
-  - `app/layout.tsx` で `robots: noindex` にしている。本公開時に外すこと
-  - `lib/site-config.ts` の `SITE_URL` は仮の値（`rakutabi.example.com`）。ドメイン取得後に差し替える
+- **vercel.app サブドメインで需要検証中（2026-09-26〜、2〜4週間の予定）**。独自ドメインは取得保留
+  - 目的：SNSからの直接誘導でのアクセス数・楽天送客クリックの発生有無を見る（SEO流入は狙わない）
+  - `app/layout.tsx` で `robots: noindex` を維持（オーナー指示）。本公開時に外すこと
+  - `lib/site-config.ts` の `SITE_URL` は Vercel の `VERCEL_PROJECT_PRODUCTION_URL` から自動設定
+
+# Vercel公開の仕組み（2026-09-26）
+
+- Vercelプロジェクト名 `rakutabi`（team_3ZA38DTbe02rLyjHXAaNuCs5）。**GitHub連携はしていない**
+  - 連携するとモノレポへの全pushでビルド判定が走り、同時ビルド枠1の環境で他事業のデプロイ待ち行列を圧迫するため
+    （ルートCLAUDE.md「Vercel Ignored Build Step」の障害履歴参照）
+- 公開は `.github/workflows/rakutabi-hotels.yml` → `rakutabi/scripts/vercel-deploy.sh` で行う。
+  GitHub Actions上で `vercel build` し、`vercel deploy --prebuilt --prod` で成果物だけをアップロードする（Vercel側のビルド枠を使わない）
+  - `rakutabi/` ディレクトリから直接デプロイするため、Vercelプロジェクト設定上の Root Directory は空（＝rakutabi直下がルート）。
+    実質的に「ルートディレクトリ: rakutabi」と同じ
+- 起動条件：`rakutabi/**` の変更をpushしたとき（main・`claude/rakutabi-skeleton-impl-gzyecr`）、手動実行、毎日05:00 JST（mainにマージ後のみ有効）
+  - **scheduleはmainにあるワークフローでしか動かない**。mainマージ前は、データ（次の土曜日の空室）は自動更新されない
+- 楽天APIはGitHub Actionsからのみ呼ぶ（閲覧者のブラウザ・Vercelからは呼ばない）ため、楽天ウェブサービスの
+  「許可されたWebサイト」に vercel.app を追加する必要はない（Refererは既存の lens-navi.jp で送っている）
+
+# 送客クリック計測（2026-09-26、GA4未導入のため簡易カウント）
+
+- `rel="sponsored"` かつ `data-hotel-no`/`data-placement` 付きのリンクのクリックを `components/ClickTracker.tsx` が
+  `navigator.sendBeacon` で `/api/click` に送る（遷移は妨げない）
+- 記録先は Vercel Blob ストア `rakutabi-clicks`（`vercel-deploy.sh` が自動作成・接続）。1クリック=1ファイル、
+  ファイル名 `clicks/{日付JST}/{施設番号}/{位置}-xxxx.json` だけで集計
+- 集計ページ `/stats`（noindex・サイト内リンクなし）：累計・日別・ボタン位置別・宿別
+- `placement: 'healthcheck'` は公開後の動作確認用で `healthcheck/` に保存され、集計に含まれない
+- 楽天側で予約が成立したか（成果）は楽天アフィリエイト管理画面で確認する。IDをlens-naviと共用しているため、
+  楽天側の数字は lens-navi 分と合算される点に注意
 
 # ページ構成（2026-09-26 デザイン案反映）
 
@@ -80,9 +106,10 @@
 
 # アフィリエイトID
 
-- 楽得くん（point-calendar）と同じく、**lens-navi用の楽天アフィリエイトIDは流用せず本事業専用を使う想定**（オーナー確認待ち）
-- GitHub Secretsに `RAKUTABI_RAKUTEN_AFFILIATE_ID` を登録すると、API取得時に `affiliateId` として渡され、
-  施設URL・プラン一覧URLが `hb.afl.rakuten.co.jp` のアフィリエイトURLになる
+- **需要検証中はlens-navi用の既存ID（`5567171b.a80702dc.5567171c.a1d1b6fc`）を流用する（2026-09-26 オーナー決定）**。
+  `lib/rakuten-travel.ts` の `LENS_NAVI_AFFILIATE_ID`。楽天側の成果レポートはlens-naviと合算される
+- 専用IDに切り替える場合は GitHub Secrets に `RAKUTABI_RAKUTEN_AFFILIATE_ID` を登録すればそちらが優先される
+- API取得時に `affiliateId` を渡すと、施設URL・プラン一覧URLが `hb.afl.rakuten.co.jp` のアフィリエイトURLになる
 - 予約ボタンは `isAffiliateUrl()` がtrueのURLのみ表示する（アフィリエイトなしの外部リンクは出さないルール）。
   ID未設定の間は「予約ボタンは準備中」と表示される
 
@@ -91,5 +118,5 @@
 - 問い合わせ先（メールアドレス等）の決定と `/contact` への記載
 
 - 独自の紹介文（現在は楽天掲載の施設紹介文をそのまま表示）。生成する場合はlens-naviと同じく公開前チェックを通す
-- GA4・`affiliate_click` 計測、sitemap/robots、OGP画像
-- 定期実行（workflowの `schedule`）の有効化
+- GA4（現在は `/stats` の簡易カウントのみ）、sitemap、OGP画像
+- mainへのマージ（マージするまで毎日のデータ自動更新が動かない）
