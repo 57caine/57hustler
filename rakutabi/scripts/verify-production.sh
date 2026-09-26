@@ -26,6 +26,11 @@ d.hotels.forEach((h) => out.push(`/hotel/${h.hotelNo}`));
 console.log(out.join("\n"));
 ')
 
+# トップが新デザインで配信されているか（キャッシュの状態も記録する）
+echo "--- トップページの配信状態 ---"
+curl -sS -D /tmp/top-headers.txt -o /tmp/top-body.html "${BASE}/"
+grep -iE '^(x-vercel-cache|age|cache-control|x-vercel-id):' /tmp/top-headers.txt
+if grep -q 'tracking-widest' /tmp/top-body.html; then echo "トップ: 新デザインのHTML"; else echo "::warning::トップ: 旧デザインのHTMLが返っています"; fi
 total=0; ok=0; fail=0; skipped_combo=0; afl_links=0
 tmp=$(mktemp)
 for p in ${paths}; do
