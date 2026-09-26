@@ -1,7 +1,119 @@
 {
-  "fetchedAt": "2026-09-26T01:56:08.626Z",
+  "fetchedAt": "2026-09-26T01:58:11.877Z",
   "checkinDate": "2026-10-03",
   "hotels": [
+    {
+      "hotelNo": 164,
+      "name": "ＡＮＡクラウンプラザホテル神戸　ｂｙ　ＩＨＧ",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区北野町1",
+      "access": "新幹線・地下鉄「新神戸駅」直結 。三宮まで１駅2分。大阪まで約25分。",
+      "nearestStation": "新神戸",
+      "special": "口コミ高評価の朝食ブッフェではご褒美おむすび・ご当地鯛茶漬けが人気♪ アクセス抜群の当館に宿泊して神戸旅を満喫！",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/164/164.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/164/164_ky.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=164",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=164&f_flg=PLAN",
+      "minCharge": 8400,
+      "reviewAverage": 4.13,
+      "reviewCount": 6628,
+      "themes": [
+        "solo"
+      ],
+      "conditions": [
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 528,
+      "name": "神戸三宮東急ＲＥＩホテル",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区雲井通6-1-5",
+      "access": "ホテル周辺工事中の為、交通規制あり。詳しくは公式HP（重要なお知らせ）をご確認ください。",
+      "nearestStation": "三ノ宮",
+      "special": "ホテル周辺工事中の為、交通規制あり。詳しくは公式HP（重要なお知らせ）をご確認ください。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/528/528.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/528/528_heya.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=528",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=528&f_flg=PLAN",
+      "minCharge": 3580,
+      "reviewAverage": 4.16,
+      "reviewCount": 3420,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 1206,
+      "name": "神戸牛と有馬温泉　天然金泉・銀泉の宿　有馬御苑",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町1296",
+      "access": "神戸電鉄線有馬温泉駅から徒歩２分、阪急バス有馬停より徒歩２分、阪神高速有馬口ＩＣより車３分、中国道西宮北ＩＣより車１０分",
+      "nearestStation": "有馬温泉",
+      "special": "楽天トラベルゴールド2025＆日本の宿TOP47受賞★部屋食プランもあり！金泉・銀泉と神戸牛自慢の宿。駅・温泉街すぐ♪",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1206/1206.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1206/1206_heya.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=1206",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=1206&f_flg=PLAN",
+      "minCharge": 10890,
+      "reviewAverage": 4.39,
+      "reviewCount": 2841,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "station"
+      ]
+    },
+    {
+      "hotelNo": 1214,
+      "name": "神戸　西神オリエンタルホテル",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市西区糀台5-6-3",
+      "access": "神戸市営地下鉄・西神山手線「西神中央駅」から駅前徒歩1分",
+      "nearestStation": "西神中央",
+      "special": "神戸（三宮）・明石・淡路へのアクセスに便利！周辺にショッピング施設が複合する駅前に位置し、交通面にも優れています。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1214/1214.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1214/1214_heya1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=1214",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=1214&f_flg=PLAN",
+      "minCharge": 6700,
+      "reviewAverage": 4.34,
+      "reviewCount": 3102,
+      "themes": [
+        "solo"
+      ],
+      "conditions": [
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 1421,
+      "name": "シーサイドホテル舞子ビラ神戸",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市垂水区東舞子町18-11",
+      "access": "ＪＲ神戸線「舞子駅」から徒歩で7分。ＪＲ舞子駅はＪＲ三宮駅から約１９分。",
+      "nearestStation": "舞子",
+      "special": "＜非日常空間＞明石海峡大橋に一番近いシティリゾートホテル★人気のディナー、朝食バイキングに舌鼓♪",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1421/1421.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1421/1421_twn.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=1421",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=1421&f_flg=PLAN",
+      "minCharge": 5225,
+      "reviewAverage": 4.46,
+      "reviewCount": 5488,
+      "themes": [
+        "weekend",
+        "solo"
+      ],
+      "conditions": [
+        "meal"
+      ]
+    },
     {
       "hotelNo": 1459,
       "name": "熱海温泉　熱海ニューフジヤホテル（伊東園ホテルズ）",
@@ -23,6 +135,73 @@
       ],
       "conditions": [
         "onsen",
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 1524,
+      "name": "神戸ベイシェラトンホテル＆タワーズ",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市東灘区向洋町中2-13",
+      "access": "ＪＲ「住吉駅」→六甲ライナー「アイランドセンター駅」から徒歩1分。ＪＲ「三ノ宮駅」から直通バスで２０分。駐車場無料。",
+      "nearestStation": "アイランドセンター",
+      "special": "2025年12月グランドリニューアル！源泉かけ流しの温泉＆駐車場無料。兵庫五国の豊かな味覚を多彩なレストランで堪能。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1524/1524.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1524/1524_room.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=1524",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=1524&f_flg=PLAN",
+      "minCharge": 7040,
+      "reviewAverage": 4.47,
+      "reviewCount": 4867,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 1641,
+      "name": "神戸シティガーデンズホテル（旧：ホテル神戸四州園）",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区相生町4-7-18",
+      "access": "JR神戸駅・高速神戸駅・ハーバーランド駅すべて徒歩3分・新神戸駅より電車またはタクシー15分",
+      "nearestStation": "神戸（兵庫）",
+      "special": "2020楽天トラベルアワード受賞！JR神戸駅・高速神戸駅へ徒歩3分■アパポイントが貯まる■ハーバーランド徒歩圏内♪",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1641/1641.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1641/1641_room.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=1641",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=1641&f_flg=PLAN",
+      "minCharge": 2926,
+      "reviewAverage": 3.79,
+      "reviewCount": 1423,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 1648,
+      "name": "ホテルオークラ神戸",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区波止場町2-1  メリケンパーク内",
+      "access": "ＪＲ神戸線・阪神線 元町駅から徒歩で10分。 新幹線 新神戸駅から 車で15分。",
+      "nearestStation": "元町（兵庫）",
+      "special": "神戸のシンボル・ポートタワーと並んでウォーターフロントに建つ35階建てのホテル。三宮からの無料シャトルバスは毎日運行。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1648/1648.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1648/1648_sgl.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=1648",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=1648&f_flg=PLAN",
+      "minCharge": 7830,
+      "reviewAverage": 4.56,
+      "reviewCount": 8999,
+      "themes": [
+        "weekend",
+        "solo"
+      ],
+      "conditions": [
         "meal"
       ]
     },
@@ -245,6 +424,26 @@
       ]
     },
     {
+      "hotelNo": 3117,
+      "name": "サンサイドホテル神戸三宮",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区雲井通4-1-3",
+      "access": "ＪＲ三ノ宮駅・阪神神戸三宮駅から東へ徒歩約５分。阪神高速＜生田川I.C＞から5分。",
+      "nearestStation": "三宮",
+      "special": "三宮の中心地近くに位置するリーズナブルなビジネスホテル♪各客室にスマートテレビ、高速無線LAN（wi-fi）完備",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/3117/3117.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/3117/3117_lb.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=3117",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=3117&f_flg=PLAN",
+      "minCharge": 3200,
+      "reviewAverage": 3.75,
+      "reviewCount": 2790,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
       "hotelNo": 4719,
       "name": "草津温泉　湯宿　みゆき",
       "areaKey": "kusatsu",
@@ -266,6 +465,26 @@
       "conditions": [
         "onsen"
       ]
+    },
+    {
+      "hotelNo": 4840,
+      "name": "神戸三宮ユニオンホテル",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区御幸通2-1-10　",
+      "access": "「三宮駅」から徒歩約１3分 阪神高速「生田川」すぐ 電車で大阪２３分・京都５３分",
+      "nearestStation": "阪急三宮",
+      "special": "【笑顔の接客で快適ビジネスステイ】約65種朝食＆名物ユニオンカレーで1日をサポート！11時チェックアウト・連泊にも最適",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/4840/4840.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/4840/4840_room.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=4840",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=4840&f_flg=PLAN",
+      "minCharge": 3400,
+      "reviewAverage": 4.16,
+      "reviewCount": 6096,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
     },
     {
       "hotelNo": 4904,
@@ -364,6 +583,32 @@
       ]
     },
     {
+      "hotelNo": 5307,
+      "name": "城崎温泉　川口屋城崎リバーサイドホテル",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島880-1",
+      "access": "北近畿豊岡道　但馬空港Ｉ．Ｃより国道９号約２５分。",
+      "nearestStation": "城崎",
+      "special": "＜ラウンジ-玄-オープン＞★客室・食事処も続々改装♪絶景露天風呂客室＆城崎グルメで、旅満喫！",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/5307/5307.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/5307/5307_kan.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=5307",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=5307&f_flg=PLAN",
+      "minCharge": 11550,
+      "reviewAverage": 4.49,
+      "reviewCount": 587,
+      "themes": [
+        "weekend",
+        "onsen",
+        "solo"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "view"
+      ]
+    },
+    {
       "hotelNo": 5417,
       "name": "ホテルニューアカオ",
       "areaKey": "atami",
@@ -386,6 +631,80 @@
         "onsen",
         "meal",
         "view"
+      ]
+    },
+    {
+      "hotelNo": 5521,
+      "name": "神戸ポートピアホテル",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区港島中町6-10-1",
+      "access": "ポートライナー神戸空港・三宮から10分、市民広場駅下車1分　ホテルと三宮駅・新神戸駅を結ぶ無料送迎バスあり",
+      "nearestStation": "市民広場",
+      "special": "神戸三宮や神戸空港からに近い、高層階からの港夜景が自慢のシティリゾート。滞在中楽天トラベルラウンジをご利用いただけます。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/5521/5521.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/5521/5521_sig.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=5521",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=5521&f_flg=PLAN",
+      "minCharge": 5530,
+      "reviewAverage": 4.43,
+      "reviewCount": 8529,
+      "themes": [
+        "weekend",
+        "solo"
+      ],
+      "conditions": [
+        "meal",
+        "view"
+      ]
+    },
+    {
+      "hotelNo": 5595,
+      "name": "城崎温泉　しののめ荘",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島757番地",
+      "access": "中国自動車道福崎ICから播但道経由で約90分間です。",
+      "nearestStation": "城崎",
+      "special": "【岩風呂とカニ料理】”但馬”の旬を味わえる自慢の料理と温泉が楽しめる木造三階建ての純和風旅館温泉＜別館貸切15名様より＞",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/5595/5595.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/5595/5595_room.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=5595",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=5595&f_flg=PLAN",
+      "minCharge": 11900,
+      "reviewAverage": 3.83,
+      "reviewCount": 122,
+      "themes": [
+        "weekend",
+        "onsen",
+        "solo"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 5719,
+      "name": "城崎温泉　東山荘（ひがしやまそう）",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島835",
+      "access": "JR城崎温泉駅から徒歩4分／旅館送り専用バス有り（予約不要）／車：播但道 和田山ICから1時間／専用駐車場あり",
+      "nearestStation": "豊岡（兵庫）",
+      "special": "★風そよぐプライベート無料貸切露天風呂が人気宿★駅5分とコンビニ1分！外湯チケット付♪",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/5719/5719.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/5719/5719_war.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=5719",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=5719&f_flg=PLAN",
+      "minCharge": 8338,
+      "reviewAverage": 4.12,
+      "reviewCount": 499,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "station"
       ]
     },
     {
@@ -437,6 +756,31 @@
       ]
     },
     {
+      "hotelNo": 7020,
+      "name": "日和山温泉　ホテル金波楼",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市瀬戸1090",
+      "access": "城崎マリンワールド隣接（ホテル宿泊者は入場半額券付）城崎温泉駅車約10分（送迎予約制）（城崎温泉街散策バス運行）",
+      "nearestStation": "城崎",
+      "special": "迫力ある日本海大パノラマ★但馬牛や松葉がになど日本海の幸をご用意。自然の美しさと温かなおもてなしが融合、心に残る滞在を",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/7020/7020.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/7020/7020_heya.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=7020",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=7020&f_flg=PLAN",
+      "minCharge": 16600,
+      "reviewAverage": 4.44,
+      "reviewCount": 569,
+      "themes": [
+        "weekend",
+        "onsen",
+        "solo"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
       "hotelNo": 7158,
       "name": "草津温泉　草津スカイランドホテル",
       "areaKey": "kusatsu",
@@ -480,6 +824,29 @@
       ],
       "conditions": [
         "view"
+      ]
+    },
+    {
+      "hotelNo": 7597,
+      "name": "城崎温泉　泉翠（せんすい）",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島753",
+      "access": "ＪＲ西日本　山陰本線　城崎温泉駅下車徒歩８分。北近畿豊岡道（豊岡出石IC)より約20分",
+      "nearestStation": "城崎",
+      "special": "2024年9月サウナ付貸切風呂「蒸の湯」オープン。コンセプトが違った貸切風呂 大切な方とゆっくり過ごしたい方にオススメ ",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/7597/7597.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/7597/7597_jpr.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=7597",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=7597&f_flg=PLAN",
+      "minCharge": 15400,
+      "reviewAverage": 4.71,
+      "reviewCount": 798,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen"
       ]
     },
     {
@@ -554,6 +921,31 @@
       "conditions": [
         "onsen",
         "meal"
+      ]
+    },
+    {
+      "hotelNo": 7739,
+      "name": "城崎温泉　喜楽",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島495",
+      "access": "城崎温泉駅から徒歩10分（旅館組合無料バスあり）北近畿豊岡道・豊岡出石ICから約30分。御所の湯付近★",
+      "nearestStation": "城崎",
+      "special": "【ポイント10倍対象宿】詳しくはプラン詳細を！【貸切風呂無料】【土曜も平日料金】プランあり♪外湯巡りに最適★陶芸体験など",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/7739/7739.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/7739/7739_heya.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=7739",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=7739&f_flg=PLAN",
+      "minCharge": 8250,
+      "reviewAverage": 4.61,
+      "reviewCount": 1896,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "station"
       ]
     },
     {
@@ -675,6 +1067,49 @@
       ]
     },
     {
+      "hotelNo": 8470,
+      "name": "ペンシオーネ　キタムラ",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市日高町太田159-10",
+      "access": "車／北近畿豊岡自動車道・日高神鍋高原ICより国道482号で神鍋高原方面へ　電車／JR山陰本線「江原駅」よりバスで25分",
+      "nearestStation": "江原",
+      "special": "大切な家族…ペットも一緒に泊まれる料理自慢のペンション。家族そろって素敵な思い出作りはペンシオーネへ！",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/8470/8470.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/8470/8470_room.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=8470",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=8470&f_flg=PLAN",
+      "minCharge": 6000,
+      "reviewAverage": 4.17,
+      "reviewCount": 60,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 8619,
+      "name": "城崎温泉　きのさき　夢こやど　天望苑",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町桃島85-3",
+      "access": "JR城崎温泉駅から無料バス5分/徒歩15分。無料Pあり。北近畿豊岡道・豊岡出石ICから約20分",
+      "nearestStation": "城崎",
+      "special": "８/22･29＆９/5泊の女性にフェイスマスクをプレゼント☆彡映えにも味にも自信ありの夕食！「朝すき焼」も絶品",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/8619/8619.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/8619/8619_heya.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=8619",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=8619&f_flg=PLAN",
+      "minCharge": 11550,
+      "reviewAverage": 4.63,
+      "reviewCount": 466,
+      "themes": [
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
       "hotelNo": 8632,
       "name": "ビジネスホテルアゼリア",
       "areaKey": "kusatsu",
@@ -694,6 +1129,30 @@
       ],
       "conditions": [
         "station"
+      ]
+    },
+    {
+      "hotelNo": 8636,
+      "name": "有馬温泉　兵衛向陽閣",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町1904",
+      "access": "神戸より電車で約３０分／神戸電鉄有馬温泉駅・バス有馬温泉駅より徒歩約６分／阪神高速道路北神戸線有馬口出口より約５分",
+      "nearestStation": "有馬温泉",
+      "special": "三つの大浴場で金泉湯巡り気分を味わえる至福のひととき。くつろぎの和室と美食、心温まるおもてなしが自慢の老舗旅館です。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/8636/8636.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/8636/8636_rw.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=8636",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=8636&f_flg=PLAN",
+      "minCharge": 15950,
+      "reviewAverage": 4.56,
+      "reviewCount": 2607,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
       ]
     },
     {
@@ -722,6 +1181,31 @@
       ]
     },
     {
+      "hotelNo": 8778,
+      "name": "神鍋温泉　自然に癒される高原ホテル　ブルーリッジホテル",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市日高町栗栖野55",
+      "access": "播但連絡道路・北近畿豊岡自動車道　日高神鍋高原ＩＣより　１５分",
+      "nearestStation": "江原",
+      "special": "松茸やボイル蟹の秋バイキング！秋夜の星空露天と源泉１０0％美肌の湯、広大な自然で至福の休息を。無料送迎有",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/8778/8778.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/8778/8778_heya1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=8778",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=8778&f_flg=PLAN",
+      "minCharge": 14000,
+      "reviewAverage": 4.04,
+      "reviewCount": 789,
+      "themes": [
+        "weekend",
+        "onsen",
+        "solo"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
       "hotelNo": 8842,
       "name": "大江戸温泉物語　ホテル鬼怒川御苑",
       "areaKey": "kinugawa",
@@ -744,6 +1228,29 @@
       "conditions": [
         "onsen",
         "meal"
+      ]
+    },
+    {
+      "hotelNo": 8978,
+      "name": "神戸メリケンパークオリエンタルホテル",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区波止場町5-6  【ホテルコード10】0570-051-153",
+      "access": "JR三ノ宮間の送迎バス運行。大阪まで約20分、元町から徒歩約15分。",
+      "nearestStation": "元町（兵庫）",
+      "special": "全室バルコニー付の客室、海と空と夜景と過ごす船旅のようなリゾートステイ。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/8978/8978.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/8978/8978_kya.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=8978",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=8978&f_flg=PLAN",
+      "minCharge": 8160,
+      "reviewAverage": 4.49,
+      "reviewCount": 7283,
+      "themes": [
+        "weekend"
+      ],
+      "conditions": [
+        "meal",
+        "view"
       ]
     },
     {
@@ -874,6 +1381,35 @@
       ]
     },
     {
+      "hotelNo": 9576,
+      "name": "有馬温泉　御幸荘　花結び",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町351",
+      "access": "阪神高速北神線有馬口ICより5分/中国道西宮ICより10分/神戸電鉄・阪急バス『有馬温泉駅』",
+      "nearestStation": "有馬温泉",
+      "special": "露天風呂付き客室で贅沢な記念日。カップルやファミリーで愉しむ貸切風呂、展望大浴場で絶景を堪能。バリアフリーで安心の寛ぎ。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/9576/9576.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/9576/9576_room.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=9576",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=9576&f_flg=PLAN",
+      "minCharge": 17480,
+      "reviewAverage": 4.3,
+      "reviewCount": 2627,
+      "themes": [
+        "weekend",
+        "onsen",
+        "family",
+        "couple"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "room",
+        "view",
+        "kids"
+      ]
+    },
+    {
       "hotelNo": 9598,
       "name": "草津温泉　草津ナウリゾートホテル",
       "areaKey": "kusatsu",
@@ -923,6 +1459,31 @@
       ]
     },
     {
+      "hotelNo": 10829,
+      "name": "城崎温泉　深山",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島1011",
+      "access": "大阪方面より中国道～舞鶴道～北近畿豊岡自動車道～豊岡出石ＩＣ下車～国道312号線で北上／JR城崎温泉駅下車　無料バス5分",
+      "nearestStation": "城崎",
+      "special": "古き良き時代の魅力と 現代の快適さが融合した新しいお宿",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/10829/10829.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/10829/10829_room.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=10829",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=10829&f_flg=PLAN",
+      "minCharge": 14800,
+      "reviewAverage": 4.55,
+      "reviewCount": 664,
+      "themes": [
+        "weekend",
+        "onsen",
+        "solo"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
       "hotelNo": 10956,
       "name": "箱根芦ノ湖温泉　源泉100％の宿　ＨＯＴＥＬ　Ｒａ　Ｋｕｕｎ　(ホテルラクーン）",
       "areaKey": "hakone",
@@ -940,6 +1501,51 @@
       "themes": [],
       "conditions": [
         "meal"
+      ]
+    },
+    {
+      "hotelNo": 11327,
+      "name": "ホテルヴィアマーレ神戸",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区京町67",
+      "access": "「三ノ宮」「神戸三宮」駅西口、「元町」駅東口徒歩８分、地下鉄「三宮」西出口徒歩５分。「旧居留地・大丸前駅」徒歩３分",
+      "nearestStation": "三ノ宮",
+      "special": "コンビニ徒歩１分☆加湿機能付空気清浄機・リセッシュ・セミダブルベッド・Ｗｉ-Ｆｉ全室完備♪",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/11327/11327.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/11327/11327_sgl.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=11327",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=11327&f_flg=PLAN",
+      "minCharge": 2800,
+      "reviewAverage": 4.2,
+      "reviewCount": 4491,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 11351,
+      "name": "城崎温泉　湯楽　Ｙｕｒａｋｕ　Ｋｉｎｏｓａｋｉ　Ｓｐａ＆Ｇａｒｄｅｎｓ",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島844",
+      "access": "城崎温泉駅から徒歩20分『送迎あり』北近畿豊岡道、播但連絡道路、但馬空港ICより→312号線を北上.",
+      "nearestStation": "城崎",
+      "special": "楽天アワード2018～2021連続受賞★花やフルーツを浮かべた無料貸切風呂が大人気♪仲買社長自慢のお食事も高評価！",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/11351/11351.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/11351/11351_room.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=11351",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=11351&f_flg=PLAN",
+      "minCharge": 10980,
+      "reviewAverage": 4.58,
+      "reviewCount": 1051,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "station"
       ]
     },
     {
@@ -966,6 +1572,78 @@
         "onsen",
         "meal",
         "station"
+      ]
+    },
+    {
+      "hotelNo": 13608,
+      "name": "ビジネスホテル　セピア",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市日高町日置112",
+      "access": "電車：JR山陰本線「江原」駅より徒歩3分／車：北近畿豊岡自動車道「日高」ICより3分",
+      "nearestStation": "江原",
+      "special": "江原駅より徒歩3分！コスパ良し◎同系列店の割烹「高砂」の料理人が作る料理が好評★全室Wi-Fi無料",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/13608/13608.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/13608/13608_sgl.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=13608",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=13608&f_flg=PLAN",
+      "minCharge": 4550,
+      "reviewAverage": 3.82,
+      "reviewCount": 303,
+      "themes": [
+        "solo"
+      ],
+      "conditions": [
+        "station"
+      ]
+    },
+    {
+      "hotelNo": 14007,
+      "name": "城崎温泉　西村屋ホテル招月庭",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島1016-2",
+      "access": "【電車】JR城崎温泉駅から旅館組合無料乗合バスで5～15分【車】北近畿豊岡自動車道・豊岡出石ICから約18分",
+      "nearestStation": "城崎",
+      "special": "城崎温泉唯一の５つ星認定宿。五万坪の森林庭園を望む温泉リゾートで美食と温泉旅",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/14007/14007.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/14007/14007_room.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=14007",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=14007&f_flg=PLAN",
+      "minCharge": 35200,
+      "reviewAverage": 4.72,
+      "reviewCount": 1179,
+      "themes": [
+        "weekend",
+        "onsen",
+        "solo"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 14074,
+      "name": "城崎温泉　お宿　白山　花まんだら　【湯亭　花のれん】",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島564",
+      "access": "ＪＲ山陰本線城崎温泉駅より無料バスで5分／中国自動車道吉川ＩＣ→舞鶴若狭道春日→北近畿自動車道終点→Ｒ３１２",
+      "nearestStation": "城崎",
+      "special": "7/6～ミニ縁日開始☆外湯横♪5と0の日は5％オフ☆新装露天付客室＆和洋室＆わんこ同室！外湯横♪お宿白山姉妹館★4湯貸切",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/14074/14074.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/14074/14074_room.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=14074",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=14074&f_flg=PLAN",
+      "minCharge": 20377,
+      "reviewAverage": 4.45,
+      "reviewCount": 1018,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "room"
       ]
     },
     {
@@ -1042,6 +1720,31 @@
       ]
     },
     {
+      "hotelNo": 15232,
+      "name": "有馬温泉　有馬ロイヤルホテル",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町987",
+      "access": "神戸（三宮・新神戸）より電車またはバスで約３０分、大阪（梅田）より阪急高速バス特急で約５５分",
+      "nearestStation": "有馬温泉",
+      "special": "リニューアルオープン！お風呂全面改装！多彩な湯舟で湯ったりとお楽しみください。館内湯めぐりが人気。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/15232/15232.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/15232/15232_ki.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=15232",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=15232&f_flg=PLAN",
+      "minCharge": 5500,
+      "reviewAverage": 4.2,
+      "reviewCount": 2031,
+      "themes": [
+        "weekend",
+        "onsen",
+        "solo"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
       "hotelNo": 15250,
       "name": "ＥＮ　ＲＥＳＯＲＴ　Ｒｅ’Ｃｏｖｅ　Ｈａｋｏｎｅ（旧：リ・カーヴ箱根）",
       "areaKey": "hakone",
@@ -1062,6 +1765,75 @@
       ],
       "conditions": [
         "onsen",
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 15261,
+      "name": "ホテル・カサベラＩＮＮ神戸",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市兵庫区西上橘通1-4-27",
+      "access": "JR神戸駅徒歩12分/高速神戸駅徒歩6分/市営地下鉄山手線 三宮から2駅3分、新神戸から3駅5分、大倉山駅下車徒歩5分",
+      "nearestStation": "大倉山（兵庫）",
+      "special": "神戸観光の拠点に。もう一つの神戸に出会うホテル。三宮やハーバーランド・大阪・姫路へのお出かけに便利。1階にはコンビニ併設",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/15261/15261.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/15261/15261_s.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=15261",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=15261&f_flg=PLAN",
+      "minCharge": 3024,
+      "reviewAverage": 3.81,
+      "reviewCount": 3435,
+      "themes": [
+        "solo"
+      ],
+      "conditions": [
+        "station"
+      ]
+    },
+    {
+      "hotelNo": 15315,
+      "name": "リロステイＶＩＬＬＡ　城崎　ザ・コンドミニアム（旧レイセニット城崎スイートＶＩＬＬＡ）",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市小島1220",
+      "access": "ＪＲ山陰本線「城崎温泉」駅から車で約７分(無料送迎車あり※予約制）。北近畿豊岡自動車道「日高神鍋高原」ＩＣより40分。",
+      "nearestStation": "城崎",
+      "special": "2026年7月リニューアルオープン！リニューアル特典プラン販売中！",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/15315/15315.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/15315/15315_room.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=15315",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=15315&f_flg=PLAN",
+      "minCharge": 6732,
+      "reviewAverage": 3.82,
+      "reviewCount": 1987,
+      "themes": [
+        "weekend",
+        "onsen",
+        "solo"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 15432,
+      "name": "ホテルプラザ神戸",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市東灘区向洋町中2-9-1",
+      "access": "六甲ライナー「アイランドセンター駅」徒歩3分／阪神高速5号湾岸線「六甲アイランド北」3分★「ユニバーサルシティ」18分",
+      "nearestStation": "住吉（兵庫）",
+      "special": "秋旅は食も楽しむ♪開放的な屋上ガーデンでステーキBBQ！朝食はごちそうバイキングで家族みんながハッピーな神戸ステイ◎",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/15432/15432.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/15432/15432_ky.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=15432",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=15432&f_flg=PLAN",
+      "minCharge": 3191,
+      "reviewAverage": 4.27,
+      "reviewCount": 4584,
+      "themes": [
+        "weekend"
+      ],
+      "conditions": [
         "meal"
       ]
     },
@@ -1104,6 +1876,26 @@
       "minCharge": 6900,
       "reviewAverage": 4.5,
       "reviewCount": 288,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 16082,
+      "name": "日和山海岸・気比の浜　海辺の宿　みはら荘",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市気比3880-10",
+      "access": "ＪＲ山陰本線城崎温泉駅よりバスにて１０分／タクシーにて約7分道路事情送迎で駅迎えのできない場合があります。",
+      "nearestStation": "城崎",
+      "special": "城崎温泉駅から送迎あり。人工セラミックの大浴場を完備しており、疲れを癒します。冬は松葉ガニをお楽しみいただけます",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/16082/16082.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/16082/16082_heya.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=16082",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=16082&f_flg=PLAN",
+      "minCharge": 6600,
+      "reviewAverage": 4.69,
+      "reviewCount": 202,
       "themes": [
         "solo"
       ],
@@ -1179,6 +1971,29 @@
       ]
     },
     {
+      "hotelNo": 16158,
+      "name": "有馬温泉　メルヴェール有馬",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町ウツギ谷1670-5",
+      "access": "電車：神戸電鉄有馬温泉駅より徒歩1分／車：中国自動車道「西宮北I.C」より車で10分",
+      "nearestStation": "有馬温泉",
+      "special": "古い歴史の有馬の街に建つ新しい形の温泉ホテル。館内に「金泉」「銀泉」を備えた大浴場あり。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/16158/16158.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/16158/16158_heya.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=16158",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=16158&f_flg=PLAN",
+      "minCharge": 13550,
+      "reviewAverage": 3.9,
+      "reviewCount": 1798,
+      "themes": [
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "station"
+      ]
+    },
+    {
       "hotelNo": 16212,
       "name": "ファミリーロッジ旅籠屋・日光鬼怒川店",
       "areaKey": "kinugawa",
@@ -1197,6 +2012,30 @@
         "solo"
       ],
       "conditions": []
+    },
+    {
+      "hotelNo": 16246,
+      "name": "有馬きらり",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町池の尻292-2",
+      "access": "【電車】神戸電鉄有馬温泉駅より徒歩約７分　【車】中国道・山陽道　西宮北ＩＣより約15分",
+      "nearestStation": "有馬温泉",
+      "special": "ホテル併設の「有馬温泉　太閤の湯」が無料でご利用いただけます。（通常大人平日1名2,750円）",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/16246/16246.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/16246/16246_r.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=16246",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=16246&f_flg=PLAN",
+      "minCharge": 12150,
+      "reviewAverage": 4.24,
+      "reviewCount": 1751,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
     },
     {
       "hotelNo": 16527,
@@ -1306,6 +2145,101 @@
       "conditions": []
     },
     {
+      "hotelNo": 18093,
+      "name": "有馬温泉　銀水荘　兆楽",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町1654-1",
+      "access": "☆無料送迎バス有☆　新神戸・三宮駅より電車で約40分／中国自動車道西宮北IC・阪神高速有馬口より車で10分",
+      "nearestStation": "有馬温泉",
+      "special": "敷地内から湧出する金泉・銀泉を自然味たっぷりの露天風呂で♪温泉とお料理で評判の櫟林の湯宿☆",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/18093/18093.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/18093/18093_w_w.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=18093",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=18093&f_flg=PLAN",
+      "minCharge": 22220,
+      "reviewAverage": 4.6,
+      "reviewCount": 1030,
+      "themes": [
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 18189,
+      "name": "有馬温泉　ねぎや陵楓閣",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町1537-2",
+      "access": "車：中国自動車道・西宮北ＩＣより12分 電車：有馬温泉駅より徒歩5分　バス：有馬温泉停留所より徒歩5分",
+      "nearestStation": "有馬温泉",
+      "special": "有馬温泉・落葉山（おちばやま）の中腹に位置し、自然を満喫できるくつろぎの宿。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/18189/18189.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/18189/18189_r.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=18189",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=18189&f_flg=PLAN",
+      "minCharge": 20570,
+      "reviewAverage": 4.54,
+      "reviewCount": 884,
+      "themes": [
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "station"
+      ]
+    },
+    {
+      "hotelNo": 18251,
+      "name": "有馬温泉　月光園　游月山荘",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町318",
+      "access": "中国自動車道 西宮北ＩＣより有馬温泉方面約１０分／神戸電鉄「有馬温泉」駅下車 徒歩１０分 ※毎日８時～１９時は無料送迎可",
+      "nearestStation": "有馬温泉",
+      "special": "★温泉総選挙2021 露天風呂／ビュッフェ1位(有馬温泉)！源泉掛け流しの露天風呂。有馬随一の自然に囲まれた純和風旅館。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/18251/18251.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=18251",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=18251&f_flg=PLAN",
+      "minCharge": 15400,
+      "reviewAverage": 4.29,
+      "reviewCount": 1456,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 18252,
+      "name": "有馬温泉　月光園　鴻朧館",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町318",
+      "access": "中国自動車道 西宮北ＩＣより有馬温泉方面約１０分／神戸電鉄「有馬温泉」駅下車 徒歩１０分（※毎日８時～１９時は無料送迎可",
+      "nearestStation": "有馬温泉",
+      "special": "目前に広がる有馬三山「落葉山」の眺望。館内随所より、四季折々の壮大な絶景をご覧いただけます。姉妹館との湯めぐりも可能。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/18252/18252.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=18252",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=18252&f_flg=PLAN",
+      "minCharge": 15180,
+      "reviewAverage": 4.55,
+      "reviewCount": 1685,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "view"
+      ]
+    },
+    {
       "hotelNo": 18253,
       "name": "白浜古賀の井リゾート＆スパ",
       "areaKey": "shirahama",
@@ -1320,6 +2254,53 @@
       "minCharge": 11900,
       "reviewAverage": 4.42,
       "reviewCount": 5719,
+      "themes": [
+        "weekend",
+        "onsen",
+        "solo"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 18743,
+      "name": "豊岡パークホテル",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市寿町9-8",
+      "access": "ＪＲ豊岡駅より徒歩５分",
+      "nearestStation": "豊岡（兵庫）",
+      "special": "■豊岡駅から徒歩5分■全室無線LAN対応■駐車場無料です",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/18743/18743.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/18743/18743_r1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=18743",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=18743&f_flg=PLAN",
+      "minCharge": 5000,
+      "reviewAverage": 3.94,
+      "reviewCount": 450,
+      "themes": [
+        "solo"
+      ],
+      "conditions": [
+        "station"
+      ]
+    },
+    {
+      "hotelNo": 19296,
+      "name": "誕生の宿　奥城崎シーサイドホテル",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市竹野町誕生のうら",
+      "access": "ＪＲ山陰本線「JR竹野駅」より送迎車（事前要予約）で５分。お車：北近畿豊岡道「但馬空港IC」よりR178で約40分",
+      "nearestStation": "竹野",
+      "special": "山陰海岸国立公園内に位置し、日本の渚百選に選ばれた白い砂浜、紺碧の海が目の前",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/19296/19296.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/19296/19296_wa.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=19296",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=19296&f_flg=PLAN",
+      "minCharge": 9900,
+      "reviewAverage": 4.13,
+      "reviewCount": 558,
       "themes": [
         "weekend",
         "onsen",
@@ -1352,6 +2333,32 @@
       "conditions": [
         "onsen",
         "meal"
+      ]
+    },
+    {
+      "hotelNo": 19705,
+      "name": "城崎温泉　やなぎ荘",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島701",
+      "access": "ＪＲ：城崎温泉駅より徒歩6分/旅館組合乗合チェックインバスあり　お車：北近畿豊岡道但馬空港ICから約15分",
+      "nearestStation": "城崎",
+      "special": "城崎温泉中心部！柳湯まで徒歩１分★当館でしか味わえない“やなぎ荘名物かにかまくら”美食×映え料理と温泉のおもてなし宿★",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/19705/19705.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/19705/19705_k.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=19705",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=19705&f_flg=PLAN",
+      "minCharge": 7500,
+      "reviewAverage": 4.55,
+      "reviewCount": 818,
+      "themes": [
+        "weekend",
+        "onsen",
+        "solo"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "station"
       ]
     },
     {
@@ -1400,6 +2407,31 @@
       "conditions": []
     },
     {
+      "hotelNo": 19746,
+      "name": "心やすらぐ海辺の実家　よどや",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市竹野町切浜621-2",
+      "access": "JR山陰本線 竹野駅より車で5分（駅まで送迎を承ります！） /　京阪神方面より2時間半",
+      "nearestStation": "竹野",
+      "special": "竹野・切浜海水浴場にある海鮮自慢の宿！！城崎温泉や城崎マリンワールドへ車で20分♪",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/19746/19746.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/19746/19746_lb.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=19746",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=19746&f_flg=PLAN",
+      "minCharge": 8000,
+      "reviewAverage": 4.56,
+      "reviewCount": 72,
+      "themes": [
+        "weekend",
+        "onsen",
+        "solo"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
       "hotelNo": 19786,
       "name": "箱根湯本温泉　女性に優しい癒しの宿　ホテルマイユクール祥月",
       "areaKey": "hakone",
@@ -1443,6 +2475,75 @@
       ],
       "conditions": [
         "station"
+      ]
+    },
+    {
+      "hotelNo": 20407,
+      "name": "こだま荘",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市但東町相田36",
+      "access": "舞鶴自動車道福知山ＩＣより国道９号・国道４２６号経由、約３８㎞",
+      "nearestStation": "豊岡（兵���）",
+      "special": "別荘感覚で、 バーベキュー、かに鍋 など楽しい感覚で使い方、自由自在ー。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/20407/20407.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/20407/20407_heya.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=20407",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=20407&f_flg=PLAN",
+      "minCharge": 3500,
+      "reviewAverage": 4.08,
+      "reviewCount": 81,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 25128,
+      "name": "有馬温泉　有馬グランドホテル",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町1304-1",
+      "access": "有馬温泉駅（電車、バス、ロープウェイ）より送迎サービス有（要電話）　神戸電鉄有馬温泉駅��り徒歩10分　",
+      "nearestStation": "有馬温泉",
+      "special": "自然に囲まれ開放感あふれる展望大浴苑「雲海」と大浴場「ゆらり」の湯巡りで贅沢なひと時を。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/25128/25128.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/25128/25128_heya.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=25128",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=25128&f_flg=PLAN",
+      "minCharge": 17050,
+      "reviewAverage": 4.65,
+      "reviewCount": 1778,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 25288,
+      "name": "有馬温泉　中の坊　瑞苑",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町808",
+      "access": "神戸電鉄 有馬温泉駅より徒歩５分以内 ／ 大阪より１時間・神戸より３０分",
+      "nearestStation": "有馬温泉",
+      "special": "楽天トラベルアワードお客様の声大賞の宿　１３歳未満のお子様のご入館はご遠慮いただいております。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/25288/25288.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/25288/25288_kan.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=25288",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=25288&f_flg=PLAN",
+      "minCharge": 28750,
+      "reviewAverage": 4.73,
+      "reviewCount": 789,
+      "themes": [
+        "onsen",
+        "family"
+      ],
+      "conditions": [
+        "onsen",
+        "station",
+        "kids"
       ]
     },
     {
@@ -1626,6 +2727,30 @@
       ]
     },
     {
+      "hotelNo": 29554,
+      "name": "城崎温泉　お宿　芹",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町桃島1297-1",
+      "access": "JR城崎温泉駅(15：00～22：30送迎有。お電話ください)／お車���北近畿豊岡自動車道「但馬空港IC」 より30分",
+      "nearestStation": "城崎",
+      "special": " 【夕食：部屋食】8年連続楽天アワード受賞！但馬牛など地元食材で腕をふるう料理自慢の宿。国立公園円山川の大自然を堪能。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/29554/29554.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/29554/29554_heya1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=29554",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=29554&f_flg=PLAN",
+      "minCharge": 10000,
+      "reviewAverage": 4.59,
+      "reviewCount": 433,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
       "hotelNo": 30888,
       "name": "箱根湯本温泉　ホテル南風荘",
       "areaKey": "hakone",
@@ -1796,6 +2921,31 @@
       ]
     },
     {
+      "hotelNo": 31801,
+      "name": "有馬温泉　高山荘　華野",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町400-1",
+      "access": "大阪より約60分/三ノ宮・新神戸より約30分／神戸電鉄、バス 有馬温泉駅から徒歩10分 送迎有(要電話)",
+      "nearestStation": "有馬温泉",
+      "special": "2025年1月温泉付スイート誕生◆全15室　季節の料理と金泉・銀泉、二種の温泉を愉しむ、大人のための隠れ宿。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/31801/31801.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/31801/31801_r1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=31801",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=31801&f_flg=PLAN",
+      "minCharge": 17545,
+      "reviewAverage": 4.44,
+      "reviewCount": 359,
+      "themes": [
+        "onsen",
+        "couple"
+      ],
+      "conditions": [
+        "onsen",
+        "station",
+        "room"
+      ]
+    },
+    {
       "hotelNo": 32086,
       "name": "いろり会席と源泉１００％秘湯の宿　湯西川温泉　上屋敷　平の高房",
       "areaKey": "kinugawa",
@@ -1867,6 +3017,50 @@
       ]
     },
     {
+      "hotelNo": 37892,
+      "name": "神戸北の坂ホテル",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区加納町3丁目12-8",
+      "access": "ＪＲ三ノ宮西口駅/阪急三宮東口駅より徒歩約７分/新幹線　新神戸駅より徒約１5分 /JR大阪よりJR三ノ宮 新快速で20分",
+      "nearestStation": "新神戸",
+      "special": "神戸北の坂ホテルは、ビジネスフロアとペットフロアを分けて、皆様に快適にお過ごし頂けます。全室空気清浄機・除菌液完備",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/37892/37892.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/37892/37892_he1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=37892",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=37892&f_flg=PLAN",
+      "minCharge": 4940,
+      "reviewAverage": 4.23,
+      "reviewCount": 1485,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 37901,
+      "name": "HOTEL　SETRE　（セトレ）",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市垂水区海岸通11-1",
+      "access": "[ＪＲ]舞子駅より徒歩７分　[車]第ニ神明道路　高丸ＩＣより南へ10分　神戸淡路鳴門道　垂水ＩＣより南へ10分",
+      "nearestStation": "舞子",
+      "special": "「海辺の絶景宿 日本一」のオーシャンビューホテル。明石海峡の絶景とオールインクルーシブで大切な人と過ごす至福のひとときを",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/37901/37901.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/37901/37901_he.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=37901",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=37901&f_flg=PLAN",
+      "minCharge": 13500,
+      "reviewAverage": 4.48,
+      "reviewCount": 965,
+      "themes": [
+        "weekend"
+      ],
+      "conditions": [
+        "meal",
+        "station",
+        "view"
+      ]
+    },
+    {
       "hotelNo": 38267,
       "name": "熱海温泉　三平荘",
       "areaKey": "atami",
@@ -1932,6 +3126,26 @@
       ]
     },
     {
+      "hotelNo": 39415,
+      "name": "アパホテル〈神戸三宮〉",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区御幸通5-2-14",
+      "access": "JR神戸線三ノ宮駅東口から5分。新幹線新神戸駅から電車で約10分。神戸三宮駅もすぐ（阪神7分・阪急8分・地下鉄7分）",
+      "nearestStation": "阪急三宮",
+      "special": "駅近だけど閑静なビジネス街で夜の到着でも安心！朝食は健康志向メニューで大好評！全室完全個別空調で暖房冷房切替自由！",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/39415/39415.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/39415/39415_ky.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=39415",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=39415&f_flg=PLAN",
+      "minCharge": 4360,
+      "reviewAverage": 3.97,
+      "reviewCount": 5061,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
       "hotelNo": 41000,
       "name": "草津温泉　十二屋旅館",
       "areaKey": "kusatsu",
@@ -1971,6 +3185,29 @@
         "solo"
       ],
       "conditions": []
+    },
+    {
+      "hotelNo": 41797,
+      "name": "有馬温泉　メープル有馬",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町406-3",
+      "access": "有馬温泉駅より徒歩10分送迎有★連絡要★神戸空港から電車40分三宮、谷上、有馬口乗換◆伊丹空港からバス45分宝塚乗換◆",
+      "nearestStation": "有馬温泉",
+      "special": "自家源泉のラジウム銀泉（療養泉）に、15タイプ64室の部屋バリエーション。夕食は月替りの創作和食です。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/41797/41797.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/41797/41797_kan2.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=41797",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=41797&f_flg=PLAN",
+      "minCharge": 10450,
+      "reviewAverage": 4.34,
+      "reviewCount": 998,
+      "themes": [
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "station"
+      ]
     },
     {
       "hotelNo": 43782,
@@ -2070,6 +3307,50 @@
         "onsen",
         "meal"
       ]
+    },
+    {
+      "hotelNo": 49358,
+      "name": "有馬温泉　亀の井ホテル　有馬",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町1617-1",
+      "access": "【車】阪神高速北神戸線有馬口ICより10分　【バス】有馬温泉バス停下車　【電車】神戸電鉄有馬温泉駅下車　※宿泊者様送迎有",
+      "nearestStation": "有馬温泉",
+      "special": "【2025年8月リニューアル】日本三古泉　有馬温泉「金泉」かけ流しの温泉ホテル",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/49358/49358.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/49358/49358_kya.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=49358",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=49358&f_flg=PLAN",
+      "minCharge": 14122,
+      "reviewAverage": 4.19,
+      "reviewCount": 1080,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 50114,
+      "name": "ホテルリブマックス豊岡",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市泉町6-25",
+      "access": "JR豊岡駅より徒歩で10分・車で3分（豊岡市役所方面）",
+      "nearestStation": "豊岡（兵庫）",
+      "special": "男女大浴場・サウナ付き！全室Wi-Fi ・空気清浄機完備！客室タイプ豊富！キャビン貸切可能、団体利用大歓迎！",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/50114/50114.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/50114/50114_si.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=50114",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=50114&f_flg=PLAN",
+      "minCharge": 3000,
+      "reviewAverage": 3.73,
+      "reviewCount": 751,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
     },
     {
       "hotelNo": 50212,
@@ -2250,6 +3531,28 @@
       "conditions": []
     },
     {
+      "hotelNo": 53390,
+      "name": "有馬温泉　欽山",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町1302-4",
+      "access": "神戸電鉄「有馬温泉駅」より徒歩５分・山陽新幹線「新神戸駅」よりバスにて約30分・大阪（梅田）より高速バスにて約55分",
+      "nearestStation": "有馬温泉",
+      "special": "四季折々の懐石料理と名湯有馬の金泉がお楽しみいただける数奇屋の佇まいが美しい、有馬温泉を代表する高級料亭旅館です。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/53390/53390.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/53390/53390_ta.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=53390",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=53390&f_flg=PLAN",
+      "minCharge": 23650,
+      "reviewAverage": 4.6,
+      "reviewCount": 498,
+      "themes": [
+        "onsen"
+      ],
+      "conditions": [
+        "onsen"
+      ]
+    },
+    {
       "hotelNo": 54102,
       "name": "季の湯　雪月花（共立リゾート）",
       "areaKey": "hakone",
@@ -2399,13 +3702,37 @@
       ]
     },
     {
+      "hotelNo": 67088,
+      "name": "有馬温泉　天地の宿　奥の細道",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町大屋敷1683-2",
+      "access": "神戸電鉄　有馬温泉駅・バス停より無料送迎（※ご到着後に当館へTEL）・ロープウェー有馬温泉駅徒歩5分",
+      "nearestStation": "有馬温泉",
+      "special": "露天風呂付和室の本館と｢個性溢れるここにしかないお料理｣で感動体験♪五感で食す有馬の宿",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/67088/67088.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/67088/67088_k.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=67088",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=67088&f_flg=PLAN",
+      "minCharge": 36000,
+      "reviewAverage": 4.85,
+      "reviewCount": 314,
+      "themes": [
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "station",
+        "room"
+      ]
+    },
+    {
       "hotelNo": 67255,
       "name": "南紀白浜温泉　料理の宿　さきのや",
       "areaKey": "shirahama",
       "address": "和歌山県西牟婁郡白浜町湯崎2998-74",
       "access": "白浜駅より車で約１０分、明光バス（湯崎行き）で新湯崎停留所下車（約５分）",
       "nearestStation": "白浜",
-      "special": "■2023年楽天ブロンズアワード受賞■白良浜まで徒歩��内！！1300年前から湧き続ける名湯【牟婁の湯】",
+      "special": "■2023年楽天ブロンズアワード受賞■白良浜まで徒歩圏内！！1300年前から湧き続ける名湯【牟婁の湯】",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/67255/67255.jpg",
       "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/67255/67255_kya.jpg",
       "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=67255",
@@ -2466,6 +3793,30 @@
       "conditions": []
     },
     {
+      "hotelNo": 67969,
+      "name": "城崎温泉　千年の湯古まん",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島481",
+      "access": "JR山陰本線　城崎温泉駅から無料送迎バスにて５分",
+      "nearestStation": "城崎",
+      "special": "城崎温泉開湯の宿。情緒深い町並みに映える純日本建築。いかにも城崎らしい「古木良木宿～ふるきよきやど～」",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/67969/67969.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/67969/67969_k.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=67969",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=67969&f_flg=PLAN",
+      "minCharge": 9900,
+      "reviewAverage": 4.35,
+      "reviewCount": 275,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
       "hotelNo": 67986,
       "name": "大江戸温泉物語Ｐｒｅｍｉｕｍ　鬼怒川観光ホテル",
       "areaKey": "kinugawa",
@@ -2488,6 +3839,28 @@
       "conditions": [
         "onsen",
         "meal"
+      ]
+    },
+    {
+      "hotelNo": 68184,
+      "name": "Ｏホテル豊岡",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市大手町7-10",
+      "access": "豊岡駅より徒歩1分",
+      "nearestStation": "豊岡（兵庫）",
+      "special": "駅近、豊岡駅より徒歩1分・朝食無料サービス♪スーパーコンビニすぐ側の好立地・フリーＷｉ-Ｆｉ完備",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/68184/68184.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/68184/68184_ky.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=68184",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=68184&f_flg=PLAN",
+      "minCharge": 6800,
+      "reviewAverage": 3.92,
+      "reviewCount": 1389,
+      "themes": [
+        "solo"
+      ],
+      "conditions": [
+        "station"
       ]
     },
     {
@@ -2587,6 +3960,32 @@
       ]
     },
     {
+      "hotelNo": 70350,
+      "name": "城崎温泉　心の宿　三國屋",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島221",
+      "access": "電車：京都・大阪より約2時間半。城崎温泉駅より徒歩３分　車：北近畿豊岡道但馬空港ICから30分　専用駐車場あり",
+      "nearestStation": "城崎",
+      "special": "12部屋と小規模ながら無料貸切風呂4ヶ所と充実の設備がある隠れ家的宿。駅から近く外湯めぐりにも便利な好立地。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/70350/70350.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/70350/70350_k.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=70350",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=70350&f_flg=PLAN",
+      "minCharge": 14850,
+      "reviewAverage": 4.46,
+      "reviewCount": 245,
+      "themes": [
+        "weekend",
+        "onsen",
+        "solo"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "station"
+      ]
+    },
+    {
       "hotelNo": 70807,
       "name": "草津温泉　奈良屋",
       "areaKey": "kusatsu",
@@ -2616,7 +4015,7 @@
       "name": "川治温泉　川治一柳閣本館（伊東園ホテルズ）",
       "areaKey": "kinugawa",
       "address": "栃木県日光市川治温泉高原46",
-      "access": "川治湯元駅より無料送迎実施。駅にご到着後お気軽にお電話ください。TEL：0570-005-780",
+      "access": "川治湯元駅より無料送迎実施。駅にご到��後お気軽にお電話ください。TEL：0570-005-780",
       "nearestStation": "川治温泉",
       "special": "”源泉そのまま”毎分380リットルの圧倒的湯量!!良質なpH8.1の弱アルカリ性単純泉　”美肌温泉”を満喫♪",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/72098/72098.jpg",
@@ -2704,6 +4103,28 @@
       "conditions": [
         "onsen",
         "meal"
+      ]
+    },
+    {
+      "hotelNo": 75225,
+      "name": "ダイヤモンド有馬温泉ソサエティ",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町423",
+      "access": "神戸電鉄有馬温泉駅・有馬温泉バス停より無料送迎バス有。(時間制)",
+      "nearestStation": "有馬温泉",
+      "special": "＜有馬温泉の閑静な高台に佇むホテル＞最適な質に管理された有馬の銀泉や、旬食材を活かした逸品料理を堪能！",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/75225/75225.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/75225/75225_wa.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=75225",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=75225&f_flg=PLAN",
+      "minCharge": 6000,
+      "reviewAverage": 3.9,
+      "reviewCount": 675,
+      "themes": [
+        "onsen"
+      ],
+      "conditions": [
+        "onsen"
       ]
     },
     {
@@ -2805,6 +4226,121 @@
       ]
     },
     {
+      "hotelNo": 79342,
+      "name": "神戸ポートタワーホテル　なごみの湯宿",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区波止場町6-1",
+      "access": "地下鉄みなと元町駅より徒歩４分。ＪＲ・阪神元町駅より徒歩８分。阪急花隈駅より徒歩７分。",
+      "nearestStation": "元町（兵庫）",
+      "special": "男性専用サウナ＆水風呂と女性専用無料岩盤浴、さらにハッピーアワーのアルコールサービスも大好評。ホテルで整う充実ステイを。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/79342/79342.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/79342/79342_s.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=79342",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=79342&f_flg=PLAN",
+      "minCharge": 4440,
+      "reviewAverage": 4.11,
+      "reviewCount": 5675,
+      "themes": [
+        "weekend",
+        "solo"
+      ],
+      "conditions": [
+        "meal",
+        "station"
+      ]
+    },
+    {
+      "hotelNo": 79415,
+      "name": "城崎温泉　あさぎり荘",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島876",
+      "access": "ＪＲ　城崎温泉駅より徒歩にて7分　　　車　豊岡空港ICより３０分",
+      "nearestStation": "城崎",
+      "special": "【JAグループ】だから叶う、生産者とのつながりが育む、安心・安全な旬の味覚が楽しめるお宿 ",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/79415/79415.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/79415/79415_ru.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=79415",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=79415&f_flg=PLAN",
+      "minCharge": 9900,
+      "reviewAverage": 4.75,
+      "reviewCount": 676,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 80572,
+      "name": "有馬温泉　陶泉　御所坊",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町858",
+      "access": "神戸電鉄有馬温泉駅から徒歩5分／中国自動車道西宮北ＩＣより５ｋｍ／神戸空港より電車乗り継ぎで約60分",
+      "nearestStation": "有馬温泉",
+      "special": "有馬最古の湯宿。鎌倉以来八百年の色合いが滲み出る御所坊独特の風情を。湯は源泉かけ流し100%、無加水無加温の金泉。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/80572/80572.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/80572/80572_ky1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=80572",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=80572&f_flg=PLAN",
+      "minCharge": 17800,
+      "reviewAverage": 4.33,
+      "reviewCount": 312,
+      "themes": [
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "station"
+      ]
+    },
+    {
+      "hotelNo": 80573,
+      "name": "神戸有馬温泉　元湯龍泉閣〜赤ちゃんも楽しめるお部屋食の宿〜",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町ウツギ谷1663",
+      "access": "有馬温泉駅より徒歩10分。チェックイン時とチェックアウト時に送迎有。ご到着時にご連絡ください。神戸市内より車で約30分。",
+      "nearestStation": "有馬温泉",
+      "special": "有馬温泉の家族で楽しめる源泉宿。夕食はお部屋食、朝食は朝食会場にて。貸切露天や室内プールなど設備も充実！全室禁煙。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/80573/80573.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/80573/80573_ky1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=80573",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=80573&f_flg=PLAN",
+      "minCharge": 13310,
+      "reviewAverage": 4.59,
+      "reviewCount": 685,
+      "themes": [
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "station"
+      ]
+    },
+    {
+      "hotelNo": 80658,
+      "name": "スーパーホテル神戸",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区加納町2-1-11",
+      "access": "◇三宮駅(在来線)より徒歩約７分！◇新神戸駅(新幹線)より徒歩約９分！ホテル目の前のバス停は「加納町３」です★",
+      "nearestStation": "三ノ宮",
+      "special": "2020年4月フルリニューアルオープン！客室に５０インチテレビ完備　焼き立てパン健康朝食無料♪　新神戸・三ノ宮２駅利用可",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/80658/80658.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/80658/80658_ru.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=80658",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=80658&f_flg=PLAN",
+      "minCharge": 3560,
+      "reviewAverage": 4.35,
+      "reviewCount": 1470,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
       "hotelNo": 84856,
       "name": "亀の井ホテル　熱海",
       "areaKey": "atami",
@@ -2828,6 +4364,28 @@
         "meal",
         "room",
         "view"
+      ]
+    },
+    {
+      "hotelNo": 104705,
+      "name": "ホテル　ラ・スイート神戸ハーバーランド",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区波止場町7-2",
+      "access": "JR「神戸駅」より徒歩約10分／地下鉄海岸線「みなと元町駅」より徒歩約4分／阪神高速3号神戸線「京橋出入口」より車約5分",
+      "nearestStation": "神戸（兵庫）",
+      "special": "楽天トラベル高級ホテル・旅館ランキング近畿総合1位！全室が70㎡以上の大型ジャグジー＆テラス付オーシャンンビュールーム♪",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/104705/104705.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/104705/104705_spa.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=104705",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=104705&f_flg=PLAN",
+      "minCharge": 15090,
+      "reviewAverage": 4.74,
+      "reviewCount": 1826,
+      "themes": [
+        "weekend"
+      ],
+      "conditions": [
+        "meal"
       ]
     },
     {
@@ -3135,6 +4693,26 @@
       ]
     },
     {
+      "hotelNo": 109048,
+      "name": "たびたび　花院",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市気比4509",
+      "access": "ＪＲ　城崎温泉駅からお車で７分（送迎有・要予約）　駐車場完備",
+      "nearestStation": "城崎",
+      "special": "津居山港直送の鮮魚を美しく。お子さま連れにも好評。海水浴×城崎温泉×城崎マリンワールド　星降る田舎でまた来たくなる宿",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/109048/109048.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/109048/109048_kya.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=109048",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=109048&f_flg=PLAN",
+      "minCharge": 10100,
+      "reviewAverage": 4.63,
+      "reviewCount": 27,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
       "hotelNo": 109164,
       "name": "草津温泉　ペットと泊まれる宿　音雅",
       "areaKey": "kusatsu",
@@ -3179,11 +4757,36 @@
       "conditions": []
     },
     {
+      "hotelNo": 128351,
+      "name": "ホテルシルク温泉やまびこ",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市但東町正法寺165",
+      "access": "☆1泊2食の方に限り福知山駅送迎OK♪13時福知山駅発　翌11時10分当館発要予約",
+      "nearestStation": "",
+      "special": "【本物のヌルヌル美肌湯】まるで美容液！？とろける但馬牛と極上の泉質に癒される贅沢な休日。広々無料駐車場！ドライブも安心♪",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/128351/128351.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/128351/128351_kya.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=128351",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=128351&f_flg=PLAN",
+      "minCharge": 7060,
+      "reviewAverage": 4.36,
+      "reviewCount": 427,
+      "themes": [
+        "weekend",
+        "onsen",
+        "solo"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
       "hotelNo": 128558,
       "name": "リブマックスリゾート川治（旧　源泉の宿　らんりょう）",
       "areaKey": "kinugawa",
       "address": "栃木県日光市川治温泉川治11",
-      "access": "電車：鬼怒川温泉駅→川治湯元駅で下車、徒歩１０分��車：今市ＩＣ下車、国道１２１号線経由にて約４５分",
+      "access": "電車：鬼怒川温泉駅→川治湯元駅で下車、徒歩１０分、車：今市ＩＣ下車、国道１２１号線経由にて約４５分",
       "nearestStation": "川治湯元",
       "special": "毎分１０００リットル以上の湯量を誇り、全ての大浴場が源泉１００％かけ流し天然温泉で御座います。",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/128558/128558.jpg",
@@ -3245,6 +4848,30 @@
         "solo"
       ],
       "conditions": []
+    },
+    {
+      "hotelNo": 130498,
+      "name": "大江戸温泉物語Ｐｒｅｍｉｕｍ　きのさき",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町桃島1232",
+      "access": "城崎温泉駅⇒当館　旅館組合の送迎バス（詳しい出発時間は駅舎の係員にお尋ね下さい）",
+      "nearestStation": "",
+      "special": "プレミアムラウンジで贅沢な時間を満喫。くつろぎの和モダン温泉宿",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/130498/130498.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/130498/130498_ru.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=130498",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=130498&f_flg=PLAN",
+      "minCharge": 16200,
+      "reviewAverage": 4.14,
+      "reviewCount": 2583,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
     },
     {
       "hotelNo": 130704,
@@ -3387,7 +5014,7 @@
       "address": "神奈川県足柄下郡箱根町仙石原934-29",
       "access": "箱根湯本駅より箱根登山バスで約40分、新宿駅より高速バスで約2時間、「仙郷楼前」徒歩1分。駐車場13台無料",
       "nearestStation": "",
-      "special": "和乃オーベルジュが誇る一品一品に愛情と情熱を込めた懐石料���と、【全室にごり湯の露天風呂付客室】で心を解き放つひと時を",
+      "special": "和乃オーベルジュが誇る一品一品に愛情と情熱を込めた懐石料理と、【全室にごり湯の露天風呂付客室】で心を解き放つひと時を",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/137410/137410.jpg",
       "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/137410/137410_res.jpg",
       "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=137410",
@@ -3426,6 +5053,31 @@
         "onsen",
         "meal",
         "kids"
+      ]
+    },
+    {
+      "hotelNo": 138019,
+      "name": "城崎温泉　旨し隠れ家　湯宿　山よし",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島379",
+      "access": "城崎温泉駅から徒歩７分",
+      "nearestStation": "",
+      "special": "温泉街のど真ん中！で外湯めぐりも便利。木屋町通りの川沿いに佇むたった5室の美食家集う旨し隠れ家。貸切温泉無料♪　",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/138019/138019.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/138019/138019_ka1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=138019",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=138019&f_flg=PLAN",
+      "minCharge": 12000,
+      "reviewAverage": 4.67,
+      "reviewCount": 136,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "station"
       ]
     },
     {
@@ -3522,6 +5174,50 @@
       ],
       "conditions": [
         "station"
+      ]
+    },
+    {
+      "hotelNo": 141211,
+      "name": "神鍋グリーンホテル",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市日高町国分寺400-17",
+      "access": "ＪＲ　江原駅より徒歩にて１分",
+      "nearestStation": "江原",
+      "special": "当ホテルは、但馬（兵庫県北部）の中心に位置しますので、観光処点として大変便利です。ＪＲ江原駅から、徒歩１分です。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/141211/141211.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/141211/141211_kya1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=141211",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=141211&f_flg=PLAN",
+      "minCharge": 4150,
+      "reviewAverage": 3.68,
+      "reviewCount": 144,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 141327,
+      "name": "有馬　瑞宝園",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町1751",
+      "access": "有馬温泉駅より車で約5分（徒歩約15分～20分）/中国自動車道西宮北ICより約15分/阪神高速西宮山口南ICより約10分",
+      "nearestStation": "有馬温泉",
+      "special": "有馬温泉【瑞宝寺公園】すぐ♪高台の静かな宿。大浴場・露天風呂で愉しむ温泉や山海の幸を堪能。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/141327/141327.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/141327/141327_kya.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=141327",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=141327&f_flg=PLAN",
+      "minCharge": 11990,
+      "reviewAverage": 4.3,
+      "reviewCount": 360,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
       ]
     },
     {
@@ -3703,6 +5399,52 @@
       ]
     },
     {
+      "hotelNo": 145406,
+      "name": "豊岡グリーンホテルモーリス",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市千代田町6-32",
+      "access": "豊岡駅より徒歩にて約５分",
+      "nearestStation": "豊岡（兵庫）",
+      "special": "豊岡駅から徒歩５分。全室ダブルベッド,高速インターネット無料接続、男女大浴場・サウナ付。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/145406/145406.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/145406/145406_kan.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=145406",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=145406&f_flg=PLAN",
+      "minCharge": 5005,
+      "reviewAverage": 4.55,
+      "reviewCount": 2610,
+      "themes": [
+        "weekend",
+        "solo"
+      ],
+      "conditions": [
+        "meal",
+        "station"
+      ]
+    },
+    {
+      "hotelNo": 146878,
+      "name": "ＴＯＹＯＯＫＡ１９２５",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市中央町11-22",
+      "access": "JR豊岡駅徒歩8分、但馬空港より全但バス15分、城崎温泉まで車で20分",
+      "nearestStation": "豊岡（兵庫）",
+      "special": "まちの記憶を遺す、名建築ホテル。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/146878/146878.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/146878/146878_room.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=146878",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=146878&f_flg=PLAN",
+      "minCharge": 12540,
+      "reviewAverage": 4.83,
+      "reviewCount": 121,
+      "themes": [
+        "solo"
+      ],
+      "conditions": [
+        "station"
+      ]
+    },
+    {
       "hotelNo": 147090,
       "name": "ファミリーロッジ旅籠屋・箱根仙石原店",
       "areaKey": "hakone",
@@ -3721,6 +5463,57 @@
         "solo"
       ],
       "conditions": []
+    },
+    {
+      "hotelNo": 147192,
+      "name": "城崎温泉　料理旅館　翠山荘",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島728",
+      "access": "城崎温泉駅より徒歩にて約１２分ほどかかります。　車の方は、北近畿豊岡道（豐岡出石ＩＣ）を降りてから約３０分で当館着。",
+      "nearestStation": "",
+      "special": "城崎温泉外湯めぐりに最適！但馬牛や津居山かにを堪能できる料理旅館。個室お食事処でカップル・ご夫婦・ファミリーも大歓迎！",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/147192/147192.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/147192/147192_room.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=147192",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=147192&f_flg=PLAN",
+      "minCharge": 9350,
+      "reviewAverage": 4.1,
+      "reviewCount": 265,
+      "themes": [
+        "weekend",
+        "onsen",
+        "family",
+        "couple"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "kids"
+      ]
+    },
+    {
+      "hotelNo": 147438,
+      "name": "神戸　ホテル　フルーツ・フラワー",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区大沢町上大沢2150",
+      "access": "ＪＲ　三田駅より送迎バスにて約２０分",
+      "nearestStation": "三田（兵庫）",
+      "special": "黒毛和牛を堪能できるBBQや遊園地、美肌効果がある天然温泉、果樹狩りなど一日中遊べる道の駅にあります。無料送迎バスあり！",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/147438/147438.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/147438/147438_kan1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=147438",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=147438&f_flg=PLAN",
+      "minCharge": 4500,
+      "reviewAverage": 4.06,
+      "reviewCount": 1831,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
     },
     {
       "hotelNo": 147442,
@@ -3769,6 +5562,58 @@
       ]
     },
     {
+      "hotelNo": 147569,
+      "name": "城崎温泉　風月魚匠（ふうげつぎょしょう）",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島636-1",
+      "access": "ＪＲ：城崎温泉駅より徒歩20分/旅館組合乗合送迎バスあり　お車：北近畿豊岡道 豊岡出石ICでお降り下さい",
+      "nearestStation": "",
+      "special": "2022年11月貸切風呂＆離れ特別室リニューアル！老舗鮮魚店直営宿！社長自らが仕入れ、ここでしか味わえない本物を提供★",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/147569/147569.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=147569",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=147569&f_flg=PLAN",
+      "minCharge": 15400,
+      "reviewAverage": 4.63,
+      "reviewCount": 800,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "station",
+        "room"
+      ]
+    },
+    {
+      "hotelNo": 147721,
+      "name": "ザ　グラン　リゾート　プリンセス有馬",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町1338",
+      "access": "有馬温泉駅より徒歩にて約１５分（送迎あり）",
+      "nearestStation": "有馬温泉",
+      "special": "有馬温泉の最高峰に佇む大浴場＆屋内プールを備えたリゾートホテル｜ファミリーにも安心なミキハウス・ウェルカムベビーの認定宿",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/147721/147721.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/147721/147721_kan1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=147721",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=147721&f_flg=PLAN",
+      "minCharge": 5865,
+      "reviewAverage": 4.06,
+      "reviewCount": 484,
+      "themes": [
+        "weekend",
+        "onsen",
+        "family"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "kids"
+      ]
+    },
+    {
       "hotelNo": 147782,
       "name": "ソラトニワ熱海伊豆山",
       "areaKey": "atami",
@@ -3792,6 +5637,28 @@
         "meal",
         "room",
         "view"
+      ]
+    },
+    {
+      "hotelNo": 148909,
+      "name": "有馬温泉　有馬六彩",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町341-1",
+      "access": "有馬温泉駅より徒歩にて約１５分",
+      "nearestStation": "有馬温泉",
+      "special": "【2026年7/18レストランリニューアル】金・銀湯×ペット可★愛犬・猫と泊まれる有馬の高台宿",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/148909/148909.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/148909/148909_kan1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=148909",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=148909&f_flg=PLAN",
+      "minCharge": 21500,
+      "reviewAverage": 4.47,
+      "reviewCount": 285,
+      "themes": [
+        "onsen"
+      ],
+      "conditions": [
+        "onsen"
       ]
     },
     {
@@ -3836,6 +5703,31 @@
       "conditions": [
         "onsen",
         "meal"
+      ]
+    },
+    {
+      "hotelNo": 149298,
+      "name": "神戸みなと温泉　蓮",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区新港町1-1",
+      "access": "JR大阪駅より新快速で21分、各線三宮駅からシャトルバスで5分。",
+      "nearestStation": "三ノ宮",
+      "special": "各線三宮駅からシャトルバスで5分。270度海に囲まれた天然温泉旅館。50平米以上の客室は全室テラス付オーシャンビュー。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/149298/149298.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/149298/149298_kan1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=149298",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=149298&f_flg=PLAN",
+      "minCharge": 10230,
+      "reviewAverage": 4.64,
+      "reviewCount": 1206,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "view"
       ]
     },
     {
@@ -3983,13 +5875,60 @@
       ]
     },
     {
+      "hotelNo": 153168,
+      "name": "竹野の海辺　湯やど　海の音〜うみのね〜",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市竹野町竹野3396-1",
+      "access": "ＪＲ　山陰本線　竹野駅よりお車にて約５分（送迎車あり）/城崎温泉駅よりお車にて約１５分/香住駅よりお車にて約３０分",
+      "nearestStation": "竹野",
+      "special": "わんちゃんと泊まれる別棟OPEN★城崎から15分！★海を目の前に時間を気にしない贅沢なひと時を★新鮮魚介＆但馬牛",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/153168/153168.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=153168",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=153168&f_flg=PLAN",
+      "minCharge": 9900,
+      "reviewAverage": 4.77,
+      "reviewCount": 330,
+      "themes": [
+        "weekend",
+        "onsen",
+        "solo"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 153192,
+      "name": "同心ビジネスイン",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市兵庫区本町1-3-23",
+      "access": "中央市場前駅から徒歩5分！1番出口階段正面の横断歩道を渡ってすぐ左直進、入江橋を渡ってすぐ右直進約300mです。",
+      "nearestStation": "",
+      "special": "コスパ重視の方に最適♪ アメニティは必要最低限のみ完備♪ 全室禁煙ルーム♪ 長期ビジネス滞在もOK！",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/153192/153192.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/153192/153192_kan1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=153192",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=153192&f_flg=PLAN",
+      "minCharge": 2600,
+      "reviewAverage": 3.81,
+      "reviewCount": 502,
+      "themes": [
+        "solo"
+      ],
+      "conditions": [
+        "station"
+      ]
+    },
+    {
       "hotelNo": 153212,
       "name": "みよりふるさと体験村　宿泊棟ケビン",
       "areaKey": "kinugawa",
       "address": "栃木県日光市中三依423",
       "access": "中三依（なかみより）温泉駅より徒歩３分！東北道西那須野塩原ICから国道４００号経由で約４０分！",
       "nearestStation": "",
-      "special": "浅草から電車で１本『中三依（なかみより）温��駅』徒歩３分！綺麗な川と空気の中に佇む２階建貸切コテージ。",
+      "special": "浅草から電車で１本『中三依（なかみより）温泉駅』徒歩３分！綺麗な川と空気の中に佇む２階建貸切コテージ。",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/153212/153212.jpg",
       "roomImageUrl": "",
       "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=153212",
@@ -4069,6 +6008,26 @@
       "conditions": []
     },
     {
+      "hotelNo": 153695,
+      "name": "センチュリオンホテル　グランド　神戸駅前",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区相生町2-3-7",
+      "access": "JR神戸から徒歩1分■「三ノ宮」まで電車で4分■「新神戸」まで地下鉄で5分（大倉山駅）■ハーバーランドすぐ",
+      "nearestStation": "神戸（兵庫）",
+      "special": "【彩り小鉢の朝食ビュッフェ】異文化が融合する街「神戸」を堪能できる名物料理をお楽しみください【JR神戸・徒歩1分】",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/153695/153695.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=153695",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=153695&f_flg=PLAN",
+      "minCharge": 2350,
+      "reviewAverage": 4.23,
+      "reviewCount": 1699,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
       "hotelNo": 153696,
       "name": "新錦ホテル",
       "areaKey": "shirahama",
@@ -4085,6 +6044,26 @@
       "reviewCount": 80,
       "themes": [
         "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 158366,
+      "name": "ホテルサンルートソプラ神戸アネッサ",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市兵庫区湊町４丁目１－１１",
+      "access": "阪急・阪神・神戸・山陽電鉄 新開地駅出口より徒歩2分 　三宮から電車で7分",
+      "nearestStation": "新開地",
+      "special": "【楽天トラベル ゴールドアワード2024受賞】新開地���出口より徒歩2分！　全室セパレートのバスルームが好評です",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/158366/158366.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=158366",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=158366&f_flg=PLAN",
+      "minCharge": 3400,
+      "reviewAverage": 4.28,
+      "reviewCount": 1859,
+      "themes": [
+        "weekend"
       ],
       "conditions": []
     },
@@ -4315,7 +6294,7 @@
       "name": "箱根風雅",
       "areaKey": "hakone",
       "address": "神奈川県足柄下郡箱根町仙石原1246-773",
-      "access": "バス停「仙石高原」より徒歩約7分／小田原駅より箱根登山バスにて約50分／バスタ新宿より高速バスにて約2時間",
+      "access": "バス停「仙石高原」より徒歩約7分／小田��駅より箱根登山バスにて約50分／バスタ新宿より高速バスにて約2時間",
       "nearestStation": "箱根湯本",
       "special": "【全24室の大人限定宿】仙石原の別荘地に佇む静かな空間で、大人だけの優雅な時間を／旬の味が楽しめる料理自慢の宿",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/162753/162753.jpg",
@@ -4407,6 +6386,53 @@
       ]
     },
     {
+      "hotelNo": 164929,
+      "name": "有馬温泉　ＳＰＡ　ＴＥＲＲＡＣＥ紫翠",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町1656-1",
+      "access": "有馬温泉駅より徒歩にて約１０分(送迎有電話要）",
+      "nearestStation": "有馬温泉",
+      "special": "日本の良さと“今”を紡ぐジャパニーズモダンの宿。女性の五感を満たし、自分の為のゆったりとした時間。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/164929/164929.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/164929/164929_kan1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=164929",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=164929&f_flg=PLAN",
+      "minCharge": 15000,
+      "reviewAverage": 4.7,
+      "reviewCount": 230,
+      "themes": [
+        "onsen"
+      ],
+      "conditions": [
+        "onsen"
+      ]
+    },
+    {
+      "hotelNo": 165044,
+      "name": "城崎温泉　花小路　彩月",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島108",
+      "access": "ＪＲ　城崎温泉駅より徒歩にて約３分",
+      "nearestStation": "",
+      "special": "駅から徒歩3分、全9室の大人専用湯宿です。2つの無料貸切温泉と個室レストランを備え、但馬牛やカニ料理を提供しています",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/165044/165044.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=165044",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=165044&f_flg=PLAN",
+      "minCharge": 12870,
+      "reviewAverage": 4.67,
+      "reviewCount": 229,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "station"
+      ]
+    },
+    {
       "hotelNo": 165676,
       "name": "ＨＥＳＴＡ箱根",
       "areaKey": "hakone",
@@ -4421,6 +6447,46 @@
       "minCharge": 4700,
       "reviewAverage": 3.34,
       "reviewCount": 182,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 166196,
+      "name": "ゲストハウス城崎若代（女性専用）",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島737",
+      "access": "城崎温泉駅より徒歩にて約８分",
+      "nearestStation": "",
+      "special": "2018年4月、城崎温泉にある築９０年の旅館を改装し女性専用ゲストハウスとしてオープン！",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/166196/166196.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/166196/166196_kan1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=166196",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=166196&f_flg=PLAN",
+      "minCharge": 4250,
+      "reviewAverage": 5,
+      "reviewCount": 27,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 166545,
+      "name": "神戸ルミナスホテル三宮",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区江戸町92",
+      "access": "ＪＲ　三ノ宮駅西口より徒歩にて約５分",
+      "nearestStation": "三ノ宮",
+      "special": "【２０１８年８月１日グランドオープン！】ＪＲ三ノ宮駅西口より徒歩５分、旧居留地内にあり、くつろげる客室",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/166545/166545.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=166545",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=166545&f_flg=PLAN",
+      "minCharge": 3087,
+      "reviewAverage": 4.31,
+      "reviewCount": 1498,
       "themes": [
         "solo"
       ],
@@ -4450,6 +6516,47 @@
         "onsen",
         "meal"
       ]
+    },
+    {
+      "hotelNo": 167053,
+      "name": "ＨＯＴＥＬ　だるま",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市日高町日置34-9",
+      "access": "ＪＲ江原(えばら)駅東口より徒歩約2分 。 北近畿豊岡道の日高神鍋ＩＣより車で５分。江原(えばら)河畔劇場前バス停目の前",
+      "nearestStation": "江原",
+      "special": "市内最安値★Wi-Fi完備★ユニットバス付or共同シャワー★駅近,バス停目の前★近くに飲食店商店街あり★無料P有",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/167053/167053.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/167053/167053_kan1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=167053",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=167053&f_flg=PLAN",
+      "minCharge": 4700,
+      "reviewAverage": 4.23,
+      "reviewCount": 110,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 167683,
+      "name": "コンフォートホテルＥＲＡ神戸三宮",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区雲井通4-2-10",
+      "access": "阪神電車「神戸三宮」駅A23出口より徒歩約4分◆ＪＲ「三ノ宮」駅東口より徒歩にて約５分◆ベイエリアの観光の拠点に最適",
+      "nearestStation": "三ノ宮",
+      "special": "旅を楽しむための仕掛けが充実◆野菜やフルーツたっぷりの朝食ビュッフェ◆地域を感じられるカフェ空間◆小学生まで添い寝無料",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/167683/167683.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=167683",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=167683&f_flg=PLAN",
+      "minCharge": 3550,
+      "reviewAverage": 4.33,
+      "reviewCount": 2189,
+      "themes": [
+        "weekend",
+        "solo"
+      ],
+      "conditions": []
     },
     {
       "hotelNo": 167693,
@@ -4523,6 +6630,49 @@
       "conditions": []
     },
     {
+      "hotelNo": 168548,
+      "name": "有馬温泉　湯屋の宿　康貴",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有馬町1401",
+      "access": "【電車】有馬温泉駅→徒歩約7分【高速バス】三宮→約30分、大阪→約60分、京都→約75分※バス停…JR約7分・阪急約5分",
+      "nearestStation": "有馬温泉",
+      "special": "4つの無料の貸切風呂あり。源泉隣接、鮮度自慢の金泉・銀泉が楽しめる大人の湯宿。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/168548/168548.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/168548/168548_kan1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=168548",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=168548&f_flg=PLAN",
+      "minCharge": 12300,
+      "reviewAverage": 4.66,
+      "reviewCount": 101,
+      "themes": [
+        "onsen",
+        "couple"
+      ],
+      "conditions": [
+        "onsen"
+      ]
+    },
+    {
+      "hotelNo": 168741,
+      "name": "ＫＯＫＯ　ＨＯＴＥＬ　神戸新長田",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市長田区若松町5丁目1-1",
+      "access": "神戸市営地下鉄　西神線、JR神戸線「新長田駅」より徒歩１分/山陽新幹線「新神戸駅」より「新長田駅」まで約13分",
+      "nearestStation": "新長田",
+      "special": "「新神戸駅」より地下鉄で約13分。３路線が交わるハブステーション「新長田駅」より徒歩１分。観光やビジネスの拠点に。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/168741/168741.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/168741/168741_kan1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=168741",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=168741&f_flg=PLAN",
+      "minCharge": 2565,
+      "reviewAverage": 4.34,
+      "reviewCount": 1008,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
       "hotelNo": 170212,
       "name": "Ｒａｋｕｔｅｎ　ＳＴＡＹ　ＶＩＬＬＡ　箱根仙石原",
       "areaKey": "hakone",
@@ -4585,6 +6735,52 @@
         "solo"
       ],
       "conditions": []
+    },
+    {
+      "hotelNo": 172261,
+      "name": "相鉄フレッサイン　神戸三宮",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区旭通5-2-3",
+      "access": "ＪＲ線「三ノ宮駅」より徒歩３分。阪急・阪神線「神戸三宮駅」より徒歩4分。",
+      "nearestStation": "三ノ宮",
+      "special": "【JR三ノ宮・私鉄各線神戸三宮駅より徒歩5分圏内】新神戸駅や神戸空港にもアクセス良好！ビジネス・観光の拠点にご最適です",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/172261/172261.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=172261",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=172261&f_flg=PLAN",
+      "minCharge": 5350,
+      "reviewAverage": 4.2,
+      "reviewCount": 981,
+      "themes": [
+        "solo"
+      ],
+      "conditions": [
+        "station"
+      ]
+    },
+    {
+      "hotelNo": 172553,
+      "name": "錦水旅館",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島759",
+      "access": "城崎温泉駅より徒歩にて約６分",
+      "nearestStation": "",
+      "special": "城崎温泉の中心街に位置し、外湯めぐりに便利なお宿。館内には３つの貸切風呂や趣の異なる客室で女性に人気",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/172553/172553.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/172553/172553_kan1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=172553",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=172553&f_flg=PLAN",
+      "minCharge": 19800,
+      "reviewAverage": 4.56,
+      "reviewCount": 142,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
     },
     {
       "hotelNo": 172893,
@@ -4727,6 +6923,32 @@
       ]
     },
     {
+      "hotelNo": 176571,
+      "name": "城崎温泉　きのさきの宿　緑風閣",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町湯島174",
+      "access": "城崎温泉駅より徒歩にて約３分、専用駐車場は徒歩1分",
+      "nearestStation": "",
+      "special": "城崎温泉駅徒歩3分。部屋食とサウナで、家族にも記念日にも選ばれる宿。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/176571/176571.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/176571/176571_kan1.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=176571",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=176571&f_flg=PLAN",
+      "minCharge": 26900,
+      "reviewAverage": 4.69,
+      "reviewCount": 769,
+      "themes": [
+        "weekend",
+        "onsen",
+        "couple"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "station"
+      ]
+    },
+    {
       "hotelNo": 177016,
       "name": "ザ　グラン　リゾート　エレガンテ熱海",
       "areaKey": "atami",
@@ -4745,6 +6967,28 @@
         "solo"
       ],
       "conditions": []
+    },
+    {
+      "hotelNo": 177593,
+      "name": "ザ　グラン　リゾート城崎",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市小島1188-3",
+      "access": "ＪＲ　城崎温泉駅よりお車にて約１０分",
+      "nearestStation": "",
+      "special": "城崎温泉駅より無料送迎付き／豊かな自然と四季折々の絶景＆日本海の新鮮な魚介類やカニ、但馬牛を満喫",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/177593/177593.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=177593",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=177593&f_flg=PLAN",
+      "minCharge": 4300,
+      "reviewAverage": 4.07,
+      "reviewCount": 87,
+      "themes": [
+        "solo"
+      ],
+      "conditions": [
+        "view"
+      ]
     },
     {
       "hotelNo": 177836,
@@ -4770,7 +7014,7 @@
       "hotelNo": 178290,
       "name": "箱根つたや旅館",
       "areaKey": "hakone",
-      "address": "神奈川県足柄��郡箱根町底倉240-1",
+      "address": "神奈川県足柄下郡箱根町底倉240-1",
       "access": "箱根登山バス　箱根町線「神社下」バス停より徒歩にて約１分",
       "nearestStation": "宮ノ下",
       "special": "箱根七湯の底倉温泉が露天でも楽しめる、江戸時代から続く老舗旅館をリノベーションしたゲストハウス",
@@ -4850,6 +7094,55 @@
       ]
     },
     {
+      "hotelNo": 179274,
+      "name": "天然温泉　浪漫湯　ドーミーイン神戸元町（ドーミーイン・野乃グループ）",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区栄町通2-5-1",
+      "access": "JR/阪神「元町駅」より徒歩にて約4分（西口にEVあり）。",
+      "nearestStation": "元町（兵庫）",
+      "special": "神戸南京町に2021年OPEN♪最上階には天然温泉大浴場・露天風呂＆チェーン西日本最大級の広さを誇るサウナあり♪",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/179274/179274.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=179274",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=179274&f_flg=PLAN",
+      "minCharge": 6497,
+      "reviewAverage": 4.53,
+      "reviewCount": 1867,
+      "themes": [
+        "weekend",
+        "onsen",
+        "solo"
+      ],
+      "conditions": [
+        "onsen",
+        "meal"
+      ]
+    },
+    {
+      "hotelNo": 179425,
+      "name": "センチュリオンホテル＆スパ　ヴィンテージ神戸",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区港島1-1-6",
+      "access": "①中公園駅3番線西出入口からポートアイランドビル連絡口へ進み2階へ　②喫茶店を右折し西出入口から歩道橋をお渡り下さい",
+      "nearestStation": "中公園",
+      "special": "神戸随一の夜景を一望できる屋上とレストラン。ジムで汗を流した後はこだわりのサウナ・水風呂完備の大浴場をご利用下さい",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/179425/179425.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=179425",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=179425&f_flg=PLAN",
+      "minCharge": 4000,
+      "reviewAverage": 4.27,
+      "reviewCount": 1146,
+      "themes": [
+        "weekend",
+        "solo"
+      ],
+      "conditions": [
+        "meal",
+        "view"
+      ]
+    },
+    {
       "hotelNo": 179717,
       "name": "ＩＳＨＩＮＯＹＡ熱海／石のや熱海（ＴＫＰ　Ｈｏｔｅｌｓ　＆　Ｒｅｓｏｒｔｓ）",
       "areaKey": "atami",
@@ -4925,6 +7218,29 @@
       ]
     },
     {
+      "hotelNo": 181293,
+      "name": "神戸ホテルジュラク",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区東川崎町1-1-1",
+      "access": "神戸駅徒歩3分、ハーバーランド駅徒歩5分、西元町駅徒歩5分、高速神戸駅徒歩7分　　神戸空港40分、新神戸駅30分",
+      "nearestStation": "神戸（兵庫）",
+      "special": "２０２１年４月オープン神戸駅徒歩３分★朝食ビュッフェは美味しい神戸が詰まってます♪カフェでは国産牛100％手作りバーガー",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/181293/181293.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=181293",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=181293&f_flg=PLAN",
+      "minCharge": 4150,
+      "reviewAverage": 4.56,
+      "reviewCount": 1599,
+      "themes": [
+        "weekend",
+        "solo"
+      ],
+      "conditions": [
+        "station"
+      ]
+    },
+    {
       "hotelNo": 181341,
       "name": "プリンス　スマート　イン　熱海",
       "areaKey": "atami",
@@ -4943,6 +7259,28 @@
         "solo"
       ],
       "conditions": []
+    },
+    {
+      "hotelNo": 181391,
+      "name": "ＨＯＴＥＬ　メリケンポート神戸元町",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区栄町通3-1-3",
+      "access": "元町駅から徒歩5分、阪神高速「京橋」から15分　【ホテルから】メリケンパークまで徒歩5分、南京町まで徒歩5分",
+      "nearestStation": "元町（兵庫）",
+      "special": "周辺利便性クチコミ評価4.0、神戸観光の拠点に、全室禁煙、小学6年まで添い寝無料、アンパンマンミュージアム徒歩15分",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/181391/181391.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=181391",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=181391&f_flg=PLAN",
+      "minCharge": 3300,
+      "reviewAverage": 3.96,
+      "reviewCount": 2122,
+      "themes": [
+        "weekend"
+      ],
+      "conditions": [
+        "station"
+      ]
     },
     {
       "hotelNo": 181405,
@@ -4995,6 +7333,46 @@
       ]
     },
     {
+      "hotelNo": 182147,
+      "name": "神戸プラザホテル",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区元町通1-13-12　",
+      "access": "■ＪＲ神戸線「元町駅」 正面！■阪神電鉄「元町駅」 徒歩１分！■市営地下鉄「旧居留地大丸前駅」徒歩2分　好立地！",
+      "nearestStation": "元町（兵庫）",
+      "special": "JR元町駅前の好立地！南京町すぐ！万博会場好アクセス！モダンデザインと最新設備で快適性と機能性を兼ね備えたスマートホテル",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/182147/182147.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=182147",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=182147&f_flg=PLAN",
+      "minCharge": 4800,
+      "reviewAverage": 4.33,
+      "reviewCount": 374,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 182191,
+      "name": "ホテルＳＵＩ神戸三宮ｂｙＡＢＥＳＴ　なごみの湯",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区中山手通2-1-20",
+      "access": "JR三ノ宮駅西口より徒歩10分／阪急三宮駅西口より徒歩7分／地下鉄三宮駅西口より徒歩5分",
+      "nearestStation": "三ノ宮",
+      "special": "ハッピーアワーや夜食を満喫。広々大浴場で心も体も癒される、粋なおもてなしのホテルステイを。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/182191/182191.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=182191",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=182191&f_flg=PLAN",
+      "minCharge": 4250,
+      "reviewAverage": 4.22,
+      "reviewCount": 1407,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
       "hotelNo": 183409,
       "name": "南紀白浜　和みの湯　花鳥風月",
       "areaKey": "shirahama",
@@ -5021,6 +7399,31 @@
       ]
     },
     {
+      "hotelNo": 183438,
+      "name": "有馬街道　自家源泉の宿　月への舟",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市北区有野町唐櫃4509-87",
+      "access": "有馬温泉駅より徒歩９分　無料送迎有（到着後要連絡）：有馬温泉駅、バス停(太閤橋、阪急バスターミナル）",
+      "nearestStation": "有馬温泉",
+      "special": "★2021年12月オープン◆【湯守推奨】5つの貸切露天風呂が大人気！１番人気は猫の恋、２番人気は月鏡、３番人気は月の舟",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/183438/183438.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=183438",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=183438&f_flg=PLAN",
+      "minCharge": 19800,
+      "reviewAverage": 4.47,
+      "reviewCount": 604,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "station"
+      ]
+    },
+    {
       "hotelNo": 183472,
       "name": "あざみ庵　ＡＳＳＯＢＯ　南紀白浜",
       "areaKey": "shirahama",
@@ -5035,6 +7438,26 @@
       "minCharge": 3920,
       "reviewAverage": null,
       "reviewCount": 3,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 183491,
+      "name": "ダイワロイネットホテル神戸三宮　ＰＲＥＭＩＥＲ",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区三宮町1丁目2番2号",
+      "access": "JR「三ノ宮」駅西口・阪急/阪神/地下鉄「三宮」駅から徒歩約7分。神戸空港からポートライナーご利用で約30分。",
+      "nearestStation": "三ノ宮",
+      "special": "全ての客室バス・トイレ別のセパレートタイプ！JR三ノ宮西口からも徒歩約7分♪",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/183491/183491.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=183491",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=183491&f_flg=PLAN",
+      "minCharge": 7220,
+      "reviewAverage": 4.46,
+      "reviewCount": 861,
       "themes": [
         "solo"
       ],
@@ -5100,6 +7523,26 @@
       "minCharge": 2400,
       "reviewAverage": 4.17,
       "reviewCount": 23,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 184123,
+      "name": "ＫＯＫＯ　ＨＯＴＥＬ　神戸三宮",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区浪花町63",
+      "access": "JR「三ノ宮」駅西口より徒歩約７分",
+      "nearestStation": "三ノ宮",
+      "special": "洗練された旧居留地エリアにニューオープン。旅の拠点に快適でスタイリッシュな客室をご提供致します。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/184123/184123.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=184123",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=184123&f_flg=PLAN",
+      "minCharge": 3465,
+      "reviewAverage": 4.03,
+      "reviewCount": 256,
       "themes": [
         "solo"
       ],
@@ -5216,6 +7659,26 @@
       "conditions": []
     },
     {
+      "hotelNo": 184669,
+      "name": "フェアフィールド・バイ・マリオット・兵庫神鍋高原",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市日高町栗栖野59-30",
+      "access": "北近畿豊岡自動車道、日高神鍋高原ICから車で約14分 。JR江原駅より車で約20分",
+      "nearestStation": "江原",
+      "special": "偶然と発見に出会う旅が待っている。特別な物語をここで。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/184669/184669.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=184669",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=184669&f_flg=PLAN",
+      "minCharge": 5899,
+      "reviewAverage": 4.59,
+      "reviewCount": 114,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
       "hotelNo": 184829,
       "name": "箱根ホテル小涌園（藤田観光リゾート）",
       "areaKey": "hakone",
@@ -5285,6 +7748,46 @@
       "conditions": []
     },
     {
+      "hotelNo": 187332,
+      "name": "出石温泉　ウインブルドン",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市出石町福住1217-1",
+      "access": "国府駅または八鹿駅より車で約15分！養父ICより車で約30分！",
+      "nearestStation": "国府（兵庫）",
+      "special": "お肌つるつるの美人の湯☆ビジネスや観光の拠点に♪ワンちゃん同伴大歓迎(^_-)-☆",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/187332/187332.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=187332",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=187332&f_flg=PLAN",
+      "minCharge": 4400,
+      "reviewAverage": 2.39,
+      "reviewCount": 37,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
+      "hotelNo": 187918,
+      "name": "ＳＫ　ＨＯＴＥＬ　神戸駅前",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区中町通2-3-1",
+      "access": "JR神戸駅中央口から地上または地下道で徒歩約3分。阪急・阪神・神戸高速線「高速神戸駅」東改札より地下道直結で徒歩約1分。",
+      "nearestStation": "高速神戸",
+      "special": "2023年7月開業★JR神戸駅より徒歩約3分・高速神戸駅より徒歩約1分。地下道で直接アクセス可能",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/187918/187918.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=187918",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=187918&f_flg=PLAN",
+      "minCharge": 4050,
+      "reviewAverage": 4.38,
+      "reviewCount": 1531,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
       "hotelNo": 187989,
       "name": "箱根湯本　温泉旅館「大和館」",
       "areaKey": "hakone",
@@ -5323,6 +7826,28 @@
         "solo"
       ],
       "conditions": []
+    },
+    {
+      "hotelNo": 188973,
+      "name": "神戸須磨シーワールドホテル",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市須磨区若宮町1-3-5",
+      "access": "JR須磨海浜公園駅より徒歩約５分",
+      "nearestStation": "須磨",
+      "special": "神戸須磨シーワールド入館券付。日本初のドルフィンラグーンを備えたオフィシャルホテル",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/188973/188973.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=188973",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=188973&f_flg=PLAN",
+      "minCharge": 17100,
+      "reviewAverage": 4.78,
+      "reviewCount": 678,
+      "themes": [
+        "weekend"
+      ],
+      "conditions": [
+        "meal"
+      ]
     },
     {
       "hotelNo": 189009,
@@ -5419,6 +7944,26 @@
       ]
     },
     {
+      "hotelNo": 191684,
+      "name": "Ｈｏｔｅｌ　ＩＫＵＥ　豊岡",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市寿町2-20",
+      "access": "豊岡駅から徒歩約５分／北近畿豊岡道但馬空港ＩＣより車で約１０分／但馬空港より車で約１５分",
+      "nearestStation": "豊岡（兵庫）",
+      "special": "限られた部屋数だからできるエリアNo1のゆとりの客室。機能性を兼ね備えたくつろぎの空間へようこそ。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/191684/191684.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=191684",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=191684&f_flg=PLAN",
+      "minCharge": 5200,
+      "reviewAverage": 4.14,
+      "reviewCount": 225,
+      "themes": [
+        "solo"
+      ],
+      "conditions": []
+    },
+    {
       "hotelNo": 192000,
       "name": "おやど　湯の季",
       "areaKey": "kinugawa",
@@ -5513,7 +8058,7 @@
     },
     {
       "hotelNo": 193207,
-      "name": "��ＡＯＹＡ川治",
+      "name": "ＴＡＯＹＡ川治",
       "areaKey": "kinugawa",
       "address": "栃木県日光市川治温泉川治22",
       "access": "野岩鉄道 川治湯元駅より車で約5分。東武鉄道 鬼怒川温泉駅より車で約20分。",
@@ -5842,6 +8387,31 @@
       "conditions": [
         "onsen",
         "kids"
+      ]
+    },
+    {
+      "hotelNo": 199940,
+      "name": "Ｒａｋｕｔｅｎ　ＳＴＡＹ　ＴＥＲＲＡＣＥ　城崎リバーサイド",
+      "areaKey": "kinosaki",
+      "address": "兵庫県豊岡市城崎町上山1414-4",
+      "access": "城崎温泉駅から車で7分／コウノトリ但馬空港から車で21分／鳥取コナン空港から車で1時間15分",
+      "nearestStation": "城崎",
+      "special": "★2026年6月新規OPEN★客室専用の天然温泉を存分に堪能、日常を離れた贅沢なプライベート空間",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/199940/199940.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=199940",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=199940&f_flg=PLAN",
+      "minCharge": 4800,
+      "reviewAverage": 4.59,
+      "reviewCount": 39,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "room"
       ]
     }
   ]
