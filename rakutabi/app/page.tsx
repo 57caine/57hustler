@@ -2,9 +2,11 @@ import Link from 'next/link';
 import HotelCard from '@/components/HotelCard';
 import Icon from '@/components/Icon';
 import Photo from '@/components/Photo';
+import PhotoCredits from '@/components/PhotoCredits';
 import SearchBox from '@/components/SearchBox';
 import { SectionTitle, TravelTopButton } from '@/components/ui';
 import { getCurrentSeason, REGIONS, SEASONAL_FEATURES, THEMES } from '@/lib/site-config';
+import { PHOTO_QUERIES, type PhotoKey } from '@/lib/photo-keys';
 import { getHotelsByTheme } from '@/lib/hotels';
 import { getPhoto } from '@/lib/photos';
 
@@ -49,7 +51,7 @@ export default function Home() {
           {THEMES.map((t) => (
             <Link key={t.slug} href={`/theme/${t.slug}`} className="group bg-white rounded-2xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-md transition-shadow text-center">
               <div className="relative aspect-[4/3] overflow-hidden">
-                <Photo photo={getPhoto(`theme-${t.slug}`)} credit={false} className="group-hover:scale-105 transition-transform duration-500" />
+                <Photo photo={getPhoto(`theme-${t.slug}`)} credit="text" className="group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="relative px-3 pb-4 pt-7">
                 <span className="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white shadow ring-1 ring-black/5 flex items-center justify-center text-ink">
@@ -71,7 +73,7 @@ export default function Home() {
             {SEASONAL_FEATURES.map((f) => (
               <Link key={f.season} href={f.href} className="group bg-white rounded-2xl overflow-hidden shadow-sm ring-1 ring-black/5 hover:shadow-md transition-shadow">
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <Photo photo={getPhoto(`season-${f.season}`)} credit={false} className="group-hover:scale-105 transition-transform duration-500" />
+                  <Photo photo={getPhoto(`season-${f.season}`)} credit="text" className="group-hover:scale-105 transition-transform duration-500" />
                   {f.season === season && (
                     <span className="absolute top-2 left-2 text-[10px] bg-white/95 text-ink rounded-full px-2 py-0.5 font-bold">いまの季節</span>
                   )}
@@ -93,7 +95,7 @@ export default function Home() {
           {REGIONS.map((r) => (
             <Link key={r.slug} href={`/region/${r.slug}`} className="group">
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-sm">
-                <Photo photo={getPhoto(`region-${r.slug}`)} credit={false} className="group-hover:scale-105 transition-transform duration-500" />
+                <Photo photo={getPhoto(`region-${r.slug}`)} credit="text" className="group-hover:scale-105 transition-transform duration-500" />
               </div>
               <p className="font-serif font-bold text-ink mt-2 group-hover:text-season">{r.name}</p>
               <p className="text-[11px] text-gray-500">{r.tagline}</p>
@@ -125,6 +127,8 @@ export default function Home() {
           <TravelTopButton label="楽天トラベルで探す" placement="banner" className="self-start md:self-auto px-7 py-3.5" />
         </div>
       </section>
+
+      <PhotoCredits photos={(Object.keys(PHOTO_QUERIES) as PhotoKey[]).map((k) => getPhoto(k))} />
     </div>
   );
 }

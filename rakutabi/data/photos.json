@@ -1,1 +1,98 @@
-{}
+{
+  "banner": {
+    "url": "https://images.unsplash.com/photo-1618278942403-e973260cc425?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8bW91bnQlMjBmdWppJTIwbGFrZXxlbnwxfDB8fHwxNzkwNDIyNzg0fDA&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "body of water near mountain under blue sky during daytime",
+    "credit": "Tommy Silver",
+    "creditUrl": "https://unsplash.com/@tommysvr?utm_source=rakutabi&utm_medium=referral"
+  },
+  "theme-weekend": {
+    "url": "https://images.unsplash.com/photo-1660299476138-49caa24f8846?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8amFwYW5lc2UlMjByeW9rYW58ZW58MXwwfHx8MTc5MDQyMjc4NXww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "a window with trees outside",
+    "credit": "enkuu smile",
+    "creditUrl": "https://unsplash.com/@enkuu?utm_source=rakutabi&utm_medium=referral"
+  },
+  "theme-couple": {
+    "url": "https://images.unsplash.com/photo-1735382124934-bed617fb1adf?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8Y291cGxlJTIwc3Vuc2V0JTIwamFwYW58ZW58MXwwfHx8MTc5MDQyMjc4Nnww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "Two people standing next to each other near a tree",
+    "credit": "Yanhao Fang",
+    "creditUrl": "https://unsplash.com/@alamanga?utm_source=rakutabi&utm_medium=referral"
+  },
+  "theme-solo": {
+    "url": "https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8c29sbyUyMHRyYXZlbGVyJTIwamFwYW4lMjBsYWtlfGVufDF8MHx8fDE3OTA0MjI3ODZ8MA&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "A red torii gate standing in the water at Lake Ashi in Hakone, Japan",
+    "credit": "Tianshu Liu",
+    "creditUrl": "https://unsplash.com/@tianshu?utm_source=rakutabi&utm_medium=referral"
+  },
+  "season-spring": {
+    "url": "https://images.unsplash.com/photo-1522383225653-ed111181a951?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8Y2hlcnJ5JTIwYmxvc3NvbSUyMGphcGFufGVufDF8MHx8fDE3OTA0MjI3ODZ8MA&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "pink flowers",
+    "credit": "AJ",
+    "creditUrl": "https://unsplash.com/@ajny?utm_source=rakutabi&utm_medium=referral"
+  },
+  "season-autumn": {
+    "url": "https://images.unsplash.com/photo-1507967669805-c23336beea5b?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8amFwYW4lMjBhdXR1bW4lMjBsZWF2ZXN8ZW58MXwwfHx8MTc5MDQyMjc4N3ww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "shallow focus photography of orange leafed tree during daytime",
+    "credit": "Lyndon Li",
+    "creditUrl": "https://unsplash.com/@dynastywind?utm_source=rakutabi&utm_medium=referral"
+  },
+  "season-winter": {
+    "url": "https://images.unsplash.com/photo-1610623757180-f5ec7090a07f?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8amFwYW4lMjBzbm93JTIwb25zZW58ZW58MXwwfHx8MTc5MDQyMjc4N3ww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "red and white temple surrounded by trees covered with snow",
+    "credit": "Samuel Berner",
+    "creditUrl": "https://unsplash.com/@reduxxphotography?utm_source=rakutabi&utm_medium=referral"
+  },
+  "region-hokkaido": {
+    "url": "https://images.unsplash.com/photo-1626911635167-0b3006fbda39?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8aG9ra2FpZG8lMjBsYXZlbmRlcnxlbnwxfDB8fHwxNzkwNDIyNzg4fDA&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "2 person walking on purple flower field during daytime",
+    "credit": "Cindy Bissig",
+    "creditUrl": "https://unsplash.com/@cindybissig?utm_source=rakutabi&utm_medium=referral"
+  },
+  "region-kanto": {
+    "url": "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8dG9reW8lMjBza3lsaW5lfGVufDF8MHx8fDE3OTA0MjI3ODh8MA&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "tokyo tower illuminated at dusk with city skyline",
+    "credit": "Louie Martinez",
+    "creditUrl": "https://unsplash.com/@thetalkinglens?utm_source=rakutabi&utm_medium=referral"
+  },
+  "region-tokai": {
+    "url": "https://images.unsplash.com/photo-1783613770534-e3d94ca6c6e7?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8aG90JTIwc3ByaW5nJTIwamFwYW4lMjB0b3dufGVufDF8MHx8fDE3OTA0MjI3ODh8MA&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "Traditional japanese buildings nestled in a mountain valley",
+    "credit": "waa towaw",
+    "creditUrl": "https://unsplash.com/@toowaaw?utm_source=rakutabi&utm_medium=referral"
+  },
+  "region-kyushu": {
+    "url": "https://images.unsplash.com/photo-1624517608532-c6cd07c012eb?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8a3l1c2h1JTIwbmF0dXJlfGVufDF8MHx8fDE3OTA0MjI3ODl8MA&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "brown and white house near lake surrounded by green trees during daytime",
+    "credit": "Tayawee Supan",
+    "creditUrl": "https://unsplash.com/@banktayawee?utm_source=rakutabi&utm_medium=referral"
+  },
+  "hero": {
+    "url": "https://images.unsplash.com/photo-1560863244-387447ab62c4?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8NHx8bGFrZSUyMGFzaGklMjBoYWtvbmV8ZW58MXwwfHx8MTc5MDQyMzI5Mnww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "man standing on concrete dock",
+    "credit": "Mark Hang Fung So",
+    "creditUrl": "https://unsplash.com/@17somh1?utm_source=rakutabi&utm_medium=referral"
+  },
+  "theme-onsen": {
+    "url": "https://images.unsplash.com/photo-1644413638617-02369c89c156?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8b25zZW58ZW58MXwwfHx8MTc5MDQyMzI5Mnww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "a large pool of water next to a tall building",
+    "credit": "Roméo A.",
+    "creditUrl": "https://unsplash.com/@gronemo?utm_source=rakutabi&utm_medium=referral"
+  },
+  "theme-family": {
+    "url": "https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8MXx8ZmFtaWx5JTIwdmFjYXRpb258ZW58MXwwfHx8MTc5MDQyMzI5M3ww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "man, woman and child holding hands on seashore",
+    "credit": "Natalya Zaritskaya",
+    "creditUrl": "https://unsplash.com/@goodmood77?utm_source=rakutabi&utm_medium=referral"
+  },
+  "season-summer": {
+    "url": "https://images.unsplash.com/photo-1558497346-2668653247c7?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8NHx8b2tpbmF3YSUyMGJlYWNofGVufDF8MHx8fDE3OTA0MjMyOTN8MA&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "people walking in seashore near mountain",
+    "credit": "Roméo A.",
+    "creditUrl": "https://unsplash.com/@gronemo?utm_source=rakutabi&utm_medium=referral"
+  },
+  "region-kansai": {
+    "url": "https://images.unsplash.com/photo-1503640538573-148065ba4904?ixid=M3wxMDgzNDAyfDB8MXxzZWFyY2h8Mnx8a3lvdG8lMjB0ZW1wbGV8ZW58MXwwfHx8MTc5MDQyMzI5M3ww&ixlib=rb-4.1.0&w=1600&q=75&auto=format&fit=crop",
+    "alt": "pagoda house near body of water during daytime",
+    "credit": "Erik Eastman",
+    "creditUrl": "https://unsplash.com/@erikeae?utm_source=rakutabi&utm_medium=referral"
+  }
+}

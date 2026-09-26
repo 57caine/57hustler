@@ -9,21 +9,21 @@ export interface Photo {
 }
 
 export const PHOTO_QUERIES = {
-  hero: 'japan onsen sunset lake',
+  hero: 'lake ashi hakone',
   banner: 'mount fuji lake',
   'theme-weekend': 'japanese ryokan',
-  'theme-onsen': 'japanese hot spring',
-  'theme-family': 'family travel japan',
+  'theme-onsen': 'onsen',
+  'theme-family': 'family vacation',
   'theme-couple': 'couple sunset japan',
   'theme-solo': 'solo traveler japan lake',
   'season-spring': 'cherry blossom japan',
-  'season-summer': 'tropical beach japan',
+  'season-summer': 'okinawa beach',
   'season-autumn': 'japan autumn leaves',
   'season-winter': 'japan snow onsen',
   'region-hokkaido': 'hokkaido lavender',
   'region-kanto': 'tokyo skyline',
   'region-tokai': 'hot spring japan town',
-  'region-kansai': 'kyoto pagoda',
+  'region-kansai': 'kyoto temple',
   'region-kyushu': 'kyushu nature',
 } as const;
 

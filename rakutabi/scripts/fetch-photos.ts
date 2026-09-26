@@ -17,6 +17,7 @@ const UTM = 'utm_source=rakutabi&utm_medium=referral';
 interface UnsplashSearch {
   results?: {
     id: string;
+    likes: number;
     alt_description: string | null;
     urls: { raw: string };
     links: { download_location: string };
@@ -41,7 +42,9 @@ async function main() {
       if (res.status === 401 || res.status === 403) break;
       continue;
     }
-    const first = ((await res.json()) as UnsplashSearch).results?.[0];
+    // 上位5件のうち「いいね」が最も多い写真を使う（1件目がテーマから外れていることがあるため）
+    const results = ((await res.json()) as UnsplashSearch).results ?? [];
+    const first = [...results].sort((a, b) => (b.likes ?? 0) - (a.likes ?? 0))[0];
     if (!first) {
       console.log(`  ${photoKey}（${query}）: 該当なし`);
       continue;
