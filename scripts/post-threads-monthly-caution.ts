@@ -2,7 +2,7 @@
  * Threads「今月の注意点」自動投稿スクリプト（毎月1日 07:15 JST のみ）
  *
  * 月盤中宮星（scripts/lib/kyusei-ban.tsの修正済みロジックを使用）を基に、
- * 「今月のテーマ一文」（40文字以内）＋各星の「今月の注意点一言」（8〜12文字・完結文、
+ * 「今月のテーマ一文」（40文字以内）＋各星の「今月の注意点一言」（8〜18文字・完結文、
  * 「⚪一白｜一言」の1行フォーマット）を生成する。
  * 生成後に機械チェックし、超過があれば再生成する（slice等での強制切りはしない）。
  */
@@ -10,6 +10,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import {
   KYUSEI, POSITION_MEANINGS, getMonthlyStarForToday, getStarPositionIndex, getJstDateSlug, validateOneLiners, KYUSEI_CONTENT_CAUTION, getSeasonWordCaution,
+  MAX_ONELINER_LENGTH,
 } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
@@ -43,7 +44,7 @@ ${positionInfo}
 以下の2つを生成してください。
 
 1. 「今月のテーマ」：月盤「${monthlyStar.name}」の意味を踏まえた今月全体のテーマを40文字以内の一文で
-2. 各星の「今月の注意点」：具体的な行動・避けるべきことを8〜12文字で、意味が必ず完結する文にすること
+2. 各星の「今月の注意点」：具体的な行動・避けるべきことを8〜18文字で、意味が必ず完結する文にすること
 
 【厳守（両方に共通）】
 - 象意の言い換えは絶対NG。「地盤を固める」「じっくり取り組む」などは禁止
@@ -51,7 +52,7 @@ ${positionInfo}
 - 注意点の良い例：「衝動買いを控える」「即決を避ける」「発言前に一呼吸」
 - 注意点のNG例：「信用でコミュニケーシ」（単語の途中で切れている）「中央で変化の核心を動」（助詞で切れている）
 - 体言止め・動詞終わりのどちらでもよい。ですます調不要
-- 12文字（テーマは40文字）を1文字でも超える内容は、要素を削って短くまとめる（尻切れにしない）
+- 18文字（テーマは40文字）を1文字でも超える内容は、要素を削って短くまとめる（尻切れにしない）
 
 以下のJSONのみ出力（前置き不要）：
 {"theme":"","cautions":{"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":"","9":""}}`,
@@ -66,7 +67,7 @@ ${positionInfo}
   };
 }
 
-/** テーマ（40文字以内）と各星の注意点（12文字以内）を機械的にチェックする */
+/** テーマ（40文字以内）と各星の注意点（MAX_ONELINER_LENGTH文字以内）を機械的にチェックする */
 function validateMonthlyContent(content: MonthlyContent): boolean {
   return content.theme.length > 0 && content.theme.length <= THEME_MAX_LENGTH && validateOneLiners(content.cautions);
 }
@@ -139,7 +140,7 @@ async function main() {
       content = candidate;
       break;
     }
-    const tooLong = Object.entries(candidate.cautions).filter(([, v]) => v.length > 12);
+    const tooLong = Object.entries(candidate.cautions).filter(([, v]) => v.length > MAX_ONELINER_LENGTH);
     console.warn(`⚠️ 試行${attempt}: 文字数チェック不合格（テーマ${candidate.theme.length}文字${tooLong.length > 0 ? `, 注意点超過: ${tooLong.map(([k, v]) => `${k}:「${v}」`).join(', ')}` : ''}） → 再生成`);
   }
   if (content === null) {

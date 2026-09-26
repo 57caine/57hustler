@@ -8,7 +8,11 @@
 
 // 各星の一言の上限文字数。slice()等での強制切りは文字切れの原因になるため、
 // 生成後にこの値でチェックし、超えていれば再生成する運用とする（切り詰めない）。
-export const MAX_ONELINER_LENGTH = 12;
+// 旧値12はClaude Haiku 4.5の実際の生成結果（13〜17文字が大半）に対して厳しすぎ、
+// 3回リトライしても通過できず投稿自体がスキップされ続ける不具合の原因になっていた
+// （2026-09-25発見。fortune.ts・short.ts・weekly-theme.tsの本番ログで実証）。
+// 実際の出力分布に合わせて18に緩和する。
+export const MAX_ONELINER_LENGTH = 18;
 
 /** ｜以降の一言の文字数を機械的にチェックする。1件でも上限を超えたら false */
 export function validateOneLiners(oneLiners: Record<number, string>, maxLength = MAX_ONELINER_LENGTH): boolean {
