@@ -40,26 +40,22 @@ function collectAreaCodes(node: unknown, middle: string | null, out: Set<string>
   }
 }
 
-/** 指定した都道府県（middleClass）配下の小地区・詳細地区のコードと名称を列挙する */
+/** 指定した都道府県（middleClass）配下の小地区・詳細地区のコードと名称を列挙する（生JSONを文字列として検索） */
 function describeMiddleClass(data: unknown, middleCode: string): string[] {
+  const json = JSON.stringify(data);
+  const start = json.indexOf(`"middleClassCode":"${middleCode}"`);
+  if (start < 0) return [];
+  const next = json.indexOf('"middleClassCode"', start + 1);
+  const chunk = json.slice(start, next < 0 ? undefined : next);
   const lines: string[] = [];
-  const walk = (node: unknown, inTarget: boolean) => {
-    if (Array.isArray(node)) {
-      const holder = node.find((x) => x && typeof x === 'object' && 'middleClassCode' in (x as object)) as
-        | Record<string, unknown>
-        | undefined;
-      const target = holder ? holder.middleClassCode === middleCode : inTarget;
-      for (const n of node) walk(n, target);
-      return;
-    }
-    if (!node || typeof node !== 'object') return;
-    const obj = node as Record<string, unknown>;
-    if (inTarget && typeof obj.smallClassCode === 'string') lines.push(`${obj.smallClassCode}: ${obj.smallClassName}`);
-    if (inTarget && typeof obj.detailClassCode === 'string') lines.push(`  └ detail ${obj.detailClassCode}: ${obj.detailClassName}`);
-    for (const v of Object.values(obj)) walk(v, inTarget);
-  };
-  walk(data, false);
-  return [...new Set(lines)];
+  const re = /"(small|detail)ClassCode":"([^"]*)","\1ClassName":"([^"]*)"|"(small|detail)ClassName":"([^"]*)","\4ClassCode":"([^"]*)"/g;
+  for (const m of chunk.matchAll(re)) {
+    const kind = m[1] ?? m[4];
+    const code = m[2] ?? m[6];
+    const name = m[3] ?? m[5];
+    lines.push(`${kind === 'detail' ? '  └ detail ' : ''}${code}: ${name}`);
+  }
+  return lines.length ? lines : [chunk.slice(0, 1500)];
 }
 
 async function main() {
