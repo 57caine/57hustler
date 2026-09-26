@@ -16,10 +16,10 @@ export const metadata: Metadata = {
 };
 
 const categoryConfig = {
-  '1day':    { label: '1day',    bg: 'bg-slate-50',   border: 'border-slate-200',   text: 'text-slate-700'   },
-  '2week':   { label: '2week',   bg: 'bg-teal-50',   border: 'border-teal-200',   text: 'text-teal-700'   },
-  'monthly': { label: 'monthly', bg: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-700' },
-  'color':   { label: 'color',   bg: 'bg-pink-50',   border: 'border-pink-200',   text: 'text-pink-700'   },
+  '1day':    { label: '1day',    bg: 'bg-sky-50',   border: 'border-sky-200',   text: 'text-sky-700'   },
+  '2week':   { label: '2week',   bg: 'bg-blue-50',  border: 'border-blue-200',  text: 'text-blue-700'  },
+  'monthly': { label: 'monthly', bg: 'bg-sky-100',  border: 'border-sky-300',   text: 'text-sky-800'   },
+  'color':   { label: 'color',   bg: 'bg-blue-100', border: 'border-blue-300',  text: 'text-blue-800'  },
 } as const;
 
 const homeFaqs = [
@@ -94,7 +94,7 @@ export default async function HomePage() {
         </section>
 
         {/* 特集バナー */}
-        <section className="py-8 px-0 mb-16 bg-gray-50">
+        <section className="py-8 px-0 mb-16 bg-sky-50/50">
           <div className="px-4 mb-4">
             <h2 className="text-xl font-bold text-gray-900">特集</h2>
           </div>
@@ -103,7 +103,7 @@ export default async function HomePage() {
             <a
               href="/karakon"
               className="flex-none w-72 rounded-xl overflow-hidden block hover:shadow-lg transition-shadow duration-200"
-              style={{ background: 'linear-gradient(135deg, #ad1457, #c2185b)' }}
+              style={{ background: 'linear-gradient(135deg, #0284c7, #0369a1)' }}
             >
               <div className="p-6 text-white">
                 <Sparkles className="w-8 h-8 mb-2" />
@@ -116,7 +116,7 @@ export default async function HomePage() {
             <a
               href="/vr"
               className="flex-none w-72 rounded-xl overflow-hidden block hover:shadow-lg transition-shadow duration-200"
-              style={{ background: 'linear-gradient(135deg, #4527a0, #512da8)' }}
+              style={{ background: 'linear-gradient(135deg, #1d4ed8, #1e40af)' }}
             >
               <div className="p-6 text-white">
                 <Headset className="w-8 h-8 mb-2" />
@@ -129,7 +129,7 @@ export default async function HomePage() {
             <a
               href="/lasik"
               className="flex-none w-72 rounded-xl overflow-hidden block hover:shadow-lg transition-shadow duration-200"
-              style={{ background: 'linear-gradient(135deg, #00695c, #00897b)' }}
+              style={{ background: 'linear-gradient(135deg, #16305a, #0d1f3d)' }}
             >
               <div className="p-6 text-white">
                 <Stethoscope className="w-8 h-8 mb-2" />

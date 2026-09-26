@@ -2,8 +2,21 @@
 
 /* ─── school-navi aligned CSS variables ─── */
 :root {
-  --background: #f9fafb;
+  --background: #f8fafc;
   --foreground: #111827;
+}
+
+/* ─── ブランドカラートークン（2026-09-26リブランディング）───
+   「白 → 淡いブルー → 中間ブルー → 深いネイビー」のグラデーション世界観を
+   サイト全体で統一するためのトークン。淡い〜中間ブルーはTailwind標準のsky-*を
+   引き続き使用し（既存実装との一貫性・変更コスト最小化のため）、標準パレットに
+   無い「深いネイビー」のみここで独自定義する。
+   用途: フッター背景（navy-950）、楽天CTAボタン（navy-900、旧#bf0000固定から変更）。
+   詳細・経緯はCLAUDE.mdの「サイト全体リブランディング」セクション参照。 */
+@theme {
+  --color-navy-800: #223f72;
+  --color-navy-900: #16305a;
+  --color-navy-950: #0d1f3d;
 }
 
 /* ─── Article typography & affiliate button design ─── */
@@ -30,12 +43,12 @@
   color: #0f172a;
 }
 
-/* Affiliate CTA button — Rakuten red */
+/* Affiliate CTA button — 深いネイビー（2026-09-26リブランディングでRakuten固定赤から変更） */
 #article-body a[href*="hb.afl.rakuten.co.jp"],
 #article-body a[href*="search.rakuten.co.jp"],
 .affiliate-btn {
   display: inline-block;
-  background-color: #bf0000 !important;
+  background-color: var(--color-navy-900) !important;
   color: #ffffff !important;
   padding: 10px 22px;
   border-radius: 8px;
