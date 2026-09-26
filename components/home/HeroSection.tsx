@@ -18,12 +18,20 @@ export default function HeroSection() {
             <br className="hidden md:block" />
             あなたにぴったりの選択が見つかる、目の総合情報サイトです。
           </p>
-          <a
-            href="/ranking"
-            className="inline-block rounded-full bg-sky-600 px-8 py-3.5 font-bold text-white transition-colors hover:bg-sky-700 no-underline"
-          >
-            人気のコンタクトレンズを見てみる →
-          </a>
+          <div className="flex flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
+            <a
+              href="/ranking"
+              className="inline-block rounded-full bg-sky-600 px-8 py-3.5 font-bold text-white transition-colors hover:bg-sky-700 no-underline"
+            >
+              人気ランキングを見る →
+            </a>
+            <a
+              href="/column"
+              className="inline-block rounded-full border border-sky-200 bg-white px-8 py-3.5 font-bold text-sky-700 transition-colors hover:bg-sky-50 no-underline"
+            >
+              コラムを読む →
+            </a>
+          </div>
         </div>
 
         <div className="w-full max-w-xs md:w-1/2 md:max-w-md">

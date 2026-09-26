@@ -103,7 +103,7 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
             href={rakutenUrl}
             target="_blank"
             rel="noopener noreferrer nofollow sponsored"
-            className="block bg-[#bf0000] hover:opacity-90 text-white text-sm font-bold text-center py-3 rounded-lg transition-opacity w-full"
+            className="block bg-navy-900 hover:bg-navy-800 text-white text-sm font-bold text-center py-3 rounded-lg transition-colors w-full"
           >
             楽天で購入 →
           </a>

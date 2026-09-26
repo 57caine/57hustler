@@ -29,16 +29,26 @@ const SITE_INFO = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200 text-gray-500 mt-16">
+    <footer className="bg-navy-950 text-blue-200 mt-16">
       <div className="max-w-6xl mx-auto px-4 py-10">
+        <div className="flex items-center gap-2.5 mb-8">
+          <div className="w-8 h-8 bg-sky-500 rounded-lg flex items-center justify-center shrink-0">
+            <span className="text-white text-sm font-bold">目</span>
+          </div>
+          <div>
+            <span className="text-base font-bold text-white">レンズナビ</span>
+            <p className="text-xs text-blue-300 leading-none mt-0.5">目のことなら、レンズナビ。</p>
+          </div>
+        </div>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           {/* Column 1: カテゴリ一覧 */}
           <div>
-            <h3 className="font-bold text-gray-700 mb-3 text-sm">カテゴリ一覧</h3>
+            <h3 className="font-bold text-white mb-3 text-sm">カテゴリ一覧</h3>
             <ul className="space-y-2 text-xs">
               {CATEGORIES.map((c) => (
                 <li key={c.href}>
-                  <Link href={c.href} className="hover:text-sky-600 transition-colors inline-flex items-center gap-1.5">
+                  <Link href={c.href} className="hover:text-sky-300 transition-colors inline-flex items-center gap-1.5">
                     <c.Icon className="w-3.5 h-3.5" />
                     {c.label}
                   </Link>
@@ -49,17 +59,17 @@ export default function Footer() {
 
           {/* Column 2: 人気コラム */}
           <div>
-            <h3 className="font-bold text-gray-700 mb-3 text-sm">人気コラム</h3>
+            <h3 className="font-bold text-white mb-3 text-sm">人気コラム</h3>
             <ul className="space-y-2 text-xs">
               {POPULAR_COLUMNS.map((c) => (
                 <li key={c.href}>
-                  <Link href={c.href} className="hover:text-sky-600 transition-colors leading-snug block">
+                  <Link href={c.href} className="hover:text-sky-300 transition-colors leading-snug block">
                     {c.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/column" className="text-sky-600 hover:text-sky-500 transition-colors font-medium">
+                <Link href="/column" className="text-sky-300 hover:text-sky-200 transition-colors font-medium">
                   全記事を見る →
                 </Link>
               </li>
@@ -68,11 +78,11 @@ export default function Footer() {
 
           {/* Column 3: サイト情報 */}
           <div>
-            <h3 className="font-bold text-gray-700 mb-3 text-sm">サイト情報</h3>
+            <h3 className="font-bold text-white mb-3 text-sm">サイト情報</h3>
             <ul className="space-y-2 text-xs">
               {SITE_INFO.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="hover:text-sky-600 transition-colors">
+                  <Link href={s.href} className="hover:text-sky-300 transition-colors">
                     {s.label}
                   </Link>
                 </li>
@@ -82,18 +92,18 @@ export default function Footer() {
 
           {/* Column 4: SNS・アフィリエイト表記 */}
           <div>
-            <h3 className="font-bold text-gray-700 mb-3 text-sm">アフィリエイト表記</h3>
-            <p className="text-xs leading-relaxed mb-4">
+            <h3 className="font-bold text-white mb-3 text-sm">アフィリエイト表記</h3>
+            <p className="text-xs leading-relaxed mb-4 text-blue-300">
               当サイトは楽天アフィリエイト・A8.netなどのアフィリエイトプログラムに参加しています。
               商品リンクから購入された場合、当サイトに手数料が発生することがあります。
             </p>
-            <p className="text-xs leading-relaxed">
+            <p className="text-xs leading-relaxed text-blue-300">
               掲載価格は自動スクレイピングにより定期更新しています。最新価格は各ショップでご確認ください。
             </p>
           </div>
         </div>
 
-        <div className="border-t border-gray-200 pt-6 text-xs text-center text-gray-400">
+        <div className="border-t border-navy-900 pt-6 text-xs text-center text-blue-400">
           <p>© 2026 レンズナビ (lens-navi.jp) — コンタクトレンズ・カラコン・目の情報メディア</p>
         </div>
       </div>
