@@ -119,14 +119,23 @@ export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 /**
  * 楽天トラベルの施設レスポンス（format=json, formatVersion=1）は
- * hotels: [{ hotel: [{ hotelBasicInfo }, { hotelRatingInfo }, { roomInfo }, ...] }]
+ * hotels: [{ hotel: [{ hotelBasicInfo }, { hotelRatingInfo }, { hotelDetailInfo }, { roomInfo }, ...] }]
  * という「オブジェクトの配列」の形をしているため、1つのオブジェクトに平らにまとめる。
+ * responseType=large の hotelDetailInfo / hotelFacilitiesInfo / hotelPolicyInfo / hotelOtherInfo もそのまま保持する。
  */
 export interface RawHotel {
   hotelBasicInfo?: Record<string, unknown>;
   hotelRatingInfo?: Record<string, unknown>;
+  hotelDetailInfo?: Record<string, unknown>;
+  hotelFacilitiesInfo?: Record<string, unknown>;
+  hotelPolicyInfo?: Record<string, unknown>;
+  hotelOtherInfo?: Record<string, unknown>;
   roomInfo?: { roomBasicInfo?: Record<string, unknown>; dailyCharge?: Record<string, unknown> }[];
 }
+
+const INFO_KEYS = [
+  'hotelBasicInfo', 'hotelRatingInfo', 'hotelDetailInfo', 'hotelFacilitiesInfo', 'hotelPolicyInfo', 'hotelOtherInfo',
+] as const;
 
 export function flattenHotels(data: unknown): RawHotel[] {
   const hotels = (data as { hotels?: unknown[] })?.hotels ?? [];
@@ -135,8 +144,9 @@ export function flattenHotels(data: unknown): RawHotel[] {
     const merged: RawHotel = {};
     const rooms: NonNullable<RawHotel['roomInfo']> = [];
     for (const part of parts) {
-      if (part.hotelBasicInfo) merged.hotelBasicInfo = part.hotelBasicInfo as Record<string, unknown>;
-      if (part.hotelRatingInfo) merged.hotelRatingInfo = part.hotelRatingInfo as Record<string, unknown>;
+      for (const key of INFO_KEYS) {
+        if (part[key]) merged[key] = part[key] as Record<string, unknown>;
+      }
       if (part.roomInfo) {
         // 空室検索APIは roomInfo: [{ roomBasicInfo }, { dailyCharge }] の組を返す
         const ri = part.roomInfo as Record<string, unknown>[];

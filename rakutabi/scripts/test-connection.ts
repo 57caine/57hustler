@@ -132,6 +132,8 @@ async function main() {
       const charges = (h.roomInfo ?? []).map((r) => Number(r.dailyCharge?.total)).filter((n) => n > 0);
       console.log(`  - [${b.hotelNo}] ${b.hotelName} / 空室プラン${h.roomInfo?.length ?? 0}件 / 合計料金の最安 ¥${charges.length ? Math.min(...charges) : '-'}`);
       console.log(`    プラン一覧URL: ${b.planListUrl}`);
+      const room = h.roomInfo?.[0];
+      if (room) console.log(`    roomBasicInfoの項目: ${Object.keys(room.roomBasicInfo ?? {}).join(', ')}`);
     }
     summary.push({ api: 'VacantHotelSearch', result: 'OK', detail: `${hotels.length}件取得（${checkin}泊）` });
   } else {
@@ -158,6 +160,29 @@ async function main() {
   } else {
     console.log('  施設検索APIが失敗したため、施設番号が得られずスキップ');
     summary.push({ api: 'HotelDetailSearch', result: 'SKIP', detail: '施設番号なし' });
+  }
+
+  // 5. 施設検索API（複数施設番号・responseType=large）: fetch-hotels.ts が使う詳細項目の構造確認
+  console.log('\n=== 5. 施設検索API 複数施設・responseType=large ===');
+  await sleep(1500);
+  const large = await callApi(ENDPOINTS.simpleHotelSearch, { hotelNo: '84721,19684', responseType: 'large' }, cred);
+  if (large.ok) {
+    const hotels = flattenHotels(large.data);
+    const h = hotels[0] ?? {};
+    for (const [section, value] of Object.entries(h)) {
+      if (section === 'roomInfo') continue;
+      const keys = Object.keys((value ?? {}) as Record<string, unknown>);
+      console.log(`  ${section}: ${keys.join(', ')}`);
+    }
+    const b = h.hotelBasicInfo ?? {};
+    console.log(`  口コミURL: ${b.reviewUrl}`);
+    console.log(`  最新口コミ: ${String(b.userReview ?? '').slice(0, 80)}`);
+    console.log(`  評価: ${JSON.stringify(h.hotelRatingInfo)}`);
+    console.log(`  施設設備(生データ抜粋): ${JSON.stringify(h.hotelFacilitiesInfo ?? {}).slice(0, 400)}`);
+    summary.push({ api: 'SimpleHotelSearch(large)', result: 'OK', detail: `${hotels.length}件取得` });
+  } else {
+    console.log(`  失敗: HTTP ${large.statusCode} ${large.error}`);
+    summary.push({ api: 'SimpleHotelSearch(large)', result: 'NG', detail: `HTTP ${large.statusCode} ${large.error}` });
   }
 
   console.log('\n=== まとめ ===');
