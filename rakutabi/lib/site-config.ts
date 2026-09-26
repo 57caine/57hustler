@@ -10,6 +10,7 @@
 
 export const SITE_NAME = '楽旅くん';
 export const SITE_CATCH = '知らない景色に、会いに行こう。';
+export const SITE_TAGLINE = '行きたい旅が、きっと見つかる。';
 export const SITE_DESCRIPTION =
   '週末旅行・温泉旅行・子連れ旅行・カップル旅行・一人旅。エリアとテーマの組み合わせから、楽天トラベル掲載の宿を比較できます。';
 // 独自ドメインは未取得（2026-09-26時点、vercel.app で需要検証中）。
@@ -20,12 +21,17 @@ export const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
 
 // ───────── テーマ ─────────
 
+export type IconName = 'calendar' | 'onsen' | 'family' | 'heart' | 'person';
+
 export type ThemeSlug = 'weekend' | 'onsen' | 'family' | 'couple' | 'solo';
 
 export interface Theme {
   slug: ThemeSlug;
   name: string;
-  icon: string;
+  /** components/Icon.tsx のアイコン名 */
+  icon: IconName;
+  /** トップのテーマカードの一言（デザイン案の文言） */
+  tagline: string;
   lead: string;
   /** 掛け合わせページで使う「悩み・目的」の一文 */
   worry: string;
@@ -39,7 +45,8 @@ export const THEMES: Theme[] = [
   {
     slug: 'weekend',
     name: '週末旅行',
-    icon: '🗓',
+    icon: 'calendar',
+    tagline: '近場でちょっと贅沢に',
     lead: '次の土曜日に空室がある宿を集めました。思い立ったらすぐ行ける週末旅に。',
     worry: '週末に思い立って、1泊でどこかへ出かけたい',
     comboTitle: (a) => `${a}へ週末旅行｜次の土曜日に泊まれるホテル・旅館`,
@@ -48,7 +55,8 @@ export const THEMES: Theme[] = [
   {
     slug: 'onsen',
     name: '温泉旅行',
-    icon: '♨',
+    icon: 'onsen',
+    tagline: '心も体もリフレッシュ',
     lead: '温泉のある宿だけを集めました。日帰りでは味わえない、泊まりの温泉旅に。',
     worry: '日帰りではなく、泊まりでゆっくり温泉を楽しみたい',
     comboTitle: (a) => `${a}の温泉旅行におすすめの温泉宿`,
@@ -57,7 +65,8 @@ export const THEMES: Theme[] = [
   {
     slug: 'family',
     name: '子連れ旅行',
-    icon: '👪',
+    icon: 'family',
+    tagline: '家族みんなで楽しむ',
     lead: '施設紹介文に、子ども向けの設備・サービスの記載がある宿を集めました。',
     worry: '小さな子どもがいても、気兼ねなく泊まれる宿を探したい',
     comboTitle: (a) => `${a}で子連れ旅行におすすめのホテル・旅館`,
@@ -66,7 +75,8 @@ export const THEMES: Theme[] = [
   {
     slug: 'couple',
     name: 'カップル旅行',
-    icon: '💑',
+    icon: 'heart',
+    tagline: '特別な時間をふたりで',
     lead: '施設紹介文に、記念日・カップル向けの記載がある宿を集めました。',
     worry: '記念日やふたり旅で、少し特別な宿に泊まりたい',
     comboTitle: (a) => `${a}のカップル旅行・記念日におすすめの宿`,
@@ -75,7 +85,8 @@ export const THEMES: Theme[] = [
   {
     slug: 'solo',
     name: '一人旅',
-    icon: '🎒',
+    icon: 'person',
+    tagline: '自分を満たす旅を',
     lead: '大人1名で予約できる空室がある宿を集めました。',
     worry: '一人でも予約しやすく、気軽に泊まれる宿を探したい',
     comboTitle: (a) => `${a}の一人旅におすすめ｜1名で泊まれる宿`,
@@ -94,15 +105,17 @@ export type RegionSlug = 'hokkaido' | 'kanto' | 'tokai' | 'kansai' | 'kyushu';
 export interface Region {
   slug: RegionSlug;
   name: string;
+  /** トップのエリアカードの一言（デザイン案の文言） */
+  tagline: string;
   lead: string;
 }
 
 export const REGIONS: Region[] = [
-  { slug: 'hokkaido', name: '北海道', lead: '登別・函館など、北海道の温泉地・観光地の宿。' },
-  { slug: 'kanto', name: '関東', lead: '箱根・草津・鬼怒川など、首都圏から行きやすい宿。' },
-  { slug: 'tokai', name: '東海', lead: '熱海・伊東・下呂など、東海エリアの温泉地の宿。' },
-  { slug: 'kansai', name: '関西', lead: '有馬・城崎・白浜など、関西の温泉地の宿。' },
-  { slug: 'kyushu', name: '九州', lead: '別府・由布院など、九州の温泉地の宿。' },
+  { slug: 'hokkaido', tagline: '絶景とグルメの宝庫', name: '北海道', lead: '登別・函館など、北海道の温泉地・観光地の宿。' },
+  { slug: 'kanto', tagline: '週末旅行におすすめ', name: '関東', lead: '箱根・草津・鬼怒川など、首都圏から行きやすい宿。' },
+  { slug: 'tokai', tagline: '温泉とグルメを満喫', name: '東海', lead: '熱海・伊東・下呂など、東海エリアの温泉地の宿。' },
+  { slug: 'kansai', tagline: '歴史と街歩きを楽しむ', name: '関西', lead: '有馬・城崎・白浜など、関西の温泉地の宿。' },
+  { slug: 'kyushu', tagline: '自然と温泉の癒し旅', name: '九州', lead: '別府・由布院など、九州の温泉地の宿。' },
 ];
 
 export function getRegion(slug: string): Region | undefined {
@@ -212,21 +225,23 @@ export type ConditionGroup = '食事' | '温泉' | '客室' | '親子' | '立地
 export interface Condition {
   key: ConditionKey;
   label: string;
+  /** カードの特徴タグ用の短い表記 */
+  short?: string;
   group: ConditionGroup;
   source: 'api' | 'text';
   keywords?: RegExp;
 }
 
 export const CONDITIONS: Condition[] = [
-  { key: 'meal', label: '2食付きプランあり', group: '食事', source: 'api' },
-  { key: 'breakfast', label: '朝食付きプランあり', group: '食事', source: 'api' },
+  { key: 'meal', label: '2食付きプランあり', short: '2食付き', group: '食事', source: 'api' },
+  { key: 'breakfast', label: '朝食付きプランあり', short: '朝食付き', group: '食事', source: 'api' },
   // 楽天の空室検索に素泊まりの絞り込み条件は無いため、空室プランの食事フラグ（朝食なし・夕食なし）で判定する
-  { key: 'roomOnly', label: '素泊まりプランあり', group: '食事', source: 'api' },
-  { key: 'onsen', label: '温泉あり', group: '温泉', source: 'api' },
-  { key: 'room', label: '露天風呂付客室など', group: '客室', source: 'text', keywords: /露天風呂付|客室露天|スイート|和洋室|離れ/ },
-  { key: 'kids', label: '子連れ向け', group: '親子', source: 'text', keywords: /キッズ|お子様|子供|子ども|ファミリー|赤ちゃん|ベビー/ },
-  { key: 'station', label: '駅から徒歩圏', group: '立地・景色', source: 'text', keywords: /駅(から|より)?\s*徒歩\s*[0-9０-９]{1,2}\s*分/ },
-  { key: 'view', label: '景色・眺望', group: '立地・景色', source: 'text', keywords: /眺望|一望|絶景|オーシャンビュー|夜景|景色/ },
+  { key: 'roomOnly', label: '素泊まりプランあり', short: '素泊まり', group: '食事', source: 'api' },
+  { key: 'onsen', label: '温泉あり', short: '温泉', group: '温泉', source: 'api' },
+  { key: 'room', label: '露天風呂付客室など', short: '露天風呂付客室', group: '客室', source: 'text', keywords: /露天風呂付|客室露天|スイート|和洋室|離れ/ },
+  { key: 'kids', label: '子連れ向け', short: '子連れ向け', group: '親子', source: 'text', keywords: /キッズ|お子様|子供|子ども|ファミリー|赤ちゃん|ベビー/ },
+  { key: 'station', label: '駅から徒歩圏', short: '駅近', group: '立地・景色', source: 'text', keywords: /駅(から|より)?\s*徒歩\s*[0-9０-９]{1,2}\s*分/ },
+  { key: 'view', label: '景色・眺望', short: '眺望', group: '立地・景色', source: 'text', keywords: /眺望|一望|絶景|オーシャンビュー|夜景|景色/ },
 ];
 
 export const COUPLE_KEYWORDS = /カップル|記念日|ご夫婦|おふたり|二人|プロポーズ|大人の/;
@@ -259,10 +274,10 @@ export interface SeasonalFeature {
 }
 
 export const SEASONAL_FEATURES: SeasonalFeature[] = [
-  { season: 'spring', label: '春', title: '桜の季節の週末旅行', lead: '過ごしやすい季節は、週末の1泊旅行に。', href: '/theme/weekend' },
-  { season: 'summer', label: '夏', title: '夏休みの子連れ旅行', lead: '家族旅行に向く宿を、エリア別に探す。', href: '/theme/family' },
-  { season: 'autumn', label: '秋', title: '紅葉と温泉の旅', lead: '涼しくなってきたら、温泉宿でゆっくり。', href: '/feature/tokyo-onsen' },
-  { season: 'winter', label: '冬', title: '雪見と温泉の宿', lead: '寒い季節こそ、北海道の温泉地へ。', href: '/region/hokkaido' },
+  { season: 'spring', label: '春', title: '桜と温泉で癒される旅', lead: '過ごしやすい季節は、週末の1泊旅行に。', href: '/theme/weekend' },
+  { season: 'summer', label: '夏', title: '海と絶景のリゾート旅', lead: '白浜・伊東など、海沿いのエリアの宿へ。', href: '/area/shirahama' },
+  { season: 'autumn', label: '秋', title: '紅葉の絶景を楽しむ旅', lead: '涼しくなってきたら、温泉宿でゆっくり。', href: '/feature/tokyo-onsen' },
+  { season: 'winter', label: '冬', title: '雪景色と温泉を満喫', lead: '寒い季節こそ、北海道の温泉地へ。', href: '/region/hokkaido' },
 ];
 
 /** 日本時間の月から季節を判定する（ビルド時点。データ更新のたびに再ビルドされる） */

@@ -17,6 +17,7 @@ on:
     paths:
       - 'rakutabi/**'
       - '!rakutabi/data/hotels.json'
+      - '!rakutabi/data/photos.json'
       - '!rakutabi/CLAUDE.md'
       - '.github/workflows/rakutabi-hotels.yml'
   workflow_dispatch:
@@ -67,12 +68,17 @@ jobs:
           RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
           RAKUTABI_RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTABI_RAKUTEN_AFFILIATE_ID }}
 
+      - name: 風景写真の取得（Unsplash。キーが無ければスキップし、楽天の宿の写真で代用表示）
+        run: npm run fetch:photos
+        env:
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+
       # push先は起動元のブランチ（明示指定なし）。data/hotels.json はトリガー対象外のため再実行ループにはならない
       - name: 変更をコミット・プッシュ
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Actions Bot"
-          git add data/hotels.json
+          git add data/hotels.json data/photos.json
           git diff --staged --quiet || git commit -m "chore: 楽旅くん 宿泊施設データ更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"

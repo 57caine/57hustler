@@ -1,15 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import Icon from '@/components/Icon';
 import type { DetailItem, Plan, Ratings } from '@/lib/hotels';
 
 type TabKey = 'features' | 'plans' | 'photos' | 'reviews';
 
 const TABS: { key: TabKey; label: string }[] = [
   { key: 'features', label: '施設の特徴' },
-  { key: 'plans', label: 'プラン料金' },
+  { key: 'plans', label: 'プラン・料金' },
   { key: 'photos', label: '写真' },
-  { key: 'reviews', label: '口コミ' },
+  { key: 'reviews', label: 'クチコミ' },
 ];
 
 const RATING_LABELS: [keyof Ratings, string][] = [
@@ -25,6 +26,7 @@ const RATING_LABELS: [keyof Ratings, string][] = [
 
 /** 個別宿泊施設ページのタブ（施設の特徴／プラン料金／写真／口コミ） */
 export default function HotelTabs({
+  highlights,
   hotelNo,
   hotelName,
   special,
@@ -40,6 +42,8 @@ export default function HotelTabs({
   userReview,
   reviewUrl,
 }: {
+  /** この宿のおすすめポイント（lib/hotels.ts の getHighlights、取得データから言える事実のみ） */
+  highlights: string[];
   hotelNo: number;
   hotelName: string;
   special: string;
@@ -69,7 +73,7 @@ export default function HotelTabs({
             type="button"
             aria-selected={tab === t.key}
             onClick={() => setTab(t.key)}
-            className={`flex-1 min-w-24 px-4 py-3 text-sm font-medium border-b-2 -mb-px ${tab === t.key ? 'border-season text-season' : 'border-transparent text-gray-500 hover:text-ink'}`}
+            className={`flex-1 min-w-24 px-4 py-3 text-sm font-medium border-b-2 -mb-px ${tab === t.key ? 'border-ink text-ink font-bold' : 'border-transparent text-gray-500 hover:text-ink'}`}
           >
             {t.label}
           </button>
@@ -79,6 +83,20 @@ export default function HotelTabs({
       <div className="p-5 md:p-6 text-sm leading-relaxed" role="tabpanel">
         {tab === 'features' && (
           <div className="space-y-5">
+            {highlights.length > 0 && (
+              <div>
+                <h3 className="text-lg font-bold text-ink mb-3">この宿のおすすめポイント</h3>
+                <ul className="space-y-2">
+                  {highlights.map((p) => (
+                    <li key={p} className="flex gap-2">
+                      <Icon name="check" className="w-5 h-5 shrink-0 text-season" strokeWidth={2.4} />
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-xs text-gray-400 mt-2">※楽天トラベルAPIから取得した情報をもとに記載しています。</p>
+              </div>
+            )}
             {special && (
               <div>
                 <p className="whitespace-pre-line">{special}</p>

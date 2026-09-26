@@ -4,6 +4,10 @@ import { notFound } from 'next/navigation';
 import DataNotice from '@/components/DataNotice';
 import HotelFilterList from '@/components/HotelFilterList';
 import PageHeader from '@/components/PageHeader';
+import AreaSidebar from '@/components/AreaSidebar';
+import Icon from '@/components/Icon';
+import { getAreaPhoto } from '@/lib/photos';
+
 import { AREAS, getArea, getRegion, THEMES } from '@/lib/site-config';
 import { getHotelsByArea, getHotelsByTheme, hasComboPage } from '@/lib/hotels';
 
@@ -32,6 +36,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
   return (
     <div>
       <PageHeader
+        photo={getAreaPhoto(area.key)}
         crumbs={[
           ...(region ? [{ name: region.name, href: `/region/${region.slug}` }] : []),
           { name: area.name, href: `/area/${area.key}` },
@@ -40,14 +45,16 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
         title={`${area.name}のホテル・旅館`}
         lead={`${area.name}エリアの宿を、目的別に比較できます。`}
       />
-      <div className="max-w-6xl mx-auto px-4 py-8">
+      <div className="max-w-6xl mx-auto px-4 py-8 flex gap-8">
+        <AreaSidebar current={[area.key]} />
+        <div className="flex-1 min-w-0">
         {combos.length > 0 && (
           <section className="mb-10">
             <h2 className="text-xl font-bold mb-4">{area.name}の宿を目的から探す</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {combos.map((t) => (
                 <Link key={t.slug} href={`/area/${area.key}/${t.slug}`} className="bg-white rounded-xl ring-1 ring-black/5 p-4 hover:ring-season">
-                  <p className="font-serif font-bold text-season">{t.icon} {t.comboTitle(area.name)}</p>
+                  <p className="font-serif font-bold text-ink flex items-start gap-2"><Icon name={t.icon} className="w-5 h-5 shrink-0 text-season" />{t.comboTitle(area.name)}</p>
                   <p className="text-xs text-gray-500 mt-1">{getHotelsByTheme(t.slug, [area.key]).length}件</p>
                 </Link>
               ))}
@@ -56,6 +63,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
         )}
         <DataNotice />
         <HotelFilterList hotels={hotels} showArea={false} />
+        </div>
       </div>
     </div>
   );

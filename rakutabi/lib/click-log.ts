@@ -12,7 +12,9 @@
  */
 import { list, put } from '@vercel/blob';
 
-export const PLACEMENTS = ['card', 'hotel-main', 'plan', 'review'] as const;
+export const PLACEMENTS = ['card', 'hotel-main', 'plan', 'review', 'hero', 'banner'] as const;
+/** 宿に紐づかない（楽天トラベルのトップへ送る）ボタン。施設番号は0で記録する */
+export const SITE_WIDE_PLACEMENTS: readonly string[] = ['hero', 'banner'];
 export type Placement = (typeof PLACEMENTS)[number];
 
 export const PLACEMENT_LABELS: Record<Placement, string> = {
@@ -20,6 +22,8 @@ export const PLACEMENT_LABELS: Record<Placement, string> = {
   'hotel-main': '個別ページの予約ボタン',
   plan: 'プラン料金タブの予約ボタン',
   review: '口コミタブのリンク',
+  hero: 'トップ最上部の「楽天トラベルで予約する」',
+  banner: 'トップ下部の「楽天トラベルで探す」',
 };
 
 export function isBlobConfigured(): boolean {

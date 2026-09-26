@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test:api": "tsx scripts/test-connection.ts",
-    "fetch:hotels": "tsx scripts/fetch-hotels.ts"
+    "fetch:hotels": "tsx scripts/fetch-hotels.ts",
+    "fetch:photos": "tsx scripts/fetch-photos.ts"
   },
   "dependencies": {
     "@vercel/blob": "^2.8.0",

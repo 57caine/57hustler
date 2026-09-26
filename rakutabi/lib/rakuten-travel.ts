@@ -17,6 +17,7 @@
  */
 
 import https from 'node:https';
+import { LENS_NAVI_AFFILIATE_ID } from './affiliate';
 
 const BASE = 'https://openapi.rakuten.co.jp/engine/api/Travel';
 
@@ -42,14 +43,6 @@ export interface RakutenCredentials {
   /** 楽天ウェブサービスの「許可されたWebサイト」に登録済みのURL */
   referer: string;
 }
-
-/**
- * 楽天アフィリエイトID。vercel.app での需要検証（2026-09-26〜）の間は、オーナー指示により
- * lens-navi用の既存IDを流用する（本事業専用IDの新規発行は見送り）。
- * 専用IDに切り替える場合は GitHub Secrets の RAKUTABI_RAKUTEN_AFFILIATE_ID に登録すれば、こちらより優先される。
- * アフィリエイトIDは楽天のアフィリエイトURLにそのまま含まれる公開情報のため、コードに直接記載している。
- */
-export const LENS_NAVI_AFFILIATE_ID = '5567171b.a80702dc.5567171c.a1d1b6fc';
 
 export function credentialsFromEnv(): RakutenCredentials {
   const applicationId = process.env.RAKUTEN_APP_ID;

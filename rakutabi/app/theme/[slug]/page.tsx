@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation';
 import DataNotice from '@/components/DataNotice';
 import HotelFilterList from '@/components/HotelFilterList';
 import PageHeader from '@/components/PageHeader';
+import { getPhoto } from '@/lib/photos';
+
 import { AREAS, getTheme, THEMES } from '@/lib/site-config';
 import { getHotelsByTheme, hasComboPage } from '@/lib/hotels';
 
@@ -27,7 +29,8 @@ export default async function ThemePage({ params }: { params: Promise<{ slug: st
 
   return (
     <div>
-      <PageHeader crumbs={[{ name: theme.name, href: `/theme/${theme.slug}` }]} eyebrow="THEME" title={`${theme.name}におすすめの宿`} lead={theme.lead}>
+      <PageHeader
+        photo={getPhoto(`theme-${theme.slug}`)} crumbs={[{ name: theme.name, href: `/theme/${theme.slug}` }]} eyebrow="THEME" title={`${theme.name}におすすめの宿`} lead={theme.lead}>
         {comboAreas.length > 0 && (
           <div className="mt-5">
             <p className="text-xs text-gray-500 mb-2">エリア別に見る</p>

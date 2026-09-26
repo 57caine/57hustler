@@ -14,10 +14,10 @@ const d = require("./data/hotels.json");
 const cfg = require("fs").readFileSync("lib/site-config.ts", "utf8");
 const pick = (re) => [...cfg.matchAll(re)].map((m) => m[1]);
 const themes = pick(/slug: \x27(weekend|onsen|family|couple|solo)\x27/g);
-const regions = pick(/\{ slug: \x27([a-z]+)\x27, name: \x27[^\x27]+\x27, lead:/g);
+const regions = pick(/\{ slug: \x27([a-z]+)\x27, tagline:/g);
 const areas = pick(/\{ key: \x27([a-z]+)\x27, name:/g);
 const features = pick(/slug: \x27([a-z]+-[a-z]+)\x27,\n    title:/g);
-const out = ["/", "/about", "/terms", "/privacy", "/contact", "/operator", "/search", "/search?q=%E7%AE%B1%E6%A0%B9", "/search?meal=roomOnly"];
+const out = ["/", "/area", "/feature", "/about", "/terms", "/privacy", "/contact", "/operator", "/search", "/search?q=%E7%AE%B1%E6%A0%B9", "/search?meal=roomOnly"];
 themes.forEach((t) => out.push(`/theme/${t}`));
 regions.forEach((r) => out.push(`/region/${r}`));
 features.forEach((f) => out.push(`/feature/${f}`));
@@ -49,6 +49,10 @@ for p in ${paths}; do
 done
 curl -sS "${BASE}/search?meal=roomOnly" -o "${tmp}"
 echo "素泊まり検索（/search?meal=roomOnly）: $(grep -o '<h1[^>]*>[^<]*' "${tmp}" | sed 's/<[^>]*>//') ／ 表示件数 $(grep -o '<article' "${tmp}" | wc -l)"
+# 楽天トラベルのトップへのアフィリエイトリンク（ヒーロー・下部バナー）が楽天側で有効か（リダイレクトされるか）
+top=$(grep -o 'href="https://hb.afl.rakuten.co.jp/hgc/[^"]*travel.rakuten.co.jp%2F"' <(curl -sS "${BASE}/") | head -1 | sed 's/^href="//; s/"$//; s/&amp;/\&/g')
+echo "楽天トラベルトップへのアフィリエイトリンク: ${top:-（見つかりません）}"
+[ -n "${top}" ] && curl -sS -o /dev/null -w "  → 楽天側の応答: HTTP %{http_code} / 転送先 %{redirect_url}\n" "${top}"
 rm -f "${tmp}"
 echo "確認ページ数: ${total} / 合格: ${ok} / 不合格: ${fail} / 生成対象外の掛け合わせページ(404): ${skipped_combo} / 送客リンク合計: ${afl_links}"
 [ "${fail}" = "0" ]

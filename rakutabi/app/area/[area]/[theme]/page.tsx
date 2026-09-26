@@ -4,6 +4,10 @@ import { notFound } from 'next/navigation';
 import DataNotice from '@/components/DataNotice';
 import HotelFilterList from '@/components/HotelFilterList';
 import PageHeader from '@/components/PageHeader';
+import AreaSidebar from '@/components/AreaSidebar';
+import Icon from '@/components/Icon';
+import { getAreaPhoto } from '@/lib/photos';
+
 import { getArea, getRegion, getTheme, THEMES } from '@/lib/site-config';
 import { formatYen, getComboPages, getHotelsByTheme, hasComboPage } from '@/lib/hotels';
 
@@ -48,6 +52,7 @@ export default async function ComboPage({ params }: { params: Promise<{ area: st
   return (
     <div>
       <PageHeader
+        photo={getAreaPhoto(area.key)}
         crumbs={[
           ...(region ? [{ name: region.name, href: `/region/${region.slug}` }] : []),
           { name: area.name, href: `/area/${area.key}` },
@@ -69,7 +74,9 @@ export default async function ComboPage({ params }: { params: Promise<{ area: st
           </ul>
         </div>
       </PageHeader>
-      <div className="max-w-6xl mx-auto px-4 py-8">
+      <div className="max-w-6xl mx-auto px-4 py-8 flex gap-8">
+        <AreaSidebar current={[area.key]} />
+        <div className="flex-1 min-w-0">
         <DataNotice />
         <HotelFilterList hotels={hotels} showArea={false} />
 
@@ -79,12 +86,13 @@ export default async function ComboPage({ params }: { params: Promise<{ area: st
             <div className="flex flex-wrap gap-2">
               {otherThemes.map((t) => (
                 <Link key={t.slug} href={`/area/${area.key}/${t.slug}`} className="text-sm bg-white rounded-full px-3 py-1.5 ring-1 ring-black/10 hover:ring-season hover:text-season">
-                  {t.icon} {area.name}の{t.name}
+                  <Icon name={t.icon} className="w-4 h-4 inline -mt-0.5 mr-1" />{area.name}の{t.name}
                 </Link>
               ))}
             </div>
           </section>
         )}
+        </div>
       </div>
     </div>
   );

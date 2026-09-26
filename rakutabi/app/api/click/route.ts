@@ -1,4 +1,4 @@
-import { isBlobConfigured, PLACEMENTS, recordClick, type Placement } from '@/lib/click-log';
+import { isBlobConfigured, PLACEMENTS, recordClick, SITE_WIDE_PLACEMENTS, type Placement } from '@/lib/click-log';
 import { getHotel } from '@/lib/hotels';
 
 /** 送客ボタンのクリックを1件記録する（components/ClickTracker.tsx から sendBeacon で呼ばれる） */
@@ -13,7 +13,8 @@ export async function POST(request: Request) {
   const placement = String(payload.placement) as Placement | 'healthcheck';
   // 実在する施設番号・想定したボタン位置以外は記録しない（いたずら・誤送信で集計が汚れないように）。
   // healthcheck は公開後の動作確認用で、集計対象外の場所に保存される
-  if (!getHotel(hotelNo) || !(placement === 'healthcheck' || PLACEMENTS.includes(placement))) {
+  const validHotel = SITE_WIDE_PLACEMENTS.includes(placement) ? hotelNo === 0 : Boolean(getHotel(hotelNo));
+  if (!validHotel || !(placement === 'healthcheck' || PLACEMENTS.includes(placement))) {
     return new Response(null, { status: 400 });
   }
   const page = String(payload.page ?? '').slice(0, 200);

@@ -2,60 +2,62 @@
 
 /*
  * 季節ごとの配色トークン。<html data-season="..."> で切り替える（ビルド時点の日本時間の月で決定）。
- * 【注意】色コードは仮の値。オーナーのデザイン案の色コードが共有されたら、この4ブロックの値だけを差し替える。
- * 各色の役割:
- *   primary      見出し・リンク・アクセントの主色
- *   primary-soft タグ・薄い背景
- *   accent       補助色（季節のもう一つのモチーフ）
- *   surface      ページ全体の背景
- *   hero-from/to ヒーローのグラデーション
+ * main / accent / base はオーナーのデザイン案（2026-09-26）の色コードそのまま。
+ * primary-soft・hero-from/to はデザイン案の色から作った補助色。
  */
 :root,
 [data-season="spring"] {
   /* 春：桜・新緑 */
-  --season-primary: #c24d72;
-  --season-primary-soft: #fbe6ed;
-  --season-accent: #5c9a58;
-  --season-surface: #fffafb;
-  --season-hero-from: #f4b8c9;
-  --season-hero-to: #9fcf98;
+  --season-primary: #e968a5;
+  --season-accent: #7fbf7f;
+  --season-surface: #f8f5f8;
+  --season-primary-soft: #fbe3ef;
+  --season-hero-from: #f6b9d5;
+  --season-hero-to: #7fbf7f;
 }
 
 [data-season="summer"] {
-  /* 夏：海・空（青系統） */
-  --season-primary: #1a6ca3;
+  /* 夏：海・空 */
+  --season-primary: #2e9fd9;
+  --season-accent: #00c6d7;
+  --season-surface: #f1faff;
   --season-primary-soft: #dcf0fb;
-  --season-accent: #22a7b8;
-  --season-surface: #f6fbfe;
   --season-hero-from: #8fd3f4;
-  --season-hero-to: #1a6ca3;
+  --season-hero-to: #2e9fd9;
 }
 
 [data-season="autumn"] {
   /* 秋：紅葉 */
-  --season-primary: #a5401d;
-  --season-primary-soft: #f8e4d7;
-  --season-accent: #c9861c;
-  --season-surface: #fffaf5;
-  --season-hero-from: #eaa760;
-  --season-hero-to: #a5401d;
+  --season-primary: #d97706;
+  --season-accent: #b5521b;
+  --season-surface: #faf6f0;
+  --season-primary-soft: #fbe8d0;
+  --season-hero-from: #f2b35c;
+  --season-hero-to: #b5521b;
 }
 
 [data-season="winter"] {
   /* 冬：雪・温泉 */
-  --season-primary: #2e5471;
-  --season-primary-soft: #e3edf4;
-  --season-accent: #8a6a4e;
-  --season-surface: #f8fafc;
-  --season-hero-from: #d3e1ec;
-  --season-hero-to: #2e5471;
+  --season-primary: #4a6b8a;
+  --season-accent: #9db4c7;
+  --season-surface: #f7f9fc;
+  --season-primary-soft: #e3ebf3;
+  --season-hero-from: #c9d8e6;
+  --season-hero-to: #4a6b8a;
 }
 
 :root {
   /* 予約ボタン：楽天トラベルのブランドカラー（赤）に寄せた色。季節に関係なく固定 */
-  --cta: #bf0000;
-  --cta-hover: #960000;
-  --ink: #1f2328;
+  --cta: #e0263a;
+  --cta-hover: #c01d2f;
+  /* 見出し・フッターの紺色（デザイン案） */
+  --ink: #1d2b45;
+  --navy: #16223a;
+  /* 特徴タグの薄い青灰色（デザイン案） */
+  --tag: #eef2f7;
+  --tag-ink: #4a5a70;
+  /* 価格の赤 */
+  --price: #e0263a;
 }
 
 @theme inline {
@@ -68,12 +70,16 @@
   --color-cta: var(--cta);
   --color-cta-hover: var(--cta-hover);
   --color-ink: var(--ink);
+  --color-navy: var(--navy);
+  --color-tag: var(--tag);
+  --color-tag-ink: var(--tag-ink);
+  --color-price: var(--price);
   --font-sans: var(--font-noto-sans-jp), system-ui, sans-serif;
   --font-serif: var(--font-noto-serif-jp), "Hiragino Mincho ProN", serif;
 }
 
 body {
-  background: var(--season-surface);
+  background: #fff;
   color: var(--ink);
 }
 

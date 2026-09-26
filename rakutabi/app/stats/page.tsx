@@ -47,7 +47,7 @@ export default async function StatsPage() {
       <Table
         title="宿別（上位30件）"
         head={['宿', 'クリック']}
-        rows={byHotel.map(([no, n]) => [getHotel(no)?.name ?? `施設番号${no}`, n])}
+        rows={byHotel.map(([no, n]) => [no === 0 ? '（楽天トラベルのトップへ）' : getHotel(no)?.name ?? `施設番号${no}`, n])}
       />
     </Shell>
   );
