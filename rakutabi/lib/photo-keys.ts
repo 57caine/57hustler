@@ -39,12 +39,18 @@ export interface PhotoRule {
   include: RegExp;
   /** 説明文にこのいずれかを含む写真は除外する */
   exclude?: RegExp;
+  /**
+   * 写真の内容を表す説明文（alt_description）にこれを含む写真を優先する。
+   * 補足説明（description）は地名・施設名（例「〇〇温泉の旅館」）を含むことがあり、写真の中身と一致しないため対象外
+   */
+  prefer?: RegExp;
 }
 
 export const PHOTO_RULES: Partial<Record<PhotoKey, PhotoRule>> = {
   'theme-onsen': {
     queries: ['露天風呂', '和風旅館', 'onsen ryokan japan', 'japanese outdoor hot spring bath', 'rotenburo'],
     include: /onsen|hot spring|hotspring|rotenburo|open-air bath|outdoor bath|bath|ryokan|japanese|温泉|露天|旅館|和風/i,
+    prefer: /hot spring|onsen|rotenburo|open-air bath|outdoor bath|温泉|露天/i,
     exclude: /swimming pool|\bpool\b|tall building|skyscraper|city|hotel room|bathroom|bathtub in|toilet|people|person|woman|man\b/i,
   },
 };

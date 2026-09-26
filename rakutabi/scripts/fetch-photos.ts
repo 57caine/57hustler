@@ -39,7 +39,9 @@ async function main() {
   for (const [photoKey, query] of Object.entries(PHOTO_QUERIES) as [PhotoKey, string][]) {
     if (photos[photoKey]) continue;
     const rule = PHOTO_RULES[photoKey];
-    const first = rule ? await pickByRule(photoKey, rule, key) : await pickMostLiked(photoKey, query, key);
+    // サイト内の別の場所ですでに使っている写真は選ばない（同じ写真が2か所に出ないように）
+    const used = new Set(Object.values(photos).map((p) => photoId(p.url)));
+    const first = rule ? await pickByRule(photoKey, rule, key, used) : await pickMostLiked(photoKey, query, key);
     if (first === 'stop') break;
     if (!first) continue;
     // Unsplash API ガイドライン: 写真を使うときは download_location を呼ぶ
@@ -79,7 +81,12 @@ async function pickMostLiked(photoKey: string, query: string, key: string): Prom
 }
 
 /** 複数の検索語で候補を集め、説明文の条件を満たすものの中から「いいね」が最も多い写真 */
-async function pickByRule(photoKey: string, rule: PhotoRule, key: string): Promise<Result | 'stop' | null> {
+/** images.unsplash.com/photo-xxxx?... の photo-xxxx 部分 */
+function photoId(url: string): string {
+  return url.match(/photo-[^?]+/)?.[0] ?? url;
+}
+
+async function pickByRule(photoKey: string, rule: PhotoRule, key: string, used: Set<string>): Promise<Result | 'stop' | null> {
   const seen = new Map<string, Result>();
   for (const q of rule.queries) {
     const results = await search(q, key, 10);
@@ -89,12 +96,16 @@ async function pickByRule(photoKey: string, rule: PhotoRule, key: string): Promi
   const passed: Result[] = [];
   for (const r of seen.values()) {
     const text = `${r.alt_description ?? ''} ${r.description ?? ''}`;
-    const ok = rule.include.test(text) && !(rule.exclude?.test(text) ?? false);
-    console.log(`    候補 ${ok ? '○' : '×'} likes=${r.likes} 「${text.trim().slice(0, 90)}」`);
+    const dup = used.has(photoId(r.urls.raw));
+    const ok = !dup && rule.include.test(text) && !(rule.exclude?.test(text) ?? false);
+    const preferred = ok && (rule.prefer?.test(r.alt_description ?? '') ?? false);
+    console.log(`    候補 ${ok ? (preferred ? '◎' : '○') : '×'}${dup ? '（使用済み）' : ''} likes=${r.likes} 「${text.trim().slice(0, 90)}」`);
     if (ok) passed.push(r);
   }
-  const best = passed.sort((a, b) => (b.likes ?? 0) - (a.likes ?? 0))[0];
-  console.log(`  ${photoKey}: 候補${seen.size}件中、条件を満たすもの${passed.length}件`);
+  // 写真の内容そのものが条件に合うもの（◎）を優先し、その中で「いいね」が多い順
+  const isPreferred = (r: Result) => (rule.prefer?.test(r.alt_description ?? '') ? 1 : 0);
+  const best = passed.sort((a, b) => isPreferred(b) - isPreferred(a) || (b.likes ?? 0) - (a.likes ?? 0))[0];
+  console.log(`  ${photoKey}: 候補${seen.size}件中、条件を満たすもの${passed.length}件（うち写真の内容が合うもの${passed.filter(isPreferred).length}件）`);
   return best ?? null;
 }
 
