@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-26T01:49:41.974Z",
+  "fetchedAt": "2026-09-26T01:51:50.375Z",
   "checkinDate": "2026-10-03",
   "hotels": [
     {
@@ -80,7 +80,7 @@
       "hotelNo": 1729,
       "name": "箱根湯本温泉　湯本富士屋ホテル",
       "areaKey": "hakone",
-      "address": "神奈川県足柄下郡箱根���湯本256-1",
+      "address": "神奈川県足柄下郡箱根町湯本256-1",
       "access": "新宿駅より小田急線ロマンスカーにて約90分、箱根湯本駅下車徒歩3分。",
       "nearestStation": "箱根湯本",
       "special": "箱根湯本駅より徒歩3分。和室・和洋室など豊富な部屋タイプと緑広がる露天風呂、和洋中の本格料理で満たされる贅沢なひととき。",
@@ -198,7 +198,7 @@
     },
     {
       "hotelNo": 2984,
-      "name": "鬼怒川温泉　鬼怒川パークホテルズ",
+      "name": "鬼怒川温泉　鬼怒川パーク��テルズ",
       "areaKey": "kinugawa",
       "address": "栃木県日光市鬼怒川温泉大原1409",
       "access": "【アクセス抜群】浅草駅、北千住各駅より東武特急スペーシア『鬼怒川温泉』駅より徒歩5分。",
@@ -676,7 +676,7 @@
     },
     {
       "hotelNo": 8632,
-      "name": "ビジネ��ホテルアゼリア",
+      "name": "ビジネスホテルアゼリア",
       "areaKey": "kusatsu",
       "address": "群馬県吾妻郡草津町草津455",
       "access": "上野→JR長野原・草津駅→JR・バス草津温泉駅より徒歩5分",
@@ -744,6 +744,32 @@
       "conditions": [
         "onsen",
         "meal"
+      ]
+    },
+    {
+      "hotelNo": 9086,
+      "name": "鬼怒川温泉　日光きぬ川ホテル三日月",
+      "areaKey": "kinugawa",
+      "address": "栃木県日光市鬼怒川温泉大原1400",
+      "access": "東武鉄道鬼怒川温泉駅より徒歩約3分。東北道宇都宮ＩＣ～日光宇都宮道今市ＩＣ～Ｒ121経由で約40分",
+      "nearestStation": "鬼怒川温泉",
+      "special": "20年7月館内リニューアル☆駅から徒歩3分！渓谷一望のおぷーろや屋内プールなど３世代で楽しめる全天候型温泉テーマパーク",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/9086/9086.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/9086/9086_yo.jpg",
+      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=9086",
+      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=9086&f_flg=PLAN",
+      "minCharge": 16531,
+      "reviewAverage": 4.47,
+      "reviewCount": 4620,
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "station",
+        "view"
       ]
     },
     {
@@ -1498,11 +1524,8 @@
       "minCharge": 42160,
       "reviewAverage": 4.41,
       "reviewCount": 393,
-      "themes": [
-        "onsen"
-      ],
+      "themes": [],
       "conditions": [
-        "onsen",
         "meal",
         "station"
       ]
@@ -1676,7 +1699,7 @@
     },
     {
       "hotelNo": 31366,
-      "name": "鬼怒川温泉���鬼怒川グランドホテル　夢の季（ゆめのとき）",
+      "name": "鬼怒川温泉　鬼怒川グランドホテル　夢の季（ゆめのとき）",
       "areaKey": "kinugawa",
       "address": "栃木県日光市鬼怒川温泉大原1021",
       "access": "鬼怒川温泉駅より徒歩8分／日光・宇都宮有料道路今市ＩＣより車で20分",
@@ -2167,7 +2190,7 @@
       "name": "アレーズド・バレ　ＳＨＩＲＡＨＡＭＡ",
       "areaKey": "shirahama",
       "address": "和歌山県西牟婁郡白浜町堅田2500-127",
-      "access": "白浜ビーチまで車で約8分／アドベンチャーワールドより車で約10分/とれとれ市場より車で約５��",
+      "access": "白浜ビーチまで車で約8分／アドベンチャーワールドより車で約10分/とれとれ市場より車で約５分",
       "nearestStation": "白浜",
       "special": "白浜温泉｜温泉・プール・カラオケ｜朝はパン食べ放題｜観光地車10分以内",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/51873/51873.jpg",
@@ -2382,7 +2405,7 @@
       "address": "和歌山県西牟婁郡白浜町湯崎2998-74",
       "access": "白浜駅より車で約１０分、明光バス（湯崎行き）で新湯崎停留所下車（約５分）",
       "nearestStation": "白浜",
-      "special": "■2023年楽天ブロンズアワード受賞■白良浜まで徒歩圏内！！1300年前から湧き続ける名湯【牟婁の湯】",
+      "special": "■2023年楽天ブロンズアワード受賞■白良浜まで徒歩���内！！1300年前から湧き続ける名湯【牟婁の湯】",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/67255/67255.jpg",
       "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/67255/67255_kya.jpg",
       "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=67255",
@@ -2620,7 +2643,7 @@
       "address": "静岡県熱海市海光町7-79",
       "access": "熱海駅より徒歩20分。車５分。",
       "nearestStation": "熱海",
-      "special": "全室オー��ャンビュー！3種類の貸切風呂・全国約170店舗展開中のBBHホテルグループ！",
+      "special": "全室オーシャンビュー！3種類の貸切風呂・全国約170店舗展開中のBBHホテルグループ！",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/72738/72738.jpg",
       "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/72738/72738_wa.jpg",
       "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=72738",
@@ -2635,7 +2658,8 @@
       "conditions": [
         "onsen",
         "meal",
-        "station"
+        "station",
+        "view"
       ]
     },
     {
@@ -3291,7 +3315,7 @@
     },
     {
       "hotelNo": 136832,
-      "name": "大江戸温泉物語Ｐｒｅｍｉｕｍ　あたみ",
+      "name": "大江戸温泉物語Ｐｒｅ��ｉｕｍ　あたみ",
       "areaKey": "atami",
       "address": "静岡県熱海市咲見町8-3",
       "access": "熱海駅より徒歩にて約7分",
@@ -3680,7 +3704,7 @@
     },
     {
       "hotelNo": 147090,
-      "name": "ファミリーロッジ旅籠屋・箱根仙���原店",
+      "name": "ファミリーロッジ旅籠屋・箱根仙石原店",
       "areaKey": "hakone",
       "address": "神奈川県足柄下郡箱根町仙石原1246-747",
       "access": "東名高速・御殿場ＩＣ下車、国道138号線を箱根方面へ約11ｋｍ、仙石原交差点を右折、約3.2ｋｍ先右側。",
@@ -4290,8 +4314,8 @@
       "hotelNo": 162753,
       "name": "箱根風雅",
       "areaKey": "hakone",
-      "address": "神奈川県足柄下郡箱根町仙石原1246-773",
-      "access": "バス停「仙石高原」より徒歩約7分／小田原駅より箱根登山バスにて約50分／��スタ新宿より高速バスにて約2時間",
+      "address": "神奈川県足柄下郡��根町仙石原1246-773",
+      "access": "バス停「仙石高原」より徒歩約7分／小田原駅より箱根登山バスにて約50分／バスタ新宿より高速バスにて約2時間",
       "nearestStation": "箱根湯本",
       "special": "【全24室の大人限定宿】仙石原の別荘地に佇む静かな空間で、大人だけの優雅な時間を／旬の味が楽しめる料理自慢の宿",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/162753/162753.jpg",
@@ -4389,7 +4413,7 @@
       "address": "神奈川県足柄下郡箱根町元箱根159-205（マップ上で旧ホテル名「ザグランリゾート箱根」で表示される場合がございますが場所は同じです）",
       "access": "伊豆箱根バス「湖尻上」停留所より徒歩にて約２分／新宿から高速バス約2時間30分 桃源台駅徒歩約１５分",
       "nearestStation": "強羅",
-      "special": "芦ノ湖まで徒歩10分。元箱根温��の天然温泉をご堪能いただけます。",
+      "special": "芦ノ湖まで徒歩10分。元箱根温泉の天然温泉をご堪能いただけます。",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/165676/165676.jpg",
       "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/165676/165676_sho1.jpg",
       "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=165676",
@@ -5023,7 +5047,7 @@
       "address": "群馬県吾妻郡長野原町大字川原湯454-91",
       "access": "川原湯温泉駅より徒歩15分(送迎バスあり）",
       "nearestStation": "川原湯温泉",
-      "special": "【個室食事��｜貸切風呂無料】2000坪に全8室借景庭園付 川原湯温泉最古の宿",
+      "special": "【個室食事処｜貸切風呂無料】2000坪に全8室借景庭園付 川原湯温泉最古の宿",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/183529/183529.jpg",
       "roomImageUrl": "",
       "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=183529",
@@ -5080,28 +5104,6 @@
         "solo"
       ],
       "conditions": []
-    },
-    {
-      "hotelNo": 183929,
-      "name": "愛犬と楽しむ温泉旅館　鬼怒川　絆",
-      "areaKey": "kinugawa",
-      "address": "栃木県日光市鬼怒川温泉大原1422-4",
-      "access": "東武鉄道鬼怒川温泉駅より徒歩5分",
-      "nearestStation": "鬼怒川温泉",
-      "special": "初めての愛犬同伴旅行も安心。17種の客室、愛犬用客室露天風呂や屋内外ドッグラン完備。愛犬と地元・全国厳選の食材堪能。",
-      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/183929/183929.jpg",
-      "roomImageUrl": "",
-      "informationUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/pvonD/?f_no=183929",
-      "planListUrl": "https://img.travel.rakuten.co.jp/image/tr/api/re/vFumt/?f_no=183929&f_flg=PLAN",
-      "minCharge": 57600,
-      "reviewAverage": 4.78,
-      "reviewCount": 24,
-      "themes": [],
-      "conditions": [
-        "meal",
-        "station",
-        "room"
-      ]
     },
     {
       "hotelNo": 184221,
@@ -5783,7 +5785,6 @@
       "reviewAverage": 3.42,
       "reviewCount": 86,
       "themes": [
-        "weekend",
         "onsen",
         "solo"
       ],
