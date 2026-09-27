@@ -5,31 +5,16 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - name: fetch homepage and extract featured product image URLs
+      - name: check hotlink protection with Referer header
         run: |
-          curl -s "https://www.lens-navi.jp/" -o /tmp/home.html
-          echo "=== raw <img> tags near featured products ==="
-          grep -oE '<img[^>]*src="[^"]*"[^>]*>' /tmp/home.html | grep -i "rakuten\|thumbnail" || echo "NO rakuten/thumbnail img tags found"
-          echo
-          echo "=== all thumbnail.image.rakuten.co.jp URLs in HTML ==="
-          grep -oE 'https://thumbnail\.image\.rakuten\.co\.jp[^"]*' /tmp/home.html | sort -u
-
-      - name: check each image URL actually resolves
-        run: |
-          urls=$(grep -oE 'https://thumbnail\.image\.rakuten\.co\.jp[^"]*' /tmp/home.html | sort -u)
-          if [ -z "$urls" ]; then
-            echo "No image URLs extracted, skipping fetch checks"
-          fi
+          urls="https://thumbnail.image.rakuten.co.jp/@0_mall/lensamigo/cabinet/johnson/1davms30-01p.jpg https://thumbnail.image.rakuten.co.jp/@0_mall/loook/cabinet/2609_evernatu_main.jpg https://thumbnail.image.rakuten.co.jp/@0_mall/zoff/cabinet/top_2/za201012_14e1.jpg"
           for u in $urls; do
-            echo "--- $u ---"
-            curl -s -o /dev/null -D - "$u" | grep -iE "^HTTP|^content-type|^location"
+            echo "=== $u ==="
+            echo "-- no referer (baseline) --"
+            curl -s -o /dev/null -D - "$u" | grep -iE "^HTTP|^content-type|^content-length"
+            echo "-- with Referer: https://www.lens-navi.jp/ --"
+            curl -s -o /dev/null -D - -e "https://www.lens-navi.jp/" "$u" | grep -iE "^HTTP|^content-type|^content-length"
+            echo "-- with real browser User-Agent + Referer --"
+            curl -s -o /dev/null -D - -e "https://www.lens-navi.jp/" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" "$u" | grep -iE "^HTTP|^content-type|^content-length"
             echo
           done
-
-      - name: check column list thumbnail markup
-        run: |
-          curl -s "https://www.lens-navi.jp/column" -o /tmp/column.html
-          echo "=== img tags on /column ==="
-          grep -oE '<img[^>]*>' /tmp/column.html | head -5 || echo "NO img tags on /column at all"
-          echo "=== gradient thumbnail divs (expected pre-existing design) ==="
-          grep -c "linear-gradient" /tmp/column.html
