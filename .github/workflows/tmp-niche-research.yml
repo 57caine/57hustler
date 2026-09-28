@@ -1,0 +1,28 @@
+name: 一時調査 楽天アフィリエイト新規ニッチ候補の市場集計
+
+# 楽天市場の商品検索・ランキングAPIで、ペット防災・サイズ悩み系の靴の市場を集計してログに出すだけ。
+# サイトやデータは変更しない。調査完了後にこのファイルと .github/scripts/niche-research.mjs を削除する。
+on:
+  push:
+    branches:
+      - claude/rakutabi-skeleton-impl-gzyecr
+    paths:
+      - '.github/scripts/niche-research.mjs'
+      - '.github/workflows/tmp-niche-research.yml'
+  workflow_dispatch:
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: 市場集計
+        run: node .github/scripts/niche-research.mjs
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
