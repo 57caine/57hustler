@@ -14,7 +14,7 @@ jobs:
         run: npm ci
       - name: Run GA4 traffic source report
         run: |
-          cat > /tmp/traffic-report.ts <<'SCRIPTEOF'
+          cat > ./tmp-traffic-report.ts <<'SCRIPTEOF'
           import { BetaAnalyticsDataClient } from '@google-analytics/data';
 
           async function main() {
@@ -69,6 +69,6 @@ jobs:
             process.exit(1);
           });
           SCRIPTEOF
-          npx tsx /tmp/traffic-report.ts
+          npx tsx ./tmp-traffic-report.ts
         env:
           GA4_SERVICE_ACCOUNT_KEY: ${{ secrets.GA4_SERVICE_ACCOUNT_KEY }}
