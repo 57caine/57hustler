@@ -25,6 +25,16 @@
  *   日本神話・古事記／日本史の謎／言葉の語源／世界神話の共通点／地形と歴史 の5カテゴリを追加
  * - 上記5カテゴリは「有名な話→でも実は反転→具体的根拠→人間の知恵で締める」の型を必須化
  * - topic_tagは「雑学」を優先設定
+ *
+ * ルール集の接続（2026-09-28）:
+ * - data/yonaka-feedback.json → scripts/distill-feedback.ts で月次蒸留される
+ *   data/yonaka-rules.json を生成のたびに読み込み、システムプロンプトへ追加するようにした。
+ *   これまでルール集は蒸留されるだけで生成処理には接続されておらず、CEOが直させた内容が
+ *   次の投稿に反映されていなかった（蒸留 → data/yonaka-rules.json 止まりだった）。
+ * - 既存の直書きルール（BANNED_KEYWORDS・checkStyle・checkFactSafety等）との優先順位:
+ *   安全性に関わるもの（禁止キーワード・断定表現の抑制）は常にコード側のチェックで強制し、
+ *   ルール集の内容でこれらを緩めることはできない。一方、書き出しパターン等のスタイル面は
+ *   ルール集を優先する（プロンプト内で「矛盾する場合はこちらを優先」と明記）。
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -38,6 +48,7 @@ const ACCESS_TOKEN = process.env.THREADS_ACCESS_TOKEN!;
 
 const HISTORY_PATH = path.join(process.cwd(), 'data', 'yonaka-post-history.json');
 const HISTORY_KEEP = 200; // 6投稿/日 × 30日超をカバー
+const RULES_PATH = path.join(process.cwd(), 'data', 'yonaka-rules.json');
 
 // ────── 13カテゴリ定義 ──────
 const CATEGORIES = [
@@ -180,6 +191,14 @@ interface HistoryEntry {
   category?: string;
 }
 
+interface Rule {
+  name: string;
+  reason?: string;
+  ng: string;
+  ok: string;
+  addedDate?: string;
+}
+
 // ────── トピック自動判定（キーワード判定） ──────
 // 一般層への露出を優先するため、配列の並び順＝優先順位（複数キーワードが該当する場合は先頭が優先）
 const TOPIC_KEYWORDS: { topic: string; keywords: string[] }[] = [
@@ -220,6 +239,27 @@ function loadHistory(): HistoryEntry[] {
 function saveHistory(existing: HistoryEntry[], newEntry: HistoryEntry): void {
   const posts = [newEntry, ...existing].slice(0, HISTORY_KEEP);
   fs.writeFileSync(HISTORY_PATH, JSON.stringify({ posts }, null, 2), 'utf-8');
+}
+
+// ────── ルール集（data/yonaka-feedback.json → scripts/distill-feedback.tsで月次蒸留） ──────
+// CEOが実際に指摘・修正した内容の蓄積。ファイルが存在しない/空でも生成自体は止めない。
+function loadRules(): Rule[] {
+  try {
+    if (!fs.existsSync(RULES_PATH)) return [];
+    const data = JSON.parse(fs.readFileSync(RULES_PATH, 'utf-8')) as { rules: Rule[] };
+    return data.rules ?? [];
+  } catch { return []; }
+}
+
+// ルール集はスタイル・パターン面の是正のみを扱う想定（禁止キーワード・断定表現の抑制は
+// BANNED_KEYWORDSとcheckFactSafety側で別途強制するため、ここでは上書きしない）。
+// 該当ルールがなければ空文字を返し、システムプロンプトに何も追加しない。
+function buildRulesBlock(rules: Rule[]): string {
+  if (rules.length === 0) return '';
+  const lines = rules
+    .map(r => `・${r.name}：NG「${r.ng}」→ OK「${r.ok}」${r.reason ? `（理由：${r.reason}）` : ''}`)
+    .join('\n');
+  return `\n【過去の指摘から学んだルール（最優先で厳守すること。上記の基本スタイルと矛盾する場合はこちらを優先）】\n${lines}\n`;
 }
 
 // ────── カテゴリ選出（3日間クールダウン） ──────
@@ -324,7 +364,7 @@ async function checkReadability(text: string, client: Anthropic): Promise<boolea
 }
 
 // ────── 生成 ──────
-async function generatePost(category: Category, history: HistoryEntry[], client: Anthropic): Promise<string> {
+async function generatePost(category: Category, history: HistoryEntry[], rules: Rule[], client: Anthropic): Promise<string> {
   const recentTexts = history.slice(0, 30).map(p => `- ${p.text}`).join('\n') || '（履歴なし）';
   const templateBlock = SCIENCE_TEMPLATE_CATEGORIES.includes(category)
     ? SCIENCE_TEMPLATE_BLOCK
@@ -333,6 +373,7 @@ async function generatePost(category: Category, history: HistoryEntry[], client:
       : '';
   const kyuseiCautionBlock = category === '気学・易経の豆知識' ? `\n${KYUSEI_CONTENT_CAUTION}\n` : '';
   const seasonCautionBlock = `\n${getSeasonWordCaution()}\n`;
+  const rulesBlock = buildRulesBlock(rules);
 
   const res = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
@@ -374,7 +415,7 @@ async function generatePost(category: Category, history: HistoryEntry[], client:
 （該当しそうな内容は、上記の柔らかい文末表現を使って言い切りを避けること）
 ・ハッシュタグ
 ・ですます調以外の一人称禁止（私は〜ではなく、客観的な問いかけスタイルで）
-
+${rulesBlock}
 【今回のカテゴリ】
 ${category}
 
@@ -424,6 +465,9 @@ async function main() {
   const history = loadHistory();
   console.log(`投稿履歴: 直近${history.length}件を参照`);
 
+  const rules = loadRules();
+  console.log(`ルール集: ${rules.length}件を参照`);
+
   const client = new Anthropic();
   const MAX_RETRIES = 3;
   let finalText: string | null = null;
@@ -437,7 +481,7 @@ async function main() {
     // 生成
     let candidate: string;
     try {
-      candidate = await generatePost(category, history, client);
+      candidate = await generatePost(category, history, rules, client);
     } catch (e) {
       console.warn(`⚠️ 試行${attempt}: API生成失敗 → ${(e as Error).message}`);
       continue;
