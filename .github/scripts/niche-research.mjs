@@ -75,7 +75,8 @@ async function children(id) {
   if (!genre) return [];
   const r = await call(genre.base, { genreId: id });
   const ch = r.data.children || [];
-  const list = ch.map((c) => c.child || c).map((c) => ({ id: String(c.genreId), name: c.genreName }));
+  if (id === '101213') console.log('[genre raw]', JSON.stringify(r.data).slice(0, 600));
+  const list = ch.map((c) => c.child || c).map((c) => ({ id: String(c.genreId ?? c.id), name: c.genreName ?? c.name ?? c.nameJa ?? JSON.stringify(c).slice(0, 80) }));
   console.log(`[genre] ${id} ${JSON.stringify(r.data.current?.genreName || r.data.current || '')} children:`, list.map((c) => `${c.name}(${c.id})`).join(' / '));
   return list;
 }
@@ -134,7 +135,8 @@ function summarize(label, list, totalCount) {
 async function searchSample(keyword, genreId, pages = 3) {
   const all = []; let count = null;
   for (let page = 1; page <= pages; page++) {
-    const params = { keyword, hits: '30', page: String(page), sort: '-reviewCount', availability: '1' };
+    const params = { hits: '30', page: String(page), sort: '-reviewCount', availability: '1' };
+    if (keyword) params.keyword = keyword;
     if (genreId) params.genreId = genreId;
     const r = await call(search.base, params);
     if (r.status !== 200) { console.log(`[warn] search ${keyword} p${page} HTTP ${r.status} ${JSON.stringify(r.data).slice(0, 150)}`); break; }
@@ -143,7 +145,7 @@ async function searchSample(keyword, genreId, pages = 3) {
     all.push(...got);
     if (got.length < 30) break;
   }
-  return summarize(`検索「${keyword}」${genreId ? `(genre ${genreId})` : ''}`, all, count);
+  return summarize(`検索「${keyword || '(キーワードなし)'}」${genreId ? `(genre ${genreId})` : ''}`, all, count);
 }
 
 async function rankingSample(label, genreId, pages = 2) {
@@ -164,36 +166,47 @@ async function countOnly(keyword, genreId) {
   console.log(`[kw] ${keyword}\t${r.status === 200 ? r.data.count : 'HTTP ' + r.status}`);
 }
 
-console.log('\n===== A. ペット防災 =====');
-await rankingSample('ペット全体', genreIds.pet);
+
+console.log('\n===== A. 犬・猫・小動物別ランキング =====');
 if (dogGenre) await rankingSample('犬用品', dogGenre);
 if (catGenre) await rankingSample('猫用品', catGenre);
 if (smallGenre) await rankingSample('小動物用品', smallGenre);
-for (const kw of ['ペット 防災', '犬 防災 セット', '猫 防災 セット', 'ペット キャリー 避難', 'ペット 折りたたみ ケージ', 'ペット 給水 携帯', 'ペット 防寒 ブランケット']) await searchSample(kw, genreIds.pet);
 
-console.log('\n----- A. 備蓄消耗品（犬・猫・小動物別） -----');
-const find = (list, re) => list.find((c) => re.test(c.name))?.id;
-const stock = [
-  ['犬 フード', 'ドッグフード', find(dogCh, /フード/) || dogGenre],
-  ['犬 トイレ用品', 'トイレシーツ', find(dogCh, /トイレ|衛生/) || dogGenre],
-  ['猫 フード', 'キャットフード', find(catCh, /フード/) || catGenre],
-  ['猫 トイレ用品', '猫砂', find(catCh, /トイレ|衛生/) || catGenre],
-  ['小動物 フード', 'フード', find(smallCh, /フード/) || smallGenre],
-  ['小動物 トイレ用品', 'トイレ 砂', find(smallCh, /トイレ|床材|衛生/) || smallGenre],
+console.log('\n----- A. 備蓄消耗品（犬・猫・小動物別、ジャンル内の商品数と価格帯） -----');
+const pickAll = (list, re) => list.filter((c) => re.test(c.name));
+const stockTargets = [
+  ['犬', dogCh], ['猫', catCh], ['小動物', smallCh],
 ];
-for (const [label, kw, gid] of stock) {
-  console.log(`[stock] ${label}: keyword=${kw} genre=${gid}`);
-  await searchSample(kw, gid);
+for (const [animal, list] of stockTargets) {
+  for (const [kind, re] of [['フード', /フード|ペレット|牧草|餌/], ['トイレ用品', /トイレ|床材|砂|シーツ|衛生/]]) {
+    for (const g of pickAll(list, re)) {
+      console.log(`[stock] ${animal} ${kind}: ${g.name}(${g.id})`);
+      await searchSample('', g.id);
+    }
+  }
 }
+// 小動物は下位ジャンルがフード・トイレに分かれていない場合があるため、動物別の下位ジャンル名も出す
+for (const g of smallCh) await children(g.id);
 
-console.log('\n===== B. サイズ悩み系の靴 =====');
-await rankingSample('靴全体', genreIds.shoes);
+console.log('\n===== B. 靴 レディース・メンズ別ランキング =====');
 for (const c of shoeChildren.filter((c) => /レディース|メンズ/.test(c.name))) await rankingSample(c.name, c.id);
-for (const kw of ['幅広 甲高 スニーカー', '幅広 パンプス', '4E ビジネスシューズ', '外反母趾 靴 レディース', '小さいサイズ パンプス', '小さいサイズ スニーカー レディース', '大きいサイズ パンプス', '大きいサイズ スニーカー メンズ', 'キングサイズ 靴 メンズ', '5E スニーカー']) await searchSample(kw, genreIds.shoes);
 
-console.log('\n===== 検索キーワード案の商品数 =====');
-const KW_A = ['犬 防災グッズ', '猫 防災グッズ', 'ペット 避難 キャリー リュック', '猫 避難 キャリー', '犬 避難 リュック', 'うさぎ キャリー 避難', 'ハムスター キャリー', '折りたたみ ケージ 犬', '折りたたみ ケージ 猫', 'ペット 非常食', 'ドッグフード 長期保存', 'キャットフード 長期保存', 'ペット 保存水', 'ペット 携帯 トイレ', '猫 簡易トイレ 折りたたみ', 'マナーポーチ', 'ペット 迷子札', 'ペット カイロ', 'ペット 保温 マット 電気不要', 'ペット 防災 セット 猫', '小動物 保温', 'ペット 給水ボトル 携帯', 'ペット 食器 折りたたみ', 'ペット 防災 ベスト'];
-const KW_B = ['幅広 甲高 スニーカー レディース', '幅広 甲高 ビジネスシューズ メンズ', '幅広 パンプス 痛くない', '4E パンプス', '5E ウォーキングシューズ', '6E スニーカー', '外反母趾 パンプス', '外反母趾 スニーカー', '21cm パンプス', '21.5cm スニーカー', '22cm ブーツ 小さいサイズ', '小さいサイズ メンズ スニーカー 24cm', '25.5cm パンプス', '26cm レディース スニーカー', '大きいサイズ ブーツ レディース', '29cm スニーカー', '30cm スニーカー', '31cm ビジネスシューズ', '甲高 ローファー', '幅広 ランニングシューズ', '幅広 安全靴', '幅広 ナースシューズ', '甲高 レインブーツ', '幅狭 パンプス'];
-for (const kw of KW_A) await countOnly(kw, genreIds.pet);
-for (const kw of KW_B) await countOnly(kw, genreIds.shoes);
+console.log('\n===== 料率アップ商品の有無（APIの affiliateRate が4%以外になることがあるかの確認） =====');
+const rateHist = {}; const highs = [];
+async function rateScan(label, params) {
+  for (let page = 1; page <= 3; page++) {
+    const r = await call(search.base, { hits: '30', page: String(page), ...params });
+    if (r.status !== 200) break;
+    for (const i of items(r.data)) {
+      const k = String(Number(i.affiliateRate)); rateHist[k] = (rateHist[k] || 0) + 1;
+      if (Number(i.affiliateRate) > 4) highs.push(`${label}: ${i.affiliateRate}% ${Number(i.itemPrice)}円 ${i.shopName} ${String(i.itemName).slice(0, 40)}`);
+    }
+  }
+}
+for (const kw of ['ペット 防災', 'ペット キャリー', '犬 ケージ', 'ペットシーツ', 'キャットフード', '猫砂', 'ドッグフード', 'うさぎ 牧草', 'ハムスター 床材', 'パンプス 幅広', 'スニーカー 4E', '大きいサイズ 靴', '小さいサイズ 靴']) {
+  await rateScan(kw, { keyword: kw, sort: '-affiliateRate' });
+}
+for (const kw of ['ペット', '靴']) await rateScan(`${kw}(標準順)`, { keyword: kw });
+console.log('[rate] 料率の分布', JSON.stringify(rateHist));
+console.log('[rate] 4%超の商品', highs.length ? '\n' + [...new Set(highs)].slice(0, 30).join('\n') : 'なし');
 console.log('\n[done]');
