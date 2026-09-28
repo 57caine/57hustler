@@ -167,46 +167,6 @@ async function countOnly(keyword, genreId) {
 }
 
 
-console.log('\n===== A. 犬・猫・小動物別ランキング =====');
-if (dogGenre) await rankingSample('犬用品', dogGenre);
-if (catGenre) await rankingSample('猫用品', catGenre);
-if (smallGenre) await rankingSample('小動物用品', smallGenre);
-
-console.log('\n----- A. 備蓄消耗品（犬・猫・小動物別、ジャンル内の商品数と価格帯） -----');
-const pickAll = (list, re) => list.filter((c) => re.test(c.name));
-const stockTargets = [
-  ['犬', dogCh], ['猫', catCh], ['小動物', smallCh],
-];
-for (const [animal, list] of stockTargets) {
-  for (const [kind, re] of [['フード', /フード|ペレット|牧草|餌/], ['トイレ用品', /トイレ|床材|砂|シーツ|衛生/]]) {
-    for (const g of pickAll(list, re)) {
-      console.log(`[stock] ${animal} ${kind}: ${g.name}(${g.id})`);
-      await searchSample('', g.id);
-    }
-  }
-}
-// 小動物は下位ジャンルがフード・トイレに分かれていない場合があるため、動物別の下位ジャンル名も出す
-for (const g of smallCh) await children(g.id);
-
-console.log('\n===== B. 靴 レディース・メンズ別ランキング =====');
-for (const c of shoeChildren.filter((c) => /レディース|メンズ/.test(c.name))) await rankingSample(c.name, c.id);
-
-console.log('\n===== 料率アップ商品の有無（APIの affiliateRate が4%以外になることがあるかの確認） =====');
-const rateHist = {}; const highs = [];
-async function rateScan(label, params) {
-  for (let page = 1; page <= 3; page++) {
-    const r = await call(search.base, { hits: '30', page: String(page), ...params });
-    if (r.status !== 200) break;
-    for (const i of items(r.data)) {
-      const k = String(Number(i.affiliateRate)); rateHist[k] = (rateHist[k] || 0) + 1;
-      if (Number(i.affiliateRate) > 4) highs.push(`${label}: ${i.affiliateRate}% ${Number(i.itemPrice)}円 ${i.shopName} ${String(i.itemName).slice(0, 40)}`);
-    }
-  }
-}
-for (const kw of ['ペット 防災', 'ペット キャリー', '犬 ケージ', 'ペットシーツ', 'キャットフード', '猫砂', 'ドッグフード', 'うさぎ 牧草', 'ハムスター 床材', 'パンプス 幅広', 'スニーカー 4E', '大きいサイズ 靴', '小さいサイズ 靴']) {
-  await rateScan(kw, { keyword: kw, sort: '-affiliateRate' });
-}
-for (const kw of ['ペット', '靴']) await rateScan(`${kw}(標準順)`, { keyword: kw });
-console.log('[rate] 料率の分布', JSON.stringify(rateHist));
-console.log('[rate] 4%超の商品', highs.length ? '\n' + [...new Set(highs)].slice(0, 30).join('\n') : 'なし');
+console.log('\n[stock] 小動物 フード: エサ(565702)');
+await searchSample('', '565702');
 console.log('\n[done]');
