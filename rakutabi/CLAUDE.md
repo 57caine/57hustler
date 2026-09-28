@@ -1,5 +1,11 @@
 @AGENTS.md
 
+# 現在地（2026-09-29更新）
+
+- 公開設定の見直し済み：本番（https://rakutabi-nine.vercel.app）に出るのは GitHub Actions の main からの実行だけ。作業ブランチへのpushでは公開処理が起動しない
+- 需要検証中（vercel.app・noindex）。データは毎日05:00 JSTにmainで自動更新・公開
+- 未対応：問い合わせ先の決定、GA4導入（任意）、エリアごとの風景写真、お気に入り機能、楽天ロゴの使用可否
+
 # 事業ステータス（2026-09-26時点）
 
 - 事業名は「楽旅くん」（2026-09-26 オーナー確認。以前「落旅くん」と誤記していたのを全面修正）。ディレクトリ名 `rakutabi`。楽天トラベルへの送客（楽天アフィリエイト）がメインの旅行比較・案内サイト
@@ -20,8 +26,11 @@
     実質的に「ルートディレクトリ: rakutabi」と同じ
 - 公開後、同ワークフロー内で `scripts/verify-production.sh` が全ページ（約750）を機械チェックする
   （HTTP 200・h1・noindex・送客リンクのsponsored/計測属性・アフィリエイトなし楽天リンクが無いこと）
-- 起動条件：`rakutabi/**` の変更をpushしたとき（main・`claude/rakutabi-skeleton-impl-gzyecr`）、手動実行、毎日05:00 JST（mainにマージ後のみ有効）
-  - **scheduleはmainにあるワークフローでしか動かない**。mainマージ前は、データ（次の土曜日の空室）は自動更新されない
+- 起動条件：mainへの `rakutabi/**` の変更のpush、手動実行（mainを選んだときのみ実行）、毎日05:00 JST
+  - main以外は3か所で止める（2026-09-29、作業ブランチの操作で本番公開が1回動いたため）：push起動条件がmainのみ／ジョブに `if: github.ref == 'refs/heads/main'`／`vercel-deploy.sh` が `--prod` の前に `GITHUB_REF` を確認し、main以外なら停止
+  - `vercel-deploy.sh` はVercelプロジェクトの `link`（GitHub連携）をAPIで確認し、連携していたら公開せず停止する
+  - データ更新のコミット先はmainに明示指定
+- GitHub非連携のためignoreCommandは使わない。本番公開はActionsのmainのみ
 - 楽天APIはGitHub Actionsからのみ呼ぶ（閲覧者のブラウザ・Vercelからは呼ばない）ため、楽天ウェブサービスの
   「許可されたWebサイト」に vercel.app を追加する必要はない（Refererは既存の lens-navi.jp で送っている）
 
