@@ -5,56 +5,27 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - name: Check /api/tasks (GITHUB_TOKEN liveness, read-only)
+      - name: Find ceo-dashboard project domains + latest deployment
         run: |
-          echo "--- GET /api/tasks ---"
-          curl -sS -o /tmp/tasks.json -w "HTTP_STATUS:%{http_code}\n" "https://ceo-dashboard.vercel.app/api/tasks"
-          head -c 1500 /tmp/tasks.json
+          echo "--- domains for ceo-dashboard project ---"
+          curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "https://api.vercel.com/v9/projects/prj_B033Bkfsk6LkJZNxS61Gc4Xvddva/domains" | node -e "
+              let data=''; process.stdin.on('data', d => data+=d); process.stdin.on('end', () => {
+                const j = JSON.parse(data);
+                console.log(JSON.stringify(j, null, 2).slice(0, 3000));
+              });
+            "
           echo ""
-
-      - name: Fetch pages and their JS bundles, grep for key strings
-        run: |
-          set -e
-          check_page () {
-            local path="$1"
-            echo "=========================================="
-            echo "PAGE: $path"
-            curl -sS -o /tmp/page.html -w "HTTP_STATUS:%{http_code}\n" "https://ceo-dashboard.vercel.app${path}"
-            # extract JS chunk paths referenced by this page
-            grep -oE '/_next/static/chunks/[a-zA-Z0-9_./-]+\.js' /tmp/page.html | sort -u > /tmp/chunks.txt
-            echo "chunk count: $(wc -l < /tmp/chunks.txt)"
-            : > /tmp/bundle_all.js
-            while read -r chunk; do
-              curl -sS "https://ceo-dashboard.vercel.app${chunk}" >> /tmp/bundle_all.js 2>/dev/null || true
-              echo "" >> /tmp/bundle_all.js
-            done < /tmp/chunks.txt
-            echo "bundle_all.js size: $(wc -c < /tmp/bundle_all.js) bytes"
-          }
-
-          check_page "/report-log"
-          echo "--- report-log: key strings ---"
-          for s in "報告一覧" "確認済みにする" "未確認（要対応）" "報告を手動追加"; do
-            cnt=$(grep -oF "$s" /tmp/bundle_all.js | wc -l)
-            echo "  [$s] occurrences: $cnt"
-          done
-
-          check_page "/analytics"
-          echo "--- analytics: key strings ---"
-          for s in "クリック数" "クリック率" "var(--bg)" "var(--muted)" "var(--text)" "bg-gray-50" "bg-yellow-50"; do
-            cnt=$(grep -oF "$s" /tmp/bundle_all.js | wc -l)
-            echo "  [$s] occurrences: $cnt"
-          done
-
-          check_page "/tasks"
-          echo "--- tasks: key strings ---"
-          for s in "承認してマージ" "見送る" "承認・却下は改善レビュー画面から行ってください" "タスク一覧"; do
-            cnt=$(grep -oF "$s" /tmp/bundle_all.js | wc -l)
-            echo "  [$s] occurrences: $cnt"
-          done
-
-          check_page "/column-review"
-          echo "--- column-review: key strings ---"
-          for s in "承認してマージ" "見送る" "改善レビュー"; do
-            cnt=$(grep -oF "$s" /tmp/bundle_all.js | wc -l)
-            echo "  [$s] occurrences: $cnt"
-          done
+          echo "--- latest deployments for ceo-dashboard project ---"
+          curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&limit=5&target=production" | node -e "
+              let data=''; process.stdin.on('data', d => data+=d); process.stdin.on('end', () => {
+                const j = JSON.parse(data);
+                if (j.error) { console.log('ERROR', JSON.stringify(j.error)); process.exit(0); }
+                for (const d of (j.deployments||[])) {
+                  console.log(new Date(d.created||d.createdAt).toISOString(), d.state, d.url, d.meta && d.meta.githubCommitMessage ? d.meta.githubCommitMessage.split('\n')[0] : '');
+                }
+              });
+            "
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
