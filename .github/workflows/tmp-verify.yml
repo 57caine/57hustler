@@ -1,0 +1,93 @@
+name: tmp-verify
+on:
+  workflow_dispatch:
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install playwright chromium
+        run: |
+          npm i -D playwright@1
+          npx playwright install --with-deps chromium
+
+      - name: Check /api/tasks (GITHUB_TOKEN liveness, read-only)
+        run: |
+          echo "--- GET /api/tasks ---"
+          curl -sS -o /tmp/tasks.json -w "HTTP_STATUS:%{http_code}\n" "https://ceo-dashboard.vercel.app/api/tasks"
+          cat /tmp/tasks.json | head -c 2000
+          echo ""
+
+      - name: Playwright checks
+        run: |
+          cat > ./tmp-check.ts <<'EOF'
+          import { chromium } from 'playwright';
+
+          async function main() {
+            const browser = await chromium.launch();
+            const page = await browser.newPage();
+
+            // 1. report-log
+            await page.goto('https://ceo-dashboard.vercel.app/report-log', { waitUntil: 'networkidle' });
+            await page.waitForTimeout(1500);
+            const reportLogText = await page.locator('body').innerText();
+            console.log('=== /report-log body text (first 800 chars) ===');
+            console.log(reportLogText.slice(0, 800));
+
+            // 2. analytics
+            await page.goto('https://ceo-dashboard.vercel.app/analytics', { waitUntil: 'networkidle' });
+            await page.waitForTimeout(1500);
+            const hasClickCol = await page.locator('th:has-text("クリック数")').count();
+            const hasCtrCol = await page.locator('th:has-text("クリック率")').count();
+            console.log('=== /analytics ===');
+            console.log('th クリック数 count:', hasClickCol, 'th クリック率 count:', hasCtrCol);
+
+            const headerRow = page.locator('thead tr').first();
+            const headerBg = await headerRow.evaluate(el => getComputedStyle(el).backgroundColor);
+            const headerTh = headerRow.locator('th').first();
+            const headerColor = await headerTh.evaluate(el => getComputedStyle(el).color);
+            console.log('header row bg:', headerBg, 'header th text color:', headerColor);
+
+            const starRow = page.locator('tr', { hasText: '★' }).first();
+            const starRowCount = await page.locator('tr', { hasText: '★' }).count();
+            console.log('star row count:', starRowCount);
+            if (starRowCount > 0) {
+              const starBg = await starRow.evaluate(el => getComputedStyle(el).backgroundColor);
+              const starTd = starRow.locator('td').first();
+              const starColor = await starTd.evaluate(el => getComputedStyle(el).color);
+              console.log('star row bg:', starBg, 'star row text color:', starColor);
+            }
+            await page.screenshot({ path: 'analytics.png', fullPage: true });
+
+            // 3. tasks
+            await page.goto('https://ceo-dashboard.vercel.app/tasks', { waitUntil: 'networkidle' });
+            await page.waitForTimeout(1500);
+            const approveBtnCount = await page.locator('button:has-text("承認")').count();
+            const rejectBtnCount = await page.locator('button:has-text("見送")').count();
+            const tasksText = await page.locator('body').innerText();
+            console.log('=== /tasks ===');
+            console.log('approve button count:', approveBtnCount, 'reject button count:', rejectBtnCount);
+            console.log(tasksText.slice(0, 600));
+
+            // 4. column-review
+            await page.goto('https://ceo-dashboard.vercel.app/column-review', { waitUntil: 'networkidle' });
+            await page.waitForTimeout(1500);
+            const crApproveCount = await page.locator('button:has-text("承認してマージ")').count();
+            const crRejectCount = await page.locator('button:has-text("見送る")').count();
+            console.log('=== /column-review ===');
+            console.log('承認してマージ button count:', crApproveCount, '見送る button count:', crRejectCount);
+
+            await browser.close();
+          }
+          main();
+          EOF
+          npx tsx ./tmp-check.ts
+
+      - name: Upload screenshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: analytics-screenshot
+          path: analytics.png
