@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import DataNotice from '@/components/DataNotice';
 import HotelFilterList from '@/components/HotelFilterList';
 import PageHeader from '@/components/PageHeader';
+import ThemeGuide from '@/components/ThemeGuide';
 import { getPhoto } from '@/lib/photos';
 
 import { AREAS, getTheme, THEMES } from '@/lib/site-config';
@@ -47,6 +48,7 @@ export default async function ThemePage({ params }: { params: Promise<{ slug: st
       <div className="max-w-6xl mx-auto px-4 py-8">
         <DataNotice criteria={theme.criteria} />
         <HotelFilterList hotels={hotels} />
+        <ThemeGuide theme={theme.slug} />
       </div>
     </div>
   );

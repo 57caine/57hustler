@@ -217,9 +217,13 @@ export function getFeature(slug: string): Feature | undefined {
 
 /**
  * source: 'api' は楽天トラベルAPIの検索条件で確認できたもの、
- * source: 'text' は施設紹介文（API取得）のキーワードから判定したもの（目安）。
+ * source: 'text' は施設紹介文（API取得）のキーワードから判定したもの（目安、scripts/fetch-hotels.ts で判定）、
+ * source: 'detail' は施設情報API（responseType=large）の設備・食事場所などの記載から判定したもの（目安、lib/hotels.ts で表示時に判定）。
  */
-export type ConditionKey = 'onsen' | 'meal' | 'breakfast' | 'roomOnly' | 'station' | 'room' | 'view' | 'kids';
+export type ConditionKey =
+  | 'onsen' | 'meal' | 'breakfast' | 'roomOnly' | 'station' | 'room' | 'view' | 'kids'
+  // 2026-09-29 追加：子連れの夏休み（テーマ整理4位）・親孝行（同5位）向けの絞り込み
+  | 'pool' | 'washitsu' | 'buffet' | 'privateBath' | 'freeParking' | 'roomDining' | 'pickup' | 'barrierFree';
 export type ConditionGroup = '食事' | '温泉' | '客室' | '親子' | '立地・景色';
 
 export interface Condition {
@@ -228,8 +232,12 @@ export interface Condition {
   /** カードの特徴タグ用の短い表記 */
   short?: string;
   group: ConditionGroup;
-  source: 'api' | 'text';
+  source: 'api' | 'text' | 'detail';
   keywords?: RegExp;
+  /** source: 'detail' のとき、keywords を当てる項目（施設情報の見出し名、または special/access/planNames/roomNames） */
+  fields?: string[];
+  /** source: 'detail' のとき、これに当てはまる記載は該当としない */
+  exclude?: RegExp;
 }
 
 export const CONDITIONS: Condition[] = [
@@ -242,7 +250,57 @@ export const CONDITIONS: Condition[] = [
   { key: 'kids', label: '子連れ向け', short: '子連れ向け', group: '親子', source: 'text', keywords: /キッズ|お子様|子供|子ども|ファミリー|赤ちゃん|ベビー/ },
   { key: 'station', label: '駅から徒歩圏', short: '駅近', group: '立地・景色', source: 'text', keywords: /駅(から|より)?\s*徒歩\s*[0-9０-９]{1,2}\s*分/ },
   { key: 'view', label: '景色・眺望', short: '眺望', group: '立地・景色', source: 'text', keywords: /眺望|一望|絶景|オーシャンビュー|夜景|景色/ },
+  // ↓ 施設情報の記載から判定（目安）。子連れの夏休み・親孝行の旅で「予約を決める条件」になりやすいもの
+  { key: 'buffet', label: 'バイキング・ビュッフェ', short: 'バイキング', group: '食事', source: 'detail', keywords: /バイキング|ビュッフェ|ブッフェ/, fields: ['special', 'planNames'] },
+  { key: 'roomDining', label: '部屋食・個室食', short: '部屋食・個室食', group: '食事', source: 'detail', keywords: /部屋|個室/, fields: ['食事場所'] },
+  { key: 'privateBath', label: '貸切風呂・家族風呂', short: '貸切風呂', group: '温泉', source: 'detail', keywords: /貸切|貸し切り|家族風呂/, fields: ['お風呂について', '館内設備', 'special'] },
+  { key: 'washitsu', label: '和室・和洋室', short: '和室・和洋室', group: '客室', source: 'detail', keywords: /和室|和洋室/, fields: ['special', 'roomNames'] },
+  { key: 'barrierFree', label: 'バリアフリー設備あり', short: 'バリアフリー', group: '客室', source: 'detail', keywords: /バリアフリー|手すり|車椅子可|介助/, fields: ['バリアフリー'] },
+  { key: 'pool', label: 'プールあり', short: 'プール', group: '親子', source: 'detail', keywords: /プール/, fields: ['館内設備', 'special'] },
+  { key: 'pickup', label: '送迎あり', short: '送迎', group: '立地・景色', source: 'detail', keywords: /送迎/, fields: ['special', 'access', '館内設備'] },
+  // 「1泊800円」のように料金の記載がある駐車場は、宿泊者の一部だけ無料などの例外が多いため該当としない
+  { key: 'freeParking', label: '駐車場無料', short: '駐車場無料', group: '立地・景色', source: 'detail', keywords: /無料/, fields: ['駐車場'], exclude: /[0-9０-９][0-9０-９,，]*\s*円|^\s*(なし|無し)|^\s*無[^料]/ },
 ];
+
+/**
+ * テーマページ・掛け合わせページに出す「宿を選ぶときのポイント」（2026-09-29 オーナー指示で family・onsen のみ）。
+ * テーマ整理（予約を決める条件・比較するポイント）の4位「子連れの夏休み」・5位「親孝行」をもとにしている。
+ * 裏付けのない数値・断定表現は書かない（ルートCLAUDE.md 反対監査ルール）
+ */
+export interface ThemeGuide {
+  title: string;
+  intro: string;
+  points: { heading: string; body: string; conditions: ConditionKey[] }[];
+}
+
+export const THEME_GUIDES: Partial<Record<ThemeSlug, ThemeGuide>> = {
+  family: {
+    title: '夏休みの子連れ旅行で、宿を選ぶときのポイント',
+    intro:
+      '子どもと一緒の旅行は、料金だけでなく「子どもが楽しめるか」「親も休めるか」で満足度が変わります。予約の前に、次の点を楽天トラベルの宿のページで確かめておくと安心です。',
+    points: [
+      { heading: 'プールや遊べる場所があるか', body: 'プールの営業期間や予約の要否は宿によって異なります。夏休み中に使えるかどうかを確認しましょう。', conditions: ['pool', 'kids'] },
+      { heading: '家族みんなで1部屋に泊まれるか', body: '和室や和洋室なら、布団を並べて家族で休めます。子どもの添い寝の条件や子ども料金はプランごとに違うため、予約前に確認しましょう。', conditions: ['washitsu'] },
+      { heading: '子どもが食べやすい食事か', body: 'バイキング（ビュッフェ）形式なら、好き嫌いのある子どもでも料理を選びやすくなります。', conditions: ['buffet'] },
+      { heading: '周りを気にせずお風呂に入れるか', body: '貸切風呂や家族風呂があると、小さな子どもと一緒でも気兼ねなく入浴できます。', conditions: ['privateBath'] },
+      { heading: '車で行きやすいか', body: '荷物の多い子連れ旅行では、駐車場の有無と料金も比べておきたいポイントです。', conditions: ['freeParking'] },
+      { heading: 'キャンセルの条件', body: '子どもの急な発熱に備えて、キャンセル料がいつからかかるかを予約前に確認しておきましょう。', conditions: [] },
+    ],
+  },
+  onsen: {
+    title: '親孝行の温泉旅行で、宿を選ぶときのポイント',
+    intro:
+      '両親への贈り物や記念日の温泉旅行では、移動や食事の負担が少ないことが、ゆっくり過ごしてもらうための条件になります。予約の前に、次の点を楽天トラベルの宿のページで確かめておくと安心です。',
+    points: [
+      { heading: '自分たちのペースで温泉に入れるか', body: '露天風呂付きの客室や貸切風呂があれば、大浴場の混雑を気にせず温泉を楽しめます。', conditions: ['room', 'privateBath'] },
+      { heading: '食事の場所', body: '部屋食や個室での食事なら、食事処まで移動せず、周りを気にせずに過ごせます。料理の量や内容を相談できるかは、宿に確認しましょう。', conditions: ['roomDining'] },
+      { heading: '駅からの移動', body: '送迎があると、荷物を持って長く歩かずに済みます。送迎の時間や予約の要否は宿によって異なります。', conditions: ['pickup'] },
+      { heading: '足腰への負担', body: '足腰が心配な場合は、車椅子の貸し出しや手すりなど、宿のバリアフリー情報を確認しましょう。', conditions: ['barrierFree'] },
+      { heading: 'ベッドで休めるか', body: '布団からの立ち上がりが負担になる場合は、ベッドのある和洋室も選択肢になります。部屋の種類はプランごとに確認しましょう。', conditions: ['washitsu'] },
+      { heading: '記念日の相談', body: 'ケーキや花束などの手配ができるかは、プランの内容や宿への問い合わせで確かめましょう。', conditions: [] },
+    ],
+  },
+};
 
 export const COUPLE_KEYWORDS = /カップル|記念日|ご夫婦|おふたり|二人|プロポーズ|大人の/;
 

@@ -106,13 +106,15 @@ export default function HotelFilterList({ hotels, showArea = true }: { hotels: H
               </button>
             ))}
           {open !== 'area' && open !== 'price' &&
-            CONDITIONS.filter((c) => c.group === open).map((c) => (
+            // 一覧の中に該当する宿が1件もない条件は出さない（選んでも0件になるだけのため）
+            CONDITIONS.filter((c) => c.group === open && hotels.some((h) => h.conditions.includes(c.key))).map((c) => (
               <button key={c.key} type="button" aria-pressed={selected.includes(c.key)} onClick={() => toggle(c.key)} className={option(selected.includes(c.key))}>
                 {c.label}
+                <span className="ml-1 opacity-70">({hotels.filter((h) => h.conditions.includes(c.key)).length})</span>
               </button>
             ))}
-          {open !== 'area' && open !== 'price' && CONDITIONS.find((c) => c.group === open)?.source === 'text' && (
-            <p className="w-full text-xs text-gray-500">※施設紹介文のキーワードから判定した目安です。</p>
+          {open !== 'area' && open !== 'price' && CONDITIONS.some((c) => c.group === open && c.source !== 'api') && (
+            <p className="w-full text-xs text-gray-500">※「温泉あり」「2食付き」「朝食付き」「素泊まり」以外は、施設紹介文・施設情報の記載から判定した目安です。</p>
           )}
         </div>
       )}

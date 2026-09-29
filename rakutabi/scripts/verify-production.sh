@@ -31,7 +31,7 @@ echo "--- トップページの配信状態 ---"
 curl -sS -D /tmp/top-headers.txt -o /tmp/top-body.html "${BASE}/"
 grep -iE '^(x-vercel-cache|age|cache-control|x-vercel-id):' /tmp/top-headers.txt
 if grep -q 'tracking-widest' /tmp/top-body.html; then echo "トップ: 新デザインのHTML"; else echo "::warning::トップ: 旧デザインのHTMLが返っています"; fi
-total=0; ok=0; fail=0; skipped_combo=0; afl_links=0; unsplash_pages=0; unsplash_imgs=0
+total=0; ok=0; fail=0; skipped_combo=0; afl_links=0; unsplash_pages=0; unsplash_imgs=0; guide_pages=0
 tmp=$(mktemp)
 for p in ${paths}; do
   total=$((total + 1))
@@ -58,6 +58,11 @@ for p in ${paths}; do
     [ "${u_credit}" -ge "${u_img}" ] || problems+=" Unsplash写真${u_img}枚に対しクレジット${u_credit}件"
     grep -q 'href="https://unsplash.com/@[^"]*utm_source=rakutabi' "${tmp}" || problems+=" 撮影者ページへのリンクなし"
   fi
+  # 子連れ（family）・親孝行（onsen）の「宿を選ぶときのポイント」（2026-09-29追加）がテーマ・掛け合わせページに出ているか
+  case "${p}" in
+    */family) grep -q '夏休みの子連れ旅行で、宿を選ぶときのポイント' "${tmp}" && guide_pages=$((guide_pages + 1)) || problems+=" 子連れの解説文なし" ;;
+    */onsen) grep -q '親孝行の温泉旅行で、宿を選ぶときのポイント' "${tmp}" && guide_pages=$((guide_pages + 1)) || problems+=" 親孝行の解説文なし" ;;
+  esac
   if [ -z "${problems}" ]; then ok=$((ok + 1)); else fail=$((fail + 1)); echo "NG ${p}:${problems}"; fi
 done
 curl -sS "${BASE}/search?meal=roomOnly" -o "${tmp}"
@@ -67,6 +72,7 @@ top=$(grep -o 'href="https://hb.afl.rakuten.co.jp/hgc/[^"]*travel.rakuten.co.jp%
 echo "楽天トラベルトップへのアフィリエイトリンク: ${top:-（見つかりません）}"
 [ -n "${top}" ] && curl -sS -o /dev/null -w "  → 楽天側の応答: HTTP %{http_code} / 転送先 %{redirect_url}\n" "${top}"
 rm -f "${tmp}"
+echo "子連れ・親孝行の解説文があるページ: ${guide_pages}"
 echo "Unsplash写真を表示しているページ: ${unsplash_pages} / Unsplash写真の表示枚数(延べ): ${unsplash_imgs}"
 echo "確認ページ数: ${total} / 合格: ${ok} / 不合格: ${fail} / 生成対象外の掛け合わせページ(404): ${skipped_combo} / 送客リンク合計: ${afl_links}"
 [ "${fail}" = "0" ]
