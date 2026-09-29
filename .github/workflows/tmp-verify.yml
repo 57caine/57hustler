@@ -1,0 +1,133 @@
+name: tmp-verify
+on:
+  workflow_dispatch:
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run GA4 quality/trend report
+        run: |
+          cat > ./tmp-quality-report.ts <<'SCRIPTEOF'
+          import { BetaAnalyticsDataClient } from '@google-analytics/data';
+
+          async function main() {
+            const keyJson = process.env.GA4_SERVICE_ACCOUNT_KEY;
+            if (!keyJson) throw new Error('GA4_SERVICE_ACCOUNT_KEY is not set');
+            const credentials = JSON.parse(keyJson);
+            const client = new BetaAnalyticsDataClient({ credentials });
+            const propertyId = '520238223'; // lens-navi
+
+            function sourceMediumFilter(source: string, medium: string) {
+              return {
+                andGroup: {
+                  expressions: [
+                    { filter: { fieldName: 'sessionSource', stringFilter: { matchType: 'EXACT' as const, value: source } } },
+                    { filter: { fieldName: 'sessionMedium', stringFilter: { matchType: 'EXACT' as const, value: medium } } },
+                  ],
+                },
+              };
+            }
+
+            async function landingPageBreakdown(label: string, source: string, medium: string) {
+              const [res] = await client.runReport({
+                property: `properties/${propertyId}`,
+                dateRanges: [{ startDate: '28daysAgo', endDate: 'today' }],
+                dimensions: [{ name: 'landingPage' }],
+                metrics: [
+                  { name: 'sessions' },
+                  { name: 'averageSessionDuration' },
+                  { name: 'bounceRate' },
+                  { name: 'engagementRate' },
+                  { name: 'engagedSessions' },
+                ],
+                dimensionFilter: sourceMediumFilter(source, medium),
+                orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
+                limit: 25,
+              });
+              console.log(`\n=== ${label} (${source}/${medium}) ランディングページ別 (直近28日) ===`);
+              let totalSessions = 0;
+              for (const row of res.rows ?? []) {
+                const page = row.dimensionValues?.[0]?.value ?? '(not set)';
+                const sessions = Number(row.metricValues?.[0]?.value ?? 0);
+                const avgDur = Number(row.metricValues?.[1]?.value ?? 0);
+                const bounce = Number(row.metricValues?.[2]?.value ?? 0);
+                const engRate = Number(row.metricValues?.[3]?.value ?? 0);
+                const engaged = Number(row.metricValues?.[4]?.value ?? 0);
+                totalSessions += sessions;
+                console.log(`${page}\tsessions=${sessions}\tavgSessionDuration=${avgDur.toFixed(1)}s\tbounceRate=${(bounce * 100).toFixed(1)}%\tengagementRate=${(engRate * 100).toFixed(1)}%\tengagedSessions=${engaged}`);
+              }
+              console.log(`${label} 合計セッション(ランディングページ内訳合計): ${totalSessions}`);
+
+              // 全体サマリ(フィルタのみ、ディメンションなし)
+              const [summary] = await client.runReport({
+                property: `properties/${propertyId}`,
+                dateRanges: [{ startDate: '28daysAgo', endDate: 'today' }],
+                metrics: [
+                  { name: 'sessions' },
+                  { name: 'averageSessionDuration' },
+                  { name: 'bounceRate' },
+                  { name: 'engagementRate' },
+                  { name: 'engagedSessions' },
+                  { name: 'totalUsers' },
+                ],
+                dimensionFilter: sourceMediumFilter(source, medium),
+              });
+              const s = summary.rows?.[0]?.metricValues;
+              if (s) {
+                console.log(`${label} 全体サマリ: sessions=${s[0].value} avgSessionDuration=${Number(s[1].value).toFixed(1)}s bounceRate=${(Number(s[2].value) * 100).toFixed(1)}% engagementRate=${(Number(s[3].value) * 100).toFixed(1)}% engagedSessions=${s[4].value} totalUsers=${s[5].value}`);
+              }
+            }
+
+            await landingPageBreakdown('Bing organic', 'bing', 'organic');
+            await landingPageBreakdown('Google organic', 'google', 'organic');
+
+            // 流入元別・ランディングページ別 (全ソース横断、上位30)
+            const [combo] = await client.runReport({
+              property: `properties/${propertyId}`,
+              dateRanges: [{ startDate: '28daysAgo', endDate: 'today' }],
+              dimensions: [{ name: 'sessionSource' }, { name: 'sessionMedium' }, { name: 'landingPage' }],
+              metrics: [{ name: 'sessions' }, { name: 'averageSessionDuration' }],
+              orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
+              limit: 30,
+            });
+            console.log('\n=== 流入元(source/medium)×ランディングページ別 セッション数・平均エンゲージメント時間 (直近28日, 上位30) ===');
+            for (const row of combo.rows ?? []) {
+              const source = row.dimensionValues?.[0]?.value ?? '(not set)';
+              const medium = row.dimensionValues?.[1]?.value ?? '(not set)';
+              const page = row.dimensionValues?.[2]?.value ?? '(not set)';
+              const sessions = row.metricValues?.[0]?.value ?? '0';
+              const avgDur = Number(row.metricValues?.[1]?.value ?? 0);
+              console.log(`${source}/${medium}\t${page}\tsessions=${sessions}\tavgSessionDuration=${avgDur.toFixed(1)}s`);
+            }
+
+            // 日別セッション推移 (直近60日)
+            const [daily] = await client.runReport({
+              property: `properties/${propertyId}`,
+              dateRanges: [{ startDate: '60daysAgo', endDate: 'today' }],
+              dimensions: [{ name: 'date' }],
+              metrics: [{ name: 'sessions' }],
+              orderBys: [{ dimension: { dimensionName: 'date' } }],
+            });
+            console.log('\n=== 日別セッション推移 (直近60日) ===');
+            for (const row of daily.rows ?? []) {
+              const date = row.dimensionValues?.[0]?.value ?? '';
+              const sessions = row.metricValues?.[0]?.value ?? '0';
+              console.log(`${date}\t${sessions}`);
+            }
+          }
+
+          main().catch(err => {
+            console.error(err);
+            process.exit(1);
+          });
+          SCRIPTEOF
+          npx tsx ./tmp-quality-report.ts
+        env:
+          GA4_SERVICE_ACCOUNT_KEY: ${{ secrets.GA4_SERVICE_ACCOUNT_KEY }}
