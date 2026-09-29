@@ -25,6 +25,31 @@
  *   日本神話・古事記／日本史の謎／言葉の語源／世界神話の共通点／地形と歴史 の5カテゴリを追加
  * - 上記5カテゴリは「有名な話→でも実は反転→具体的根拠→人間の知恵で締める」の型を必須化
  * - topic_tagは「雑学」を優先設定
+ *
+ * ルール集の接続（2026-09-28）:
+ * - data/yonaka-feedback.json → scripts/distill-feedback.ts で月次蒸留される
+ *   data/yonaka-rules.json を生成のたびに読み込み、システムプロンプトへ追加するようにした。
+ *   これまでルール集は蒸留されるだけで生成処理には接続されておらず、CEOが直させた内容が
+ *   次の投稿に反映されていなかった（蒸留 → data/yonaka-rules.json 止まりだった）。
+ * - 既存の直書きルール（BANNED_KEYWORDS・checkStyle・checkFactSafety等）との優先順位:
+ *   安全性に関わるもの（禁止キーワード・断定表現の抑制）は常にコード側のチェックで強制し、
+ *   ルール集の内容でこれらを緩めることはできない。一方、書き出しパターン等のスタイル面は
+ *   ルール集を優先する（プロンプト内で「矛盾する場合はこちらを優先」と明記）。
+ *
+ * インサイトデータに基づく方針更新（2026-09-29）:
+ * - 閲覧数上位の投稿（古事記・日本神話／神社の結界／瞑想×科学の体験談）に基づき、
+ *   日本神話・古事記の重みを5→8、地形と歴史を4→5に引き上げ
+ * - 日本神話・古事記のヒントにスサノオ・出雲等の具体的な固有名詞・聖地名と
+ *   「古事記には〜という話が載っています」という書き出しパターンを追加
+ * - 日月神事・神道の祭祀のヒントに「神社の〜って、〜じゃないですか」という
+ *   身近な問いかけパターンを追加
+ * - 科学・化学のふしぎ／量子・宇宙論の型（SCIENCE_TEMPLATE_BLOCK）に、
+ *   読者が実際に試せる行動を提案する締め方を選択肢として追加
+ * - 気学・易経の豆知識／日本の妖怪・神々／結界・日常のしきたり／古代ミステリー／
+ *   宗教の共通項／日月神事・神道の祭祀の重みも指示に従い引き上げたが、指示書では
+ *   「維持」とラベルされていたにもかかわらず実際には旧値から変わっているものが
+ *   複数あった（詳細はCATEGORY_WEIGHTSの直前コメント参照）。特に日月神事・神道の祭祀は
+ *   意図的な抑制（0.2）を大きく戻す変更になっており、意図した変更か要確認
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -38,6 +63,7 @@ const ACCESS_TOKEN = process.env.THREADS_ACCESS_TOKEN!;
 
 const HISTORY_PATH = path.join(process.cwd(), 'data', 'yonaka-post-history.json');
 const HISTORY_KEEP = 200; // 6投稿/日 × 30日超をカバー
+const RULES_PATH = path.join(process.cwd(), 'data', 'yonaka-rules.json');
 
 // ────── 13カテゴリ定義 ──────
 const CATEGORIES = [
@@ -73,9 +99,9 @@ const CATEGORY_HINTS: Record<Category, string> = {
   '科学・化学のふしぎ':
     '日常に潜む化学・物理現象・人体の不思議・生物の進化・脳の仕組み',
   '日月神事・神道の祭祀':
-    '日本の祭祀・神道の儀式・神社の作法・天皇祭祀・季節の神事',
+    '日本の祭祀・神道の儀式・神社の作法・天皇祭祀・季節の神事。「神社の〜って、〜じゃないですか」のように身近な体験・不思議な問いかけから入る',
   '日本神話・古事記':
-    'ヤマタノオロチ・イザナギイザナミ・天照大神など古事記・日本書紀の有名な神話',
+    'スサノオ・イザナギ・イザナミ・アマテラスなど古事記・日本書紀の有名な神話。出雲・伊勢・熊野など具体的な聖地名を積極的に使う。書き出しは「古事記には〜という話が載っています」のように有名な話から入る',
   '日本史の謎':
     '邪馬台国・縄文vs弥生・大和朝廷の起源など定説が定まっていない日本史のテーマ',
   '言葉の語源':
@@ -83,29 +109,39 @@ const CATEGORY_HINTS: Record<Category, string> = {
   '世界神話の共通点':
     '洪水伝説・龍蛇信仰・太陽神話など世界各地の神話に共通するモチーフ',
   '地形と歴史':
-    '地形が生んだ文化・信仰・妖怪など、土地の成り立ちと人の営みの関係',
+    '地形が生んだ文化・信仰・妖怪など、土地の成り立ちと人の営みの関係。出雲・伊勢・熊野など検索されやすい具体的な地名を積極的に使う',
 };
 
 // ────── カテゴリ優先度（重み付け抽選） ──────
-// 反応の良いカテゴリ（科学・化学のふしぎ／宗教の共通項）を優先選出し、
-// 反応が薄く突っ込まれやすい神社・夜間参詣系（日月神事・神道の祭祀）は
-// 週1回以下程度の頻度に抑える。数値は相対的な重み（絶対数ではない）。
-// 2026-09-10: 占い系以外の一般層向けカテゴリ（日本神話・古事記／地形と歴史／
-// 世界神話の共通点／日本史の謎／言葉の語源）が最も伸びたため高めの重みで追加。
+// 2026-09-29: インサイトデータ（閲覧数上位の投稿）に基づく更新。上位投稿は
+// 古事記・日本神話（スサノオ・出雲、イザナギイザナミ）／神社の結界／
+// 瞑想×科学の体験談で占められていたため、日本神話・古事記と地形と歴史の
+// 重みを引き上げた。
+//
+// 【2026-09-10時点からの変更、注意】
+// 気学・易経の豆知識／日本の妖怪・神々／結界・日常のしきたり／古代ミステリー／
+// 宗教の共通項の重みも今回まとめて引き上げているが、これらはオーナーからの
+// 指示上「維持」とラベルされていたもの（指示書の記載と当時の実際の値が
+// 食い違っていた）。特に日月神事・神道の祭祀は「反応が薄く突っ込まれやすい
+// 神社・夜間参詣系」として意図的に0.2まで下げていた抑制を、今回0.2→3へ
+// 大きく戻す形になっている。この抑制の理由（品質・炎上リスク）自体が
+// 解消したという情報はなく、指示された数値をそのまま反映したのみのため、
+// 意図した変更か次回オーナーに確認すること。
+// 数値は相対的な重み（絶対数ではない）。
 const CATEGORY_WEIGHTS: Record<Category, number> = {
+  '日本神話・古事記': 8,
+  '地形と歴史': 5,
   '科学・化学のふしぎ': 5,
-  '日本神話・古事記': 5,
   '量子・宇宙論': 4,
-  '地形と歴史': 4,
   '世界神話の共通点': 4,
-  '日本史の謎': 3,
-  '言葉の語源': 3,
-  '宗教の共通項': 2,
-  '気学・易経の豆知識': 1,
+  '結界・日常のしきたり': 3,
+  '宗教の共通項': 3,
+  '気学・易経の豆知識': 3,
+  '日月神事・神道の祭祀': 3,
+  '日本史の謎': 2,
+  '言葉の語源': 2,
+  '古代ミステリー': 2,
   '日本の妖怪・神々': 1,
-  '結界・日常のしきたり': 1,
-  '古代ミステリー': 1,
-  '日月神事・神道の祭祀': 0.2,
 };
 
 // ────── 視点反転4ステップの型（科学・化学のふしぎ／量子・宇宙論カテゴリ限定） ──────
@@ -119,6 +155,9 @@ const SCIENCE_TEMPLATE_BLOCK = `
 ②「でも考えてみると〜」で視点を反転させる
 ③「つまり〜ということ」で概念を広げる
 ④「だとしたら〜じゃないでしょうか」で問いかけて終わる
+　（読者が実際に試せる内容の場合は「〜という研究があります。
+　　だとしたら、〜してみると〜かもしれません」のように、
+　　具体的な行動を提案する締め方でもよい）
 
 良い例（この型・トーンをそのまま参考にすること）：
 「量子もつれの実験を読んでると思うんですけど、
@@ -180,6 +219,14 @@ interface HistoryEntry {
   category?: string;
 }
 
+interface Rule {
+  name: string;
+  reason?: string;
+  ng: string;
+  ok: string;
+  addedDate?: string;
+}
+
 // ────── トピック自動判定（キーワード判定） ──────
 // 一般層への露出を優先するため、配列の並び順＝優先順位（複数キーワードが該当する場合は先頭が優先）
 const TOPIC_KEYWORDS: { topic: string; keywords: string[] }[] = [
@@ -220,6 +267,27 @@ function loadHistory(): HistoryEntry[] {
 function saveHistory(existing: HistoryEntry[], newEntry: HistoryEntry): void {
   const posts = [newEntry, ...existing].slice(0, HISTORY_KEEP);
   fs.writeFileSync(HISTORY_PATH, JSON.stringify({ posts }, null, 2), 'utf-8');
+}
+
+// ────── ルール集（data/yonaka-feedback.json → scripts/distill-feedback.tsで月次蒸留） ──────
+// CEOが実際に指摘・修正した内容の蓄積。ファイルが存在しない/空でも生成自体は止めない。
+function loadRules(): Rule[] {
+  try {
+    if (!fs.existsSync(RULES_PATH)) return [];
+    const data = JSON.parse(fs.readFileSync(RULES_PATH, 'utf-8')) as { rules: Rule[] };
+    return data.rules ?? [];
+  } catch { return []; }
+}
+
+// ルール集はスタイル・パターン面の是正のみを扱う想定（禁止キーワード・断定表現の抑制は
+// BANNED_KEYWORDSとcheckFactSafety側で別途強制するため、ここでは上書きしない）。
+// 該当ルールがなければ空文字を返し、システムプロンプトに何も追加しない。
+function buildRulesBlock(rules: Rule[]): string {
+  if (rules.length === 0) return '';
+  const lines = rules
+    .map(r => `・${r.name}：NG「${r.ng}」→ OK「${r.ok}」${r.reason ? `（理由：${r.reason}）` : ''}`)
+    .join('\n');
+  return `\n【過去の指摘から学んだルール（最優先で厳守すること。上記の基本スタイルと矛盾する場合はこちらを優先）】\n${lines}\n`;
 }
 
 // ────── カテゴリ選出（3日間クールダウン） ──────
@@ -324,7 +392,7 @@ async function checkReadability(text: string, client: Anthropic): Promise<boolea
 }
 
 // ────── 生成 ──────
-async function generatePost(category: Category, history: HistoryEntry[], client: Anthropic): Promise<string> {
+async function generatePost(category: Category, history: HistoryEntry[], rules: Rule[], client: Anthropic): Promise<string> {
   const recentTexts = history.slice(0, 30).map(p => `- ${p.text}`).join('\n') || '（履歴なし）';
   const templateBlock = SCIENCE_TEMPLATE_CATEGORIES.includes(category)
     ? SCIENCE_TEMPLATE_BLOCK
@@ -333,6 +401,7 @@ async function generatePost(category: Category, history: HistoryEntry[], client:
       : '';
   const kyuseiCautionBlock = category === '気学・易経の豆知識' ? `\n${KYUSEI_CONTENT_CAUTION}\n` : '';
   const seasonCautionBlock = `\n${getSeasonWordCaution()}\n`;
+  const rulesBlock = buildRulesBlock(rules);
 
   const res = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
@@ -374,7 +443,7 @@ async function generatePost(category: Category, history: HistoryEntry[], client:
 （該当しそうな内容は、上記の柔らかい文末表現を使って言い切りを避けること）
 ・ハッシュタグ
 ・ですます調以外の一人称禁止（私は〜ではなく、客観的な問いかけスタイルで）
-
+${rulesBlock}
 【今回のカテゴリ】
 ${category}
 
@@ -424,6 +493,9 @@ async function main() {
   const history = loadHistory();
   console.log(`投稿履歴: 直近${history.length}件を参照`);
 
+  const rules = loadRules();
+  console.log(`ルール集: ${rules.length}件を参照`);
+
   const client = new Anthropic();
   const MAX_RETRIES = 3;
   let finalText: string | null = null;
@@ -437,7 +509,7 @@ async function main() {
     // 生成
     let candidate: string;
     try {
-      candidate = await generatePost(category, history, client);
+      candidate = await generatePost(category, history, rules, client);
     } catch (e) {
       console.warn(`⚠️ 試行${attempt}: API生成失敗 → ${(e as Error).message}`);
       continue;
