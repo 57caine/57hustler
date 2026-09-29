@@ -1,6 +1,7 @@
 import hotelsData from '@/data/hotels.json';
 import {
   AREAS,
+  CONDITIONS,
   COMBO_MIN_HOTELS,
   THEMES,
   type Area,
@@ -81,10 +82,31 @@ const raw = hotelsData as unknown as { fetchedAt: string | null; checkinDate: st
 const EMPTY_RATINGS: Ratings = {
   service: null, location: null, room: null, equipment: null, bath: null, breakfast: null, dinner: null, cleanliness: null,
 };
+/** 施設情報の見出し（「館内設備」等）または special/access/planNames/roomNames の記載を取り出す */
+function fieldText(h: Hotel, field: string): string {
+  if (field === 'special') return h.special ?? '';
+  if (field === 'access') return h.access ?? '';
+  if (field === 'planNames') return h.plans.map((p) => p.planName).join(' ');
+  if (field === 'roomNames') return h.plans.map((p) => p.roomName).join(' ');
+  return h.details.find((d) => d.label === field)?.value ?? '';
+}
+
+/** source: 'detail' の絞り込み条件（施設情報の記載から判定する目安）を付け足す */
+function withDetailConditions(h: Hotel): Hotel {
+  const extra = CONDITIONS.filter((c) => c.source === 'detail' && c.keywords && c.fields)
+    .filter((c) => c.fields!.some((f) => {
+      const text = fieldText(h, f);
+      return c.keywords!.test(text) && !(c.exclude?.test(text));
+    }))
+    .map((c) => c.key)
+    .filter((k) => !h.conditions.includes(k));
+  return extra.length ? { ...h, conditions: [...h.conditions, ...extra] } : h;
+}
+
 const data: HotelsFile = {
   fetchedAt: raw.fetchedAt,
   checkinDate: raw.checkinDate,
-  hotels: (raw.hotels ?? []).map((h) => ({
+  hotels: (raw.hotels ?? []).map((h) => withDetailConditions({
     ...(h as Hotel),
     kana: h.kana ?? '',
     reviewUrl: h.reviewUrl ?? '',
@@ -92,6 +114,7 @@ const data: HotelsFile = {
     ratings: h.ratings ? { ...EMPTY_RATINGS, ...h.ratings } : null,
     details: h.details ?? [],
     plans: h.plans ?? [],
+    conditions: h.conditions ?? [],
   })),
 };
 

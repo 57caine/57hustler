@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import DataNotice from '@/components/DataNotice';
 import HotelFilterList from '@/components/HotelFilterList';
 import PageHeader from '@/components/PageHeader';
+import ThemeGuide from '@/components/ThemeGuide';
 import AreaSidebar from '@/components/AreaSidebar';
 import Icon from '@/components/Icon';
 import { getAreaPhoto } from '@/lib/photos';
@@ -79,6 +80,7 @@ export default async function ComboPage({ params }: { params: Promise<{ area: st
         <div className="flex-1 min-w-0">
         <DataNotice />
         <HotelFilterList hotels={hotels} showArea={false} />
+        <ThemeGuide theme={theme.slug} />
 
         {otherThemes.length > 0 && (
           <section className="mt-14">
