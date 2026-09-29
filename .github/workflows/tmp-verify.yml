@@ -9,10 +9,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install deps + playwright chromium
+      - name: Install playwright chromium
         run: |
-          npm ci
-          npx playwright install --with-deps chromium
+          npm i --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium chromium-headless-shell
 
       - name: Check /api/tasks (GITHUB_TOKEN liveness, read-only)
         run: |
