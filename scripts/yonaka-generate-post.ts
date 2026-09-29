@@ -50,6 +50,12 @@
  *   「維持」とラベルされていたにもかかわらず実際には旧値から変わっているものが
  *   複数あった（詳細はCATEGORY_WEIGHTSの直前コメント参照）。特に日月神事・神道の祭祀は
  *   意図的な抑制（0.2）を大きく戻す変更になっており、意図した変更か要確認
+ *   → オーナー確認済み（2026-09-29）。意図した変更として0.2→3のまま維持する
+ *
+ * 自走改善ループ Phase1（検知）着手（2026-09-29）:
+ * - HistoryEntryにpostIdフィールドを追加し、Threads投稿成功時にpublishThread()の
+ *   戻り値をそのまま記録するようにした。診断（Insights取得・型分析）以降は、
+ *   直近30投稿分のデータが貯まってから着手する（現時点では未実装）
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -217,6 +223,10 @@ interface HistoryEntry {
   date: string;
   text: string;
   category?: string;
+  // 自走改善ループPhase1（2026-09-29）: Threads Insights APIで投稿ごとの反応
+  // （views/likes/replies/reposts/quotes）を取得する際のキーとして記録する。
+  // 既存エントリにはこのフィールドが無いため、読み込み側は常にoptionalとして扱うこと。
+  postId?: string;
 }
 
 interface Rule {
@@ -598,8 +608,8 @@ async function main() {
   console.log(`✓ 投稿完了: ${postId}`);
 
   const today = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
-  saveHistory(history, { date: today, text: finalText, category: finalCategory! });
-  console.log('✓ 投稿履歴を保存しました');
+  saveHistory(history, { date: today, text: finalText, category: finalCategory!, postId });
+  console.log('✓ 投稿履歴を保存しました（投稿ID記録済み）');
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
