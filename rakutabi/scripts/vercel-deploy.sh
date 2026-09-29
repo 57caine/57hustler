@@ -8,9 +8,20 @@
 # - GitHub Actions 上でビルドし（vercel build）、ビルド済みの成果物だけをアップロードする（--prebuilt）。
 #   Vercel側のビルド枠を使わないので、他プロジェクトのデプロイと競合しない
 #
-# 必要な環境変数: VERCEL_TOKEN
+# - 本番公開は main からの実行のみ（2026-09-29 オーナー指示）。起動元が main 以外なら何もせず停止する。
+#   あわせて、Vercelプロジェクトが GitHub と連携していない（＝本番公開の経路がこのスクリプトだけ）ことを
+#   APIで確認し、連携していたら停止する
+#
+# 必要な環境変数: VERCEL_TOKEN（GITHUB_REF は GitHub Actions が自動で設定する）
 # このスクリプトは rakutabi/ ディレクトリで実行する。
 set -euo pipefail
+
+echo "=== 0. 起動元ブランチの確認 ==="
+if [ "${GITHUB_REF:-}" != "refs/heads/main" ]; then
+  echo "::error::本番公開は main からの実行のみです（起動元: ${GITHUB_REF:-不明}）。公開せずに停止します"
+  exit 1
+fi
+echo "起動元: ${GITHUB_REF}（公開を続行）"
 
 TEAM_ID="team_3ZA38DTbe02rLyjHXAaNuCs5"
 PROJECT_NAME="rakutabi"
@@ -30,6 +41,13 @@ if [ -z "${PROJECT_ID}" ]; then
   echo "プロジェクトの取得・作成に失敗しました:"; cat /tmp/project.json; exit 1
 fi
 echo "projectId=${PROJECT_ID} name=$(jq -r .name /tmp/project.json) rootDirectory=$(jq -r '.rootDirectory // "（なし）"' /tmp/project.json)"
+# GitHub連携（link）があると、このスクリプト以外（Vercel側の自動ビルド）からも本番公開されうるため停止する
+GIT_LINK=$(jq -c '.link // empty' /tmp/project.json)
+if [ -n "${GIT_LINK}" ]; then
+  echo "::error::VercelプロジェクトがGitリポジトリと連携しています（${GIT_LINK}）。main以外からの公開経路になるため停止します"
+  exit 1
+fi
+echo "GitHub連携: なし（link 未設定を確認）"
 
 echo "=== 2. 送客クリック記録用 Vercel Blob ストア ==="
 (
