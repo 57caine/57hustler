@@ -1,0 +1,120 @@
+name: tmp-verify
+on:
+  workflow_dispatch:
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: GA4 fine-grained event check for the gap window
+        run: |
+          cat > ./tmp-gap-check.ts <<'SCRIPTEOF'
+          import { BetaAnalyticsDataClient } from '@google-analytics/data';
+
+          async function main() {
+            const keyJson = process.env.GA4_SERVICE_ACCOUNT_KEY;
+            if (!keyJson) throw new Error('GA4_SERVICE_ACCOUNT_KEY is not set');
+            const credentials = JSON.parse(keyJson);
+            const client = new BetaAnalyticsDataClient({ credentials });
+            const propertyId = '520238223'; // lens-navi
+
+            // 日別: sessions以外にeventCount/pageviews/activeUsersも見て、
+            // 本当に全指標がゼロなのか、sessionsだけがゼロなのかを確認する
+            const [daily] = await client.runReport({
+              property: `properties/${propertyId}`,
+              dateRanges: [{ startDate: '2026-09-14', endDate: '2026-09-23' }],
+              dimensions: [{ name: 'date' }],
+              metrics: [
+                { name: 'eventCount' },
+                { name: 'screenPageViews' },
+                { name: 'sessions' },
+                { name: 'activeUsers' },
+              ],
+              orderBys: [{ dimension: { dimensionName: 'date' } }],
+              keepEmptyRows: true,
+            });
+            console.log('=== 日別 詳細指標 (2026-09-14〜09-23, keepEmptyRows=true) ===');
+            for (const row of daily.rows ?? []) {
+              const date = row.dimensionValues?.[0]?.value ?? '';
+              const events = row.metricValues?.[0]?.value ?? '0';
+              const pv = row.metricValues?.[1]?.value ?? '0';
+              const sessions = row.metricValues?.[2]?.value ?? '0';
+              const users = row.metricValues?.[3]?.value ?? '0';
+              console.log(`${date}\teventCount=${events}\tpageViews=${pv}\tsessions=${sessions}\tactiveUsers=${users}`);
+            }
+
+            // イベント種別ごとの日別内訳（該当期間のみ）。session_start等が本当に0か個別確認。
+            const [byEvent] = await client.runReport({
+              property: `properties/${propertyId}`,
+              dateRanges: [{ startDate: '2026-09-16', endDate: '2026-09-22' }],
+              dimensions: [{ name: 'date' }, { name: 'eventName' }],
+              metrics: [{ name: 'eventCount' }],
+              orderBys: [{ dimension: { dimensionName: 'date' } }],
+              limit: 100,
+            });
+            console.log('\n=== イベント種別ごとの日別件数 (2026-09-16〜09-22) ===');
+            for (const row of byEvent.rows ?? []) {
+              const date = row.dimensionValues?.[0]?.value ?? '';
+              const evt = row.dimensionValues?.[1]?.value ?? '';
+              const cnt = row.metricValues?.[0]?.value ?? '0';
+              console.log(`${date}\t${evt}\t${cnt}`);
+            }
+          }
+
+          main().catch(err => {
+            console.error(err);
+            process.exit(1);
+          });
+          SCRIPTEOF
+          npx tsx ./tmp-gap-check.ts
+        env:
+          GA4_SERVICE_ACCOUNT_KEY: ${{ secrets.GA4_SERVICE_ACCOUNT_KEY }}
+
+      - name: Vercel deployment history for lens-navi (9/16-9/22)
+        run: |
+          SINCE=$(node -e "console.log(Date.parse('2026-09-15T00:00:00Z'))")
+          UNTIL=$(node -e "console.log(Date.parse('2026-09-23T00:00:00Z'))")
+          echo "since=$SINCE until=$UNTIL"
+          echo "=== lens-navi (prj_giumlnQKdnPBBAKU6l5t81ol54AV) deployments ==="
+          curl -s -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "https://api.vercel.com/v6/deployments?projectId=prj_giumlnQKdnPBBAKU6l5t81ol54AV&limit=100&since=$SINCE&until=$UNTIL" \
+            | node -e "
+              let data = '';
+              process.stdin.on('data', d => data += d);
+              process.stdin.on('end', () => {
+                const json = JSON.parse(data);
+                if (json.error) { console.log('ERROR:', JSON.stringify(json.error)); return; }
+                const deployments = json.deployments || [];
+                console.log('count:', deployments.length);
+                for (const d of deployments) {
+                  const created = new Date(d.created || d.createdAt).toISOString();
+                  console.log(created, d.uid, d.state, d.readyState, d.target, d.meta && d.meta.githubCommitMessage ? d.meta.githubCommitMessage.split('\n')[0] : '');
+                }
+              });
+            "
+          echo
+          echo "=== 57hustler (prj_4yiljvIq7aiIKcIc7HejavrAceH4) deployments ==="
+          curl -s -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "https://api.vercel.com/v6/deployments?projectId=prj_4yiljvIq7aiIKcIc7HejavrAceH4&limit=100&since=$SINCE&until=$UNTIL" \
+            | node -e "
+              let data = '';
+              process.stdin.on('data', d => data += d);
+              process.stdin.on('end', () => {
+                const json = JSON.parse(data);
+                if (json.error) { console.log('ERROR:', JSON.stringify(json.error)); return; }
+                const deployments = json.deployments || [];
+                console.log('count:', deployments.length);
+                for (const d of deployments) {
+                  const created = new Date(d.created || d.createdAt).toISOString();
+                  console.log(created, d.uid, d.state, d.readyState, d.target, d.meta && d.meta.githubCommitMessage ? d.meta.githubCommitMessage.split('\n')[0] : '');
+                }
+              });
+            "
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
