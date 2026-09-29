@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '0 23,3,7,11,13,19 * * *'   # 1日6回 JST 08:00/12:00/16:00/20:00/22:00/04:00
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'true にすると--dry-runで実行（Threadsには投稿しない。動作確認用）'
+        type: boolean
+        default: false
 
 jobs:
   post:
@@ -25,13 +30,14 @@ jobs:
       - run: npm ci
 
       - name: ネタ生成・Threads投稿
-        run: npx ts-node scripts/yonaka-generate-post.ts
+        run: npx ts-node scripts/yonaka-generate-post.ts ${{ inputs.dry_run && '--dry-run' || '' }}
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
 
       - name: 投稿履歴をコミット
+        if: ${{ !inputs.dry_run }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Actions Bot"
