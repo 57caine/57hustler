@@ -148,6 +148,32 @@
 | school-navi（プログラミングスクール） | `school-navi/` | `main` |
 | shikaku-navi（資格） | `shikaku-navi/` | `main` |
 | 楽旅くん（仮称・旅行比較、vercel.appで需要検証中） | `rakutabi/` | GitHub連携なし。Actionsから公開（詳細は`rakutabi/CLAUDE.md`） |
+| CEOダッシュボード | `ceo-dashboard/` | `main`。本番URL: `https://ceo-dashboard-alpha-livid.vercel.app`（2026-09-29確認。`ceo-dashboard.vercel.app`ではない。`scripts/business-audit.ts`のコメントに古いURLが残っているので参照しないこと。正しいURLはVercel API `GET /v9/projects/{id}/domains`で確認） |
+
+## CEOダッシュボードの機能実装漏れドキュメント化（2026-09-29発見）
+
+過去のセッションが実装済みだった以下2機能が、CLAUDE.mdに記載されないまま本番稼働していたことが
+判明した（コミット自体はmainに存在し本番でも動作確認済み、単にドキュメント化を忘れていた）。
+
+- **アナリティクス画面のクリック数・クリック率列＋配色バグ修正**（コミット`62bf8e9`、2026-09-24実装）:
+  `ceo-dashboard/app/analytics/page.tsx`のページ別セッション表に、`affiliateClicksByPage`
+  （`affiliate_click`イベント集計）を元にした「クリック数」「クリック率」列を追加。また見出し行・
+  ★ハイライト行が生のTailwindライトカラー（`bg-gray-50`・`bg-yellow-50`、テキスト色指定なし）を
+  使っていたため、ダッシュボード全体のダークテーマ既定文字色と同化して読めなくなっていたバグを、
+  `var(--bg)`/`var(--text)`/`var(--muted)`等のCSS変数ベースに統一して修正。2026-09-29時点で本番の
+  JSバンドルに`bg-gray-50`/`bg-yellow-50`が0件、`クリック数`/`クリック率`/`var(--muted)`等が
+  存在することを確認済み
+- **タスク一覧・改善レビューの承認/見送りボタン**: タスク一覧タブには承認・見送りボタンは無く
+  （一覧表示のみ、意図した設計）、改善レビュー画面の「✅ 承認してマージ」「🚫 見送る」ボタンは
+  `article.pendingPr`がある記事カードにのみ条件付き表示される。2026-09-29時点で`pendingPr`を持つ
+  記事は0件（Tier B自動修正の対象条件＝セッション数10件以上を満たす未対応課題が無いため）のため、
+  これらのボタンは実運用で一度も押されたことがない（`git log --grep`で承認・見送りAPIのコミットが
+  0件であることを確認済み）。コード自体（`approve-fix`/`reject-fix`ルート）は実際のGitHub PR
+  マージ・クローズAPIを正しく呼ぶ実装になっていることをソースレビューで確認済みだが、実運用での
+  動作実績はまだ無い
+- **教訓**: 機能を実装した際は、その場でCLAUDE.mdに記載するまでを1タスクとして扱うこと。
+  「本番で動いているがCLAUDE.mdに書かれていない機能」は、後続のセッションが車輪の再発明したり、
+  「実装されていない」と誤判定したりする直接原因になる
 
 ## データファイル構成（lens-navi）
 
