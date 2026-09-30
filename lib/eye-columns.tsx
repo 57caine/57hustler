@@ -1022,7 +1022,8 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
           <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">まずはこれから・度なしタイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">mujina ブルーライトカットPCメガネ</p>
-          <p className="text-xs text-gray-500 mb-3">度なしで手に取りやすい価格帯。まず試してみたい方に</p>
+          <p className="text-xs text-gray-500 mb-1">度なしで手に取りやすい価格帯。まず試してみたい方に</p>
+          <p className="text-sm font-bold text-sky-700 mb-3">¥2,980（税込）</p>
           <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">mujina ブルーライトカットPCメガネを楽天で見る →</div>
         </a>
       </div>
@@ -1054,7 +1055,8 @@ export const eyeColumnContent: Record<string, React.ReactNode> = {
           className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
           <span className="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-medium">度なしタイプ</span>
           <p className="font-bold text-gray-800 text-sm leading-snug mt-2 mb-1">mujina PCメガネ MJ-1092</p>
-          <p className="text-xs text-gray-500 mb-3">度なしで気軽に試せるスタンダードモデル</p>
+          <p className="text-xs text-gray-500 mb-1">度なしで気軽に試せるスタンダードモデル</p>
+          <p className="text-sm font-bold text-sky-700 mb-3">¥2,970（税込）</p>
           <div className="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold text-center py-2 rounded-lg">mujina PCメガネ MJ-1092を楽天で見る →</div>
         </a>
       </div>
