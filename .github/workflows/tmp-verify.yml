@@ -28,10 +28,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install playwright (pinned)
+      - name: Install playwright (pinned, no --with-deps)
         run: |
           npm i --no-save playwright@1.55.1
-          npx playwright install --with-deps chromium chromium-headless-shell
+          npx playwright install chromium chromium-headless-shell
 
       - name: Fetch source data for cross-check
         run: |
