@@ -5,29 +5,37 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - name: Get exact deployment detail + build events for latest ceo-dashboard deployment
+      - name: Inspect deployment events for a specific commit SHA
         run: |
+          TARGET_SHA="7641009"
           RESP=$(curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" \
-            "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&limit=1&target=production")
-          DEPLOY_ID=$(echo "$RESP" | node -e "let d='';process.stdin.on('data',c=>d+=c);process.stdin.on('end',()=>{const j=JSON.parse(d);console.log(j.deployments[0].uid);});")
-          echo "Deploy ID: $DEPLOY_ID"
+            "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&limit=10&target=production")
+          DEPLOY_ID=$(echo "$RESP" | node -e "
+            let d='';process.stdin.on('data',c=>d+=c);process.stdin.on('end',()=>{
+              const j=JSON.parse(d);
+              const match = j.deployments.find(x => (x.meta && x.meta.githubCommitSha || '').startsWith('$TARGET_SHA'));
+              console.log(match ? match.uid : 'NOT_FOUND');
+            });
+          ")
+          echo "Deploy ID for $TARGET_SHA: $DEPLOY_ID"
+          if [ "$DEPLOY_ID" = "NOT_FOUND" ]; then exit 0; fi
           echo "--- v13 detail ---"
           curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" "https://api.vercel.com/v13/deployments/$DEPLOY_ID" | node -e "
             let d=''; process.stdin.on('data',c=>d+=c); process.stdin.on('end',()=>{
               const j = JSON.parse(d);
               console.log('state:', j.readyState, 'errorMessage:', j.errorMessage);
-              console.log('buildSkipped:', j.buildSkipped, 'buildingAt:', j.buildingAt, 'ready:', j.ready);
+              console.log('buildSkipped:', j.buildSkipped, 'buildingAt:', j.buildingAt, 'ready:', j.ready, 'createdAt:', j.createdAt);
             });
           "
-          echo "--- build events (last 40) ---"
+          echo "--- build events ---"
           curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" "https://api.vercel.com/v3/deployments/$DEPLOY_ID/events?builds=1" | node -e "
             let d=''; process.stdin.on('data',c=>d+=c); process.stdin.on('end',()=>{
               try {
                 const lines = d.trim().split('\n').filter(Boolean);
-                for (const line of lines.slice(-40)) {
-                  try { const ev = JSON.parse(line); console.log(ev.type, ev.text || ev.payload && ev.payload.text || ''); } catch(e) { console.log('RAW:', line.slice(0,200)); }
+                for (const line of lines) {
+                  try { const ev = JSON.parse(line); if(ev.type) console.log(ev.type, ev.text || (ev.payload && ev.payload.text) || ''); } catch(e) {}
                 }
-              } catch(e) { console.log('parse error, raw:', d.slice(0,2000)); }
+              } catch(e) { console.log('parse error, raw:', d.slice(0,3000)); }
             });
           "
         env:
