@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-09-30T04:48:41.953Z",
+  "generatedAt": "2026-09-30T10:02:26.557Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-09-30T04:48:39.809Z",
+      "fetchedAt": "2026-09-30T10:02:21.425Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 329,
-      "totalPageviews": 414,
+      "totalSessions": 335,
+      "totalPageviews": 419,
       "topPages": [
         {
           "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
-          "sessions": 30,
-          "pageviews": 33,
-          "avgSessionDuration": 247.1775291,
-          "bounceRate": 0.3333333333333333
+          "sessions": 31,
+          "pageviews": 34,
+          "avgSessionDuration": 247.36543296774192,
+          "bounceRate": 0.3225806451612903
         },
         {
           "path": "/",
@@ -43,10 +43,24 @@
         },
         {
           "path": "/column/eyestrain-stretching-massage-guide",
+          "sessions": 14,
+          "pageviews": 13,
+          "avgSessionDuration": 128.55729364285713,
+          "bounceRate": 0.5714285714285714
+        },
+        {
+          "path": "/column/blue-light-megane-kouka",
           "sessions": 13,
-          "pageviews": 12,
-          "avgSessionDuration": 138.44631623076924,
-          "bounceRate": 0.5384615384615384
+          "pageviews": 13,
+          "avgSessionDuration": 60.67500038461538,
+          "bounceRate": 0.15384615384615385
+        },
+        {
+          "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
+          "sessions": 13,
+          "pageviews": 9,
+          "avgSessionDuration": 115.74691769230769,
+          "bounceRate": 0.46153846153846156
         },
         {
           "path": "/column/sunglass-polarized-guide",
@@ -61,20 +75,6 @@
           "pageviews": 13,
           "avgSessionDuration": 99.77117491666667,
           "bounceRate": 0.3333333333333333
-        },
-        {
-          "path": "/column/blue-light-megane-kouka",
-          "sessions": 12,
-          "pageviews": 12,
-          "avgSessionDuration": 61.4795455,
-          "bounceRate": 0.16666666666666666
-        },
-        {
-          "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
-          "sessions": 11,
-          "pageviews": 8,
-          "avgSessionDuration": 136.79181181818183,
-          "bounceRate": 0.36363636363636365
         },
         {
           "path": "/column/karakon-osusume-ranking-2026",
@@ -249,15 +249,15 @@
         },
         {
           "date": "2026-09-30",
-          "sessions": 1
+          "sessions": 7
         }
       ],
       "affiliateClicksByPage": {
         "/column/karakon-osusume-ranking-2026": 8,
         "/ranking": 6,
+        "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide": 5,
         "/category/1day": 4,
         "/category/color": 3,
-        "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide": 3,
         "/column/dryeye-taisaku": 2,
         "/column/megane-kaomikata": 2,
         "/column/meta-quest-3-review-2026": 2,
@@ -276,7 +276,7 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-09-30T04:48:41.953Z",
+      "fetchedAt": "2026-09-30T10:02:26.557Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"

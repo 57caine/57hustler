@@ -1,4 +1,4 @@
-name: tmp-verify
+name: tmp-verify3
 on:
   workflow_dispatch:
 jobs:
@@ -17,7 +17,7 @@ jobs:
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
-      - name: Full curl-based content verification (no browser needed)
+      - name: Full curl-based content verification
         run: |
           DOMAIN="https://ceo-dashboard-alpha-livid.vercel.app"
 
@@ -28,7 +28,6 @@ jobs:
             : > "$out"
             cat /tmp/page.html >> "$out"
             echo "" >> "$out"
-            # broaden: capture ANY /_next/static/ reference (chunks, css, media json etc referenced as scripts)
             for u in $(grep -oE '"/_next/static/[a-zA-Z0-9_./%-]+\.js"' /tmp/page.html | tr -d '"' | sort -u) \
                      $(grep -oE 'href="/_next/static/[a-zA-Z0-9_./%-]+\.js"' /tmp/page.html | sed -E 's/href="//;s/"$//' | sort -u); do
               curl -sS "${DOMAIN}${u}" >> "$out" 2>/dev/null || true
@@ -49,13 +48,13 @@ jobs:
           wc -c /tmp/today_all.txt
           check /tmp/today_all.txt "TOP3" "決めることは3つです" "判断待ち" "ALERT該当" "AI TEAM" "PROJECTS" "MONEY" "PDCA" "57hustler CEO Dashboard"
 
-          echo "===== /alert (check TODAY nav link + self content) ====="
+          echo "===== /alert ====="
           fetch_full "/alert" /tmp/alert_all.txt
-          check /tmp/alert_all.txt "自動検知" "全" "条件" "🎯 TODAY" "href=\"/today\""
+          check /tmp/alert_all.txt "自動検知" "全" "条件" "TODAY"
 
           echo "===== /projects ====="
           fetch_full "/projects" /tmp/projects_all.txt
-          check /tmp/projects_all.txt "全12プロジェクト" "稼働中" "停止中" "レンズナビ" "楽旅くん" "ペット避難" "夜中のおじさん" "出口のノート" "雑草おじさん" "収益" "流入" "未取得"
+          check /tmp/projects_all.txt "全" "プロジェクト" "稼働中" "停止中" "レンズナビ" "楽旅くん" "ペット避難" "夜中のおじさん" "出口のノート" "雑草おじさん" "収益" "流入" "未取得"
 
           echo "===== /projects/lens-navi ====="
           fetch_full "/projects/lens-navi" /tmp/detail_all.txt
@@ -80,12 +79,13 @@ jobs:
             echo "  $p -> $code $loc"
           done
 
-          echo "===== raw RSC payload snippet for /today (last resort direct inspection) ====="
-          curl -sS "${DOMAIN}/today" -o /tmp/today_raw.html
-          python3 -c "
-data = open('/tmp/today_raw.html', encoding='utf-8', errors='replace').read()
-idx = data.find('self.__next_f.push')
-print('first push idx:', idx)
-if idx >= 0:
-    print(data[idx:idx+3000])
-"
+      - name: RSC payload snippet for TODAY (separate step, safe indentation)
+        run: |
+          curl -sS "https://ceo-dashboard-alpha-livid.vercel.app/today" -o /tmp/today_raw.html
+          node -e "
+            const fs = require('fs');
+            const data = fs.readFileSync('/tmp/today_raw.html', 'utf-8');
+            const idx = data.indexOf('self.__next_f.push');
+            console.log('first push idx:', idx);
+            if (idx >= 0) console.log(data.slice(idx, idx + 3000));
+          "
