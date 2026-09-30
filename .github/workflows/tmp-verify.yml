@@ -1,0 +1,21 @@
+name: tmp-verify
+on:
+  workflow_dispatch:
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vercel deployment status for ceo-dashboard
+        run: |
+          curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&limit=3&target=production" | node -e "
+              let data=''; process.stdin.on('data', d => data+=d); process.stdin.on('end', () => {
+                const j = JSON.parse(data);
+                if (j.error) { console.log('ERROR', JSON.stringify(j.error)); process.exit(0); }
+                for (const d of (j.deployments||[])) {
+                  console.log(new Date(d.created||d.createdAt).toISOString(), d.state, d.url, d.meta && d.meta.githubCommitSha);
+                }
+              });
+            "
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
