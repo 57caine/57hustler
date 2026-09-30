@@ -17,6 +17,9 @@ interface ManualArticle {
   business: string;
   priority: 'high' | 'medium' | 'low';
   source: 'manual';
+  execution?: string;
+  result?: string;
+  nextAction?: string;
 }
 
 interface ColumnReviewFile {
@@ -65,6 +68,7 @@ export async function POST(req: NextRequest) {
     title: string;
     description?: string;
     priority?: 'high' | 'medium' | 'low';
+    nextAction?: string;
   };
   if (!body.business?.trim()) return NextResponse.json({ error: 'business required' }, { status: 400 });
   if (!body.title?.trim()) return NextResponse.json({ error: 'title required' }, { status: 400 });
@@ -84,6 +88,7 @@ export async function POST(req: NextRequest) {
     business: body.business.trim(),
     priority: body.priority ?? 'medium',
     source: 'manual',
+    ...(body.nextAction?.trim() ? { nextAction: body.nextAction.trim() } : {}),
   };
 
   const headers = {

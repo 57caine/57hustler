@@ -26,8 +26,15 @@ async function updateOneFile(filePath: string, slug: string, headers: Record<str
   const article = data.flaggedArticles.find(a => a.slug === slug);
   if (!article) return { ok: false, error: `slug not found in ${filePath}: ${slug}` };
 
+  const mergedAt = new Date().toISOString();
+  const prTitle = article.pendingPr?.title ?? '(タイトル不明)';
+  const prNumber = article.pendingPr?.prNumber;
+
   article.status = '対応済み';
-  article.autoFixMergedAt = new Date().toISOString();
+  article.autoFixMergedAt = mergedAt;
+  // PDCAの「実行」欄はここで自動記録する（承認日時・変更内容）。
+  // 「結果」欄はオーナーが振り返って記入する前提のため、ここでは触らない
+  article.execution = `AI自動修正PRを承認・マージ（${mergedAt.slice(0, 10)}${prNumber ? ` PR #${prNumber}` : ''}: ${prTitle}）`;
   delete article.pendingPr;
   data.flaggedCount = data.flaggedArticles.filter(a => (a.status ?? '未対応') === '未対応').length;
 

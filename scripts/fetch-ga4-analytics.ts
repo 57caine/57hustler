@@ -237,6 +237,19 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
   const endDate = 'today';
   const startDate = '28daysAgo';
 
+  // サイト全体の合計（ディメンションなし）。topPagesはlimit:20で取得するため、
+  // その合計を「全体の合計」として使うと21位以降のロングテール分が欠落する
+  // （2026-09-29発見のバグ。詳細はCLAUDE.md参照）。必ずこちらを別クエリで取得する。
+  const [totalsResponse] = await client.runReport({
+    property: propertyId,
+    dimensions: [],
+    metrics: [{ name: 'sessions' }, { name: 'screenPageViews' }],
+    dateRanges: [{ startDate, endDate }],
+  });
+  const totalsRow = totalsResponse.rows?.[0];
+  const totalSessions = parseInt(totalsRow?.metricValues?.[0]?.value ?? '0');
+  const totalPageviews = parseInt(totalsRow?.metricValues?.[1]?.value ?? '0');
+
   // Top pages by sessions
   const [pagesResponse] = await client.runReport({
     property: propertyId,
@@ -297,9 +310,6 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
     const p = row.dimensionValues?.[0]?.value ?? '';
     affiliateClicksByPage[p] = parseInt(row.metricValues?.[0]?.value ?? '0');
   }
-
-  const totalSessions = topPages.reduce((s, p) => s + p.sessions, 0);
-  const totalPageviews = topPages.reduce((s, p) => s + p.pageviews, 0);
 
   return {
     propertyId: property.id,

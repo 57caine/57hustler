@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-09-30T00:00:00.000Z",
+  "members": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "role": "戦略・優先順位・収益設計・分析・レビュー・改善指示",
+      "status": "未設定",
+      "currentTask": "",
+      "nextTask": "",
+      "completedTasks": [],
+      "pendingDecision": "",
+      "updatedAt": null,
+      "updatedBy": null
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "role": "コーディング・実装・制作・自動化・テスト",
+      "status": "稼働中",
+      "currentTask": "CEOダッシュボードのAIチーム司令塔化改修（TODAY/PROJECTS/PROJECT DETAIL/MONEY/AI TEAM/PDCA/ALERTの7画面実装）",
+      "nextTask": "実装後の動作確認・本番反映・PROJECT_STATUS.md更新",
+      "completedTasks": [
+        "GA4合計セッション数の集計バグ修正（上位20ページ合計→サイト全体合計に変更）",
+        "4点調査（GA4バグ・A8セッション切れ・ダミーリンク一覧・コラム自動化停止の特定）"
+      ],
+      "pendingDecision": "",
+      "updatedAt": "2026-09-30T00:00:00.000Z",
+      "updatedBy": "claude-session"
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "role": "検索需要・競合・市場調査・事実確認",
+      "status": "未設定",
+      "currentTask": "",
+      "nextTask": "",
+      "completedTasks": [],
+      "pendingDecision": "",
+      "updatedAt": null,
+      "updatedBy": null
+    }
+  ]
+}

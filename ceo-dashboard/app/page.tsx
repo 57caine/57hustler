@@ -1,7 +1,6 @@
 import { redirect } from 'next/navigation';
 
-// ナビゲーションを「改善レビュー」「アナリティクス」の2つに絞ったため、
-// ルート（旧ダッシュボードトップ）は改善レビューへリダイレクトする（2026-09-23）
+// 「AIチームの司令塔」化（2026-09-30）に伴い、起動画面をTODAYに変更
 export default function RootPage() {
-  redirect('/column-review');
+  redirect('/today');
 }
