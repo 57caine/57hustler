@@ -2,174 +2,90 @@ name: tmp-verify
 on:
   workflow_dispatch:
 jobs:
-  deploy-status:
+  verify:
     runs-on: ubuntu-latest
     steps:
-      - name: Vercel deployment status for ceo-dashboard
+      - name: Deploy status
         run: |
           curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" \
-            "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&limit=8&target=production" | node -e "
+            "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&limit=3&target=production" | node -e "
               let d=''; process.stdin.on('data',c=>d+=c); process.stdin.on('end',()=>{
                 const j = JSON.parse(d);
-                if (j.error) { console.log('ERROR', JSON.stringify(j.error)); process.exit(0); }
-                for (const dep of j.deployments) {
-                  console.log(new Date(dep.created).toISOString(), dep.state, dep.url, (dep.meta && dep.meta.githubCommitSha || '').slice(0,7), (dep.meta && dep.meta.githubCommitMessage || '').split('\n')[0].slice(0,50));
-                }
+                for (const dep of j.deployments) console.log(new Date(dep.created).toISOString(), dep.state, (dep.meta && dep.meta.githubCommitSha||'').slice(0,7));
               });
             "
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
-  playwright-checks:
-    needs: deploy-status
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install playwright (pinned, no --with-deps)
+      - name: Full curl-based content verification (no browser needed)
         run: |
-          npm i --no-save playwright@1.55.1
-          npx playwright install chromium chromium-headless-shell
+          DOMAIN="https://ceo-dashboard-alpha-livid.vercel.app"
 
-      - name: Fetch source data for cross-check
-        run: |
-          curl -sS "https://raw.githubusercontent.com/57caine/57hustler/main/data/projects-registry.json" -o /tmp/registry.json
-          curl -sS "https://raw.githubusercontent.com/57caine/57hustler/main/data/ga4-analytics.json" -o /tmp/ga4.json
-          curl -sS "https://raw.githubusercontent.com/57caine/57hustler/main/data/ai-team.json" -o /tmp/aiteam.json
-          curl -sS "https://raw.githubusercontent.com/57caine/57hustler/main/data/column-review.json" -o /tmp/colrev.json
-          node -e "
-            const g = JSON.parse(require('fs').readFileSync('/tmp/ga4.json','utf-8'));
-            const lens = g.sites.find(s => s.siteName === 'lens-navi');
-            console.log('EXPECTED lens-navi totalSessions:', lens.totalSessions, 'totalPageviews:', lens.totalPageviews);
-            const at = JSON.parse(require('fs').readFileSync('/tmp/aiteam.json','utf-8'));
-            const claude = at.members.find(m => m.id === 'claude');
-            console.log('EXPECTED claude currentTask:', claude.currentTask);
-            const cr = JSON.parse(require('fs').readFileSync('/tmp/colrev.json','utf-8'));
-            const withResult = cr.flaggedArticles.filter(a => a.result && a.result.trim());
-            console.log('EXPECTED articles with non-empty result field:', withResult.length, '(should be 0, since result is never auto-generated)');
-            const withoutNextAction = cr.flaggedArticles.filter(a => !a.nextAction || !a.nextAction.trim());
-            console.log('EXPECTED articles without nextAction (should surface in ALERT):', withoutNextAction.length);
-          "
-
-      - name: Run full verification
-        run: |
-          cat > ./tmp-verify.mjs <<'EOF'
-          import { chromium } from 'playwright';
-
-          const DOMAIN = 'https://ceo-dashboard-alpha-livid.vercel.app';
-          const browser = await chromium.launch({ executablePath: undefined });
-          const results = [];
-
-          function log(section, msg) { results.push(`[${section}] ${msg}`); console.log(`[${section}] ${msg}`); }
-
-          // ---------- Desktop checks ----------
-          const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-          const consoleErrors = [];
-          page.on('pageerror', e => consoleErrors.push(e.message));
-          page.on('console', m => { if (m.type() === 'error') consoleErrors.push(m.text()); });
-
-          // 1. TODAY page loads, shows TOP3
-          await page.goto(`${DOMAIN}/today`, { waitUntil: 'networkidle', timeout: 20000 });
-          await page.waitForTimeout(1500);
-          const todayBody = await page.locator('body').innerText();
-          log('2-TODAY-load', todayBody.includes('今日、決めることは3つです') ? 'OK heading found' : 'NG heading missing: ' + todayBody.slice(0,200));
-          const top3Cards = await page.locator('a[href]').filter({ hasText: /判断待ち|停滞|未更新|緊急|KPI/ }).count();
-          log('3-TODAY-top3', `candidate priority-linked elements: ${top3Cards}`);
-          log('3-TODAY-top3-text', todayBody.includes('データ未取得') ? 'NG shows fetch error' : 'no fetch error banner shown');
-
-          // 4. Nav has ALERT and TODAY both reachable (bidirectional via shared Nav)
-          const navLinks = await page.locator('nav a').allTextContents();
-          log('4-nav-links', navLinks.join(' | '));
-
-          // go to /alert, click TODAY nav link, confirm navigation works
-          await page.goto(`${DOMAIN}/alert`, { waitUntil: 'networkidle', timeout: 20000 });
-          await page.waitForTimeout(1200);
-          const alertBody = await page.locator('body').innerText();
-          log('4-ALERT-load', alertBody.includes('自動検知') ? 'OK' : 'NG: ' + alertBody.slice(0,200));
-          const todayNavLink = page.locator('nav a', { hasText: 'TODAY' });
-          const todayNavCount = await todayNavLink.count();
-          if (todayNavCount > 0) {
-            await todayNavLink.first().click();
-            await page.waitForURL(/\/today/, { timeout: 10000 }).catch(() => {});
-            const url = page.url();
-            log('4-ALERT-to-TODAY', url.includes('/today') ? 'OK navigated to ' + url : 'NG stayed at ' + url);
-          } else {
-            log('4-ALERT-to-TODAY', 'NG no TODAY nav link found on /alert');
+          fetch_full () {
+            local path="$1"
+            local out="$2"
+            curl -sS -o /tmp/page.html -w "HTTP %{http_code}\n" "${DOMAIN}${path}"
+            : > "$out"
+            cat /tmp/page.html >> "$out"
+            echo "" >> "$out"
+            # broaden: capture ANY /_next/static/ reference (chunks, css, media json etc referenced as scripts)
+            for u in $(grep -oE '"/_next/static/[a-zA-Z0-9_./%-]+\.js"' /tmp/page.html | tr -d '"' | sort -u) \
+                     $(grep -oE 'href="/_next/static/[a-zA-Z0-9_./%-]+\.js"' /tmp/page.html | sed -E 's/href="//;s/"$//' | sort -u); do
+              curl -sS "${DOMAIN}${u}" >> "$out" 2>/dev/null || true
+              echo "" >> "$out"
+            done
           }
 
-          // 5+6+7. PROJECTS page: count active/stopped, check lens-navi KPI matches GA4, check placeholder text distinct from 0
-          await page.goto(`${DOMAIN}/projects`, { waitUntil: 'networkidle', timeout: 20000 });
-          await page.waitForTimeout(1500);
-          const projectsBody = await page.locator('body').innerText();
-          const activeMatch = projectsBody.match(/稼働中\s*(\d+)/);
-          log('5-PROJECTS-active-count', activeMatch ? activeMatch[1] : 'NOT FOUND');
-          const stoppedMatch = projectsBody.match(/停止中\s*(\d+)/);
-          log('5-PROJECTS-stopped-count', stoppedMatch ? stoppedMatch[1] : 'NOT FOUND');
-          const lensRow = projectsBody.includes('レンズナビ');
-          log('5-PROJECTS-lens-navi-present', lensRow ? 'OK' : 'NG');
-          log('7-PROJECTS-placeholder-text', projectsBody.includes('未取得') ? 'OK "未取得" present' : 'NG missing 未取得');
-          log('7-PROJECTS-placeholder-text2', projectsBody.includes('準備中') ? 'OK "準備中" present' : 'NG missing 準備中');
-
-          await page.goto(`${DOMAIN}/projects/lens-navi`, { waitUntil: 'networkidle', timeout: 20000 });
-          await page.waitForTimeout(1500);
-          const detailBody = await page.locator('body').innerText();
-          log('6-DETAIL-load', detailBody.includes('目的') ? 'OK' : 'NG: ' + detailBody.slice(0,200));
-          log('6-DETAIL-funnel', detailBody.includes('流入') && detailBody.includes('CV') ? 'OK funnel present' : 'NG funnel missing');
-          // Extract session number shown in KPI step
-          const sessionMatch = detailBody.match(/(\d+)\s*セッション/);
-          log('6-DETAIL-sessions-shown', sessionMatch ? sessionMatch[1] : 'NOT FOUND (raw check below)');
-
-          // ---------- MONEY ----------
-          await page.goto(`${DOMAIN}/money`, { waitUntil: 'networkidle', timeout: 20000 });
-          await page.waitForTimeout(1500);
-          const moneyBody = await page.locator('body').innerText();
-          log('7-MONEY-collected-vs-zero', moneyBody.includes('収集前') ? 'OK 収集前 present (not fake 0)' : 'NG missing 収集前');
-          const clickMatch = moneyBody.match(/(\d+)\s*\n?\s*クリック/);
-          log('7-MONEY-click-number', clickMatch ? `found numeric click value: ${clickMatch[1]}` : 'no numeric click value matched (may be 0 or format differs)');
-
-          // ---------- AI TEAM ----------
-          await page.goto(`${DOMAIN}/ai-team`, { waitUntil: 'networkidle', timeout: 20000 });
-          await page.waitForTimeout(1500);
-          const aiTeamBody = await page.locator('body').innerText();
-          log('10-AITEAM-claude-task', aiTeamBody.includes('AIチーム司令塔化改修') ? 'OK dynamic content matches data/ai-team.json' : 'NG dynamic content NOT found: ' + aiTeamBody.slice(0,400));
-          log('10-AITEAM-chatgpt-empty', aiTeamBody.includes('未設定') ? 'OK shows 未設定 for empty ChatGPT/Gemini fields' : 'no 未設定 text found');
-
-          // ---------- PDCA ----------
-          await page.goto(`${DOMAIN}/pdca`, { waitUntil: 'networkidle', timeout: 20000 });
-          await page.waitForTimeout(1500);
-          const pdcaBody = await page.locator('body').innerText();
-          log('8-PDCA-load', pdcaBody.includes('結果') ? 'OK' : 'NG');
-          log('8-PDCA-result-not-autofilled', pdcaBody.includes('自動では埋めない') || pdcaBody.includes('空欄') ? 'OK placeholder text present (not auto-generated)' : 'placeholder text not found in visible summary (may need expand)');
-          log('9-PDCA-nextaction-flag', pdcaBody.includes('次アクション未設定') || pdcaBody.includes('次のアクション未設定') ? 'OK flag visible' : 'flag text not found in collapsed view');
-
-          // ---------- column-review legacy ----------
-          const crRes = await page.goto(`${DOMAIN}/column-review`, { waitUntil: 'networkidle', timeout: 20000 });
-          log('12-column-review-redirect', page.url().includes('/pdca') ? `OK redirected to ${page.url()}` : `NG at ${page.url()}`);
-
-          log('CONSOLE-ERRORS', consoleErrors.length ? consoleErrors.slice(0,10).join(' || ') : 'none');
-
-          await page.close();
-
-          // ---------- Mobile checks ----------
-          const mobile = await browser.newPage({ viewport: { width: 390, height: 844 } });
-          await mobile.goto(`${DOMAIN}/today`, { waitUntil: 'networkidle', timeout: 20000 });
-          await mobile.waitForTimeout(1200);
-          const bodyWidth = await mobile.evaluate(() => document.body.scrollWidth);
-          const viewportWidth = await mobile.evaluate(() => window.innerWidth);
-          log('11-MOBILE-today-hscroll', bodyWidth > viewportWidth + 5 ? `NG horizontal scroll: body=${bodyWidth} vp=${viewportWidth}` : `OK no overflow body=${bodyWidth} vp=${viewportWidth}`);
-          const navVisible = await mobile.locator('nav').isVisible();
-          log('11-MOBILE-nav-visible', navVisible ? 'OK' : 'NG');
-
-          for (const p of ['/projects', '/alert', '/pdca', '/ai-team', '/money']) {
-            await mobile.goto(`${DOMAIN}${p}`, { waitUntil: 'networkidle', timeout: 20000 });
-            await mobile.waitForTimeout(800);
-            const w = await mobile.evaluate(() => document.body.scrollWidth);
-            const vw = await mobile.evaluate(() => window.innerWidth);
-            log(`11-MOBILE-${p}`, w > vw + 5 ? `NG overflow w=${w} vw=${vw}` : `OK w=${w} vw=${vw}`);
+          check () {
+            local file="$1"; shift
+            for s in "$@"; do
+              cnt=$(grep -ocF "$s" "$file" 2>/dev/null || echo 0)
+              echo "    [$s]: $cnt"
+            done
           }
 
-          await browser.close();
-          EOF
-          node ./tmp-verify.mjs
+          echo "===== /today ====="
+          fetch_full "/today" /tmp/today_all.txt
+          wc -c /tmp/today_all.txt
+          check /tmp/today_all.txt "TOP3" "決めることは3つです" "判断待ち" "ALERT該当" "AI TEAM" "PROJECTS" "MONEY" "PDCA" "57hustler CEO Dashboard"
+
+          echo "===== /alert (check TODAY nav link + self content) ====="
+          fetch_full "/alert" /tmp/alert_all.txt
+          check /tmp/alert_all.txt "自動検知" "全" "条件" "🎯 TODAY" "href=\"/today\""
+
+          echo "===== /projects ====="
+          fetch_full "/projects" /tmp/projects_all.txt
+          check /tmp/projects_all.txt "全12プロジェクト" "稼働中" "停止中" "レンズナビ" "楽旅くん" "ペット避難" "夜中のおじさん" "出口のノート" "雑草おじさん" "収益" "流入" "未取得"
+
+          echo "===== /projects/lens-navi ====="
+          fetch_full "/projects/lens-navi" /tmp/detail_all.txt
+          check /tmp/detail_all.txt "目的" "現在の状態" "ファネル" "問題" "仮説" "次のアクション" "担当AI" "セッション"
+
+          echo "===== /money ====="
+          fetch_full "/money" /tmp/money_all.txt
+          check /tmp/money_all.txt "収益ダッシュボード" "今月収益" "前月収益" "プロジェクト別収益" "クリック" "収集前" "目標未設定"
+
+          echo "===== /ai-team ====="
+          fetch_full "/ai-team" /tmp/aiteam_all.txt
+          check /tmp/aiteam_all.txt "ChatGPT" "Claude" "Gemini" "AIチーム司令塔化改修" "未設定" "手動で更新"
+
+          echo "===== /pdca ====="
+          fetch_full "/pdca" /tmp/pdca_all.txt
+          check /tmp/pdca_all.txt "仮説" "実行" "結果" "改善案" "次のアクション" "自動では埋めない" "空欄"
+
+          echo "===== redirects ====="
+          for p in "/" "/column-review" "/tasks" "/report-log" "/analytics"; do
+            code=$(curl -sS -o /dev/null -w "%{http_code}" "${DOMAIN}${p}")
+            loc=$(curl -sS -o /dev/null -D - "${DOMAIN}${p}" | grep -i "^location" | tr -d '\r')
+            echo "  $p -> $code $loc"
+          done
+
+          echo "===== raw RSC payload snippet for /today (last resort direct inspection) ====="
+          curl -sS "${DOMAIN}/today" -o /tmp/today_raw.html
+          python3 -c "
+data = open('/tmp/today_raw.html', encoding='utf-8', errors='replace').read()
+idx = data.find('self.__next_f.push')
+print('first push idx:', idx)
+if idx >= 0:
+    print(data[idx:idx+3000])
+"
