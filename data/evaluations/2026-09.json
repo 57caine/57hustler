@@ -1,6 +1,6 @@
 {
   "month": "2026-09",
-  "generatedAt": "2026-09-29T02:46:53.703Z",
+  "generatedAt": "2026-09-30T02:26:42.693Z",
   "metrics": {
     "period": "2026-09",
     "夜中のおじさん": {
@@ -22,16 +22,21 @@
       "failure": 0
     },
     "GitHubActions全体": {
-      "workflowCount": 27,
+      "workflowCount": 28,
       "totalRuns": 100,
-      "successRuns": 83
+      "successRuns": 80
     }
   },
-  "evaluation": "# 57hustler AI社員 月次評価 (2026年9月)\n\n## 🌙 夜中のおじさん\n**よくできた点**\n- 月2件の投稿を安定配信\n- 重複なし（重複率0%）で品質維持\n\n**改善点**\n- 投稿頻度の増加検討\n\n**来月への期待**\n- 継続的な配信と投稿数の増加\n\n---\n\n## 📝 コラムbot\n**よくできた点**\n- 体制整備完了\n\n**改善点**\n- 今月投稿実績なし\n\n**来月への期待**\n- 本格稼働と定期投稿開始\n\n---\n\n## 💰 価格監視bot・🔮 九星気学bot\n**よくできた点**\n- システム基盤の構築\n\n**改善点**\n- 両者とも稼働実績なし\n\n**来月への期待**\n- 早期の運用開始と定常化\n\n---\n\n## ⚙️ GitHubActions全体\n**よくできた点**\n- 83%の高い成功率達成（83/100）\n\n**改善点**\n- 17件の失敗案件の改善\n\n**来月への期待**\n- 成功率90%以上を目指す",
+  "evaluation": "# 57hustler AI社員 2026年9月月次評価\n\n## 夜中のおじさん\n**よくできた点**\n- 月2件の投稿を安定配信\n- 重複なし（0%）で品質維持\n\n**改善点**\n- 投稿数がやや少ない傾向\n\n**来月への期待**\n- 投稿頻度の向上を期待\n\n---\n\n## コラムbot\n**よくできた点**\n- 特になし\n\n**改善点**\n- 9月は稼働していない状態\n\n**来月への期待**\n- 稼働確認・復帰を急務\n\n---\n\n## 価格監視bot / 九星気学bot\n**よくできた点**\n- 特になし\n\n**改善点**\n- 両者とも稼働実績ゼロ\n\n**来月への期待**\n- 動作確認・改修が必要\n\n---\n\n## GitHubActions全体\n**よくできた点**\n- 28ワークフロー運用中\n- 成功率80%で安定稼働\n\n**改善点**\n- 失敗案件20件（20%）の原因分析必要\n\n**来月への期待**\n- 成功率85%以上を目標に",
   "workflowBreakdown": {
     "AI社員 月次人事評価": {
-      "total": 1,
-      "success": 0,
+      "total": 2,
+      "success": 1,
+      "failure": 0
+    },
+    "Threads 夜中のおじさん 自動投稿": {
+      "total": 17,
+      "success": 17,
       "failure": 0
     },
     "Threads 今週のテーマ 自動投稿": {
@@ -69,24 +74,9 @@
       "success": 7,
       "failure": 0
     },
-    "tmp-verify": {
-      "total": 12,
-      "success": 11,
-      "failure": 1
-    },
-    "改善レビュー自動修正PRのマージ検知": {
-      "total": 4,
-      "success": 0,
-      "failure": 0
-    },
-    "Build lens-navi / school-navi / shop-navi / yonaka-uranai": {
-      "total": 8,
-      "success": 8,
-      "failure": 0
-    },
     "楽旅くん 楽天トラベルAPI接続確認・宿泊施設データ取得・Vercel公開": {
-      "total": 7,
-      "success": 4,
+      "total": 8,
+      "success": 5,
       "failure": 2
     },
     "改善レビュー課題の自動修正（Tier B・PR作成）": {
@@ -94,37 +84,22 @@
       "success": 3,
       "failure": 0
     },
-    "Threads 夜中のおじさん 自動投稿": {
-      "total": 13,
-      "success": 13,
-      "failure": 0
-    },
     "Threads 夜間コラム自動投稿": {
-      "total": 3,
+      "total": 2,
       "success": 0,
-      "failure": 3
+      "failure": 2
     },
     "Threads 今日の易経 自動投稿": {
-      "total": 3,
-      "success": 3,
-      "failure": 0
-    },
-    "Threads あなたの本命星は？ 自動投稿": {
-      "total": 3,
-      "success": 3,
-      "failure": 0
-    },
-    "Threads 夜21時 自動投稿（一文考察・夜占い）": {
       "total": 2,
       "success": 2,
       "failure": 0
     },
-    "一時調査 楽天アフィリエイト新規ニッチ候補の市場集計": {
-      "total": 3,
-      "success": 3,
+    "Threads あなたの本命星は？ 自動投稿": {
+      "total": 2,
+      "success": 2,
       "failure": 0
     },
-    "Build CEO Dashboard": {
+    "Threads 夜21時 自動投稿（一文考察・夜占い）": {
       "total": 2,
       "success": 2,
       "failure": 0
@@ -143,6 +118,36 @@
       "total": 2,
       "success": 0,
       "failure": 2
+    },
+    "tmp-verify": {
+      "total": 12,
+      "success": 8,
+      "failure": 2
+    },
+    "改善レビュー自動修正PRのマージ検知": {
+      "total": 5,
+      "success": 0,
+      "failure": 0
+    },
+    "一時調査 楽天ウェブサービス規約・アフィリエイトガイドラインの確認": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "Build CEO Dashboard": {
+      "total": 2,
+      "success": 2,
+      "failure": 0
+    },
+    "Build lens-navi / school-navi / shop-navi / yonaka-uranai": {
+      "total": 3,
+      "success": 3,
+      "failure": 0
+    },
+    "一時調査 楽天アフィリエイト新規ニッチ候補の市場集計": {
+      "total": 3,
+      "success": 3,
+      "failure": 0
     },
     "henkutsu 海外商品リサーチ": {
       "total": 1,
