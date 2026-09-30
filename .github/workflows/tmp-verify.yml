@@ -1,0 +1,23 @@
+name: tmp-verify
+on:
+  workflow_dispatch:
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check deployment state for a6e2a4b and current production
+        run: |
+          RESP=$(curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&limit=5&target=production")
+          echo "$RESP" | node -e "
+            let d='';process.stdin.on('data',c=>d+=c);process.stdin.on('end',()=>{
+              const j=JSON.parse(d);
+              for (const dep of j.deployments) {
+                console.log(new Date(dep.created).toISOString(), dep.state, dep.url, (dep.meta && dep.meta.githubCommitSha || '').slice(0,7));
+              }
+            });
+          "
+          echo "--- current production content check ---"
+          curl -sS -o /dev/null -w "HTTP_STATUS:%{http_code}\n" -L "https://ceo-dashboard-alpha-livid.vercel.app/today"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
