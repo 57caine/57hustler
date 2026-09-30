@@ -5,61 +5,25 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - name: Full content check of new CEO dashboard pages
+      - name: Debug /today page specifically
         run: |
           DOMAIN="https://ceo-dashboard-alpha-livid.vercel.app"
-          check_page () {
-            local path="$1"
-            echo "=========================================="
-            echo "PAGE: $path"
-            curl -sS -o /tmp/page.html -w "HTTP_STATUS:%{http_code}\n" "${DOMAIN}${path}"
-            grep -oE '/_next/static/chunks/[a-zA-Z0-9_./-]+\.js' /tmp/page.html | sort -u > /tmp/chunks.txt
-            : > /tmp/bundle_all.js
-            while read -r chunk; do
-              curl -sS "${DOMAIN}${chunk}" >> /tmp/bundle_all.js 2>/dev/null || true
-              echo "" >> /tmp/bundle_all.js
-            done < /tmp/chunks.txt
-          }
-
-          check_page "/today"
-          for s in "今日やることTOP3" "ユーザー判断待ち" "AI作業待ち" "現在の収益状況"; do
-            cnt=$(grep -oF "$s" /tmp/bundle_all.js | wc -l); echo "  [$s]: $cnt"
+          curl -sS -o /tmp/today.html -w "HTTP_STATUS:%{http_code}\n" "${DOMAIN}/today"
+          echo "--- page.html size ---"
+          wc -c /tmp/today.html
+          echo "--- chunks referenced ---"
+          grep -oE '/_next/static/chunks/[a-zA-Z0-9_./-]+\.js' /tmp/today.html | sort -u
+          echo "--- inline script check for TODAY text (in raw page.html itself) ---"
+          grep -oF "TODAY" /tmp/today.html | wc -l
+          grep -oF "今日" /tmp/today.html | wc -l
+          echo "--- nav labels (should be same across all pages, sanity check) ---"
+          grep -oF "57hustler" /tmp/today.html | wc -l
+          echo "--- fetch all chunks and grep ---"
+          : > /tmp/bundle.js
+          for c in $(grep -oE '/_next/static/chunks/[a-zA-Z0-9_./-]+\.js' /tmp/today.html | sort -u); do
+            curl -sS "${DOMAIN}${c}" >> /tmp/bundle.js
+            echo "" >> /tmp/bundle.js
           done
-
-          check_page "/projects"
-          for s in "全" "プロジェクト" "稼働中" "停止中" "レンズナビ" "楽旅くん" "ペット避難" "出口のノート"; do
-            cnt=$(grep -oF "$s" /tmp/bundle_all.js | wc -l); echo "  [$s]: $cnt"
-          done
-
-          check_page "/projects/lens-navi"
-          for s in "目的" "現在の状態" "ファネル" "次のアクション" "担当AI"; do
-            cnt=$(grep -oF "$s" /tmp/bundle_all.js | wc -l); echo "  [$s]: $cnt"
-          done
-
-          check_page "/money"
-          for s in "収益ダッシュボード" "今月収益" "クリック" "収集前"; do
-            cnt=$(grep -oF "$s" /tmp/bundle_all.js | wc -l); echo "  [$s]: $cnt"
-          done
-
-          check_page "/ai-team"
-          for s in "ChatGPT" "Gemini" "手動で更新"; do
-            cnt=$(grep -oF "$s" /tmp/bundle_all.js | wc -l); echo "  [$s]: $cnt"
-          done
-
-          check_page "/pdca"
-          for s in "仮説" "実行" "結果" "改善案" "次のアクション"; do
-            cnt=$(grep -oF "$s" /tmp/bundle_all.js | wc -l); echo "  [$s]: $cnt"
-          done
-
-          check_page "/alert"
-          for s in "自動検知" "長期間停滞" "未更新" "KPI悪化"; do
-            cnt=$(grep -oF "$s" /tmp/bundle_all.js | wc -l); echo "  [$s]: $cnt"
-          done
-
-          echo "=========================================="
-          echo "REDIRECTS"
-          for p in "/" "/column-review" "/tasks" "/report-log" "/analytics"; do
-            loc=$(curl -sS -o /dev/null -D - "${DOMAIN}${p}" | grep -i "^location" | tr -d '\r')
-            code=$(curl -sS -o /dev/null -w "%{http_code}" "${DOMAIN}${p}")
-            echo "  $p -> $code $loc"
-          done
+          wc -c /tmp/bundle.js
+          echo "--- any Japanese text sample from bundle ---"
+          grep -oP '[\x{3040}-\x{30FF}\x{4E00}-\x{9FFF}]{2,}' /tmp/bundle.js | sort -u | head -30
