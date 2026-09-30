@@ -1,0 +1,32 @@
+name: tmp-verify-price
+on:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vercel deploy status (lens-navi)
+        run: |
+          curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "https://api.vercel.com/v6/deployments?projectId=prj_giumlnQKdnPBBAKU6l5t81ol54AV&limit=3&target=production" | node -e "
+              let d=''; process.stdin.on('data',c=>d+=c); process.stdin.on('end',()=>{
+                const j = JSON.parse(d);
+                for (const dep of j.deployments) console.log(new Date(dep.created).toISOString(), dep.state, (dep.meta && dep.meta.githubCommitSha||'').slice(0,7));
+              });
+            "
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Curl production page for price + link integrity
+        run: |
+          URL="https://www.lens-navi.jp/column/blue-light-megane-kouka"
+          curl -sS -o /tmp/page.html -w "HTTP %{http_code}\n" "$URL"
+          wc -c /tmp/page.html
+          echo "--- price strings ---"
+          grep -oc "2,980（税込）" /tmp/page.html || echo 0
+          grep -oc "2,970（税込）" /tmp/page.html || echo 0
+          echo "--- affiliate link integrity (mujina0008 / mj-1092 present) ---"
+          grep -oc "mujina0008" /tmp/page.html || echo 0
+          grep -oc "mj-1092" /tmp/page.html || echo 0
+          echo "--- rel=sponsored count on page ---"
+          grep -oc "sponsored" /tmp/page.html || echo 0
