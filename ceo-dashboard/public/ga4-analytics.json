@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-09-30T00:14:57.175Z",
+  "generatedAt": "2026-09-30T04:48:41.953Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-09-30T00:14:56.132Z",
+      "fetchedAt": "2026-09-30T04:48:39.809Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 223,
-      "totalPageviews": 261,
+      "totalSessions": 329,
+      "totalPageviews": 414,
       "topPages": [
         {
           "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
@@ -108,14 +108,14 @@
           "path": "/bc/8.8",
           "sessions": 6,
           "pageviews": 15,
-          "avgSessionDuration": 179.12704100000005,
+          "avgSessionDuration": 179.127041,
           "bounceRate": 0.3333333333333333
         },
         {
           "path": "/column/eye-goods-pc",
           "sessions": 6,
           "pageviews": 7,
-          "avgSessionDuration": 224.88215100000002,
+          "avgSessionDuration": 224.882151,
           "bounceRate": 0.3333333333333333
         },
         {
@@ -276,12 +276,12 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-09-30T00:14:57.175Z",
+      "fetchedAt": "2026-09-30T04:48:41.953Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 8,
+      "totalSessions": 7,
       "totalPageviews": 31,
       "topPages": [
         {

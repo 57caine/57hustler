@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T00:14:57.184Z",
+  "generatedAt": "2026-09-30T04:48:41.962Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -217,7 +217,7 @@
       "metrics": {
         "sessions": 6,
         "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 224.88215100000002,
+        "avgSessionDuration": 224.882151,
         "affiliateClicks": 0
       },
       "flags": [
