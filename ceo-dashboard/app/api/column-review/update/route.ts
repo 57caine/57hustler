@@ -8,6 +8,9 @@ interface FlaggedArticle {
   status?: '未対応' | '対応済み' | '様子見';
   priority?: 'high' | 'medium' | 'low';
   business?: string;
+  execution?: string;
+  result?: string;
+  nextAction?: string;
   [key: string]: unknown;
 }
 
@@ -18,10 +21,14 @@ interface ColumnReviewFile {
   flaggedArticles: FlaggedArticle[];
 }
 
+type UpdatablePatch = Partial<
+  Pick<FlaggedArticle, 'status' | 'priority' | 'business' | 'execution' | 'result' | 'nextAction'>
+>;
+
 async function updateOneFile(
   filePath: string,
   slug: string,
-  patch: Partial<Pick<FlaggedArticle, 'status' | 'priority' | 'business'>>,
+  patch: UpdatablePatch,
   headers: Record<string, string>,
 ): Promise<{ ok: boolean; error?: string }> {
   const getRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${filePath}`, { headers });
@@ -57,15 +64,23 @@ export async function POST(req: NextRequest) {
     status?: FlaggedArticle['status'];
     priority?: FlaggedArticle['priority'];
     business?: string;
+    execution?: string;
+    result?: string;
+    nextAction?: string;
   };
   if (!body.slug) return NextResponse.json({ error: 'slug required' }, { status: 400 });
 
-  const patch: Partial<Pick<FlaggedArticle, 'status' | 'priority' | 'business'>> = {};
+  const patch: UpdatablePatch = {};
   if (body.status) patch.status = body.status;
   if (body.priority) patch.priority = body.priority;
   if (body.business) patch.business = body.business;
+  // execution/result/nextActionは意図的に空文字での上書き（クリア）を許可する
+  // （PDCAの「結果」は自動生成しない欄で、書いたものを消したいケースがあるため）
+  if (typeof body.execution === 'string') patch.execution = body.execution;
+  if (typeof body.result === 'string') patch.result = body.result;
+  if (typeof body.nextAction === 'string') patch.nextAction = body.nextAction;
   if (Object.keys(patch).length === 0) {
-    return NextResponse.json({ error: 'status, priority, or business required' }, { status: 400 });
+    return NextResponse.json({ error: 'status, priority, business, execution, result, or nextAction required' }, { status: 400 });
   }
 
   const headers = {

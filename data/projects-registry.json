@@ -1,0 +1,167 @@
+{
+  "generatedAt": "2026-09-30T00:00:00.000Z",
+  "note": "収益・PV等の実数値はここには持たない（ga4-analytics.json等から都度取得）。ここは目的・現状・ファネル定義など変化の少ない静的情報のみを持つ。lastUpdated（最終更新）はここに固定値で持たず、/api/projects-activityでworkflowFileの最終実行日時を都度取得する",
+  "projects": [
+    {
+      "slug": "lens-navi",
+      "businessKey": "lens-navi",
+      "name": "レンズナビ",
+      "status": "active",
+      "assignedAI": "Claude",
+      "purpose": "コンタクトレンズ比較サイトとして検索流入を集め、A8.net／もしもアフィリエイト／楽天アフィリエイト経由の成約数を最大化する",
+      "currentState": "サイト全体リブランディング（配色統一・サイト内検索）完了。検索流入が主要チャネル。GA4集計バグは2026-09-30に修正済み",
+      "funnel": {
+        "inflow": "PV / 検索流入",
+        "middle": "記事閲覧 / 商品ページ遷移",
+        "cv": "商品クリック / 購入",
+        "final": "アフィリエイト収益"
+      },
+      "dataSource": "ga4",
+      "ga4PropertyId": "520238223",
+      "workflowFile": "update-prices.yml",
+      "notes": "価格・アフィリエイトリンクの自動更新は1日3回稼働中。A8_JSESSIONID期限切れにより新規リンク取得のみ失敗中（既存リンクは影響なし）"
+    },
+    {
+      "slug": "rakutabi",
+      "businessKey": "楽旅くん",
+      "name": "楽旅くん",
+      "status": "active",
+      "assignedAI": "Claude",
+      "purpose": "旅行比較サイトとして楽天トラベルへの送客収益を得る（需要検証中）",
+      "currentState": "宿泊施設データの自動取得は稼働中だが、直近のVercel公開ステップがビルドエラーで失敗している",
+      "funnel": {
+        "inflow": "PV / 検索流入",
+        "middle": "テーマ・地域ページ / 宿ページ閲覧",
+        "cv": "予約サイトへのクリック / 予約",
+        "final": "送客・収益"
+      },
+      "dataSource": "none",
+      "workflowFile": "rakutabi-hotels.yml",
+      "notes": "2026-09-29の実行でVercel公開ステップがNoto Serif JP（Google Fonts）取得エラーによりビルド失敗。データ取得自体は成功しコミットされている。ceo-dashboardにはGA4連携なし（rakutabi固有のアナリティクスは未確認）"
+    },
+    {
+      "slug": "pet-hinan",
+      "businessKey": "ペット避難",
+      "name": "ペット避難",
+      "status": "active",
+      "assignedAI": "未設定",
+      "purpose": "未設定（登録情報なし）",
+      "currentState": "リポジトリ内にコード・データが見つからない。構想段階か、別リポジトリで管理されている可能性がある",
+      "funnel": {
+        "inflow": "PV / 検索流入",
+        "middle": "記事閲覧 / 商品ページ遷移",
+        "cv": "商品クリック / 購入",
+        "final": "アフィリエイト収益"
+      },
+      "dataSource": "none",
+      "workflowFile": null,
+      "notes": "「稼働中」とのことだが本リポジトリ内に実装が一切見当たらない。実体の所在をオーナーに確認する必要がある"
+    },
+    {
+      "slug": "yonaka-uranai",
+      "businessKey": "夜中のおじさん",
+      "name": "夜中のおじさん",
+      "status": "active",
+      "assignedAI": "Claude",
+      "purpose": "占いコンテンツのThreads投稿によるフォロワー獲得と、有料note経由の収益化",
+      "currentState": "Threads自動投稿（1日6回＋テーマ別複数ワークフロー）が稼働中",
+      "funnel": {
+        "inflow": "Threads閲覧 / プロフィール流入",
+        "middle": "noteクリック",
+        "cv": "有料note購入",
+        "final": "note売上"
+      },
+      "dataSource": "none",
+      "workflowFile": "yonaka-threads-post.yml",
+      "notes": "Threads投稿の自動化は稼働中。note販売の実績（クリック数・購入数・売上額）を計測する仕組みは本リポジトリ内に存在しない"
+    },
+    {
+      "slug": "deguchi-note",
+      "businessKey": "出口のノート",
+      "name": "出口のノート",
+      "status": "active",
+      "assignedAI": "Claude（下書き生成のみ）",
+      "purpose": "note.comでの有料記事販売による収益化",
+      "currentState": "週次で下書きを自動生成（note-drafts/）。note.comへの実際の投稿・公開はオーナーによる手動作業",
+      "funnel": {
+        "inflow": "SNS / note流入",
+        "middle": "無料記事 → 有料記事",
+        "cv": "購入",
+        "final": "note売上"
+      },
+      "dataSource": "none",
+      "workflowFile": "generate-note.yml",
+      "notes": "下書き生成は自動化されているが、note.comへの公開・販売実績の計測はいずれも自動化されておらず、本リポジトリからは見えない"
+    },
+    {
+      "slug": "zassou-ojisan",
+      "businessKey": "雑草おじさん",
+      "name": "雑草おじさん",
+      "status": "active",
+      "assignedAI": "未設定",
+      "purpose": "X（旧Twitter）への投稿によるDMMコンテンツのアフィリエイト収益化",
+      "currentState": "投稿ネタ在庫の自動生成ワークフローが2026-09-22以降停止中（Vercelビルド輻輳対策として一時停止したまま再開されていない）",
+      "funnel": {
+        "inflow": "Xインプレッション / プロフィール流入",
+        "middle": "外部リンククリック",
+        "cv": "アフィリエイトCV",
+        "final": "収益"
+      },
+      "dataSource": "none",
+      "workflowFile": "zassou-stock.yml",
+      "notes": "在庫生成ワークフローのスケジュール実行が停止中（workflow_dispatchのみ）。実際のX投稿自体が続いているかは本リポジトリからは確認できない"
+    },
+    {
+      "slug": "shikaku-navi",
+      "businessKey": "資格サイト",
+      "name": "資格サイト",
+      "status": "stopped",
+      "assignedAI": "未設定",
+      "purpose": "資格スクール比較サイト",
+      "currentState": "停止中",
+      "funnel": { "inflow": "PV / 検索流入", "middle": "講座ページ閲覧", "cv": "講座申込クリック", "final": "アフィリエイト収益" },
+      "dataSource": "none",
+      "workflowFile": null,
+      "notes": "shikaku-navi/ディレクトリに実装は存在するが、A8提携16講座全件がダミーリンクのまま（A8_JSESSIONID期限切れが原因）"
+    },
+    {
+      "slug": "hoikushi-hikaku",
+      "businessKey": "保育士比較サイト",
+      "name": "保育士比較サイト",
+      "status": "stopped",
+      "assignedAI": "未設定",
+      "purpose": "未設定（登録情報なし）",
+      "currentState": "リポジトリ内に実装が見つからない",
+      "funnel": { "inflow": "未設定", "middle": "未設定", "cv": "未設定", "final": "未設定" },
+      "dataSource": "none",
+      "workflowFile": null,
+      "notes": "停止中案件のため未調査。実装の有無・停止理由ともに未確認"
+    },
+    {
+      "slug": "tokyo-ramen-map",
+      "businessKey": "東京ラーメンマップ",
+      "name": "東京ラーメンマップ",
+      "status": "stopped",
+      "assignedAI": "未設定",
+      "purpose": "未設定（登録情報なし）",
+      "currentState": "リポジトリ内に実装が見つからない",
+      "funnel": { "inflow": "未設定", "middle": "未設定", "cv": "未設定", "final": "未設定" },
+      "dataSource": "none",
+      "workflowFile": null,
+      "notes": "停止中案件のため未調査"
+    },
+    {
+      "slug": "etsy",
+      "businessKey": "Etsy",
+      "name": "Etsy",
+      "status": "stopped",
+      "assignedAI": "未設定",
+      "purpose": "未設定（登録情報なし）",
+      "currentState": "リポジトリ内に実装が見つからない",
+      "funnel": { "inflow": "未設定", "middle": "未設定", "cv": "未設定", "final": "未設定" },
+      "dataSource": "none",
+      "workflowFile": null,
+      "notes": "停止中案件のため未調査。Etsy運用自体がリポジトリ外（手動）の可能性が高い"
+    }
+  ]
+}
