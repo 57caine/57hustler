@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { logout } from '@/app/logout/actions';
 
 const links = [
   { href: '/today',    label: '🎯 TODAY' },
@@ -31,6 +32,15 @@ export default function Nav() {
             </Link>
           );
         })}
+        <form action={logout} className="ml-auto shrink-0">
+          <button
+            type="submit"
+            className="shrink-0 px-3 py-1.5 rounded-md text-sm whitespace-nowrap"
+            style={{ color: 'var(--muted)' }}
+          >
+            🚪 ログアウト
+          </button>
+        </form>
       </div>
     </nav>
   );
