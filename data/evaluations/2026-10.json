@@ -1,0 +1,78 @@
+{
+  "month": "2026-10",
+  "generatedAt": "2026-10-01T02:28:47.507Z",
+  "metrics": {
+    "period": "2026-10",
+    "夜中のおじさん": {
+      "posts": 0,
+      "duplicateCount": 0,
+      "duplicateRate": "0%"
+    },
+    "コラムbot": {
+      "posts": 0
+    },
+    "価格監視bot": {
+      "total": 0,
+      "success": 0,
+      "failure": 0
+    },
+    "九星気学bot": {
+      "total": 0,
+      "success": 0,
+      "failure": 0
+    },
+    "GitHubActions全体": {
+      "workflowCount": 9,
+      "totalRuns": 9,
+      "successRuns": 8
+    }
+  },
+  "evaluation": "# 57hustler AI社員 月次評価 (2026-10月)\n\n## 🤖 夜中のおじさん\n**よくできた点**\n- 稼働体制の維持\n\n**改善点**\n- 投稿機能が停止中（0件）\n- 重複チェック機能も非稼働\n\n**来月への期待**\n- 早期の復旧と安定稼働を希望\n\n---\n\n## 📝 コラムbot\n**よくできた点**\n- システム構築完了\n\n**改善点**\n- 本格運用開始前（0件）\n\n**来月への期待**\n- 定期投稿開始で実績を期待\n\n---\n\n## 💰 価格監視bot / 🌙 九星気学bot\n**よくできた点**\n- インフラ準備完了\n\n**改善点**\n- 両者とも未稼働（0件）\n\n**来月への期待**\n- 本稼働開始による活躍\n\n---\n\n## ⚙️ GitHubActions全体\n**よくできた点**\n- 89%の成功率を達成（8/9成功）\n- 安定したワークフロー運用\n\n**改善点**\n- 失敗1件の原因分析が必要\n\n**来月への期待**\n- 100%成功率を目指す",
+  "workflowBreakdown": {
+    "AI社員 月次人事評価": {
+      "total": 1,
+      "success": 0,
+      "failure": 0
+    },
+    "Threads 夜中のおじさん 自動投稿": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "Threads 今週のテーマ 自動投稿": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "Threads 今月の注意点 自動投稿": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "Morning Brief": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "Instagram 自動投稿": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "Threads 占い 日次自動投稿": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "GA4アナリティクス日次取得": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "価格データ・アフィリエイトリンク自動更新": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    }
+  }
+}
