@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T00:19:58.488Z",
+  "generatedAt": "2026-10-03T23:42:11.427Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -11,16 +11,16 @@
       "slug": "eyestrain-stretching-massage-guide",
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
-        "sessions": 15,
-        "bounceRate": 0.6,
-        "avgSessionDuration": 119.9868074,
+        "sessions": 14,
+        "bounceRate": 0.6428571428571429,
+        "avgSessionDuration": 127.57891178571428,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション15件・affiliate_clickゼロ"
+        "セッション14件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 6,
@@ -81,7 +81,7 @@
       "metrics": {
         "sessions": 13,
         "bounceRate": 0.3076923076923077,
-        "avgSessionDuration": 100.5378546153846,
+        "avgSessionDuration": 173.51777207692308,
         "affiliateClicks": 0
       },
       "flags": [
@@ -217,7 +217,7 @@
       "metrics": {
         "sessions": 8,
         "bounceRate": 0.125,
-        "avgSessionDuration": 36.219272499999995,
+        "avgSessionDuration": 36.2192725,
         "affiliateClicks": 0
       },
       "flags": [
