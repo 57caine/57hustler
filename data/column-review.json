@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T00:38:04.496Z",
+  "generatedAt": "2026-10-03T00:19:58.488Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -45,16 +45,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 14,
-        "bounceRate": 0.42857142857142855,
-        "avgSessionDuration": 86.52216735714285,
+        "sessions": 13,
+        "bounceRate": 0.46153846153846156,
+        "avgSessionDuration": 86.79682392307693,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション14件・affiliate_clickゼロ"
+        "セッション13件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -215,16 +215,16 @@
       "slug": "reading-glasses-presbyopia-choose-2026",
       "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
       "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.14285714285714285,
-        "avgSessionDuration": 39.03515542857143,
+        "sessions": 8,
+        "bounceRate": 0.125,
+        "avgSessionDuration": 36.219272499999995,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
+        "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -319,7 +319,7 @@
       "metrics": {
         "sessions": 6,
         "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 29.848209166666663,
+        "avgSessionDuration": 29.848209166666667,
         "affiliateClicks": 0
       },
       "flags": [
@@ -374,40 +374,6 @@
       ],
       "suggestions": [
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/acuvue-zenkindai-hikaku",
-      "slug": "acuvue-zenkindai-hikaku",
-      "title": "acuvue-zenkindai-hikaku",
-      "metrics": {
-        "sessions": 5,
-        "bounceRate": 0.2,
-        "avgSessionDuration": 28.5883658,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション5件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 6,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 68624
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
