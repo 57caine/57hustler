@@ -8,27 +8,25 @@ jobs:
       - name: Vercel deploy status (ceo-dashboard, extended history)
         run: |
           curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" \
-            "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&limit=10&target=production" | node -e "
+            "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&limit=5&target=production" | node -e "
               let d=''; process.stdin.on('data',c=>d+=c); process.stdin.on('end',()=>{
                 const j = JSON.parse(d);
-                for (const dep of j.deployments) console.log(new Date(dep.created).toISOString(), dep.state, dep.uid, (dep.meta && dep.meta.githubCommitSha||'').slice(0,7), dep.meta && dep.meta.githubCommitMessage ? dep.meta.githubCommitMessage.split('\n')[0] : '');
+                for (const dep of j.deployments) console.log(new Date(dep.created).toISOString(), dep.state, (dep.meta && dep.meta.githubCommitSha||'').slice(0,7));
               });
             "
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
-      - name: Detailed status of the a64b556 and 6094c86 deployments
+      - name: Unauthenticated redirect check (A and D) + cookie header inspection
         run: |
-          for sha in a64b556 6094c86; do
-            echo "===== commit $sha ====="
-            curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" \
-              "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&limit=20" | node -e "
-                let d=''; process.stdin.on('data',c=>d+=c); process.stdin.on('end',()=>{
-                  const j = JSON.parse(d);
-                  const target = j.deployments.find(dep => (dep.meta && dep.meta.githubCommitSha||'').startsWith('$sha'));
-                  console.log(target ? JSON.stringify({uid: target.uid, state: target.state, target: target.target, errorMessage: target.errorMessage}, null, 2) : 'not found in last 20');
-                });
-              "
+          DOMAIN="https://ceo-dashboard-alpha-livid.vercel.app"
+          for p in "/today" "/projects" "/money" "/ai-team" "/pdca" "/alert"; do
+            echo "===== $p ====="
+            curl -sS -o /dev/null -D /tmp/headers.txt -w "HTTP %{http_code}\n" "${DOMAIN}${p}"
+            grep -i "^location" /tmp/headers.txt || echo "(no location header)"
+            grep -i "^set-cookie" /tmp/headers.txt || echo "(no set-cookie header)"
+            echo
           done
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+          echo "===== /login (should be 200, not redirected) ====="
+          curl -sS -o /dev/null -w "HTTP %{http_code}\n" "${DOMAIN}/login"
