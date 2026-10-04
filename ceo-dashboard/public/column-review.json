@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T10:02:26.563Z",
+  "generatedAt": "2026-10-03T23:42:11.427Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -12,8 +12,8 @@
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
         "sessions": 14,
-        "bounceRate": 0.5714285714285714,
-        "avgSessionDuration": 128.55729364285713,
+        "bounceRate": 0.6428571428571429,
+        "avgSessionDuration": 127.57891178571428,
         "affiliateClicks": 0
       },
       "flags": [
@@ -27,41 +27,7 @@
         "h3Count": 12,
         "hasAffiliateLinks": true,
         "ctaCount": 16,
-        "contentChars": 117274
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/blue-light-megane-kouka",
-      "slug": "blue-light-megane-kouka",
-      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
-      "metrics": {
-        "sessions": 13,
-        "bounceRate": 0.15384615384615385,
-        "avgSessionDuration": 60.67500038461538,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション13件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 3,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 65370
+        "contentChars": 117529
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -81,7 +47,7 @@
       "metrics": {
         "sessions": 13,
         "bounceRate": 0.46153846153846156,
-        "avgSessionDuration": 115.74691769230769,
+        "avgSessionDuration": 86.79682392307693,
         "affiliateClicks": 0
       },
       "flags": [
@@ -95,7 +61,7 @@
         "h3Count": 8,
         "hasAffiliateLinks": true,
         "ctaCount": 4,
-        "contentChars": 71327
+        "contentChars": 71582
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -114,8 +80,8 @@
       "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
       "metrics": {
         "sessions": 13,
-        "bounceRate": 0.23076923076923078,
-        "avgSessionDuration": 167.5945823076923,
+        "bounceRate": 0.3076923076923077,
+        "avgSessionDuration": 173.51777207692308,
         "affiliateClicks": 0
       },
       "flags": [
@@ -129,7 +95,7 @@
         "h3Count": 4,
         "hasAffiliateLinks": true,
         "ctaCount": 8,
-        "contentChars": 85766
+        "contentChars": 86021
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -143,27 +109,27 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/multifocal-iol-presbyopia-surgery-2026",
-      "slug": "multifocal-iol-presbyopia-surgery-2026",
-      "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
+      "path": "/column/blue-light-megane-kouka",
+      "slug": "blue-light-megane-kouka",
+      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.2222222222222222,
-        "avgSessionDuration": 252.30668622222225,
+        "sessions": 11,
+        "bounceRate": 0.18181818181818182,
+        "avgSessionDuration": 52.02071209090909,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
+        "セッション11件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 7,
-        "h3Count": 15,
+        "h2Count": 4,
+        "h3Count": 3,
         "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 93345
+        "ctaCount": 4,
+        "contentChars": 65953
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -181,9 +147,111 @@
       "slug": "megane-facial-shape-frame-2026",
       "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
       "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.125,
+        "avgSessionDuration": 252.632898625,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 8,
+        "contentChars": 77375
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/multifocal-iol-presbyopia-surgery-2026",
+      "slug": "multifocal-iol-presbyopia-surgery-2026",
+      "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.25,
+        "avgSessionDuration": 221.884581625,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 7,
+        "h3Count": 15,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 93600
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/reading-glasses-presbyopia-choose-2026",
+      "slug": "reading-glasses-presbyopia-choose-2026",
+      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.125,
+        "avgSessionDuration": 36.2192725,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 7,
+        "contentChars": 71650
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/soft-vs-hard-contact-hikaku",
+      "slug": "soft-vs-hard-contact-hikaku",
+      "title": "soft-vs-hard-contact-hikaku",
+      "metrics": {
         "sessions": 7,
-        "bounceRate": 0.14285714285714285,
-        "avgSessionDuration": 55.21733157142857,
+        "bounceRate": 0.42857142857142855,
+        "avgSessionDuration": 39.770486999999996,
         "affiliateClicks": 0
       },
       "flags": [
@@ -193,11 +261,11 @@
         "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 3,
-        "h3Count": 4,
+        "h2Count": 4,
+        "h3Count": 5,
         "hasAffiliateLinks": true,
-        "ctaCount": 8,
-        "contentChars": 77120
+        "ctaCount": 3,
+        "contentChars": 75440
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -231,115 +299,13 @@
         "h3Count": 4,
         "hasAffiliateLinks": true,
         "ctaCount": 7,
-        "contentChars": 71525
+        "contentChars": 71780
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/reading-glasses-presbyopia-choose-2026",
-      "slug": "reading-glasses-presbyopia-choose-2026",
-      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
-      "metrics": {
-        "sessions": 6,
-        "bounceRate": 0,
-        "avgSessionDuration": 44.25681566666666,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション6件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 4,
-        "hasAffiliateLinks": true,
-        "ctaCount": 7,
-        "contentChars": 71395
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/soft-vs-hard-contact-hikaku",
-      "slug": "soft-vs-hard-contact-hikaku",
-      "title": "soft-vs-hard-contact-hikaku",
-      "metrics": {
-        "sessions": 6,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 44.94475116666666,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション6件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 5,
-        "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 75185
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/acuvue-zenkindai-hikaku",
-      "slug": "acuvue-zenkindai-hikaku",
-      "title": "acuvue-zenkindai-hikaku",
-      "metrics": {
-        "sessions": 5,
-        "bounceRate": 0.2,
-        "avgSessionDuration": 28.5883658,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション5件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 6,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 68369
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -351,23 +317,23 @@
       "slug": "kanso-shinikui-contact",
       "title": "kanso-shinikui-contact",
       "metrics": {
-        "sessions": 5,
-        "bounceRate": 0.4,
-        "avgSessionDuration": 12.4782896,
+        "sessions": 6,
+        "bounceRate": 0.3333333333333333,
+        "avgSessionDuration": 29.848209166666667,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション5件・affiliate_clickゼロ"
+        "セッション6件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
         "h3Count": 9,
         "hasAffiliateLinks": true,
         "ctaCount": 1,
-        "contentChars": 81092
+        "contentChars": 81347
       },
       "causes": [
         "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
@@ -381,27 +347,27 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/orthokeratology-guide-2026",
-      "slug": "orthokeratology-guide-2026",
-      "title": "オルソケラトロジー（角膜矯正）完全ガイド2026【子どもの近視進行抑制・費用・副作用】",
+      "path": "/column/smile-surgery-guide-2026",
+      "slug": "smile-surgery-guide-2026",
+      "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
       "metrics": {
-        "sessions": 5,
-        "bounceRate": 0.2,
-        "avgSessionDuration": 99.63477519999999,
+        "sessions": 6,
+        "bounceRate": 0.16666666666666666,
+        "avgSessionDuration": 352.4044508333333,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション5件・affiliate_clickゼロ"
+        "セッション6件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
         "h3Count": 2,
         "hasAffiliateLinks": true,
         "ctaCount": 3,
-        "contentChars": 70841
+        "contentChars": 68250
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
