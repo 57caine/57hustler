@@ -1,0 +1,32 @@
+name: tmp-verify-auth
+on:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vercel deploy status (ceo-dashboard)
+        run: |
+          curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&limit=3&target=production" | node -e "
+              let d=''; process.stdin.on('data',c=>d+=c); process.stdin.on('end',()=>{
+                const j = JSON.parse(d);
+                for (const dep of j.deployments) console.log(new Date(dep.created).toISOString(), dep.state, (dep.meta && dep.meta.githubCommitSha||'').slice(0,7));
+              });
+            "
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Unauthenticated redirect check (A and D) + cookie header inspection
+        run: |
+          DOMAIN="https://ceo-dashboard-alpha-livid.vercel.app"
+          for p in "/today" "/projects" "/money" "/ai-team" "/pdca" "/alert"; do
+            echo "===== $p ====="
+            curl -sS -o /dev/null -D /tmp/headers.txt -w "HTTP %{http_code}\n" "${DOMAIN}${p}"
+            grep -i "^location" /tmp/headers.txt || echo "(no location header)"
+            grep -i "^set-cookie" /tmp/headers.txt || echo "(no set-cookie header)"
+            echo
+          done
+
+          echo "===== /login (should be 200, not redirected) ====="
+          curl -sS -o /dev/null -w "HTTP %{http_code}\n" "${DOMAIN}/login"
