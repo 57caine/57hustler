@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T23:42:11.427Z",
+  "generatedAt": "2026-10-04T23:54:32.859Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -80,8 +80,8 @@
       "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
       "metrics": {
         "sessions": 13,
-        "bounceRate": 0.3076923076923077,
-        "avgSessionDuration": 173.51777207692308,
+        "bounceRate": 0.23076923076923078,
+        "avgSessionDuration": 176.38887415384613,
         "affiliateClicks": 0
       },
       "flags": [
@@ -149,7 +149,7 @@
       "metrics": {
         "sessions": 8,
         "bounceRate": 0.125,
-        "avgSessionDuration": 252.632898625,
+        "avgSessionDuration": 246.98182324999996,
         "affiliateClicks": 0
       },
       "flags": [
@@ -217,7 +217,7 @@
       "metrics": {
         "sessions": 8,
         "bounceRate": 0.125,
-        "avgSessionDuration": 36.2192725,
+        "avgSessionDuration": 38.377566875,
         "affiliateClicks": 0
       },
       "flags": [
