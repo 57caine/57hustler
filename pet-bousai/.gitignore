@@ -1,0 +1,7 @@
+node_modules/
+.next/
+.vercel/
+next-env.d.ts
+*.tsbuildinfo
+# 楽天APIから公開時に取得する（リポジトリには入れない）
+data/products.json
