@@ -15,39 +15,16 @@ jobs:
     permissions:
       contents: read
     steps:
-      - name: 環境省 一次資料の取得とテキスト化
+      - name: 環境省 一般飼い主編 本文（16〜23ページ）とリーフレット
         run: |
           set -u
           sudo apt-get install -y -qq poppler-utils >/dev/null
-          mkdir -p r && cd r
-          pages="
-          https://www.env.go.jp/nature/dobutsu/aigo/1_law/disaster.html
-          https://www.env.go.jp/nature/dobutsu/aigo/2_data/pamph/h3009a.html
-          https://www.env.go.jp/nature/dobutsu/aigo/2_data/pamph/h3002.html
-          https://www.env.go.jp/press/109428.html
-          https://www.env.go.jp/nature/dobutsu/aigo/2_data/saigai_guide_pet.html
-          "
-          for p in $pages; do
-            echo "################ PAGE ${p}"
-            curl -sSL -A 'Mozilla/5.0' "$p" -o page.html || { echo FETCH_FAILED; continue; }
-            # 本文テキスト（タグ除去）と、PDFリンク一覧
-            sed -e 's/<[^>]*>//g' page.html | tr -s ' \t' ' ' | grep -v '^\s*$' | head -150
-            echo "---- PDF links"
-            grep -oE 'href="[^"]+\.pdf"' page.html | sed 's/href="//;s/"$//' | sort -u | head -40
-          done
-          # 一般飼い主編・チェックリストのPDF本文
-          base_a="https://www.env.go.jp/nature/dobutsu/aigo/2_data/pamph/h3009a.html"
-          curl -sSL -A 'Mozilla/5.0' "$base_a" -o a.html
-          curl -sSL -A 'Mozilla/5.0' "https://www.env.go.jp/press/109428.html" -o c.html
-          for href in $(grep -ohE 'href="[^"]+\.pdf"' a.html c.html | sed 's/href="//;s/"$//' | sort -u | head -12); do
-            case "$href" in
-              http*) url="$href" ;;
-              /*) url="https://www.env.go.jp${href}" ;;
-              *) url="https://www.env.go.jp/nature/dobutsu/aigo/2_data/pamph/${href}" ;;
-            esac
-            echo "################ PDF ${url}"
-            curl -sSL -A 'Mozilla/5.0' "$url" -o f.pdf && pdftotext -layout f.pdf - 2>/dev/null | grep -v '^\s*$' | head -400
-          done
+          curl -sSL -A 'Mozilla/5.0' https://www.env.go.jp/nature/dobutsu/aigo/2_data/pamph/h3009a/a-1a.pdf -o a.pdf
+          echo "################ a-1a.pdf p14-23"
+          pdftotext -f 14 -l 25 a.pdf - | grep -v '^\s*$'
+          curl -sSL -A 'Mozilla/5.0' https://www.env.go.jp/nature/dobutsu/aigo/1_law/disaster.html -o d.html
+          echo "################ disaster.html links"
+          grep -oE 'href="[^"]+"[^>]*>[^<]{0,60}' d.html | grep -iE 'pdf|h3002|h3009|r0208|douko|同行' | head -30
 
       - name: 楽天市場 商品検索API 接続確認（1キーワード1回・2秒間隔）
         env:
@@ -57,7 +34,7 @@ jobs:
           cat > probe.mjs <<'EOF'
           import https from 'node:https';
           const AFF = '5567171b.a80702dc.5567171c.a1d1b6fc'; // lens-naviと共通の楽天アフィリエイトID（リンクURLに含まれる公開情報）
-          const KEYWORDS = ['犬 防災グッズ','猫 防災グッズ','ペット 避難 キャリー リュック','猫 避難 キャリー','犬 避難 リュック','うさぎ キャリー 避難','モルモット キャリー','折りたたみ ケージ 猫','猫 簡易トイレ 折りたたみ','ペット 携帯 トイレ','ペット 防災セット','ペット 迷子札','ペット 給水ボトル 携帯','小動物 保温 電気不要'];
+          const KEYWORDS = ['犬 迷子札','猫 迷子札','ペット 給水ボトル 携帯','マナーポーチ 犬','猫 洗濯ネット','犬 避難 リュック','折りたたみ ケージ 犬','猫 キャリー ハード','折りたたみ ケージ 猫','猫 簡易トイレ 折りたたみ','うさぎ キャリー','モルモット キャリー','小動物 保温 電気不要','ペット 防災セット'];
           function get(url) {
             return new Promise((resolve, reject) => {
               const req = https.get(url, { headers: { Referer: 'https://lens-navi.jp/', Origin: 'https://lens-navi.jp' } }, (res) => {
@@ -69,17 +46,17 @@ jobs:
           }
           const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
           for (const kw of KEYWORDS) {
-            const q = new URLSearchParams({ applicationId: process.env.RAKUTEN_APP_ID, accessKey: process.env.RAKUTEN_ACCESS_KEY, affiliateId: AFF, keyword: kw, hits: '10', availability: '1', imageFlag: '1', formatVersion: '2', format: 'json' });
+            const q = new URLSearchParams({ applicationId: process.env.RAKUTEN_APP_ID, accessKey: process.env.RAKUTEN_ACCESS_KEY, affiliateId: AFF, keyword: kw, hits: '15', availability: '1', imageFlag: '1', genreId: '101213', formatVersion: '2', format: 'json' });
             const r = await get(`https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701?${q}`);
             console.log(`\n===== ${kw} HTTP ${r.status}`);
             let d; try { d = JSON.parse(r.body); } catch { console.log(r.body.slice(0, 300)); await sleep(2000); continue; }
             if (d.error || d.errors) { console.log(JSON.stringify(d).slice(0, 400)); await sleep(2000); continue; }
             console.log(`count=${d.count} keys(top)=${Object.keys(d).join(',')}`);
             const items = d.Items || [];
-            if (items[0]) console.log('item keys=' + Object.keys(items[0].Item || items[0]).join(','));
+            if (items[0]) { const f = items[0].Item || items[0]; console.log('item keys=' + Object.keys(f).join(',')); console.log('FULL affiliateUrl=' + f.affiliateUrl); console.log('FULL itemUrl=' + f.itemUrl); console.log('mediumImageUrls=' + JSON.stringify(f.mediumImageUrls)); console.log('contains our affiliate id: ' + String(f.affiliateUrl || '').includes(AFF)); }
             for (const raw of items) {
               const it = raw.Item || raw;
-              console.log(JSON.stringify({ name: it.itemName?.slice(0, 70), price: it.itemPrice, shop: it.shopName, genreId: it.genreId, aff: (it.affiliateUrl || '').slice(0, 60), item: (it.itemUrl || '').slice(0, 50), img: (it.mediumImageUrls?.[0]?.imageUrl ?? it.mediumImageUrls?.[0] ?? '').toString().slice(0, 90), code: it.itemCode, rev: it.reviewCount }));
+              console.log(JSON.stringify({ name: it.itemName?.slice(0, 90), price: it.itemPrice, shop: it.shopName, genreId: it.genreId, affOk: String(it.affiliateUrl || '').includes(AFF), code: it.itemCode, rev: it.reviewCount }));
             }
             await sleep(2000);
           }
