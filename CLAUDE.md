@@ -224,6 +224,7 @@ JSESSIONID更新後の実行ログで初めて判明する。現時点では「�
 | school-navi（プログラミングスクール） | `school-navi/` | `main` |
 | shikaku-navi（資格） | `shikaku-navi/` | `main` |
 | 楽旅くん（仮称・旅行比較、vercel.appで需要検証中） | `rakutabi/` | GitHub連携なし。Actionsから公開（詳細は`rakutabi/CLAUDE.md`） |
+| ペット防災（仮称・MVP、未公開・noindex） | `pet-bousai/` | GitHub連携なし。作業ブランチ`claude/pet-bousai-mvp`からActionsでプレビュー公開のみ（本番公開の経路は未作成。詳細は`pet-bousai/CLAUDE.md`） |
 | CEOダッシュボード | `ceo-dashboard/` | `main`。本番URL: `https://ceo-dashboard-alpha-livid.vercel.app`（2026-09-29確認。`ceo-dashboard.vercel.app`ではない。`scripts/business-audit.ts`のコメントに古いURLが残っているので参照しないこと。正しいURLはVercel API `GET /v9/projects/{id}/domains`で確認） |
 
 ## CEOダッシュボードの機能実装漏れドキュメント化（2026-09-29発見）

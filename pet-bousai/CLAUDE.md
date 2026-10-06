@@ -12,6 +12,12 @@
 - Vercelプロジェクト `pet-bousai`（GitHub連携なし）。`.github/workflows/pet-bousai-preview.yml` が
   Actions上でビルドし、**プレビュー公開のみ**を行う（本番公開・独自ドメインの手順はまだ無い）
 - 全ページ noindex。独自ドメイン取得・GA4・Search Console・楽天サイト登録・index解禁は未実施（オーナー確認後）
+- **Vercelへのプレビュー公開は未完了**: GitHub Secrets の `VERCEL_TOKEN` がチーム `57caines-projects` への権限を失っており
+  （`Not authorized: Trying to access resource under scope "57caines-projects". You must re-authenticate`、saml:true）、
+  プロジェクトの作成・公開APIが403になる。楽旅くんの公開（rakutabi-hotels.yml）も 2026-10-04 以降同じエラーで失敗している。
+  オーナーがVercelでトークンを再発行（チームへの再認証）し、Secret を更新するまで公開できない
+- 公開できない間も、ワークフローは Actions 上でビルド・起動し、実際の商品データで全ページ機械チェックと
+  スマホ実ブラウザ確認（商品画像の読み込み・affiliate_click）まで行う（2026-10-06 run 37410826072 で全項目合格）
 
 ## index（検索エンジン公開）の安全装置
 
