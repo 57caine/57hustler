@@ -95,9 +95,12 @@ const PAGES = ['/', '/dog', '/cat', '/rabbit-guinea-pig', '/dog/carrier', '/cat/
   await new Promise((r) => setTimeout(r, 1500));
   const clicks = hits.filter(isClick);
   console.log('クリックした楽天リンク:', expected.href.slice(0, 90));
-  console.log('affiliate_click（GA4への送信内容）:', JSON.stringify(clicks.map((h) => ({ en: h.en, tid: h.tid, page_path: h['ep.page_path'], product_name: h['ep.product_name'], product_category: h['ep.product_category'], destination: h['ep.destination'] }))));
+  // page_path は gtag の予約パラメータで独自項目としては送られないため、どのページのクリックかは
+  // GA4 が全イベントに自動で付ける page_location（dl）で判定する（GA4 の「ページパス」はここから作られる）
+  const pathOf = (h) => h['ep.page_path'] || (h.dp ?? '') || new URL(h.dl || 'http://x/').pathname;
+  console.log('affiliate_click（GA4への送信内容）:', JSON.stringify(clicks.map((h) => ({ en: h.en, tid: h.tid, page_location: h.dl, page: pathOf(h), product_name: h['ep.product_name'], product_category: h['ep.product_category'], destination: h['ep.destination'], keys: Object.keys(h).filter((k) => k.startsWith('ep.') || k.startsWith('epn.')) }))));
   const ev = clicks[0];
-  if (clicks.length !== 1 || ev['ep.page_path'] !== '/cat/carrier' || ev['ep.product_name'] !== expected.name || ev['ep.product_category'] !== expected.cat || ev['ep.destination'] !== 'rakuten') {
+  if (clicks.length !== 1 || pathOf(ev) !== '/cat/carrier' || ev['ep.product_name'] !== expected.name || ev['ep.product_category'] !== expected.cat || ev['ep.destination'] !== 'rakuten') {
     problems.push(`affiliate_click が期待どおりに送られていない（${clicks.length}件）`);
   }
   // 広告以外のリンク（環境省の出典）では送られないこと

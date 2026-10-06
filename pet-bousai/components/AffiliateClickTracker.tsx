@@ -13,6 +13,7 @@ declare global {
  * GA4イベント affiliate_click を送る。
  * 対象: rel に sponsored を含むリンク（＝楽天アフィリエイトリンク）
  * パラメータ: page_path, product_name, product_category, destination（個人情報は送らない）
+ * ※ page_path は gtag の予約パラメータのため、GA4 では独自項目にならず、自動で付く page_location（ページパス）として記録される
  * GA4 未導入（window.gtag が無い）ときは何もしない。
  */
 export default function AffiliateClickTracker() {
