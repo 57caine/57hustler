@@ -3,8 +3,9 @@ name: ペット防災 商品取得・プレビュー公開（noindex）
 # 開発環境からは楽天API・Vercel API に直接アクセスできないため、Actions 上で行う。
 #   1. 型チェック・lint
 #   2. 楽天市場 商品検索APIから商品を取得（pet-bousai/data/products.json、コミットはしない）
-#   3. Vercelプロジェクト「pet-bousai」へプレビュー公開（本番公開・独自ドメインは扱わない）
-#   4. プレビューURLの全ページを機械チェック（noindex・広告表記・出典・楽天リンク属性・禁止表現・robots・sitemap）
+#   3. Actions上でビルド・起動し、全ページ機械チェック＋スマホ実ブラウザ確認（実際の商品データ・画像で確認）
+#   4. Vercelプロジェクト「pet-bousai」へプレビュー公開（本番公開・独自ドメインは扱わない）
+#   5. プレビューURLの全ページを機械チェック（noindex・広告表記・出典・楽天リンク属性・禁止表現・robots・sitemap）
 #
 # 2026-10-05 時点: オーナー確認前のMVP。独自ドメイン取得・index 解禁はオーナー承認後に別途追加する。
 # 商品は毎日は更新しない（このワークフローを実行したときだけ取得する）。
@@ -54,6 +55,19 @@ jobs:
           RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
           RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
 
+      - name: Actions上でビルド・起動して全ページ機械チェック（実際の商品データ）
+        run: |
+          npm run build
+          (npx next start -p 3100 > /tmp/next.log 2>&1 &)
+          for i in $(seq 1 30); do curl -sf -o /dev/null http://localhost:3100/ && break; sleep 1; done
+          npx tsx scripts/verify-site.ts http://localhost:3100 --expect-products
+
+      - name: Actions上でスマホ表示・商品画像・affiliate_click の実ブラウザ確認
+        run: |
+          npm i --no-save --no-audit --no-fund playwright@1.63.0 >/dev/null
+          npx playwright install --with-deps chromium >/dev/null
+          node scripts/check-mobile.mjs http://localhost:3100
+
       - name: Vercelへプレビュー公開
         run: |
           set -o pipefail
@@ -72,6 +86,4 @@ jobs:
       - name: スマホ表示・商品画像・affiliate_click の実ブラウザ確認
         run: |
           url=$(grep -oE '^PREVIEW_URL=https://[^ ]+' /tmp/deploy.log | tail -1 | cut -d= -f2)
-          npm i --no-save --no-audit --no-fund playwright@1.63.0 >/dev/null
-          npx playwright install --with-deps chromium >/dev/null
           node scripts/check-mobile.mjs "${url}"

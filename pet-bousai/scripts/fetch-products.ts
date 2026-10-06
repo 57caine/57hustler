@@ -134,7 +134,7 @@ async function main() {
     let seen = 0;
     let excluded = 0;
     for (const keyword of group.keywords) {
-      for (let page = 1; page <= 2 && picked.length < group.limit; page++) {
+      for (let page = 1; page <= 3 && picked.length < group.limit; page++) {
         const items = await search(keyword, page);
         for (const it of items) {
           if (picked.length >= group.limit) break;
@@ -143,6 +143,7 @@ async function main() {
           const nameKey = displayName(it.itemName).slice(0, 24);
           if (!isAffiliateItemUrl(it.affiliateUrl) || !image || it.availability === 0) { excluded++; continue; }
           if (isExcludedName(it.itemName)) { excluded++; continue; }
+          if (!group.mustMatch.test(it.itemName)) { excluded++; continue; }
           if (used.has(it.itemCode) || usedNames.has(nameKey)) continue;
           used.add(it.itemCode);
           usedNames.add(nameKey);
