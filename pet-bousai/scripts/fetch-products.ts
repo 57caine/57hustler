@@ -143,7 +143,8 @@ async function main() {
           const nameKey = displayName(it.itemName).slice(0, 24);
           if (!isAffiliateItemUrl(it.affiliateUrl) || !image || it.availability === 0) { excluded++; continue; }
           if (isExcludedName(it.itemName)) { excluded++; continue; }
-          if (!group.mustMatch.test(it.itemName)) { excluded++; continue; }
+          // 表示する商品名（括弧書きを除いた部分）で判定し、利用者が見て対象の動物・用品だと分かるものだけを載せる
+          if (!group.mustMatch.test(displayName(it.itemName))) { excluded++; continue; }
           if (used.has(it.itemCode) || usedNames.has(nameKey)) continue;
           used.add(it.itemCode);
           usedNames.add(nameKey);

@@ -27,6 +27,21 @@ const PAGES = ['/', '/dog', '/cat', '/rabbit-guinea-pig', '/dog/carrier', '/cat/
     // 遅延読み込みの画像を読ませるため最下部までスクロール
     await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 80)); } });
     await page.waitForLoadState('networkidle');
+    // 商品画像は1枚ずつ読み込み完了（最大15秒）を待ってから判定する
+    await page.evaluate(() =>
+      Promise.all(
+        [...document.querySelectorAll('[data-product-section] img')].map((img) =>
+          img.complete && img.naturalWidth > 0
+            ? null
+            : new Promise((resolve) => {
+                img.loading = 'eager';
+                img.addEventListener('load', resolve, { once: true });
+                img.addEventListener('error', resolve, { once: true });
+                setTimeout(resolve, 15000);
+              }),
+        ),
+      ),
+    );
     const r = await page.evaluate(() => {
       const de = document.documentElement;
       const over = [...document.querySelectorAll('body *')].filter((el) => el.getBoundingClientRect().right > de.clientWidth + 1).map((el) => el.tagName);
