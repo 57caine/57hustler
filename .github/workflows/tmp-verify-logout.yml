@@ -5,15 +5,23 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - name: Check logout markup presence on /login (Nav renders on every page)
+      - name: Vercel deploy status (ceo-dashboard)
+        run: |
+          curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&limit=5&target=production" | node -e "
+              let d=''; process.stdin.on('data',c=>d+=c); process.stdin.on('end',()=>{
+                const j = JSON.parse(d);
+                for (const dep of j.deployments) console.log(new Date(dep.created).toISOString(), dep.state, (dep.meta && dep.meta.githubCommitSha||'').slice(0,7));
+              });
+            "
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Check logout button is now outside the scrolling nav links container
         run: |
           DOMAIN="https://ceo-dashboard-alpha-livid.vercel.app"
           curl -sS -o /tmp/login.html -w "HTTP %{http_code}\n" "${DOMAIN}/login"
-          echo "--- logout action reference present? ---"
-          grep -oc "logout" /tmp/login.html || echo 0
           echo "--- logout button text present? ---"
           grep -oc "ログアウト" /tmp/login.html || echo 0
-          echo "--- nav container classes (overflow/scroll behavior) ---"
-          grep -oE '<nav[^>]*>.{0,200}' /tmp/login.html | head -3
-          echo "--- ml-auto present (pushes button to far right of scroll container)? ---"
-          grep -oc "ml-auto" /tmp/login.html || echo 0
+          echo "--- full nav markup (first 900 chars) ---"
+          grep -oE '<nav[^>]*>.{0,900}' /tmp/login.html | head -1
