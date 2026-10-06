@@ -40,4 +40,10 @@ export const INDEXABLE: boolean = indexRequested && SITE_URL !== null;
 /** 楽天アフィリエイトID（lens-navi と共通の1アカウント。リンクURLに含まれる公開情報） */
 export const RAKUTEN_AFFILIATE_ID = '5567171b.a80702dc.5567171c.a1d1b6fc';
 
+/**
+ * GA4 測定ID（2026-10-07 オーナー作成のデータストリーム、対象: https://pet-bousai-pi.vercel.app）。
+ * 測定IDはページのHTMLに必ず含まれる公開情報のため、コードに直接記載する。
+ */
+export const GA_MEASUREMENT_ID = 'G-KPE1LBHFW7';
+
 export const AD_NOTICE = '当サイトは楽天アフィリエイトを利用しており、商品の紹介には広告が含まれます。';

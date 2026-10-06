@@ -53,6 +53,10 @@ async function checkPage(path: string, isArticle: boolean) {
     if (!/noindex/.test(xRobots)) ng(path, `X-Robots-Tag に noindex がない（${xRobots || 'なし'}）`);
   }
   if (/vercel\.app/.test(canonical)) ng(path, `canonical が vercel.app を指している（${canonical}）`);
+  // GA4: gtag.js の先読み指定が1件、初期化（config）が1件であること（実際に読み込まれる数はスマホ確認で数える）
+  const gaTags = (body.match(/<link rel="preload" href="https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-KPE1LBHFW7"/g) ?? []).length;
+  const gaConfig = (body.match(/gtag\('config','G-KPE1LBHFW7'\)/g) ?? []).length;
+  if (gaTags !== 1 || gaConfig !== 1) ng(path, `GA4タグ（G-KPE1LBHFW7）: gtag.js ${gaTags}件・config ${gaConfig}件（各1件であるべき）`);
 
   if (path !== '/about' && path !== '/privacy' && path !== '/sources' && !body.includes('data-ad-notice')) ng(path, '広告表記がない');
   if (isArticle) {
@@ -86,7 +90,7 @@ async function checkPage(path: string, isArticle: boolean) {
   for (const w of FORBIDDEN) if (text.includes(w)) ng(path, `禁止表現「${w}」を含む`);
   if (/[￥¥]\s?\d|\d[\d,]*円/.test(text)) ng(path, '価格表示を含む');
 
-  console.log(`OK? ${path.padEnd(20)} HTTP ${res.status} | robots="${robotsMeta}" | X-Robots-Tag="${xRobots}" | canonical="${canonical || 'なし'}" | 楽天リンク ${affiliate}件`);
+  console.log(`OK? ${path.padEnd(20)} HTTP ${res.status} | robots="${robotsMeta}" | X-Robots-Tag="${xRobots}" | canonical="${canonical || 'なし'}" | GA4タグ ${gaTags}件 | 楽天リンク ${affiliate}件`);
 }
 
 async function main() {

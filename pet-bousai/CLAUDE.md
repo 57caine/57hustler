@@ -15,7 +15,11 @@
 - **Vercel公開済み（2026-10-06、noindex）**: 固定URL `https://pet-bousai-pi.vercel.app`。オーナーが `VERCEL_TOKEN` を再発行して公開できた
   （それ以前は旧トークンがチーム `57caines-projects` への権限を失っており403だった。楽旅くんも同じ原因で10/4から公開失敗）。
   プロジェクト初回の公開だったため、Vercel の仕様で `--prod` なしでも本番扱いになり上記の固定URLが割り当てられた。
-  2回目以降の公開はプレビュー（毎回別URL）になり、固定URLの中身は更新されない
+  2026-10-07 以降、公開スクリプトは `--prod` で固定URLへ反映する（オーナー指示）。noindex のまま（index 用の環境変数がプロジェクトに無いことを確認してから公開）
+- **GA4導入済み（2026-10-07）**: 測定ID `G-KPE1LBHFW7`（`lib/site.ts` の GA_MEASUREMENT_ID、`components/Analytics.tsx` で全ページ1回だけ読み込み）。
+  page_view は `gtag('config')` の自動送信のみ（手動送信なし＝二重計測なし。サイト内移動はGA4の拡張計測「ブラウザの履歴イベント」に依存）。
+  affiliate_click は `components/AffiliateClickTracker.tsx`（rel=sponsored のリンクのみ、page_path/product_name/product_category/destination）。
+  `scripts/check-mobile.mjs` は GA4 への実送信（/g/collect）をブラウザ内で捕まえて検証し、Google には届けない（実データを汚さない）
 - 公開できない間も、ワークフローは Actions 上でビルド・起動し、実際の商品データで全ページ機械チェックと
   スマホ実ブラウザ確認（商品画像の読み込み・affiliate_click）まで行う（2026-10-06 run 37410826072 で全項目合格）
 

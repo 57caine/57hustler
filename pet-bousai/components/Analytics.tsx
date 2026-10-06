@@ -1,12 +1,15 @@
 import Script from 'next/script';
+import { GA_MEASUREMENT_ID } from '@/lib/site';
 
 /**
- * GA4。測定ID（NEXT_PUBLIC_GA_ID）が設定されたときだけ読み込む。
- * 2026-10-05 時点では未設定（GA4プロパティはオーナー確認後に作成する）。
+ * GA4（gtag.js）。layout.tsx から全ページで1回だけ読み込む。
+ * - page_view は gtag('config') が自動で送る（初回表示）。サイト内のページ移動は、GA4 のデータストリーム設定
+ *   「拡張計測機能 > ブラウザの履歴イベントに基づくページの変更」で計測される。二重計測を避けるため、
+ *   page_view を手動では送らない
+ * - affiliate_click は components/AffiliateClickTracker.tsx が送る
  */
 export default function Analytics() {
-  const id = process.env.NEXT_PUBLIC_GA_ID;
-  if (!id || !/^G-[A-Z0-9]+$/.test(id)) return null;
+  const id = GA_MEASUREMENT_ID;
   return (
     <>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${id}`} strategy="afterInteractive" />

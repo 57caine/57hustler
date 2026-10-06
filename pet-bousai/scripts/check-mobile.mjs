@@ -3,8 +3,10 @@
  *   node scripts/check-mobile.mjs <baseUrl>
  * - 横方向のはみ出し、12px未満の文字、ページエラー
  * - 商品画像（楽天APIの画像URL）が実際に読み込めているか
- * - 楽天リンクのクリックで GA4 イベント affiliate_click が正しいパラメータで1回送られるか
- *   （GA4 は未導入のため window.gtag を差し替えて記録する。楽天への遷移はテスト中は遮断する）
+ * - GA4（G-KPE1LBHFW7）: 各ページの表示で page_view が1回だけ送られるか（重複計測がないか）
+ * - 楽天リンクのクリックで affiliate_click が正しいパラメータで1回送られるか
+ *   GA4 への送信（/g/collect）はブラウザ内で捕まえて中身を確認し、Google には届けない（確認作業で実データを汚さないため）。
+ *   楽天への遷移もテスト中は遮断する
  * 問題があれば終了コード1。playwright はワークフロー内で一時的にインストールする（package.json には入れない）。
  */
 import { chromium } from 'playwright';
@@ -16,14 +18,37 @@ const PAGES = ['/', '/dog', '/cat', '/rabbit-guinea-pig', '/dog/carrier', '/cat/
   const problems = [];
   const browser = await chromium.launch();
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, locale: 'ja-JP' });
-  await ctx.addInitScript(() => { window.__events = []; window.gtag = (...a) => window.__events.push(a); });
   await ctx.route('https://hb.afl.rakuten.co.jp/**', (r) => r.fulfill({ status: 200, body: 'blocked in test' }));
+  // GA4 の送信を捕まえる（1リクエストに複数イベントがまとめて入る場合は本文の各行が1イベント）
+  const hits = [];
+  await ctx.route(/google-analytics\.com\/g\/collect/, (route) => {
+    const req = route.request();
+    const url = new URL(req.url());
+    const base = Object.fromEntries(url.searchParams);
+    const lines = (req.postData() || '').split('\n').filter(Boolean);
+    if (lines.length === 0) hits.push(base);
+    for (const line of lines) hits.push({ ...base, ...Object.fromEntries(new URLSearchParams(line)) });
+    route.fulfill({ status: 204, body: '' });
+  });
+  const waitFor = async (pred, ms) => {
+    for (let t = 0; t < ms; t += 250) { if (hits.some(pred)) return true; await new Promise((r) => setTimeout(r, 250)); }
+    return hits.some(pred);
+  };
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
 
   for (const p of PAGES) {
+    hits.length = 0;
     await page.goto(BASE + p, { waitUntil: 'networkidle' });
+    const isPv = (h) => h.en === 'page_view' && h.tid === 'G-KPE1LBHFW7' && new URL(h.dl || 'http://x/').pathname === p;
+    await waitFor(isPv, 8000);
+    await new Promise((r) => setTimeout(r, 1000)); // 重複送信がないかを見るため少し待つ
+    const pv = hits.filter(isPv).length;
+    const gaScripts = await page.evaluate(() => document.querySelectorAll('script[src*="googletagmanager.com/gtag/js?id=G-KPE1LBHFW7"]').length);
+    if (gaScripts !== 1) problems.push(`${p}: GA4スクリプトが ${gaScripts} 個読み込まれている（1個であるべき）`);
+    console.log(`${p.padEnd(20)} GA4スクリプト ${gaScripts}個 / page_view ${pv}件（tid=G-KPE1LBHFW7）`);
+    if (pv !== 1) problems.push(`${p}: page_view が ${pv} 件（1件であるべき）`);
     // 遅延読み込みの画像を読ませるため最下部までスクロール
     await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 80)); } });
     await page.waitForLoadState('networkidle');
@@ -59,17 +84,31 @@ const PAGES = ['/', '/dog', '/cat', '/rabbit-guinea-pig', '/dog/carrier', '/cat/
   }
 
   await page.goto(BASE + '/cat/carrier', { waitUntil: 'networkidle' });
+  await waitFor((h) => h.en === 'page_view', 8000);
+  hits.length = 0;
   const link = page.locator('a[rel~="sponsored"]').first();
   const expected = await link.evaluate((a) => ({ name: a.dataset.productName, cat: a.dataset.productCategory, href: a.href }));
   const [popup] = await Promise.all([page.waitForEvent('popup'), link.click()]);
   await popup.close();
-  const events = await page.evaluate(() => window.__events.filter((e) => e[0] === 'event' && e[1] === 'affiliate_click'));
+  const isClick = (h) => h.en === 'affiliate_click' && h.tid === 'G-KPE1LBHFW7';
+  await waitFor(isClick, 10000);
+  await new Promise((r) => setTimeout(r, 1500));
+  const clicks = hits.filter(isClick);
   console.log('クリックした楽天リンク:', expected.href.slice(0, 90));
-  console.log('affiliate_click:', JSON.stringify(events));
-  const ev = events[0]?.[2];
-  if (events.length !== 1 || !ev || ev.page_path !== '/cat/carrier' || ev.product_name !== expected.name || ev.product_category !== expected.cat || ev.destination !== 'rakuten') {
-    problems.push('affiliate_click が期待どおりに送られていない');
+  console.log('affiliate_click（GA4への送信内容）:', JSON.stringify(clicks.map((h) => ({ en: h.en, tid: h.tid, page_path: h['ep.page_path'], product_name: h['ep.product_name'], product_category: h['ep.product_category'], destination: h['ep.destination'] }))));
+  const ev = clicks[0];
+  if (clicks.length !== 1 || ev['ep.page_path'] !== '/cat/carrier' || ev['ep.product_name'] !== expected.name || ev['ep.product_category'] !== expected.cat || ev['ep.destination'] !== 'rakuten') {
+    problems.push(`affiliate_click が期待どおりに送られていない（${clicks.length}件）`);
   }
+  // 広告以外のリンク（環境省の出典）では送られないこと
+  hits.length = 0;
+  const src = page.locator('a[href^="https://www.env.go.jp"]').first();
+  await src.evaluate((a) => a.addEventListener('click', (e) => e.preventDefault()));
+  await src.click();
+  await new Promise((r) => setTimeout(r, 3000));
+  const wrong = hits.filter((h) => h.en === 'affiliate_click').length;
+  console.log(`出典リンククリック時の affiliate_click: ${wrong}件`);
+  if (wrong) problems.push('広告以外のリンクで affiliate_click が送られた');
   if (errors.length) problems.push(`ページエラー: ${errors.join(' / ')}`);
   await browser.close();
   console.log(problems.length ? `\n問題 ${problems.length}件:\n- ${problems.join('\n- ')}` : '\nスマホ表示・計測チェック: 問題なし');

@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-# ペット防災（pet-bousai）を Vercel に「プレビュー」として公開する（GitHub Actions から実行）。
+# ペット防災（pet-bousai）を Vercel に公開する（固定の vercel.app URL、noindex）（GitHub Actions から実行）。
 #
 # - Vercelプロジェクト「pet-bousai」が無ければ作成する。GitHub連携はしない（楽旅くんと同じ方式。
 #   連携するとモノレポへの全pushでビルド判定が走り、同時ビルド枠1の環境で他事業のデプロイを圧迫するため）
 # - GitHub Actions 上でビルドし（vercel build）、成果物だけをアップロードする（--prebuilt）
-# - このスクリプトは本番公開（--prod）を行わない。独自ドメインでの公開はオーナー承認後に別途追加する
+# - 固定の vercel.app URL（pet-bousai-pi.vercel.app）へ反映するため --prod で公開する（2026-10-07 オーナー指示）。
+#   独自ドメインは未設定で、index を許可する環境変数がプロジェクトに無いことを下で確認してから公開する（noindex のまま）
 # - 確認URLをオーナーがログインなしで開けるよう、このプロジェクトに限りプレビューの Vercel認証 を無効にする
 #   （検索エンジン対策は、ページの noindex と X-Robots-Tag ヘッダーで行う）
 #
@@ -49,13 +50,13 @@ if [ "${SSO}" != "null" ]; then
     -d '{"ssoProtection":null}' | jq -c '{ssoProtection, error}'
 fi
 
-echo "=== 2. ビルド・プレビュー公開 ==="
+echo "=== 2. ビルド・公開（固定URLへ反映、noindex） ==="
 export VERCEL_ORG_ID="${TEAM_ID}"
 export VERCEL_PROJECT_ID="${PROJECT_ID}"
 unset PET_BOUSAI_INDEXABLE PET_BOUSAI_SITE_URL
-npx --yes vercel@latest pull --yes --environment=preview --token="${VERCEL_TOKEN}" >/dev/null
-npx --yes vercel@latest build --token="${VERCEL_TOKEN}"
-PREVIEW_URL=$(npx --yes vercel@latest deploy --prebuilt --yes --token="${VERCEL_TOKEN}")
+npx --yes vercel@latest pull --yes --environment=production --token="${VERCEL_TOKEN}" >/dev/null
+npx --yes vercel@latest build --prod --token="${VERCEL_TOKEN}"
+PREVIEW_URL=$(npx --yes vercel@latest deploy --prebuilt --prod --yes --token="${VERCEL_TOKEN}")
 echo "PREVIEW_URL=${PREVIEW_URL}"
 
 # 固定の vercel.app URL（初回公開時に Vercel が本番エイリアスとして割り当てたもの）も確認対象として出力する
