@@ -85,7 +85,17 @@ jobs:
           echo "### 確認URL: ${url}" >> "$GITHUB_STEP_SUMMARY"
           npx tsx scripts/verify-site.ts "${url}" --expect-products
 
-      - name: スマホ表示・商品画像・affiliate_click の実ブラウザ確認
+      - name: 固定URL（vercel.app）の全ページ機械チェック
         run: |
+          alias=$(grep -oE '^PRODUCTION_ALIAS=https://[^ ]+' /tmp/deploy.log | tail -1 | cut -d= -f2)
+          if [ -z "${alias}" ]; then echo "固定URLなし（スキップ）"; exit 0; fi
+          echo "固定URL: ${alias}"
+          echo "### 固定URL: ${alias}" >> "$GITHUB_STEP_SUMMARY"
+          npx tsx scripts/verify-site.ts "${alias}" --expect-products
+
+      - name: スマホ表示・商品画像・affiliate_click の実ブラウザ確認（公開URL）
+        run: |
+          # 公開処理（vercel build）で依存関係が入れ直され playwright が消えるため、ここで再度入れる
+          npm i --no-save --no-audit --no-fund playwright@1.63.0 >/dev/null
           url=$(grep -oE '^PREVIEW_URL=https://[^ ]+' /tmp/deploy.log | tail -1 | cut -d= -f2)
           node scripts/check-mobile.mjs "${url}"

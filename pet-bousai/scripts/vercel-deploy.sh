@@ -57,3 +57,8 @@ npx --yes vercel@latest pull --yes --environment=preview --token="${VERCEL_TOKEN
 npx --yes vercel@latest build --token="${VERCEL_TOKEN}"
 PREVIEW_URL=$(npx --yes vercel@latest deploy --prebuilt --yes --token="${VERCEL_TOKEN}")
 echo "PREVIEW_URL=${PREVIEW_URL}"
+
+# 固定の vercel.app URL（初回公開時に Vercel が本番エイリアスとして割り当てたもの）も確認対象として出力する
+PRODUCTION_ALIAS=$(curl -sS "${API}/v9/projects/${PROJECT_ID}/domains?teamId=${TEAM_ID}" -H "${AUTH}" \
+  | jq -r '[.domains[]?.name | select(endswith(".vercel.app"))][0] // empty')
+[ -n "${PRODUCTION_ALIAS}" ] && echo "PRODUCTION_ALIAS=https://${PRODUCTION_ALIAS}"
