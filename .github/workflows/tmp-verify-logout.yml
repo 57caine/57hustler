@@ -1,0 +1,19 @@
+name: tmp-verify-logout
+on:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check logout markup presence on /login (Nav renders on every page)
+        run: |
+          DOMAIN="https://ceo-dashboard-alpha-livid.vercel.app"
+          curl -sS -o /tmp/login.html -w "HTTP %{http_code}\n" "${DOMAIN}/login"
+          echo "--- logout action reference present? ---"
+          grep -oc "logout" /tmp/login.html || echo 0
+          echo "--- logout button text present? ---"
+          grep -oc "ログアウト" /tmp/login.html || echo 0
+          echo "--- nav container classes (overflow/scroll behavior) ---"
+          grep -oE '<nav[^>]*>.{0,200}' /tmp/login.html | head -3
+          echo "--- ml-auto present (pushes button to far right of scroll container)? ---"
+          grep -oc "ml-auto" /tmp/login.html || echo 0
