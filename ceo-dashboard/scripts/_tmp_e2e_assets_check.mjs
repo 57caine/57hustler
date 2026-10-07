@@ -80,18 +80,23 @@ async function restCount(token) {
     console.log(`  [net] request failed: ${req.method()} ${req.url()} ${req.failure()?.errorText ?? ''}`);
   });
   page.on('response', (res) => {
-    if (res.request().method() === 'POST') {
-      console.log(`  [net] POST ${res.url()} -> status=${res.status()}`);
+    const status = res.status();
+    if (status >= 300 && status < 400) {
+      console.log(`  [net] ${res.request().method()} ${res.url()} -> ${status}, location=${res.headers()['location'] ?? '(なし)'}`);
+    } else if (res.request().method() === 'POST') {
+      console.log(`  [net] POST ${res.url()} -> status=${status}`);
     }
   });
 
-  // 実際の/loginフォームからログイン(本物のUI経由)。固定待機で状態を確実に確認する
-  await page.goto(`${BASE_URL}/login`, { waitUntil: 'domcontentloaded' });
+  // 実際の/loginフォームからログイン(本物のUI経由)。hydration完了を待ってから操作し、固定待機で状態を確実に確認する
+  await page.goto(`${BASE_URL}/login`, { waitUntil: 'networkidle' });
   await page.fill('input[name=email]', EMAIL);
   await page.fill('input[name=password]', PASSWORD);
   await page.click('button[type=submit]');
   await page.waitForTimeout(5000);
   await diag(page, 'ログイン5秒後');
+  const cookies = await page.context().cookies();
+  console.log(`  [diag] cookie一覧(名前のみ): ${cookies.map((c) => c.name).join(', ') || '(なし)'}`);
   let loggedIn = !page.url().includes('/login');
   check('ログイン後、/loginから離脱している', loggedIn);
 
