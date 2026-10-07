@@ -1,6 +1,39 @@
 # CEOダッシュボード PROJECT_STATUS
 
-最終更新: 2026-09-30（Playwright実ブラウザによる本番12項目チェック完了）
+最終更新: 2026-10-07（STEP3: Supabase読み取り専用の最小実装）
+
+## STEP1〜3 進捗（個人・家族・資産データ基盤、2026-10-07時点）
+
+- STEP1（認証基盤）: 完了・本番確認済み。Supabase Auth（email+password）、`proxy.ts`が
+  全ページ・全API Routeを保護。ログイン/ログアウトともにServer Action経由
+- STEP2-A（DBスキーマ・RLS）: 完了・本番確認済み。7テーブル（net_worth_items／
+  real_estate_properties／family_members／education_costs／future_expenses／
+  income_streams／owner_settings）、全テーブルRLS有効、`authenticated`ロールへの
+  GRANT設定済み。GitHub Actions（`.github/workflows/rls-test.yml`、`workflow_dispatch`
+  のみ）による実動テスト20項目全てPASS（未認証アクセス不可／owner_id偽装不可／
+  他ユーザーアクセス不可／education_costsの複合FKによるowner越え参照不可）
+- STEP3（Supabase読み取り）: 今回実装。`/home`を新設し、ログイン中の本人データのみを
+  安全に読み取れることを確認。詳細は以下
+  - `lib/supabase/auth.ts`: `cache()`でラップした`getCurrentUser()`。`getUser()`で
+    Supabase Auth側へ再検証（`getSession()`は使わない）
+  - `lib/supabase/home-data.ts`: 7テーブルを並列取得するデータアクセス層。RLSに加えて
+    `.eq('owner_id', user.id)`で取得クエリ側にも整合性を持たせる。owner_idはURL/
+    フォーム/クライアント入力から一切受け取らず、常にサーバー側セッションの
+    `user.id`のみを使用。エラーは`rows: []`＋`error: true`に正規化し、生の
+    Supabaseエラーを画面へ渡さない
+  - `lib/home-metrics.ts`: 自由への距離・純資産・自動化率・教育費準備率の純粋関数。
+    必要なデータが無い場合は`available: false`を返し、仮の数値を作らない
+  - `app/home/page.tsx`: Server Component、`force-dynamic`。OWNER DECISIONS・
+    BUSINESSセクションは既存の`/alert`・`/projects`へのリンクに留め、既存の
+    GitHub JSON事業データ・ロジックには一切触れていない
+  - READ ONLYのみ。service_role key不使用、console.log等への機微データ出力なし
+  - 実資産・家族等の機微データはまだ投入していない（空DBでの動作確認のみ）
+  - 未実装: `Nav.tsx`への🏠HOMEリンク追加、ルート`/`のリダイレクト先変更、
+    INSERT/UPDATE/DELETE（STEP4以降）
+
+---
+
+最終更新（旧）: 2026-09-30（Playwright実ブラウザによる本番12項目チェック完了）
 
 ## 本番12項目チェック結果サマリー（2026-09-30）
 
