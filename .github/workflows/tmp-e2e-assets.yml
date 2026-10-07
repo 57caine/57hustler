@@ -1,0 +1,60 @@
+name: "[一時] STEP5-1 /assets E2E確認"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install ceo-dashboard deps
+        working-directory: ceo-dashboard
+        run: npm ci
+
+      - name: Install Playwright (CI専用、package.jsonへは保存しない)
+        working-directory: ceo-dashboard
+        run: |
+          npm install --no-save playwright@1.48.0
+          npx playwright install --with-deps chromium
+
+      - name: Build
+        working-directory: ceo-dashboard
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+
+      - name: Start server in background
+        working-directory: ceo-dashboard
+        run: |
+          nohup npm run start -- -p 3001 > /tmp/server.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -sS -o /dev/null -w "%{http_code}" http://localhost:3001/login | grep -q 200; then
+              echo "server is up"
+              break
+            fi
+            sleep 1
+          done
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+
+      - name: Run E2E check
+        working-directory: ceo-dashboard
+        run: node scripts/_tmp_e2e_assets_check.mjs
+        env:
+          BASE_URL: http://localhost:3001
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+          RLS_TEST_USER1_EMAIL: ${{ secrets.RLS_TEST_USER1_EMAIL }}
+          RLS_TEST_USER1_PASSWORD: ${{ secrets.RLS_TEST_USER1_PASSWORD }}
+
+      - name: Dump server log on failure
+        if: failure()
+        run: cat /tmp/server.log || true
