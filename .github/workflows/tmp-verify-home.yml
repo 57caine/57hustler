@@ -5,17 +5,15 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - name: Vercel deploy detail (last 5, with errorMessage)
+      - name: Fetch build events for the canceled fa06d3b deployment
         run: |
           curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" \
-            "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&limit=5&target=production" | node -e "
-              let d=''; process.stdin.on('data',c=>d+=c); process.stdin.on('end',()=>{
-                const j = JSON.parse(d);
-                for (const dep of j.deployments) {
-                  console.log(new Date(dep.created).toISOString(), dep.state, dep.uid, (dep.meta && dep.meta.githubCommitSha||'').slice(0,7));
-                  if (dep.errorMessage) console.log('  errorMessage:', dep.errorMessage);
-                }
-              });
-            "
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+            "https://api.vercel.com/v3/deployments/dpl_YCrGej8uKD5edcMnddX6qmZKKPjg/events?builds=1" > /tmp/events.json
+          node -e "
+            const fs = require('fs');
+            const events = JSON.parse(fs.readFileSync('/tmp/events.json', 'utf8'));
+            const arr = Array.isArray(events) ? events : (events.events || []);
+            for (const e of arr) {
+              if (e.text) console.log('[' + (e.type||'') + ']', e.text);
+            }
+          "
