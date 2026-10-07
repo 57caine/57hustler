@@ -1,0 +1,20 @@
+name: "[一時] STEP5-1 /assets 本番反映確認"
+on:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: curl /assets (未認証でproxy.tsによりredirectされるはず)
+        run: |
+          set +e
+          STATUS=$(curl -sS -o /tmp/body.html -D /tmp/headers.txt -w "%{http_code}" "https://ceo-dashboard-alpha-livid.vercel.app/assets")
+          echo "status=$STATUS"
+          cat /tmp/headers.txt
+          LOCATION=$(grep -i '^location:' /tmp/headers.txt || true)
+          echo "redirect先: $LOCATION"
+          if [ "$STATUS" = "307" ] && echo "$LOCATION" | grep -q "/login"; then
+            echo "RESULT: OK - /assetsルートが存在し、未認証は/loginへリダイレクトされる(=STEP5-1コードが本番に反映されている)"
+          else
+            echo "RESULT: unexpected"
+          fi
