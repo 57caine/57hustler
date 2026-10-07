@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T01:43:17.040Z",
+  "generatedAt": "2026-10-07T00:31:57.282Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -11,16 +11,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 16,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 71.512893875,
+        "sessions": 17,
+        "bounceRate": 0.47058823529411764,
+        "avgSessionDuration": 71.04410858823529,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション16件・affiliate_clickゼロ"
+        "セッション17件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -45,16 +45,16 @@
       "slug": "eyestrain-stretching-massage-guide",
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
-        "sessions": 13,
-        "bounceRate": 0.5384615384615384,
-        "avgSessionDuration": 138.57145984615386,
+        "sessions": 12,
+        "bounceRate": 0.5833333333333334,
+        "avgSessionDuration": 71.70808733333334,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション13件・affiliate_clickゼロ"
+        "セッション12件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 6,
@@ -79,16 +79,16 @@
       "slug": "sunglass-polarized-guide",
       "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
       "metrics": {
-        "sessions": 13,
-        "bounceRate": 0.23076923076923078,
-        "avgSessionDuration": 176.38887415384613,
+        "sessions": 12,
+        "bounceRate": 0.25,
+        "avgSessionDuration": 187.87841508333335,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション13件・affiliate_clickゼロ"
+        "セッション12件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -113,16 +113,16 @@
       "slug": "blue-light-megane-kouka",
       "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
-        "sessions": 12,
-        "bounceRate": 0.16666666666666666,
-        "avgSessionDuration": 138.92611666666667,
+        "sessions": 10,
+        "bounceRate": 0.2,
+        "avgSessionDuration": 150.4031064,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション12件・affiliate_clickゼロ"
+        "セッション10件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -177,47 +177,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/multifocal-iol-presbyopia-surgery-2026",
-      "slug": "multifocal-iol-presbyopia-surgery-2026",
-      "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
-      "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.2222222222222222,
-        "avgSessionDuration": 207.30710388888892,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 7,
-        "h3Count": 15,
-        "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 93600
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/soft-vs-hard-contact-hikaku",
       "slug": "soft-vs-hard-contact-hikaku",
       "title": "soft-vs-hard-contact-hikaku",
       "metrics": {
         "sessions": 9,
         "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 85.07414899999999,
+        "avgSessionDuration": 85.074149,
         "affiliateClicks": 0
       },
       "flags": [
@@ -232,6 +198,40 @@
         "hasAffiliateLinks": true,
         "ctaCount": 3,
         "contentChars": 75440
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/multifocal-iol-presbyopia-surgery-2026",
+      "slug": "multifocal-iol-presbyopia-surgery-2026",
+      "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.25,
+        "avgSessionDuration": 158.841315,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 7,
+        "h3Count": 15,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 93600
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -266,6 +266,40 @@
         "hasAffiliateLinks": true,
         "ctaCount": 7,
         "contentChars": 71650
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/eye-goods-pc",
+      "slug": "eye-goods-pc",
+      "title": "PC作業で目を守るグッズおすすめ10選【ブルーライトカット・モニターライト・目薬】",
+      "metrics": {
+        "sessions": 7,
+        "bounceRate": 0.2857142857142857,
+        "avgSessionDuration": 164.89959985714285,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション7件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 7,
+        "contentChars": 71780
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -347,13 +381,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/eye-goods-pc",
-      "slug": "eye-goods-pc",
-      "title": "PC作業で目を守るグッズおすすめ10選【ブルーライトカット・モニターライト・目薬】",
+      "path": "/column/acuvue-zenkindai-hikaku",
+      "slug": "acuvue-zenkindai-hikaku",
+      "title": "acuvue-zenkindai-hikaku",
       "metrics": {
         "sessions": 6,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 170.81427433333332,
+        "bounceRate": 0.16666666666666666,
+        "avgSessionDuration": 25.8976965,
         "affiliateClicks": 0
       },
       "flags": [
@@ -363,17 +397,17 @@
         "セッション6件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 4,
-        "h3Count": 4,
+        "h2Count": 3,
+        "h3Count": 6,
         "hasAffiliateLinks": true,
-        "ctaCount": 7,
-        "contentChars": 71780
+        "ctaCount": 1,
+        "contentChars": 68624
       },
       "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
       ],
       "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
