@@ -7,7 +7,8 @@ jobs:
     steps:
       - name: curl /home/write-test (未認証でproxy.tsによりredirectされるはず)
         run: |
-          STATUS=$(curl -sS -o /tmp/body.html -D /tmp/headers.txt -w "%{http_code}" -L --max-redirs 0 "https://ceo-dashboard-alpha-livid.vercel.app/home/write-test")
+          set +e
+          STATUS=$(curl -sS -o /tmp/body.html -D /tmp/headers.txt -w "%{http_code}" "https://ceo-dashboard-alpha-livid.vercel.app/home/write-test")
           echo "status=$STATUS"
           echo "--- headers ---"
           cat /tmp/headers.txt
