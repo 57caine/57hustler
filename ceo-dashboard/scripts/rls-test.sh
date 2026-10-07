@@ -385,15 +385,52 @@ echo "::endgroup::"
 
 # ============================================================
 # 9. future_expenses CRUD/spoof/cross-user (STEP4追加)
-#   future_expenses.categoryには実際のCHECK制約があり、想定していた自由入力
-#   ("test")では "future_expenses_category_check" 違反で拒否されることが
-#   実テストで判明した(2026-10-07)。正しい許容値が不明なため、推測で値を
-#   変えて通すことはせず、このテーブルのCRUD系テストは一旦スキップする。
-#   有効なcategory値が判明したら、この節を有効化してREP_BASE等と同様の
-#   形に書き換えること。
+#   2026-10-07、Supabase SQL Editorでの実CHECK制約確認により有効化。
+#   future_expenses_category_check: category は housing/property_maintenance/
+#   tax/major_purchase/other の5値のみ。future_expenses_source_check: source は
+#   'assumption' 固定の1値のみ。future_expenses_estimated_jpy_check:
+#   estimated_jpy >= 0。REST直叩きのテストでは(Server Actionを経由しないため)
+#   sourceも明示的にペイロードへ含める
 # ============================================================
 echo "::group::9. future_expenses CRUD/spoof/cross-user"
-echo "  SKIP: future_expenses.categoryの有効なCHECK制約値が未確認のため、このグループは未実行(要確認)"
+
+FE_BASE="{\"category\":\"housing\",\"label\":\"${MARKER}\",\"estimated_jpy\":1,\"source\":\"assumption\"}"
+
+STATUS=$(req POST "/rest/v1/future_expenses" "$TOKEN_A" "$FE_BASE")
+CNT=$(row_count "$RESP")
+FE_ID_A=$(first_id "$RESP")
+OWNER_OF_FE_A=$(first_owner "$RESP")
+[ -n "$FE_ID_A" ] && mask "$FE_ID_A"
+if [ "$CNT" = "1" ] && [ "$OWNER_OF_FE_A" = "$UID_A" ]; then record "9-1 A: INSERT成功・owner_id=A" 1; else record "9-1 A: INSERT成功・owner_id=A" 0; dump_on_fail; fi
+
+STATUS=$(req GET "/rest/v1/future_expenses?id=eq.${FE_ID_A}&select=id" "$TOKEN_A" "")
+CNT=$(row_count "$RESP")
+[ "$CNT" = "1" ] && record "9-2 A: SELECT成功(自分の行)" 1 || { record "9-2 A: SELECT成功(自分の行)" 0; dump_on_fail; }
+
+STATUS=$(req PATCH "/rest/v1/future_expenses?id=eq.${FE_ID_A}" "$TOKEN_A" "{\"label\":\"${MARKER}_updated\",\"category\":\"tax\"}")
+CNT=$(row_count "$RESP")
+[ "$CNT" = "1" ] && record "9-3 A: UPDATE成功(自分の行)" 1 || { record "9-3 A: UPDATE成功(自分の行)" 0; dump_on_fail; }
+
+STATUS=$(req POST "/rest/v1/future_expenses" "$TOKEN_A" "{\"category\":\"housing\",\"label\":\"${MARKER}\",\"estimated_jpy\":1,\"source\":\"assumption\",\"owner_id\":\"${UID_B}\"}")
+CNT=$(row_count "$RESP")
+if [ "$STATUS" -ge 400 ] 2>/dev/null || [ "$CNT" = "0" ]; then record "9-4 A: owner_id=B偽装INSERT拒否" 1; else record "9-4 A: owner_id=B偽装INSERT拒否" 0; dump_on_fail; fi
+
+STATUS=$(req GET "/rest/v1/future_expenses?id=eq.${FE_ID_A}&select=id" "$TOKEN_B" "")
+CNT=$(row_count "$RESP")
+[ "$CNT" = "0" ] && record "9-5 B: AのデータをSELECTできない" 1 || { record "9-5 B: AのデータをSELECTできない" 0; dump_on_fail; }
+
+STATUS=$(req PATCH "/rest/v1/future_expenses?id=eq.${FE_ID_A}" "$TOKEN_B" "{\"label\":\"hacked\"}")
+CNT=$(row_count "$RESP")
+if [ "$STATUS" -ge 400 ] 2>/dev/null || [ "$CNT" = "0" ]; then record "9-6 B: AのデータをUPDATEできない" 1; else record "9-6 B: AのデータをUPDATEできない" 0; dump_on_fail; fi
+
+STATUS=$(req DELETE "/rest/v1/future_expenses?id=eq.${FE_ID_A}" "$TOKEN_B" "")
+CNT=$(row_count "$RESP")
+if [ "$STATUS" -ge 400 ] 2>/dev/null || [ "$CNT" = "0" ]; then record "9-7 B: AのデータをDELETEできない" 1; else record "9-7 B: AのデータをDELETEできない" 0; dump_on_fail; fi
+
+STATUS=$(req DELETE "/rest/v1/future_expenses?id=eq.${FE_ID_A}" "$TOKEN_A" "")
+CNT=$(row_count "$RESP")
+[ "$CNT" = "1" ] && record "9-8 A: DELETE成功" 1 || { record "9-8 A: DELETE成功" 0; dump_on_fail; }
+FE_ID_A=""
 echo "::endgroup::"
 
 # ============================================================
@@ -492,14 +529,16 @@ STATUS=$(req GET "/rest/v1/education_costs?label=eq.${MARKER}&select=id" "$TOKEN
 CNT3=$(row_count "$RESP")
 STATUS=$(req GET "/rest/v1/real_estate_properties?name=eq.${MARKER}&select=id" "$TOKEN_A" "")
 CNT4=$(row_count "$RESP")
+STATUS=$(req GET "/rest/v1/future_expenses?label=eq.${MARKER}&select=id" "$TOKEN_A" "")
+CNT5=$(row_count "$RESP")
 STATUS=$(req GET "/rest/v1/income_streams?label=eq.${MARKER}&select=id" "$TOKEN_A" "")
 CNT6=$(row_count "$RESP")
 
-if [ "$CNT1" = "0" ] && [ "$CNT2" = "0" ] && [ "$CNT3" = "0" ] && [ "$CNT4" = "0" ] && [ "$CNT6" = "0" ]; then
-  record "12. テストデータが残っていない(マーカー付き全テーブル、future_expenses除く=STEP4未実行分)" 1
+if [ "$CNT1" = "0" ] && [ "$CNT2" = "0" ] && [ "$CNT3" = "0" ] && [ "$CNT4" = "0" ] && [ "$CNT5" = "0" ] && [ "$CNT6" = "0" ]; then
+  record "12. テストデータが残っていない(マーカー付き全テーブル)" 1
 else
-  record "12. テストデータが残っていない(マーカー付き全テーブル、future_expenses除く=STEP4未実行分)" 0
-  echo "  残存件数: net_worth_items=$CNT1 family_members=$CNT2 education_costs=$CNT3 real_estate_properties=$CNT4 income_streams=$CNT6"
+  record "12. テストデータが残っていない(マーカー付き全テーブル)" 0
+  echo "  残存件数: net_worth_items=$CNT1 family_members=$CNT2 education_costs=$CNT3 real_estate_properties=$CNT4 future_expenses=$CNT5 income_streams=$CNT6"
 fi
 
 STATUS=$(req GET "/rest/v1/owner_settings?owner_id=eq.${UID_A}&select=owner_id" "$TOKEN_A" "")
