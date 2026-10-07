@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react';
 import type { NetWorthItem } from '@/lib/supabase/home-data';
+import { CATEGORY_OPTIONS } from './_labels';
 
 // /assets/new・/assets/[id]/editで共用するフォーム本体(JSXのみ、データ取得なし)。
 // 表示するフィールドは実DB schema(net_worth_items)に存在する列だけ。
@@ -60,14 +61,13 @@ export default function AssetForm({
       </Field>
 
       <Field label="分類" required>
-        <input
-          name="category"
-          required
-          maxLength={100}
-          defaultValue={defaultValues?.category ?? ''}
-          placeholder="例：現金・銀行預金・株式・ローン など"
-          style={inputStyle}
-        />
+        <select name="category" defaultValue={defaultValues?.category ?? CATEGORY_OPTIONS[0].value} style={inputStyle}>
+          {CATEGORY_OPTIONS.map((c) => (
+            <option key={c.value} value={c.value}>
+              {c.label}
+            </option>
+          ))}
+        </select>
       </Field>
 
       <Field label="資産 / 負債" required>

@@ -6,11 +6,13 @@ import { requireUser, runWrite, GENERIC_ERROR, type ActionResult } from './share
 
 const KIND = ['asset', 'liability'] as const;
 const SOURCE = ['user_input', 'assumption'] as const;
+// net_worth_items_category_check(2026-10-07にSupabase SQL Editorで確認済み)に一致する6値のみ
+const CATEGORY = ['home', 'financial', 'business', 'cash', 'mortgage', 'other_liability'] as const;
 
 function readFields(formData: FormData) {
   return {
     kind: requireEnum(formData.get('kind'), '種別', KIND),
-    category: requireString(formData.get('category'), 'カテゴリ', 100),
+    category: requireEnum(formData.get('category'), 'カテゴリ', CATEGORY),
     label: requireString(formData.get('label'), 'ラベル', 200),
     value_jpy: requireNumber(formData.get('value_jpy'), '金額'),
     as_of_date: requireDate(formData.get('as_of_date'), '時点日付'),

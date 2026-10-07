@@ -4,7 +4,7 @@ import { getCurrentUser } from '@/lib/supabase/auth';
 import { getNetWorthItem } from '@/lib/supabase/assets-data';
 import { deleteNetWorthItem } from '@/lib/supabase/writes/net-worth-items';
 import { formatJpy } from '@/lib/home-metrics';
-import { kindLabel } from '../../_labels';
+import { kindLabel, categoryLabel } from '../../_labels';
 
 // 誤操作防止のため、削除は専用の確認ページを経由してから実行する
 // (一覧から直接ワンクリックで削除できないようにする)
@@ -50,7 +50,7 @@ export default async function DeleteAssetPage({
           >
             <p className="text-sm font-bold" style={{ color: 'var(--text)' }}>{row.label}</p>
             <p className="text-[11px] mt-0.5" style={{ color: 'var(--muted)' }}>
-              {kindLabel(row.kind)}　{row.category}
+              {kindLabel(row.kind)}　{categoryLabel(row.category)}
             </p>
             <div className="text-base font-bold font-mono mt-1" style={{ color: 'var(--text)' }}>
               {formatJpy(row.value_jpy)}

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { getCurrentUser } from '@/lib/supabase/auth';
 import { getNetWorthItems } from '@/lib/supabase/assets-data';
 import { formatJpy } from '@/lib/home-metrics';
-import { kindLabel } from './_labels';
+import { kindLabel, categoryLabel } from './_labels';
 
 // ログイン中の本人の資産・負債(net_worth_items)だけを一覧表示する。
 // 架空データ・サンプル金額は表示しない(DBが空ならempty state)。
@@ -85,7 +85,7 @@ export default async function AssetsPage({
                     </span>
                   </div>
                   <p className="text-[11px] mt-0.5" style={{ color: 'var(--muted)' }}>
-                    {item.category}　基準日: {item.as_of_date}
+                    {categoryLabel(item.category)}　基準日: {item.as_of_date}
                   </p>
                 </div>
                 <div className="text-right shrink-0">
