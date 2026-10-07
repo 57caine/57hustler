@@ -5,6 +5,7 @@ import { logout } from '@/app/logout/actions';
 
 const links = [
   { href: '/today',    label: '🎯 TODAY' },
+  { href: '/assets',   label: '📊 ASSETS' },
   { href: '/projects', label: '📁 PROJECTS' },
   { href: '/money',    label: '💰 MONEY' },
   { href: '/ai-team',  label: '🤖 AI TEAM' },

@@ -105,7 +105,12 @@ export default async function HomePage() {
         {data.netWorthItems.error || data.realEstateProperties.error ? (
           <ErrorNote />
         ) : !netWorth.available ? (
-          <Empty text="資産・不動産データがまだ登録されていません" />
+          <div>
+            <Empty text="資産・不動産データがまだ登録されていません" />
+            <div className="mt-2">
+              <LinkOut href="/assets" label="資産を登録する" />
+            </div>
+          </div>
         ) : (
           <div>
             <div className="text-2xl font-bold font-mono" style={{ color: 'var(--text)' }}>
@@ -114,6 +119,9 @@ export default async function HomePage() {
             <p className="text-[11px] mt-1" style={{ color: 'var(--muted)' }}>
               総資産 {formatJpy(netWorth.totalAssetsJpy!)} － 総負債 {formatJpy(netWorth.totalLiabilitiesJpy!)}
             </p>
+            <div className="mt-2">
+              <LinkOut href="/assets" label="資産を管理する" />
+            </div>
           </div>
         )}
       </Section>

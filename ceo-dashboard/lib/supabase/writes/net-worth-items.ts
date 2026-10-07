@@ -27,7 +27,7 @@ export async function insertNetWorthItem(formData: FormData): Promise<ActionResu
     const supabase = await createClient();
     const { error } = await supabase.from('net_worth_items').insert({ owner_id: user.id, ...fields });
     if (error) throw new ActionError(GENERIC_ERROR);
-  }, '/home');
+  }, ['/home', '/assets']);
 }
 
 export async function updateNetWorthItem(formData: FormData): Promise<ActionResult> {
@@ -43,7 +43,7 @@ export async function updateNetWorthItem(formData: FormData): Promise<ActionResu
       .eq('id', id)
       .eq('owner_id', user.id);
     if (error) throw new ActionError(GENERIC_ERROR);
-  }, '/home');
+  }, ['/home', '/assets']);
 }
 
 export async function deleteNetWorthItem(formData: FormData): Promise<ActionResult> {
@@ -57,5 +57,5 @@ export async function deleteNetWorthItem(formData: FormData): Promise<ActionResu
       .eq('id', id)
       .eq('owner_id', user.id);
     if (error) throw new ActionError(GENERIC_ERROR);
-  }, '/home');
+  }, ['/home', '/assets']);
 }

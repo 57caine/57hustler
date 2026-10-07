@@ -25,13 +25,19 @@ export async function requireUser() {
 // 書き込み本体(fn)を実行し、ActionResultに正規化する。
 // fn内で投げたActionErrorのmessageだけが利用者に見える。それ以外の例外(Supabaseの
 // 生エラー等を含む)は全てGENERIC_ERRORに握り止める。
-export async function runWrite(fn: () => Promise<void>, revalidate?: string): Promise<ActionResult> {
+// revalidateはこのテーブルを実際に表示しているページだけを指定する
+// (不要な全サイトrevalidationは避ける)。複数ページがある場合は配列で渡す
+export async function runWrite(fn: () => Promise<void>, revalidate?: string | string[]): Promise<ActionResult> {
   try {
     await fn();
   } catch (e) {
     if (e instanceof ActionError) return { ok: false, error: e.message };
     return { ok: false, error: GENERIC_ERROR };
   }
-  if (revalidate) revalidatePath(revalidate);
+  if (revalidate) {
+    for (const path of Array.isArray(revalidate) ? revalidate : [revalidate]) {
+      revalidatePath(path);
+    }
+  }
   return { ok: true };
 }
