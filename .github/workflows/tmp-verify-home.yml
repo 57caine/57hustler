@@ -1,0 +1,33 @@
+name: tmp-verify-home
+on:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vercel deploy status (ceo-dashboard)
+        run: |
+          curl -sS -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "https://api.vercel.com/v6/deployments?projectId=prj_B033Bkfsk6LkJZNxS61Gc4Xvddva&limit=3&target=production" | node -e "
+              let d=''; process.stdin.on('data',c=>d+=c); process.stdin.on('end',()=>{
+                const j = JSON.parse(d);
+                for (const dep of j.deployments) console.log(new Date(dep.created).toISOString(), dep.state, (dep.meta && dep.meta.githubCommitSha||'').slice(0,7));
+              });
+            "
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: /home unauthenticated redirect check
+        run: |
+          DOMAIN="https://ceo-dashboard-alpha-livid.vercel.app"
+          curl -sS -o /dev/null -D /tmp/headers.txt -w "HTTP %{http_code}\n" "${DOMAIN}/home"
+          grep -i "^location" /tmp/headers.txt || echo "(no location header)"
+
+      - name: existing pages unaffected (quick spot check)
+        run: |
+          DOMAIN="https://ceo-dashboard-alpha-livid.vercel.app"
+          for p in "/today" "/alert" "/projects"; do
+            STATUS=$(curl -sS -o /dev/null -D /tmp/h.txt -w "%{http_code}" "${DOMAIN}${p}")
+            LOC=$(grep -i "^location" /tmp/h.txt || echo "none")
+            echo "$p -> $STATUS $LOC"
+          done
