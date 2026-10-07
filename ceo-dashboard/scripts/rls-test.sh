@@ -121,9 +121,7 @@ cleanup() {
     [ -n "${FM2_ID_A:-}" ] && req DELETE "/rest/v1/family_members?id=eq.${FM2_ID_A}" "$TOKEN_A" "" >/dev/null
     [ -n "${FE_ID_A:-}" ] && req DELETE "/rest/v1/future_expenses?id=eq.${FE_ID_A}" "$TOKEN_A" "" >/dev/null
     [ -n "${IS_ID_A:-}" ] && req DELETE "/rest/v1/income_streams?id=eq.${IS_ID_A}" "$TOKEN_A" "" >/dev/null
-    if [ "${OS_CREATED_A:-0}" = "1" ]; then
-      req DELETE "/rest/v1/owner_settings?owner_id=eq.${UID_A}" "$TOKEN_A" "" >/dev/null
-    fi
+    req DELETE "/rest/v1/owner_settings?owner_id=eq.${UID_A}" "$TOKEN_A" "" >/dev/null
 
     # マーカー付きの取り残しを一括掃除(id捕捉に失敗したケースの保険)
     req DELETE "/rest/v1/education_costs?label=eq.${MARKER}" "$TOKEN_A" "" >/dev/null
@@ -439,43 +437,27 @@ echo "::endgroup::"
 #   owner_settingsはid列を持たず、owner_id自体が主キー(owner毎に1行)。
 #   id=eq.*によるフィルタはPostgREST側で「列が存在しない」エラーになることを
 #   実テストで確認済み(2026-10-07)。そのため全てowner_id=eq.*でフィルタする。
-#   既存行がある場合はINSERT/DELETEの破壊的テストをスキップし、
-#   UPDATE拒否・SELECT拒否等の非破壊テストのみ行う
+#   test_user_1/2はRLSテスト専用の架空アカウントで実データを持たないため、
+#   既存のテスト残留行があれば遠慮せず先に削除してクリーンな状態から検証する
+#   (旧版はid列前提のバグで残留データを削除できておらず、以降のテストが
+#   毎回「既存行があるためskip」になってしまっていた。2026-10-07修正)
 # ============================================================
 echo "::group::11. owner_settings CRUD/spoof/cross-user"
 
-OS_CREATED_A=0
-STATUS=$(req GET "/rest/v1/owner_settings?select=owner_id" "$TOKEN_A" "")
-EXISTING_CNT_A=$(row_count "$RESP")
+req DELETE "/rest/v1/owner_settings?owner_id=eq.${UID_A}" "$TOKEN_A" "" >/dev/null
 
-if [ "$EXISTING_CNT_A" = "0" ]; then
-  STATUS=$(req POST "/rest/v1/owner_settings" "$TOKEN_A" "{\"living_cost_monthly_jpy\":1}")
-  CNT=$(row_count "$RESP")
-  OWNER_OF_OS_A=$(first_owner "$RESP")
-  if [ "$CNT" = "1" ] && [ "$OWNER_OF_OS_A" = "$UID_A" ]; then
-    record "11-1 A: INSERT成功・owner_id=A" 1
-    OS_CREATED_A=1
-  else
-    record "11-1 A: INSERT成功・owner_id=A" 0; dump_on_fail
-  fi
-else
-  echo "  note: test_user_1に既存のowner_settings行があるためINSERT/DELETEの破壊的テストはスキップ"
-  record "11-1 A: INSERT成功・owner_id=A (既存行のためskip)" 1
-fi
+STATUS=$(req POST "/rest/v1/owner_settings" "$TOKEN_A" "{\"living_cost_monthly_jpy\":1}")
+CNT=$(row_count "$RESP")
+OWNER_OF_OS_A=$(first_owner "$RESP")
+if [ "$CNT" = "1" ] && [ "$OWNER_OF_OS_A" = "$UID_A" ]; then record "11-1 A: INSERT成功・owner_id=A" 1; else record "11-1 A: INSERT成功・owner_id=A" 0; dump_on_fail; fi
 
-if [ "$OS_CREATED_A" = "1" ]; then
-  STATUS=$(req PATCH "/rest/v1/owner_settings?owner_id=eq.${UID_A}" "$TOKEN_A" "{\"living_cost_monthly_jpy\":2}")
-  CNT=$(row_count "$RESP")
-  [ "$CNT" = "1" ] && record "11-2 A: UPDATE成功(自分の行)" 1 || { record "11-2 A: UPDATE成功(自分の行)" 0; dump_on_fail; }
+STATUS=$(req PATCH "/rest/v1/owner_settings?owner_id=eq.${UID_A}" "$TOKEN_A" "{\"living_cost_monthly_jpy\":2}")
+CNT=$(row_count "$RESP")
+[ "$CNT" = "1" ] && record "11-2 A: UPDATE成功(自分の行)" 1 || { record "11-2 A: UPDATE成功(自分の行)" 0; dump_on_fail; }
 
-  STATUS=$(req POST "/rest/v1/owner_settings" "$TOKEN_A" "{\"living_cost_monthly_jpy\":1,\"owner_id\":\"${UID_B}\"}")
-  CNT=$(row_count "$RESP")
-  if [ "$STATUS" -ge 400 ] 2>/dev/null || [ "$CNT" = "0" ]; then record "11-3 A: owner_id=B偽装INSERT拒否" 1; else record "11-3 A: owner_id=B偽装INSERT拒否" 0; dump_on_fail; fi
-else
-  echo "  note: 11-2/11-3は既存行保護のためskip扱い"
-  record "11-2 A: UPDATE成功(自分の行) (既存行のためskip)" 1
-  record "11-3 A: owner_id=B偽装INSERT拒否 (既存行のためskip)" 1
-fi
+STATUS=$(req POST "/rest/v1/owner_settings" "$TOKEN_A" "{\"living_cost_monthly_jpy\":1,\"owner_id\":\"${UID_B}\"}")
+CNT=$(row_count "$RESP")
+if [ "$STATUS" -ge 400 ] 2>/dev/null || [ "$CNT" = "0" ]; then record "11-3 A: owner_id=B偽装INSERT拒否" 1; else record "11-3 A: owner_id=B偽装INSERT拒否" 0; dump_on_fail; fi
 
 STATUS=$(req GET "/rest/v1/owner_settings?owner_id=eq.${UID_A}&select=owner_id" "$TOKEN_B" "")
 CNT=$(row_count "$RESP")
@@ -489,14 +471,9 @@ STATUS=$(req DELETE "/rest/v1/owner_settings?owner_id=eq.${UID_A}" "$TOKEN_B" ""
 CNT=$(row_count "$RESP")
 if [ "$STATUS" -ge 400 ] 2>/dev/null || [ "$CNT" = "0" ]; then record "11-6 B: AのデータをDELETEできない" 1; else record "11-6 B: AのデータをDELETEできない" 0; dump_on_fail; fi
 
-if [ "$OS_CREATED_A" = "1" ]; then
-  STATUS=$(req DELETE "/rest/v1/owner_settings?owner_id=eq.${UID_A}" "$TOKEN_A" "")
-  CNT=$(row_count "$RESP")
-  [ "$CNT" = "1" ] && record "11-7 A: DELETE成功" 1 || { record "11-7 A: DELETE成功" 0; dump_on_fail; }
-else
-  echo "  note: 11-7は既存行保護のためskip扱い(削除していない)"
-  record "11-7 A: DELETE成功 (既存行のためskip)" 1
-fi
+STATUS=$(req DELETE "/rest/v1/owner_settings?owner_id=eq.${UID_A}" "$TOKEN_A" "")
+CNT=$(row_count "$RESP")
+[ "$CNT" = "1" ] && record "11-7 A: DELETE成功" 1 || { record "11-7 A: DELETE成功" 0; dump_on_fail; }
 echo "::endgroup::"
 
 # ============================================================
@@ -525,11 +502,9 @@ else
   echo "  残存件数: net_worth_items=$CNT1 family_members=$CNT2 education_costs=$CNT3 real_estate_properties=$CNT4 income_streams=$CNT6"
 fi
 
-if [ "$OS_CREATED_A" = "1" ]; then
-  STATUS=$(req GET "/rest/v1/owner_settings?owner_id=eq.${UID_A}&select=owner_id" "$TOKEN_A" "")
-  CNT7=$(row_count "$RESP")
-  [ "$CNT7" = "0" ] && record "12-2. owner_settings(今回作成分)が残っていない" 1 || { record "12-2. owner_settings(今回作成分)が残っていない" 0; echo "  残存件数: owner_settings=$CNT7"; }
-fi
+STATUS=$(req GET "/rest/v1/owner_settings?owner_id=eq.${UID_A}&select=owner_id" "$TOKEN_A" "")
+CNT7=$(row_count "$RESP")
+[ "$CNT7" = "0" ] && record "12-2. owner_settings(テスト分)が残っていない" 1 || { record "12-2. owner_settings(テスト分)が残っていない" 0; echo "  残存件数: owner_settings=$CNT7"; }
 
 # EXITで再度cleanupが走るのを防ぐため、ここで取得したidを空にしておく
 EDU_ID_A=""; FAMILY_ID_A=""; ROW_X=""
