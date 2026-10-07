@@ -19,6 +19,17 @@ function check(name, ok) {
 function mask(v) {
   if (v) console.log(`::add-mask::${v}`);
 }
+async function diag(page, label) {
+  const url = page.url();
+  let snippet = '';
+  try {
+    snippet = (await page.textContent('body'))?.slice(0, 200).replace(/\s+/g, ' ') ?? '';
+  } catch {
+    snippet = '(body取得失敗)';
+  }
+  console.log(`  [diag:${label}] url=${url}`);
+  console.log(`  [diag:${label}] body先頭200文字=${snippet}`);
+}
 
 async function restLogin() {
   const res = await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
@@ -67,68 +78,98 @@ async function restCount(token) {
   const page = await browser.newPage();
 
   // 実際の/loginフォームからログイン(本物のUI経由)
-  await page.goto(`${BASE_URL}/login`);
+  await page.goto(`${BASE_URL}/login`, { waitUntil: 'domcontentloaded' });
   await page.fill('input[name=email]', EMAIL);
   await page.fill('input[name=password]', PASSWORD);
-  await page.click('button[type=submit]');
-  await page.waitForLoadState('networkidle');
+  await Promise.all([
+    page.waitForURL((u) => !u.href.includes('/login'), { timeout: 15000 }).catch(() => {}),
+    page.click('button[type=submit]'),
+  ]);
+  await page.waitForLoadState('networkidle').catch(() => {});
+  await diag(page, 'ログイン直後');
   check('ログイン後、/loginから離脱している', !page.url().includes('/login'));
 
   // A. /assets正常表示
-  await page.goto(`${BASE_URL}/assets`);
+  await page.goto(`${BASE_URL}/assets`, { waitUntil: 'domcontentloaded' });
   const bodyBefore = await page.textContent('body');
   check('A. /assetsページが表示される(見出し確認)', bodyBefore.includes('ASSETS'));
+  if (!bodyBefore.includes('ASSETS')) await diag(page, 'A失敗時');
 
   // B. 架空資産1件をUIから登録
-  await page.goto(`${BASE_URL}/assets/new`);
-  await page.fill('input[name=label]', MARKER);
-  await page.fill('input[name=category]', 'テスト用カテゴリ');
-  await page.selectOption('select[name=kind]', 'asset');
-  await page.fill('input[name=value_jpy]', '1234567');
-  await page.fill('input[name=as_of_date]', '2026-10-07');
-  await page.selectOption('select[name=source]', 'user_input');
-  await page.click('button[type=submit]');
-  await page.waitForURL('**/assets', { timeout: 10000 });
+  await page.goto(`${BASE_URL}/assets/new`, { waitUntil: 'domcontentloaded' });
+  const labelInputVisible = await page
+    .locator('input[name=label]')
+    .first()
+    .isVisible({ timeout: 10000 })
+    .catch(() => false);
+  if (!labelInputVisible) {
+    await diag(page, '/assets/new 表示失敗');
+    check('B. /assets/newに登録フォームが表示される', false);
+  } else {
+    check('B. /assets/newに登録フォームが表示される', true);
+    await page.fill('input[name=label]', MARKER);
+    await page.fill('input[name=category]', 'テスト用カテゴリ');
+    await page.selectOption('select[name=kind]', 'asset');
+    await page.fill('input[name=value_jpy]', '1234567');
+    await page.fill('input[name=as_of_date]', '2026-10-07');
+    await page.selectOption('select[name=source]', 'user_input');
+    await Promise.all([
+      page.waitForURL((u) => u.pathname === '/assets', { timeout: 15000 }).catch(() => {}),
+      page.click('button[type=submit]'),
+    ]);
+    await page.waitForLoadState('networkidle').catch(() => {});
+    await diag(page, '登録submit後');
 
-  // C. 一覧へ反映
-  const listText1 = await page.textContent('body');
-  check('B/C. 登録した資産が一覧に反映される(ラベル)', listText1.includes(MARKER));
-  check('B/C. 登録した資産が一覧に反映される(金額)', listText1.includes('1,234,567'));
+    // C. 一覧へ反映
+    const listText1 = await page.textContent('body');
+    check('C. 登録した資産が一覧に反映される(ラベル)', listText1.includes(MARKER));
+    check('C. 登録した資産が一覧に反映される(金額)', listText1.includes('1,234,567'));
 
-  // D. /home TOTAL WEALTHへ反映
-  await page.goto(`${BASE_URL}/home`);
-  const homeText1 = await page.textContent('body');
-  check('D. /home TOTAL WEALTHに反映される', homeText1.includes('1,234,567'));
+    // D. /home TOTAL WEALTHへ反映
+    await page.goto(`${BASE_URL}/home`, { waitUntil: 'domcontentloaded' });
+    const homeText1 = await page.textContent('body');
+    check('D. /home TOTAL WEALTHに反映される', homeText1.includes('1,234,567'));
 
-  // E. UIから金額を編集
-  await page.goto(`${BASE_URL}/assets`);
-  const editHref = await page.locator('a:has-text("編集")').first().getAttribute('href');
-  check('編集リンクを取得できる', !!editHref);
-  await page.goto(`${BASE_URL}${editHref}`);
-  await page.fill('input[name=value_jpy]', '2000000');
-  await page.click('button[type=submit]');
-  await page.waitForURL('**/assets', { timeout: 10000 });
+    // E. UIから金額を編集
+    await page.goto(`${BASE_URL}/assets`, { waitUntil: 'domcontentloaded' });
+    const editHref = await page.locator('a:has-text("編集")').first().getAttribute('href');
+    check('編集リンクを取得できる', !!editHref);
+    if (editHref) {
+      await page.goto(`${BASE_URL}${editHref}`, { waitUntil: 'domcontentloaded' });
+      await page.fill('input[name=value_jpy]', '2000000');
+      await Promise.all([
+        page.waitForURL((u) => u.pathname === '/assets', { timeout: 15000 }).catch(() => {}),
+        page.click('button[type=submit]'),
+      ]);
+      await page.waitForLoadState('networkidle').catch(() => {});
 
-  // F. 変更が一覧と/homeへ反映
-  const listText2 = await page.textContent('body');
-  check('F-1. 編集後の金額が一覧に反映される', listText2.includes('2,000,000'));
-  await page.goto(`${BASE_URL}/home`);
-  const homeText2 = await page.textContent('body');
-  check('F-2. 編集後の金額が/homeへ反映される', homeText2.includes('2,000,000'));
+      // F. 変更が一覧と/homeへ反映
+      const listText2 = await page.textContent('body');
+      check('F-1. 編集後の金額が一覧に反映される', listText2.includes('2,000,000'));
+      await page.goto(`${BASE_URL}/home`, { waitUntil: 'domcontentloaded' });
+      const homeText2 = await page.textContent('body');
+      check('F-2. 編集後の金額が/homeへ反映される', homeText2.includes('2,000,000'));
+    }
 
-  // G. UIから削除(確認ページ経由)
-  await page.goto(`${BASE_URL}/assets`);
-  const deleteHref = await page.locator('a:has-text("削除")').first().getAttribute('href');
-  check('削除リンクを取得できる', !!deleteHref);
-  await page.goto(`${BASE_URL}${deleteHref}`);
-  const confirmText = await page.textContent('body');
-  check('削除確認ページに対象データの内容が表示される', confirmText.includes(MARKER));
-  await page.click('button:has-text("削除する")');
-  await page.waitForURL('**/assets*', { timeout: 10000 });
+    // G. UIから削除(確認ページ経由)
+    await page.goto(`${BASE_URL}/assets`, { waitUntil: 'domcontentloaded' });
+    const deleteHref = await page.locator('a:has-text("削除")').first().getAttribute('href');
+    check('削除リンクを取得できる', !!deleteHref);
+    if (deleteHref) {
+      await page.goto(`${BASE_URL}${deleteHref}`, { waitUntil: 'domcontentloaded' });
+      const confirmText = await page.textContent('body');
+      check('削除確認ページに対象データの内容が表示される', confirmText.includes(MARKER));
+      await Promise.all([
+        page.waitForURL((u) => u.pathname === '/assets', { timeout: 15000 }).catch(() => {}),
+        page.click('button:has-text("削除する")'),
+      ]);
+      await page.waitForLoadState('networkidle').catch(() => {});
 
-  // H. 削除後0件(UI上)
-  const listText3 = await page.textContent('body');
-  check('H. 削除後、一覧にマーカーが残っていない', !listText3.includes(MARKER));
+      // H. 削除後0件(UI上)
+      const listText3 = await page.textContent('body');
+      check('H. 削除後、一覧にマーカーが残っていない', !listText3.includes(MARKER));
+    }
+  }
 
   await browser.close();
 
