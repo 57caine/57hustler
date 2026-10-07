@@ -1,6 +1,35 @@
 # CEOダッシュボード PROJECT_STATUS
 
-最終更新: 2026-10-07（STEP3: Supabase読み取り専用の最小実装）
+最終更新: 2026-10-07（STEP4: Supabase書き込み基盤(Server Actions)）
+
+## STEP1〜4 進捗（個人・家族・資産データ基盤、2026-10-07時点）
+
+- STEP4（Supabase書き込み基盤）: 今回実装。全7テーブルにINSERT/UPDATE/DELETEの
+  Server Actionsを追加。詳細・テスト結果・未解決事項はチャットの最終報告を参照。
+  要点のみここに記録:
+  - `lib/supabase/writes/{net-worth-items,real-estate-properties,family-members,
+    education-costs,future-expenses,income-streams,owner-settings}.ts`:
+    テーブル毎のINSERT/UPDATE/DELETE Server Actions。owner_idは常に
+    `getCurrentUser()`由来のサーバー側セッションのみから取得し、
+    client/formData/URL/hidden inputからは一切受け取らない。UPDATE/DELETEは
+    RLSに加えて`.eq('owner_id', user.id)`を明示するdefense-in-depth
+  - `lib/supabase/writes/shared.ts`: `requireUser()`・`runWrite()`共通ヘルパー
+    （認証チェックとエラー正規化のみ、過度な抽象化はしていない）
+  - `lib/supabase/validation.ts`: 手書きのサーバー側入力検証（必須値・数値・
+    日付・enum・UUID）。既存package.jsonにvalidation libraryが無いため
+    新規依存は追加していない
+  - `app/home/write-test/page.tsx`: net_worth_items限定の開発・検証用最小フォーム
+    （本番の資産入力UIではない）。本番で`/home/write-test`が未認証時`/login`へ
+    307リダイレクトされることを確認済み（proxy.ts保護下にある）
+  - **重要な既存バグ修正**: `owner_settings`テーブルには`id`列が存在せず、
+    `owner_id`自体が主キー（owner毎に1行）。実動テストで発覚し、
+    update/deleteOwnerSettingsを`.eq('owner_id', user.id)`のみに修正済み
+  - **未解決・要確認**: `future_expenses.category`に実際のCHECK制約があり、
+    想定していた自由入力値では拒否される。正しい許容値が不明なため、
+    `scripts/rls-test.sh`のグループ9は一旦skipしてある。有効な値が分かれば
+    有効化すること
+  - テストは`scripts/rls-test.sh`拡張（既存20項目は維持、新規約25項目追加）。
+    GitHub Actions実行で全項目PASS確認済み（future_expenses除く）
 
 ## STEP1〜3 進捗（個人・家族・資産データ基盤、2026-10-07時点）
 
