@@ -1,7 +1,5 @@
 // 一時スクリプト: STEP5-1 /assets のE2E動作確認(架空データのみ)。
 // 確認後に削除する(本番コードには含めない)。
-// ブラウザ(Playwright)で実際のログイン→/assets/new→編集→削除の一連の操作を
-// 本物のUI経由で行い、REST(PostgREST)直叩きで事前/事後のDB状態も確認する。
 import { chromium } from 'playwright';
 
 const BASE_URL = process.env.BASE_URL || 'http://localhost:3001';
@@ -21,14 +19,15 @@ function mask(v) {
 }
 async function diag(page, label) {
   const url = page.url();
-  let snippet = '';
+  let text = '';
   try {
-    snippet = (await page.textContent('body'))?.slice(0, 200).replace(/\s+/g, ' ') ?? '';
+    text = (await page.textContent('body')) ?? '';
   } catch {
-    snippet = '(body取得失敗)';
+    text = '(body取得失敗)';
   }
   console.log(`  [diag:${label}] url=${url}`);
-  console.log(`  [diag:${label}] body先頭200文字=${snippet}`);
+  console.log(`  [diag:${label}] has-login-error=${text.includes('メールアドレスまたはパスワードが正しくありません')}`);
+  console.log(`  [diag:${label}] body先頭300文字=${text.slice(0, 300).replace(/\s+/g, ' ')}`);
 }
 
 async function restLogin() {
@@ -76,24 +75,42 @@ async function restCount(token) {
   await unauthCtx.close();
 
   const page = await browser.newPage();
+  page.on('console', (msg) => console.log(`  [browser console:${msg.type()}] ${msg.text()}`));
+  page.on('requestfailed', (req) => {
+    console.log(`  [net] request failed: ${req.method()} ${req.url()} ${req.failure()?.errorText ?? ''}`);
+  });
+  page.on('response', (res) => {
+    if (res.request().method() === 'POST') {
+      console.log(`  [net] POST ${res.url()} -> status=${res.status()}`);
+    }
+  });
 
-  // 実際の/loginフォームからログイン(本物のUI経由)
+  // 実際の/loginフォームからログイン(本物のUI経由)。固定待機で状態を確実に確認する
   await page.goto(`${BASE_URL}/login`, { waitUntil: 'domcontentloaded' });
   await page.fill('input[name=email]', EMAIL);
   await page.fill('input[name=password]', PASSWORD);
-  await Promise.all([
-    page.waitForURL((u) => !u.href.includes('/login'), { timeout: 15000 }).catch(() => {}),
-    page.click('button[type=submit]'),
-  ]);
-  await page.waitForLoadState('networkidle').catch(() => {});
-  await diag(page, 'ログイン直後');
-  check('ログイン後、/loginから離脱している', !page.url().includes('/login'));
+  await page.click('button[type=submit]');
+  await page.waitForTimeout(5000);
+  await diag(page, 'ログイン5秒後');
+  let loggedIn = !page.url().includes('/login');
+  check('ログイン後、/loginから離脱している', loggedIn);
 
-  // A. /assets正常表示
+  if (!loggedIn) {
+    console.log('FATAL: ログインに失敗したため、以降のUI操作テストは中止します(REST層のcleanupのみ実行)');
+    await browser.close();
+    const remaining = await restCount(token);
+    check('J. cleanup後、DB上もマーカー付きデータが0件', remaining === 0);
+    if (remaining !== 0) await restCleanup(token);
+    console.log('');
+    console.log('===== SUMMARY =====');
+    console.log(`FAIL_COUNT=${FAIL}`);
+    process.exit(1);
+  }
+
+  // A. /assets正常表示(h1の厳密テキストで判定。Navの"ASSETS"リンクと混同しない)
   await page.goto(`${BASE_URL}/assets`, { waitUntil: 'domcontentloaded' });
-  const bodyBefore = await page.textContent('body');
-  check('A. /assetsページが表示される(見出し確認)', bodyBefore.includes('ASSETS'));
-  if (!bodyBefore.includes('ASSETS')) await diag(page, 'A失敗時');
+  const h1Text = await page.locator('h1').first().textContent().catch(() => '');
+  check('A. /assetsページの見出しがASSETS', (h1Text ?? '').trim() === 'ASSETS');
 
   // B. 架空資産1件をUIから登録
   await page.goto(`${BASE_URL}/assets/new`, { waitUntil: 'domcontentloaded' });
@@ -113,11 +130,8 @@ async function restCount(token) {
     await page.fill('input[name=value_jpy]', '1234567');
     await page.fill('input[name=as_of_date]', '2026-10-07');
     await page.selectOption('select[name=source]', 'user_input');
-    await Promise.all([
-      page.waitForURL((u) => u.pathname === '/assets', { timeout: 15000 }).catch(() => {}),
-      page.click('button[type=submit]'),
-    ]);
-    await page.waitForLoadState('networkidle').catch(() => {});
+    await page.click('button[type=submit]');
+    await page.waitForTimeout(3000);
     await diag(page, '登録submit後');
 
     // C. 一覧へ反映
@@ -137,11 +151,8 @@ async function restCount(token) {
     if (editHref) {
       await page.goto(`${BASE_URL}${editHref}`, { waitUntil: 'domcontentloaded' });
       await page.fill('input[name=value_jpy]', '2000000');
-      await Promise.all([
-        page.waitForURL((u) => u.pathname === '/assets', { timeout: 15000 }).catch(() => {}),
-        page.click('button[type=submit]'),
-      ]);
-      await page.waitForLoadState('networkidle').catch(() => {});
+      await page.click('button[type=submit]');
+      await page.waitForTimeout(3000);
 
       // F. 変更が一覧と/homeへ反映
       const listText2 = await page.textContent('body');
@@ -159,11 +170,8 @@ async function restCount(token) {
       await page.goto(`${BASE_URL}${deleteHref}`, { waitUntil: 'domcontentloaded' });
       const confirmText = await page.textContent('body');
       check('削除確認ページに対象データの内容が表示される', confirmText.includes(MARKER));
-      await Promise.all([
-        page.waitForURL((u) => u.pathname === '/assets', { timeout: 15000 }).catch(() => {}),
-        page.click('button:has-text("削除する")'),
-      ]);
-      await page.waitForLoadState('networkidle').catch(() => {});
+      await page.click('button:has-text("削除する")');
+      await page.waitForTimeout(3000);
 
       // H. 削除後0件(UI上)
       const listText3 = await page.textContent('body');
