@@ -34,7 +34,7 @@ def run(prices, capital=1_000_000, lookback=126, max_names=5, cost_bps=20):
     trades = 0
     curve = []
     for i, d in enumerate(common):
-        if i and common[i-1].month != d.month and i > lookback:
+        if i and (common[i-1].year, common[i-1].month) != (d.year, d.month) and i > lookback:
             signal_i = i-1
             ranking = []
             for ticker, series in prices.items():
