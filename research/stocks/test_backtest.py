@@ -53,5 +53,14 @@ class TestResearchProperties(unittest.TestCase):
         self.assertGreater(zero['trades'],0)
         self.assertLess(costly['final'],zero['final'])
 
+    def test_one_name_keeps_most_capital_as_cash(self):
+        dates=[date(2024,1,1)+timedelta(days=i) for i in range(430)]
+        series={d:100+i for i,d in enumerate(dates)}
+        result=run({'X':series},lookback=60,cost_bps=0)
+        self.assertGreater(result['trades'],0)
+        # A 20% initial allocation cannot outperform a 100% buy-and-hold
+        # in this monotonically increasing synthetic series.
+        self.assertLess(result['final'],1_000_000*series[dates[-1]]/series[dates[0]])
+
 if __name__=="__main__":
     unittest.main()
