@@ -5,6 +5,7 @@ No commissions/tax assumptions embedded: report gross and explicit cost-adjusted
 """
 import csv
 import sys
+import math
 from collections import defaultdict
 from datetime import date
 
@@ -14,7 +15,7 @@ def load(path):
         for r in csv.DictReader(f):
             d = date.fromisoformat(r["date"])
             p = float(r["close"])
-            if p <= 0 or d in prices[r["ticker"]]:
+            if not math.isfinite(p) or p <= 0 or d in prices[r["ticker"]]:
                 raise ValueError("invalid or duplicate price")
             prices[r["ticker"]][d] = p
     if not prices:
@@ -26,6 +27,12 @@ def run(prices, capital=1_000_000, lookback=126, max_names=5, cost_bps=20):
     Rebalance at next common observation close; fractional shares are used
     solely for research and must not be interpreted as executable Japanese lots.
     """
+    if not prices or not math.isfinite(capital) or capital <= 0:
+        raise ValueError("positive finite capital and nonempty prices required")
+    if not isinstance(lookback, int) or lookback < 1 or not isinstance(max_names, int) or max_names < 1:
+        raise ValueError("positive integer lookback and max_names required")
+    if not math.isfinite(cost_bps) or not 0 <= cost_bps < 10000:
+        raise ValueError("cost_bps must be between 0 and 10000")
     common = sorted(set.intersection(*(set(x) for x in prices.values())))
     if len(common) < lookback + 3:
         raise ValueError("insufficient common history")
