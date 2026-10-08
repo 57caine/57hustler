@@ -113,14 +113,28 @@ def compare_lot_models(prices, capital=1_000_000, lookback=126, max_names=5,
             "drawdown_episodes": metrics.drawdown_durations(result["equity_curve"]),
         }
 
-    bh = baselines.buy_and_hold_equal_weight(prices, capital=capital, cost_bps=comparison_cost_bps)
-    cash = baselines.cash_baseline(capital, start, end)
-    models["buy_and_hold_equal_weight"] = {
-        "result": _without_bulk_fields(bh),
-        "monthly_returns": metrics.monthly_returns(bh["equity_curve"]),
-        "worst_month": metrics.worst_month(bh["equity_curve"]),
-        "drawdown_episodes": metrics.drawdown_durations(bh["equity_curve"]),
+    # Phase 4 fix: each lot-size model is compared against a buy-and-hold
+    # baseline using the SAME lot_size and cost assumption as that model --
+    # not a single generic fractional-share baseline reused for every one.
+    # An earlier (Phase 3) version of this comparison made exactly that
+    # mistake, which the owner's Phase 4 review flagged as a false/mismatched
+    # comparison; fixed here, not hidden.
+    baseline_specs = {
+        "buy_and_hold_fractional": {"lot_size": None, "cost_bps": comparison_cost_bps},
+        "buy_and_hold_lot_100": {"lot_size": 100, "cost_bps": comparison_cost_bps},
+        "buy_and_hold_skabu_1_share_zero_cost": {"lot_size": 1, "cost_bps": SKABU_COST_BPS_ZERO},
+        "buy_and_hold_skabu_1_share_same_cost_as_lots": {"lot_size": 1, "cost_bps": comparison_cost_bps},
     }
+    for name, spec in baseline_specs.items():
+        bh = baselines.buy_and_hold_equal_weight(prices, capital=capital, **spec)
+        models[name] = {
+            "result": _without_bulk_fields(bh),
+            "monthly_returns": metrics.monthly_returns(bh["equity_curve"]),
+            "worst_month": metrics.worst_month(bh["equity_curve"]),
+            "drawdown_episodes": metrics.drawdown_durations(bh["equity_curve"]),
+        }
+
+    cash = baselines.cash_baseline(capital, start, end)
     models["cash"] = {"result": cash, "monthly_returns": [], "worst_month": None, "drawdown_episodes": []}
 
     return {
@@ -139,8 +153,12 @@ def compare_lot_models(prices, capital=1_000_000, lookback=126, max_names=5,
             "skabu_1_share_zero_cost uses the officially-zero S-Kabu commission+spread; "
             "skabu_1_share_same_cost_as_lots re-runs the identical model at the other models' cost_bps "
             "purely to show how much of the difference is the cost assumption itself.",
-            "All four lot models and the buy-and-hold baseline use the SAME lookback/max_names; none was "
+            "All four lot models and all buy-and-hold baselines use the SAME lookback/max_names; none was "
             "tuned per model.",
+            "Each lot-size model (fractional/100-share/1-share) is compared against a buy-and-hold "
+            "baseline using that SAME lot_size and cost assumption -- see the Phase 4 fix note in "
+            "this module's source for why a single shared baseline would have been a mismatched "
+            "comparison.",
             "See ROBUSTNESS_AUDIT.md for the Phase 2 caveats (survivorship/selection bias, dividend-adjustment "
             "uncertainty, short ~2-year sample), which apply unchanged here.",
         ],

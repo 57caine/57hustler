@@ -29,7 +29,8 @@ def load(path):
         raise ValueError("empty prices")
     return prices
 
-def run(prices, capital=1_000_000, lookback=126, max_names=5, cost_bps=20, lot_size=None):
+def run(prices, capital=1_000_000, lookback=126, max_names=5, cost_bps=20, lot_size=None,
+        execution_delay_sessions=0):
     """Signals at month-end using only observations <= signal day.
     Rebalance at next common observation close. With the default
     lot_size=None, fractional shares are used (unchanged from the original
@@ -37,6 +38,18 @@ def run(prices, capital=1_000_000, lookback=126, max_names=5, cost_bps=20, lot_s
     Japanese lots. Pass lot_size (e.g. 100) for the realistic whole-lot mode:
     each buy is rounded down to a multiple of lot_size and the rounding
     remainder stays in cash, same as the existing 20%-cap logic already does.
+
+    execution_delay_sessions (new, default 0 = EXACT original behavior: the
+    rebalance executes immediately at the signal's own next-common-day,
+    identical to every prior version of this function). Pass a positive
+    integer to defer the actual trade to that many additional trading days
+    later -- a deterministic stand-in for "the order did not fill in its
+    expected session and instead filled a full session later, at the next
+    close this data actually has," used as a Phase 4 sensitivity case for
+    nonfill / one-session execution delay. If a later signal fires before a
+    deferred trade has executed, the newer signal replaces the pending one
+    (most recent decision wins); result["overlapping_signals_discarded"]
+    counts how often this happened.
     """
     if not prices or not math.isfinite(capital) or capital <= 0:
         raise ValueError("positive finite capital and nonempty prices required")
@@ -46,6 +59,8 @@ def run(prices, capital=1_000_000, lookback=126, max_names=5, cost_bps=20, lot_s
         raise ValueError("cost_bps must be between 0 and 10000")
     if lot_size is not None and (not isinstance(lot_size, int) or lot_size < 1):
         raise ValueError("lot_size must be a positive integer or None")
+    if not isinstance(execution_delay_sessions, int) or execution_delay_sessions < 0:
+        raise ValueError("execution_delay_sessions must be a non-negative integer")
     common = sorted(set.intersection(*(set(x) for x in prices.values())))
     if len(common) < lookback + 3:
         raise ValueError("insufficient common history")
@@ -55,8 +70,54 @@ def run(prices, capital=1_000_000, lookback=126, max_names=5, cost_bps=20, lot_s
     trades = 0
     notional_traded = 0.0
     realized_gain_total = 0.0
+    overlapping_signals_discarded = 0
     curve = []
+    rebalance_log = []
+    pending_chosen = None
+    pending_execute_at = None
+
+    def execute_rebalance(chosen, trade_date):
+        nonlocal cash, trades, notional_traded, realized_gain_total
+        trades_before = trades
+        # Sell old holdings, then equal-weight buy using available equity.
+        for t in list(shares):
+            if shares[t] > 0:
+                gross = shares[t] * prices[t][trade_date]
+                proceeds = gross * (1 - cost_bps / 10000)
+                cash += proceeds
+                realized_gain_total += proceeds - cost_basis[t]
+                notional_traded += gross
+                shares[t] = 0
+                cost_basis[t] = 0.0
+                trades += 1
+        budget = min(cash / len(chosen), cash * 0.20) if chosen else 0
+        for t in chosen:
+            spend = budget / (1 + cost_bps / 10000)
+            raw_qty = spend / prices[t][trade_date]
+            if lot_size:
+                qty = math.floor(raw_qty / lot_size) * lot_size
+                if qty <= 0:
+                    shares[t] = 0
+                    cost_basis[t] = 0.0
+                    continue
+                cash -= qty * prices[t][trade_date] * (1 + cost_bps / 10000)
+                shares[t] = qty
+                cost_basis[t] = qty * prices[t][trade_date]
+                notional_traded += qty * prices[t][trade_date]
+            else:
+                shares[t] = raw_qty
+                cash -= budget
+                cost_basis[t] = raw_qty * prices[t][trade_date]
+                notional_traded += raw_qty * prices[t][trade_date]
+            trades += 1
+        return trades - trades_before
+
     for i, d in enumerate(common):
+        if pending_execute_at is not None and i == pending_execute_at:
+            n = execute_rebalance(pending_chosen, d)
+            rebalance_log.append({"date": d.isoformat(), "trades": n})
+            pending_chosen, pending_execute_at = None, None
+
         if i and (common[i-1].year, common[i-1].month) != (d.year, d.month) and i > lookback:
             signal_i = i-1
             ranking = []
@@ -67,37 +128,17 @@ def run(prices, capital=1_000_000, lookback=126, max_names=5, cost_bps=20, lot_s
                 if momentum > 0:
                     ranking.append((momentum, ticker))
             chosen = [t for _, t in sorted(ranking, reverse=True)[:max_names]]
-            # Sell old holdings, then equal-weight buy using available equity.
-            for t in list(shares):
-                if shares[t] > 0:
-                    gross = shares[t] * prices[t][d]
-                    proceeds = gross * (1-cost_bps/10000)
-                    cash += proceeds
-                    realized_gain_total += proceeds - cost_basis[t]
-                    notional_traded += gross
-                    shares[t] = 0
-                    cost_basis[t] = 0.0
-                    trades += 1
-            budget = min(cash / len(chosen), cash * 0.20) if chosen else 0
-            for t in chosen:
-                spend = budget / (1+cost_bps/10000)
-                raw_qty = spend / prices[t][d]
-                if lot_size:
-                    qty = math.floor(raw_qty / lot_size) * lot_size
-                    if qty <= 0:
-                        shares[t] = 0
-                        cost_basis[t] = 0.0
-                        continue
-                    cash -= qty * prices[t][d] * (1+cost_bps/10000)
-                    shares[t] = qty
-                    cost_basis[t] = qty * prices[t][d]
-                    notional_traded += qty * prices[t][d]
-                else:
-                    shares[t] = raw_qty
-                    cash -= budget
-                    cost_basis[t] = raw_qty * prices[t][d]
-                    notional_traded += raw_qty * prices[t][d]
-                trades += 1
+
+            if execution_delay_sessions == 0:
+                # Execute immediately, in this same iteration -- byte-for-byte
+                # the original (pre-Phase-4) code path.
+                n = execute_rebalance(chosen, d)
+                rebalance_log.append({"date": d.isoformat(), "trades": n})
+            else:
+                if pending_execute_at is not None:
+                    overlapping_signals_discarded += 1
+                pending_chosen = chosen
+                pending_execute_at = min(i + execution_delay_sessions, len(common) - 1)
         equity = cash + sum(q * prices[t][d] for t,q in shares.items())
         curve.append((d.isoformat(), round(equity,2)))
     peak = capital
@@ -108,10 +149,13 @@ def run(prices, capital=1_000_000, lookback=126, max_names=5, cost_bps=20, lot_s
     return {"initial":capital,"final":curve[-1][1],"return_pct":round((curve[-1][1]/capital-1)*100,2),
             "max_drawdown_pct":round(dd*100,2),"trades":trades,"cost_bps":cost_bps,
             "lot_size":lot_size,
+            "execution_delay_sessions":execution_delay_sessions,
+            "overlapping_signals_discarded":overlapping_signals_discarded,
             "notional_traded":round(notional_traded,2),
             "turnover_ratio":round(notional_traded/capital,2),
             "realized_gain_total":round(realized_gain_total,2),
             "final_positions":{t: q for t, q in shares.items() if q},
+            "rebalance_log":rebalance_log,
             "equity_curve":curve}
 
 

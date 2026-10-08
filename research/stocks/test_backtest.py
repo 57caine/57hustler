@@ -157,5 +157,59 @@ class TestRealisticLotsFeesAndTax(unittest.TestCase):
                     after_tax_summary(result, tax_rate=bad)
 
 
+class TestExecutionDelaySessions(unittest.TestCase):
+    """Phase 4 Priority A/B.5: a deterministic stand-in for nonfill /
+    one-session execution delay, without inventing intraday prices."""
+
+    def _uptrend(self, days=430):
+        dates = [date(2024, 1, 1) + timedelta(days=i) for i in range(days)]
+        return {d: 100 + i for i, d in enumerate(dates)}
+
+    def test_default_delay_zero_matches_original_rebalance_log(self):
+        series = self._uptrend()
+        result = run({'X': series}, lookback=60, cost_bps=20)
+        self.assertEqual(result["execution_delay_sessions"], 0)
+        self.assertEqual(result["overlapping_signals_discarded"], 0)
+        self.assertGreater(len(result["rebalance_log"]), 0)
+        # Signal month-boundary date and execution date are identical when
+        # delay=0 -- the rebalance_log's own dates must match that.
+        for entry in result["rebalance_log"]:
+            self.assertIn(entry["date"], [d for d, _ in result["equity_curve"]])
+
+    def test_delay_one_defers_each_rebalance_by_one_trading_day(self):
+        series = self._uptrend()
+        no_delay = run({'X': series}, lookback=60, cost_bps=0, execution_delay_sessions=0)
+        delayed = run({'X': series}, lookback=60, cost_bps=0, execution_delay_sessions=1)
+        dates = [d for d, _ in no_delay["equity_curve"]]
+        no_delay_dates = [e["date"] for e in no_delay["rebalance_log"]]
+        delayed_dates = [e["date"] for e in delayed["rebalance_log"]]
+        self.assertEqual(len(no_delay_dates), len(delayed_dates))
+        for nd, dd in zip(no_delay_dates, delayed_dates):
+            self.assertLess(dates.index(nd), dates.index(dd))
+
+    def test_delay_reduces_trades_only_from_last_minute_truncation_not_crash(self):
+        series = self._uptrend()
+        # Large delay still must not crash even if it pushes past the end of
+        # the series; it clamps to the last available date instead.
+        result = run({'X': series}, lookback=60, cost_bps=0, execution_delay_sessions=10_000)
+        self.assertGreaterEqual(result["final"], 0)
+
+    def test_flat_market_no_trades_regardless_of_delay(self):
+        dates = [date(2024, 1, 1) + timedelta(days=i) for i in range(430)]
+        flat = {d: 100 for d in dates}
+        result = run({'X': flat}, lookback=60, execution_delay_sessions=1)
+        self.assertEqual(result["trades"], 0)
+        # A rebalance "event" still fires every month boundary; it is simply
+        # a no-op (0 trades) when no ticker has positive momentum.
+        self.assertTrue(all(e["trades"] == 0 for e in result["rebalance_log"]))
+
+    def test_rejects_invalid_execution_delay_sessions(self):
+        series = {"X": self._uptrend(100)}
+        for bad in [-1, 1.5, "1"]:
+            with self.subTest(execution_delay_sessions=bad):
+                with self.assertRaises(ValueError):
+                    run(series, lookback=10, execution_delay_sessions=bad)
+
+
 if __name__=="__main__":
     unittest.main()

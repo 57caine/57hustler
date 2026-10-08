@@ -47,8 +47,27 @@ class CompareLotModelsTests(unittest.TestCase):
         prices = multi_ticker_uptrend()
         report = compare_lot_models(prices, lookback=60)
         for key in ["fractional_shares", "lot_100_shares", "skabu_1_share_zero_cost",
-                    "skabu_1_share_same_cost_as_lots", "buy_and_hold_equal_weight", "cash"]:
+                    "skabu_1_share_same_cost_as_lots",
+                    "buy_and_hold_fractional", "buy_and_hold_lot_100",
+                    "buy_and_hold_skabu_1_share_zero_cost", "buy_and_hold_skabu_1_share_same_cost_as_lots",
+                    "cash"]:
             self.assertIn(key, report["models"])
+
+    def test_each_strategy_compared_against_matching_lot_size_baseline(self):
+        prices = multi_ticker_uptrend()
+        report = compare_lot_models(prices, lookback=60)
+        pairs = {
+            "fractional_shares": "buy_and_hold_fractional",
+            "lot_100_shares": "buy_and_hold_lot_100",
+            "skabu_1_share_zero_cost": "buy_and_hold_skabu_1_share_zero_cost",
+            "skabu_1_share_same_cost_as_lots": "buy_and_hold_skabu_1_share_same_cost_as_lots",
+        }
+        for strategy_key, baseline_key in pairs.items():
+            self.assertEqual(
+                report["models"][strategy_key]["result"]["lot_size"],
+                report["models"][baseline_key]["result"]["lot_size"],
+                msg=f"{strategy_key} and {baseline_key} must share the same lot_size",
+            )
 
     def test_every_model_uses_same_lookback_and_max_names(self):
         prices = multi_ticker_uptrend()
@@ -85,7 +104,7 @@ class CompareLotModelsTests(unittest.TestCase):
     def test_each_model_has_monthly_returns_and_drawdowns(self):
         prices = multi_ticker_uptrend()
         report = compare_lot_models(prices, lookback=60)
-        for key in ["fractional_shares", "lot_100_shares", "skabu_1_share_zero_cost", "buy_and_hold_equal_weight"]:
+        for key in ["fractional_shares", "lot_100_shares", "skabu_1_share_zero_cost", "buy_and_hold_fractional"]:
             entry = report["models"][key]
             self.assertIn("monthly_returns", entry)
             self.assertIn("drawdown_episodes", entry)

@@ -28,3 +28,12 @@ SBI証券S株（単元未満株、1株単位・公式情報で確認した約定
 buy-and-hold基準との比較CLI（`skabu_report.py`）を追加。日中の始値データが無いため
 前場・後場始値約定パターンは非対応と明記。詳細・公式情報の出典・既知の限界・
 Mac実行コマンドは`PHASE3_SKABU_COMPARISON.md`を参照。
+
+## Phase 4: 執行リアリズム・アウトオブサンプル検証（2026-10-08、`PHASE4_EXECUTION_REALISM.md`参照）
+約定タイミングの前提を明示チェックする`execution_timing.py`（S-Kabu想定ウィンドウの
+確認・取引暦の異常ギャップ検知）、Phase 2の期間分割にあった「ウォームアップ消費」問題を
+修正した`walk_forward.py`、Phase 3の比較が分数株ベースラインのみを使っていた不整合を
+修正した`skabu_model.py`のlot別ベースライン、約定失敗・1営業日遅延・コスト悪化・
+流動性・集中度・配当/コーポレートアクションの不確実性を感度分析として扱う
+`phase4_report.py`を追加。生株価・equity curveを含まないコンパクトJSONレポートCLI。
+詳細・既知の限界・Mac実行コマンドは`PHASE4_EXECUTION_REALISM.md`を参照。
