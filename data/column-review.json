@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T00:31:57.282Z",
+  "generatedAt": "2026-10-08T00:53:27.451Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,7 +13,7 @@
       "metrics": {
         "sessions": 17,
         "bounceRate": 0.47058823529411764,
-        "avgSessionDuration": 71.04410858823529,
+        "avgSessionDuration": 71.0441085882353,
         "affiliateClicks": 0
       },
       "flags": [
@@ -45,16 +45,16 @@
       "slug": "eyestrain-stretching-massage-guide",
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
-        "sessions": 12,
-        "bounceRate": 0.5833333333333334,
-        "avgSessionDuration": 71.70808733333334,
+        "sessions": 14,
+        "bounceRate": 0.5714285714285714,
+        "avgSessionDuration": 63.453598857142865,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション12件・affiliate_clickゼロ"
+        "セッション14件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 6,
@@ -79,16 +79,16 @@
       "slug": "sunglass-polarized-guide",
       "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
       "metrics": {
-        "sessions": 12,
-        "bounceRate": 0.25,
-        "avgSessionDuration": 187.87841508333335,
+        "sessions": 13,
+        "bounceRate": 0.23076923076923078,
+        "avgSessionDuration": 177.4622947692308,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション12件・affiliate_clickゼロ"
+        "セッション13件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -130,6 +130,40 @@
         "hasAffiliateLinks": true,
         "ctaCount": 4,
         "contentChars": 65953
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/multifocal-iol-presbyopia-surgery-2026",
+      "slug": "multifocal-iol-presbyopia-surgery-2026",
+      "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
+      "metrics": {
+        "sessions": 10,
+        "bounceRate": 0.2,
+        "avgSessionDuration": 148.5014582,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション10件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 7,
+        "h3Count": 15,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 93600
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -211,13 +245,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/multifocal-iol-presbyopia-surgery-2026",
-      "slug": "multifocal-iol-presbyopia-surgery-2026",
-      "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
+      "path": "/column/kanso-shinikui-contact",
+      "slug": "kanso-shinikui-contact",
+      "title": "kanso-shinikui-contact",
       "metrics": {
         "sessions": 8,
-        "bounceRate": 0.25,
-        "avgSessionDuration": 158.841315,
+        "bounceRate": 0.375,
+        "avgSessionDuration": 25.67665925,
         "affiliateClicks": 0
       },
       "flags": [
@@ -227,51 +261,17 @@
         "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 7,
-        "h3Count": 15,
+        "h2Count": 4,
+        "h3Count": 9,
         "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 93600
+        "ctaCount": 1,
+        "contentChars": 81347
       },
       "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
       ],
       "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/reading-glasses-presbyopia-choose-2026",
-      "slug": "reading-glasses-presbyopia-choose-2026",
-      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
-      "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.125,
-        "avgSessionDuration": 38.377566875,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 4,
-        "hasAffiliateLinks": true,
-        "ctaCount": 7,
-        "contentChars": 71650
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -285,7 +285,7 @@
       "metrics": {
         "sessions": 7,
         "bounceRate": 0.2857142857142857,
-        "avgSessionDuration": 164.89959985714285,
+        "avgSessionDuration": 164.89959985714287,
         "affiliateClicks": 0
       },
       "flags": [
@@ -306,40 +306,6 @@
       ],
       "suggestions": [
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/kanso-shinikui-contact",
-      "slug": "kanso-shinikui-contact",
-      "title": "kanso-shinikui-contact",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.2857142857142857,
-        "avgSessionDuration": 29.13781057142857,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 9,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 81347
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -381,6 +347,40 @@
       "source": "auto-ga4"
     },
     {
+      "path": "/column/reading-glasses-presbyopia-choose-2026",
+      "slug": "reading-glasses-presbyopia-choose-2026",
+      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
+      "metrics": {
+        "sessions": 7,
+        "bounceRate": 0.14285714285714285,
+        "avgSessionDuration": 42.39632414285715,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション7件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 7,
+        "contentChars": 71650
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
       "path": "/column/acuvue-zenkindai-hikaku",
       "slug": "acuvue-zenkindai-hikaku",
       "title": "acuvue-zenkindai-hikaku",
@@ -408,6 +408,40 @@
       ],
       "suggestions": [
         "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/dryeye-taisaku",
+      "slug": "dryeye-taisaku",
+      "title": "ドライアイ・疲れ目の対策【目薬・生活習慣・サプリで症状改善】原因と対処法",
+      "metrics": {
+        "sessions": 6,
+        "bounceRate": 0.16666666666666666,
+        "avgSessionDuration": 113.60809766666665,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション6件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 3,
+        "hasAffiliateLinks": true,
+        "ctaCount": 7,
+        "contentChars": 76392
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見",
       "business": "lens-navi",
