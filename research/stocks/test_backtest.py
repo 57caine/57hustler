@@ -62,5 +62,26 @@ class TestResearchProperties(unittest.TestCase):
         # in this monotonically increasing synthetic series.
         self.assertLess(result['final'],1_000_000*series[dates[-1]]/series[dates[0]])
 
+    def test_nonfinite_csv_price_rejected(self):
+        for bad in ["nan", "inf", "-inf"]:
+            with self.subTest(price=bad):
+                with tempfile.NamedTemporaryFile(mode="w",suffix=".csv",delete=False) as f:
+                    f.write(f"date,ticker,close\\n2025-01-01,X,{bad}\\n")
+                    path=f.name
+                try:
+                    with self.assertRaises(ValueError):
+                        load(path)
+                finally:
+                    os.unlink(path)
+
+    def test_invalid_parameters_rejected(self):
+        dates=[date(2024,1,1)+timedelta(days=i) for i in range(100)]
+        series={"X":{d:100 for d in dates}}
+        for params in [{"capital":0},{"capital":float("nan")},{"lookback":0},
+                       {"max_names":0},{"cost_bps":-1},{"cost_bps":10000}]:
+            with self.subTest(params=params):
+                with self.assertRaises(ValueError):
+                    run(series,**params)
+
 if __name__=="__main__":
     unittest.main()
