@@ -21,3 +21,10 @@
 期間分割検証・感度分析（`time_split.py`）、月次リターン・最大ドローダウン持続期間・
 最悪月（`metrics.py`）、生株価・equity curveを含まないコンパクトJSONレポートCLI
 （`report.py`）を追加。詳細・既知の限界・Mac実行コマンドは`ROBUSTNESS_AUDIT.md`を参照。
+
+## Phase 3: SBI S株（1株単位）モデルとlotサイズ比較（2026-10-08、`PHASE3_SKABU_COMPARISON.md`参照）
+SBI証券S株（単元未満株、1株単位・公式情報で確認した約定タイミング・手数料ルールに基づく）
+モデルを`skabu_model.py`に追加。既存の分数株モデル・100株モデルと、同一パラメータ・
+buy-and-hold基準との比較CLI（`skabu_report.py`）を追加。日中の始値データが無いため
+前場・後場始値約定パターンは非対応と明記。詳細・公式情報の出典・既知の限界・
+Mac実行コマンドは`PHASE3_SKABU_COMPARISON.md`を参照。
