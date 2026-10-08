@@ -27,5 +27,31 @@ class TestResearchBacktest(unittest.TestCase):
         finally:
             os.unlink(path)
 
+
+
+class TestResearchProperties(unittest.TestCase):
+    def test_future_shock_cannot_change_past_equity(self):
+        dates = [date(2024,1,1)+timedelta(days=i) for i in range(430)]
+        baseline = {d:100+i*0.2 for i,d in enumerate(dates)}
+        changed = baseline.copy()
+        changed[dates[-1]] = baseline[dates[-1]]*10
+        a=run({'X':baseline},lookback=60)
+        b=run({'X':changed},lookback=60)
+        self.assertEqual(a['equity_curve'][:-1],b['equity_curve'][:-1])
+
+    def test_flat_market_no_trades(self):
+        dates=[date(2024,1,1)+timedelta(days=i) for i in range(430)]
+        out=run({'X':{d:100 for d in dates}},lookback=60)
+        self.assertEqual(out['trades'],0)
+        self.assertEqual(out['final'],1_000_000)
+
+    def test_uptrend_buys_and_costs_reduce_result(self):
+        dates=[date(2024,1,1)+timedelta(days=i) for i in range(430)]
+        series={d:100+i for i,d in enumerate(dates)}
+        zero=run({'X':series},lookback=60,cost_bps=0)
+        costly=run({'X':series},lookback=60,cost_bps=20)
+        self.assertGreater(zero['trades'],0)
+        self.assertLess(costly['final'],zero['final'])
+
 if __name__=="__main__":
     unittest.main()
