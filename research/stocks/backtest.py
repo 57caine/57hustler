@@ -50,7 +50,7 @@ def run(prices, capital=1_000_000, lookback=126, max_names=5, cost_bps=20):
                     cash += shares[t] * prices[t][d] * (1-cost_bps/10000)
                     shares[t] = 0
                     trades += 1
-            budget = cash / len(chosen) if chosen else 0
+            budget = min(cash / len(chosen), cash * 0.20) if chosen else 0
             for t in chosen:
                 spend = budget / (1+cost_bps/10000)
                 shares[t] = spend / prices[t][d]
