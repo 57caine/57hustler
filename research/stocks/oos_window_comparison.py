@@ -21,6 +21,7 @@ from datetime import date
 
 import backtest
 import baselines
+import oos_ledger
 import time_split
 from preregistration import holdout_protocol_report, PRE_REGISTERED_PARAMS, PRE_REGISTERED_MANIFEST_HASH
 
@@ -34,7 +35,7 @@ POSITION_CONCENTRATION_CAP_PCT_OF_CASH = 20
 
 
 def oos_vs_buy_and_hold_report(prices, capital=1_000_000, oos_start=DEFAULT_OOS_START, oos_end=DEFAULT_OOS_END,
-                                params=None, expected_manifest_hash=PRE_REGISTERED_MANIFEST_HASH):
+                                params=None, expected_manifest_hash=PRE_REGISTERED_MANIFEST_HASH, ledger=None):
     """params defaults to preregistration.PRE_REGISTERED_PARAMS -- the
     single pre-registered parameter set -- so this comparison is never
     silently run with different parameters than the rest of Phase 5. The
@@ -42,7 +43,17 @@ def oos_vs_buy_and_hold_report(prices, capital=1_000_000, oos_start=DEFAULT_OOS_
     manifest-checked holdout evaluation pinned to [oos_start, oos_end];
     the buy-and-hold side is computed independently over the identical
     realized OOS date range, capital, ticker set, and cost/lot
-    assumptions, so the two are directly comparable."""
+    assumptions, so the two are directly comparable.
+
+    Pass `ledger` (an oos_ledger-shaped dict, e.g. from oos_ledger.load_ledger())
+    to enforce Phase 6's reuse guard: raises if [oos_start, oos_end] overlaps
+    a window already recorded there with status "evaluated" -- i.e. a
+    period that already produced a real result must not be silently
+    re-treated as fresh, untouched data. Omitting `ledger` (the default)
+    skips this check entirely, so existing callers are unaffected; the
+    CLI below enables it by default."""
+    if ledger is not None:
+        oos_ledger.assert_window_not_already_evaluated(ledger, oos_start, oos_end)
     if params is None:
         params = PRE_REGISTERED_PARAMS
 
@@ -146,16 +157,25 @@ def build_parser():
     parser.add_argument("--oos-end", default=DEFAULT_OOS_END.isoformat(),
                          help="ISO date (YYYY-MM-DD); default 2026-06-30")
     parser.add_argument("--out", help="optional local file path to also write the JSON to")
+    parser.add_argument("--ignore-ledger", action="store_true",
+                         help="skip the oos_ledger.json reuse check (default: checked)")
+    parser.add_argument("--record-ledger", action="store_true",
+                         help="after a successful run, record this window as 'evaluated' in "
+                              "oos_ledger.json with the REAL oos_status this run just computed "
+                              "(never a guessed or hypothetical figure)")
+    parser.add_argument("--ledger-path", default=oos_ledger.LEDGER_PATH,
+                         help="override the ledger file location (mainly for testing)")
     return parser
 
 
 def main():
     args = build_parser().parse_args()
+    oos_start, oos_end = date.fromisoformat(args.oos_start), date.fromisoformat(args.oos_end)
+    ledger = None if args.ignore_ledger else oos_ledger.load_ledger(path=args.ledger_path)
     try:
         prices = backtest.load(args.prices_csv)
         report = oos_vs_buy_and_hold_report(
-            prices, capital=args.capital,
-            oos_start=date.fromisoformat(args.oos_start), oos_end=date.fromisoformat(args.oos_end),
+            prices, capital=args.capital, oos_start=oos_start, oos_end=oos_end, ledger=ledger,
         )
     except ValueError as e:
         sys.exit(f"stopped: {e}")
@@ -166,6 +186,16 @@ def main():
         with open(args.out, "w", encoding="utf-8") as f:
             f.write(text)
         print(f"also wrote {args.out}", file=sys.stderr)
+
+    if args.record_ledger:
+        updated = oos_ledger.record_evaluation(
+            ledger if ledger is not None else oos_ledger.load_ledger(path=args.ledger_path),
+            oos_start, oos_end, PRE_REGISTERED_MANIFEST_HASH,
+            report["oos_status"], note="recorded via oos_window_comparison.py --record-ledger",
+        )
+        oos_ledger.save_ledger(updated, path=args.ledger_path)
+        print(f"recorded this window as 'evaluated' (oos_status={report['oos_status']}) in "
+              f"{args.ledger_path}", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -69,3 +69,18 @@ lookback+3日未満だと必ず失敗する）を修正。開発期間末尾のl
 銘柄選択バイアスを`known_constraints`として明示。既存テストはすべて維持し、新規23件を
 追加（計225件）。詳細・Mac実行コマンドは`PHASE5_UNBIASED_VALIDATION.md`の
 「Real-data follow-up fix」「Fixed-window OOS comparison」セクションを参照。
+
+## Phase 6: 銘柄選択バイアスの低減・再現性検証（2026-10-09、`PHASE6_REPRODUCIBILITY_AUDIT.md`参照）
+現行10銘柄の選定日・選定基準をリポジトリ全履歴・PRコメントから調査した結果、
+**選定日・選定基準は不明（このリポジトリからは検証不能）**と確定（Phase 2時点の記載と
+矛盾しない追加確認）。`universe.py`に複数の日付（リバランス日）にわたってPoint-in-Time
+ユニバースを構築する`point_in_time_universe_series()`を追加（まだ`backtest.run()`への
+統合は未実装、将来課題と明記）。J-Quants Freeで取得可能/不可能なデータを整理する
+`data_availability.py`を新規追加し、過去の上場廃止銘柄リストが取得不可能である以上、
+現在のティッカーリストを完全な歴史的ユニバースとして扱ってはならないことをコードで
+強制（`assert_no_delisted_ticker_fabrication()`）。`bias_unresolved=true`は変更なし。
+OOS期間の再利用を防ぐ`oos_ledger.py`＋`oos_ledger.json`を新規追加し、2025-12-19〜
+2026-06-30を「reserved」（予約済み・実結果未報告）として記録。将来の新規データでの
+時系列検証プロトコル（パラメータは事前登録済みハッシュで固定、過去成績を見て調整しない）を
+設計・実装。既存テストは全件維持し、新規39件を追加（計264件）。詳細・未解決バイアス・
+Mac実行コマンドは`PHASE6_REPRODUCIBILITY_AUDIT.md`を参照。

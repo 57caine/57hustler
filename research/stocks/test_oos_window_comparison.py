@@ -15,6 +15,7 @@ from oos_window_comparison import (
     POSITION_CONCENTRATION_CAP_PCT_OF_CASH,
 )
 from preregistration import PRE_REGISTERED_PARAMS
+import oos_ledger
 
 
 def uptrend_then_flat_from_oos(n=5, flat_from=DEFAULT_OOS_START, end=DEFAULT_OOS_END, start=date(2024, 1, 1)):
@@ -161,6 +162,28 @@ class OosVsBuyAndHoldReportTests(unittest.TestCase):
         self.assertEqual(report["oos_window"]["requested_start"], custom_start.isoformat())
         self.assertEqual(report["oos_window"]["requested_end"], custom_end.isoformat())
 
+    def test_no_ledger_check_by_default(self):
+        # Omitting `ledger` (the default) must never raise, even though an
+        # "evaluated" entry covering the exact same window would raise if
+        # a ledger WERE passed -- confirming existing callers that never
+        # pass `ledger` are completely unaffected by Phase 6's addition.
+        prices = uptrend_then_flat_from_oos()
+        report = oos_vs_buy_and_hold_report(prices, capital=1_000_000)  # must not raise
+        self.assertIn("oos_status", report)
+
+    def test_raises_when_ledger_marks_window_already_evaluated(self):
+        prices = uptrend_then_flat_from_oos()
+        ledger = oos_ledger.record_evaluation({"entries": []}, DEFAULT_OOS_START, DEFAULT_OOS_END,
+                                                "some-hash", "validated_with_caveats")
+        with self.assertRaises(ValueError):
+            oos_vs_buy_and_hold_report(prices, capital=1_000_000, ledger=ledger)
+
+    def test_does_not_raise_when_ledger_only_has_reserved_entry(self):
+        prices = uptrend_then_flat_from_oos()
+        ledger = oos_ledger.record_window({"entries": []}, DEFAULT_OOS_START, DEFAULT_OOS_END,
+                                            "some-hash", "reserved")
+        oos_vs_buy_and_hold_report(prices, capital=1_000_000, ledger=ledger)  # must not raise
+
 
 class OosWindowComparisonCliTests(unittest.TestCase):
     """Runs the actual CLI as a subprocess -- no network access occurs
@@ -208,6 +231,33 @@ class OosWindowComparisonCliTests(unittest.TestCase):
         report = json.loads(proc.stdout)
         self.assertEqual(report["oos_window"]["requested_start"], "2024-06-01")
         self.assertEqual(report["oos_window"]["requested_end"], "2024-08-31")
+
+    def test_cli_record_ledger_writes_evaluated_entry_to_custom_path(self):
+        ledger_path = os.path.join(self.tmpdir, "test_ledger.json")
+        proc = self.run_cli("--oos-start", "2024-06-01", "--oos-end", "2024-08-31",
+                             "--ledger-path", ledger_path, "--record-ledger")
+        self.assertEqual(proc.returncode, 0, msg=proc.stderr)
+        self.assertTrue(os.path.isfile(ledger_path))
+        with open(ledger_path, encoding="utf-8") as f:
+            ledger = json.load(f)
+        self.assertEqual(len(ledger["entries"]), 1)
+        self.assertEqual(ledger["entries"][0]["status"], "evaluated")
+        self.assertEqual(ledger["entries"][0]["start"], "2024-06-01")
+
+    def test_cli_rejects_reusing_an_already_evaluated_window(self):
+        ledger_path = os.path.join(self.tmpdir, "test_ledger.json")
+        first = self.run_cli("--oos-start", "2024-06-01", "--oos-end", "2024-08-31",
+                              "--ledger-path", ledger_path, "--record-ledger")
+        self.assertEqual(first.returncode, 0, msg=first.stderr)
+
+        second = self.run_cli("--oos-start", "2024-07-01", "--oos-end", "2024-07-15",
+                               "--ledger-path", ledger_path)
+        self.assertNotEqual(second.returncode, 0)
+        self.assertIn("stopped:", second.stderr)
+
+        third = self.run_cli("--oos-start", "2024-07-01", "--oos-end", "2024-07-15",
+                              "--ledger-path", ledger_path, "--ignore-ledger")
+        self.assertEqual(third.returncode, 0, msg=third.stderr)
 
     def test_cli_rejects_bad_csv_without_crashing(self):
         bad_path = os.path.join(self.tmpdir, "bad.csv")

@@ -102,6 +102,44 @@ def build_point_in_time_universe(events, as_of_date, sector=None):
     return sorted(universe)
 
 
+def point_in_time_universe_series(events, dates, sector=None):
+    """Phase 6: the universe-construction mechanism extended across a
+    sequence of REBALANCE dates (ascending), not just a single as_of_date.
+    Each entry is computed independently via build_point_in_time_universe()
+    using that entry's OWN as_of_date -- a later date's universe can never
+    be influenced by information only knowable as of an even-later date,
+    the same no-lookahead guarantee as the single-date function, just
+    applied repeatedly.
+
+    Returns a list of {"as_of": iso_date, "universe": [tickers...],
+    "added": [...], "removed": [...]} dicts, where added/removed are
+    relative to the PREVIOUS entry in this same list (empty for the first
+    entry) -- making universe churn over time explicit and auditable
+    rather than buried inside independent per-date snapshots a caller
+    would otherwise have to diff by hand.
+
+    NOT wired into backtest.run(): that engine still assumes one fixed
+    universe for an entire run. Using a time-varying universe inside an
+    actual backtest (adding/dropping tickers mid-run, handling the cash
+    from a dropped position, etc.) is explicitly FUTURE WORK beyond this
+    phase's scope -- this function only produces the per-date universe
+    series, which is the prerequisite for that future integration, not
+    the integration itself."""
+    if not dates:
+        raise ValueError("dates must be a non-empty list")
+    if list(dates) != sorted(dates):
+        raise ValueError("dates must be sorted ascending")
+    series = []
+    previous = None
+    for d in dates:
+        current = build_point_in_time_universe(events, d, sector=sector)
+        added = sorted(set(current) - set(previous)) if previous is not None else []
+        removed = sorted(set(previous) - set(current)) if previous is not None else []
+        series.append({"as_of": d.isoformat(), "universe": current, "added": added, "removed": removed})
+        previous = current
+    return series
+
+
 def bias_status(has_point_in_time_metadata):
     """Explicit, non-fabricated statement of whether survivorship-bias-free
     validation is actually possible given what data exists right now.
