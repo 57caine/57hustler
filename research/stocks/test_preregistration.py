@@ -5,6 +5,7 @@ from preregistration import (
     freeze_params,
     verify_manifest,
     chronological_holdout_split,
+    date_range_holdout_split,
     holdout_protocol_report,
     _evaluation_window_result,
     PRE_REGISTERED_PARAMS,
@@ -90,6 +91,43 @@ class ChronologicalHoldoutSplitTests(unittest.TestCase):
     def test_rejects_too_few_observations(self):
         with self.assertRaises(ValueError):
             chronological_holdout_split([date(2024, 1, 1)])
+
+
+class DateRangeHoldoutSplitTests(unittest.TestCase):
+    def test_splits_on_the_requested_window(self):
+        dates = [date(2024, 1, 1) + timedelta(days=i) for i in range(100)]
+        dev, holdout = date_range_holdout_split(dates, date(2024, 3, 1), date(2024, 3, 10))
+        self.assertTrue(all(d < date(2024, 3, 1) for d in dev))
+        self.assertTrue(all(date(2024, 3, 1) <= d <= date(2024, 3, 10) for d in holdout))
+        self.assertEqual(holdout[0], date(2024, 3, 1))
+        self.assertEqual(holdout[-1], date(2024, 3, 10))
+
+    def test_clips_to_available_dates_when_window_extends_past_data(self):
+        dates = [date(2024, 1, 1) + timedelta(days=i) for i in range(50)]
+        # dates only run through day 49 (2024-02-19); ask for a window that
+        # extends well past the end of available data.
+        dev, holdout = date_range_holdout_split(dates, date(2024, 2, 1), date(2024, 12, 31))
+        self.assertEqual(holdout[-1], dates[-1])
+
+    def test_rejects_start_after_end(self):
+        dates = [date(2024, 1, 1) + timedelta(days=i) for i in range(10)]
+        with self.assertRaises(ValueError):
+            date_range_holdout_split(dates, date(2024, 1, 9), date(2024, 1, 2))
+
+    def test_rejects_window_with_no_matching_dates(self):
+        dates = [date(2024, 1, 1) + timedelta(days=i) for i in range(10)]
+        with self.assertRaises(ValueError):
+            date_range_holdout_split(dates, date(2025, 1, 1), date(2025, 1, 10))
+
+    def test_rejects_window_leaving_no_development_data(self):
+        dates = [date(2024, 1, 1) + timedelta(days=i) for i in range(10)]
+        with self.assertRaises(ValueError):
+            date_range_holdout_split(dates, date(2023, 1, 1), date(2024, 1, 5))
+
+    def test_rejects_non_date_inputs(self):
+        dates = [date(2024, 1, 1) + timedelta(days=i) for i in range(10)]
+        with self.assertRaises(ValueError):
+            date_range_holdout_split(dates, "2024-01-05", date(2024, 1, 8))
 
 
 class HoldoutProtocolReportTests(unittest.TestCase):
@@ -211,6 +249,33 @@ class HoldoutProtocolReportTests(unittest.TestCase):
         holdout = report["holdout_result"]
         self.assertEqual(round((holdout["end_value"] / holdout["start_value"] - 1) * 100, 2),
                           holdout["return_pct"])
+
+    def test_explicit_holdout_window_pins_the_holdout_period(self):
+        prices = ten_ticker_uptrend(days=900)
+        oos_start, oos_end = date(2026, 1, 1), date(2026, 3, 31)
+        report = holdout_protocol_report(prices, lookback=126, max_names=5, cost_bps=20,
+                                           holdout_start=oos_start, holdout_end=oos_end)
+        self.assertEqual(report["holdout_period"]["start"], oos_start.isoformat())
+        self.assertTrue(report["holdout_period"]["end"] <= oos_end.isoformat())
+        self.assertLess(report["development_period"]["end"], oos_start.isoformat())
+
+    def test_development_fraction_is_ignored_when_explicit_window_given(self):
+        prices = ten_ticker_uptrend(days=900)
+        oos_start, oos_end = date(2026, 1, 1), date(2026, 3, 31)
+        report_a = holdout_protocol_report(prices, lookback=126, max_names=5, cost_bps=20,
+                                             development_fraction=0.1, holdout_start=oos_start, holdout_end=oos_end)
+        report_b = holdout_protocol_report(prices, lookback=126, max_names=5, cost_bps=20,
+                                             development_fraction=0.99, holdout_start=oos_start, holdout_end=oos_end)
+        self.assertEqual(report_a["holdout_period"], report_b["holdout_period"])
+
+    def test_rejects_only_one_of_holdout_start_end_given(self):
+        prices = ten_ticker_uptrend(days=900)
+        with self.assertRaises(ValueError):
+            holdout_protocol_report(prices, lookback=126, max_names=5, cost_bps=20,
+                                      holdout_start=date(2026, 1, 1))
+        with self.assertRaises(ValueError):
+            holdout_protocol_report(prices, lookback=126, max_names=5, cost_bps=20,
+                                      holdout_end=date(2026, 3, 31))
 
 
 class EvaluationWindowResultTests(unittest.TestCase):

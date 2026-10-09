@@ -57,3 +57,15 @@ CLI（`phase5_report.py`、戦略パラメータのCLIフラグは意図的に�
 でしか行えない（Phase 1からの結論と同じ）。半導体・水関連を中心とした研究対象10銘柄の
 候補選定（既存10銘柄が実質この構成だったことを確認・記録、購入推奨ではない）も含む。
 詳細は`DATA_READINESS_REPORT.md`を参照。
+
+## Phase 5追加検証：ウォームアップ修正とOOS固定期間の買いっぱなし比較（2026-10-09）
+オーナーの実データ実行で判明した`preregistration.py`のバグ（検証期間が
+lookback+3日未満だと必ず失敗する）を修正。開発期間末尾のlookback日分をウォームアップに
+使い、ウォームアップ中の損益・取引はOOS成績から除外する（除外ロジック自体は合成データで
+直接検証済み）。さらに`holdout_protocol_report()`に日付指定モード（`holdout_start`/
+`holdout_end`）を追加し、固定OOS期間（既定: 2025-12-19〜2026-06-30）での戦略と
+買いっぱなし比較を行う`oos_window_comparison.py`を新規追加。買いっぱなし側は戦略と
+同一期間・同一初期資金・同一銘柄・同一コストで比較し、取引コスト・株数制約（単元株/分数株）・
+銘柄選択バイアスを`known_constraints`として明示。既存テストはすべて維持し、新規23件を
+追加（計225件）。詳細・Mac実行コマンドは`PHASE5_UNBIASED_VALIDATION.md`の
+「Real-data follow-up fix」「Fixed-window OOS comparison」セクションを参照。

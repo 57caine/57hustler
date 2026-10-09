@@ -232,6 +232,62 @@ Regression tests added (`test_preregistration.py`, 8 new): the exact reported sh
 All still against synthetic fixtures only — this fix has not yet been re-run against
 the owner's real data; see "Running this later on your Mac" below.
 
+## Fixed-window OOS comparison vs buy-and-hold (2026-10-09, `oos_window_comparison.py`)
+
+Owner requested a dedicated comparison for a specific calendar OOS window
+(`2025-12-19` to `2026-06-30`): the pre-registered strategy against a plain
+buy-and-hold, matched exactly on period, starting capital, ticker universe, and
+cost/lot assumptions.
+
+- `preregistration.py`'s `holdout_protocol_report()` gained an explicit date-range
+  mode: pass **both** `holdout_start` and `holdout_end` (date objects) to pin the
+  holdout to a specific calendar window instead of a `development_fraction`; passing
+  only one of the two raises rather than silently guessing. A new
+  `date_range_holdout_split()` implements the split (development = everything
+  strictly before `holdout_start`; holdout = dates within `[holdout_start,
+  holdout_end]`, clipped to whatever the data actually has). The existing
+  fraction-based path and every test depending on it are untouched — this is a
+  purely additive change (6 new tests for the split function, 3 more for the new
+  mode on `holdout_protocol_report()`).
+- `oos_window_comparison.oos_vs_buy_and_hold_report()` (new module) runs the
+  strategy side through that date-range holdout (inheriting the warmup fix above
+  unchanged), and an independent `baselines.buy_and_hold_equal_weight()` run sliced
+  to the **exact same realized OOS date range**, using the **same** `capital`,
+  **same** ticker universe (every ticker in the supplied price data), and the
+  **same** `cost_bps`/`lot_size` as the strategy's pre-registered parameters —
+  `matched_on` in the output states this explicitly. Defaults to
+  `preregistration.PRE_REGISTERED_PARAMS`; no CLI flag exists to change
+  `lookback`/`max_names`/`cost_bps`, same design choice as `phase5_report.py`.
+- `known_constraints` makes the three items the owner asked to have documented
+  explicit, machine-readable fields rather than only prose: `trading_cost_bps` (the
+  single bundled commission+spread assumption, not measured from real fills),
+  `lot_size` (fractional-share research mode vs whole-lot rounding, with the
+  rounding-remainder-stays-in-cash behavior noted), `position_concentration_cap_pct_of_cash`
+  (the existing 20%-of-cash cap, not relaxed), and `ticker_selection_bias` (the
+  universe is a present-day-selected set, not point-in-time — `bias_unresolved`
+  applies here too; this report does not attempt to resolve it).
+- **Warmup P&L/trades do not leak into the OOS figures** — verified in
+  `test_oos_window_comparison.py::test_oos_trade_count_matches_independently_filtered_rebalance_log`
+  by independently re-deriving the expected OOS trade count (re-running
+  `backtest.run()` on the same warmup+OOS slice and filtering `rebalance_log` by
+  date manually, duplicating none of the implementation's own filtering code) and
+  comparing it against the report's own figure. That test also surfaces a
+  structural property worth stating plainly: because warmup is sized at **exactly**
+  `lookback` days, `backtest.run()`'s own `i > lookback` guard makes it
+  mathematically impossible for a trade (or any resulting P&L) to be dated before
+  the OOS window even starts within this dedicated run — the earliest a signal can
+  fire already falls inside the OOS window. So for this specific design, there is
+  structurally nothing to leak in the first place, which the test confirms directly
+  (`pre_oos_trades == 0`, `start_value == initial capital`) rather than assuming it.
+  The general-purpose exclusion mechanism itself (`_evaluation_window_result()`, for
+  contexts where leakage genuinely could happen — e.g. a much longer pre-window
+  history) is proven separately against a controlled synthetic equity curve and
+  rebalance log in `test_preregistration.py`'s `EvaluationWindowResultTests`.
+- 14 new tests in `test_oos_window_comparison.py` (9 on `oos_vs_buy_and_hold_report()`,
+  5 on the CLI via subprocess), plus the 9 `preregistration.py` additions above — 23
+  new tests total for this change, all against synthetic fixtures. No existing test
+  was modified.
+
 ## Flags, every Phase 5 report
 
 - `data_required`: non-empty list naming exactly what point-in-time metadata is
@@ -245,15 +301,16 @@ the owner's real data; see "Running this later on your Mac" below.
 
 ## Tests
 
-`test_universe.py` (17), `test_preregistration.py` (27, including the 8 holdout-warmup
-regression tests above), `test_phase5_report.py` (17), plus the Priority-0 regression
-tests added to `test_time_split.py`, `test_report.py`, `test_skabu_model.py`, and
+`test_universe.py` (17), `test_preregistration.py` (36, including the 8 holdout-warmup
+regression tests and the 9 fixed-window-OOS additions above), `test_phase5_report.py`
+(17), `test_oos_window_comparison.py` (14, new), plus the Priority-0 regression tests
+added to `test_time_split.py`, `test_report.py`, `test_skabu_model.py`, and
 `test_phase4_report.py` (5 more) — all against synthetic fixtures, zero network
 calls, zero real data. Combined with every prior phase:
 
 ```
 cd research/stocks && python3 -m unittest discover -v
-# Ran 202 tests ... OK
+# Ran 225 tests ... OK
 ```
 
 ## Unresolved blockers (stated plainly)
@@ -287,8 +344,8 @@ cd /path/to/57hustler/research/stocks
 git fetch origin docs/ai-harness-trading-research-20261008
 git checkout docs/ai-harness-trading-research-20261008
 
-# 1) Run the full test suite (202 tests as of the holdout-warmup fix above;
-#    standard library only, no network, no key, no real data).
+# 1) Run the full test suite (225 tests as of the fixed-window OOS comparison
+#    above; standard library only, no network, no key, no real data).
 python3 -m unittest discover -v
 
 # 2) Generate the Phase 5 unbiased-universe / holdout-validation report on
@@ -297,9 +354,18 @@ python3 -m unittest discover -v
 python3 phase5_report.py ~/Desktop/stock-research-all10/adjusted_prices.csv \
   --development-fraction 0.7 \
   --out ~/Desktop/stock-research-all10/phase5_report.json
+
+# 3) Generate the fixed-window (2025-12-19 to 2026-06-30) strategy vs
+#    buy-and-hold comparison. Same no-parameter-flags design as above.
+python3 oos_window_comparison.py ~/Desktop/stock-research-all10/adjusted_prices.csv \
+  --out ~/Desktop/stock-research-all10/oos_window_comparison.json
 ```
 
 `phase5_report.json` is written locally only and contains no raw per-day price
 series or equity curves — only the pre-registered parameters and manifest hash,
 universe transparency and bias flags, the genuine holdout-validation result, the
 matched 1-share benchmark comparison, and the caveats described above.
+`oos_window_comparison.json` is likewise local-only and raw-data-free — only the
+realized OOS window, the strategy's warmup-corrected holdout result, the matched
+buy-and-hold result, the documented cost/lot/concentration/selection-bias
+constraints, and the caveats above.

@@ -114,6 +114,33 @@ def chronological_holdout_split(common_dates, development_fraction=0.7):
     return development, holdout
 
 
+def date_range_holdout_split(common_dates, holdout_start, holdout_end):
+    """Splits a SORTED list of dates into a strictly earlier development
+    range (everything before holdout_start) and a holdout range pinned to
+    a CALLER-SPECIFIED calendar window [holdout_start, holdout_end],
+    clipped to whatever dates actually exist in common_dates. Unlike
+    chronological_holdout_split()'s fraction-based split, this lets a
+    specific real-world out-of-sample window (e.g. a fixed OOS period
+    agreed on ahead of time) be evaluated directly, while keeping the
+    same strict chronological separation -- development never includes
+    any date on or after holdout_start."""
+    if not common_dates:
+        raise ValueError("empty common_dates")
+    if list(common_dates) != sorted(common_dates):
+        raise ValueError("common_dates must be sorted ascending")
+    if not isinstance(holdout_start, date) or not isinstance(holdout_end, date):
+        raise ValueError("holdout_start and holdout_end must be date objects")
+    if holdout_start > holdout_end:
+        raise ValueError("holdout_start must not be after holdout_end")
+    development = [d for d in common_dates if d < holdout_start]
+    holdout = [d for d in common_dates if holdout_start <= d <= holdout_end]
+    if not development:
+        raise ValueError("no development-period observations exist before holdout_start")
+    if not holdout:
+        raise ValueError(f"no observations fall within [{holdout_start}, {holdout_end}]")
+    return development, holdout
+
+
 def _strip_bulk(d):
     return {k: v for k, v in d.items() if k not in ("equity_curve", "final_positions", "rebalance_log")}
 
@@ -154,6 +181,7 @@ def _evaluation_window_result(run_result, window_start_iso, window_end_iso):
 
 def holdout_protocol_report(prices, lookback, max_names, cost_bps, lot_size=None,
                              capital=1_000_000, development_fraction=0.7,
+                             holdout_start=None, holdout_end=None,
                              expected_manifest_hash=None,
                              min_holdout_observations=MIN_VIABLE_HOLDOUT_OBSERVATIONS,
                              min_holdout_trades=MIN_VIABLE_HOLDOUT_TRADES):
@@ -168,7 +196,17 @@ def holdout_protocol_report(prices, lookback, max_names, cost_bps, lot_size=None
         real conclusion (contamination detected, too little data to split
         meaningfully, or below the minimum observation/trade thresholds).
         Reported candidly, with the reason, instead of a fabricated or
-        silently-weakened number."""
+        silently-weakened number.
+
+    By default the holdout period is the LAST (1 - development_fraction)
+    of the available history. Pass BOTH holdout_start and holdout_end
+    (date objects) to pin the holdout to a specific calendar window
+    instead (e.g. a fixed OOS period agreed on ahead of time) --
+    development_fraction is then ignored. Passing only one of the two
+    raises, so a caller cannot accidentally mix the two modes."""
+    if (holdout_start is None) != (holdout_end is None):
+        raise ValueError("holdout_start and holdout_end must both be given, or neither")
+
     params, manifest_hash = freeze_params(lookback, max_names, cost_bps, lot_size)
 
     if expected_manifest_hash is not None and manifest_hash != expected_manifest_hash:
@@ -184,7 +222,10 @@ def holdout_protocol_report(prices, lookback, max_names, cost_bps, lot_size=None
 
     common = sorted(set.intersection(*(set(x) for x in prices.values())))
     try:
-        development_dates, holdout_dates = chronological_holdout_split(common, development_fraction)
+        if holdout_start is not None:
+            development_dates, holdout_dates = date_range_holdout_split(common, holdout_start, holdout_end)
+        else:
+            development_dates, holdout_dates = chronological_holdout_split(common, development_fraction)
     except ValueError as e:
         return {
             "oos_status": "not_validated",
