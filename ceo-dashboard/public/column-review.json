@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T00:53:27.451Z",
+  "generatedAt": "2026-10-09T01:06:59.650Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -45,16 +45,16 @@
       "slug": "eyestrain-stretching-massage-guide",
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
-        "sessions": 14,
-        "bounceRate": 0.5714285714285714,
-        "avgSessionDuration": 63.453598857142865,
+        "sessions": 13,
+        "bounceRate": 0.5384615384615384,
+        "avgSessionDuration": 15.317368307692307,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション14件・affiliate_clickゼロ"
+        "セッション13件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 6,
@@ -114,8 +114,8 @@
       "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
         "sessions": 10,
-        "bounceRate": 0.2,
-        "avgSessionDuration": 150.4031064,
+        "bounceRate": 0.3,
+        "avgSessionDuration": 143.1580363,
         "affiliateClicks": 0
       },
       "flags": [
@@ -143,88 +143,20 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/multifocal-iol-presbyopia-surgery-2026",
-      "slug": "multifocal-iol-presbyopia-surgery-2026",
-      "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
-      "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.2,
-        "avgSessionDuration": 148.5014582,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 7,
-        "h3Count": 15,
-        "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 93600
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/smile-surgery-guide-2026",
-      "slug": "smile-surgery-guide-2026",
-      "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
-      "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.1,
-        "avgSessionDuration": 236.6294486,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 68250
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/soft-vs-hard-contact-hikaku",
       "slug": "soft-vs-hard-contact-hikaku",
       "title": "soft-vs-hard-contact-hikaku",
       "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 85.074149,
+        "sessions": 10,
+        "bounceRate": 0.3,
+        "avgSessionDuration": 80.0134525,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
+        "セッション10件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -245,13 +177,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/kanso-shinikui-contact",
-      "slug": "kanso-shinikui-contact",
-      "title": "kanso-shinikui-contact",
+      "path": "/column/megane-facial-shape-frame-2026",
+      "slug": "megane-facial-shape-frame-2026",
+      "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
       "metrics": {
         "sessions": 8,
-        "bounceRate": 0.375,
-        "avgSessionDuration": 25.67665925,
+        "bounceRate": 0.125,
+        "avgSessionDuration": 251.278433625,
         "affiliateClicks": 0
       },
       "flags": [
@@ -261,17 +193,51 @@
         "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 4,
-        "h3Count": 9,
+        "h2Count": 3,
+        "h3Count": 4,
         "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 81347
+        "ctaCount": 8,
+        "contentChars": 77375
       },
       "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/multifocal-iol-presbyopia-surgery-2026",
+      "slug": "multifocal-iol-presbyopia-surgery-2026",
+      "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.25,
+        "avgSessionDuration": 91.803469,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 7,
+        "h3Count": 15,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 93600
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -313,13 +279,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/megane-facial-shape-frame-2026",
-      "slug": "megane-facial-shape-frame-2026",
-      "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
+      "path": "/column/kanso-shinikui-contact",
+      "slug": "kanso-shinikui-contact",
+      "title": "kanso-shinikui-contact",
       "metrics": {
         "sessions": 7,
-        "bounceRate": 0.14285714285714285,
-        "avgSessionDuration": 280.97605785714285,
+        "bounceRate": 0.42857142857142855,
+        "avgSessionDuration": 26.697583714285713,
         "affiliateClicks": 0
       },
       "flags": [
@@ -329,17 +295,17 @@
         "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 3,
-        "h3Count": 4,
+        "h2Count": 4,
+        "h3Count": 9,
         "hasAffiliateLinks": true,
-        "ctaCount": 8,
-        "contentChars": 77375
+        "ctaCount": 1,
+        "contentChars": 81347
       },
       "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
       ],
       "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -408,40 +374,6 @@
       ],
       "suggestions": [
         "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/dryeye-taisaku",
-      "slug": "dryeye-taisaku",
-      "title": "ドライアイ・疲れ目の対策【目薬・生活習慣・サプリで症状改善】原因と対処法",
-      "metrics": {
-        "sessions": 6,
-        "bounceRate": 0.16666666666666666,
-        "avgSessionDuration": 113.60809766666665,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション6件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 3,
-        "hasAffiliateLinks": true,
-        "ctaCount": 7,
-        "contentChars": 76392
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見",
       "business": "lens-navi",
