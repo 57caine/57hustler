@@ -185,6 +185,53 @@ ever invented. The report surfaces, per run:
   parameter set was reused unchanged — nothing here was searched or adjusted to
   produce a better headline return.
 
+## Real-data follow-up fix (2026-10-09): holdout warmup
+
+The owner ran `phase5_report.py` locally against real J-Quants data (10 tickers x
+425 trading days) and reported `oos_status: not_validated`, reason `"holdout period
+backtest failed: insufficient common history"`, with `development=298` days /
+`holdout=127` days under the pre-registered `lookback=126`.
+
+**Root cause:** `holdout_protocol_report()` ran `backtest.run()` on the holdout
+slice **alone**. `backtest.run()` requires at least `lookback + 3` observations
+before it will generate even one signal (its own internal validation). A 127-day
+holdout against `lookback=126` needs 129 — so the holdout could **never** produce a
+single trade, regardless of how long the underlying price history actually was. This
+was a real defect in the Priority 2 implementation, not a property of the real data
+or evidence against the strategy.
+
+**Fix:** `holdout_protocol_report()` now gives the holdout run `lookback` trading
+days of **warmup**, taken from the tail of the *development* period — strictly
+before the holdout starts, never from inside or after it, so this is not future data
+and not a look at holdout performance. The combined warmup+holdout slice is run
+through `backtest.run()` as a single, still-independent-from-development call; a new
+helper, `_evaluation_window_result()`, then reports return/drawdown/trades/monthly
+returns computed **only** from the holdout period's own start onward — mirroring how
+`walk_forward.py` (Phase 4) measures a window's return from its own start value, not
+the run's original capital. The development evaluation itself is completely
+unaffected (same full development-period run as before); the two evaluations remain
+strictly separate, which `test_development_result_unaffected_by_warmup_reuse` checks
+directly.
+
+One subtlety worth stating plainly: because warmup is sized at **exactly**
+`lookback` days, `backtest.run()`'s own `i > lookback` guard means no trade is even
+possible until one day past the warmup/holdout boundary — so the very first holdout
+observation can legitimately still show the unchanged initial-capital-shaped equity
+from warmup. That is expected behavior given this design, not evidence the warmup
+was skipped; `EvaluationWindowResultTests` in `test_preregistration.py` tests the
+exclusion logic directly against a controlled synthetic curve/rebalance log, rather
+than relying on a specific economic scenario to demonstrate it end-to-end.
+
+Regression tests added (`test_preregistration.py`, 8 new): the exact reported shape
+(10 tickers, 425 days, `lookback=126`, default `development_fraction=0.7` ->
+298/127) no longer fails with "insufficient common history"
+(`test_holdout_shorter_than_lookback_plus_three_no_longer_fails_outright`);
+`warmup_period` is reported with the correct length and ends strictly before
+`holdout_period` starts; the development evaluation is provably unaffected; and
+`EvaluationWindowResultTests` (4 tests) verify the warmup-exclusion helper directly.
+All still against synthetic fixtures only — this fix has not yet been re-run against
+the owner's real data; see "Running this later on your Mac" below.
+
 ## Flags, every Phase 5 report
 
 - `data_required`: non-empty list naming exactly what point-in-time metadata is
@@ -198,14 +245,15 @@ ever invented. The report surfaces, per run:
 
 ## Tests
 
-`test_universe.py` (17), `test_preregistration.py` (19), `test_phase5_report.py` (17),
-plus the Priority-0 regression tests added to `test_time_split.py`, `test_report.py`,
-`test_skabu_model.py`, and `test_phase4_report.py` (5 more) — all against synthetic
-fixtures, zero network calls, zero real data. Combined with every prior phase:
+`test_universe.py` (17), `test_preregistration.py` (27, including the 8 holdout-warmup
+regression tests above), `test_phase5_report.py` (17), plus the Priority-0 regression
+tests added to `test_time_split.py`, `test_report.py`, `test_skabu_model.py`, and
+`test_phase4_report.py` (5 more) — all against synthetic fixtures, zero network
+calls, zero real data. Combined with every prior phase:
 
 ```
 cd research/stocks && python3 -m unittest discover -v
-# Ran 194 tests ... OK
+# Ran 202 tests ... OK
 ```
 
 ## Unresolved blockers (stated plainly)
@@ -219,12 +267,14 @@ cd research/stocks && python3 -m unittest discover -v
   `has_point_in_time_metadata=True` is currently just a plumbing-test switch — passing
   it does not mean real metadata was used, only that the code path it unlocks is
   exercised; see `test_universe.py`'s synthetic fixtures.
-- **Nothing here has been run against the owner's real `adjusted_prices.csv`.** This
-  cloud sandbox cannot access it. `oos_status`, trade counts, and every figure in
-  `phase5_report.py`'s output will differ once run against real data — possibly
-  landing on `"not_validated"` for a reason not seen in these synthetic tests (e.g. a
-  real holdout slice with too few trades). The Mac command below is the only way to
-  find out.
+- **The fix above has not yet been re-run against the owner's real `adjusted_prices.csv`.**
+  This cloud sandbox cannot access it. The owner's one real-data run (10 tickers, 425
+  days) is what surfaced the holdout-warmup bug in the first place, and that run
+  predates this fix. `oos_status`, trade counts, and every other figure in
+  `phase5_report.py`'s output may still differ once re-run against real data with the
+  fix applied — possibly landing on `"not_validated"` for a different, legitimate
+  reason not seen in these synthetic tests (e.g. too few trades even with warmup).
+  The Mac command below is the only way to find out.
 - **Statistical power remains weak regardless of outcome.** Even a clean
   `"validated_with_caveats"` result from real data will rest on a development/holdout
   split of what is still well under 1,000 total observations — `statistical_power_note`
@@ -237,8 +287,8 @@ cd /path/to/57hustler/research/stocks
 git fetch origin docs/ai-harness-trading-research-20261008
 git checkout docs/ai-harness-trading-research-20261008
 
-# 1) Run the full test suite (194 tests as of Phase 5; standard library
-#    only, no network, no key, no real data).
+# 1) Run the full test suite (202 tests as of the holdout-warmup fix above;
+#    standard library only, no network, no key, no real data).
 python3 -m unittest discover -v
 
 # 2) Generate the Phase 5 unbiased-universe / holdout-validation report on

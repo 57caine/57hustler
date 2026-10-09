@@ -24,12 +24,33 @@ test, because one run produced every window and no parameter was ever
 
 No parameter is ever chosen by looking at the holdout result; the only
 sequence this module supports is freeze -> develop -> holdout.
+
+Real-data follow-up fix (found running against the owner's actual
+J-Quants data: 10 tickers x 425 trading days, development_fraction=0.7 ->
+development=298 days, holdout=127 days, lookback=126): the holdout run
+used to be backtest.run() on ONLY the holdout_dates slice. Since
+backtest.run() requires at least lookback+3 observations before it will
+generate even one signal, a holdout slice of 127 days against
+lookback=126 failed outright with "insufficient common history" -- the
+holdout could never produce a single trade, no matter how long the
+underlying history was. Fixed in holdout_protocol_report() by giving the
+holdout run `lookback` trading days of WARMUP taken from the tail of the
+development period (strictly BEFORE the holdout starts -- never from
+inside or after it, so this is not future data and not a look at holdout
+performance), then reporting holdout performance (return, drawdown,
+trades, monthly returns) ONLY from the holdout period's own start onward
+-- mirroring how walk_forward.py (Phase 4) slices a window's performance
+from its own start value, not from the run's original capital. The
+development run and its own reported evaluation are completely
+unaffected by this; the two evaluations remain strictly separate (see
+_evaluation_window_result()).
 """
 import hashlib
 import json
 from datetime import date
 
 import backtest
+import metrics
 import time_split
 
 # A few months of trading days; below this, period-level statistics (max
@@ -97,6 +118,40 @@ def _strip_bulk(d):
     return {k: v for k, v in d.items() if k not in ("equity_curve", "final_positions", "rebalance_log")}
 
 
+def _evaluation_window_result(run_result, window_start_iso, window_end_iso):
+    """Given a backtest.run() result whose equity_curve/rebalance_log spans
+    a WARMUP period followed by an evaluation window, returns metrics
+    computed ONLY from the evaluation window [window_start_iso,
+    window_end_iso] -- never from the run's own initial capital, and never
+    from trades/P&L that happened during warmup. start_value is the
+    window's OWN starting equity (already shaped by whatever happened
+    during warmup), so return_pct measures growth within the window only.
+    Mirrors walk_forward.py's per-window slicing (Phase 4), applied here
+    to a single dedicated, independent holdout run rather than a combined
+    development+holdout run. Returns None if the window is too short to
+    evaluate (fewer than 2 equity observations in range)."""
+    curve = run_result["equity_curve"]
+    sub_curve = [(d, v) for d, v in curve if window_start_iso <= d <= window_end_iso]
+    if len(sub_curve) < 2:
+        return None
+    start_value = sub_curve[0][1]
+    end_value = sub_curve[-1][1]
+    window_trades = sum(e["trades"] for e in run_result["rebalance_log"]
+                         if window_start_iso <= e["date"] <= window_end_iso)
+    dd_episodes = metrics.drawdown_durations(sub_curve)
+    return {
+        "start_value": start_value,
+        "end_value": end_value,
+        "return_pct": round((end_value / start_value - 1) * 100, 2),
+        "trades": window_trades,
+        "max_drawdown_pct": round(min((e["depth_pct"] for e in dd_episodes), default=0.0), 2),
+        "worst_month": metrics.worst_month(sub_curve),
+        "monthly_returns": metrics.monthly_returns(sub_curve),
+        "cost_bps": run_result["cost_bps"],
+        "lot_size": run_result["lot_size"],
+    }
+
+
 def holdout_protocol_report(prices, lookback, max_names, cost_bps, lot_size=None,
                              capital=1_000_000, development_fraction=0.7,
                              expected_manifest_hash=None,
@@ -138,8 +193,22 @@ def holdout_protocol_report(prices, lookback, max_names, cost_bps, lot_size=None
             "parameters": params,
         }
 
+    development_period = {"start": development_dates[0].isoformat(), "end": development_dates[-1].isoformat(),
+                           "observations": len(development_dates)}
     development_prices = time_split.slice_prices(prices, development_dates[0], development_dates[-1])
-    holdout_prices = time_split.slice_prices(prices, holdout_dates[0], holdout_dates[-1])
+
+    # Warmup: the `lookback` trading days immediately BEFORE the holdout
+    # period starts, taken from the tail of development_dates -- strictly
+    # earlier than holdout, never from inside or after it. See the module
+    # docstring for why this is necessary and why it is not a lookahead or
+    # a look at holdout performance.
+    warmup_dates = development_dates[-lookback:] if len(development_dates) >= lookback else development_dates
+    warmup_period = {"start": warmup_dates[0].isoformat(), "end": warmup_dates[-1].isoformat(),
+                      "observations": len(warmup_dates),
+                      "note": "Reused from the tail of the development period solely to satisfy "
+                              "backtest.run()'s own lookback requirement at the start of the holdout "
+                              "run; its own P&L/trades are excluded from holdout_result below."}
+    holdout_run_prices = time_split.slice_prices(prices, warmup_dates[0], holdout_dates[-1])
 
     warnings = []
     if len(holdout_dates) < min_holdout_observations:
@@ -154,43 +223,56 @@ def holdout_protocol_report(prices, lookback, max_names, cost_bps, lot_size=None
             "reason": f"development period backtest failed: {e}",
             "manifest_hash": manifest_hash,
             "parameters": params,
+            "development_period": development_period,
             "warnings": warnings,
         }
 
     try:
-        holdout_result = backtest.run(holdout_prices, capital=capital, **params)
+        holdout_run_result = backtest.run(holdout_run_prices, capital=capital, **params)
     except ValueError as e:
         return {
             "oos_status": "not_validated",
             "reason": f"holdout period backtest failed: {e}",
             "manifest_hash": manifest_hash,
             "parameters": params,
-            "development_period": {"start": development_dates[0].isoformat(),
-                                    "end": development_dates[-1].isoformat(),
-                                    "observations": len(development_dates)},
+            "development_period": development_period,
+            "warmup_period": warmup_period,
             "development_result": _strip_bulk(development_result),
             "warnings": warnings,
         }
 
-    if holdout_result["trades"] < min_holdout_trades:
-        warnings.append(f"holdout executed only {holdout_result['trades']} trades "
+    holdout_start_iso, holdout_end_iso = holdout_dates[0].isoformat(), holdout_dates[-1].isoformat()
+    holdout_eval = _evaluation_window_result(holdout_run_result, holdout_start_iso, holdout_end_iso)
+    if holdout_eval is None:
+        return {
+            "oos_status": "not_validated",
+            "reason": "holdout evaluation window too short to evaluate after excluding warmup",
+            "manifest_hash": manifest_hash,
+            "parameters": params,
+            "development_period": development_period,
+            "warmup_period": warmup_period,
+            "development_result": _strip_bulk(development_result),
+            "warnings": warnings,
+        }
+
+    if holdout_eval["trades"] < min_holdout_trades:
+        warnings.append(f"holdout evaluation window executed only {holdout_eval['trades']} trades "
                          f"(below the minimum viable {min_holdout_trades}) -- too few to support "
                          f"a real conclusion")
 
     oos_status = "validated_with_caveats" if (
-        len(holdout_dates) >= min_holdout_observations and holdout_result["trades"] >= min_holdout_trades
+        len(holdout_dates) >= min_holdout_observations and holdout_eval["trades"] >= min_holdout_trades
     ) else "not_validated"
 
     return {
         "oos_status": oos_status,
         "manifest_hash": manifest_hash,
         "parameters": params,
-        "development_period": {"start": development_dates[0].isoformat(), "end": development_dates[-1].isoformat(),
-                                "observations": len(development_dates)},
-        "holdout_period": {"start": holdout_dates[0].isoformat(), "end": holdout_dates[-1].isoformat(),
-                            "observations": len(holdout_dates)},
+        "development_period": development_period,
+        "warmup_period": warmup_period,
+        "holdout_period": {"start": holdout_start_iso, "end": holdout_end_iso, "observations": len(holdout_dates)},
         "development_result": _strip_bulk(development_result),
-        "holdout_result": _strip_bulk(holdout_result),
+        "holdout_result": holdout_eval,
         "warnings": warnings,
         "statistical_power_note": (
             f"{len(common)} total observations split {development_fraction:.0%}/"
