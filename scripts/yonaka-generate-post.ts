@@ -405,7 +405,7 @@ async function generatePost(category: Category, history: HistoryEntry[], rules: 
 
   const res = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
-    max_tokens: 300,
+    max_tokens: 500,
     system: `あなたは「夜中のおじさん」です。知的好奇心旺盛な中年男性が、ふと思ったことをつぶやくスタイルで投稿を書いてください。
 
 【コンテンツの根底にある思想】
