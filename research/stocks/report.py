@@ -40,8 +40,10 @@ CAVEATS = [
 
 def _without_bulk_fields(d):
     """Shallow copy dropping fields not needed in a compact summary
-    (equity curves, per-ticker position maps)."""
-    drop = {"equity_curve", "final_positions"}
+    (equity curves, per-ticker position maps, and -- Phase 5 fix, this
+    used to omit it -- the per-rebalance-event rebalance_log Phase 4
+    added to backtest.run()'s result)."""
+    drop = {"equity_curve", "final_positions", "rebalance_log"}
     return {k: v for k, v in d.items() if k not in drop}
 
 

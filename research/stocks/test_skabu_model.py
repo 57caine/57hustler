@@ -101,6 +101,17 @@ class CompareLotModelsTests(unittest.TestCase):
         self.assertNotIn("equity_curve", text)
         self.assertNotIn("final_positions", text)
 
+    def test_output_is_compact_no_rebalance_log(self):
+        # Phase 5 regression test: _without_bulk_fields() used to drop only
+        # equity_curve/final_positions, silently leaking the per-rebalance
+        # rebalance_log Phase 4 added to backtest.run()'s result into every
+        # model's "compact" result here.
+        import json
+        prices = multi_ticker_uptrend()
+        report = compare_lot_models(prices, lookback=60)
+        text = json.dumps(report, ensure_ascii=False)
+        self.assertNotIn("rebalance_log", text)
+
     def test_each_model_has_monthly_returns_and_drawdowns(self):
         prices = multi_ticker_uptrend()
         report = compare_lot_models(prices, lookback=60)

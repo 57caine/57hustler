@@ -74,7 +74,12 @@ def run_skabu(prices, capital=1_000_000, lookback=126, max_names=5, cost_bps=SKA
 
 
 def _without_bulk_fields(d):
-    drop = {"equity_curve", "final_positions"}
+    # Phase 5 fix: this used to drop only equity_curve/final_positions,
+    # silently leaking the per-rebalance-event rebalance_log Phase 4 added
+    # to backtest.run()'s result into every model's "compact" result here
+    # (confirmed leaking into compare_lot_models()'s JSON output, and from
+    # there into phase4_report.py's lot_model_comparison section).
+    drop = {"equity_curve", "final_positions", "rebalance_log"}
     return {k: v for k, v in d.items() if k not in drop}
 
 

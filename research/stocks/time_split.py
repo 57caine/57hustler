@@ -67,7 +67,12 @@ def time_split_report(prices, n_splits=2, **run_kwargs):
         entry = {"period": {"start": start.isoformat(), "end": end.isoformat(), "observations": observations}}
         try:
             r = backtest.run(sub, **run_kwargs)
-            entry["result"] = {k: v for k, v in r.items() if k != "equity_curve"}
+            # Phase 5 fix: this used to drop only equity_curve, silently
+            # leaving final_positions and (once Phase 4 added it)
+            # rebalance_log -- a raw-ish per-rebalance-event log -- inside a
+            # report meant to be compact. Drop all three bulk fields here.
+            entry["result"] = {k: v for k, v in r.items()
+                                if k not in ("equity_curve", "final_positions", "rebalance_log")}
         except ValueError as e:
             entry["error"] = str(e)
         results.append(entry)

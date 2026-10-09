@@ -37,3 +37,15 @@ Mac実行コマンドは`PHASE3_SKABU_COMPARISON.md`を参照。
 流動性・集中度・配当/コーポレートアクションの不確実性を感度分析として扱う
 `phase4_report.py`を追加。生株価・equity curveを含まないコンパクトJSONレポートCLI。
 詳細・既知の限界・Mac実行コマンドは`PHASE4_EXECUTION_REALISM.md`を参照。
+
+## Phase 5: 非偏向ユニバース・真のアウトオブサンプル検証（2026-10-09、`PHASE5_UNBIASED_VALIDATION.md`参照）
+Phase 4の独立監査で発見・修正した実バグ（`rebalance_log`が3箇所のコンパクト出力に
+漏れていた）と、「承認済み」と「実証済み」を混同しない明示フラグの追加。
+現在のローカルデータには銘柄選定のpoint-in-time情報が無いため生存者バイアスは
+解消不能と明記した上で、将来データが与えられた場合に備えたスキーマ・検証・
+ユニバース構築（`universe.py`、合成フィクスチャのみ）を追加。パラメータを事前登録し
+ハッシュで固定した上で、単一runのスライスではない真の時系列development/holdoutテストを
+行う`preregistration.py`、1株buy-and-hold基準・集中度・turnover・コストを比較する
+CLI（`phase5_report.py`、戦略パラメータのCLIフラグは意図的に非公開）を追加。
+`data_required`・`bias_unresolved`・`oos_status`・`readiness_for_real_trading: false`の
+明示フラグ付き。詳細・未解決の課題・Mac実行コマンドは`PHASE5_UNBIASED_VALIDATION.md`を参照。

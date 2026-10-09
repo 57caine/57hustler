@@ -51,6 +51,18 @@ class BuildPhase4ReportTests(unittest.TestCase):
         # Daily consecutive dates in the fixture -> every gap is 1 day.
         self.assertEqual(preflight["largest_observed_gap_days"], 1)
 
+    def test_acknowledgment_is_not_conflated_with_empirical_validation(self):
+        # Phase 5 Priority 0: an explicit boolean acknowledgment is not
+        # empirical validation -- this must stay False regardless of the
+        # acknowledgment flag above.
+        prices = multi_ticker_uptrend()
+        tmpdir = tempfile.mkdtemp()
+        self.addCleanup(lambda: __import__("shutil").rmtree(tmpdir, ignore_errors=True))
+        csv_path = os.path.join(tmpdir, "prices.csv")
+        write_prices_csv(csv_path, sorted(prices))
+        report = build_phase4_report(csv_path, lookback=60)
+        self.assertFalse(report["timing_preflight"]["empirically_validated"])
+
     def test_anomalous_calendar_gap_is_rejected_not_silently_accepted(self):
         dates1 = [date(2024, 1, 1) + timedelta(days=i) for i in range(200)]
         dates2 = [dates1[-1] + timedelta(days=45 + i) for i in range(200)]  # implausible gap
@@ -102,6 +114,10 @@ class BuildPhase4ReportTests(unittest.TestCase):
         )
 
     def test_output_is_compact_no_raw_curves_anywhere(self):
+        # Phase 5 regression test: lot_model_comparison (sourced from
+        # skabu_model.compare_lot_models()) used to leak rebalance_log --
+        # a raw-ish per-rebalance-event log -- because that module's own
+        # compacting helper dropped only equity_curve/final_positions.
         prices = multi_ticker_uptrend()
         tmpdir = tempfile.mkdtemp()
         self.addCleanup(lambda: __import__("shutil").rmtree(tmpdir, ignore_errors=True))
@@ -111,6 +127,7 @@ class BuildPhase4ReportTests(unittest.TestCase):
         text = json.dumps(report, ensure_ascii=False)
         self.assertNotIn("equity_curve", text)
         self.assertNotIn("final_positions", text)
+        self.assertNotIn("rebalance_log", text)
 
     def test_no_parameter_tuning_same_cost_bps_and_lookback_everywhere(self):
         prices = multi_ticker_uptrend()

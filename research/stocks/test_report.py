@@ -26,6 +26,14 @@ class WithoutBulkFieldsTests(unittest.TestCase):
         self.assertEqual(out["final"], 1)
         self.assertEqual(out["trades"], 2)
 
+    def test_drops_rebalance_log(self):
+        # Phase 5 regression test: this used to leak rebalance_log (a
+        # raw-ish per-rebalance-event log Phase 4 added to backtest.run())
+        # into every "compact" report built from this function.
+        d = {"final": 1, "rebalance_log": [{"date": "2024-01-01", "trades": 2}]}
+        out = _without_bulk_fields(d)
+        self.assertNotIn("rebalance_log", out)
+
 
 class BuildReportTests(unittest.TestCase):
     def setUp(self):
@@ -39,6 +47,7 @@ class BuildReportTests(unittest.TestCase):
         text = json.dumps(report, ensure_ascii=False)
         self.assertNotIn("equity_curve", text)
         self.assertNotIn("final_positions", text)
+        self.assertNotIn("rebalance_log", text)
 
     def test_report_has_all_required_sections(self):
         report = build_report(self.csv_path, lookback=60, n_splits=2, min_rows=60)

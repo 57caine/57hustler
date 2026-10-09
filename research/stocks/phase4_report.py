@@ -111,6 +111,13 @@ def build_phase4_report(prices_csv, capital=1_000_000, lookback=126, max_names=5
                         "cost_bps": cost_bps, "lot_size": lot_size, "n_splits": n_splits},
         "timing_preflight": {
             "same_day_close_fill_assumption_acknowledged": True,
+            # Phase 5 clarification: "acknowledged" means this report-builder
+            # passed the required boolean -- it is NOT evidence the SBI
+            # 10:30-14:00 same-day-close assumption was empirically tested
+            # against real intraday/order data (none exists in this
+            # project). Kept as an explicit, separate field so the
+            # acknowledgment can never be read as validation.
+            "empirically_validated": False,
             "trading_calendar_checked": True,
             "max_gap_days": max_gap_days,
             "largest_observed_gap_days": max((g for _, _, g in calendar_gaps), default=0),
@@ -122,6 +129,11 @@ def build_phase4_report(prices_csv, capital=1_000_000, lookback=126, max_names=5
         "failure_mode_sensitivity": failure_modes,
         "caveats": [
             "Unvalidated research output, NOT investment results.",
+            "timing_preflight.same_day_close_fill_assumption_acknowledged=True records that this "
+            "report-builder passed the required acknowledgment, not that the SBI 10:30-14:00 "
+            "same-day-close assumption was empirically tested -- see empirically_validated=False "
+            "in that same section; see PHASE5_UNBIASED_VALIDATION.md Priority 0 for the audit that "
+            "flagged this distinction.",
             "See ROBUSTNESS_AUDIT.md (Phase 2) and PHASE3_SKABU_COMPARISON.md (Phase 3) for caveats "
             "that still apply unchanged (survivorship/selection bias, dividend-adjustment uncertainty, "
             "short ~2-year sample, S-Kabu rule sourcing).",

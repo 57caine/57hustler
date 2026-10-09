@@ -64,6 +64,18 @@ class TimeSplitReportTests(unittest.TestCase):
         report = time_split_report(prices, n_splits=2, lookback=300)
         self.assertTrue(any("error" in entry for entry in report))
 
+    def test_result_entries_are_compact_no_bulk_fields(self):
+        # Phase 5 regression test: this used to drop only equity_curve,
+        # silently leaking final_positions and (once Phase 4 added it)
+        # the per-rebalance-event rebalance_log into every split's result.
+        import json
+        prices = {"X": make_series(430)}
+        report = time_split_report(prices, n_splits=2, lookback=60, cost_bps=20)
+        text = json.dumps(report, ensure_ascii=False)
+        self.assertNotIn("equity_curve", text)
+        self.assertNotIn("final_positions", text)
+        self.assertNotIn("rebalance_log", text)
+
 
 class SensitivitySweepTests(unittest.TestCase):
     def test_returns_one_row_per_grid_entry(self):
