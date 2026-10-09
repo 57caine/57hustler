@@ -49,3 +49,11 @@ Phase 4の独立監査で発見・修正した実バグ（`rebalance_log`が3箇
 CLI（`phase5_report.py`、戦略パラメータのCLIフラグは意図的に非公開）を追加。
 `data_required`・`bias_unresolved`・`oos_status`・`readiness_for_real_trading: false`の
 明示フラグ付き。詳細・未解決の課題・Mac実行コマンドは`PHASE5_UNBIASED_VALIDATION.md`を参照。
+
+## 実データ検証への移行可否チェック（2026-10-09、`DATA_READINESS_REPORT.md`参照）
+`DATA_EXECUTION_GATE.md`に基づき、実データ検証へ移行できる状態かを確認（新規コードは
+追加していない）。結論：このクラウド実行環境はJ-Quants・Stooq・Yahoo Finance等の
+金融データ系ホストへの通信を全てブロックしており、実データ取得はオーナー自身のMac上
+でしか行えない（Phase 1からの結論と同じ）。半導体・水関連を中心とした研究対象10銘柄の
+候補選定（既存10銘柄が実質この構成だったことを確認・記録、購入推奨ではない）も含む。
+詳細は`DATA_READINESS_REPORT.md`を参照。
