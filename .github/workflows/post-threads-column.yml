@@ -2,7 +2,7 @@ name: Threads 夜間コラム自動投稿
 
 on:
   schedule:
-    - cron: '0 14 * * *'   # 毎日 JST 23:00 (UTC 14:00)
+    - cron: '0 12 * * *'   # 毎日 JST 21:00 (UTC 12:00)
   workflow_dispatch:
 
 jobs:
