@@ -5,7 +5,7 @@ import ProductCard from '@/components/ProductCard';
 
 export const metadata: Metadata = {
   title: 'コンタクトレンズ商品比較2026年版【装用タイプ別】',
-  description: 'コンタクトレンズの掲載商品を比較。アキュビュー・デイリーズ・バイオフィニティなどの商品情報とカテゴリ別ランキングを掲載。',
+  description: 'コンタクトレンズの掲載商品を比較。アキュビュー・デイリーズ・バイオフィニティなどの商品情報と装用タイプ別の商品比較を掲載。',
 };
 
 const faqs = [
@@ -117,7 +117,7 @@ export default function RankingPage() {
           </p>
           <div className="space-y-3">
             {products.map((product) => (
-              <ProductCard key={product.id} product={product} rank={index + 1} />
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </section>
