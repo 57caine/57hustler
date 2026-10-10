@@ -22,9 +22,16 @@ for (const path of paths) {
     const html = await response.text();
     const hasAffiliate = /hb\.afl\.rakuten\.co\.jp|afl\.rakuten\.co\.jp|px\.a8\.net/.test(html);
     const hasTracking = /affiliate_click|AffiliateClickTracker|googletagmanager\.com\/gtag/.test(html);
-    const ok = response.ok && html.includes('<html') && hasAffiliate;
+    // Ranking copy assertions validate the PR #38 production page, not merely a 200 response.
+    const rankingCopyOk = path !== '/ranking' || (
+      html.includes('購入前に確認すること') &&
+      html.includes('商品比較') &&
+      !html.includes('注目の新規ショップ')
+    );
+    const ok = response.ok && html.includes('<html') && hasAffiliate && rankingCopyOk;
     if (!ok) failed = true;
-    results.push({ path, http: response.status, hasAffiliate, hasTracking, ok });
+    results.push({ path, http: response.status, hasAffiliate, hasTracking, rankingCopyOk, ok });
+    if (!rankingCopyOk) diagnoses.push(`STALE_CONTENT: ${path} - expected PR #38 copy missing or old generic shop CTA present.`);
     const diagnosis = diagnose({ path, http: response.status, hasAffiliate, hasTracking });
     if (diagnosis) diagnoses.push(diagnosis);
   } catch (error) {
@@ -36,9 +43,9 @@ for (const path of paths) {
 const lines = [
   '# Lens-navi revenue path: read-only healthcheck',
   '',
-  '| Page | HTTP | Affiliate link present | Tracking marker present | Result |',
+  '| Page | HTTP | Affiliate link present | Tracking marker present | PR #38 copy | Result |',
   '|---|---:|---|---|---|',
-  ...results.map(r => `| ${r.path} | ${r.http ?? '-'} | ${r.hasAffiliate ? 'yes' : 'no'} | ${r.hasTracking ? 'yes' : 'no'} | ${r.ok ? 'PASS' : 'FAIL'} |`),
+  ...results.map(r => `| ${r.path} | ${r.http ?? '-'} | ${r.hasAffiliate ? 'yes' : 'no'} | ${r.hasTracking ? 'yes' : 'no'} | ${r.rankingCopyOk === undefined ? '-' : r.rankingCopyOk ? 'yes' : 'no'} | ${r.ok ? 'PASS' : 'FAIL'} |`),
   '',
   '## Automatic diagnostic hints',
   '',
