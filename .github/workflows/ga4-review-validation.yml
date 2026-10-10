@@ -1,0 +1,23 @@
+name: GA4 review fallback validation
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/fetch-ga4-analytics.ts'
+      - 'scripts/tests/ga4-review-fallback.test.cjs'
+      - '.github/workflows/ga4-review-validation.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: node --test scripts/tests/ga4-review-fallback.test.cjs
