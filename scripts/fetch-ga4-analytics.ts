@@ -227,6 +227,7 @@ interface SiteData {
   topPages: PageMetrics[];
   weeklyTrend: { date: string; sessions: number }[];
   affiliateClicksByPage: Record<string, number>;
+  affiliateClicksStatus: 'ok' | 'error';
 }
 
 async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object): Promise<SiteData> {
@@ -291,6 +292,7 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
   });
 
   // affiliate_click イベント数（ページ別）
+  let affiliateClicksStatus: 'ok' | 'error' = 'ok';
   const [clicksResponse] = await client.runReport({
     property: propertyId,
     dimensions: [{ name: 'pagePath' }],
@@ -303,7 +305,11 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
     },
     dateRanges: [{ startDate, endDate }],
     limit: 100,
-  }).catch(() => [{ rows: [] }]);
+  }).catch((error: unknown) => {
+    affiliateClicksStatus = 'error';
+    console.error(`  ✗ ${property.label}: affiliate_click取得失敗（ゼロ件として扱わない）`, error);
+    return [{ rows: [] }];
+  });
 
   const affiliateClicksByPage: Record<string, number> = {};
   for (const row of (clicksResponse?.rows ?? [])) {
@@ -322,6 +328,7 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
     topPages,
     weeklyTrend,
     affiliateClicksByPage,
+    affiliateClicksStatus,
   };
 }
 
@@ -382,6 +389,7 @@ async function main() {
   }
 
   const autoArticles = lensNaviSite
+    && lensNaviSite.affiliateClicksStatus === 'ok'
     ? detectFlaggedColumns(lensNaviSite.topPages, contentLog, lensNaviSite.affiliateClicksByPage, existingStatuses, existingPriorities)
     : [];
   // 手動追加分（school-navi・henkutsu等、自動検知の対象外の事業課題）は
