@@ -7,7 +7,7 @@ const raw = JSON.parse(fs.readFileSync(file, 'utf8'));
 const site = (raw.sites ?? []).find(s => s.siteName === 'lens-navi');
 if (!site) throw new Error('lens-navi GA4 data missing; do not report zero');
 const clicks = site.affiliateClicksByPage;
-if (site.affiliateClicksStatus !== 'ok' || !clicks || typeof clicks !== 'object') {
+if (site.affiliateClicksStatus === 'error' || !clicks || typeof clicks !== 'object') {
   throw new Error('affiliate_click data missing or failed; do not report zero');
 }
 const generated = Date.parse(raw.generatedAt);
@@ -22,6 +22,7 @@ const lines = [
   `- GA4 fetched: ${raw.generatedAt} (${ageHours.toFixed(1)} hours old)`,
   `- GA4 data freshness: ${stale ? 'STALE — do not use for current decisions' : 'within 48 hours'}`,
   `- GA4 period: ${site.dateRange?.start ?? 'unknown'} to ${site.dateRange?.end ?? 'unknown'}`,
+  `- Click fetch status: ${site.affiliateClicksStatus ?? 'unknown (legacy data; completeness not verified)'}`,
   `- Sessions: ${site.totalSessions ?? 'unknown'}`,
   `- Recorded affiliate_click events by page (sum): ${total}`,
   '',
