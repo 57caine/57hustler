@@ -378,6 +378,7 @@ async function main() {
   const existingPriorities: Record<string, 'high' | 'medium' | 'low'> = {};
   let manualArticles: FlaggedColumn[] = [];
   let previousAutoArticles: FlaggedColumn[] = [];
+  let previousReviewDateRange: { start: string; end: string } | null = null;
   if (fs.existsSync(reviewPaths[0])) {
     try {
       const existing = JSON.parse(fs.readFileSync(reviewPaths[0], 'utf-8'));
@@ -387,6 +388,7 @@ async function main() {
       }
       manualArticles = (existing.flaggedArticles ?? []).filter((a: FlaggedColumn) => a.source === 'manual');
       previousAutoArticles = (existing.flaggedArticles ?? []).filter((a: FlaggedColumn) => a.source === 'auto-ga4');
+      previousReviewDateRange = existing.dataDateRange ?? null;
     } catch { /* 既存ファイルが壊れていても続行 */ }
   }
 
@@ -401,7 +403,7 @@ async function main() {
 
   const columnReview = {
     generatedAt: new Date().toISOString(),
-    dataDateRange: lensNaviSite?.dateRange ?? null,
+    dataDateRange: clickDataReady ? lensNaviSite?.dateRange ?? null : previousReviewDateRange,
     affiliateClicksStatus: lensNaviSite?.affiliateClicksStatus ?? 'error',
     autoReviewStale: !clickDataReady,
     flaggedCount: flaggedArticles.filter(a => a.status === '未対応').length,
