@@ -1,0 +1,19 @@
+name: GA4 daily workflow static validation
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/fetch-ga4-analytics.yml'
+      - '.github/workflows/ga4-daily-workflow-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parse GA4 workflow YAML
+        run: ruby -e "require 'yaml'; YAML.load_file('.github/workflows/fetch-ga4-analytics.yml'); puts 'YAML valid'"
