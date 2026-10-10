@@ -4,8 +4,8 @@ import { getAllProductsWithPrices } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
 
 export const metadata: Metadata = {
-  title: 'コンタクトレンズ 人気ランキング2026年版【商品比較】',
-  description: 'コンタクトレンズの人気商品を比較。アキュビュー・デイリーズ・バイオフィニティなどの商品情報とカテゴリ別ランキングを掲載。',
+  title: 'コンタクトレンズ商品比較2026年版【装用タイプ別】',
+  description: 'コンタクトレンズの掲載商品を比較。アキュビュー・デイリーズ・バイオフィニティなどの商品情報と装用タイプ別の商品比較を掲載。',
 };
 
 const faqs = [
@@ -28,7 +28,7 @@ const faqs = [
 ];
 
 export default function RankingPage() {
-  const allRanked = getAllProductsWithPrices().sort((a, b) => b.popularity - a.popularity);
+  const allRanked = getAllProductsWithPrices();
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -65,22 +65,22 @@ export default function RankingPage() {
       </nav>
 
       <h1 className="text-2xl font-bold text-gray-900 mb-2">
-        コンタクトレンズ 人気ランキング2026年版
+        コンタクトレンズ商品比較2026年版
       </h1>
       <p className="text-gray-600 mb-8">
-        全{allRanked.length}商品の中から人気順で比較。価格・送料・在庫は各販売店の最新表示をご確認ください。
+        全{allRanked.length}商品を掲載データの順序で紹介。価格・送料・在庫は各販売店の最新表示をご確認ください。
       </p>
 
       {/* Category jump links */}
       <div className="flex flex-wrap gap-2 mb-8">
-        <a href="#overall" className="text-sm bg-sky-600 text-white px-3 py-1 rounded-full font-medium">総合TOP10</a>
+        <a href="#overall" className="text-sm bg-sky-600 text-white px-3 py-1 rounded-full font-medium">掲載商品10選</a>
         {byCategory.map(({ cat, label }) => (
           <a
             key={cat}
             href={`#${cat}`}
             className="text-sm bg-white border border-gray-200 text-gray-700 px-3 py-1 rounded-full hover:border-slate-400 transition-colors"
           >
-            {label}TOP5
+            {label}5選
           </a>
         ))}
       </div>
@@ -88,12 +88,12 @@ export default function RankingPage() {
       {/* Overall Top 10 */}
       <section id="overall" className="mb-12">
         <h2 className="text-xl font-bold text-gray-900 mb-1 pb-2 border-b border-gray-200">
-          総合人気ランキング TOP10
+          掲載商品10選
         </h2>
-        <p className="text-sm text-gray-500 mb-4">全カテゴリを対象にした人気順ランキングです。</p>
+        <p className="text-sm text-gray-500 mb-4">全カテゴリから掲載データの順序で10商品を紹介します。人気・売上順位ではありません。</p>
         <div className="space-y-3">
-          {top10.map((product, index) => (
-            <ProductCard key={product.id} product={product} rank={index + 1} />
+          {top10.map((product) => (
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </section>
@@ -103,7 +103,7 @@ export default function RankingPage() {
         <section key={cat} id={cat} className="mb-12">
           <div className="flex items-center justify-between mb-1 pb-2 border-b border-gray-200">
             <h2 className="text-xl font-bold text-gray-900">
-              {label}ランキング TOP5
+              {label}の商品5選
             </h2>
             <Link
               href={`/category/${cat}`}
@@ -113,11 +113,11 @@ export default function RankingPage() {
             </Link>
           </div>
           <p className="text-sm text-gray-500 mb-4">
-            {label}コンタクトの人気商品TOP5です。
+            {label}コンタクトから掲載データの順序で5商品を紹介します。
           </p>
           <div className="space-y-3">
-            {products.map((product, index) => (
-              <ProductCard key={product.id} product={product} rank={index + 1} />
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </section>
