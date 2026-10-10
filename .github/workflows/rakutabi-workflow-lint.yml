@@ -1,0 +1,37 @@
+name: Rakutabi workflow static validation
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/rakutabi-hotels.yml'
+      - '.github/workflows/rakutabi-workflow-lint.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  static-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate workflow YAML and embedded shell scripts
+        shell: bash
+        run: |
+          ruby -r yaml -r open3 -e '
+            file = ".github/workflows/rakutabi-hotels.yml"
+            doc = YAML.load_file(file)
+            abort "missing workflow jobs" unless doc.is_a?(Hash) && doc["jobs"].is_a?(Hash)
+            count = 0
+            doc.fetch("jobs").each do |job_name, job|
+              (job["steps"] || []).each do |step|
+                next unless step["run"].is_a?(String)
+                shell = step["shell"] || "bash"
+                next unless shell.start_with?("bash") || shell == "sh"
+                _stdout, stderr, status = Open3.capture3("bash", "-n", stdin_data: step["run"])
+                abort "syntax error in #{job_name}/#{step["name"]}: #{stderr}" unless status.success?
+                count += 1
+              end
+            end
+            abort "no run steps validated" if count == 0
+            puts "YAML parsed; #{count} shell run steps passed bash -n"
+          '
