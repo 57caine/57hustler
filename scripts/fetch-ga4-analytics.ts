@@ -377,6 +377,7 @@ async function main() {
   const existingStatuses: Record<string, string> = {};
   const existingPriorities: Record<string, 'high' | 'medium' | 'low'> = {};
   let manualArticles: FlaggedColumn[] = [];
+  let previousAutoArticles: FlaggedColumn[] = [];
   if (fs.existsSync(reviewPaths[0])) {
     try {
       const existing = JSON.parse(fs.readFileSync(reviewPaths[0], 'utf-8'));
@@ -385,13 +386,15 @@ async function main() {
         if (article.priority) existingPriorities[article.slug] = article.priority;
       }
       manualArticles = (existing.flaggedArticles ?? []).filter((a: FlaggedColumn) => a.source === 'manual');
+      previousAutoArticles = (existing.flaggedArticles ?? []).filter((a: FlaggedColumn) => a.source === 'auto-ga4');
     } catch { /* 既存ファイルが壊れていても続行 */ }
   }
 
-  const autoArticles = lensNaviSite
-    && lensNaviSite.affiliateClicksStatus === 'ok'
+  const clickDataReady = lensNaviSite?.affiliateClicksStatus === 'ok';
+  const autoArticles = lensNaviSite && clickDataReady
     ? detectFlaggedColumns(lensNaviSite.topPages, contentLog, lensNaviSite.affiliateClicksByPage, existingStatuses, existingPriorities)
-    : [];
+    : previousAutoArticles;
+  if (!clickDataReady) console.warn('GA4 affiliate_clickが取得できないため、前回の自動改善判定を保持します（最新データではありません）');
   // 手動追加分（school-navi・henkutsu等、自動検知の対象外の事業課題）は
   // GA4自動検知では作られないため、既存ファイルからそのまま引き継ぐ
   const flaggedArticles = [...autoArticles, ...manualArticles];
@@ -399,6 +402,8 @@ async function main() {
   const columnReview = {
     generatedAt: new Date().toISOString(),
     dataDateRange: lensNaviSite?.dateRange ?? null,
+    affiliateClicksStatus: lensNaviSite?.affiliateClicksStatus ?? 'error',
+    autoReviewStale: !clickDataReady,
     flaggedCount: flaggedArticles.filter(a => a.status === '未対応').length,
     flaggedArticles,
   };
