@@ -1,0 +1,25 @@
+name: Affiliate evidence report
+
+on:
+  schedule:
+    - cron: '45 23 * * *' # 08:45 JST daily
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/report-affiliate-evidence.mjs'
+      - '.github/workflows/affiliate-evidence-report.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate GA4 evidence summary (no merchant attribution)
+        run: node scripts/report-affiliate-evidence.mjs
