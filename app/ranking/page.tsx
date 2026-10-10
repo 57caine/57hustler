@@ -61,7 +61,7 @@ export default function RankingPage() {
       <nav className="text-sm text-gray-500 mb-6">
         <Link href="/" className="hover:text-slate-700">ホーム</Link>
         <span className="mx-2">/</span>
-        <span className="text-gray-800">人気ランキング</span>
+        <span className="text-gray-800">商品比較</span>
       </nav>
 
       <h1 className="text-2xl font-bold text-gray-900 mb-2">
@@ -123,23 +123,18 @@ export default function RankingPage() {
         </section>
       ))}
 
-      {/* New Shops */}
-      <section className="mb-10">
-        <h2 className="text-lg font-bold text-gray-900 mb-2">注目の新規ショップ</h2>
-        <p className="text-xs text-gray-400 mb-4">※当サイトはアフィリエイト広告を掲載しています。</p>
-        <div className="grid sm:grid-cols-2 gap-3">
-          {[
-            { name: 'レンズスマイル', desc: 'コンタクトレンズ通販', url: 'https://px.a8.net/svt/ejp?a8mat=4B8454+ESV0QQ+3SZ4+BXIYP' },
-            { name: 'レンズラボ', desc: 'コンタクトレンズ通販', url: 'https://px.a8.net/svt/ejp?a8mat=4B8454+F4ROUA+3SZ4+5ZMCH' },
-          ].map(s => (
-            <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer nofollow sponsored"
-              className="block bg-white border border-gray-200 rounded-xl p-4 hover:shadow-sm hover:border-sky-300 transition-all">
-              <p className="font-bold text-gray-800 text-sm mb-1">{s.name}</p>
-              <p className="text-xs text-gray-500 mb-3">{s.desc}</p>
-              <div className="bg-sky-600 text-white text-xs font-bold text-center py-2 rounded-lg">公式サイトで見る →</div>
-            </a>
-          ))}
-        </div>
+      {/* Purchase decision guidance: do not send visitors to generic shop landing pages. */}
+      <section className="mb-10 rounded-xl border border-sky-100 bg-sky-50 p-5">
+        <h2 className="text-lg font-bold text-gray-900 mb-3">購入前に確認すること</h2>
+        <p className="text-sm text-gray-700 mb-3">
+          眼科で適合を確認した製品と同じ商品を選び、度数・BC・DIA・箱数を販売ページで確認してください。
+          価格は送料を含む支払総額で比較しましょう。
+        </p>
+        <p className="text-sm text-gray-700">
+          上の商品カードから各商品の販売ページや楽天の商品検索へ進めます。
+          リンク先の価格・在庫・取扱条件は変更される場合があります。
+        </p>
+        <p className="text-xs text-gray-500 mt-3">※当サイトはアフィリエイト広告を掲載しています。</p>
       </section>
 
       <section className="mb-8">
@@ -155,7 +150,7 @@ export default function RankingPage() {
       </section>
 
       <div className="text-xs text-gray-400 bg-gray-50 rounded-lg p-3 mt-4">
-        ※ ランキングは当サイトの掲載商品データに基づく独自の表示順です。価格は参考値であり、送料・在庫・販売条件は各販売店の最新表示をご確認ください。
+        ※ 商品の掲載順は当サイトの掲載データに基づくもので、人気・売上順位ではありません。価格は参考値であり、送料・在庫・販売条件は各販売店の最新表示をご確認ください。
       </div>
     </div>
   );
