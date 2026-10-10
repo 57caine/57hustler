@@ -7,7 +7,7 @@ const raw = JSON.parse(fs.readFileSync(file, 'utf8'));
 const site = (raw.sites ?? []).find(s => s.siteName === 'lens-navi');
 if (!site) throw new Error('lens-navi GA4 data missing; do not report zero');
 const clicks = site.affiliateClicksByPage;
-if (site.affiliateClicksStatus === 'error' || !clicks || typeof clicks !== 'object') {
+if (site.affiliateClicksStatus !== 'ok' || !clicks || typeof clicks !== 'object') {
   throw new Error('affiliate_click data missing or failed; do not report zero');
 }
 const generated = Date.parse(raw.generatedAt);
