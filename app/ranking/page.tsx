@@ -28,7 +28,7 @@ const faqs = [
 ];
 
 export default function RankingPage() {
-  const allRanked = getAllProductsWithPrices().sort((a, b) => b.popularity - a.popularity);
+  const allRanked = getAllProductsWithPrices();
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -92,8 +92,8 @@ export default function RankingPage() {
         </h2>
         <p className="text-sm text-gray-500 mb-4">全カテゴリから掲載データの順序で10商品を紹介します。人気・売上順位ではありません。</p>
         <div className="space-y-3">
-          {top10.map((product, index) => (
-            <ProductCard key={product.id} product={product} rank={index + 1} />
+          {top10.map((product) => (
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </section>
@@ -116,7 +116,7 @@ export default function RankingPage() {
             {label}コンタクトから掲載データの順序で5商品を紹介します。
           </p>
           <div className="space-y-3">
-            {products.map((product, index) => (
+            {products.map((product) => (
               <ProductCard key={product.id} product={product} rank={index + 1} />
             ))}
           </div>
