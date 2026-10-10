@@ -28,9 +28,15 @@ for (const path of paths) {
       html.includes('商品比較') &&
       !html.includes('注目の新規ショップ')
     );
-    const ok = response.ok && html.includes('<html') && hasAffiliate && rankingCopyOk;
+    const columnCopyOk = !path.startsWith('/column/contact-') || (
+      html.includes('自分に合うコンタクトレンズを比較する') &&
+      html.includes('掲載商品を比較する') &&
+      !html.includes('コンタクトレンズをお得に購入する')
+    );
+    const ok = response.ok && html.includes('<html') && hasAffiliate && rankingCopyOk && columnCopyOk;
     if (!ok) failed = true;
-    results.push({ path, http: response.status, hasAffiliate, hasTracking, rankingCopyOk, ok });
+    results.push({ path, http: response.status, hasAffiliate, hasTracking, rankingCopyOk, columnCopyOk, ok });
+    if (!columnCopyOk) diagnoses.push(`STALE_CONTENT: ${path} - expected PR #40 article CTA copy missing or legacy copy present.`);
     if (!rankingCopyOk) diagnoses.push(`STALE_CONTENT: ${path} - expected PR #38 copy missing or old generic shop CTA present.`);
     const diagnosis = diagnose({ path, http: response.status, hasAffiliate, hasTracking });
     if (diagnosis) diagnoses.push(diagnosis);
@@ -43,9 +49,9 @@ for (const path of paths) {
 const lines = [
   '# Lens-navi revenue path: read-only healthcheck',
   '',
-  '| Page | HTTP | Affiliate link present | Tracking marker present | PR #38 copy | Result |',
+  '| Page | HTTP | Affiliate link present | Tracking marker present | PR #38 copy | PR #40 column copy | Result |',
   '|---|---:|---|---|---|',
-  ...results.map(r => `| ${r.path} | ${r.http ?? '-'} | ${r.hasAffiliate ? 'yes' : 'no'} | ${r.hasTracking ? 'yes' : 'no'} | ${r.rankingCopyOk === undefined ? '-' : r.rankingCopyOk ? 'yes' : 'no'} | ${r.ok ? 'PASS' : 'FAIL'} |`),
+  ...results.map(r => `| ${r.path} | ${r.http ?? '-'} | ${r.hasAffiliate ? 'yes' : 'no'} | ${r.hasTracking ? 'yes' : 'no'} | ${r.rankingCopyOk === undefined ? '-' : r.rankingCopyOk ? 'yes' : 'no'} | ${r.columnCopyOk === undefined ? '-' : r.columnCopyOk ? 'yes' : 'no'} | ${r.ok ? 'PASS' : 'FAIL'} |`),
   '',
   '## Automatic diagnostic hints',
   '',
