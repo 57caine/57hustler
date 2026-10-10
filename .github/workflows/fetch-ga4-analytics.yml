@@ -49,7 +49,11 @@ jobs:
             if (Date.now() - Date.parse(data.generatedAt) > 2 * 3600000) throw new Error(`Stale generatedAt: ${path}`);
           }
           const ga4 = JSON.parse(fs.readFileSync(paths[0], 'utf8'));
-          if (!(ga4.sites || []).some(site => site.siteName === 'lens-navi')) throw new Error('lens-navi GA4 record missing');
+          const lens = (ga4.sites || []).find(site => site.siteName === 'lens-navi');
+          if (!lens) throw new Error('lens-navi GA4 record missing');
+          if (lens.affiliateClicksStatus !== 'ok') throw new Error('lens-navi affiliate_click query failed; refuse to publish misleading fresh GA4 snapshot');
+          const review = JSON.parse(fs.readFileSync(paths[2], 'utf8'));
+          if (review.autoReviewStale === true || review.affiliateClicksStatus !== 'ok') throw new Error('column review is stale or click query failed');
           console.log('Generated GA4 outputs validated');
           NODE
 

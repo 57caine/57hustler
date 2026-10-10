@@ -21,5 +21,25 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Validate reporter with synthetic known-good and known-bad data (PR only)
+        if: github.event_name == 'pull_request'
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const source = JSON.parse(fs.readFileSync('data/ga4-analytics.json', 'utf8'));
+          const site = source.sites.find(s => s.siteName === 'lens-navi');
+          if (!site) throw new Error('Missing lens-navi fixture base');
+          source.generatedAt = new Date().toISOString();
+          site.affiliateClicksStatus = 'ok';
+          fs.writeFileSync('/tmp/ga4-good.json', JSON.stringify(source));
+          site.affiliateClicksStatus = 'error';
+          fs.writeFileSync('/tmp/ga4-bad.json', JSON.stringify(source));
+          NODE
+          GA4_REPORT_PATH=/tmp/ga4-good.json node scripts/report-affiliate-evidence.mjs
+          if GA4_REPORT_PATH=/tmp/ga4-bad.json node scripts/report-affiliate-evidence.mjs; then
+            echo '::error::Invalid GA4 data was incorrectly accepted'
+            exit 1
+          fi
       - name: Generate GA4 evidence summary (no merchant attribution)
+        if: github.event_name != 'pull_request'
         run: node scripts/report-affiliate-evidence.mjs
