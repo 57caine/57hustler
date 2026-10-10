@@ -11,9 +11,9 @@ const VALID_BC = ['8.4', '8.5', '8.6', '8.7', '8.8', '8.9', '9.0'];
 
 const BC_GUIDE: Record<string, { title: string; desc: string; note: string }> = {
   '8.4': {
-    title: 'BC 8.4のコンタクトレンズ おすすめ一覧',
-    desc: 'BC 8.4は比較的カーブのきついBC値です。アキュビュー オアシス（2week）やマイデイ ワンデーなど、フィット感の高い商品が揃っています。',
-    note: '角膜曲率が小さめ（カーブがきつい）の方に処方されやすいBC値です。',
+    title: 'BC8.4のコンタクトレンズ一覧｜対応製品と価格を比較',
+    desc: 'BC8.4に対応するコンタクトレンズを一覧で確認。装用期間・DIA・価格を比較し、眼科で指定された製品・規格と一致するか確認しましょう。',
+    note: 'BCが同じでも製品によって装用感は異なります。BCの数値だけで適合を判断せず、眼科で確認した製品・規格に従ってください。',
   },
   '8.5': {
     title: 'BC 8.5のコンタクトレンズ おすすめ一覧',
@@ -48,6 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${guide.title} | レンズナビ`,
     description: guide.desc,
+    alternates: { canonical: `https://lens-navi.jp/bc/${value}` },
     keywords: [`コンタクト BC${value}`, `BC${value} コンタクト`, `ベースカーブ${value}`, `BC ${value} おすすめ`],
   };
 }
@@ -118,6 +119,14 @@ export default async function BCValuePage({ params }: Props) {
         <p className="text-xs text-sky-700 bg-sky-50 border border-sky-200 rounded-lg px-3 py-2 mb-6">
           ℹ️ {guide.note}
         </p>
+      )}
+
+      {value === '8.4' && (
+        <div className="mb-6 rounded-lg border border-sky-100 bg-sky-50 p-4 text-sm text-slate-700">
+          <p className="font-semibold mb-2">BC8.4のコンタクトを探す前に</p>
+          <p className="leading-relaxed">BC（ベースカーブ）はレンズの曲率を表す数値です。BC8.4という数字だけで商品を決めず、眼科で確認した製品名・度数・DIA・装用期間と照合してください。</p>
+          <p className="mt-2">初めて通販を利用する場合は、<Link href="/column/contact-net-kounyu-guide" className="text-sky-700 underline underline-offset-2">コンタクトのネット購入ガイド</Link>も参考にしてください。</p>
+        </div>
       )}
 
       {/* BC切り替えタブ */}
