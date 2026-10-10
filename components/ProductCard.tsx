@@ -30,7 +30,7 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
   const CategoryIcon = CATEGORY_ICON[product.category] ?? Eye;
   const rakutenUrl = RAKUTEN(product.name);
 
-  // 楽天以外の最安値A8ショップを取得
+  // A8提携ショップの掲載価格例を取得（リアルタイムの最安値ではない）
   const a8Prices = product.prices.filter(
     (p) => p.inStock && p.storeId !== 'rakuten' && p.store.url.includes('px.a8.net') && !p.url.startsWith('#')
   );
@@ -75,12 +75,12 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
         <div className="pt-4 border-t border-gray-100 mb-4">
           {cheapestA8 != null ? (
             <div>
-              <span className="text-xs text-gray-500 font-medium">通販最安値（{cheapestA8.store.name}）</span>
+              <span className="text-xs text-gray-500 font-medium">掲載価格例（{cheapestA8.store.name}）</span>
               <p className="text-2xl font-bold text-gray-900 mt-1">¥{cheapestA8.price.toLocaleString()}</p>
             </div>
           ) : product.lowestPrice != null ? (
             <div>
-              <span className="text-xs text-gray-500 font-medium">参考最安値</span>
+              <span className="text-xs text-gray-500 font-medium">参考価格（更新時点）</span>
               <p className="text-2xl font-bold text-gray-900 mt-1">¥{product.lowestPrice.toLocaleString()}</p>
             </div>
           ) : (
@@ -96,7 +96,7 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
               rel="noopener noreferrer nofollow sponsored"
               className="block bg-sky-600 hover:bg-sky-500 text-white text-sm font-bold text-center py-3 rounded-lg transition-colors w-full"
             >
-              {cheapestA8.store.name}で購入 →
+              {cheapestA8.store.name}で詳細を見る →
             </a>
           )}
           <a
@@ -105,7 +105,7 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
             rel="noopener noreferrer nofollow sponsored"
             className="block bg-navy-900 hover:bg-navy-800 text-white text-sm font-bold text-center py-3 rounded-lg transition-colors w-full"
           >
-            楽天で購入 →
+            楽天で商品を探す →
           </a>
         </div>
       </div>
