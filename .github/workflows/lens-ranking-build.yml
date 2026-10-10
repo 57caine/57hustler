@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'app/ranking/page.tsx'
+      - 'app/column/[slug]/page.tsx'
       - 'components/ProductCard.tsx'
       - '.github/workflows/lens-ranking-build.yml'
   workflow_dispatch:
