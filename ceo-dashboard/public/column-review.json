@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T01:06:59.650Z",
+  "generatedAt": "2026-10-10T00:39:31.961Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -12,8 +12,8 @@
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
         "sessions": 17,
-        "bounceRate": 0.47058823529411764,
-        "avgSessionDuration": 71.0441085882353,
+        "bounceRate": 0.4117647058823529,
+        "avgSessionDuration": 63.88460123529412,
         "affiliateClicks": 0
       },
       "flags": [
@@ -45,16 +45,16 @@
       "slug": "eyestrain-stretching-massage-guide",
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
-        "sessions": 13,
-        "bounceRate": 0.5384615384615384,
-        "avgSessionDuration": 15.317368307692307,
+        "sessions": 15,
+        "bounceRate": 0.6,
+        "avgSessionDuration": 52.2778334,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション13件・affiliate_clickゼロ"
+        "セッション15件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 6,
@@ -109,40 +109,6 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/blue-light-megane-kouka",
-      "slug": "blue-light-megane-kouka",
-      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
-      "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.3,
-        "avgSessionDuration": 143.1580363,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 3,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 65953
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/soft-vs-hard-contact-hikaku",
       "slug": "soft-vs-hard-contact-hikaku",
       "title": "soft-vs-hard-contact-hikaku",
@@ -177,13 +143,47 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/megane-facial-shape-frame-2026",
-      "slug": "megane-facial-shape-frame-2026",
-      "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
+      "path": "/column/blue-light-megane-kouka",
+      "slug": "blue-light-megane-kouka",
+      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
+      "metrics": {
+        "sessions": 9,
+        "bounceRate": 0.3333333333333333,
+        "avgSessionDuration": 148.93577022222223,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション9件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 3,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 65953
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/enkintsuyo-contact-guide",
+      "slug": "enkintsuyo-contact-guide",
+      "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
       "metrics": {
         "sessions": 8,
         "bounceRate": 0.125,
-        "avgSessionDuration": 251.278433625,
+        "avgSessionDuration": 70.44184824999999,
         "affiliateClicks": 0
       },
       "flags": [
@@ -193,17 +193,17 @@
         "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 3,
-        "h3Count": 4,
+        "h2Count": 4,
+        "h3Count": 2,
         "hasAffiliateLinks": true,
-        "ctaCount": 8,
-        "contentChars": 77375
+        "ctaCount": 1,
+        "contentChars": 68746
       },
       "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
       ],
       "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -279,13 +279,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/kanso-shinikui-contact",
-      "slug": "kanso-shinikui-contact",
-      "title": "kanso-shinikui-contact",
+      "path": "/column/megane-facial-shape-frame-2026",
+      "slug": "megane-facial-shape-frame-2026",
+      "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
       "metrics": {
         "sessions": 7,
-        "bounceRate": 0.42857142857142855,
-        "avgSessionDuration": 26.697583714285713,
+        "bounceRate": 0.14285714285714285,
+        "avgSessionDuration": 269.12859828571425,
         "affiliateClicks": 0
       },
       "flags": [
@@ -295,17 +295,17 @@
         "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 4,
-        "h3Count": 9,
+        "h2Count": 3,
+        "h3Count": 4,
         "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 81347
+        "ctaCount": 8,
+        "contentChars": 77375
       },
       "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -347,13 +347,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/acuvue-zenkindai-hikaku",
-      "slug": "acuvue-zenkindai-hikaku",
-      "title": "acuvue-zenkindai-hikaku",
+      "path": "/column/dryeye-taisaku",
+      "slug": "dryeye-taisaku",
+      "title": "ドライアイ・疲れ目の対策【目薬・生活習慣・サプリで症状改善】原因と対処法",
       "metrics": {
         "sessions": 6,
         "bounceRate": 0.16666666666666666,
-        "avgSessionDuration": 25.8976965,
+        "avgSessionDuration": 113.60809766666667,
         "affiliateClicks": 0
       },
       "flags": [
@@ -363,17 +363,17 @@
         "セッション6件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 3,
-        "h3Count": 6,
+        "h2Count": 4,
+        "h3Count": 3,
         "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 68624
+        "ctaCount": 7,
+        "contentChars": 76392
       },
       "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見",
       "business": "lens-navi",

@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-09T01:06:59.642Z",
+  "generatedAt": "2026-10-10T00:39:31.956Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-10-09T01:06:56.965Z",
+      "fetchedAt": "2026-10-10T00:39:29.994Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
@@ -37,16 +37,23 @@
         {
           "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
           "sessions": 17,
-          "pageviews": 13,
-          "avgSessionDuration": 71.0441085882353,
-          "bounceRate": 0.47058823529411764
+          "pageviews": 14,
+          "avgSessionDuration": 63.88460123529412,
+          "bounceRate": 0.4117647058823529
         },
         {
           "path": "/column/eyestrain-stretching-massage-guide",
-          "sessions": 13,
-          "pageviews": 11,
-          "avgSessionDuration": 15.317368307692307,
-          "bounceRate": 0.5384615384615384
+          "sessions": 15,
+          "pageviews": 12,
+          "avgSessionDuration": 52.2778334,
+          "bounceRate": 0.6
+        },
+        {
+          "path": "/column/smile-surgery-guide-2026",
+          "sessions": 14,
+          "pageviews": 13,
+          "avgSessionDuration": 190.69832607142857,
+          "bounceRate": 0.21428571428571427
         },
         {
           "path": "/column/sunglass-polarized-guide",
@@ -63,20 +70,6 @@
           "bounceRate": 0.25
         },
         {
-          "path": "/column/blue-light-megane-kouka",
-          "sessions": 10,
-          "pageviews": 9,
-          "avgSessionDuration": 143.1580363,
-          "bounceRate": 0.3
-        },
-        {
-          "path": "/column/smile-surgery-guide-2026",
-          "sessions": 10,
-          "pageviews": 9,
-          "avgSessionDuration": 125.3315842,
-          "bounceRate": 0.1
-        },
-        {
           "path": "/column/soft-vs-hard-contact-hikaku",
           "sessions": 10,
           "pageviews": 10,
@@ -84,17 +77,24 @@
           "bounceRate": 0.3
         },
         {
+          "path": "/column/blue-light-megane-kouka",
+          "sessions": 9,
+          "pageviews": 8,
+          "avgSessionDuration": 148.93577022222223,
+          "bounceRate": 0.3333333333333333
+        },
+        {
+          "path": "/column/enkintsuyo-contact-guide",
+          "sessions": 8,
+          "pageviews": 7,
+          "avgSessionDuration": 70.44184824999999,
+          "bounceRate": 0.125
+        },
+        {
           "path": "/column/karakon-osusume-ranking-2026",
           "sessions": 8,
           "pageviews": 8,
           "avgSessionDuration": 211.975155875,
-          "bounceRate": 0.125
-        },
-        {
-          "path": "/column/megane-facial-shape-frame-2026",
-          "sessions": 8,
-          "pageviews": 9,
-          "avgSessionDuration": 251.278433625,
           "bounceRate": 0.125
         },
         {
@@ -119,11 +119,11 @@
           "bounceRate": 0.2857142857142857
         },
         {
-          "path": "/column/kanso-shinikui-contact",
+          "path": "/column/megane-facial-shape-frame-2026",
           "sessions": 7,
-          "pageviews": 6,
-          "avgSessionDuration": 26.697583714285713,
-          "bounceRate": 0.42857142857142855
+          "pageviews": 8,
+          "avgSessionDuration": 269.12859828571425,
+          "bounceRate": 0.14285714285714285
         },
         {
           "path": "/column/reading-glasses-presbyopia-choose-2026",
@@ -147,18 +147,14 @@
           "bounceRate": 0.3333333333333333
         },
         {
-          "path": "/column/acuvue-zenkindai-hikaku",
+          "path": "/column/dryeye-taisaku",
           "sessions": 6,
-          "pageviews": 6,
-          "avgSessionDuration": 25.8976965,
+          "pageviews": 5,
+          "avgSessionDuration": 113.60809766666667,
           "bounceRate": 0.16666666666666666
         }
       ],
       "weeklyTrend": [
-        {
-          "date": "2026-09-11",
-          "sessions": 14
-        },
         {
           "date": "2026-09-12",
           "sessions": 13
@@ -249,6 +245,10 @@
         },
         {
           "date": "2026-10-09",
+          "sessions": 14
+        },
+        {
+          "date": "2026-10-10",
           "sessions": 1
         }
       ],
@@ -278,23 +278,16 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-10-09T01:06:59.642Z",
+      "fetchedAt": "2026-10-10T00:39:31.956Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 4,
-      "totalPageviews": 4,
+      "totalSessions": 3,
+      "totalPageviews": 3,
       "topPages": [
         {
           "path": "/",
-          "sessions": 1,
-          "pageviews": 1,
-          "avgSessionDuration": 0,
-          "bounceRate": 1
-        },
-        {
-          "path": "/column/engineer-tenshoku-nenshu-career",
           "sessions": 1,
           "pageviews": 1,
           "avgSessionDuration": 0,
@@ -316,10 +309,6 @@
         }
       ],
       "weeklyTrend": [
-        {
-          "date": "2026-09-11",
-          "sessions": 1
-        },
         {
           "date": "2026-09-13",
           "sessions": 1
