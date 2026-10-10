@@ -178,11 +178,11 @@ export default async function ColumnPage({ params }: Props) {
           return (
             <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-3">
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-bold text-gray-800">コンタクトレンズをお得に購入する</p>
-                <p className="text-xs text-gray-500 mt-0.5">楽天市場で価格・送料を確認</p>
+                <p className="text-sm font-bold text-gray-800">自分に合うコンタクトレンズを比較する</p>
+                <p className="text-xs text-gray-500 mt-0.5">装用タイプ・価格の目安を比較し、販売ページで条件を確認</p>
               </div>
               <Link href="/ranking" className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors whitespace-nowrap">
-                おすすめ商品を見る →
+                掲載商品を比較する →
               </Link>
             </div>
           );
@@ -234,12 +234,12 @@ export default async function ColumnPage({ params }: Props) {
           }
           return (
             <div className="mt-10 p-5 bg-sky-50 border border-sky-200 rounded-xl">
-              <p className="text-sm font-bold text-gray-800 mb-1">コンタクトレンズを楽天で購入する</p>
-              <p className="text-xs text-gray-500 mb-3">楽天市場で価格・送料を確認</p>
+              <p className="text-sm font-bold text-gray-800 mb-1">購入前にレンズの条件を確認</p>
+              <p className="text-xs text-gray-500 mb-3">眼科で確認した製品名・度数・BC・DIAと送料込みの価格を確認</p>
               <div className="flex flex-wrap gap-2">
                 <a href={RAKUTEN(contactLensSearchTerm(column.title))} target="_blank" rel="noopener noreferrer nofollow sponsored"
                   className="bg-navy-900 hover:bg-navy-800 text-white text-sm font-bold px-4 py-2.5 rounded-lg transition-colors">
-                  楽天で探す →
+                  楽天で商品を探す →
                 </a>
                 <Link href="/category/1day" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2.5 rounded-lg hover:border-slate-300 transition-colors">
                   ワンデー比較
