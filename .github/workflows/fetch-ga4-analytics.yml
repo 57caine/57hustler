@@ -5,9 +5,18 @@ on:
     - cron: '0 21 * * *'  # 毎日 6:00 JST (UTC 21:00 前日)
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+concurrency:
+  group: ga4-daily-analytics-main
+  cancel-in-progress: false
+
 jobs:
   fetch:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
@@ -29,12 +38,31 @@ jobs:
         env:
           GA4_SERVICE_ACCOUNT_KEY: ${{ secrets.GA4_SERVICE_ACCOUNT_KEY }}
 
+      - name: Validate generated analytics before commit
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const paths = ['data/ga4-analytics.json', 'ceo-dashboard/public/ga4-analytics.json', 'data/column-review.json', 'ceo-dashboard/public/column-review.json'];
+          for (const path of paths) {
+            const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+            if (!data.generatedAt || !Number.isFinite(Date.parse(data.generatedAt))) throw new Error(`Invalid generatedAt: ${path}`);
+            if (Date.now() - Date.parse(data.generatedAt) > 2 * 3600000) throw new Error(`Stale generatedAt: ${path}`);
+          }
+          const ga4 = JSON.parse(fs.readFileSync(paths[0], 'utf8'));
+          if (!(ga4.sites || []).some(site => site.siteName === 'lens-navi')) throw new Error('lens-navi GA4 record missing');
+          console.log('Generated GA4 outputs validated');
+          NODE
+
       - name: Commit analytics data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/ga4-analytics.json ceo-dashboard/public/ga4-analytics.json \
             data/column-review.json ceo-dashboard/public/column-review.json
-          git diff --staged --quiet || git commit -m "chore: GA4アナリティクスデータ更新 $(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M JST')"
-          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
-          git push
+          if git diff --staged --quiet; then
+            echo "No analytics changes to commit"
+            exit 0
+          fi
+          git commit -m "chore: GA4アナリティクスデータ更新 $(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M JST')"
+          git pull --rebase origin main
+          git push origin HEAD:main
