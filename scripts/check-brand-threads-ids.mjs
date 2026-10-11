@@ -26,7 +26,7 @@ for (const account of accounts) {
     const response = await fetch(url, { headers: { Accept: 'application/json' }, signal: AbortSignal.timeout(15000) });
     if (!response.ok) throw new Error('API returned non-success status');
     const me = await response.json();
-    if (!/^\\d+$/.test(String(me.id ?? ''))) throw new Error('Invalid Threads user ID');
+    if (!String(me.id ?? '').match(/^[0-9]+$/)) throw new Error('Invalid Threads user ID');
     if (String(me.username ?? '').toLowerCase().replace(/^@/, '') !== account.handle) {
       throw new Error('Unexpected Threads account (username mismatch)');
     }
@@ -40,6 +40,6 @@ for (const account of accounts) {
   }
 }
 lines.push('', '確認したIDを、上記の名前で GitHub Actions Secrets に登録してください。IDはアクセストークンではありません。', 'この処理は読み取り専用で、投稿しません。');
-if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, lines.join('\\n') + '\\n');
-else console.log(lines.join('\\n'));
+if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, lines.join(String.fromCharCode(10)) + String.fromCharCode(10));
+else console.log(lines.join(String.fromCharCode(10)));
 if (failures) process.exitCode = 1;
