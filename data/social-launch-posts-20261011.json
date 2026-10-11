@@ -1,0 +1,48 @@
+{
+  "createdAt": "2026-10-11",
+  "status": "draft_not_published",
+  "posts": [
+    {
+      "brand": "rakutabi",
+      "day": 1,
+      "topic": "温泉旅行",
+      "url": "https://rakutabi-nine.vercel.app/feature/tokyo-onsen?utm_source=threads&utm_medium=social&utm_campaign=launch_202610",
+      "text": "次の休み、温泉に行くなら「場所」から決める？それとも「どんな時間を過ごしたいか」から？♨️\n\n箱根・草津・鬼怒川・熱海・伊東。東京からの温泉旅をエリア別に比較できるようにまとめました。\n\n宿探しのヒントはプロフィールの楽旅くんへ。※広告を含みます。"
+    },
+    {
+      "brand": "rakutabi",
+      "day": 2,
+      "topic": "週末旅",
+      "url": "https://rakutabi-nine.vercel.app/feature/tokyo-weekend?utm_source=threads&utm_medium=social&utm_campaign=launch_202610",
+      "text": "金曜の夜に「どこか行きたい」と思ったら、旅先を3つに絞ってみる。\n\n①移動の負担 ②泊まりたい雰囲気 ③予算\n\n東京発の週末旅で候補を探すときに使える比較ページを用意しました。リンクはプロフィールから。※広告を含みます。"
+    },
+    {
+      "brand": "rakutabi",
+      "day": 3,
+      "topic": "関西温泉",
+      "url": "https://rakutabi-nine.vercel.app/feature/osaka-onsen?utm_source=threads&utm_medium=social&utm_campaign=launch_202610",
+      "text": "関西から1泊の温泉旅なら、有馬・城崎・白浜。どこを選ぶ？\n\n街歩きを楽しむか、温泉でゆっくりするか。行き先と旅の目的を先に決めると宿選びがラクになります。\n\nエリア別の宿比較は楽旅くんへ。※広告を含みます。"
+    },
+    {
+      "brand": "lens",
+      "day": 1,
+      "topic": "BC8.4",
+      "url": "https://www.lens-navi.jp/bc/8.4?utm_source=threads&utm_medium=social&utm_campaign=launch_202610",
+      "text": "コンタクトの「BC8.4」、数字だけで選んでいませんか？👀\n\nBCはレンズの曲がり具合を表す値。でも、同じBCでも製品ごとに設計が違います。\n\n眼科で確認した製品名・度数・DIA・装用期間もセットで照合を。BC8.4の製品一覧はレンズナビで確認できます。※広告を含みます。"
+    },
+    {
+      "brand": "lens",
+      "day": 2,
+      "topic": "通販",
+      "url": "https://www.lens-navi.jp/column/contact-net-kounyu-guide?utm_source=threads&utm_medium=social&utm_campaign=launch_202610",
+      "text": "コンタクトをネットで買う前のチェックは3つ。\n\n①いつもの製品・規格と同じ？\n②送料込みの価格は？\n③販売店の情報は確認できる？\n\n初めての通販で迷うポイントを記事にまとめています。眼科での確認・定期検査も忘れずに。※広告を含みます。"
+    },
+    {
+      "brand": "lens",
+      "day": 3,
+      "topic": "眼鏡",
+      "url": "https://www.lens-navi.jp/column/megane-kaomikata?utm_source=threads&utm_medium=social&utm_campaign=launch_202610",
+      "text": "メガネが似合わないと思ったら、顔型だけで決めつけないで。👓\n\nフレームの横幅・眉とのバランス・かけ心地で印象は変わります。\n\n自分に合うフレームを考えるヒントをレンズナビで紹介中。※広告を含みます。"
+    }
+  ]
+}
