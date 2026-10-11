@@ -24,18 +24,33 @@ for (const account of accounts) {
     url.searchParams.set('fields', 'id,username');
     url.searchParams.set('access_token', token);
     const response = await fetch(url, { headers: { Accept: 'application/json' }, signal: AbortSignal.timeout(15000) });
-    if (!response.ok) throw new Error('API returned non-success status');
+    if (!response.ok) {
+      // Only numeric HTTP/API codes; never include server messages or request URLs.
+      let code = 'unknown';
+      let subcode = 'none';
+      try {
+        const failure = await response.json();
+        if (Number.isInteger(failure?.error?.code)) code = String(failure.error.code);
+        if (Number.isInteger(failure?.error?.error_subcode)) subcode = String(failure.error.error_subcode);
+      } catch { /* no response body logged */ }
+      throw new Error('HTTP ' + response.status + ' / API code ' + code + ' / subcode ' + subcode);
+    }
     const me = await response.json();
-    if (!String(me.id ?? '').match(/^[0-9]+$/)) throw new Error('Invalid Threads user ID');
+    if (!String(me.id ?? '').match(/^[0-9]+$/)) throw new Error('ID field missing or invalid');
     if (String(me.username ?? '').toLowerCase().replace(/^@/, '') !== account.handle) {
       throw new Error('Unexpected Threads account (username mismatch)');
     }
     lines.push(`| ${account.label} (@${account.handle}) | OK | \`${me.id}\` | \`${account.idSecret}\` |`);
     console.log(`${account.label}: account verified (no post created)`);
-  } catch {
-    // Never print the request URL, response body, token, or exception details.
-    lines.push(`| ${account.label} (@${account.handle}) | 認証失敗または通信エラー | — | \`${account.idSecret}\` |`);
-    console.error(`${account.label}: identity check failed; verify the token and tester permissions`);
+  } catch (error) {
+    // Only messages authored above are allowed. No request URL, response body or token.
+    const detail = error?.name === 'TimeoutError' ? '通信タイムアウト'
+      : error?.message?.startsWith('HTTP ') ? error.message
+      : error?.message === 'ID field missing or invalid' ? 'ユーザーIDの形式不正'
+      : error?.message?.startsWith('Unexpected Threads account') ? 'アカウント名不一致'
+      : '通信または応答解析エラー';
+    lines.push(`| ${account.label} (@${account.handle}) | ${detail} | — | \`${account.idSecret}\` |`);
+    console.error(`${account.label}: ${detail}`);
     failures++;
   }
 }
