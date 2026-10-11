@@ -4,7 +4,7 @@
 - 2ブランドそれぞれ専用のInstagram + Threadsアカウントを開設（まずThreads中心、Instagramは紐付け・プロフィール整備）。
 - 夜中のおじさん @westin_lab のアカウント、トークン、投稿履歴、フォロワーを流用しない。
 - 追加課金なし、無差別フォロー/DM/自動コメント/スクレイピングなし。初回14日は各ブランド1日1投稿を上限目安に品質優先。
-- アカウント名の取得可否は未確認。作成・Meta認証・Threads API権限付与はアカウント保有者の操作が必要。
+- オーナーから両ブランドのInstagram/Threads開設完了報告あり。指定ユーザー名 @rakutabi_navi / @lens_navi_jp で作成したとの申告。Threads API認証・投稿権限付与は未実施。
 - 既存の夜中のおじさん用 GitHub Secrets (THREADS_USER_ID / THREADS_ACCESS_TOKEN) は**絶対に上書きしない**。新規アカウントの認証情報をチャット・GitHubコード・Publicリポジトリに貼らない。
 
 ## 開設時に入力する情報
@@ -33,10 +33,11 @@ Instagramプロフィールには utm_source=instagram に変えたURLを設定�
 7. 自動化：**別の認証情報**として RAKUTABI_THREADS_USER_ID / RAKUTABI_THREADS_ACCESS_TOKEN、LENS_THREADS_USER_ID / LENS_THREADS_ACCESS_TOKEN をGitHub Secretsへ登録する設計。既存の夜中のおじさん投稿ワークフローは触れない。新規投稿スクリプトは初回dry-runと重複投稿防止の検証後に有効化。
 8. プロフィールリンクの有効性、Metaアカウント状態、API公開権限、規約を接続後に再確認。運用費用が生じるツールを勝手に追加しない。
 
-## 本人が行う最小操作（現段階）
-- Instagramアカウントをブランド別に2つ作成し、対応するThreadsを有効化。電話/メール認証・Metaへの同意を完了する。
-- 確定した**公開ユーザー名だけ**を伝える。パスワード・2FAコード・アクセストークンはチャットに送らない。
-- 以降は接続可能な公式認証フローを利用。自動投稿が認められるアカウント種別・API権限が揃うまでは投稿の手動承認方式で開始。
+## 現在の残タスク
+- InstagramとThreadsの2アカウントはオーナーが開設済み（本人申告）。
+- Meta開発者アプリ/Threads APIの公式認証フローでブランド別の投稿権限を付与する。パスワード・2FAコード・アクセストークンをチャットやPublicコードに貼らない。
+- 各ブランド専用の GitHub Actions Secrets に user ID とトークンを安全に登録し、手動dry-run → 投稿先照合 → 少量の実投稿テストを行う。
+- 自動化が認められるアカウント種別・API権限が揃うまでは投稿の手動承認方式で開始。
 
 ## 現状のPRとの関係
 - レンズナビのSNSプレビュー・シェア: PR #43
