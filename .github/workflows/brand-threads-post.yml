@@ -1,0 +1,49 @@
+name: ブランド別 Threads 投稿（手動・dry-run優先）
+on:
+  workflow_dispatch:
+    inputs:
+      brand:
+        description: '投稿先（夜中のおじさんは対象外）'
+        required: true
+        type: choice
+        options:
+          - rakutabi
+          - lens
+      day:
+        description: '初期投稿番号'
+        required: true
+        type: choice
+        options:
+          - '1'
+          - '2'
+          - '3'
+      publish:
+        description: '実投稿する（認証と事前検証が完了した場合のみ）'
+        required: true
+        type: boolean
+        default: false
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    concurrency:
+      group: brand-threads-${{ inputs.brand }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: ドライラン
+        if: ${{ !inputs.publish }}
+        run: node scripts/post-brand-threads.mjs --brand "${{ inputs.brand }}" --day "${{ inputs.day }}"
+      - name: 認証アカウントを検証して投稿
+        if: ${{ inputs.publish }}
+        env:
+          RAKUTABI_THREADS_USER_ID: ${{ secrets.RAKUTABI_THREADS_USER_ID }}
+          RAKUTABI_THREADS_ACCESS_TOKEN: ${{ secrets.RAKUTABI_THREADS_ACCESS_TOKEN }}
+          LENS_THREADS_USER_ID: ${{ secrets.LENS_THREADS_USER_ID }}
+          LENS_THREADS_ACCESS_TOKEN: ${{ secrets.LENS_THREADS_ACCESS_TOKEN }}
+          ENABLE_BRAND_THREADS_PUBLISH: 'true'
+        run: node scripts/post-brand-threads.mjs --brand "${{ inputs.brand }}" --day "${{ inputs.day }}" --publish
