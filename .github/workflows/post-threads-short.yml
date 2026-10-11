@@ -1,8 +1,7 @@
 name: Threads 夜21時 自動投稿（一文考察・夜占い）
 
 on:
-  schedule:
-    - cron: '0 12 * * *'   # 毎日 JST 21:00 (UTC 12:00)
+  # 14日間の1日2投稿テスト中は定期実行を停止。手動実行のみ許可。
   workflow_dispatch:
 
 jobs:
