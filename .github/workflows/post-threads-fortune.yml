@@ -1,9 +1,7 @@
 name: Threads 占い 日次自動投稿
 
 on:
-  schedule:
-    # 毎朝 7:00 JST (UTC 22:00)
-    - cron: '0 22 * * *'
+  # 14日間の1日2投稿テスト中は定期実行を停止。手動実行のみ許可。
   workflow_dispatch:
 
 jobs:

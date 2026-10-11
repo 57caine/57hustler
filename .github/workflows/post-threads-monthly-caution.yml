@@ -1,9 +1,7 @@
 name: Threads 今月の注意点 自動投稿
 
 on:
-  schedule:
-    # 毎日 JST 07:15 (UTC 22:15、前日扱い)。毎月1日判定はスクリプト内部で実施
-    - cron: '15 22 * * *'
+  # 14日間の1日2投稿テスト中は定期実行を停止。手動実行のみ許可。
   workflow_dispatch:
 
 jobs:
