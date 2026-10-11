@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${guide.title} | レンズナビ`,
     description: guide.desc,
-    alternates: { canonical: `https://lens-navi.jp/bc/${value}` },
+    alternates: { canonical: `https://www.lens-navi.jp/bc/${value}` },
     keywords: [`コンタクト BC${value}`, `BC${value} コンタクト`, `ベースカーブ${value}`, `BC ${value} おすすめ`],
   };
 }
