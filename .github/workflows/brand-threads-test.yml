@@ -1,0 +1,20 @@
+name: ブランド別 Threads 安全テスト
+on:
+  pull_request:
+    paths:
+      - 'scripts/post-brand-threads.mjs'
+      - 'data/social-launch-posts-20261011.json'
+      - 'tests/brand-threads.test.mjs'
+      - '.github/workflows/brand-threads-test.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/brand-threads.test.mjs
