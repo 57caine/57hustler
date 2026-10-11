@@ -1,0 +1,19 @@
+name: ブランド別 Threads ID確認（投稿なし）
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: 登録済みトークンからユーザーIDを安全に確認
+        env:
+          RAKUTABI_THREADS_ACCESS_TOKEN: ${{ secrets.RAKUTABI_THREADS_ACCESS_TOKEN }}
+          LENS_THREADS_ACCESS_TOKEN: ${{ secrets.LENS_THREADS_ACCESS_TOKEN }}
+        run: node scripts/check-brand-threads-ids.mjs
