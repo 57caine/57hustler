@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: 'https://lens-navi.jp/sitemap.xml',
-    host: 'https://lens-navi.jp',
+    sitemap: 'https://www.lens-navi.jp/sitemap.xml',
+    host: 'https://www.lens-navi.jp',
   };
 }
