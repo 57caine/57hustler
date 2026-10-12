@@ -12,7 +12,7 @@ test('exactly six unique brand/day drafts and all messages fit 500 characters', 
   assert.deepEqual([...new Set(data.posts.map(p => p.brand + ':' + p.day))].sort(),
     ['lens:1','lens:2','lens:3','rakutabi:1','rakutabi:2','rakutabi:3']);
   for (const p of data.posts) {
-    assert.ok(p.text.includes('※広告を含みます。'));
+    assert.ok(p.text.startsWith('【PR】'));
     assert.ok(p.text.length + 2 + p.url.length <= 500);
     assert.equal(new URL(p.url).searchParams.get('utm_source'), 'threads');
   }
