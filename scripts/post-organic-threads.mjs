@@ -47,6 +47,9 @@ for(let page=0;page<10;page++){
 if(!complete) throw new Error('Incomplete posting history; abort');
 const container=await call(API+'/'+encodeURIComponent(id)+'/threads',{method:'POST',body:new URLSearchParams({media_type:'TEXT',text:post.text,access_token:token})});
 if(!container.id) throw new Error('Container creation failed');
+// Give Threads time to prepare the new media container before publishing.
+// Never retry threads_publish automatically: an ambiguous failure may have published.
+await new Promise(resolve => setTimeout(resolve, 5000));
 const result=await call(API+'/'+encodeURIComponent(id)+'/threads_publish',{method:'POST',body:new URLSearchParams({creation_id:container.id,access_token:token})},'publish');
 if(!result.id) throw new Error('No published ID returned');
 console.log(JSON.stringify({status:'published',brand,day,postId:result.id}));
