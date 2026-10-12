@@ -246,7 +246,7 @@ function saveSeriesWeek(data: SeriesWeek): void {
   fs.writeFileSync(SERIES_PATH, JSON.stringify(data, null, 2), 'utf-8');
 }
 
-async function selectSeriesTheme(client: Anthropic, recentPosts: ColumnPost[]): Promise<{ theme: string; category: string }> {
+async function selectSeriesTheme(client: Anthropic, recentPosts: ColumnPost[]): Promise<{ theme: string; category: string } | null> {
   const recentContext = recentPosts.slice(0, 20).map(p => `- ${p.text}`).join('\n') || '（なし）';
 
   const message = await client.messages.create({
@@ -267,7 +267,28 @@ ${recentContext}
   });
 
   const raw = (message.content[0] as { type: string; text: string }).text;
-  return JSON.parse(raw.replace(/```json\n?|\n?```/g, '').trim()) as { theme: string; category: string };
+  // Claude may add a preface, markdown fences, or trailing notes around the JSON.
+  // Extract the first valid theme object rather than crashing the entire post job.
+  for (const candidate of raw.match(/\\{[^{}]*\\}/g) ?? []) {
+    try {
+      const parsed: unknown = JSON.parse(candidate);
+      if (typeof parsed !== 'object' || parsed === null) continue;
+      const value = parsed as Record<string, unknown>;
+      if (
+        typeof value.theme === 'string' &&
+        value.theme.trim().length >= 3 &&
+        value.theme.trim().length <= 100 &&
+        typeof value.category === 'string' &&
+        CATEGORIES.includes(value.category)
+      ) {
+        return { theme: value.theme.trim(), category: value.category };
+      }
+    } catch {
+      // Try the next candidate; do not log generated text unnecessarily.
+    }
+  }
+  console.warn('連作weekテーマのJSONが不正です。通常コラムへ切り替えます。');
+  return null;
 }
 
 const SERIES_POSITION_LABELS = {
@@ -437,7 +458,14 @@ async function trySeriesPost(
   // 月曜かつ新しい月 → 連作テーマ選出
   if (dayOfWeek === 1 && (!series || series.current_month !== currentMonth)) {
     console.log('連作weekテーマを選出中...');
-    const newTheme = await selectSeriesTheme(client, history);
+    let newTheme: { theme: string; category: string } | null = null;
+    try {
+      newTheme = await selectSeriesTheme(client, history);
+    } catch (error) {
+      // A transient theme-generation API failure must not block today's post.
+      console.warn('連作weekテーマの生成に失敗しました。通常コラムへ切り替えます。', error instanceof Error ? error.message : 'unknown error');
+    }
+    if (!newTheme) return null;
     series = {
       current_month: currentMonth,
       theme: newTheme.theme,
