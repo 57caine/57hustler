@@ -28,7 +28,7 @@ export default async function LoginPage({
           </div>
         )}
 
-        <input type="hidden" name="redirectedFrom" value={redirectedFrom ?? '/today'} />
+        <input type="hidden" name="redirectedFrom" value={redirectedFrom ?? '/home'} />
 
         <label className="block text-xs mb-1" style={{ color: 'var(--muted)' }}>
           メールアドレス

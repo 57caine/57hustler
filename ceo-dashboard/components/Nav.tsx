@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { logout } from '@/app/logout/actions';
 
 const links = [
+  { href: '/home',     label: '🏠 HOME' },
   { href: '/today',    label: '🎯 TODAY' },
   { href: '/assets',   label: '📊 ASSETS' },
   { href: '/projects', label: '📁 PROJECTS' },
