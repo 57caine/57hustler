@@ -1,6 +1,6 @@
 # CEOダッシュボード PROJECT_STATUS
 
-最終更新: 2026-10-12（家族・教育費・将来支出・収入・投資不動産・生活費の入力UI追加）
+最終更新: 2026-10-12（全7テーブルの入力UI・本番ブラウザ確認済み）
 
 ## 現行状況（2026-10-12）
 
@@ -10,7 +10,17 @@
   家族削除時は関連教育費の同時削除を明示。生活費はowner_id主キーの1行を扱う。
   HOMEから全6区分へ移動可能。将来支出の合計と明細をHOMEに追加。
   不動産のplanは現在純資産の集計から除外し、actualのみを現在資産に計上。
-  ローカルビルド成功。今回のUIの本番E2Eは反映後に検証予定であり、この時点では未確認。
+  ローカル・GitHub Actionsビルド成功。本番ブラウザE2Eも14チェック全てPASS。
+  証拠: https://github.com/57caine/57hustler/actions/runs/38203698518
+  （job 114662408309、RESULT: PASS）。家族・教育費CRUDと関連削除の警告/実動作、
+  将来支出CRUDとHOME反映、生活費CRUD、収入CRUDと自由への距離50%→60%、
+  不動産CRUDとplan除外/actualの純資産計上、未認証保護・モバイル幅・cleanupを確認。
+  実個人データは投入せず、専用テストユーザーの仮データを終了時に削除済み。
+  本番反映は043ea770のVercelステータス「Deployment has completed」を確認。
+  公開差分判定の修正: ceo-dashboard/vercel.jsonのignoreCommandを
+  git -C "$(git rev-parse --show-toplevel)" diffに変更し、作業ディレクトリに依存しない
+  判定に修正（236文字、256文字制限内）。同じ変更に対して旧コマンドはproject cwdで
+  exit 0（見送り）、修正後はroot/project cwdともexit 1（ビルド）を再現確認。
 
 - STEP1〜3: 下記の2026-10-07本番確認記録あり。認証方式はemail+password。
 - STEP4: 全7テーブルのServer Actions実装済み。`future_expenses`の実CHECK制約に
@@ -38,7 +48,8 @@
   実資産・家族データの投入なし。パスワード・トークン・ID・ページ本文のログ出力なし。
   再実行手順: Actionsの「CEO HOME assets browser verification」→Run workflow。
   tests/ceo-home-assets-e2e.mjsを隔離した一時Playwright環境で実行する。
-- 残り: 今回追加した6区分の入力UIの本番操作検証、DB定義のSQL記録。
+- 残り: DB定義のSQL記録。入力UIと本番操作検証は全7テーブル分完了。
+  オーナー自身の実情報入力・今後の見やすさ改善は、構築完了とは別の運用項目。
   現行リポジトリにDB migration SQLは見当たらず、既存DB定義を取得してから記録する。
   推測したSQLの適用や実資産・家族データの投入は行わない。
 
