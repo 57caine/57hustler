@@ -101,6 +101,10 @@ export default async function HomePage() {
             </p>
           </div>
         )}
+        <div className="flex gap-4 mt-3">
+          <LinkOut href="/home/manage/settings" label="生活費を登録・編集" />
+          <LinkOut href="/home/manage/income" label="収入を登録・編集" />
+        </div>
       </Section>
 
       {/* 2. TOTAL WEALTH */}
@@ -162,6 +166,26 @@ export default async function HomePage() {
             </p>
           </div>
         )}
+        <div className="flex gap-4 mt-3">
+          <LinkOut href="/home/manage/family" label="家族を登録・編集" />
+          <LinkOut href="/home/manage/education" label="教育費を登録・編集" />
+        </div>
+      </Section>
+
+      <Section icon="🏡" title="将来の大きな支出">
+        {data.futureExpenses.error ? <ErrorNote /> : data.futureExpenses.rows.length === 0 ? (
+          <Empty text="将来の支出がまだ登録されていません" />
+        ) : (
+          <div>
+            <p className="text-2xl font-bold font-mono">{formatJpy(data.futureExpenses.rows.reduce((sum, expense) => sum + expense.estimated_jpy, 0))}</p>
+            <div className="space-y-1 mt-2">
+              {data.futureExpenses.rows.map((expense) => <p key={expense.id} className="text-sm break-words">
+                {expense.label}：{formatJpy(expense.estimated_jpy)}{expense.target_year ? `（${expense.target_year}年）` : ''}
+              </p>)}
+            </div>
+          </div>
+        )}
+        <div className="mt-3"><LinkOut href="/home/manage/expenses" label="将来の支出を登録・編集" /></div>
       </Section>
 
       {/* 5. AUTOMATION */}
@@ -195,11 +219,12 @@ export default async function HomePage() {
           <div className="space-y-2">
             {data.realEstateProperties.rows.map((p) => (
               <div key={p.id} className="text-[12px]" style={{ color: 'var(--text)' }}>
-                {p.name}：評価額 {formatJpy(p.property_value_jpy)} ／ ローン残高 {formatJpy(p.loan_balance_jpy)}
+                {p.name}（{p.data_type === 'plan' ? '将来の計画' : '現在の情報'}）：評価額 {formatJpy(p.property_value_jpy)} ／ ローン残高 {formatJpy(p.loan_balance_jpy)}
               </div>
             ))}
           </div>
         )}
+        <div className="mt-3"><LinkOut href="/home/manage/properties" label="投資不動産を登録・編集" /></div>
       </Section>
     </div>
   );

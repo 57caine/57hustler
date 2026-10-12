@@ -47,14 +47,15 @@ export function computeNetWorth(
   netWorthItems: NetWorthItem[],
   realEstateProperties: RealEstateProperty[]
 ): NetWorthResult {
-  if (netWorthItems.length === 0 && realEstateProperties.length === 0) return { available: false };
+  const currentProperties = realEstateProperties.filter((p) => p.data_type === 'actual');
+  if (netWorthItems.length === 0 && currentProperties.length === 0) return { available: false };
 
   const assets =
     netWorthItems.filter((i) => i.kind === 'asset').reduce((s, i) => s + i.value_jpy, 0) +
-    realEstateProperties.reduce((s, p) => s + p.property_value_jpy, 0);
+    currentProperties.reduce((s, p) => s + p.property_value_jpy, 0);
   const liabilities =
     netWorthItems.filter((i) => i.kind === 'liability').reduce((s, i) => s + i.value_jpy, 0) +
-    realEstateProperties.reduce((s, p) => s + p.loan_balance_jpy, 0);
+    currentProperties.reduce((s, p) => s + p.loan_balance_jpy, 0);
 
   return { available: true, totalAssetsJpy: assets, totalLiabilitiesJpy: liabilities, netWorthJpy: assets - liabilities };
 }

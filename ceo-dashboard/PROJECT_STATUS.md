@@ -1,8 +1,16 @@
 # CEOダッシュボード PROJECT_STATUS
 
-最終更新: 2026-10-12（HOME入口・資産画面の本番E2E確認済み）
+最終更新: 2026-10-12（家族・教育費・将来支出・収入・投資不動産・生活費の入力UI追加）
 
 ## 現行状況（2026-10-12）
+
+- STEP5-2: `/home/manage/{family,education,expenses,income,properties,settings}`を追加。
+  全6区分の登録・編集・専用確認画面経由の削除。既存の認証付きServer Actionsを使用し、
+  owner_idをクライアントから受け取らない。教育費の対象家族は本人の登録済み家族のみ。
+  家族削除時は関連教育費の同時削除を明示。生活費はowner_id主キーの1行を扱う。
+  HOMEから全6区分へ移動可能。将来支出の合計と明細をHOMEに追加。
+  不動産のplanは現在純資産の集計から除外し、actualのみを現在資産に計上。
+  ローカルビルド成功。今回のUIの本番E2Eは反映後に検証予定であり、この時点では未確認。
 
 - STEP1〜3: 下記の2026-10-07本番確認記録あり。認証方式はemail+password。
 - STEP4: 全7テーブルのServer Actions実装済み。`future_expenses`の実CHECK制約に
@@ -30,7 +38,7 @@
   実資産・家族データの投入なし。パスワード・トークン・ID・ページ本文のログ出力なし。
   再実行手順: Actionsの「CEO HOME assets browser verification」→Run workflow。
   tests/ceo-home-assets-e2e.mjsを隔離した一時Playwright環境で実行する。
-- 残り: 家族・教育費・将来支出・収入・不動産・生活費の入力UI。
+- 残り: 今回追加した6区分の入力UIの本番操作検証、DB定義のSQL記録。
   現行リポジトリにDB migration SQLは見当たらず、既存DB定義を取得してから記録する。
   推測したSQLの適用や実資産・家族データの投入は行わない。
 

@@ -17,6 +17,7 @@ let owner;
 let browser;
 let fixtureId;
 let failed = false;
+let settingsCreated = false;
 
 async function api(path, options = {}) {
   const response = await fetch(`${supabase}${path}`, {
@@ -45,6 +46,10 @@ try {
   assert.equal(properties.length, 0, 'Test account must have no property data');
   assert.ok(assets.every((row) => /^(RLS_TEST_TEMP|CEO_HOME_E2E_)/.test(row.label)), 'Test account contains non-test assets');
   const baseline = assets.reduce((sum, row) => sum + (row.kind === 'asset' ? Number(row.value_jpy) : -Number(row.value_jpy)), 0);
+  for (const table of ['family_members', 'education_costs', 'future_expenses', 'income_streams', 'owner_settings']) {
+    const rows = await api(`/rest/v1/${table}?select=*&owner_id=eq.${owner}`);
+    assert.equal(rows.length, 0, 'Test account must have no existing personal records');
+  }
   pass('dedicated test-account safety gate');
 
   browser = await chromium.launch({ headless: true });
@@ -52,7 +57,7 @@ try {
   const page = await context.newPage();
   page.setDefaultTimeout(30000);
   stage = 'unauthenticated protection';
-  for (const path of ['/home', '/assets', '/assets/new']) {
+  for (const path of ['/home', '/assets', '/assets/new', ...['family', 'education', 'expenses', 'income', 'properties', 'settings'].map((section) => `/home/manage/${section}`)]) {
     await page.goto(`${base}${path}`, { waitUntil: 'networkidle' });
     assert.equal(new URL(page.url()).pathname, '/login');
   }
@@ -130,6 +135,98 @@ try {
   else await homeReflects(0);
   pass('UI delete removes test asset and restores HOME baseline');
 
+
+  // Wait for this code's production deployment before exercising the new forms.
+  stage = 'management UI deployment readiness';
+  for (let attempt = 0; attempt < 36; attempt++) {
+    await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
+    if (await page.locator('a[href="/home/manage/settings"]').count()) break;
+    if (attempt === 35) throw new Error('Management UI not deployed');
+    await page.waitForTimeout(5000);
+  }
+  async function manage(section, fields, id) {
+    await page.goto(`${base}/home/manage/${section}${id ? `?edit=${id}` : ''}`, { waitUntil: 'networkidle' });
+    for (const [name, value] of Object.entries(fields)) {
+      const input = page.locator(`[name="${name}"]`);
+      if (await input.evaluate((el) => el.tagName === 'SELECT')) await input.selectOption(String(value));
+      else await input.fill(String(value));
+    }
+    const button = page.getByRole('button', { name: id ? '更新する' : '登録する', exact: true });
+    await button.click();
+    await page.getByRole('status').getByText('保存しました', { exact: true }).waitFor();
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
+  }
+  async function ownRow(table, key = 'label') {
+    const rows = await api(`/rest/v1/${table}?select=*&owner_id=eq.${owner}&${key}=eq.${encodeURIComponent(marker)}`);
+    assert.equal(rows.length, 1);
+    return rows[0];
+  }
+  async function removeRecord(section, id) {
+    await page.goto(`${base}/home/manage/${section}?delete=${id}`, { waitUntil: 'networkidle' });
+    await page.getByRole('heading', { name: '削除の確認', exact: true }).waitFor();
+    await page.getByRole('button', { name: '削除する', exact: true }).click();
+    await page.getByRole('status').getByText('削除しました', { exact: true }).waitFor();
+  }
+  stage = 'family and education forms';
+  await manage('family', { name: marker, birth_year: 2018 });
+  const member = await ownRow('family_members', 'name');
+  await manage('family', { name: marker, birth_year: 2019 }, member.id);
+  assert.equal((await ownRow('family_members', 'name')).birth_year, 2019);
+  await manage('education', { family_member_id: member.id, label: marker, estimated_jpy: 300000, target_year: 2033 });
+  const education = await ownRow('education_costs');
+  await manage('education', { estimated_jpy: 400000 }, education.id);
+  assert.equal(Number((await ownRow('education_costs')).estimated_jpy), 400000);
+  await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
+  await page.getByText('準備済み ¥0 ／ 必要額 ¥400,000', { exact: true }).waitFor();
+  await removeRecord('education', education.id);
+  await manage('education', { family_member_id: member.id, label: marker, estimated_jpy: 100000 });
+  await page.goto(`${base}/home/manage/family?delete=${member.id}`, { waitUntil: 'networkidle' });
+  await page.getByText('この家族に登録した教育費も一緒に削除されます（1件）。', { exact: true }).waitFor();
+  await page.getByRole('button', { name: '削除する', exact: true }).click();
+  await page.getByRole('status').getByText('削除しました', { exact: true }).waitFor();
+  assert.equal((await api(`/rest/v1/education_costs?select=id&owner_id=eq.${owner}&label=eq.${encodeURIComponent(marker)}`)).length, 0);
+  pass('family and education CRUD, HOME totals and cascade warning');
+
+  stage = 'future expense forms';
+  await manage('expenses', { label: marker, category: 'housing', estimated_jpy: 500000, target_year: 2030 });
+  const expense = await ownRow('future_expenses');
+  await manage('expenses', { estimated_jpy: 600000 }, expense.id);
+  assert.equal(Number((await ownRow('future_expenses')).estimated_jpy), 600000);
+  await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
+  await page.getByText(`${marker}：¥600,000（2030年）`, { exact: true }).waitFor();
+  await removeRecord('expenses', expense.id);
+  pass('future expense CRUD and HOME reflection');
+
+  stage = 'living cost and income forms';
+  settingsCreated = true;
+  await manage('settings', { living_cost_monthly_jpy: 100000 });
+  await manage('settings', { living_cost_monthly_jpy: 120000 }, 'settings');
+  const settings = await api(`/rest/v1/owner_settings?select=living_cost_monthly_jpy&owner_id=eq.${owner}`);
+  assert.equal(Number(settings[0].living_cost_monthly_jpy), 120000);
+  await manage('income', { label: marker, type: 'automated', monthly_jpy: 60000, automation_level: 'full', stability: 'stable' });
+  const income = await ownRow('income_streams');
+  await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
+  await page.getByText('50.00%', { exact: true }).waitFor();
+  await manage('income', { monthly_jpy: 72000 }, income.id);
+  await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
+  await page.getByText('60.00%', { exact: true }).waitFor();
+  await removeRecord('income', income.id);
+  await removeRecord('settings', 'settings');
+  settingsCreated = false;
+  pass('living cost and income CRUD and freedom calculation');
+
+  stage = 'property forms';
+  await manage('properties', { name: marker, property_value_jpy: 2000000, loan_balance_jpy: 500000, data_type: 'plan', as_of_date: '2026-10-12' });
+  const property = await ownRow('real_estate_properties', 'name');
+  await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
+  await page.getByText('資産・不動産データがまだ登録されていません', { exact: true }).waitFor();
+  await manage('properties', { data_type: 'actual' }, property.id);
+  await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
+  const wealth = page.locator('div.rounded-xl').filter({ has: page.getByText('💰 TOTAL WEALTH', { exact: true }) });
+  await wealth.getByText(money(baseline + 1500000), { exact: true }).waitFor();
+  await removeRecord('properties', property.id);
+  pass('property CRUD: future plans excluded, current net worth reflected');
+
   stage = 'logout';
   await page.getByRole('button', { name: '🚪 ログアウト', exact: true }).click();
   await page.waitForURL((url) => url.pathname === '/login');
@@ -146,6 +243,15 @@ try {
       await api(`/rest/v1/net_worth_items?owner_id=eq.${owner}&label=eq.${encodeURIComponent(marker)}`, { method: 'DELETE' });
       const remaining = await api(`/rest/v1/net_worth_items?select=id&owner_id=eq.${owner}&label=eq.${encodeURIComponent(marker)}`);
       assert.equal(remaining.length, 0);
+      for (const [table, key] of [['education_costs', 'label'], ['family_members', 'name'], ['future_expenses', 'label'], ['income_streams', 'label'], ['real_estate_properties', 'name']]) {
+        await api(`/rest/v1/${table}?owner_id=eq.${owner}&${key}=eq.${encodeURIComponent(marker)}`, { method: 'DELETE' });
+        const rows = await api(`/rest/v1/${table}?select=id&owner_id=eq.${owner}&${key}=eq.${encodeURIComponent(marker)}`);
+        assert.equal(rows.length, 0);
+      }
+      if (settingsCreated) {
+        await api(`/rest/v1/owner_settings?owner_id=eq.${owner}`, { method: 'DELETE' });
+        assert.equal((await api(`/rest/v1/owner_settings?select=owner_id&owner_id=eq.${owner}`)).length, 0);
+      }
       pass('cleanup verified: no test fixture remains');
     } catch {
       failed = true;
