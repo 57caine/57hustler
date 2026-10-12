@@ -1,0 +1,56 @@
+name: ブランド別 Threads 通常投稿（4日間限定パイロット）
+on:
+  schedule:
+    - cron: '15 1 * * *'
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: '手動実行時に公開する（通常はOFF）'
+        type: boolean
+        required: true
+        default: false
+permissions:
+  contents: read
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: 公開対象を日付で限定
+        id: plan
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          MANUAL_PUBLISH: ${{ inputs.publish }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          TODAY="$(date -u +%F)"
+          case "$TODAY" in
+            2026-10-14) BRAND=rakutabi; DAY=2 ;;
+            2026-10-15) BRAND=lens; DAY=2 ;;
+            2026-10-16) BRAND=rakutabi; DAY=3 ;;
+            2026-10-17) BRAND=lens; DAY=3 ;;
+            *) echo "No scheduled content for $TODAY"; exit 0 ;;
+          esac
+          echo "brand=$BRAND" >> "$GITHUB_OUTPUT"
+          echo "day=$DAY" >> "$GITHUB_OUTPUT"
+          if [[ "$EVENT_NAME" == "schedule" || "$MANUAL_PUBLISH" == "true" ]]; then
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: 通常投稿ドライラン
+        if: ${{ steps.plan.outputs.brand != '' && steps.plan.outputs.publish != 'true' }}
+        run: node scripts/post-organic-threads.mjs --brand "${{ steps.plan.outputs.brand }}" --day "${{ steps.plan.outputs.day }}"
+      - name: アカウント・重複を検証して通常投稿
+        if: ${{ steps.plan.outputs.brand != '' && steps.plan.outputs.publish == 'true' }}
+        env:
+          RAKUTABI_THREADS_USER_ID: ${{ secrets.RAKUTABI_THREADS_USER_ID }}
+          RAKUTABI_THREADS_ACCESS_TOKEN: ${{ secrets.RAKUTABI_THREADS_ACCESS_TOKEN }}
+          LENS_THREADS_USER_ID: ${{ secrets.LENS_THREADS_USER_ID }}
+          LENS_THREADS_ACCESS_TOKEN: ${{ secrets.LENS_THREADS_ACCESS_TOKEN }}
+          ENABLE_ORGANIC_THREADS_PUBLISH: 'true'
+        run: node scripts/post-organic-threads.mjs --brand "${{ steps.plan.outputs.brand }}" --day "${{ steps.plan.outputs.day }}" --publish
