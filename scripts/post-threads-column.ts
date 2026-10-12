@@ -269,7 +269,7 @@ ${recentContext}
   const raw = (message.content[0] as { type: string; text: string }).text;
   // Claude may add a preface, markdown fences, or trailing notes around the JSON.
   // Extract the first valid theme object rather than crashing the entire post job.
-  for (const candidate of raw.match(/\\{[^{}]*\\}/g) ?? []) {
+  for (const candidate of raw.match(/\{[^{}]*\}/g) ?? []) {
     try {
       const parsed: unknown = JSON.parse(candidate);
       if (typeof parsed !== 'object' || parsed === null) continue;
