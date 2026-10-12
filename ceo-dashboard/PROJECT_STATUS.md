@@ -1,6 +1,6 @@
 # CEOダッシュボード PROJECT_STATUS
 
-最終更新: 2026-10-12（HOME入口・導線、STEP4/5の記録更新）
+最終更新: 2026-10-12（HOME入口・資産画面の本番E2E確認済み）
 
 ## 現行状況（2026-10-12）
 
@@ -8,18 +8,28 @@
 - STEP4: 全7テーブルのServer Actions実装済み。`future_expenses`の実CHECK制約に
   合わせた修正（6127b65）後のGitHub Actions実動テストは57項目PASS、FAIL_COUNT=0。
   証拠: https://github.com/57caine/57hustler/actions/runs/37647587650 （2026-10-07 15:53 UTC）。
-  後続b9a7f5dでnet_worth_items.categoryを6値のenumに限定。当該コミットの
-  RLS実行37655681952はcancelledであり、最後のcategory修正後の実動検証は未確認。
+  後続b9a7f5dでnet_worth_items.categoryを6値のenumに限定。
+  RLS実行37655681952の全体状態はcancelledだが、job 112909877076の
+  テストログは57項目PASS・FAIL_COUNT=0・RESULT: PASSまで完了していることを確認。
+  さらに今回の本番ブラウザE2Eでcash分類の登録・更新・削除も確認済み。
 - STEP5-1: `/assets`の一覧・登録・編集・削除画面、ASSETSナビ、HOMEからの資産リンクを
   実装済み。資産categoryのDB制約不整合はb9a7f5dで修正済み。修正後の
-  ログイン→登録→編集→削除→HOME集計反映の一連の実UI確認は未確認。
-  以前のPlaywright検証は検証環境でログイン失敗し、調査ファイル削除済み。
+  ログイン→登録→編集→削除→HOME集計反映の一連の実UI確認は2026-10-12にPASS。
+  以前のPlaywright検証のログイン失敗は今回の本番ブラウザ検証では再現せず。
 - 今回: `/`の遷移先と通常ログイン後の既定遷移先を`/home`へ変更。
   HOMEナビを先頭に追加し、HOMEからTODAYへのリンクを追加。
   直接アクセスした保護ページへのログイン後復帰は既存のredirectedFromを維持。
   HOMEの古いSTEP3開発用案内を利用者向けの説明へ変更。
 - 確認: ローカル`npm run build`成功（Next.js 16.2.6、TypeScript確認を含む）。
-  この記録作成時点では今回変更の本番反映・認証済みUI操作は未確認。
+  HOME入口変更は本番デプロイ完了（4d6aa2a）。本番/loginの既定遷移先/homeを取得確認。
+  本番E2E: https://github.com/57caine/57hustler/actions/runs/38193933720
+  （job 114632389292、10項目PASS、RESULT: PASS）。390×844のChromiumで、
+  未認証保護、ログイン後HOME、HOME/TODAY移動、ログアウト導線、資産登録・DB保存、
+  HOME反映、金額編集・HOME反映、削除確認・DB削除・HOME復元、ログアウト後の保護、
+  テストデータ削除を確認。既存RLSテスト専用ユーザーと仮データのみ使用。
+  実資産・家族データの投入なし。パスワード・トークン・ID・ページ本文のログ出力なし。
+  再実行手順: Actionsの「CEO HOME assets browser verification」→Run workflow。
+  tests/ceo-home-assets-e2e.mjsを隔離した一時Playwright環境で実行する。
 - 残り: 家族・教育費・将来支出・収入・不動産・生活費の入力UI。
   現行リポジトリにDB migration SQLは見当たらず、既存DB定義を取得してから記録する。
   推測したSQLの適用や実資産・家族データの投入は行わない。
@@ -53,7 +63,7 @@
     estimated_jpyは0以上、sourceはサーバー側でassumption固定。
     `scripts/rls-test.sh`のグループ9とcleanupを再有効化済み。
   - 修正後のGitHub Actions実動テスト57項目全てPASS（future_expensesを含む）。
-    最新のnet_worth_items.category修正後の再検証は未確認（上記参照）。
+    最新category修正後のテストログと本番資産E2Eも確認済み（上記参照）。
 
 ## STEP1〜3 進捗（個人・家族・資産データ基盤、2026-10-07時点）
 
