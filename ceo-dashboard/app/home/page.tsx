@@ -76,7 +76,7 @@ export default async function HomePage() {
         </div>
         <h1 className="text-xl font-bold">CEO HOME</h1>
         <p className="text-[10px] mt-1" style={{ color: 'var(--muted)' }}>
-          暮らし・資産・事業の状況をまとめて確認できます
+          暮らし・資産・事業を見渡し、必要な情報を登録できます
         </p>
         <div className="mt-2">
           <LinkOut href="/today" label="今日やることを見る" />
