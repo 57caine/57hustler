@@ -19,11 +19,11 @@ if(process.env.ENABLE_ORGANIC_THREADS_PUBLISH!=='true') throw new Error('Publish
 const token=process.env[cfg.token], configuredId=process.env[cfg.userId];
 if(!token) throw new Error('Missing brand token');
 const API='https://graph.threads.net/v1.0';
-async function call(url,options={}){
+async function call(url,options={},stage='request'){
  let response,json;
  try {response=await fetch(url,{...options,signal:AbortSignal.timeout(15000)});json=await response.json();}
  catch {throw new Error('Threads request outcome unknown; inspect history before retrying');}
- if(!response.ok||json.error) throw new Error('Threads API error: '+response.status);
+ if(!response.ok||json.error) { const code=Number.isInteger(json?.error?.code)?json.error.code:null; const subcode=Number.isInteger(json?.error?.error_subcode)?json.error.error_subcode:null; throw new Error('Threads API error '+JSON.stringify({stage,status:response.status,code,subcode})); }
  return json;
 }
 const me=await call(API+'/me?fields=id,username&access_token='+encodeURIComponent(token));
@@ -47,6 +47,6 @@ for(let page=0;page<10;page++){
 if(!complete) throw new Error('Incomplete posting history; abort');
 const container=await call(API+'/'+encodeURIComponent(id)+'/threads',{method:'POST',body:new URLSearchParams({media_type:'TEXT',text:post.text,access_token:token})});
 if(!container.id) throw new Error('Container creation failed');
-const result=await call(API+'/'+encodeURIComponent(id)+'/threads_publish',{method:'POST',body:new URLSearchParams({creation_id:container.id,access_token:token})});
+const result=await call(API+'/'+encodeURIComponent(id)+'/threads_publish',{method:'POST',body:new URLSearchParams({creation_id:container.id,access_token:token})},'publish');
 if(!result.id) throw new Error('No published ID returned');
 console.log(JSON.stringify({status:'published',brand,day,postId:result.id}));
