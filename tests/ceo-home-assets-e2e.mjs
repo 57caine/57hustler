@@ -73,14 +73,25 @@ try {
   await page.getByRole('heading', { name: 'CEO HOME', exact: true }).waitFor();
   pass('browser login opens HOME');
 
+  // Wait for this code's production deployment before exercising the new forms.
+  stage = 'management UI deployment readiness';
+  for (let attempt = 0; attempt < 36; attempt++) {
+    await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
+    if (await page.getByRole('heading', { name: '🕊️ 自由への距離', exact: true }).count()) break;
+    if (attempt === 35) throw new Error('Management UI not deployed');
+    await page.waitForTimeout(5000);
+  }
+  await page.getByText('生活費または収入が未入力です', { exact: true }).waitFor();
+  pass('missing input is not shown as zero income');
+
   stage = 'mobile navigation';
-  await page.getByRole('link', { name: '🏠 HOME', exact: true }).waitFor();
+  await page.getByRole('link', { name: '🏠 ホーム', exact: true }).waitFor();
   const logout = page.getByRole('button', { name: '🚪 ログアウト', exact: true });
   assert.ok(await logout.isVisible());
   assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
   await page.getByRole('link', { name: '今日やることを見る →', exact: true }).click();
   await page.waitForURL((url) => url.pathname === '/today');
-  await page.getByRole('link', { name: '🏠 HOME', exact: true }).click();
+  await page.getByRole('link', { name: '🏠 ホーム', exact: true }).click();
   await page.waitForURL((url) => url.pathname === '/home');
   pass('mobile HOME/TODAY navigation and visible logout');
 
@@ -103,7 +114,7 @@ try {
 
   async function homeReflects(amount) {
     await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
-    const wealth = page.locator('div.rounded-xl').filter({ has: page.getByText('💰 TOTAL WEALTH', { exact: true }) });
+    const wealth = page.locator('div.rounded-xl').filter({ has: page.getByText('💰 純資産', { exact: true }) });
     await wealth.getByText(money(baseline + amount), { exact: true }).waitFor();
   }
   stage = 'HOME after registration';
@@ -120,6 +131,12 @@ try {
   assert.equal(Number(updated[0].value_jpy), 23456);
   await homeReflects(23456);
   pass('UI edit persists and HOME reflects changed amount');
+  await page.goto(`${base}/assets/${fixtureId}/edit`, { waitUntil: 'networkidle' });
+  await page.locator('[name="value_jpy"]').fill('0');
+  await page.getByRole('button', { name: '更新する', exact: true }).click();
+  await page.waitForURL((url) => url.pathname === '/assets');
+  await homeReflects(0);
+  pass('a registered zero-value asset remains visible as zero');
 
   stage = 'asset delete';
   await page.goto(`${base}/assets/${fixtureId}/delete`, { waitUntil: 'networkidle' });
@@ -131,19 +148,11 @@ try {
   const deleted = await api(`/rest/v1/net_worth_items?select=id&owner_id=eq.${owner}&label=eq.${encodeURIComponent(marker)}`);
   assert.equal(deleted.length, 0);
   await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
-  if (assets.length === 0) await page.getByText('資産・不動産データがまだ登録されていません', { exact: true }).waitFor();
+  if (assets.length === 0) await page.getByText('現在の資産・負債がまだ登録されていません', { exact: true }).waitFor();
   else await homeReflects(0);
   pass('UI delete removes test asset and restores HOME baseline');
 
 
-  // Wait for this code's production deployment before exercising the new forms.
-  stage = 'management UI deployment readiness';
-  for (let attempt = 0; attempt < 36; attempt++) {
-    await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
-    if (await page.locator('a[href="/home/manage/settings"]').count()) break;
-    if (attempt === 35) throw new Error('Management UI not deployed');
-    await page.waitForTimeout(5000);
-  }
   async function manage(section, fields, id) {
     await page.goto(`${base}/home/manage/${section}${id ? `?edit=${id}` : ''}`, { waitUntil: 'networkidle' });
     for (const [name, value] of Object.entries(fields)) {
@@ -178,6 +187,9 @@ try {
   assert.equal(Number((await ownRow('education_costs')).estimated_jpy), 400000);
   await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
   await page.getByText('準備済み ¥0 ／ 必要額 ¥400,000', { exact: true }).waitFor();
+  await manage('education', { estimated_jpy: 0 }, education.id);
+  await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
+  await page.getByText('教育費の必要額が0円のため、準備率は表示していません', { exact: true }).waitFor();
   await removeRecord('education', education.id);
   await manage('education', { family_member_id: member.id, label: marker, estimated_jpy: 100000 });
   await page.goto(`${base}/home/manage/family?delete=${member.id}`, { waitUntil: 'networkidle' });
@@ -210,6 +222,14 @@ try {
   await manage('income', { monthly_jpy: 72000 }, income.id);
   await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
   await page.getByText('60.00%', { exact: true }).waitFor();
+  await manage('income', { monthly_jpy: 0 }, income.id);
+  await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
+  await page.getByText('0.00%', { exact: true }).waitFor();
+  await page.getByText('給与以外の収入が0円のため、割合は表示していません', { exact: true }).waitFor();
+  await manage('settings', { living_cost_monthly_jpy: 0 }, 'settings');
+  await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
+  await page.getByText('生活費が0円のため、達成率は表示していません', { exact: true }).waitFor();
+  pass('zero education, income and living costs have distinct explanations');
   await removeRecord('income', income.id);
   await removeRecord('settings', 'settings');
   settingsCreated = false;
@@ -219,10 +239,10 @@ try {
   await manage('properties', { name: marker, property_value_jpy: 2000000, loan_balance_jpy: 500000, data_type: 'plan', as_of_date: '2026-10-12' });
   const property = await ownRow('real_estate_properties', 'name');
   await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
-  await page.getByText('資産・不動産データがまだ登録されていません', { exact: true }).waitFor();
+  await page.getByText('現在の資産・負債がまだ登録されていません', { exact: true }).waitFor();
   await manage('properties', { data_type: 'actual' }, property.id);
   await page.goto(`${base}/home`, { waitUntil: 'networkidle' });
-  const wealth = page.locator('div.rounded-xl').filter({ has: page.getByText('💰 TOTAL WEALTH', { exact: true }) });
+  const wealth = page.locator('div.rounded-xl').filter({ has: page.getByText('💰 純資産', { exact: true }) });
   await wealth.getByText(money(baseline + 1500000), { exact: true }).waitFor();
   await removeRecord('properties', property.id);
   pass('property CRUD: future plans excluded, current net worth reflected');

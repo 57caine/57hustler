@@ -19,7 +19,7 @@ export function computeFreedomDistance(
   incomeStreams: IncomeStream[],
   ownerSettings: OwnerSettings | null
 ): FreedomDistanceResult {
-  if (!ownerSettings || !ownerSettings.living_cost_monthly_jpy) return { available: false };
+  if (incomeStreams.length === 0 || !ownerSettings || !ownerSettings.living_cost_monthly_jpy) return { available: false };
   const livingCost = ownerSettings.living_cost_monthly_jpy;
   if (livingCost <= 0) return { available: false };
 

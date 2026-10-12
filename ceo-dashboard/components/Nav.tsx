@@ -4,14 +4,14 @@ import { usePathname } from 'next/navigation';
 import { logout } from '@/app/logout/actions';
 
 const links = [
-  { href: '/home',     label: '🏠 HOME' },
-  { href: '/today',    label: '🎯 TODAY' },
-  { href: '/assets',   label: '📊 ASSETS' },
-  { href: '/projects', label: '📁 PROJECTS' },
-  { href: '/money',    label: '💰 MONEY' },
-  { href: '/ai-team',  label: '🤖 AI TEAM' },
-  { href: '/pdca',     label: '🔁 PDCA' },
-  { href: '/alert',    label: '🚨 ALERT' },
+  { href: '/home',     label: '🏠 ホーム' },
+  { href: '/today',    label: '🎯 今日やること' },
+  { href: '/assets',   label: '📊 資産' },
+  { href: '/projects', label: '📁 事業' },
+  { href: '/money',    label: '💰 事業収益' },
+  { href: '/ai-team',  label: '🤖 AIチーム' },
+  { href: '/pdca',     label: '🔁 振り返り' },
+  { href: '/alert',    label: '🚨 判断・お知らせ' },
 ];
 
 export default function Nav() {

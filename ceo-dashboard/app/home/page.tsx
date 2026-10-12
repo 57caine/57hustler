@@ -27,9 +27,9 @@ function Section({
       className="rounded-xl px-4 py-3.5"
       style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
     >
-      <div className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: 'var(--accent)' }}>
+      <h2 className="text-sm font-bold mb-2" style={{ color: 'var(--accent)' }}>
         {icon} {title}
-      </div>
+      </h2>
       {children}
     </div>
   );
@@ -84,11 +84,12 @@ export default async function HomePage() {
       </div>
 
       {/* 1. FREEDOM DISTANCE */}
-      <Section icon="🕊️" title="FREEDOM DISTANCE">
+      <Section icon="🕊️" title="自由への距離">
+        <p className="text-xs mb-2" style={{ color: 'var(--muted)' }}>安定した給与以外の収入が、毎月の生活費をどれだけ賄えるか</p>
         {data.incomeStreams.error || data.ownerSettings.error ? (
           <ErrorNote />
         ) : !freedom.available ? (
-          <Empty text="生活費・収入データがまだ登録されていません" />
+          <Empty text={!data.ownerSettings.row || data.incomeStreams.rows.length === 0 ? "生活費または収入が未入力です" : "生活費が0円のため、達成率は表示していません"} />
         ) : (
           <div>
             <div className="text-2xl font-bold font-mono" style={{ color: 'var(--text)' }}>
@@ -101,19 +102,19 @@ export default async function HomePage() {
             </p>
           </div>
         )}
-        <div className="flex gap-4 mt-3">
+        <div className="flex flex-wrap gap-3 mt-3">
           <LinkOut href="/home/manage/settings" label="生活費を登録・編集" />
           <LinkOut href="/home/manage/income" label="収入を登録・編集" />
         </div>
       </Section>
 
       {/* 2. TOTAL WEALTH */}
-      <Section icon="💰" title="TOTAL WEALTH">
+      <Section icon="💰" title="純資産">
         {data.netWorthItems.error || data.realEstateProperties.error ? (
           <ErrorNote />
         ) : !netWorth.available ? (
           <div>
-            <Empty text="資産・不動産データがまだ登録されていません" />
+            <Empty text="現在の資産・負債がまだ登録されていません" />
             <div className="mt-2">
               <LinkOut href="/assets" label="資産を登録する" />
             </div>
@@ -134,15 +135,15 @@ export default async function HomePage() {
       </Section>
 
       {/* 3. OWNER DECISIONS（既存のGitHub JSONベースのALERT画面をそのまま使う。今回は新規実装しない） */}
-      <Section icon="👑" title="OWNER DECISIONS">
+      <Section icon="👑" title="判断が必要なこと">
         <p className="text-sm mb-2" style={{ color: 'var(--muted)' }}>
-          判断待ちの項目は既存のALERT画面でご確認ください
+          判断待ちや気を付けたいことを確認できます
         </p>
-        <LinkOut href="/alert" label="ALERTを見る" />
+        <LinkOut href="/alert" label="判断・お知らせを見る" />
       </Section>
 
       {/* 4. FAMILY */}
-      <Section icon="👨‍👩‍👧" title="FAMILY">
+      <Section icon="👨‍👩‍👧" title="家族・教育費">
         {data.familyMembers.error || data.educationCosts.error ? (
           <ErrorNote />
         ) : data.familyMembers.rows.length === 0 ? (
@@ -153,7 +154,7 @@ export default async function HomePage() {
               登録済みの家族: {data.familyMembers.rows.length}名
             </p>
             <p className="text-[11px] mt-1" style={{ color: 'var(--muted)' }}>
-              教育費の見積もりがまだ登録されていません
+              {data.educationCosts.rows.length === 0 ? '教育費の見積もりが未入力です' : '教育費の必要額が0円のため、準備率は表示していません'}
             </p>
           </div>
         ) : (
@@ -166,7 +167,7 @@ export default async function HomePage() {
             </p>
           </div>
         )}
-        <div className="flex gap-4 mt-3">
+        <div className="flex flex-wrap gap-3 mt-3">
           <LinkOut href="/home/manage/family" label="家族を登録・編集" />
           <LinkOut href="/home/manage/education" label="教育費を登録・編集" />
         </div>
@@ -189,11 +190,12 @@ export default async function HomePage() {
       </Section>
 
       {/* 5. AUTOMATION */}
-      <Section icon="⚙️" title="AUTOMATION">
+      <Section icon="⚙️" title="収入の自動化率">
+        <p className="text-xs mb-2" style={{ color: 'var(--muted)' }}>給与以外の収入で、手をかけずに入る割合。一部に手をかける収入は半分として計算します。</p>
         {data.incomeStreams.error ? (
           <ErrorNote />
         ) : !automation.available ? (
-          <Empty text="収入源データがまだ登録されていません" />
+          <Empty text={data.incomeStreams.rows.some((income) => income.type !== 'employment') ? "給与以外の収入が0円のため、割合は表示していません" : "給与以外の収入が未入力です"} />
         ) : (
           <div className="text-2xl font-bold font-mono" style={{ color: 'var(--text)' }}>
             {formatPercent(automation.percent!)}
@@ -202,15 +204,15 @@ export default async function HomePage() {
       </Section>
 
       {/* 6. BUSINESS（既存のGitHub JSONベースのPROJECTS画面をそのまま使う。今回は新規実装しない） */}
-      <Section icon="💼" title="BUSINESS">
+      <Section icon="💼" title="事業の状況">
         <p className="text-sm mb-2" style={{ color: 'var(--muted)' }}>
-          事業の状況は既存のPROJECTS画面でご確認ください
+          それぞれの事業の進み具合と、次にすることを確認できます
         </p>
-        <LinkOut href="/projects" label="PROJECTSを見る" />
+        <LinkOut href="/projects" label="事業の状況を見る" />
       </Section>
 
       {/* 7. REAL ESTATE */}
-      <Section icon="🏢" title="REAL ESTATE">
+      <Section icon="🏢" title="投資不動産">
         {data.realEstateProperties.error ? (
           <ErrorNote />
         ) : data.realEstateProperties.rows.length === 0 ? (
