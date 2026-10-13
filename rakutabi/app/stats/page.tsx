@@ -31,6 +31,7 @@ export default async function StatsPage() {
 
   const byDate = countBy(rows, (r) => r.date).sort((a, b) => b[0].localeCompare(a[0]));
   const byPlacement = countBy(rows, (r) => r.placement).sort((a, b) => b[1] - a[1]);
+  const bySource = countBy(rows, (r) => r.trafficSource).sort((a, b) => b[1] - a[1]);
   const byHotel = countBy(rows, (r) => r.hotelNo).sort((a, b) => b[1] - a[1]).slice(0, 30);
 
   return (
@@ -44,6 +45,7 @@ export default async function StatsPage() {
         head={['位置', 'クリック']}
         rows={byPlacement.map(([p, n]) => [PLACEMENT_LABELS[p as Placement] ?? p, n])}
       />
+      <Table title="流入経路別の送客クリック（UTM付きのみ識別）" head={['流入元', 'クリック']} rows={bySource.map(([s, n]) => [s === 'unattributed' ? '未判定（従来分・UTMなし）' : s, n])} />
       <Table
         title="宿別（上位30件）"
         head={['宿', 'クリック']}

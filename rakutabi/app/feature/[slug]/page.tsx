@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import DataNotice from '@/components/DataNotice';
+import ShareLinks from '@/components/ShareLinks';
 import HotelFilterList from '@/components/HotelFilterList';
 import PageHeader from '@/components/PageHeader';
 import AreaSidebar from '@/components/AreaSidebar';
@@ -45,6 +46,7 @@ export default async function FeaturePage({ params }: { params: Promise<{ slug: 
         <AreaSidebar current={feature.areaKeys} />
         <div className="flex-1 min-w-0">
         <DataNotice criteria={theme?.criteria} />
+        <ShareLinks path={`/feature/${feature.slug}`} title={feature.title} />
         <HotelFilterList hotels={hotels} />
         </div>
       </div>

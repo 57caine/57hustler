@@ -9,13 +9,21 @@ import { useEffect } from 'react';
  */
 export default function ClickTracker() {
   useEffect(() => {
+    // キャンペーン識別子だけをタブ内に保存（個人情報・外部リファラーは収集しない）。
+    const source = new URLSearchParams(window.location.search).get('utm_source');
+    const allowed = ['share_x', 'share_line', 'threads', 'instagram', 'rakuten_room'];
+    if (source && allowed.includes(source)) {
+      try { sessionStorage.setItem('rakutabi_source', source); } catch { /* storage unavailable */ }
+    }
     function handleClick(e: MouseEvent) {
       const a = (e.target as HTMLElement | null)?.closest('a');
       if (!a || !(a.getAttribute('rel') ?? '').includes('sponsored')) return;
       const hotelNo = a.dataset.hotelNo;
       const placement = a.dataset.placement;
       if (!hotelNo || !placement) return;
-      const body = JSON.stringify({ hotelNo, placement, page: window.location.pathname });
+      let trafficSource = 'unattributed';
+      try { trafficSource = sessionStorage.getItem('rakutabi_source') ?? 'unattributed'; } catch { /* storage unavailable */ }
+      const body = JSON.stringify({ hotelNo, placement, page: window.location.pathname, trafficSource });
       try {
         if (!navigator.sendBeacon?.('/api/click', new Blob([body], { type: 'application/json' }))) {
           void fetch('/api/click', { method: 'POST', body, keepalive: true });
