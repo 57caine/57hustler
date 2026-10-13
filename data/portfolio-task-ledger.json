@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-13",
+  "purpose": "Cross-project outstanding work ledger; do not infer completion from CI success or absence of reminders.",
+  "rules": [
+    "Never mark a task done without evidence and date.",
+    "Before answering 'anything left?', review all active projects plus independent initiatives and blocked tasks.",
+    "Separate AI-executable tasks from owner-only authentication/decisions.",
+    "CI success does not prove posts were published, traffic converted, or affiliate attribution.",
+    "Do not modify credentials or publish social posts solely because this ledger exists."
+  ],
+  "tasks": [
+    {
+      "id": "mitama-continue-posts",
+      "project": "MITAMA",
+      "account": "@mitama.wisdom",
+      "priority": 1,
+      "status": "pending",
+      "owner": "AI",
+      "nextAction": "Audit actual Instagram/Threads posts and account access; verify last three posts and avoid duplicates; prepare/publish next English-language Japanese culture post only after safe authenticated access is confirmed.",
+      "verification": "Public post URL or platform post ID and timestamp",
+      "notes": "Separate from 夜中のおじさん; 3 posts and 0 followers were previously reported, not current verified metrics."
+    },
+    {
+      "id": "lens-rakuten-attribution",
+      "project": "レンズナビ",
+      "priority": 2,
+      "status": "blocked_external_verification",
+      "owner": "AI + owner if platform login required",
+      "nextAction": "Confirm Rakuten tracking ID lensnavi attribution; do not infer from aggregate clicks. Check next daily link healthcheck after PR #61 merge.",
+      "verification": "Tracking-ID-specific report evidence or explicitly record unavailable."
+    },
+    {
+      "id": "rakutabi-threads-auth",
+      "project": "楽旅くん",
+      "priority": 3,
+      "status": "pending",
+      "owner": "AI",
+      "nextAction": "Diagnose Meta Threads app test invitation/account mismatch and verify whether posting is actually published; avoid duplicate posts.",
+      "verification": "Platform post ID and live URL or exact error."
+    },
+    {
+      "id": "yonaka-posting-and-note",
+      "project": "夜中のおじさん / 出口のノート",
+      "priority": 4,
+      "status": "pending",
+      "owner": "AI",
+      "nextAction": "Check latest real published Threads posts and note conversion path; separate workflow success from publishing evidence.",
+      "verification": "Post IDs and note clicks/sales when available."
+    },
+    {
+      "id": "pet-disaster-status",
+      "project": "ペット避難",
+      "priority": 5,
+      "status": "pending",
+      "owner": "AI",
+      "nextAction": "Locate actual code/site and establish launch/monetization status; do not assume active deployment.",
+      "verification": "Repository path and live URL or confirmed planning-only status."
+    },
+    {
+      "id": "zassou-posting-status",
+      "project": "雑草おじさん",
+      "priority": 6,
+      "status": "pending",
+      "owner": "AI",
+      "nextAction": "Check X publishing workflow and whether posts exist; report blocker rather than claim running.",
+      "verification": "Live X post ID or explicit failure."
+    },
+    {
+      "id": "ceo-home-ledger-integration",
+      "project": "CEO HOME",
+      "priority": 7,
+      "status": "pending",
+      "owner": "AI",
+      "nextAction": "Integrate ledger into cross-project 'what remains?' workflow after validating existing dashboard data model.",
+      "verification": "Dashboard view and tests."
+    },
+    {
+      "id": "stock-research-pr20",
+      "project": "株式検証",
+      "priority": 8,
+      "status": "pending",
+      "owner": "AI",
+      "nextAction": "Review Draft PR #20 independently; never mix changes into monetization PRs.",
+      "verification": "PR status and test evidence."
+    }
+  ],
+  "excludedFromActive": [
+    "資格サイト",
+    "保育士比較",
+    "東京ラーメンマップ",
+    "Etsy",
+    "school-navi"
+  ]
+}
