@@ -15,7 +15,7 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://lens-navi.jp'),
+  metadataBase: new URL('https://www.lens-navi.jp'),
   verification: {
     google: 'ms0YnowygFYwPKk3oWjnPGoyx0Jpox_yJAzBU8mVaA8',
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ja_JP',
     siteName: 'レンズナビ',
-    url: 'https://lens-navi.jp',
+    url: 'https://www.lens-navi.jp',
     description: 'コンタクトレンズの最安値比較から眼鏡・VRゴーグル・レーシック・アイケアまで。目に関するすべての情報が揃う総合サイト。',
   },
   twitter: {
@@ -53,22 +53,22 @@ export default function RootLayout({
     '@graph': [
       {
         '@type': 'WebSite',
-        '@id': 'https://lens-navi.jp/#website',
-        url: 'https://lens-navi.jp',
+        '@id': 'https://www.lens-navi.jp/#website',
+        url: 'https://www.lens-navi.jp',
         name: 'レンズナビ',
         description: 'コンタクトレンズの最安値を比較するサイト',
         inLanguage: 'ja',
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://lens-navi.jp/ranking',
+          target: 'https://www.lens-navi.jp/ranking',
           'query-input': 'required name=search_term_string',
         },
       },
       {
         '@type': 'Organization',
-        '@id': 'https://lens-navi.jp/#organization',
+        '@id': 'https://www.lens-navi.jp/#organization',
         name: 'レンズナビ',
-        url: 'https://lens-navi.jp',
+        url: 'https://www.lens-navi.jp',
         description: 'コンタクトレンズの最安値比較から眼鏡・VRゴーグル・レーシック・アイケアまで、目に関するすべての情報が揃う総合サイト。',
       },
     ],

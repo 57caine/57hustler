@@ -73,6 +73,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: column.title,
     description: column.description,
+    alternates: { canonical: `https://www.lens-navi.jp/column/${slug}` },
   };
 }
 
@@ -87,8 +88,18 @@ export default async function ColumnPage({ params }: Props) {
   const content = columnContent[slug] ?? eyeColumnContent[slug] ?? karakonColumnContent[slug];
   if (!content) notFound();
 
-  const otherColumns = allColumns.filter((c) => c.slug !== slug).slice(0, 4);
-  const BASE = 'https://lens-navi.jp';
+  // 関連記事は全記事共通の先頭4件ではなく、同じカテゴリ・セクションを優先する。
+  const otherColumns = allColumns
+    .filter((c) => c.slug !== slug)
+    .map((c) => ({
+      column: c,
+      score: (c.category === column.category ? 10 : 0)
+        + ('section' in c && 'section' in column && c.section === column.section ? 5 : 0),
+    }))
+    .sort((a, b) => b.score - a.score || a.column.slug.localeCompare(b.column.slug))
+    .slice(0, 4)
+    .map(({ column: related }) => related);
+  const BASE = 'https://www.lens-navi.jp';
 
   const heroImage = await getHeroImage(getHeroQuery(column), stableIndex(slug, 30));
 
@@ -192,6 +203,14 @@ export default async function ColumnPage({ params }: Props) {
         <div id="article-body" className="text-gray-800 leading-relaxed">
           {content}
         </div>
+
+        {['contact-net-kounyu-guide', 'acuvue-medallist-days-hikaku-2026', 'contact-dosu-shohosen-mikata-kanzen-2026', 'dosu-mikata'].includes(slug) && (
+          <aside className="mt-8 rounded-xl border border-sky-200 bg-sky-50 p-4">
+            <h2 className="font-bold text-slate-800 mb-2">処方されたBCに合う製品を確認する</h2>
+            <p className="text-sm text-slate-600 mb-2">BCだけで装用可否を判断せず、眼科で確認した製品名・度数・DIA・装用期間と照合してください。</p>
+            <Link href="/bc/8.4" className="text-sm font-medium text-sky-700 hover:underline">BC8.4対応コンタクト一覧を見る →</Link>
+          </aside>
+        )}
 
         {/* FAQ（メタデータから） */}
         {('faqs' in column) && column.faqs && column.faqs.length > 0 && (
