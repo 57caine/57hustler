@@ -111,7 +111,15 @@ jobs:
             grep -o 'href="https://hb.afl.rakuten.co.jp[^"]*" target="_blank" rel="[^"]*" data-hotel-no="[0-9]*" data-placement="[a-z-]*"' /tmp/hotel.html | head -1 | cut -c1-200
             curl -sS -o /dev/null -w "api/click（不正な施設番号→400を期待）: HTTP %{http_code}\n" -X POST "${url}/api/click" -d '{"hotelNo":1,"placement":"card"}'
             # 集計対象外の healthcheck を1件送り、Blobへの書き込みが実際に成功するか確認（X-Click-Recorded: 1 が期待値）
-            curl -sS -D - -o /dev/null -X POST "${url}/api/click" -d "{\"hotelNo\":${hotel},\"placement\":\"healthcheck\",\"page\":\"/deploy-check\"}" | grep -iE '^HTTP|x-click-recorded'
+            headers=$(mktemp)
+            status=$(curl -sS -D "${headers}" -o /dev/null -w '%{http_code}' -X POST "${url}/api/click" -d "{\"hotelNo\":${hotel},\"placement\":\"healthcheck\",\"page\":\"/deploy-check\"}")
+            recorded=$(grep -i '^x-click-recorded:' "${headers}" | tr -d '\r' | awk '{print $2}' || true)
+            rm -f "${headers}"
+            echo "api/click healthcheck: HTTP ${status}, X-Click-Recorded: ${recorded:-missing}"
+            if [ "${status}" != "204" ] || [ "${recorded}" != "1" ]; then
+              echo "::error::楽天送客クリック計測の書き込み検証に失敗（HTTP ${status}, X-Click-Recorded: ${recorded:-missing}）"
+              exit 1
+            fi
             curl -sS -o /tmp/stats.html -w "stats: HTTP %{http_code}\n" "${url}/stats"
             grep -o 'Vercel Blob）が未接続[^<]*\|[0-9,]*<span[^>]*>クリック（累計）' /tmp/stats.html | head -1
             echo "--- 全ページの機械チェック ---"
