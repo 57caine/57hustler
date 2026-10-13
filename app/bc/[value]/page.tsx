@@ -80,9 +80,9 @@ export default async function BCValuePage({ params }: Props) {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'ホーム', item: 'https://lens-navi.jp' },
-          { '@type': 'ListItem', position: 2, name: 'BCで選ぶ', item: 'https://lens-navi.jp/bc' },
-          { '@type': 'ListItem', position: 3, name: `BC ${value}`, item: `https://lens-navi.jp/bc/${value}` },
+          { '@type': 'ListItem', position: 1, name: 'ホーム', item: 'https://www.lens-navi.jp' },
+          { '@type': 'ListItem', position: 2, name: 'BCで選ぶ', item: 'https://www.lens-navi.jp/bc' },
+          { '@type': 'ListItem', position: 3, name: `BC ${value}`, item: `https://www.lens-navi.jp/bc/${value}` },
         ],
       },
       {
@@ -93,7 +93,7 @@ export default async function BCValuePage({ params }: Props) {
           '@type': 'ListItem',
           position: i + 1,
           name: p!.name,
-          url: `https://lens-navi.jp/product/${p!.slug}`,
+          url: `https://www.lens-navi.jp/product/${p!.slug}`,
         })),
       },
     ],
