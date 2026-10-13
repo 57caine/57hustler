@@ -66,7 +66,7 @@ try {
   const response = await fetch(new URL(BC_PATH, base), { signal: AbortSignal.timeout(20000), redirect: 'follow', headers: { 'User-Agent': '57hustler-revenue-healthcheck/1.0' } });
   const html = await response.text();
   const canonicalOk = html.includes('https://www.lens-navi.jp/bc/8.4');
-  const comparisonOk = html.includes('価格を比較') && /href="\\/product\\//.test(html);
+  const comparisonOk = html.includes('価格を比較') && html.includes('href="/product/');
   const safetyOk = html.includes('BC8.4という数字だけで商品を決めず');
   const ok = response.ok && canonicalOk && comparisonOk && safetyOk;
   if (!ok) failed = true;
