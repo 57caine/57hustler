@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T00:23:24.840Z",
+  "generatedAt": "2026-10-13T02:30:01.227Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -47,16 +47,16 @@
       "slug": "eyestrain-stretching-massage-guide",
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
-        "sessions": 14,
-        "bounceRate": 0.5714285714285714,
-        "avgSessionDuration": 56.01196435714286,
+        "sessions": 13,
+        "bounceRate": 0.6153846153846154,
+        "avgSessionDuration": 58.61193776923077,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション14件・affiliate_clickゼロ"
+        "セッション13件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 6,
@@ -145,13 +145,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/blue-light-megane-kouka",
-      "slug": "blue-light-megane-kouka",
-      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
+      "path": "/column/enkintsuyo-contact-guide",
+      "slug": "enkintsuyo-contact-guide",
+      "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
       "metrics": {
         "sessions": 9,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 148.93577022222223,
+        "bounceRate": 0.1111111111111111,
+        "avgSessionDuration": 103.02249088888888,
         "affiliateClicks": 0
       },
       "flags": [
@@ -159,40 +159,6 @@
       ],
       "flagLabels": [
         "セッション9件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 3,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 65953
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/enkintsuyo-contact-guide",
-      "slug": "enkintsuyo-contact-guide",
-      "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
-      "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.125,
-        "avgSessionDuration": 70.44184825,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -213,13 +179,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/megane-facial-shape-frame-2026",
-      "slug": "megane-facial-shape-frame-2026",
-      "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
+      "path": "/column/dryeye-taisaku",
+      "slug": "dryeye-taisaku",
+      "title": "ドライアイ・疲れ目の対策【目薬・生活習慣・サプリで症状改善】原因と対処法",
       "metrics": {
         "sessions": 8,
         "bounceRate": 0.125,
-        "avgSessionDuration": 409.19397499999997,
+        "avgSessionDuration": 107.292232125,
         "affiliateClicks": 0
       },
       "flags": [
@@ -229,11 +195,11 @@
         "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 3,
-        "h3Count": 4,
+        "h2Count": 4,
+        "h3Count": 3,
         "hasAffiliateLinks": true,
-        "ctaCount": 8,
-        "contentChars": 77375
+        "ctaCount": 7,
+        "contentChars": 76392
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -253,7 +219,7 @@
       "metrics": {
         "sessions": 8,
         "bounceRate": 0.25,
-        "avgSessionDuration": 119.66043487499999,
+        "avgSessionDuration": 119.660434875,
         "affiliateClicks": 0
       },
       "flags": [
@@ -281,54 +247,20 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/dryeye-taisaku",
-      "slug": "dryeye-taisaku",
-      "title": "ドライアイ・疲れ目の対策【目薬・生活習慣・サプリで症状改善】原因と対処法",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.14285714285714285,
-        "avgSessionDuration": 114.865222,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 3,
-        "hasAffiliateLinks": true,
-        "ctaCount": 7,
-        "contentChars": 76392
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/orthokeratology-guide-2026",
       "slug": "orthokeratology-guide-2026",
       "title": "オルソケラトロジー（角膜矯正）完全ガイド2026【子どもの近視進行抑制・費用・副作用】",
       "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.42857142857142855,
-        "avgSessionDuration": 220.90366971428574,
+        "sessions": 8,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 193.29071100000002,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
+        "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -342,6 +274,74 @@
       ],
       "suggestions": [
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/vr-movie-streaming-service-recommend-2026",
+      "slug": "vr-movie-streaming-service-recommend-2026",
+      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.375,
+        "avgSessionDuration": 159.698396,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 6,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 65608
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/kanso-shinikui-contact",
+      "slug": "kanso-shinikui-contact",
+      "title": "kanso-shinikui-contact",
+      "metrics": {
+        "sessions": 7,
+        "bounceRate": 0.42857142857142855,
+        "avgSessionDuration": 76.64204,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション7件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 9,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 81415
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -370,40 +370,6 @@
         "hasAffiliateLinks": true,
         "ctaCount": 7,
         "contentChars": 71650
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/vr-movie-streaming-service-recommend-2026",
-      "slug": "vr-movie-streaming-service-recommend-2026",
-      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.42857142857142855,
-        "avgSessionDuration": 180.74969442857144,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 6,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 65608
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
