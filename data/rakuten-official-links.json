@@ -1,0 +1,12 @@
+{
+  "description": "Officially generated Rakuten affiliate links for lens-navi; do not synthesize tracking parameters.",
+  "trackingId": "lensnavi",
+  "trackingCode": "_RTLink150145",
+  "links": {
+    "acuvue-oasys-1day": {
+      "url": "https://hb.afl.rakuten.co.jp/hgc/114e97c1.38a0c26d.114e97c4.9e3d3454/_RTLink150145?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%A2%E3%82%AD%E3%83%A5%E3%83%93%E3%83%A5%E3%83%BC%2520%E3%82%AA%E3%82%A2%E3%82%B7%E3%82%B9%2520%E3%83%AF%E3%83%B3%E3%83%87%E3%83%BC%2F&link_type=text&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6InRleHQiLCJjb2wiOjF9",
+      "source": "Rakuten Affiliate official HTML, supplied by owner 2026-10-13",
+      "clickVerified": false
+    }
+  }
+}
