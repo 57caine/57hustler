@@ -1,0 +1,40 @@
+name: MITAMA Threads 投稿（認証確認後のみ公開）
+on:
+  workflow_dispatch:
+    inputs:
+      day:
+        description: '投稿番号（既存投稿との重複を確認）'
+        required: true
+        type: choice
+        options:
+          - '1'
+          - '2'
+          - '3'
+      publish:
+        description: '実投稿（初期値OFF）'
+        required: true
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: mitama-threads-publish
+  cancel-in-progress: false
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: 投稿ドライラン
+        if: ${{ !inputs.publish }}
+        run: node scripts/post-organic-threads.mjs --brand mitama --day "${{ inputs.day }}"
+      - name: 本人アカウント確認・重複検査・公開
+        if: ${{ inputs.publish }}
+        env:
+          MITAMA_THREADS_USER_ID: ${{ secrets.MITAMA_THREADS_USER_ID }}
+          MITAMA_THREADS_ACCESS_TOKEN: ${{ secrets.MITAMA_THREADS_ACCESS_TOKEN }}
+          ENABLE_ORGANIC_THREADS_PUBLISH: 'true'
+        run: node scripts/post-organic-threads.mjs --brand mitama --day "${{ inputs.day }}" --publish
