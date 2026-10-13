@@ -1,0 +1,78 @@
+{
+  "updatedAt": "2026-10-13",
+  "source": "docs/ceo-cross-project-task-ledger.md",
+  "items": [
+    {
+      "id": "mitama",
+      "name": "MITAMA",
+      "status": "unverified",
+      "next": "投稿3本の実績とアカウント接続を確認し、4本目以降の投稿を継続",
+      "owner": "AI",
+      "priority": 1
+    },
+    {
+      "id": "lens",
+      "name": "レンズナビ",
+      "status": "verification_pending",
+      "next": "楽天計測ID lensnavi のクリック帰属を検証",
+      "owner": "AI",
+      "priority": 2
+    },
+    {
+      "id": "rakutabi",
+      "name": "楽旅くん",
+      "status": "in_progress",
+      "next": "Threads認証と送客計測を検証",
+      "owner": "AI",
+      "priority": 3
+    },
+    {
+      "id": "yonaka",
+      "name": "夜中のおじさん",
+      "status": "in_progress",
+      "next": "投稿実績とnote誘導を検証",
+      "owner": "AI",
+      "priority": 4
+    },
+    {
+      "id": "deguchi",
+      "name": "出口のノート",
+      "status": "unverified",
+      "next": "公開状況と販売実績を確認",
+      "owner": "AI",
+      "priority": 5
+    },
+    {
+      "id": "pet",
+      "name": "ペット防災",
+      "status": "unverified",
+      "next": "実装所在と進捗を確認",
+      "owner": "AI",
+      "priority": 6
+    },
+    {
+      "id": "zassou",
+      "name": "雑草おじさん",
+      "status": "unverified",
+      "next": "X投稿ワークフロー稼働を確認",
+      "owner": "AI",
+      "priority": 7
+    },
+    {
+      "id": "ceo",
+      "name": "CEO HOME",
+      "status": "in_progress",
+      "next": "横断台帳の継続更新と監視を実装",
+      "owner": "AI",
+      "priority": 8
+    },
+    {
+      "id": "stocks",
+      "name": "株式検証",
+      "status": "in_progress",
+      "next": "Draft PR #20を独立管理",
+      "owner": "AI",
+      "priority": 9
+    }
+  ]
+}
