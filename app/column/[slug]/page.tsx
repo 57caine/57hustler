@@ -73,6 +73,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: column.title,
     description: column.description,
+    alternates: { canonical: `/column/${column.slug}` },
+    openGraph: {
+      type: 'article',
+      url: `https://lens-navi.jp/column/${column.slug}`,
+      title: column.title,
+      description: column.description,
+      siteName: 'レンズナビ',
+      locale: 'ja_JP',
+    },
+    twitter: { card: 'summary', title: column.title, description: column.description },
   };
 }
 
@@ -192,6 +202,25 @@ export default async function ColumnPage({ params }: Props) {
         <div id="article-body" className="text-gray-800 leading-relaxed">
           {content}
         </div>
+
+        {/* 読者による任意の共有。自動投稿はしない。 */}
+        <aside aria-label="記事を共有" className="mt-10 rounded-xl border border-sky-100 bg-sky-50 p-5">
+          <p className="text-sm font-bold text-gray-800 mb-3">役立ったら、この記事をシェア</p>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(column.title)}&url=${encodeURIComponent(`https://lens-navi.jp/column/${slug}`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-bold text-white hover:bg-slate-700"
+            >Xで共有</a>
+            <a
+              href={`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(`https://lens-navi.jp/column/${slug}`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg bg-green-600 px-4 py-2 text-sm font-bold text-white hover:bg-green-700"
+            >LINEで共有</a>
+          </div>
+        </aside>
 
         {/* FAQ（メタデータから） */}
         {('faqs' in column) && column.faqs && column.faqs.length > 0 && (
