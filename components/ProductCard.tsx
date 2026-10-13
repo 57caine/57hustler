@@ -1,5 +1,6 @@
 import { Eye, Repeat, Calendar, Rainbow, Medal, type LucideIcon } from 'lucide-react';
 import { ProductWithPrices } from '@/lib/products';
+import rakutenOfficialLinks from '@/data/rakuten-official-links.json';
 
 const RAKUTEN = (kw: string) =>
   `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent(
@@ -28,7 +29,10 @@ type ProductCardProps = {
 export default function ProductCard({ product, rank }: ProductCardProps) {
   const label = CATEGORY_LABEL[product.category] ?? product.category;
   const CategoryIcon = CATEGORY_ICON[product.category] ?? Eye;
-  const rakutenUrl = RAKUTEN(product.name);
+  // Only use verbatim links issued in Rakuten's official link generator.
+  // Other products retain their existing links; never synthesize tracking IDs.
+  const officialLinks = rakutenOfficialLinks.links as Record<string, { url: string }>;
+  const rakutenUrl = officialLinks[product.slug]?.url ?? RAKUTEN(product.name);
 
   // A8提携ショップの掲載価格例を取得（リアルタイムの最安値ではない）
   const a8Prices = product.prices.filter(
