@@ -6,7 +6,7 @@ const base = process.env.LENS_BASE_URL || 'https://lens-navi.jp';
 // generic per-product search-link fallback. See data/rakuten-official-links.json.
 const PILOT_PRODUCT_PATH = '/product/acuvue-oasys-1day';
 const PILOT_TRACKING_CODE = '_RTLink150145';
-const paths = ['/ranking', '/column/contact-tsuuhan-shohosen-nashi-kanzen-guide', '/column/contact-dosu-shohosen-mikata-kanzen-2026', PILOT_PRODUCT_PATH];
+const paths = ['/category/1day', '/ranking', '/column/contact-tsuuhan-shohosen-nashi-kanzen-guide', '/column/contact-dosu-shohosen-mikata-kanzen-2026', PILOT_PRODUCT_PATH];
 const results = [];
 const diagnoses = [];
 function diagnose({ path, http, hasAffiliate, hasTracking, error }) {
