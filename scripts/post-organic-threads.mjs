@@ -5,11 +5,12 @@ function arg(name) { const i=args.indexOf('--'+name); return i<0?undefined:args[
 const brand=arg('brand'), day=Number(arg('day')), publish=args.includes('--publish');
 const CONFIG={
   rakutabi:{handle:'rakutabi_navi',token:'RAKUTABI_THREADS_ACCESS_TOKEN',userId:'RAKUTABI_THREADS_USER_ID'},
-  lens:{handle:'lens_navi_jp',token:'LENS_THREADS_ACCESS_TOKEN',userId:'LENS_THREADS_USER_ID'}
+  lens:{handle:'lens_navi_jp',token:'LENS_THREADS_ACCESS_TOKEN',userId:'LENS_THREADS_USER_ID'},
+  mitama:{handle:'mitama.wisdom',token:'MITAMA_THREADS_ACCESS_TOKEN',userId:'MITAMA_THREADS_USER_ID'}
 };
 if(!Object.hasOwn(CONFIG,brand)||!Number.isInteger(day)||day<1||day>3) throw new Error('Invalid brand/day');
 const cfg=CONFIG[brand];
-const data=JSON.parse(await readFile(new URL('../data/organic-threads-posts-20261013.json',import.meta.url),'utf8'));
+const data=JSON.parse(await readFile(new URL(brand==='mitama'?'../data/mitama-threads-posts.json':'../data/organic-threads-posts-20261013.json',import.meta.url),'utf8'));
 const post=data.posts.find(p=>p.brand===brand&&p.day===day);
 if(!post||typeof post.text!=='string'||!post.text.trim()||post.text.length>500) throw new Error('Invalid post');
 if(/https?:\/\/|【PR】|#PR|アフィリエイト/i.test(post.text)) throw new Error('Organic content must not contain promotional links/disclosures');
