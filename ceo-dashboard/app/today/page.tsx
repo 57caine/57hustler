@@ -7,21 +7,31 @@ import { topN, CATEGORY_LABEL, CATEGORY_COLOR, AlertCategory, PriorityItem } fro
 const REPORT_LOG_URL = 'https://raw.githubusercontent.com/57caine/57hustler/main/data/report-log.json';
 const COLUMN_REVIEW_URL = 'https://raw.githubusercontent.com/57caine/57hustler/main/data/column-review.json';
 const REGISTRY_URL = 'https://raw.githubusercontent.com/57caine/57hustler/main/data/projects-registry.json';
+const OPEN_ITEMS_URL = 'https://raw.githubusercontent.com/57caine/57hustler/main/data/ceo-open-items.json';
 const GA4_URL = 'https://raw.githubusercontent.com/57caine/57hustler/main/data/ga4-analytics.json';
 
 const CATEGORY_ICON: Record<AlertCategory, string> = {
   user_decision: '🙋', stalled: '🐌', stale: '🕓', kpi_degraded: '📉', next_action_unset: '📋', ai_waiting: '🤖',
 };
 
+interface OpenItem { id: string; name: string; status: string; next: string; owner: string; priority: number }
+interface OpenItemsData { updatedAt: string; items: OpenItem[] }
+
 interface Ga4Site { siteName: string; totalSessions: number; dateRange: { start: string; end: string } }
 
 export default function TodayPage() {
   const [items, setItems] = useState<PriorityItem[] | null>(null);
+  const [openItems, setOpenItems] = useState<OpenItemsData | null>(null);
+  const [openItemsError, setOpenItemsError] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [ga4, setGa4] = useState<Ga4Site[] | null>(null);
   const [activeCount, setActiveCount] = useState<{ active: number; stopped: number } | null>(null);
 
   useEffect(() => {
+    fetch(OPEN_ITEMS_URL, { cache: 'no-store' })
+      .then(r => { if (!r.ok) throw new Error('台帳取得失敗'); return r.json(); })
+      .then((data: OpenItemsData) => setOpenItems(data))
+      .catch(() => setOpenItemsError(true));
     Promise.all([
       fetch(REPORT_LOG_URL, { cache: 'no-store' }).then(r => r.json()),
       fetch('/api/tasks', { cache: 'no-store' }).then(r => r.json()),
@@ -103,6 +113,24 @@ export default function TodayPage() {
           <p className="text-sm font-medium" style={{ color: '#22c55e' }}>今日やるべき緊急事項はありません</p>
         </div>
       )}
+
+      {/* 全案件の未完了を隠さない。既存TOP3と独立表示 */}
+      <section className="rounded-xl px-4 py-4" style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+        <div className="text-sm font-bold mb-2">📌 全案件の未完了・確認待ち</div>
+        {openItemsError ? <p className="text-xs" style={{ color: '#ef4444' }}>横断台帳を取得できません。未完了ゼロとは判定しないでください。</p> :
+          !openItems ? <p className="text-xs" style={{ color: 'var(--muted)' }}>横断台帳を確認中…</p> :
+          <>
+            <p className="text-[10px] mb-3" style={{ color: 'var(--muted)' }}>台帳更新日 {openItems.updatedAt} ／ 状態は自動更新されません。実績確認が必要です。</p>
+            <div className="space-y-2">
+              {openItems.items.filter(item => item.status !== 'completed').sort((a,b) => a.priority - b.priority).map(item => (
+                <div key={item.id} className="rounded-lg p-2.5" style={{ border: '1px solid var(--border)' }}>
+                  <p className="text-xs font-semibold">{item.name} <span style={{ color: 'var(--muted)' }}>・{item.status === 'unverified' ? '未確認' : item.status === 'verification_pending' ? '検証待ち' : '進行中'}</span></p>
+                  <p className="text-[11px] mt-1" style={{ color: 'var(--muted)' }}>{item.next}（{item.owner}）</p>
+                </div>
+              ))}
+            </div>
+          </>}
+      </section>
 
       {/* サマリー行：ALERT各カテゴリ + 収益 + プロジェクト稼働数 */}
       <div className="grid grid-cols-2 gap-2.5">
