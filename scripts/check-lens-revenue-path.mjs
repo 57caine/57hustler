@@ -1,7 +1,12 @@
 #!/usr/bin/env node
 // Read-only live smoke test for the revenue path. No secrets, clicks, or purchases.
 const base = process.env.LENS_BASE_URL || 'https://lens-navi.jp';
-const paths = ['/ranking', '/column/contact-tsuuhan-shohosen-nashi-kanzen-guide', '/column/contact-dosu-shohosen-mikata-kanzen-2026'];
+// PR #60 pilot: this one product must render the officially-generated
+// Rakuten tracked link (trackingId "lensnavi", code below), not the
+// generic per-product search-link fallback. See data/rakuten-official-links.json.
+const PILOT_PRODUCT_PATH = '/product/acuvue-oasys-1day';
+const PILOT_TRACKING_CODE = '_RTLink150145';
+const paths = ['/ranking', '/column/contact-tsuuhan-shohosen-nashi-kanzen-guide', '/column/contact-dosu-shohosen-mikata-kanzen-2026', PILOT_PRODUCT_PATH];
 const results = [];
 const diagnoses = [];
 function diagnose({ path, http, hasAffiliate, hasTracking, error }) {
@@ -32,11 +37,20 @@ for (const path of paths) {
       html.includes('自分に合うコンタクトレンズを比較する') &&
       html.includes('掲載商品を比較する')
     );
-    const ok = response.ok && html.includes('<html') && hasAffiliate && rankingCopyOk && columnCopyOk;
+    // PR #60: verify the EXACT officially-issued tracked link renders on
+    // the pilot product page, not merely "some" Rakuten affiliate link.
+    const officialLinkOk = path !== PILOT_PRODUCT_PATH || html.includes(PILOT_TRACKING_CODE);
+    const ok = response.ok && html.includes('<html') && hasAffiliate && rankingCopyOk && columnCopyOk && officialLinkOk;
     if (!ok) failed = true;
-    results.push({ path, http: response.status, hasAffiliate, hasTracking, rankingCopyOk, columnCopyOk, ok });
+    results.push({ path, http: response.status, hasAffiliate, hasTracking, rankingCopyOk, columnCopyOk, officialLinkOk, ok });
     if (!columnCopyOk) diagnoses.push(`STALE_CONTENT: ${path} - expected PR #40 article CTA copy missing.`);
     if (!rankingCopyOk) diagnoses.push(`STALE_CONTENT: ${path} - expected PR #38 copy missing or old generic shop CTA present.`);
+    if (path === PILOT_PRODUCT_PATH && !officialLinkOk) {
+      diagnoses.push(`RAKUTEN_PILOT_LINK_MISSING: ${path} - expected PR #60 official tracked link ` +
+        `(trackingId lensnavi, code ${PILOT_TRACKING_CODE}) not found; page may be serving the generic ` +
+        `fallback Rakuten search link instead. This does NOT check Rakuten's own click attribution - ` +
+        `see data/rakuten-official-links.json and CLAUDE.md for why that remains a manual check.`);
+    }
     const diagnosis = diagnose({ path, http: response.status, hasAffiliate, hasTracking });
     if (diagnosis) diagnoses.push(diagnosis);
   } catch (error) {
@@ -48,15 +62,20 @@ for (const path of paths) {
 const lines = [
   '# Lens-navi revenue path: read-only healthcheck',
   '',
-  '| Page | HTTP | Affiliate link present | Tracking marker present | PR #38 copy | PR #40 column copy | Result |',
-  '|---|---:|---|---|---|---|',
-  ...results.map(r => `| ${r.path} | ${r.http ?? '-'} | ${r.hasAffiliate ? 'yes' : 'no'} | ${r.hasTracking ? 'yes' : 'no'} | ${r.rankingCopyOk === undefined ? '-' : r.rankingCopyOk ? 'yes' : 'no'} | ${r.columnCopyOk === undefined ? '-' : r.columnCopyOk ? 'yes' : 'no'} | ${r.ok ? 'PASS' : 'FAIL'} |`),
+  '| Page | HTTP | Affiliate link present | Tracking marker present | PR #38 copy | PR #40 column copy | PR #60 official link | Result |',
+  '|---|---:|---|---|---|---|---|---|',
+  ...results.map(r => `| ${r.path} | ${r.http ?? '-'} | ${r.hasAffiliate ? 'yes' : 'no'} | ${r.hasTracking ? 'yes' : 'no'} | ${r.rankingCopyOk === undefined ? '-' : r.rankingCopyOk ? 'yes' : 'no'} | ${r.columnCopyOk === undefined ? '-' : r.columnCopyOk ? 'yes' : 'no'} | ${r.officialLinkOk === undefined ? '-' : r.officialLinkOk ? 'yes' : 'no'} | ${r.ok ? 'PASS' : 'FAIL'} |`),
   '',
   '## Automatic diagnostic hints',
   '',
   ...(diagnoses.length ? diagnoses.map(d => `- ${d}`) : ['- No obvious issue found in the HTML checks.']),
   '',
   'This checks HTML availability and affiliate URL presence only. It does NOT prove click tracking, attribution, or sales.',
+  '',
+  '**Rakuten click data by tracking ID (lensnavi): not checked here, and cannot be automated.** ' +
+    'No official Rakuten Affiliate API for per-tracking-ID click reports was found (confirmed via web search; ' +
+    'direct fetch of the Rakuten affiliate/developer sites is blocked from this kind of sandbox). ' +
+    'Check the Rakuten affiliate dashboard manually for attributed clicks. See CLAUDE.md.',
   '',
 ];
 console.log(lines.join('\n'));
