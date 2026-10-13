@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { TriangleAlert, BookOpen } from 'lucide-react';
 import { getAllProducts, getProductWithPrices, getProductsByCategory } from '@/lib/products';
 import PriceTable from '@/components/PriceTable';
+import rakutenOfficialLinks from '@/data/rakuten-official-links.json';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -40,6 +41,8 @@ export default async function ProductPage({ params }: Props) {
     'color': 'カラコン',
   };
   const label = categoryLabel[product.category] ?? product.category;
+  const officialRakutenLinks = rakutenOfficialLinks.links as Record<string, { url: string }>;
+  const officialRakutenUrl = officialRakutenLinks[product.slug]?.url;
   const BASE = 'https://lens-navi.jp';
 
   // Related products (same category, excluding current, top 3 by popularity)
@@ -185,6 +188,14 @@ export default async function ProductPage({ params }: Props) {
         </div>
         <PriceTable prices={product.prices} productName={product.name} />
       </div>
+
+      {officialRakutenUrl && (
+        <div className="bg-white rounded-xl border border-gray-200 p-5 mb-8">
+          <h2 className="font-bold text-gray-900 mb-2">楽天市場でも探す</h2>
+          <p className="text-sm text-gray-600 mb-3">楽天市場の商品検索結果を開きます。表示価格・在庫は楽天市場でご確認ください。</p>
+          <a href={officialRakutenUrl} target="_blank" rel="noopener noreferrer nofollow sponsored" className="inline-block bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold px-5 py-3 rounded-lg">楽天市場で商品を探す →</a>
+        </div>
+      )}
 
       {/* Related Column */}
       {relatedColumn && (
