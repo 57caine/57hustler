@@ -8,6 +8,7 @@ const PILOT_PRODUCT_PATH = '/product/acuvue-oasys-1day';
 const PILOT_TRACKING_CODE = '_RTLink150145';
 const paths = ['/category/1day', '/ranking', '/column/contact-tsuuhan-shohosen-nashi-kanzen-guide', '/column/contact-dosu-shohosen-mikata-kanzen-2026', PILOT_PRODUCT_PATH];
 const results = [];
+const BC_PATH = '/bc/8.4';
 const diagnoses = [];
 function diagnose({ path, http, hasAffiliate, hasTracking, error }) {
   if (error) return `NETWORK: ${path} - check DNS/TLS/timeout and GitHub Actions logs. ${error}`;
@@ -59,12 +60,29 @@ for (const path of paths) {
     diagnoses.push(diagnose({ path, error: String(error) }));
   }
 }
+// Validate the highest-traffic GSC landing page without requiring an affiliate link
+// on this informational comparison page. Check the actual product comparison path.
+try {
+  const response = await fetch(new URL(BC_PATH, base), { signal: AbortSignal.timeout(20000), redirect: 'follow', headers: { 'User-Agent': '57hustler-revenue-healthcheck/1.0' } });
+  const html = await response.text();
+  const canonicalOk = html.includes('https://www.lens-navi.jp/bc/8.4');
+  const comparisonOk = html.includes('価格を比較') && /href="\\/product\\//.test(html);
+  const safetyOk = html.includes('BC8.4という数字だけで商品を決めず');
+  const ok = response.ok && canonicalOk && comparisonOk && safetyOk;
+  if (!ok) failed = true;
+  results.push({ path: BC_PATH, http: response.status, hasAffiliate: 'n/a', hasTracking: 'n/a', canonicalOk, comparisonOk, safetyOk, ok });
+  if (!ok) diagnoses.push(`BC_LANDING_PAGE: ${BC_PATH} - verify canonical, comparison product links and medical safety notice.`);
+} catch (error) {
+  failed = true;
+  results.push({ path: BC_PATH, ok: false, error: String(error) });
+  diagnoses.push(`BC_LANDING_PAGE: ${BC_PATH} - ${String(error)}`);
+}
 const lines = [
   '# Lens-navi revenue path: read-only healthcheck',
   '',
   '| Page | HTTP | Affiliate link present | Tracking marker present | PR #38 copy | PR #40 column copy | PR #60 official link | Result |',
   '|---|---:|---|---|---|---|---|---|',
-  ...results.map(r => `| ${r.path} | ${r.http ?? '-'} | ${r.hasAffiliate ? 'yes' : 'no'} | ${r.hasTracking ? 'yes' : 'no'} | ${r.rankingCopyOk === undefined ? '-' : r.rankingCopyOk ? 'yes' : 'no'} | ${r.columnCopyOk === undefined ? '-' : r.columnCopyOk ? 'yes' : 'no'} | ${r.officialLinkOk === undefined ? '-' : r.officialLinkOk ? 'yes' : 'no'} | ${r.ok ? 'PASS' : 'FAIL'} |`),
+  ...results.map(r => `| ${r.path} | ${r.http ?? '-'} | ${r.hasAffiliate === 'n/a' ? 'n/a' : r.hasAffiliate ? 'yes' : 'no'} | ${r.hasTracking === 'n/a' ? 'n/a' : r.hasTracking ? 'yes' : 'no'} | ${r.rankingCopyOk === undefined ? '-' : r.rankingCopyOk ? 'yes' : 'no'} | ${r.columnCopyOk === undefined ? '-' : r.columnCopyOk ? 'yes' : 'no'} | ${r.officialLinkOk === undefined ? '-' : r.officialLinkOk ? 'yes' : 'no'} | ${r.ok ? 'PASS' : 'FAIL'} |`),
   '',
   '## Automatic diagnostic hints',
   '',
