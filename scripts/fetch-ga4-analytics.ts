@@ -227,6 +227,8 @@ interface SiteData {
   topPages: PageMetrics[];
   weeklyTrend: { date: string; sessions: number }[];
   affiliateClicksByPage: Record<string, number>;
+  affiliateClicksByPlatform: Record<string, number>;
+  affiliateClicksPlatformStatus: 'ok' | 'error';
   affiliateClicksStatus: 'ok' | 'error';
 }
 
@@ -317,6 +319,29 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
     affiliateClicksByPage[p] = parseInt(row.metricValues?.[0]?.value ?? '0');
   }
 
+  // Affiliate platform breakdown. Uses the custom event parameter registered in GA4
+  // as an event-scoped custom dimension (customEvent:affiliate_platform).
+  // If the dimension is not registered, mark unavailable rather than report zero.
+  let affiliateClicksPlatformStatus: 'ok' | 'error' = 'ok';
+  const affiliateClicksByPlatform: Record<string, number> = {};
+  try {
+    const [platformResponse] = await client.runReport({
+      property: propertyId,
+      dimensions: [{ name: 'customEvent:affiliate_platform' }],
+      metrics: [{ name: 'eventCount' }],
+      dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { matchType: 'EXACT', value: 'affiliate_click' } } },
+      dateRanges: [{ startDate, endDate }],
+      limit: 20,
+    });
+    for (const row of (platformResponse.rows ?? [])) {
+      const platform = row.dimensionValues?.[0]?.value ?? '(not set)';
+      affiliateClicksByPlatform[platform] = parseInt(row.metricValues?.[0]?.value ?? '0');
+    }
+  } catch (error) {
+    affiliateClicksPlatformStatus = 'error';
+    console.error(`  ✗ ${property.label}: affiliate_platform内訳取得不可（GA4カスタムディメンション未登録の可能性）`, error);
+  }
+
   return {
     propertyId: property.id,
     siteName: property.name,
@@ -328,6 +353,8 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
     topPages,
     weeklyTrend,
     affiliateClicksByPage,
+    affiliateClicksByPlatform,
+    affiliateClicksPlatformStatus,
     affiliateClicksStatus,
   };
 }
