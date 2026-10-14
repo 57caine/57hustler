@@ -47,8 +47,9 @@ for(let page=0;page<10;page++){
 }
 if(!complete) throw new Error('Incomplete posting history; abort');
 const containerParams={media_type:'TEXT',text:post.text,access_token:token};
-// MITAMA: tag the actual Threads topic (not a plain-text hashtag). Other brands unchanged.
-if(brand==='mitama') containerParams.topic_tag='Japan';
+// Set the actual Threads topic (not a plain-text hashtag) for each brand.
+const TOPICS={mitama:'Japan',lens:'コンタクトレンズ',rakutabi:'国内旅行'};
+containerParams.topic_tag=TOPICS[brand];
 const container=await call(API+'/'+encodeURIComponent(id)+'/threads',{method:'POST',body:new URLSearchParams(containerParams)});
 if(!container.id) throw new Error('Container creation failed');
 // Give Threads time to prepare the new media container before publishing.
