@@ -46,7 +46,10 @@ for(let page=0;page<10;page++){
  seen.add(after);
 }
 if(!complete) throw new Error('Incomplete posting history; abort');
-const container=await call(API+'/'+encodeURIComponent(id)+'/threads',{method:'POST',body:new URLSearchParams({media_type:'TEXT',text:post.text,access_token:token})});
+const containerParams={media_type:'TEXT',text:post.text,access_token:token};
+// MITAMA: tag the actual Threads topic (not a plain-text hashtag). Other brands unchanged.
+if(brand==='mitama') containerParams.topic_tag='Japan';
+const container=await call(API+'/'+encodeURIComponent(id)+'/threads',{method:'POST',body:new URLSearchParams(containerParams)});
 if(!container.id) throw new Error('Container creation failed');
 // Give Threads time to prepare the new media container before publishing.
 // Never retry threads_publish automatically: an ambiguous failure may have published.
