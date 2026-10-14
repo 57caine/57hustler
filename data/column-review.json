@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T00:13:23.958Z",
+  "generatedAt": "2026-10-14T23:48:53.833Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -81,16 +81,16 @@
       "slug": "sunglass-polarized-guide",
       "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
       "metrics": {
-        "sessions": 13,
-        "bounceRate": 0.23076923076923078,
-        "avgSessionDuration": 177.420687,
+        "sessions": 12,
+        "bounceRate": 0.25,
+        "avgSessionDuration": 165.72278558333332,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション13件・affiliate_clickゼロ"
+        "セッション12件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -145,13 +145,47 @@
       "source": "auto-ga4"
     },
     {
+      "path": "/column/meta-quest-3-review-2026",
+      "slug": "meta-quest-3-review-2026",
+      "title": "Meta Quest 3レビュー2026【スペック・できること・買うべき人を徹底解説】",
+      "metrics": {
+        "sessions": 10,
+        "bounceRate": 0.3,
+        "avgSessionDuration": 248.94822169999998,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション10件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 7,
+        "contentChars": 82664
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
       "path": "/column/soft-vs-hard-contact-hikaku",
       "slug": "soft-vs-hard-contact-hikaku",
       "title": "soft-vs-hard-contact-hikaku",
       "metrics": {
         "sessions": 10,
         "bounceRate": 0.3,
-        "avgSessionDuration": 80.0134525,
+        "avgSessionDuration": 89.12580820000001,
         "affiliateClicks": 0
       },
       "flags": [
@@ -179,27 +213,27 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/dryeye-taisaku",
-      "slug": "dryeye-taisaku",
-      "title": "ドライアイ・疲れ目の対策【目薬・生活習慣・サプリで症状改善】原因と対処法",
+      "path": "/column/vr-movie-streaming-service-recommend-2026",
+      "slug": "vr-movie-streaming-service-recommend-2026",
+      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
       "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.125,
-        "avgSessionDuration": 107.292232125,
+        "sessions": 9,
+        "bounceRate": 0.3333333333333333,
+        "avgSessionDuration": 167.33238322222223,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
+        "セッション9件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
-        "h3Count": 3,
+        "h3Count": 6,
         "hasAffiliateLinks": true,
-        "ctaCount": 7,
-        "contentChars": 79122
+        "ctaCount": 4,
+        "contentChars": 68723
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -285,16 +319,16 @@
       "slug": "orthokeratology-guide-2026",
       "title": "オルソケラトロジー（角膜矯正）完全ガイド2026【子どもの近視進行抑制・費用・副作用】",
       "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 193.0182235,
+        "sessions": 7,
+        "bounceRate": 0.7142857142857143,
+        "avgSessionDuration": 192.72862585714284,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
+        "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -315,81 +349,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/vr-movie-streaming-service-recommend-2026",
-      "slug": "vr-movie-streaming-service-recommend-2026",
-      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
-      "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.375,
-        "avgSessionDuration": 159.698396,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 6,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 68723
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/kanso-shinikui-contact",
-      "slug": "kanso-shinikui-contact",
-      "title": "kanso-shinikui-contact",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.42857142857142855,
-        "avgSessionDuration": 76.64204,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 9,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 84087
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/reading-glasses-presbyopia-choose-2026",
       "slug": "reading-glasses-presbyopia-choose-2026",
       "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
       "metrics": {
         "sessions": 7,
         "bounceRate": 0.2857142857142857,
-        "avgSessionDuration": 31.511207285714285,
+        "avgSessionDuration": 25.32307442857143,
         "affiliateClicks": 0
       },
       "flags": [
