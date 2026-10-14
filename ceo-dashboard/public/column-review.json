@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T02:30:01.227Z",
+  "generatedAt": "2026-10-14T00:13:23.958Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,23 +13,23 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 18,
-        "bounceRate": 0.3888888888888889,
-        "avgSessionDuration": 75.07840411111111,
+        "sessions": 20,
+        "bounceRate": 0.45,
+        "avgSessionDuration": 67.57056370000001,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション18件・affiliate_clickゼロ"
+        "セッション20件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 4,
+        "h2Count": 5,
         "h3Count": 8,
         "hasAffiliateLinks": true,
         "ctaCount": 4,
-        "contentChars": 71650
+        "contentChars": 75430
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -63,7 +63,7 @@
         "h3Count": 12,
         "hasAffiliateLinks": true,
         "ctaCount": 16,
-        "contentChars": 117529
+        "contentChars": 120488
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -97,7 +97,7 @@
         "h3Count": 4,
         "hasAffiliateLinks": true,
         "ctaCount": 8,
-        "contentChars": 86021
+        "contentChars": 88893
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -106,6 +106,40 @@
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "対応済み",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/enkintsuyo-contact-guide",
+      "slug": "enkintsuyo-contact-guide",
+      "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
+      "metrics": {
+        "sessions": 11,
+        "bounceRate": 0.09090909090909091,
+        "avgSessionDuration": 111.7068380909091,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション11件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 71526
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
       "business": "lens-navi",
       "priority": "low",
       "source": "auto-ga4"
@@ -131,47 +165,13 @@
         "h3Count": 5,
         "hasAffiliateLinks": true,
         "ctaCount": 3,
-        "contentChars": 75508
+        "contentChars": 78433
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/enkintsuyo-contact-guide",
-      "slug": "enkintsuyo-contact-guide",
-      "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
-      "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.1111111111111111,
-        "avgSessionDuration": 103.02249088888888,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 68814
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -199,7 +199,41 @@
         "h3Count": 3,
         "hasAffiliateLinks": true,
         "ctaCount": 7,
-        "contentChars": 76392
+        "contentChars": 79122
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/megane-facial-shape-frame-2026",
+      "slug": "megane-facial-shape-frame-2026",
+      "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.25,
+        "avgSessionDuration": 401.014109125,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 8,
+        "contentChars": 80208
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -233,7 +267,7 @@
         "h3Count": 15,
         "hasAffiliateLinks": true,
         "ctaCount": 3,
-        "contentChars": 93600
+        "contentChars": 96385
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -253,7 +287,7 @@
       "metrics": {
         "sessions": 8,
         "bounceRate": 0.5,
-        "avgSessionDuration": 193.29071100000002,
+        "avgSessionDuration": 193.0182235,
         "affiliateClicks": 0
       },
       "flags": [
@@ -267,7 +301,7 @@
         "h3Count": 2,
         "hasAffiliateLinks": true,
         "ctaCount": 3,
-        "contentChars": 71096
+        "contentChars": 73892
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -301,7 +335,7 @@
         "h3Count": 6,
         "hasAffiliateLinks": true,
         "ctaCount": 4,
-        "contentChars": 65608
+        "contentChars": 68723
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -335,7 +369,7 @@
         "h3Count": 9,
         "hasAffiliateLinks": true,
         "ctaCount": 1,
-        "contentChars": 81415
+        "contentChars": 84087
       },
       "causes": [
         "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
@@ -354,8 +388,8 @@
       "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
       "metrics": {
         "sessions": 7,
-        "bounceRate": 0.14285714285714285,
-        "avgSessionDuration": 34.48282685714286,
+        "bounceRate": 0.2857142857142857,
+        "avgSessionDuration": 31.511207285714285,
         "affiliateClicks": 0
       },
       "flags": [
@@ -369,7 +403,7 @@
         "h3Count": 4,
         "hasAffiliateLinks": true,
         "ctaCount": 7,
-        "contentChars": 71650
+        "contentChars": 74684
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
