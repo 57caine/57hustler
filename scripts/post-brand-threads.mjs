@@ -75,7 +75,8 @@ for (let page = 0; page < 10; page++) {
   cursors.add(after);
 }
 if (!historyComplete) throw new Error('Posting history incomplete. Publish stopped.');
-const form = new URLSearchParams({ media_type: 'TEXT', text: message, access_token: token });
+const TOPICS = { lens: 'コンタクトレンズ', rakutabi: '国内旅行' };
+const form = new URLSearchParams({ media_type: 'TEXT', text: message, topic_tag: TOPICS[brand], access_token: token });
 const container = await call(API + '/' + encodeURIComponent(id) + '/threads', { method: 'POST', body: form });
 if (!container.id) throw new Error('Threads media container was not created');
 const published = await call(API + '/' + encodeURIComponent(id) + '/threads_publish', {
