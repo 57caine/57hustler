@@ -5,6 +5,10 @@ on:
     # 2026-10-15 through 10-30, 09:15 JST. Date guard prevents annual repeats.
     # Retry opportunities on the same JST day; publisher checks Threads history before posting.
     - cron: '15 0,3,6,9 15-30 10 *'
+  # Independent fallback: this existing daily report has recently run reliably.
+  workflow_run:
+    workflows: ['Affiliate evidence report']
+    types: [completed]
   workflow_dispatch:
     inputs:
       day:
@@ -42,13 +46,14 @@ concurrency:
 jobs:
   post:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.event == 'schedule' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main') }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - name: スケジュール対象日の検証
-        if: ${{ github.event_name == 'schedule' }}
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_run' }}
         id: datecheck
         run: |
           TODAY=$(date -u +%Y-%m-%d)
@@ -62,9 +67,9 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' && !inputs.publish }}
         run: node scripts/post-organic-threads.mjs --brand mitama --day "${{ inputs.day }}"
       - name: 本人アカウント確認・重複検査・公開
-        if: ${{ github.event_name == 'schedule' || inputs.publish }}
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_run' || inputs.publish }}
         env:
           MITAMA_THREADS_USER_ID: ${{ secrets.MITAMA_THREADS_USER_ID }}
           MITAMA_THREADS_ACCESS_TOKEN: ${{ secrets.MITAMA_THREADS_ACCESS_TOKEN }}
           ENABLE_ORGANIC_THREADS_PUBLISH: 'true'
-        run: node scripts/post-organic-threads.mjs --brand mitama --day "${{ github.event_name == 'schedule' && steps.datecheck.outputs.day || inputs.day }}" --publish
+        run: node scripts/post-organic-threads.mjs --brand mitama --day "${{ (github.event_name == 'schedule' || github.event_name == 'workflow_run') && steps.datecheck.outputs.day || inputs.day }}" --publish
