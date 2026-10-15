@@ -1,7 +1,9 @@
 name: ブランド別 Threads 通常投稿（4日間限定パイロット）
 on:
   schedule:
-    - cron: '15 1 * * *'
+    # Multiple daily opportunities: missed GitHub schedule runs must not mean missed posts.
+    # All times are UTC and remain on the same JST calendar day.
+    - cron: '15 1,4,7,10 * * *'
   workflow_dispatch:
     inputs:
       publish:
