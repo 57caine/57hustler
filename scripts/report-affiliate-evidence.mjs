@@ -16,6 +16,12 @@ const ageHours = (Date.now() - generated) / 3600000;
 const stale = ageHours > 48 || ageHours < -1;
 const top = Object.entries(clicks).filter(([, n]) => Number.isFinite(n) && n > 0).sort((a, b) => b[1] - a[1]).slice(0, 12);
 const total = Object.values(clicks).reduce((sum, n) => sum + (Number.isFinite(n) ? n : 0), 0);
+// Prioritize existing proven click paths; page sessions are available only for GA4 topPages.
+// Event counts are not unique visitors, orders, or click-through rates.
+const pageSessions = new Map((site.topPages ?? []).map(p => [p.path, p.sessions]));
+const opportunities = top.slice(0, 5).map(([path, clicks]) => ({ path, clicks, sessions: pageSessions.get(path) }));
+const platformStatus = site.affiliateClicksPlatformStatus ?? 'unknown';
+const platformData = site.affiliateClicksByPlatform ?? {};
 const lines = [
   '# Affiliate revenue evidence — lens-navi',
   '',
@@ -25,10 +31,21 @@ const lines = [
   `- Click fetch status: ${site.affiliateClicksStatus ?? 'unknown (legacy data; completeness not verified)'}`,
   `- Sessions: ${site.totalSessions ?? 'unknown'}`,
   `- Recorded affiliate_click events by page (sum): ${total}`,
+  `- Affiliate platform breakdown: ${platformStatus} (not proof of merchant sales)`,
+  ...(platformStatus === 'ok' ? Object.entries(platformData).map(([name, n]) => `  - ${name}: ${n} events`) : ['- Platform-level clicks unavailable; do not assume Rakuten/A8 split.']),
   '',
   '| Page | Recorded affiliate_click |',
   '|---|---:|',
   ...top.map(([path, n]) => `| ${path.replaceAll('|', '\\|')} | ${n} |`),
+  '',
+  '## Priority: pages with recorded affiliate intent',
+  '',
+  '| Page | Affiliate click events | Page sessions (if in GA4 top 20) |',
+  '|---|---:|---:|',
+  ...opportunities.map(({ path, clicks, sessions }) => `| ${path.replaceAll('|', '\\\\|')} | ${clicks} | ${Number.isFinite(sessions) ? sessions : 'not available'} |`),
+  '',
+  'Action: check offer availability, outbound URL and purchase-intent clarity on these pages first; do not add more articles solely based on sessions.',
+  'Event counts can include multiple clicks by one person; page sessions and clicks are different measures and their ratio is not a conversion rate.',
   '',
   '**Commission and attribution: NOT VERIFIED.** GA4 click events cannot prove Rakuten/A8 orders, confirmed commissions, or which project generated a sale.',
   'A zero in this report is never a substitute for merchant conversion data. The date range may overlap previous reports; do not add rolling-window totals.',
