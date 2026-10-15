@@ -3,7 +3,8 @@ on:
 
   schedule:
     # 2026-10-15 through 10-30, 09:15 JST. Date guard prevents annual repeats.
-    - cron: '15 0 15-30 10 *'
+    # Retry opportunities on the same JST day; publisher checks Threads history before posting.
+    - cron: '15 0,3,6,9 15-30 10 *'
   workflow_dispatch:
     inputs:
       day:
