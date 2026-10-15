@@ -228,7 +228,7 @@ interface SiteData {
   weeklyTrend: { date: string; sessions: number }[];
   affiliateClicksByPage: Record<string, number>;
   affiliateClicksByPlatform: Record<string, number>;
-  affiliateClicksPlatformStatus: 'ok' | 'error';
+  affiliateClicksPlatformStatus: 'ok' | 'error' | 'missing_dimension';
   affiliateClicksStatus: 'ok' | 'error';
 }
 
@@ -322,9 +322,17 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
   // Affiliate platform breakdown. Uses the custom event parameter registered in GA4
   // as an event-scoped custom dimension (customEvent:affiliate_platform).
   // If the dimension is not registered, mark unavailable rather than report zero.
-  let affiliateClicksPlatformStatus: 'ok' | 'error' = 'ok';
+  let affiliateClicksPlatformStatus: 'ok' | 'error' | 'missing_dimension' = 'ok';
   const affiliateClicksByPlatform: Record<string, number> = {};
   try {
+    // GA4 Data API metadata identifies registered custom dimensions without
+    // guessing from an empty INVALID_ARGUMENT error.
+    const [metadata] = await client.getMetadata({ name: `${propertyId}/metadata` });
+    const registered = (metadata.dimensions ?? []).some(d => d.apiName === 'customEvent:affiliate_platform');
+    if (!registered) {
+      affiliateClicksPlatformStatus = 'missing_dimension';
+      console.warn(`  ⚠ ${property.label}: GA4イベントスコープのaffiliate_platformカスタムディメンション未登録`);
+    } else {
     const [platformResponse] = await client.runReport({
       property: propertyId,
       dimensions: [{ name: 'customEvent:affiliate_platform' }],
@@ -336,6 +344,7 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
     for (const row of (platformResponse.rows ?? [])) {
       const platform = row.dimensionValues?.[0]?.value ?? '(not set)';
       affiliateClicksByPlatform[platform] = parseInt(row.metricValues?.[0]?.value ?? '0');
+    }
     }
   } catch (error) {
     affiliateClicksPlatformStatus = 'error';
