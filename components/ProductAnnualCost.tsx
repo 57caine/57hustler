@@ -7,14 +7,7 @@ import annualBundleMap from '@/data/annual-bundle-url-map.json';
 type Offer = Price & { store: Store };
 type BundleTarget = { url: string; label: string };
 
-type Props = {
-  prices: Offer[];
-  category: string;
-  productName: string;
-  productId: string;
-};
-
-export default function ProductAnnualCost({ prices, category, productName, productId }: Props) {
+export default function ProductAnnualCost({ prices, category, productName }: { prices: Offer[]; category: string; productName: string }) {
   const eligible = prices.filter(p => p.inStock && p.price > 0 && p.lensCount > 0 && p.boxes > 0 && p.url && !p.url.startsWith('#'));
   const [storeId, setStoreId] = useState(eligible[0]?.storeId ?? '');
   const [days, setDays] = useState(365);
@@ -30,7 +23,7 @@ export default function ProductAnnualCost({ prices, category, productName, produ
   const yearly = yearlyProductCost + yearlyCareCost;
   const monthly = Math.round(yearly / 12);
 
-  const productBundles = (annualBundleMap as Record<string, Record<string, BundleTarget>>)[productId];
+  const productBundles = (annualBundleMap as Record<string, Record<string, BundleTarget>>)[selected.productId];
   const annualTarget = productBundles?.[selected.storeId];
   const fallbackLink = selected.url + selected.store.affiliateParam;
   const annualLink = annualTarget
