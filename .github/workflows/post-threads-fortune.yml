@@ -1,7 +1,9 @@
 name: Threads 占い 日次自動投稿
 
 on:
-  # 14日間の1日2投稿テスト中は定期実行を停止。手動実行のみ許可。
+  # 昼コラムの代わりに九星別運勢を毎日12:00 JSTに投稿。夜コラムは維持。
+  schedule:
+    - cron: '0 3 * * *'
   workflow_dispatch:
 
 jobs:
