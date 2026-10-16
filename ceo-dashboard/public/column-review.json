@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T23:37:45.708Z",
+  "generatedAt": "2026-10-16T23:23:54.637Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 23,
-        "bounceRate": 0.391304347826087,
-        "avgSessionDuration": 74.98811582608695,
+        "sessions": 25,
+        "bounceRate": 0.44,
+        "avgSessionDuration": 69.15697388,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション23件・affiliate_clickゼロ"
+        "セッション25件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
@@ -47,16 +47,16 @@
       "slug": "enkintsuyo-contact-guide",
       "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
       "metrics": {
-        "sessions": 13,
-        "bounceRate": 0.07692307692307693,
-        "avgSessionDuration": 101.73842123076923,
+        "sessions": 15,
+        "bounceRate": 0.06666666666666667,
+        "avgSessionDuration": 93.71849900000001,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション13件・affiliate_clickゼロ"
+        "セッション15件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -111,6 +111,40 @@
       "source": "auto-ga4"
     },
     {
+      "path": "/column/soft-vs-hard-contact-hikaku",
+      "slug": "soft-vs-hard-contact-hikaku",
+      "title": "soft-vs-hard-contact-hikaku",
+      "metrics": {
+        "sessions": 12,
+        "bounceRate": 0.3333333333333333,
+        "avgSessionDuration": 91.21979441666666,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション12件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 5,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 78433
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
       "path": "/column/sunglass-polarized-guide",
       "slug": "sunglass-polarized-guide",
       "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
@@ -140,6 +174,40 @@
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "対応済み",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/kanso-shinikui-contact",
+      "slug": "kanso-shinikui-contact",
+      "title": "kanso-shinikui-contact",
+      "metrics": {
+        "sessions": 11,
+        "bounceRate": 0.36363636363636365,
+        "avgSessionDuration": 85.6049220909091,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション11件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 9,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 84087
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
       "business": "lens-navi",
       "priority": "low",
       "source": "auto-ga4"
@@ -179,81 +247,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/soft-vs-hard-contact-hikaku",
-      "slug": "soft-vs-hard-contact-hikaku",
-      "title": "soft-vs-hard-contact-hikaku",
-      "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.3,
-        "avgSessionDuration": 89.12580820000001,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 5,
-        "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 78433
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/kanso-shinikui-contact",
-      "slug": "kanso-shinikui-contact",
-      "title": "kanso-shinikui-contact",
-      "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 101.59161677777779,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 9,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 84087
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/megane-facial-shape-frame-2026",
       "slug": "megane-facial-shape-frame-2026",
       "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
       "metrics": {
         "sessions": 9,
         "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 356.80841788888887,
+        "avgSessionDuration": 356.8084178888889,
         "affiliateClicks": 0
       },
       "flags": [
@@ -315,6 +315,40 @@
       "source": "auto-ga4"
     },
     {
+      "path": "/column/multifocal-contact-rogansetsu",
+      "slug": "multifocal-contact-rogansetsu",
+      "title": "multifocal-contact-rogansetsu",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.625,
+        "avgSessionDuration": 18.4800895,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 69447
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
       "path": "/column/multifocal-iol-presbyopia-surgery-2026",
       "slug": "multifocal-iol-presbyopia-surgery-2026",
       "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
@@ -349,13 +383,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/orthokeratology-guide-2026",
-      "slug": "orthokeratology-guide-2026",
-      "title": "オルソケラトロジー（角膜矯正）完全ガイド2026【子どもの近視進行抑制・費用・副作用】",
+      "path": "/column/eye-goods-pc",
+      "slug": "eye-goods-pc",
+      "title": "PC作業で目を守るグッズおすすめ10選【ブルーライトカット・モニターライト・目薬】",
       "metrics": {
         "sessions": 7,
-        "bounceRate": 0.7142857142857143,
-        "avgSessionDuration": 192.72862585714284,
+        "bounceRate": 0.42857142857142855,
+        "avgSessionDuration": 149.13548514285714,
         "affiliateClicks": 0
       },
       "flags": [
@@ -366,44 +400,10 @@
       ],
       "analysis": {
         "h2Count": 4,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 73892
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/reading-glasses-presbyopia-choose-2026",
-      "slug": "reading-glasses-presbyopia-choose-2026",
-      "title": "リーディンググラス・老眼鏡の選び方とおすすめ2026年版｜快適な視生活を実現する完全ガイド",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.2857142857142857,
-        "avgSessionDuration": 25.32307442857143,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
         "h3Count": 4,
         "hasAffiliateLinks": true,
         "ctaCount": 7,
-        "contentChars": 74684
+        "contentChars": 74617
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
