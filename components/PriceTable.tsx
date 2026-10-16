@@ -14,7 +14,7 @@ type PriceTableProps = {
 };
 
 export default function PriceTable({ prices, productName }: PriceTableProps) {
-  const [sortKey, setSortKey] = useState<SortKey>('store');
+  const [sortKey, setSortKey] = useState<SortKey>('annual');
   const [sortDir, setSortDir] = useState<SortDir>('asc');
 
   if (prices.length === 0) {
@@ -24,10 +24,13 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
   const product = productsData.products.find(p => p.id === prices[0]?.productId);
   const annualLensNeed = product?.category === '1day' ? 730 : product?.category === '2week' ? 52 : null;
   const annualEstimate = (item: Price & { store: Store }) => {
-    if (!annualLensNeed || item.lensCount <= 0 || item.boxes <= 0) return null;
+    if (!annualLensNeed || item.lensCount <= 0 || item.boxes <= 0 || item.price <= 0 || !item.inStock) return null;
     const lensesPerListedSet = item.lensCount * item.boxes;
     return Math.ceil(annualLensNeed / lensesPerListedSet) * item.price;
   };
+
+  const annualValues = prices.map(annualEstimate).filter((v): v is number => v != null);
+  const cheapestAnnual = annualValues.length > 0 ? Math.min(...annualValues) : null;
 
   const sorted = [...prices].sort((a, b) => {
     if (a.inStock !== b.inStock) return a.inStock ? -1 : 1;
@@ -55,7 +58,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
       <div className="flex items-start gap-2 bg-yellow-50 border border-yellow-200 rounded-lg px-4 py-3 mb-3 text-sm text-yellow-800">
         <TriangleAlert className="w-4 h-4 flex-shrink-0 mt-0.5" />
         <span>
-          価格はショップにより随時変動します。年間コストは現在の掲載価格からの目安です。最新のまとめ買い価格・送料・クーポンはリンク先でご確認ください。
+          1箱の価格ではなく、両眼で1年使った場合の総額目安で並べています。最新のまとめ買い価格・送料・クーポンはリンク先でご確認ください。
         </span>
       </div>
       <div className="overflow-x-auto">
@@ -83,8 +86,11 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
           <tbody>
             {sorted.map((item, index) => {
               const annual = annualEstimate(item);
+              const isCheapest = annual != null && cheapestAnnual != null && annual === cheapestAnnual;
+              const difference = annual != null && cheapestAnnual != null ? annual - cheapestAnnual : null;
               return <tr key={`${item.storeId}-${index}`} className={[
                 'border-b border-gray-100 transition-colors hover:bg-slate-50',
+                isCheapest ? 'bg-emerald-50/50' : '',
                 !item.inStock ? 'opacity-50 bg-gray-50' : '',
               ].filter(Boolean).join(' ')}>
                 <td className="px-4 py-3">
@@ -92,19 +98,13 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                     {isRakuten(item.storeId) && (
                       <span className="bg-red-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">楽天</span>
                     )}
+                    {isCheapest && <span className="bg-emerald-600 text-white text-xs px-2 py-0.5 rounded-full font-bold">年間最安目安</span>}
                     {!isRakuten(item.storeId) && item.store.url && !item.store.url.startsWith('#') ? (
-                      <a
-                        href={item.store.url}
-                        target="_blank"
-                        rel="noopener noreferrer nofollow sponsored"
-                        className={`font-medium ${!item.inStock ? 'text-gray-400' : 'text-sky-600 hover:underline'}`}
-                      >
+                      <a href={item.store.url} target="_blank" rel="noopener noreferrer nofollow sponsored" className={`font-medium ${!item.inStock ? 'text-gray-400' : 'text-sky-600 hover:underline'}`}>
                         {item.store.name}
                       </a>
                     ) : (
-                      <span className={`font-medium ${!item.inStock ? 'text-gray-400' : 'text-gray-800'}`}>
-                        {item.store.name}
-                      </span>
+                      <span className={`font-medium ${!item.inStock ? 'text-gray-400' : 'text-gray-800'}`}>{item.store.name}</span>
                     )}
                     {item.store.prescriptionFree && (
                       <span className="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded-full">処方箋不要</span>
@@ -112,29 +112,21 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                   </div>
                 </td>
                 <td className="px-4 py-3 text-center whitespace-nowrap">
-                  {annual != null ? <><span className="font-bold text-slate-900">約{annual.toLocaleString('ja-JP')}円</span><span className="block text-[11px] text-gray-400">掲載単価換算</span></> : <span className="text-gray-400">—</span>}
+                  {annual != null ? <>
+                    <span className="font-bold text-slate-900">約{annual.toLocaleString('ja-JP')}円</span>
+                    {isCheapest ? <span className="block text-[11px] font-semibold text-emerald-700">掲載最安目安</span> : difference != null && difference > 0 ? <span className="block text-[11px] text-amber-700">最安目安より +{difference.toLocaleString('ja-JP')}円</span> : null}
+                  </> : <span className="text-gray-400">—</span>}
                 </td>
                 <td className="px-4 py-3 text-center hidden md:table-cell">
-                  {item.store.prescriptionFree ? (
-                    <span className="text-green-600 text-xs font-medium">不要</span>
-                  ) : (
-                    <span className="text-gray-400 text-xs">要確認</span>
-                  )}
+                  {item.store.prescriptionFree ? <span className="text-green-600 text-xs font-medium">不要</span> : <span className="text-gray-400 text-xs">要確認</span>}
                 </td>
                 <td className="px-4 py-3 text-center">
                   {!item.inStock ? (
                     <span className="text-gray-400 text-xs">在庫なし</span>
                   ) : item.url.startsWith('#') ? (
-                    <span className="inline-block px-3 py-2 rounded-lg text-xs text-gray-400 border border-gray-200 whitespace-nowrap">
-                      近日追加予定
-                    </span>
+                    <span className="inline-block px-3 py-2 rounded-lg text-xs text-gray-400 border border-gray-200 whitespace-nowrap">近日追加予定</span>
                   ) : (
-                    <a
-                      href={item.url + item.store.affiliateParam}
-                      target="_blank"
-                      rel="noopener noreferrer sponsored nofollow"
-                      className="inline-block px-4 py-2 rounded-lg text-sm font-medium border border-gray-300 text-gray-700 hover:bg-sky-50 hover:border-sky-300 hover:text-sky-700 transition-colors whitespace-nowrap"
-                    >
+                    <a href={item.url + item.store.affiliateParam} target="_blank" rel="noopener noreferrer sponsored nofollow" className="inline-block px-4 py-2 rounded-lg text-sm font-medium border border-gray-300 text-gray-700 hover:bg-sky-50 hover:border-sky-300 hover:text-sky-700 transition-colors whitespace-nowrap">
                       価格を確認する →
                     </a>
                   )}
@@ -144,7 +136,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
           </tbody>
         </table>
         <p className="text-xs text-gray-400 mt-2 px-4 pb-4">
-          ※ 1年分目安はワンデー＝両眼365日、2week＝両眼26交換サイクルで単純換算。まとめ買い割引・ケア用品代等は含みません。
+          ※ 1年分目安はワンデー＝両眼365日、2week＝両眼26交換サイクルで掲載単価から単純換算。まとめ買い割引・送料・ケア用品代等は含みません。
         </p>
       </div>
     </div>
