@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { TriangleAlert, BookOpen } from 'lucide-react';
 import { getAllProducts, getProductWithPrices, getProductsByCategory } from '@/lib/products';
 import PriceTable from '@/components/PriceTable';
+import ProductAnnualCost from '@/components/ProductAnnualCost';
 import rakutenOfficialLinks from '@/data/rakuten-official-links.json';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -187,7 +188,9 @@ export default async function ProductPage({ params }: Props) {
           <h2 className="text-lg font-bold text-gray-800">ショップ別価格比較（送料込み）</h2>
         </div>
         <PriceTable prices={product.prices} productName={product.name} />
+        {['1day', '2week'].includes(product.category) && <div className="px-6 pb-5"><a href="#annual-cost" className="block text-center bg-sky-100 hover:bg-sky-200 text-sky-900 font-semibold rounded-lg py-3">年間コストを見てみる！ →</a></div>}
       </div>
+      <ProductAnnualCost prices={product.prices} category={product.category} productName={product.name} />
 
       {officialRakutenUrl && (
         <div className="bg-white rounded-xl border border-gray-200 p-5 mb-8">
