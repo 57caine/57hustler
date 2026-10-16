@@ -1,8 +1,7 @@
 name: Threads 昼間コラム自動投稿
 
 on:
-  schedule:
-    - cron: '0 3 * * *'   # 毎日 JST 12:00 (UTC 3:00)
+  # 14-day trial: replace daytime column with daily fortune; evening column remains scheduled.
   workflow_dispatch:
 
 jobs:
