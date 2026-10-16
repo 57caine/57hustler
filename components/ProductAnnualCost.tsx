@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import type { Price, Store } from '@/lib/products';
 import annualBundleMap from '@/data/annual-bundle-url-map.json';
 
@@ -34,15 +34,11 @@ export default function ProductAnnualCost({ prices, category, productName }: { p
   };
 
   const selectedEstimate = estimateFor(selected)!;
-  const cheapest = useMemo(() => {
-    return eligible
-      .map(item => ({ item, estimate: estimateFor(item) }))
-      .filter((x): x is { item: Offer; estimate: NonNullable<ReturnType<typeof estimateFor>> } => x.estimate != null)
-      .sort((a, b) => a.estimate.total - b.estimate.total)[0];
-  // estimate inputs are primitive state plus eligible prices
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [eligible, lenses, care, period, category]);
-
+  const ranked = eligible
+    .map(item => ({ item, estimate: estimateFor(item) }))
+    .filter((x): x is { item: Offer; estimate: NonNullable<ReturnType<typeof estimateFor>> } => x.estimate != null)
+    .sort((a, b) => a.estimate.total - b.estimate.total);
+  const cheapest = ranked[0];
   const savingsVsCheapest = cheapest ? selectedEstimate.total - cheapest.estimate.total : 0;
   const monthly = Math.round(selectedEstimate.total / period);
 
