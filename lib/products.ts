@@ -104,6 +104,20 @@ export function getStoreById(id: string): Store | undefined {
   return productsData.stores.find((s) => s.id === id) as Store | undefined;
 }
 
+// Only known product-detail URLs qualify for direct-purchase CTAs.
+// Tracking-only affiliate URLs and marketplace search URLs are not product destinations.
+export function hasProductDetailDestination(productId: string, storeId: string): boolean {
+  const url = (productUrlMap as Record<string, Record<string, string>>)[storeId]?.[productId];
+  if (!url) return false;
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== 'https:') return false;
+    if (storeId === 'rakuten' || parsed.hostname === 'px.a8.net') return false;
+    if (/^(www\\.)?rakuten\\.co\\.jp$/.test(parsed.hostname)) return false;
+    return /\\/(item|goods\\/index\\/gc|products\\/os\\/pid)\\//.test(parsed.pathname);
+  } catch { return false; }
+}
+
 export function getPricesForProduct(productId: string): (Price & { store: Store })[] {
   const prices = pricesData.prices.filter((p) => p.productId === productId) as Price[];
   return prices
