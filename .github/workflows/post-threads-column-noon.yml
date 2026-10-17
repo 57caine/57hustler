@@ -1,8 +1,7 @@
 name: Threads 昼間コラム自動投稿
 
 on:
-  schedule:
-    - cron: '0 3 * * *'   # 毎日 JST 12:00 (UTC 3:00)
+  # 14-day trial: replace daytime column with daily fortune; evening column remains scheduled.
   workflow_dispatch:
 
 jobs:
@@ -35,7 +34,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Actions Bot"
-          git add data/column-history.json
+          git add data/column-history.json data/yonaka-post-history.json
           git diff --staged --quiet || git commit -m "chore: Threadsコラム投稿履歴更新（昼） $(date '+%Y-%m-%d')"
           git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
           git push

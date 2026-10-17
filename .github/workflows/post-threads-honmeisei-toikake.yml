@@ -1,9 +1,7 @@
 name: Threads あなたの本命星は？ 自動投稿
 
 on:
-  schedule:
-    # 毎日 JST 22:30 (UTC 13:30)。日曜判定はスクリプト内部で実施
-    - cron: '30 13 * * *'
+  # 14日間の1日2投稿テスト中は定期実行を停止。手動実行のみ許可。
   workflow_dispatch:
 
 jobs:

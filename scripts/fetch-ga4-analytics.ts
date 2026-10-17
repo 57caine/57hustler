@@ -227,6 +227,9 @@ interface SiteData {
   topPages: PageMetrics[];
   weeklyTrend: { date: string; sessions: number }[];
   affiliateClicksByPage: Record<string, number>;
+  affiliateClicksByPlatform: Record<string, number>;
+  affiliateClicksPlatformStatus: 'ok' | 'error' | 'missing_dimension';
+  affiliateClicksStatus: 'ok' | 'error';
 }
 
 async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object): Promise<SiteData> {
@@ -291,6 +294,7 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
   });
 
   // affiliate_click イベント数（ページ別）
+  let affiliateClicksStatus: 'ok' | 'error' = 'ok';
   const [clicksResponse] = await client.runReport({
     property: propertyId,
     dimensions: [{ name: 'pagePath' }],
@@ -303,12 +307,48 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
     },
     dateRanges: [{ startDate, endDate }],
     limit: 100,
-  }).catch(() => [{ rows: [] }]);
+  }).catch((error: unknown) => {
+    affiliateClicksStatus = 'error';
+    console.error(`  ✗ ${property.label}: affiliate_click取得失敗（ゼロ件として扱わない）`, error);
+    return [{ rows: [] }];
+  });
 
   const affiliateClicksByPage: Record<string, number> = {};
   for (const row of (clicksResponse?.rows ?? [])) {
     const p = row.dimensionValues?.[0]?.value ?? '';
     affiliateClicksByPage[p] = parseInt(row.metricValues?.[0]?.value ?? '0');
+  }
+
+  // Affiliate platform breakdown. Uses the custom event parameter registered in GA4
+  // as an event-scoped custom dimension (customEvent:affiliate_platform).
+  // If the dimension is not registered, mark unavailable rather than report zero.
+  let affiliateClicksPlatformStatus: 'ok' | 'error' | 'missing_dimension' = 'ok';
+  const affiliateClicksByPlatform: Record<string, number> = {};
+  try {
+    // GA4 Data API metadata identifies registered custom dimensions without
+    // guessing from an empty INVALID_ARGUMENT error.
+    const [metadata] = await client.getMetadata({ name: `${propertyId}/metadata` });
+    const registered = (metadata.dimensions ?? []).some(d => d.apiName === 'customEvent:affiliate_platform');
+    if (!registered) {
+      affiliateClicksPlatformStatus = 'missing_dimension';
+      console.warn(`  ⚠ ${property.label}: GA4イベントスコープのaffiliate_platformカスタムディメンション未登録`);
+    } else {
+    const [platformResponse] = await client.runReport({
+      property: propertyId,
+      dimensions: [{ name: 'customEvent:affiliate_platform' }],
+      metrics: [{ name: 'eventCount' }],
+      dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { matchType: 'EXACT', value: 'affiliate_click' } } },
+      dateRanges: [{ startDate, endDate }],
+      limit: 20,
+    });
+    for (const row of (platformResponse.rows ?? [])) {
+      const platform = row.dimensionValues?.[0]?.value ?? '(not set)';
+      affiliateClicksByPlatform[platform] = parseInt(row.metricValues?.[0]?.value ?? '0');
+    }
+    }
+  } catch (error) {
+    affiliateClicksPlatformStatus = 'error';
+    console.error(`  ✗ ${property.label}: affiliate_platform内訳取得不可（GA4カスタムディメンション未登録の可能性）`, error);
   }
 
   return {
@@ -322,6 +362,9 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
     topPages,
     weeklyTrend,
     affiliateClicksByPage,
+    affiliateClicksByPlatform,
+    affiliateClicksPlatformStatus,
+    affiliateClicksStatus,
   };
 }
 
@@ -370,6 +413,8 @@ async function main() {
   const existingStatuses: Record<string, string> = {};
   const existingPriorities: Record<string, 'high' | 'medium' | 'low'> = {};
   let manualArticles: FlaggedColumn[] = [];
+  let previousAutoArticles: FlaggedColumn[] = [];
+  let previousReviewDateRange: { start: string; end: string } | null = null;
   if (fs.existsSync(reviewPaths[0])) {
     try {
       const existing = JSON.parse(fs.readFileSync(reviewPaths[0], 'utf-8'));
@@ -378,19 +423,25 @@ async function main() {
         if (article.priority) existingPriorities[article.slug] = article.priority;
       }
       manualArticles = (existing.flaggedArticles ?? []).filter((a: FlaggedColumn) => a.source === 'manual');
+      previousAutoArticles = (existing.flaggedArticles ?? []).filter((a: FlaggedColumn) => a.source === 'auto-ga4');
+      previousReviewDateRange = existing.dataDateRange ?? null;
     } catch { /* 既存ファイルが壊れていても続行 */ }
   }
 
-  const autoArticles = lensNaviSite
+  const clickDataReady = lensNaviSite?.affiliateClicksStatus === 'ok';
+  const autoArticles = lensNaviSite && clickDataReady
     ? detectFlaggedColumns(lensNaviSite.topPages, contentLog, lensNaviSite.affiliateClicksByPage, existingStatuses, existingPriorities)
-    : [];
+    : previousAutoArticles;
+  if (!clickDataReady) console.warn('GA4 affiliate_clickが取得できないため、前回の自動改善判定を保持します（最新データではありません）');
   // 手動追加分（school-navi・henkutsu等、自動検知の対象外の事業課題）は
   // GA4自動検知では作られないため、既存ファイルからそのまま引き継ぐ
   const flaggedArticles = [...autoArticles, ...manualArticles];
 
   const columnReview = {
     generatedAt: new Date().toISOString(),
-    dataDateRange: lensNaviSite?.dateRange ?? null,
+    dataDateRange: clickDataReady ? lensNaviSite?.dateRange ?? null : previousReviewDateRange,
+    affiliateClicksStatus: lensNaviSite?.affiliateClicksStatus ?? 'error',
+    autoReviewStale: !clickDataReady,
     flaggedCount: flaggedArticles.filter(a => a.status === '未対応').length,
     flaggedArticles,
   };

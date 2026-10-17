@@ -42,6 +42,15 @@ function getHeroQuery(column: { category?: string; section?: string; title: stri
 
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
 
+// Use the article topic for shopping links instead of always searching for 1day lenses.
+function contactLensSearchTerm(title: string): string {
+  if (/2week|2ウィーク|2週間|ツーウィーク/i.test(title)) return 'コンタクトレンズ 2week';
+  if (/カラコン|カラーコンタクト/.test(title)) return 'カラコン ワンデー';
+  if (/乱視/.test(title)) return '乱視用 コンタクトレンズ';
+  if (/遠近両用/.test(title)) return '遠近両用 コンタクトレンズ';
+  return 'コンタクトレンズ ワンデー';
+}
+
 const SECTION_CTA: Record<string, { label: string; rakuten: string }> = {
   megane:      { label: '眼鏡・サングラスを楽天で探す', rakuten: '眼鏡フレーム おすすめ' },
   vr:          { label: 'VR・スマートグラスを楽天で探す', rakuten: 'VRゴーグル Meta Quest' },
@@ -64,6 +73,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: column.title,
     description: column.description,
+    alternates: { canonical: `/column/${slug}` },
+    openGraph: { type: 'article', url: `https://www.lens-navi.jp/column/${slug}`, title: column.title, description: column.description, siteName: 'レンズナビ', locale: 'ja_JP' },
+    twitter: { card: 'summary', title: column.title, description: column.description },
   };
 }
 
@@ -78,8 +90,8 @@ export default async function ColumnPage({ params }: Props) {
   const content = columnContent[slug] ?? eyeColumnContent[slug] ?? karakonColumnContent[slug];
   if (!content) notFound();
 
-  const otherColumns = allColumns.filter((c) => c.slug !== slug).slice(0, 4);
-  const BASE = 'https://lens-navi.jp';
+  const otherColumns = allColumns.filter((c) => c.slug !== slug).map((c) => ({ column: c, score: (c.category === column.category ? 10 : 0) + ('section' in c && 'section' in column && c.section === column.section ? 5 : 0) })).sort((a, b) => b.score - a.score || a.column.slug.localeCompare(b.column.slug)).slice(0, 4).map(({ column: related }) => related);
+  const BASE = 'https://www.lens-navi.jp';
 
   const heroImage = await getHeroImage(getHeroQuery(column), stableIndex(slug, 30));
 
@@ -169,11 +181,11 @@ export default async function ColumnPage({ params }: Props) {
           return (
             <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-3">
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-bold text-gray-800">コンタクトレンズをお得に購入する</p>
-                <p className="text-xs text-gray-500 mt-0.5">楽天市場で最安値をチェック</p>
+                <p className="text-sm font-bold text-gray-800">自分に合うコンタクトレンズを比較する</p>
+                <p className="text-xs text-gray-500 mt-0.5">装用タイプ・価格の目安を比較し、販売ページで条件を確認</p>
               </div>
               <Link href="/ranking" className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors whitespace-nowrap">
-                おすすめ商品を見る →
+                掲載商品を比較する →
               </Link>
             </div>
           );
@@ -184,6 +196,21 @@ export default async function ColumnPage({ params }: Props) {
           {content}
         </div>
 
+        {['contact-net-kounyu-guide', 'acuvue-medallist-days-hikaku-2026', 'contact-dosu-shohosen-mikata-kanzen-2026', 'dosu-mikata'].includes(slug) && (
+          <aside className="mt-8 rounded-xl border border-sky-200 bg-sky-50 p-4">
+            <h2 className="font-bold text-slate-800 mb-2">処方されたBCに合う製品を確認する</h2>
+            <p className="text-sm text-slate-600 mb-2">BCだけで装用可否を判断せず、眼科で確認した製品名・度数・DIA・装用期間と照合してください。</p>
+            <Link href="/bc/8.4" className="text-sm font-medium text-sky-700 hover:underline">BC8.4対応コンタクト一覧を見る →</Link>
+          </aside>
+        )}
+        {/* 読者による任意の共有。自動投稿はしない。 */}
+        <aside aria-label="記事を共有" className="mt-10 rounded-xl border border-sky-100 bg-sky-50 p-5">
+          <p className="text-sm font-bold text-gray-800 mb-3">役立ったら、この記事をシェア</p>
+          <div className="flex flex-wrap gap-3">
+            <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(column.title)}&url=${encodeURIComponent(`${BASE}/column/${slug}`)}`} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-bold text-white hover:bg-slate-700">Xで共有</a>
+            <a href={`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(`${BASE}/column/${slug}`)}`} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-green-600 px-4 py-2 text-sm font-bold text-white hover:bg-green-700">LINEで共有</a>
+          </div>
+        </aside>
         {/* FAQ（メタデータから） */}
         {('faqs' in column) && column.faqs && column.faqs.length > 0 && (
           <div className="mt-10">
@@ -215,9 +242,9 @@ export default async function ColumnPage({ params }: Props) {
                   楽天市場で見る →
                 </a>
                 <div className="mt-3 pt-3 border-t border-sky-100 flex items-center justify-between gap-3">
-                  <p className="text-xs text-gray-500">コンタクトレンズの最安値も比較</p>
+                  <p className="text-xs text-gray-500">コンタクトレンズの商品情報を比較</p>
                   <Link href="/ranking" className="shrink-0 text-xs font-bold text-sky-600 hover:underline whitespace-nowrap">
-                    コンタクト最安値を見る →
+                    コンタクト比較を見る →
                   </Link>
                 </div>
               </div>
@@ -225,12 +252,12 @@ export default async function ColumnPage({ params }: Props) {
           }
           return (
             <div className="mt-10 p-5 bg-sky-50 border border-sky-200 rounded-xl">
-              <p className="text-sm font-bold text-gray-800 mb-1">コンタクトレンズを楽天で購入する</p>
-              <p className="text-xs text-gray-500 mb-3">楽天市場で最安値をチェック</p>
+              <p className="text-sm font-bold text-gray-800 mb-1">購入前にレンズの条件を確認</p>
+              <p className="text-xs text-gray-500 mb-3">眼科で確認した製品名・度数・BC・DIAと送料込みの価格を確認</p>
               <div className="flex flex-wrap gap-2">
-                <a href={RAKUTEN('コンタクトレンズ ワンデー')} target="_blank" rel="noopener noreferrer nofollow sponsored"
+                <a href={RAKUTEN(contactLensSearchTerm(column.title))} target="_blank" rel="noopener noreferrer nofollow sponsored"
                   className="bg-navy-900 hover:bg-navy-800 text-white text-sm font-bold px-4 py-2.5 rounded-lg transition-colors">
-                  楽天で探す →
+                  楽天で商品を探す →
                 </a>
                 <Link href="/category/1day" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2.5 rounded-lg hover:border-slate-300 transition-colors">
                   ワンデー比較

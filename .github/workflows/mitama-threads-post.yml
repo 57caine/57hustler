@@ -1,0 +1,75 @@
+name: MITAMA Threads 投稿（認証確認後のみ公開）
+on:
+
+  schedule:
+    # 2026-10-15 through 10-30, 09:15 JST. Date guard prevents annual repeats.
+    # Retry opportunities on the same JST day; publisher checks Threads history before posting.
+    - cron: '15 0,3,6,9 15-30 10 *'
+  # Independent fallback: this existing daily report has recently run reliably.
+  workflow_run:
+    workflows: ['Affiliate evidence report']
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      day:
+        description: '投稿番号（既存投稿との重複を確認）'
+        required: true
+        type: choice
+        options:
+          - '1'
+          - '2'
+          - '3'
+          - '4'
+          - '5'
+          - '6'
+          - '7'
+          - '8'
+          - '9'
+          - '10'
+          - '11'
+          - '12'
+          - '13'
+          - '14'
+          - '15'
+          - '16'
+          - '17'
+      publish:
+        description: '実投稿（初期値OFF）'
+        required: true
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: mitama-threads-publish
+  cancel-in-progress: false
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.event == 'schedule' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main') }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: スケジュール対象日の検証
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_run' }}
+        id: datecheck
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          case "$TODAY" in
+            2026-10-1[5-9]|2026-10-2[0-9]|2026-10-30)
+              DOM=$(date -u +%-d)
+              echo "day=$((DOM-13))" >> "$GITHUB_OUTPUT" ;;
+            *) echo "Not an approved publishing date: $TODAY"; exit 1 ;;
+          esac
+      - name: 投稿ドライラン
+        if: ${{ github.event_name == 'workflow_dispatch' && !inputs.publish }}
+        run: node scripts/post-organic-threads.mjs --brand mitama --day "${{ inputs.day }}"
+      - name: 本人アカウント確認・重複検査・公開
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_run' || inputs.publish }}
+        env:
+          MITAMA_THREADS_USER_ID: ${{ secrets.MITAMA_THREADS_USER_ID }}
+          MITAMA_THREADS_ACCESS_TOKEN: ${{ secrets.MITAMA_THREADS_ACCESS_TOKEN }}
+          ENABLE_ORGANIC_THREADS_PUBLISH: 'true'
+        run: node scripts/post-organic-threads.mjs --brand mitama --day "${{ (github.event_name == 'schedule' || github.event_name == 'workflow_run') && steps.datecheck.outputs.day || inputs.day }}" --publish

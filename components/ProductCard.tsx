@@ -1,5 +1,9 @@
+'use client';
+
+import Link from 'next/link';
 import { Eye, Repeat, Calendar, Rainbow, Medal, type LucideIcon } from 'lucide-react';
 import { ProductWithPrices } from '@/lib/products';
+import rakutenOfficialLinks from '@/data/rakuten-official-links.json';
 
 const RAKUTEN = (kw: string) =>
   `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent(
@@ -28,9 +32,12 @@ type ProductCardProps = {
 export default function ProductCard({ product, rank }: ProductCardProps) {
   const label = CATEGORY_LABEL[product.category] ?? product.category;
   const CategoryIcon = CATEGORY_ICON[product.category] ?? Eye;
-  const rakutenUrl = RAKUTEN(product.name);
+  // Only use verbatim links issued in Rakuten's official link generator.
+  // Other products retain their existing links; never synthesize tracking IDs.
+  const officialLinks = rakutenOfficialLinks.links as Record<string, { url: string }>;
+  const rakutenUrl = officialLinks[product.slug]?.url ?? RAKUTEN(product.name);
 
-  // 楽天以外の最安値A8ショップを取得
+  // A8提携ショップの掲載価格例を取得（リアルタイムの最安値ではない）
   const a8Prices = product.prices.filter(
     (p) => p.inStock && p.storeId !== 'rakuten' && p.store.url.includes('px.a8.net') && !p.url.startsWith('#')
   );
@@ -75,12 +82,12 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
         <div className="pt-4 border-t border-gray-100 mb-4">
           {cheapestA8 != null ? (
             <div>
-              <span className="text-xs text-gray-500 font-medium">通販最安値（{cheapestA8.store.name}）</span>
+              <span className="text-xs text-gray-500 font-medium">掲載価格例（{cheapestA8.store.name}）</span>
               <p className="text-2xl font-bold text-gray-900 mt-1">¥{cheapestA8.price.toLocaleString()}</p>
             </div>
           ) : product.lowestPrice != null ? (
             <div>
-              <span className="text-xs text-gray-500 font-medium">参考最安値</span>
+              <span className="text-xs text-gray-500 font-medium">参考価格（更新時点）</span>
               <p className="text-2xl font-bold text-gray-900 mt-1">¥{product.lowestPrice.toLocaleString()}</p>
             </div>
           ) : (
@@ -89,6 +96,13 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
         </div>
 
         <div className="flex flex-col gap-2">
+          <Link
+            onClick={() => { if (typeof window !== 'undefined' && typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === 'function') (window as Window & { gtag?: (...args: unknown[]) => void }).gtag?.('event', 'annual_comparison_click', { product_id: product.id, source: 'product_card' }); }}
+            href={`/product/${product.slug}#${['1day', '2week'].includes(product.category) ? 'annual-cost' : 'price-comparison'}`}
+            className="block bg-sky-700 hover:bg-sky-800 text-white text-sm font-bold text-center py-3 rounded-lg transition-colors w-full"
+          >
+            {['1day', '2week'].includes(product.category) ? '年間コスト・最安店を比較する →' : 'ショップ別の価格を比較する →'}
+          </Link>
           {cheapestA8 && (
             <a
               href={cheapestA8.url}
@@ -96,7 +110,7 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
               rel="noopener noreferrer nofollow sponsored"
               className="block bg-sky-600 hover:bg-sky-500 text-white text-sm font-bold text-center py-3 rounded-lg transition-colors w-full"
             >
-              {cheapestA8.store.name}で購入 →
+              {cheapestA8.store.name}で詳細を見る →
             </a>
           )}
           <a
@@ -105,7 +119,7 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
             rel="noopener noreferrer nofollow sponsored"
             className="block bg-navy-900 hover:bg-navy-800 text-white text-sm font-bold text-center py-3 rounded-lg transition-colors w-full"
           >
-            楽天で購入 →
+            楽天で商品を探す →
           </a>
         </div>
       </div>

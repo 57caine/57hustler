@@ -1,0 +1,29 @@
+name: Lens-navi revenue path healthcheck
+
+on:
+  schedule:
+    - cron: '15 23 * * *' # 08:15 JST daily
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/check-lens-revenue-path.mjs'
+      - '.github/workflows/lens-revenue-healthcheck.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lens-revenue-healthcheck
+  cancel-in-progress: true
+
+jobs:
+  live-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check published affiliate pages without clicking links
+        run: node scripts/check-lens-revenue-path.mjs

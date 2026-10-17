@@ -1,9 +1,9 @@
 name: Threads 占い 日次自動投稿
 
 on:
+  # 昼コラムの代わりに九星別運勢を毎日12:00 JSTに投稿。夜コラムは維持。
   schedule:
-    # 毎朝 7:00 JST (UTC 22:00)
-    - cron: '0 22 * * *'
+    - cron: '0 3 * * *'
   workflow_dispatch:
 
 jobs:

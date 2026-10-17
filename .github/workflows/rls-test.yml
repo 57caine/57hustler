@@ -1,0 +1,20 @@
+name: CEO Dashboard RLS実動テスト
+
+on:
+  workflow_dispatch:
+
+jobs:
+  rls-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run RLS test script
+        run: bash ceo-dashboard/scripts/rls-test.sh
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+          RLS_TEST_USER1_EMAIL: ${{ secrets.RLS_TEST_USER1_EMAIL }}
+          RLS_TEST_USER1_PASSWORD: ${{ secrets.RLS_TEST_USER1_PASSWORD }}
+          RLS_TEST_USER2_EMAIL: ${{ secrets.RLS_TEST_USER2_EMAIL }}
+          RLS_TEST_USER2_PASSWORD: ${{ secrets.RLS_TEST_USER2_PASSWORD }}

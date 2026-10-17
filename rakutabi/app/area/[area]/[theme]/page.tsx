@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import DataNotice from '@/components/DataNotice';
+import ShareLinks from '@/components/ShareLinks';
 import HotelFilterList from '@/components/HotelFilterList';
 import PageHeader from '@/components/PageHeader';
 import ThemeGuide from '@/components/ThemeGuide';
@@ -79,6 +80,7 @@ export default async function ComboPage({ params }: { params: Promise<{ area: st
         <AreaSidebar current={[area.key]} />
         <div className="flex-1 min-w-0">
         <DataNotice />
+        <ShareLinks path={`/area/${area.key}/${theme.slug}`} title={theme.comboTitle(area.name)} />
         <HotelFilterList hotels={hotels} showArea={false} />
         <ThemeGuide theme={theme.slug} />
 

@@ -4,7 +4,7 @@ import { columns } from '@/lib/columns';
 import { eyeColumns } from '@/lib/eye-columns';
 import { karakonColumns } from '@/lib/karakon-columns';
 
-const BASE_URL = 'https://lens-navi.jp';
+const BASE_URL = 'https://www.lens-navi.jp';
 
 const VALID_BC = ['8.4', '8.5', '8.6', '8.7', '8.8', '8.9', '9.0'];
 

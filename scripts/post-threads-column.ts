@@ -99,13 +99,13 @@ const STYLE_GUIDE = `投稿文は以下のスタイルで書くこと。
 5行目：「〜じゃないでしょうか」「〜ですかね」で締める
 
 【良い例】
-「古事記に『イザナギとイザナミが
-最初に造った島は淡路島』と書いてありますよね。
+「古事記の国生みの話には、
+淡路島が登場しますよね。
 
-でも淡路島って、本州のすぐ隣なんですよ。
+淡路島は、今も海を渡って行く島です。
 
-海を渡ってきた人たちが最初に辿り着いた場所を、
-後から神話にしたんじゃないか、という気がするんですよね。」
+昔の人にとって、海の向こうの島は
+どんな場所に見えたんでしょうね。」
 
 【禁止ワード・表現（使ったら書き直し）】
 ・「神話的に」
@@ -117,10 +117,20 @@ const STYLE_GUIDE = `投稿文は以下のスタイルで書くこと。
 ・1文に2つ以上の意味を詰め込む
 ・結論を押しつける断定文
 
+【事実と考察を分ける（必須）】
+・古事記などの原典に書かれたこと、学術的な定説、諸説ある解釈、自分の想像を混同しない。
+・「実は〜ではなく〜」「本当の意味は〜」「古代の人は〜と考えた」など、根拠のない断定は禁止。
+・語源、神話の意味、宗教的慣習の由来を独自に決めつけない。出典が不明なら「〜という見方もあります」「私は〜とも感じます」と区別する。
+・量子力学や脳科学が占い・霊性を証明した、という主張は禁止。
+・実際に確認していない史実・統計・学者の発言・自分の体験談を創作しない。
+・説明できない固有名詞や数字は省き、身近な問いに置き換える。
+・説が複数あるときは、一つを唯一の正解として紹介しない。
+
 【投稿前チェック】
 生成後に必ず確認する。
 「この投稿を初めて見た人が一度読んで意味がわかるか」
-→ わからない場合は書き直す。`;
+「伝承・説・私見を、確定した事実として言い切っていないか」
+→ どちらかに問題があれば書き直す。`;
 
 interface ColumnPost { date: string; text: string; category?: string; keywords?: string[]; }
 interface SeriesWeek {
@@ -246,7 +256,7 @@ function saveSeriesWeek(data: SeriesWeek): void {
   fs.writeFileSync(SERIES_PATH, JSON.stringify(data, null, 2), 'utf-8');
 }
 
-async function selectSeriesTheme(client: Anthropic, recentPosts: ColumnPost[]): Promise<{ theme: string; category: string }> {
+async function selectSeriesTheme(client: Anthropic, recentPosts: ColumnPost[]): Promise<{ theme: string; category: string } | null> {
   const recentContext = recentPosts.slice(0, 20).map(p => `- ${p.text}`).join('\n') || '（なし）';
 
   const message = await client.messages.create({
@@ -267,7 +277,28 @@ ${recentContext}
   });
 
   const raw = (message.content[0] as { type: string; text: string }).text;
-  return JSON.parse(raw.replace(/```json\n?|\n?```/g, '').trim()) as { theme: string; category: string };
+  // Claude may add a preface, markdown fences, or trailing notes around the JSON.
+  // Extract the first valid theme object rather than crashing the entire post job.
+  for (const candidate of raw.match(/\{[^{}]*\}/g) ?? []) {
+    try {
+      const parsed: unknown = JSON.parse(candidate);
+      if (typeof parsed !== 'object' || parsed === null) continue;
+      const value = parsed as Record<string, unknown>;
+      if (
+        typeof value.theme === 'string' &&
+        value.theme.trim().length >= 3 &&
+        value.theme.trim().length <= 100 &&
+        typeof value.category === 'string' &&
+        CATEGORIES.includes(value.category)
+      ) {
+        return { theme: value.theme.trim(), category: value.category };
+      }
+    } catch {
+      // Try the next candidate; do not log generated text unnecessarily.
+    }
+  }
+  console.warn('連作weekテーマのJSONが不正です。通常コラムへ切り替えます。');
+  return null;
 }
 
 const SERIES_POSITION_LABELS = {
@@ -417,7 +448,7 @@ ${historyContext}
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 600,
-    system: `あなたは「夜中のおじさん」というキャラクターで、Threadsにコラムを投稿します。30歳まで鳴かず飛ばず、九星気学の吉方位参拝で人生が逆転した経験を持つ、親しみやすいおじさんです。20〜50代の読者に向けて、専門用語を使わず「〜です」「〜ます」というですます調で丁寧に語りかけます。「〜ですよ」「〜ますよ」は使いません。怪しい表現は避け、知的好奇心を刺激する読み物を書きます。\n${STYLE_GUIDE}${forcedCategory === '気学・易経' ? `\n${KYUSEI_CONTENT_CAUTION}` : ''}\n${getSeasonWordCaution()}`,
+    system: `あなたは「夜中のおじさん」というキャラクターで、Threadsにコラムを投稿します。古事記・神社・九星気学・易経などを夜な夜な調べる、親しみやすいおじさんです。実在の体験談や経歴は作らず、好奇心と問いかけを中心に書きます。20〜50代の読者に向けて、専門用語を使わず「〜です」「〜ます」というですます調で丁寧に語りかけます。「〜ですよ」「〜ますよ」は使いません。怪しい表現は避け、知的好奇心を刺激する読み物を書きます。\n${STYLE_GUIDE}${forcedCategory === '気学・易経' ? `\n${KYUSEI_CONTENT_CAUTION}` : ''}\n${getSeasonWordCaution()}`,
     messages: [{ role: 'user', content: prompt }],
   });
 
@@ -437,7 +468,14 @@ async function trySeriesPost(
   // 月曜かつ新しい月 → 連作テーマ選出
   if (dayOfWeek === 1 && (!series || series.current_month !== currentMonth)) {
     console.log('連作weekテーマを選出中...');
-    const newTheme = await selectSeriesTheme(client, history);
+    let newTheme: { theme: string; category: string } | null = null;
+    try {
+      newTheme = await selectSeriesTheme(client, history);
+    } catch (error) {
+      // A transient theme-generation API failure must not block today's post.
+      console.warn('連作weekテーマの生成に失敗しました。通常コラムへ切り替えます。', error instanceof Error ? error.message : 'unknown error');
+    }
+    if (!newTheme) return null;
     series = {
       current_month: currentMonth,
       theme: newTheme.theme,

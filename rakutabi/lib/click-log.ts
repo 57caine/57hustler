@@ -38,11 +38,11 @@ function todayJst(): string {
 /**
  * healthcheck: 公開後の動作確認用（GitHub Actions から送る）。clicks/ とは別の場所に保存し、集計には含めない
  */
-export async function recordClick(hotelNo: number, placement: Placement | 'healthcheck', page: string): Promise<void> {
+export async function recordClick(hotelNo: number, placement: Placement | 'healthcheck', page: string, trafficSource = 'unattributed'): Promise<void> {
   const pathname = placement === 'healthcheck'
     ? `healthcheck/${todayJst()}.json`
-    : `clicks/${todayJst()}/${hotelNo}/${placement}.json`;
-  const body = JSON.stringify({ hotelNo, placement, page, at: new Date().toISOString() });
+    : `clicks/${todayJst()}/${hotelNo}/${placement}--${trafficSource}.json`;
+  const body = JSON.stringify({ hotelNo, placement, page, trafficSource, at: new Date().toISOString() });
   const options = { addRandomSuffix: true, contentType: 'application/json' } as const;
   try {
     await put(pathname, body, { ...options, access: 'private' });
@@ -56,6 +56,7 @@ export interface ClickRow {
   date: string;
   hotelNo: number;
   placement: string;
+  trafficSource: string;
 }
 
 /** 記録済みクリックを全件（ファイル名から）読み出す */
@@ -67,7 +68,9 @@ export async function listClicks(): Promise<ClickRow[]> {
     for (const b of res.blobs) {
       const [, date, hotelNo, file] = b.pathname.split('/');
       if (!date || !hotelNo || !file) continue;
-      rows.push({ date, hotelNo: Number(hotelNo), placement: file.replace(/-[^-]*\.json$/, '').replace(/\.json$/, '') });
+      const filename = file.replace(/-[^-]*\.json$/, '').replace(/\.json$/, '');
+      const [placement, trafficSource = 'unattributed'] = filename.split('--');
+      rows.push({ date, hotelNo: Number(hotelNo), placement, trafficSource });
     }
     cursor = res.hasMore ? res.cursor : undefined;
   } while (cursor);

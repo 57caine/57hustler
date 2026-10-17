@@ -3,7 +3,7 @@ import { getHotel } from '@/lib/hotels';
 
 /** 送客ボタンのクリックを1件記録する（components/ClickTracker.tsx から sendBeacon で呼ばれる） */
 export async function POST(request: Request) {
-  let payload: { hotelNo?: unknown; placement?: unknown; page?: unknown };
+  let payload: { hotelNo?: unknown; placement?: unknown; page?: unknown; trafficSource?: unknown };
   try {
     payload = JSON.parse(await request.text());
   } catch {
@@ -18,13 +18,16 @@ export async function POST(request: Request) {
     return new Response(null, { status: 400 });
   }
   const page = String(payload.page ?? '').slice(0, 200);
+  const source = String(payload.trafficSource ?? 'unattributed');
+  const allowedSources = ['share_x', 'share_line', 'threads', 'instagram', 'rakuten_room'];
+  const trafficSource = allowedSources.includes(source) ? source : 'unattributed';
 
   if (!isBlobConfigured()) {
     console.log(`[click] Blob未接続のため記録をスキップ hotelNo=${hotelNo} placement=${placement} page=${page}`);
     return new Response(null, { status: 204, headers: { 'X-Click-Recorded': '0' } });
   }
   try {
-    await recordClick(hotelNo, placement, page);
+    await recordClick(hotelNo, placement, page, trafficSource);
   } catch (e) {
     console.error('[click] 記録に失敗', e);
     return new Response(null, { status: 500, headers: { 'X-Click-Recorded': '0' } });

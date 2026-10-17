@@ -1,6 +1,130 @@
 # CEOダッシュボード PROJECT_STATUS
 
-最終更新: 2026-09-30（Playwright実ブラウザによる本番12項目チェック完了）
+最終更新: 2026-10-12（HOMEの日本語表示・未入力とゼロの区別）
+
+## 現行状況（2026-10-12）
+
+- STEP5-3: HOMEの見出しと共通ナビを日本語に統一。自由への距離と自動化率の説明を追加。
+  収入未入力で自由への距離を0%とみなさない。資産0円は金額として表示する。
+  生活費0円・教育費必要額0円・給与以外の収入0円は、割合を計算できない理由を表示。
+  ローカル・GitHub Actionsビルド成功。本番デプロイc0b6cf0完了。
+  本番ブラウザ検証17チェック全てPASS、テストデータ削除も確認。
+  証拠: https://github.com/57caine/57hustler/actions/runs/38205973930
+  （job 114669439672）。収入未入力・登録資産0円・教育費0円・収入0円・生活費0円の
+  表示を実UIで確認。既存CRUD、HOME反映、モバイル導線、認証保護も再確認済み。
+
+- STEP5-2: `/home/manage/{family,education,expenses,income,properties,settings}`を追加。
+  全6区分の登録・編集・専用確認画面経由の削除。既存の認証付きServer Actionsを使用し、
+  owner_idをクライアントから受け取らない。教育費の対象家族は本人の登録済み家族のみ。
+  家族削除時は関連教育費の同時削除を明示。生活費はowner_id主キーの1行を扱う。
+  HOMEから全6区分へ移動可能。将来支出の合計と明細をHOMEに追加。
+  不動産のplanは現在純資産の集計から除外し、actualのみを現在資産に計上。
+  ローカル・GitHub Actionsビルド成功。本番ブラウザE2Eも14チェック全てPASS。
+  証拠: https://github.com/57caine/57hustler/actions/runs/38203698518
+  （job 114662408309、RESULT: PASS）。家族・教育費CRUDと関連削除の警告/実動作、
+  将来支出CRUDとHOME反映、生活費CRUD、収入CRUDと自由への距離50%→60%、
+  不動産CRUDとplan除外/actualの純資産計上、未認証保護・モバイル幅・cleanupを確認。
+  実個人データは投入せず、専用テストユーザーの仮データを終了時に削除済み。
+  本番反映は043ea770のVercelステータス「Deployment has completed」を確認。
+  公開差分判定の修正: ceo-dashboard/vercel.jsonのignoreCommandを
+  git -C "$(git rev-parse --show-toplevel)" diffに変更し、作業ディレクトリに依存しない
+  判定に修正（236文字、256文字制限内）。同じ変更に対して旧コマンドはproject cwdで
+  exit 0（見送り）、修正後はroot/project cwdともexit 1（ビルド）を再現確認。
+
+- STEP1〜3: 下記の2026-10-07本番確認記録あり。認証方式はemail+password。
+- STEP4: 全7テーブルのServer Actions実装済み。`future_expenses`の実CHECK制約に
+  合わせた修正（6127b65）後のGitHub Actions実動テストは57項目PASS、FAIL_COUNT=0。
+  証拠: https://github.com/57caine/57hustler/actions/runs/37647587650 （2026-10-07 15:53 UTC）。
+  後続b9a7f5dでnet_worth_items.categoryを6値のenumに限定。
+  RLS実行37655681952の全体状態はcancelledだが、job 112909877076の
+  テストログは57項目PASS・FAIL_COUNT=0・RESULT: PASSまで完了していることを確認。
+  さらに今回の本番ブラウザE2Eでcash分類の登録・更新・削除も確認済み。
+- STEP5-1: `/assets`の一覧・登録・編集・削除画面、ASSETSナビ、HOMEからの資産リンクを
+  実装済み。資産categoryのDB制約不整合はb9a7f5dで修正済み。修正後の
+  ログイン→登録→編集→削除→HOME集計反映の一連の実UI確認は2026-10-12にPASS。
+  以前のPlaywright検証のログイン失敗は今回の本番ブラウザ検証では再現せず。
+- 今回: `/`の遷移先と通常ログイン後の既定遷移先を`/home`へ変更。
+  HOMEナビを先頭に追加し、HOMEからTODAYへのリンクを追加。
+  直接アクセスした保護ページへのログイン後復帰は既存のredirectedFromを維持。
+  HOMEの古いSTEP3開発用案内を利用者向けの説明へ変更。
+- 確認: ローカル`npm run build`成功（Next.js 16.2.6、TypeScript確認を含む）。
+  HOME入口変更は本番デプロイ完了（4d6aa2a）。本番/loginの既定遷移先/homeを取得確認。
+  本番E2E: https://github.com/57caine/57hustler/actions/runs/38193933720
+  （job 114632389292、10項目PASS、RESULT: PASS）。390×844のChromiumで、
+  未認証保護、ログイン後HOME、HOME/TODAY移動、ログアウト導線、資産登録・DB保存、
+  HOME反映、金額編集・HOME反映、削除確認・DB削除・HOME復元、ログアウト後の保護、
+  テストデータ削除を確認。既存RLSテスト専用ユーザーと仮データのみ使用。
+  実資産・家族データの投入なし。パスワード・トークン・ID・ページ本文のログ出力なし。
+  再実行手順: Actionsの「CEO HOME assets browser verification」→Run workflow。
+  tests/ceo-home-assets-e2e.mjsを隔離した一時Playwright環境で実行する。
+- 残り: DB定義のSQL記録。入力UIと本番操作検証は全7テーブル分完了。
+  オーナー自身の実情報入力・今後の見やすさ改善は、構築完了とは別の運用項目。
+  現行リポジトリにDB migration SQLは見当たらず、既存DB定義を取得してから記録する。
+  推測したSQLの適用や実資産・家族データの投入は行わない。
+
+以下は各実装時点の記録。現行状況は上記を優先する。
+
+## STEP1〜4 進捗（個人・家族・資産データ基盤、2026-10-07時点）
+
+- STEP4（Supabase書き込み基盤）: 今回実装。全7テーブルにINSERT/UPDATE/DELETEの
+  Server Actionsを追加。詳細・テスト結果・未解決事項はチャットの最終報告を参照。
+  要点のみここに記録:
+  - `lib/supabase/writes/{net-worth-items,real-estate-properties,family-members,
+    education-costs,future-expenses,income-streams,owner-settings}.ts`:
+    テーブル毎のINSERT/UPDATE/DELETE Server Actions。owner_idは常に
+    `getCurrentUser()`由来のサーバー側セッションのみから取得し、
+    client/formData/URL/hidden inputからは一切受け取らない。UPDATE/DELETEは
+    RLSに加えて`.eq('owner_id', user.id)`を明示するdefense-in-depth
+  - `lib/supabase/writes/shared.ts`: `requireUser()`・`runWrite()`共通ヘルパー
+    （認証チェックとエラー正規化のみ、過度な抽象化はしていない）
+  - `lib/supabase/validation.ts`: 手書きのサーバー側入力検証（必須値・数値・
+    日付・enum・UUID）。既存package.jsonにvalidation libraryが無いため
+    新規依存は追加していない
+  - `app/home/write-test/page.tsx`: net_worth_items限定の開発・検証用最小フォーム
+    （本番の資産入力UIではない）。本番で`/home/write-test`が未認証時`/login`へ
+    307リダイレクトされることを確認済み（proxy.ts保護下にある）
+  - **重要な既存バグ修正**: `owner_settings`テーブルには`id`列が存在せず、
+    `owner_id`自体が主キー（owner毎に1行）。実動テストで発覚し、
+    update/deleteOwnerSettingsを`.eq('owner_id', user.id)`のみに修正済み
+  - **解決済み（6127b65）**: `future_expenses.category`の実許容値
+    housing/property_maintenance/tax/major_purchase/otherに入力検証を統一。
+    estimated_jpyは0以上、sourceはサーバー側でassumption固定。
+    `scripts/rls-test.sh`のグループ9とcleanupを再有効化済み。
+  - 修正後のGitHub Actions実動テスト57項目全てPASS（future_expensesを含む）。
+    最新category修正後のテストログと本番資産E2Eも確認済み（上記参照）。
+
+## STEP1〜3 進捗（個人・家族・資産データ基盤、2026-10-07時点）
+
+- STEP1（認証基盤）: 完了・本番確認済み。Supabase Auth（email+password）、`proxy.ts`が
+  全ページ・全API Routeを保護。ログイン/ログアウトともにServer Action経由
+- STEP2-A（DBスキーマ・RLS）: 完了・本番確認済み。7テーブル（net_worth_items／
+  real_estate_properties／family_members／education_costs／future_expenses／
+  income_streams／owner_settings）、全テーブルRLS有効、`authenticated`ロールへの
+  GRANT設定済み。GitHub Actions（`.github/workflows/rls-test.yml`、`workflow_dispatch`
+  のみ）による実動テスト20項目全てPASS（未認証アクセス不可／owner_id偽装不可／
+  他ユーザーアクセス不可／education_costsの複合FKによるowner越え参照不可）
+- STEP3（Supabase読み取り）: 今回実装。`/home`を新設し、ログイン中の本人データのみを
+  安全に読み取れることを確認。詳細は以下
+  - `lib/supabase/auth.ts`: `cache()`でラップした`getCurrentUser()`。`getUser()`で
+    Supabase Auth側へ再検証（`getSession()`は使わない）
+  - `lib/supabase/home-data.ts`: 7テーブルを並列取得するデータアクセス層。RLSに加えて
+    `.eq('owner_id', user.id)`で取得クエリ側にも整合性を持たせる。owner_idはURL/
+    フォーム/クライアント入力から一切受け取らず、常にサーバー側セッションの
+    `user.id`のみを使用。エラーは`rows: []`＋`error: true`に正規化し、生の
+    Supabaseエラーを画面へ渡さない
+  - `lib/home-metrics.ts`: 自由への距離・純資産・自動化率・教育費準備率の純粋関数。
+    必要なデータが無い場合は`available: false`を返し、仮の数値を作らない
+  - `app/home/page.tsx`: Server Component、`force-dynamic`。OWNER DECISIONS・
+    BUSINESSセクションは既存の`/alert`・`/projects`へのリンクに留め、既存の
+    GitHub JSON事業データ・ロジックには一切触れていない
+  - READ ONLYのみ。service_role key不使用、console.log等への機微データ出力なし
+  - 実資産・家族等の機微データはまだ投入していない（空DBでの動作確認のみ）
+  - 後続実装: INSERT/UPDATE/DELETEはSTEP4で追加済み。
+    HOMEナビとルート`/`のHOMEへの遷移は2026-10-12に追加。
+
+---
+
+最終更新（旧）: 2026-09-30（Playwright実ブラウザによる本番12項目チェック完了）
 
 ## 本番12項目チェック結果サマリー（2026-09-30）
 

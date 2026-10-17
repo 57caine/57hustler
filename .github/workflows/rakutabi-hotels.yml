@@ -76,17 +76,25 @@ jobs:
         env:
           UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
 
-      # push先は main に明示指定（ジョブ自体も main からしか動かない）。data/*.json はトリガー対象外のため再実行ループにはならない
+      # push先は main に明示指定。定期更新でデータが同一ならVercelビルドを省略する。
       - name: 変更をコミット・プッシュ
+        id: data_update
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Actions Bot"
           git add data/hotels.json data/photos.json
-          git diff --staged --quiet || git commit -m "chore: 楽旅くん 宿泊施設データ更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          if git diff --staged --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "宿泊施設・写真データに変更なし。定期デプロイを省略します。"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git commit -m "chore: 楽旅くん 宿泊施設データ更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
 
       - name: Vercelへ公開
+        if: github.event_name != 'schedule' || steps.data_update.outputs.changed == 'true'
         run: |
           set -o pipefail
           bash scripts/vercel-deploy.sh | tee /tmp/deploy.log
@@ -94,6 +102,7 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
       - name: 公開URLの表示確認
+        if: github.event_name != 'schedule' || steps.data_update.outputs.changed == 'true'
         run: |
           set -u
           hosts=$(sed -n '/=== 4/,$p' /tmp/deploy.log | grep -E '\.vercel\.app$' || true)
@@ -111,7 +120,15 @@ jobs:
             grep -o 'href="https://hb.afl.rakuten.co.jp[^"]*" target="_blank" rel="[^"]*" data-hotel-no="[0-9]*" data-placement="[a-z-]*"' /tmp/hotel.html | head -1 | cut -c1-200
             curl -sS -o /dev/null -w "api/click（不正な施設番号→400を期待）: HTTP %{http_code}\n" -X POST "${url}/api/click" -d '{"hotelNo":1,"placement":"card"}'
             # 集計対象外の healthcheck を1件送り、Blobへの書き込みが実際に成功するか確認（X-Click-Recorded: 1 が期待値）
-            curl -sS -D - -o /dev/null -X POST "${url}/api/click" -d "{\"hotelNo\":${hotel},\"placement\":\"healthcheck\",\"page\":\"/deploy-check\"}" | grep -iE '^HTTP|x-click-recorded'
+            headers=$(mktemp)
+            status=$(curl -sS -D "${headers}" -o /dev/null -w '%{http_code}' -X POST "${url}/api/click" -d "{\"hotelNo\":${hotel},\"placement\":\"healthcheck\",\"page\":\"/deploy-check\"}")
+            recorded=$(grep -i '^x-click-recorded:' "${headers}" | tr -d '\r' | awk '{print $2}' || true)
+            rm -f "${headers}"
+            echo "api/click healthcheck: HTTP ${status}, X-Click-Recorded: ${recorded:-missing}"
+            if [ "${status}" != "204" ] || [ "${recorded}" != "1" ]; then
+              echo "::error::楽天送客クリック計測の書き込み検証に失敗（HTTP ${status}, X-Click-Recorded: ${recorded:-missing}）"
+              exit 1
+            fi
             curl -sS -o /tmp/stats.html -w "stats: HTTP %{http_code}\n" "${url}/stats"
             grep -o 'Vercel Blob）が未接続[^<]*\|[0-9,]*<span[^>]*>クリック（累計）' /tmp/stats.html | head -1
             echo "--- 全ページの機械チェック ---"

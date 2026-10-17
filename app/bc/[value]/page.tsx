@@ -11,9 +11,9 @@ const VALID_BC = ['8.4', '8.5', '8.6', '8.7', '8.8', '8.9', '9.0'];
 
 const BC_GUIDE: Record<string, { title: string; desc: string; note: string }> = {
   '8.4': {
-    title: 'BC 8.4のコンタクトレンズ おすすめ一覧',
-    desc: 'BC 8.4は比較的カーブのきついBC値です。アキュビュー オアシス（2week）やマイデイ ワンデーなど、フィット感の高い商品が揃っています。',
-    note: '角膜曲率が小さめ（カーブがきつい）の方に処方されやすいBC値です。',
+    title: 'BC8.4のコンタクトレンズ一覧｜対応製品と価格を比較',
+    desc: 'BC8.4に対応するコンタクトレンズを一覧で確認。装用期間・DIA・価格を比較し、眼科で指定された製品・規格と一致するか確認しましょう。',
+    note: 'BCが同じでも製品によって装用感は異なります。BCの数値だけで適合を判断せず、眼科で確認した製品・規格に従ってください。',
   },
   '8.5': {
     title: 'BC 8.5のコンタクトレンズ おすすめ一覧',
@@ -48,6 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${guide.title} | レンズナビ`,
     description: guide.desc,
+    alternates: { canonical: `https://www.lens-navi.jp/bc/${value}` },
     keywords: [`コンタクト BC${value}`, `BC${value} コンタクト`, `ベースカーブ${value}`, `BC ${value} おすすめ`],
   };
 }
@@ -79,9 +80,9 @@ export default async function BCValuePage({ params }: Props) {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'ホーム', item: 'https://lens-navi.jp' },
-          { '@type': 'ListItem', position: 2, name: 'BCで選ぶ', item: 'https://lens-navi.jp/bc' },
-          { '@type': 'ListItem', position: 3, name: `BC ${value}`, item: `https://lens-navi.jp/bc/${value}` },
+          { '@type': 'ListItem', position: 1, name: 'ホーム', item: 'https://www.lens-navi.jp' },
+          { '@type': 'ListItem', position: 2, name: 'BCで選ぶ', item: 'https://www.lens-navi.jp/bc' },
+          { '@type': 'ListItem', position: 3, name: `BC ${value}`, item: `https://www.lens-navi.jp/bc/${value}` },
         ],
       },
       {
@@ -92,7 +93,7 @@ export default async function BCValuePage({ params }: Props) {
           '@type': 'ListItem',
           position: i + 1,
           name: p!.name,
-          url: `https://lens-navi.jp/product/${p!.slug}`,
+          url: `https://www.lens-navi.jp/product/${p!.slug}`,
         })),
       },
     ],
@@ -120,6 +121,22 @@ export default async function BCValuePage({ params }: Props) {
         </p>
       )}
 
+      {value === '8.4' && (
+        <div className="mb-6 rounded-lg border border-sky-100 bg-sky-50 p-4 text-sm text-slate-700">
+          <p className="font-semibold mb-2">BC8.4のコンタクトを探す前に</p>
+          <p className="leading-relaxed">BC（ベースカーブ）はレンズの曲率を表す数値です。BC8.4という数字だけで商品を決めず、眼科で確認した製品名・度数・DIA・装用期間と照合してください。</p>
+          <p className="mt-2">初めて通販を利用する場合は、<Link href="/column/contact-net-kounyu-guide" className="text-sky-700 underline underline-offset-2">コンタクトのネット購入ガイド</Link>も参考にしてください。</p>
+        </div>
+      )}
+
+      {value === '8.4' && (
+        <div className="mb-6 rounded-xl border border-sky-200 bg-white p-4 sm:p-5">
+          <h2 className="text-base font-bold text-slate-900 mb-2">使っている製品の年間コストを比較</h2>
+          <p className="text-sm text-slate-600 mb-3">現在お使いの製品と同じ規格を確認したうえで、下の商品一覧から年間費用や販売店ごとの価格を比較できます。BCだけを基準に製品を変更しないでください。</p>
+          <a href="#bc-products" className="block text-center rounded-lg bg-sky-700 hover:bg-sky-800 text-white font-bold py-3 px-4">対応商品から年間コストを比較する →</a>
+        </div>
+      )}
+
       {/* BC切り替えタブ */}
       <div className="flex gap-2 flex-wrap mb-8">
         {allBCValues.map((bc) => (
@@ -136,7 +153,7 @@ export default async function BCValuePage({ params }: Props) {
 
       {/* 商品一覧 */}
       <p className="text-xs text-gray-400 mb-4">{productsWithPrices.length}商品 ／ 人気順</p>
-      <div className="space-y-4">
+      <div id="bc-products" className="scroll-mt-6 space-y-4">
         {productsWithPrices.map((product, i) => {
           if (!product) return null;
           const cheapest = product.prices[0];
@@ -178,9 +195,9 @@ export default async function BCValuePage({ params }: Props) {
                     ) : (
                       <p className="text-sm text-gray-400">価格情報なし</p>
                     )}
-                    <Link href={`/product/${product.slug}`}
+                    <Link href={`/product/${product.slug}#${['1day', '2week'].includes(product.category) ? 'annual-cost' : 'price-comparison'}`}
                       className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors">
-                      価格を比較 →
+                      {['1day', '2week'].includes(product.category) ? '年間費用を比較 →' : '価格を比較 →'}
                     </Link>
                   </div>
                 </div>

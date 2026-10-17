@@ -1,9 +1,7 @@
 name: Threads 今日の吉方位 自動投稿
 
 on:
-  schedule:
-    # 毎日 JST 12:30 (UTC 3:30)。対象曜日（火・木・土）判定はスクリプト内部で実施
-    - cron: '30 3 * * *'
+  # 14日間の1日2投稿テスト中は定期実行を停止。手動実行のみ許可。
   workflow_dispatch:
 
 jobs:
