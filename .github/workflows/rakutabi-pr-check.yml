@@ -1,0 +1,28 @@
+name: Rakutabi PR preflight
+on:
+  pull_request:
+    paths:
+      - 'rakutabi/**'
+      - '.github/workflows/rakutabi-pr-check.yml'
+  push:
+    branches:
+      - 'fix/rakutabi-search-preflight-20261018'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rakutabi
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: rakutabi/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
