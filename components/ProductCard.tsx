@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Eye, Repeat, Calendar, Rainbow, Medal, type LucideIcon } from 'lucide-react';
 import { ProductWithPrices } from '@/lib/products';
 import rakutenOfficialLinks from '@/data/rakuten-official-links.json';
@@ -93,6 +94,12 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
         </div>
 
         <div className="flex flex-col gap-2">
+          <Link
+            href={`/product/${product.slug}#${['1day', '2week'].includes(product.category) ? 'annual-cost' : 'price-comparison'}`}
+            className="block bg-sky-700 hover:bg-sky-800 text-white text-sm font-bold text-center py-3 rounded-lg transition-colors w-full"
+          >
+            {['1day', '2week'].includes(product.category) ? '年間コスト・最安店を比較する →' : 'ショップ別の価格を比較する →'}
+          </Link>
           {cheapestA8 && (
             <a
               href={cheapestA8.url}
