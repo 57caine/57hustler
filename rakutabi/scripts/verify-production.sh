@@ -17,7 +17,7 @@ const themes = pick(/slug: \x27(weekend|onsen|family|couple|solo)\x27/g);
 const regions = pick(/\{ slug: \x27([a-z]+)\x27, tagline:/g);
 const areas = pick(/\{ key: \x27([a-z]+)\x27, name:/g);
 const features = pick(/slug: \x27([a-z]+-[a-z]+)\x27,\n    title:/g);
-const out = ["/", "/area", "/feature", "/about", "/terms", "/privacy", "/contact", "/operator", "/search", "/search?q=%E7%AE%B1%E6%A0%B9", "/search?meal=roomOnly"];
+const out = ["/", "/area", "/feature", "/about", "/terms", "/privacy", "/contact", "/operator", "/search", "/search?q=%E7%AE%B1%E6%A0%B9", "/search?meal=roomOnly", "/search?q=%E7%9F%B3%E5%B7%9D&meal=roomOnly", "/search?q=%E6%9D%B1%E4%BA%AC", "/search?q=%E5%8C%97%E6%B5%B7%E9%81%93", "/search?q=%E5%AD%98%E5%9C%A8%E3%81%97%E3%81%AA%E3%81%84%E5%AE%BF"];
 themes.forEach((t) => out.push(`/theme/${t}`));
 regions.forEach((r) => out.push(`/region/${r}`));
 features.forEach((f) => out.push(`/feature/${f}`));
@@ -39,6 +39,10 @@ for p in ${paths}; do
   # 掛け合わせページは宿が3件未満だと生成しない仕様のため、404は不合格にしない
   if [ "${code}" = "404" ] && [[ "${p}" =~ ^/area/[a-z]+/[a-z]+$ ]]; then skipped_combo=$((skipped_combo + 1)); continue; fi
   problems=""
+  case "${p}" in
+    /search?q=%E7%9F%B3%E5%B7%9D*|/search?q=%E6%9D%B1%E4%BA%AC*|/search?q=%E5%AD%98%E5%9C%A8%E3%81%97%E3%81%AA%E3%81%84%E5%AE%BF*)
+      grep -q "検索対象の宿が見つかりませんでした" "${tmp}" || problems+=" 未収録検索の案内なし" ;;
+  esac
   [ "${code}" = "200" ] || problems+=" HTTP${code}"
   grep -q '<h1' "${tmp}" || problems+=" h1なし"
   grep -q '<meta name="robots" content="noindex, nofollow"' "${tmp}" || problems+=" noindexなし"

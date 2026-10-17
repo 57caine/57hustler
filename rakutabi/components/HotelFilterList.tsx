@@ -15,7 +15,7 @@ const SORTS: { key: SortKey; label: string }[] = [
 
 type PanelKey = 'area' | ConditionGroup;
 
-/** デザイン案の絞り込みボタン列（エリア・価格帯・食事・温泉・客室・景色・子連れ向け） */
+/** デザイン案の絞り込みボタン列（エリア・食事・温泉・客室・景色・子連れ向け） */
 const PANELS: { key: PanelKey; label: string; icon: IconKey }[] = [
   { key: 'area', label: 'エリア', icon: 'pin' },
   { key: '食事', label: '食事', icon: 'meal' },
@@ -90,12 +90,6 @@ export default function HotelFilterList({ hotels, showArea = true }: { hotels: H
             areaOptions.map((a) => (
               <button key={a.key} type="button" aria-pressed={areaKey === a.key} onClick={() => setAreaKey(areaKey === a.key ? '' : a.key)} className={option(areaKey === a.key)}>
                 {a.prefecture}・{a.name}
-              </button>
-            ))}
-          {open === 'price' &&
-            PRICE_BANDS.map((b) => (
-              <button key={b.key} type="button" aria-pressed={band === b.key} onClick={() => setBand(band === b.key ? '' : b.key)} className={option(band === b.key)}>
-                {b.label}
               </button>
             ))}
           {open !== 'area' &&
