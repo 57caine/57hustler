@@ -15,6 +15,8 @@ export interface ProductGroup {
   limit: number;
   /** 商品名に含まれている必要がある語（検索結果に混ざる別の動物用・無関係な商品を除く） */
   mustMatch: RegExp;
+  /** 商品名に含まれていたら除外する語（同じ語で検索に出る別の用途の商品を除く） */
+  mustNotMatch?: RegExp;
 }
 
 const DOG = /犬|いぬ|イヌ|ドッグ|DOG/i;
@@ -24,7 +26,7 @@ export const PRODUCT_GROUPS: ProductGroup[] = [
   { id: 'dog-id-tag', label: '犬用の迷子札', category: 'id-tag', keywords: ['犬 迷子札'], limit: 4, mustMatch: /迷子札|ネームタグ|ネームプレート|名札/ },
   { id: 'water-bottle', label: 'ペット用の携帯給水ボトル', category: 'water', keywords: ['ペット 給水ボトル 携帯'], limit: 4, mustMatch: /給水|ボトル|水筒|水飲み/ },
   { id: 'dog-manner-pouch', label: '犬用のマナーポーチ（排泄物の持ち運び用）', category: 'toilet', keywords: ['マナーポーチ 犬'], limit: 4, mustMatch: /マナーポーチ/ },
-  { id: 'dog-bowl', label: '折りたたみできる食器（ボウル）', category: 'bowl', keywords: ['犬 折りたたみ 食器', 'ペット 折りたたみ ボウル'], limit: 6, mustMatch: /(折りたたみ|折り畳み|折りたため|たためる|携帯|シリコン).*(ボウル|食器|皿)|(ボウル|食器|皿).*(折りたたみ|折り畳み|折りたため|たためる|携帯)/ },
+  { id: 'dog-bowl', label: '折りたたみできる食器（ボウル）', category: 'bowl', keywords: ['犬 折りたたみ 食器', 'ペット 折りたたみ ボウル'], limit: 6, mustMatch: /(折りたたみ|折り畳み|折りたため|たためる|携帯|シリコン).*(ボウル|食器|皿)|(ボウル|食器|皿).*(折りたたみ|折り畳み|折りたため|たためる|携帯)/, mustNotMatch: /食器台|スタンド|テーブル|餌台|水台/ },
   { id: 'dog-sheet', label: 'ペットシーツ', category: 'toilet', keywords: ['ペットシーツ 犬'], limit: 4, mustMatch: /シーツ|シート/ },
   { id: 'dog-waste-bag', label: '排泄物を入れる袋', category: 'toilet', keywords: ['うんち袋 犬'], limit: 4, mustMatch: /袋|バッグ/ },
   { id: 'cat-id-tag', label: '猫用の迷子札・首輪', category: 'id-tag', keywords: ['猫 迷子札'], limit: 4, mustMatch: /迷子札|ネームタグ|ネームプレート|名札/ },
