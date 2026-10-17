@@ -59,3 +59,19 @@
 - `npx tsx scripts/verify-site.ts <URL> [--expect-index] [--expect-products]` 全ページの機械チェック（HTTPのみ）
 - `node scripts/check-mobile.mjs <URL>` スマホ幅の実ブラウザ確認・商品画像・affiliate_click（playwright は一時インストール）
 - 開発環境からは vercel.app・楽天の画像サーバーにも届かないため、公開後の確認はワークフロー内で行う
+
+## 犬向け3テーマMVP（2026-10-17、ブランチ `claude/pet-bousai-dog-mvp`、Draft PR）
+
+オーナーの計画書（main の `docs/pet-bousai-mvp-20261017.md`、PR #85 `docs/pet-disaster-mvp-plan.md`）に合わせて犬向けに再構成した。
+**このブランチは公開しない**（検証は `.github/workflows/pet-bousai-ci.yml`。VERCEL_TOKEN を使わない）。
+
+- ページ: `/dog/evacuation-carrier`（旧 `/dog/carrier` から恒久転送）・`/dog/water-food`（携帯給水器・折りたたみ食器）・
+  `/dog/toilet`（ペットシーツ・処理袋・マナーポーチ）・`/dog/checklist`（犬の持ち出し用品）。猫・小動物のページは残しているが拡張しない
+- 3テーマページは商品を `components/ComparisonTable.tsx`（全列で並べ替え可能。CLAUDE.md の比較表ルール）で表示。
+  列は掲載順・商品・タイプ・ショップ。タイプは商品名の語から機械的に分類（`lib/product-types.ts`）。価格・レビューは出さない
+- 計測: `affiliate_click` に item_id（楽天の商品コード）・position（card/table）を追加。比較表へのリンク（data-compare-link）で
+  `product_compare_click`。`transport_type` は削除
+- リンク検証: `scripts/verify-links.ts`。アフィリエイトURLは開かず（楽天側でクリックとして数えられるため）、形式と遷移先の商品ページの存在を確認
+- **楽天アフィリエイトの帰属は未確定**: lens-navi と同じアカウントのID（1アカウントで複数サイトが前提の仕組み）だが、
+  2022年2月以降、リンクを掲載するサイトは「サイト情報の登録」が必須。このサイトの登録は未確認のため、成果が帰属するとは主張しない
+- 楽天ウェブサービス（API）の Referer は lens-navi.jp を流用中。公開ドメインが決まったら、そのドメインをアプリの「許可されたWebサイト」に追加する

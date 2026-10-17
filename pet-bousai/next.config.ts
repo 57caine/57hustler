@@ -8,6 +8,10 @@ const indexable =
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // 2026-10-17 キャリーのページのURLを計画書（docs/pet-bousai-mvp-20261017.md）に合わせて変更。旧URLは恒久転送する
+  async redirects() {
+    return [{ source: '/dog/carrier', destination: '/dog/evacuation-carrier', permanent: true }];
+  },
   // モノレポ内のため、親フォルダ（lens-navi）の package-lock.json を起点と誤認しないよう明示する
   turbopack: { root: path.join(__dirname) },
   async headers() {

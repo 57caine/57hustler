@@ -12,7 +12,7 @@
 import { chromium } from 'playwright';
 
 const BASE = (process.argv[2] || '').replace(/\/$/, '');
-const PAGES = ['/', '/dog', '/cat', '/rabbit-guinea-pig', '/dog/carrier', '/cat/carrier', '/cat/toilet', '/bousai-set', '/checklist', '/about', '/privacy', '/sources'];
+const PAGES = ['/', '/dog', '/dog/evacuation-carrier', '/dog/water-food', '/dog/toilet', '/dog/checklist', '/cat', '/rabbit-guinea-pig', '/cat/carrier', '/cat/toilet', '/bousai-set', '/checklist', '/about', '/privacy', '/sources'];
 
 (async () => {
   const problems = [];
@@ -83,11 +83,38 @@ const PAGES = ['/', '/dog', '/cat', '/rabbit-guinea-pig', '/dog/carrier', '/cat/
     if (r.emptyNames) problems.push(`${p}: 商品名が空のリンク ${r.emptyNames}件`);
   }
 
-  await page.goto(BASE + '/cat/carrier', { waitUntil: 'networkidle' });
+  const CLICK_PAGE = '/dog/evacuation-carrier';
+  await page.goto(BASE + CLICK_PAGE, { waitUntil: 'networkidle' });
   await waitFor((h) => h.en === 'page_view', 8000);
+
+  // 比較表の並べ替え（全列）が実際に動くか
+  const table = page.locator('[data-comparison-table]').first();
+  const firstNames = async () => table.locator('tbody tr td:nth-child(2) a').evaluateAll((as) => as.map((a) => a.dataset.itemId));
+  const before = await firstNames();
+  for (const key of ['name', 'type', 'shop', 'order']) {
+    await table.locator(`button[data-sort-key="${key}"]`).click();
+    const sortAttr = await table.locator(`button[data-sort-key="${key}"]`).evaluate((b) => b.closest('th').getAttribute('aria-sort'));
+    if (sortAttr !== 'ascending') problems.push(`比較表: ${key} 列の並べ替えで aria-sort が ${sortAttr}`);
+  }
+  await table.locator('button[data-sort-key="order"]').click(); // 掲載順の降順
+  const desc = await firstNames();
+  console.log(`比較表の並べ替え: 掲載順(昇順)先頭=${before[0]} / 掲載順(降順)先頭=${desc[0]} / 行数=${before.length}`);
+  if (before.length > 1 && (desc[0] !== before[before.length - 1])) problems.push('比較表: 掲載順の降順が正しくない');
+  await table.locator('button[data-sort-key="order"]').click(); // 昇順に戻す
+
+  // 比較表へのリンク → product_compare_click
   hits.length = 0;
-  const link = page.locator('a[rel~="sponsored"]').first();
-  const expected = await link.evaluate((a) => ({ name: a.dataset.productName, cat: a.dataset.productCategory, href: a.href }));
+  await page.locator('a[data-compare-link]').first().click();
+  const isCompare = (h) => h.en === 'product_compare_click' && h.tid === 'G-KPE1LBHFW7';
+  await waitFor(isCompare, 10000);
+  const compares = hits.filter(isCompare);
+  console.log('product_compare_click（GA4への送信内容）:', JSON.stringify(compares.map((h) => ({ en: h.en, page: new URL(h.dl || 'http://x/').pathname, link_location: h['ep.link_location'] }))));
+  if (compares.length !== 1) problems.push(`product_compare_click が ${compares.length} 件（1件であるべき）`);
+
+  // 比較表の楽天リンク → affiliate_click（商品ID・位置つき）
+  hits.length = 0;
+  const link = table.locator('a[rel~="sponsored"]').first();
+  const expected = await link.evaluate((a) => ({ name: a.dataset.productName, cat: a.dataset.productCategory, id: a.dataset.itemId, pos: a.dataset.position, href: a.href }));
   const [popup] = await Promise.all([page.waitForEvent('popup'), link.click()]);
   await popup.close();
   const isClick = (h) => h.en === 'affiliate_click' && h.tid === 'G-KPE1LBHFW7';
@@ -98,9 +125,9 @@ const PAGES = ['/', '/dog', '/cat', '/rabbit-guinea-pig', '/dog/carrier', '/cat/
   // page_path は gtag の予約パラメータで独自項目としては送られないため、どのページのクリックかは
   // GA4 が全イベントに自動で付ける page_location（dl）で判定する（GA4 の「ページパス」はここから作られる）
   const pathOf = (h) => h['ep.page_path'] || (h.dp ?? '') || new URL(h.dl || 'http://x/').pathname;
-  console.log('affiliate_click（GA4への送信内容）:', JSON.stringify(clicks.map((h) => ({ en: h.en, tid: h.tid, page_location: h.dl, page: pathOf(h), product_name: h['ep.product_name'], product_category: h['ep.product_category'], destination: h['ep.destination'], keys: Object.keys(h).filter((k) => k.startsWith('ep.') || k.startsWith('epn.')) }))));
+  console.log('affiliate_click（GA4への送信内容）:', JSON.stringify(clicks.map((h) => ({ en: h.en, tid: h.tid, page: pathOf(h), item_id: h['ep.item_id'], position: h['ep.position'], product_name: h['ep.product_name'], product_category: h['ep.product_category'], destination: h['ep.destination'] }))));
   const ev = clicks[0];
-  if (clicks.length !== 1 || pathOf(ev) !== '/cat/carrier' || ev['ep.product_name'] !== expected.name || ev['ep.product_category'] !== expected.cat || ev['ep.destination'] !== 'rakuten') {
+  if (clicks.length !== 1 || pathOf(ev) !== CLICK_PAGE || ev['ep.item_id'] !== expected.id || ev['ep.position'] !== 'table' || ev['ep.product_name'] !== expected.name || ev['ep.product_category'] !== expected.cat || ev['ep.destination'] !== 'rakuten') {
     problems.push(`affiliate_click が期待どおりに送られていない（${clicks.length}件）`);
   }
   // 広告以外のリンク（環境省の出典）では送られないこと

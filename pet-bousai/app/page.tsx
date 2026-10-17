@@ -36,6 +36,7 @@ export default function Home() {
       </p>
       <p className="mt-2 text-[15px] leading-relaxed">
         用品は、防災専用の物よりも、通院や散歩など普段から使える物を中心に紹介しています。
+        現在は、犬の避難用キャリー・携帯給水器と食器・トイレ用品の比較を中心に掲載しています。
       </p>
 
       <Link

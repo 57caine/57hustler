@@ -1,4 +1,6 @@
 import { getGroup } from '@/lib/product-groups';
+import { classifyType } from '@/lib/product-types';
+import ComparisonTable from './ComparisonTable';
 import { formatFetchedDate, loadProducts } from '@/lib/products';
 
 /**
@@ -7,10 +9,19 @@ import { formatFetchedDate, loadProducts } from '@/lib/products';
  * - 並びは楽天の検索結果の標準順で、当サイトによる順位付けではない
  * - 1商品＝1リンク。カード全体が商品ページへのリンクで、商品名を必ず表示する
  */
-export default function ProductSection({ groupIds, intro }: { groupIds: string[]; intro?: string }) {
+export default function ProductSection({
+  groupIds,
+  intro,
+  variant = 'cards',
+}: {
+  groupIds: string[];
+  intro?: string;
+  /** table: 全列で並べ替えできる比較表で表示する（犬の3テーマページ） */
+  variant?: 'cards' | 'table';
+}) {
   const data = loadProducts();
   return (
-    <section className="mt-10 border-t-4 border-gray-200 pt-6" data-product-section>
+    <section id="compare" className="mt-10 border-t-4 border-gray-200 pt-6 scroll-mt-4" data-product-section>
       <p className="inline-block rounded bg-gray-700 px-2 py-0.5 text-xs font-bold text-white">広告</p>
       <h2 className="mt-2 text-lg font-bold">楽天市場で用品を探す</h2>
       <p className="mt-2 text-sm text-gray-600 leading-relaxed">
@@ -28,6 +39,20 @@ export default function ProductSection({ groupIds, intro }: { groupIds: string[]
               <p className="mt-2 text-sm text-gray-500" data-products-empty>
                 商品情報は公開時に楽天市場から取得します。
               </p>
+            ) : variant === 'table' ? (
+              <ComparisonTable
+                caption={`${group.label}の比較（${items.length}件）。見出しを押すと並べ替えられます。タイプは商品名に含まれる語から分類しています。`}
+                rows={items.map((p, i) => ({
+                  itemCode: p.itemCode,
+                  name: p.name,
+                  shopName: p.shopName,
+                  url: p.url,
+                  imageUrl: p.imageUrl,
+                  type: classifyType(id, p.name),
+                  category: group.category,
+                  order: i + 1,
+                }))}
+              />
             ) : (
               <ul className="mt-3 grid gap-3 sm:grid-cols-2">
                 {items.map((p) => (
@@ -37,6 +62,8 @@ export default function ProductSection({ groupIds, intro }: { groupIds: string[]
                       target="_blank"
                       rel="noopener noreferrer nofollow sponsored"
                       data-affiliate
+                      data-item-id={p.itemCode}
+                      data-position="card"
                       data-product-name={p.name.slice(0, 100)}
                       data-product-category={group.category}
                       data-destination="rakuten"

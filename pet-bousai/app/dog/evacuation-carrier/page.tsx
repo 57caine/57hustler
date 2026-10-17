@@ -2,10 +2,11 @@ import Link from 'next/link';
 import Article from '@/components/Article';
 import OfficialInfo from '@/components/OfficialInfo';
 import ProductSection from '@/components/ProductSection';
+import CompareLink from '@/components/CompareLink';
 import { getPage } from '@/lib/pages';
 import { pageMetadata } from '@/lib/metadata';
 
-const meta = getPage('/dog/carrier');
+const meta = getPage('/dog/evacuation-carrier');
 export const metadata = pageMetadata(meta);
 
 export default function DogCarrierPage() {
@@ -13,12 +14,15 @@ export default function DogCarrierPage() {
     <Article
       meta={meta}
       lead={
-        <p>
-          犬の避難用キャリーは、リュック型・肩掛け型・ハード型（クレート）など形がさまざまです。
-          このページでは、環境省のガイドラインにある同行避難の準備例を確認したうえで、購入前に確認したい点を整理しました。
-        </p>
+        <>
+          <p>
+            犬の避難用キャリーは、リュック型・肩掛け型・ハード型（クレート）など形がさまざまです。
+            このページでは、環境省のガイドラインにある同行避難の準備例を確認したうえで、購入前に確認したい点を整理しました。
+          </p>
+          <CompareLink label="楽天市場のキャリーの比較表を見る" />
+        </>
       }
-      products={<ProductSection groupIds={['dog-carrier']} intro="通院や外出にも使えるキャリーを掲載しています。" />}
+      products={<ProductSection groupIds={['dog-carrier']} variant="table" intro="通院や外出にも使えるキャリーを掲載しています。" />}
     >
       <OfficialInfo title="ガイドラインでのキャリー・ケージの位置づけ" cite={[{ id: 'owner-guide', pages: 'p.13、p.17、p.19、p.22' }]}>
         <ul>

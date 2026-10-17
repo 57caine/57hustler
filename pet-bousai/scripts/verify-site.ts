@@ -20,6 +20,7 @@ if (!base) {
 const FORBIDDEN = ['効く', '防ぐ', '改善', 'No.1', 'NO.1', '1位', '１位', 'ランキング', '絶対', '必ず', 'これがないと', '人気', '最強', '必須'];
 
 const problems: string[] = [];
+const COMPARE_PAGES = ['/dog/evacuation-carrier', '/dog/water-food', '/dog/toilet'];
 const ng = (path: string, msg: string) => problems.push(`${path}: ${msg}`);
 
 function visibleText(html: string): string {
@@ -78,12 +79,23 @@ async function checkPage(path: string, isArticle: boolean) {
     if (!/target="_blank"/.test(a)) ng(path, 'target="_blank" がない');
     if (!/data-product-name="[^"]+"/.test(a)) ng(path, 'data-product-name がない');
     if (!/data-product-category="[^"]+"/.test(a)) ng(path, 'data-product-category がない');
+    if (!/data-item-id="[^"]+"/.test(a)) ng(path, 'data-item-id（商品ID）がない');
+    if (!/data-position="(card|table)"/.test(a)) ng(path, 'data-position（掲載位置）がない');
   }
 
   if (expectProducts && body.includes('data-product-section')) {
     if (body.includes('data-products-empty')) ng(path, '商品が表示されていないグループがある');
     if (affiliate === 0) ng(path, '楽天リンクが0件');
     if (!body.includes('data-products-fetched')) ng(path, '商品情報の取得日の表示がない');
+  }
+
+  // 犬の3テーマページ: 全列で並べ替えできる比較表と、比較表へのリンク（product_compare_click）があること
+  if (COMPARE_PAGES.includes(path)) {
+    const tables = (body.match(/data-comparison-table/g) ?? []).length;
+    const sortButtons = (body.match(/data-sort-key="(order|name|type|shop)"/g) ?? []).length;
+    if (tables === 0) ng(path, '比較表がない');
+    if (sortButtons !== tables * 4) ng(path, `並べ替えボタンが ${sortButtons} 個（比較表${tables}つ×4列であるべき）`);
+    if (!body.includes('data-compare-link')) ng(path, '比較表へのリンクがない');
   }
 
   const text = visibleText(body);
@@ -109,6 +121,11 @@ async function main() {
   urls.forEach((u) => console.log('  ' + u));
   if (urls.some((u) => /vercel\.app/.test(u))) ng('/sitemap.xml', 'vercel.app の URL を含む');
   if (expectIndex && urls.length !== ARTICLES.length + INFO_PAGES.length + 1) ng('/sitemap.xml', `URL数が想定と違う（${urls.length}）`);
+
+  const old = await get('/dog/carrier');
+  const loc = old.res.headers.get('location') ?? '';
+  console.log(`--- 旧URL /dog/carrier → HTTP ${old.res.status} ${loc}`);
+  if (![301, 308].includes(old.res.status) || !loc.endsWith('/dog/evacuation-carrier')) ng('/dog/carrier', '新URLへの恒久転送になっていない');
 
   const nf = await get('/this-page-does-not-exist');
   if (nf.res.status !== 404) ng('/this-page-does-not-exist', `存在しないページが HTTP ${nf.res.status}`);

@@ -24,8 +24,8 @@ export default function DogPage() {
       }
       products={
         <ProductSection
-          groupIds={['dog-id-tag', 'water-bottle', 'dog-manner-pouch']}
-          intro="散歩や外出でも使える用品を中心に掲載しています。"
+          groupIds={['dog-id-tag']}
+          intro="迷子札など、散歩や外出でも使える用品を掲載しています。"
         />
       }
     >
@@ -77,7 +77,7 @@ export default function DogPage() {
           <li>ガムテープやマジック（ケージの補修や動物情報の掲示などに使えます）</li>
         </ul>
         <p>
-          持ち物を一覧で確認したい場合は、<Link href="/checklist">同行避難の持ち物チェックリスト</Link>にまとめています。
+          持ち物を一覧で確認したい場合は、<Link href="/dog/checklist">犬の持ち出し用品チェックリスト</Link>にまとめています。
         </p>
       </OfficialInfo>
 
@@ -99,7 +99,11 @@ export default function DogPage() {
           防災専用の物を別に買い足すより、普段使っている物の予備を用意しておくほうが、使い慣れた状態で持ち出せます。
         </p>
         <p>
-          キャリーやケージについては<Link href="/dog/carrier">犬の避難用キャリーの選び方</Link>、
+          用品ごとの選び方と楽天市場の商品の比較表は、
+          <Link href="/dog/evacuation-carrier">避難用キャリー</Link>・
+          <Link href="/dog/water-food">携帯給水器・折りたたみ食器</Link>・
+          <Link href="/dog/toilet">トイレ用品</Link>
+          の各ページにまとめています。持ち物は<Link href="/dog/checklist">犬の持ち出し用品チェックリスト</Link>で確認できます。
           市販のセットについては<Link href="/bousai-set">ペット防災セットは買うべき？</Link>で整理しています。
         </p>
       </section>
