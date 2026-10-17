@@ -15,7 +15,7 @@ const SORTS: { key: SortKey; label: string }[] = [
 
 type PanelKey = 'area' | ConditionGroup;
 
-/** デザイン案の絞り込みボタン列（エリア・価格帯・食事・温泉・客室・景色・子連れ向け） */
+/** デザイン案の絞り込みボタン列（エリア・食事・温泉・客室・景色・子連れ向け） */
 const PANELS: { key: PanelKey; label: string; icon: IconKey }[] = [
   { key: 'area', label: 'エリア', icon: 'pin' },
   { key: '食事', label: '食事', icon: 'meal' },
