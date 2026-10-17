@@ -7,15 +7,52 @@
  */
 
 import Anthropic from '@anthropic-ai/sdk';
+import * as fs from 'fs';
+import * as path from 'path';
 import {
   KYUSEI, POSITION_MEANINGS, getDailyStar, getMonthlyStarForToday, getStarPositionIndex,
   getJstDayOfWeek, STAR_TO_TRIGRAM, selectHexagram, validateOneLiners, KYUSEI_CONTENT_CAUTION, getSeasonWordCaution,
-  EKIKYO_THEME_GUIDANCE, MAX_ONELINER_LENGTH,
+  EKIKYO_THEME_GUIDANCE, MAX_ONELINER_LENGTH, getJstDateSlug,
 } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
 const USER_ID  = process.env.THREADS_USER_ID!;
 const ACCESS_TOKEN = process.env.THREADS_ACCESS_TOKEN!;
+
+// 同日の重複投稿防止（post-threads-fortune.ts と同じ設計。手動実行とスケジュール実行が
+// 重なった場合や、GitHub Actionsのスケジュールが同日に二重起動した場合の対策）。
+// --claim で予約・コミット・pushを済ませてから --post で実際に投稿する2段階方式
+// （2026-10-17、CEOコードレビュー対応。投稿後に履歴保存だけが失敗して翌回に再投稿する
+// 事故を構造的に無くすため、予約の方を先に確定させる）。
+const HISTORY_PATH = path.join(process.cwd(), 'data', 'yonaka-short-post-history.json');
+
+function hasPostedToday(today: string): boolean {
+  if (!fs.existsSync(HISTORY_PATH)) return false;
+  const raw = fs.readFileSync(HISTORY_PATH, 'utf-8');
+  let data: { lastPostedDate?: string };
+  try {
+    data = JSON.parse(raw) as { lastPostedDate?: string };
+  } catch (e) {
+    // 履歴ファイルが壊れている場合、「投稿していない」とみなして進めるのは危険
+    // （実際には投稿済みで、壊れた直前に書き損じただけ、という可能性を否定できないため）。
+    // 安全側に倒して処理を止める。手動で data/yonaka-short-post-history.json を確認・修復すること。
+    throw new Error(`履歴ファイルの読み取りに失敗しました（JSON破損の可能性）: ${HISTORY_PATH}\n` +
+      `内容を確認し、問題なければ手動で修復してください。安全のため投稿は行いません。\n原因: ${(e as Error).message}`);
+  }
+  return data.lastPostedDate === today;
+}
+
+function saveLastPostedDate(today: string): void {
+  fs.writeFileSync(HISTORY_PATH, JSON.stringify({ lastPostedDate: today }, null, 2), 'utf-8');
+}
+
+// GitHub Actionsの $GITHUB_OUTPUT に書き込む。ローカル実行（$GITHUB_OUTPUT未設定）では
+// 何もしない（ローカルでの動作確認を妨げないため）。
+function setGithubOutput(key: string, value: string): void {
+  const outPath = process.env.GITHUB_OUTPUT;
+  if (!outPath) return;
+  fs.appendFileSync(outPath, `${key}=${value}\n`, 'utf-8');
+}
 
 type PostType = 'horoscope' | 'ikkouiku' | 'toikake';
 
@@ -239,9 +276,24 @@ async function publishThread(creationId: string): Promise<string> {
   return ((await res.json()) as { id: string }).id;
 }
 
+// --claim: 本日まだ投稿していないかを確認し、未投稿なら予約（履歴ファイルへの記録）だけを
+// 行って終了する。実際のThreads投稿はまだ行わない。ワークフロー側はこのステップの直後に
+// 履歴ファイルをコミット・pushし、それが確実に成功した場合のみ --post を実行する設計。
+function runClaim(): void {
+  const today = getJstDateSlug();
+  if (hasPostedToday(today)) {
+    console.log(`::warning::本日（${today}）は既に投稿済みのためスキップします（重複投稿防止）。` +
+      `Actionsの実行自体は成功扱いになりますが、実際の投稿は行っていません。`);
+    setGithubOutput('should_post', 'false');
+    return;
+  }
+  saveLastPostedDate(today);
+  console.log(`✓ 本日（${today}）分を予約しました。この後コミット・pushが成功した場合のみ投稿します。`);
+  setGithubOutput('should_post', 'true');
+}
+
 // ─── メイン ──────────────────────────────────────────────────
-async function main() {
-  const dryRun = process.argv.includes('--dry-run');
+async function runPost(dryRun: boolean) {
   const dow = getJstDayOfWeek();
   const postType = getPostType(dow);
   const DOW_NAMES = ['日', '月', '火', '水', '木', '金', '土'];
@@ -269,7 +321,7 @@ async function main() {
       console.warn(`⚠️ 試行${attempt}: ${MAX_ONELINER_LENGTH}文字を超える一言を検出（${tooLong.map(([k, v]) => `${k}:「${v}」`).join(', ')}） → 再生成`);
     }
     if (oneLiners === null) {
-      console.warn('⚠️ 3回試行しても文字数チェックを通過できなかったため、今回の投稿をスキップします');
+      console.log('::warning::3回試行しても文字数チェックを通過できなかったため、今回の投稿をスキップします（Actionsは成功扱いですが、実際の投稿は行っていません）。');
       return;
     }
     text = buildHoroscopeText(oneLiners);
@@ -290,7 +342,7 @@ async function main() {
       console.warn(`⚠️ 試行${attempt}回目: 禁止キーワード検出 → 再生成`);
     }
     if (generated === null) {
-      console.warn('⚠️ 3回連続で禁止キーワード検出。今回の投稿をスキップします');
+      console.log('::warning::3回連続で禁止キーワード検出。今回の投稿をスキップします（Actionsは成功扱いですが、実際の投稿は行っていません）。');
       return;
     }
     text = generated;
@@ -323,6 +375,33 @@ async function main() {
   console.log('投稿公開中...');
   const postId = await publishThread(creationId);
   console.log(`✓ 投稿完了: ${postId}`);
+  // 履歴への記録は --claim 時点で既にコミット・push済み（投稿前に予約する設計のため、
+  // ここで改めて保存する必要はない）。
+}
+
+// 呼び出し方:
+//   --dry-run          ローカル動作確認用。重複チェック・履歴の読み書き・投稿を一切行わない
+//   --claim            本日分の予約のみ（投稿なし）。ワークフローはこの直後に履歴をコミット・push
+//   --post             実際の生成・投稿のみ（--claim が既に成功している前提）
+// 本番ワークフローから呼ぶときは --claim と --post を必ずペアで、間に確実なコミット・pushを挟むこと。
+async function main() {
+  const dryRun = process.argv.includes('--dry-run');
+  const claim = process.argv.includes('--claim');
+  const post = process.argv.includes('--post');
+
+  if (dryRun) {
+    await runPost(true);
+    return;
+  }
+  if (claim === post) {
+    throw new Error('--claim または --post のどちらか一方を指定してください（両方・どちらもなしは不可）。' +
+      '動作確認のみなら --dry-run を使ってください。');
+  }
+  if (claim) {
+    runClaim();
+    return;
+  }
+  await runPost(false);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
