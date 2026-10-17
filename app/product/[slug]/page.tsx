@@ -183,7 +183,7 @@ export default async function ProductPage({ params }: Props) {
       </div>
 
       {/* Price Table */}
-      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-8">
+      <div id="price-comparison" className="scroll-mt-6 bg-white rounded-xl border border-gray-200 overflow-hidden mb-8">
         <div className="px-6 py-4 border-b border-gray-100">
           <h2 className="text-lg font-bold text-gray-800">ショップ別価格比較（送料込み）</h2>
         </div>
