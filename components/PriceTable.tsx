@@ -5,7 +5,7 @@ import { TriangleAlert } from 'lucide-react';
 import { Price, Store } from '@/lib/products';
 import productsData from '@/data/products.json';
 
-type SortKey = 'store' | 'prescription' | 'annual';
+type SortKey = 'store' | 'prescription' | 'annual' | 'box';
 type SortDir = 'asc' | 'desc';
 
 type PriceTableProps = {
@@ -29,6 +29,10 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
     return Math.ceil(annualLensNeed / lensesPerListedSet) * item.price;
   };
 
+  const boxPrice = (item: Price & { store: Store }) => item.price > 0 && item.boxes > 0 && item.inStock ? item.price / item.boxes : null;
+  const boxValues = prices.map(boxPrice).filter((v): v is number => v != null);
+  const cheapestBox = boxValues.length ? Math.min(...boxValues) : null;
+
   const annualValues = prices.map(annualEstimate).filter((v): v is number => v != null);
   const cheapestAnnual = annualValues.length > 0 ? Math.min(...annualValues) : null;
 
@@ -37,6 +41,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
     let diff = 0;
     if (sortKey === 'store') diff = a.store.name.localeCompare(b.store.name, 'ja');
     else if (sortKey === 'prescription') diff = (a.store.prescriptionFree ? 0 : 1) - (b.store.prescriptionFree ? 0 : 1);
+    else if (sortKey === 'box') diff = (boxPrice(a) ?? Number.MAX_SAFE_INTEGER) - (boxPrice(b) ?? Number.MAX_SAFE_INTEGER);
     else if (sortKey === 'annual') diff = (annualEstimate(a) ?? Number.MAX_SAFE_INTEGER) - (annualEstimate(b) ?? Number.MAX_SAFE_INTEGER);
     return sortDir === 'asc' ? diff : -diff;
   });
@@ -58,7 +63,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
       <div className="flex items-start gap-2 bg-yellow-50 border border-yellow-200 rounded-lg px-4 py-3 mb-3 text-sm text-yellow-800">
         <TriangleAlert className="w-4 h-4 flex-shrink-0 mt-0.5" />
         <span>
-          1箱の価格ではなく、両眼で1年使った場合の総額目安で並べています。最新のまとめ買い価格・送料・クーポンはリンク先でご確認ください。
+          初期表示は両眼で1年使った場合の総額目安順です。1箱あたりの換算価格でも並べ替えられます。最新のまとめ買い価格・送料・クーポンはリンク先でご確認ください。
         </span>
       </div>
       <div className="overflow-x-auto">
@@ -69,6 +74,9 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                 <button onClick={() => handleSort('store')} className="flex items-center hover:text-slate-900">
                   ショップ<SortIcon col="store" />
                 </button>
+              </th>
+              <th className="text-center px-4 py-3 font-semibold text-gray-700">
+                <button onClick={() => handleSort('box')} className="flex items-center justify-center w-full hover:text-slate-900 whitespace-nowrap">1箱あたり<SortIcon col="box" /></button>
               </th>
               <th className="text-center px-4 py-3 font-semibold text-gray-700">
                 <button onClick={() => handleSort('annual')} className="flex items-center justify-center w-full hover:text-slate-900 whitespace-nowrap">
@@ -86,6 +94,8 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
           <tbody>
             {sorted.map((item, index) => {
               const annual = annualEstimate(item);
+              const perBox = boxPrice(item);
+              const isCheapestBox = perBox != null && cheapestBox != null && perBox === cheapestBox;
               const isCheapest = annual != null && cheapestAnnual != null && annual === cheapestAnnual;
               const difference = annual != null && cheapestAnnual != null ? annual - cheapestAnnual : null;
               return <tr key={`${item.storeId}-${index}`} className={[
@@ -112,6 +122,9 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                   </div>
                 </td>
                 <td className="px-4 py-3 text-center whitespace-nowrap">
+                  {perBox != null ? <><span className="font-bold text-slate-900">{Math.round(perBox).toLocaleString('ja-JP')}円</span>{isCheapestBox && <span className="block text-[11px] font-semibold text-emerald-700">1箱最安目安</span>}{item.boxes > 1 && <span className="block text-[11px] text-gray-500">{item.boxes}箱セット換算</span>}</> : <span className="text-gray-400">—</span>}
+                </td>
+                <td className="px-4 py-3 text-center whitespace-nowrap">
                   {annual != null ? <>
                     <span className="font-bold text-slate-900">約{annual.toLocaleString('ja-JP')}円</span>
                     {isCheapest ? <span className="block text-[11px] font-semibold text-emerald-700">掲載最安目安</span> : difference != null && difference > 0 ? <span className="block text-[11px] text-amber-700">最安目安より +{difference.toLocaleString('ja-JP')}円</span> : null}
@@ -136,7 +149,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
           </tbody>
         </table>
         <p className="text-xs text-gray-400 mt-2 px-4 pb-4">
-          ※ 1年分目安はワンデー＝両眼365日、2week＝両眼26交換サイクルで掲載単価から単純換算。まとめ買い割引・送料・ケア用品代等は含みません。
+          ※ 1箱あたりは掲載価格÷セット箱数（送料・割引条件は未反映）。1年分目安はワンデー＝両眼365日、2week＝両眼26交換サイクルで掲載単価から単純換算。まとめ買い割引・送料・ケア用品代等は含みません。
         </p>
       </div>
     </div>
