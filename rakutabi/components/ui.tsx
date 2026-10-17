@@ -28,15 +28,11 @@ export function FeatureTags({ conditions, limit }: { conditions: ConditionKey[];
   );
 }
 
-/** 価格表示（赤・1名あたり） */
-export function Price({ value, size = 'md' }: { value: number | null; size?: 'md' | 'lg' }) {
-  if (value == null) return <span className="text-sm text-gray-400">料金は楽天トラベルでご確認ください</span>;
-  return (
-    <span className="text-price font-bold font-sans">
-      <span className={size === 'lg' ? 'text-3xl' : 'text-xl'}>¥{value.toLocaleString('ja-JP')}</span>
-      <span className="text-sm">〜/人</span>
-    </span>
-  );
+/** 施設最低料金は予約日・人数・プランと一致しないため表示しない。 */
+export function Price({ value: _value, size: _size = 'md' }: { value: number | null; size?: 'md' | 'lg' }) {
+  void _value;
+  void _size;
+  return <span className="text-sm font-semibold text-ink">最新の宿泊料金は楽天トラベルで確認</span>;
 }
 
 /**
