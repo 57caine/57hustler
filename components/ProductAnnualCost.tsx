@@ -42,6 +42,7 @@ export default function ProductAnnualCost({ prices, category, productName }: { p
   const savingsVsCheapest = cheapest ? selectedEstimate.total - cheapest.estimate.total : 0;
   const monthly = Math.round(selectedEstimate.total / period);
 
+
   const productBundles = (annualBundleMap as Record<string, Record<string, BundleTarget>>)[selected.productId];
   const annualTarget = period === 12 ? productBundles?.[selected.storeId] : undefined;
   const fallbackLink = selected.url + selected.store.affiliateParam;
@@ -50,6 +51,8 @@ export default function ProductAnnualCost({ prices, category, productName }: { p
   const destinationLink = trackedBundle
     ? `${selected.store.url}&a8ejpredirect=${encodeURIComponent(trackedBundle.url)}${selected.store.affiliateParam}`
     : fallbackLink;
+
+  const isTrackedDestination = destinationLink.includes('px.a8.net') || destinationLink.includes('afl.rakuten.co.jp');
 
   const selectPeriod = (months: PeriodMonths) => {
     setPeriod(months);
@@ -103,9 +106,9 @@ export default function ProductAnnualCost({ prices, category, productName }: { p
 
       <p className="text-sm text-slate-600 mb-4">計算：{selected.price.toLocaleString('ja-JP')}円 × 約{selectedEstimate.listedSetsNeeded}掲載セット{category === '2week' && care > 0 ? ` ＋ ケア用品 ${selectedEstimate.careCost.toLocaleString('ja-JP')}円` : ''}</p>
       {trackedBundle && <p className="text-sm font-medium text-sky-800 mb-3">このショップは {trackedBundle.label} に直接移動できます。</p>}
-      <a onClick={() => { if (typeof window !== 'undefined' && typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === 'function') (window as Window & { gtag?: (...args: unknown[]) => void }).gtag?.('event', 'annual_bundle_click', { product_id: selected.productId, store_id: selected.storeId, period_months: period, is_bundle_link: Boolean(trackedBundle) }); }} href={destinationLink} target="_blank" rel="noopener noreferrer sponsored nofollow" className="block text-center rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold px-4 py-3">
+      {isTrackedDestination ? <a onClick={() => { if (typeof window !== 'undefined' && typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === 'function') (window as Window & { gtag?: (...args: unknown[]) => void }).gtag?.('event', 'annual_bundle_click', { product_id: selected.productId, store_id: selected.storeId, period_months: period, is_bundle_link: Boolean(trackedBundle) }); }} href={destinationLink} target="_blank" rel="noopener noreferrer sponsored nofollow" className="block text-center rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold px-4 py-3">
         {trackedBundle ? `${selected.store.name}の約1年分セットを見る →` : `${selected.store.name}で${period}か月分の購入条件を確認する →`}
-      </a>
+      </a> : <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">このショップの購入リンクは確認中です。上のショップ比較表から他の販売店をご確認ください。</p>}
       <p className="text-xs text-slate-500 mt-2">※ 総額はレンズナビ掲載価格からの目安です。まとめ買い価格・送料・クーポン等はリンク先の最新表示を優先してください。</p>
     </div>
 
