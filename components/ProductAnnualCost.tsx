@@ -61,7 +61,8 @@ export default function ProductAnnualCost({ prices, category, productName }: { p
 
   return <section id="annual-cost" className="scroll-mt-6 bg-sky-50 rounded-xl border border-sky-200 p-5 sm:p-6 mb-8">
     <h2 className="text-xl font-bold text-slate-900 mb-2">{productName}、まとめ買いならいくら？</h2>
-    <p className="text-sm text-slate-600 mb-4">3・6・12か月で必要量と総額を比較。ショップを変えると差額もすぐ分かります。</p>
+    <p className="text-sm text-slate-600 mb-2">3・6・12か月で必要量と総額を比較。ショップを変えると差額もすぐ分かります。</p>
+    <p className="text-xs text-slate-700 mb-4">表示する総額は掲載セット価格を必要数量に掛けた<strong>試算</strong>です。リンク先のまとめ買い商品の販売価格を取得・比較したものではありません。</p>
 
     <div className="mb-5">
       <p className="text-sm font-medium mb-2">購入期間</p>
@@ -97,10 +98,10 @@ export default function ProductAnnualCost({ prices, category, productName }: { p
       </div>
 
       {cheapest && selected.storeId === cheapest.item.storeId ? (
-        <div className="mb-4 rounded-lg bg-emerald-50 border border-emerald-200 px-4 py-3 text-sm text-emerald-800 font-semibold">この条件では掲載ショップ内の最安目安です。</div>
+        <div className="mb-4 rounded-lg bg-emerald-50 border border-emerald-200 px-4 py-3 text-sm text-emerald-800 font-semibold">この条件では掲載価格を同じ計算条件で試算した最安目安です。</div>
       ) : savingsVsCheapest > 0 && cheapest ? (
         <div className="mb-4 rounded-lg bg-amber-50 border border-amber-200 px-4 py-3 text-sm text-amber-900">
-          掲載最安目安は <strong>{cheapest.item.store.name}</strong>。このショップとの差は約<strong>{savingsVsCheapest.toLocaleString('ja-JP')}円</strong>です。
+          掲載価格からの試算で最安なのは <strong>{cheapest.item.store.name}</strong>。この試算との差は約<strong>{savingsVsCheapest.toLocaleString('ja-JP')}円</strong>です。
         </div>
       ) : null}
 
@@ -110,7 +111,7 @@ export default function ProductAnnualCost({ prices, category, productName }: { p
       {isTrackedDestination ? <a onClick={() => { if (typeof window !== 'undefined' && typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === 'function') (window as Window & { gtag?: (...args: unknown[]) => void }).gtag?.('event', 'annual_bundle_click', { product_id: selected.productId, store_id: selected.storeId, period_months: period, is_bundle_link: Boolean(trackedBundle) }); }} href={destinationLink} target="_blank" rel="noopener noreferrer sponsored nofollow" className="block text-center rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold px-4 py-3">
         {trackedBundle ? `${selected.store.name}の360日分セットを見る →` : `${selected.store.name}で${period}か月分の購入条件を確認する →`}
       </a> : <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">このショップの購入リンクは確認中です。上のショップ比較表から他の販売店をご確認ください。</p>}
-      <p className="text-xs text-slate-500 mt-2">※ 総額はレンズナビ掲載価格からの目安です。まとめ買い価格・送料・クーポン等はリンク先の最新表示を優先してください。</p>
+      <p className="text-xs text-slate-500 mt-2">※ これは掲載セットを必要数購入した場合の試算であり、リンク先のまとめ買いセット価格とは一致しない場合があります。送料・クーポン・在庫を含め、購入前にリンク先の支払総額をご確認ください。</p>
     </div>
 
     <p className="text-xs text-slate-600 mt-4">※ 掲載価格の更新日：{selected.lastUpdated?.slice(0, 10) ?? '不明'}。2weekは装用しない日も含めて原則14日ごとに交換。実際のレンズ選択は眼科でご相談ください。</p>
