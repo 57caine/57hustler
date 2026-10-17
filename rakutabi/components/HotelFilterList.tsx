@@ -46,6 +46,8 @@ export default function HotelFilterList({ hotels, showArea = true }: { hotels: H
       return (b.reviewAverage ?? 0) - (a.reviewAverage ?? 0);
     });
 
+  const countWith = (key: ConditionKey) => hotels.filter((h) => (!areaKey || h.areaKey === areaKey) && selected.filter((s) => s !== key).every((s) => h.conditions.includes(s)) && h.conditions.includes(key)).length;
+
   const toggle = (key: ConditionKey) =>
     setSelected((prev) => (prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]));
   const reset = () => { setSelected([]); setAreaKey(''); };
@@ -98,10 +100,10 @@ export default function HotelFilterList({ hotels, showArea = true }: { hotels: H
             ))}
           {open !== 'area' &&
             // 一覧の中に該当する宿が1件もない条件は出さない（選んでも0件になるだけのため）
-            CONDITIONS.filter((c) => c.group === open && hotels.some((h) => h.conditions.includes(c.key))).map((c) => (
+            CONDITIONS.filter((c) => c.group === open && (selected.includes(c.key) || countWith(c.key) > 0)).map((c) => (
               <button key={c.key} type="button" aria-pressed={selected.includes(c.key)} onClick={() => toggle(c.key)} className={option(selected.includes(c.key))}>
                 {c.label}
-                <span className="ml-1 opacity-70">({hotels.filter((h) => h.conditions.includes(c.key)).length})</span>
+                <span className="ml-1 opacity-70">({countWith(c.key)})</span>
               </button>
             ))}
           {open !== 'area' && CONDITIONS.some((c) => c.group === open && c.source !== 'api') && (
@@ -142,7 +144,7 @@ export default function HotelFilterList({ hotels, showArea = true }: { hotels: H
       </div>
 
       {visible.length === 0 ? (
-        <p className="text-gray-500 py-16 text-center bg-white rounded-2xl ring-1 ring-black/5">条件に合う宿が見つかりませんでした。条件を減らしてお試しください。</p>
+        <div className="py-12 text-center bg-white rounded-2xl ring-1 ring-black/5 space-y-4"><p className="text-gray-600">現在の掲載施設には、この条件の組み合わせに一致する宿がありません。</p><button type="button" onClick={reset} className="rounded-full bg-ink text-white px-5 py-2 text-sm">絞り込みを解除する</button></div>
       ) : (
         <div className="grid gap-4 xl:grid-cols-2">
           {visible.map((h) => <HotelRow key={h.hotelNo} hotel={h} />)}
