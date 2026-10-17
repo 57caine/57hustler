@@ -16,13 +16,33 @@
  */
 
 import Anthropic from '@anthropic-ai/sdk';
+import * as fs from 'fs';
+import * as path from 'path';
 import {
   KYUSEI, POSITION_MEANINGS, getDailyStar, getMonthlyStarForToday, getStarPositionIndex,
-  MAX_ONELINER_LENGTH, validateOneLiners, KYUSEI_CONTENT_CAUTION, getSeasonWordCaution,
+  MAX_ONELINER_LENGTH, validateOneLiners, KYUSEI_CONTENT_CAUTION, getSeasonWordCaution, getJstDateSlug,
 } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
 const USER_ID = process.env.THREADS_USER_ID!;
+
+// 同日の重複投稿防止（手動実行とスケジュール実行が重なった場合や、GitHub Actionsの
+// スケジュールが同日に二重起動した場合の対策。post-threads-column.ts の履歴ファイル方式と同じ設計）。
+const HISTORY_PATH = path.join(process.cwd(), 'data', 'yonaka-fortune-history.json');
+
+function hasPostedToday(today: string): boolean {
+  if (!fs.existsSync(HISTORY_PATH)) return false;
+  try {
+    const data = JSON.parse(fs.readFileSync(HISTORY_PATH, 'utf-8')) as { lastPostedDate?: string };
+    return data.lastPostedDate === today;
+  } catch {
+    return false; // 履歴ファイルが壊れていても投稿自体は妨げない
+  }
+}
+
+function saveLastPostedDate(today: string): void {
+  fs.writeFileSync(HISTORY_PATH, JSON.stringify({ lastPostedDate: today }, null, 2), 'utf-8');
+}
 const ACCESS_TOKEN = process.env.THREADS_ACCESS_TOKEN!;
 
 // 月盤中宮星ごとの象意・対応卦（月替わりで随時追加していく想定。未登録の月は象意なしで生成する）
@@ -145,6 +165,12 @@ async function main() {
   console.log(`=== 九星気学まとめ投稿開始${dryRun ? '（DRY RUN）' : ''} ===`);
   if (!dryRun && (!USER_ID || !ACCESS_TOKEN)) throw new Error('THREADS_USER_ID と THREADS_ACCESS_TOKEN を設定してください');
 
+  const today = getJstDateSlug();
+  if (!dryRun && hasPostedToday(today)) {
+    console.log(`::warning::本日（${today}）は既に投稿済みのためスキップします（重複投稿防止）。Actionsの実行自体は成功扱いになりますが、実際の投稿は行っていません。`);
+    return;
+  }
+
   const dailyStarNum   = getDailyStar();
   const monthlyStarNum = getMonthlyStarForToday();
   console.log(`本日の日盤中宮: ${KYUSEI[dailyStarNum].name} / 月盤中宮: ${KYUSEI[monthlyStarNum].name}`);
@@ -163,7 +189,7 @@ async function main() {
   }
 
   if (oneLiners === null) {
-    console.warn('⚠️ 3回試行しても文字数チェックを通過できなかったため、今回の投稿をスキップします');
+    console.log('::warning::3回試行しても文字数チェックを通過できなかったため、今回の投稿をスキップします（Actionsは成功扱いですが、実際の投稿は行っていません）。');
     return;
   }
 
@@ -189,6 +215,7 @@ async function main() {
   console.log('投稿公開中...');
   const postId = await publishThread(creationId);
   console.log(`✓ 投稿完了: ${postId}`);
+  saveLastPostedDate(today);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });

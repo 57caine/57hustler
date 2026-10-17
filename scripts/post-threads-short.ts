@@ -7,15 +7,35 @@
  */
 
 import Anthropic from '@anthropic-ai/sdk';
+import * as fs from 'fs';
+import * as path from 'path';
 import {
   KYUSEI, POSITION_MEANINGS, getDailyStar, getMonthlyStarForToday, getStarPositionIndex,
   getJstDayOfWeek, STAR_TO_TRIGRAM, selectHexagram, validateOneLiners, KYUSEI_CONTENT_CAUTION, getSeasonWordCaution,
-  EKIKYO_THEME_GUIDANCE, MAX_ONELINER_LENGTH,
+  EKIKYO_THEME_GUIDANCE, MAX_ONELINER_LENGTH, getJstDateSlug,
 } from './lib/kyusei-ban';
 
 const THREADS_API_BASE = 'https://graph.threads.net/v1.0';
 const USER_ID  = process.env.THREADS_USER_ID!;
 const ACCESS_TOKEN = process.env.THREADS_ACCESS_TOKEN!;
+
+// 同日の重複投稿防止（post-threads-fortune.ts と同じ設計。手動実行とスケジュール実行が
+// 重なった場合や、GitHub Actionsのスケジュールが同日に二重起動した場合の対策）。
+const HISTORY_PATH = path.join(process.cwd(), 'data', 'yonaka-short-post-history.json');
+
+function hasPostedToday(today: string): boolean {
+  if (!fs.existsSync(HISTORY_PATH)) return false;
+  try {
+    const data = JSON.parse(fs.readFileSync(HISTORY_PATH, 'utf-8')) as { lastPostedDate?: string };
+    return data.lastPostedDate === today;
+  } catch {
+    return false; // 履歴ファイルが壊れていても投稿自体は妨げない
+  }
+}
+
+function saveLastPostedDate(today: string): void {
+  fs.writeFileSync(HISTORY_PATH, JSON.stringify({ lastPostedDate: today }, null, 2), 'utf-8');
+}
 
 type PostType = 'horoscope' | 'ikkouiku' | 'toikake';
 
@@ -249,6 +269,12 @@ async function main() {
   console.log(`=== 夜21時投稿開始（${DOW_NAMES[dow]}曜・${postType}）${dryRun ? '【DRY RUN】' : ''} ===`);
   if (!dryRun && (!USER_ID || !ACCESS_TOKEN)) throw new Error('THREADS_USER_ID と THREADS_ACCESS_TOKEN を設定してください');
 
+  const today = getJstDateSlug();
+  if (!dryRun && hasPostedToday(today)) {
+    console.log(`::warning::本日（${today}）は既に投稿済みのためスキップします（重複投稿防止）。Actionsの実行自体は成功扱いになりますが、実際の投稿は行っていません。`);
+    return;
+  }
+
   let text: string;
 
   if (postType === 'horoscope') {
@@ -269,7 +295,7 @@ async function main() {
       console.warn(`⚠️ 試行${attempt}: ${MAX_ONELINER_LENGTH}文字を超える一言を検出（${tooLong.map(([k, v]) => `${k}:「${v}」`).join(', ')}） → 再生成`);
     }
     if (oneLiners === null) {
-      console.warn('⚠️ 3回試行しても文字数チェックを通過できなかったため、今回の投稿をスキップします');
+      console.log('::warning::3回試行しても文字数チェックを通過できなかったため、今回の投稿をスキップします（Actionsは成功扱いですが、実際の投稿は行っていません）。');
       return;
     }
     text = buildHoroscopeText(oneLiners);
@@ -290,7 +316,7 @@ async function main() {
       console.warn(`⚠️ 試行${attempt}回目: 禁止キーワード検出 → 再生成`);
     }
     if (generated === null) {
-      console.warn('⚠️ 3回連続で禁止キーワード検出。今回の投稿をスキップします');
+      console.log('::warning::3回連続で禁止キーワード検出。今回の投稿をスキップします（Actionsは成功扱いですが、実際の投稿は行っていません）。');
       return;
     }
     text = generated;
@@ -323,6 +349,7 @@ async function main() {
   console.log('投稿公開中...');
   const postId = await publishThread(creationId);
   console.log(`✓ 投稿完了: ${postId}`);
+  saveLastPostedDate(today);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
