@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { TriangleAlert } from 'lucide-react';
-import { Price, Store } from '@/lib/products';
+import { Price, Store, hasProductDetailDestination } from '@/lib/products';
 import productsData from '@/data/products.json';
 
 type SortKey = 'store' | 'prescription' | 'annual' | 'box';
@@ -98,6 +98,9 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
               const isCheapestBox = perBox != null && cheapestBox != null && perBox === cheapestBox;
               const isCheapest = annual != null && cheapestAnnual != null && annual === cheapestAnnual;
               const difference = annual != null && cheapestAnnual != null ? annual - cheapestAnnual : null;
+              // Do not claim a direct product price check for an unverified affiliate redirect.
+              const verifiedProductLink = hasProductDetailDestination(item.productId, item.storeId) &&
+                !item.url.includes('px.a8.net') && !item.url.includes('a8ejpredirect=');
               return <tr key={`${item.storeId}-${index}`} className={[
                 'border-b border-gray-100 transition-colors hover:bg-slate-50',
                 isCheapest ? 'bg-emerald-50/50' : '',
@@ -136,6 +139,8 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                 <td className="px-4 py-3 text-center">
                   {!item.inStock ? (
                     <span className="text-gray-400 text-xs">在庫なし</span>
+                  ) : !verifiedProductLink ? (
+                    <span className="inline-block px-3 py-2 rounded-lg text-xs text-gray-400 border border-gray-200 whitespace-nowrap">購入先確認中</span>
                   ) : item.url.startsWith('#') ? (
                     <span className="inline-block px-3 py-2 rounded-lg text-xs text-gray-400 border border-gray-200 whitespace-nowrap">近日追加予定</span>
                   ) : (
