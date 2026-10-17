@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Eye, Repeat, Calendar, Rainbow, Medal, type LucideIcon } from 'lucide-react';
 import { ProductWithPrices } from '@/lib/products';
@@ -95,6 +97,7 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
 
         <div className="flex flex-col gap-2">
           <Link
+            onClick={() => { if (typeof window !== 'undefined' && typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === 'function') (window as Window & { gtag?: (...args: unknown[]) => void }).gtag?.('event', 'annual_comparison_click', { product_id: product.id, source: 'product_card' }); }}
             href={`/product/${product.slug}#${['1day', '2week'].includes(product.category) ? 'annual-cost' : 'price-comparison'}`}
             className="block bg-sky-700 hover:bg-sky-800 text-white text-sm font-bold text-center py-3 rounded-lg transition-colors w-full"
           >
