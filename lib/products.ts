@@ -113,8 +113,10 @@ export function hasProductDetailDestination(productId: string, storeId: string):
     const parsed = new URL(url);
     if (parsed.protocol !== 'https:') return false;
     if (storeId === 'rakuten' || parsed.hostname === 'px.a8.net') return false;
-    if (/^(www\\.)?rakuten\\.co\\.jp$/.test(parsed.hostname)) return false;
-    return /\\/(item|goods\\/index\\/gc|products\\/os\\/pid)\\//.test(parsed.pathname);
+    if (parsed.hostname === 'rakuten.co.jp' || parsed.hostname === 'www.rakuten.co.jp') return false;
+    return parsed.pathname.includes('/item/') ||
+      parsed.pathname.includes('/goods/index/gc/') ||
+      parsed.pathname.includes('/products/os/pid/');
   } catch { return false; }
 }
 

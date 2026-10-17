@@ -161,7 +161,6 @@ export default async function BCValuePage({ params }: Props) {
           const cheapest = [...(singleBoxOffers.length ? singleBoxOffers : offers)].sort((a, b) => calcTotalPrice(a.price, a.store) / a.boxes - calcTotalPrice(b.price, b.store) / b.boxes)[0];
           const totalPrice = cheapest ? calcTotalPrice(cheapest.price, cheapest.store) : null;
           const perBox = cheapest && totalPrice != null ? totalPrice / cheapest.boxes : null;
-          const buyUrl = cheapest ? cheapest.url + cheapest.store.affiliateParam : null;
 
           return (
             <div key={product.id} className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm transition-shadow">
@@ -201,7 +200,6 @@ export default async function BCValuePage({ params }: Props) {
                       <p className="text-sm text-gray-400">価格情報なし</p>
                     )}
                     <div className="flex flex-wrap gap-2">
-                    {buyUrl && <a href={buyUrl} target="_blank" rel="noopener noreferrer sponsored nofollow" className="shrink-0 bg-emerald-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors">{cheapest.boxes === 1 ? "1箱を購入 →" : `${cheapest.boxes}箱セットを確認 →`}</a>}
                     <Link href={`/product/${product.slug}#${['1day', '2week'].includes(product.category) ? 'annual-cost' : 'price-comparison'}`}
                       className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors">
                       {['1day', '2week'].includes(product.category) ? '年間費用を比較 →' : '価格を比較 →'}
