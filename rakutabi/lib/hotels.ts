@@ -115,6 +115,16 @@ const data: HotelsFile = {
     details: h.details ?? [],
     plans: h.plans ?? [],
     conditions: h.conditions ?? [],
+    themes: (() => {
+      const themes = [...(h.themes ?? [])];
+      const details = (h.details ?? []).map((d) => d.value).join(' ');
+      const plans = (h.plans ?? []).map((p) => p.planName + ' ' + p.roomName).join(' ');
+      const familyEvidence = /キッズ|お子様|子ども|子供|赤ちゃん|ベビー|ファミリー|添い寝|ベビーベッド|おむつ|離乳食|児童|幼児/.test([h.special, details, plans].join(' '));
+      const coupleEvidence = /カップル|記念日|アニバーサリー|ご夫婦|おふたり|二人旅|プロポーズ|ハネムーン|ペアプラン/.test([h.special, details, plans].join(' '));
+      if (familyEvidence && !themes.includes('family')) themes.push('family');
+      if (coupleEvidence && !themes.includes('couple')) themes.push('couple');
+      return themes;
+    })(),
   })),
 };
 
