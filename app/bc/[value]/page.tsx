@@ -156,8 +156,11 @@ export default async function BCValuePage({ params }: Props) {
       <div id="bc-products" className="scroll-mt-6 space-y-4">
         {productsWithPrices.map((product, i) => {
           if (!product) return null;
-          const cheapest = product.prices[0];
+          const offers = product.prices.filter(p => p.inStock && p.price > 0 && p.boxes > 0 && p.url && !p.url.startsWith('#'));
+          const cheapest = [...offers].sort((a, b) => calcTotalPrice(a.price, a.store) / a.boxes - calcTotalPrice(b.price, b.store) / b.boxes)[0];
           const totalPrice = cheapest ? calcTotalPrice(cheapest.price, cheapest.store) : null;
+          const perBox = cheapest && totalPrice != null ? totalPrice / cheapest.boxes : null;
+          const buyUrl = cheapest ? cheapest.url + cheapest.store.affiliateParam : null;
 
           return (
             <div key={product.id} className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm transition-shadow">
@@ -180,14 +183,15 @@ export default async function BCValuePage({ params }: Props) {
                   <p className="text-xs text-gray-500 leading-relaxed line-clamp-2 mb-3">
                     {product.description}
                   </p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap items-end justify-between gap-3">
                     {totalPrice ? (
                       <div>
-                        <span className="text-xs text-gray-400">最安値（送料込）</span>
+                        <span className="text-xs text-gray-400">1箱あたり目安（掲載送料込み）</span>
                         <p className="text-lg font-bold text-sky-700">
-                          ¥{totalPrice.toLocaleString()}
+                          ¥{Math.round(perBox!).toLocaleString()}
                           <span className="text-xs font-normal text-gray-400 ml-1">〜</span>
                         </p>
+                        {cheapest.boxes > 1 && <p className="text-xs text-gray-400">{cheapest.boxes}箱セット合計 ¥{totalPrice.toLocaleString()}</p>}
                         {cheapest && (
                           <p className="text-xs text-gray-400">{cheapest.store.name}</p>
                         )}
@@ -195,10 +199,13 @@ export default async function BCValuePage({ params }: Props) {
                     ) : (
                       <p className="text-sm text-gray-400">価格情報なし</p>
                     )}
+                    <div className="flex flex-wrap gap-2">
+                    {buyUrl && <a href={buyUrl} target="_blank" rel="noopener noreferrer sponsored nofollow" className="shrink-0 bg-emerald-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors">今すぐ購入 →</a>}
                     <Link href={`/product/${product.slug}#${['1day', '2week'].includes(product.category) ? 'annual-cost' : 'price-comparison'}`}
                       className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors">
                       {['1day', '2week'].includes(product.category) ? '年間費用を比較 →' : '価格を比較 →'}
                     </Link>
+                    </div>
                   </div>
                 </div>
               </div>
