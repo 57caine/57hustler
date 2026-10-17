@@ -6,6 +6,13 @@ on:
     - cron: '0 3 * * *'
   workflow_dispatch:
 
+# 同じワークフローの実行が同時に走らないようにする（手動実行とスケジュール実行が重なった場合や、
+# GitHub Actionsのスケジュールが稀に二重起動した場合の対策）。cancel-in-progress: false なので、
+# 実行中のジョブを強制終了して中途半端な投稿状態を作ることはなく、後発の実行は先発の完了を待つ。
+concurrency:
+  group: post-threads-fortune
+  cancel-in-progress: false
+
 jobs:
   post:
     runs-on: ubuntu-latest
@@ -25,18 +32,45 @@ jobs:
 
       - run: npm ci
 
+      # 本日まだ投稿していないかを確認し、未投稿なら予約（履歴ファイルの更新）だけ行う。
+      # この時点では実際のThreads投稿はまだ行わない。
+      - name: 本日分の重複投稿チェック・予約
+        id: claim
+        run: npx ts-node scripts/post-threads-fortune.ts --claim
+
+      # 予約を確実にリモートへpushできた場合のみ、後続の投稿ステップを実行する。
+      # pushが最終的に失敗した場合はこのステップ自体を失敗させ、ワークフロー全体を止める
+      # （Threadsにはまだ一切投稿していないので、ここで止まっても重複は発生しない）。
+      - name: 予約をコミット・push（重複投稿防止用）
+        id: commit_claim
+        if: steps.claim.outputs.should_post == 'true'
+        run: |
+          set -euo pipefail
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/yonaka-fortune-history.json
+          if git diff --staged --quiet; then
+            echo "変更なし（想定外: --claimで予約したはずなのに差分がありません）"
+            exit 1
+          fi
+          git commit -m "chore: Threads占い投稿履歴更新 $(date '+%Y-%m-%d')"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin "$(git rev-parse --abbrev-ref HEAD)" && git push; then
+              echo "✓ 予約のpushに成功（試行${attempt}回目）"
+              exit 0
+            fi
+            echo "⚠️ 予約のpushに失敗（試行${attempt}回目）。少し待って再試行します。"
+            sleep $((attempt * 10))
+          done
+          echo "::error::予約のpushが3回とも失敗しました。Threadsへの投稿は行いません。手動で data/yonaka-fortune-history.json の状態を確認してください。"
+          exit 1
+
+      # 予約が確実にpushできた場合のみ投稿する。--post 自体は履歴の読み書きを行わない
+      # （予約時点で既に確定済みのため）。
       - name: 占い投稿
-        run: npx ts-node scripts/post-threads-fortune.ts
+        if: steps.claim.outputs.should_post == 'true'
+        run: npx ts-node scripts/post-threads-fortune.ts --post
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
-
-      - name: 投稿履歴をコミット（重複投稿防止用）
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Actions Bot"
-          git add data/yonaka-fortune-history.json
-          git diff --staged --quiet || git commit -m "chore: Threads占い投稿履歴更新 $(date '+%Y-%m-%d')"
-          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
-          git push
