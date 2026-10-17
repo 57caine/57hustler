@@ -92,12 +92,6 @@ export default function HotelFilterList({ hotels, showArea = true }: { hotels: H
                 {a.prefecture}・{a.name}
               </button>
             ))}
-          {open === 'price' &&
-            PRICE_BANDS.map((b) => (
-              <button key={b.key} type="button" aria-pressed={band === b.key} onClick={() => setBand(band === b.key ? '' : b.key)} className={option(band === b.key)}>
-                {b.label}
-              </button>
-            ))}
           {open !== 'area' &&
             // 一覧の中に該当する宿が1件もない条件は出さない（選んでも0件になるだけのため）
             CONDITIONS.filter((c) => c.group === open && (selected.includes(c.key) || countWith(c.key) > 0)).map((c) => (
