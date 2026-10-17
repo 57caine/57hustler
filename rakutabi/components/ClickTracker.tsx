@@ -26,7 +26,17 @@ export default function ClickTracker() {
       const body = JSON.stringify({ hotelNo, placement, page: window.location.pathname, trafficSource });
       try {
         if (!navigator.sendBeacon?.('/api/click', new Blob([body], { type: 'application/json' }))) {
-          void fetch('/api/click', { method: 'POST', body, keepalive: true });
+          // sendBeacon が送信キューに入らなかった場合だけ代替送信する。
+          // fetch の拒否を捕捉し、ページ遷移中の unhandled rejection を防ぐ。
+          // 応答失敗時に自動再送すると二重計上の可能性があるため再送しない。
+          void fetch('/api/click', {
+            method: 'POST',
+            body,
+            keepalive: true,
+            headers: { 'Content-Type': 'application/json' },
+          }).catch(() => {
+            // 計測の失敗で利用者の操作を妨げない
+          });
         }
       } catch {
         // 計測の失敗で利用者の操作を妨げない
