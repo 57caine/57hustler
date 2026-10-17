@@ -157,7 +157,8 @@ export default async function BCValuePage({ params }: Props) {
         {productsWithPrices.map((product, i) => {
           if (!product) return null;
           const offers = product.prices.filter(p => p.inStock && p.price > 0 && p.boxes > 0 && p.url && !p.url.startsWith('#'));
-          const cheapest = [...offers].sort((a, b) => calcTotalPrice(a.price, a.store) / a.boxes - calcTotalPrice(b.price, b.store) / b.boxes)[0];
+          const singleBoxOffers = offers.filter(p => p.boxes === 1);
+          const cheapest = [...(singleBoxOffers.length ? singleBoxOffers : offers)].sort((a, b) => calcTotalPrice(a.price, a.store) / a.boxes - calcTotalPrice(b.price, b.store) / b.boxes)[0];
           const totalPrice = cheapest ? calcTotalPrice(cheapest.price, cheapest.store) : null;
           const perBox = cheapest && totalPrice != null ? totalPrice / cheapest.boxes : null;
           const buyUrl = cheapest ? cheapest.url + cheapest.store.affiliateParam : null;
@@ -186,7 +187,7 @@ export default async function BCValuePage({ params }: Props) {
                   <div className="flex flex-wrap items-end justify-between gap-3">
                     {totalPrice ? (
                       <div>
-                        <span className="text-xs text-gray-400">1箱あたり目安（掲載送料込み）</span>
+                        <span className="text-xs text-gray-400">{cheapest.boxes === 1 ? "1箱購入価格（送料込み目安）" : "セット購入時の1箱換算（送料込み目安）"}</span>
                         <p className="text-lg font-bold text-sky-700">
                           ¥{Math.round(perBox!).toLocaleString()}
                           <span className="text-xs font-normal text-gray-400 ml-1">〜</span>
@@ -200,7 +201,7 @@ export default async function BCValuePage({ params }: Props) {
                       <p className="text-sm text-gray-400">価格情報なし</p>
                     )}
                     <div className="flex flex-wrap gap-2">
-                    {buyUrl && <a href={buyUrl} target="_blank" rel="noopener noreferrer sponsored nofollow" className="shrink-0 bg-emerald-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors">今すぐ購入 →</a>}
+                    {buyUrl && <a href={buyUrl} target="_blank" rel="noopener noreferrer sponsored nofollow" className="shrink-0 bg-emerald-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors">{cheapest.boxes === 1 ? "1箱を購入 →" : `${cheapest.boxes}箱セットを確認 →`}</a>}
                     <Link href={`/product/${product.slug}#${['1day', '2week'].includes(product.category) ? 'annual-cost' : 'price-comparison'}`}
                       className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors">
                       {['1day', '2week'].includes(product.category) ? '年間費用を比較 →' : '価格を比較 →'}
