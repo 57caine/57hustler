@@ -44,6 +44,17 @@ export default function Home() {
         </svg>
       </section>
 
+      {/* 予約意欲の高い旅行テーマへのショートカット */}
+      <section className="max-w-6xl mx-auto px-4 -mt-8 relative z-10 mb-4">
+        <div className="bg-white rounded-2xl shadow-md ring-1 ring-black/5 p-5 sm:p-6">
+          <h2 className="font-bold text-ink text-lg mb-1">週末の温泉旅行、宿を比べて探す</h2>
+          <p className="text-sm text-gray-600 mb-4">温泉宿の写真・クチコミ・掲載料金を比較。料金や空室状況は楽天トラベルで最新情報を確認できます。</p>
+          <Link href="/theme/onsen" className="inline-flex items-center justify-center rounded-full bg-cta hover:bg-cta-hover text-white font-bold text-sm px-6 py-3">
+            温泉宿を比較する →
+          </Link>
+        </div>
+      </section>
+
       {/* 人気のテーマ */}
       <section id="themes" className="max-w-6xl mx-auto px-4 py-12 md:py-16 scroll-mt-16">
         <SectionTitle title="人気のテーマから探す" lead="あなたの旅のスタイルに合わせて、ぴったりの宿を見つけましょう。" />
