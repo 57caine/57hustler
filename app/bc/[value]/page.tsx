@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { TriangleAlert } from 'lucide-react';
-import { getAllBCValues, getProductsByBC, getProductWithPrices } from '@/lib/products';
+import { getAllBCValues, getProductsByBC, getProductWithPrices, hasProductDetailDestination } from '@/lib/products';
 import { calcTotalPrice } from '@/lib/products';
 
 type Props = { params: Promise<{ value: string }> };
@@ -156,7 +156,7 @@ export default async function BCValuePage({ params }: Props) {
       <div id="bc-products" className="scroll-mt-6 space-y-4">
         {productsWithPrices.map((product, i) => {
           if (!product) return null;
-          const offers = product.prices.filter(p => p.inStock && p.price > 0 && p.boxes > 0 && p.url && !p.url.startsWith('#'));
+          const offers = product.prices.filter(p => p.inStock && p.price > 0 && p.boxes > 0 && p.url && !p.url.startsWith('#') && hasProductDetailDestination(product.id, p.storeId));
           const singleBoxOffers = offers.filter(p => p.boxes === 1);
           const cheapest = [...(singleBoxOffers.length ? singleBoxOffers : offers)].sort((a, b) => calcTotalPrice(a.price, a.store) / a.boxes - calcTotalPrice(b.price, b.store) / b.boxes)[0];
           const totalPrice = cheapest ? calcTotalPrice(cheapest.price, cheapest.store) : null;
