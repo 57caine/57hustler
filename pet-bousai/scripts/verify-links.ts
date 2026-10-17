@@ -34,12 +34,26 @@ async function main() {
         continue;
       }
       await sleep(800);
-      const res = await fetch(target, { redirect: 'follow', headers: { 'User-Agent': 'Mozilla/5.0 (link check)' } });
+      let res: Response;
+      try {
+        res = await fetch(target, {
+          redirect: 'follow',
+          signal: AbortSignal.timeout(15000),
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36',
+            'Accept-Language': 'ja,en;q=0.8',
+          },
+        });
+      } catch (e) {
+        console.log(`NG  ${g.id.padEnd(16)} ${(e as Error).name} ${target.replace('https://item.rakuten.co.jp/', '')}`);
+        problems.push(`${p.itemCode}: 商品ページの応答なし（${(e as Error).name}）`);
+        continue;
+      }
       const finalUrl = res.url;
       const ok = res.status === 200 && finalUrl.startsWith('https://item.rakuten.co.jp/');
       console.log(`${ok ? 'OK ' : 'NG '} ${g.id.padEnd(16)} HTTP ${res.status} ${target.replace('https://item.rakuten.co.jp/', '')}${finalUrl !== target ? ` → ${finalUrl.slice(0, 60)}` : ''}`);
       if (!ok) problems.push(`${p.itemCode}: 商品ページが開けない（HTTP ${res.status} ${finalUrl.slice(0, 60)}）`);
-      await res.body?.cancel();
+      await res.body?.cancel().catch(() => undefined);
     }
   }
   console.log(problems.length ? `\n問題 ${problems.length}件 / ${checked}件:\n- ${problems.join('\n- ')}` : `\nリンク検証: ${checked}件すべて問題なし`);
