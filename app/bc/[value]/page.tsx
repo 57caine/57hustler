@@ -161,7 +161,9 @@ export default async function BCValuePage({ params }: Props) {
           const cheapest = [...(singleBoxOffers.length ? singleBoxOffers : offers)].sort((a, b) => calcTotalPrice(a.price, a.store) / a.boxes - calcTotalPrice(b.price, b.store) / b.boxes)[0];
           const totalPrice = cheapest ? calcTotalPrice(cheapest.price, cheapest.store) : null;
           const perBox = cheapest && totalPrice != null ? totalPrice / cheapest.boxes : null;
-          const buyUrl = cheapest ? cheapest.url + cheapest.store.affiliateParam : null;
+          // Do not present an unverified affiliate redirect as a direct product purchase URL.
+          // A product mapping alone does not prove that A8 lands on the correct product.
+          const buyUrl = null;
 
           return (
             <div key={product.id} className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm transition-shadow">
