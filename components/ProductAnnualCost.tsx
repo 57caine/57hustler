@@ -106,10 +106,11 @@ export default function ProductAnnualCost({ prices, category, productName }: { p
       ) : null}
 
       <p className="text-sm text-slate-600 mb-4">計算：{selected.price.toLocaleString('ja-JP')}円 × 約{selectedEstimate.listedSetsNeeded}掲載セット{category === '2week' && care > 0 ? ` ＋ ケア用品 ${selectedEstimate.careCost.toLocaleString('ja-JP')}円` : ''}</p>
+      {trackedBundle && <p className="text-xs text-slate-600 mb-2">※ リンク先のまとめ買いセット価格は、このページの試算総額とは異なる場合があります。</p>}
       {trackedBundle && category === '1day' && effectiveDays > 360 && <p className="text-xs text-amber-800 mb-2">※ 90枚×8箱は両眼で360日分です。365日使う場合は不足分の追加購入が必要です。</p>}
       {trackedBundle && <p className="text-sm font-medium text-sky-800 mb-3">このショップは {trackedBundle.label} に直接移動できます。</p>}
       {isTrackedDestination ? <a onClick={() => { if (typeof window !== 'undefined' && typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === 'function') (window as Window & { gtag?: (...args: unknown[]) => void }).gtag?.('event', 'annual_bundle_click', { product_id: selected.productId, store_id: selected.storeId, period_months: period, is_bundle_link: Boolean(trackedBundle) }); }} href={destinationLink} target="_blank" rel="noopener noreferrer sponsored nofollow" className="block text-center rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold px-4 py-3">
-        {trackedBundle ? `${selected.store.name}の360日分セットを見る →` : `${selected.store.name}で${period}か月分の購入条件を確認する →`}
+        {trackedBundle ? `${selected.store.name}の360日分セットの販売価格を確認 →` : `${selected.store.name}で販売価格・購入条件を確認 →`}
       </a> : <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">このショップの購入リンクは確認中です。上のショップ比較表から他の販売店をご確認ください。</p>}
       <p className="text-xs text-slate-500 mt-2">※ これは掲載セットを必要数購入した場合の試算であり、リンク先のまとめ買いセット価格とは一致しない場合があります。送料・クーポン・在庫を含め、購入前にリンク先の支払総額をご確認ください。</p>
     </div>
