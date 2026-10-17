@@ -15,7 +15,7 @@ interface Ga4Site {
   topPages: PageMetrics[];
   affiliateClicksByPage?: Record<string, number>;
 }
-interface RegistryProject { slug: string; name: string; status: 'active' | 'stopped' }
+interface RegistryProject { slug: string; name: string; status: 'active' | 'stopped' | 'design_only' }
 
 function fmtPct(n: number) { return `${(n * 100).toFixed(1)}%`; }
 
