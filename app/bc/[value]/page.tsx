@@ -129,6 +129,14 @@ export default async function BCValuePage({ params }: Props) {
         </div>
       )}
 
+      {value === '8.4' && (
+        <div className="mb-6 rounded-xl border border-sky-200 bg-white p-4 sm:p-5">
+          <h2 className="text-base font-bold text-slate-900 mb-2">使っている製品の年間コストを比較</h2>
+          <p className="text-sm text-slate-600 mb-3">現在お使いの製品と同じ規格を確認したうえで、下の商品一覧から年間費用や販売店ごとの価格を比較できます。BCだけを基準に製品を変更しないでください。</p>
+          <a href="#bc-products" className="block text-center rounded-lg bg-sky-700 hover:bg-sky-800 text-white font-bold py-3 px-4">対応商品から年間コストを比較する →</a>
+        </div>
+      )}
+
       {/* BC切り替えタブ */}
       <div className="flex gap-2 flex-wrap mb-8">
         {allBCValues.map((bc) => (
@@ -145,7 +153,7 @@ export default async function BCValuePage({ params }: Props) {
 
       {/* 商品一覧 */}
       <p className="text-xs text-gray-400 mb-4">{productsWithPrices.length}商品 ／ 人気順</p>
-      <div className="space-y-4">
+      <div id="bc-products" className="scroll-mt-6 space-y-4">
         {productsWithPrices.map((product, i) => {
           if (!product) return null;
           const cheapest = product.prices[0];
@@ -187,9 +195,9 @@ export default async function BCValuePage({ params }: Props) {
                     ) : (
                       <p className="text-sm text-gray-400">価格情報なし</p>
                     )}
-                    <Link href={`/product/${product.slug}`}
+                    <Link href={`/product/${product.slug}#${['1day', '2week'].includes(product.category) ? 'annual-cost' : 'price-comparison'}`}
                       className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors">
-                      価格を比較 →
+                      {['1day', '2week'].includes(product.category) ? '年間費用を比較 →' : '価格を比較 →'}
                     </Link>
                   </div>
                 </div>
