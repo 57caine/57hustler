@@ -103,7 +103,7 @@ export default function ProductAnnualCost({ prices, category, productName }: { p
 
       <p className="text-sm text-slate-600 mb-4">計算：{selected.price.toLocaleString('ja-JP')}円 × 約{selectedEstimate.listedSetsNeeded}掲載セット{category === '2week' && care > 0 ? ` ＋ ケア用品 ${selectedEstimate.careCost.toLocaleString('ja-JP')}円` : ''}</p>
       {annualTarget && <p className="text-sm font-medium text-sky-800 mb-3">このショップは {annualTarget.label} に直接移動できます。</p>}
-      <a href={destinationLink} target="_blank" rel="noopener noreferrer sponsored nofollow" className="block text-center rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold px-4 py-3">
+      <a onClick={() => { if (typeof window !== 'undefined' && typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === 'function') (window as Window & { gtag?: (...args: unknown[]) => void }).gtag?.('event', 'annual_bundle_click', { product_id: selected.productId, store_id: selected.storeId, period_months: period, is_bundle_link: Boolean(annualTarget) }); }} href={destinationLink} target="_blank" rel="noopener noreferrer sponsored nofollow" className="block text-center rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold px-4 py-3">
         {annualTarget ? `${selected.store.name}の約1年分セットを見る →` : `${selected.store.name}で${period}か月分の購入条件を確認する →`}
       </a>
       <p className="text-xs text-slate-500 mt-2">※ 総額はレンズナビ掲載価格からの目安です。まとめ買い価格・送料・クーポン等はリンク先の最新表示を優先してください。</p>
