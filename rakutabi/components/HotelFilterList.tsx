@@ -3,24 +3,21 @@
 import { useState } from 'react';
 import Icon, { type IconKey } from '@/components/Icon';
 import { HotelRow } from '@/components/HotelCard';
-import { AREAS, CONDITIONS, PRICE_BANDS, type ConditionGroup, type ConditionKey } from '@/lib/site-config';
+import { AREAS, CONDITIONS, type ConditionGroup, type ConditionKey } from '@/lib/site-config';
 import type { Hotel } from '@/lib/hotels';
 
-type SortKey = 'recommend' | 'reviewCount' | 'priceAsc' | 'priceDesc';
+type SortKey = 'recommend' | 'reviewCount';
 
 const SORTS: { key: SortKey; label: string }[] = [
   { key: 'recommend', label: 'おすすめ順（評価が高い順）' },
   { key: 'reviewCount', label: 'クチコミ件数が多い順' },
-  { key: 'priceAsc', label: '料金が安い順' },
-  { key: 'priceDesc', label: '料金が高い順' },
 ];
 
-type PanelKey = 'area' | 'price' | ConditionGroup;
+type PanelKey = 'area' | ConditionGroup;
 
 /** デザイン案の絞り込みボタン列（エリア・価格帯・食事・温泉・客室・景色・子連れ向け） */
 const PANELS: { key: PanelKey; label: string; icon: IconKey }[] = [
   { key: 'area', label: 'エリア', icon: 'pin' },
-  { key: 'price', label: '価格帯', icon: 'yen' },
   { key: '食事', label: '食事', icon: 'meal' },
   { key: '温泉', label: '温泉', icon: 'onsen' },
   { key: '客室', label: '客室', icon: 'bed' },
@@ -35,32 +32,26 @@ const PANELS: { key: PanelKey; label: string; icon: IconKey }[] = [
 export default function HotelFilterList({ hotels, showArea = true }: { hotels: Hotel[]; showArea?: boolean }) {
   const [selected, setSelected] = useState<ConditionKey[]>([]);
   const [areaKey, setAreaKey] = useState('');
-  const [band, setBand] = useState('');
   const [sort, setSort] = useState<SortKey>('recommend');
   const [open, setOpen] = useState<PanelKey | null>(null);
 
   const areaOptions = AREAS.filter((a) => hotels.some((h) => h.areaKey === a.key));
-  const priceBand = PRICE_BANDS.find((b) => b.key === band);
   const panels = PANELS.filter((p) => p.key !== 'area' || (showArea && areaOptions.length > 1));
 
   const visible = hotels
     .filter((h) => selected.every((c) => h.conditions.includes(c)))
     .filter((h) => !areaKey || h.areaKey === areaKey)
-    .filter((h) => !priceBand || (h.minCharge != null && h.minCharge >= priceBand.min && h.minCharge < priceBand.max))
     .sort((a, b) => {
-      if (sort === 'priceAsc') return (a.minCharge ?? Infinity) - (b.minCharge ?? Infinity);
-      if (sort === 'priceDesc') return (b.minCharge ?? -Infinity) - (a.minCharge ?? -Infinity);
       if (sort === 'reviewCount') return (b.reviewCount ?? 0) - (a.reviewCount ?? 0);
       return (b.reviewAverage ?? 0) - (a.reviewAverage ?? 0);
     });
 
   const toggle = (key: ConditionKey) =>
     setSelected((prev) => (prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]));
-  const reset = () => { setSelected([]); setAreaKey(''); setBand(''); };
+  const reset = () => { setSelected([]); setAreaKey(''); };
 
   const chips: { label: string; remove: () => void }[] = [
     ...(areaKey ? [{ label: AREAS.find((a) => a.key === areaKey)?.name ?? areaKey, remove: () => setAreaKey('') }] : []),
-    ...(priceBand ? [{ label: priceBand.label, remove: () => setBand('') }] : []),
     ...CONDITIONS.filter((c) => selected.includes(c.key)).map((c) => ({ label: c.short ?? c.label, remove: () => toggle(c.key) })),
   ];
 
@@ -68,7 +59,7 @@ export default function HotelFilterList({ hotels, showArea = true }: { hotels: H
     `text-sm rounded-full border px-3 py-1.5 transition-colors ${on ? 'bg-ink border-ink text-white' : 'bg-white border-gray-300 text-ink hover:border-ink'}`;
 
   const isActive = (p: PanelKey) =>
-    p === 'area' ? Boolean(areaKey) : p === 'price' ? Boolean(band) : CONDITIONS.some((c) => c.group === p && selected.includes(c.key));
+    p === 'area' ? Boolean(areaKey) : CONDITIONS.some((c) => c.group === p && selected.includes(c.key));
 
   return (
     <div>
@@ -105,7 +96,7 @@ export default function HotelFilterList({ hotels, showArea = true }: { hotels: H
                 {b.label}
               </button>
             ))}
-          {open !== 'area' && open !== 'price' &&
+          {open !== 'area' &&
             // 一覧の中に該当する宿が1件もない条件は出さない（選んでも0件になるだけのため）
             CONDITIONS.filter((c) => c.group === open && hotels.some((h) => h.conditions.includes(c.key))).map((c) => (
               <button key={c.key} type="button" aria-pressed={selected.includes(c.key)} onClick={() => toggle(c.key)} className={option(selected.includes(c.key))}>
@@ -113,7 +104,7 @@ export default function HotelFilterList({ hotels, showArea = true }: { hotels: H
                 <span className="ml-1 opacity-70">({hotels.filter((h) => h.conditions.includes(c.key)).length})</span>
               </button>
             ))}
-          {open !== 'area' && open !== 'price' && CONDITIONS.some((c) => c.group === open && c.source !== 'api') && (
+          {open !== 'area' && CONDITIONS.some((c) => c.group === open && c.source !== 'api') && (
             <p className="w-full text-xs text-gray-500">※「温泉あり」「2食付き」「朝食付き」「素泊まり」以外は、施設紹介文・施設情報の記載から判定した目安です。</p>
           )}
         </div>
