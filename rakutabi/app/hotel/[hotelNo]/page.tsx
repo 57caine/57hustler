@@ -100,10 +100,10 @@ export default async function HotelPage({ params }: { params: Promise<{ hotelNo:
         {/* 予約ボックス（スマホでは宿名の下、PCでは右側に固定） */}
         <aside className="lg:sticky lg:top-20 h-fit space-y-4 order-first lg:order-none">
           <div className="bg-white rounded-2xl ring-1 ring-black/10 shadow-sm p-5">
-            <p className="text-xs text-gray-500">1名あたり最低料金（楽天トラベル掲載）</p>
+            <p className="text-xs text-gray-500">最新の宿泊料金</p>
             <p className="mt-1"><Price value={hotel.minCharge} size="lg" /></p>
             <p className="text-[11px] text-gray-400 mt-1 mb-4">
-              ※料金は日程・人数・プランにより変動します
+              ※表示料金は予約日・人数・プランによって異なります。予約画面でご確認ください
               {fetchedAt && `（${new Date(fetchedAt).toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo' })}時点）`}。
             </p>
             {reserveUrl ? (
