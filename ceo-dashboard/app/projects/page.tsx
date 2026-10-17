@@ -72,6 +72,13 @@ export default function ProjectsPage() {
 
   const active = projects.filter(p => p.status === 'active');
   const stopped = projects.filter(p => p.status === 'stopped');
+  const designOnly = projects.filter(p => p.status === 'design_only');
+
+  function statusLabel(status: RegistryProject['status']): { text: string; color: string } {
+    if (status === 'active') return { text: '🟢稼働中', color: '#22c55e' };
+    if (status === 'design_only') return { text: '📝設計中（未実装）', color: '#8b5cf6' };
+    return { text: '⏸停止中', color: '#5c5a70' };
+  }
 
   function ProjectCard({ p }: { p: RegistryProject }) {
     const cats = alertsBySlug[p.slug] ?? [];
@@ -86,8 +93,8 @@ export default function ProjectsPage() {
         <div className="flex items-start justify-between gap-2 mb-2">
           <div>
             <div className="text-sm font-bold" style={{ color: 'var(--text)' }}>{p.name}</div>
-            <div className="text-[10px] mt-0.5" style={{ color: p.status === 'active' ? '#22c55e' : '#5c5a70' }}>
-              {p.status === 'active' ? '🟢稼働中' : '⏸停止中'}
+            <div className="text-[10px] mt-0.5" style={{ color: statusLabel(p.status).color }}>
+              {statusLabel(p.status).text}
             </div>
           </div>
           {cats.length > 0 ? (
@@ -146,6 +153,15 @@ export default function ProjectsPage() {
         </button>
         {showStopped && stopped.map(p => <ProjectCard key={p.slug} p={p} />)}
       </div>
+
+      {designOnly.length > 0 && (
+        <div className="space-y-3">
+          <div className="text-[11px] font-bold tracking-widest uppercase px-1" style={{ color: '#8b5cf6' }}>
+            📝 設計中（未実装）　{designOnly.length}
+          </div>
+          {designOnly.map(p => <ProjectCard key={p.slug} p={p} />)}
+        </div>
+      )}
     </div>
   );
 }

@@ -25,7 +25,7 @@ export default function TodayPage() {
   const [openItemsError, setOpenItemsError] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [ga4, setGa4] = useState<Ga4Site[] | null>(null);
-  const [activeCount, setActiveCount] = useState<{ active: number; stopped: number } | null>(null);
+  const [activeCount, setActiveCount] = useState<{ active: number; stopped: number; designOnly: number } | null>(null);
 
   useEffect(() => {
     fetch(OPEN_ITEMS_URL, { cache: 'no-store' })
@@ -52,6 +52,7 @@ export default function TodayPage() {
       setActiveCount({
         active: projects.filter(p => p.status === 'active').length,
         stopped: projects.filter(p => p.status === 'stopped').length,
+        designOnly: projects.filter(p => p.status === 'design_only').length,
       });
       if (ga4Res?.sites) setGa4(ga4Res.sites as Ga4Site[]);
     }).catch(e => setError(e.message));
@@ -189,6 +190,11 @@ export default function TodayPage() {
         <div className="text-sm font-bold mt-1">
           <span style={{ color: '#22c55e' }}>{activeCount.active}</span> 稼働中 ／
           <span style={{ color: '#5c5a70' }}> {activeCount.stopped}</span> 停止中
+          {activeCount.designOnly > 0 && (
+            <>
+              ／<span style={{ color: '#8b5cf6' }}> {activeCount.designOnly}</span> 設計中
+            </>
+          )}
         </div>
       </a>
 

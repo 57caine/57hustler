@@ -42,7 +42,10 @@ export interface RegistryProject {
   slug: string;
   businessKey: string;
   name: string;
-  status: 'active' | 'stopped';
+  // 'design_only': 設計ドキュメントのみ存在し、サイト本体・ワークフローが未実装の案件
+  // （2026-10-17追加。ペット防災のため）。'active'でないという判定自体は既存のアラート
+  // ロジック（稼働中プロジェクトのみを対象にstale等を検知する）に影響しない。
+  status: 'active' | 'stopped' | 'design_only';
   workflowFile: string | null;
 }
 

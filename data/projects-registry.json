@@ -43,19 +43,19 @@
       "slug": "pet-hinan",
       "businessKey": "ペット避難",
       "name": "ペット避難",
-      "status": "active",
-      "assignedAI": "未設定",
-      "purpose": "未設定（登録情報なし）",
-      "currentState": "リポジトリ内にコード・データが見つからない。構想段階か、別リポジトリで管理されている可能性がある",
+      "status": "design_only",
+      "assignedAI": "Claude Code（Issue #89、2026-10-17）",
+      "purpose": "犬向け防災用品（避難キャリー中心）の楽天送客サイト。6週間のMVP検証を計画中",
+      "currentState": "サイト本体・商品データ・コードは未実装（2026-10-17確認）。設計ドキュメントのみ存在: docs/pet-disaster-mvp-plan.md（PR #85、未マージ）、docs/pet-bousai-mvp-20261017.md（mainにマージ済み）、docs/pet-bousai-evacuation-carrier-design.md（Issue #89対応、未確認事項の明示とページ構成・計測設計）",
       "funnel": {
-        "inflow": "PV / 検索流入",
-        "middle": "記事閲覧 / 商品ページ遷移",
-        "cv": "商品クリック / 購入",
-        "final": "アフィリエイト収益"
+        "inflow": "PV / 検索流入（未実装のため実測なし）",
+        "middle": "記事閲覧 / 商品ページ遷移（未実装）",
+        "cv": "商品クリック / 購入（未実装）",
+        "final": "アフィリエイト収益（未実装）"
       },
       "dataSource": "none",
       "workflowFile": null,
-      "notes": "「稼働中」とのことだが本リポジトリ内に実装が一切見当たらない。実体の所在をオーナーに確認する必要がある"
+      "notes": "以前は「稼働中」と記載されていたが実装が無いことを2026-10-17に確認し、statusを design_only に修正した。公開前に楽天商品の実在確認・アフィリエイト登録・報酬条件の確認が必要（docs/pet-bousai-evacuation-carrier-design.md参照）"
     },
     {
       "slug": "yonaka-uranai",

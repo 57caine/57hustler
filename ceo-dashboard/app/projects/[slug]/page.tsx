@@ -12,7 +12,7 @@ interface RegistryProject {
   slug: string;
   businessKey: string;
   name: string;
-  status: 'active' | 'stopped';
+  status: 'active' | 'stopped' | 'design_only';
   assignedAI: string;
   purpose: string;
   currentState: string;
@@ -97,10 +97,12 @@ export default function ProjectDetailPage() {
           <h1 className="text-xl font-bold">{project.name}</h1>
           <span className="text-[10px] px-2 py-0.5 rounded-full font-bold"
             style={{
-              background: project.status === 'active' ? 'rgba(34,197,94,0.15)' : 'rgba(107,107,138,0.15)',
-              color: project.status === 'active' ? '#22c55e' : '#8b899e',
+              background: project.status === 'active' ? 'rgba(34,197,94,0.15)'
+                : project.status === 'design_only' ? 'rgba(139,92,246,0.15)' : 'rgba(107,107,138,0.15)',
+              color: project.status === 'active' ? '#22c55e'
+                : project.status === 'design_only' ? '#8b5cf6' : '#8b899e',
             }}>
-            {project.status === 'active' ? '🟢稼働中' : '⏸停止中'}
+            {project.status === 'active' ? '🟢稼働中' : project.status === 'design_only' ? '📝設計中（未実装）' : '⏸停止中'}
           </span>
         </div>
       </div>
