@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T23:23:54.637Z",
+  "generatedAt": "2026-10-17T22:59:28.955Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -29,7 +29,7 @@
         "h3Count": 8,
         "hasAffiliateLinks": true,
         "ctaCount": 4,
-        "contentChars": 75430
+        "contentChars": 76122
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -63,7 +63,7 @@
         "h3Count": 2,
         "hasAffiliateLinks": true,
         "ctaCount": 1,
-        "contentChars": 71526
+        "contentChars": 72266
       },
       "causes": [
         "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
@@ -97,7 +97,7 @@
         "h3Count": 12,
         "hasAffiliateLinks": true,
         "ctaCount": 16,
-        "contentChars": 120488
+        "contentChars": 121180
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -111,13 +111,47 @@
       "source": "auto-ga4"
     },
     {
+      "path": "/column/kanso-shinikui-contact",
+      "slug": "kanso-shinikui-contact",
+      "title": "kanso-shinikui-contact",
+      "metrics": {
+        "sessions": 12,
+        "bounceRate": 0.3333333333333333,
+        "avgSessionDuration": 107.81017833333334,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション12件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 9,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 84827
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
       "path": "/column/soft-vs-hard-contact-hikaku",
       "slug": "soft-vs-hard-contact-hikaku",
       "title": "soft-vs-hard-contact-hikaku",
       "metrics": {
         "sessions": 12,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 91.21979441666666,
+        "bounceRate": 0.25,
+        "avgSessionDuration": 96.15977016666666,
         "affiliateClicks": 0
       },
       "flags": [
@@ -131,7 +165,7 @@
         "h3Count": 5,
         "hasAffiliateLinks": true,
         "ctaCount": 3,
-        "contentChars": 78433
+        "contentChars": 79125
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -165,7 +199,7 @@
         "h3Count": 4,
         "hasAffiliateLinks": true,
         "ctaCount": 8,
-        "contentChars": 88893
+        "contentChars": 89633
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -174,40 +208,6 @@
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "対応済み",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/kanso-shinikui-contact",
-      "slug": "kanso-shinikui-contact",
-      "title": "kanso-shinikui-contact",
-      "metrics": {
-        "sessions": 11,
-        "bounceRate": 0.36363636363636365,
-        "avgSessionDuration": 85.6049220909091,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション11件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 9,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 84087
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
       "business": "lens-navi",
       "priority": "low",
       "source": "auto-ga4"
@@ -233,13 +233,47 @@
         "h3Count": 2,
         "hasAffiliateLinks": true,
         "ctaCount": 7,
-        "contentChars": 82664
+        "contentChars": 83404
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/multifocal-contact-rogansetsu",
+      "slug": "multifocal-contact-rogansetsu",
+      "title": "multifocal-contact-rogansetsu",
+      "metrics": {
+        "sessions": 10,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 42.278371299999996,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション10件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 70139
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -267,7 +301,7 @@
         "h3Count": 4,
         "hasAffiliateLinks": true,
         "ctaCount": 8,
-        "contentChars": 80208
+        "contentChars": 80900
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -301,47 +335,13 @@
         "h3Count": 6,
         "hasAffiliateLinks": true,
         "ctaCount": 4,
-        "contentChars": 68723
+        "contentChars": 69415
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/multifocal-contact-rogansetsu",
-      "slug": "multifocal-contact-rogansetsu",
-      "title": "multifocal-contact-rogansetsu",
-      "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.625,
-        "avgSessionDuration": 18.4800895,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 4,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 69447
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -369,41 +369,7 @@
         "h3Count": 15,
         "hasAffiliateLinks": true,
         "ctaCount": 3,
-        "contentChars": 96385
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/eye-goods-pc",
-      "slug": "eye-goods-pc",
-      "title": "PC作業で目を守るグッズおすすめ10選【ブルーライトカット・モニターライト・目薬】",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.42857142857142855,
-        "avgSessionDuration": 149.13548514285714,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 4,
-        "hasAffiliateLinks": true,
-        "ctaCount": 7,
-        "contentChars": 74617
+        "contentChars": 97077
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
