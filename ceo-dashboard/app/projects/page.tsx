@@ -17,7 +17,7 @@ interface RegistryProject extends BaseRegistryProject {
   ga4PropertyId?: string;
 }
 
-interface Ga4Site { siteName: string; totalSessions: number; totalPageviews: number }
+interface Ga4Site { siteName: string; totalSessions: number; totalPageviews: number; affiliateClicksStatus?: string; affiliateClicksByPage?: Record<string, number> }
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<RegistryProject[] | null>(null);
@@ -116,7 +116,7 @@ export default function ProjectsPage() {
           <div><span style={{ color: 'var(--muted)' }}>流入: </span>
             <span style={{ color: site ? 'var(--text)' : '#5c5a70' }}>{site ? `${site.totalSessions}セッション` : '未取得'}</span>
           </div>
-          <div><span style={{ color: 'var(--muted)' }}>CV: </span><span style={{ color: '#5c5a70' }}>未取得</span></div>
+          <div><span style={{ color: 'var(--muted)' }}>送客クリック: </span><span style={{ color: 'var(--text)' }}>{site && 'affiliateClicksStatus' in site && site.affiliateClicksStatus === 'ok' && 'affiliateClicksByPage' in site && site.affiliateClicksByPage ? `${Object.values(site.affiliateClicksByPage as Record<string, number>).reduce((a, b) => a + b, 0)}件（28日間）` : '未取得'}</span></div>
           <div><span style={{ color: 'var(--muted)' }}>担当AI: </span><span style={{ color: 'var(--text)' }}>{p.assignedAI}</span></div>
           <div className="col-span-2"><span style={{ color: 'var(--muted)' }}>次のアクション: </span>
             <span style={{ color: hasNextAction ? 'var(--text)' : '#5c5a70' }}>{hasNextAction ? nextActionText : '未設定'}</span>
