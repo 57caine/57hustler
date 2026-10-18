@@ -1,6 +1,17 @@
 {
   "reports": [
     {
+      "weekOf": "2026-10-11",
+      "generatedAt": "2026-10-18T23:51:10.032Z",
+      "stats": {
+        "threadsPostsThisWeek": 14,
+        "lensNaviColumnsThisWeek": 0,
+        "henkutsuApprovedThisWeek": 0,
+        "noteArticles": 7,
+        "githubActionsSuccessRate": 100
+      }
+    },
+    {
       "weekOf": "2026-10-05",
       "generatedAt": "2026-10-12T00:54:04.908Z",
       "stats": {
@@ -116,17 +127,6 @@
       "stats": {
         "threadsPostsThisWeek": 45,
         "lensNaviColumnsThisWeek": 1,
-        "henkutsuApprovedThisWeek": 0,
-        "noteArticles": 7,
-        "githubActionsSuccessRate": 100
-      }
-    },
-    {
-      "weekOf": "2026-07-19",
-      "generatedAt": "2026-07-26T22:54:38.550Z",
-      "stats": {
-        "threadsPostsThisWeek": 51,
-        "lensNaviColumnsThisWeek": 11,
         "henkutsuApprovedThisWeek": 0,
         "noteArticles": 7,
         "githubActionsSuccessRate": 100
