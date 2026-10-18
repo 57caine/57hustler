@@ -1,0 +1,38 @@
+name: Rakutabi API diagnostics (no deploy)
+
+on:
+  push:
+    branches:
+      - fix/rakutabi-search-preflight-20261018
+    paths:
+      - 'rakutabi/scripts/test-connection.ts'
+      - 'rakutabi/lib/site-config.ts'
+      - 'rakutabi/lib/rakuten-travel.ts'
+      - '.github/workflows/rakutabi-api-diagnostics.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  api-diagnostics:
+    if: github.repository == '57caine/57hustler'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: rakutabi
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: rakutabi/package-lock.json
+      - run: npm ci
+      - name: Validate real Rakuten area codes and API access (read only)
+        run: npm run test:api
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+          RAKUTABI_RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTABI_RAKUTEN_AFFILIATE_ID }}
