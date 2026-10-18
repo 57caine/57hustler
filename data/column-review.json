@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T22:59:28.955Z",
+  "generatedAt": "2026-10-18T22:56:38.645Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -47,16 +47,16 @@
       "slug": "enkintsuyo-contact-guide",
       "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
       "metrics": {
-        "sessions": 15,
-        "bounceRate": 0.06666666666666667,
-        "avgSessionDuration": 93.71849900000001,
+        "sessions": 16,
+        "bounceRate": 0.0625,
+        "avgSessionDuration": 89.35468043750001,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション15件・affiliate_clickゼロ"
+        "セッション16件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -117,7 +117,7 @@
       "metrics": {
         "sessions": 12,
         "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 107.81017833333334,
+        "avgSessionDuration": 107.81017833333333,
         "affiliateClicks": 0
       },
       "flags": [
@@ -247,6 +247,40 @@
       "source": "auto-ga4"
     },
     {
+      "path": "/column/megane-facial-shape-frame-2026",
+      "slug": "megane-facial-shape-frame-2026",
+      "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
+      "metrics": {
+        "sessions": 10,
+        "bounceRate": 0.3,
+        "avgSessionDuration": 323.9157826,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション10件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 8,
+        "contentChars": 80900
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
       "path": "/column/multifocal-contact-rogansetsu",
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
@@ -281,13 +315,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/megane-facial-shape-frame-2026",
-      "slug": "megane-facial-shape-frame-2026",
-      "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
+      "path": "/column/multifocal-iol-presbyopia-surgery-2026",
+      "slug": "multifocal-iol-presbyopia-surgery-2026",
+      "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
       "metrics": {
         "sessions": 9,
         "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 356.8084178888889,
+        "avgSessionDuration": 107.16576355555556,
         "affiliateClicks": 0
       },
       "flags": [
@@ -297,11 +331,11 @@
         "セッション9件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 3,
-        "h3Count": 4,
+        "h2Count": 7,
+        "h3Count": 15,
         "hasAffiliateLinks": true,
-        "ctaCount": 8,
-        "contentChars": 80900
+        "ctaCount": 3,
+        "contentChars": 97077
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -336,40 +370,6 @@
         "hasAffiliateLinks": true,
         "ctaCount": 4,
         "contentChars": 69415
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/multifocal-iol-presbyopia-surgery-2026",
-      "slug": "multifocal-iol-presbyopia-surgery-2026",
-      "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
-      "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.25,
-        "avgSessionDuration": 119.660434875,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 7,
-        "h3Count": 15,
-        "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 97077
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
