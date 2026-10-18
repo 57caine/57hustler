@@ -17,6 +17,14 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
     .filter((h) => !meal || h.conditions.includes(meal.value));
   const prefectures = [...new Set(AREAS.map((a) => a.prefecture))];
   const unsupported = q.trim() && !base.length;
+  const hasQuery = Boolean(q.trim());
+  const relaxedParams = new URLSearchParams();
+  if (hasQuery) relaxedParams.set('q', q.trim());
+  const relaxedHref = `/search?${relaxedParams.toString()}`;
+  const themeRelaxedParams = new URLSearchParams();
+  if (hasQuery) themeRelaxedParams.set('q', q.trim());
+  if (theme) themeRelaxedParams.set('theme', theme.slug);
+  const mealRelaxedHref = `/search?${themeRelaxedParams.toString()}`;
   const suggestions = unsupported ? getAllHotels().filter((h) => !theme || h.themes.includes(theme.slug)).filter((h) => !meal || h.conditions.includes(meal.value)).slice(0, 6) : [];
   const heading = [q.trim() && `「${q.trim()}」`, theme?.name, meal?.label].filter(Boolean).join('×') || 'すべての宿';
 
@@ -31,9 +39,18 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
         <p className="mb-5 text-sm text-gray-600">現在の検索対象は全国すべての宿ではなく、選定した13エリアです。対象地域：{prefectures.join('・')}。掲載外の地域は検索結果に表示されません。</p>
         {hotels.length === 0 && (
           <div className="mb-6 rounded-2xl border border-gray-200 bg-white p-5 space-y-3">
-            <h2 className="font-bold text-ink">検索対象の宿が見つかりませんでした</h2>
+            <h2 className="font-bold text-ink">{unsupported ? 'この地域・宿名は現在の掲載データにありません' : '指定条件に合う宿が見つかりませんでした'}</h2>
             <p className="text-sm text-gray-600">{unsupported ? '入力した地域・宿名は、現在収録している宿データにありません。実際に宿がないという意味ではありません。' : '選択した条件に合う宿が、現在収録しているデータにありません。条件を減らすと候補が見つかる場合があります。'}</p>
-            <a className="inline-block rounded-full border border-ink px-4 py-2 text-sm font-bold text-ink" href="/search">条件を外して探し直す →</a>
+            <div className="flex flex-wrap gap-3">
+              {!unsupported && meal && (
+                <a className="inline-block rounded-full bg-ink text-white px-4 py-2 text-sm font-bold" href={mealRelaxedHref}>食事条件を外して探す →</a>
+              )}
+              {!unsupported && (theme || meal) && (
+                <a className="inline-block rounded-full border border-ink px-4 py-2 text-sm font-bold text-ink" href={relaxedHref}>地域・宿名だけで探す →</a>
+              )}
+              <a className="inline-block rounded-full border border-ink px-4 py-2 text-sm font-bold text-ink" href="/search">掲載中の宿から探す →</a>
+            </div>
+            {unsupported && <p className="text-xs text-gray-500">現在の掲載エリアは上記の13エリアです。全国の宿泊施設を網羅した検索ではありません。</p>}
           </div>
         )}
         {hotels.length > 0 && <HotelFilterList hotels={hotels} />}
