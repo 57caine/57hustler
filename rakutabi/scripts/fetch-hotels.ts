@@ -211,7 +211,7 @@ async function main() {
       let restored = 0;
       for (const old of previous.hotels) {
         if (failedAreas.has(old.areaKey) && !byNo.has(old.hotelNo)) {
-          byNo.set(old.hotelNo, { ...old, plans: [], themes: old.themes.filter((t) => t !== 'weekend' && t !== 'solo') });
+          byNo.set(old.hotelNo, { ...old, plans: [], themes: old.themes.filter((t) => t !== 'weekend' && t !== 'solo' && t !== 'onsen'), conditions: old.conditions.filter((key) => !['onsen', 'meal', 'breakfast', 'roomOnly'].includes(key)) });
           restored++;
         }
       }
