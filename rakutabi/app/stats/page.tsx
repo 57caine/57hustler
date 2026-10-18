@@ -29,6 +29,16 @@ export default async function StatsPage() {
     return <Shell><p>記録の読み出しに失敗しました：{(e as Error).message}</p></Shell>;
   }
 
+  // 直近7日（日本時間・当日を含む）。送客クリックであり予約・売上ではない。
+  const nowJst = new Date(Date.now() + 9 * 60 * 60 * 1000);
+  const sinceJst = new Date(nowJst);
+  sinceJst.setUTCDate(sinceJst.getUTCDate() - 6);
+  const sinceDate = sinceJst.toISOString().slice(0, 10);
+  const last7Days = rows.filter((r) => r.date >= sinceDate);
+  const threads7Days = last7Days.filter((r) => r.trafficSource === 'threads').length;
+  const unattributed7Days = last7Days.filter((r) => r.trafficSource === 'unattributed').length;
+  const bySource7Days = countBy(last7Days, (r) => r.trafficSource).sort((a, b) => b[1] - a[1]);
+
   const byDate = countBy(rows, (r) => r.date).sort((a, b) => b[0].localeCompare(a[0]));
   const byPlacement = countBy(rows, (r) => r.placement).sort((a, b) => b[1] - a[1]);
   const bySource = countBy(rows, (r) => r.trafficSource).sort((a, b) => b[1] - a[1]);
@@ -39,6 +49,13 @@ export default async function StatsPage() {
       <p className="text-4xl font-bold">{rows.length.toLocaleString('ja-JP')}<span className="text-base font-normal ml-1">クリック（累計）</span></p>
       <p className="text-xs text-gray-500">楽天トラベルへの予約ボタン・リンクのクリック数です（日付は日本時間）。楽天側で予約が成立したかどうかは、楽天アフィリエイトの管理画面でご確認ください。</p>
 
+      <section className="bg-white rounded-2xl ring-1 ring-black/5 p-5 space-y-2">
+        <h2 className="text-lg font-bold">直近7日間の送客クリック（当日含む・日本時間）</h2>
+        <p className="text-3xl font-bold">{last7Days.length.toLocaleString('ja-JP')}<span className="text-sm font-normal ml-1">件</span></p>
+        <p className="text-sm">Threads判定：{threads7Days}件 ／ 流入元未判定：{unattributed7Days}件</p>
+        <p className="text-xs text-gray-500">サイト訪問数や予約成立数ではありません。UTMなしのクリックは流入元を判定できません。</p>
+      </section>
+      <Table title="直近7日・流入元別送客クリック" head={['流入元', 'クリック']} rows={bySource7Days.map(([s, n]) => [s === 'unattributed' ? '未判定（UTMなし等）' : s, n])} />
       <Table title="日別" head={['日付', 'クリック']} rows={byDate.map(([d, n]) => [d, n])} />
       <Table
         title="ボタンの位置別"
