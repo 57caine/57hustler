@@ -30,7 +30,7 @@ export default async function StatsPage() {
   }
 
   // 直近7日（日本時間・当日を含む）。送客クリックであり予約・売上ではない。
-  const nowJst = new Date(Date.now() + 9 * 60 * 60 * 1000);
+  const nowJst = new Date(new Date().getTime() + 9 * 60 * 60 * 1000);
   const sinceJst = new Date(nowJst);
   sinceJst.setUTCDate(sinceJst.getUTCDate() - 6);
   const sinceDate = sinceJst.toISOString().slice(0, 10);
