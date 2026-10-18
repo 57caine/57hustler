@@ -81,6 +81,23 @@ async function main() {
     const codes = new Set<string>();
     collectAreaCodes(area.data, null, codes);
     console.log(`取得した小地区コード数: ${codes.size}`);
+    // 全国拡張に必要な都道府県・地区コードをAPIの実データから出力する。
+    // 推測したコードをサイト設定に追加しないための調査ログ。
+    const areaJson = JSON.stringify(area.data);
+    const prefectures = new Map<string, string>();
+    for (const m of areaJson.matchAll(/"middleClassCode":"([^"]+)","middleClassName":"([^"]+)"|"middleClassName":"([^"]+)","middleClassCode":"([^"]+)"/g)) {
+      prefectures.set(m[1] ?? m[4], m[2] ?? m[3]);
+    }
+    console.log(`APIで確認した都道府県・地域コード: ${prefectures.size}件`);
+    for (const [code, name] of [...prefectures].sort((a, b) => a[1].localeCompare(b[1], 'ja'))) {
+      console.log(`  ${name}: ${code}（小地区 ${[...codes].filter((key) => key.startsWith(`${code}/`)).length}件）`);
+    }
+    if (process.env.GITHUB_STEP_SUMMARY) {
+      const fs = await import('node:fs');
+      const rows = [...prefectures].sort((a, b) => a[1].localeCompare(b[1], 'ja'))
+        .map(([code, name]) => `| ${name} | \`${code}\` | ${[...codes].filter((key) => key.startsWith(`${code}/`)).length} |`);
+      fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, ['## 楽天API実測の都道府県・地域コード', '', '| 地域 | middleClassCode | 小地区数 |', '|---|---|---:|', ...rows, ''].join('\\n'));
+    }
     const missing: string[] = [];
     for (const a of AREAS) {
       const key = `${a.middleClassCode}/${a.smallClassCode}`;
