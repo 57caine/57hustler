@@ -227,6 +227,7 @@ interface SiteData {
   topPages: PageMetrics[];
   weeklyTrend: { date: string; sessions: number }[];
   affiliateClicksByPage: Record<string, number>;
+  affiliateClicksTotal: number | null;
   affiliateClicksByPlatform: Record<string, number>;
   affiliateClicksPlatformStatus: 'ok' | 'error' | 'missing_dimension';
   affiliateClicksStatus: 'ok' | 'error';
@@ -292,6 +293,21 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
       sessions: parseInt(row.metricValues?.[0]?.value ?? '0'),
     };
   });
+
+  // 全件数はページ別上位100件の合計から推定しない（101位以降が欠落するため）。
+  let affiliateClicksTotal: number | null = null;
+  try {
+    const [totalClicksResponse] = await client.runReport({
+      property: propertyId,
+      dimensions: [],
+      metrics: [{ name: 'eventCount' }],
+      dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { matchType: 'EXACT', value: 'affiliate_click' } } },
+      dateRanges: [{ startDate, endDate }],
+    });
+    affiliateClicksTotal = Number(totalClicksResponse.rows?.[0]?.metricValues?.[0]?.value ?? '0');
+  } catch (error) {
+    console.error(`  ✗ ${property.label}: affiliate_click合計取得失敗`, error);
+  }
 
   // affiliate_click イベント数（ページ別）
   let affiliateClicksStatus: 'ok' | 'error' = 'ok';
@@ -362,6 +378,7 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
     topPages,
     weeklyTrend,
     affiliateClicksByPage,
+    affiliateClicksTotal,
     affiliateClicksByPlatform,
     affiliateClicksPlatformStatus,
     affiliateClicksStatus,
