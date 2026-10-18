@@ -269,6 +269,11 @@ async function main() {
   };
   fs.writeFileSync(OUT, JSON.stringify(out, null, 2) + '\n');
   console.log(`\n${out.hotels.length}施設を保存しました（成功${success}回・失敗${failure}回）`);
+  // 一部エリアの欠落・古い情報を本番へ自動公開しない。Actionsを失敗させてデプロイを止める。
+  if (failure > 0) {
+    console.error(`楽天APIで${failure}件の取得失敗があったため、今回のデータ更新と本番デプロイを中止します。`);
+    process.exit(1);
+  }
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
