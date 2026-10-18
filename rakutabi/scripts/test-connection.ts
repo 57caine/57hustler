@@ -96,7 +96,7 @@ async function main() {
       const fs = await import('node:fs');
       const rows = [...prefectures].sort((a, b) => a[1].localeCompare(b[1], 'ja'))
         .map(([code, name]) => `| ${name} | \`${code}\` | ${[...codes].filter((key) => key.startsWith(`${code}/`)).length} |`);
-      fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, ['## 楽天API実測の都道府県・地域コード', '', '| 地域 | middleClassCode | 小地区数 |', '|---|---|---:|', ...rows, ''].join('\\n'));
+      fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, ['## 楽天API実測の都道府県・地域コード', '', '| 地域 | middleClassCode | 小地区数 |', '|---|---|---:|', ...rows, ''].join('\n'));
     }
     const missing: string[] = [];
     for (const a of AREAS) {
