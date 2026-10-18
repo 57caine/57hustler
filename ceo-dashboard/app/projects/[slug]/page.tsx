@@ -29,6 +29,9 @@ interface Ga4Site {
   totalPageviews: number;
   dateRange: { start: string; end: string };
   topPages: { path: string; sessions: number }[];
+  fetchedAt?: string;
+  affiliateClicksStatus?: 'ok' | 'error';
+  affiliateClicksByPage?: Record<string, number>;
 }
 
 function Step({ n, label, color, children }: { n: number; label: string; color?: string; children: React.ReactNode }) {
@@ -88,6 +91,8 @@ export default function ProjectDetailPage() {
   if (!project) return <div className="p-6" style={{ color: 'var(--muted)' }}>読み込み中...</div>;
 
   const latestNextAction = pdcaEntries.find(e => e.nextAction?.trim())?.nextAction;
+  const outboundClicks = ga4?.affiliateClicksStatus === 'ok' && ga4.affiliateClicksByPage
+    ? Object.values(ga4.affiliateClicksByPage).reduce((sum, n) => sum + n, 0) : null;
 
   return (
     <div className="space-y-4 pb-10">
@@ -126,9 +131,14 @@ export default function ProjectDetailPage() {
           <div className="grid grid-cols-2 gap-3">
             <div><div className="text-lg font-bold font-mono" style={{ color: 'var(--text)' }}>{ga4.totalSessions}</div><div className="text-[9px]" style={{ color: 'var(--muted)' }}>セッション（{ga4.dateRange.start}）</div></div>
             <div><div className="text-lg font-bold font-mono" style={{ color: 'var(--text)' }}>{ga4.totalPageviews}</div><div className="text-[9px]" style={{ color: 'var(--muted)' }}>PV</div></div>
+            <div><div className="text-lg font-bold font-mono">{outboundClicks === null ? '未取得' : outboundClicks}</div><div className="text-[9px]" style={{ color: 'var(--muted)' }}>送客クリック（購入数ではありません）</div></div>
+            {ga4.fetchedAt && <div className="col-span-2 text-[10px]" style={{ color: 'var(--muted)' }}>取得日時: {new Date(ga4.fetchedAt).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}</div>}
           </div>
         ) : (
-          <p className="text-sm" style={{ color: '#5c5a70' }}>未取得（GA4等のデータ連携なし）</p>
+          <div className="space-y-2">
+            <p className="text-sm" style={{ color: '#5c5a70' }}>{project.status === 'design_only' ? 'サイト未実装（計測対象なし）' : '訪問数の計測未連携'}</p>
+            {project.slug === 'rakutabi' && <a href="https://rakutabi-nine.vercel.app/stats" target="_blank" rel="noopener noreferrer" className="text-xs underline" style={{ color: 'var(--accent)' }}>楽旅くんの送客クリック集計を確認 ↗</a>}
+          </div>
         )}
       </Step>
 
