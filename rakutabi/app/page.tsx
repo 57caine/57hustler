@@ -5,7 +5,7 @@ import Photo from '@/components/Photo';
 import PhotoCredits from '@/components/PhotoCredits';
 import SearchBox from '@/components/SearchBox';
 import { SectionTitle, TravelTopButton } from '@/components/ui';
-import { getCurrentSeason, REGIONS, SEASONAL_FEATURES, THEMES } from '@/lib/site-config';
+import { AREAS, getCurrentSeason, REGIONS, SEASONAL_FEATURES, THEMES } from '@/lib/site-config';
 import { PHOTO_QUERIES, type PhotoKey } from '@/lib/photo-keys';
 import { getHotelsByTheme } from '@/lib/hotels';
 import { getPhoto } from '@/lib/photos';
@@ -36,6 +36,17 @@ export default function Home() {
           <div className="mt-8 flex flex-col lg:flex-row lg:items-center gap-4 max-w-4xl">
             <div className="flex-1"><SearchBox /></div>
             <TravelTopButton label="楽天トラベルで予約する" placement="hero" className="self-start px-6 py-3.5 text-sm" />
+          </div>
+          <div className="mt-5 max-w-4xl">
+            <p className="text-sm font-bold drop-shadow mb-2">掲載中の人気エリアから探す</p>
+            <div className="flex flex-wrap gap-2">
+              {AREAS.map((area) => (
+                <Link key={area.key} href={`/area/${area.key}`} className="rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-ink hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-white">
+                  {area.name} →
+                </Link>
+              ))}
+            </div>
+            <p className="mt-2 text-xs text-white/90 drop-shadow">現在は13エリアを掲載しています。全国の宿を網羅した検索ではありません。</p>
           </div>
         </div>
         {/* 下端の波 */}
