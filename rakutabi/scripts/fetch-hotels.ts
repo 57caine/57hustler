@@ -152,6 +152,7 @@ async function main() {
   const byNo = new Map<number, Hotel>();
   let success = 0;
   let failure = 0;
+  const failedAreas = new Set<string>();
 
   // 1. 空室検索
   for (const area of AREAS) {
@@ -174,6 +175,7 @@ async function main() {
         } else {
           console.log(`  ${area.name} / ${q.label}: 失敗 HTTP ${res.statusCode} ${res.error}`);
           failure++;
+          failedAreas.add(area.key);
         }
         continue;
       }
@@ -199,6 +201,24 @@ async function main() {
   if (byNo.size === 0) {
     console.log(`\n施設を1件も取得できませんでした（成功${success}回・失敗${failure}回）。既存データを保持します。`);
     process.exit(failure > 0 ? 1 : 0);
+  }
+
+  // 一時的なAPI障害で一部エリアの宿が丸ごと消えることを防ぐ。
+  // 古いデータは空室・料金が最新ではないため、既存施設の表示継続用に限る。
+  if (failedAreas.size > 0 && fs.existsSync(OUT)) {
+    try {
+      const previous = JSON.parse(fs.readFileSync(OUT, 'utf8')) as HotelsFile;
+      let restored = 0;
+      for (const old of previous.hotels) {
+        if (failedAreas.has(old.areaKey) && !byNo.has(old.hotelNo)) {
+          byNo.set(old.hotelNo, { ...old, plans: [], themes: old.themes.filter((t) => t !== 'weekend' && t !== 'solo') });
+          restored++;
+        }
+      }
+      console.log(`API失敗エリア ${failedAreas.size}件: 既存施設 ${restored}件を保護（古い空室プランは破棄）`);
+    } catch (error) {
+      console.warn('既存施設データの復元に失敗:', error);
+    }
   }
 
   // 2. 施設詳細（15施設ずつ）
