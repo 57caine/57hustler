@@ -52,6 +52,7 @@ jobs:
           const lens = (ga4.sites || []).find(site => site.siteName === 'lens-navi');
           if (!lens) throw new Error('lens-navi GA4 record missing');
           if (lens.affiliateClicksStatus !== 'ok') throw new Error('lens-navi affiliate_click query failed; refuse to publish misleading fresh GA4 snapshot');
+          if (!Number.isSafeInteger(lens.affiliateClicksTotal) || lens.affiliateClicksTotal < 0) throw new Error('lens-navi affiliate_click total missing or invalid');
           const review = JSON.parse(fs.readFileSync(paths[2], 'utf8'));
           if (review.autoReviewStale === true || review.affiliateClicksStatus !== 'ok') throw new Error('column review is stale or click query failed');
           console.log('Generated GA4 outputs validated');
