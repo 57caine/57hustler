@@ -179,12 +179,13 @@ export function hasComboPage(areaKey: string, theme: ThemeSlug): boolean {
 
 /** 検索窓用。宿名・よみがな・エリア名・住所・最寄り駅で部分一致 */
 export function searchHotels(query: string): Hotel[] {
-  const words = query.trim().split(/\s+/).filter(Boolean);
+  const normalize = (value: string) => value.normalize('NFKC').toLocaleLowerCase('ja-JP').replace(/[\s\u3000]+/g, '');
+  const words = query.trim().split(/\s+/).map(normalize).filter(Boolean);
   if (words.length === 0) return [];
   return data.hotels
     .filter((h) => {
       const area = AREAS.find((a) => a.key === h.areaKey);
-      const text = `${h.name} ${h.kana} ${area?.name ?? ''} ${area?.prefecture ?? ''} ${h.address} ${h.nearestStation}`;
+      const text = normalize(`${h.name} ${h.kana} ${area?.name ?? ''} ${area?.prefecture ?? ''} ${h.address} ${h.nearestStation}`);
       return words.every((w) => text.includes(w));
     })
     .sort(byReview);
