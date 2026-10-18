@@ -17,7 +17,7 @@ interface RegistryProject extends BaseRegistryProject {
   ga4PropertyId?: string;
 }
 
-interface Ga4Site { siteName: string; totalSessions: number; totalPageviews: number }
+interface Ga4Site { siteName: string; totalSessions: number; totalPageviews: number; fetchedAt?: string; affiliateClicksStatus?: string; affiliateClicksByPage?: Record<string, number>; affiliateClicksTotal?: number | null }
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<RegistryProject[] | null>(null);
@@ -84,6 +84,7 @@ export default function ProjectsPage() {
     const cats = alertsBySlug[p.slug] ?? [];
     const act = activity[p.slug];
     const site = p.ga4PropertyId ? ga4.find(s => s.siteName === p.slug) : undefined;
+    const stale = site?.fetchedAt ? Date.now() - new Date(site.fetchedAt).getTime() > 48 * 3600000 : false;
     const hasNextAction = flagged.some(a => a.business === p.businessKey && a.nextAction?.trim());
     const nextActionText = flagged.find(a => a.business === p.businessKey && a.nextAction?.trim())?.nextAction;
 
@@ -114,13 +115,15 @@ export default function ProjectsPage() {
         <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-[11px]">
           <div><span style={{ color: 'var(--muted)' }}>収益: </span><span style={{ color: '#5c5a70' }}>準備中</span></div>
           <div><span style={{ color: 'var(--muted)' }}>流入: </span>
-            <span style={{ color: site ? 'var(--text)' : '#5c5a70' }}>{site ? `${site.totalSessions}セッション` : '未取得'}</span>
+            <span style={{ color: site ? 'var(--text)' : '#5c5a70' }}>{site ? `${site.totalSessions}セッション${stale ? '（更新遅延）' : ''}` : p.status === 'design_only' ? '未実装' : p.slug === 'rakutabi' ? '訪問数未計測' : p.dataSource === 'none' ? '計測未連携' : '未取得'}</span>
           </div>
-          <div><span style={{ color: 'var(--muted)' }}>CV: </span><span style={{ color: '#5c5a70' }}>未取得</span></div>
+          <div><span style={{ color: 'var(--muted)' }}>送客クリック: </span><span style={{ color: 'var(--text)' }}>{site?.affiliateClicksTotal != null ? `${site.affiliateClicksTotal}件（28日間）` : '未取得'}</span></div>
           <div><span style={{ color: 'var(--muted)' }}>担当AI: </span><span style={{ color: 'var(--text)' }}>{p.assignedAI}</span></div>
+          {p.slug === 'rakutabi' && <div className="col-span-2" style={{ color: 'var(--muted)' }}>送客クリック: 楽旅くん /stats で計測中（訪問数とは別）</div>}
           <div className="col-span-2"><span style={{ color: 'var(--muted)' }}>次のアクション: </span>
             <span style={{ color: hasNextAction ? 'var(--text)' : '#5c5a70' }}>{hasNextAction ? nextActionText : '未設定'}</span>
           </div>
+          {site?.fetchedAt && <div className="col-span-2"><span style={{ color: 'var(--muted)' }}>計測更新: </span><span>{new Date(site.fetchedAt).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}</span></div>}
           <div className="col-span-2"><span style={{ color: 'var(--muted)' }}>最終更新: </span>
             <span style={{ color: 'var(--text)' }}>
               {act?.lastRunAt ? `${daysSince(act.lastRunAt)}日前${act.lastRunConclusion === 'failure' ? '（失敗）' : ''}` : 'データなし'}
@@ -136,7 +139,7 @@ export default function ProjectsPage() {
       <div>
         <div className="text-[10px] uppercase tracking-widest mb-1" style={{ color: 'var(--muted)' }}>PROJECTS</div>
         <h1 className="text-xl font-bold">全{projects.length}プロジェクト</h1>
-        <p className="text-[10px] mt-1" style={{ color: 'var(--muted)' }}>収益・CVは自動取得できるものだけ表示。取得できないものはダミー値を入れず「未取得」と表示します</p>
+        <p className="text-[10px] mt-1" style={{ color: 'var(--muted)' }}>送客クリックは購入・売上ではありません。計測できない項目は未取得・未連携・未実装を区別します</p>
       </div>
 
       <div className="space-y-3">
