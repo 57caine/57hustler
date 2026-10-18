@@ -17,7 +17,7 @@ interface RegistryProject extends BaseRegistryProject {
   ga4PropertyId?: string;
 }
 
-interface Ga4Site { siteName: string; totalSessions: number; totalPageviews: number; fetchedAt?: string; affiliateClicksStatus?: string; affiliateClicksByPage?: Record<string, number> }
+interface Ga4Site { siteName: string; totalSessions: number; totalPageviews: number; fetchedAt?: string; affiliateClicksStatus?: string; affiliateClicksByPage?: Record<string, number>; affiliateClicksTotal?: number | null }
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<RegistryProject[] | null>(null);
@@ -117,7 +117,7 @@ export default function ProjectsPage() {
           <div><span style={{ color: 'var(--muted)' }}>流入: </span>
             <span style={{ color: site ? 'var(--text)' : '#5c5a70' }}>{site ? `${site.totalSessions}セッション${stale ? '（更新遅延）' : ''}` : p.status === 'design_only' ? '未実装' : p.slug === 'rakutabi' ? '訪問数未計測' : p.dataSource === 'none' ? '計測未連携' : '未取得'}</span>
           </div>
-          <div><span style={{ color: 'var(--muted)' }}>送客クリック: </span><span style={{ color: 'var(--text)' }}>{site?.affiliateClicksStatus === 'ok' && site.affiliateClicksByPage ? `${Object.values(site.affiliateClicksByPage).reduce((a, b) => a + b, 0)}件（28日間）` : '未取得'}</span></div>
+          <div><span style={{ color: 'var(--muted)' }}>送客クリック: </span><span style={{ color: 'var(--text)' }}>{site?.affiliateClicksTotal != null ? `${site.affiliateClicksTotal}件（28日間）` : '未取得'}</span></div>
           <div><span style={{ color: 'var(--muted)' }}>担当AI: </span><span style={{ color: 'var(--text)' }}>{p.assignedAI}</span></div>
           {p.slug === 'rakutabi' && <div className="col-span-2" style={{ color: 'var(--muted)' }}>送客クリック: 楽旅くん /stats で計測中（訪問数とは別）</div>}
           <div className="col-span-2"><span style={{ color: 'var(--muted)' }}>次のアクション: </span>
