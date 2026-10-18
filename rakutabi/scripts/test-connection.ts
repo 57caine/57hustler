@@ -199,7 +199,13 @@ async function main() {
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `## 楽天トラベルAPI 接続確認\n\n${md}\n`);
   }
 
-  if (summary.every((r) => r.result !== 'OK')) process.exit(1);
+  // 地区コードが不一致でも従来は「APIが1件でも成功」なら成功扱いだった。
+  // データ欠落を見逃さないよう、地区コードの不一致・API失敗を明確に失敗とする。
+  const failures = summary.filter((r) => r.result !== 'OK' || (r.api === 'GetAreaClass' && r.detail !== '全エリアのコード一致'));
+  if (failures.length) {
+    console.error(`API検証に失敗: ${failures.map((r) => `${r.api}: ${r.detail}`).join(' / ')}`);
+    process.exit(1);
+  }
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
