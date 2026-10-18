@@ -32,6 +32,7 @@ interface Ga4Site {
   fetchedAt?: string;
   affiliateClicksStatus?: 'ok' | 'error';
   affiliateClicksByPage?: Record<string, number>;
+  affiliateClicksTotal?: number | null;
 }
 
 function Step({ n, label, color, children }: { n: number; label: string; color?: string; children: React.ReactNode }) {
@@ -91,8 +92,7 @@ export default function ProjectDetailPage() {
   if (!project) return <div className="p-6" style={{ color: 'var(--muted)' }}>読み込み中...</div>;
 
   const latestNextAction = pdcaEntries.find(e => e.nextAction?.trim())?.nextAction;
-  const outboundClicks = ga4?.affiliateClicksStatus === 'ok' && ga4.affiliateClicksByPage
-    ? Object.values(ga4.affiliateClicksByPage).reduce((sum, n) => sum + n, 0) : null;
+  const outboundClicks = ga4?.affiliateClicksTotal ?? null;
 
   return (
     <div className="space-y-4 pb-10">
