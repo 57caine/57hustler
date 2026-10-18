@@ -8,6 +8,7 @@ const REPORT_LOG_URL = 'https://raw.githubusercontent.com/57caine/57hustler/main
 const COLUMN_REVIEW_URL = 'https://raw.githubusercontent.com/57caine/57hustler/main/data/column-review.json';
 const REGISTRY_URL = 'https://raw.githubusercontent.com/57caine/57hustler/main/data/projects-registry.json';
 const GA4_URL = 'https://raw.githubusercontent.com/57caine/57hustler/main/data/ga4-analytics.json';
+const RAKUTABI_STATS_URL = 'https://rakutabi-nine.vercel.app/stats';
 
 interface RegistryProject extends BaseRegistryProject {
   purpose: string;
@@ -115,10 +116,11 @@ export default function ProjectsPage() {
         <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-[11px]">
           <div><span style={{ color: 'var(--muted)' }}>収益: </span><span style={{ color: '#5c5a70' }}>準備中</span></div>
           <div><span style={{ color: 'var(--muted)' }}>流入: </span>
-            <span style={{ color: site ? 'var(--text)' : '#5c5a70' }}>{site ? `${site.totalSessions}セッション${stale ? '（更新遅延）' : ''}` : p.status === 'design_only' ? '未実装' : p.dataSource === 'none' ? '計測未連携' : '未取得'}</span>
+            <span style={{ color: site ? 'var(--text)' : '#5c5a70' }}>{site ? `${site.totalSessions}セッション${stale ? '（更新遅延）' : ''}` : p.status === 'design_only' ? '未実装' : p.slug === 'rakutabi' ? '訪問数未計測' : p.dataSource === 'none' ? '計測未連携' : '未取得'}</span>
           </div>
           <div><span style={{ color: 'var(--muted)' }}>送客クリック: </span><span style={{ color: 'var(--text)' }}>{site && 'affiliateClicksStatus' in site && site.affiliateClicksStatus === 'ok' && 'affiliateClicksByPage' in site && site.affiliateClicksByPage ? `${Object.values(site.affiliateClicksByPage as Record<string, number>).reduce((a, b) => a + b, 0)}件（28日間）` : '未取得'}</span></div>
           <div><span style={{ color: 'var(--muted)' }}>担当AI: </span><span style={{ color: 'var(--text)' }}>{p.assignedAI}</span></div>
+          {p.slug === 'rakutabi' && <div className="col-span-2"><a href={RAKUTABI_STATS_URL} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()} style={{ color: 'var(--accent)' }}>送客クリック集計を開く（/stats） ↗</a></div>}
           <div className="col-span-2"><span style={{ color: 'var(--muted)' }}>次のアクション: </span>
             <span style={{ color: hasNextAction ? 'var(--text)' : '#5c5a70' }}>{hasNextAction ? nextActionText : '未設定'}</span>
           </div>
