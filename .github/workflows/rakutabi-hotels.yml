@@ -89,8 +89,18 @@ jobs:
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
             git commit -m "chore: 楽旅くん 宿泊施設データ更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
-            git pull --rebase origin main
-            git push origin HEAD:main
+            # データ生成中に main が更新されても、生成済みの2ファイルを
+            # 最新 main 上に載せ直す。競合する JSON を rebase で自動マージしない。
+            git fetch origin main
+            git reset --soft origin/main
+            git add data/hotels.json data/photos.json
+            if git diff --cached --quiet; then
+              echo "changed=false" >> "$GITHUB_OUTPUT"
+              echo "最新 main と同じデータのためプッシュ不要"
+            else
+              git commit -m "chore: 楽旅くん 宿泊施設データ更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
+              git push origin HEAD:main
+            fi
           fi
 
       # 宿データに差分が無くても、公開URLが落ちていれば再デプロイする。
