@@ -329,6 +329,8 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
     return [{ rows: [] }];
   });
 
+  if (affiliateClicksTotal === null) affiliateClicksStatus = 'error';
+
   const affiliateClicksByPage: Record<string, number> = {};
   for (const row of (clicksResponse?.rows ?? [])) {
     const p = row.dimensionValues?.[0]?.value ?? '';
