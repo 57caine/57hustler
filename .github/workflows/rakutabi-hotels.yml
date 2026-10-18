@@ -93,8 +93,23 @@ jobs:
             git push origin HEAD:main
           fi
 
+      # 宿データに差分が無くても、公開URLが落ちていれば再デプロイする。
+      # 本番への公開自体は既存の main 限定ゲートを維持する。
+      - name: 公開サイトの到達性確認
+        id: site_health
+        run: |
+          code=$(curl -L -sS --connect-timeout 10 --max-time 20 -o /tmp/rakutabi-health.html -w '%{http_code}' 'https://rakutabi-nine.vercel.app/' || true)
+          if [ "${code}" = "200" ] && grep -q '楽旅くん' /tmp/rakutabi-health.html; then
+            echo "healthy=true" >> "$GITHUB_OUTPUT"
+            echo "公開サイトは正常です（HTTP 200・サイト名あり）"
+          else
+            echo "healthy=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::公開サイトの異常を検知（HTTP ${code}）。データ変更が無くても再デプロイします"
+          fi
+        working-directory: rakutabi
+
       - name: Vercelへ公開
-        if: github.event_name != 'schedule' || steps.data_update.outputs.changed == 'true'
+        if: github.event_name != 'schedule' || steps.data_update.outputs.changed == 'true' || steps.site_health.outputs.healthy == 'false'
         run: |
           set -o pipefail
           bash scripts/vercel-deploy.sh | tee /tmp/deploy.log
@@ -102,7 +117,7 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
       - name: 公開URLの表示確認
-        if: github.event_name != 'schedule' || steps.data_update.outputs.changed == 'true'
+        if: github.event_name != 'schedule' || steps.data_update.outputs.changed == 'true' || steps.site_health.outputs.healthy == 'false'
         run: |
           set -u
           hosts=$(sed -n '/=== 4/,$p' /tmp/deploy.log | grep -E '\.vercel\.app$' || true)
