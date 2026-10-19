@@ -7,6 +7,7 @@ on:
   pull_request:
     paths:
       - 'scripts/report-affiliate-evidence.mjs'
+      - 'tests/affiliate-evidence-report.test.mjs'
       - '.github/workflows/affiliate-evidence-report.yml'
 
 permissions:
@@ -21,6 +22,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Verify complete totals and invalid-data handling
+        run: node --test tests/affiliate-evidence-report.test.mjs
       - name: Validate reporter with synthetic known-good and known-bad data (PR only)
         if: github.event_name == 'pull_request'
         run: |

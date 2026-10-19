@@ -15,7 +15,18 @@ if (!Number.isFinite(generated)) throw new Error('Invalid GA4 generatedAt');
 const ageHours = (Date.now() - generated) / 3600000;
 const stale = ageHours > 48 || ageHours < -1;
 const top = Object.entries(clicks).filter(([, n]) => Number.isFinite(n) && n > 0).sort((a, b) => b[1] - a[1]).slice(0, 12);
-const total = Object.values(clicks).reduce((sum, n) => sum + (Number.isFinite(n) ? n : 0), 0);
+const pageCounts = Object.values(clicks);
+if (pageCounts.some(n => !Number.isSafeInteger(n) || n < 0)) {
+  throw new Error('Invalid page click counts; refuse to report a partial total');
+}
+const pageSubtotal = pageCounts.reduce((sum, n) => sum + n, 0);
+const total = site.affiliateClicksTotal;
+if (!Number.isSafeInteger(total) || total < 0) {
+  throw new Error('GA4 ungrouped affiliate_click total unavailable; do not substitute page subtotal or zero');
+}
+if (pageSubtotal > total) {
+  throw new Error('Page click subtotal exceeds GA4 ungrouped total; reconcile reports before use');
+}
 // Prioritize existing proven click paths; page sessions are available only for GA4 topPages.
 // Event counts are not unique visitors, orders, or click-through rates.
 const pageSessions = new Map((site.topPages ?? []).map(p => [p.path, p.sessions]));
@@ -30,7 +41,8 @@ const lines = [
   `- GA4 period: ${site.dateRange?.start ?? 'unknown'} to ${site.dateRange?.end ?? 'unknown'}`,
   `- Click fetch status: ${site.affiliateClicksStatus ?? 'unknown (legacy data; completeness not verified)'}`,
   `- Sessions: ${site.totalSessions ?? 'unknown'}`,
-  `- Recorded affiliate_click events by page (sum): ${total}`,
+  `- Recorded affiliate_click events (GA4 ungrouped total): ${total}`,
+  `- Listed page subtotal (up to 100 pages; not the overall total): ${pageSubtotal}`,
   `- Affiliate platform breakdown: ${platformStatus} (not proof of merchant sales)`,
   ...(platformStatus === 'ok' ? Object.entries(platformData).map(([name, n]) => `  - ${name}: ${n} events`) : ['- Platform-level clicks unavailable; do not assume Rakuten/A8 split.']),
   '',
