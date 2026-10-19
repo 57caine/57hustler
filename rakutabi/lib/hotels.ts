@@ -57,7 +57,7 @@ export interface Hotel {
   planListUrl: string;
   /** 楽天トラベルの口コミページURL（同上） */
   reviewUrl: string;
-  /** 楽天トラベル掲載の最低料金（1名あたり、円） */
+  /** 楽天トラベル掲載の参考最低料金（1部屋1泊、税・サービス料込み、円）。日付・人数指定の料金ではない */
   minCharge: number | null;
   reviewAverage: number | null;
   reviewCount: number | null;

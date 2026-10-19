@@ -29,3 +29,14 @@
 
 - 作業ブランチを作り直すための履歴の書き換え（force push）。変更点の判定がずれて、意図しない公開処理が起動した（2026-09-28）
 - 連続したpush。公開処理が終わるのを待ってから次のpushをする
+
+## 料金カードの表示（2026-10-20）
+
+- `Price` が `minCharge` を無視していたため、共通の縦型・横型カードに参考最低料金「○円〜」を表示。根拠のない上限額や1名換算はしない。
+- `minCharge` は取得スクリプトの `hotelBasicInfo.hotelMinCharge`。公式仕様では1部屋1泊、税・サービス料込みの目安。以前の型コメント「1名あたり」を修正。
+- 出典: https://webservice.rakuten.co.jp/documentation/vacant-hotel-search と https://webservice.rakuten.co.jp/documentation/simple-hotel-search の出力項目 `hotelMinCharge`。
+- `plans[].total` は次の土曜日1泊・検索人数での合計。人数・食事条件が異なり、最大6プランに絞っているため施設全体の上限として使わない。
+- 既存データの `fetchedAt` を各カードで日本時間表示。価格未取得・0以下・非数値・無限値では「料金は楽天トラベルで確認」。
+- 各カードに「※最新の宿泊料金は楽天トラベルで確認」、全幅の料金・空室確認CTAを表示。施設別のアフィリエイトURL・クリック計測属性を維持。
+- 回帰確認: `node --import tsx scripts/test-card-prices.tsx`。縦型・横型、欠損価格、予約URL欠損時の詳細リンク、全施設の楽天リンク先施設番号と計測属性を確認。
+- 本番公開はオーナー承認後。mainへマージすると既存Actionsにより本番公開が起動する。
