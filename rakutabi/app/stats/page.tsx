@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { SITE_URL } from '@/lib/site-config';
 import { connection } from 'next/server';
 import { isBlobConfigured, listClicks, PLACEMENT_LABELS, type ClickRow, type Placement } from '@/lib/click-log';
 import { getHotel } from '@/lib/hotels';
@@ -72,7 +71,7 @@ export default async function StatsPage() {
           { label: '週末旅行', path: '/theme/weekend' },
           { label: '子連れ旅行', path: '/theme/family' },
         ].map((item) => {
-          const url = `${SITE_URL}${item.path}?utm_source=threads&utm_medium=social&utm_campaign=rakutabi_202610`;
+          const url = `https://rakutabi-nine.vercel.app${item.path}?utm_source=threads&utm_medium=social&utm_campaign=rakutabi_202610`;
           return (
             <div key={item.path} className="space-y-1">
               <p className="text-sm font-bold">{item.label}</p>
