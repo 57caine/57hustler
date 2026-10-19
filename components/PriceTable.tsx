@@ -72,8 +72,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
           const annual = annualEstimate(item);
           const perBox = boxPrice(item);
           const verifiedProductLink = hasProductDetailDestination(item.productId, item.storeId) &&
-            !item.url.includes('px.a8.net') && !item.url.includes('a8ejpredirect=') &&
-            !item.url.startsWith('#');
+            item.url.startsWith('https://');
           return (
             <div key={`mobile-${item.storeId}-${index}`} className="rounded-xl border border-slate-200 bg-white p-4">
               <div className="flex flex-wrap items-center gap-2 mb-3">
@@ -137,7 +136,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
               const difference = annual != null && cheapestAnnual != null ? annual - cheapestAnnual : null;
               // Do not claim a direct product price check for an unverified affiliate redirect.
               const verifiedProductLink = hasProductDetailDestination(item.productId, item.storeId) &&
-                !item.url.includes('px.a8.net') && !item.url.includes('a8ejpredirect=');
+                item.url.startsWith('https://');
               return <tr key={`${item.storeId}-${index}`} className={[
                 'border-b border-gray-100 transition-colors hover:bg-slate-50',
                 isCheapest ? 'bg-emerald-50/50' : '',
