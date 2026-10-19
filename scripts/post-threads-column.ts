@@ -132,7 +132,7 @@ const STYLE_GUIDE = `投稿文は以下のスタイルで書くこと。
 「伝承・説・私見を、確定した事実として言い切っていないか」
 → どちらかに問題があれば書き直す。`;
 
-interface ColumnPost { date: string; text: string; category?: string; keywords?: string[]; }
+interface ColumnPost { date: string; text: string; category?: string; keywords?: string[]; postId?: string; }
 interface SeriesWeek {
   current_month: string;
   theme: string;
@@ -161,20 +161,20 @@ function loadHistory(): ColumnPost[] {
   } catch { return []; }
 }
 
-function saveHistory(existing: ColumnPost[], newText: string, category?: string, keywords?: string[]): void {
+function saveHistory(existing: ColumnPost[], newText: string, category?: string, keywords?: string[], postId?: string): void {
   const today = getJstDateSlug();
-  const entry: ColumnPost = { date: today, text: newText.slice(0, 200), ...(category ? { category } : {}), ...(keywords?.length ? { keywords } : {}) };
+  const entry: ColumnPost = { date: today, text: newText.slice(0, 200), ...(category ? { category } : {}), ...(keywords?.length ? { keywords } : {}), ...(postId ? { postId } : {}) };
   const posts = [entry, ...existing].slice(0, HISTORY_KEEP);
   fs.writeFileSync(HISTORY_PATH, JSON.stringify({ posts }, null, 2), 'utf-8');
 }
 
-function appendToYonakaHistory(text: string, category?: string, keywords?: string[]): void {
+function appendToYonakaHistory(text: string, category?: string, keywords?: string[], postId?: string): void {
   try {
     const today = getJstDateSlug();
     const data = fs.existsSync(YONAKA_HISTORY_PATH)
       ? JSON.parse(fs.readFileSync(YONAKA_HISTORY_PATH, 'utf-8')) as { posts: object[] }
       : { posts: [] };
-    const entry: object = { date: today, text: text.slice(0, 300), ...(category ? { category } : {}), ...(keywords?.length ? { keywords } : {}) };
+    const entry: object = { date: today, text: text.slice(0, 300), ...(category ? { category } : {}), ...(keywords?.length ? { keywords } : {}), ...(postId ? { postId } : {}) };
     data.posts = [entry, ...data.posts].slice(0, 100);
     fs.writeFileSync(YONAKA_HISTORY_PATH, JSON.stringify(data, null, 2), 'utf-8');
   } catch { /* 履歴保存失敗は投稿に影響させない */ }
@@ -599,8 +599,8 @@ async function main() {
   const postId = await publishThread(creationId);
   console.log(`✓ 投稿完了: ${postId}`);
 
-  saveHistory(history, text, selectedCategory);
-  appendToYonakaHistory(text, selectedCategory);
+  saveHistory(history, text, selectedCategory, undefined, postId);
+  appendToYonakaHistory(text, selectedCategory, undefined, postId);
   if (updatedSeries) saveSeriesWeek(updatedSeries);
   console.log('✓ 投稿履歴を保存しました（column-history + yonaka-post-history）');
 }
