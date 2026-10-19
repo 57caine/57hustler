@@ -5,6 +5,7 @@
  * あわせて要改善コラムの検知・改善案を data/column-review.json に出力
  */
 import { BetaAnalyticsDataClient } from '@google-analytics/data';
+import { fetchSingleBoxComparisons } from './lib/fetch-single-box-comparisons.mjs';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -231,6 +232,7 @@ interface SiteData {
   affiliateClicksByPlatform: Record<string, number>;
   affiliateClicksPlatformStatus: 'ok' | 'error' | 'missing_dimension';
   affiliateClicksStatus: 'ok' | 'error';
+  singleBoxComparisonClicks?: { status: 'ok' | 'error'; total: number | null };
 }
 
 async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object): Promise<SiteData> {
@@ -384,6 +386,7 @@ async function fetchSiteData(property: typeof PROPERTIES[0], credentials: object
     affiliateClicksByPlatform,
     affiliateClicksPlatformStatus,
     affiliateClicksStatus,
+    ...(property.name === 'lens-navi' ? { singleBoxComparisonClicks: await fetchSingleBoxComparisons(client, { property: propertyId, startDate, endDate }) } : {}),
   };
 }
 

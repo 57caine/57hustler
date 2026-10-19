@@ -48,3 +48,18 @@ test('inconsistent or malformed page counts fail explicitly', () => {
     assert.match(result.stderr, /subtotal exceeds|Invalid page click counts/);
   }
 });
+
+test('comparison intent is displayed separately from affiliate clicks and sales', () => {
+  const result = report({singleBoxComparisonClicks:{status:'ok',total:7}});
+  assert.equal(result.status, 0, result.stderr);
+  assert.match(result.stdout, /1day single-box comparison events: 7/);
+  assert.match(result.stdout, /GA4 ungrouped total\): 81/);
+  assert.match(result.stdout, /Comparison events are not outbound clicks/);
+});
+test('comparison query failure and legacy snapshots are unavailable, never zero', () => {
+  for (const comparison of [undefined, {status:'error',total:null}, {status:'ok',total:-1}]) {
+    const result = report({singleBoxComparisonClicks:comparison});
+    assert.equal(result.status, 0, result.stderr);
+    assert.match(result.stdout, /1day single-box comparison events: unavailable/);
+  }
+});
