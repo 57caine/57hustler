@@ -5,6 +5,11 @@ on:
     - cron: '0 12 * * *'   # 毎日 JST 21:00 (UTC 12:00)
   workflow_dispatch:
 
+# Prevent overlapping manual/scheduled runs from publishing duplicate columns.
+concurrency:
+  group: yonaka-evening-column
+  cancel-in-progress: false
+
 jobs:
   post:
     runs-on: ubuntu-latest
