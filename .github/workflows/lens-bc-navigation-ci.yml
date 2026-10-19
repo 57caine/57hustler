@@ -5,6 +5,7 @@ on:
     paths:
       - 'app/bc/[value]/page.tsx'
       - 'app/product/[slug]/page.tsx'
+      - 'components/PriceTable.tsx'
       - 'scripts/check-bc-single-box-navigation.mjs'
       - 'tsconfig.json'
       - '.github/workflows/lens-bc-navigation-ci.yml'
