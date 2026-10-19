@@ -11,14 +11,14 @@
 # 判定ロジック側は文字数制限を気にせず自由に拡張できるようにする。
 #
 # 判定方針:
-#   - data/配下・他事業ディレクトリ（.github含む）以外に差分があれば build
+#   - data/配下・他事業ディレクトリ（.github含む）以外に差分があれば build（pet-bousai は 2026-10-06 追加）
 #   - data/配下は、lens-navi本体が実際に使う4ファイルのみ差分を見る
 #   - git diffコマンド自体がエラー（bad object等）の場合も安全側でbuildに倒す
 
 PREV="${VERCEL_GIT_PREVIOUS_SHA:-HEAD^}"
 
 git diff --quiet "$PREV" HEAD -- . \
-  :!school-navi :!shikaku-navi :!shop-navi :!yonaka-uranai :!ceo-dashboard :!rakutabi :!.github :!data \
+  :!school-navi :!shikaku-navi :!shop-navi :!yonaka-uranai :!ceo-dashboard :!rakutabi :!pet-bousai :!.github :!data \
   :!CLAUDE.md :!AGENTS.md
 CODE_DIFF=$?
 

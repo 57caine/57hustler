@@ -1,0 +1,75 @@
+name: ペット防災 検証（公開なし）
+
+# ペット防災（pet-bousai/）の変更を検証する。Vercel への公開は一切行わない（VERCEL_TOKEN を使わない）。
+#   1. 型チェック・lint
+#   2. 楽天市場 商品検索APIから商品を取得（pet-bousai/data/products.json、コミットはしない）
+#   3. ビルド・起動し、全ページ機械チェック（noindex・広告表記・出典・比較表・楽天リンク属性・禁止表現・robots・sitemap）
+#   4. リンク検証（アフィリエイトURLの形式と、遷移先の楽天商品ページの存在。アフィリエイトURL自体は開かない）
+#   5. スマホ実ブラウザ確認（表示崩れ・商品画像・比較表の並べ替え・GA4の page_view / product_compare_click / affiliate_click。
+#      GA4への送信はブラウザ内で捕まえて確認し、Google には届けない）
+# 公開は .github/workflows/pet-bousai-preview.yml（claude/pet-bousai-mvp ブランチのみ）が担当する。
+on:
+  push:
+    branches:
+      - claude/pet-bousai-dog-mvp
+    paths:
+      - 'pet-bousai/**'
+      - '!pet-bousai/CLAUDE.md'
+      - '!pet-bousai/AGENTS.md'
+      - '.github/workflows/pet-bousai-ci.yml'
+  pull_request:
+    paths:
+      - 'pet-bousai/**'
+      - '.github/workflows/pet-bousai-ci.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: pet-bousai-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: pet-bousai
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: pet-bousai/package-lock.json
+
+      - name: 依存関係インストール
+        run: npm ci
+
+      - name: 型チェック・lint
+        run: |
+          npm run typecheck
+          npm run lint
+
+      - name: 楽天市場 商品検索APIから商品を取得
+        run: npm run fetch:products
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+
+      - name: ビルド・起動して全ページ機械チェック
+        run: |
+          npm run build
+          (npx next start -p 3100 > /tmp/next.log 2>&1 &)
+          for i in $(seq 1 30); do curl -sf -o /dev/null http://localhost:3100/ && break; sleep 1; done
+          npx tsx scripts/verify-site.ts http://localhost:3100 --expect-products
+
+      - name: リンク検証（楽天の商品ページの存在）
+        run: npx tsx scripts/verify-links.ts
+
+      - name: スマホ実ブラウザ確認（表示・画像・並べ替え・GA4計測）
+        run: |
+          npm i --no-save --no-audit --no-fund playwright@1.63.0 >/dev/null
+          npx playwright install --with-deps chromium >/dev/null
+          node scripts/check-mobile.mjs http://localhost:3100
