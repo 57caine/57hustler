@@ -7,6 +7,8 @@ on:
   pull_request:
     paths:
       - 'scripts/check-lens-revenue-path.mjs'
+      - 'scripts/lib/inspect-purchase-ctas.mjs'
+      - 'tests/purchase-cta-healthcheck.test.mjs'
       - '.github/workflows/lens-revenue-healthcheck.yml'
 
 permissions:
@@ -25,5 +27,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Verify purchase CTA detection
+        run: node --test tests/purchase-cta-healthcheck.test.mjs
       - name: Check published affiliate pages without clicking links
         run: node scripts/check-lens-revenue-path.mjs
