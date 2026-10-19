@@ -35,6 +35,11 @@ export default async function StatsPage() {
   sinceJst.setUTCDate(sinceJst.getUTCDate() - 6);
   const sinceDate = sinceJst.toISOString().slice(0, 10);
   const last7Days = rows.filter((r) => r.date >= sinceDate);
+  const previousSinceJst = new Date(sinceJst);
+  previousSinceJst.setUTCDate(previousSinceJst.getUTCDate() - 7);
+  const previousSinceDate = previousSinceJst.toISOString().slice(0, 10);
+  const previous7Days = rows.filter((r) => r.date >= previousSinceDate && r.date < sinceDate);
+  const sourceKnown7Days = last7Days.filter((r) => r.trafficSource !== 'unattributed').length;
   const threads7Days = last7Days.filter((r) => r.trafficSource === 'threads').length;
   const unattributed7Days = last7Days.filter((r) => r.trafficSource === 'unattributed').length;
   const bySource7Days = countBy(last7Days, (r) => r.trafficSource).sort((a, b) => b[1] - a[1]);
@@ -52,7 +57,10 @@ export default async function StatsPage() {
       <section className="bg-white rounded-2xl ring-1 ring-black/5 p-5 space-y-2">
         <h2 className="text-lg font-bold">直近7日間の送客クリック（当日含む・日本時間）</h2>
         <p className="text-3xl font-bold">{last7Days.length.toLocaleString('ja-JP')}<span className="text-sm font-normal ml-1">件</span></p>
+        <p className="text-sm">前の7日間：{previous7Days.length.toLocaleString('ja-JP')}件（集計期間は重複しません）</p>
         <p className="text-sm">Threads判定：{threads7Days}件 ／ 流入元未判定：{unattributed7Days}件</p>
+        <p className="text-sm">流入元を判定できたクリック：{sourceKnown7Days} / {last7Days.length}件{last7Days.length > 0 ? `（${Math.round(sourceKnown7Days / last7Days.length * 100)}%）` : ''}</p>
+        <p className="text-xs text-gray-500">Threads投稿のリンクには utm_source=threads を付けてください。クリックした利用者が同じタブ内で予約リンクへ進んだ場合に判定します。</p>
         <p className="text-xs text-gray-500">サイト訪問数や予約成立数ではありません。UTMなしのクリックは流入元を判定できません。</p>
       </section>
       <Table title="直近7日・流入元別送客クリック" head={['流入元', 'クリック']} rows={bySource7Days.map(([s, n]) => [s === 'unattributed' ? '未判定（UTMなし等）' : s, n])} />
