@@ -1,0 +1,32 @@
+name: Lens BC purchase navigation CI
+
+on:
+  pull_request:
+    paths:
+      - 'app/bc/[value]/page.tsx'
+      - 'app/product/[slug]/page.tsx'
+      - 'scripts/check-bc-single-box-navigation.mjs'
+      - 'tsconfig.json'
+      - '.github/workflows/lens-bc-navigation-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Check CTA and anchor
+        run: node scripts/check-bc-single-box-navigation.mjs
+      - name: Production build
+        run: npm run build
+      - name: Confirm build output
+        run: test -d .next

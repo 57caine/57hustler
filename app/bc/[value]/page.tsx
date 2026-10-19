@@ -200,6 +200,12 @@ export default async function BCValuePage({ params }: Props) {
                       <p className="text-sm text-gray-400">価格情報なし</p>
                     )}
                     <div className="flex flex-wrap gap-2">
+                    {singleBoxOffers.length > 0 && (
+                      <Link href={`/product/${product.slug}#price-comparison`}
+                        className="shrink-0 border border-sky-600 text-sky-700 bg-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-50 transition-colors">
+                        1箱の価格を見る →
+                      </Link>
+                    )}
                     <Link href={`/product/${product.slug}#${['1day', '2week'].includes(product.category) ? 'annual-cost' : 'price-comparison'}`}
                       className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors">
                       {['1day', '2week'].includes(product.category) ? '年間費用を比較 →' : '価格を比較 →'}
