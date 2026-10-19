@@ -62,7 +62,7 @@ export function HotelRow({ hotel }: { hotel: Hotel }) {
   const href = `/hotel/${hotel.hotelNo}`;
   return (
     <article className="group bg-white rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row">
-      <Link href={href} className="block w-full aspect-[4/3] sm:aspect-auto sm:w-64 shrink-0 bg-tag overflow-hidden min-h-40">
+      <Link href={href} className="block w-full aspect-[4/3] sm:aspect-auto sm:w-[38%] shrink-0 bg-tag overflow-hidden min-h-40">
         <Img hotel={hotel} />
       </Link>
       <div className="p-3 sm:p-4 flex flex-col gap-1.5 flex-1 min-w-0">
