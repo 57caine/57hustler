@@ -28,11 +28,20 @@ export function FeatureTags({ conditions, limit }: { conditions: ConditionKey[];
   );
 }
 
-/** 施設最低料金は予約日・人数・プランと一致しないため表示しない。 */
-export function Price({ value: _value, size: _size = 'md' }: { value: number | null; size?: 'md' | 'lg' }) {
-  void _value;
-  void _size;
-  return <span className="text-sm font-semibold text-ink">最新の宿泊料金は楽天トラベルで確認</span>;
+/** APIの施設最低料金。特定日・人数での予約価格ではなく、施設の参考下限を表示する。 */
+export function Price({ value, size = 'md' }: { value: number | null; size?: 'md' | 'lg' }) {
+  if (typeof value !== 'number' || !Number.isFinite(value) || value <= 0) {
+    return <span className="text-sm font-semibold text-ink">料金は楽天トラベルで確認</span>;
+  }
+  return (
+    <span className="inline-flex flex-col gap-0.5">
+      <span className="text-xs text-gray-500">宿泊料金の目安</span>
+      <span className={`font-bold text-cta ${size === 'lg' ? 'text-3xl' : 'text-xl'}`}>
+        {value.toLocaleString('ja-JP')}円〜
+      </span>
+      <span className="text-[11px] text-gray-500">1部屋1泊・税／サービス料込み</span>
+    </span>
+  );
 }
 
 /**
@@ -48,9 +57,11 @@ export function ReserveButton({
   size = 'sm',
   hotelNo,
   placement,
+  className = '',
 }: {
   url: string | null;
   label: string;
+  className?: string;
   fallbackHref?: string;
   fallbackLabel?: string;
   size?: 'sm' | 'lg';
@@ -59,8 +70,8 @@ export function ReserveButton({
   placement?: 'card' | 'hotel-main';
 }) {
   const base = `font-sans font-bold rounded-full text-center transition-colors inline-flex items-center justify-center gap-2 ${
-    size === 'lg' ? 'w-full px-6 py-3.5 text-base shadow-md' : 'px-4 py-2 text-xs'
-  }`;
+    size === 'lg' ? 'w-full px-6 py-3.5 text-base shadow-md' : 'px-4 py-2 text-xs min-h-11'
+  } ${className}`;
   if (url) {
     return (
       <a

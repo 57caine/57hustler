@@ -17,7 +17,7 @@ export default function DataNotice({ criteria }: { criteria?: string }) {
       {criteria && <p>掲載基準：{criteria}</p>}
       <p>
         楽天トラベルAPIより {at} 時点で取得{checkin && `（${checkin}チェックイン・1泊で空室検索）`}。
-        料金・空室は変動するため、予約先でご確認ください。
+        表示料金は施設の参考最低料金で、上記宿泊日・人数を指定した料金ではありません。料金・空室は変動するため、予約先でご確認ください。
       </p>
     </div>
   );
