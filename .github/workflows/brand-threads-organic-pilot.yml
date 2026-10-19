@@ -38,6 +38,13 @@ jobs:
             2026-10-15) BRAND=lens; DAY=2 ;;
             2026-10-16) BRAND=rakutabi; DAY=3 ;;
             2026-10-17) BRAND=lens; DAY=3 ;;
+            2026-10-20) BRAND=rakutabi; DAY=4 ;;
+            2026-10-21) BRAND=lens; DAY=4 ;;
+            2026-10-22) BRAND=rakutabi; DAY=5 ;;
+            2026-10-23) BRAND=lens; DAY=5 ;;
+            2026-10-24) BRAND=rakutabi; DAY=6 ;;
+            2026-10-25) BRAND=lens; DAY=6 ;;
+            2026-10-26) BRAND=rakutabi; DAY=7 ;;
             *) echo "No scheduled content for $TODAY"; exit 0 ;;
           esac
           echo "brand=$BRAND" >> "$GITHUB_OUTPUT"
