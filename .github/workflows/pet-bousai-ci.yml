@@ -12,6 +12,7 @@ on:
   push:
     branches:
       - claude/pet-bousai-dog-mvp
+      - main
     paths:
       - 'pet-bousai/**'
       - '!pet-bousai/CLAUDE.md'
