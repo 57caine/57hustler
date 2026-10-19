@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/site-config';
 import { connection } from 'next/server';
 import { isBlobConfigured, listClicks, PLACEMENT_LABELS, type ClickRow, type Placement } from '@/lib/click-log';
 import { getHotel } from '@/lib/hotels';
@@ -62,6 +63,24 @@ export default async function StatsPage() {
         <p className="text-sm">流入元を判定できたクリック：{sourceKnown7Days} / {last7Days.length}件{last7Days.length > 0 ? `（${Math.round(sourceKnown7Days / last7Days.length * 100)}%）` : ''}</p>
         <p className="text-xs text-gray-500">Threads投稿のリンクには utm_source=threads を付けてください。クリックした利用者が同じタブ内で予約リンクへ進んだ場合に判定します。</p>
         <p className="text-xs text-gray-500">サイト訪問数や予約成立数ではありません。UTMなしのクリックは流入元を判定できません。</p>
+      </section>
+      <section className="bg-white rounded-2xl ring-1 ring-black/5 p-5 space-y-3">
+        <h2 className="text-lg font-bold">Threads投稿用の計測リンク</h2>
+        <p className="text-sm text-gray-600">下記のURLをThreadsの投稿やプロフィールに使用すると、同じタブで楽天の予約ボタンへ進んだクリックをThreads経由として判定できます。投稿自体は自動実行されません。</p>
+        {[
+          { label: '温泉旅行', path: '/theme/onsen' },
+          { label: '週末旅行', path: '/theme/weekend' },
+          { label: '子連れ旅行', path: '/theme/family' },
+        ].map((item) => {
+          const url = `${SITE_URL}${item.path}?utm_source=threads&utm_medium=social&utm_campaign=rakutabi_202610`;
+          return (
+            <div key={item.path} className="space-y-1">
+              <p className="text-sm font-bold">{item.label}</p>
+              <a href={url} target="_blank" rel="noopener noreferrer" className="block text-xs text-blue-700 underline break-all">{url}</a>
+            </div>
+          );
+        })}
+        <p className="text-xs text-gray-500">この集計は訪問数・予約数・売上を示すものではありません。URLを開いただけでは送客クリックに計上されません。</p>
       </section>
       <Table title="直近7日・流入元別送客クリック" head={['流入元', 'クリック']} rows={bySource7Days.map(([s, n]) => [s === 'unattributed' ? '未判定（UTMなし等）' : s, n])} />
       <Table title="日別" head={['日付', 'クリック']} rows={byDate.map(([d, n]) => [d, n])} />
