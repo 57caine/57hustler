@@ -66,7 +66,44 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
           初期表示は両眼で1年使った場合の総額目安順です。1箱あたりの換算価格でも並べ替えられます。最新のまとめ買い価格・送料・クーポンはリンク先でご確認ください。
         </span>
       </div>
-      <div className="overflow-x-auto">
+      {/* On phones, keep each store, both prices and the purchase action together. */}
+      <div className="md:hidden space-y-3 px-3 pb-4">
+        {sorted.map((item, index) => {
+          const annual = annualEstimate(item);
+          const perBox = boxPrice(item);
+          const verifiedProductLink = hasProductDetailDestination(item.productId, item.storeId) &&
+            !item.url.includes('px.a8.net') && !item.url.includes('a8ejpredirect=') &&
+            !item.url.startsWith('#');
+          return (
+            <div key={`mobile-${item.storeId}-${index}`} className="rounded-xl border border-slate-200 bg-white p-4">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <span className="font-bold text-slate-900 break-words min-w-0">{item.store.name}</span>
+                {annual != null && annual === cheapestAnnual && <span className="text-xs font-semibold text-emerald-700">年間最安目安</span>}
+                {item.store.prescriptionFree && <span className="text-xs text-green-700">処方箋不要</span>}
+              </div>
+              <div className="grid grid-cols-2 gap-3 mb-3">
+                <div className="rounded-lg bg-slate-50 p-3">
+                  <p className="text-xs text-slate-600 mb-1">1箱あたり</p>
+                  <p className="font-bold text-slate-900 whitespace-nowrap">{perBox == null ? '—' : `${Math.round(perBox).toLocaleString('ja-JP')}円`}</p>
+                  {item.boxes > 1 && <p className="text-[11px] text-slate-500">{item.boxes}箱セット換算</p>}
+                </div>
+                <div className="rounded-lg bg-slate-50 p-3">
+                  <p className="text-xs text-slate-600 mb-1">1年分目安</p>
+                  <p className="font-bold text-slate-900 whitespace-nowrap">{annual == null ? '—' : `約${annual.toLocaleString('ja-JP')}円`}</p>
+                </div>
+              </div>
+              {!item.inStock ? <p className="text-center text-sm text-slate-500">在庫なし</p> :
+                verifiedProductLink ? (
+                  <a href={item.url + item.store.affiliateParam} target="_blank" rel="noopener noreferrer sponsored nofollow"
+                    className="block w-full rounded-lg bg-sky-700 px-4 py-3 text-center font-bold text-white hover:bg-sky-800">
+                    {item.boxes === 1 ? 'このショップで1箱の価格を確認 →' : `${item.boxes}箱セットの販売価格を確認 →`}
+                  </a>
+                ) : <p className="rounded-lg border border-slate-200 p-3 text-center text-sm text-slate-500">購入先確認中</p>}
+            </div>
+          );
+        })}
+      </div>
+      <div className="hidden md:block overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-gray-50 border-b border-gray-200">
