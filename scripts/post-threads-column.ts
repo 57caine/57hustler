@@ -132,7 +132,7 @@ const STYLE_GUIDE = `投稿文は以下のスタイルで書くこと。
 「伝承・説・私見を、確定した事実として言い切っていないか」
 → どちらかに問題があれば書き直す。`;
 
-interface ColumnPost { date: string; text: string; category?: string; keywords?: string[]; postId?: string; }
+interface ColumnPost { date: string; text: string; category?: string; keywords?: string[]; postId?: string; slot?: 'noon' | 'evening'; }
 interface SeriesWeek {
   current_month: string;
   theme: string;
@@ -163,7 +163,7 @@ function loadHistory(): ColumnPost[] {
 
 function saveHistory(existing: ColumnPost[], newText: string, category?: string, keywords?: string[], postId?: string): void {
   const today = getJstDateSlug();
-  const entry: ColumnPost = { date: today, text: newText.slice(0, 200), ...(category ? { category } : {}), ...(keywords?.length ? { keywords } : {}), ...(postId ? { postId } : {}) };
+  const entry: ColumnPost = { date: today, text: newText.slice(0, 200), ...(category ? { category } : {}), ...(keywords?.length ? { keywords } : {}), ...(postId ? { postId } : {}), slot: SLOT };
   const posts = [entry, ...existing].slice(0, HISTORY_KEEP);
   fs.writeFileSync(HISTORY_PATH, JSON.stringify({ posts }, null, 2), 'utf-8');
 }
@@ -542,6 +542,10 @@ async function main() {
 
   // 当日の投稿履歴を抽出（同日重複防止に使用）
   const todayPosts = history.filter(p => p.date === today);
+  if (!dryRun && todayPosts.some(p => p.slot === SLOT && p.postId)) {
+    console.log(`✓ 本日の${SLOT}投稿は公開済みのためスキップします`);
+    return;
+  }
   console.log(`投稿履歴: 全${history.length}件 / 本日${todayPosts.length}件`);
 
   let text: string;
