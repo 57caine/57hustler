@@ -6,6 +6,7 @@ on:
       - 'app/bc/[value]/page.tsx'
       - 'app/product/[slug]/page.tsx'
       - 'scripts/check-bc-single-box-navigation.mjs'
+      - 'tsconfig.json'
       - '.github/workflows/lens-bc-navigation-ci.yml'
   workflow_dispatch:
 
