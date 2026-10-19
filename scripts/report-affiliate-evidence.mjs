@@ -33,6 +33,8 @@ const pageSessions = new Map((site.topPages ?? []).map(p => [p.path, p.sessions]
 const opportunities = top.slice(0, 5).map(([path, clicks]) => ({ path, clicks, sessions: pageSessions.get(path) }));
 const platformStatus = site.affiliateClicksPlatformStatus ?? 'unknown';
 const platformData = site.affiliateClicksByPlatform ?? {};
+const comparison = site.singleBoxComparisonClicks;
+const comparisonReady = comparison?.status === 'ok' && Number.isSafeInteger(comparison.total) && comparison.total >= 0;
 const lines = [
   '# Affiliate revenue evidence — lens-navi',
   '',
@@ -43,6 +45,8 @@ const lines = [
   `- Sessions: ${site.totalSessions ?? 'unknown'}`,
   `- Recorded affiliate_click events (GA4 ungrouped total): ${total}`,
   `- Listed page subtotal (up to 100 pages; not the overall total): ${pageSubtotal}`,
+  `- 1day single-box comparison events: ${comparisonReady ? comparison.total : 'unavailable (not fetched or query failed; do not interpret as zero)'}`,
+  '- Comparison events are not outbound clicks, unique people, orders, or confirmed revenue. A reported zero does not establish that tracking is working.',
   `- Affiliate platform breakdown: ${platformStatus} (not proof of merchant sales)`,
   ...(platformStatus === 'ok' ? Object.entries(platformData).map(([name, n]) => `  - ${name}: ${n} events`) : ['- Platform-level clicks unavailable; do not assume Rakuten/A8 split.']),
   '',
