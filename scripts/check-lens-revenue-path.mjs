@@ -1,11 +1,9 @@
 #!/usr/bin/env node
+import { inspectPurchaseCtas } from './lib/inspect-purchase-ctas.mjs';
 // Read-only live smoke test for the revenue path. No secrets, clicks, or purchases.
 const base = process.env.LENS_BASE_URL || 'https://lens-navi.jp';
-// PR #60 pilot: this one product must render the officially-generated
-// Rakuten tracked link (trackingId "lensnavi", code below), not the
-// generic per-product search-link fallback. See data/rakuten-official-links.json.
+// This product has verified A8 offers. Rakuten remains unverified for purchase CTAs.
 const PILOT_PRODUCT_PATH = '/product/acuvue-oasys-1day';
-const PILOT_TRACKING_CODE = '_RTLink150145';
 const paths = ['/category/1day', '/ranking', '/column/contact-tsuuhan-shohosen-nashi-kanzen-guide', '/column/contact-dosu-shohosen-mikata-kanzen-2026', PILOT_PRODUCT_PATH];
 const results = [];
 const BC_PATH = '/bc/8.4';
@@ -38,20 +36,15 @@ for (const path of paths) {
       html.includes('自分に合うコンタクトレンズを比較する') &&
       html.includes('掲載商品を比較する')
     );
-    // PR #60: verify the EXACT officially-issued tracked link renders on
-    // the pilot product page, not merely "some" Rakuten affiliate link.
-    const officialLinkOk = path !== PILOT_PRODUCT_PATH || html.includes(PILOT_TRACKING_CODE);
-    const ok = response.ok && html.includes('<html') && hasAffiliate && rankingCopyOk && columnCopyOk && officialLinkOk;
+    const purchase = path === PILOT_PRODUCT_PATH ? inspectPurchaseCtas(html) : null;
+    // Serialized page data may contain inactive affiliate URLs. Require a real purchase anchor.
+    const purchaseCtaOk = purchase ? (purchase.a8 > 0 && purchase.rakuten === 0) : null;
+    const ok = response.ok && html.includes('<html') && hasAffiliate && hasTracking && rankingCopyOk && columnCopyOk && purchaseCtaOk !== false;
     if (!ok) failed = true;
-    results.push({ path, http: response.status, hasAffiliate, hasTracking, rankingCopyOk, columnCopyOk, officialLinkOk, ok });
+    results.push({ path, http: response.status, hasAffiliate, hasTracking, rankingCopyOk, columnCopyOk, purchaseCtaOk, ok });
     if (!columnCopyOk) diagnoses.push(`STALE_CONTENT: ${path} - expected PR #40 article CTA copy missing.`);
     if (!rankingCopyOk) diagnoses.push(`STALE_CONTENT: ${path} - expected PR #38 copy missing or old generic shop CTA present.`);
-    if (path === PILOT_PRODUCT_PATH && !officialLinkOk) {
-      diagnoses.push(`RAKUTEN_PILOT_LINK_MISSING: ${path} - expected PR #60 official tracked link ` +
-        `(trackingId lensnavi, code ${PILOT_TRACKING_CODE}) not found; page may be serving the generic ` +
-        `fallback Rakuten search link instead. This does NOT check Rakuten's own click attribution - ` +
-        `see data/rakuten-official-links.json and CLAUDE.md for why that remains a manual check.`);
-    }
+    if (purchaseCtaOk === false) diagnoses.push(`PURCHASE_CTA: ${path} - require a rendered sponsored A8 purchase link and keep unverified Rakuten purchase CTAs disabled.`);
     const diagnosis = diagnose({ path, http: response.status, hasAffiliate, hasTracking });
     if (diagnosis) diagnoses.push(diagnosis);
   } catch (error) {
@@ -80,9 +73,9 @@ try {
 const lines = [
   '# Lens-navi revenue path: read-only healthcheck',
   '',
-  '| Page | HTTP | Affiliate link present | Tracking marker present | PR #38 copy | PR #40 column copy | PR #60 official link | Result |',
+  '| Page | HTTP | Affiliate link present | Tracking marker present | PR #38 copy | PR #40 column copy | Purchase CTA guard | Result |',
   '|---|---:|---|---|---|---|---|---|',
-  ...results.map(r => `| ${r.path} | ${r.http ?? '-'} | ${r.hasAffiliate === 'n/a' ? 'n/a' : r.hasAffiliate ? 'yes' : 'no'} | ${r.hasTracking === 'n/a' ? 'n/a' : r.hasTracking ? 'yes' : 'no'} | ${r.rankingCopyOk === undefined ? '-' : r.rankingCopyOk ? 'yes' : 'no'} | ${r.columnCopyOk === undefined ? '-' : r.columnCopyOk ? 'yes' : 'no'} | ${r.officialLinkOk === undefined ? '-' : r.officialLinkOk ? 'yes' : 'no'} | ${r.ok ? 'PASS' : 'FAIL'} |`),
+  ...results.map(r => `| ${r.path} | ${r.http ?? '-'} | ${r.hasAffiliate === 'n/a' ? 'n/a' : r.hasAffiliate ? 'yes' : 'no'} | ${r.hasTracking === 'n/a' ? 'n/a' : r.hasTracking ? 'yes' : 'no'} | ${r.rankingCopyOk === undefined ? '-' : r.rankingCopyOk ? 'yes' : 'no'} | ${r.columnCopyOk === undefined ? '-' : r.columnCopyOk ? 'yes' : 'no'} | ${r.purchaseCtaOk == null ? '-' : r.purchaseCtaOk ? 'yes' : 'no'} | ${r.ok ? 'PASS' : 'FAIL'} |`),
   '',
   '## Automatic diagnostic hints',
   '',
@@ -90,10 +83,7 @@ const lines = [
   '',
   'This checks HTML availability and affiliate URL presence only. It does NOT prove click tracking, attribution, or sales.',
   '',
-  '**Rakuten click data by tracking ID (lensnavi): not checked here, and cannot be automated.** ' +
-    'No official Rakuten Affiliate API for per-tracking-ID click reports was found (confirmed via web search; ' +
-    'direct fetch of the Rakuten affiliate/developer sites is blocked from this kind of sandbox). ' +
-    'Check the Rakuten affiliate dashboard manually for attributed clicks. See CLAUDE.md.',
+  'Rakuten/A8 attributed clicks, orders and confirmed commissions require separate ASP reports; this HTML check does not verify them.',
   '',
 ];
 console.log(lines.join('\n'));
