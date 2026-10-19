@@ -6,6 +6,7 @@ import {
   getCategoryBySlug,
   getProductsByCategory,
   getPricesForProduct,
+  hasProductDetailDestination,
 } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
 
@@ -223,7 +224,11 @@ export default async function CategoryPage({ params }: Props) {
           <p className="text-sm text-gray-500 mb-4">{productsWithPrices.length}商品を表示中（人気順）</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {productsWithPrices.map((product, index) => (
-              <ProductCard key={product.id} product={product} rank={index + 1} />
+              <ProductCard key={product.id} product={product} rank={index + 1}
+                singleBoxComparison={type === '1day' && product.prices.some(p =>
+                  p.inStock && p.boxes === 1 && p.price > 0 && p.url.startsWith('https://') &&
+                  hasProductDetailDestination(product.id, p.storeId)
+                )} />
             ))}
           </div>
         </>

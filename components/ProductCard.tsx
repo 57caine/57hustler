@@ -27,9 +27,10 @@ const CATEGORY_LABEL: Record<string, string> = {
 type ProductCardProps = {
   product: ProductWithPrices;
   rank?: number;
+  singleBoxComparison?: boolean;
 };
 
-export default function ProductCard({ product, rank }: ProductCardProps) {
+export default function ProductCard({ product, rank, singleBoxComparison = false }: ProductCardProps) {
   const label = CATEGORY_LABEL[product.category] ?? product.category;
   const CategoryIcon = CATEGORY_ICON[product.category] ?? Eye;
   // Only use verbatim links issued in Rakuten's official link generator.
@@ -97,11 +98,16 @@ export default function ProductCard({ product, rank }: ProductCardProps) {
 
         <div className="flex flex-col gap-2">
           <Link
-            onClick={() => { if (typeof window !== 'undefined' && typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === 'function') (window as Window & { gtag?: (...args: unknown[]) => void }).gtag?.('event', 'annual_comparison_click', { product_id: product.id, source: 'product_card' }); }}
-            href={`/product/${product.slug}#${['1day', '2week'].includes(product.category) ? 'annual-cost' : 'price-comparison'}`}
+            onClick={() => {
+              window.gtag?.('event', singleBoxComparison ? 'single_box_comparison_click' : 'annual_comparison_click', {
+                product_id: product.id,
+                source: singleBoxComparison ? 'category_1day' : 'product_card',
+              });
+            }}
+            href={`/product/${product.slug}#${singleBoxComparison ? 'price-comparison' : ['1day', '2week'].includes(product.category) ? 'annual-cost' : 'price-comparison'}`}
             className="block bg-sky-700 hover:bg-sky-800 text-white text-sm font-bold text-center py-3 rounded-lg transition-colors w-full"
           >
-            {['1day', '2week'].includes(product.category) ? '年間コスト・最安店を比較する →' : 'ショップ別の価格を比較する →'}
+            {singleBoxComparison ? '1箱の価格・購入先を確認する →' : ['1day', '2week'].includes(product.category) ? '年間コスト・最安店を比較する →' : 'ショップ別の価格を比較する →'}
           </Link>
           {cheapestA8 && (
             <a

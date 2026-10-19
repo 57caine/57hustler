@@ -1,0 +1,29 @@
+name: Lens 1day purchase navigation
+on:
+  pull_request:
+    paths:
+      - 'app/category/**'
+      - 'components/ProductCard.tsx'
+      - 'lib/products.ts'
+      - 'data/product-url-map.json'
+      - 'scripts/check-1day-purchase-navigation.mjs'
+      - '.github/workflows/lens-1day-navigation-ci.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NODE_OPTIONS: --max-old-space-size=4096
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build -- --webpack
+      - run: npx playwright install --with-deps chromium
+      - run: node scripts/check-1day-purchase-navigation.mjs
