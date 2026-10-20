@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T00:12:15.983Z",
+  "generatedAt": "2026-10-20T23:44:01.010Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,23 +13,23 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 25,
-        "bounceRate": 0.44,
-        "avgSessionDuration": 69.15697388,
+        "sessions": 26,
+        "bounceRate": 0.4230769230769231,
+        "avgSessionDuration": 78.59703092307691,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション25件・affiliate_clickゼロ"
+        "セッション26件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
         "h3Count": 8,
         "hasAffiliateLinks": true,
         "ctaCount": 4,
-        "contentChars": 76122
+        "contentChars": 77556
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -63,7 +63,75 @@
         "h3Count": 2,
         "hasAffiliateLinks": true,
         "ctaCount": 1,
-        "contentChars": 72266
+        "contentChars": 72272
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/multifocal-contact-rogansetsu",
+      "slug": "multifocal-contact-rogansetsu",
+      "title": "multifocal-contact-rogansetsu",
+      "metrics": {
+        "sessions": 16,
+        "bounceRate": 0.375,
+        "avgSessionDuration": 148.20796175,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション16件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 70145
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/kanso-shinikui-contact",
+      "slug": "kanso-shinikui-contact",
+      "title": "kanso-shinikui-contact",
+      "metrics": {
+        "sessions": 15,
+        "bounceRate": 0.26666666666666666,
+        "avgSessionDuration": 166.76004206666667,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション15件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 9,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 84833
       },
       "causes": [
         "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
@@ -83,7 +151,7 @@
       "metrics": {
         "sessions": 14,
         "bounceRate": 0.5714285714285714,
-        "avgSessionDuration": 58.4273435,
+        "avgSessionDuration": 58.427343500000006,
         "affiliateClicks": 0
       },
       "flags": [
@@ -97,7 +165,7 @@
         "h3Count": 12,
         "hasAffiliateLinks": true,
         "ctaCount": 16,
-        "contentChars": 121180
+        "contentChars": 121186
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -111,47 +179,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/kanso-shinikui-contact",
-      "slug": "kanso-shinikui-contact",
-      "title": "kanso-shinikui-contact",
-      "metrics": {
-        "sessions": 14,
-        "bounceRate": 0.2857142857142857,
-        "avgSessionDuration": 174.79796592857141,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション14件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 9,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 84827
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/multifocal-contact-rogansetsu",
-      "slug": "multifocal-contact-rogansetsu",
-      "title": "multifocal-contact-rogansetsu",
+      "path": "/column/soft-vs-hard-contact-hikaku",
+      "slug": "soft-vs-hard-contact-hikaku",
+      "title": "soft-vs-hard-contact-hikaku",
       "metrics": {
         "sessions": 13,
-        "bounceRate": 0.46153846153846156,
-        "avgSessionDuration": 164.98543884615384,
+        "bounceRate": 0.3076923076923077,
+        "avgSessionDuration": 88.76286476923077,
         "affiliateClicks": 0
       },
       "flags": [
@@ -162,16 +196,16 @@
       ],
       "analysis": {
         "h2Count": 4,
-        "h3Count": 4,
+        "h3Count": 5,
         "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 70139
+        "ctaCount": 3,
+        "contentChars": 79131
       },
       "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -179,13 +213,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/soft-vs-hard-contact-hikaku",
-      "slug": "soft-vs-hard-contact-hikaku",
-      "title": "soft-vs-hard-contact-hikaku",
+      "path": "/column/meta-quest-3-review-2026",
+      "slug": "meta-quest-3-review-2026",
+      "title": "Meta Quest 3レビュー2026【スペック・できること・買うべき人を徹底解説】",
       "metrics": {
         "sessions": 12,
         "bounceRate": 0.25,
-        "avgSessionDuration": 96.15977016666666,
+        "avgSessionDuration": 229.33330408333333,
         "affiliateClicks": 0
       },
       "flags": [
@@ -196,10 +230,10 @@
       ],
       "analysis": {
         "h2Count": 4,
-        "h3Count": 5,
+        "h3Count": 2,
         "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 79125
+        "ctaCount": 7,
+        "contentChars": 83410
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -233,41 +267,7 @@
         "h3Count": 4,
         "hasAffiliateLinks": true,
         "ctaCount": 8,
-        "contentChars": 80900
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/meta-quest-3-review-2026",
-      "slug": "meta-quest-3-review-2026",
-      "title": "Meta Quest 3レビュー2026【スペック・できること・買うべき人を徹底解説】",
-      "metrics": {
-        "sessions": 11,
-        "bounceRate": 0.2727272727272727,
-        "avgSessionDuration": 247.89818481818182,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション11件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 7,
-        "contentChars": 83404
+        "contentChars": 80906
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -285,23 +285,23 @@
       "slug": "multifocal-iol-presbyopia-surgery-2026",
       "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
       "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 107.16576355555556,
+        "sessions": 11,
+        "bounceRate": 0.2727272727272727,
+        "avgSessionDuration": 110.53808718181817,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
+        "セッション11件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 7,
         "h3Count": 15,
         "hasAffiliateLinks": true,
         "ctaCount": 3,
-        "contentChars": 97077
+        "contentChars": 97083
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
