@@ -18,8 +18,8 @@ export async function generateStaticParams() {
 
 const categoryMeta: Record<string, { title: string; description: string }> = {
   '1day': {
-    title: 'ワンデーコンタクトレンズ 最安値比較【2026年版・全商品対応】',
-    description: '1日使い捨てコンタクトレンズの最安値を送料込みで比較。アキュビュー・デイリーズ・バイオトゥルーなど人気全商品の価格を一覧で確認。',
+    title: 'ワンデーコンタクトの1箱価格・購入先比較',
+    description: 'いつも使うワンデーコンタクトの1箱価格と購入先を比較。製品名・枚数・送料・販売条件を確認し、商品別のショップ比較へ進めます。',
   },
   '2week': {
     title: '2週間コンタクトレンズ 最安値比較【2026年版】',
@@ -38,11 +38,12 @@ const categoryMeta: Record<string, { title: string; description: string }> = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { type } = await params;
   const meta = categoryMeta[type];
-  if (meta) return { title: meta.title, description: meta.description };
+  if (meta) return { title: meta.title, description: meta.description, alternates: { canonical: `/category/${type}` }, openGraph: { url: `https://www.lens-navi.jp/category/${type}`, title: meta.title, description: meta.description } };
   const category = getCategoryBySlug(type);
   if (!category) return {};
   return {
     title: `${category.name}コンタクト 最安値比較`,
+    alternates: { canonical: `/category/${type}` },
     description: `${category.name}コンタクトレンズの最安値を比較。${category.description}`,
   };
 }
@@ -155,7 +156,7 @@ export default async function CategoryPage({ params }: Props) {
     .sort((a, b) => b.popularity - a.popularity);
 
   const guide = categoryGuide[type];
-  const BASE = 'https://lens-navi.jp';
+  const BASE = 'https://www.lens-navi.jp';
   const categoryLabel: Record<string, string> = {
     '1day': 'ワンデー',
     '2week': 'ツーウィーク',

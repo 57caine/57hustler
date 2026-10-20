@@ -35,6 +35,16 @@ export default function AffiliateClickTracker() {
       const target = (e.target as HTMLElement).closest('a');
       if (!target?.href) return;
 
+      // Intent events are separate from merchant clicks. No navigation interception.
+      const growthEvent = target.dataset.growthEvent;
+      if (growthEvent === 'comparison_navigation' || growthEvent === 'share_intent') {
+        window.gtag?.('event', growthEvent, {
+          page_path: pathname,
+          source: target.dataset.growthSource || 'unknown',
+          destination_path: new URL(target.href).pathname,
+        });
+        return;
+      }
       const rel = target.getAttribute('rel') ?? '';
       if (!rel.includes('sponsored')) return;
 

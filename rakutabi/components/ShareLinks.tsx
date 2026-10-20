@@ -6,9 +6,11 @@ export default function ShareLinks({ path, title }: { path: string; title: strin
   const forX = new URL(url);
   forX.searchParams.set('utm_source', 'share_x');
   forX.searchParams.set('utm_medium', 'social');
+  forX.searchParams.set('utm_campaign', 'reader_share');
   const forLine = new URL(url);
   forLine.searchParams.set('utm_source', 'share_line');
   forLine.searchParams.set('utm_medium', 'social');
+  forLine.searchParams.set('utm_campaign', 'reader_share');
 
   const xHref = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(title)
     + '&url=' + encodeURIComponent(forX.toString());

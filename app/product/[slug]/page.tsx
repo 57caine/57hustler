@@ -25,7 +25,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = getProductWithPrices(slug);
   if (!product) return {};
   return {
-    title: `${product.name}の最安値比較`,
+    title: `${product.name}の価格比較・1箱の購入先`,
+    alternates: { canonical: `/product/${slug}` },
+    openGraph: { url: `https://www.lens-navi.jp/product/${slug}`, title: `${product.name}の価格比較・購入先` },
     description: `${product.name}の最安値は¥${product.lowestPrice?.toLocaleString() ?? '調査中'}。${product.description}`,
   };
 }
@@ -44,7 +46,7 @@ export default async function ProductPage({ params }: Props) {
   const label = categoryLabel[product.category] ?? product.category;
   const officialRakutenLinks = rakutenOfficialLinks.links as Record<string, { url: string }>;
   const officialRakutenUrl = officialRakutenLinks[product.slug]?.url;
-  const BASE = 'https://lens-navi.jp';
+  const BASE = 'https://www.lens-navi.jp';
 
   // Related products (same category, excluding current, top 3 by popularity)
   const relatedProducts = getProductsByCategory(product.category)
