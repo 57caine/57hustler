@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T22:56:38.645Z",
+  "generatedAt": "2026-10-20T00:12:15.983Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -47,16 +47,16 @@
       "slug": "enkintsuyo-contact-guide",
       "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
       "metrics": {
-        "sessions": 16,
-        "bounceRate": 0.0625,
-        "avgSessionDuration": 89.35468043750001,
+        "sessions": 17,
+        "bounceRate": 0.058823529411764705,
+        "avgSessionDuration": 86.26150752941176,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション16件・affiliate_clickゼロ"
+        "セッション17件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -81,16 +81,16 @@
       "slug": "eyestrain-stretching-massage-guide",
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
       "metrics": {
-        "sessions": 13,
-        "bounceRate": 0.6153846153846154,
-        "avgSessionDuration": 58.61193776923077,
+        "sessions": 14,
+        "bounceRate": 0.5714285714285714,
+        "avgSessionDuration": 58.4273435,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション13件・affiliate_clickゼロ"
+        "セッション14件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 6,
@@ -115,16 +115,16 @@
       "slug": "kanso-shinikui-contact",
       "title": "kanso-shinikui-contact",
       "metrics": {
-        "sessions": 12,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 107.81017833333333,
+        "sessions": 14,
+        "bounceRate": 0.2857142857142857,
+        "avgSessionDuration": 174.79796592857141,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション12件・affiliate_clickゼロ"
+        "セッション14件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -132,6 +132,40 @@
         "hasAffiliateLinks": true,
         "ctaCount": 1,
         "contentChars": 84827
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/multifocal-contact-rogansetsu",
+      "slug": "multifocal-contact-rogansetsu",
+      "title": "multifocal-contact-rogansetsu",
+      "metrics": {
+        "sessions": 13,
+        "bounceRate": 0.46153846153846156,
+        "avgSessionDuration": 164.98543884615384,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション13件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 70139
       },
       "causes": [
         "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
@@ -179,27 +213,27 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/sunglass-polarized-guide",
-      "slug": "sunglass-polarized-guide",
-      "title": "偏光サングラスの選び方2026【釣り・ドライブ・スキー別おすすめ・UV対策】",
+      "path": "/column/megane-facial-shape-frame-2026",
+      "slug": "megane-facial-shape-frame-2026",
+      "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
       "metrics": {
-        "sessions": 12,
-        "bounceRate": 0.25,
-        "avgSessionDuration": 165.72278558333332,
+        "sessions": 11,
+        "bounceRate": 0.2727272727272727,
+        "avgSessionDuration": 301.7519594545455,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション12件・affiliate_clickゼロ"
+        "セッション11件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
         "h3Count": 4,
         "hasAffiliateLinks": true,
         "ctaCount": 8,
-        "contentChars": 89633
+        "contentChars": 80900
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -207,7 +241,7 @@
       "suggestions": [
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
-      "status": "対応済み",
+      "status": "様子見",
       "business": "lens-navi",
       "priority": "low",
       "source": "auto-ga4"
@@ -247,74 +281,6 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/megane-facial-shape-frame-2026",
-      "slug": "megane-facial-shape-frame-2026",
-      "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
-      "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.3,
-        "avgSessionDuration": 323.9157826,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 4,
-        "hasAffiliateLinks": true,
-        "ctaCount": 8,
-        "contentChars": 80900
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/multifocal-contact-rogansetsu",
-      "slug": "multifocal-contact-rogansetsu",
-      "title": "multifocal-contact-rogansetsu",
-      "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 42.278371299999996,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 4,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 70139
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/multifocal-iol-presbyopia-surgery-2026",
       "slug": "multifocal-iol-presbyopia-surgery-2026",
       "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
@@ -336,40 +302,6 @@
         "hasAffiliateLinks": true,
         "ctaCount": 3,
         "contentChars": 97077
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/vr-movie-streaming-service-recommend-2026",
-      "slug": "vr-movie-streaming-service-recommend-2026",
-      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
-      "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 167.3323832222222,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 6,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 69415
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
