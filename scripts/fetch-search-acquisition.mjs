@@ -54,7 +54,7 @@ if (!key) {
       requestBody: { dateRanges: [range], dimensions: dimensions.map(name => ({ name })), metrics: metrics.map(name => ({ name })),
         dimensionFilter: { andGroup: { expressions: [
           { filter: { fieldName: 'hostName', stringFilter: { matchType: 'EXACT', value: report.host } } },
-          ...(eventName ? [{ filter: { fieldName: 'eventName', stringFilter: { matchType: 'EXACT', value: eventName } } } }] } },
+          ...(eventName ? [{ filter: { fieldName: 'eventName', stringFilter: { matchType: 'EXACT', value: eventName } } }] : [])] } },
         limit: '10000' },
     })).data;
     const [sessions, affiliateClicks, comparisons, shareIntent] = await Promise.all([
