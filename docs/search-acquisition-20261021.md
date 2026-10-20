@@ -32,6 +32,12 @@ Googleで「未登録・低順位・低CTR」のどれが主因かはGSC取得�
 - 診断結果はActions artifactに7日保存。自動コミット・main更新・URL登録申請・サイトマップ送信なし。
 - 匿名化検索語の欠落、最大25000行、直近データ遅延に留意。クエリ合算を総計と扱わない。
 
+## 無料APIの実行結果
+- Actions 39461443919: 既存認証でGA4の直接取得成功。GSCはHTTP403、reason=accessNotConfigured。権限追加以前に、既存認証のGoogle CloudプロジェクトでSearch Console APIの有効化が必要。
+- 無料の有効化画面: https://console.cloud.google.com/apis/library/searchconsole.googleapis.com 。新規課金・新規プロジェクト・鍵の再発行は不要。有効化後にsites.listで対象サイトへの閲覧権限を確認する。
+- 自動診断はUTC日付の3日前まで28日（今回9/20〜10/17）。上のWindsor実測9/22〜10/19とは別期間であり、数値差を改善効果としない。
+- 診断成功はGA4取得・欠測の記録処理が動いたことを示す。GSCデータ取得の成功ではない。
+
 ## 実装
 1. 商品とカテゴリにwww自己canonicalとOG URL。商品構造化データもwww。1dayの検索説明を1箱比較の実機能に合わせ、「全商品対応」の断定を除去。価格計算・購入URLを変更しない。
 2. robotsの/_next/ブロックを除去し、表示に必要な静的リソースをクロール可能にする。/api/は維持。
@@ -64,5 +70,5 @@ Googleで「未登録・低順位・低CTR」のどれが主因かはGSC取得�
 
 ## オーナー判断
 - テスト完了後、このPRのマージ・本番公開の承認。
-- GSC権限不足が実証された場合のみ、Google側で閲覧権限追加またはCSV提供。
+- 既存GA4認証のGoogle CloudプロジェクトでSearch Console APIを有効化（無料）。有効化後、対象サイトへの権限がなければ閲覧権限追加またはCSV提供。
 - Pinterest事業アカウント運用、楽旅のnoindex解除、成果報酬データ連携は別判断。今回の公開条件に混ぜない。
