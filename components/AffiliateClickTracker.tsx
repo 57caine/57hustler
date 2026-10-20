@@ -45,7 +45,11 @@ export default function AffiliateClickTracker() {
       const rel = target.getAttribute('rel') ?? '';
       if (!rel.includes('sponsored')) return;
 
-      const platform = getAffiliatePlatform(target.href);
+      // Prefer the verified store identifier on comparison links; fall back to known affiliate hosts.
+      const declaredPlatform = target.dataset.affiliatePlatform;
+      const platform = declaredPlatform === 'a8' || declaredPlatform === 'rakuten'
+        ? declaredPlatform
+        : getAffiliatePlatform(target.href);
       if (!platform || !window.gtag) return;
 
       window.gtag('event', 'affiliate_click', {
