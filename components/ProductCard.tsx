@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { getAffiliatePlatform } from '@/lib/affiliate-platform';
 import { Eye, Repeat, Calendar, Rainbow, Medal, type LucideIcon } from 'lucide-react';
 import { ProductWithPrices } from '@/lib/products';
 import rakutenOfficialLinks from '@/data/rakuten-official-links.json';
@@ -40,7 +41,7 @@ export default function ProductCard({ product, rank, singleBoxComparison = false
 
   // A8提携ショップの掲載価格例を取得（リアルタイムの最安値ではない）
   const a8Prices = product.prices.filter(
-    (p) => p.inStock && p.storeId !== 'rakuten' && p.store.url.includes('px.a8.net') && !p.url.startsWith('#')
+    (p) => p.inStock && p.storeId !== 'rakuten' && getAffiliatePlatform(p.url + p.store.affiliateParam) === 'a8'
   );
   const cheapestA8 = a8Prices.length > 0
     ? a8Prices.reduce((min, p) => p.price < min.price ? p : min, a8Prices[0])

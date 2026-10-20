@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { incomingTrafficSource } from '@/lib/traffic-source';
 
 /**
  * 楽天への送客クリックの簡易計測。
@@ -10,9 +11,8 @@ import { useEffect } from 'react';
 export default function ClickTracker() {
   useEffect(() => {
     // キャンペーン識別子だけをタブ内に保存（個人情報・外部リファラーは収集しない）。
-    const source = new URLSearchParams(window.location.search).get('utm_source');
-    const allowed = ['share_x', 'share_line', 'threads', 'instagram', 'rakuten_room'];
-    if (source && allowed.includes(source)) {
+    const source = incomingTrafficSource(window.location.search, document.referrer);
+    if (source) {
       try { sessionStorage.setItem('rakutabi_source', source); } catch { /* storage unavailable */ }
     }
     function handleClick(e: MouseEvent) {

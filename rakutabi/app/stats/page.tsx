@@ -61,7 +61,7 @@ export default async function StatsPage() {
         <p className="text-sm">Threads判定：{threads7Days}件 ／ 流入元未判定：{unattributed7Days}件</p>
         <p className="text-sm">流入元を判定できたクリック：{sourceKnown7Days} / {last7Days.length}件{last7Days.length > 0 ? `（${Math.round(sourceKnown7Days / last7Days.length * 100)}%）` : ''}</p>
         <p className="text-xs text-gray-500">Threads投稿のリンクには utm_source=threads を付けてください。クリックした利用者が同じタブ内で予約リンクへ進んだ場合に判定します。</p>
-        <p className="text-xs text-gray-500">サイト訪問数や予約成立数ではありません。UTMなしのクリックは流入元を判定できません。</p>
+        <p className="text-xs text-gray-500">サイト訪問数や予約成立数ではありません。UTMがなくてもThreadsの参照元を取得できた場合は判定します。どちらもない場合は未判定です。</p>
       </section>
       <section className="bg-white rounded-2xl ring-1 ring-black/5 p-5 space-y-3">
         <h2 className="text-lg font-bold">Threads投稿用の計測リンク</h2>
@@ -88,7 +88,7 @@ export default async function StatsPage() {
         head={['位置', 'クリック']}
         rows={byPlacement.map(([p, n]) => [PLACEMENT_LABELS[p as Placement] ?? p, n])}
       />
-      <Table title="流入経路別の送客クリック（UTM付きのみ識別）" head={['流入元', 'クリック']} rows={bySource.map(([s, n]) => [s === 'unattributed' ? '未判定（従来分・UTMなし）' : s, n])} />
+      <Table title="流入経路別の送客クリック（UTM・Threads参照元で識別）" head={['流入元', 'クリック']} rows={bySource.map(([s, n]) => [s === 'unattributed' ? '未判定（従来分・識別情報なし）' : s, n])} />
       <Table
         title="宿別（上位30件）"
         head={['宿', 'クリック']}

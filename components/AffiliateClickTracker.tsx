@@ -2,19 +2,12 @@
 
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { getAffiliatePlatform } from '@/lib/affiliate-platform';
 
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
   }
-}
-
-type AffiliatePlatform = 'rakuten' | 'a8';
-
-function getAffiliatePlatform(href: string): AffiliatePlatform | null {
-  if (href.includes('afl.rakuten.co.jp') || href.includes('hb.afl.rakuten')) return 'rakuten';
-  if (href.includes('px.a8.net')) return 'a8';
-  return null;
 }
 
 function getCategory(pathname: string): string {
@@ -45,11 +38,8 @@ export default function AffiliateClickTracker() {
       const rel = target.getAttribute('rel') ?? '';
       if (!rel.includes('sponsored')) return;
 
-      // Prefer the verified store identifier on comparison links; fall back to known affiliate hosts.
-      const declaredPlatform = target.dataset.affiliatePlatform;
-      const platform = declaredPlatform === 'a8' || declaredPlatform === 'rakuten'
-        ? declaredPlatform
-        : getAffiliatePlatform(target.href);
+      // Metadata is descriptive; the actual tracking host is authoritative.
+      const platform = getAffiliatePlatform(target.href);
       if (!platform || !window.gtag) return;
 
       window.gtag('event', 'affiliate_click', {

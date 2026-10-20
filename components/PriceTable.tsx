@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { getAffiliatePlatform } from '@/lib/affiliate-platform';
 import { TriangleAlert } from 'lucide-react';
 import { Price, Store, hasProductDetailDestination } from '@/lib/products';
 import productsData from '@/data/products.json';
@@ -51,7 +52,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
     else { setSortKey(key); setSortDir('asc'); }
   };
 
-  const SortIcon = ({ col }: { col: SortKey }) => {
+  const sortIcon = (col: SortKey) => {
     if (sortKey !== col) return <span className="text-gray-300 ml-1">↕</span>;
     return <span className="text-slate-600 ml-1">{sortDir === 'asc' ? '↑' : '↓'}</span>;
   };
@@ -93,7 +94,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
               </div>
               {!item.inStock ? <p className="text-center text-sm text-slate-500">在庫なし</p> :
                 verifiedProductLink ? (
-                  <a data-affiliate-platform={item.storeId === 'rakuten' ? 'rakuten' : 'a8'} href={item.url + item.store.affiliateParam} target="_blank" rel="noopener noreferrer sponsored nofollow"
+                  <a data-affiliate-platform={getAffiliatePlatform(item.url + item.store.affiliateParam) ?? undefined} href={item.url + item.store.affiliateParam} target="_blank" rel="noopener noreferrer sponsored nofollow"
                     className="block w-full rounded-lg bg-sky-700 px-4 py-3 text-center font-bold text-white hover:bg-sky-800">
                     {item.boxes === 1 ? 'このショップで1箱の価格を確認 →' : `${item.boxes}箱セットの販売価格を確認 →`}
                   </a>
@@ -108,20 +109,20 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
             <tr className="bg-gray-50 border-b border-gray-200">
               <th className="text-left px-4 py-3 font-semibold text-gray-700">
                 <button onClick={() => handleSort('store')} className="flex items-center hover:text-slate-900">
-                  ショップ<SortIcon col="store" />
+                  ショップ{sortIcon("store")}
                 </button>
               </th>
               <th className="text-center px-4 py-3 font-semibold text-gray-700">
-                <button onClick={() => handleSort('box')} className="flex items-center justify-center w-full hover:text-slate-900 whitespace-nowrap">1箱あたり<SortIcon col="box" /></button>
+                <button onClick={() => handleSort('box')} className="flex items-center justify-center w-full hover:text-slate-900 whitespace-nowrap">1箱あたり{sortIcon("box")}</button>
               </th>
               <th className="text-center px-4 py-3 font-semibold text-gray-700">
                 <button onClick={() => handleSort('annual')} className="flex items-center justify-center w-full hover:text-slate-900 whitespace-nowrap">
-                  1年分目安<SortIcon col="annual" />
+                  1年分目安{sortIcon("annual")}
                 </button>
               </th>
               <th className="text-center px-4 py-3 font-semibold text-gray-700 hidden md:table-cell">
                 <button onClick={() => handleSort('prescription')} className="flex items-center justify-center w-full hover:text-slate-900">
-                  処方箋<SortIcon col="prescription" />
+                  処方箋{sortIcon("prescription")}
                 </button>
               </th>
               <th className="text-center px-4 py-3 font-semibold text-gray-700">最新価格を確認</th>
@@ -180,7 +181,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                   ) : item.url.startsWith('#') ? (
                     <span className="inline-block px-3 py-2 rounded-lg text-xs text-gray-400 border border-gray-200 whitespace-nowrap">近日追加予定</span>
                   ) : (
-                    <a data-affiliate-platform={item.storeId === 'rakuten' ? 'rakuten' : 'a8'} href={item.url + item.store.affiliateParam} target="_blank" rel="noopener noreferrer sponsored nofollow" className="inline-block px-4 py-2 rounded-lg text-sm font-medium border border-gray-300 text-gray-700 hover:bg-sky-50 hover:border-sky-300 hover:text-sky-700 transition-colors whitespace-nowrap">
+                    <a data-affiliate-platform={getAffiliatePlatform(item.url + item.store.affiliateParam) ?? undefined} href={item.url + item.store.affiliateParam} target="_blank" rel="noopener noreferrer sponsored nofollow" className="inline-block px-4 py-2 rounded-lg text-sm font-medium border border-gray-300 text-gray-700 hover:bg-sky-50 hover:border-sky-300 hover:text-sky-700 transition-colors whitespace-nowrap">
                       価格を確認する →
                     </a>
                   )}
