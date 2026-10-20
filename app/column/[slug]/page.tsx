@@ -224,8 +224,8 @@ export default async function ColumnPage({ params }: Props) {
           <div className="flex flex-wrap gap-3">
             <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(column.title)}&url=${encodeURIComponent(shareUrl(slug, 'share_x'))}`} data-growth-event="share_intent" data-growth-source="share_x" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-bold text-white hover:bg-slate-700">Xで共有</a>
             <a href={`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(shareUrl(slug, 'share_line'))}`} data-growth-event="share_intent" data-growth-source="share_line" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-green-600 px-4 py-2 text-sm font-bold text-white hover:bg-green-700">LINEで共有</a>
-            {PINTEREST_PILOT.has(slug) && heroImage && (
-              <a href={`https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(shareUrl(slug, 'pinterest'))}&media=${encodeURIComponent(heroImage)}&description=${encodeURIComponent(column.title)}`}
+            {PINTEREST_PILOT.has(slug) && (
+              <a href={`https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(shareUrl(slug, 'pinterest'))}&media=${encodeURIComponent(heroImage ?? `${BASE}/images/hero/hero-woman.webp`)}&description=${encodeURIComponent(column.title)}`}
                 data-growth-event="share_intent" data-growth-source="pinterest"
                 target="_blank" rel="noopener noreferrer"
                 className="rounded-lg bg-red-700 px-4 py-2 text-sm font-bold text-white hover:bg-red-800">Pinterestに保存</a>
