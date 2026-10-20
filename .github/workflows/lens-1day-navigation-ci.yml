@@ -4,6 +4,12 @@ on:
     paths:
       - 'app/category/**'
       - 'components/ProductCard.tsx'
+      - 'components/AffiliateClickTracker.tsx'
+      - 'components/PriceTable.tsx'
+      - 'app/column/**'
+      - 'lib/affiliate-platform.ts'
+      - 'scripts/check-affiliate-tracking.mjs'
+      - 'tests/affiliate-platform.test.mjs'
       - 'lib/products.ts'
       - 'data/product-url-map.json'
       - 'scripts/check-1day-purchase-navigation.mjs'
@@ -27,3 +33,5 @@ jobs:
       - run: npm run build -- --webpack
       - run: npx playwright install --with-deps chromium
       - run: node scripts/check-1day-purchase-navigation.mjs
+      - run: node --test tests/*.test.mjs
+      - run: node scripts/check-affiliate-tracking.mjs

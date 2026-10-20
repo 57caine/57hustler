@@ -191,6 +191,17 @@ export default async function ColumnPage({ params }: Props) {
           );
         })()}
 
+        {['contact-tsuuhan-shohosen-nashi-kanzen-guide', 'contact-dosu-shohosen-mikata-kanzen-2026'].includes(slug) && (
+          <aside aria-label="いつものコンタクトの購入先" className="mb-8 rounded-xl border border-sky-200 bg-sky-50 p-4">
+            <p className="font-bold text-slate-800">いつも使うレンズの購入先を確認</p>
+            <p className="mt-1 text-sm text-slate-600">眼科で確認した製品名・度数・BC・DIAと同じ条件でお探しください。ワンデーは1箱の価格と購入先を確認できます。</p>
+            <div className="mt-3 flex flex-wrap gap-3">
+              <Link href="/category/1day" className="rounded-lg bg-sky-700 px-4 py-2 text-sm font-bold text-white hover:bg-sky-800">ワンデーの1箱価格・購入先を比較 →</Link>
+              <Link href="/category/2week" className="rounded-lg border border-sky-700 px-4 py-2 text-sm font-bold text-sky-800 hover:bg-sky-100">2ウィークを比較 →</Link>
+            </div>
+          </aside>
+        )}
+
         {/* 本文 */}
         <div id="article-body" className="text-gray-800 leading-relaxed">
           {content}
