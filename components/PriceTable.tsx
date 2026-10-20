@@ -93,7 +93,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
               </div>
               {!item.inStock ? <p className="text-center text-sm text-slate-500">在庫なし</p> :
                 verifiedProductLink ? (
-                  <a href={item.url + item.store.affiliateParam} target="_blank" rel="noopener noreferrer sponsored nofollow"
+                  <a data-affiliate-platform={item.storeId === 'rakuten' ? 'rakuten' : 'a8'} href={item.url + item.store.affiliateParam} target="_blank" rel="noopener noreferrer sponsored nofollow"
                     className="block w-full rounded-lg bg-sky-700 px-4 py-3 text-center font-bold text-white hover:bg-sky-800">
                     {item.boxes === 1 ? 'このショップで1箱の価格を確認 →' : `${item.boxes}箱セットの販売価格を確認 →`}
                   </a>
@@ -180,7 +180,7 @@ export default function PriceTable({ prices, productName }: PriceTableProps) {
                   ) : item.url.startsWith('#') ? (
                     <span className="inline-block px-3 py-2 rounded-lg text-xs text-gray-400 border border-gray-200 whitespace-nowrap">近日追加予定</span>
                   ) : (
-                    <a href={item.url + item.store.affiliateParam} target="_blank" rel="noopener noreferrer sponsored nofollow" className="inline-block px-4 py-2 rounded-lg text-sm font-medium border border-gray-300 text-gray-700 hover:bg-sky-50 hover:border-sky-300 hover:text-sky-700 transition-colors whitespace-nowrap">
+                    <a data-affiliate-platform={item.storeId === 'rakuten' ? 'rakuten' : 'a8'} href={item.url + item.store.affiliateParam} target="_blank" rel="noopener noreferrer sponsored nofollow" className="inline-block px-4 py-2 rounded-lg text-sm font-medium border border-gray-300 text-gray-700 hover:bg-sky-50 hover:border-sky-300 hover:text-sky-700 transition-colors whitespace-nowrap">
                       価格を確認する →
                     </a>
                   )}
