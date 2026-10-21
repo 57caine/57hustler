@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T23:44:01.010Z",
+  "generatedAt": "2026-10-21T23:57:34.106Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 26,
-        "bounceRate": 0.4230769230769231,
-        "avgSessionDuration": 78.59703092307691,
+        "sessions": 28,
+        "bounceRate": 0.4642857142857143,
+        "avgSessionDuration": 72.98295728571428,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション26件・affiliate_clickゼロ"
+        "セッション28件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
@@ -47,16 +47,16 @@
       "slug": "enkintsuyo-contact-guide",
       "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
       "metrics": {
-        "sessions": 17,
-        "bounceRate": 0.058823529411764705,
-        "avgSessionDuration": 86.26150752941176,
+        "sessions": 19,
+        "bounceRate": 0.05263157894736842,
+        "avgSessionDuration": 82.21983105263158,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション17件・affiliate_clickゼロ"
+        "セッション19件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -81,16 +81,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 16,
-        "bounceRate": 0.375,
-        "avgSessionDuration": 148.20796175,
+        "sessions": 17,
+        "bounceRate": 0.35294117647058826,
+        "avgSessionDuration": 140.84672894117648,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション16件・affiliate_clickゼロ"
+        "セッション17件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -115,16 +115,16 @@
       "slug": "kanso-shinikui-contact",
       "title": "kanso-shinikui-contact",
       "metrics": {
-        "sessions": 15,
-        "bounceRate": 0.26666666666666666,
-        "avgSessionDuration": 166.76004206666667,
+        "sessions": 16,
+        "bounceRate": 0.3125,
+        "avgSessionDuration": 156.3375394375,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション15件・affiliate_clickゼロ"
+        "セッション16件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -247,54 +247,20 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/megane-facial-shape-frame-2026",
-      "slug": "megane-facial-shape-frame-2026",
-      "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
-      "metrics": {
-        "sessions": 11,
-        "bounceRate": 0.2727272727272727,
-        "avgSessionDuration": 301.7519594545455,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション11件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 4,
-        "hasAffiliateLinks": true,
-        "ctaCount": 8,
-        "contentChars": 80906
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/multifocal-iol-presbyopia-surgery-2026",
       "slug": "multifocal-iol-presbyopia-surgery-2026",
       "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
       "metrics": {
-        "sessions": 11,
-        "bounceRate": 0.2727272727272727,
-        "avgSessionDuration": 110.53808718181817,
+        "sessions": 12,
+        "bounceRate": 0.3333333333333333,
+        "avgSessionDuration": 101.32657991666666,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション11件・affiliate_clickゼロ"
+        "セッション12件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 7,
