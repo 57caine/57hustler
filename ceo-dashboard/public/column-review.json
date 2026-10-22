@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T23:57:34.106Z",
+  "generatedAt": "2026-10-22T23:57:20.547Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 28,
-        "bounceRate": 0.4642857142857143,
-        "avgSessionDuration": 72.98295728571428,
+        "sessions": 29,
+        "bounceRate": 0.4827586206896552,
+        "avgSessionDuration": 70.46630358620689,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション28件・affiliate_clickゼロ"
+        "セッション29件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
@@ -81,16 +81,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 17,
-        "bounceRate": 0.35294117647058826,
-        "avgSessionDuration": 140.84672894117648,
+        "sessions": 19,
+        "bounceRate": 0.3157894736842105,
+        "avgSessionDuration": 129.3834547368421,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション17件・affiliate_clickゼロ"
+        "セッション19件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -145,40 +145,6 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/eyestrain-stretching-massage-guide",
-      "slug": "eyestrain-stretching-massage-guide",
-      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
-      "metrics": {
-        "sessions": 14,
-        "bounceRate": 0.5714285714285714,
-        "avgSessionDuration": 58.427343500000006,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション14件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 6,
-        "h3Count": 12,
-        "hasAffiliateLinks": true,
-        "ctaCount": 16,
-        "contentChars": 121186
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/soft-vs-hard-contact-hikaku",
       "slug": "soft-vs-hard-contact-hikaku",
       "title": "soft-vs-hard-contact-hikaku",
@@ -200,6 +166,40 @@
         "hasAffiliateLinks": true,
         "ctaCount": 3,
         "contentChars": 79131
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/eyestrain-stretching-massage-guide",
+      "slug": "eyestrain-stretching-massage-guide",
+      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
+      "metrics": {
+        "sessions": 12,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 68.16523408333335,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション12件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 6,
+        "h3Count": 12,
+        "hasAffiliateLinks": true,
+        "ctaCount": 16,
+        "contentChars": 121186
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -252,8 +252,8 @@
       "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
       "metrics": {
         "sessions": 12,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 101.32657991666666,
+        "bounceRate": 0.25,
+        "avgSessionDuration": 117.09123675,
         "affiliateClicks": 0
       },
       "flags": [
@@ -268,6 +268,40 @@
         "hasAffiliateLinks": true,
         "ctaCount": 3,
         "contentChars": 97083
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/blue-light-megane-kouka",
+      "slug": "blue-light-megane-kouka",
+      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
+      "metrics": {
+        "sessions": 10,
+        "bounceRate": 0.4,
+        "avgSessionDuration": 149.94609469999997,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション10件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 3,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 69528
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
