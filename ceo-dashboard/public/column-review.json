@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T23:48:47.834Z",
+  "generatedAt": "2026-10-24T23:02:35.798Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -14,8 +14,8 @@
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
         "sessions": 28,
-        "bounceRate": 0.4642857142857143,
-        "avgSessionDuration": 76.91388096428571,
+        "bounceRate": 0.42857142857142855,
+        "avgSessionDuration": 87.26375257142857,
         "affiliateClicks": 0
       },
       "flags": [
@@ -47,16 +47,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 21,
-        "bounceRate": 0.2857142857142857,
-        "avgSessionDuration": 143.4118534761905,
+        "sessions": 23,
+        "bounceRate": 0.30434782608695654,
+        "avgSessionDuration": 131.41605634782607,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション21件・affiliate_clickゼロ"
+        "セッション23件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -145,6 +145,40 @@
       "source": "auto-ga4"
     },
     {
+      "path": "/column/soft-vs-hard-contact-hikaku",
+      "slug": "soft-vs-hard-contact-hikaku",
+      "title": "soft-vs-hard-contact-hikaku",
+      "metrics": {
+        "sessions": 13,
+        "bounceRate": 0.3076923076923077,
+        "avgSessionDuration": 84.73995546153846,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション13件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 5,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 79131
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
       "path": "/column/eyestrain-stretching-massage-guide",
       "slug": "eyestrain-stretching-massage-guide",
       "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
@@ -166,40 +200,6 @@
         "hasAffiliateLinks": true,
         "ctaCount": 16,
         "contentChars": 121186
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/soft-vs-hard-contact-hikaku",
-      "slug": "soft-vs-hard-contact-hikaku",
-      "title": "soft-vs-hard-contact-hikaku",
-      "metrics": {
-        "sessions": 12,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 86.43507491666666,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション12件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 5,
-        "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 79131
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -281,27 +281,61 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/multifocal-iol-presbyopia-surgery-2026",
-      "slug": "multifocal-iol-presbyopia-surgery-2026",
-      "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
+      "path": "/column/vr-game-osusume-2026",
+      "slug": "vr-game-osusume-2026",
+      "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
       "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.1111111111111111,
-        "avgSessionDuration": 140.54246144444443,
+        "sessions": 10,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 220.50036060000002,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
+        "セッション10件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 7,
-        "h3Count": 15,
+        "h2Count": 3,
+        "h3Count": 2,
         "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 97083
+        "ctaCount": 6,
+        "contentChars": 80235
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/vr-movie-streaming-service-recommend-2026",
+      "slug": "vr-movie-streaming-service-recommend-2026",
+      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
+      "metrics": {
+        "sessions": 10,
+        "bounceRate": 0.2,
+        "avgSessionDuration": 155.75933990000001,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション10件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 6,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 69421
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
