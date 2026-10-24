@@ -16,15 +16,15 @@ const post=data.posts.find(p=>p.brand===brand&&p.day===day);
 // The existing day 1-9 archive is intentionally grandfathered in.
 function auditMitamaPost(p) {
  const t=p.text;
- const culturalAnchor=/(japan|japanese|itadakimasu|gochisousama|otsukaresama|yoroshiku|tadaima|okaeri|omotenashi|mottainai|\\ben\\b|縁)/i.test(t);
- const crossCulturalQuestion=/(\\?|？)/.test(t);
+ const culturalAnchor=/(japan|japanese|itadakimasu|gochisousama|otsukaresama|yoroshiku|tadaima|okaeri|omotenashi|mottainai|縁)/i.test(t);
+ const crossCulturalQuestion=t.includes('?')||t.includes('？');
  return {day:p.day,valid:typeof t==='string'&&t.length>0&&t.length<=500&&culturalAnchor&&crossCulturalQuestion, culturalAnchor,crossCulturalQuestion,length:t.length};
 }
 if(brand==='mitama'&&args.includes('--audit')) {
  const report=data.posts.filter(p=>p.brand==='mitama'&&p.day>=10).map(auditMitamaPost);
  console.log(JSON.stringify({mode:'audit',brand,report}));
- if(report.some(p=>!p.valid)) process.exitCode=1;
- process.exit();
+ if(report.some(p=>!p.valid)) process.exit(1);
+ process.exit(0);
 }
 if(!post||typeof post.text!=='string'||!post.text.trim()||post.text.length>500) throw new Error('Invalid post');
 if(brand==='mitama'&&day>=10&&!auditMitamaPost(post).valid) throw new Error('MITAMA editorial audit failed: Japanese cultural anchor and reader question required');
