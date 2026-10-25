@@ -219,8 +219,9 @@ async function runPost(dryRun: boolean): Promise<void> {
   }
 
   if (oneLiners === null) {
-    console.log('::warning::3回試行しても文字数チェックを通過できなかったため、今回の投稿をスキップします（Actionsは成功扱いですが、実際の投稿は行っていません）。');
-    return;
+    // 予約は既にpush済み。自動再実行すると重複投稿の恐れがあるため、
+    // 予約を解除せずに失敗を明示し、人が投稿履歴と公開状態を確認できるようにする。
+    throw new Error('3回試行しても文字数チェックを通過できず、Threadsには投稿していません。予約済み履歴を確認するまで自動再実行しないでください。');
   }
 
   const text = buildPostText(dailyStarNum, oneLiners);
