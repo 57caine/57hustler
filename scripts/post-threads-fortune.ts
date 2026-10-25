@@ -237,8 +237,9 @@ async function runPost(dryRun: boolean): Promise<void> {
   }
 
   if (oneLiners === null) {
-    console.log('::warning::3回試行しても文字数チェックを通過できなかったため、今回の投稿をスキップします（Actionsは成功扱いですが、実際の投稿は行っていません）。');
-    return;
+    // The day has already been claimed and pushed by the workflow. Do not report
+    // a successful run when nothing was posted; an operator must reconcile history.
+    throw new Error('3回試行しても品質チェックを通過できず未投稿です。予約済み履歴とThreads実投稿を確認してください（自動再投稿は禁止）。');
   }
 
   const text = buildPostText(dailyStarNum, oneLiners);
