@@ -121,7 +121,7 @@ ${positionInfo}
 
 【厳守】
 - 象意の言い換えは絶対NG。「地盤を固める」「じっくり取り組む」などは禁止
-- 行動・場面・注意点で具体的に
+- 行動・場面・注意点で具体的に。方位や宮名（中央・南西・北西など）を一言の本文に書かない。職場・家庭・会話・予定など、今日できる行動を示す
   良い例：「静かに受け取る日」「地道が実を結ぶ」「発信より傾聴を」「縁を大切に動く」
   NG例：「信用でコミュニケーシ」（単語の途中で切れている）「中央で変化の核心を動」（助詞で切れている）
 - 体言止め・動詞終わりのどちらでもよい。ですます調不要
@@ -135,6 +135,24 @@ ${positionInfo}
   const raw = (message.content[0] as { type: string; text: string }).text;
   const json = JSON.parse(raw.replace(/```json\n?|\n?```/g, '').trim()) as Record<string, string>;
   return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v)]));
+}
+
+// Prevent vague palace/direction language from reaching the daily public post.
+// Do not attempt to calculate fortunes here; the existing kyusei-ban library remains authoritative.
+const VAGUE_FORTUNE_PATTERNS = [
+  /(?:中央|北西|南西|北東|南東|東南|南|北|東|西)で(?:変化|権威|運気|評価|信用|縁|輝き)/,
+  /(?:風のように|火の輝き|金運が交わる|天の助けで)/,
+  /(?:変化の核心|運気が高まる|幸運が訪れる)/,
+];
+function validateConcreteAdvice(lines: Record<number, string>): boolean {
+  const invalid = Object.entries(lines).filter(([, value]) =>
+    VAGUE_FORTUNE_PATTERNS.some(pattern => pattern.test(value))
+  );
+  if (invalid.length) {
+    console.warn('::warning::抽象的な九星コメントを検出。再生成します: ' + invalid.map(([star]) => star).join(','));
+    return false;
+  }
+  return true;
 }
 
 function buildPostText(dailyStarNum: number, oneLiners: Record<number, string>): string {
@@ -210,7 +228,7 @@ async function runPost(dryRun: boolean): Promise<void> {
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     console.log(`Claude API で各星の一言を生成中...（試行${attempt}/${MAX_RETRIES}）`);
     const candidate = await generateOneLiners(dailyStarNum, monthlyStarNum);
-    if (validateOneLiners(candidate)) {
+    if (validateOneLiners(candidate) && validateConcreteAdvice(candidate)) {
       oneLiners = candidate;
       break;
     }
