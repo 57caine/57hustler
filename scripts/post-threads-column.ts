@@ -156,7 +156,7 @@ function getJstDateSlug(): string {
 }
 
 function getJstDayOfWeek(): number {
-  const jstStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
+  const jstStr = getJstDateSlug();
   return new Date(jstStr + 'T12:00:00Z').getDay();
 }
 
