@@ -40,6 +40,10 @@ function getHeroQuery(column: { category?: string; section?: string; title: stri
   return sub?.query ?? DEFAULT_HERO_QUERY;
 }
 
+const PINTEREST_PILOT = new Set(['1day-vs-2week-dotchiga-otoku', 'acuvue-zenkindai-hikaku', 'contact-nenkan-cost']);
+const PURCHASE_GUIDES = new Set(['kanso-shinikui-contact', 'acuvue-zenkindai-hikaku', '1day-vs-2week-dotchiga-otoku', 'contact-net-kounyu-guide', 'contact-nenkan-cost']);
+const shareUrl = (slug: string, source: string) => `https://www.lens-navi.jp/column/${slug}?utm_source=${source}&utm_medium=social&utm_campaign=reader_share`;
+
 const RAKUTEN = (kw: string) => `https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=${encodeURIComponent('https://search.rakuten.co.jp/search/mall/' + kw + '/')}`;
 
 // Use the article topic for shopping links instead of always searching for 1day lenses.
@@ -203,13 +207,13 @@ export default async function ColumnPage({ params }: Props) {
           );
         })()}
 
-        {['contact-tsuuhan-shohosen-nashi-kanzen-guide', 'contact-dosu-shohosen-mikata-kanzen-2026'].includes(slug) && (
+        {(['contact-tsuuhan-shohosen-nashi-kanzen-guide', 'contact-dosu-shohosen-mikata-kanzen-2026'].includes(slug) || PURCHASE_GUIDES.has(slug)) && (
           <aside aria-label="いつものコンタクトの購入先" className="mb-8 rounded-xl border border-sky-200 bg-sky-50 p-4">
             <p className="font-bold text-slate-800">いつも使うレンズの購入先を確認</p>
             <p className="mt-1 text-sm text-slate-600">眼科で確認した製品名・度数・BC・DIAと同じ条件でお探しください。ワンデーは1箱の価格と購入先を確認できます。</p>
             <div className="mt-3 flex flex-wrap gap-3">
-              <Link href="/category/1day" className="rounded-lg bg-sky-700 px-4 py-2 text-sm font-bold text-white hover:bg-sky-800">ワンデーの1箱価格・購入先を比較 →</Link>
-              <Link href="/category/2week" className="rounded-lg border border-sky-700 px-4 py-2 text-sm font-bold text-sky-800 hover:bg-sky-100">2ウィークを比較 →</Link>
+              <Link href="/category/1day" data-growth-event="comparison_navigation" data-growth-source="column_purchase_guide" className="rounded-lg bg-sky-700 px-4 py-2 text-sm font-bold text-white hover:bg-sky-800">ワンデーの1箱価格・購入先を比較 →</Link>
+              <Link href="/category/2week" data-growth-event="comparison_navigation" data-growth-source="column_purchase_guide" className="rounded-lg border border-sky-700 px-4 py-2 text-sm font-bold text-sky-800 hover:bg-sky-100">2ウィークを比較 →</Link>
             </div>
           </aside>
         )}
@@ -230,8 +234,14 @@ export default async function ColumnPage({ params }: Props) {
         <aside aria-label="記事を共有" className="mt-10 rounded-xl border border-sky-100 bg-sky-50 p-5">
           <p className="text-sm font-bold text-gray-800 mb-3">役立ったら、この記事をシェア</p>
           <div className="flex flex-wrap gap-3">
-            <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(column.title)}&url=${encodeURIComponent(`${BASE}/column/${slug}`)}`} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-bold text-white hover:bg-slate-700">Xで共有</a>
-            <a href={`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(`${BASE}/column/${slug}`)}`} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-green-600 px-4 py-2 text-sm font-bold text-white hover:bg-green-700">LINEで共有</a>
+            <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(column.title)}&url=${encodeURIComponent(shareUrl(slug, 'share_x'))}`} data-growth-event="share_intent" data-growth-source="share_x" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-bold text-white hover:bg-slate-700">Xで共有</a>
+            <a href={`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(shareUrl(slug, 'share_line'))}`} data-growth-event="share_intent" data-growth-source="share_line" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-green-600 px-4 py-2 text-sm font-bold text-white hover:bg-green-700">LINEで共有</a>
+            {PINTEREST_PILOT.has(slug) && (
+              <a href={`https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(shareUrl(slug, 'pinterest'))}&media=${encodeURIComponent(heroImage ?? `${BASE}/images/hero/hero-woman.webp`)}&description=${encodeURIComponent(column.title)}`}
+                data-growth-event="share_intent" data-growth-source="pinterest"
+                target="_blank" rel="noopener noreferrer"
+                className="rounded-lg bg-red-700 px-4 py-2 text-sm font-bold text-white hover:bg-red-800">Pinterestに保存</a>
+            )}
           </div>
         </aside>
         {/* FAQ（メタデータから） */}

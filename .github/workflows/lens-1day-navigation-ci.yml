@@ -2,6 +2,9 @@ name: Lens 1day purchase navigation
 on:
   pull_request:
     paths:
+      - 'scripts/check-search-growth.mjs'
+      - 'app/product/**'
+      - 'app/robots.ts'
       - 'app/category/**'
       - 'components/ProductCard.tsx'
       - 'components/AffiliateClickTracker.tsx'
@@ -37,3 +40,4 @@ jobs:
       - run: node scripts/check-1day-purchase-navigation.mjs
       - run: node --test tests/*.test.mjs
       - run: node scripts/check-affiliate-tracking.mjs
+      - run: node scripts/check-search-growth.mjs
