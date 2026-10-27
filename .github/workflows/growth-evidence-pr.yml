@@ -1,0 +1,42 @@
+name: Growth evidence draft PR (no paid AI)
+on:
+  schedule:
+    - cron: '30 0 * * 1' # Monday 09:30 JST
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  propose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    concurrency:
+      group: growth-evidence-pr
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/growth-evidence-pr.mjs
+      - name: Open or update one draft evidence PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          branch="automation/lens-growth-evidence"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/automated/lens-growth-evidence.md
+          if git diff --staged --quiet; then
+            echo "No changes to evidence report"
+            exit 0
+          fi
+          git commit -m "docs(growth): refresh GA4 evidence"
+          git push --force-with-lease origin "HEAD:refs/heads/$branch"
+          pr="$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')"
+          if [ -z "$pr" ]; then
+            gh pr create --draft --head "$branch" --base main --title "docs(growth): automated GA4 evidence for human review" --body "Read-only GA4 evidence report. No paid AI, no production code changes, no auto-merge. Inspect verified metrics and open a separate engineering fix PR."
+          fi
