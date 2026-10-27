@@ -20,16 +20,16 @@ export default function HeroSection() {
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
             <a
-              href="/ranking"
+              href="/category/1day"
               className="inline-block rounded-full bg-sky-600 px-8 py-3.5 font-bold text-white transition-colors hover:bg-sky-700 no-underline"
             >
-              人気ランキングを見る →
+              1dayコンタクトの価格を比較 →
             </a>
             <a
-              href="/column"
+              href="/ranking"
               className="inline-block rounded-full border border-sky-200 bg-white px-8 py-3.5 font-bold text-sky-700 transition-colors hover:bg-sky-50 no-underline"
             >
-              コラムを読む →
+              人気ランキングを見る →
             </a>
           </div>
         </div>

@@ -1,0 +1,39 @@
+name: Growth autonomous triage
+on:
+  schedule:
+    - cron: '45 23 * * *' # 08:45 JST
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch and analyze live funnel
+        run: |
+          node scripts/growth-funnel-diagnostics.mjs || true
+          node scripts/growth-triage.mjs
+      - name: Maintain one recurring actionable issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          title="Growth daily triage (automated)"
+          existing="$(gh issue list --state open --search "$title in:title" --json number,title --jq '.[] | select(.title == "Growth daily triage (automated)") | .number' | head -1)"
+          if [ -n "$existing" ]; then
+            gh issue edit "$existing" --body-file growth-reports/triage-issue.md
+          else
+            gh issue create --title "$title" --body-file growth-reports/triage-issue.md
+          fi
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: growth-triage
+          path: growth-reports/
+          retention-days: 14

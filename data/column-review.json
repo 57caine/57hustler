@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T00:12:15.983Z",
+  "generatedAt": "2026-10-27T00:19:02.256Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -14,8 +14,8 @@
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
         "sessions": 25,
-        "bounceRate": 0.44,
-        "avgSessionDuration": 69.15697388,
+        "bounceRate": 0.4,
+        "avgSessionDuration": 83.0462762,
         "affiliateClicks": 0
       },
       "flags": [
@@ -29,13 +29,47 @@
         "h3Count": 8,
         "hasAffiliateLinks": true,
         "ctaCount": 4,
-        "contentChars": 76122
+        "contentChars": 77556
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
       ],
       "suggestions": [
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/multifocal-contact-rogansetsu",
+      "slug": "multifocal-contact-rogansetsu",
+      "title": "multifocal-contact-rogansetsu",
+      "metrics": {
+        "sessions": 25,
+        "bounceRate": 0.28,
+        "avgSessionDuration": 124.61334352,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション25件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 4,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 70145
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -49,7 +83,7 @@
       "metrics": {
         "sessions": 17,
         "bounceRate": 0.058823529411764705,
-        "avgSessionDuration": 86.26150752941176,
+        "avgSessionDuration": 82.95775247058823,
         "affiliateClicks": 0
       },
       "flags": [
@@ -63,47 +97,13 @@
         "h3Count": 2,
         "hasAffiliateLinks": true,
         "ctaCount": 1,
-        "contentChars": 72266
+        "contentChars": 72272
       },
       "causes": [
         "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
       ],
       "suggestions": [
         "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/eyestrain-stretching-massage-guide",
-      "slug": "eyestrain-stretching-massage-guide",
-      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
-      "metrics": {
-        "sessions": 14,
-        "bounceRate": 0.5714285714285714,
-        "avgSessionDuration": 58.4273435,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション14件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 6,
-        "h3Count": 12,
-        "hasAffiliateLinks": true,
-        "ctaCount": 16,
-        "contentChars": 121180
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -115,57 +115,23 @@
       "slug": "kanso-shinikui-contact",
       "title": "kanso-shinikui-contact",
       "metrics": {
-        "sessions": 14,
-        "bounceRate": 0.2857142857142857,
-        "avgSessionDuration": 174.79796592857141,
+        "sessions": 16,
+        "bounceRate": 0.3125,
+        "avgSessionDuration": 156.3375394375,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション14件・affiliate_clickゼロ"
+        "セッション16件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
         "h3Count": 9,
         "hasAffiliateLinks": true,
         "ctaCount": 1,
-        "contentChars": 84827
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/multifocal-contact-rogansetsu",
-      "slug": "multifocal-contact-rogansetsu",
-      "title": "multifocal-contact-rogansetsu",
-      "metrics": {
-        "sessions": 13,
-        "bounceRate": 0.46153846153846156,
-        "avgSessionDuration": 164.98543884615384,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション13件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 4,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 70139
+        "contentChars": 84833
       },
       "causes": [
         "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
@@ -183,23 +149,23 @@
       "slug": "soft-vs-hard-contact-hikaku",
       "title": "soft-vs-hard-contact-hikaku",
       "metrics": {
-        "sessions": 12,
-        "bounceRate": 0.25,
-        "avgSessionDuration": 96.15977016666666,
+        "sessions": 13,
+        "bounceRate": 0.3076923076923077,
+        "avgSessionDuration": 84.37669415384615,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション12件・affiliate_clickゼロ"
+        "セッション13件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
         "h3Count": 5,
         "hasAffiliateLinks": true,
         "ctaCount": 3,
-        "contentChars": 79125
+        "contentChars": 79131
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -213,13 +179,47 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/megane-facial-shape-frame-2026",
-      "slug": "megane-facial-shape-frame-2026",
-      "title": "メガネ 顔型別おすすめフレーム2026|自分に似合う眼鏡の選び方完全ガイド",
+      "path": "/column/eyestrain-stretching-massage-guide",
+      "slug": "eyestrain-stretching-massage-guide",
+      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
+      "metrics": {
+        "sessions": 12,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 68.16523408333335,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション12件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 6,
+        "h3Count": 12,
+        "hasAffiliateLinks": true,
+        "ctaCount": 16,
+        "contentChars": 121186
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/vr-movie-streaming-service-recommend-2026",
+      "slug": "vr-movie-streaming-service-recommend-2026",
+      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
       "metrics": {
         "sessions": 11,
-        "bounceRate": 0.2727272727272727,
-        "avgSessionDuration": 301.7519594545455,
+        "bounceRate": 0.18181818181818182,
+        "avgSessionDuration": 149.4865439090909,
         "affiliateClicks": 0
       },
       "flags": [
@@ -229,11 +229,45 @@
         "セッション11件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 3,
-        "h3Count": 4,
+        "h2Count": 4,
+        "h3Count": 6,
         "hasAffiliateLinks": true,
-        "ctaCount": 8,
-        "contentChars": 80900
+        "ctaCount": 4,
+        "contentChars": 69421
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/blue-light-megane-kouka",
+      "slug": "blue-light-megane-kouka",
+      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
+      "metrics": {
+        "sessions": 10,
+        "bounceRate": 0.4,
+        "avgSessionDuration": 149.9460947,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション10件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 3,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 69528
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -251,23 +285,57 @@
       "slug": "meta-quest-3-review-2026",
       "title": "Meta Quest 3レビュー2026【スペック・できること・買うべき人を徹底解説】",
       "metrics": {
-        "sessions": 11,
-        "bounceRate": 0.2727272727272727,
-        "avgSessionDuration": 247.89818481818182,
+        "sessions": 10,
+        "bounceRate": 0.2,
+        "avgSessionDuration": 237.59933899999996,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション11件・affiliate_clickゼロ"
+        "セッション10件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
         "h3Count": 2,
         "hasAffiliateLinks": true,
         "ctaCount": 7,
-        "contentChars": 83404
+        "contentChars": 83410
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/vr-game-osusume-2026",
+      "slug": "vr-game-osusume-2026",
+      "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
+      "metrics": {
+        "sessions": 10,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 220.50036060000002,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション10件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 6,
+        "contentChars": 80235
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -286,8 +354,8 @@
       "title": "老眼手術の多焦点眼内レンズ：費用・適応条件・選択基準を徹底解説",
       "metrics": {
         "sessions": 9,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 107.16576355555556,
+        "bounceRate": 0.1111111111111111,
+        "avgSessionDuration": 140.54246144444443,
         "affiliateClicks": 0
       },
       "flags": [
@@ -301,7 +369,7 @@
         "h3Count": 15,
         "hasAffiliateLinks": true,
         "ctaCount": 3,
-        "contentChars": 97077
+        "contentChars": 97083
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"

@@ -121,7 +121,7 @@ ${positionInfo}
 
 【厳守】
 - 象意の言い換えは絶対NG。「地盤を固める」「じっくり取り組む」などは禁止
-- 行動・場面・注意点で具体的に
+- 行動・場面・注意点で具体的に。方位や宮名（中央・南西・北西など）を一言の本文に書かない。職場・家庭・会話・予定など、今日できる行動を示す
   良い例：「静かに受け取る日」「地道が実を結ぶ」「発信より傾聴を」「縁を大切に動く」
   NG例：「信用でコミュニケーシ」（単語の途中で切れている）「中央で変化の核心を動」（助詞で切れている）
 - 体言止め・動詞終わりのどちらでもよい。ですます調不要
@@ -135,6 +135,24 @@ ${positionInfo}
   const raw = (message.content[0] as { type: string; text: string }).text;
   const json = JSON.parse(raw.replace(/```json\n?|\n?```/g, '').trim()) as Record<string, string>;
   return Object.fromEntries(Object.entries(json).map(([k, v]) => [Number(k), String(v)]));
+}
+
+// Prevent vague palace/direction language from reaching the daily public post.
+// Do not attempt to calculate fortunes here; the existing kyusei-ban library remains authoritative.
+const VAGUE_FORTUNE_PATTERNS = [
+  /(?:中央|北西|南西|北東|南東|東南|南|北|東|西)で(?:変化|権威|運気|評価|信用|縁|輝き)/,
+  /(?:風のように|火の輝き|金運が交わる|天の助けで)/,
+  /(?:変化の核心|運気が高まる|幸運が訪れる)/,
+];
+function validateConcreteAdvice(lines: Record<number, string>): boolean {
+  const invalid = Object.entries(lines).filter(([, value]) =>
+    VAGUE_FORTUNE_PATTERNS.some(pattern => pattern.test(value))
+  );
+  if (invalid.length) {
+    console.warn('::warning::抽象的な九星コメントを検出。再生成します: ' + invalid.map(([star]) => star).join(','));
+    return false;
+  }
+  return true;
 }
 
 function buildPostText(dailyStarNum: number, oneLiners: Record<number, string>): string {
@@ -152,7 +170,12 @@ function buildPostText(dailyStarNum: number, oneLiners: Record<number, string>):
       return `${s.emoji}${s.short}｜${oneLiners[n] ?? ''}`;
     }),
     '',
-    '自分の本命星がわからない方はプロフィールのリンクから調べられます。',
+    // 日々の占いは無料のまま維持。日曜のみ控えめに11月号へ誘導する。
+    // 2026年11月末で自動停止し、古い月号へのリンクを残さない。
+    ...(new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' }).slice(0, 7) === '2026-11'
+      && new Date().toLocaleDateString('en-US', { weekday: 'short', timeZone: 'Asia/Tokyo' }) === 'Sun'
+      ? ['', '11月の詳しい九星別運勢をnoteにまとめました。仕事・お金・人間関係について、今月を心地よく過ごすヒントをお届けします。', 'https://note.com/kobayashi_done/n/n8fab3c4cc51a']
+      : []),
     '🌙 #九星気学 #今日の運勢 #夜中のおじさん #占い #運勢 #開運',
   ];
 
@@ -210,17 +233,28 @@ async function runPost(dryRun: boolean): Promise<void> {
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     console.log(`Claude API で各星の一言を生成中...（試行${attempt}/${MAX_RETRIES}）`);
     const candidate = await generateOneLiners(dailyStarNum, monthlyStarNum);
-    if (validateOneLiners(candidate)) {
+    const invalidLengths = Array.from({ length: 9 }, (_, i) => i + 1)
+      .filter(star => typeof candidate[star] !== 'string'
+        || candidate[star].length === 0
+        || candidate[star].length > MAX_ONELINER_LENGTH);
+    const hasAllNineStars = Object.keys(candidate).length === 9
+      && Array.from({ length: 9 }, (_, i) => i + 1).every(star => Object.hasOwn(candidate, star));
+    const validLength = validateOneLiners(candidate) && hasAllNineStars;
+    const validAdvice = validateConcreteAdvice(candidate);
+    if (validLength && validAdvice) {
       oneLiners = candidate;
       break;
     }
-    const tooLong = Object.entries(candidate).filter(([, v]) => v.length > MAX_ONELINER_LENGTH);
-    console.warn(`⚠️ 試行${attempt}: ${MAX_ONELINER_LENGTH}文字を超える一言を検出（${tooLong.map(([k, v]) => `${k}:「${v}」`).join(', ')}） → 再生成`);
+    console.warn(`::warning::試行${attempt}/${MAX_RETRIES} 品質チェック不合格: `
+      + `星数=${Object.keys(candidate).length}/9, `
+      + `文字数・欠落NG星=${invalidLengths.join(',') || 'なし'}, `
+      + `抽象表現NG=${!validAdvice}。投稿せず再生成します。`);
   }
 
   if (oneLiners === null) {
-    console.log('::warning::3回試行しても文字数チェックを通過できなかったため、今回の投稿をスキップします（Actionsは成功扱いですが、実際の投稿は行っていません）。');
-    return;
+    // The day has already been claimed and pushed by the workflow. Do not report
+    // a successful run when nothing was posted; an operator must reconcile history.
+    throw new Error('3回試行しても品質チェックを通過できず未投稿です。予約済み履歴とThreads実投稿を確認してください（自動再投稿は禁止）。');
   }
 
   const text = buildPostText(dailyStarNum, oneLiners);
