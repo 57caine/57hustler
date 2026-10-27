@@ -1,0 +1,36 @@
+name: GA4 evidence growth priorities
+on:
+  schedule:
+    - cron: '15 0 * * *' # 09:15 JST, after existing 06:00 GA4 refresh
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  prioritize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/ga4-growth-priorities.mjs
+      - name: Update one GA4 growth issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          title="Lens GA4 growth priorities (automated)"
+          number="$(gh issue list --state open --search "$title in:title" --json number,title --jq '.[] | select(.title == "Lens GA4 growth priorities (automated)") | .number' | head -1)"
+          if [ -n "$number" ]; then
+            gh issue edit "$number" --body-file growth-reports/ga4-priorities.md
+          else
+            gh issue create --title "$title" --body-file growth-reports/ga4-priorities.md
+          fi
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ga4-growth-priorities
+          path: growth-reports/ga4-priorities.*
+          retention-days: 14
