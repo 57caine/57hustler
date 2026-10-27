@@ -1,0 +1,30 @@
+name: Free GSC lens acquisition diagnostics
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Monday 09:00 JST
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  search-console:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Read free GSC API
+        env:
+          GA4_SERVICE_ACCOUNT_KEY: ${{ secrets.GA4_SERVICE_ACCOUNT_KEY }}
+          GSC_SITE_URL: 'sc-domain:lens-navi.jp'
+        run: node scripts/fetch-free-gsc.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: free-gsc-report
+          path: growth-reports/gsc-lens.json
+          retention-days: 14
+          if-no-files-found: ignore
