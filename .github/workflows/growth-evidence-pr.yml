@@ -26,26 +26,21 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          branch="automation/lens-growth-evidence"
+          # Only one pending proposal at a time. No overwriting human edits.
+          existing="$(gh pr list --state open --search 'in:title automated GA4 evidence for human review' --json number,title --jq '.[] | select(.title == "docs(growth): automated GA4 evidence for human review") | .number' | head -1)"
+          if [ -n "$existing" ]; then
+            echo "Existing draft PR #$existing awaits review; skip duplicate."
+            exit 0
+          fi
+          branch="automation/lens-growth-evidence-$(date -u +%Y%m%d)-${GITHUB_RUN_ID}"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
           git add docs/automated/lens-growth-evidence.md
           if git diff --staged --quiet; then
-            echo "No changes to evidence report"
+            echo "No evidence changes"
             exit 0
           fi
           git commit -m "docs(growth): refresh GA4 evidence"
-          # Fetch current branch explicitly: --force-with-lease without this can reject every repeat run.
-          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
-            git fetch origin "$branch:refs/remotes/origin/$branch"
-            # Never overwrite a human-edited automation branch.
-            if ! git merge-base --is-ancestor "origin/$branch" HEAD; then
-              echo "Existing automation branch diverged; refuse to overwrite it"
-              exit 1
-            fi
-          fi
           git push origin "HEAD:refs/heads/$branch"
-          pr="$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')"
-          if [ -z "$pr" ]; then
-            gh pr create --draft --head "$branch" --base main --title "docs(growth): automated GA4 evidence for human review" --body "Read-only GA4 evidence report. No paid AI, no production code changes, no auto-merge. Inspect verified metrics and open a separate engineering fix PR."
-          fi
+          gh pr create --draft --head "$branch" --base main --title "docs(growth): automated GA4 evidence for human review" --body "Read-only GA4 evidence report. No paid AI, no production code changes, no auto-merge. Review verified metrics before engineering changes."
