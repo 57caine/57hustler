@@ -42,6 +42,12 @@ try {
       await page.goto(`${base}/category/${category}`);
       assert.equal(await page.getByRole('link', { name: '1箱の価格・購入先を確認する →', exact: true }).count(), 0);
     }
+    // Regression: a generic contact article must link to its 1day comparison.
+    const articleResponse = await page.goto(`${base}/column/contact-net-kounyu-guide`);
+    assert.equal(articleResponse?.status(), 200);
+    const articleCTA = page.getByRole('link', { name: 'ワンデーの価格を比較する →', exact: true });
+    assert.equal(await articleCTA.count(), 1);
+    assert.equal(await articleCTA.getAttribute('href'), '/category/1day');
     console.log(`PASS: ${viewport.width}px — 1day CTA, price anchor, one GA4 comparison event, other-category scope`);
     await page.close();
   }
