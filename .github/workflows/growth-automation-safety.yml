@@ -7,6 +7,8 @@ on:
       - '.github/workflows/growth-*.yml'
       - '.github/workflows/ga4-growth-priorities.yml'
   workflow_dispatch:
+  schedule:
+    - cron: '0 1 * * *' # Daily 10:00 JST: verify automation safety even without PRs
 permissions:
   contents: read
 jobs:
