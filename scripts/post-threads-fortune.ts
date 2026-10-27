@@ -233,12 +233,22 @@ async function runPost(dryRun: boolean): Promise<void> {
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     console.log(`Claude API で各星の一言を生成中...（試行${attempt}/${MAX_RETRIES}）`);
     const candidate = await generateOneLiners(dailyStarNum, monthlyStarNum);
-    if (validateOneLiners(candidate) && validateConcreteAdvice(candidate)) {
+    const invalidLengths = Array.from({ length: 9 }, (_, i) => i + 1)
+      .filter(star => typeof candidate[star] !== 'string'
+        || candidate[star].length === 0
+        || candidate[star].length > MAX_ONELINER_LENGTH);
+    const hasAllNineStars = Object.keys(candidate).length === 9
+      && Array.from({ length: 9 }, (_, i) => i + 1).every(star => Object.hasOwn(candidate, star));
+    const validLength = validateOneLiners(candidate) && hasAllNineStars;
+    const validAdvice = validateConcreteAdvice(candidate);
+    if (validLength && validAdvice) {
       oneLiners = candidate;
       break;
     }
-    const tooLong = Object.entries(candidate).filter(([, v]) => v.length > MAX_ONELINER_LENGTH);
-    console.warn(`⚠️ 試行${attempt}: ${MAX_ONELINER_LENGTH}文字を超える一言を検出（${tooLong.map(([k, v]) => `${k}:「${v}」`).join(', ')}） → 再生成`);
+    console.warn(`::warning::試行${attempt}/${MAX_RETRIES} 品質チェック不合格: `
+      + `星数=${Object.keys(candidate).length}/9, `
+      + `文字数・欠落NG星=${invalidLengths.join(',') || 'なし'}, `
+      + `抽象表現NG=${!validAdvice}。投稿せず再生成します。`);
   }
 
   if (oneLiners === null) {
