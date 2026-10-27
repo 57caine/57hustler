@@ -170,7 +170,6 @@ function buildPostText(dailyStarNum: number, oneLiners: Record<number, string>):
       return `${s.emoji}${s.short}｜${oneLiners[n] ?? ''}`;
     }),
     '',
-    '自分の本命星がわからない方はプロフィールのリンクから調べられます。',
     '🌙 #九星気学 #今日の運勢 #夜中のおじさん #占い #運勢 #開運',
   ];
 
