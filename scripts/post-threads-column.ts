@@ -142,11 +142,21 @@ interface SeriesWeek {
 }
 
 function getJstDateSlug(): string {
-  return new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
+  const now = new Date();
+  // GitHub scheduled jobs may start hours late. An evening slot executed after
+  // midnight but before noon JST still belongs to the preceding evening.
+  // Manual dispatches retain the actual JST date.
+  const jstHour = Number(new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Asia/Tokyo', hour: '2-digit', hourCycle: 'h23',
+  }).format(now));
+  if (process.env.GITHUB_EVENT_NAME === 'schedule' && SLOT === 'evening' && jstHour < 12) {
+    return new Date(now.getTime() - 86400000).toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
+  }
+  return now.toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
 }
 
 function getJstDayOfWeek(): number {
-  const jstStr = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' });
+  const jstStr = getJstDateSlug();
   return new Date(jstStr + 'T12:00:00Z').getDay();
 }
 
