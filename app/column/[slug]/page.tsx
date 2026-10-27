@@ -178,14 +178,18 @@ export default async function ColumnPage({ params }: Props) {
               </div>
             );
           }
+          // Route readers to the matching wearing-period comparison, not a generic ranking.
+          const is2Week = /2week|2ウィーク|2週間|ツーウィーク/i.test(column.title);
+          const comparisonHref = is2Week ? '/category/2week' : '/category/1day';
+          const comparisonLabel = is2Week ? '2ウィークの価格を比較する →' : 'ワンデーの価格を比較する →';
           return (
             <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-3">
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-bold text-gray-800">自分に合うコンタクトレンズを比較する</p>
                 <p className="text-xs text-gray-500 mt-0.5">装用タイプ・価格の目安を比較し、販売ページで条件を確認</p>
               </div>
-              <Link href="/ranking" className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors whitespace-nowrap">
-                掲載商品を比較する →
+              <Link href={comparisonHref} className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors whitespace-nowrap">
+                {comparisonLabel}
               </Link>
             </div>
           );
