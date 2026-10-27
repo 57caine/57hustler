@@ -35,7 +35,16 @@ jobs:
             exit 0
           fi
           git commit -m "docs(growth): refresh GA4 evidence"
-          git push --force-with-lease origin "HEAD:refs/heads/$branch"
+          # Fetch current branch explicitly: --force-with-lease without this can reject every repeat run.
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            git fetch origin "$branch:refs/remotes/origin/$branch"
+            # Never overwrite a human-edited automation branch.
+            if ! git merge-base --is-ancestor "origin/$branch" HEAD; then
+              echo "Existing automation branch diverged; refuse to overwrite it"
+              exit 1
+            fi
+          fi
+          git push origin "HEAD:refs/heads/$branch"
           pr="$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')"
           if [ -z "$pr" ]; then
             gh pr create --draft --head "$branch" --base main --title "docs(growth): automated GA4 evidence for human review" --body "Read-only GA4 evidence report. No paid AI, no production code changes, no auto-merge. Inspect verified metrics and open a separate engineering fix PR."
