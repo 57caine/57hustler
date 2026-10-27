@@ -170,6 +170,12 @@ function buildPostText(dailyStarNum: number, oneLiners: Record<number, string>):
       return `${s.emoji}${s.short}｜${oneLiners[n] ?? ''}`;
     }),
     '',
+    // 日々の占いは無料のまま維持。日曜のみ控えめに11月号へ誘導する。
+    // 2026年11月末で自動停止し、古い月号へのリンクを残さない。
+    ...(new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Tokyo' }).slice(0, 7) === '2026-11'
+      && new Date().toLocaleDateString('en-US', { weekday: 'short', timeZone: 'Asia/Tokyo' }) === 'Sun'
+      ? ['', '11月の詳しい九星別運勢をnoteにまとめました。仕事・お金・人間関係について、今月を心地よく過ごすヒントをお届けします。', 'https://note.com/kobayashi_done/n/n8fab3c4cc51a']
+      : []),
     '🌙 #九星気学 #今日の運勢 #夜中のおじさん #占い #運勢 #開運',
   ];
 
