@@ -1,0 +1,21 @@
+name: Fortune advice quality tests
+on:
+  pull_request:
+    paths:
+      - 'scripts/post-threads-fortune.ts'
+      - 'scripts/lib/fortune-advice.ts'
+      - 'scripts/tests/fortune-advice.test.cjs'
+      - '.github/workflows/fortune-advice-pr-check.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: node -r ts-node/register --test scripts/tests/fortune-advice.test.cjs
