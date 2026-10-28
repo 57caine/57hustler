@@ -14,8 +14,9 @@ if (!key) {
   report.gsc = { status: 'missing_existing_credential' };
   report.ga4 = { status: 'missing_existing_credential' };
 } else {
+  const credentials = JSON.parse(key);
   const auth = new google.auth.GoogleAuth({
-    credentials: JSON.parse(key),
+    credentials,
     scopes: ['https://www.googleapis.com/auth/webmasters.readonly', 'https://www.googleapis.com/auth/analytics.readonly'],
   });
   const gsc = google.searchconsole({ version: 'v1', auth });
@@ -25,7 +26,10 @@ if (!key) {
     const sites = listed.filter(s => ['sc-domain:lens-navi.jp', 'https://www.lens-navi.jp/', 'https://lens-navi.jp/'].includes(s.siteUrl));
     const site = sites.find(s => s.siteUrl === 'sc-domain:lens-navi.jp' && s.permissionLevel !== 'siteUnverifiedUser')
       ?? sites.find(s => s.siteUrl === 'https://www.lens-navi.jp/' && s.permissionLevel !== 'siteUnverifiedUser');
-    report.gsc = { status: site ? 'reading' : 'property_access_missing', properties: sites };
+    report.gsc = { status: site ? 'reading' : 'property_access_missing', properties: sites,
+      // Account identifier only: never include the credential object or private key.
+      ...(!site ? { requiredReaderEmail: credentials.client_email, requiredProperty: 'sc-domain:lens-navi.jp', nextAction: 'Add this service account as a restricted reader in Search Console; do not create a new key.' } : {}),
+    };
     if (site) {
       const query = async dimensions => (await gsc.searchanalytics.query({
         siteUrl: site.siteUrl,
