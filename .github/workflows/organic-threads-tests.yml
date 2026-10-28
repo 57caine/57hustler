@@ -9,6 +9,8 @@ on:
       - 'data/organic-threads-posts-20261013.json'
       - 'tests/organic-threads.test.mjs'
       - '.github/workflows/brand-threads-organic.yml'
+      - '.github/workflows/brand-threads-organic-pilot.yml'
+      - '.github/workflows/organic-threads-tests.yml'
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -21,3 +23,20 @@ jobs:
           node-version: '22'
       - run: node --test tests/organic-threads.test.mjs
       - run: node --test tests/brand-threads.test.mjs
+
+  identity:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feat/brand-threads-next-pilot-20261028'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify only the two brand accounts (no posts)
+        env:
+          RAKUTABI_THREADS_ACCESS_TOKEN: ${{ secrets.RAKUTABI_THREADS_ACCESS_TOKEN }}
+          LENS_THREADS_ACCESS_TOKEN: ${{ secrets.LENS_THREADS_ACCESS_TOKEN }}
+        run: node scripts/check-brand-threads-ids.mjs
