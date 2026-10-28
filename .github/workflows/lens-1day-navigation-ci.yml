@@ -11,6 +11,7 @@ on:
       - 'components/PriceTable.tsx'
       - 'app/column/**'
       - 'lib/eye-columns.tsx'
+      - 'lib/columns.tsx'
       - 'lib/affiliate-platform.ts'
       - 'scripts/check-affiliate-tracking.mjs'
       - 'tests/affiliate-platform.test.mjs'
