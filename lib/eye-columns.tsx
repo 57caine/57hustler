@@ -78,8 +78,8 @@ export const eyeColumns: EyeColumnMeta[] = [
   },
   {
     slug: 'vr-shiryoku-warui',
-    title: '視力が悪い人のVRゴーグル対策【コンタクト・度付きインサート・メガネスペーサー完全ガイド】',
-    description: '近視・乱視があってもVRを快適に楽しむ3つの方法を解説。Meta Quest対応の度付きインサートレンズも紹介。',
+    title: 'VRは視力が悪くても使える？コンタクト・メガネ・度付きレンズを比較',
+    description: 'VRでコンタクトを使う場合と、メガネ・度付きインサートを使う場合の違いを比較。装着時の注意点と費用の目安を整理します。',
     category: 'VR・スマートグラス',
     section: 'vr',
     publishedAt: '2026-07-13',
