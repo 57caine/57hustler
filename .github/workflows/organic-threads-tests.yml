@@ -6,6 +6,7 @@ on:
   pull_request:
     paths:
       - 'scripts/post-organic-threads.mjs'
+      - 'scripts/lib/organic-threads-message.mjs'
       - 'data/organic-threads-posts-20261013.json'
       - 'tests/organic-threads.test.mjs'
       - '.github/workflows/brand-threads-organic.yml'

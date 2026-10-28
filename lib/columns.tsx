@@ -339,13 +339,13 @@ export const columns: ColumnMeta[] = [
   },
   {
     slug: 'contact-net-kounyu-guide',
-    title: 'コンタクトレンズはネットで買える【完全ガイド】処方箋不要・Amazon・楽天での正しい買い方',
-    description: 'コンタクトレンズをネットで安全に購入する方法を完全解説。処方箋なしで買える理由・安全に購入するための3つのポイント・Amazon楽天での具体的な手順。',
+    title: 'コンタクトはネットで買える？いつもの製品を確認して注文する手順',
+    description: '眼科で確認したコンタクトをネットで買う手順を解説。製品名・度数・規格、送料を含めた比較、購入先の処方箋条件を確認します。',
     category: '購入ガイド',
     publishedAt: '2026-07-15',
     updatedAt: '2026-07-15',
     readingTime: 8,
-    headings: ['コンタクトレンズは通販で購入できる', '処方箋不要で購入できる理由', '安全に買うための3つのポイント', 'Amazon・楽天での具体的な買い方', 'おすすめ通販サイトの選び方'],
+    headings: ['コンタクトレンズは通販で購入できる', '購入先の処方内容の確認条件を調べる', '安全に買うための3つのポイント', 'Amazon・楽天での具体的な買い方', 'おすすめ通販サイトの選び方'],
   },
   {
     slug: 'shohosen-souyo-shijisho-chishiki',
@@ -5280,25 +5280,25 @@ export const columnContent: Record<string, React.ReactNode> = {
   'contact-net-kounyu-guide': (
     <div className="prose prose-gray max-w-none">
       <p className="lead text-lg text-gray-700 mb-6">
-        「コンタクトレンズってネットで買えるの？」と疑問に思う方は多いです。答えはYES。正しい知識と購入方法を理解すれば、Amazon・楽天など通販で安全に購入できます。このガイドでは具体的な手順を解説します。
+        コンタクトレンズは実店舗のほか、ネット通販で購入する方法もあります。このガイドでは、眼科で確認したいつもの製品を、指示書と購入先の条件に従って注文する手順を解説します。
       </p>
 
       <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">コンタクトレンズは通販で購入できる</h2>
       <p className="mb-4">
-        コンタクトレンズは「高度管理医療機器」に分類されますが、日本の法律では医師の処方箋がなくてもネット通販で購入することが可能です。ただし、初めて使う場合は必ず眼科で検査を受けることを強く推奨します。
+        コンタクトレンズは高度管理医療機器です。ネットで購入する場合も、眼科で確認した製品と規格に従って選び、購入先が定める処方箋などの提出条件を確認してください。初めての使用や製品・度数の変更は、眼科で相談しましょう。
       </p>
       <div className="bg-sky-50 border border-sky-200 rounded-xl p-5 mb-6">
         <p className="font-bold text-sky-800 mb-2">ネット購入が便利な3つの理由</p>
         <ul className="text-sm text-gray-700 space-y-2">
-          <li>✓ 実店舗より30〜50%安い価格で購入できる</li>
+          <li>✓ 同じ製品・枚数の送料を含めた支払額を比較できる</li>
           <li>✓ 24時間いつでも注文でき、自宅に届く</li>
-          <li>✓ 在庫が豊富で、希望の度数を確実に入手できる</li>
+          <li>✓ 販売店の在庫や配送日数を確認して購入先を選べる</li>
         </ul>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">処方箋不要で購入できる理由</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">購入先の処方内容の確認条件を調べる</h2>
       <p className="mb-4">
-        日本では薬機法上、コンタクトレンズの販売に処方箋の提出義務はありません。ただし、「装用指示書」を求めるショップもあります。装用指示書とは眼科で作成してもらう使用許可証のようなもので、処方箋とは異なります。
+        販売店によって、眼科の指示書・処方箋の提出方法や確認条件が異なります。購入前に条件を確認し、眼科で指示された製品名・左右の度数・規格を照合してください。書類の呼び方だけで、検査や確認が不要と判断しないようにしましょう。
       </p>
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6">
         <p className="text-sm text-amber-800">
@@ -5309,8 +5309,8 @@ export const columnContent: Record<string, React.ReactNode> = {
       <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">安全に買うための3つのポイント</h2>
       <div className="space-y-4 mb-6">
         {[
-          { num: '①', title: '自分の度数（PWR・BC・DIA）を正確に把握する', desc: '眼科で発行された装用指示書や処方箋に記載されている数値を正確に使用します。推測や眼鏡の度数からの流用は禁物です。' },
-          { num: '②', title: '信頼できるショップを選ぶ', desc: '高度管理医療機器の販売許可（販売業許可証）を持つショップを選びましょう。Amazon・楽天の大手ショップは許可を持っています。' },
+          { num: '①', title: '指示書で製品名・度数・規格を確認する', desc: '眼科で発行された装用指示書や処方箋に記載されている数値を正確に使用します。推測や眼鏡の度数からの流用は禁物です。' },
+          { num: '②', title: '信頼できるショップを選ぶ', desc: '販売元の名称や連絡先、高度管理医療機器の販売業許可の表示、返品条件などを購入前に確認しましょう。' },
           { num: '③', title: '同じ商品・同じ度数を継続購入する', desc: 'ネット購入は自分が過去に眼科で処方・使用したことのある商品を継続購入する用途に最適です。初めての商品は眼科受診後に。' },
         ].map(p => (
           <div key={p.num} className="flex gap-3 bg-white border border-gray-200 rounded-xl p-4">
@@ -7589,39 +7589,29 @@ export const columnContent: Record<string, React.ReactNode> = {
   </div>
 
   <h2 id="pwr" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">PWR（度数）の読み方</h2>
-  <p className="text-gray-700 mb-4">PWR（またはSPH）は、レンズの屈折力を表す最も重要なパラメータです。単位はジオプター（D）で、0.25Dステップで刻まれています。</p>
+  <p className="text-gray-700 mb-4">PWR（またはSPH）は、レンズの屈折力を表す最も重要なパラメータです。単位はジオプター（D）です。選べる度数や刻みは製品によって異なるため、指示書と製品の規格を確認してください。</p>
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">マイナスとプラスの違い</h3>
   <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-    <li><strong>マイナス（−）：</strong>近視の矯正に使用。数値が大きいほど近視が強い</li>
-    <li><strong>プラス（＋）：</strong>遠視の矯正に使用。数値が大きいほど遠視が強い</li>
+    <li><strong>マイナス（−）：</strong>近視の矯正に使用。符号を除いた数値（絶対値）が大きいほど矯正する力が強い</li>
+    <li><strong>プラス（＋）：</strong>遠視の矯正に使用。符号を除いた数値（絶対値）が大きいほど矯正する力が強い</li>
     <li><strong>0.00（Plano）：</strong>度数なし（カラコンの度なしなど）</li>
   </ul>
-  <div className="bg-slate-50 rounded-xl p-4 mb-6">
-    <table className="w-full text-sm">
-      <thead><tr className="bg-slate-100"><th className="text-left p-2">PWR値</th><th className="text-left p-2">近視の程度</th></tr></thead>
-      <tbody>
-        <tr className="border-b border-gray-100"><td className="p-2">-0.25 〜 -1.75</td><td className="p-2">軽度近視</td></tr>
-        <tr className="border-b border-gray-100"><td className="p-2">-2.00 〜 -4.00</td><td className="p-2">中度近視（最も多い）</td></tr>
-        <tr className="border-b border-gray-100"><td className="p-2">-4.25 〜 -6.00</td><td className="p-2">強度近視</td></tr>
-        <tr><td className="p-2">-6.25以上</td><td className="p-2">超強度近視</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <p className="text-gray-700 mb-4">度数の数字だけで近視の程度や自分に適した製品を判断しないでください。眼科の指示書に記載された値を、そのまま正確に照合するために使いましょう。</p>
   <p className="text-gray-700 mb-4 bg-yellow-50 border-l-4 border-yellow-400 pl-4 py-2"><strong>重要：</strong>眼鏡の度数とコンタクトの度数は異なります。眼鏡の処方箋の度数をそのままコンタクトに使わないでください。</p>
 
   <h2 id="bc-dia" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">BC（ベースカーブ）とDIA（直径）</h2>
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">BCとは</h3>
-  <p className="text-gray-700 mb-4">BC（ベースカーブ）はレンズの内側のカーブの大きさを表します。単位はmmで、日本人に多いBCは8.4〜8.8mmです。BCが小さいほどカーブがきつく（急峻）、大きいほどなだらか（緩やか）です。</p>
+  <p className="text-gray-700 mb-4">BC（ベースカーブ）はレンズの内側のカーブの大きさを表します。単位はmmです。BCが小さいほどカーブがきつく（急峻）、大きいほどなだらか（緩やか）です。</p>
   <p className="text-gray-700 mb-4">BCが合わないとレンズがずれやすくなったり、目に圧迫感・充血が起きたりします。必ず眼科で処方されたBCを選んでください。</p>
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">DIAとは</h3>
-  <p className="text-gray-700 mb-4">DIA（直径）はレンズ全体の大きさを表します。通常の透明コンタクトは13.8〜14.5mm、カラコンでは14.0〜14.5mm（デカ目効果のため大きめ）が一般的です。DIAは見え方には直接影響しませんが、装用感に関係します。</p>
+  <p className="text-gray-700 mb-4">DIA（直径）はレンズ全体の大きさを表します。製品ごとに規格が異なるため、自己判断でサイズを変更せず、指示書の値と同じ製品・規格を確認してください。</p>
 
   <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-8 no-underline">楽天でコンタクトレンズの価格を確認する →</a>
 
   <h2 id="cyl-axis" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">乱視用パラメータ CYL・AXIS</h2>
   <p className="text-gray-700 mb-4">乱視がある方には、通常の度数（PWR）に加えてCYLとAXISが処方されます。乱視がない方にはこれらのパラメータは不要です。</p>
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">CYL（シリンダー）</h3>
-  <p className="text-gray-700 mb-4">CYLは乱視の度数を表します。必ずマイナス（−）で表記されます（例：-0.75、-1.25）。数値が大きいほど乱視が強いことを意味します。-0.75以下の軽度乱視は、通常のコンタクトでもある程度矯正できます。-1.00以上の場合は乱視用コンタクト（トーリックレンズ）の使用をおすすめします。</p>
+  <p className="text-gray-700 mb-4">CYLは乱視の度数を表す項目です。符号を含め、眼科の指示書に記載された値を確認してください。数値だけで通常レンズと乱視用レンズを自己判断で選び分けないようにしましょう。</p>
   <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">AXIS（アクシス）</h3>
   <p className="text-gray-700 mb-4">AXISは乱視の軸方向を1〜180度で表します。乱視は角膜のゆがみによって生じますが、そのゆがみの向き（方向）がAXISです。乱視用レンズはこの軸に合わせて矯正力の向きが設計されています。AXISは眼科でしか測定できません。</p>
   <div className="bg-blue-50 rounded-xl p-4 mb-6">
