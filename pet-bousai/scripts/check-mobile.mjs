@@ -115,8 +115,10 @@ const PAGES = ['/', '/dog', '/dog/evacuation-carrier', '/dog/water-food', '/dog/
   hits.length = 0;
   const link = table.locator('a[rel~="sponsored"]').first();
   const expected = await link.evaluate((a) => ({ name: a.dataset.productName, cat: a.dataset.productCategory, id: a.dataset.itemId, pos: a.dataset.position, href: a.href }));
-  const [popup] = await Promise.all([page.waitForEvent('popup'), link.click()]);
-  await popup.close();
+  const pageCount = ctx.pages().length;
+  if (await link.getAttribute('target') === '_blank') problems.push('商品リンクが別タブ設定');
+  await Promise.all([page.waitForURL(expected.href), link.click()]);
+  if (ctx.pages().length !== pageCount) problems.push('商品クリックで余分なタブが開いた');
   const isClick = (h) => h.en === 'affiliate_click' && h.tid === 'G-KPE1LBHFW7';
   await waitFor(isClick, 10000);
   await new Promise((r) => setTimeout(r, 1500));
@@ -130,6 +132,25 @@ const PAGES = ['/', '/dog', '/dog/evacuation-carrier', '/dog/water-food', '/dog/
   if (clicks.length !== 1 || pathOf(ev) !== CLICK_PAGE || ev['ep.item_id'] !== expected.id || ev['ep.position'] !== 'table' || ev['ep.product_name'] !== expected.name || ev['ep.product_category'] !== expected.cat || ev['ep.destination'] !== 'rakuten') {
     problems.push(`affiliate_click が期待どおりに送られていない（${clicks.length}件）`);
   }
+  await page.goBack({ waitUntil: 'networkidle' });
+  if (new URL(page.url()).pathname !== CLICK_PAGE) problems.push('戻る操作で比較記事に戻れない');
+
+  // カードの購入導線も、外部通信を遮断して同じタブでの遷移・戻る・計測を確認。
+  await page.goto(BASE + '/dog', { waitUntil: 'networkidle' });
+  hits.length = 0;
+  const card = page.locator('a[data-position="card"]').first();
+  const cardExpected = await card.evaluate(a => ({ href: a.href, id: a.dataset.itemId }));
+  const cardPageCount = ctx.pages().length;
+  await Promise.all([page.waitForURL(cardExpected.href), card.click()]);
+  await waitFor(isClick, 10000);
+  const cardClicks = hits.filter(isClick);
+  if (ctx.pages().length !== cardPageCount) problems.push('カードで余分なタブが開いた');
+  if (cardClicks.length !== 1 || cardClicks[0]['ep.item_id'] !== cardExpected.id || cardClicks[0]['ep.position'] !== 'card') {
+    problems.push(`カードのaffiliate_clickが期待どおりでない（${cardClicks.length}件）`);
+  }
+  await page.goBack({ waitUntil: 'networkidle' });
+  if (new URL(page.url()).pathname !== '/dog') problems.push('戻る操作でカードの記事に戻れない');
+
   // 広告以外のリンク（環境省の出典）では送られないこと
   hits.length = 0;
   const src = page.locator('a[href^="https://www.env.go.jp"]').first();

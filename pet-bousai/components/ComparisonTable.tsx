@@ -85,7 +85,6 @@ export default function ComparisonTable({ rows, caption }: { rows: ComparisonRow
             <td className="px-2 py-3">
               <a
                 href={r.url}
-                target="_blank"
                 rel="noopener noreferrer nofollow sponsored"
                 data-affiliate
                 data-item-id={r.itemCode}

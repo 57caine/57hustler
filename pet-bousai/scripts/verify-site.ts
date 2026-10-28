@@ -76,7 +76,7 @@ async function checkPage(path: string, isArticle: boolean) {
     affiliate++;
     const rel = a.match(/rel="([^"]*)"/)?.[1].split(/\s+/) ?? [];
     for (const r of ['sponsored', 'nofollow', 'noopener', 'noreferrer']) if (!rel.includes(r)) ng(path, `rel に ${r} がない: ${href.slice(0, 60)}`);
-    if (!/target="_blank"/.test(a)) ng(path, 'target="_blank" がない');
+    if (/target="(?!_self")[^"]+"/.test(a)) ng(path, '商品リンクが別タブを開く設定になっている');
     if (!/data-product-name="[^"]+"/.test(a)) ng(path, 'data-product-name がない');
     if (!/data-product-category="[^"]+"/.test(a)) ng(path, 'data-product-category がない');
     if (!/data-item-id="[^"]+"/.test(a)) ng(path, 'data-item-id（商品ID）がない');

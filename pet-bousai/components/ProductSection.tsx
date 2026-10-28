@@ -59,7 +59,6 @@ export default function ProductSection({
                   <li key={p.itemCode}>
                     <a
                       href={p.url}
-                      target="_blank"
                       rel="noopener noreferrer nofollow sponsored"
                       data-affiliate
                       data-item-id={p.itemCode}
