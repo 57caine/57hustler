@@ -10,7 +10,7 @@ permissions:
   contents: read
 jobs:
   diagnostics:
-    if: github.event_name == 'workflow_dispatch' || (github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'growth/search-acquisition-20261021')
+    if: github.event_name == 'workflow_dispatch' || (github.event.pull_request.head.repo.full_name == github.repository && (github.event.pull_request.head.ref == 'growth/search-acquisition-20261021' || github.event.pull_request.head.ref == 'fix/gsc-access-diagnostic-20261028'))
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
