@@ -25,27 +25,68 @@ export default function Home() {
       <div className="mt-3">
         <AdNotice />
       </div>
-      <h1 className="mt-6 text-2xl font-bold leading-snug">ペットと一緒に、災害に備える</h1>
-      <p className="mt-3 text-[15px] leading-relaxed">
-        犬・猫・うさぎ・モルモットの飼い主向けに、災害への備えを動物ごとにまとめています。
-        備えの内容は、環境省の「
-        <a href={SOURCES['owner-guide'].url} target="_blank" rel="noopener noreferrer" className="underline text-brand-700">
-          {SOURCES['owner-guide'].title}
-        </a>
-        」をもとに、出典のページを示して記載しています。
-      </p>
-      <p className="mt-2 text-[15px] leading-relaxed">
-        用品は、防災専用の物よりも、通院や散歩など普段から使える物を中心に紹介しています。
-        現在は、犬の避難用キャリー・携帯給水器と食器・トイレ用品の比較を中心に掲載しています。
-      </p>
+      <section className="relative mt-5 overflow-hidden rounded-3xl bg-brand-50 px-6 py-8 ring-1 ring-brand-100 sm:px-8">
+        <p className="text-xs font-bold tracking-widest text-brand-700">いつもの暮らしから、もしもの備えを。</p>
+        <div className="mt-5 grid items-center gap-5 sm:grid-cols-[1.2fr_1fr]">
+          <div>
+            <h1 className="text-3xl font-bold leading-snug text-brand-800 sm:text-4xl">この子と一緒に、<br />備える毎日。</h1>
+            <p className="mt-4 text-sm leading-7 text-gray-700">何から用意したらいい？<br />持ち物を確かめて、足りない用品を選ぶ。<br />普段のお散歩や通院から、少しずつ始めましょう。</p>
+          </div>
+          <svg viewBox="0 0 320 230" className="mx-auto w-full max-w-[260px]" aria-hidden="true" focusable="false">
+            <ellipse cx="160" cy="208" rx="137" ry="13" fill="#dcece9" />
+            <circle cx="172" cy="105" r="91" fill="#e4eee1" />
+            <path d="M119 75v-16c0-33 62-33 62 0v16" fill="none" stroke="#255a54" strokeWidth="9" />
+            <rect x="91" y="68" width="117" height="131" rx="28" fill="#2f6f68" />
+            <rect x="109" y="125" width="81" height="57" rx="14" fill="#f0f7f6" />
+            <path d="M135 151h29m-14-14v28" stroke="#2f6f68" strokeWidth="9" strokeLinecap="round" />
+            <path d="M111 87h77" stroke="#aecdc5" strokeWidth="5" strokeLinecap="round" />
+            <path d="M44 130l-13-22-5 38m65-16 13-22 5 38" fill="#c7a47e" />
+            <rect x="31" y="124" width="68" height="72" rx="30" fill="#e5c6a3" />
+            <ellipse cx="64" cy="168" rx="22" ry="17" fill="#fff9ed" />
+            <circle cx="48" cy="149" r="3" fill="#1f2a2e" /><circle cx="81" cy="149" r="3" fill="#1f2a2e" />
+            <path d="m59 161 6 6 6-6" fill="#1f2a2e" />
+            <path d="M227 146v-39l23 18 26-18v39" fill="#8b9e9a" />
+            <rect x="222" y="126" width="59" height="70" rx="25" fill="#a8b9b3" />
+            <circle cx="238" cy="152" r="3" fill="#1f2a2e" /><circle cx="264" cy="152" r="3" fill="#1f2a2e" />
+            <path d="m246 163 6 5 5-5" fill="#255a54" />
+            <path d="m226 164-17-4m17 10-17 2m68-8 16-4m-16 10 16 2" stroke="#255a54" strokeWidth="2" />
+            <path d="m253 63 6 7 14-16" fill="none" stroke="#c7a47e" strokeWidth="5" strokeLinecap="round" />
+          </svg>
+        </div>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <Link href="/checklist" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-brand-800 px-5 py-3 text-sm font-bold text-white hover:bg-brand-700">まずは持ち物をチェック →</Link>
+          <a href="#choose-supplies" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-brand-600 bg-white px-5 py-3 text-sm font-bold text-brand-800">足りない用品を探す ↓</a>
+        </div>
+      </section>
 
-      <Link
-        href="/checklist"
-        className="mt-6 block rounded-lg border border-brand-600 bg-brand-50 px-4 py-4 text-brand-800"
-      >
-        <span className="block font-bold">同行避難の持ち物チェックリスト</span>
-        <span className="mt-1 block text-sm">ガイドラインの優先順位にそって、持ち物と準備を確認できます</span>
-      </Link>
+      <section className="mt-8" aria-labelledby="animal-heading">
+        <h2 id="animal-heading" className="text-lg font-bold">一緒に暮らす動物から探す</h2>
+        <div className="mt-3 grid gap-3 sm:grid-cols-3">
+          {[
+            { href: '/dog', label: '犬', note: 'キャリー・水・トイレの備え' },
+            { href: '/cat', label: '猫', note: 'キャリー・トイレの備え' },
+            { href: '/rabbit-guinea-pig', label: 'うさぎ・モルモット', note: '持ち出しとキャリーの備え' },
+          ].map((item) => <Link key={item.href} href={item.href} className="rounded-2xl border border-brand-100 bg-white p-4 hover:border-brand-600"><span className="flex justify-between font-bold text-brand-800">{item.label}<span aria-hidden="true">→</span></span><span className="mt-2 block text-xs text-gray-600">{item.note}</span></Link>)}
+        </div>
+      </section>
+
+      <section id="choose-supplies" className="mt-9 scroll-mt-5" aria-labelledby="supplies-heading">
+        <p className="text-xs font-bold tracking-widest text-brand-700">犬の備え：選び方と商品を比べる</p>
+        <h2 id="supplies-heading" className="mt-1 text-xl font-bold">足りないものから、一つずつ。</h2>
+        <p className="mt-2 text-sm text-gray-600">いま使っている物も確認して、必要な物を選びましょう。</p>
+        <div className="mt-4 grid gap-3">
+          {[
+            { no: '01', href: '/dog/evacuation-carrier', title: '一緒に移動する', text: '避難用キャリー・ケージのサイズや形を比較' },
+            { no: '02', href: '/dog/water-food', title: '水とごはんを用意する', text: '携帯給水器・折りたたみ食器を比較' },
+            { no: '03', href: '/dog/toilet', title: 'トイレまわりを整える', text: 'ペットシーツ・処理袋・マナーポーチを比較' },
+          ].map((item) => <Link key={item.href} href={item.href} className="flex items-center gap-4 rounded-2xl border border-gray-200 p-4 hover:border-brand-600"><span className="text-2xl font-bold text-brand-600">{item.no}</span><span className="flex-1"><span className="block font-bold">{item.title}</span><span className="mt-1 block text-xs text-gray-600">{item.text}</span></span><span aria-hidden="true" className="text-brand-700">→</span></Link>)}
+        </div>
+      </section>
+
+      <aside className="mt-8 rounded-2xl bg-gray-50 p-5 text-sm leading-7 text-gray-600">
+        <p className="font-bold text-brand-800">公的な情報と、用品の選び方を分けて掲載</p>
+        <p className="mt-2">備えの内容は環境省の「<a href={SOURCES['owner-guide'].url} target="_blank" rel="noopener noreferrer" className="underline text-brand-700">{SOURCES['owner-guide'].title}</a>」をもとに、出典を示しています。商品紹介は広告と明記しています。</p>
+      </aside>
 
       {SECTIONS.map((s) => {
         const pages = ARTICLES.filter((a) => a.animal === s.animal && a.path !== '/checklist');
