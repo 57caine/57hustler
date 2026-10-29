@@ -18,9 +18,10 @@ export default function PrivacyPage() {
       <section>
         <h2>アクセス解析について</h2>
         <p>
-          当サイトでは、サイトの改善のためにアクセス解析ツールを導入することがあります。
-          アクセス解析ツールはCookieを使用してトラフィックデータを収集しますが、個人を特定する情報は含みません。
-          Cookieはブラウザの設定により無効にできます。
+          当サイトは、閲覧状況・流入元・楽天トラベルへのリンクの利用状況を把握し、サイトを改善するためにGoogle アナリティクス（GA4）を利用しています。
+          GoogleはCookie等を使用して利用状況を収集します。当サイトから氏名・メールアドレスを解析イベントとして送信することはありません。
+          Cookieはブラウザの設定により無効にできます。Googleによる情報の取り扱いは、
+          <a href="https://policies.google.com/technologies/partner-sites?hl=ja" target="_blank" rel="noopener noreferrer" className="underline">Googleの説明</a>をご確認ください。
         </p>
       </section>
       <section>
