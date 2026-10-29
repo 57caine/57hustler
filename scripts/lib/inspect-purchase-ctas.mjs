@@ -15,3 +15,25 @@ export function inspectPurchaseCtas(html) {
   }
   return counts;
 }
+
+
+// Require an actual comparison anchor in article content, not navigation or React data.
+// The existing live check also verifies /category/1day itself responds successfully.
+export function hasColumnComparisonLink(html) {
+  const rendered = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+    .replace(/<!--[\s\S]*?-->/g, '');
+  const articles = [...rendered.matchAll(/<article\b[^>]*>([\s\S]*?)<\/article>/gi)];
+  for (const [, article] of articles) {
+    for (const match of article.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)) {
+      const attrs = Object.fromEntries([...match[1].matchAll(/([\w-]+)\s*=\s*(["'])(.*?)\2/gs)]
+        .map(m => [m[1].toLowerCase(), m[3]]));
+      if (!attrs.href || !match[2].replace(/<[^>]*>/g, '').trim()) continue;
+      try {
+        const url = new URL(attrs.href.replaceAll('&amp;', '&'), 'https://www.lens-navi.jp');
+        if (url.protocol === 'https:' && url.hostname === 'www.lens-navi.jp' &&
+            !url.port && !url.username && !url.password && url.pathname === '/category/1day') return true;
+      } catch { /* Invalid href does not establish a usable comparison path. */ }
+    }
+  }
+  return false;
+}
