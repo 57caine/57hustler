@@ -1,0 +1,30 @@
+name: Rakutabi GA4 checks (no deploy)
+on:
+  pull_request:
+    paths:
+      - 'rakutabi/components/Analytics.tsx'
+      - 'rakutabi/components/ClickTracker.tsx'
+      - 'rakutabi/app/layout.tsx'
+      - 'rakutabi/lib/ga4.mjs'
+      - 'rakutabi/tests/ga4.test.mjs'
+      - '.github/workflows/rakutabi-ga4-pr-check.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rakutabi
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: rakutabi/package-lock.json
+      - run: npm ci
+      - run: node --test tests/ga4.test.mjs
+      - run: npx tsc --noEmit
+      - run: npm run lint
+      - run: npm run build

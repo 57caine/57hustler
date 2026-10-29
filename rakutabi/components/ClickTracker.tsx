@@ -3,6 +3,10 @@
 import { useEffect } from 'react';
 import { incomingTrafficSource } from '@/lib/traffic-source';
 
+declare global {
+  interface Window { gtag?: (...args: unknown[]) => void; }
+}
+
 /**
  * 楽天への送客クリックの簡易計測。
  * rel="sponsored" かつ data-hotel-no / data-placement を持つリンクのクリックを /api/click に送る。
@@ -23,6 +27,13 @@ export default function ClickTracker() {
       if (!hotelNo || !placement) return;
       let trafficSource = 'unattributed';
       try { trafficSource = sessionStorage.getItem('rakutabi_source') ?? 'unattributed'; } catch { /* storage unavailable */ }
+      // GA4 reports outbound intent, not bookings. Blob counting remains independent.
+      try {
+        window.gtag?.('event', 'affiliate_click', {
+          hotel_no: hotelNo, placement, page_path: window.location.pathname,
+          affiliate_platform: 'rakuten', transport_type: 'beacon',
+        });
+      } catch { /* analytics must never block navigation or existing counting */ }
       const body = JSON.stringify({ hotelNo, placement, page: window.location.pathname, trafficSource });
       try {
         if (!navigator.sendBeacon?.('/api/click', new Blob([body], { type: 'application/json' }))) {
