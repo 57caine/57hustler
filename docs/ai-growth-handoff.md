@@ -14,11 +14,11 @@ These roles are a TARGET PROCESS, not proof of an active Codex-Claude integratio
 Every task should include: problem and dated baseline, target metric, allowed files, forbidden side effects, tests, rollback, decision needed, and proof links. Do not declare metrics or deployments verified from merged code alone.
 
 ## Approval gates
-AI may investigate, write drafts, create branches, tests, issues and PRs. Preserve existing posting schedules, credentials, tracking and affiliate links. Do not enable new paid services, alter payout settings, change account access, publish a new campaign, or deploy major behavior changes without explicit approval. Follow any stricter project-specific approval instructions.
+AI may investigate, write drafts, create branches, tests, issues and PRs. Preserve existing posting schedules, credentials, tracking and affiliate links. Do not enable new paid services, alter payout settings, change account access, publish a new campaign, or deploy major behavior changes without explicit approval. Follow any stricter project-specific approval instructions. For small reversible Rakutabi display/copy/internal-navigation/accessibility changes, the owner granted continuing implementation/release approval on 2026-10-29; the narrow scope and checks are recorded in `docs/rakutabi-growth-loop.md`. This does not authorize new campaigns, tracking scope, paid services or major behavior changes.
 
 ## Growth priorities
-1. Lens: GSC query/page impressions and CTR; GA4 landing-page and outbound clicks; A8 vs Rakuten attribution separated.
-2. Rakutabi: confirm indexing/noindex intent before any SEO change; validate hotel links, traffic and outbound counts.
+1. Rakutabi (owner direction 2026-10-29): improve mobile usability and qualified outbound traffic. Follow `docs/rakutabi-growth-loop.md` for evidence, bounded continuing approval, settled periods and post-release observation. Preserve noindex and affiliate destinations.
+2. Lens: maintain existing operations; GSC query/page impressions and CTR; GA4 landing-page and outbound clicks; A8 vs Rakuten attribution separated.
 3. Other projects: do not increase volume until traffic source and purchase funnel can be measured.
 Never treat 12 Rakuten clicks and zero sales as statistically decisive.
 
