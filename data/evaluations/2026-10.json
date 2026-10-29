@@ -1,15 +1,15 @@
 {
   "month": "2026-10",
-  "generatedAt": "2026-10-01T02:28:47.507Z",
+  "generatedAt": "2026-10-29T02:55:45.961Z",
   "metrics": {
     "period": "2026-10",
     "夜中のおじさん": {
-      "posts": 0,
+      "posts": 27,
       "duplicateCount": 0,
       "duplicateRate": "0%"
     },
     "コラムbot": {
-      "posts": 0
+      "posts": 25
     },
     "価格監視bot": {
       "total": 0,
@@ -22,56 +22,146 @@
       "failure": 0
     },
     "GitHubActions全体": {
-      "workflowCount": 9,
-      "totalRuns": 9,
-      "successRuns": 8
+      "workflowCount": 27,
+      "totalRuns": 100,
+      "successRuns": 60
     }
   },
-  "evaluation": "# 57hustler AI社員 月次評価 (2026-10月)\n\n## 🤖 夜中のおじさん\n**よくできた点**\n- 稼働体制の維持\n\n**改善点**\n- 投稿機能が停止中（0件）\n- 重複チェック機能も非稼働\n\n**来月への期待**\n- 早期の復旧と安定稼働を希望\n\n---\n\n## 📝 コラムbot\n**よくできた点**\n- システム構築完了\n\n**改善点**\n- 本格運用開始前（0件）\n\n**来月への期待**\n- 定期投稿開始で実績を期待\n\n---\n\n## 💰 価格監視bot / 🌙 九星気学bot\n**よくできた点**\n- インフラ準備完了\n\n**改善点**\n- 両者とも未稼働（0件）\n\n**来月への期待**\n- 本稼働開始による活躍\n\n---\n\n## ⚙️ GitHubActions全体\n**よくできた点**\n- 89%の成功率を達成（8/9成功）\n- 安定したワークフロー運用\n\n**改善点**\n- 失敗1件の原因分析が必要\n\n**来月への期待**\n- 100%成功率を目指す",
+  "evaluation": "# 57hustler AI社員 月次評価（2026年10月）\n\n## 夜中のおじさん\n**よくできた点**\n- 27投稿と安定した稼働実績\n- 重複投稿0件、品質管理が優秀\n\n**改善点**\n- 特になし\n\n**来月への期待**\n- 現在のペースを継続してほしい\n\n---\n\n## コラムbot\n**よくできた点**\n- 25投稿で安定稼働\n\n**改善点**\n- 夜中のおじさんとの役割分化を検討\n\n**来月への期待**\n- 独自性の強化\n\n---\n\n## 価格監視bot・九星気学bot\n**よくできた点**\n- ジョブ登録完了\n\n**改善点**\n- 稼働実績なし、早急な改善が必要\n\n**来月への期待**\n- 実運用開始と成功率向上\n\n---\n\n## GitHubActions全体\n**改善点**\n- 成功率60%は目標未達（70%以上が目安）\n\n**来月への期待**\n- エラーハンドリング改善で成功率70%以上へ",
   "workflowBreakdown": {
     "AI社員 月次人事評価": {
       "total": 1,
       "success": 0,
       "failure": 0
     },
-    "Threads 夜中のおじさん 自動投稿": {
-      "total": 1,
-      "success": 1,
+    "Growth autonomous triage": {
+      "total": 2,
+      "success": 2,
       "failure": 0
     },
-    "Threads 今週のテーマ 自動投稿": {
-      "total": 1,
-      "success": 1,
+    "MITAMA Threads 投稿（認証確認後のみ公開）": {
+      "total": 5,
+      "success": 5,
       "failure": 0
     },
-    "Threads 今月の注意点 自動投稿": {
-      "total": 1,
-      "success": 1,
+    "Affiliate evidence report": {
+      "total": 2,
+      "success": 2,
       "failure": 0
+    },
+    "Growth funnel daily diagnostics": {
+      "total": 3,
+      "success": 0,
+      "failure": 3
+    },
+    "Lens-navi revenue path healthcheck": {
+      "total": 2,
+      "success": 0,
+      "failure": 2
     },
     "Morning Brief": {
-      "total": 1,
-      "success": 1,
+      "total": 2,
+      "success": 2,
       "failure": 0
     },
     "Instagram 自動投稿": {
-      "total": 1,
-      "success": 1,
-      "failure": 0
-    },
-    "Threads 占い 日次自動投稿": {
-      "total": 1,
-      "success": 1,
+      "total": 3,
+      "success": 3,
       "failure": 0
     },
     "GA4アナリティクス日次取得": {
+      "total": 2,
+      "success": 2,
+      "failure": 0
+    },
+    "価格データ・アフィリエイトリンク自動更新": {
+      "total": 6,
+      "success": 6,
+      "failure": 0
+    },
+    "楽旅くん 楽天トラベルAPI接続確認・宿泊施設データ取得・Vercel公開": {
+      "total": 3,
+      "success": 3,
+      "failure": 0
+    },
+    "改善レビュー課題の自動修正（Tier B・PR作成）": {
+      "total": 2,
+      "success": 2,
+      "failure": 0
+    },
+    "Threads 夜間コラム自動投稿": {
+      "total": 2,
+      "success": 2,
+      "failure": 0
+    },
+    "改善レビュー自動修正PRのマージ検知": {
+      "total": 28,
+      "success": 0,
+      "failure": 0
+    },
+    "ペット防災 検証（公開なし）": {
+      "total": 2,
+      "success": 2,
+      "failure": 0
+    },
+    "ブランド別 Threads 通常投稿（11月5日まで検証）": {
+      "total": 2,
+      "success": 2,
+      "failure": 0
+    },
+    "Fortune advice quality tests": {
+      "total": 2,
+      "success": 2,
+      "failure": 0
+    },
+    "X 自動投稿": {
+      "total": 2,
+      "success": 0,
+      "failure": 2
+    },
+    "Threads 占い 日次自動投稿": {
+      "total": 2,
+      "success": 0,
+      "failure": 2
+    },
+    "Growth automation safety checks": {
+      "total": 3,
+      "success": 3,
+      "failure": 0
+    },
+    "GA4 evidence growth priorities": {
       "total": 1,
       "success": 1,
       "failure": 0
     },
-    "価格データ・アフィリエイトリンク自動更新": {
+    "henkutsu 海外商品リサーチ": {
       "total": 1,
-      "success": 1,
+      "success": 0,
+      "failure": 1
+    },
+    "Build lens-navi / school-navi / shop-navi / yonaka-uranai": {
+      "total": 7,
+      "success": 7,
+      "failure": 0
+    },
+    "Organic Threads safety tests": {
+      "total": 3,
+      "success": 3,
+      "failure": 0
+    },
+    "Lens 1day purchase navigation": {
+      "total": 8,
+      "success": 7,
+      "failure": 1
+    },
+    "Search acquisition read-only review": {
+      "total": 2,
+      "success": 2,
+      "failure": 0
+    },
+    "ブランド別 Threads 通常投稿（4日間限定パイロット）": {
+      "total": 2,
+      "success": 2,
       "failure": 0
     }
   }
