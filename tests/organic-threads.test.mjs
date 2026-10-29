@@ -47,8 +47,8 @@ test('scheduled extension has valid unique drafts and preserves alternate-day ca
  assert.match(workflow,/cron: '15 1,4,7,10 \* \* \*'/);
  assert.match(workflow,/\*\) echo "No scheduled content for \$TODAY"; exit 0/);
 });
-test('Lens article links are disclosed and tagged without changing other brands',()=>{
- const linked=posts.filter(p=>p.url);
+test('Lens article links retain disclosure and attribution',()=>{
+ const linked=posts.filter(p=>p.url&&p.brand==='lens');
  assert.deepEqual(linked.map(p=>p.brand+':'+p.day),['lens:7','lens:8','lens:9','lens:10','lens:11']);
  for(const p of linked){
   const message=buildOrganicMessage(p,p.brand);
@@ -58,7 +58,7 @@ test('Lens article links are disclosed and tagged without changing other brands'
   assert.equal(url.searchParams.get('utm_content'),'lens_day_'+p.day);
   assert.equal(p.previousTexts.length,1);
  }
- assert.ok(posts.filter(p=>p.brand==='rakutabi').every(p=>!p.url));
+ assert.ok(posts.filter(p=>p.brand==='rakutabi'&&p.day!==9).every(p=>!p.url));
 });
 test('unsafe destinations and broken attribution fail before publishing',()=>{
  const p=posts.find(p=>p.brand==='lens'&&p.day===7);
@@ -76,4 +76,22 @@ test('changed copy and earlier unlinked copy cannot republish the same Lens camp
  }
  assert.equal(isOrganicDuplicate({text:'別の投稿'},p,message),false);
  assert.equal(isOrganicDuplicate({},p,message),false);
+});
+
+test('Ito pilot is disclosed, scoped, attributed and deduplicates the earlier draft',()=>{
+ const p=posts.find(p=>p.brand==='rakutabi'&&p.day===9);
+ const message=buildOrganicMessage(p,'rakutabi');
+ assert.ok(message.startsWith('【PR】\n'));
+ assert.ok(message.endsWith(p.url));
+ assert.ok(message.length<=500);
+ assert.equal(new URL(p.url).pathname,'/area/ito');
+ assert.equal(p.previousTexts.length,1);
+ for(const text of [message,p.text,p.previousTexts[0],'旧文面\n'+p.url])
+  assert.equal(isOrganicDuplicate({text},p,message),true);
+ for(const url of [p.url.replace('/area/ito','/area/atami'),p.url.replace('rakutabi-nine.vercel.app','rakutabi-nine.vercel.app.evil.test'),p.url.replace('https:','http:'),p.url.replace('rakutabi_day_9','rakutabi_day_10'),p.url+'&access_token=bad',p.url.replace('rakutabi_ito_202610','other'),p.url+'&utm_source=threads']){
+  assert.throws(()=>buildOrganicMessage({...p,url},'rakutabi'));
+ }
+ assert.throws(()=>buildOrganicMessage({...p,day:10},'rakutabi'));
+ assert.throws(()=>buildOrganicMessage(p,'lens'));
+ assert.throws(()=>buildOrganicMessage(p,'mitama'));
 });
