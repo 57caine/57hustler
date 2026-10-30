@@ -116,7 +116,8 @@ ${positionInfo}
 
 月盤「${monthlyStar.name}」＋ 各星の回座宮の組み合わせから、
 その星が今日「具体的にどんな状況・行動に置かれているか」を読み取り、
-各星の一言は8〜18文字で、意味が必ず完結する文にすること。
+各星の一言は10〜14文字を目標に、8〜18文字で意味が必ず完結する文にすること。
+短い行動を一つだけ書く。理由・効果・接続詞を足して長くしない。JSONの値だけを数え、記号や句読点も1文字として出力前に確認する。
 途中で切れる文は絶対に生成しない。助詞（「を」「に」「が」「の」など）で終えてはいけない。
 動詞か体言止めで言い切ること。
 
@@ -232,7 +233,7 @@ async function runPost(dryRun: boolean): Promise<void> {
       oneLiners = candidate;
       break;
     }
-    retryFeedback = buildRetryFeedback(invalidLengths, adviceStars, hasAllNineStars);
+    retryFeedback = buildRetryFeedback(invalidLengths, adviceStars, hasAllNineStars, candidate);
     console.warn(`::warning::試行${attempt}/${MAX_RETRIES} 品質チェック不合格: `
       + `星数=${Object.keys(candidate).length}/9, `
       + `文字数・欠落NG星=${invalidLengths.join(',') || 'なし'}, `

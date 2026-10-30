@@ -40,3 +40,13 @@ test('production sends retry guidance, caps attempts, and stops before posting o
   assert.match(failure, /throw new Error/);
   assert.ok(source.indexOf('const creationId = await createThreadsContainer') > source.indexOf('if (oneLiners === null)'));
 });
+
+test('length retry supplies actual text and length without truncation', () => {
+ const long = '会議の前に資料と予定と宛先を必ずもう一度確認する';
+ const feedback = buildRetryFeedback([1,2], [], true, {1:long});
+ assert.ok(feedback.includes(JSON.stringify(long)));
+ assert.ok(feedback.includes(long.length + '文字'));
+ assert.match(feedback, /10〜14文字/);
+ assert.match(feedback, /星2は文字列が欠落/);
+ assert.match(feedback, /途中で切らず/);
+});
