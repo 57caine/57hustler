@@ -9,7 +9,7 @@ const CONFIG={
   lens:{handle:'lens_navi_jp',token:'LENS_THREADS_ACCESS_TOKEN',userId:'LENS_THREADS_USER_ID'},
   mitama:{handle:'mitama.wisdom',token:'MITAMA_THREADS_ACCESS_TOKEN',userId:'MITAMA_THREADS_USER_ID'}
 };
-if(!Object.hasOwn(CONFIG,brand)||!Number.isInteger(day)||day<1||day>(brand==='mitama'?24:11)) throw new Error('Invalid brand/day');
+if(!Object.hasOwn(CONFIG,brand)||!Number.isInteger(day)||day<1||day>(brand==='mitama'?24:14)) throw new Error('Invalid brand/day');
 const cfg=CONFIG[brand];
 const data=JSON.parse(await readFile(new URL(brand==='mitama'?'../data/mitama-threads-posts.json':'../data/organic-threads-posts-20261013.json',import.meta.url),'utf8'));
 const post=data.posts.find(p=>p.brand===brand&&p.day===day);
