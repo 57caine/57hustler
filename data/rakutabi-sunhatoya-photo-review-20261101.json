@@ -1,0 +1,60 @@
+{
+  "id": "rakutabi-sunhatoya-photo-review-20261101",
+  "brand": "rakutabi",
+  "hotelNo": 7345,
+  "status": "review-only-not-connected",
+  "scheduledAt": null,
+  "publishEnabled": false,
+  "parent": "水槽の魚を眺めながら温泉って、ちょっと楽しそうじゃない？🐟♨️\n伊東の「ホテルサンハトヤ」。\n次の休みは、観光を詰め込まず、お風呂でのんびりする旅もいいな。",
+  "reply": "📍ホテルサンハトヤ／静岡・伊東\n🐟 水槽を眺められるお魚風呂\n♨️ 海を望む露天風呂\n🍵 お風呂のあとは、お部屋でひと休み\n\n写真の和室は客室の一例です。部屋タイプ・利用条件・最新のプランを確かめてね。\n宿の情報はこちら👇\nhttps://rakutabi-nine.vercel.app/hotel/7345",
+  "destination": "https://rakutabi-nine.vercel.app/hotel/7345",
+  "source": "https://www.sunhatoya.co.jp/home/",
+  "checkedOn": "2026-11-01",
+  "ownerInstruction": "使用オッケーだから進めて",
+  "permissionRecord": {
+    "basis": "オーナーによる写真使用の承認",
+    "hotelPermissionIndependentlyRetrieved": false,
+    "outboundInquiry": "未送信・保留。今回の承認をメール送信許可とは扱わない。"
+  },
+  "advertising": "PR文字なしの構成見本。公開時の必須表示条件は実際の提供・依頼状況に照らして判定する。",
+  "photos": [
+    {
+      "key": "fish-bath",
+      "url": "https://www.sunhatoya.co.jp/home/images/home/img_spring_01_sp.jpg",
+      "alt": "お魚風呂",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "width": 1600,
+      "height": 650,
+      "bytes": 649954,
+      "sha256": "df5aaaf833fd26beab3219fd3bdeb0ce50e56cf34e36f9f0b00afb9130d4d28e"
+    },
+    {
+      "key": "open-air-bath",
+      "url": "https://www.sunhatoya.co.jp/home/images/home/img_spring_03_sp.jpg",
+      "alt": "露天風呂",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "width": 1600,
+      "height": 650,
+      "bytes": 615920,
+      "sha256": "116054cace5d10ac635567317d90b1bff8c77a30dc2ba7574ee703ddabafe83f"
+    },
+    {
+      "key": "japanese-room",
+      "url": "https://www.sunhatoya.co.jp/home/images/home/img_jap01.jpg",
+      "alt": "和室の一例",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "width": 1072,
+      "height": 657,
+      "bytes": 360734,
+      "sha256": "a28187a0e0d9a151b63a7f72416e17f6298ec66df05b391a5b4ba176f0c72c96"
+    }
+  ],
+  "publicationRequirements": [
+    "現行の伊東パイロット評価を終えてから既存頻度内の一枠を確定する。日程はまだ変更しない。",
+    "専用状態保存の本番接続と既存の文字投稿との相互重複防止を検証する。",
+    "写真・原稿・リンク・枠が揃った最終の一件として公開判断を残す。"
+  ]
+}
