@@ -2,6 +2,7 @@ name: Rakutabi GA4 checks (no deploy)
 on:
   pull_request:
     paths:
+      - 'rakutabi/package.json'
       - 'rakutabi/components/Analytics.tsx'
       - 'rakutabi/components/ClickTracker.tsx'
       - 'rakutabi/app/layout.tsx'
