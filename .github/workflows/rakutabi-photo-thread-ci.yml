@@ -1,0 +1,18 @@
+name: Rakutabi photo thread safety
+on:
+  pull_request:
+    paths:
+      - 'scripts/lib/rakutabi-photo-thread.mjs'
+      - 'tests/rakutabi-photo-thread.test.mjs'
+      - '.github/workflows/rakutabi-photo-thread-ci.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/rakutabi-photo-thread.test.mjs tests/organic-threads.test.mjs tests/brand-threads.test.mjs
