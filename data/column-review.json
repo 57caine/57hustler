@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T00:37:13.349Z",
+  "generatedAt": "2026-11-01T00:00:36.241Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -47,16 +47,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 27,
-        "bounceRate": 0.2962962962962963,
-        "avgSessionDuration": 167.8278208148148,
+        "sessions": 26,
+        "bounceRate": 0.3076923076923077,
+        "avgSessionDuration": 171.8443862307692,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション27件・affiliate_clickゼロ"
+        "セッション26件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
