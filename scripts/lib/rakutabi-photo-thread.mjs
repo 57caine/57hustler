@@ -20,6 +20,8 @@ export function preparePhotoThread(draft, { today, allowedDestinations, allowedI
   requireValue(draft.brand === 'rakutabi' && typeof draft.id === 'string' && /^[a-z0-9-]{1,80}$/.test(draft.id), 'Invalid campaign identity');
   requireValue(draft.date === today, 'Outside approved posting date');
   text(draft.parent); text(draft.reply);
+  const previousTexts = draft.previousTexts ?? [];
+  requireValue(Array.isArray(previousTexts) && previousTexts.length <= 5 && previousTexts.every(t => typeof t === 'string' && t.trim() && t.length <= 500), 'Invalid replaced text history');
   requireValue(!/https?:\/\//i.test(draft.parent + draft.reply), 'Use the separately approved destination');
   const destination = https(draft.destination).href;
   requireValue(allowedDestinations.includes(destination), 'Unapproved destination');
@@ -51,7 +53,7 @@ export function preparePhotoThread(draft, { today, allowedDestinations, allowedI
   const plan = {
     id: draft.id, date: draft.date, brand: 'rakutabi',
     expectedHandle: 'rakutabi_navi', parent, reply,
-    photos: draft.photos, destination, advertising: a,
+    photos: draft.photos, destination, advertising: a, previousTexts,
   };
   return { ...plan, fingerprint: createHash('sha256').update(JSON.stringify(plan)).digest('hex') };
 }
@@ -75,7 +77,7 @@ export async function runPhotoThread(plan, { api, journal, approval, today }) {
     }
     const history = await api.history();
     requireValue(history.complete === true && Array.isArray(history.posts), 'Incomplete history');
-    requireValue(!history.posts.some(p => p.text === plan.parent || p.text === plan.reply ||
+    requireValue(!history.posts.some(p => p.text === plan.parent || p.text === plan.reply || plan.previousTexts.includes(p.text) ||
       (typeof p.text === 'string' && p.text.includes(plan.destination))), 'Already published');
     state = { fingerprint: plan.fingerprint, accountId: me.id, stage: 'preparing' };
     await journal.save(plan.id, state);
