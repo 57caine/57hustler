@@ -62,3 +62,12 @@
 - GitHub ActionsはPR時のテストのみを追加。定期投稿・Secrets・公開workflowは変更なし。
 一次仕様：Meta公式Postman https://www.postman.com/meta/threads/documentation/dht3nzz/threads-api でIMAGE・alt_text・reply_to_idを確認。開発者サイト https://developers.facebook.com/docs/threads/posts/ は429で取得できず、実接続前にカルーセル・処理状態確認仕様を再取得する必要あり。
 次の残件は権利確認済みの具体的な写真一組、公式仕様の残りの照合、本番APIアダプター、永続journalと排他ロック、具体的な既存予定枠への割当と公開承認。これらが揃うまで本番には接続しない。独立レビュー未実施。
+
+## 11/1 追加GO：接続部・永続記録の実装
+scripts/lib/rakutabi-photo-adapters.mjs を追加。Threads APIのアカウントIDとユーザー名の照合、全履歴ページ確認、メディア処理の最大6回確認、公開POST一回限り・例外メッセージのトークン非露出を実装。準備後の原稿は実行開始時に複製して途中変更を防ぐ。
+GitHub Contents APIのSHA照合を使う永続journalと排他処理を追加。別プロセスの同時起動を拒否し、公開応答不明・記録応答不明では永続ロックを残して自動再送しない。通常完了時のみロック解除。mainへ書かず専用 state/rakutabi-photo-threads ブランチだけに制限。
+本番の状態ブランチは未作成、書込み権限・認証は未変更、既存投稿workflowのcontents: readも維持。このため実API・実保存先での確認はまだできていない。実装の追加は本番接続成功や実投稿成功を意味しない。
+新規アダプター10テストを追加し、計34テストが手元で合格。APIとCAS保存先の結合テスト、別journalインスタンスでの再起動、同時取得競合、保存失敗・応答不明後の再送拒否を含む。外部通信を使わないテスト用応答であり本番実証ではない。PR CIに対象を追加。
+一次資料：Meta公式サンプル https://github.com/fbsamples/threads_api （11/1取得commit 854fc140a37e20f6a7086cf3ee0065f99d41f646）。src/index.jsのカルーセル子作成と公開・container/status、公式PostmanのCreate CarouselとPublishの引数を確認。GitHub Contents仕様 https://docs.github.com/en/rest/repos/contents#create-or-update-file-contents のbranch/sha/base64を確認。
+写真候補は data/rakutabi-photo-candidates-20261101.json に分離。東海館（2016年）と伊東の風景（2010年）のファイルページで権利者によるPD公開と補完的利用許可を確認したが、現時点の写真としては使わず、画面・現状確認前の候補とする。宿の客室・食事・浴場写真は未確保。伊東市素材は第三者への送信制限があるため採用しない。候補は投稿器に接続していない。
+次回は同じPRの具体的な素材一組と原稿の完成を優先。接続には既存credentialのContents書込権限と専用状態ブランチが必要だが、権限拡大や新規Secretsを自動要求しない。実際の接続を行う具体案・対象既存枠を完成してから、必要がある場合のみ最小の承認を求める。今回のGOを未提示の写真や未確定の日付の実投稿承認とは扱わない。

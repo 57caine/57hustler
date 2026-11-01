@@ -1,5 +1,5 @@
-// Not connected to a scheduler or live API. Transport and durable storage are
-// deliberately supplied by the future release adapter, never by draft JSON.
+// Not connected to a scheduler. Transport and durable storage are deliberately
+// supplied by the release adapter, never by draft JSON.
 import { createHash } from 'node:crypto';
 
 function requireValue(ok, reason) { if (!ok) throw new Error(reason); }
@@ -58,14 +58,15 @@ export function preparePhotoThread(draft, { today, allowedDestinations, allowedI
 
 // The adapter must hold a cross-process exclusive lock for this entire call,
 // and atomically persist save() before it resolves. Never automatically clear
-// an uncertain stage. A live adapter/scheduler is intentionally not provided.
+// an uncertain stage. No scheduler or live release entrypoint is provided.
 export async function runPhotoThread(plan, { api, journal, approval, today }) {
+  plan = structuredClone(plan);
   const { fingerprint, ...content } = plan;
   requireValue(fingerprint === createHash('sha256').update(JSON.stringify(content)).digest('hex'), 'Campaign mutated after preparation');
   requireValue(approval?.fingerprint === plan.fingerprint && approval?.date === today && today === plan.date, 'Exact publication approval required');
+  const me = await api.identity();
+  requireValue(me.username === plan.expectedHandle && /^\d+$/.test(me.id), 'Account mismatch');
   return journal.exclusive(plan.id, async () => {
-    const me = await api.identity();
-    requireValue(me.username === plan.expectedHandle && /^\d+$/.test(me.id), 'Account mismatch');
     let state = await journal.load(plan.id);
     if (state) {
       requireValue(state.fingerprint === plan.fingerprint && state.accountId === me.id, 'Campaign or account changed');

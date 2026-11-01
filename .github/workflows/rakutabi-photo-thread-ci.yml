@@ -3,7 +3,9 @@ on:
   pull_request:
     paths:
       - 'scripts/lib/rakutabi-photo-thread.mjs'
+      - 'scripts/lib/rakutabi-photo-adapters.mjs'
       - 'tests/rakutabi-photo-thread.test.mjs'
+      - 'tests/rakutabi-photo-adapters.test.mjs'
       - '.github/workflows/rakutabi-photo-thread-ci.yml'
 jobs:
   test:
@@ -15,4 +17,4 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --test tests/rakutabi-photo-thread.test.mjs tests/organic-threads.test.mjs tests/brand-threads.test.mjs
+      - run: node --test tests/rakutabi-photo-*.test.mjs tests/organic-threads.test.mjs tests/brand-threads.test.mjs
