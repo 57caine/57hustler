@@ -1,0 +1,83 @@
+{
+  "month": "2026-11",
+  "generatedAt": "2026-11-01T02:39:34.801Z",
+  "metrics": {
+    "period": "2026-11",
+    "夜中のおじさん": {
+      "posts": 0,
+      "duplicateCount": 0,
+      "duplicateRate": "0%"
+    },
+    "コラムbot": {
+      "posts": 0
+    },
+    "価格監視bot": {
+      "total": 0,
+      "success": 0,
+      "failure": 0
+    },
+    "九星気学bot": {
+      "total": 0,
+      "success": 0,
+      "failure": 0
+    },
+    "GitHubActions全体": {
+      "workflowCount": 10,
+      "totalRuns": 10,
+      "successRuns": 8
+    }
+  },
+  "evaluation": "# 57hustler AI社員 月次評価レポート（2026年11月）\n\n## 夜中のおじさん\n**よくできた点**\n- 安定稼働を維持\n\n**改善点**\n- 投稿が0件。活動停止状態が続いている\n\n**来月への期待**\n- 稼働再開と定期投稿の再開を強く要望\n\n---\n\n## コラムbot\n**よくできた点**\n- 既定の設定を保持\n\n**改善点**\n- 当月も投稿実績なし。2ヶ月連続で機能していない\n\n**来月への期待**\n- 原因究明と即座の復旧が必要\n\n---\n\n## 価格監視bot・九星気学bot\n**よくできた点**\n- 設定は維持\n\n**改善点**\n- 両者ともに稼働実績なし。機能不全状態\n\n**来月への期待**\n- 診断・修正と再稼働を急務とする\n\n---\n\n## GitHubActions全体\n**よくできた点**\n- 10ワークフロー中8成功（80%成功率）で概ね良好\n\n**改善点**\n- 2件の失敗。自動化の信頼性向上が課題\n\n**来月への期待**\n- 失敗原因の分析と成功率95%以上への改善を目指す",
+  "workflowBreakdown": {
+    "AI社員 月次人事評価": {
+      "total": 1,
+      "success": 0,
+      "failure": 0
+    },
+    "Growth autonomous triage": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "MITAMA Threads 投稿（認証確認後のみ公開）": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "Affiliate evidence report": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "Growth funnel daily diagnostics": {
+      "total": 1,
+      "success": 0,
+      "failure": 1
+    },
+    "Lens-navi revenue path healthcheck": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "Rakutabi click tracker PR checks": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "Rakutabi GA4 checks (no deploy)": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "Morning Brief": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "Instagram 自動投稿": {
+      "total": 1,
+      "success": 1,
+      "failure": 0
+    }
+  }
+}
