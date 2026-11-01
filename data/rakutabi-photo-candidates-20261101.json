@@ -12,7 +12,14 @@
       "height": 2736,
       "license": "PD-self: copyright holder releases worldwide; fallback permission for any purpose",
       "creditProposal": "東海館：Abasaa / Wikimedia Commons（2016年撮影）",
-      "limitations": "宿泊先ではなく見学先。現在の外観や営業状態を保証する写真として扱わない。写真の画面確認・公開URL到達性の再確認・新規投稿前の現状確認は未完了。"
+      "limitations": "2016年撮影の東海館外観と松川沿いの写真であることを画面確認。宿泊予約先の写真として使わない。現在の外観・営業状態を保証しない。",
+      "inspection": {
+        "httpStatus": 200,
+        "contentType": "image/jpeg",
+        "bytes": 2659638,
+        "sha256": "a24541dfec35e0b5697293dea7f3a2ce84c803447d2f4d1f1fa231af6579bdff",
+        "visuallyCheckedOn": "2026-11-01"
+      }
     },
     {
       "subject": "伊豆高原・大室山を含む伊東市内の風景",
@@ -24,7 +31,14 @@
       "height": 768,
       "license": "PD-self: copyright holder releases worldwide; fallback permission for any purpose",
       "creditProposal": "伊東市内の風景：Batholith / Wikimedia Commons（2010年撮影）",
-      "limitations": "伊東オレンジビーチの写真ではない。古い春の風景で今回の海辺の訴求や秋の旅の主写真には未選定。撮影者表記と現状・被写体の画面確認が必要。"
+      "limitations": "2010年の伊豆高原と大室山を含む風景と画面確認。伊東オレンジビーチではなく、海辺・宿内の訴求に合わないため今回の投稿では不採用。",
+      "inspection": {
+        "httpStatus": 200,
+        "contentType": "image/jpeg",
+        "bytes": 176556,
+        "sha256": "2dd90cde5614f02616f222eef0e6fd36072cd1e4b3fc5cd03e69736f66db4ea6",
+        "visuallyCheckedOn": "2026-11-01"
+      }
     }
   ],
   "notSelected": [
@@ -37,5 +51,5 @@
       "reason": "楽天APIや宿紹介ページにある写真をSNS投稿可能とみなして転載しない。"
     }
   ],
-  "releaseStatus": "宿の客室・食事・浴場写真は未確保。上記は調査記録のみで投稿器に接続しない。"
+  "releaseStatus": "写真2件の到達性・JPEG・画面を確認済み。宿紹介の客室・浴場・食事写真は未確保。サンハトヤの許諾依頼文は docs/rakutabi-sunhatoya-photo-request-20261101.md に準備し、未送信。"
 }
