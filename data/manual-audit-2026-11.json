@@ -1,0 +1,788 @@
+{
+  "month": "2026-11",
+  "generatedAt": "2026-11-01T07:10:29.391Z",
+  "summary": {
+    "total": 110,
+    "high": 36,
+    "medium": 50,
+    "low": 24
+  },
+  "issues": {
+    "high": [
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローで実行される 'scripts/audit-a8-link-prefixes.mjs' は存在するが、関連する設定ファイルが明確でない。A8リンク監査に必要な設定や辞書ファイルが存在するか不明。",
+        "suggestion": "スクリプト実行前に必要なファイル（設定ファイル、辞書、データベースなど）の存在確認とエラーハンドリングを追加すること",
+        "file": ".github/workflows/a8-link-identifier-audit.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフロー定義で 'tests/affiliate-evidence-report.test.mjs' をテスト実行しようとしているが、提供されたファイル一覧に存在しない。scripts/tests ディレクトリは存在するが、該当テストファイルが確認できない。",
+        "suggestion": "テストファイルが実際に存在するか確認する。存在しない場合は、テストの実行ステップを削除するか、テストファイルを作成する必要がある。",
+        "file": ".github/workflows/affiliate-evidence-report.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイル・パスへの参照",
+        "detail": "ワークフローが更新対象として指定している 'ceo-dashboard/public/column-review.json' がファイル一覧に存在しません。存在するのは 'data/column-review.json' のみです。",
+        "suggestion": "ワークフロー内の `paths` 配列から 'ceo-dashboard/public/column-review.json' を削除するか、該当ファイルが実際に存在する場合はファイル一覧を確認してください。存在しない場合、git add の対象からも除外する必要があります。",
+        "file": ".github/workflows/auto-fix-pr-merged.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローが実行する `scripts/check-brand-threads-ids.mjs` は存在するファイル一覧に含まれています。ただし、このスクリプトが依存する可能性のある設定ファイルやライブラリが明確でない。",
+        "suggestion": "スクリプトの実行前に、必要な依存ファイル（設定ファイル、環境変数、lib内のヘルパー関数など）が存在することを確認してください。",
+        "file": ".github/workflows/brand-threads-id-check.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローが実行する scripts/post-organic-threads.mjs は存在しません。ファイル一覧に存在確認できません。",
+        "suggestion": "scripts/post-organic-threads.mjs が実装済みか確認してください。未実装の場合は実装が必要です。",
+        "file": ".github/workflows/brand-threads-organic.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローが実行する `scripts/post-brand-threads.mjs` ファイルがファイル一覧に存在しない",
+        "suggestion": "ファイル一覧に `scripts/post-brand-threads.mjs` が含まれていることを確認するか、ファイル名が異なる場合は修正してください",
+        "file": ".github/workflows/brand-threads-post.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローで実行対象として指定されている 'tests/brand-threads.test.mjs' が存在しないファイル一覧に含まれていません。ファイル一覧には 'scripts/tests' ディレクトリは存在しますが、具体的なテストファイルが確認できません。",
+        "suggestion": "1) テストファイルが実際に存在するか確認してください。存在する場合は正しいパスを指定してください。2) テストファイルが存在しない場合は、該当するテストファイルを作成するか、ワークフローから削除してください。",
+        "file": ".github/workflows/brand-threads-test.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローが参照するテストファイル 'tests/ceo-home-assets-e2e.mjs' が提供されたファイル一覧に存在しません。",
+        "suggestion": "tests/ceo-home-assets-e2e.mjs ファイルの存在を確認するか、存在しない場合は該当するテストファイルへのパスを修正してください。",
+        "file": ".github/workflows/ceo-home-assets-e2e.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないディレクトリへの参照",
+        "detail": "ワークフローで 'ceo-dashboard' ディレクトリを参照していますが、提供されたファイル一覧に 'ceo-dashboard' ディレクトリが存在しません。scripts/, data/ ディレクトリのみが確認できます。",
+        "suggestion": "1) 'ceo-dashboard' ディレクトリが実際に存在することを確認するか、2) 存在しない場合はこのワークフローを削除するか、3) 正しいパスに修正してください。",
+        "file": ".github/workflows/deploy-ceo-dashboard.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないブランチへの参照",
+        "detail": "ワークフローが 'claude/bold-brahmagupta-uc9Mu' というブランチでのプッシュをトリガーに設定していますが、このブランチ名は一時的な開発ブランチと見られます。本番環境では不適切です。",
+        "suggestion": "このブランチをトリガー対象から削除するか、定期的に削除済みブランチの参照をクリーンアップしてください。",
+        "file": ".github/workflows/deploy-ceo-dashboard.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないディレクトリへの参照",
+        "detail": "ワークフロー内で 'shikaku-navi' ディレクトリへの変更を監視パスに含めている（paths内の'shikaku-navi/**'）が、存在するファイル一覧に shikaku-navi ディレクトリが存在しない。また、ジョブには build-shikaku-navi がない。",
+        "suggestion": "paths セクションから 'shikaku-navi/**' を削除するか、該当するビルドジョブを追加してください。",
+        "file": ".github/workflows/deploy-lens-navi.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローで参照しているファイル 'scripts/lib/fortune-advice.ts' が存在ファイル一覧に含まれていない。scripts/lib ディレクトリは存在するが、具体的なファイルが不明。",
+        "suggestion": "存在するファイル一覧を確認し、正確なパスを指定するか、ファイルが存在する場合はファイル一覧を更新してください。",
+        "file": ".github/workflows/fortune-advice-pr-check.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフロー内で実行する `scripts/fetch-free-gsc.mjs` は存在するファイル一覧に存在します。ただし、出力先の `growth-reports/gsc-lens.json` ディレクトリが存在するかが不明確です。ファイル一覧に `growth-reports/` ディレクトリが見当たりません。",
+        "suggestion": "スクリプトが `growth-reports/` ディレクトリを作成することを確認するか、存在確認を明示的に行うよう修正してください。",
+        "file": ".github/workflows/free-gsc-lens.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローが '.github/workflows/fetch-ga4-analytics.yml' をYAML検証しようとしていますが、実際のスクリプトは 'scripts/fetch-ga4-analytics.ts' (TypeScript) です。YAMLファイルは存在しません。",
+        "suggestion": "ワークフロー定義ファイル '.github/workflows/fetch-ga4-analytics.yml' を作成するか、検証対象を実際に存在するスクリプトファイルに変更してください。またはTypeScriptファイルの構文検査に変更してください。",
+        "file": ".github/workflows/ga4-daily-workflow-validation.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローが実行する `scripts/ga4-growth-priorities.mjs` は存在確認できますが、出力ファイル `growth-reports/ga4-priorities.md` と `growth-reports/ga4-priorities.*` が提供ファイル一覧に存在しません。このディレクトリ自体がリポジトリに存在するかどうか不明です。",
+        "suggestion": "スクリプト実行後に `growth-reports/` ディレクトリが生成されることを確認するか、存在しない場合は `.gitignore` に記載されているか確認してください。",
+        "file": ".github/workflows/ga4-growth-priorities.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "scripts/tests/ga4-review-fallback.test.cjs がファイル一覧に存在しません。ワークフローの最後のステップで実行しようとしていますが、このテストファイルが存在しないため実行は失敗します。",
+        "suggestion": "scripts/tests/ga4-review-fallback.test.cjs ファイルを作成するか、既存の同等のテストファイルへのパスに修正してください。または、scripts/testsディレクトリ内の実際に存在するテストファイルを確認して正しいパスに修正してください。",
+        "file": ".github/workflows/ga4-review-validation.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイル参照",
+        "detail": "ワークフローが参照している 'scripts/growth-funnel-diagnostics.mjs' は存在するが、出力先 'growth-reports/latest.json' のディレクトリ 'growth-reports/' がファイル一覧に存在しない",
+        "suggestion": "growth-reports/ ディレクトリが実際に存在し、スクリプトで正しく作成されているか確認するか、存在しない場合は事前に作成するステップを追加する",
+        "file": ".github/workflows/growth-funnel-diagnostics.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローが監視対象としている 'app/bc/[value]/page.tsx' と 'app/product/[slug]/page.tsx' がファイル一覧に存在しません。これらのファイルが実際に存在しない場合、このワークフローは意図通りにトリガーされません。",
+        "suggestion": "1) ファイルが実際に存在する場合は、ファイル一覧が不完全である可能性があります。2) ファイルが存在しない場合は、pathsから削除するか、正しいパスに修正してください。",
+        "file": ".github/workflows/lens-bc-navigation-ci.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローが監視対象としている 'components/PriceTable.tsx' がファイル一覧に存在しません。",
+        "suggestion": "ファイルが存在する場合はファイル一覧を確認してください。存在しない場合は、pathsから削除してください。",
+        "file": ".github/workflows/lens-bc-navigation-ci.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイル・パスへの参照",
+        "detail": "ワークフロー設定で監視対象に指定されている 'scripts/lib/fetch-single-box-comparisons.mjs' が存在しないファイル一覧に見当たりません。scripts/lib ディレクトリは存在しますが、該当ファイルが確認できません。",
+        "suggestion": "以下のいずれかを実施してください：\n1. ファイル一覧が不完全な場合は確認\n2. ファイルが削除済みの場合、paths セクションから削除\n3. ファイルが移動している場合は正しいパスに修正",
+        "file": ".github/workflows/lens-comparison-report-ci.yml"
+      },
+      {
+        "severity": "high",
+        "type": "ファイル存在確認エラー",
+        "detail": "スクリプトが読み込もうとしている 'data/lens-navi-content-log.json' は存在するが、その中身の構造（columns配列とsection、publishedAt、slugフィールド）が実際のファイル内容と一致しているか不明。ファイルが空または異なる構造の場合、スクリプトはエラーで失敗する",
+        "suggestion": "data/lens-navi-content-log.json の実際の内容を確認し、スクリプトが期待する構造と一致していることを検証する。または、エラーハンドリングを追加して、ファイルが存在しない場合やパースに失敗した場合の処理を明示する",
+        "file": ".github/workflows/lens-navi-self-improvement.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイル参照",
+        "detail": "ワークフローで参照している 'scripts/lib/inspect-purchase-ctas.mjs' が存在ファイル一覧に見当たりません",
+        "suggestion": "scripts/lib ディレクトリの内容を確認し、ファイルが存在するか検証するか、参照を削除してください",
+        "file": ".github/workflows/lens-revenue-healthcheck.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローで `scripts/post-threads-column.ts` を実行していますが、ファイル一覧に存在します。ただし、コミット対象に `data/yonaka-post-history.json` を含めており、これは夜間（yonaka）関連のファイルです。スクリプト名は『夜間コラム』（post-threads-column）であるのに対し、実行コマンドに `--slot=evening` を指定しているため、スクリプトの実際の動作との整合性確認が必要です。",
+        "suggestion": "スクリプト `post-threads-column.ts` の内部実装を確認し、`--slot=evening` パラメータが正しく機能しているか、また `data/yonaka-post-history.json` への書き込みが意図通りであるか検証してください。",
+        "file": ".github/workflows/post-threads-column.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローで実行しようとしている 'scripts/post-threads-ekikyo.ts' が存在しないファイル一覧に含まれていません。存在するのは 'scripts/post-threads-fortune.ts' など他のpost-threadsスクリプトですが、ekikyo（易経）用のスクリプトが見当たりません。",
+        "suggestion": "以下のいずれかの対応が必要です：\n1. 実際に存在するスクリプト名に修正する（例：post-threads-fortune.ts等）\n2. scripts/post-threads-ekikyo.ts が実装されていない場合は、実装するか、ワークフローを削除する\n3. スクリプトファイルが別の場所に存在する場合はパスを修正する",
+        "file": ".github/workflows/post-threads-ekikyo.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローが実行しようとしているスクリプト 'scripts/post-threads-honmeisei-toikake.ts' がファイル一覧に存在します（確認済み）。",
+        "suggestion": "問題なし - ファイルは存在しています。",
+        "file": ".github/workflows/post-threads-honmeisei-toikake.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローが実行しようとしている `scripts/post-threads-monthly-caution.ts` がファイル一覧に存在します。しかし、他の類似スクリプト（`post-threads-*.ts`）と比較して、このファイルのみが実装されているか確認が必要です。ファイル一覧に `scripts/post-threads-monthly-caution.ts` は記載されていますが、実装確認が必要。",
+        "suggestion": "スクリプトファイルが実際に存在し、実装されていることを確認してください。存在しない場合は、同様の実装がある他のpost-threadsスクリプトを参考に実装するか、ワークフローを削除/コメントアウトしてください。",
+        "file": ".github/workflows/post-threads-monthly-caution.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローで実行する 'scripts/post-threads-weekly-theme.ts' はファイル一覧に存在します（確認済み）。ただし、このスクリプトが実際に依存する他のスクリプトやライブラリが正しく参照されているか確認が必要です。",
+        "suggestion": "scripts/post-threads-weekly-theme.ts の内容を確認し、依存するファイルが全て存在することを確認してください",
+        "file": ".github/workflows/post-threads-weekly-theme.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフロー内で `scripts/post-threads-fortune.ts` と `scripts/post-threads-column.ts` を実行しようとしていますが、ファイル一覧に `scripts/post-threads-column.ts` が存在します。ただし `scripts/post-threads-fortune.ts` は存在確認できます。両ファイルとも存在するため、この指摘は取り下げます。",
+        "suggestion": "ファイル一覧を再確認してください。実際には両ファイルが存在するようです。",
+        "file": ".github/workflows/preview-post.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイル・パスへの参照",
+        "detail": "ワークフロー定義内の以下のファイルが存在ファイル一覧に見当たりません：\n- rakutabi/components/Analytics.tsx\n- rakutabi/components/ClickTracker.tsx\n- rakutabi/app/layout.tsx\n- rakutabi/lib/ga4.mjs\n- rakutabi/tests/ga4.test.mjs\n- rakutabi/package-lock.json\n\nrakutabiディレクトリ構造全体が存在ファイル一覧に含まれていません。",
+        "suggestion": "rakutabiプロジェクトのディレクトリ構造と実際のファイル配置を確認してください。このワークフローが有効に機能しているか検証が必要です。",
+        "file": ".github/workflows/rakutabi-ga4-pr-check.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないパスへの参照",
+        "detail": "ワークフロー内の `cache-dependency-path: rakutabi/package-lock.json` は、提供されたファイル一覧に存在しません。rakutabiディレクトリ配下のpackage-lock.jsonが実在するか不明です。",
+        "suggestion": "rakutabi/package-lock.jsonが存在することを確認するか、正しいパスに修正してください。存在しない場合はcache-dependency-pathを削除してデフォルト動作に任せるか、正しいパスを指定してください。",
+        "file": ".github/workflows/rakutabi-stats-pr-check.yml"
+      },
+      {
+        "severity": "high",
+        "type": "参照ファイルの存在確認",
+        "detail": "ワークフロー内で実行される 'scripts/refresh-threads-token.ts' はファイル一覧に存在します。ただし、このスクリプトが実際に THREADS_ACCESS_TOKEN と GH_SECRETS_PAT を使用して GitHub Secrets を更新する機能を持っているか確認が必要です。",
+        "suggestion": "scripts/refresh-threads-token.ts の実装内容を確認し、GitHub API を使用してシークレットを更新する処理が含まれていることを検証してください。特に GH_SECRETS_PAT が正しく使用されているか確認してください。",
+        "file": ".github/workflows/refresh-threads-token.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイル参照",
+        "detail": "ワークフローが実行しようとしている 'ceo-dashboard/scripts/rls-test.sh' がファイル一覧に存在しない。存在するのは 'scripts/' ディレクトリ下のみ。",
+        "suggestion": "パスを 'bash scripts/rls-test.sh' に修正するか、該当スクリプトファイルが実装されていない場合は作成する必要がある",
+        "file": ".github/workflows/rls-test.yml"
+      },
+      {
+        "severity": "high",
+        "type": "ディレクトリ構造の不一致",
+        "detail": "ワークフローファイルが 'ceo-dashboard/scripts/rls-test.sh' を参照しているが、ファイル一覧では全て 'scripts/' ディレクトリ直下に配置されており、'ceo-dashboard/' という親ディレクトリが存在しない",
+        "suggestion": "ワークフローのパスを正しいディレクトリ構造に合わせて修正する。また、ワークフローファイル自体が '.github/workflows/rls-test.yml' であるため、相対パスの起点を確認し修正する",
+        "file": ".github/workflows/rls-test.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフロー内で監視対象に指定されている 'rakutabi/components/ShareLinks.tsx' が、提供されたファイル一覧に存在しません。このファイルはrakutabiディレクトリ配下のコンポーネントファイルと思われますが、確認できません。",
+        "suggestion": "rakutabi/components/ShareLinks.tsx が実際に存在することを確認するか、存在しない場合は paths から削除してください。",
+        "file": ".github/workflows/search-acquisition-review.yml"
+      },
+      {
+        "severity": "high",
+        "type": "存在しないファイル参照",
+        "detail": "コミット対象に `school-navi/data/schools.json` と `shikaku-navi/data/courses.json` が指定されていますが、ファイル一覧に存在しません",
+        "suggestion": "実際に存在するデータファイルのみをコミット対象に含める、または該当ディレクトリが別リポジトリの場合は明記する",
+        "file": ".github/workflows/update-prices.yml"
+      },
+      {
+        "severity": "high",
+        "type": "ファイル参照エラー",
+        "detail": "HISTORY_PATH が 'data/yonaka-short-post-history.json' を参照していますが、存在するファイル一覧に該当ファイルがありません。類似ファイルは 'data/yonaka-post-history.json' のみです。",
+        "suggestion": "HISTORY_PATH を 'data/yonaka-post-history.json' に変更するか、新規作成する場合は明示的にドキュメント化してください。",
+        "file": "scripts/post-threads-short.ts"
+      }
+    ],
+    "medium": [
+      {
+        "severity": "medium",
+        "type": "ワークフロー設定の不完全性",
+        "detail": "ワークフローが 'read-only' 実行とされているが、スクリプトが実際に何を検査し、どのような出力を生成するかが不明確。失敗時の処理が定義されていない。",
+        "suggestion": "スクリプトの出力をレポートとしてアーティファクトに保存するか、検査結果をコメントとしてPRに追加する処理を追加すること",
+        "file": ".github/workflows/a8-link-identifier-audit.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "環境変数の依存性が不明確",
+        "detail": "GA4_REPORT_PATH という環境変数を参照しているが、デフォルト値が定義されていない。通常実行時（非PR時）に GA4_REPORT_PATH が設定されない場合、スクリプトが失敗する可能性がある。",
+        "suggestion": "スクリプト 'scripts/report-affiliate-evidence.mjs' が GA4_REPORT_PATH 未設定時の動作を確認するか、ワークフロー内でデフォルト値を設定する（例：GA4_REPORT_PATH=${GA4_REPORT_PATH:-data/ga4-analytics.json}）。",
+        "file": ".github/workflows/affiliate-evidence-report.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "手順の抜け",
+        "detail": "Checkoutステップで明示的なブランチが指定されていません。デフォルトではマージ対象のmainブランチがチェックアウトされますが、マージされたPRのブランチ (`auto-fix/*`) への参照が必要な場合、チェックアウト戦略が不明確です。",
+        "suggestion": "現在の動作が意図通りであれば、コメントで説明を追加してください。例：`# マージ済みPRはすでに削除されているため、mainブランチからの処理で問題ない`",
+        "file": ".github/workflows/auto-fix-pr-merged.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "権限設定の不適切さ",
+        "detail": "ワークフロー定義で `permissions: contents: read` となっていますが、複数のシークレット（`RAKUTABI_THREADS_ACCESS_TOKEN`, `LENS_THREADS_ACCESS_TOKEN`）を使用しています。シークレットへのアクセス権限が明示的に定義されていません。",
+        "suggestion": "セキュリティベストプラクティスに従い、明示的に権限を定義してください：`permissions: contents: read` に加えて必要に応じて他の権限を追加してください。",
+        "file": ".github/workflows/brand-threads-id-check.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "ワークフローの実行可能性",
+        "detail": "ワークフローは `workflow_dispatch` でのみトリガーされ、自動実行されません。また、タイムアウトが3分に設定されているため、Threads APIへのネットワークリクエストがタイムアウトする可能性があります。",
+        "suggestion": "スクリプトの実行時間を測定し、必要に応じてタイムアウト値を調整してください（例：5分〜10分）。",
+        "file": ".github/workflows/brand-threads-id-check.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "手順の矛盾",
+        "detail": "ワークフロー名が「手動・dry-run優先」となっていますが、publish=true時にdry-runを行わずに直接実投稿しています。検証ステップが不足しています。",
+        "suggestion": "publish=true時でも、事前にdry-runを実行してから実投稿するステップを追加するか、ワークフロー名を修正してください。",
+        "file": ".github/workflows/brand-threads-organic.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "権限設定の不完全性",
+        "detail": "permissions に contents: read しか指定されていないため、必要に応じて他の権限（例：issues、pull-requests等）が不足している可能性があります。",
+        "suggestion": "スクリプトが実行に必要な権限を明示的に確認し、必要であれば permissions セクションに追加してください。",
+        "file": ".github/workflows/brand-threads-organic.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "認証情報の管理リスク",
+        "detail": "ブランド別の認証情報（RAKUTABI_THREADS_USER_ID等）をSecrets で管理していますが、publish フラグが true でない場合でも環境変数が定義されるため、スクリプト内での不正なアクセスリスクがある",
+        "suggestion": "ドライラン時には認証情報を環境変数として渡さないようにするか、スクリプト内で `ENABLE_BRAND_THREADS_PUBLISH` フラグを確認して認証を開始するようにしてください",
+        "file": ".github/workflows/brand-threads-post.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "条件分岐の問題",
+        "detail": "publish=true の場合、ENABLE_BRAND_THREADS_PUBLISH='true' が環境変数として設定されていますが、同時に publish フラグもスクリプトに渡されています。二重の制御フラグは保守性が低い",
+        "suggestion": "`--publish` フラグまたは環境変数のどちらか一方に統一してください",
+        "file": ".github/workflows/brand-threads-post.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "ファイル参照の矛盾",
+        "detail": "ワークフローの 'on.pull_request.paths' では 'scripts/post-brand-threads.mjs' の変更を監視していますが、実際に存在するスクリプトは確認できます。一方、同じパターンの他のブランド別Threadsスクリプト（例：post-threads-ekikyo.ts など）向けのワークフローが見当たりません。",
+        "suggestion": "他のブランド別Threadsスクリプト用の同様のテストワークフローが必要な場合は、それらも作成してください。または、このワークフローが汎用的に機能するよう修正してください。",
+        "file": ".github/workflows/brand-threads-test.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "環境変数の未定義リスク",
+        "detail": "ワークフローが4つのシークレット変数を使用していますが、これらが GitHub リポジトリで定義されているかの確認ができません。特に RLS_TEST_USER1_EMAIL と RLS_TEST_USER1_PASSWORD はテストアカウント認証に必須です。",
+        "suggestion": "GitHub リポジトリの Settings > Secrets and variables > Actions で以下が定義されていることを確認してください：SUPABASE_URL、SUPABASE_PUBLISHABLE_KEY、RLS_TEST_USER1_EMAIL、RLS_TEST_USER1_PASSWORD",
+        "file": ".github/workflows/ceo-home-assets-e2e.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "手順の不明確性",
+        "detail": "verify.mjs スクリプトが正常に完了した後の 'cleanup' が手順名に含まれていますが、実際のクリーンアップ処理が明示的に記載されていません。",
+        "suggestion": "tests/ceo-home-assets-e2e.mjs に cleanup 処理が実装されているか確認し、必要に応じてステップを分割して明示的に記載してください。",
+        "file": ".github/workflows/ceo-home-assets-e2e.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "キャッシュパス指定の危険性",
+        "detail": "キャッシュパスとして 'ceo-dashboard/package-lock.json' を指定していますが、ceo-dashboard ディレクトリが存在しないため、キャッシュが機能しません。",
+        "suggestion": "ディレクトリ構造を確認し、正しいパスを指定するか、存在するディレクトリ内の package-lock.json を指定してください。",
+        "file": ".github/workflows/deploy-ceo-dashboard.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "ワークフロー設定の不一致",
+        "detail": "ワークフロー名は 'Build lens-navi / school-navi / shop-navi / yonaka-uranai' だが、paths には 'shikaku-navi/**' も監視対象として含まれている。ワークフロー名と実際の監視内容が一致していない。",
+        "suggestion": "ワークフロー名を 'Build lens-navi / school-navi / shikaku-navi / shop-navi / yonaka-uranai' に更新するか、paths から 'shikaku-navi/**' を削除してください。",
+        "file": ".github/workflows/deploy-lens-navi.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "潜在的なレース条件",
+        "detail": "git pullの後にgit pushを実行しているが、pullでコンフリクトが発生した場合の処理がない。特にスケジュール実行と手動push時の同時実行で問題が生じる可能性がある",
+        "suggestion": "git pullで失敗した場合の処理を追加するか、git pull --rebaseの前にエラーハンドリングを追加してください",
+        "file": ".github/workflows/distill-feedback.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "タイムゾーン不一致の可能性",
+        "detail": "コミットメッセージで `$(date '+%Y-%m-%d' --utc)` を使用していますが、これはUTC時刻です。一方、cronで「毎月1日 00:00 UTC = 09:00 JST」とコメントされており、JST基準で考えているなら日付が異なる可能性があります",
+        "suggestion": "JST基準でコミットしたい場合は `$(date '+%Y-%m-%d' -d '+9 hours')` または `TZ=Asia/Tokyo date '+%Y-%m-%d'` を使用してください",
+        "file": ".github/workflows/distill-feedback.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "テスト実行の矛盾",
+        "detail": "テスト実行コマンド `node -r ts-node/register --test scripts/tests/fortune-advice.test.cjs` で .cjs (CommonJS) ファイルを実行していますが、ts-node/register を使用してTypeScriptを処理しようとしており、拡張子と処理方法が一致していない可能性があります。",
+        "suggestion": "テストファイルが実際に .cjs か .ts か確認し、テスト実行コマンドを統一してください。",
+        "file": ".github/workflows/fortune-advice-pr-check.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "依存関係の不明確性",
+        "detail": "TypeScriptコンパイルコマンドで --skipLibCheck を使用していますが、fortune-advice.ts が外部依存を持つ場合、型チェックが不完全になる可能性があります。",
+        "suggestion": "--skipLibCheck を削除するか、問題がないことを確認してください。本番環境では型安全性を重視してください。",
+        "file": ".github/workflows/fortune-advice-pr-check.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "環境変数の使用方法に関する潜在的問題",
+        "detail": "`GA4_SERVICE_ACCOUNT_KEY` シークレットが定義されていますが、スクリプト `fetch-free-gsc.mjs` で実際に使用されているかが不明確です。このスクリプトが GSC API の取得のみで GA4 認証が不要な場合、不必要な環境変数設定となります。",
+        "suggestion": "スクリプトの実装を確認し、実際に必要な環境変数のみ設定するよう修正してください。",
+        "file": ".github/workflows/free-gsc-lens.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "検証方法の不適切性",
+        "detail": "YAML.load_file() でYAMLの構文検証を行っていますが、これはセキュリティリスク（任意コード実行）があります。また、ワークフローファイルの検証には不十分です。",
+        "suggestion": "yamllint など専用のYAML linter を使用するか、GitHub Actions の組み込み検証機能を活用してください。例：`yamllint .github/workflows/`",
+        "file": ".github/workflows/ga4-daily-workflow-validation.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "エラーハンドリングの不足",
+        "detail": "YAML解析失敗時のエラーメッセージが不明確です。parse エラー時に詳細情報が出力されません。",
+        "suggestion": "以下のようにエラーハンドリングを追加してください：`ruby -e \"require 'yaml'; YAML.load_file('.github/workflows/fetch-ga4-analytics.yml'); puts 'YAML valid'\" || exit 1`",
+        "file": ".github/workflows/ga4-daily-workflow-validation.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "権限設定の不完全性",
+        "detail": "`permissions` で `issues: write` を設定していますが、`contents: read` のみで `pull-requests` の権限がないため、もし将来的に PR 作成機能が追加される場合に動作しません。",
+        "suggestion": "現在の実装では問題ありませんが、Issue 作成・編集のみに限定した現在の設定は適切です。変更不要です。",
+        "file": ".github/workflows/ga4-growth-priorities.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "手順の潜在的な問題",
+        "detail": "npm ci --ignore-scripts を実行していますが、その直後に node --test を実行しています。--ignore-scripts フラグにより、必要な前処理（例：build、prepare スクリプト）がスキップされている可能性があります。",
+        "suggestion": "テストの前に必要な前処理があるか確認し、必要な場合は npm run build などを追加するか、--ignore-scripts フラグの必要性を再検討してください。",
+        "file": ".github/workflows/ga4-review-validation.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフローで実行される `scripts/growth-funnel-diagnostics.mjs` と `scripts/growth-triage.mjs` は存在するファイル一覧に含まれています。ただし、出力先の `growth-reports/triage-issue.md` ファイルの生成元スクリプトが明確でなく、これらのスクリプトが実際にこのファイルを生成する保証がない。",
+        "suggestion": "スクリプト内で `growth-reports/triage-issue.md` が確実に生成されることを確認するか、ファイルが存在しない場合のエラーハンドリングを追加してください。",
+        "file": ".github/workflows/growth-autonomous-triage.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "エラーハンドリングの不備",
+        "detail": "スクリプト実行がタイムアウト（6分）した場合、成功時と同じようにアーティファクトをアップロードしようとするため、ファイルが存在しない場合にステップが失敗する可能性がある",
+        "suggestion": "'upload-artifact' ステップに 'if-no-files-found: ignore' を追加するか、ファイル存在確認を追加する",
+        "file": ".github/workflows/growth-funnel-diagnostics.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "スクリプト実行の検証不足",
+        "detail": "\"Check CTA and anchor\" ステップで 'scripts/check-bc-single-box-navigation.mjs' を実行していますが、スクリプトの失敗時の処理が明示されていません。スクリプトがエラー終了してもワークフローが続行される可能性があります。",
+        "suggestion": "スクリプトが正常に終了することを前提としているため、スクリプト側で適切なエラーハンドリングと終了コード（exit 1など）が実装されていることを確認してください。または、`set -e` の使用を検討してください。",
+        "file": ".github/workflows/lens-bc-navigation-ci.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "手順の抜け・矛盾",
+        "detail": "ワークフロー設定で 'scripts/fetch-ga4-analytics.ts' をpaths監視対象に含めていますが、実行ステップではテストファイルのみを実行しており、スクリプト自体の検証や実行がありません。",
+        "suggestion": "以下のいずれかを実施してください：\n1. fetch-ga4-analytics.ts の検証ステップを追加\n2. またはpaths監視対象から削除（テストファイルのみを監視対象にする）",
+        "file": ".github/workflows/lens-comparison-report-ci.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "エラーハンドリングの欠落",
+        "detail": "Node.jsスクリプト内でファイル読み込みやJSON.parseに失敗した場合の例外処理がない。スクリプトがクラッシュする可能性がある",
+        "suggestion": "try-catchブロックを追加して、ファイル読み込みエラーやJSON解析エラーを適切に処理し、ワークフローが失敗した場合のメッセージをstep summaryに出力する",
+        "file": ".github/workflows/lens-navi-self-improvement.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "存在しないファイル・パスへの参照",
+        "detail": "ワークフローが監視対象としている 'app/ranking/page.tsx'、'app/column/[slug]/page.tsx'、'components/ProductCard.tsx' が、提供されたファイル一覧に存在しません。これらのファイルが実際に存在するかどうか不明です。",
+        "suggestion": "提供されたファイル一覧がプロジェクト全体を反映していない可能性があります。ワークフローの設定が実際のプロジェクト構造と一致しているか確認してください。もしこれらのファイルが存在しない場合は、paths を実際に存在するファイルに修正するか、ワークフロー自体の削除を検討してください。",
+        "file": ".github/workflows/lens-ranking-build.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "テストファイルの検証不足",
+        "detail": "tests/purchase-cta-healthcheck.test.mjs が実行されていますが、存在ファイル一覧に確認できません。プロジェクト構成から tests/ ディレクトリが存在するかも不明です",
+        "suggestion": "tests/purchase-cta-healthcheck.test.mjs ファイルの存在確認、またはファイル一覧の更新が必要です",
+        "file": ".github/workflows/lens-revenue-healthcheck.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "スケジュール時刻の妥当性",
+        "detail": "cron: '15 23 * * *' は UTC の 23:15 を示していますが、コメントでは「08:15 JST daily」と記載されています。JST は UTC+9 なため、UTC 14:15 (23:15 - 9時間) に設定すべきです",
+        "suggestion": "cron を '15 14 * * *' に修正するか、コメントを '23:15 UTC' に変更してください",
+        "file": ".github/workflows/lens-revenue-healthcheck.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "潜在的な競合状態",
+        "detail": "git pullで rebase を実行した後に git push しています。並行実行（concurrency設定で `cancel-in-progress: false`）による複数の同時push時に競合エラーが発生する可能性があります。",
+        "suggestion": "`cancel-in-progress: true` への変更、または git pull のリトライロジック、あるいは `git push --force-with-lease` の使用を検討してください。",
+        "file": ".github/workflows/post-threads-column.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "コメント内の情報が古い/曖昧",
+        "detail": "ワークフローの冒頭コメントに「14日間の1日2投稿テスト中は定期実行を停止」と記載されていますが、これがいつまで続くのか、テスト終了後の対応がどうするのかが不明確です。",
+        "suggestion": "コメントを以下のように修正することで、テスト終了時期と対応を明確にする：\n`# [テスト終了予定日] まで定期実行を停止中。テスト完了後は schedule トリガーを追加する予定`",
+        "file": ".github/workflows/post-threads-ekikyo.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "ワークフロー設定の注記と実装の不一致",
+        "detail": "コメント「14日間の1日2投稿テスト中は定期実行を停止。手動実行のみ許可。」が記載されていますが、このテスト期間がいつまでなのか不明確です。本番環境に誤ったまま残される可能性があります。",
+        "suggestion": "コメントを更新して「テスト期間終了日: YYYY-MM-DD」を明記するか、テスト終了後は定期実行スケジュール（schedule トリガー）を追加してください。",
+        "file": ".github/workflows/post-threads-honmeisei-toikake.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "設定の矛盾",
+        "detail": "コメントに「14日間の1日2投稿テスト中は定期実行を停止。手動実行のみ許可。」とありますが、このコメントが記載されたままで実装がテスト状態のままになっている可能性があります。テスト期間が終了したかどうか不明です。",
+        "suggestion": "テスト期間が終了した場合は、`on:` セクションに `schedule` トリガーを追加して定期実行を再開するか、テスト状態である旨を明確にしてください。",
+        "file": ".github/workflows/post-threads-monthly-caution.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "ワークフロー設定の注記",
+        "detail": "コメント『14日間の1日2投稿テスト中は定期実行を停止。手動実行のみ許可』が記載されていますが、テスト期間が明記されていないため、いつまでこの状態を続けるのか不明確です",
+        "suggestion": "テスト終了予定日を追記するか、別タスクとして定期実行復帰のためのPRを作成してください。例：'# TODO: 2026-XX-XX にスケジュール実行を復帰させる'",
+        "file": ".github/workflows/post-threads-weekly-theme.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "ワークフロー戦略の問題",
+        "detail": "このワークフローは `workflow_dispatch` のみで実行され、手動トリガーです。定期実行や自動実行の仕組みがないため、定期的な投稿確認が必要な場合は対応していません。",
+        "suggestion": "定期的なプレビュー確認が必要な場合は、`schedule` トリガーの追加を検討してください。例：`- cron: '0 9 * * *'`",
+        "file": ".github/workflows/preview-post.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "設定の検証不足",
+        "detail": "ワークフロー内で『cache-dependency-path: rakutabi/package-lock.json』を指定していますが、このファイルの存在が確認できません。",
+        "suggestion": "rakutabi/package.json が存在する場合は『cache-dependency-path』の指定を削除するか、正しいパスに修正してください。",
+        "file": ".github/workflows/rakutabi-ga4-pr-check.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "手順の抜け",
+        "detail": "ワークフロー内で`npm ci`実行後、テスト実行ステップが見当たりません。一般的なNode.jsプロジェクトではテストが品質保証の重要な要素ですが、Lint、Typecheck、Buildのみで、テストが実行されていません。",
+        "suggestion": "`npm run test`または同等のテストコマンドを、Buildステップの後に追加することを検討してください。",
+        "file": ".github/workflows/rakutabi-stats-pr-check.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "有効期限の妥当性検証",
+        "detail": "コメントで『60日の有効期限に対して十分な余裕を持って更新』と記載されていますが、threads/meta のアクセストークン仕様が実際に60日であるか、また更新スケジュール（毎月1日・15日）が本当に十分な余裕を持っているか確認が必要です。15日間の間隔では、有効期限が予期せず切れるリスクがあります。",
+        "suggestion": "Meta Threads API の現在のトークン有効期限を確認し、更新スケジュールが適切か検証してください。必要に応じてスケジュールを毎週に変更することを検討してください。",
+        "file": ".github/workflows/refresh-threads-token.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "エラーハンドリングの不明確性",
+        "detail": "ワークフロー定義にエラー時の通知やリトライ処理が記載されていません。トークン更新失敗時の対応が不明確です。",
+        "suggestion": "失敗時の通知機能（例：Issue作成、メール通知、Slack通知）やリトライロジックを追加してください。",
+        "file": ".github/workflows/refresh-threads-token.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "実装未完了の可能性",
+        "detail": "RLS テスト用のシェルスクリプト 'rls-test.sh' がファイル一覧に見当たらない。ワークフローは定義されているが、実行対象スクリプトが存在しない",
+        "suggestion": "RLS テストスクリプトを 'scripts/rls-test.sh' として実装する、または既に実装されている場合はファイル一覧を更新する",
+        "file": ".github/workflows/rls-test.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "条件分岐の問題",
+        "detail": "diagnostics ジョブの条件が、特定のブランチ名 'growth/search-acquisition-20261021' に限定されています。この日付が2026年10月21日を指しており、既に過去の日付となっている可能性があります。",
+        "suggestion": "ブランチ名が現在も有効か確認し、必要に応じて条件を更新するか、より柔軟な条件に変更してください。",
+        "file": ".github/workflows/search-acquisition-review.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "存在しないファイルへの参照",
+        "detail": "ワークフロー内で `scripts/generate-index.ts` を実行していますが、このファイルはファイル一覧に存在します。ただし、生成対象の `data/system-index.json` が実際に存在することは確認できますが、スクリプトの実行可能性を保証する情報がありません。",
+        "suggestion": "スクリプト実行前にファイルの存在確認テストを追加するか、ドキュメントで依存関係を明記してください。",
+        "file": ".github/workflows/update-index.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "過度に広いトリガー範囲の懸念",
+        "detail": "コメント内で述べられている通り、元々のpushトリガーは `scripts/**` と `.github/workflows/**` の全変更で発火していました。現在は `workflow_dispatch` のみですが、再開時に同じ問題が再発する可能性があります。",
+        "suggestion": "再開時は `scripts/generate-index.ts` など特定スクリプトのみに限定するか、より詳細なパスフィルタリング（例：`scripts/generate-index.ts` のみ）を設定してください。",
+        "file": ".github/workflows/update-index.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "手順の矛盾",
+        "detail": "複数のスクリプト（fetch-a8-links.ts, fetch-school-links.ts）に `continue-on-error: true` が設定されていますが、後続の update-prices.ts が失敗した場合の依存関係が不明確です",
+        "suggestion": "各スクリプトの成功/失敗条件と、全体フローへの影響を明確にするか、失敗時の代替処理を追加する",
+        "file": ".github/workflows/update-prices.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "潜在的な競合リスク",
+        "detail": "`git pull --rebase` の後に `git push` を実行しており、並行実行時にマージコンフリクトが発生する可能性があります",
+        "suggestion": "コンフリクト時の処理を明示するか、ジョブの同時実行を防ぐための並行実行制御を追加する",
+        "file": ".github/workflows/update-prices.yml"
+      },
+      {
+        "severity": "medium",
+        "type": "ファイル内容の不完全性",
+        "detail": "ファイルが途中で切れており、main()関数の実装が完了していない。コンテナID出力後のコメントが`コンテナID: ${creationId}（topic_`で途切れている",
+        "suggestion": "ファイル全体を確認し、publishThread()の呼び出しと完了ログが実装されているか検証する",
+        "file": "scripts/post-threads-honmeisei-toikake.ts"
+      },
+      {
+        "severity": "medium",
+        "type": "ファイル管理の一貫性",
+        "detail": "同じ夜間投稿スクリプト群（post-threads-short.ts、post-threads-fortune.ts など）が複数の履歴ファイルを管理する設計になっています。コメントで「post-threads-fortune.ts と同じ設計」と明記されていますが、実際に両者で異なる履歴ファイルを使用していないか確認が必要です。",
+        "suggestion": "post-threads-fortune.ts の HISTORY_PATH と post-threads-short.ts の HISTORY_PATH の整合性を確認し、必要に応じて統一するか、設計意図を文書化してください。",
+        "file": "scripts/post-threads-short.ts"
+      },
+      {
+        "severity": "medium",
+        "type": "不完全なコード片",
+        "detail": "ファイルが先頭3000字で切断されており、実装の完全性が確認できません。特に「// ─── 夜占い生成（月・水・金）─」セクションの実装部分が不明です。",
+        "suggestion": "全体のコード確認が必要です。提供していただいたファイル全体を点検してください。",
+        "file": "scripts/post-threads-short.ts"
+      }
+    ],
+    "low": [
+      {
+        "severity": "low",
+        "type": "トリガー条件の冗長性",
+        "detail": "ワークフローは 'pull_request' と 'workflow_dispatch' の両方で実行されるが、スクリプトが実際に 'pull_request' 時にのみ有効な処理を行うかが不明確。",
+        "suggestion": "PR時の変更内容を実際に検査するロジックがあれば明示すること。なければ `pull_request` トリガーを削除するか、フィルタリングロジックを追加すること",
+        "file": ".github/workflows/a8-link-identifier-audit.yml"
+      },
+      {
+        "severity": "low",
+        "type": "テストデータのハードコーディング",
+        "detail": "PR時のバリデーションテストで 'lens-navi' という特定サイト名がハードコーディングされており、 'data/ga4-analytics.json' の構造に強く依存している。",
+        "suggestion": "テストデータが将来変更される場合に備えて、テスト用の専用フィクスチャファイルを使用するか、エラーハンドリングを充実させることを検討する。",
+        "file": ".github/workflows/affiliate-evidence-report.yml"
+      },
+      {
+        "severity": "low",
+        "type": "エラーハンドリングの不足",
+        "detail": "JSONファイルのパースに失敗した場合やアーティクル更新後の検証がありません。不正なJSONが存在する場合、スクリプトが失敗します。",
+        "suggestion": "try-catchでJSONパースを保護するか、スクリプト実行前にファイル形式を検証する追加ステップを検討してください。",
+        "file": ".github/workflows/auto-fix-pr-merged.yml"
+      },
+      {
+        "severity": "low",
+        "type": "ワークフロー設定の検証",
+        "detail": "ワークフローが 'node --test' コマンドを使用していますが、Node.js 22ではテストランナーがサポートされています。ただし、テストファイルが存在しないため、このワークフローは実行時に失敗します。",
+        "suggestion": "テストファイル 'tests/brand-threads.test.mjs' を作成して、適切なテストケースを実装してください。",
+        "file": ".github/workflows/brand-threads-test.yml"
+      },
+      {
+        "severity": "low",
+        "type": "ブランチ設定の確認",
+        "detail": "ブランチ `claude/bold-brahmagupta-uc9Mu` は一時的な機能ブランチと思われるが、デプロイワークフローの対象ブランチに含まれている。",
+        "suggestion": "開発完了後、このブランチ指定を削除するか、本番運用に適した分岐戦略に変更してください。",
+        "file": ".github/workflows/deploy-lens-navi.yml"
+      },
+      {
+        "severity": "low",
+        "type": "権限設定の最小化",
+        "detail": "`permissions.contents: write` が設定されていますが、実際にはgit pullとpushが必要です。より明示的な権限設定が望ましい",
+        "suggestion": "`permissions:` セクションを拡張して、必要な権限を明確に指定してください（例：`contents: write` は問題ありませんが、他の権限が不要なことを確認してください）",
+        "file": ".github/workflows/distill-feedback.yml"
+      },
+      {
+        "severity": "low",
+        "type": "タイムゾーン表記の不一致",
+        "detail": "cron コメントに 'Monday 09:00 JST' と記載されていますが、`cron: '0 0 * * 1'` は UTC の 00:00（月曜）です。JST では月曜の 09:00 になりません。",
+        "suggestion": "JST 09:00 に実行する場合、`cron: '0 0 * * 1'` は UTC 00:00 なので、スケジュールを `cron: '0 0 * * 0'` に変更するか、コメントを UTC に統一してください。",
+        "file": ".github/workflows/free-gsc-lens.yml"
+      },
+      {
+        "severity": "low",
+        "type": "スクリプト依存関係の確認不足",
+        "detail": "`scripts/ga4-growth-priorities.mjs` が `data/ga4-analytics.json` を読み込む可能性がありますが、このファイルの更新タイミングが「06:00 GA4 refresh」の後で、本ワークフローが「09:15 JST」に実行されるため、依存関係が正しく成立しています。ただし、スクリプト内部での具体的な依存ファイルが不明です。",
+        "suggestion": "スクリプト内で必要なデータファイルを確認し、ドキュメント化することを推奨します。",
+        "file": ".github/workflows/ga4-growth-priorities.yml"
+      },
+      {
+        "severity": "low",
+        "type": "冗長性の確認",
+        "detail": "`scripts/growth-evidence-pr.mjs` と `scripts/growth-triage.mjs` の2つのスクリプトが成長関連のトリアージ処理を行うようだが、それぞれの役割分担が不明確。",
+        "suggestion": "各スクリプトの責務を明確にし、重複処理がないことを確認してください。また、ファイル一覧にはドキュメントがないため、スクリプトの説明を README に追加することを検討してください。",
+        "file": ".github/workflows/growth-autonomous-triage.yml"
+      },
+      {
+        "severity": "low",
+        "type": "エラーハンドリング",
+        "detail": "`node scripts/growth-funnel-diagnostics.mjs || true` では失敗を許容していますが、`node scripts/growth-triage.mjs` では失敗時にワークフロー全体が失敗します。",
+        "suggestion": "両スクリプトでのエラーハンドリングの方針を統一するか、意図的な差異であれば コメントで明示してください。",
+        "file": ".github/workflows/growth-autonomous-triage.yml"
+      },
+      {
+        "severity": "low",
+        "type": "ワークフロー設定の冗長性",
+        "detail": "pull_request トリガーは開発フローには有用だが、本番スケジュール実行（毎日23:30）とは別の目的。PR段階で必要な検証なのか確認が必要",
+        "suggestion": "PR時の検証が必要でない場合は pull_request トリガーを削除し、スケジュール実行とワークフロー手動実行のみに限定する",
+        "file": ".github/workflows/growth-funnel-diagnostics.yml"
+      },
+      {
+        "severity": "low",
+        "type": "情報の古い可能性",
+        "detail": "コメント '# Monday 09:00 JST' とcron式 '0 0 * * 1' のタイムゾーン対応が明確でない。UTC 0:00がJST 09:00になるため正確だが、言語や動的な日時では混乱の可能性がある",
+        "suggestion": "コメントを 'UTC 0:00 (JST Monday 09:00)' に変更して、タイムゾーン変換を明示する",
+        "file": ".github/workflows/lens-navi-self-improvement.yml"
+      },
+      {
+        "severity": "low",
+        "type": "手順の矛盾",
+        "detail": "ワークフロー名は 'Lens ranking build validation' ですが、実行内容は一般的な 'npm run build' のみで、特にLens rankingに特化した検証ステップがありません。",
+        "suggestion": "ワークフロー名と実装内容を一致させてください。特定の検証が必要な場合は、scripts/ 配下の関連スクリプト（例：check-lens-revenue-path.mjs）を実行するステップを追加してください。",
+        "file": ".github/workflows/lens-ranking-build.yml"
+      },
+      {
+        "severity": "low",
+        "type": "ワークフロー権限設定",
+        "detail": "permissions で `contents: write` のみ指定していますが、`workflow_dispatch` から手動実行する際にトークン権限が十分か確認が必要です。",
+        "suggestion": "必要に応じて `pull-requests: write` や `actions: write` を追加するか、実運用で権限エラーが出ないことを確認してください。",
+        "file": ".github/workflows/post-threads-column.yml"
+      },
+      {
+        "severity": "low",
+        "type": "似た機能の複数スクリプト存在",
+        "detail": "同様の Threads 投稿スクリプトが複数存在します：\n- post-threads-honmeisei-toikake.ts\n- post-threads-fortune.ts\n- post-threads-ekikyo.ts\n- post-threads-houi.ts\n- post-threads-weekly-theme.ts\n- post-threads-monthly-caution.ts\n- post-threads-short.ts\nなど",
+        "suggestion": "これらスクリプト間で重複する処理がないか確認し、共通部分を lib/ に統合することを検討してください。",
+        "file": ".github/workflows/post-threads-honmeisei-toikake.yml"
+      },
+      {
+        "severity": "low",
+        "type": "保守性",
+        "detail": "「14日間の1日2投稿テスト中」というコメントが具体的な日付を含まないため、テスト期間がいつ終了するのか不明確です。",
+        "suggestion": "コメントに具体的な終了予定日（例：`# 2026-XX-XX までテスト中`）を記載してください。",
+        "file": ".github/workflows/post-threads-monthly-caution.yml"
+      },
+      {
+        "severity": "low",
+        "type": "環境変数の確認",
+        "detail": "3つのシークレット（ANTHROPIC_API_KEY, THREADS_USER_ID, THREADS_ACCESS_TOKEN）が参照されていますが、これらが GitHub Secrets に正しく登録されているか、本ファイルだけからは確認できません",
+        "suggestion": "GitHub リポジトリの Settings > Secrets を確認し、3つの環境変数が全て登録されていることを確認してください",
+        "file": ".github/workflows/post-threads-weekly-theme.yml"
+      },
+      {
+        "severity": "low",
+        "type": "エラーハンドリングの欠落",
+        "detail": "`--dry-run` オプション実行時のエラーハンドリングが明示的に設定されていません。スクリプト実行失敗時の通知機構がありません。",
+        "suggestion": "失敗時の通知を追加することを検討してください。例：`- if: failure()` で失敗時アクションを追加",
+        "file": ".github/workflows/preview-post.yml"
+      },
+      {
+        "severity": "low",
+        "type": "設定の最小化検討",
+        "detail": "`permissions: contents: read`が指定されていますが、このワークフローがGitHub APIへのアクセスを必要としない場合、権限最小化の観点から不要な可能性があります。",
+        "suggestion": "ワークフローが実際にコンテンツ読み込みアクセスを必要としない場合は、permissions設定を削除するか、`permissions: {}`として明示的に権限なしを指定してください。",
+        "file": ".github/workflows/rakutabi-stats-pr-check.yml"
+      },
+      {
+        "severity": "low",
+        "type": "手順の矛盾",
+        "detail": "travel-build ジョブは diagnostics ジョブと異なり、条件チェックがなく常に実行されます。diagnostics は特定ブランチのみで実行される設計なのに対し、travel-build はすべてのPRで実行される点で一貫性がありません。",
+        "suggestion": "travel-build ジョブも同じ条件を適用するか、または意図的に異なる条件にする場合はコメントで明記してください。",
+        "file": ".github/workflows/search-acquisition-review.yml"
+      },
+      {
+        "severity": "low",
+        "type": "推奨される改善",
+        "detail": "git pullでrebaseを行っていますが、並行実行や競合の可能性があります。`workflow_dispatch` のみの現在は問題ありませんが、将来のpushトリガー復活時に懸念が生じます。",
+        "suggestion": "`git pull --rebase` の前に `git fetch` を明示的に実行するか、競合時の処理を定義してください。また、GitHub Actionsの同時実行設定（`concurrency`）の導入を検討してください。",
+        "file": ".github/workflows/update-index.yml"
+      },
+      {
+        "severity": "low",
+        "type": "環境設定の確認漏れ",
+        "detail": "A8.netのスクリプトは `A8_JSESSIONID` を使用していますが、セッションの有効期限切れ時の検証・更新メカニズムが記載されていません",
+        "suggestion": "secrets の定期更新手順やセッション有効期限チェック機能を別途ドキュメント化する",
+        "file": ".github/workflows/update-prices.yml"
+      },
+      {
+        "severity": "low",
+        "type": "環境変数の検証タイミング",
+        "detail": "dryRunチェックの後に環境変数検証を行っているが、dryRunでもUSER_IDとACCESS_TOKENの欠落でエラーが発生する可能性がある",
+        "suggestion": "dryRun時は環境変数チェックをスキップするか、より早期に検証を行う。現在：`if (!dryRun && (!USER_ID || !ACCESS_TOKEN))` は正しいが、selectVariant()の前に移動を検討",
+        "file": "scripts/post-threads-honmeisei-toikake.ts"
+      },
+      {
+        "severity": "low",
+        "type": "依存関数の確認",
+        "detail": "getJstDayOfWeek()とgetJstDateSlug()をlib/kyusei-banからインポートしているが、これらが正しく実装されているか点検対象外",
+        "suggestion": "scripts/lib/kyusei-ban.tsの実装を確認し、JSTタイムゾーンの処理が正確であることを検証",
+        "file": "scripts/post-threads-honmeisei-toikake.ts"
+      }
+    ]
+  }
+}
