@@ -1,12 +1,12 @@
 {
-  "current_month": "2026-10",
-  "theme": "科学・化学のふしぎ",
-  "category": "科学・化学のふしぎ",
-  "series_week_start": "2026-10-19",
+  "current_month": "2026-11",
+  "theme": "量子力学と古代の観察法 ～目に見えない世界を理解する方法は昔も今も同じ～",
+  "category": "量子力学・宇宙論",
+  "series_week_start": "2026-11-02",
   "posts_completed": {
     "monday": true,
-    "wednesday": true,
-    "friday": true,
+    "wednesday": false,
+    "friday": false,
     "sunday": false
   }
 }
