@@ -9,6 +9,8 @@ on:
       - 'components/ProductCard.tsx'
       - 'components/AffiliateClickTracker.tsx'
       - 'components/PriceTable.tsx'
+      - 'components/ProductAnnualCost.tsx'
+      - 'tests/annual-cost-purchase.test.mjs'
       - 'app/column/**'
       - 'lib/eye-columns.tsx'
       - 'lib/columns.tsx'
