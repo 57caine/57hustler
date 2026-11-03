@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import type { Price, Store } from '@/lib/products';
+import { hasProductDetailDestination } from '@/lib/products';
 import annualBundleMap from '@/data/annual-bundle-url-map.json';
 
 type Offer = Price & { store: Store };
@@ -52,7 +53,9 @@ export default function ProductAnnualCost({ prices, category, productName }: { p
     ? `${selected.store.url}&a8ejpredirect=${encodeURIComponent(trackedBundle.url)}${selected.store.affiliateParam}`
     : fallbackLink;
 
-  const isTrackedDestination = destinationLink.includes('px.a8.net') || destinationLink.includes('afl.rakuten.co.jp');
+  const isTrackedDestination = (destinationLink.includes('px.a8.net') || destinationLink.includes('afl.rakuten.co.jp')) &&
+    destinationLink.startsWith('https://') &&
+    (Boolean(trackedBundle) || hasProductDetailDestination(selected.productId, selected.storeId));
 
   const selectPeriod = (months: PeriodMonths) => {
     setPeriod(months);
