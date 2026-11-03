@@ -6,6 +6,10 @@ on:
   pull_request:
     paths:
       - 'scripts/post-organic-threads.mjs'
+      - 'scripts/lib/mitama-schedule.mjs'
+      - 'data/mitama-threads-posts.json'
+      - 'tests/mitama-continuation.test.mjs'
+      - '.github/workflows/mitama-threads-post.yml'
       - 'scripts/lib/organic-threads-message.mjs'
       - 'data/organic-threads-posts-20261013.json'
       - 'tests/organic-threads.test.mjs'
@@ -24,6 +28,7 @@ jobs:
           node-version: '22'
       - run: node --test tests/organic-threads.test.mjs
       - run: node --test tests/brand-threads.test.mjs
+      - run: node --test tests/mitama-continuation.test.mjs
 
   identity:
     if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feat/brand-threads-next-pilot-20261028'

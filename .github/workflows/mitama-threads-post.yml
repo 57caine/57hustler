@@ -2,9 +2,9 @@ name: MITAMA Threads 投稿（認証確認後のみ公開）
 on:
 
   schedule:
-    # 2026-11-01 through 11-07 only. Date guard prevents annual repeats.
+    # 2026-11-01 through 11-14 only. Date guard prevents annual repeats.
     # Retry opportunities on the same JST day; publisher checks Threads history before posting.
-    - cron: '15 0,3,6,9 1-7 11 *'
+    - cron: '15 0,3,6,9 1-14 11 *'
   # Independent fallback: this existing daily report has recently run reliably.
   workflow_run:
     workflows: ['Affiliate evidence report']
@@ -40,6 +40,13 @@ on:
           - '22'
           - '23'
           - '24'
+          - '25'
+          - '26'
+          - '27'
+          - '28'
+          - '29'
+          - '30'
+          - '31'
       publish:
         description: '実投稿（初期値OFF）'
         required: true
@@ -62,14 +69,7 @@ jobs:
       - name: スケジュール対象日の検証
         if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_run' }}
         id: datecheck
-        run: |
-          TODAY=$(date -u +%Y-%m-%d)
-          case "$TODAY" in
-            2026-11-0[1-7])
-              DOM=$(date -u +%-d)
-              echo "day=$((DOM+17))" >> "$GITHUB_OUTPUT" ;;
-            *) echo "Not an approved publishing date: $TODAY"; exit 1 ;;
-          esac
+        run: node scripts/lib/mitama-schedule.mjs >> "$GITHUB_OUTPUT"
       - name: 投稿ドライラン
         if: ${{ github.event_name == 'workflow_dispatch' && !inputs.publish }}
         run: node scripts/post-organic-threads.mjs --brand mitama --day "${{ inputs.day }}"
