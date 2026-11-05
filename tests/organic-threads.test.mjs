@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {mkdtempSync,readFileSync,rmSync,writeFileSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {buildOrganicMessage,isOrganicDuplicate} from '../scripts/lib/organic-threads-message.mjs';
 const posts=JSON.parse(readFileSync('data/organic-threads-posts-20261013.json','utf8')).posts;
@@ -94,4 +96,44 @@ test('Ito pilot is disclosed, scoped, attributed and deduplicates the earlier dr
  assert.throws(()=>buildOrganicMessage({...p,day:10},'rakutabi'));
  assert.throws(()=>buildOrganicMessage(p,'lens'));
  assert.throws(()=>buildOrganicMessage(p,'mitama'));
+});
+
+test('scheduled Rakutabi slots use audience windows without affecting Lens or earlier dates',t=>{
+ const dir=mkdtempSync(join(tmpdir(),'organic-slots-'));
+ t.after(()=>rmSync(dir,{recursive:true,force:true}));
+ const output=join(dir,'output');
+ const workflow=readFileSync('.github/workflows/brand-threads-organic-pilot.yml','utf8');
+ const plan=workflow.split('        run: |\n')[1].split('\n      - name:')[0]
+  .replace('TODAY="$(date -u +%F)"','TODAY="$TEST_DATE"')
+  .replace('UTC_HOUR="$(date -u +%H)"','UTC_HOUR="$TEST_HOUR"');
+ const regular='15 1,4,7,10 * * *';
+ const sunday='15 6,8 * * 0';
+ const evening='15 12,13 * * 2,4';
+ for(const [date,hour,cron,expected] of [
+  ['2026-11-06','01',regular,'rakutabi'],
+  ['2026-11-08','04',regular,null],
+  ['2026-11-08','06',sunday,'rakutabi'],
+  ['2026-11-08','08',sunday,'rakutabi'],
+  ['2026-11-08','09',sunday,null],
+  ['2026-11-10','10',regular,null],
+  ['2026-11-10','12',evening,'rakutabi'],
+  ['2026-11-10','13',evening,'rakutabi'],
+  ['2026-11-10','15',evening,null],
+  ['2026-11-05','12',evening,null],
+  ['2026-11-05','01',regular,'lens'],
+  ['2026-11-12','12',evening,null],
+ ]){
+  writeFileSync(output,'');
+  const result=spawnSync('bash',['-c',plan],{encoding:'utf8',env:{
+   PATH:process.env.PATH,EVENT_NAME:'schedule',SCHEDULE_CRON:cron,
+   TEST_DATE:date,TEST_HOUR:hour,GITHUB_OUTPUT:output,
+  }});
+  assert.equal(result.status,0,result.stderr);
+  assert.equal(readFileSync(output,'utf8').match(/^brand=(\w+)$/m)?.[1]??null,expected,date+' '+hour);
+ }
+ for(const day of [12,13,14]){
+  const p=posts.find(p=>p.brand==='rakutabi'&&p.day===day);
+  assert.equal(p.previousTexts.length,1);
+  assert.ok(isOrganicDuplicate({text:p.previousTexts[0]},p,buildOrganicMessage(p,p.brand)));
+ }
 });

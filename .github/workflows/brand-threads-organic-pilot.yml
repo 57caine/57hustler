@@ -4,6 +4,8 @@ on:
     # Multiple daily opportunities: missed GitHub schedule runs must not mean missed posts.
     # All times are UTC and remain on the same JST calendar day.
     - cron: '15 1,4,7,10 * * *'
+    - cron: '15 6,8 * * 0'       # Sunday 15:15 and 17:15 JST
+    - cron: '15 12,13 * * 2,4' # Tuesday/Thursday 21:15 and 22:15 JST
   workflow_dispatch:
     inputs:
       publish:
@@ -27,6 +29,7 @@ jobs:
       - name: 公開対象を日付で限定
         id: plan
         env:
+          SCHEDULE_CRON: ${{ github.event.schedule }}
           EVENT_NAME: ${{ github.event_name }}
           MANUAL_PUBLISH: ${{ inputs.publish }}
         shell: bash
@@ -62,6 +65,25 @@ jobs:
             2026-11-11) BRAND=lens; DAY=14 ;;
             *) echo "No scheduled content for $TODAY"; exit 0 ;;
           esac
+          if [[ "$EVENT_NAME" == "schedule" ]]; then
+            WEEKDAY="$(date -u -d "$TODAY" +%u)"
+            SLOT=default
+            if [[ "$BRAND" == rakutabi && "$TODAY" > 2026-11-05 ]]; then
+              case "$WEEKDAY" in
+                7) SLOT=sunday ;;
+                2|4) SLOT=evening ;;
+              esac
+            fi
+            case "$SLOT:$SCHEDULE_CRON" in
+              'default:15 1,4,7,10 * * *'|'sunday:15 6,8 * * 0'|'evening:15 12,13 * * 2,4') ;;
+              *) echo "Skip cron outside the planned slot for $BRAND on $TODAY"; exit 0 ;;
+            esac
+            UTC_HOUR="$(date -u +%H)"
+            case "$SLOT:$UTC_HOUR" in
+              default:*|sunday:06|sunday:07|sunday:08|evening:12|evening:13|evening:14) ;;
+              *) echo "Skip delayed run outside the audience window on $TODAY"; exit 0 ;;
+            esac
+          fi
           echo "brand=$BRAND" >> "$GITHUB_OUTPUT"
           echo "day=$DAY" >> "$GITHUB_OUTPUT"
           if [[ "$EVENT_NAME" == "schedule" || "$MANUAL_PUBLISH" == "true" ]]; then
