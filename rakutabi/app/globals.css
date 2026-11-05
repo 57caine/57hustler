@@ -74,8 +74,8 @@
   --color-tag: var(--tag);
   --color-tag-ink: var(--tag-ink);
   --color-price: var(--price);
-  --font-sans: var(--font-noto-sans-jp), system-ui, sans-serif;
-  --font-serif: var(--font-noto-serif-jp), "Hiragino Mincho ProN", serif;
+  --font-sans: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, system-ui, sans-serif;
+  --font-serif: "Hiragino Mincho ProN", "Yu Mincho", serif;
 }
 
 body {
