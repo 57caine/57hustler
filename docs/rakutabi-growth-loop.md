@@ -8,6 +8,7 @@
 
 ## 既存の実行基盤
 ChatGPTの既存日次タスク「57hustler 集客改善の自走」ID 6ae14b1867cc81918af9b0dbb9adcb23（毎朝8時JST）が実装を担当する。既存の障害監視とは別。新たな有料AIエージェントや重複スケジュールは追加しない。
+2026-11-05追記：Claude Code の予約タスク（1日1回、Proプラン内）が `claude-task` ラベル付きIssueだけを担当する。この日次タスクは `claude-task`/`claude-in-progress` 付きIssueと `claude/` ブランチのPRに着手しない。手順は `docs/claude-task-handoff.md`。
 GitHub Actionsのgrowth-triageは決定的な診断であり、自動実装の証明ではない。日次タスクの設定保存も、実装成功や増収の証明ではない。
 
 ## 一回の手順
