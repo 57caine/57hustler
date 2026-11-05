@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T01:09:33.368Z",
+  "generatedAt": "2026-11-05T01:25:28.602Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 32,
-        "bounceRate": 0.28125,
-        "avgSessionDuration": 223.67746615625,
+        "sessions": 33,
+        "bounceRate": 0.2727272727272727,
+        "avgSessionDuration": 219.99216845454546,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション32件・affiliate_clickゼロ"
+        "セッション33件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -81,16 +81,16 @@
       "slug": "enkintsuyo-contact-guide",
       "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
       "metrics": {
-        "sessions": 19,
-        "bounceRate": 0.05263157894736842,
-        "avgSessionDuration": 86.12915152631578,
+        "sessions": 17,
+        "bounceRate": 0,
+        "avgSessionDuration": 93.95168435294119,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション19件・affiliate_clickゼロ"
+        "セッション17件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -115,16 +115,16 @@
       "slug": "kanso-shinikui-contact",
       "title": "kanso-shinikui-contact",
       "metrics": {
-        "sessions": 13,
-        "bounceRate": 0.3076923076923077,
-        "avgSessionDuration": 181.525185,
+        "sessions": 12,
+        "bounceRate": 0.25,
+        "avgSessionDuration": 196.53156708333333,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション13件・affiliate_clickゼロ"
+        "セッション12件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -149,16 +149,16 @@
       "slug": "vr-game-osusume-2026",
       "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
       "metrics": {
-        "sessions": 12,
-        "bounceRate": 0.4166666666666667,
-        "avgSessionDuration": 158.93341041666667,
+        "sessions": 11,
+        "bounceRate": 0.36363636363636365,
+        "avgSessionDuration": 172.55636927272727,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション12件・affiliate_clickゼロ"
+        "セッション11件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -281,40 +281,6 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/eyestrain-stretching-massage-guide",
-      "slug": "eyestrain-stretching-massage-guide",
-      "title": "眼精疲労のストレッチ・マッサージ完全ガイド｜仕事中にできる即効テクニック",
-      "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.375,
-        "avgSessionDuration": 99.18606,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 6,
-        "h3Count": 12,
-        "hasAffiliateLinks": true,
-        "ctaCount": 16,
-        "contentChars": 121819
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/meta-quest-3-review-2026",
       "slug": "meta-quest-3-review-2026",
       "title": "Meta Quest 3レビュー2026【スペック・できること・買うべき人を徹底解説】",
@@ -336,6 +302,40 @@
         "hasAffiliateLinks": true,
         "ctaCount": 7,
         "contentChars": 84000
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/soft-vs-hard-contact-hikaku",
+      "slug": "soft-vs-hard-contact-hikaku",
+      "title": "soft-vs-hard-contact-hikaku",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.25,
+        "avgSessionDuration": 63.795215125,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 5,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 80383
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
