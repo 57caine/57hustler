@@ -7,12 +7,12 @@ import {spawnSync} from 'node:child_process';
 import {buildOrganicMessage,isOrganicDuplicate} from '../scripts/lib/organic-threads-message.mjs';
 const posts=JSON.parse(readFileSync('data/organic-threads-posts-20261013.json','utf8')).posts;
 test('safe and unique organic drafts',()=>{
- assert.equal(posts.length,28);
+ assert.equal(posts.length,35);
  assert.equal(new Set(posts.map(p=>p.text)).size,posts.length);
  assert.equal(new Set(posts.map(p=>p.brand+':'+p.day)).size,posts.length);
  for(const p of posts){
   assert.ok(['rakutabi','lens'].includes(p.brand));
-  assert.ok(Number.isInteger(p.day) && p.day>=1 && p.day<=14);
+  assert.ok(Number.isInteger(p.day) && p.day>=1 && p.day<=(p.brand==='rakutabi'?18:17));
   assert.ok(p.text.length>0 && p.text.length<=500);
   assert.ok(!p.text.includes('http'));
   assert.ok(!p.text.includes('【PR】'));
@@ -40,8 +40,8 @@ test('scheduled extension has valid unique drafts and preserves alternate-day ca
  assert.equal(new Set(rows.map(x=>x.brand+':'+x.day)).size,rows.length);
  for(const row of rows) assert.ok(posts.some(p=>p.brand===row.brand&&p.day===row.day),JSON.stringify(row));
  const extension=rows.filter(x=>x.date>='2026-10-28');
- assert.equal(extension.length,15);
- assert.equal(extension.at(-1).date,'2026-11-11');
+ assert.equal(extension.length,22);
+ assert.equal(extension.at(-1).date,'2026-11-18');
  for(const brand of ['lens','rakutabi']){
   const days=extension.filter(x=>x.brand===brand).map(x=>Date.parse(x.date));
   for(let i=1;i<days.length;i++) assert.equal(days[i]-days[i-1],2*86400000);
@@ -121,7 +121,13 @@ test('scheduled Rakutabi slots use audience windows without affecting Lens or ea
   ['2026-11-10','15',evening,null],
   ['2026-11-05','12',evening,null],
   ['2026-11-05','01',regular,'lens'],
-  ['2026-11-12','12',evening,null],
+  ['2026-11-12','10',regular,null],
+  ['2026-11-12','12',evening,'rakutabi'],
+  ['2026-11-12','15',evening,null],
+  ['2026-11-15','06',sunday,null],
+  ['2026-11-15','04',regular,'lens'],
+  ['2026-11-18','10',regular,'rakutabi'],
+  ['2026-11-19','12',evening,null],
  ]){
   writeFileSync(output,'');
   const result=spawnSync('bash',['-c',plan],{encoding:'utf8',env:{

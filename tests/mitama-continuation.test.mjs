@@ -71,7 +71,7 @@ test('existing duplicate, wrong account and incomplete history never publish', (
   }
 });
 test('upper bound and unauthorized publication fail closed', () => {
-  for (const args of [ ['--brand','mitama','--day','32'], ['--brand','lens','--day','15'], ['--brand','mitama','--day','25','--publish'] ]) {
+  for (const args of [ ['--brand','mitama','--day','32'], ['--brand','lens','--day','18'], ['--brand','rakutabi','--day','19'], ['--brand','mitama','--day','25','--publish'] ]) {
     const r=spawnSync(process.execPath,['scripts/post-organic-threads.mjs',...args],{encoding:'utf8',env:{}});
     assert.notEqual(r.status,0);
   }
