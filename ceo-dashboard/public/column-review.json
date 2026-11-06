@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T01:25:28.602Z",
+  "generatedAt": "2026-11-06T01:28:01.623Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 33,
-        "bounceRate": 0.2727272727272727,
-        "avgSessionDuration": 219.99216845454546,
+        "sessions": 34,
+        "bounceRate": 0.2647058823529412,
+        "avgSessionDuration": 271.3692018823529,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション33件・affiliate_clickゼロ"
+        "セッション34件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -47,16 +47,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 26,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 73.60472561538462,
+        "sessions": 28,
+        "bounceRate": 0.5357142857142857,
+        "avgSessionDuration": 68.34724521428572,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション26件・affiliate_clickゼロ"
+        "セッション28件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
@@ -77,20 +77,54 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/enkintsuyo-contact-guide",
-      "slug": "enkintsuyo-contact-guide",
-      "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
+      "path": "/column/smile-surgery-guide-2026",
+      "slug": "smile-surgery-guide-2026",
+      "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
       "metrics": {
-        "sessions": 17,
-        "bounceRate": 0,
-        "avgSessionDuration": 93.95168435294119,
+        "sessions": 24,
+        "bounceRate": 0.20833333333333334,
+        "avgSessionDuration": 237.84502620833334,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション17件・affiliate_clickゼロ"
+        "セッション24件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 72327
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/enkintsuyo-contact-guide",
+      "slug": "enkintsuyo-contact-guide",
+      "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
+      "metrics": {
+        "sessions": 19,
+        "bounceRate": 0,
+        "avgSessionDuration": 93.09914794736842,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション19件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -145,6 +179,40 @@
       "source": "auto-ga4"
     },
     {
+      "path": "/column/contact-net-kounyu-guide",
+      "slug": "contact-net-kounyu-guide",
+      "title": "コンタクトレンズはネットで買える？処方箋なしでも大丈夫？完全ガイド",
+      "metrics": {
+        "sessions": 11,
+        "bounceRate": 0.5454545454545454,
+        "avgSessionDuration": 67.54068118181819,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション11件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 76251
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
       "path": "/column/vr-game-osusume-2026",
       "slug": "vr-game-osusume-2026",
       "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
@@ -166,74 +234,6 @@
         "hasAffiliateLinks": true,
         "ctaCount": 6,
         "contentChars": 80825
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/contact-net-kounyu-guide",
-      "slug": "contact-net-kounyu-guide",
-      "title": "コンタクトレンズはネットで買える？処方箋なしでも大丈夫？完全ガイド",
-      "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.6,
-        "avgSessionDuration": 70.37951910000001,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 76251
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/blue-light-megane-kouka",
-      "slug": "blue-light-megane-kouka",
-      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
-      "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.4444444444444444,
-        "avgSessionDuration": 48.36076533333333,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 3,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 70118
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -281,13 +281,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/meta-quest-3-review-2026",
-      "slug": "meta-quest-3-review-2026",
-      "title": "Meta Quest 3レビュー2026【スペック・できること・買うべき人を徹底解説】",
+      "path": "/column/blue-light-megane-kouka",
+      "slug": "blue-light-megane-kouka",
+      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
         "sessions": 8,
-        "bounceRate": 0.25,
-        "avgSessionDuration": 290.63660024999996,
+        "bounceRate": 0.375,
+        "avgSessionDuration": 54.405861,
         "affiliateClicks": 0
       },
       "flags": [
@@ -298,10 +298,10 @@
       ],
       "analysis": {
         "h2Count": 4,
-        "h3Count": 2,
+        "h3Count": 3,
         "hasAffiliateLinks": true,
-        "ctaCount": 7,
-        "contentChars": 84000
+        "ctaCount": 4,
+        "contentChars": 70118
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -315,33 +315,33 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/soft-vs-hard-contact-hikaku",
-      "slug": "soft-vs-hard-contact-hikaku",
-      "title": "soft-vs-hard-contact-hikaku",
+      "path": "/column/acuvue-zenkindai-hikaku",
+      "slug": "acuvue-zenkindai-hikaku",
+      "title": "acuvue-zenkindai-hikaku",
       "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.25,
-        "avgSessionDuration": 63.795215125,
+        "sessions": 7,
+        "bounceRate": 0.14285714285714285,
+        "avgSessionDuration": 3446.9723208571427,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
+        "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 4,
-        "h3Count": 5,
+        "h2Count": 3,
+        "h3Count": 6,
         "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 80383
+        "ctaCount": 1,
+        "contentChars": 76539
       },
       "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
       ],
       "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
