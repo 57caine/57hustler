@@ -6,7 +6,7 @@
   "posts_completed": {
     "monday": true,
     "wednesday": true,
-    "friday": false,
+    "friday": true,
     "sunday": false
   }
 }
