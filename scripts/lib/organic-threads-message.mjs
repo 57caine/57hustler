@@ -30,9 +30,10 @@ export function buildOrganicMessage(post, brand) {
   return message;
 }
 
-export function isOrganicDuplicate(item, post, message) {
+export function isOrganicDuplicate(item, post, message, alternateMessages = []) {
   return typeof item?.text === 'string' && (
     item.text === message || item.text === post.text || (post.previousTexts ?? []).includes(item.text) ||
+    alternateMessages.includes(item.text) ||
     (typeof post.url === 'string' && item.text.includes(post.url))
   );
 }

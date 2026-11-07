@@ -1,0 +1,25 @@
+name: Rakutabi photo thread safety
+on:
+  pull_request:
+    paths:
+      - 'scripts/lib/rakutabi-photo-thread.mjs'
+      - 'scripts/lib/rakutabi-photo-adapters.mjs'
+      - 'scripts/lib/organic-photo-overlap.mjs'
+      - 'scripts/lib/organic-threads-message.mjs'
+      - 'scripts/post-organic-threads.mjs'
+      - 'data/rakutabi-sunhatoya-photo-review-20261101.json'
+      - 'tests/rakutabi-photo-thread.test.mjs'
+      - 'tests/rakutabi-photo-adapters.test.mjs'
+      - 'tests/rakutabi-photo-overlap.test.mjs'
+      - '.github/workflows/rakutabi-photo-thread-ci.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/rakutabi-photo-*.test.mjs tests/organic-threads.test.mjs tests/brand-threads.test.mjs
