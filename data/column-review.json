@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T01:28:01.623Z",
+  "generatedAt": "2026-11-07T00:48:29.849Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 34,
-        "bounceRate": 0.2647058823529412,
-        "avgSessionDuration": 271.3692018823529,
+        "sessions": 37,
+        "bounceRate": 0.2702702702702703,
+        "avgSessionDuration": 278.6383264324324,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション34件・affiliate_clickゼロ"
+        "セッション37件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -47,16 +47,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 28,
-        "bounceRate": 0.5357142857142857,
-        "avgSessionDuration": 68.34724521428572,
+        "sessions": 26,
+        "bounceRate": 0.5769230769230769,
+        "avgSessionDuration": 71.59357465384616,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション28件・affiliate_clickゼロ"
+        "セッション26件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
@@ -81,16 +81,16 @@
       "slug": "smile-surgery-guide-2026",
       "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
       "metrics": {
-        "sessions": 24,
-        "bounceRate": 0.20833333333333334,
-        "avgSessionDuration": 237.84502620833334,
+        "sessions": 21,
+        "bounceRate": 0.19047619047619047,
+        "avgSessionDuration": 204.37237647619045,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション24件・affiliate_clickゼロ"
+        "セッション21件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -115,16 +115,16 @@
       "slug": "enkintsuyo-contact-guide",
       "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
       "metrics": {
-        "sessions": 19,
+        "sessions": 17,
         "bounceRate": 0,
-        "avgSessionDuration": 93.09914794736842,
+        "avgSessionDuration": 90.876097,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション19件・affiliate_clickゼロ"
+        "セッション17件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -138,6 +138,40 @@
       ],
       "suggestions": [
         "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/vr-game-osusume-2026",
+      "slug": "vr-game-osusume-2026",
+      "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
+      "metrics": {
+        "sessions": 13,
+        "bounceRate": 0.46153846153846156,
+        "avgSessionDuration": 146.49874576923077,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション13件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 6,
+        "contentChars": 80825
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -213,40 +247,6 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/vr-game-osusume-2026",
-      "slug": "vr-game-osusume-2026",
-      "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
-      "metrics": {
-        "sessions": 11,
-        "bounceRate": 0.36363636363636365,
-        "avgSessionDuration": 172.55636927272727,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション11件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 6,
-        "contentChars": 80825
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/1day-vs-2week-dotchiga-otoku",
       "slug": "1day-vs-2week-dotchiga-otoku",
       "title": "1day-vs-2week-dotchiga-otoku",
@@ -308,40 +308,6 @@
       ],
       "suggestions": [
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/acuvue-zenkindai-hikaku",
-      "slug": "acuvue-zenkindai-hikaku",
-      "title": "acuvue-zenkindai-hikaku",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.14285714285714285,
-        "avgSessionDuration": 3446.9723208571427,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 6,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 76539
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
