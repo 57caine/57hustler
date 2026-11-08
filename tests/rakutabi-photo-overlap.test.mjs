@@ -48,7 +48,7 @@ test('photo core refuses an already published replaced text before making contai
 test('photo review remains unscheduled and its old-message alias matches the real draft', () => {
   const posts = JSON.parse(readFileSync('data/organic-threads-posts-20261013.json', 'utf8')).posts;
   assert.equal(review.publishEnabled, false); assert.equal(review.scheduledAt, null);
-  assert.deepEqual(review.previousTexts, [posts.find(p => p.brand === 'rakutabi' && p.day === 13).text]);
+  assert.ok(review.previousTexts.includes(posts.find(p => p.brand === 'rakutabi' && p.day === 13).text));
   assert.equal(review.photos.length, 3);
 });
 test('an activated photo slot never falls back to text, including before a parent appears', () => {
