@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T00:48:29.849Z",
+  "generatedAt": "2026-11-08T00:19:02.775Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 37,
-        "bounceRate": 0.2702702702702703,
-        "avgSessionDuration": 278.6383264324324,
+        "sessions": 38,
+        "bounceRate": 0.23684210526315788,
+        "avgSessionDuration": 314.42086857894736,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション37件・affiliate_clickゼロ"
+        "セッション38件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -47,16 +47,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 26,
-        "bounceRate": 0.5769230769230769,
-        "avgSessionDuration": 71.59357465384616,
+        "sessions": 25,
+        "bounceRate": 0.64,
+        "avgSessionDuration": 61.84057244,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション26件・affiliate_clickゼロ"
+        "セッション25件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
@@ -82,8 +82,8 @@
       "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
       "metrics": {
         "sessions": 21,
-        "bounceRate": 0.19047619047619047,
-        "avgSessionDuration": 204.37237647619045,
+        "bounceRate": 0.14285714285714285,
+        "avgSessionDuration": 206.02901328571426,
         "affiliateClicks": 0
       },
       "flags": [
@@ -149,16 +149,16 @@
       "slug": "vr-game-osusume-2026",
       "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
       "metrics": {
-        "sessions": 13,
-        "bounceRate": 0.46153846153846156,
-        "avgSessionDuration": 146.49874576923077,
+        "sessions": 14,
+        "bounceRate": 0.42857142857142855,
+        "avgSessionDuration": 137.57576692857143,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション13件・affiliate_clickゼロ"
+        "セッション14件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -251,16 +251,16 @@
       "slug": "1day-vs-2week-dotchiga-otoku",
       "title": "1day-vs-2week-dotchiga-otoku",
       "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.125,
-        "avgSessionDuration": 44.69407925,
+        "sessions": 9,
+        "bounceRate": 0.1111111111111111,
+        "avgSessionDuration": 59.71747277777778,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
+        "セッション9件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
