@@ -1,51 +1,50 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>熟女泥棒｜熟ドロ</title><style>
-/* 熟ドロ テストUI。旧版は4層の追記CSSだったものを、見た目を変えずに1層へ整理（2026-11-07）。
-   配色: 黒・深紅・金・ピンク（2026-11-08 オーナー合意の配色が基準） */
-:root{--bg:#080406;--ink:#fff5df;--red:#ff2469;--muted:#c5aaa6;--line:#64302f;--gold:#ffe4a4;--btn:linear-gradient(180deg,#ff548e,#ff1761)}
+/* 熟ドロ テストUI。配色: 黒・深紅・金・ピンク（2026-11-08 オーナー合意の配色が基準）
+   ゴール: 紹介先での単品購入・月額サブスク登録。一覧→詳細ページ→紹介先ボタンの流れで送客する */
+:root{color-scheme:dark;--bg:#080406;--ink:#fff5df;--red:#ff2469;--muted:#c5aaa6;--line:#64302f;--gold:#ffe4a4;--btn:linear-gradient(180deg,#ff548e,#ff1761)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.7 'Helvetica Neue','Noto Sans JP',sans-serif}
 button,input,select{font:inherit}
 button,a{touch-action:manipulation}
 button{cursor:pointer}
-button:focus-visible,a:focus-visible{outline:3px solid #ffdb7c;outline-offset:3px}
+button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #ffdb7c;outline-offset:3px}
+[hidden]{display:none!important}
 
 /* 告知バー・ヘッダー */
 .test{background:#470b1c;color:#ffc4d6;text-align:center;font-size:10px;letter-spacing:.1em;padding:4px}
 header{background:linear-gradient(180deg,#27050d,#100409);border-bottom:1px solid #a47a38}
 .head{max-width:1240px;margin:auto;padding:13px 20px;display:flex;align-items:center;justify-content:space-between;gap:25px}
-.logo{font-family:serif;font-size:28px;font-weight:900;letter-spacing:2px;color:#ffd87c;text-shadow:0 1px #9e2f32,0 0 18px #ff40432b}
+.logo{font-family:serif;font-size:28px;font-weight:900;letter-spacing:2px;color:#ffd87c;text-shadow:0 1px #9e2f32,0 0 18px #ff40432b;text-decoration:none;display:block;line-height:1.7}
 .logo small{font:10px sans-serif;letter-spacing:2px;display:block;color:#fb9baf}
 nav{display:flex;gap:24px}
-nav button{border:0;background:none;color:#c6b5b4;padding:8px 0}
+nav button{border:0;background:none;color:#c6b5b4;padding:8px 0;min-height:40px}
 nav button.active{color:#ff536c;border-bottom:2px solid #ff536c}
 
-/* ヒーロー */
+/* ヒーロー（一覧を最初の画面に入れるため小さめ） */
 .wrap{max-width:1040px;margin:auto;padding:14px 20px}
-.hero{display:block;overflow:hidden;border:1px solid #b38742;border-radius:10px;background:radial-gradient(ellipse at top right,#7c112e,transparent 65%),linear-gradient(110deg,#3f090b,#20050b);box-shadow:inset 0 0 28px #6b142022}
-.hero-copy{padding:19px 22px}
+.hero{border:1px solid #b38742;border-radius:10px;background:radial-gradient(ellipse at top right,#7c112e,transparent 65%),linear-gradient(110deg,#3f090b,#20050b);box-shadow:inset 0 0 28px #6b142022;padding:16px 22px}
 .eyebrow{font-size:10px;letter-spacing:1.6px;color:#edc16b;font-weight:bold}
-.hero h1{font:bold 23px/1.35 sans-serif;letter-spacing:0;margin:7px 0;color:#fff0c8;text-shadow:0 2px 8px #0008}
-.hero p{color:#cba9a2;font-size:11px;margin:7px 0 0}
+.hero h1{font:bold 23px/1.35 sans-serif;margin:5px 0;color:#fff0c8;text-shadow:0 2px 8px #0008;text-wrap:balance}
+.hero p{color:#cba9a2;font-size:11px;margin:5px 0 0}
 
-/* 検索・テーマ絞り込み・告知枠 */
+/* 検索・テーマ絞り込み */
 .search{margin:13px 0 10px;display:flex;background:#2a0715;border:1px solid #e63a75;border-radius:30px;padding:5px;gap:8px;box-shadow:0 0 13px #ff246926}
 .search:focus-within{outline:2px solid var(--red)}
 .search input{border:0;min-width:0;flex:1;outline:0;padding:10px 10px 10px 15px;background:transparent;color:white}
 .search input::placeholder{color:#d6a9bd}
 .search button{border:0;border-radius:24px;padding:8px 19px;background:var(--btn);color:#fff;font-weight:800;box-shadow:inset 0 1px #ffb1cc55}
-.chips{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
-.chips button{border:1px solid #704238;background:#241018;border-radius:20px;padding:4px 12px;color:#f4d8c8;font-size:11px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 6px}
+.chips button{border:1px solid #704238;background:#241018;border-radius:20px;padding:4px 12px;color:#f4d8c8;font-size:11px;white-space:nowrap}
 .chips button.active{background:linear-gradient(180deg,#f85186,#d90d4d);border-color:#ff8db0;color:white}
-.ticker{display:flex;gap:15px;margin:11px 0 17px;padding:8px 12px;border:1px solid #9e743c;border-radius:7px;background:linear-gradient(90deg,#3d170c,#250a11);font-size:11px;color:#efd4b5}
-.ticker b{color:#ffcd6b}
 
 /* 見出し */
-.section-top{display:flex;justify-content:space-between;align-items:center;margin:18px 0 10px}
+.section-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:18px 0 10px}
 .section-top h2{font:bold 16px sans-serif;margin:0;color:var(--gold)}
 .section-top h2:before{content:'▍';color:#ff3c7e;margin-right:5px}
 .section-top p{font-size:9px;letter-spacing:1px;color:#b68a65;margin:4px 0}
-.section-top select{background:#1a1011;border:1px solid #4c3032;padding:5px;color:#e4c8d5}
+.section-top select{background:#1a1011;border:1px solid #4c3032;padding:5px;color:#e4c8d5;border-radius:4px}
 #result{color:var(--muted);font-size:12px}
+.ranking .section-top{border-bottom:1px solid #734321;padding-bottom:11px}
 
 /* 特集枠 */
 .feature{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:13px 0 19px}
@@ -56,64 +55,169 @@ nav button.active{color:#ff536c;border-bottom:2px solid #ff536c}
 
 /* カード */
 .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-.card{position:relative;overflow:hidden;background:linear-gradient(180deg,#230d16,#170b10);border:1px solid #703044;border-radius:6px}
-.art{position:relative;overflow:hidden;height:170px;background:linear-gradient(145deg,var(--b),#140b0b);border-bottom:1px solid #6b2d3e}
+.card{position:relative;overflow:hidden;display:flex;flex-direction:column;background:linear-gradient(180deg,#230d16,#170b10);border:1px solid #703044;border-radius:6px}
+.art{position:relative;overflow:hidden;display:block;height:170px;background:linear-gradient(145deg,var(--b),#140b0b);border-bottom:1px solid #6b2d3e}
 .art:before{content:'';position:absolute;width:110px;height:150px;bottom:-16px;left:calc(50% - 55px);border-radius:50% 50% 8% 8%;background:linear-gradient(150deg,#f4e3ce99,#b17a7277);box-shadow:20px 0 40px #301c2922;transform:rotate(-8deg);opacity:.5}
 .art:after{content:attr(data-initial);position:absolute;left:17px;bottom:14px;color:#f9cde0;font:italic 29px Georgia}
 .badge{position:absolute;top:8px;left:8px;color:white;background:#e82259;padding:2px 6px;border-radius:3px;font-size:8px;letter-spacing:1px}
 .rank{position:absolute;top:8px;left:8px;z-index:1;width:24px;height:26px;border-radius:4px;background:linear-gradient(130deg,#ffe6a0,#d08b22);color:#4a2205;box-shadow:0 2px 6px #0005;text-align:center;font-weight:bold}
 .rank+.badge{left:38px}
-.save{position:absolute;right:8px;top:8px;width:27px;height:27px;border:0;border-radius:50%;background:#fffc;color:#ed255b;font-size:17px}
+.save{position:absolute;right:8px;top:8px;width:27px;height:27px;border:0;border-radius:50%;background:#fffc;color:#ed255b;font-size:17px;z-index:1}
+.save:after{content:'';position:absolute;inset:-9px}/* 見た目は27pxのまま、押せる範囲を45pxに広げる */
 .save[aria-pressed=true]{background:var(--red);color:white}
-.card-body{padding:9px}
+.card-body{padding:9px;display:flex;flex-direction:column;flex:1}
 .tag{color:#ff91b2;font-size:9px;letter-spacing:1px}
 .card h3{font:bold 14px sans-serif;margin:5px 0;color:#fff2dc}
-.card p{font-size:10px;line-height:1.6;color:#d6bfc5;margin:6px 0 8px;min-height:31px}
-.detail{width:100%;display:flex;justify-content:space-between;text-align:left;border:0;border-radius:4px;padding:7px 9px;background:var(--btn);color:#fff;font-size:10px;font-weight:800;box-shadow:inset 0 1px #ffb1cc55}
+.card h3 span{font:10px sans-serif;color:#998b80}
+.card p{font-size:10px;line-height:1.6;color:#d6bfc5;margin:4px 0 6px;min-height:31px}
+.price{display:flex;flex-wrap:wrap;gap:2px 8px;margin:0 0 8px;font-size:10px;color:#f4d8c8;font-variant-numeric:tabular-nums}
+.price b{color:var(--gold);font-size:12px}
+.tagrow{display:flex;justify-content:space-between;gap:6px;align-items:baseline}
+.meta{font-size:9px;color:#b68a65;white-space:nowrap}
+.detail{width:100%;display:flex;justify-content:space-between;align-items:center;margin-top:auto;text-align:left;text-decoration:none;border:0;border-radius:4px;padding:7px 9px;background:var(--btn);color:#fff;font-size:10px;font-weight:800;box-shadow:inset 0 1px #ffb1cc55}
 .empty{grid-column:1/-1;padding:35px;text-align:center;color:var(--muted)}
-
-/* 追加の特集セクション */
-.extra .section-top{border-bottom:1px solid #734321;padding-bottom:11px}
-.extra .art{height:150px}
-.more{display:block;margin:13px auto 21px;width:min(420px,85%);padding:8px;border:1px solid #ad8242;border-radius:30px;background:linear-gradient(180deg,#271012,#100609);color:#ffe6ac;font-size:11px}
+.ranking .art{height:150px}
 footer{margin-top:28px;padding:25px;border-top:1px solid #694025;text-align:center;color:#b89c8e;font-size:10px}
 
-/* 詳細ダイアログ */
-dialog{width:min(550px,92vw);padding:0;border:1px solid #ab7143;border-radius:6px;background:#230a14;color:#fff;box-shadow:0 20px 80px #0004}
-dialog::backdrop{background:#21181699}
-dialog .art{height:180px}
-dialog h2{font:30px serif;margin:8px 0}
-.dialog-body{padding:28px}
-.close{position:absolute;top:12px;right:12px;z-index:2;width:34px;height:34px;border:0;border-radius:50%;background:white;color:#752348;font-size:22px}
-dl{display:grid;grid-template-columns:100px 1fr;gap:10px;font-size:12px}
+/* 詳細ページ（#c-名前 で開く、1人1URL） */
+.back{display:inline-flex;align-items:center;min-height:40px;color:#f4d8c8;text-decoration:none;font-size:12px}
+.profile{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:20px;align-items:start;border:1px solid #703044;border-radius:10px;background:linear-gradient(180deg,#230d16,#170b10);overflow:hidden}
+.profile .art{height:100%;min-height:320px;border-bottom:0}
+.profile .art:after{font-size:40px}
+.profile-body{padding:20px 20px 20px 0}
+.profile h1{font:bold 26px/1.35 sans-serif;margin:4px 0 8px;color:#fff2dc}
+.profile h1 span{font:13px sans-serif;color:#b68a65;margin-left:6px}
+.profile .lead{color:#d6bfc5;margin:0 0 12px}
+dl{display:grid;grid-template-columns:90px 1fr;gap:6px 10px;font-size:12px;margin:0 0 14px}
 dt{color:var(--muted)}
-dd{margin:0}
-.notice{margin-top:18px;padding:14px;background:#3a1522;color:#eacbd2;font-size:12px}
+dd{margin:0;font-variant-numeric:tabular-nums}
+.cta{border:1px solid #b17d31;border-radius:10px;padding:14px;background:radial-gradient(ellipse at top right,#4a1220,#1a080c)}
+.cta-head{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#efd4b5;margin-bottom:10px}
+.pr{border:1px solid #b68a65;color:#e1b2a4;border-radius:3px;padding:0 5px;font-size:9px;letter-spacing:1px}
+.cta-btn{display:flex;justify-content:space-between;align-items:center;width:100%;min-height:48px;margin-top:8px;padding:10px 14px;border-radius:8px;font-weight:800;font-size:13px;text-align:left}
+.cta-btn small{font-weight:normal;font-size:10px;opacity:.85}
+.cta-main{border:0;background:var(--btn);color:#fff;box-shadow:inset 0 1px #ffb1cc55}
+.cta-sub{border:1px solid #ad8242;background:linear-gradient(180deg,#271012,#100609);color:#ffe6ac}
+.cta-note{font-size:10px;color:#c5aaa6;margin:10px 0 0}
+.cta-note[data-live]{color:#ffcd6b}
+.save-wide{margin-top:10px;width:100%;min-height:44px;border:1px solid #704238;border-radius:8px;background:#241018;color:#f4d8c8}
+.save-wide[aria-pressed=true]{border-color:#ff8db0;color:#ff91b2}
+.notice{margin-top:14px;padding:12px;background:#3a1522;color:#eacbd2;font-size:11px;border-radius:6px}
 
 /* スマホ（620px以下） */
 @media(max-width:620px){
 .head{display:block;padding:10px 12px}
-.logo{font-size:24px}
-nav{gap:18px;margin-top:8px;font-size:11px}
+.logo{font-size:24px;line-height:1.3}
+nav{gap:16px;font-size:11px}
 .wrap{padding:10px}
-.hero-copy{padding:15px}
-.eyebrow{font-size:9px}
-.hero h1{font-size:20px}
-.hero p{font-size:10px}
-.search input{font-size:11px;padding:8px 10px}
+.hero{padding:10px 15px}
+.hero .eyebrow{display:none}
+.hero h1{font-size:18px;margin:0}
+.hero p{display:none}
+.search input{font-size:16px;padding:6px 10px}/* 16px未満だとiPhoneが入力時に画面を拡大する */
+.search{margin:10px 0 8px}
 .search button{padding:6px 13px;font-size:11px}
-.chips{gap:5px}
-.chips button{font-size:10px;padding:4px 11px}
-.ticker{font-size:10px;gap:8px}
+.chips{flex-wrap:nowrap;overflow-x:auto;gap:5px;margin:0 -10px 6px;padding:0 10px 4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{font-size:11px;padding:4px 12px;min-height:34px}
+.section-top{margin:8px 0 6px}
 .section-top h2{font-size:15px}
-.section-top select{max-width:130px;font-size:12px}
+.section-top select{max-width:130px;font-size:12px;min-height:34px}
 .feature button{font-size:14px;padding:12px;min-height:88px}
 .feature span{font-size:9px}
 .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.art{height:166px}
+.art{height:136px}
+.ranking .art{height:120px}
 .card h3{font-size:13px}
+.detail{min-height:40px;font-size:11px}
+.profile{grid-template-columns:1fr;gap:0}
+.profile .art{min-height:0;height:220px}
+.profile-body{padding:16px}
+.profile h1{font-size:22px}
 }
-</style></head><body><div class="test">PRIVATE PREVIEW ・ 架空データによるテストサイト</div><header><div class="head"><div class="logo">熟女泥棒<small>熟ドロ / JUKUDORO</small></div><nav aria-label="メインメニュー"><button class="active" data-view="all">クリエイターを探す</button><button data-view="feature">特集</button><button data-view="saved">保存した一覧 <span id="saveCount">0</span></button></nav></div></header><main class="wrap"><section class="hero"><div class="hero-copy"><div class="eyebrow">A LITTLE MORE, YOUR STYLE.</div><h1>気になる特集、<br>まとめて見つかる。</h1><p>雰囲気やテーマから探す、クリエイターの特集室。<br>熟ドロがつなぐ、あなただけのお気に入り。</p></div></section><form class="search" id="searchForm"><input id="query" aria-label="名前やテーマで検索" placeholder="名前・雰囲気・テーマから探す" type="search"><button>検索する</button></form><div class="chips" aria-label="テーマで絞り込み"></div><div class="ticker"><b>熟ドロ PICK UP</b><span>気になる特集を保存して、あとでまとめてチェック。</span></div><section id="features"><div class="section-top"><div><h2>熟ドロの特集室</h2><p>EDITOR'S COLLECTION</p></div></div><div class="feature"><button data-filter="落ち着いた雰囲気"><small>COLLECTION 01</small>余韻を楽しむ、大人の時間。<span>落ち着いた雰囲気で選ぶ →</span></button><button data-filter="ナチュラル"><small>COLLECTION 02</small>飾らない魅力に、出会う。<span>ナチュラルな雰囲気で選ぶ →</span></button></div></section><section id="listing"><div class="section-top"><div><h2 id="listTitle">クリエイターを探す</h2><p id="result" aria-live="polite"></p></div><select id="sort" aria-label="表示順"><option value="new">新着順</option><option value="name">名前順</option></select></div><div class="grid" id="grid"></div></section><div class="extra" id="extraSections"></div><footer>熟女泥棒 / 熟ドロ<br>本ページの人物・情報・ビジュアルはすべて架空のデモです。<br>© JUKUDORO — PRIVATE TEST</footer></main><dialog id="dialog"><button class="close" aria-label="閉じる">×</button><div id="modal"></div></dialog><script>
-const entries=[['彩花','Ayaka','落ち着いた雰囲気','穏やかな語り口と、丁寧な日々の発信。','#c2a392','#816765'],['沙織','Saori','ナチュラル','飾らない日常を、自分のペースで。','#9ca698','#5d736b'],['美月','Mizuki','上品','さりげないこだわりが光る、特集ノート。','#bbb0bb','#73667f'],['遥','Haruka','日常','暮らしの中の、小さな楽しみを集めて。','#c5ac83','#8b7056'],['凛','Rin','落ち着いた雰囲気','静かな時間を大切にするクリエイター。','#b19199','#694c60'],['佳奈','Kana','ナチュラル','自然体の言葉でつづる、日々の記録。','#b2b3a2','#737866'],['千尋','Chihiro','上品','好きなものを、少しずつ深く。','#acb5bd','#647583'],['由衣','Yui','日常','何気ない瞬間に見つける、いつもの魅力。','#c4ab9f','#986f62']].map((a,i)=>({id:i,name:a[0],roman:a[1],tag:a[2],description:a[3],a:a[4],b:a[5]}));let saved=new Set;try{saved=new Set(JSON.parse(localStorage.getItem('jd-saved')||'[]').filter(x=>Number.isInteger(x)&&x>=0&&x<entries.length))}catch{}let filter='すべて',view='all';const grid=document.querySelector('#grid'),query=document.querySelector('#query'),dialog=document.querySelector('#dialog');function render(){let list=entries.filter(x=>(filter==='すべて'||x.tag===filter)&&(view!=='saved'||saved.has(x.id))&&[x.name,x.roman,x.tag,x.description].some(t=>t.toLowerCase().includes(query.value.trim().toLowerCase())));if(document.querySelector('#sort').value==='name')list.sort((a,b)=>a.name.localeCompare(b.name,'ja'));document.querySelector('#result').textContent=`${list.length}人のデモクリエイター`;document.querySelector('#saveCount').textContent=saved.size;document.querySelector('#listTitle').textContent=view==='saved'?'保存したクリエイター':'クリエイターを探す';grid.innerHTML=list.length?list.map(x=>`<article class="card"><div class="art" style="--a:${x.a};--b:${x.b}" data-initial="${x.roman}"><span class="badge">DEMO CREATOR</span><button class="save" aria-label="${x.name}を保存" aria-pressed="${saved.has(x.id)}" data-save="${x.id}">${saved.has(x.id)?'♥':'♡'}</button></div><div class="card-body"><div class="tag">${x.tag}</div><h3>${x.name} <span style="font:10px sans-serif;color:#998b80">${x.roman}</span></h3><p>${x.description}</p><button class="detail" data-detail="${x.id}">特集を見る <span>↗</span></button></div></article>`).join(''):'<div class="empty">条件に合うクリエイターがいません。<br>検索語や絞り込みを変えてみてください。</div>';document.querySelector('#extraSections').innerHTML=view==='all'&&!query.value&&filter==='すべて'?['注目の特集','今週のピックアップ','クリエイター一覧'].map((title,index)=>`<section><div class="section-top"><div><h2>${title}</h2><p>JUKUDORO SELECTION / DEMO</p></div></div><div class="grid">${entries.slice(index, index+4).map((x,i)=>`<article class="card"><div class="art" style="--a:${x.a};--b:${x.b}" data-initial="${x.roman}"><span class="rank">${i+1}</span><span class="badge">DEMO</span></div><div class="card-body"><div class="tag">${x.tag}</div><h3>${x.name}の特集</h3><p>${x.description}</p><button class="detail" data-detail="${x.id}">特集をチェック <span>→</span></button></div></article>`).join('')}</div><button class="more" data-view="feature">特集一覧をもっと見る →</button></section>`).join(''):'';document.querySelector('.chips').innerHTML=['すべて','落ち着いた雰囲気','ナチュラル','上品','日常'].map(t=>`<button class="${filter===t?'active':''}" aria-pressed="${filter===t}" data-filter="${t}">${t}</button>`).join('')}
-document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.filter){filter=b.dataset.filter;render()}if(b.dataset.save!==undefined){const id=Number(b.dataset.save);saved.has(id)?saved.delete(id):saved.add(id);try{localStorage.setItem('jd-saved',JSON.stringify([...saved]))}catch{}render()}if(b.dataset.detail!==undefined){const x=entries[Number(b.dataset.detail)];document.querySelector('#modal').innerHTML=`<div class="art" style="--a:${x.a};--b:${x.b}" data-initial="${x.roman}"></div><div class="dialog-body"><div class="eyebrow">CREATOR SPOTLIGHT / DEMO</div><h2>${x.name}の特集室</h2><p>${x.description}</p><dl><dt>テーマ</dt><dd>${x.tag}</dd><dt>掲載状態</dt><dd>架空データ・テスト掲載</dd><dt>更新内容</dt><dd>プロフィール・作品一覧の表示見本</dd></dl><div class="notice">本番では、許諾と掲載条件を確認した情報・素材をここに掲載します。外部サービスの接続は準備段階です。</div></div>`;dialog.showModal()}if(b.dataset.view){view=b.dataset.view;filter='すべて';query.value='';document.querySelectorAll('nav button').forEach(n=>n.classList.toggle('active',n.dataset.view===view));render();if(view==='feature')document.querySelector('#features').scrollIntoView({behavior:'smooth'});if(view==='saved')document.querySelector('#listing').scrollIntoView({behavior:'smooth'})}});document.querySelector('.close').onclick=()=>dialog.close();dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});document.querySelector('#searchForm').onsubmit=e=>{e.preventDefault();render()};query.oninput=render;document.querySelector('#sort').onchange=render;render();
+</style></head><body><div class="test">PRIVATE PREVIEW ・ 架空データによるテストサイト</div>
+<header><div class="head"><a class="logo" href="#">熟女泥棒<small>熟ドロ / JUKUDORO</small></a>
+<nav aria-label="メインメニュー"><button class="active" data-nav="list">クリエイターを探す</button><button data-nav="ranking">ランキング</button><button data-nav="saved">保存した一覧 <span id="saveCount">0</span></button></nav></div></header>
+<main class="wrap">
+<div id="listView">
+<section class="hero"><div class="eyebrow">A LITTLE MORE, YOUR STYLE.</div><h1>気になる特集、まとめて見つかる。</h1><p>雰囲気やテーマから探す、クリエイターの特集室。熟ドロがつなぐ、あなただけのお気に入り。</p></section>
+<form class="search" id="searchForm" role="search"><input id="query" aria-label="名前やテーマで検索" placeholder="名前・雰囲気・テーマから探す" type="search"><button>検索する</button></form>
+<div class="chips" id="chips" aria-label="テーマで絞り込み"></div>
+<section id="listing"><div class="section-top"><div><h2 id="listTitle">クリエイターを探す</h2><p id="result" aria-live="polite"></p></div><select id="sort" aria-label="表示順"><option value="pop">人気順</option><option value="new">新着順</option><option value="price">月額が安い順</option><option value="name">名前順</option></select></div><div class="grid" id="grid"></div></section>
+<section class="ranking" id="ranking"><div class="section-top"><div><h2>人気ランキング</h2><p>保存された数の多い順 ・ デモ数値</p></div></div><div class="grid" id="rankGrid"></div></section>
+<section id="features"><div class="section-top"><div><h2>熟ドロの特集室</h2><p>EDITOR'S COLLECTION</p></div></div><div class="feature"><button data-filter="落ち着いた雰囲気"><small>COLLECTION 01</small>余韻を楽しむ、大人の時間。<span>落ち着いた雰囲気で選ぶ →</span></button><button data-filter="ナチュラル"><small>COLLECTION 02</small>飾らない魅力に、出会う。<span>ナチュラルな雰囲気で選ぶ →</span></button></div></section>
+</div>
+<div id="detailView" hidden></div>
+<footer>熟女泥棒 / 熟ドロ<br>本ページの人物・料金・人気の数値・ビジュアルはすべて架空のデモです。<br>本番では紹介リンク（PR）を含みます。<br>© JUKUDORO — PRIVATE TEST</footer>
+</main>
+<script>
+// 架空のデモデータ。single=単品の最低価格、monthly=月額、perWeek=週あたり更新回数、pop=保存数（人気順の基準）
+const entries=[
+['ayaka','彩花','Ayaka','落ち着いた雰囲気','穏やかな語り口と、丁寧な日々の発信。','#c2a392','#816765',500,1980,3,true,820],
+['saori','沙織','Saori','ナチュラル','飾らない日常を、自分のペースで。','#9ca698','#5d736b',300,980,5,false,640],
+['mizuki','美月','Mizuki','上品','さりげないこだわりが光る、特集ノート。','#bbb0bb','#73667f',800,2980,2,true,910],
+['haruka','遥','Haruka','日常','暮らしの中の、小さな楽しみを集めて。','#c5ac83','#8b7056',300,1480,4,false,450],
+['rin','凛','Rin','落ち着いた雰囲気','静かな時間を大切にするクリエイター。','#b19199','#694c60',600,1980,2,false,730],
+['kana','佳奈','Kana','ナチュラル','自然体の言葉でつづる、日々の記録。','#b2b3a2','#737866',400,1280,3,true,380],
+['chihiro','千尋','Chihiro','上品','好きなものを、少しずつ深く。','#acb5bd','#647583',700,2480,1,false,560],
+['yui','由衣','Yui','日常','何気ない瞬間に見つける、いつもの魅力。','#c4ab9f','#986f62',300,980,6,false,690]
+].map((a,i)=>({id:i,slug:a[0],name:a[1],roman:a[2],tag:a[3],description:a[4],a:a[5],b:a[6],single:a[7],monthly:a[8],perWeek:a[9],isNew:a[10],pop:a[11]}));
+const themes=['すべて','落ち着いた雰囲気','ナチュラル','上品','日常'];
+const $=s=>document.querySelector(s);
+const yen=n=>'¥'+n.toLocaleString('ja-JP');
+let saved=new Set;try{saved=new Set(JSON.parse(localStorage.getItem('jd-saved')||'[]').filter(x=>Number.isInteger(x)&&x>=0&&x<entries.length))}catch{}
+let filter='すべて',view='all',listScroll=0;
+function persist(){try{localStorage.setItem('jd-saved',JSON.stringify([...saved]))}catch{}}
+function toggleSave(id){saved.has(id)?saved.delete(id):saved.add(id);persist()}
+function card(x,rank){return `<article class="card"><a class="art" href="#c-${x.slug}" style="--b:${x.b}" data-initial="${x.roman}" aria-label="${x.name}の詳細">${rank?`<span class="rank">${rank}</span>`:''}${x.isNew?'<span class="badge">NEW</span>':''}</a><button class="save" aria-label="${x.name}を保存" aria-pressed="${saved.has(x.id)}" data-save="${x.id}">${saved.has(x.id)?'♥':'♡'}</button><div class="card-body"><div class="tagrow"><span class="tag">${x.tag}</span><span class="meta">週${x.perWeek}回更新</span></div><h3>${x.name} <span>${x.roman}</span></h3><p>${x.description}</p><div class="price"><span>単品 <b>${yen(x.single)}</b>〜</span><span>月額 <b>${yen(x.monthly)}</b></span></div><a class="detail" href="#c-${x.slug}">詳細・料金を見る <span>→</span></a></div></article>`}
+function renderList(){
+  const q=$('#query').value.trim().toLowerCase();
+  let list=entries.filter(x=>(filter==='すべて'||x.tag===filter)&&(view!=='saved'||saved.has(x.id))&&[x.name,x.roman,x.tag,x.description].some(t=>t.toLowerCase().includes(q)));
+  const sort=$('#sort').value;
+  const by={pop:(a,b)=>b.pop-a.pop,new:(a,b)=>(b.isNew-a.isNew)||a.id-b.id,price:(a,b)=>a.monthly-b.monthly||a.single-b.single,name:(a,b)=>a.name.localeCompare(b.name,'ja')}[sort];
+  list.sort(by);
+  $('#result').textContent=`${list.length}人のデモクリエイター`;
+  $('#saveCount').textContent=saved.size;
+  $('#listTitle').textContent=view==='saved'?'保存したクリエイター':'クリエイターを探す';
+  $('#grid').innerHTML=list.length?list.map(x=>card(x)).join(''):(view==='saved'&&!saved.size?'<div class="empty">まだ保存していません。<br>カードの♡を押すと、ここにまとめて表示されます。</div>':'<div class="empty">条件に合うクリエイターがいません。<br>検索語や絞り込みを変えてみてください。</div>');
+  const plain=view==='all'&&!q&&filter==='すべて';
+  $('#ranking').hidden=!plain;$('#features').hidden=view==='saved';
+  $('#rankGrid').innerHTML=[...entries].sort((a,b)=>b.pop-a.pop).slice(0,4).map((x,i)=>card(x,i+1)).join('');
+  $('#chips').innerHTML=themes.map(t=>`<button class="${filter===t?'active':''}" aria-pressed="${filter===t}" data-filter="${t}">${t}</button>`).join('');
+  document.querySelectorAll('nav button').forEach(n=>n.classList.toggle('active',n.dataset.nav===(view==='saved'?'saved':'list')));
+}
+function renderDetail(x){
+  const others=entries.filter(y=>y.id!==x.id).sort((a,b)=>(b.tag===x.tag)-(a.tag===x.tag)||b.pop-a.pop).slice(0,4);
+  const on=saved.has(x.id);
+  $('#detailView').innerHTML=`<a class="back" href="#">← 一覧に戻る</a>
+<article class="profile"><div class="art" style="--b:${x.b}" data-initial="${x.roman}">${x.isNew?'<span class="badge">NEW</span>':''}</div><div class="profile-body">
+<div class="tag">${x.tag}</div><h1>${x.name}の特集室<span>${x.roman}</span></h1><p class="lead">${x.description}</p>
+<dl><dt>単品</dt><dd>${yen(x.single)}〜</dd><dt>月額プラン</dt><dd>${yen(x.monthly)} / 月</dd><dt>更新頻度</dt><dd>週${x.perWeek}回</dd><dt>テーマ</dt><dd>${x.tag}</dd></dl>
+<div class="cta"><div class="cta-head"><span>紹介先の公式ページで購入・登録</span><span class="pr">PR</span></div>
+<button class="cta-btn cta-main" data-cta="monthly"><span>月額プランに登録する</span><small>${yen(x.monthly)} / 月</small></button>
+<button class="cta-btn cta-sub" data-cta="single"><span>単品で購入する</span><small>${yen(x.single)}〜</small></button>
+<p class="cta-note" id="ctaNote">テスト版のため、紹介先のURLはまだ設定していません。</p></div>
+<button class="save-wide" data-save="${x.id}" aria-pressed="${on}">${on?'♥ 保存済み':'♡ あとで見るために保存'}</button>
+<div class="notice">架空のデモです。本番では、許諾と掲載条件を確認した情報・素材をここに掲載します。</div>
+</div></article>
+<section><div class="section-top"><div><h2>こちらもおすすめ</h2><p>同じテーマ・人気のクリエイター</p></div></div><div class="grid">${others.map(y=>card(y)).join('')}</div></section>`;
+  $('#saveCount').textContent=saved.size;
+}
+function route(){
+  const m=location.hash.match(/^#c-([a-z]+)$/),x=m&&entries.find(e=>e.slug===m[1]);
+  if(x){if(!$('#listView').hidden)listScroll=scrollY;$('#listView').hidden=true;$('#detailView').hidden=false;renderDetail(x);document.title=`${x.name}の特集室｜熟ドロ`;scrollTo(0,0)}
+  else{const wasDetail=!$('#detailView').hidden;$('#detailView').hidden=true;$('#listView').hidden=false;document.title='熟女泥棒｜熟ドロ';renderList();if(wasDetail)scrollTo(0,listScroll)}
+}
+function goList(){if(!$('#detailView').hidden)history.pushState(null,'',location.pathname+location.search),route()}
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  if(b.dataset.save!==undefined){toggleSave(Number(b.dataset.save));$('#detailView').hidden?renderList():route();return}
+  if(b.dataset.filter){filter=b.dataset.filter;renderList();if(b.closest('.feature'))$('#listing').scrollIntoView({behavior:'smooth'});return}
+  if(b.dataset.cta){const n=$('#ctaNote');n.dataset.live='';n.textContent=`「${b.querySelector('span').textContent}」ボタンが押されました。本番ではここで紹介先へ移動し、クリック数を計測します。`;return}
+  if(b.dataset.nav){goList();const t=b.dataset.nav;
+    if(t==='ranking'){view='all';filter='すべて';$('#query').value='';renderList();$('#ranking').scrollIntoView({behavior:'smooth'})}
+    else{view=t==='saved'?'saved':'all';filter='すべて';$('#query').value='';renderList();$('#listing').scrollIntoView({behavior:'smooth'})}}
+});
+$('#searchForm').onsubmit=e=>{e.preventDefault();renderList();$('#query').blur()};
+$('#query').oninput=renderList;$('#sort').onchange=renderList;
+addEventListener('hashchange',route);route();
 </script></body></html>
