@@ -35,7 +35,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          TODAY="$(date -u +%F)"
+          TODAY="$(TZ=Asia/Tokyo date +%F)"
           case "$TODAY" in
             2026-10-14) BRAND=rakutabi; DAY=2 ;;
             2026-10-15) BRAND=lens; DAY=2 ;;
@@ -85,11 +85,8 @@ jobs:
               'default:15 1,4,7,10 * * *'|'sunday:15 6,8 * * 0'|'evening:15 12,13 * * 2,4') ;;
               *) echo "Skip cron outside the planned slot for $BRAND on $TODAY"; exit 0 ;;
             esac
-            UTC_HOUR="$(date -u +%H)"
-            case "$SLOT:$UTC_HOUR" in
-              default:*|sunday:06|sunday:07|sunday:08|evening:12|evening:13|evening:14) ;;
-              *) echo "Skip delayed run outside the audience window on $TODAY"; exit 0 ;;
-            esac
+            # A delayed matching cron may publish only on its current JST planned day.
+          # Full API history deduplication below still prevents a second publication.
           fi
           echo "brand=$BRAND" >> "$GITHUB_OUTPUT"
           echo "day=$DAY" >> "$GITHUB_OUTPUT"
