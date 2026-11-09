@@ -98,13 +98,13 @@ test('Ito pilot is disclosed, scoped, attributed and deduplicates the earlier dr
  assert.throws(()=>buildOrganicMessage(p,'mitama'));
 });
 
-test('scheduled Rakutabi slots use audience windows without affecting Lens or earlier dates',t=>{
+test('scheduled slots accept same-JST-day delays and reject other brands and expired dates',t=>{
  const dir=mkdtempSync(join(tmpdir(),'organic-slots-'));
  t.after(()=>rmSync(dir,{recursive:true,force:true}));
  const output=join(dir,'output');
  const workflow=readFileSync('.github/workflows/brand-threads-organic-pilot.yml','utf8');
  const plan=workflow.split('        run: |\n')[1].split('\n      - name:')[0]
-  .replace('TODAY="$(date -u +%F)"','TODAY="$TEST_DATE"')
+  .replace('TODAY="$(TZ=Asia/Tokyo date +%F)"','TODAY="$TEST_DATE"')
   .replace('UTC_HOUR="$(date -u +%H)"','UTC_HOUR="$TEST_HOUR"');
  const regular='15 1,4,7,10 * * *';
  const sunday='15 6,8 * * 0';
@@ -114,20 +114,22 @@ test('scheduled Rakutabi slots use audience windows without affecting Lens or ea
   ['2026-11-08','04',regular,null],
   ['2026-11-08','06',sunday,'rakutabi'],
   ['2026-11-08','08',sunday,'rakutabi'],
-  ['2026-11-08','09',sunday,null],
+  ['2026-11-08','09',sunday,'rakutabi'],
   ['2026-11-10','10',regular,null],
   ['2026-11-10','12',evening,'rakutabi'],
   ['2026-11-10','13',evening,'rakutabi'],
-  ['2026-11-10','15',evening,null],
+  ['2026-11-10','15',evening,'rakutabi'],
   ['2026-11-05','12',evening,null],
   ['2026-11-05','01',regular,'lens'],
   ['2026-11-12','10',regular,null],
   ['2026-11-12','12',evening,'rakutabi'],
-  ['2026-11-12','15',evening,null],
+  ['2026-11-12','15',evening,'rakutabi'],
   ['2026-11-15','06',sunday,null],
   ['2026-11-15','04',regular,'lens'],
   ['2026-11-18','10',regular,'rakutabi'],
   ['2026-11-19','12',evening,null],
+  ['2026-11-09','13',sunday,null],
+  ['2026-11-11','00',evening,null],
  ]){
   writeFileSync(output,'');
   const result=spawnSync('bash',['-c',plan],{encoding:'utf8',env:{
