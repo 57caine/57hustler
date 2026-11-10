@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "revision": 0,
+  "spec": {
+    "task": "https://github.com/57caine/57hustler/pull/192",
+    "owner": "CEO",
+    "rollback": "状態記録のみ。投稿の手動再実行・過去分の再送をしない",
+    "acceptance": [
+      "11月10日の適合cronについて楽旅アカウント・実投稿ID・投稿履歴を照合"
+    ],
+    "approval": "existing",
+    "evidence": [
+      {
+        "url": "https://github.com/57caine/57hustler/pull/192#issuecomment-6756399919",
+        "checked_at": "2026-11-10T04:01:41.328Z",
+        "result": "11月10日21:15/22:15 JSTの既存起動枠で実投稿IDを確認予定。現時点は未確認。修正はmain反映済み。"
+      }
+    ],
+    "next_action": "次の承認済み適合cron完了後、Actions実ログ・アカウント・実投稿ID・永続履歴を照合。時刻前は状態維持し検証失敗として消費しない",
+    "resume_when": "2026-11-10の21:15/22:15 JST適合cron実行完了後"
+  },
+  "contract": "7b7b676bca68a7a3474ab80eba66e28dce594f5c0580536f2e3bb0164d69f034",
+  "status": "queued",
+  "attempts": 0,
+  "history": []
+}
+
