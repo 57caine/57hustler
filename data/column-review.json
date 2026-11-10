@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T00:41:39.600Z",
+  "generatedAt": "2026-11-10T03:21:43.044Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 38,
-        "bounceRate": 0.23684210526315788,
-        "avgSessionDuration": 314.42086857894736,
+        "sessions": 37,
+        "bounceRate": 0.21621621621621623,
+        "avgSessionDuration": 322.91872989189187,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション38件・affiliate_clickゼロ"
+        "セッション37件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -81,16 +81,16 @@
       "slug": "smile-surgery-guide-2026",
       "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
       "metrics": {
-        "sessions": 20,
-        "bounceRate": 0.15,
-        "avgSessionDuration": 180.6694646,
+        "sessions": 19,
+        "bounceRate": 0.15789473684210525,
+        "avgSessionDuration": 184.54298205263157,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション20件・affiliate_clickゼロ"
+        "セッション19件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -104,40 +104,6 @@
       ],
       "suggestions": [
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/enkintsuyo-contact-guide",
-      "slug": "enkintsuyo-contact-guide",
-      "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
-      "metrics": {
-        "sessions": 17,
-        "bounceRate": 0,
-        "avgSessionDuration": 90.876097,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション17件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 73455
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -179,95 +145,27 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/kanso-shinikui-contact",
-      "slug": "kanso-shinikui-contact",
-      "title": "kanso-shinikui-contact",
+      "path": "/column/enkintsuyo-contact-guide",
+      "slug": "enkintsuyo-contact-guide",
+      "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
       "metrics": {
-        "sessions": 12,
-        "bounceRate": 0.25,
-        "avgSessionDuration": 196.53156708333333,
+        "sessions": 16,
+        "bounceRate": 0,
+        "avgSessionDuration": 73.8266260625,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション12件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 9,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 87756
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/contact-net-kounyu-guide",
-      "slug": "contact-net-kounyu-guide",
-      "title": "コンタクトレンズはネットで買える？処方箋なしでも大丈夫？完全ガイド",
-      "metrics": {
-        "sessions": 11,
-        "bounceRate": 0.5454545454545454,
-        "avgSessionDuration": 67.54068118181819,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション11件・affiliate_clickゼロ"
+        "セッション16件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
         "h3Count": 2,
         "hasAffiliateLinks": true,
         "ctaCount": 1,
-        "contentChars": 76251
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/1day-vs-2week-dotchiga-otoku",
-      "slug": "1day-vs-2week-dotchiga-otoku",
-      "title": "1day-vs-2week-dotchiga-otoku",
-      "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.1111111111111111,
-        "avgSessionDuration": 59.71747277777778,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 5,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 78936
+        "contentChars": 73455
       },
       "causes": [
         "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
@@ -285,16 +183,16 @@
       "slug": "blue-light-megane-kouka",
       "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 53.60231833333333,
+        "sessions": 10,
+        "bounceRate": 0.4,
+        "avgSessionDuration": 48.596763700000004,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
+        "セッション10件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -315,13 +213,81 @@
       "source": "auto-ga4"
     },
     {
+      "path": "/column/contact-net-kounyu-guide",
+      "slug": "contact-net-kounyu-guide",
+      "title": "コンタクトレンズはネットで買える？処方箋なしでも大丈夫？完全ガイド",
+      "metrics": {
+        "sessions": 10,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 73.7064937,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション10件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 76251
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/kanso-shinikui-contact",
+      "slug": "kanso-shinikui-contact",
+      "title": "kanso-shinikui-contact",
+      "metrics": {
+        "sessions": 10,
+        "bounceRate": 0.2,
+        "avgSessionDuration": 198.6211464,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション10件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 9,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 87756
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
       "path": "/column/vr-movie-streaming-service-recommend-2026",
       "slug": "vr-movie-streaming-service-recommend-2026",
       "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
       "metrics": {
         "sessions": 8,
-        "bounceRate": 0.375,
-        "avgSessionDuration": 49.2608325,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 48.858381249999994,
         "affiliateClicks": 0
       },
       "flags": [
@@ -342,6 +308,40 @@
       ],
       "suggestions": [
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/1day-vs-2week-dotchiga-otoku",
+      "slug": "1day-vs-2week-dotchiga-otoku",
+      "title": "1day-vs-2week-dotchiga-otoku",
+      "metrics": {
+        "sessions": 7,
+        "bounceRate": 0.14285714285714285,
+        "avgSessionDuration": 65.85409457142858,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション7件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 5,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 78936
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
