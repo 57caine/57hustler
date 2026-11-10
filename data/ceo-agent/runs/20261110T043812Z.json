@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-11-10T04:38:12.961931+00:00",
+  "task": "https://github.com/57caine/57hustler/pull/192",
+  "state": "verifying",
+  "state_revision": 1,
+  "result": "次の予定枠前のため状態維持。投稿再送・ワークフロー再実行なし。",
+  "production": [
+    {
+      "url": "https://rakutabi-nine.vercel.app/stats",
+      "http": 200
+    },
+    {
+      "url": "https://www.lens-navi.jp/",
+      "http": 200
+    },
+    {
+      "url": "https://pet-bousai-pi.vercel.app/",
+      "http": 200
+    }
+  ],
+  "outbound_clicks": {
+    "period": "2026-11-03/2026-11-09",
+    "count": 6,
+    "previous_period": "2026-10-27/2026-11-02",
+    "previous_count": 6
+  },
+  "sales": "未取得",
+  "existing_followup": {
+    "pr": 197,
+    "public_robots_http": 404,
+    "result": "既存Draft PRを維持。新規の同等修正を作成しない。"
+  },
+  "next": "11月10日21:15/22:15 JST以降の既存投稿器の実投稿ID・アカウント・履歴照合"
+}
