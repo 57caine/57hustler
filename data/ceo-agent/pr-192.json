@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 0,
+  "revision": 1,
   "spec": {
     "task": "https://github.com/57caine/57hustler/pull/192",
     "owner": "CEO",
@@ -20,8 +20,22 @@
     "resume_when": "2026-11-10の21:15/22:15 JST適合cron実行完了後"
   },
   "contract": "7b7b676bca68a7a3474ab80eba66e28dce594f5c0580536f2e3bb0164d69f034",
-  "status": "queued",
+  "status": "verifying",
   "attempts": 0,
-  "history": []
+  "history": [
+    {
+      "revision": 1,
+      "from": "queued",
+      "to": "verifying",
+      "type": "implement",
+      "at": "2026-11-10T04:02:00.715Z",
+      "event": {
+        "type": "implement",
+        "actor": "CEO",
+        "revision": 0,
+        "commit_sha": "18de44edf3d7bb8537f1226e062b806f56eb8dec"
+      }
+    }
+  ],
+  "commit_sha": "18de44edf3d7bb8537f1226e062b806f56eb8dec"
 }
-
