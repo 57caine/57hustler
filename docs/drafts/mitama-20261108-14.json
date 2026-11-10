@@ -26,29 +26,41 @@
       "brand": "mitama",
       "day": 28,
       "scheduledDate": "2026-11-11",
-      "text": "In Japanese, \"ma\" can refer to a space or pause.\n\nHere is a small experiment: leave a moment after someone finishes speaking before you reply.\n\nDoes that pause feel welcoming or awkward in your culture?",
-      "translationJa": "「間」は空間やひと呼吸を表すことがあります。相手が話し終えてから、少し待って返事をしてみる。その間は、あなたの文化では心地よいものですか、それとも気まずいものですか？"
+      "text": "A Japanese train carriage is a shared room for a few minutes.\n\nKeeping a call for later is one small way to leave that room peaceful for a stranger.\n\nConsideration can be quiet enough to go unnoticed. Its absence is easier to hear.\n\nWhat small courtesy makes your daily life gentler?",
+      "translationJa": "「間」は空間やひと呼吸を表すことがあります。相手が話し終えてから、少し待って返事をしてみる。その間は、あなたの文化では心地よいものですか、それとも気まずいものですか？",
+      "previousTexts": [
+        "In Japanese, \"ma\" can refer to a space or pause.\n\nHere is a small experiment: leave a moment after someone finishes speaking before you reply.\n\nDoes that pause feel welcoming or awkward in your culture?"
+      ]
     },
     {
       "brand": "mitama",
       "day": 29,
       "scheduledDate": "2026-11-12",
-      "text": "\"Itadakimasu\" is a Japanese expression said before a meal.\n\nEven on a rushed day, a brief pause can help us notice the food and the people behind it.\n\nWhat helps you slow down before you eat?",
-      "translationJa": "「いただきます」は食事の前の言葉。慌ただしい日でも、ひと呼吸おくと食べ物や関わった人に目を向けられます。食べ始める前に落ち着くため、何をしていますか？"
+      "text": "In Japan, a familiar saying is: \"The sun is watching.\"\n\nIt can invite a simple question: how do we act when nobody is there to praise or blame us?\n\nPutting something back. Leaving a shared place tidy. Keeping a promise.\n\nNot everyone lives by the same beliefs. But care that needs no audience is worth passing on.",
+      "translationJa": "「いただきます」は食事の前の言葉。慌ただしい日でも、ひと呼吸おくと食べ物や関わった人に目を向けられます。食べ始める前に落ち着くため、何をしていますか？",
+      "previousTexts": [
+        "\"Itadakimasu\" is a Japanese expression said before a meal.\n\nEven on a rushed day, a brief pause can help us notice the food and the people behind it.\n\nWhat helps you slow down before you eat?"
+      ]
     },
     {
       "brand": "mitama",
       "day": 30,
       "scheduledDate": "2026-11-13",
-      "text": "In Japan, \"osusowake\" is sharing a little of something with others.\n\nA few pieces of fruit or a small portion of homemade food can carry a simple message: I thought of you.\n\nWhat small thing do people like to share where you live?",
-      "translationJa": "「おすそ分け」は何かを少し分けること。果物や手料理の一部には、あなたを思い浮かべた、という気持ちも込められます。住んでいる地域では、どんなものを分け合いますか？"
+      "text": "A chipped cup does not have to stop being your favorite.\n\nIn Japanese life, care for an object can also be care for the hands that made it, and the years spent using it.\n\nBefore asking what to buy next, what might be worth keeping?\n\nSometimes respect begins with what is already beside us.",
+      "translationJa": "「おすそ分け」は何かを少し分けること。果物や手料理の一部には、あなたを思い浮かべた、という気持ちも込められます。住んでいる地域では、どんなものを分け合いますか？",
+      "previousTexts": [
+        "In Japan, \"osusowake\" is sharing a little of something with others.\n\nA few pieces of fruit or a small portion of homemade food can carry a simple message: I thought of you.\n\nWhat small thing do people like to share where you live?"
+      ]
     },
     {
       "brand": "mitama",
       "day": 31,
       "scheduledDate": "2026-11-14",
-      "text": "\"Tadaima\" and \"okaeri\" are familiar Japanese words for coming home and welcoming someone back.\n\nA greeting can be a small daily ritual of connection.\n\nWhat makes you feel welcome when you return home?",
-      "translationJa": "「ただいま」と「おかえり」は帰宅と出迎えの言葉。あいさつは日々のつながりを感じる小さな習慣にもなります。帰宅したとき、どんなことで迎えられていると感じますか？"
+      "text": "The quiet street in your Japan photos may be someone's route home after a long shift.\n\nEnjoying a place also means making room for the people who live there: keeping doorways clear, lowering our voices, asking before taking a portrait.\n\nWhat do we hope visitors will notice about our own neighborhood?\n\nLet's offer that same care when we are the visitors.",
+      "translationJa": "「ただいま」と「おかえり」は帰宅と出迎えの言葉。あいさつは日々のつながりを感じる小さな習慣にもなります。帰宅したとき、どんなことで迎えられていると感じますか？",
+      "previousTexts": [
+        "\"Tadaima\" and \"okaeri\" are familiar Japanese words for coming home and welcoming someone back.\n\nA greeting can be a small daily ritual of connection.\n\nWhat makes you feel welcome when you return home?"
+      ]
     }
   ]
 }
