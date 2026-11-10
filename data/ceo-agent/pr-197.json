@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 1,
+  "revision": 4,
   "spec": {
     "task": "https://github.com/57caine/57hustler/pull/197",
     "owner": "CEO",
@@ -20,8 +20,8 @@
     ]
   },
   "contract": "1254b7718960b6496f7c10bf0b37fa63e9c38c2c990dd62c5a463101da78ab6b",
-  "status": "verifying",
-  "attempts": 0,
+  "status": "done",
+  "attempts": 1,
   "history": [
     {
       "revision": 1,
@@ -35,7 +35,147 @@
         "revision": 0,
         "commit_sha": "bc506a1cc5f7934d2c661194a0daa24f6b72791f"
       }
+    },
+    {
+      "revision": 2,
+      "from": "verifying",
+      "to": "ready",
+      "type": "verify",
+      "at": "2026-11-10T23:52:04.041Z",
+      "event": {
+        "actor": "CEO",
+        "revision": 1,
+        "type": "verify",
+        "commit_sha": "bc506a1cc5f7934d2c661194a0daa24f6b72791f",
+        "checks": [
+          {
+            "name": "対象mainの既存公開処理と全ページ検証が成功",
+            "result": "pass",
+            "evidence": [
+              {
+                "url": "https://github.com/57caine/57hustler/actions/runs/42925668840",
+                "checked_at": "2026-11-10T23:52:04.039Z",
+                "result": "main bc506a1公開成功。639対象中626合格、不合格0、仕様による非生成404は13。送客リンク6713。"
+              }
+            ]
+          },
+          {
+            "name": "本番robots.txtがHTTP200・User-Agent:*・Allow:/",
+            "result": "pass",
+            "evidence": [
+              {
+                "url": "https://rakutabi-nine.vercel.app/robots.txt",
+                "checked_at": "2026-11-10T23:49:31.744203+00:00",
+                "result": "User-Agent: *\nAllow: /\n\n"
+              }
+            ]
+          },
+          {
+            "name": "本番トップのnoindexが維持",
+            "result": "pass",
+            "evidence": [
+              {
+                "url": "https://rakutabi-nine.vercel.app/",
+                "checked_at": "2026-11-10T23:49:31.659357+00:00",
+                "result": "HTTP200、noindexあり"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "revision": 3,
+      "from": "ready",
+      "to": "observing",
+      "type": "published",
+      "at": "2026-11-10T23:52:04.041Z",
+      "event": {
+        "actor": "CEO",
+        "revision": 2,
+        "type": "published",
+        "commit_sha": "bc506a1cc5f7934d2c661194a0daa24f6b72791f",
+        "evidence": [
+          {
+            "url": "https://github.com/57caine/57hustler/actions/runs/42925668840",
+            "checked_at": "2026-11-10T23:52:04.039Z",
+            "result": "main bc506a1公開成功。639対象中626合格、不合格0、仕様による非生成404は13。送客リンク6713。"
+          }
+        ]
+      }
+    },
+    {
+      "revision": 4,
+      "from": "observing",
+      "to": "done",
+      "type": "observe",
+      "at": "2026-11-10T23:52:04.041Z",
+      "event": {
+        "actor": "CEO",
+        "revision": 3,
+        "type": "observe",
+        "evidence": [
+          {
+            "url": "https://github.com/57caine/57hustler/actions/runs/42925668840",
+            "checked_at": "2026-11-10T23:52:04.039Z",
+            "result": "main bc506a1公開成功。639対象中626合格、不合格0、仕様による非生成404は13。送客リンク6713。"
+          }
+        ],
+        "conclusion": "robots公開と既存ページ回帰検証は成功。収益・検索流入への効果は未測定で不明。"
+      }
     }
   ],
-  "commit_sha": "bc506a1cc5f7934d2c661194a0daa24f6b72791f"
+  "commit_sha": "bc506a1cc5f7934d2c661194a0daa24f6b72791f",
+  "checks": [
+    {
+      "name": "対象mainの既存公開処理と全ページ検証が成功",
+      "result": "pass",
+      "evidence": [
+        {
+          "url": "https://github.com/57caine/57hustler/actions/runs/42925668840",
+          "checked_at": "2026-11-10T23:52:04.039Z",
+          "result": "main bc506a1公開成功。639対象中626合格、不合格0、仕様による非生成404は13。送客リンク6713。"
+        }
+      ]
+    },
+    {
+      "name": "本番robots.txtがHTTP200・User-Agent:*・Allow:/",
+      "result": "pass",
+      "evidence": [
+        {
+          "url": "https://rakutabi-nine.vercel.app/robots.txt",
+          "checked_at": "2026-11-10T23:49:31.744203+00:00",
+          "result": "User-Agent: *\nAllow: /\n\n"
+        }
+      ]
+    },
+    {
+      "name": "本番トップのnoindexが維持",
+      "result": "pass",
+      "evidence": [
+        {
+          "url": "https://rakutabi-nine.vercel.app/",
+          "checked_at": "2026-11-10T23:49:31.659357+00:00",
+          "result": "HTTP200、noindexあり"
+        }
+      ]
+    }
+  ],
+  "publication": [
+    {
+      "url": "https://github.com/57caine/57hustler/actions/runs/42925668840",
+      "checked_at": "2026-11-10T23:52:04.039Z",
+      "result": "main bc506a1公開成功。639対象中626合格、不合格0、仕様による非生成404は13。送客リンク6713。"
+    }
+  ],
+  "observation": {
+    "evidence": [
+      {
+        "url": "https://github.com/57caine/57hustler/actions/runs/42925668840",
+        "checked_at": "2026-11-10T23:52:04.039Z",
+        "result": "main bc506a1公開成功。639対象中626合格、不合格0、仕様による非生成404は13。送客リンク6713。"
+      }
+    ],
+    "conclusion": "robots公開と既存ページ回帰検証は成功。収益・検索流入への効果は未測定で不明。"
+  }
 }
