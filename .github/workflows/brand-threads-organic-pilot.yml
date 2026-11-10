@@ -6,6 +6,9 @@ on:
     - cron: '15 1,4,7,10 * * *'
     - cron: '15 6,8 * * 0'       # Sunday 15:15 and 17:15 JST
     - cron: '15 12,13 * * 2,4' # Tuesday/Thursday 21:15 and 22:15 JST
+  workflow_run:
+    workflows: ['価格データ・アフィリエイトリンク自動更新']
+    types: [completed]
   workflow_dispatch:
     inputs:
       publish:
@@ -21,6 +24,7 @@ concurrency:
 jobs:
   post:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.event == 'schedule' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main') }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -72,7 +76,7 @@ jobs:
             2026-11-18) BRAND=rakutabi; DAY=18 ;;
             *) echo "No scheduled content for $TODAY"; exit 0 ;;
           esac
-          if [[ "$EVENT_NAME" == "schedule" ]]; then
+          if [[ "$EVENT_NAME" == "schedule" || "$EVENT_NAME" == "workflow_run" ]]; then
             WEEKDAY="$(date -u -d "$TODAY" +%u)"
             SLOT=default
             if [[ "$BRAND" == rakutabi && "$TODAY" > 2026-11-05 ]]; then
@@ -81,16 +85,21 @@ jobs:
                 2|4) SLOT=evening ;;
               esac
             fi
-            case "$SLOT:$SCHEDULE_CRON" in
-              'default:15 1,4,7,10 * * *'|'sunday:15 6,8 * * 0'|'evening:15 12,13 * * 2,4') ;;
-              *) echo "Skip cron outside the planned slot for $BRAND on $TODAY"; exit 0 ;;
+            JST_HOUR="$(TZ=Asia/Tokyo date +%H)"
+            case "$SLOT" in
+              sunday) START_HOUR=15 ;;
+              evening) START_HOUR=21 ;;
+              *) START_HOUR=10 ;;
             esac
-            # A delayed matching cron may publish only on its current JST planned day.
-          # Full API history deduplication below still prevents a second publication.
+            if (( 10#$JST_HOUR < START_HOUR )); then
+              echo "Before planned audience window for $BRAND on $TODAY"; exit 0
+            fi
+            # Existing daily cron and trusted workflow completion share the same
+            # day, serial group and full-history duplicate check. No old-day replay.
           fi
           echo "brand=$BRAND" >> "$GITHUB_OUTPUT"
           echo "day=$DAY" >> "$GITHUB_OUTPUT"
-          if [[ "$EVENT_NAME" == "schedule" || "$MANUAL_PUBLISH" == "true" ]]; then
+          if [[ "$EVENT_NAME" == "schedule" || "$EVENT_NAME" == "workflow_run" || "$MANUAL_PUBLISH" == "true" ]]; then
             echo "publish=true" >> "$GITHUB_OUTPUT"
           else
             echo "publish=false" >> "$GITHUB_OUTPUT"
