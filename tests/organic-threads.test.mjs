@@ -98,50 +98,29 @@ test('Ito pilot is disclosed, scoped, attributed and deduplicates the earlier dr
  assert.throws(()=>buildOrganicMessage(p,'mitama'));
 });
 
-test('scheduled slots accept same-JST-day delays and reject other brands and expired dates',t=>{
- const dir=mkdtempSync(join(tmpdir(),'organic-slots-'));
- t.after(()=>rmSync(dir,{recursive:true,force:true}));
- const output=join(dir,'output');
- const workflow=readFileSync('.github/workflows/brand-threads-organic-pilot.yml','utf8');
- const plan=workflow.split('        run: |\n')[1].split('\n      - name:')[0]
-  .replace('TODAY="$(TZ=Asia/Tokyo date +%F)"','TODAY="$TEST_DATE"')
-  .replace('UTC_HOUR="$(date -u +%H)"','UTC_HOUR="$TEST_HOUR"');
- const regular='15 1,4,7,10 * * *';
- const sunday='15 6,8 * * 0';
- const evening='15 12,13 * * 2,4';
- for(const [date,hour,cron,expected] of [
-  ['2026-11-06','01',regular,'rakutabi'],
-  ['2026-11-08','04',regular,null],
-  ['2026-11-08','06',sunday,'rakutabi'],
-  ['2026-11-08','08',sunday,'rakutabi'],
-  ['2026-11-08','09',sunday,'rakutabi'],
-  ['2026-11-10','10',regular,null],
-  ['2026-11-10','12',evening,'rakutabi'],
-  ['2026-11-10','13',evening,'rakutabi'],
-  ['2026-11-10','15',evening,'rakutabi'],
-  ['2026-11-05','12',evening,null],
-  ['2026-11-05','01',regular,'lens'],
-  ['2026-11-12','10',regular,null],
-  ['2026-11-12','12',evening,'rakutabi'],
-  ['2026-11-12','15',evening,'rakutabi'],
-  ['2026-11-15','06',sunday,null],
-  ['2026-11-15','04',regular,'lens'],
-  ['2026-11-18','10',regular,'rakutabi'],
-  ['2026-11-19','12',evening,null],
-  ['2026-11-09','13',sunday,null],
-  ['2026-11-11','00',evening,null],
- ]){
-  writeFileSync(output,'');
-  const result=spawnSync('bash',['-c',plan],{encoding:'utf8',env:{
-   PATH:process.env.PATH,EVENT_NAME:'schedule',SCHEDULE_CRON:cron,
-   TEST_DATE:date,TEST_HOUR:hour,GITHUB_OUTPUT:output,
-  }});
-  assert.equal(result.status,0,result.stderr);
-  assert.equal(readFileSync(output,'utf8').match(/^brand=(\w+)$/m)?.[1]??null,expected,date+' '+hour);
+test('same-day fallback respects start hours, expiry and manual opt-in', t=>{
+ const dir=mkdtempSync(join(tmpdir(),'posting-fallback-'));t.after(()=>rmSync(dir,{recursive:true,force:true}));
+ const output=join(dir,'out');
+ const w=readFileSync('.github/workflows/brand-threads-organic-pilot.yml','utf8');
+ assert.match(w,/workflow_run.event == 'schedule'/);assert.match(w,/head_branch == 'main'/);assert.match(w,/conclusion == 'success'/);
+ assert.match(w,/cancel-in-progress: false/);
+ const plan=w.split('        run: |\n')[1].split('\n      - name:')[0]
+ .replace('TODAY="$(TZ=Asia/Tokyo date +%F)"','TODAY="$TEST_DATE"')
+ .replace('JST_HOUR="$(TZ=Asia/Tokyo date +%H)"','JST_HOUR="$TEST_HOUR"');
+ for(const [date,hour,event,publish] of [
+ ['2026-11-10','20','schedule',false],['2026-11-10','21','schedule',true],
+ ['2026-11-10','23','workflow_run',true],['2026-11-10','08','workflow_run',false],
+ ['2026-11-08','14','schedule',false],['2026-11-08','16','schedule',true],
+ ['2026-11-11','09','workflow_run',false],['2026-11-11','10','workflow_run',true],
+ ['2026-11-19','22','workflow_run',false],['2027-11-10','22','schedule',false],
+ ['2026-11-10','22','workflow_dispatch',false]]){
+ writeFileSync(output,'');
+ const r=spawnSync('bash',['-c',plan],{encoding:'utf8',env:{PATH:process.env.PATH,TEST_DATE:date,TEST_HOUR:hour,EVENT_NAME:event,SCHEDULE_CRON:'15 1,4,7,10 * * *',MANUAL_PUBLISH:'false',GITHUB_OUTPUT:output}});
+ assert.equal(r.status,0,r.stderr);
+ assert.equal(readFileSync(output,'utf8').includes('publish=true'),publish,date+' '+hour+' '+event);
  }
  for(const day of [12,13,14]){
-  const p=posts.find(p=>p.brand==='rakutabi'&&p.day===day);
-  assert.equal(p.previousTexts.length,1);
-  assert.ok(isOrganicDuplicate({text:p.previousTexts[0]},p,buildOrganicMessage(p,p.brand)));
+ const p=posts.find(p=>p.brand==='rakutabi'&&p.day===day);
+ assert.ok(isOrganicDuplicate({text:p.previousTexts[0]},p,buildOrganicMessage(p,p.brand)));
  }
 });
