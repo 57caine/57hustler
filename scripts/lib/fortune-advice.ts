@@ -1,7 +1,7 @@
 // Shared generation guidance and rejection feedback. No API calls or history writes.
 export const CONCRETE_ADVICE_EXAMPLES = [
-  '会議の前に資料を見直す', '返信する前に宛先を確認',
-  '予定を一つ減らして休む', '買い物前に残高を確認',
+  '気になる人へ短く声をかける', '返事を急がずひと呼吸置く',
+  '頼まれごとを一つ断る', '使った場所をそっと整える',
 ];
 export const FORBIDDEN_ADVICE = [
   '地盤を固める', 'じっくり取り組む', '風のように', '火の輝き',
@@ -20,7 +20,8 @@ export function invalidAdviceStars(lines: Record<number, string>): string[] {
 }
 
 export function buildAdviceGuidance(): string {
-  return `具体例：${CONCRETE_ADVICE_EXAMPLES.map(value => `「${value}」`).join('、')}\n` +
+  return '読み手の暮らしが浮かぶ一言にする。仕事の確認作業だけに偏らず、人との距離・休息・家の中の小さな行動も、回座宮に合う場合に取り入れる。9星を同じ助言の言い換えで埋めない。責める口調・不安を煽る予言・購入や幸運の保証は避ける。例文の固定コピーをせず今日の回座宮から書く。\n' +
+    `具体例：${CONCRETE_ADVICE_EXAMPLES.map(value => `「${value}」`).join('、')}\n` +
     `禁止表現：${FORBIDDEN_ADVICE.join('、')}。方位・宮名を本文に書かない。`;
 }
 
