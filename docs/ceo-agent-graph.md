@@ -79,3 +79,35 @@ status は queued / implementing / verifying / awaiting_approval / publishing / 
 2026-11-10の既存日次結果では投稿遅延修正はmain反映済み、実投稿ID確認は未完了。PR #192と最新Actionsを再取得して確認する。本書だけから復旧済みとしない。
 ClaudeのPR #191（Issue #190）は専任範囲として維持。
 MITAMAは日本語の語義説明への偏りを現状データと原稿から確認し、既存コンセプトに照らして改善案を検証。夜中のおじさんも反応の低下を実測せず断定しない。
+
+## 実行可能な状態管理（初版・PRで検証）
+`scripts/ceo-agent/graph.mjs` が工程の遷移を判定し、`state.mjs` がローカルJSONへ排他・revision照合付きで保存する。追加依存・モデル呼出し・公開処理はない。
+
+- `node --test scripts/ceo-agent/graph.test.mjs`
+- `node scripts/ceo-agent/state.mjs init STATE.json SPEC.json`
+- `node scripts/ceo-agent/state.mjs advance STATE.json EVENT.json`
+- `node scripts/ceo-agent/state.mjs show STATE.json`
+
+SPECの必須項目は task/owner/rollback/acceptance（重複なし文字列配列）/evidence/approval（existing又はfinal）。evidenceはurl/checked_at/resultを持つ配列。EVENTはtype/actor/revisionを必須とし、implementにはcommit_sha、verifyには同SHAと全acceptanceに一対一のchecks（name/result/evidence）、publishedには同SHAとevidence、observeにはevidence/conclusionを渡す。
+
+工程は queued → verifying → ready（既存承認）又はawaiting_approval。検証失敗はimplementingへ戻り、三回目でblocked。readyの公開証拠記録後はobserving、観察結果を記録してdone。最終承認を要する経路には本人認証済みアダプターが未接続のため先へ進めない。CLIへapproved=trueを渡しても承認できない。
+
+利用者AIは実ログを取得して入力する必要がある。このコードはログの真偽・GitHubのSHA実在・人間の承認を認証しない。契約hashは誤変更検知であり改ざん耐性のある署名ではない。外部のマージ/投稿/公開を制御するセキュリティ境界でもない。既存公開処理を直接呼ばず、状態管理のみを行う。チェックポイントは許可された自分の作業ブランチ/PRに保存して次回再利用する（mainや他担当へ直接保存しない）。秘密値は入力しない。
+
+GitHub保存アダプターと日次の呼出し手順を下記に追加。本人認証済み承認アダプターとCEO画面表示は未実装。単なる指示反映やテストfixture成功を完全自走の証明にしない。
+
+### GitHubへの保存・再開
+保存先を専用ブランチ `ceo-agent-state` の `data/ceo-agent/pr-N.json` に固定する。mainに運用状態を書かない。ブランチはCEO側が作成済みのものを使う。
+
+`node scripts/ceo-agent/github-state.mjs show pr-192` で前回状態を読む。init/advanceは末尾にSPEC/EVENT JSONファイルを渡す。既存のGITHUB_TOKEN又はGH_TOKENのみ再利用し、新規認証や権限を求める処理はない。Contents APIのblob SHAで競合を拒否し、書込後の再取得一致を確認する。409/422や応答不明では同じイベントを自動再送しない。
+
+実行環境にGitHubトークンがなく接続済みGitHubツールがある場合は、次の同等手順を使う:
+1. fetch_fileで上記固定ブランチ/パスを読み、contentとblob SHAを保持。
+2. ローカルへそのJSONを保存しstate.mjs advanceで次状態を生成（JSONのstatusを手で書き換えない）。
+3. update_fileに保持したSHAと生成した全内容を渡し、固定ブランチへ保存。既存の状態がない場合だけcreate_file。ブランチやパスを推測してmainへ代替保存しない。
+4. fetch_fileで再取得して全内容一致を確認し、PRへ状態URLと次の一手を残す。
+失敗時は公開等へ進まずblocked扱いで理由を実行結果へ残す。作業中の状態を触るのは記録されたownerだけ。Claude専任の状態は作らない/変更しない。
+
+日次タスクはこの手順で状態を復元し、該当工程の入力を実取得する。未取得や次の予定時刻未到来をfail検査として消費せず状態維持し、対象PRへ再開条件を残す。公開処理や投稿処理は従来の承認済み実行器を使い、このCLIから起動しない。
+
+CLI・保存アダプターのテスト: `node --test scripts/ceo-agent/*.test.mjs`。全8件。既存の `node scripts/test-growth-automation.mjs` も成功を確認。本番の実投稿/改善効果は別途検証する。
