@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "revision": 1,
+  "spec": {
+    "task": "https://github.com/57caine/57hustler/pull/202",
+    "owner": "CEO",
+    "rollback": "PR202 revert; preserve published history and never replay",
+    "approval": "existing",
+    "acceptance": [
+      "旧31原稿不変・新7原稿の一意性と編集監査",
+      "JST対応11/15〜21・翌日翌年停止・既存頻度維持",
+      "新原稿の重複/誤アカウント/履歴不完備でPOSTなし",
+      "対象Organic Threadsおよび安全CI成功"
+    ],
+    "evidence": [
+      {
+        "url": "https://github.com/57caine/57hustler/blob/main/docs/mitama-editorial-heart.md",
+        "checked_at": "2026-11-11T20:08:50.918061+00:00",
+        "result": "11/14終了、11/12準備期限。同頻度継続承認に基づき次7日分を準備"
+      }
+    ]
+  },
+  "contract": "1e969127dff80e444de94b4b869d1505f8542bbd2d16fff7a993d5161f58c6c4",
+  "status": "verifying",
+  "attempts": 0,
+  "history": [
+    {
+      "revision": 1,
+      "from": "queued",
+      "to": "verifying",
+      "type": "implement",
+      "at": "2026-11-11T20:08:51.141Z",
+      "event": {
+        "type": "implement",
+        "actor": "CEO",
+        "revision": 0,
+        "commit_sha": "a72b9c6beb3fb348976da0fd9605474db4e1834b"
+      }
+    }
+  ],
+  "commit_sha": "a72b9c6beb3fb348976da0fd9605474db4e1834b"
+}
