@@ -2,9 +2,9 @@ name: MITAMA Threads 投稿（認証確認後のみ公開）
 on:
 
   schedule:
-    # 2026-11-01 through 11-14 only. Date guard prevents annual repeats.
+    # 2026-11-01 through 11-21 only. Date guard prevents annual repeats.
     # Retry opportunities on the same JST day; publisher checks Threads history before posting.
-    - cron: '15 0,3,6,9 1-14 11 *'
+    - cron: '15 0,3,6,9 1-21 11 *'
   # Independent fallback: this existing daily report has recently run reliably.
   workflow_run:
     workflows: ['Affiliate evidence report']
@@ -47,6 +47,13 @@ on:
           - '29'
           - '30'
           - '31'
+          - '32'
+          - '33'
+          - '34'
+          - '35'
+          - '36'
+          - '37'
+          - '38'
       publish:
         description: '実投稿（初期値OFF）'
         required: true
