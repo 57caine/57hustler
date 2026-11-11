@@ -97,6 +97,7 @@ export default async function ColumnPage({ params }: Props) {
   // rather than a generic marketplace search with potentially mismatched lens specs.
   const purchaseIntentGuide = PURCHASE_GUIDES.has(slug) ||
     ['contact-tsuuhan-shohosen-nashi-kanzen-guide', 'contact-dosu-shohosen-mikata-kanzen-2026'].includes(slug);
+  const purchaseIs2Week = /2week|2ウィーク|2週間|ツーウィーク/i.test(column.title);
 
   const otherColumns = allColumns.filter((c) => c.slug !== slug).map((c) => ({ column: c, score: (c.category === column.category ? 10 : 0) + ('section' in c && 'section' in column && c.section === column.section ? 5 : 0) })).sort((a, b) => b.score - a.score || a.column.slug.localeCompare(b.column.slug)).slice(0, 4).map(({ column: related }) => related);
   const BASE = 'https://www.lens-navi.jp';
@@ -293,9 +294,9 @@ export default async function ColumnPage({ params }: Props) {
               <p className="text-xs text-gray-500 mb-3">眼科で確認した製品名・度数・BC・DIAと送料込みの価格を確認</p>
               <div className="flex flex-wrap gap-2">
                 {purchaseIntentGuide ? (
-                  <Link href="/category/1day" data-growth-event="comparison_navigation" data-growth-source="column_footer_purchase_intent"
+                  <Link href={purchaseIs2Week ? '/category/2week' : '/category/1day'} data-growth-event="comparison_navigation" data-growth-source="column_footer_purchase_intent"
                     className="bg-sky-700 hover:bg-sky-800 text-white text-sm font-bold px-4 py-2.5 rounded-lg transition-colors">
-                    いつものワンデーの1箱価格・購入先を比較 →
+                    {purchaseIs2Week ? 'いつもの2ウィークの購入先を比較 →' : 'いつものワンデーの1箱価格・購入先を比較 →'}
                   </Link>
                 ) : (
                   <a href={RAKUTEN(contactLensSearchTerm(column.title))} target="_blank" rel="noopener noreferrer nofollow sponsored"
