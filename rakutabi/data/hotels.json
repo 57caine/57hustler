@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-10T23:47:12.996Z",
+  "fetchedAt": "2026-11-11T00:20:38.746Z",
   "checkinDate": "2026-11-14",
   "hotels": [
     {
@@ -751,7 +751,7 @@
       "address": "北海道函館市若松町19-11",
       "access": "ＪＲ函館駅から徒歩で5分。函館空港よりシャトルバスで20分。",
       "nearestStation": "函館",
-      "special": "函館駅より徒歩5分★朝市・市電・バス���ーミナルにも近く、ビジネスや観光に便利☆",
+      "special": "函館駅より徒歩5分★朝市・市電・バスターミナルにも近く、ビジネスや観光に便利☆",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1477/1477.jpg",
       "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1477/1477_sgl.jpg",
       "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D1477",
@@ -1155,7 +1155,7 @@
     {
       "hotelNo": 1648,
       "name": "ホテルオークラ神戸",
-      "kana": "おー���ら　こうべ",
+      "kana": "おーくら　こうべ",
       "areaKey": "arima",
       "address": "兵庫県神戸市中央区波止場町2-1  メリケンパーク内",
       "access": "ＪＲ神戸線・阪神線 元町駅から徒歩で10分。 新幹線 新神戸駅から 車で15分。",
@@ -1495,102 +1495,6 @@
       ]
     },
     {
-      "hotelNo": 1854,
-      "name": "熱海温泉　湯の宿　平鶴（ひらつる）",
-      "kana": "あたみおんせん　ゆのやど　ひらつる",
-      "areaKey": "atami",
-      "address": "静岡県熱海市下多賀493",
-      "access": "国道１３５号線を熱海より伊東方面へ７ｋｍ　ＪＲ伊東線網代駅下車徒歩５分　海は目の前　国道よりも海よりの温泉旅館",
-      "nearestStation": "網代",
-      "special": "《熱海で最も海に近い貸切露天風呂》魚屋直営の海鮮とオーシャンビュー◆東京から37分の熱海温泉で非日常の贅沢を",
-      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1854/1854.jpg",
-      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/1854/1854_room.jpg",
-      "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D1854",
-      "planListUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FvFumt%2F%3Ff_no%3D1854%26f_flg%3DPLAN",
-      "reviewUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FgJNfM%2F%3Ff_hotel_no%3D1854",
-      "minCharge": 10200,
-      "reviewAverage": 4.52,
-      "reviewCount": 1117,
-      "userReview": "海に浮かぶ露天風呂とアワビに感動!全て最高でしたまるで海の中に浮かんでるような露天風呂、アワビ美味しかったですまた行きます他の画像やクチコミの詳細はこちらから　https://revi…　2026-11-07 12:16:59投稿",
-      "ratings": {
-        "service": 4.53,
-        "location": 4.51,
-        "room": 4.51,
-        "equipment": 4.34,
-        "bath": 4.6,
-        "breakfast": 4.48,
-        "dinner": 4.58,
-        "cleanliness": 4.53
-      },
-      "details": [
-        {
-          "label": "チェックイン",
-          "value": "14:00"
-        },
-        {
-          "label": "最終チェックイン",
-          "value": "18:30"
-        },
-        {
-          "label": "チェックアウト",
-          "value": "10:00"
-        },
-        {
-          "label": "客室数",
-          "value": "22室"
-        },
-        {
-          "label": "お風呂について",
-          "value": "温泉、大浴場、露天風呂、家族風呂、天然温泉、ナトリウム・カルシウム塩化物泉、カルシウム泉、ナトリウム泉、関節痛、美肌効果、疲労回復"
-        },
-        {
-          "label": "食事場所",
-          "value": "広間、食事処、広間、食事処"
-        },
-        {
-          "label": "館内設備",
-          "value": "「素泊まりプラン」のお客様はタオル・バスタオル・ハブラシ・浴衣等が別料金となります。、フロントのお電話の対応は夜11時までで朝7時よりたまわります。、ご予約・お問い合わせ時間は夜9時まで　朝8時よりとなります。、レストラン、コーヒーハウス、喫茶、宴会場、会議室、大浴場、露天風呂、禁煙ルーム、売店、コーヒーショップ、自動販売機、マッサージサービス、宅配便、駐車場あり"
-        },
-        {
-          "label": "客室設備",
-          "value": "テレビ、衛星放送、電話、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、ドライヤー(貸出)、電気スタンド、加湿器(一部)、個別空調、洗浄機付トイレ、石鹸（液体）、ボディーソープ、シャンプー、コンディショナー、洗顔ソープ、ハミガキセット、カミソリ、シャワーキャップ、くし、おふろセット、タオル、バスタオル、浴衣、スリッパ、金庫"
-        },
-        {
-          "label": "レジャー",
-          "value": "山に海に体験、観光、散策、まちあるき、ハイキング、日帰り温泉、立ち寄り湯など楽しみ方は自由自在です。,海水浴,釣り,海釣り,カヌー,ヨット,クルージング,ウィンドサーフィン,ダイビング,ウォータースポーツ,テニス,ゲートボール,ゴルフ,サッカー,パラグライダー,サイクリング,ハイキング,登山,遊園地,博物館,水族館,フラワーパーク,美術館,水上バス"
-        },
-        {
-          "label": "バリアフリー",
-          "value": "車椅子可、客室内に洋式トイレあり、客室内トイレに手すりあり、大浴場浴槽に手すりあり"
-        },
-        {
-          "label": "駐車場",
-          "value": "有り　５０台　有料　乗用車1台1泊700円（税別）"
-        }
-      ],
-      "plans": [
-        {
-          "planName": "【ファミリー・グループ】海辺で過ごす家族の休日｜海鮮と海一望の露天風呂を楽しむ1泊2食【現金価格】",
-          "roomName": "■和室■（ウォシュレットトイレ付）お部屋は選べません",
-          "adults": 2,
-          "total": 81998,
-          "withBreakfast": true,
-          "withDinner": true,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D1854%26f_syu%3Da%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D4782791"
-        }
-      ],
-      "themes": [
-        "weekend",
-        "onsen"
-      ],
-      "conditions": [
-        "onsen",
-        "meal",
-        "breakfast",
-        "view"
-      ]
-    },
-    {
       "hotelNo": 2108,
       "name": "草津温泉　ペンション五郎次",
       "kana": "くさつおんせん　ごろうじ",
@@ -1869,7 +1773,7 @@
         },
         {
           "planName": "【彩り会席】エゾアワビと国産牛すきやきを愉しむスタンダードプラン",
-          "roomName": "【オーシャンビュー】お部屋タイプおまかせ／禁煙",
+          "roomName": "【オーシャンビュー】お部屋タイ��おまかせ／禁煙",
           "adults": 2,
           "total": 47684,
           "withBreakfast": true,
@@ -1952,7 +1856,7 @@
         },
         {
           "label": "レジャー",
-          "value": "渓流釣り,トレッキン��,登山"
+          "value": "渓流釣り,トレッキング,登山"
         },
         {
           "label": "駐車場",
@@ -2084,90 +1988,6 @@
       ]
     },
     {
-      "hotelNo": 3156,
-      "name": "神戸ルミナスホテル　兵庫駅前",
-      "kana": "こうべすみなすほてる　ひょうごえきまえ",
-      "areaKey": "arima",
-      "address": "兵庫県神戸市兵庫区塚本通6-2-11",
-      "access": "＝＝●「ＪＲ三宮駅」より３つ目の『ＪＲ兵庫駅』より徒歩２分。　■お車でお越しの方は『阪神高速柳原Ｉ．Ｃ』から２分。＝＝",
-      "nearestStation": "兵庫",
-      "special": "★２００９年全室を改装しました！全室に加湿器機能付き空気清浄機・ウォッシュレット・高速インターネットがございます！",
-      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/3156/3156.jpg",
-      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/3156/3156_sgl.jpg",
-      "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D3156",
-      "planListUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FvFumt%2F%3Ff_no%3D3156%26f_flg%3DPLAN",
-      "reviewUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FgJNfM%2F%3Ff_hotel_no%3D3156",
-      "minCharge": 3250,
-      "reviewAverage": 4.08,
-      "reviewCount": 2708,
-      "userReview": "神戸の中では安価で接客も良好神戸は高いねその中でも価格安かった接客は良いですねクチコミの詳細はこちらから　https://review.travel.rakuten.co.jp/hot…　2026-11-05 18:24:02投稿",
-      "ratings": {
-        "service": 4.06,
-        "location": 4.11,
-        "room": 4.07,
-        "equipment": 4,
-        "bath": 3.99,
-        "breakfast": 4.16,
-        "dinner": null,
-        "cleanliness": 4.01
-      },
-      "details": [
-        {
-          "label": "チェックイン",
-          "value": "14:00"
-        },
-        {
-          "label": "最終チェックイン",
-          "value": "29:30"
-        },
-        {
-          "label": "チェックアウト",
-          "value": "11:00"
-        },
-        {
-          "label": "客室数",
-          "value": "192室"
-        },
-        {
-          "label": "食事場所",
-          "value": "レストラン(バイキング)、レストラン"
-        },
-        {
-          "label": "館内設備",
-          "value": "★１Ｆフロント横には無料で高速インターネットが使用できるパソコンを設置しております。、★ノートパソコンをご持参の方は、無料で全客室より高速インターネットが楽しめます！、レストラン、宴会場、会議室、禁煙ルーム、自動販売機、コインランドリー(有料)、パソコン利用可、ファックス送信可、モーニングコール、宅配便、駐車場あり"
-        },
-        {
-          "label": "客室設備",
-          "value": "テレビ、衛星放送、有料ビデオ、電話、モジュラージャック、ファックス、インターネット接続(LAN形式)、湯沸かしポット、冷蔵庫、ドライヤー、ズボンプレッサー(貸出)、電気スタンド(貸出)、アイロン(貸出)、洗浄機付トイレ、ボディーソープ、リンスインシャンプー、ハミガキセット、カミソリ、ブラシ、タオル、バスタオル、スリッパ、パジャマ"
-        },
-        {
-          "label": "レジャー",
-          "value": "★サッカー観戦などノエビアスタジアムへは、徒歩で行くことができます。,海水浴,釣り,海釣り,クルージング,ゴルフ,サッカー,乗馬,陸上競技,遊園地,動物園,博物館,水族館,フラワーパーク,農業公園,美術館"
-        },
-        {
-          "label": "駐車場",
-          "value": "有　25台1泊\\1,650〜税別(先着順、予約不可。ご到着時満車の際はお近くの駐車場をご案内。）"
-        }
-      ],
-      "plans": [
-        {
-          "planName": "●【楽天限定】スーペリア素泊まりプラン",
-          "roomName": "○禁煙シングルルーム○",
-          "adults": 1,
-          "total": 22000,
-          "withBreakfast": false,
-          "withDinner": false,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D3156%26f_syu%3Dsingle-k%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D1%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D1768938"
-        }
-      ],
-      "themes": [
-        "solo"
-      ],
-      "conditions": [
-        "roomOnly"
-      ]
-    },
-    {
       "hotelNo": 4730,
       "name": "下呂温泉　湯あそびの宿　下呂観光ホテル本館",
       "kana": "げろおんせん　ゆあそびのやど　げろかんこうほてる　ほんかん",
@@ -2222,7 +2042,7 @@
         },
         {
           "label": "館内設備",
-          "value": "プランによりミキモトのアメニティを��用、色浴衣無料（女性のみ）、読書サロンでのコーヒー等の無料サービス、多目的室、大浴場、露天風呂、湯上がりサロン、禁煙ルーム、売店、自動販売機、送迎バス、ファックス送信可、モーニングコール、宅配便、駐車場あり"
+          "value": "プランによりミキモトのアメニティを採用、色浴衣無料（女性のみ）、読書サロンでのコーヒー等の無料サービス、多目的室、大浴場、露天風呂、湯上がりサロン、禁煙ルーム、売店、自動販売機、送迎バス、ファックス送信可、モーニングコール、宅配便、駐車場あり"
         },
         {
           "label": "客室設備",
@@ -2395,6 +2215,104 @@
         "meal",
         "breakfast",
         "station",
+        "roomOnly"
+      ]
+    },
+    {
+      "hotelNo": 4840,
+      "name": "神戸三宮ユニオンホテル",
+      "kana": "こうべさんのみや　ゆにおんほてる",
+      "areaKey": "arima",
+      "address": "兵庫県神戸市中央区御幸通2-1-10",
+      "access": "「三宮駅」から徒歩約１3分 阪神高速「生田川」すぐ 電車で大阪２３分・京都５３分",
+      "nearestStation": "阪急三宮",
+      "special": "【約65種の朝食が自慢】神戸ご当地メニューも♪11時OUT＆シモンズベッドで快適ステイ/三宮徒歩圏×夜食カレーも好評",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/4840/4840.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/4840/4840_room.jpg",
+      "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D4840",
+      "planListUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FvFumt%2F%3Ff_no%3D4840%26f_flg%3DPLAN",
+      "reviewUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FgJNfM%2F%3Ff_hotel_no%3D4840",
+      "minCharge": 3550,
+      "reviewAverage": 4.17,
+      "reviewCount": 6171,
+      "userReview": "朝食を部屋で満喫、レンタルサイクルも便利推しのライブ参戦の為2泊しました。朝食バイキングが、お部屋で食べれたのが一番嬉しかったです。まわりを気にせず、時間も気にせずに過ごせました、余りにものん…　2026-11-01 18:32:55投稿",
+      "ratings": {
+        "service": 4.22,
+        "location": 3.99,
+        "room": 4.12,
+        "equipment": 4.09,
+        "bath": 4.09,
+        "breakfast": 4.22,
+        "dinner": 3.85,
+        "cleanliness": 4.16
+      },
+      "details": [
+        {
+          "label": "チェックイン",
+          "value": "14:00"
+        },
+        {
+          "label": "最終チェックイン",
+          "value": "26:00"
+        },
+        {
+          "label": "チェックアウト",
+          "value": "11:00"
+        },
+        {
+          "label": "客室数",
+          "value": "307室"
+        },
+        {
+          "label": "食事場所",
+          "value": "部屋、レストラン(バイキング)、部屋、レストラン"
+        },
+        {
+          "label": "館内設備",
+          "value": "ゲストラウンジ「Canone　海音」　11時30分〜翌５時は無料開放。、軽食自販機（カップ麺など）・製氷機・無料割り箸あり。、1階フロント前に各種アメニティなどあり。最寄りのコンビニまで徒歩２分。ビジネスや観光に最適☆、レストラン、夜食コーナー、会議室、売店、自動販売機、コインランドリー(有料)、貸自転車、卓球、クリーニングサービス、パソコン利用可、ファックス送信可、マッサージサービス、モーニングコール、宅配便、駐車場あり"
+        },
+        {
+          "label": "客室設備",
+          "value": "テレビ、衛星放送、衛星放送（無料）、電話、インターネット接続(LAN形式)、インターネット接続(無線LAN形式)、ティーサーバー、お茶セット、冷蔵庫、ドライヤー、ズボンプレッサー(貸出)、電気スタンド(貸出)、アイロン(貸出)、加湿器(貸出)、洗浄機付トイレ、ボディーソープ、シャンプー、コンディショナー、洗顔ソープ、入浴剤、ハミガキセット、カミソリ、シャワーキャップ、ブラシ、タオル、バスタオル、ナイトウェア、スリッパ"
+        },
+        {
+          "label": "レジャー",
+          "value": "海水浴,釣り,海釣り,クルージング,ウォータースポーツ,ゴルフ,サッカー,サイクリング,ハイキング,スケート,トレッキング,登山,遊園地,動物園,博物館,水族館,フラワーパーク,テーマパーク,農業公園,美術館,水上バス"
+        },
+        {
+          "label": "バリアフリー",
+          "value": "車椅子可、貸出用車椅子、バリアフリー用トイレ、客室内に洋式トイレあり、館内に車椅子利用可能なトイレあり"
+        },
+        {
+          "label": "駐車場",
+          "value": "ホテル南側200M契約駐車場1泊1,200円車高2.1m営業6〜23時半 時間内出入可・予約不要"
+        }
+      ],
+      "plans": [
+        {
+          "planName": "【素泊まり】三宮徒歩圏×11時OUT♪シモンズベッドで快適ステイ｜無料レンタサイクルあり",
+          "roomName": "【禁煙】シングル15平米　シモンズベッド/六甲山の伏流水使用",
+          "adults": 1,
+          "total": 19500,
+          "withBreakfast": false,
+          "withDinner": false,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D4840%26f_syu%3Dsingle1%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D1%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D4027541"
+        },
+        {
+          "planName": "【夕食＆朝食】〜2食付〜◆4つ星評価の朝食バイキングとユニオンカレー夕食（18時~25時）付プラン",
+          "roomName": "【禁煙】セミダブル16平米　ベッド幅130センチ",
+          "adults": 2,
+          "total": 28380,
+          "withBreakfast": true,
+          "withDinner": true,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D4840%26f_syu%3Dsemidb1%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D4803812"
+        }
+      ],
+      "themes": [
+        "solo"
+      ],
+      "conditions": [
+        "meal",
         "roomOnly"
       ]
     },
@@ -2672,6 +2590,15 @@
       ],
       "plans": [
         {
+          "planName": "【直前割×基本プラン】直前のご予約でも基本プラ���をお得に愉しめる＜★基本プラン＞",
+          "roomName": "洋室ツイン（1〜3名）／38平米　※禁煙",
+          "adults": 2,
+          "total": 63800,
+          "withBreakfast": true,
+          "withDinner": true,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D5066%26f_syu%3Dt1%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5329340"
+        },
+        {
           "planName": "【直前割×基本プラン】直前のご予約でも基本プランをお得に愉しめる＜★基本プラン＞",
           "roomName": "洋室ツイン（1〜3名）／38平米　※禁煙",
           "adults": 2,
@@ -2767,15 +2694,6 @@
       ],
       "plans": [
         {
-          "planName": "【素泊まりプラン】◇時間を気にせずチェックイン◇草津温泉ナイトステイ",
-          "roomName": "【タワー館】森に囲まれた洋室タイプのお部屋",
-          "adults": 2,
-          "total": 41800,
-          "withBreakfast": false,
-          "withDinner": false,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D5270%26f_syu%3Dyoshitsurc%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D4673797"
-        },
-        {
           "planName": "【朝食付き】◇1日の始まりは森林浴散策と朝ごはん◇夕食なし朝食付きプラン♪",
           "roomName": "森に囲まれた洋室タイプのお部屋【タワー館】",
           "adults": 2,
@@ -2801,8 +2719,7 @@
       "conditions": [
         "onsen",
         "meal",
-        "breakfast",
-        "roomOnly"
+        "breakfast"
       ]
     },
     {
@@ -3011,7 +2928,7 @@
       "kana": "ぜっけいのゆやど　とうや　こはんてい",
       "areaKey": "noboribetsu",
       "address": "北海道虻田郡洞爺湖町洞爺湖温泉7-8",
-      "access": "JR室蘭本線洞爺駅より路線バス又はタクシー　　　　　JR札幌駅より毎日送迎バス���行中",
+      "access": "JR室蘭本線洞爺駅より路線バス又はタクシー　　　　　JR札幌駅より毎日送迎バス運行中",
       "nearestStation": "洞爺",
       "special": "最上階９階・湖上32mの空中露天風呂からの眺めはまさに絶景！雄大な景色と滑らかなお湯をお楽しみ下さい。",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/5501/5501.jpg",
@@ -3494,7 +3411,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、衛星放送、ＣＳ放送（有料）、衛星放送（無料）、電話、モジュラージャック、ファックス(貸出)、ファックス(一部)、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、ズボンプレッサー(貸出)、電気スタンド(貸出)、アイロン(貸出)、ＣＤプレイヤ(一部)、加湿器、ヘルスメーター、変圧器（貸出）、洗浄機付トイレ、エクステンションベッド、ベビーベッド、石鹸���液体）、ボディーソープ、シャンプー、コンディショナー、ハミガキセット、カミソリ、シャワーキャップ、ブラシ、タオル、バスタオル、スリッパ、パジャマ"
+          "value": "テレビ、衛星放送、ＣＳ放送（有料）、衛星放送（無料）、電話、モジュラージャック、ファックス(貸出)、ファックス(一部)、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、ズボンプレッサー(貸出)、電気スタンド(貸出)、アイロン(貸出)、ＣＤプレイヤ(一部)、加湿器、ヘルスメーター、変圧器（貸出）、洗浄機付トイレ、エクステンションベッド、ベビーベッド、石鹸（液体）、ボディーソープ、シャンプー、コンディショナー、ハミガキセット、カミソリ、シャワーキャップ、ブラシ、タオル、バスタオル、スリッパ、パジャマ"
         },
         {
           "label": "レジャー",
@@ -3521,21 +3438,21 @@
         },
         {
           "planName": "【事前決済限定】キャンセル・返金不可プラン　11時OUT＜素泊まり＞",
-          "roomName": "南館サウスリゾートダブル　【禁煙】",
+          "roomName": "本館16〜19階スーペリアツイン【禁煙】",
           "adults": 2,
           "total": 40350,
           "withBreakfast": false,
           "withDinner": false,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D5521%26f_syu%3Dmdx%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6180140"
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D5521%26f_syu%3Dhtr2%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6180140"
         },
         {
           "planName": "【事前決済限定】キャンセル・返金不可プラン　11時OUT＜朝食付＞",
-          "roomName": "南館サウスリゾートダブル　【禁煙】",
+          "roomName": "本館16〜19階スーペリアツイン【禁煙】",
           "adults": 2,
           "total": 46950,
           "withBreakfast": true,
           "withDinner": false,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D5521%26f_syu%3Dmdx%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6449446"
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D5521%26f_syu%3Dhtr2%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6449446"
         },
         {
           "planName": "【本館30階　GOCOCU】地上100mのディナーブッフェ付プラン＜11時OUT＞ 夕朝食付",
@@ -4150,7 +4067,7 @@
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D7140%26f_syu%3Djs%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D2848315"
         },
         {
-          "planName": "近海物使用 １品チョイスプラン《鯛シ��ブ 》【当館人気】",
+          "planName": "近海物使用 １品チョイスプラン《鯛シャブ 》【当館人気】",
           "roomName": "和室10畳",
           "adults": 2,
           "total": 77000,
@@ -4543,7 +4460,7 @@
         },
         {
           "label": "館内設備",
-          "value": "彩り浴衣と帯のお色をお選びいただけます、ロビーラウンジサービス：温泉饅頭・ウェルカムドリンク　14：00〜18：00、レストラン、カラオケ��ーム、宴会場、会議室、大浴場、露天風呂、禁煙ルーム、売店、自動販売機、プール(夏期のみ)、卓球、送迎バス、ペット同宿可、モーニングコール、宅配便、駐車場あり"
+          "value": "彩り浴衣と帯のお色をお選びいただけます、ロビーラウンジサービス：温泉饅頭・ウェルカムドリンク　14：00〜18：00、レストラン、カラオケルーム、宴会場、会議室、大浴場、露天風呂、禁煙ルーム、売店、自動販売機、プール(夏期のみ)、卓球、送迎バス、ペット同宿可、モーニングコール、宅配便、駐車場あり"
         },
         {
           "label": "客室設備",
@@ -4650,7 +4567,7 @@
         },
         {
           "label": "お風呂について",
-          "value": "温泉、大浴��、露天風呂、天然温泉、単純温泉、塩化物泉、疲労回復、婦人病、リウマチ・神経病"
+          "value": "温泉、大浴場、露天風呂、天然温泉、単純温泉、塩化物泉、疲労回復、婦人病、リウマチ・神経病"
         },
         {
           "label": "食事場所",
@@ -4961,7 +4878,7 @@
         },
         {
           "label": "バリアフリー",
-          "value": "バリアフリールーム、大浴場浴槽に手すりあり、アレルギーに配慮した料理への対応可能、施設スタッフによる介助・補助対応が可能"
+          "value": "バリアフリールーム、大浴場浴槽に手すりあり、アレルギーに配慮した料理への対応可能、施設スタッフによる介助・補助対応��可能"
         },
         {
           "label": "駐車場",
@@ -5082,6 +4999,15 @@
           "withBreakfast": false,
           "withDinner": false,
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D7780%26f_syu%3Dn%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D1%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5766719"
+        },
+        {
+          "planName": "【持ち込み歓迎】素泊りシンプルプラン！【チェックイン16時から20時迄】",
+          "roomName": "【禁煙室】川側共有バスルーム【Wi-fi���料】",
+          "adults": 2,
+          "total": 24000,
+          "withBreakfast": false,
+          "withDinner": false,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D7780%26f_syu%3Dn%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5766719"
         },
         {
           "planName": "【持ち込み歓迎】素泊りシンプルプラン！【チェックイン16時から20時迄】",
@@ -5683,7 +5609,7 @@
         },
         {
           "label": "館内設備",
-          "value": "ペットと一緒に入れる家族風呂ＤＯＧ（有料）シャンプー・リンス・ドライヤー完備、５階ペットコミュニティー広場にペット専用露天風呂（無料）がございます。バスタオルレンタルも可能、貸出用車椅子・シャワーチェアー・客室内風呂段差のサポート手すり（準備あり）、喫茶、大浴場、禁煙ルーム、売店、自動販売機、ペット同宿可、モーニングコール、宅配便、駐車場あり"
+          "value": "ペットと一緒に入れる家族風呂ＤＯＧ（有料）シャンプー・リンス・ドライヤー完備、５階ペットコミュニティー広場にペット専用露天風呂（無料）がございます。バスタオルレンタルも可能、貸出用車椅子・シャワーチェアー・客室内風呂段差のサポート手すり（準備あり）、喫茶、大浴場、禁煙ルーム、売店、自動販売機、ペット同宿可、モーニング��ール、宅配便、駐車場あり"
         },
         {
           "label": "客室設備",
@@ -6026,7 +5952,9 @@
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D8371%26f_syu%3Dt%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D2849380"
         }
       ],
-      "themes": [],
+      "themes": [
+        "weekend"
+      ],
       "conditions": [
         "meal",
         "breakfast"
@@ -6460,100 +6388,6 @@
       ]
     },
     {
-      "hotelNo": 8754,
-      "name": "城崎温泉　大和屋",
-      "kana": "きのさきおんせん　やまとや",
-      "areaKey": "kinosaki",
-      "address": "兵庫県豊岡市城崎町湯島427",
-      "access": "JR城崎温泉駅より約800m",
-      "nearestStation": "城崎",
-      "special": "城崎温泉ど真ん中！外湯めぐりや街歩きに超便利！家族で営むこじんまりとしたアットホームな宿です。",
-      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/8754/8754.jpg",
-      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/8754/8754_war.jpg",
-      "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D8754",
-      "planListUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FvFumt%2F%3Ff_no%3D8754%26f_flg%3DPLAN",
-      "reviewUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FgJNfM%2F%3Ff_hotel_no%3D8754",
-      "minCharge": 9900,
-      "reviewAverage": 4.24,
-      "reviewCount": 79,
-      "userReview": "外観は古いが内装は綺麗で快適な空間清崎温泉外の真ん中にあり、一の湯と御所の湯に近くとても利便性が良かったです。また建物自体古さを感じる外観ですが、何と中に入るときれいにリフォームされており部屋…　2026-11-07 21:09:18投稿",
-      "ratings": {
-        "service": 4.25,
-        "location": 4.47,
-        "room": 4,
-        "equipment": 4.12,
-        "bath": 0,
-        "breakfast": 3.78,
-        "dinner": 4,
-        "cleanliness": 4
-      },
-      "details": [
-        {
-          "label": "チェックイン",
-          "value": "15:00"
-        },
-        {
-          "label": "最終チェックイン",
-          "value": "18:00"
-        },
-        {
-          "label": "チェックアウト",
-          "value": "10:00"
-        },
-        {
-          "label": "客室数",
-          "value": "6室"
-        },
-        {
-          "label": "お風呂について",
-          "value": "温泉、家族風呂、水風呂、打ち身、外傷、慢性消化器病"
-        },
-        {
-          "label": "食事場所",
-          "value": "食事処、食事処"
-        },
-        {
-          "label": "館内設備",
-          "value": "サイクリスト歓迎。事前連絡でスタンド・空気入れ貸出可、送迎バス、ファックス送信可、マッサージサービス、駐車場あり"
-        },
-        {
-          "label": "客室設備",
-          "value": "テレビ、電話、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー(貸出)、加湿器(一部)、個別空調、洗浄機付トイレ、ハミガキセット、カミソリ、タオル、バスタオル、浴衣、金庫"
-        },
-        {
-          "label": "レジャー",
-          "value": "ボートとアイスホッケー経験あり。マイナー競技談義歓迎,海水浴,釣り,海釣り,カヌー,ダイビング,ウォータースポーツ,テニス,ゴルフ,サイクリング,ハイキング,スキー,スケート,トレッキング,遊園地,博物館,水族館,農業公園,美術館,山菜取り"
-        },
-        {
-          "label": "バリアフリー",
-          "value": "貸出用車椅子、客室内に洋式トイレあり"
-        },
-        {
-          "label": "駐車場",
-          "value": "契約有料Pをご案内（平日1700円／土日祝2200円）※無料Pなし"
-        }
-      ],
-      "plans": [
-        {
-          "planName": "気軽に城崎素泊まり｜外湯めぐり・街歩きにおすすめ【外湯券付】※予約時確認事項あり",
-          "roomName": "温泉街側3階｜ツインベッド和室／2名様向け",
-          "adults": 2,
-          "total": 26400,
-          "withBreakfast": false,
-          "withDinner": false,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D8754%26f_syu%3Dcts%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6016812"
-        }
-      ],
-      "themes": [
-        "weekend",
-        "onsen"
-      ],
-      "conditions": [
-        "onsen",
-        "roomOnly"
-      ]
-    },
-    {
       "hotelNo": 8778,
       "name": "神鍋温泉　自然に癒される高原ホテル　ブルーリッジホテル",
       "kana": "かんなべおんせん　しぜんにいやされるこうげんほてる　ぶるーりっじほてる",
@@ -6837,7 +6671,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、衛星放送（無料）、電話、インターネット接続(無線LAN形式)、湯沸かしポット、冷蔵庫、ドライヤー、ズボン��レッサー(貸出)、電気スタンド(貸出)、アイロン(貸出)、加湿器、洗浄機付トイレ、石鹸（液体）、ボディーソープ、シャンプー、リンス、ハミガキセット、カミソリ、シャワーキャップ、ブラシ、タオル、バスタオル、スリッパ、パジャマ"
+          "value": "テレビ、衛星放送（無料）、電話、インターネット接続(無線LAN形式)、湯沸かしポット、冷蔵庫、ドライヤー、ズボンプレッサー(貸出)、電気スタンド(貸出)、アイロン(貸出)、加湿器、洗浄機付トイレ、石鹸（液体）、ボディーソープ、シャンプー、リンス、ハミガキセット、カミソリ、シャワーキャップ、ブラシ、タオル、バスタオル、スリッパ、パジャマ"
         },
         {
           "label": "レジャー",
@@ -7362,7 +7196,7 @@
         },
         {
           "label": "館内設備",
-          "value": "歯ブラシ・カミソリ・綿棒・ヘヤブラシ・ボディスポンジはアメニティコーナーからお取りください。、レストラン、宴会場、会議室、禁煙ルーム、自動販売機、コインランドリー(有料)、貸自転車、卓球、モーニングコール、宅配便、駐車場あり"
+          "value": "歯ブラシ・カミソリ・綿棒・ヘヤブラシ・ボディスポンジはアメニティコーナーからお取りください。、レストラン、宴会場、会議室、禁煙ルーム、自動販売機、コインランドリー(有料)、貸自転車、卓球、モー���ングコール、宅配便、駐車場あり"
         },
         {
           "label": "客室設備",
@@ -7604,15 +7438,6 @@
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D9418%26f_syu%3Dwa10%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D1%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5861445"
         },
         {
-          "planName": "【素泊り】当館から徒歩圏内に飲食店やコンビニあり！海や川に近い♪",
-          "roomName": "和室10畳☆トイレなし",
-          "adults": 2,
-          "total": 9900,
-          "withBreakfast": false,
-          "withDinner": false,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D9418%26f_syu%3Dwa10%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5861293"
-        },
-        {
           "planName": "12月5日花火大会【朝食付】朝食だけは宿でという方におすすめ！漁師の町伊東の和朝食♪",
           "roomName": "和室10畳☆トイレなし",
           "adults": 2,
@@ -7632,14 +7457,12 @@
         }
       ],
       "themes": [
-        "weekend",
         "solo"
       ],
       "conditions": [
         "meal",
         "breakfast",
-        "station",
-        "roomOnly"
+        "station"
       ]
     },
     {
@@ -9139,7 +8962,7 @@
       "minCharge": 24200,
       "reviewAverage": 4.66,
       "reviewCount": 825,
-      "userReview": "サイトを見てお部屋も綺麗��お料理も美味しそうで宿泊を決めたのですが、お部屋、お料理共に大満足でした。タイミングもあったと思うのですが浴場も貸し切り状態で入ることが出来、満喫。受付時からあたたかいおもて…　2026-10-31 10:02:32投稿",
+      "userReview": "サイトを見てお部屋も綺麗、お料理も美味しそうで宿泊を決めたのですが、お部屋、お料理共に大満足でした。タイミングもあったと思うのですが浴場も貸し切り状態で入ることが出来、満喫。受付時からあたたかいおもて…　2026-10-31 10:02:32投稿",
       "ratings": {
         "service": 4.7,
         "location": 4.26,
@@ -9274,7 +9097,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、電話、インターネット接続(無線LAN形式)、お茶セット、冷蔵庫、ドライヤー(貸出)、電気スタンド(貸出)、個別空調、洗浄機付トイレ、ボディーソープ、シャンプー、リンス、ハミガキセット、タオル、バスタオル、浴衣、スリッパ"
+          "value": "テレビ、電話、インターネット接続(無線LAN形式)、お茶セット、冷蔵庫、ドライヤー(貸出)、電気スタンド(貸出)、個別空調、洗浄機付トイレ、���ディーソープ、シャンプー、リンス、ハミガキセット、タオル、バスタオル、浴衣、スリッパ"
         },
         {
           "label": "レジャー",
@@ -9367,7 +9190,7 @@
         },
         {
           "label": "レジャー",
-          "value": "春・桜と高山まつり　夏・長良川鵜飼、郡上盆踊　秋・紅葉と高山まつり　冬・下呂温泉花火ミュージカル,釣り,渓流釣り,カヌー,渓流下り,川上り,テニス,ゲートボール,ゴルフ,サッカー,パラグライダー,ハンググライダー,サイクリング,ハイキング,スキー,クロスカントリー,トレッキング,登山,陸上競��,博物館,テーマパーク,農業公園,美術館,しいたけ狩り,栗拾い,山菜取り"
+          "value": "春・桜と高山まつり　夏・長良川鵜飼、郡上盆踊　秋・紅葉と高山まつり　冬・下呂温泉花火ミュージカル,釣り,渓流釣り,カヌー,渓流下り,川上り,テニス,ゲートボール,ゴルフ,サッカー,パラグライダー,ハンググライダー,サイクリング,ハイキング,スキー,クロスカントリー,トレッキング,登山,陸上競技,博物館,テーマパーク,農業公園,美術館,しいたけ狩り,栗拾い,山菜取り"
         },
         {
           "label": "駐車場",
@@ -9478,8 +9301,12 @@
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D13791%26f_syu%3Dmoritwin%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5464051"
         }
       ],
-      "themes": [],
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
       "conditions": [
+        "onsen",
         "meal",
         "breakfast",
         "station"
@@ -9557,15 +9384,6 @@
       ],
       "plans": [
         {
-          "planName": "【朝食付】海辺の宿の朝ごはんは栄養満点！伊豆観光の拠点に♪",
-          "roomName": "山側和室12畳【3F】",
-          "adults": 2,
-          "total": 24200,
-          "withBreakfast": true,
-          "withDinner": false,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D13817%26f_syu%3Dwaa12%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D4807175"
-        },
-        {
           "planName": "【漁港直送新鮮素材！】-旬味覚を楽しむスタンダードコース-《貸切風呂無料》",
           "roomName": "山側和室12畳【3F】",
           "adults": 2,
@@ -9577,8 +9395,7 @@
       ],
       "themes": [],
       "conditions": [
-        "meal",
-        "breakfast"
+        "meal"
       ]
     },
     {
@@ -9636,7 +9453,7 @@
         },
         {
           "label": "館内設備",
-          "value": "◆リラクゼーションサロン「風香（ふうか）」アロマオイルで優しくトリートメント25分5,500円〜、◆貸切露天風呂「森のプライベートスパ」＜和風・バリ風・中国風＞の3タイプから選べます　岩盤浴付、70分8,800円（4名様まで）＊5名様以上はおひとり様1,100円追加（最大6名様まで）、レストラン、ティーラウンジ、バーラウンジ、夜食コーナー、カラオケルーム、カラオケサロン、宴会場、会議室、結婚式場、大浴場、サウナ、露天風呂、湯上がりサロン、禁煙ルーム、売店、自動販売機、コインランドリー(有料)、エステサロン、プール(夏期のみ)、屋外プール、貸自転車、茶室、コネクティングルーム（一部・要予約）、送迎バス、ファックス送信可、マッサージサービス、モーニングコール、宅配便、駐車場あり"
+          "value": "◆リラクゼーションサロン「風香（ふうか）」アロマオイルで優しくトリートメント25分5,500円〜、◆貸切露天風呂「森のプライベートスパ」＜和風・バリ風・中国風＞の3タイプから選べます　岩盤浴付、70分8,800円（4名様まで）＊5名様以上はおひとり様1,100円追加（最大6名様まで）、レストラン、ティーラウンジ、バーラウンジ、夜食コーナー、カラオケルーム、カラオケサロン、宴会場、会議室、結婚式場、大浴場、サウナ、露天風呂、湯上がりサロン、禁煙ルーム、売店、自動販売機、コインランドリー(有料)、エステサロン、プール(夏期のみ)、屋外プール、貸自転車、茶室、コネクティングルーム（一部・要予約��、送迎バス、ファックス送信可、マッサージサービス、モーニングコール、宅配便、駐車場あり"
         },
         {
           "label": "客室設備",
@@ -10081,7 +9898,7 @@
     {
       "hotelNo": 14467,
       "name": "洞爺湖温泉　ホテルグランド　トーヤ",
-      "kana": "とうやこおんせん　��らんど　とーや",
+      "kana": "とうやこおんせん　ぐらんど　とーや",
       "areaKey": "noboribetsu",
       "address": "北海道虻田郡洞爺湖町洞爺湖温泉 144",
       "access": "ＪＲ室蘭本線洞爺駅より車で約15分／道央道虻田洞爺湖ＩＣより20分",
@@ -10496,7 +10313,7 @@
       "address": "兵庫県神戸市北区有馬町987",
       "access": "神戸（三宮・新神戸）より電車またはバスで約３０分、大阪（梅田）より阪急高速バス特急で約５５分",
       "nearestStation": "有馬温泉",
-      "special": "���ニューアルオープン！お風呂全面改装！多彩な湯舟で湯ったりとお楽しみください。館内湯めぐりが人気。",
+      "special": "リニューアルオープン！お風呂全面改装！多彩な湯舟で湯ったりとお楽しみください。館内湯めぐりが人気。",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/15232/15232.jpg",
       "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/15232/15232_ki.jpg",
       "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D15232",
@@ -10746,7 +10563,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、電話、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、電気スタンド、加湿器、個別空調、洗浄機付トイレ、石鹸（液体）、ボディーソープ、リンスインシャンプー、ハミガキセット、カミソリ、ブラシ、タオル、バスタオル、浴衣、スリッパ、電子レンジ（一部・要予約）"
+          "value": "テレビ、電話、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、電気スタンド、加湿器、個別空調、洗浄機付トイレ、石鹸（液体）、ボディーソープ、リンスインシャンプー、ハミガキセット、カミソリ、ブラシ、タオル、バスタオル、浴衣、スリ���パ、電子レンジ（一部・要予約）"
         },
         {
           "label": "レジャー",
@@ -10842,7 +10659,7 @@
         },
         {
           "label": "館内設備",
-          "value": "・一部のア���ニティはアメニティバーでございます。、・デラックスツイン、コーナーツイン、ファミリースイートのバスルームはシャワーブースがございます。、・コーナーツイン、ファミリースイートはバス・トイレがセパレートです。、レストラン、喫茶、宴会場、会議室、結婚式場、禁煙ルーム、自動販売機、コネクティングルーム（一部・要予約）、クリーニングサービス、パソコン利用可、ファックス送信可、モーニングコール、宅配便、駐車場あり"
+          "value": "・一部のアメニティはアメニティバーでございます。、・デラックスツイン、コーナーツイン、ファミリースイートのバスルームはシャワーブースがございます。、・コーナーツイン、ファミリースイートはバス・トイレがセパレートです。、レストラン、喫茶、宴会場、会議室、結婚式場、禁煙ルーム、自動販売機、コネクティングルーム（一部・要予約）、クリーニングサービス、パソコン利用可、ファックス送信可、モーニングコール、宅配便、駐車場あり"
         },
         {
           "label": "客室設備",
@@ -10982,6 +10799,15 @@
           "withBreakfast": false,
           "withDinner": false,
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D15606%26f_syu%3Dyjston%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D1%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6199859"
+        },
+        {
+          "planName": "【事前決済・返金不可】3日前までの予約で最大15％OFF＜素泊��＞",
+          "roomName": "ラウンジアクセス付き　ジュニアスイート ツイン 海側",
+          "adults": 2,
+          "total": 112996,
+          "withBreakfast": false,
+          "withDinner": false,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D15606%26f_syu%3Dyjston%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6199859"
         },
         {
           "planName": "【事前決済・返金不可】3日前までの予約で最大15％OFF＜素泊り＞",
@@ -11376,7 +11202,7 @@
         },
         {
           "label": "館内設備",
-          "value": "送迎は送りのみ対応、夜食コーナー、居酒屋コーナー、カラオケルーム、宴会場、露天風呂、コーヒーショップ、送迎バス、パソコン利用可、ファックス送信可、E-Mail送信可、マッサージサービス、モーニングコール、駐車場あり"
+          "value": "送���は送りのみ対応、夜食コーナー、居酒屋コーナー、カラオケルーム、宴会場、露天風呂、コーヒーショップ、送迎バス、パソコン利用可、ファックス送信可、E-Mail送信可、マッサージサービス、モーニングコール、駐車場あり"
         },
         {
           "label": "客室設備",
@@ -11504,7 +11330,7 @@
         },
         {
           "planName": "≪スタンダード≫ 宿泊プラン 一泊二食付（駐車場無料）",
-          "roomName": "（禁煙）和洋室（和室６畳＋ツイ��）",
+          "roomName": "（禁煙）和洋室（和室６畳＋ツイン）",
           "adults": 2,
           "total": 54000,
           "withBreakfast": true,
@@ -11642,7 +11468,7 @@
       "kana": "とうやサンパレス　リゾート＆スパ（グランベルホテルズ&リゾーツ）",
       "areaKey": "noboribetsu",
       "address": "北海道有珠郡壮瞥町洞爺湖温泉7-1",
-      "access": "道央自動車道　伊達ＩＣより２０分。  虻田洞爺湖Ｉ���より１０分。",
+      "access": "道央自動車道　伊達ＩＣより２０分。  虻田洞爺湖ＩＣより１０分。",
       "nearestStation": "洞爺",
       "special": "全室湖側の客室と、湖と一つになる絶景の露天風呂を満喫して下さい。",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/17810/17810.jpg",
@@ -11745,7 +11571,7 @@
     {
       "hotelNo": 18252,
       "name": "有馬温泉　月光園　鴻朧館",
-      "kana": "ありまおんせん　げっこうえん　こうろうかん",
+      "kana": "ありまおんせん　げっこ���えん　こうろうかん",
       "areaKey": "arima",
       "address": "兵庫県神戸市北区有馬町318",
       "access": "中国自動車道 西宮北ＩＣより有馬温泉方面約１０分／神戸電鉄「有馬温泉」駅下車 徒歩１０分（※毎日８時～１９時は無料送迎可",
@@ -11759,7 +11585,7 @@
       "minCharge": 17380,
       "reviewAverage": 4.53,
       "reviewCount": 1713,
-      "userReview": "丁寧な接客と温泉、美味しい食事に大満足丁寧な接客でサービスが行き届いてました。部屋も清潔で温���も三カ所あり満足でした。食事も全て美味しく頂きました。また利用したいと思いました。クチコミの詳…　2026-11-06 18:03:51投稿",
+      "userReview": "丁寧な接客と温泉、美味しい食事に大満足丁寧な接客でサービスが行き届いてました。部屋も清潔で温泉も三カ所あり満足でした。食事も全て美味しく頂きました。また利用したいと思いました。クチコミの詳…　2026-11-06 18:03:51投稿",
       "ratings": {
         "service": 4.61,
         "location": 4.54,
@@ -12031,7 +11857,7 @@
       "minCharge": 15400,
       "reviewAverage": 4.36,
       "reviewCount": 210,
-      "userReview": "来宮神社隣の好立地、温泉と食事に大満足家族3世代でお世話になりました。ロケーションも来宮神社の隣で部屋から神社が見える好立地。温泉のお湯もお肌がスベスベになりました。こじんまりとした昔ながらの…　2026-11-02 09:19:56投稿",
+      "userReview": "来宮神社隣の好立地、温泉と食事に大満足家族3世代でお世話になりました。ロケーションも来宮神社の隣で部屋から神社が見える好立地。温泉のお湯もお肌がスベスベ��なりました。こじんまりとした昔ながらの…　2026-11-02 09:19:56投稿",
       "ratings": {
         "service": 4.5,
         "location": 4.31,
@@ -12451,7 +12277,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、電話、インターネット接続(���線LAN形式)、湯沸かしポット、冷蔵庫、ドライヤー、加湿器、加湿器(一部)、洗浄機付トイレ(一部)、ボディーソープ、リンスインシャンプー、タオル、バスタオル、浴衣、スリッパ、金庫"
+          "value": "テレビ、電話、インターネット接続(無線LAN形式)、湯沸かしポット、冷蔵庫、ドライヤー、加湿器、加湿器(一部)、洗浄機付トイレ(一部)、ボディーソープ、リンスインシャンプー、タオル、バスタオル、浴衣、スリッパ、金庫"
         },
         {
           "label": "レジャー",
@@ -12583,7 +12409,7 @@
       "plans": [
         {
           "planName": "【スタンダード】一泊朝食付きプラン",
-          "roomName": "こじんまり和室　トイレ・洗面付き",
+          "roomName": "こじんまり��室　トイレ・洗面付き",
           "adults": 1,
           "total": 21450,
           "withBreakfast": true,
@@ -12956,7 +12782,7 @@
       "kana": "とうやこまんせいかくほてるれいくさいどてらす",
       "areaKey": "noboribetsu",
       "address": "北海道虻田郡洞爺湖町洞爺湖温泉 21",
-      "access": "JR室蘭本線「洞爺駅」より、道南バス「洞爺湖温泉行き」���て「中央通」停留所下車すぐ",
+      "access": "JR室蘭本線「洞爺駅」より、道南バス「洞爺湖温泉行き」にて「中央通」停留所下車すぐ",
       "nearestStation": "洞爺",
       "special": "洞爺湖温泉中心に位置する老舗旅館。客室からは四季折々の景色が楽しめる。",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/20613/20613.jpg",
@@ -13852,7 +13678,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、インターネット接続(無線LAN形式)、湯沸かしポット、冷蔵庫、ドライヤー、アイロン(貸出)、加湿器(貸出)、個���空調、洗浄機付トイレ、石鹸（液体）、ボディーソープ、シャンプー、リンス、コンディショナー、洗顔ソープ、ハミガキセット、カミソリ、シャワーキャップ、ブラシ、タオル、バスタオル、浴衣、電子レンジ（一部・要予約）、ミニキッチン（一部・要予約）"
+          "value": "テレビ、インターネット接続(無線LAN形式)、湯沸かしポット、冷蔵庫、ドライヤー、アイロン(貸出)、加湿器(貸出)、個別空調、洗浄機付トイレ、石鹸（液体）、ボディーソープ、シャンプー、リンス、コンディショナー、洗顔ソープ、ハミガキセット、カミソリ、シャワーキャップ、ブラシ、タオル、バスタオル、浴衣、電子レンジ（一部・要予約）、ミニキッチン（一部・要予約）"
         },
         {
           "label": "レジャー",
@@ -13945,11 +13771,11 @@
         },
         {
           "label": "客室設備",
-          "value": "有料テレビ、テレビ、衛星放送、インターネット接続(LAN形式)、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、��ライヤー、ドライヤー(貸出)、ズボンプレッサー(貸出)、電気スタンド(貸出)、アイロン(貸出)、加湿器、加湿器(貸出)、個別空調、洗浄機付トイレ、ボディーソープ、シャンプー、リンス、洗顔ソープ、ハミガキセット、カミソリ、ブラシ、タオル、バスタオル、ナイトウェア、スリッパ"
+          "value": "有料テレビ、テレビ、衛星放送、インターネット接続(LAN形式)、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、ドライヤー(貸出)、ズボンプレッサー(貸出)、電気スタンド(貸出)、アイロン(貸出)、加湿器、加湿器(貸出)、個別空調、洗浄機付トイレ、ボディーソープ、シャンプー、リンス、洗顔ソープ、ハミガキセット、カミソリ、ブラシ、タオル、バスタオル、ナイトウェア、スリッパ"
         },
         {
           "label": "レジャー",
-          "value": "神戸南京町に隣接。ベイエリアまで徒歩10分で、ショッピング・グルメも楽しめる絶好のロ���ーションです。,クルージング,登山,遊園地,動物園,博物館,水族館,美術館,水上バス"
+          "value": "神戸南京町に隣接。ベイエリアまで徒歩10分で、ショッピング・グルメも楽しめる絶好のロケーションです。,クルージング,登山,遊園地,動物園,博物館,水族館,美術館,水上バス"
         },
         {
           "label": "バリアフリー",
@@ -13982,7 +13808,7 @@
     {
       "hotelNo": 29203,
       "name": "鬼怒川温泉　一心舘",
-      "kana": "きぬがわおんせ��　いっしんかん",
+      "kana": "きぬがわおんせん　いっしんかん",
       "areaKey": "kinugawa",
       "address": "栃木県日光市鬼怒川温泉滝542-3",
       "access": "浅草駅～東武鬼怒川温泉駅まで１２０分／鬼怒川温泉駅～東武ダイヤルバスで７分",
@@ -14267,7 +14093,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、電話、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、洗浄機付トイレ、ボディーソープ、リンスインシャンプー、ハミガキセット、タオル、バスタオル、浴衣、スリッパ、金庫"
+          "value": "テレビ、電話、湯���かしポット、お茶セット、冷蔵庫、ドライヤー、洗浄機付トイレ、ボディーソープ、リンスインシャンプー、ハミガキセット、タオル、バスタオル、浴衣、スリッパ、金庫"
         },
         {
           "label": "レジャー",
@@ -14655,7 +14481,7 @@
       "address": "静岡県熱海市網代627-1143",
       "access": "■熱海駅から／車で約25分・電車＋徒歩で約55分　■網代駅から／車で約10分・徒歩約40分　■小田原駅から／車で約40分",
       "nearestStation": "網代",
-      "special": "お部屋はゆったり【80～90平米】＆お風呂は全室【天然温泉】！相模湾を望む高台のコンドミニアム。ペットOKのお部屋も♪",
+      "special": "お部屋はゆったり【80～90平米】＆お��呂は全室【天然温泉】！相模湾を望む高台のコンドミニアム。ペットOKのお部屋も♪",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/30132/30132.jpg",
       "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/30132/30132_kan1.jpg",
       "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D30132",
@@ -15714,7 +15540,7 @@
       "minCharge": 17000,
       "reviewAverage": 4.55,
       "reviewCount": 600,
-      "userReview": "古民家風の風情と紅葉、敷布団の薄さが残念夫と二人で!鬼怒川温泉から少し先にも温泉街があるとは知りませんでした!電車とバスの移動で本数も少なく乗り換え時間が大変でしたが、少し紅葉がみれてよかったです…　2026-11-05 08:48:24投稿",
+      "userReview": "古民家風の風情と紅葉、敷布団の薄さが残念夫と二人で!鬼怒川温泉から少し先にも温泉街があるとは知りません���した!電車とバスの移動で本数も少なく乗り換え時間が大変でしたが、少し紅葉がみれてよかったです…　2026-11-05 08:48:24投稿",
       "ratings": {
         "service": 4.63,
         "location": 4.4,
@@ -17511,7 +17337,7 @@
         },
         {
           "label": "館内設備",
-          "value": "浴衣、アメニティは1階ロビーのアメニティーバーよりお持ちください、アメニティーバー:ハブラシ、シャワーキャップ、コーム、綿棒、ヘアブラシ、カミソリ、宴会場、会議室、大浴場、湯上がりサロン、売店、自動販売機、コインランドリー(有料)、ファックス送信可、マッサージサービス、モーニングコール、宅配便、駐車場あり"
+          "value": "浴衣、アメニティは1階ロビーのアメニティーバーよりお持ちください、アメニティーバー:ハブラシ、シャワーキャップ、コーム、綿棒、ヘアブラシ、カミソリ、宴会場、会議室、大浴場、湯上がりサロン、売店、自��販売機、コインランドリー(有料)、ファックス送信可、マッサージサービス、モーニングコール、宅配便、駐車場あり"
         },
         {
           "label": "客室設備",
@@ -17633,15 +17459,6 @@
         {
           "planName": "【温泉付き客室・和食会席】源泉かけ流しの温泉付き客室「東海亭」 で旬の和食会席を味わう（夕・朝食）",
           "roomName": "天然温泉展望風呂付き・和室10畳■東海亭■",
-          "adults": 2,
-          "total": 50600,
-          "withBreakfast": true,
-          "withDinner": true,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D40685%26f_syu%3Dj10%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D3697893"
-        },
-        {
-          "planName": "【温泉付き客室・和食会席】源泉かけ流しの温泉付き客室「東海亭」 で旬の和食会席を味わう（夕・朝食）",
-          "roomName": "天然温泉展望風呂付き・和室10畳���東海亭■",
           "adults": 2,
           "total": 50600,
           "withBreakfast": true,
@@ -18323,7 +18140,7 @@
         },
         {
           "label": "お風呂について",
-          "value": "温泉、大浴場、���ウナ、天然温泉、ナトリウム塩化物泉、中性低張性冷鉱泉、ラドン温泉（銀泉）、神経痛、痛風、慢性消化器病"
+          "value": "温泉、大浴場、サウナ、天然温泉、ナトリウム塩化物泉、中性低張性冷鉱泉、ラドン温泉（銀泉）、神経痛、痛風、慢性消化器病"
         },
         {
           "label": "食事場所",
@@ -18726,6 +18543,15 @@
       ],
       "plans": [
         {
+          "planName": "���【素泊り】シンプルステイ×2種類の温泉券付",
+          "roomName": "【禁煙】＜ファンタジックゾーン＞フローリングフロア",
+          "adults": 2,
+          "total": 25800,
+          "withBreakfast": false,
+          "withDinner": false,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D44126%26f_syu%3Ds9%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6474297"
+        },
+        {
           "planName": "・【素泊り】シンプルステイ×2種類の温泉券付",
           "roomName": "【禁煙】＜ファンタジックゾーン＞フローリングフロア",
           "adults": 2,
@@ -18827,15 +18653,6 @@
       ],
       "plans": [
         {
-          "planName": "【基本プラン】旬の地魚を楽しむ・季節の地魚会席プラン［朝食なし］",
-          "roomName": "＜2021年リニューアル＞半露天風呂付和洋展望室【風の詩】",
-          "adults": 2,
-          "total": 66000,
-          "withBreakfast": false,
-          "withDinner": true,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D44334%26f_syu%3D06%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6031742"
-        },
-        {
           "planName": "【基本プラン】旬の地魚を楽しむ・季節の地魚会席プラン",
           "roomName": "＜2021年リニューアル＞半露天風呂付和洋展望室【風の詩】",
           "adults": 2,
@@ -18845,11 +18662,8 @@
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D44334%26f_syu%3D06%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6031736"
         }
       ],
-      "themes": [
-        "onsen"
-      ],
+      "themes": [],
       "conditions": [
-        "onsen",
         "meal",
         "breakfast",
         "room"
@@ -19678,7 +19492,7 @@
         },
         {
           "label": "館内設備",
-          "value": "ロビーに無線LANがございます。、自動販売機、コインランドリー(有料)、テニスコート、モーニングコール、宅配便、駐車場あり"
+          "value": "ロビーに無線LANがございます。、自動販売機、コインランドリー(有料)、テ���スコート、モーニングコール、宅配便、駐車場あり"
         },
         {
           "label": "客室設備",
@@ -19717,7 +19531,7 @@
       "kana": "みずのと（きょうりつりぞーと）",
       "areaKey": "hakone",
       "address": "神奈川県足柄下郡箱根町小涌谷492-23",
-      "access": "箱根湯本駅より箱根登山鉄道小涌谷駅下車、無料送迎約5分。小��原厚木道路箱根口ICより国道1号線を芦ノ湖方面へ約30分",
+      "access": "箱根湯本駅より箱根登山鉄道小涌谷駅下車、無料送迎約5分。小田原厚木道路箱根口ICより国道1号線を芦ノ湖方面へ約30分",
       "nearestStation": "小涌谷",
       "special": "小涌谷温泉・宮ノ下温泉の2種のお湯を愉しめ、趣の異なる4つの大浴場でとことん温泉を満喫♪",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/50826/50826.jpg",
@@ -20422,6 +20236,93 @@
       ]
     },
     {
+      "hotelNo": 53175,
+      "name": "箱根宮城野温泉　ドッグパレスリゾート箱根",
+      "kana": "どっぐぱれすりぞーとはこね",
+      "areaKey": "hakone",
+      "address": "神奈川県足柄下郡箱根町宮城野1355-1",
+      "access": "強羅駅より車で１５分",
+      "nearestStation": "強羅",
+      "special": "【全客室　ワンちゃん可!】天然かけ流し温泉宿　ラウンジからは箱根強羅の景色が一望　天気の良い日には富士山も見えます。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/53175/53175.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/53175/53175_wa.jpg",
+      "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D53175",
+      "planListUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FvFumt%2F%3Ff_no%3D53175%26f_flg%3DPLAN",
+      "reviewUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FgJNfM%2F%3Ff_hotel_no%3D53175",
+      "minCharge": 19800,
+      "reviewAverage": 3.83,
+      "reviewCount": 162,
+      "userReview": "外観は古いですが、内装はリニューアルされていて部屋もダイニングも快適でした。お料理もとても美味しかったです。　2026-10-01 00:32:32投稿",
+      "ratings": {
+        "service": 0,
+        "location": 0,
+        "room": 0,
+        "equipment": 0,
+        "bath": 0,
+        "breakfast": 4.08,
+        "dinner": 4.38,
+        "cleanliness": 3.75
+      },
+      "details": [
+        {
+          "label": "チェックイン",
+          "value": "15:00"
+        },
+        {
+          "label": "最終チェックイン",
+          "value": "17:30"
+        },
+        {
+          "label": "チェックアウト",
+          "value": "10:00"
+        },
+        {
+          "label": "客室数",
+          "value": "10室"
+        },
+        {
+          "label": "お風呂について",
+          "value": "大浴場、天然温泉、ナトリウム塩化物泉、冷え性、疲労回復、慢性消化器病"
+        },
+        {
+          "label": "食事場所",
+          "value": "部屋、レストラン、部屋、レストラン"
+        },
+        {
+          "label": "館内設備",
+          "value": "ラウンジ、バーラウンジ、大浴場、ペット同宿可、パソコン利用可、宅配便、駐車場あり"
+        },
+        {
+          "label": "客室設備",
+          "value": "テレビ、ファックス(一部)、インターネット接続(LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、ヘルスメーター、石鹸（液体）、ボディーソープ、シャンプー、リンス、ハミガキセット、カミソリ、シャワーキャップ、タオル、バスタオル、浴衣、スリッパ"
+        },
+        {
+          "label": "レジャー",
+          "value": "御殿場アウトレットプレミアム,釣り,テニス,ゴルフ,ハイキング,登山,水族館,フラワーパーク,テーマパーク,美術館,山菜取り"
+        },
+        {
+          "label": "駐車場",
+          "value": "1部屋1台有り　無料予約不要"
+        }
+      ],
+      "plans": [
+        {
+          "planName": "ワンちゃんと泊まろう！1泊2食付き和牛の溶岩石焼きプラン",
+          "roomName": "和室か洋室かはご来館してからのお楽しみ",
+          "adults": 2,
+          "total": 46200,
+          "withBreakfast": true,
+          "withDinner": true,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D53175%26f_syu%3Dno%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5791004"
+        }
+      ],
+      "themes": [],
+      "conditions": [
+        "meal",
+        "view"
+      ]
+    },
+    {
       "hotelNo": 53390,
       "name": "有馬温泉　欽山",
       "kana": "ありまおんせん　きんざん",
@@ -20675,7 +20576,7 @@
         },
         {
           "label": "館内設備",
-          "value": "喫茶、宴会場、会議室、大浴場、サウナ、露天風呂、売店、自動販売機、コインランドリー(有料)、ルームサービス、モーニングコール、宅配便、駐車場あり"
+          "value": "喫茶、宴会場、会議室、大浴場、サウナ、露天風呂、売店、自動販売機、コインランドリー(有料)、ルームサービス、���ーニングコール、宅配便、駐車場あり"
         },
         {
           "label": "客室設備",
@@ -22341,15 +22242,6 @@
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D69326%26f_syu%3Doma%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5068839"
         },
         {
-          "planName": "【���天限定】オンライン決済限定プラン☆天然温泉＆朝食ビュッフェ付",
-          "roomName": "【禁煙】お部屋タイプお任せ",
-          "adults": 2,
-          "total": 10800,
-          "withBreakfast": true,
-          "withDinner": false,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D69326%26f_syu%3Doma%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5068839"
-        },
-        {
           "planName": "【朝夕２食セット】【ひかりの屋台・大門横丁】屋台村2000円お食事券セット／人数",
           "roomName": "【禁煙】お部屋タイプお任せ",
           "adults": 2,
@@ -22448,6 +22340,15 @@
         {
           "planName": "【得旅】思い立ったら温泉旅行♪お日にち限定お得プラン　1泊2食付基本バイキング（わんちゃんと泊まれる",
           "roomName": "【禁煙】わんちゃん スタンダード洋室 内風呂・眺望なし",
+          "adults": 2,
+          "total": 47800,
+          "withBreakfast": true,
+          "withDinner": true,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D69377%26f_syu%3Ds2w0%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5991278"
+        },
+        {
+          "planName": "【得旅】思い立ったら温泉旅行♪お日にち限定お得プラン　1泊2食付基本バイキング（わんちゃんと泊まれる",
+          "roomName": "【禁煙】わんちゃん スタ��ダード洋室 内風呂・眺望なし",
           "adults": 2,
           "total": 47800,
           "withBreakfast": true,
@@ -24102,6 +24003,121 @@
       ]
     },
     {
+      "hotelNo": 78235,
+      "name": "伊東温泉　伊東園ホテル松川館",
+      "kana": "いとうえんほてるまつかわかん",
+      "areaKey": "ito",
+      "address": "静岡県伊東市寿町1-1",
+      "access": "伊東駅より徒歩１０分",
+      "nearestStation": "伊東",
+      "special": "全国第３位の湧出量を誇る伊東温泉。伊東園ホテル松川館で天然温泉かけ流しの湯を心ゆくまでお楽しみ下さい。",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/78235/78235.jpg",
+      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/78235/78235_wagr.jpg",
+      "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D78235",
+      "planListUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FvFumt%2F%3Ff_no%3D78235%26f_flg%3DPLAN",
+      "reviewUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FgJNfM%2F%3Ff_hotel_no%3D78235",
+      "minCharge": 6248,
+      "reviewAverage": 3.83,
+      "reviewCount": 820,
+      "userReview": "バイキングは2部制の後半だったので追加料理があまりなかったことが残念でした。また朝食に夕食のカレーがあれば嬉しかったです。温泉は最高！　2026-11-10 13:00:07投稿",
+      "ratings": {
+        "service": 3.79,
+        "location": 3.79,
+        "room": 3.62,
+        "equipment": 3.55,
+        "bath": 4.06,
+        "breakfast": 3.65,
+        "dinner": 3.62,
+        "cleanliness": 3.6
+      },
+      "details": [
+        {
+          "label": "チェックイン",
+          "value": "15:00"
+        },
+        {
+          "label": "最終チェックイン",
+          "value": "24:00"
+        },
+        {
+          "label": "チェックアウト",
+          "value": "11:00"
+        },
+        {
+          "label": "客室数",
+          "value": "60室"
+        },
+        {
+          "label": "お風呂について",
+          "value": "温泉、大浴場、露天風呂、天然温泉、弱アルカリ単純泉、関節痛、筋肉痛、五十肩"
+        },
+        {
+          "label": "食事場所",
+          "value": "レストラン(バイキング)、レストラン(バイキング)"
+        },
+        {
+          "label": "館内設備",
+          "value": "2022年4月1日よりプラスチック資源循環促進法が施行されました。、その為、くし・ブラシ・歯ブラシ・カミソリ・シャワーキャップは、各部屋に設置しておりません。、フロント前にてご用意しておりますので、必要に応じて各部屋へお持ちくださいませ。、カラオケルーム、カラオケサロン、大浴場、露天風呂、売店、自動販売機、プール(夏期のみ)、卓球、パソコン利用可、マッサージサービス、宅配便、駐車場あり"
+        },
+        {
+          "label": "客室設備",
+          "value": "テレビ、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、洗浄機付トイレ、ボディーソープ、シャンプー、リンス、タオル、バスタオル、浴衣"
+        },
+        {
+          "label": "レジャー",
+          "value": "海水浴,釣り,テニス,ゴルフ,サイクリング,ハイキング"
+        },
+        {
+          "label": "バリアフリー",
+          "value": "車椅子可、貸出用車椅子"
+        },
+        {
+          "label": "駐車場",
+          "value": "有り　４０台　無料　予約不要"
+        }
+      ],
+      "plans": [
+        {
+          "planName": "手軽に温泉♪素泊まりプラン",
+          "roomName": "【川側】和室二間",
+          "adults": 2,
+          "total": 20196,
+          "withBreakfast": false,
+          "withDinner": false,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D78235%26f_syu%3Db2%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6405930"
+        },
+        {
+          "planName": "ゆっくりチェックイン！一泊朝食プラン",
+          "roomName": "【川側】和室二間",
+          "adults": 2,
+          "total": 21296,
+          "withBreakfast": true,
+          "withDinner": false,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D78235%26f_syu%3Db2%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6062991"
+        },
+        {
+          "planName": "【スタンダードプラン】静岡県1番の湧出量伊東温泉を満喫 一泊二食付きバイキングプラン",
+          "roomName": "【川側】和室二間",
+          "adults": 2,
+          "total": 24596,
+          "withBreakfast": true,
+          "withDinner": true,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D78235%26f_syu%3Db2%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6062266"
+        }
+      ],
+      "themes": [
+        "weekend",
+        "onsen"
+      ],
+      "conditions": [
+        "onsen",
+        "meal",
+        "breakfast",
+        "station",
+        "roomOnly"
+      ]
+    },
+    {
       "hotelNo": 79342,
       "name": "神戸ポートタワーホテル　なごみの湯宿",
       "kana": "こうべぽーとたわーほてる",
@@ -24351,9 +24367,9 @@
       "kana": "あでっくす　いん",
       "areaKey": "noboribetsu",
       "address": "北海道登別市登別温泉町76-2",
-      "access": "JR登別駅から道南バス利用→登別温泉バスターミナルから徒歩約7分　足湯入口行きバス利用の場合は第一滝本館前バス停前下車",
+      "access": "JR登別駅から道南バス利用→登別温泉��スターミナルから徒歩約7分　足湯入口行きバス利用の場合は第一滝本館前バス停前下車",
       "nearestStation": "登別",
-      "special": "◆登別温泉のカジュアルホテル◆館内の温泉大浴場に加えて第一滝本館の大浴場・プールも無料！カフェの焼きたてパンが人���です",
+      "special": "◆登別温泉のカジュアルホテル◆館内の温泉大浴場に加えて第一滝本館の大浴場・プールも無料！カフェの焼きたてパンが人気です",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/79364/79364.jpg",
       "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/79364/79364_ru.jpg",
       "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D79364",
@@ -25585,7 +25601,7 @@
       "kana": "きのさきおんせん　しがなおやゆかりのやど　みきや",
       "areaKey": "kinosaki",
       "address": "兵庫県豊岡市城崎町湯島487",
-      "access": "城崎温泉駅より徒歩にて１３分",
+      "access": "城崎温泉���より徒歩にて１３分",
       "nearestStation": "",
       "special": "楽天トラベル評価の高い有形文化財の宿ランキング全国５位受賞！モダンと歴史が調和した、小説「城の崎にて」舞台の老舗宿",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/106245/106245.jpg",
@@ -27241,7 +27257,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、インターネット接続(無線LAN形式)、湯沸かしポット、冷蔵庫、ドライヤー、ドライヤー(貸出)、ズボンプレッサー(貸出)、電気スタンド、電気スタンド(貸出)、アイロン(貸出)、加湿器(貸出)、個別空調、洗浄機付トイレ、ボディーソープ、シャンプー、リンス、洗顔ソープ、ハミガキセット、カミソリ、シャワーキャップ、くし、ブラシ、タオル、バスタオル、浴衣、くつろぎ着の作務衣、スリッパ、電子レンジ（一部・要予約）、金庫"
+          "value": "テレビ、インターネット接続(無線LAN形式)、湯沸かしポット、冷蔵庫、ドライヤー、ドライヤ��(貸出)、ズボンプレッサー(貸出)、電気スタンド、電気スタンド(貸出)、アイロン(貸出)、加湿器(貸出)、個別空調、洗浄機付トイレ、ボディーソープ、シャンプー、リンス、洗顔ソープ、ハミガキセット、カミソリ、シャワーキャップ、くし、ブラシ、タオル、バスタオル、浴衣、くつろぎ着の作務衣、スリッパ、電子レンジ（一部・要予約）、金庫"
         },
         {
           "label": "レジャー",
@@ -27658,7 +27674,7 @@
       ],
       "plans": [
         {
-          "planName": "素泊まりプラン★城崎温泉まで車で5分×無料駐車場×城崎温泉駅まで無料送迎あり★",
+          "planName": "素泊まりプ���ン★城崎温泉まで車で5分×無料駐車場×城崎温泉駅まで無料送迎あり★",
           "roomName": "和洋室",
           "adults": 1,
           "total": 20570,
@@ -28018,7 +28034,7 @@
       "areaKey": "arima",
       "address": "兵庫県神戸市北区有馬町958",
       "access": "有馬温泉駅より送迎車あり／阪神高速西宮山口東出口から約6分／新神戸駅より鉄道約30分　新大阪駅より高速バスで約50分",
-      "nearestStation": "有馬温泉",
+      "nearestStation": "有���温泉",
       "special": "有馬温泉でも自然に極めて近く閑静な1400坪の敷地に立つ、100平米の客室全10室のサーマルスイートで贅沢なひと時を。",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/136937/136937.jpg",
       "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/136937/136937_me.jpg",
@@ -28087,13 +28103,13 @@
       ],
       "plans": [
         {
-          "planName": "【季節の山家会席】有馬名湯と山家会席を堪能する全10棟の離れで過ごす至福",
+          "planName": "【アフタヌーンティー】チェックイン前の13時からゆったり楽しむ有馬の特別なひととき",
           "roomName": "ツリーハウス型温泉露天風呂付ヴィラ「コルボ・デ・オウロ」",
           "adults": 2,
           "total": 450000,
           "withBreakfast": true,
           "withDinner": true,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D136937%26f_syu%3Dcorvodeour%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D4687825"
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D136937%26f_syu%3Dcorvodeour%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5103796"
         }
       ],
       "themes": [
@@ -28186,8 +28202,11 @@
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D137049%26f_syu%3Db%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5693267"
         }
       ],
-      "themes": [],
+      "themes": [
+        "onsen"
+      ],
       "conditions": [
+        "onsen",
         "meal",
         "breakfast"
       ]
@@ -28462,7 +28481,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、ビデオデッキ(貸出)、電話、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、電気スタンド(貸出)、アイロン(貸出)、加湿器、洗浄機付トイレ、ボディーソープ、シャンプー、コンディショナー、洗顔ソープ、��ミガキセット、カミソリ、くし、ブラシ、おふろセット、タオル、バスタオル、くつろぎ着・たび、スリッパ、パジャマ、ミニキッチン（一部・要予約）、金庫"
+          "value": "テレビ、ビデオデッキ(貸出)、電話、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、電気スタンド(貸出)、アイロン(貸出)、加湿器、洗浄機付トイレ、ボディーソープ、シャンプー、コンディショナー、洗顔ソープ、ハミガキセット、カミソリ、くし、ブラシ、おふろセット、タオル、バスタオル、くつろぎ着・たび、スリッパ、パジャマ、ミニキッチン（一部・要予約）、金庫"
         },
         {
           "label": "レジャー",
@@ -28654,7 +28673,7 @@
       "minCharge": 11000,
       "reviewAverage": 4.55,
       "reviewCount": 469,
-      "userReview": "系列ホテルのブッフェは種類が多く大満足でした。朝食もしっかり用意していただいてあり、2食付きと言ってもいいほどでした。中央通りが工…　2026-10-27 15:39:30投稿",
+      "userReview": "系列ホテルのブッフェは種類が多く大満足でした。朝食��しっかり用意していただいてあり、2食付きと言ってもいいほどでした。中央通りが工…　2026-10-27 15:39:30投稿",
       "ratings": {
         "service": 4.56,
         "location": 4.65,
@@ -28891,7 +28910,7 @@
         },
         {
           "label": "レジャー",
-          "value": "果物狩り,海水浴,釣り,海釣り,ゴルフ,サイクリング,ハイキング,スキー,スケート,登山,博物館,美術���"
+          "value": "果物狩り,海水浴,釣り,海釣り,ゴルフ,サイクリング,ハイキング,スキー,スケート,登山,博物館,美術館"
         },
         {
           "label": "駐車場",
@@ -29094,7 +29113,7 @@
       "kana": "すみともふどうさんほてる　ヴぃらふぉんてーぬこうべさんのみや",
       "areaKey": "arima",
       "address": "兵庫県神戸市中央区旭通4-1-4",
-      "access": "【ＪＲ三ノ宮駅より徒歩4分】兵庫県内最高層ビル「シティタワー神戸三宮」隣接／スーパー・コンビニ・薬局やレストランが至近",
+      "access": "【ＪＲ三ノ宮駅より徒歩4分】兵庫県内最高層��ル「シティタワー神戸三宮」隣接／スーパー・コンビニ・薬局やレストランが至近",
       "nearestStation": "三宮",
       "special": "毎日17時～20時までワインやおつまみ無料のハッピーアワーを開催中/引続き23時迄は珈琲紅茶も無料でご提供",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/141282/141282.jpg",
@@ -29228,7 +29247,7 @@
         },
         {
           "label": "館内設備",
-          "value": "室内ドッグラン、300坪屋外ドッグラン、にごり湯足湯ドッグラン、レストラン、ラウンジ、多目的室、禁煙ルーム、自動販売機、ペット同宿可、マッサージサービス、宅配便、駐車場あり"
+          "value": "室内ドッグラン、300坪屋外ドッグラン、にごり湯足湯ドッグラン、レストラン、ラウンジ、多目的室、禁煙ルーム、自動販売機、ペット同宿可、マッサージサービス、宅配便、���車場あり"
         },
         {
           "label": "客室設備",
@@ -29521,7 +29540,7 @@
         },
         {
           "label": "館内設備",
-          "value": "宿泊者専用ラウンジにてお酒やソフトドリンクを無料提供。１６時半から１９時まで水曜休、城崎温泉や周辺を観光できるレンタサイクルもございます。宿泊者割引あります。、ヘアアイロンや読書灯など貸出しております。数に限りがございますのでフロントスタッフへお尋ねください。、レストラン、喫茶、ラウンジ、バー、コーヒーショップ、貸自転車、パソコン利用可、ファックス送信可、マッサージサービス、宅配便、駐車場あり"
+          "value": "宿泊者専用ラウンジにてお酒やソフトドリンクを無料提供。１６時半から１９時まで水曜休、城崎温泉や周辺を観光できるレンタサイクルもございます。宿泊者割引あります。、ヘアアイロンや読書灯など貸出しております。数に限りがございますのでフロントスタッフへお尋ねください。、レストラン、喫茶、ラウンジ、バー、コーヒーショップ、貸自転車、パソコン利用可、ファックス送信可、マッサージサービス、宅配便、駐車場���り"
         },
         {
           "label": "客室設備",
@@ -29659,15 +29678,6 @@
         {
           "planName": "■素泊まり＜平日限定＞■紀州の名湯を満喫！",
           "roomName": "【4〜7階】禁煙和モダンダブル｜ユニットバス",
-          "adults": 2,
-          "total": 15400,
-          "withBreakfast": false,
-          "withDinner": false,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D145306%26f_syu%3Da3%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D3126809"
-        },
-        {
-          "planName": "■素泊まり＜平日限定＞■紀州の名湯を満喫！",
-          "roomName": "【4〜7階】禁煙和モダンダブル｜ユニッ��バス",
           "adults": 2,
           "total": 15400,
           "withBreakfast": false,
@@ -29861,7 +29871,7 @@
     {
       "hotelNo": 147090,
       "name": "ファミリーロッジ旅籠屋・箱根仙石原店",
-      "kana": "ふぁみりーろっじはたごや・はこねせんごくはらてん",
+      "kana": "ふぁみりーろっじはたごや���はこねせんごくはらてん",
       "areaKey": "hakone",
       "address": "神奈川県足柄下郡箱根町仙石原1246-747",
       "access": "東名高速・御殿場ＩＣ下車、国道138号線を箱根方面へ約11ｋｍ、仙石原交差点を右折、約3.2ｋｍ先右側。",
@@ -29875,7 +29885,7 @@
       "minCharge": 4235,
       "reviewAverage": 3.92,
       "reviewCount": 72,
-      "userReview": "ただアニメティや備品など宿泊に必要な最小限の提供となります　2026-10-21 18:00:23投稿",
+      "userReview": "ただアニメティや備品など宿泊に必���な最小限の提供となります　2026-10-21 18:00:23投稿",
       "ratings": {
         "service": 4,
         "location": 4.12,
@@ -30663,11 +30673,11 @@
     },
     {
       "hotelNo": 149334,
-      "name": "天然温泉　幸鐘の湯　ドーミーイン東室蘭（ドーミーイン・御宿野乃　ホテルズグループ）",
+      "name": "天然���泉　幸鐘の湯　ドーミーイン東室蘭（ドーミーイン・御宿野乃　ホテルズグループ）",
       "kana": "てんねんおんせん　こうしょうのゆ　どーみーいんひがしむろらん",
       "areaKey": "noboribetsu",
       "address": "北海道室蘭市中島町2-30-11",
-      "access": "東室蘭駅西口より直進 徒歩にて約7分",
+      "access": "東室蘭駅西口よ��直進 徒歩にて約7分",
       "nearestStation": "東室蘭",
       "special": "男女別天然温泉大浴場【幸鐘の湯】とご当地メニューを含んだ種類豊富な朝食レストランが自慢のホテル。",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/149334/149334.jpg",
@@ -31551,7 +31561,7 @@
         },
         {
           "label": "館内設備",
-          "value": "・ウェルカムサービス（15:00〜17:00)フィンガーフードとドリンクをご用意いたします。、・無料送迎は前日までの予約制。（先着順）事前予約サービス（モバイルオーダー）にてご予約が可能で��。、・貸切岩盤浴をご利用いただくことが出来ます（無料）。※要予約、大浴場、露天風呂、禁煙ルーム、自動販売機、送迎バス、駐車場あり"
+          "value": "・ウェルカムサービス（15:00〜17:00)フィンガーフードとドリンクをご用意いたします。、・無料送迎は前日までの予約制。（先着順）事前予約サービス（モバイルオーダー）にてご予約が可能です。、・貸切岩盤浴をご利用いただくことが出来ます（無料）。※要予約、大浴場、露天風呂、禁煙ルーム、自動販売機、送迎バス、駐車場あり"
         },
         {
           "label": "客室設備",
@@ -31908,7 +31918,7 @@
     },
     {
       "hotelNo": 153212,
-      "name": "みよりふるさと体験村　宿泊棟ケビン",
+      "name": "みよりふるさと体験村　宿泊棟ケビ��",
       "kana": "みよりふるさとたいけんむら　しゅくはくとうけびん",
       "areaKey": "kinugawa",
       "address": "栃木県日光市中三依423",
@@ -32056,7 +32066,7 @@
         },
         {
           "label": "お風呂について",
-          "value": "温泉、大浴場、露天風呂、天然温泉、ナトリウム塩化��泉、筋肉痛、神経痛、疲労回復"
+          "value": "温泉、大浴場、露天風呂、天然温泉、ナトリウム塩化物泉、筋肉痛、神経痛、疲労回復"
         },
         {
           "label": "食事場所",
@@ -32747,7 +32757,7 @@
         },
         {
           "label": "バリアフリー",
-          "value": "貸出用車椅子、客室内に洋式トイレあり、大浴場浴槽に手すりあり、館内に車椅子利用可能なトイレあり、アレルギーに配慮した料理への対応可能、施設スタッフによる介助・補助対応が可能"
+          "value": "貸出用車椅子、客室内に洋式トイレあり、大浴場浴槽に手すりあり、館内に車椅子利用可能なトイレあり、アレルギーに配慮した料理への対応可能、施設スタッ��による介助・補助対応が可能"
         },
         {
           "label": "駐車場",
@@ -33203,7 +33213,7 @@
         },
         {
           "label": "レジャー",
-          "value": "釣り,海釣り,渓流釣り,ゴルフ,スキー,トレッキング,登山,ハンティング,テーマパーク"
+          "value": "釣��,海釣り,渓流釣り,ゴルフ,スキー,トレッキング,登山,ハンティング,テーマパーク"
         },
         {
           "label": "バリアフリー",
@@ -33372,7 +33382,7 @@
     {
       "hotelNo": 161012,
       "name": "リブマックスリゾート箱根芦ノ湖",
-      "kana": "りぶまっくすりぞーとはこねあしのこ",
+      "kana": "��ぶまっくすりぞーとはこねあしのこ",
       "areaKey": "hakone",
       "address": "神奈川県足柄下郡箱根町元箱根159-171",
       "access": "ＪＲ「小田原駅」よりお車にて約46分　伊豆箱根バス「大石バス停」から徒歩１分",
@@ -33601,7 +33611,7 @@
       "minCharge": 22350,
       "reviewAverage": 4.37,
       "reviewCount": 1541,
-      "userReview": "温泉も堪能し、リフレッシュする事ができました。また箱根に行く時は必ずお世話になり…　2026-11-06 21:07:26投稿",
+      "userReview": "温泉も堪能し、リフレッシュする事ができました。���た箱根に行く時は必ずお世話になり…　2026-11-06 21:07:26投稿",
       "ratings": {
         "service": 4.41,
         "location": 4.46,
@@ -33794,97 +33804,6 @@
         "breakfast",
         "view",
         "roomOnly"
-      ]
-    },
-    {
-      "hotelNo": 162753,
-      "name": "箱根風雅",
-      "kana": "はこねふうが",
-      "areaKey": "hakone",
-      "address": "神奈川県足柄下郡箱根町仙石原1246-773",
-      "access": "バス停「仙石高原」より徒歩約7分／小田原駅より箱根登山バスにて約50分／バスタ新宿より高速バスにて約2時間",
-      "nearestStation": "箱根湯本",
-      "special": "【全24室の大人限定宿】仙石原の別荘地に佇む静かな空間で、大人だけの優雅な時間を／旬の味が楽しめる料理自慢の宿",
-      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/162753/162753.jpg",
-      "roomImageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/162753/162753_sho1.jpg",
-      "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D162753",
-      "planListUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FvFumt%2F%3Ff_no%3D162753%26f_flg%3DPLAN",
-      "reviewUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FgJNfM%2F%3Ff_hotel_no%3D162753",
-      "minCharge": 12100,
-      "reviewAverage": 4.47,
-      "reviewCount": 1827,
-      "userReview": "サウナ付きのホテルに泊まるのが初めてでワクワクしました。お部屋も広く、色使いも素敵で癒され、アットホーム感もあり、落ち着くホテルでした。お食事が美味しいのも勿論、外の木々と木漏れ日も合わせて自然も感じ…　2026-10-28 19:33:14投稿",
-      "ratings": {
-        "service": 4.58,
-        "location": 4.33,
-        "room": 4.49,
-        "equipment": 4.35,
-        "bath": 4.34,
-        "breakfast": 4.45,
-        "dinner": 4.49,
-        "cleanliness": 4.54
-      },
-      "details": [
-        {
-          "label": "チェックイン",
-          "value": "15:00"
-        },
-        {
-          "label": "最終チェックイン",
-          "value": "22:00"
-        },
-        {
-          "label": "チェックアウト",
-          "value": "10:00"
-        },
-        {
-          "label": "客室数",
-          "value": "24室"
-        },
-        {
-          "label": "お風呂について",
-          "value": "温泉、大浴場、露天風呂、サウナ、ジャグジー、岩盤浴、低張性弱アルカリ性泉、ナトリウム塩化物泉、神経痛、皮膚病、婦人病"
-        },
-        {
-          "label": "食事場所",
-          "value": "レストラン、レストラン"
-        },
-        {
-          "label": "館内設備",
-          "value": "※サウナはサウナ付き客室をご予約の方のみご利用いただけます。、レストラン、ラウンジ、バー、大浴場、サウナ、露天風呂、禁煙ルーム、自動販売機、駐車場あり"
-        },
-        {
-          "label": "客室設備",
-          "value": "テレビ、モジュラージャック、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、加湿器、個別空調、洗浄機付トイレ、石鹸（液体）、ボディーソープ、シャンプー、コンディショナー、洗顔ソープ、カミソリ、ブラシ、タオル、バスタオル、浴衣、スリッパ、金庫"
-        },
-        {
-          "label": "レジャー",
-          "value": "貸切露天ジャグジーは温泉ではございません。,ゴルフ,サイクリング,美術館"
-        },
-        {
-          "label": "駐車場",
-          "value": "有り（無料／屋外／敷地外・敷地内）バイクも駐車可能（無料／屋外／敷地内）"
-        }
-      ],
-      "plans": [
-        {
-          "planName": "【秋冬セール】最大25％OFF／大人だけで愉しむいつもより少し贅沢な食旅を＜最上級会席■極＞",
-          "roomName": "＜本館＞洋室ツイン／定員2名（禁煙）",
-          "adults": 2,
-          "total": 66880,
-          "withBreakfast": true,
-          "withDinner": true,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D162753%26f_syu%3Dsp2%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6424452"
-        }
-      ],
-      "themes": [
-        "weekend",
-        "onsen"
-      ],
-      "conditions": [
-        "onsen",
-        "meal",
-        "breakfast"
       ]
     },
     {
@@ -34600,7 +34519,7 @@
       "minCharge": 7500,
       "reviewAverage": 4.26,
       "reviewCount": 1466,
-      "userReview": "朝食の内容が充実していました。また、朝食の時間帯が設定されていたためか、混むこともなくスムーズに朝食を取ることができました。　2026-11-06 17:09:34投稿",
+      "userReview": "朝食の内容が充実していました。また、朝食の時間帯が設定されていたためか、混むこともなくスムーズに朝食を取ることができました。　2026-11-06 17:09:34投���",
       "ratings": {
         "service": 4.27,
         "location": 4.27,
@@ -34842,7 +34761,7 @@
         },
         {
           "label": "館内設備",
-          "value": "ベビーベッド（有料）、レストラン、ラウンジ、バーラウンジ、バー、夜食コーナー、カラオケルーム、多目的室、宴会場、会議室、大浴場、サウナ、露天風呂、湯上がりサロン、禁煙ルーム、売店、ベーカーショップ、コーヒーショップ、自動販売機、コインランドリー(有料)、貸自転車、麻雀室、卓球、バーベキューガーデン、コネクティングルーム（一部・要予約）、クリーニングサービス、マッサージサービス、モーニングコール、宅配便、駐車場あり"
+          "value": "ベビーベッド（有料）、レストラン、ラウンジ、バーラウンジ、バー、夜食コーナー、カラオケルーム、多目的室、宴会場、会議室、大浴場、サウナ、露天風呂、湯上がりサロン、禁煙ルーム、売店、ベーカーショップ、コーヒーショップ、自動販売機、コインランドリー(有料)、貸自転車、麻雀室、卓球、バーベキュー��ーデン、コネクティングルーム（一部・要予約）、クリーニングサービス、マッサージサービス、モーニングコール、宅配便、駐車場あり"
         },
         {
           "label": "客室設備",
@@ -35047,7 +34966,7 @@
           "planName": "【客室露天風呂リニューアル記念】女性限定「SHOLAYERD」アメニティプレゼント！源泉掛け流し温泉",
           "roomName": "6/26 new【半露天風呂付】リビングフロア付◇2間和洋室",
           "adults": 2,
-          "total": 68400,
+          "total": 66600,
           "withBreakfast": true,
           "withDinner": true,
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D167067%26f_syu%3Dsemisuite%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6515081"
@@ -35749,7 +35668,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、電話、インターネット接続(無線LAN形式)、湯沸かしポット、冷蔵庫、ドライヤー、加湿器、洗浄機付トイレ、ボディーソープ、シャンプー、コンディショナー、ハミガキセット、カミソリ、シャワーキャップ、ブラシ、タオル、バスタオル、浴衣、くつろぎ着の作務衣、スリッパ、金庫"
+          "value": "テレビ、電話、インターネット接続(無線LAN形式)、湯沸かしポット、冷蔵庫、ドライヤー、加湿器、洗浄機付トイレ、ボディーソープ、シャンプー、コンディショナー、ハミガキセット、カミソリ、シャワ��キャップ、ブラシ、タオル、バスタオル、浴衣、くつろぎ着の作務衣、スリッパ、金庫"
         },
         {
           "label": "レジャー",
@@ -35767,39 +35686,39 @@
       "plans": [
         {
           "planName": "【シンプルステイ】バス停徒歩1分◎◆全室オーシャンビュー×源泉掛け流しの天然温泉を満喫＜素泊まり＞",
-          "roomName": "【和室】全室オーシャンビュー｜バスなし｜10畳｜禁煙",
+          "roomName": "【和ベッド】最上階10階確約｜オーシャンビュー｜ツイン10畳",
           "adults": 1,
-          "total": 17250,
+          "total": 19205,
           "withBreakfast": false,
           "withDinner": false,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D168387%26f_syu%3Dgranshira5%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D1%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D4574706"
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D168387%26f_syu%3Dgranshira%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D1%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D4574706"
         },
         {
           "planName": "【シンプルステイ】バス停徒歩1分◎◆全室オーシャンビュー×源泉掛け流しの天然温泉を満喫＜素泊まり＞",
-          "roomName": "【和室】全室オーシャンビュー｜バスなし｜10畳｜禁煙",
+          "roomName": "【和ベッド】最上階10階確約｜オーシャンビュー｜ツイン10畳",
           "adults": 2,
-          "total": 24610,
+          "total": 27370,
           "withBreakfast": false,
           "withDinner": false,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D168387%26f_syu%3Dgranshira5%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D4574706"
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D168387%26f_syu%3Dgranshira%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D4574706"
         },
         {
           "planName": "【朝食バイキング】オーシャンビューレストランで1日の始まりを元気に◆源泉掛け流し露天風呂＜1泊朝食＞",
-          "roomName": "【和室】全室オーシャンビュー｜バスなし｜10畳｜禁煙",
+          "roomName": "【和ベッド】最上階10階確約｜オーシャンビュー｜ツイン10畳",
           "adults": 2,
-          "total": 30130,
+          "total": 32890,
           "withBreakfast": true,
           "withDinner": false,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D168387%26f_syu%3Dgranshira5%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D4574714"
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D168387%26f_syu%3Dgranshira%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D4574714"
         },
         {
           "planName": "【白浜オリジナル定食】気軽に白浜温泉満喫プラン｜夕食はボリューム控え目朝食は人気ビュッフェ｜1泊2食",
-          "roomName": "【和室】全室オーシャンビュー｜バスなし｜10畳｜禁煙",
+          "roomName": "【和ベッド】最上階10階確約｜オーシャンビュー｜ツイン10畳",
           "adults": 2,
-          "total": 37720,
+          "total": 40480,
           "withBreakfast": true,
           "withDinner": true,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D168387%26f_syu%3Dgranshira5%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6516433"
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D168387%26f_syu%3Dgranshira%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6516433"
         }
       ],
       "themes": [
@@ -36313,15 +36232,6 @@
           "withBreakfast": true,
           "withDinner": false,
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D170212%26f_syu%3Db-1%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6605839"
-        },
-        {
-          "planName": "選べる2種の夕食＆フレンチトースト★全室天然温泉あり（夕朝付）※1〜5名用・予約時確認事項あり",
-          "roomName": "【N102】メゾネット・テラスなし（1〜5名）",
-          "adults": 2,
-          "total": 134700,
-          "withBreakfast": true,
-          "withDinner": true,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D170212%26f_syu%3Db-1%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6605867"
         }
       ],
       "themes": [
@@ -36331,7 +36241,6 @@
       ],
       "conditions": [
         "onsen",
-        "meal",
         "breakfast",
         "roomOnly"
       ]
@@ -36761,15 +36670,6 @@
           "withBreakfast": true,
           "withDinner": true,
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D172768%26f_syu%3Dsddwl%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5521272"
-        },
-        {
-          "planName": "＜特別価格＞早めのご夕食(17時〜)がお得♪おおいた和牛ステーキ��べ飲み放題★予約時確認事項あり",
-          "roomName": "【山側】ダブルルーム（禁煙）※ベッド数は1台のみ",
-          "adults": 2,
-          "total": 67100,
-          "withBreakfast": true,
-          "withDinner": true,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D172768%26f_syu%3Dsddwl%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5521272"
         }
       ],
       "themes": [
@@ -36841,7 +36741,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、衛星放送、衛星放送（無料）、電話、インターネット接続(LAN形式)、インターネット接続(無線LAN形式)、お茶セット、冷蔵庫、ミニバー、ドライヤー、ズボンプレッサー(貸出)、電気スタンド(貸出)、アイロン、加湿器(貸出)、個別空調、ヘルスメーター、変圧器（貸出）、洗浄機付トイレ、石鹸（固形）、ボディーソープ、シャンプー、リンス、コンディショナー、洗顔ソープ、入浴剤、ハミガキセット、カミソリ、くし、タオル、バスタオル、バスローブ、浴衣、スリッパ、湯沸かしポット(貸出)、金庫"
+          "value": "テレビ、衛星放送、衛星放送（無料）、電話、インターネット接続(LAN形式)、インターネット接続(無線LAN形式)、お茶セット、冷蔵庫、ミニバー、ドライヤー、ズボンプレッサー(貸出)、電気スタンド(貸出)、アイロン、加湿器(貸出)、個別空調、ヘルスメーター、変圧器（貸出）、洗浄機付トイレ、石鹸（固形）、ボディーソープ、���ャンプー、リンス、コンディショナー、洗顔ソープ、入浴剤、ハミガキセット、カミソリ、くし、タオル、バスタオル、バスローブ、浴衣、スリッパ、湯沸かしポット(貸出)、金庫"
         },
         {
           "label": "レジャー",
@@ -37702,7 +37602,7 @@
       ],
       "plans": [
         {
-          "planName": "直前【急なご���約でも直前でお得】JR函館駅隣接♪　☆素泊り　［RC］",
+          "planName": "直前【急なご予約でも直前でお得】JR函館駅隣接♪　☆素泊り　［RC］",
           "roomName": "シングル【禁煙】16平米・140ｃｍ幅ベッド1台　函館駅側",
           "adults": 1,
           "total": 16000,
@@ -37745,7 +37645,7 @@
       "areaKey": "beppu",
       "address": "大分県別府市北浜2-11-18",
       "access": "JR別府駅より徒歩約10分／別府ICよりお車で約15分／大分空港よりお車で約50分",
-      "nearestStation": "別府（大分）",
+      "nearestStation": "別���（大分）",
       "special": "全室キッチン付きの和モダンな客室。最大12名可、竹瓦温泉など別府の湯めぐりに便利な立地",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/177818/177818.jpg",
       "roomImageUrl": "",
@@ -37908,6 +37808,15 @@
       ],
       "plans": [
         {
+          "planName": "【朝食付】ベスト フレックス料金",
+          "roomName": "スタンダードルーム 温泉風呂付（お部屋指定なし）",
+          "adults": 2,
+          "total": 121100,
+          "withBreakfast": true,
+          "withDinner": false,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D177836%26f_syu%3Dcdxg%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D4727877"
+        },
+        {
           "planName": "【夕朝食付】返金不可プランだからお手頃価格！薪グリル香ばしいブランドポークのスタンダードコース！",
           "roomName": "スタンダードルーム 温泉風呂付（お部屋指定なし）",
           "adults": 2,
@@ -37919,7 +37828,8 @@
       ],
       "themes": [],
       "conditions": [
-        "meal"
+        "meal",
+        "breakfast"
       ]
     },
     {
@@ -37969,7 +37879,7 @@
         },
         {
           "label": "館内設備",
-          "value": "レ��トラン、自動販売機、コインランドリー(有料)、モーニングコール"
+          "value": "レストラン、自動販売機、コインランドリー(有料)、モーニングコール"
         },
         {
           "label": "客室設備",
@@ -38228,7 +38138,7 @@
         },
         {
           "label": "駐車場",
-          "value": "敷地内駐車場有。満車の場合はジョイフル先の第２駐車場をご利用下さい。バス等の駐車はご遠慮下さい。"
+          "value": "敷地内駐車��有。満車の場合はジョイフル先の第２駐車場をご利用下さい。バス等の駐車はご遠慮下さい。"
         }
       ],
       "plans": [
@@ -38393,7 +38303,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、インターネット接続(LAN形式)、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、ズボンプレッサー(貸出)、電気スタンド(貸出)、アイロン(貸出)、加湿器(貸出)、個別空調、洗浄機付トイレ、ボディーソープ、シャンプー、コンディショナー、洗顔ソープ、タオル、バスタオル、ナイトウェア、スリッパ、金庫"
+          "value": "テレビ、インターネット接続(LAN形式)、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、ズボンプレッサー(貸出)、電気スタンド(貸出)、アイロン(貸出)、加湿器(貸出)、個別空調、洗浄機付トイレ、ボ���ィーソープ、シャンプー、コンディショナー、洗顔ソープ、タオル、バスタオル、ナイトウェア、スリッパ、金庫"
         },
         {
           "label": "バリアフリー",
@@ -39996,7 +39906,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、電話、インターネット接続(無線LAN形式)、湯沸かしポット、冷蔵庫、ドライヤー、ズボンプレッサー(貸出)、電気スタンド(貸出)、アイロ��(貸出)、加湿器(貸出)、個別空調、洗浄機付トイレ、ボディーソープ、シャンプー、リンス、洗顔ソープ、タオル、バスタオル、スリッパ、パジャマ、金庫"
+          "value": "テレビ、電話、インターネット接続(無線LAN形式)、湯沸かしポット、冷蔵庫、ドライヤー、ズボンプレッサー(貸出)、電気スタンド(貸出)、アイロン(貸出)、加湿器(貸出)、個別空調、洗浄機付トイレ、ボディーソープ、シャンプー、リンス、洗顔ソープ、タオル、バスタオル、スリッパ、パジャマ、金庫"
         },
         {
           "label": "レジャー",
@@ -40160,7 +40070,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、インターネット接続(無線LAN形式)、冷蔵庫、ドライヤー、アイロン、石鹸（液体）、ボディーソープ、シャンプー、コンディショナー、洗顔ソープ、ハミガキセット、タオル、バスタオル、スリッパ"
+          "value": "テレビ、インターネット接続(無線LAN形式)、冷蔵庫、ドライヤー、アイロン、石鹸���液体）、ボディーソープ、シャンプー、コンディショナー、洗顔ソープ、ハミガキセット、タオル、バスタオル、スリッパ"
         },
         {
           "label": "レジャー",
@@ -40511,7 +40421,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、衛星放送（無料）、電話、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、ズボンプレッサー(貸出)、加湿器(貸出)、変圧器（貸出）、洗浄機付トイレ、ボディーソープ、シャンプー、リンス、コンディショナー、洗顔ソープ、ハミガキセット、カミソリ、くし、タオル、バスタオル、浴衣、スリッパ、金庫"
+          "value": "テレビ、衛星放送（無料）、電話、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、ズボンプレッサー(貸出)、加湿器(貸出)、変圧器（貸出）、洗浄機付トイレ、ボディーソープ、シャンプー、���ンス、コンディショナー、洗顔ソープ、ハミガキセット、カミソリ、くし、タオル、バスタオル、浴衣、スリッパ、金庫"
         },
         {
           "label": "レジャー",
@@ -41630,7 +41540,7 @@
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D183409%26f_syu%3Dbb%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5476274"
         },
         {
-          "planName": "【１泊朝食】南紀白浜と花鳥風月を楽しむ♪お気軽プラン■朝食付■",
+          "planName": "【１泊朝食】南紀白浜と花鳥風月を楽しむ���お気軽プラン■朝食付■",
           "roomName": "【天然温泉半露天風呂付】スタンダード和洋室",
           "adults": 2,
           "total": 61600,
@@ -42083,7 +41993,7 @@
       "address": "北海道虻田郡豊浦町字浜町109",
       "access": "豊浦駅より徒歩15分",
       "nearestStation": "豊浦",
-      "special": "噴火湾が一望で��る温泉はまるで大海原を渡り行く船の上！豊富な湯量と源泉掛け流しで心身をリフレッシュ！",
+      "special": "噴火湾が一望できる温泉はまるで大海原を渡り行く船の上！豊富な湯量と源泉掛け流しで心身をリフレッシュ！",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/183847/183847.jpg",
       "roomImageUrl": "",
       "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D183847",
@@ -42158,15 +42068,6 @@
           "withBreakfast": false,
           "withDinner": false,
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D183847%26f_syu%3D1wnt%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D1%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5402382"
-        },
-        {
-          "planName": "素泊まり／噴火湾を見ながら源泉かけ流しの温泉を��喫♪",
-          "roomName": "1階【訳あり・海側】和室18畳（バス・トイレ・洗面なし）",
-          "adults": 2,
-          "total": 19360,
-          "withBreakfast": false,
-          "withDinner": false,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D183847%26f_syu%3D1wnt%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5402382"
         },
         {
           "planName": "素泊まり／噴火湾を見ながら源泉かけ流しの温泉を満喫♪",
@@ -42841,7 +42742,7 @@
         },
         {
           "label": "客室設備",
-          "value": "お茶セット、冷蔵庫、ドライヤー、個別空調、ボディーソープ、シャンプー、コンディショナー、ハミガキセット、カミソリ、くし、おふろセット、タオル、バスタオル、スリッパ、パジャマ、電子レンジ（一部・要予約）"
+          "value": "お茶セット、冷蔵庫、ドライヤー、個別空調、ボディーソープ、シャンプー、コンディショナー、ハミガキセット、カミソリ、く���、おふろセット、タオル、バスタオル、スリッパ、パジャマ、電子レンジ（一部・要予約）"
         },
         {
           "label": "レジャー",
@@ -42899,7 +42800,7 @@
       "address": "北海道函館市大手町5-23",
       "access": "JR函館本線【函館駅】から市内循環バス「はこだてビール前」下車、徒歩約2分",
       "nearestStation": "函館",
-      "special": "クラシックな趣と気品が漂う全室31平米以上の贅沢な寛ぎ。北海道の美食を味わい天然温泉で心解ける贅沢。",
+      "special": "クラシックな趣と気品が漂う全室31平米���上の贅沢な寛ぎ。北海道の美食を味わい天然温泉で心解ける贅沢。",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/184396/184396.jpg",
       "roomImageUrl": "",
       "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D184396",
@@ -42972,7 +42873,7 @@
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D184396%26f_syu%3Dtwn%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5897585"
         },
         {
-          "planName": "【ショートステイ】16時イン/10時アウトでお得に♪趣の異なる無料貸切風呂で癒しのひととき（朝食付）",
+          "planName": "【ショートステイ】16時イン/10時アウトでお得に♪趣の異なる無料貸切風呂で癒しのひ��とき（朝食付）",
           "roomName": "【禁煙】ツイン 31平米",
           "adults": 2,
           "total": 54050,
@@ -44163,16 +44064,7 @@
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D187285%26f_syu%3Ddm2%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6239799"
         },
         {
-          "planName": "【ドリンク飲���放題】〜全棟プライベート露天風呂温泉付で本格グランピング体験〜　＜1泊2食＞",
-          "roomName": "『2』貸切温泉客室付ドームテント　ダブル×2 シングル×2",
-          "adults": 2,
-          "total": 88000,
-          "withBreakfast": true,
-          "withDinner": true,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D187285%26f_syu%3Ddm2%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5858981"
-        },
-        {
-          "planName": "【ドリンク飲み放題】〜全棟プライベート露天風呂温泉付で本格グラ��ピング体験〜　＜1泊2食＞",
+          "planName": "【ドリンク飲み放題】〜全棟プライベート露天風呂温泉付で本格グランピング体験〜　＜1泊2食＞",
           "roomName": "『2』貸切温泉客室付ドームテント　ダブル×2 シングル×2",
           "adults": 2,
           "total": 88000,
@@ -44304,6 +44196,115 @@
         "onsen",
         "meal",
         "breakfast",
+        "roomOnly"
+      ]
+    },
+    {
+      "hotelNo": 187532,
+      "name": "ホテルブリーズベイ熱海ＡＮＮＥＸ",
+      "kana": "ほてるぶりーずべいあたみあねっくす",
+      "areaKey": "atami",
+      "address": "静岡県熱海市海光町7-64",
+      "access": "熱海駅より約徒歩12分、車にて5分",
+      "nearestStation": "熱海",
+      "special": "熱海駅よりお車で約5分 伊豆山温泉 オーシャンビューの宿",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/187532/187532.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D187532",
+      "planListUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FvFumt%2F%3Ff_no%3D187532%26f_flg%3DPLAN",
+      "reviewUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FgJNfM%2F%3Ff_hotel_no%3D187532",
+      "minCharge": 8600,
+      "reviewAverage": 4.38,
+      "reviewCount": 177,
+      "userReview": "夕食の鮑はスタッ…　2026-11-03 17:37:16投稿",
+      "ratings": {
+        "service": 4.38,
+        "location": 4.38,
+        "room": 4.36,
+        "equipment": 4.17,
+        "bath": 3.92,
+        "breakfast": 4.29,
+        "dinner": 4.43,
+        "cleanliness": 4.31
+      },
+      "details": [
+        {
+          "label": "チェックイン",
+          "value": "15:00"
+        },
+        {
+          "label": "最終チェックイン",
+          "value": "21:00"
+        },
+        {
+          "label": "チェックアウト",
+          "value": "11:00"
+        },
+        {
+          "label": "客室数",
+          "value": "15室"
+        },
+        {
+          "label": "お風呂について",
+          "value": "温泉、弱アルカリ泉、ナトリウム・塩化物強塩泉、カルシウム泉、五十肩、疲労回復、腰痛"
+        },
+        {
+          "label": "食事場所",
+          "value": "レストラン、レストラン"
+        },
+        {
+          "label": "館内設備",
+          "value": "レストラン、自動販売機、コインランドリー(有料)、宅配便"
+        },
+        {
+          "label": "客室設備",
+          "value": "テレビ、湯沸かしポット、冷蔵庫、ドライヤー、アイロン(貸出)、加湿器(貸出)、洗浄機付トイレ、ボディーソープ、シャンプー、リンス、タオル、バスタオル、くつろぎ着の作務衣、スリッパ"
+        },
+        {
+          "label": "レジャー",
+          "value": "海水浴,美術館"
+        },
+        {
+          "label": "駐車場",
+          "value": "有り　8台　￥1000　先着順"
+        }
+      ],
+      "plans": [
+        {
+          "planName": "【熱海復興応援】遅い到着も大丈夫、ご家族・カップルへオススメ☆素泊りプラン",
+          "roomName": "和室10畳",
+          "adults": 2,
+          "total": 49200,
+          "withBreakfast": false,
+          "withDinner": false,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D187532%26f_syu%3Dwashitu%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5772992"
+        },
+        {
+          "planName": "【熱海復興応援】遅い到着も大丈夫、ご家族・カップルへオススメ☆1泊朝食付きプラン",
+          "roomName": "和室10畳",
+          "adults": 2,
+          "total": 51200,
+          "withBreakfast": true,
+          "withDinner": false,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D187532%26f_syu%3Dwashitu%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5772975"
+        },
+        {
+          "planName": "アワビ＆霜降り牛食べ放題！無煙ロースターで豪快に！海鮮＆焼肉食べ飲み放題♪☆一泊４食プラン☆",
+          "roomName": "和室10畳",
+          "adults": 2,
+          "total": 61200,
+          "withBreakfast": true,
+          "withDinner": true,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D187532%26f_syu%3Dwashitu%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5763749"
+        }
+      ],
+      "themes": [
+        "weekend"
+      ],
+      "conditions": [
+        "meal",
+        "breakfast",
+        "view",
         "roomOnly"
       ]
     },
@@ -45160,15 +45161,6 @@
           "withBreakfast": true,
           "withDinner": true,
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D188402%26f_syu%3Dst4%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6093255"
-        },
-        {
-          "planName": "【秋SALE】自然に囲まれた仙石原で贅沢な食と自由な過ごし方を味わう＜■プレミアム＞",
-          "roomName": "スタンダードルー���／定員4名／禁煙／50.2平米",
-          "adults": 2,
-          "total": 85690,
-          "withBreakfast": true,
-          "withDinner": true,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D188402%26f_syu%3Dst4%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6093255"
         }
       ],
       "themes": [
@@ -45350,7 +45342,7 @@
         },
         {
           "label": "駐車場",
-          "value": "駐車場は全2台分ございます。1グループ1台まで無料、2台目以降は1日500円（現地払い）��す。"
+          "value": "駐車場は全2台分ございます。1グループ1台まで無料、2台目以降は1日500円（現地払い）です。"
         }
       ],
       "plans": [
@@ -45925,7 +45917,7 @@
       "name": "Ｒａｋｕｔｅｎ　ＳＴＡＹ　ＦＵＪＩＭＩ　ＴＥＲＲＡＣＥ　箱根芦ノ湖",
       "kana": "",
       "areaKey": "hakone",
-      "address": "神奈川県足��下郡箱根町元箱根三ツ谷2-2　Ｒａｋｕｔｅｎ　ＳＴＡＹ　ＦＵＪＩＭＩ　ＴＥＲＲＡＣＥ　箱根芦ノ湖",
+      "address": "神奈川県足柄下郡箱根町元箱根三ツ谷2-2　Ｒａｋｕｔｅｎ　ＳＴＡＹ　ＦＵＪＩＭＩ　ＴＥＲＲＡＣＥ　箱根芦ノ湖",
       "access": "箱根湯本駅から車で約１５分 ／ 箱根登山バス・東海バスにて元箱根港 下車 徒歩 ３分",
       "nearestStation": "小涌谷",
       "special": "芦ノ湖のほとり、富士山を望む立地で、天然温泉とゆったりと流れる贅沢な時間を堪能。",
@@ -45995,15 +45987,6 @@
         }
       ],
       "plans": [
-        {
-          "planName": "直前割《最大10％OFF》【富士山＆レイクサイド】箱根神社や元箱根港も徒歩圏内（素泊まり）",
-          "roomName": "2���ブルベッド＋ソファ（ペット不可）／5名定員",
-          "adults": 2,
-          "total": 118800,
-          "withBreakfast": false,
-          "withDinner": false,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D189383%26f_syu%3Dac-sd%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5896684"
-        },
         {
           "planName": "直前割《最大10％OFF》【富士山＆レイクサイド】箱根神社や元箱根港も徒歩圏内（素泊まり）",
           "roomName": "2ダブルベッド＋ソファ（ペット不可）／5名定員",
@@ -46210,7 +46193,7 @@
       "name": "Ｒａｋｕｔｅｎ　ＳＴＡＹ　ＴＥＲＲＡＣＥ　箱根小涌谷",
       "kana": "",
       "areaKey": "hakone",
-      "address": "神奈川県足柄下郡箱根町小涌谷483-2　Ｒａｋｕｔｅｎ　ＳＴＡＹ　ＴＥＲＲＡＣＥ　箱根小涌谷",
+      "address": "神奈川県足柄下郡箱根町小涌谷483-2���Ｒａｋｕｔｅｎ　ＳＴＡＹ　ＴＥＲＲＡＣＥ　箱根小涌谷",
       "access": "箱根登山鉄道　小涌谷駅から徒歩で約5分",
       "nearestStation": "小涌谷",
       "special": "風光明媚な箱根の中心、風物詩とRakuten STAYこだわりの「おもてなし」を体感ください。",
@@ -46617,7 +46600,7 @@
       "kana": "カシベッソウハナツツリ",
       "areaKey": "ito",
       "address": "静岡県伊東市富戸1317-219",
-      "access": "城ヶ崎海岸駅から車で約１０分。��豆高原駅から車で約１２分。",
+      "access": "城ヶ崎海岸駅から車で約１０分。伊豆高原駅から車で約１２分。",
       "nearestStation": "城ヶ崎海岸",
       "special": "・１２名様まで・ＢＢＱ、ＰＳ４、麻雀、温泉風呂・大室山登山リフト、伊豆シャボテン公園まで徒歩圏内",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/191542/191542.jpg",
@@ -46742,7 +46725,7 @@
         },
         {
           "label": "お風呂について",
-          "value": "大浴場、家族風呂、ナトリウム炭酸水素塩泉、塩化物泉、外傷、皮膚病、火傷"
+          "value": "大浴場、家族風呂、ナトリウム炭酸水素塩泉、塩化物泉、外傷、皮膚���、火傷"
         },
         {
           "label": "食事場所",
@@ -47035,7 +47018,7 @@
           "planName": "【素泊まり】一泊五湯■山あいの秘湯で自分だけの時間過ごす何度でも入る貸切露天風呂旅＜素泊まり＞",
           "roomName": "【禁煙】小上がりベッド付き和室8〜10畳＜トイレ付/バス無＞",
           "adults": 2,
-          "total": 46200,
+          "total": 44000,
           "withBreakfast": false,
           "withDinner": false,
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D192000%26f_syu%3Dko8-10%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5975054"
@@ -47044,19 +47027,19 @@
           "planName": "【1泊朝食】一泊五湯■清々しい朝の空気と美味しい和朝食、源泉掛け流しで整う爽やか旅＜朝食付＞",
           "roomName": "【禁煙】小上がりベッド付き和室8〜10畳＜トイレ付/バス無＞",
           "adults": 2,
-          "total": 48400,
+          "total": 46200,
           "withBreakfast": true,
           "withDinner": false,
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D192000%26f_syu%3Dko8-10%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5990591"
         },
         {
-          "planName": "【スタンダード】一泊五湯■那須三元豚のしゃぶしゃぶと貸切露天で気ままに巡る湯西川旅＜2食付＞",
+          "planName": "【直前割】お一人様1100円OFF。100％源泉かけ流し、泉質に自信あり！のんびり満喫＜2食付＞",
           "roomName": "【禁煙】小上がりベッド付き和室8〜10畳＜トイレ付/バス無＞",
           "adults": 2,
-          "total": 57200,
+          "total": 52800,
           "withBreakfast": true,
           "withDinner": true,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D192000%26f_syu%3Dko8-10%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6002843"
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D192000%26f_syu%3Dko8-10%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D5975877"
         }
       ],
       "themes": [
@@ -47527,7 +47510,7 @@
         },
         {
           "planName": "【スタンダード】＜アイヌ文化に触れる＞歴史と自然が交差する、贅沢なひととき【食事無し】",
-          "roomName": "【ユニバーサルルーム】38平米　スーペリア　ツインルーム",
+          "roomName": "【ユニバーサルルーム】38平米　スーペリア　ツインルー��",
           "adults": 2,
           "total": 48000,
           "withBreakfast": false,
@@ -48079,7 +48062,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、電話、ファックス(一部)、インターネット接続(無線LAN形式)、ティーサーバー、湯沸かしポット、お茶セット、冷蔵庫、ミニバー、ドライヤー、ズボンプレッサー、アイロン(貸出)、個別空調、洗浄機付トイレ、石鹸（液体）、ボディーソープ、リンスインシャンプー、��ャンプー、リンス、コンディショナー、洗顔ソープ、ハミガキセット、カミソリ、シャワーキャップ、くし、ブラシ、おふろセット、タオル、バスタオル、ナイトウェア、浴衣、くつろぎ着・たび、スリッパ、パジャマ、電子レンジ（一部・要予約）、金庫"
+          "value": "テレビ、電話、ファックス(一部)、インターネット接続(無線LAN形式)、ティーサーバー、湯沸かしポット、お茶セット、冷蔵庫、ミニバー、ドライヤー、ズボンプレッサー、アイロン(貸出)、個別空調、洗浄機付トイレ、石鹸（液体）、ボディーソープ、リンスインシャンプー、シャンプー、リンス、コンディショナー、洗顔ソープ、ハミガキセット、カミソリ、シャワーキャップ、くし、ブラシ、おふろセット、タオル、バスタオル、ナイトウェア、浴衣、くつろぎ着・たび、スリッパ、パジャマ、電子レンジ（一部・要予約）、金庫"
         },
         {
           "label": "レジャー",
@@ -48097,7 +48080,7 @@
       "plans": [
         {
           "planName": "心通わせる、大人の家族旅 — 美々海のファミリープラン",
-          "roomName": "オーシャンビュー源泉掛け流し半露天風呂付ミニスイート和洋室",
+          "roomName": "オーシャンビュー源泉掛け流し半露天風呂付ミ���スイート和洋室",
           "adults": 2,
           "total": 82000,
           "withBreakfast": true,
@@ -48157,7 +48140,7 @@
         },
         {
           "label": "お風呂について",
-          "value": "温泉、大浴場、露天風呂、サウナ、水風呂、カルシウム・ナトリウム硫酸塩泉、外傷、動脈硬化、美肌効果"
+          "value": "温泉、大浴場、露天風呂、サウナ、水風呂、カル��ウム・ナトリウム硫酸塩泉、外傷、動脈硬化、美肌効果"
         },
         {
           "label": "食事場所",
@@ -48323,7 +48306,7 @@
       "minCharge": 5760,
       "reviewAverage": 4.14,
       "reviewCount": 236,
-      "userReview": "設備は最高です。　2026-11-09 18:51:59投稿",
+      "userReview": "設���は最高です。　2026-11-09 18:51:59投稿",
       "ratings": {
         "service": 4.03,
         "location": 4.18,
@@ -48617,7 +48600,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレビ、インターネット接続(LAN形式)、インターネット接続(無線LAN形式)、冷蔵庫、ドライヤー、石鹸（固形）、シャンプー、ハミガキセット"
+          "value": "テレビ、インターネット接続(LAN形式)、インターネット接続(無線LAN形式)、冷蔵���、ドライヤー、石鹸（固形）、シャンプー、ハミガキセット"
         },
         {
           "label": "駐車場",
@@ -48735,7 +48718,7 @@
       "minCharge": 7680,
       "reviewAverage": 4.39,
       "reviewCount": 147,
-      "userReview": "広々としたお部屋��、今の時期テラスが心地よく最高でした！温泉も源泉でこの値段はコスパが良いと思います。無料のフリードリンクやおつまみなどもとても充実していてどれも美味しかったです。コーヒーはノンカフェ…　2026-10-29 20:51:05投稿",
+      "userReview": "広々としたお部屋で、今の時期テラスが心地よく最高でした！温泉も源泉でこの値段はコスパが良いと思います。無料のフリードリンクやおつまみなどもとても充実していてどれも美味しかったです。コーヒーはノンカフェ…　2026-10-29 20:51:05投稿",
       "ratings": {
         "service": 4.21,
         "location": 4.33,
@@ -49786,7 +49769,7 @@
       "name": "ＴＡＯＹＡ箱根",
       "kana": "たおやはこね",
       "areaKey": "hakone",
-      "address": "神奈川県足柄下郡��根町仙石原1246",
+      "address": "神奈川県足柄下郡箱根町仙石原1246",
       "access": "箱根登山電車 箱根湯本駅より車で約30分（カーナビはマップコード「50 599 899*78」をご入力ください）",
       "nearestStation": "強羅",
       "special": "2025年11月グランドオープン！箱根の伝統美とモダンが融和する緑に包まれた大人の温泉リゾートホテル",
@@ -49879,13 +49862,13 @@
     },
     {
       "hotelNo": 197101,
-      "name": "ＨＯＴＥＬ　ＡＳＯＢ��ＢＡ　白老",
+      "name": "ＨＯＴＥＬ　ＡＳＯＢＵＢＡ　白老",
       "kana": "ほてる　あそぶば　しらおい",
       "areaKey": "noboribetsu",
       "address": "北海道白老郡白老町森野98-1",
       "access": "道央自動車道白老ＩＣより車で約１０分",
       "nearestStation": "白老",
-      "special": "北海道内で最高峰レベルの食材が揃う白老町にあ���「本気で遊ぼう。」をテーマにしたキャンプ場",
+      "special": "北海道内で最高峰レベルの食材が揃う白老町にある「本気で遊ぼう。」をテーマにしたキャンプ場",
       "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/197101/197101.jpg",
       "roomImageUrl": "",
       "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D197101",
@@ -50308,22 +50291,12 @@
           "withBreakfast": false,
           "withDinner": false,
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D197679%26f_syu%3Drkt3villa%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D1%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6341374"
-        },
-        {
-          "planName": "【２食付】伊豆川奈の海一望！レストランで日替わり夜プレート＆手作り朝食をどうぞ！【駐車場無料】",
-          "roomName": "絶景オーシャンビュー・1から3名部屋・バス共用【禁煙】",
-          "adults": 2,
-          "total": 19900,
-          "withBreakfast": true,
-          "withDinner": true,
-          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D197679%26f_syu%3Drkt3villa%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6524677"
         }
       ],
       "themes": [
         "solo"
       ],
       "conditions": [
-        "meal",
         "view",
         "roomOnly"
       ]
@@ -51078,7 +51051,7 @@
         },
         {
           "label": "館内設備",
-          "value": "全棟源泉かけ流しの客室温泉完備、天然温泉を心ゆくまでお寛ぎいただけます。、【持ち込み食材でBBQのご案内】お部屋のテラスでBBQをお楽しみいただけま���。、BBQセットレンタル有（スノーピーク製のガスグリル・1台2500円（税込））、レストラン、禁煙ルーム、ペット同宿可、駐車場あり"
+          "value": "全棟源泉かけ流しの客室温泉完備、天然温泉を心ゆくまでお寛ぎいただけます。、【持ち込み食材でBBQのご案内】お部屋のテラスでBBQをお楽しみいただけます。、BBQセットレンタル有（スノーピーク製のガスグリル・1台2500円（税込））、レストラン、禁煙ルーム、ペット同宿可、駐車場あり"
         },
         {
           "label": "客室設備",
@@ -51609,7 +51582,7 @@
       ],
       "plans": [
         {
-          "planName": "▼直前割：２０％ＯＦＦ▼雄大な水景と客室専用天然温泉に癒される、贅沢なプライベートステイ",
+          "planName": "▼直前割：２０％Ｏ��Ｆ▼雄大な水景と客室専用天然温泉に癒される、贅沢なプライベートステイ",
           "roomName": "【F】2クイーン+1ソファベッド／温泉付客室",
           "adults": 1,
           "total": 80000,
@@ -51911,6 +51884,94 @@
       "conditions": [
         "meal",
         "breakfast"
+      ]
+    },
+    {
+      "hotelNo": 201845,
+      "name": "箱根強羅　ＫＡＩＫＡ",
+      "kana": "はこねごうら　かいか",
+      "areaKey": "hakone",
+      "address": "神奈川県足柄下郡箱根町強羅1320-475",
+      "access": "箱根登山鉄道 強羅駅 徒歩14分",
+      "nearestStation": "強羅",
+      "special": "■2026年7月31日開業■ありのままの自分を取り戻す『数寄屋レジリエンス』の滞在・全室露天風呂付の隠れ宿",
+      "imageUrl": "https://img.travel.rakuten.co.jp/share/HOTEL/201845/201845.jpg",
+      "roomImageUrl": "",
+      "informationUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FpvonD%2F%3Ff_no%3D201845",
+      "planListUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FvFumt%2F%3Ff_no%3D201845%26f_flg%3DPLAN",
+      "reviewUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FgJNfM%2F%3Ff_hotel_no%3D201845",
+      "minCharge": 34900,
+      "reviewAverage": null,
+      "reviewCount": 1,
+      "userReview": "",
+      "ratings": {
+        "service": null,
+        "location": null,
+        "room": null,
+        "equipment": null,
+        "bath": null,
+        "breakfast": null,
+        "dinner": null,
+        "cleanliness": null
+      },
+      "details": [
+        {
+          "label": "チェックイン",
+          "value": "15:00"
+        },
+        {
+          "label": "最終チェックイン",
+          "value": "21:00"
+        },
+        {
+          "label": "チェックアウト",
+          "value": "12:00"
+        },
+        {
+          "label": "客室数",
+          "value": "19室"
+        },
+        {
+          "label": "お風呂について",
+          "value": "温泉、露天風呂、天然温泉、塩化物温泉、弱アルカリ塩化物泉、ナトリウム泉、神経痛、冷え性、疲労回復"
+        },
+        {
+          "label": "食事場所",
+          "value": "個室、レストラン、個室、レストラン"
+        },
+        {
+          "label": "館内設備",
+          "value": "当館はエレベーターがない建物となります。一部の客室を除き、階段でのご移動となります。、レストラン、露天風呂、茶室、送迎バス、駐車場あり"
+        },
+        {
+          "label": "客室設備",
+          "value": "インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ミニバー、ドライヤー、加湿器、洗浄機付トイレ、ボディーソープ、シャンプー、リンス、コンディショナー、洗顔ソープ、ハミガキセット、カミソリ、ブラシ、タオル、バスタオル、ナイトウェア、くつろぎ着・たび、くつろぎ着の作務衣、スリッパ、パジャマ、金庫"
+        },
+        {
+          "label": "レジャー",
+          "value": "ハイキング,テーマパーク,美術館"
+        },
+        {
+          "label": "駐車場",
+          "value": "あり3台　無料 (要予約）"
+        }
+      ],
+      "plans": [
+        {
+          "planName": "■2026年7月31日開業■【1泊2食】ミシュラン星付料理人監修の茶懐石コース（夕食18:00）",
+          "roomName": "温泉半露天風呂付デラックスツインルーム",
+          "adults": 2,
+          "total": 124800,
+          "withBreakfast": true,
+          "withDinner": true,
+          "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D201845%26f_syu%3Drkdxtw03%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D2%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6576678"
+        }
+      ],
+      "themes": [],
+      "conditions": [
+        "meal",
+        "room",
+        "station"
       ]
     },
     {
@@ -52629,7 +52690,7 @@
         },
         {
           "label": "客室設備",
-          "value": "テレ��、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、個別空調、洗浄機付トイレ、ボディーソープ、シャンプー、コンディショナー、洗顔ソープ、ハミガキセット、カミソリ、くし、タオル、バスタオル、バスローブ、浴衣、スリッパ"
+          "value": "テレビ、インターネット接続(無線LAN形式)、湯沸かしポット、お茶セット、冷蔵庫、ドライヤー、個別空調、洗浄機付トイレ、ボディーソープ、シャンプー、コンディショナー、洗顔ソープ、ハミガキセット、カミソリ、くし、タオル、バスタオル、バスローブ、浴衣、スリッパ"
         },
         {
           "label": "レジャー",
@@ -52760,7 +52821,7 @@
           "reserveUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fimg.travel.rakuten.co.jp%2Fimage%2Ftr%2Fapi%2Fre%2FIdsCY%2F%3Ff_no%3D202517%26f_syu%3D01%26f_hi1%3D2026-11-14%26f_hi2%3D2026-11-15%26f_heya_su%3D1%26f_otona_su%3D1%26f_s1%3D0%26f_s2%3D0%26f_y1%3D0%26f_y2%3D0%26f_y3%3D0%26f_y4%3D0%26f_camp_id%3D6633343"
         },
         {
-          "planName": "【スタンダードプラン】愛犬と過ごす、別府亀川温泉の名湯���楽しむ癒し旅《食事なし》",
+          "planName": "【スタンダードプラン】愛犬と過ごす、別府亀川温泉の名湯を楽しむ癒し旅《食事なし》",
           "roomName": "【ペット同伴可・離れ】スーペリア和洋室　露天風呂付　68平米",
           "adults": 2,
           "total": 56000,
