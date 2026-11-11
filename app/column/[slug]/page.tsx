@@ -93,6 +93,10 @@ export default async function ColumnPage({ params }: Props) {
 
   const content = columnContent[slug] ?? eyeColumnContent[slug] ?? karakonColumnContent[slug];
   if (!content) notFound();
+  // For purchase-intent articles, send readers to a verified product comparison first,
+  // rather than a generic marketplace search with potentially mismatched lens specs.
+  const purchaseIntentGuide = PURCHASE_GUIDES.has(slug) ||
+    ['contact-tsuuhan-shohosen-nashi-kanzen-guide', 'contact-dosu-shohosen-mikata-kanzen-2026'].includes(slug);
 
   const otherColumns = allColumns.filter((c) => c.slug !== slug).map((c) => ({ column: c, score: (c.category === column.category ? 10 : 0) + ('section' in c && 'section' in column && c.section === column.section ? 5 : 0) })).sort((a, b) => b.score - a.score || a.column.slug.localeCompare(b.column.slug)).slice(0, 4).map(({ column: related }) => related);
   const BASE = 'https://www.lens-navi.jp';
@@ -288,10 +292,17 @@ export default async function ColumnPage({ params }: Props) {
               <p className="text-sm font-bold text-gray-800 mb-1">購入前にレンズの条件を確認</p>
               <p className="text-xs text-gray-500 mb-3">眼科で確認した製品名・度数・BC・DIAと送料込みの価格を確認</p>
               <div className="flex flex-wrap gap-2">
-                <a href={RAKUTEN(contactLensSearchTerm(column.title))} target="_blank" rel="noopener noreferrer nofollow sponsored"
-                  className="bg-navy-900 hover:bg-navy-800 text-white text-sm font-bold px-4 py-2.5 rounded-lg transition-colors">
-                  楽天で商品を探す →
-                </a>
+                {purchaseIntentGuide ? (
+                  <Link href="/category/1day" data-growth-event="comparison_navigation" data-growth-source="column_footer_purchase_intent"
+                    className="bg-sky-700 hover:bg-sky-800 text-white text-sm font-bold px-4 py-2.5 rounded-lg transition-colors">
+                    いつものワンデーの1箱価格・購入先を比較 →
+                  </Link>
+                ) : (
+                  <a href={RAKUTEN(contactLensSearchTerm(column.title))} target="_blank" rel="noopener noreferrer nofollow sponsored"
+                    className="bg-navy-900 hover:bg-navy-800 text-white text-sm font-bold px-4 py-2.5 rounded-lg transition-colors">
+                    楽天で商品を探す →
+                  </a>
+                )}
                 <Link href="/category/1day" className="bg-white border border-slate-200 text-slate-700 text-sm px-4 py-2.5 rounded-lg hover:border-slate-300 transition-colors">
                   ワンデー比較
                 </Link>
