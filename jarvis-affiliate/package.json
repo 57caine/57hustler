@@ -7,14 +7,16 @@
     "dev": "astro dev",
     "validate": "tsx scripts/validate-links.ts",
     "validate:online": "tsx scripts/validate-links.ts --online",
-    "prebuild": "npm run validate",
+    "prebuild": "npm run validate -- --json",
     "build": "astro build",
     "preview": "astro preview",
     "social": "tsx scripts/generate-social-posts.ts",
     "metrics": "tsx scripts/analyze-metrics.ts",
     "check": "astro check",
     "postbuild": "tsx scripts/validate-links.ts --dist",
-    "build:prod": "JARVIS_ENV=production npm run build"
+    "build:prod": "JARVIS_ENV=production npm run build",
+    "refresh": "tsx scripts/validate-links.ts --json; tsx scripts/analyze-metrics.ts; tsx scripts/generate-social-posts.ts",
+    "predev": "npm run refresh"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.5",

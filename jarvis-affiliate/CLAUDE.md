@@ -51,7 +51,14 @@
 4. 本番に公開した場合は、本番URLを実際に取得して確認する（取得できない場合は「確認できていません」と報告）
 5. 警告（WARN）が残っている場合は、件数と内容を報告に書く
 
-## 5. コマンド早見表
+## 5. 運用コンソール（/jarvis/）
+
+- `npm run dev` で `http://localhost:4321/jarvis/` を開くと、LP一覧・案件マスター・SNS投稿案・改善提案・チェック結果・「今日の判断」が1画面で見られる
+- データはビルド時に `config/` `content/` `output/` から読む。`npm run refresh`（`npm run dev` 実行時は自動）で最新化
+- 報酬単価などの内部情報を含むため、本番ビルド（`JARVIS_ENV=production`）では生成しない。noindex
+- 画面からは書き換えない（表示とコマンドのコピーのみ）。変更はコマンド経由でエージェントが行う
+
+## 6. コマンド早見表
 
 ```bash
 npm install            # 初回のみ
@@ -62,9 +69,10 @@ npm run build:prod     # 本番用（ダミー案件・GA4未設定をエラー�
 npm run validate:online # リンク先に実際にアクセスしてリンク切れ確認
 npm run social         # SNS投稿案を output/social/{日付}/ に生成
 npm run metrics        # data/reports/*.csv から改善提案を output/reports/ に生成
+npm run refresh        # チェック・分析・投稿案をまとめて更新（コンソールの表示データ）
 ```
 
-## 6. デプロイ
+## 7. デプロイ
 
 静的HTML（`dist/`）を出力するので、Cloudflare Pages / Vercel のどちらでもそのまま公開できる。
 

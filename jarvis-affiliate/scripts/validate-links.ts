@@ -109,7 +109,8 @@ function checkHardcodedLinks() {
 // ---------- 4. ビルド後HTML ----------
 function checkDist() {
   const dist = p('dist');
-  const htmlFiles = walk(dist, ['.html']);
+  // /jarvis/ は運用コンソール（noindex・本番ビルドでは生成しない）なのでLP向けチェックの対象外
+  const htmlFiles = walk(dist, ['.html']).filter((f) => !f.includes(`${path.sep}jarvis${path.sep}`));
   if (!htmlFiles.length) return err('dist', 'ビルド成果物がありません（先に astro build）');
   const gaOn = !!process.env.PUBLIC_GA4_ID && !process.env.PUBLIC_GA4_ID.includes('XXXX');
   if (PROD && !gaOn) err('.env', 'PUBLIC_GA4_ID が未設定です（本番では計測必須）');
@@ -167,5 +168,8 @@ const warns = issues.filter((i) => i.level === 'warn');
 for (const i of warns) console.log(`${c.yellow('WARN ')} ${i.where}: ${i.message}`);
 for (const i of errors) console.log(`${c.red('ERROR')} ${i.where}: ${i.message}`);
 console.log(errors.length ? c.red(`✗ エラー ${errors.length}件 / 警告 ${warns.length}件`) : c.green(`✓ エラーなし（警告 ${warns.length}件）`));
-if (hasFlag('json')) fs.writeFileSync(p('output', 'validate-result.json'), JSON.stringify(issues, null, 2));
+if (hasFlag('json')) {
+  fs.mkdirSync(p('output'), { recursive: true });
+  fs.writeFileSync(p('output', 'validate-result.json'), JSON.stringify({ generatedAt: new Date().toISOString(), mode: PROD ? 'production' : 'development', scope: hasFlag('dist') ? 'dist' : 'source', issues }, null, 2));
+}
 process.exitCode = errors.length ? 1 : 0;
