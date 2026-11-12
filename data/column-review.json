@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T01:09:41.405Z",
+  "generatedAt": "2026-11-12T02:11:45.061Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 37,
-        "bounceRate": 0.21621621621621623,
-        "avgSessionDuration": 322.91872989189187,
+        "sessions": 40,
+        "bounceRate": 0.25,
+        "avgSessionDuration": 302.7378281499999,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション37件・affiliate_clickゼロ"
+        "セッション40件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -47,16 +47,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 23,
-        "bounceRate": 0.6086956521739131,
-        "avgSessionDuration": 67.21801352173914,
+        "sessions": 24,
+        "bounceRate": 0.5833333333333334,
+        "avgSessionDuration": 69.59204558333333,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション23件・affiliate_clickゼロ"
+        "セッション24件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
@@ -77,54 +77,20 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/smile-surgery-guide-2026",
-      "slug": "smile-surgery-guide-2026",
-      "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
-      "metrics": {
-        "sessions": 18,
-        "bounceRate": 0.16666666666666666,
-        "avgSessionDuration": 188.24277727777778,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション18件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 72327
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/vr-game-osusume-2026",
       "slug": "vr-game-osusume-2026",
       "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
       "metrics": {
-        "sessions": 17,
-        "bounceRate": 0.5294117647058824,
-        "avgSessionDuration": 125.47328482352941,
+        "sessions": 20,
+        "bounceRate": 0.6,
+        "avgSessionDuration": 106.6522921,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション17件・affiliate_clickゼロ"
+        "セッション20件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -145,20 +111,54 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/enkintsuyo-contact-guide",
-      "slug": "enkintsuyo-contact-guide",
-      "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
+      "path": "/column/smile-surgery-guide-2026",
+      "slug": "smile-surgery-guide-2026",
+      "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
       "metrics": {
-        "sessions": 15,
-        "bounceRate": 0,
-        "avgSessionDuration": 77.7721864,
+        "sessions": 17,
+        "bounceRate": 0.11764705882352941,
+        "avgSessionDuration": 199.31588182352942,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション15件・affiliate_clickゼロ"
+        "セッション17件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 72327
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/enkintsuyo-contact-guide",
+      "slug": "enkintsuyo-contact-guide",
+      "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
+      "metrics": {
+        "sessions": 14,
+        "bounceRate": 0,
+        "avgSessionDuration": 62.83237257142857,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション14件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -179,33 +179,33 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/blue-light-megane-kouka",
-      "slug": "blue-light-megane-kouka",
-      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
+      "path": "/column/kanso-shinikui-contact",
+      "slug": "kanso-shinikui-contact",
+      "title": "kanso-shinikui-contact",
       "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.4,
-        "avgSessionDuration": 94.8895889,
+        "sessions": 11,
+        "bounceRate": 0.18181818181818182,
+        "avgSessionDuration": 228.3912691818182,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
+        "セッション11件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
-        "h3Count": 3,
+        "h3Count": 9,
         "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 70118
+        "ctaCount": 1,
+        "contentChars": 87756
       },
       "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
       ],
       "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
@@ -247,61 +247,27 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/kanso-shinikui-contact",
-      "slug": "kanso-shinikui-contact",
-      "title": "kanso-shinikui-contact",
+      "path": "/column/blue-light-megane-kouka",
+      "slug": "blue-light-megane-kouka",
+      "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.2,
-        "avgSessionDuration": 198.6211464,
+        "sessions": 9,
+        "bounceRate": 0.3333333333333333,
+        "avgSessionDuration": 104.94390233333334,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
+        "セッション9件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
-        "h3Count": 9,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 87756
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/vr-movie-streaming-service-recommend-2026",
-      "slug": "vr-movie-streaming-service-recommend-2026",
-      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
-      "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 48.858381249999994,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 6,
+        "h3Count": 3,
         "hasAffiliateLinks": true,
         "ctaCount": 4,
-        "contentChars": 70011
+        "contentChars": 70118
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -342,6 +308,40 @@
       ],
       "suggestions": [
         "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/vr-movie-streaming-service-recommend-2026",
+      "slug": "vr-movie-streaming-service-recommend-2026",
+      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
+      "metrics": {
+        "sessions": 7,
+        "bounceRate": 0.5714285714285714,
+        "avgSessionDuration": 23.208967,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション7件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 6,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 70011
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見",
       "business": "lens-navi",
