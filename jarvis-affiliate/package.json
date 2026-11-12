@@ -1,0 +1,32 @@
+{
+  "name": "jarvis-affiliate",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "validate": "tsx scripts/validate-links.ts",
+    "validate:online": "tsx scripts/validate-links.ts --online",
+    "prebuild": "npm run validate",
+    "build": "astro build",
+    "preview": "astro preview",
+    "social": "tsx scripts/generate-social-posts.ts",
+    "metrics": "tsx scripts/analyze-metrics.ts",
+    "check": "astro check",
+    "postbuild": "tsx scripts/validate-links.ts --dist",
+    "build:prod": "JARVIS_ENV=production npm run build"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^7.4.11",
+    "gray-matter": "^4.0.3",
+    "marked": "^18.2.0",
+    "tailwindcss": "^4.3.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@types/node": "^22.20.5",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}

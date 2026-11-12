@@ -1,0 +1,5 @@
+# ダミーデータ（動作確認用）
+program_id,asp,clicks,conversions,approved,revenue
+sample-eikaiwa-a,a8,22,1,1,3000
+sample-eikaiwa-b,moshimo,9,1,0,0
+sample-eikaiwa-c,rakuten,11,0,0,0

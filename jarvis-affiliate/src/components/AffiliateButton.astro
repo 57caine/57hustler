@@ -1,0 +1,53 @@
+---
+/**
+ * アフィリエイトリンクを出力する唯一のコンポーネント。
+ * - URLは config/affiliates.json から取得（直書き禁止）
+ * - rel="noopener noreferrer nofollow sponsored" を必ず付与
+ * - data-* 属性を付け、LpLayout のクリック計測スクリプトが GA4 affiliate_click を送る
+ */
+import { getProgram } from '../lib/affiliates.ts';
+
+interface Props {
+  programId: string;
+  /** 「行動＋得られるもの」のラベル。省略時は「{案件名}の公式サイトを見る」 */
+  label?: string;
+  /** 計測用の設置場所（hero / table / ranking / final など） */
+  placement: string;
+  campaign: string;
+  variant?: 'primary' | 'secondary';
+  size?: 'sm' | 'md' | 'lg';
+  microcopy?: string;
+}
+
+const { programId, label, placement, campaign, variant = 'primary', size = 'md', microcopy } = Astro.props;
+const program = getProgram(programId);
+const text = label ?? `${program.name}の公式サイトを見る`;
+
+const base = 'inline-flex items-center justify-center gap-2 rounded-xl font-bold shadow-md transition focus:outline-none focus-visible:ring-4 focus-visible:ring-cta-500/40';
+const sizes = { sm: 'px-3 py-2 text-sm whitespace-nowrap', md: 'px-5 py-3 text-base', lg: 'px-7 py-4 text-lg w-full sm:w-auto' };
+const variants = {
+  primary: 'bg-cta-500 text-white hover:bg-cta-600',
+  secondary: 'bg-white text-cta-600 ring-2 ring-cta-500 hover:bg-orange-50',
+};
+---
+<div class="inline-flex flex-col items-center gap-1 max-w-full">
+  <a
+    href={program.url}
+    target="_blank"
+    rel="noopener noreferrer nofollow sponsored"
+    class:list={[base, sizes[size], variants[variant]]}
+    data-affiliate-id={program.id}
+    data-affiliate-platform={program.asp}
+    data-affiliate-name={program.name}
+    data-placement={placement}
+    data-campaign={campaign}
+    data-dummy={program.dummy ? 'true' : undefined}
+  >
+    <span>{text}</span>
+    <svg aria-hidden="true" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor"><path d="M7.3 4.3a1 1 0 0 1 1.4 0l5 5a1 1 0 0 1 0 1.4l-5 5a1 1 0 0 1-1.4-1.4L11.6 10 7.3 5.7a1 1 0 0 1 0-1.4Z"/></svg>
+  </a>
+  <span class="text-xs text-slate-500">
+    <span class="mr-1 rounded bg-slate-200 px-1 py-px text-[10px] font-bold text-slate-600">PR</span>
+    {microcopy ?? `${program.name}の公式サイトへ移動します`}
+  </span>
+</div>

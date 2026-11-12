@@ -1,0 +1,91 @@
+---
+/**
+ * 比較表。行・値は config/affiliates.json の specs から自動生成する。
+ * 全データ列にソートあり（列見出しをクリック／Enter）。
+ */
+import AffiliateButton from './AffiliateButton.astro';
+import { getProgram } from '../lib/affiliates.ts';
+import type { Campaign } from '../lib/campaigns.ts';
+
+interface Props { campaign: Campaign }
+const { campaign } = Astro.props;
+const cmp = campaign.comparison!;
+const programs = cmp.programIds.map(getProgram);
+
+const display = (value: unknown, type: string, unit?: string) => {
+  if (value === null || value === undefined || value === '') return '—';
+  if (type === 'boolean') return value ? '◯' : '×';
+  if (type === 'number') return `${Number(value).toLocaleString('ja-JP')}${unit ?? ''}`;
+  return `${value}${unit ?? ''}`;
+};
+const sortValue = (value: unknown, type: string) => {
+  if (value === null || value === undefined || value === '') return '';
+  if (type === 'boolean') return value ? '1' : '0';
+  return String(value);
+};
+const oldest = programs.map((x) => x.verifiedAt).filter(Boolean).sort()[0];
+---
+<section id="comparison" class="mx-auto max-w-5xl px-4 py-10">
+  <h2 class="mb-2 text-2xl font-bold text-brand-900">比較表</h2>
+  {cmp.caption && <p class="mb-4 text-sm text-slate-500">{cmp.caption}</p>}
+  <p class="mb-2 text-xs text-slate-500">列の見出しを押すと並び替えできます。{oldest && `情報確認日：${oldest}`}</p>
+  <div class="overflow-x-auto rounded-2xl ring-1 ring-slate-200">
+    <table class="min-w-[640px] w-full border-collapse text-sm" data-sortable-table>
+      <thead class="bg-brand-900 text-white">
+        <tr>
+          <th scope="col" class="p-3 text-left whitespace-nowrap">
+            <button type="button" class="font-bold" data-sort-key="0" data-sort-type="text">サービス名 <span aria-hidden="true">↕</span></button>
+          </th>
+          {cmp.columns.map((col, i) => (
+            <th scope="col" class="p-3 text-left whitespace-nowrap">
+              <button type="button" class="font-bold" data-sort-key={String(i + 1)} data-sort-type={col.type}>{col.label} <span aria-hidden="true">↕</span></button>
+            </th>
+          ))}
+          <th scope="col" class="p-3 text-left whitespace-nowrap">公式サイト</th>
+        </tr>
+      </thead>
+      <tbody>
+        {programs.map((program) => (
+          <tr class="border-t border-slate-200 odd:bg-white even:bg-surface">
+            <th scope="row" class="p-3 text-left font-bold text-brand-900 whitespace-nowrap" data-sort-value={program.name}>{program.name}</th>
+            {cmp.columns.map((col) => (
+              <td class="p-3 whitespace-nowrap" data-sort-value={sortValue(program.specs[col.key], col.type)}>
+                {display(program.specs[col.key], col.type, col.unit)}
+              </td>
+            ))}
+            <td class="p-3">
+              <AffiliateButton programId={program.id} label={`${program.name}を見る`} placement="table" campaign={campaign.slug} microcopy="公式サイトへ" size="sm" />
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<script>
+  // 比較表ソート（全データ列）。依存ライブラリなし
+  document.querySelectorAll<HTMLTableElement>('[data-sortable-table]').forEach((table) => {
+    const tbody = table.tBodies[0];
+    table.querySelectorAll<HTMLButtonElement>('[data-sort-key]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const idx = Number(btn.dataset.sortKey);
+        const type = btn.dataset.sortType;
+        const asc = btn.dataset.dir !== 'asc';
+        table.querySelectorAll<HTMLButtonElement>('[data-sort-key]').forEach((b) => { delete b.dataset.dir; b.closest('th')?.removeAttribute('aria-sort'); });
+        btn.dataset.dir = asc ? 'asc' : 'desc';
+        btn.closest('th')?.setAttribute('aria-sort', asc ? 'ascending' : 'descending');
+        const rows = Array.from(tbody.rows);
+        rows.sort((a, b) => {
+          const va = (a.cells[idx] as HTMLElement).dataset.sortValue ?? '';
+          const vb = (b.cells[idx] as HTMLElement).dataset.sortValue ?? '';
+          if (va === '' && vb !== '') return 1;
+          if (vb === '' && va !== '') return -1;
+          const cmp = type === 'number' || type === 'boolean' ? Number(va) - Number(vb) : va.localeCompare(vb, 'ja');
+          return asc ? cmp : -cmp;
+        });
+        rows.forEach((r) => tbody.appendChild(r));
+      });
+    });
+  });
+</script>

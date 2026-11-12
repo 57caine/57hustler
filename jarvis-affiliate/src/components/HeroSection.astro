@@ -1,0 +1,45 @@
+---
+import AffiliateButton from './AffiliateButton.astro';
+import type { Campaign } from '../lib/campaigns.ts';
+
+interface Props { campaign: Campaign }
+const { campaign } = Astro.props;
+const { hero, pains, benefits } = campaign;
+---
+<section class="bg-gradient-to-b from-brand-50 to-white">
+  <div class="mx-auto max-w-3xl px-4 pt-8 pb-10 md:pt-14 md:pb-14">
+    {hero.eyebrow && <p class="mb-3 inline-block rounded-full bg-brand-100 px-3 py-1 text-sm font-bold text-brand-600">{hero.eyebrow}</p>}
+    <h1 class="text-[28px] font-bold leading-snug text-brand-900 md:text-[40px]">{hero.headline}</h1>
+    {hero.subheadline && <p class="mt-4 text-slate-600">{hero.subheadline}</p>}
+
+    {pains.length > 0 && (
+      <div class="mt-6 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
+        <p class="mb-2 font-bold text-brand-900">こんなお悩みはありませんか？</p>
+        <ul class="space-y-1.5">
+          {pains.map((pain) => (
+            <li class="flex gap-2"><span aria-hidden="true" class="text-brand-600">✓</span><span>{pain}</span></li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {benefits.length > 0 && (
+      <ul class="mt-5 grid gap-2 sm:grid-cols-3">
+        {benefits.map((b) => (
+          <li class="rounded-xl bg-brand-600/5 px-3 py-2 text-sm font-medium text-brand-900">{b}</li>
+        ))}
+      </ul>
+    )}
+
+    <div class="mt-8 text-center">
+      <AffiliateButton
+        programId={hero.primaryProgramId}
+        label={hero.ctaLabel}
+        microcopy={hero.microcopy}
+        placement="hero"
+        campaign={campaign.slug}
+        size="lg"
+      />
+    </div>
+  </div>
+</section>

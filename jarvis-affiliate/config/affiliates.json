@@ -1,0 +1,82 @@
+{
+  "$comment": "ASP案件マスター。リンクはここだけに書く（LP本文・コンポーネントへの直書き禁止）。dummy:true の案件は本番ビルド（JARVIS_ENV=production）で自動的にエラーになる。",
+  "version": 1,
+  "updatedAt": "2026-11-12",
+  "programs": [
+    {
+      "id": "sample-eikaiwa-a",
+      "name": "サンプル英会話A",
+      "asp": "a8",
+      "status": "active",
+      "dummy": true,
+      "url": "https://px.a8.net/svt/ejp?a8mat=DUMMY+AAAAAA+0000+000000",
+      "officialUrl": "https://example.com/eikaiwa-a",
+      "trackingId": "DUMMY-A8-001",
+      "reward": { "type": "CPA", "amount": 3000, "currency": "JPY", "condition": "無料体験申込" },
+      "approvalRate": 0.7,
+      "category": "online-eikaiwa",
+      "image": "",
+      "specs": {
+        "monthlyPrice": 6480,
+        "lessonMinutes": 25,
+        "freeTrial": true,
+        "nativeTeacher": false,
+        "hours": "24時間"
+      },
+      "highlights": ["24時間レッスン可能", "毎日受講できる定額プラン"],
+      "cautions": ["講師の国籍は選べない時間帯がある"],
+      "verifiedAt": "2026-11-12",
+      "source": "ダミーデータ（実在しないサービス）"
+    },
+    {
+      "id": "sample-eikaiwa-b",
+      "name": "サンプル英会話B",
+      "asp": "moshimo",
+      "status": "active",
+      "dummy": true,
+      "url": "https://af.moshimo.com/af/c/click?a_id=DUMMY&p_id=0&pc_id=0&pl_id=0",
+      "officialUrl": "https://example.com/eikaiwa-b",
+      "trackingId": "DUMMY-MOSHIMO-002",
+      "reward": { "type": "CPA", "amount": 2500, "currency": "JPY", "condition": "有料会員登録" },
+      "approvalRate": 0.55,
+      "category": "online-eikaiwa",
+      "image": "",
+      "specs": {
+        "monthlyPrice": 9800,
+        "lessonMinutes": 25,
+        "freeTrial": true,
+        "nativeTeacher": true,
+        "hours": "6:00〜25:00"
+      },
+      "highlights": ["ネイティブ講師在籍", "ビジネス英語コースあり"],
+      "cautions": ["月額はAより高め"],
+      "verifiedAt": "2026-11-12",
+      "source": "ダミーデータ（実在しないサービス）"
+    },
+    {
+      "id": "sample-eikaiwa-c",
+      "name": "サンプル英会話C",
+      "asp": "rakuten",
+      "status": "active",
+      "dummy": true,
+      "url": "https://hb.afl.rakuten.co.jp/hgc/DUMMY.00000000.DUMMY.00000000/?pc=https%3A%2F%2Fexample.com%2Feikaiwa-c",
+      "officialUrl": "https://example.com/eikaiwa-c",
+      "trackingId": "DUMMY-RAKUTEN-003",
+      "reward": { "type": "CPS", "amount": 4, "currency": "PERCENT", "condition": "教材購入額の4%" },
+      "approvalRate": 0.9,
+      "category": "online-eikaiwa",
+      "image": "",
+      "specs": {
+        "monthlyPrice": 3980,
+        "lessonMinutes": 15,
+        "freeTrial": false,
+        "nativeTeacher": false,
+        "hours": "7:00〜24:00"
+      },
+      "highlights": ["月額が最も安い", "1回15分でスキマ時間向き"],
+      "cautions": ["無料体験なし"],
+      "verifiedAt": "2026-11-12",
+      "source": "ダミーデータ（実在しないサービス）"
+    }
+  ]
+}

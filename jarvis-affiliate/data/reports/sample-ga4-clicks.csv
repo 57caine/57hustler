@@ -1,0 +1,9 @@
+# ダミーデータ（動作確認用）
+page_path,placement,program_id,clicks
+/lp/sample-campaign/,hero,sample-eikaiwa-a,6
+/lp/sample-campaign/,table,sample-eikaiwa-a,9
+/lp/sample-campaign/,table,sample-eikaiwa-b,7
+/lp/sample-campaign/,table,sample-eikaiwa-c,11
+/lp/sample-campaign/,ranking-1,sample-eikaiwa-a,5
+/lp/sample-campaign/,ranking-2,sample-eikaiwa-b,2
+/lp/sample-campaign/,final,sample-eikaiwa-a,2

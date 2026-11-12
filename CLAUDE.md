@@ -225,6 +225,7 @@ JSESSIONID更新後の実行ログで初めて判明する。現時点では「�
 | shikaku-navi（資格） | `shikaku-navi/` | `main` |
 | 楽旅くん（仮称・旅行比較、vercel.appで需要検証中） | `rakutabi/` | GitHub連携なし。Actionsから公開（詳細は`rakutabi/CLAUDE.md`） |
 | ペット防災（仮称・MVP、noindex） | `pet-bousai/` | GitHub連携なし。`claude/pet-bousai-mvp`ブランチのpush時のみActionsから`pet-bousai-pi.vercel.app`へ公開（noindex）。犬向け3テーマ版は`claude/pet-bousai-dog-mvp`（公開なし・検証のみ）。詳細は`pet-bousai/CLAUDE.md` |
+| JARVIS-Affiliate（アフィリエイトLP量産基盤・Astro） | `jarvis-affiliate/` | 未公開（Vercel/Cloudflareプロジェクト未作成）。ルートのlens-naviビルド・tsconfig・ESLintからは除外済み。詳細は`jarvis-affiliate/CLAUDE.md` |
 | CEOダッシュボード | `ceo-dashboard/` | `main`。本番URL: `https://ceo-dashboard-alpha-livid.vercel.app`（2026-09-29確認。`ceo-dashboard.vercel.app`ではない。`scripts/business-audit.ts`のコメントに古いURLが残っているので参照しないこと。正しいURLはVercel API `GET /v9/projects/{id}/domains`で確認） |
 
 ## CEOダッシュボードの機能実装漏れドキュメント化（2026-09-29発見）
