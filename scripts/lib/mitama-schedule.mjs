@@ -1,7 +1,7 @@
 import { pathToFileURL } from 'node:url';
 
 export function mitamaDayForDate(date) {
-  if (typeof date !== 'string' || !/^2026-11-(0[1-9]|1[0-4])$/.test(date)) {
+  if (typeof date !== 'string' || !/^2026-11-(0[1-9]|1[0-9]|2[01])$/.test(date)) {
     throw new Error('Not an approved MITAMA publishing date');
   }
   return Number(date.slice(-2)) + 17;

@@ -9,7 +9,7 @@ const CONFIG={
   lens:{handle:'lens_navi_jp',token:'LENS_THREADS_ACCESS_TOKEN',userId:'LENS_THREADS_USER_ID'},
   mitama:{handle:'mitama.wisdom',token:'MITAMA_THREADS_ACCESS_TOKEN',userId:'MITAMA_THREADS_USER_ID'}
 };
-if(!Object.hasOwn(CONFIG,brand)||!Number.isInteger(day)||day<1||day>(brand==='mitama'?31:brand==='rakutabi'?18:17)) throw new Error('Invalid brand/day');
+if(!Object.hasOwn(CONFIG,brand)||!Number.isInteger(day)||day<1||day>(brand==='mitama'?38:brand==='rakutabi'?18:17)) throw new Error('Invalid brand/day');
 const cfg=CONFIG[brand];
 if (brand === 'rakutabi') {
   // Dedicated hotel-image + reply publisher. Never fall back to TEXT-only format.
