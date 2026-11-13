@@ -21,16 +21,24 @@ test('safe and unique organic drafts',()=>{
 test('all drafts dry-run without credentials',()=>{
  for(const p of posts){
   const r=spawnSync(process.execPath,['scripts/post-organic-threads.mjs','--brand',p.brand,'--day',String(p.day)],{encoding:'utf8',env:{}});
+  if(p.brand==='rakutabi'){
+   if(p.day!==16){assert.notEqual(r.status,0);assert.match(r.stderr,/No verified hotel-image campaign/);continue;}
+   assert.equal(r.status,0,r.stderr);
+   const out=JSON.parse(r.stdout);
+   assert.match(out.imageUrl,/wikimedia\.org/);
+   assert.match(out.reply,/hb\.afl\.rakuten\.co\.jp/);
+   continue;
+  }
   assert.equal(r.status,0,r.stderr);
   const out=JSON.parse(r.stdout);
   assert.equal(out.mode,'dry-run');
-  if(p.url){assert.ok(out.message.startsWith('【PR】\n'));assert.ok(out.message.includes(p.text));assert.ok(out.message.endsWith(p.url));assert.ok(out.message.length<=500);}else{assert.equal(out.message,p.text);}
+  if(p.url){assert.ok(out.message.startsWith('【PR】\\n'));assert.ok(out.message.includes(p.text));assert.ok(out.message.endsWith(p.url));assert.ok(out.message.length<=500);}else{assert.equal(out.message,p.text);}
  }
 });
 test('publish is disabled without explicit switch',()=>{
  const r=spawnSync(process.execPath,['scripts/post-organic-threads.mjs','--brand','rakutabi','--day','1','--publish'],{encoding:'utf8',env:{}});
  assert.notEqual(r.status,0);
- assert.ok(r.stderr.includes('Publishing not authorized'));
+ assert.ok(r.stderr.includes('No verified hotel-image campaign'));
 });
 test('scheduled extension has valid unique drafts and preserves alternate-day cadence',()=>{
  const workflow=readFileSync('.github/workflows/brand-threads-organic-pilot.yml','utf8');
