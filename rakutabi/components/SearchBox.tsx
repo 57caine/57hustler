@@ -14,7 +14,7 @@ export default function SearchBox({ defaultQuery = '', defaultTheme = '', defaul
   defaultTheme?: string;
   defaultMeal?: string;
 }) {
-  const select = 'bg-transparent text-sm text-ink outline-none px-2 py-2 sm:border-l sm:border-gray-200';
+  const select = 'bg-transparent text-sm text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink rounded-none px-2 py-2 sm:border-l sm:border-gray-200';
   return (
     <form action="/search" method="get" className="bg-white rounded-3xl sm:rounded-full shadow-xl p-1.5 pl-5 flex flex-col sm:flex-row sm:items-center gap-1">
       <label className="flex items-center gap-2 flex-1 min-w-0">
@@ -24,7 +24,7 @@ export default function SearchBox({ defaultQuery = '', defaultTheme = '', defaul
           name="q"
           defaultValue={defaultQuery}
           placeholder="行き先・エリア・宿名などを入力"
-          className="flex-1 min-w-0 py-2.5 text-ink bg-transparent outline-none placeholder:text-gray-400"
+          className="flex-1 min-w-0 py-2.5 text-ink bg-transparent rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink placeholder:text-gray-400"
           aria-label="行き先・エリア・宿名"
         />
       </label>
