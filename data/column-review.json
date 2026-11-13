@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T02:11:45.061Z",
+  "generatedAt": "2026-11-13T01:45:23.251Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -14,8 +14,8 @@
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
         "sessions": 40,
-        "bounceRate": 0.25,
-        "avgSessionDuration": 302.7378281499999,
+        "bounceRate": 0.2,
+        "avgSessionDuration": 305.991394,
         "affiliateClicks": 0
       },
       "flags": [
@@ -47,16 +47,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 24,
-        "bounceRate": 0.5833333333333334,
-        "avgSessionDuration": 69.59204558333333,
+        "sessions": 21,
+        "bounceRate": 0.6666666666666666,
+        "avgSessionDuration": 87.11396514285714,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション24件・affiliate_clickゼロ"
+        "セッション21件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
@@ -115,16 +115,16 @@
       "slug": "smile-surgery-guide-2026",
       "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
       "metrics": {
-        "sessions": 17,
-        "bounceRate": 0.11764705882352941,
-        "avgSessionDuration": 199.31588182352942,
+        "sessions": 19,
+        "bounceRate": 0.21052631578947367,
+        "avgSessionDuration": 178.33526268421053,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション17件・affiliate_clickゼロ"
+        "セッション19件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -149,16 +149,16 @@
       "slug": "enkintsuyo-contact-guide",
       "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
       "metrics": {
-        "sessions": 14,
+        "sessions": 13,
         "bounceRate": 0,
-        "avgSessionDuration": 62.83237257142857,
+        "avgSessionDuration": 62.51897307692308,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション14件・affiliate_clickゼロ"
+        "セッション13件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -166,40 +166,6 @@
         "hasAffiliateLinks": true,
         "ctaCount": 1,
         "contentChars": 73455
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/kanso-shinikui-contact",
-      "slug": "kanso-shinikui-contact",
-      "title": "kanso-shinikui-contact",
-      "metrics": {
-        "sessions": 11,
-        "bounceRate": 0.18181818181818182,
-        "avgSessionDuration": 228.3912691818182,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション11件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 9,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 87756
       },
       "causes": [
         "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
@@ -247,6 +213,40 @@
       "source": "auto-ga4"
     },
     {
+      "path": "/column/kanso-shinikui-contact",
+      "slug": "kanso-shinikui-contact",
+      "title": "kanso-shinikui-contact",
+      "metrics": {
+        "sessions": 10,
+        "bounceRate": 0.2,
+        "avgSessionDuration": 294.6531043,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション10件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 9,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 87756
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
       "path": "/column/blue-light-megane-kouka",
       "slug": "blue-light-megane-kouka",
       "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
@@ -268,6 +268,40 @@
         "hasAffiliateLinks": true,
         "ctaCount": 4,
         "contentChars": 70118
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/vr-movie-streaming-service-recommend-2026",
+      "slug": "vr-movie-streaming-service-recommend-2026",
+      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 22.126134875,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 6,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 70011
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -308,40 +342,6 @@
       ],
       "suggestions": [
         "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/vr-movie-streaming-service-recommend-2026",
-      "slug": "vr-movie-streaming-service-recommend-2026",
-      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.5714285714285714,
-        "avgSessionDuration": 23.208967,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 6,
-        "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 70011
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
       ],
       "status": "様子見",
       "business": "lens-navi",
