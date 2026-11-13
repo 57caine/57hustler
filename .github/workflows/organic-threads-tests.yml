@@ -7,6 +7,7 @@ on:
     paths:
       - 'scripts/post-organic-threads.mjs'
       - 'scripts/post-rakutabi-hotel-threads.mjs'
+      - 'scripts/lib/rakutabi-photo-policy.mjs'
       - 'data/rakutabi-threads-hotel-posts.json'
       - 'tests/rakutabi-hotel-threads.test.mjs'
       - 'scripts/lib/mitama-schedule.mjs'
