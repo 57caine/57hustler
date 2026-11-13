@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 1,
+  "revision": 2,
   "spec": {
     "task": "https://github.com/57caine/57hustler/pull/202",
     "owner": "CEO",
@@ -21,8 +21,8 @@
     ]
   },
   "contract": "1e969127dff80e444de94b4b869d1505f8542bbd2d16fff7a993d5161f58c6c4",
-  "status": "verifying",
-  "attempts": 0,
+  "status": "ready",
+  "attempts": 1,
   "history": [
     {
       "revision": 1,
@@ -36,7 +36,112 @@
         "revision": 0,
         "commit_sha": "a72b9c6beb3fb348976da0fd9605474db4e1834b"
       }
+    },
+    {
+      "revision": 2,
+      "from": "verifying",
+      "to": "ready",
+      "type": "verify",
+      "at": "2026-11-13T16:57:03.221Z",
+      "event": {
+        "type": "verify",
+        "actor": "CEO",
+        "revision": 1,
+        "commit_sha": "a72b9c6beb3fb348976da0fd9605474db4e1834b",
+        "checks": [
+          {
+            "name": "旧31原稿不変・新7原稿の一意性と編集監査",
+            "result": "pass",
+            "evidence": [
+              {
+                "url": "https://github.com/57caine/57hustler/actions/runs/43467702101",
+                "checked_at": "2026-11-13T16:57:02.890Z",
+                "result": "対象headのOrganic Threads safety tests test job132031128200成功。既存原稿不変/新7本/日付境界/重複・誤アカウント・不完全履歴を検証。静的安全検査も対象ブランチのローカルで成功。"
+              }
+            ]
+          },
+          {
+            "name": "JST対応11/15〜21・翌日翌年停止・既存頻度維持",
+            "result": "pass",
+            "evidence": [
+              {
+                "url": "https://github.com/57caine/57hustler/actions/runs/43467702101",
+                "checked_at": "2026-11-13T16:57:02.890Z",
+                "result": "対象headのOrganic Threads safety tests test job132031128200成功。既存原稿不変/新7本/日付境界/重複・誤アカウント・不完全履歴を検証。静的安全検査も対象ブランチのローカルで成功。"
+              }
+            ]
+          },
+          {
+            "name": "新原稿の重複/誤アカウント/履歴不完備でPOSTなし",
+            "result": "pass",
+            "evidence": [
+              {
+                "url": "https://github.com/57caine/57hustler/actions/runs/43467702101",
+                "checked_at": "2026-11-13T16:57:02.890Z",
+                "result": "対象headのOrganic Threads safety tests test job132031128200成功。既存原稿不変/新7本/日付境界/重複・誤アカウント・不完全履歴を検証。静的安全検査も対象ブランチのローカルで成功。"
+              }
+            ]
+          },
+          {
+            "name": "対象Organic Threadsおよび安全CI成功",
+            "result": "pass",
+            "evidence": [
+              {
+                "url": "https://github.com/57caine/57hustler/actions/runs/43467702101",
+                "checked_at": "2026-11-13T16:57:02.890Z",
+                "result": "対象headのOrganic Threads safety tests test job132031128200成功。既存原稿不変/新7本/日付境界/重複・誤アカウント・不完全履歴を検証。静的安全検査も対象ブランチのローカルで成功。"
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
-  "commit_sha": "a72b9c6beb3fb348976da0fd9605474db4e1834b"
+  "commit_sha": "a72b9c6beb3fb348976da0fd9605474db4e1834b",
+  "checks": [
+    {
+      "name": "旧31原稿不変・新7原稿の一意性と編集監査",
+      "result": "pass",
+      "evidence": [
+        {
+          "url": "https://github.com/57caine/57hustler/actions/runs/43467702101",
+          "checked_at": "2026-11-13T16:57:02.890Z",
+          "result": "対象headのOrganic Threads safety tests test job132031128200成功。既存原稿不変/新7本/日付境界/重複・誤アカウント・不完全履歴を検証。静的安全検査も対象ブランチのローカルで成功。"
+        }
+      ]
+    },
+    {
+      "name": "JST対応11/15〜21・翌日翌年停止・既存頻度維持",
+      "result": "pass",
+      "evidence": [
+        {
+          "url": "https://github.com/57caine/57hustler/actions/runs/43467702101",
+          "checked_at": "2026-11-13T16:57:02.890Z",
+          "result": "対象headのOrganic Threads safety tests test job132031128200成功。既存原稿不変/新7本/日付境界/重複・誤アカウント・不完全履歴を検証。静的安全検査も対象ブランチのローカルで成功。"
+        }
+      ]
+    },
+    {
+      "name": "新原稿の重複/誤アカウント/履歴不完備でPOSTなし",
+      "result": "pass",
+      "evidence": [
+        {
+          "url": "https://github.com/57caine/57hustler/actions/runs/43467702101",
+          "checked_at": "2026-11-13T16:57:02.890Z",
+          "result": "対象headのOrganic Threads safety tests test job132031128200成功。既存原稿不変/新7本/日付境界/重複・誤アカウント・不完全履歴を検証。静的安全検査も対象ブランチのローカルで成功。"
+        }
+      ]
+    },
+    {
+      "name": "対象Organic Threadsおよび安全CI成功",
+      "result": "pass",
+      "evidence": [
+        {
+          "url": "https://github.com/57caine/57hustler/actions/runs/43467702101",
+          "checked_at": "2026-11-13T16:57:02.890Z",
+          "result": "対象headのOrganic Threads safety tests test job132031128200成功。既存原稿不変/新7本/日付境界/重複・誤アカウント・不完全履歴を検証。静的安全検査も対象ブランチのローカルで成功。"
+        }
+      ]
+    }
+  ]
 }
