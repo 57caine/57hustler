@@ -6,19 +6,8 @@
       "day": 16,
       "hotelNo": 2013,
       "hotelName": "ホテルニューグランド",
-      "caption": "横浜で、泊まること自体を旅の目的にするなら。1927年開業のホテルニューグランド。目の前は山下公園。港を眺めて散歩したら、中華街で食べ歩きも楽しめます。館内の『ザ・カフェ』では、ホテル発祥のナポリタンやシーフードドリアも。🚢☕️\n\n📍元町・中華街駅から徒歩約1分\n📷 Volfgang / Wikimedia Commons / CC BY-SA 3.0（2009年撮影・無加工）",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Yokohama_hotel_new_grand.jpg",
+      "caption": "横浜で、泊まること自体を旅の目的にするなら。1927年開業のホテルニューグランド。目の前は山下公園。港を眺めて散歩したら、中華街で食べ歩きも楽しめます。館内の『ザ・カフェ』では、ホテル発祥のナポリタンやシーフードドリアも。🚢☕️\n\n📍元町・中華街駅から徒歩約1分\n📷 写真3枚の撮影者・出典と利用条件は予約案内の返信に記載（2009〜2017年撮影）",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F2013%2F2013.html",
-      "photoRights": {
-        "source": "independent-licensed",
-        "owner": "Volfgang",
-        "scope": "Commercial use including Threads, with attribution and share-alike",
-        "license": "CC BY-SA 3.0",
-        "proofUrl": "https://commons.wikimedia.org/wiki/File:Yokohama_hotel_new_grand.jpg",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-        "date": "2009-01-19",
-        "changes": "none"
-      },
       "nearbySources": [
         {
           "claim": "山下公園が目の前で、中華街・元町も周辺の観光エリア",
@@ -30,7 +19,51 @@
         }
       ],
       "hotelSource": "https://travel.rakuten.co.jp/HOTEL/2013/2013.html",
-      "verifiedAt": "2026-11-13"
+      "verifiedAt": "2026-11-13",
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Yokohama_hotel_new_grand.jpg",
+          "alt": "ホテルニューグランドの歴史的な建物の外観（2009年撮影）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "Volfgang",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 3.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Yokohama_hotel_new_grand.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+            "date": "2009-01-19",
+            "changes": "none"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Yamashita_Park_and_Hotel_Newgrand_in_Yokohama.jpg",
+          "alt": "山下公園から見えるホテルニューグランドの建物（2009年撮影）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "Kounosu",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 3.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Yamashita_Park_and_Hotel_Newgrand_in_Yokohama.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+            "date": "2009-03-21",
+            "changes": "none"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Pudding_a_la_mode_2017_Hotel_New_Grand_The_Cafe_1.jpg",
+          "alt": "ホテルニューグランドのザ・カフェで撮影されたプリンアラモード（2017年撮影）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "Morio",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Pudding_a_la_mode_2017_Hotel_New_Grand_The_Cafe_1.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2017-08-11",
+            "changes": "none"
+          }
+        }
+      ]
     }
   ]
 }
