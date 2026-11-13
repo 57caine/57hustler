@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Icon from '@/components/Icon';
 import type { DetailItem, Plan, Ratings } from '@/lib/hotels';
 
@@ -62,9 +62,16 @@ export default function HotelTabs({
   reviewUrl: string | null;
 }) {
   const [tab, setTab] = useState<TabKey>('features');
+  const rootRef = useRef<HTMLDivElement>(null);
+  // 「施設の特徴」を読み終えた位置から、空室プラン（予約ボタン付き）のタブへ移る。
+  // タブの中身が短くなっても読者が迷わないよう、タブの先頭までスクロールする
+  const showPlans = () => {
+    setTab('plans');
+    rootRef.current?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  };
 
   return (
-    <div className="bg-white rounded-2xl ring-1 ring-black/5">
+    <div ref={rootRef} className="bg-white rounded-2xl ring-1 ring-black/5 scroll-mt-20">
       <div role="tablist" className="flex border-b border-black/5 overflow-x-auto">
         {TABS.map((t) => (
           <button
@@ -117,6 +124,16 @@ export default function HotelTabs({
                 </div>
               ))}
             </dl>
+            {plans.length > 0 && (
+              <button
+                type="button"
+                onClick={showPlans}
+                className="w-full min-h-11 rounded-full border border-ink/20 text-ink font-bold px-4 py-2.5 hover:bg-gray-50 inline-flex items-center justify-center gap-2"
+              >
+                {checkinDate ? `${checkinDate}チェックインの` : ''}空室プラン{plans.length}件を見る
+                <Icon name="arrow" className="w-4 h-4" strokeWidth={2.2} />
+              </button>
+            )}
           </div>
         )}
 
