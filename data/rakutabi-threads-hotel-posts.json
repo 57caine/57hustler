@@ -1,5 +1,36 @@
 {
   "schemaVersion": 1,
-  "notes": "Only independently licensed real hotel photos. Rakuten Travel API images are prohibited on Threads. Every campaign must have verified photo permission and official nearby information sources. Empty until sources verified.",
-  "posts": []
+  "notes": "Image must be independent Creative Commons or separately permitted, never Rakuten API or Rakuten Travel image. Source, license and attribution documented; verify current URL/booking availability before real publication.",
+  "posts": [
+    {
+      "day": 16,
+      "hotelNo": 2013,
+      "hotelName": "ホテルニューグランド",
+      "caption": "横浜で、泊まること自体を旅の目的にするなら。1927年開業のホテルニューグランド。目の前は山下公園。港を眺めて散歩したら、中華街で食べ歩きも楽しめます。館内の『ザ・カフェ』では、ホテル発祥のナポリタンやシーフードドリアも。🚢☕️\n\n📍元町・中華街駅から徒歩約1分\n📷 Volfgang / Wikimedia Commons / CC BY-SA 3.0（2009年撮影・無加工）",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Yokohama_hotel_new_grand.jpg",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F2013%2F2013.html",
+      "photoRights": {
+        "source": "independent-licensed",
+        "owner": "Volfgang",
+        "scope": "Commercial use including Threads, with attribution and share-alike",
+        "license": "CC BY-SA 3.0",
+        "proofUrl": "https://commons.wikimedia.org/wiki/File:Yokohama_hotel_new_grand.jpg",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "date": "2009-01-19",
+        "changes": "none"
+      },
+      "nearbySources": [
+        {
+          "claim": "山下公園が目の前で、中華街・元町も周辺の観光エリア",
+          "url": "https://www.welcome.city.yokohama.jp/spot/area/area07.php"
+        },
+        {
+          "claim": "ザ・カフェでホテル発祥のナポリタン・ドリアなどが紹介されている。元町・中華街駅から徒歩1分",
+          "url": "https://www.welcome.city.yokohama.jp/hotel/detail.php?hotel_id=35"
+        }
+      ],
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/2013/2013.html",
+      "verifiedAt": "2026-11-13"
+    }
+  ]
 }
