@@ -28,3 +28,12 @@ test('day17 refuses old text-only fallback when no hotel campaign is verified',(
  assert.match(r.stderr,/No verified hotel-image campaign/);
  assert.doesNotMatch(r.stdout,/荷物を預けて/);
 });
+
+test('photo counts: zero skips, one is IMAGE, two through six are CAROUSEL, seven rejected',async()=>{
+ const {selectPhotoMedia}=await import('../scripts/lib/rakutabi-photo-policy.mjs');
+ assert.equal(selectPhotoMedia([]),'SKIP');
+ assert.equal(selectPhotoMedia([1]),'IMAGE');
+ for(const n of [2,3,4,5,6]) assert.equal(selectPhotoMedia(Array(n).fill(1)),'CAROUSEL');
+ assert.throws(()=>selectPhotoMedia(Array(7).fill(1)),/Maximum 6/);
+ assert.throws(()=>selectPhotoMedia(null),/array/);
+});
