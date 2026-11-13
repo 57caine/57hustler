@@ -5,7 +5,7 @@
  * Dry-run unless --publish and ENABLE_ORGANIC_THREADS_PUBLISH=true.
  */
 import { readFile } from 'node:fs/promises';
-import { selectPhotoMedia } from './lib/rakutabi-photo-policy.mjs';
+import { selectPhotoMedia, photoCreditMessages } from './lib/rakutabi-photo-policy.mjs';
 const args=process.argv.slice(2);
 const flag=(key)=>{const i=args.indexOf('--'+key);return i<0?null:args[i+1];};
 const day=Number(flag('day'));
@@ -36,8 +36,8 @@ if(post.nearbySources.some(s=>!s.claim||!s.url||new URL(s.url).protocol!=='https
 const marker='【宿番号 '+post.hotelNo+'・企画'+day+'】';
 const caption='【PR】 '+post.caption+'\n'+marker;
 const reply='【PR】楽天トラベルで「'+post.hotelName+'」の宿泊プランを確認👇\n'+post.bookingUrl;
-const photoCredits='📷写真出典・ライセンス（画像は無加工）\n'+photos.map((p,i)=>(i+1)+'. '+p.rights.owner+' / '+p.rights.license+'\n'+p.rights.proofUrl).join('\n')+'\n各写真の詳細ライセンスは出典ページに記載。';
-if(caption.length>500||reply.length>500||photoCredits.length>500)throw new Error('Threads 500 character limit exceeded');
+const photoCredits=photoCreditMessages(photos);
+if(caption.length>500||reply.length>500)throw new Error('Threads 500 character limit exceeded');
 console.log(JSON.stringify({mode:publish?'publish':'dry-run',hotelNo:post.hotelNo,hotelName:post.hotelName,mediaType,photos:photos.map(p=>({url:p.url,alt:p.alt,rights:p.rights})),nearbySources:post.nearbySources,caption,reply,photoCredits},null,2));
 if(!publish)process.exit(0);
 if(process.env.ENABLE_ORGANIC_THREADS_PUBLISH!=='true')throw new Error('Publish not authorized');
@@ -100,10 +100,14 @@ await new Promise(r=>setTimeout(r,5000));
 const replySent=await call('/'+id+'/threads_publish',{creation_id:String(replyCtr.id)},'reply-publish');
 if(!replySent.id)throw new Error('Reply publish ID unavailable; inspect account history first');
 console.log(JSON.stringify({status:'published-photo-parent-and-booking-reply',parentId:sent.id,replyId:replySent.id,photos:photos.length,hotelNo:post.hotelNo}));
-// A separate reply provides author credits and source links without burying booking CTA.
-const creditCtr=await call('/'+id+'/threads',{media_type:'TEXT',text:photoCredits,reply_to_id:String(sent.id)},'credit-container');
-if(!creditCtr.id)throw new Error('Photo credit reply missing container; inspect the published parent');
-await new Promise(r=>setTimeout(r,5000));
-const creditSent=await call('/'+id+'/threads_publish',{creation_id:String(creditCtr.id)},'credit-publish');
-if(!creditSent.id)throw new Error('Photo credit publish uncertain; inspect post history');
-console.log(JSON.stringify({status:'complete-with-photo-credits',parentId:sent.id,bookingReplyId:replySent.id,creditReplyId:creditSent.id}));
+// Keep the booking CTA first; add one or more short licensing replies if needed.
+const creditReplyIds=[];
+for(const [index,creditText] of photoCredits.entries()){
+ const creditCtr=await call('/'+id+'/threads',{media_type:'TEXT',text:creditText,reply_to_id:String(sent.id)},'credit-container-'+(index+1));
+ if(!creditCtr.id)throw new Error('Photo credit reply missing container; inspect the published parent');
+ await new Promise(r=>setTimeout(r,5000));
+ const creditSent=await call('/'+id+'/threads_publish',{creation_id:String(creditCtr.id)},'credit-publish-'+(index+1));
+ if(!creditSent.id)throw new Error('Photo credit publish uncertain; inspect post history');
+ creditReplyIds.push(creditSent.id);
+}
+console.log(JSON.stringify({status:'complete-with-photo-credits',parentId:sent.id,bookingReplyId:replySent.id,creditReplyIds}));
