@@ -12,10 +12,9 @@ const CONFIG={
 if(!Object.hasOwn(CONFIG,brand)||!Number.isInteger(day)||day<1||day>(brand==='mitama'?31:brand==='rakutabi'?18:17)) throw new Error('Invalid brand/day');
 const cfg=CONFIG[brand];
 if (brand === 'rakutabi') {
-  // Owner directive 2026-11-13: the next Rakutabi post MUST be an approved
-  // hotel-photo parent post followed by a same-hotel Rakuten booking reply.
-  // Never silently fall back to legacy plain-text organic posts.
-  throw new Error('Rakutabi legacy TEXT posting disabled. Use verified IMAGE parent + booking-link reply workflow (issue #203).');
+  // Dedicated hotel-image + reply publisher. Never fall back to TEXT-only format.
+  await import('./post-rakutabi-hotel-threads.mjs');
+  process.exit(0);
 }
 const data=JSON.parse(await readFile(new URL(brand==='mitama'?'../data/mitama-threads-posts.json':'../data/organic-threads-posts-20261013.json',import.meta.url),'utf8'));
 const post=data.posts.find(p=>p.brand===brand&&p.day===day);
