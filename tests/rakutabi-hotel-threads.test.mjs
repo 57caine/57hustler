@@ -11,7 +11,8 @@ test('day16 has three independently licensed photos and booking reply content',(
  assert.equal(v.photos.length,3);
  assert.deepEqual(v.photos.map(p=>p.rights.owner),['Volfgang','Kounosu','Morio']);
  assert.ok(v.photos.every(p=>p.rights.license && p.rights.proofUrl && p.rights.scope.includes('Threads')));
- assert.match(v.photoCredits,/Kounosu/);
+ assert.ok(v.photoCredits.some(text=>text.includes('Kounosu')));
+ assert.ok(v.photoCredits.every(text=>text.length<=500));
  assert.match(v.reply,/【PR】.*ホテルニューグランド/);
  assert.match(v.reply,/hb\.afl\.rakuten\.co\.jp/);
  assert.ok(v.photos.every(p=>p.url.includes('upload.wikimedia.org')));
@@ -36,4 +37,15 @@ test('photo counts: zero skips, one is IMAGE, two through six are CAROUSEL, seve
  for(const n of [2,3,4,5,6]) assert.equal(selectPhotoMedia(Array(n).fill(1)),'CAROUSEL');
  assert.throws(()=>selectPhotoMedia(Array(7).fill(1)),/Maximum 6/);
  assert.throws(()=>selectPhotoMedia(null),/array/);
+});
+
+test('six photos fit in multiple copyright replies when required',async()=>{
+ const {photoCreditMessages}=await import('../scripts/lib/rakutabi-photo-policy.mjs');
+ const photos=Array.from({length:6},(_,i)=>({
+  rights:{owner:'Photographer '+i,license:'CC BY-SA 4.0',proofUrl:'https://commons.wikimedia.org/wiki/File:Hotel_photo_'+i+'.jpg',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/'}
+ }));
+ const replies=photoCreditMessages(photos);
+ assert.ok(replies.length>=2);
+ assert.ok(replies.every(reply=>reply.length<=500));
+ for(let i=0;i<6;i++)assert.ok(replies.some(reply=>reply.includes('Photographer '+i)));
 });
