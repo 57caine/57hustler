@@ -24,7 +24,7 @@ if(post.caption.length>460||post.caption.includes('http://')||post.caption.inclu
 if(post.nearbySources.some(s=>!s.claim||!s.url||new URL(s.url).protocol!=='https:'))throw new Error('Nearby claims need primary source URLs');
 const marker='【宿番号 '+post.hotelNo+'・企画'+day+'】';
 const caption='【PR】 '+post.caption+'\n'+marker;
-const reply='【PR】楽天トラベルで「'+post.hotelName+'」の宿泊プランを確認👇\n'+post.bookingUrl;
+const reply='【PR】楽天トラベルで「'+post.hotelName+'」の宿泊プランを確認👇\n'+post.bookingUrl+'\n\n写真：'+post.photoRights.owner+' / '+post.photoRights.license+'\n'+post.photoRights.proofUrl+'\n'+post.photoRights.licenseUrl;
 if(caption.length>500||reply.length>500)throw new Error('Threads 500 character limit exceeded');
 console.log(JSON.stringify({mode:publish?'publish':'dry-run',hotelNo:post.hotelNo,hotelName:post.hotelName,imageUrl:image.href,rights:post.photoRights,nearbySources:post.nearbySources,caption,reply},null,2));
 if(!publish)process.exit(0);
