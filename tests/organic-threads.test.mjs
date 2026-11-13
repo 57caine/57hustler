@@ -25,7 +25,8 @@ test('all drafts dry-run without credentials',()=>{
    if(p.day!==16){assert.notEqual(r.status,0);assert.match(r.stderr,/No verified hotel-image campaign/);continue;}
    assert.equal(r.status,0,r.stderr);
    const out=JSON.parse(r.stdout);
-   assert.match(out.imageUrl,/wikimedia\.org/);
+   assert.equal(out.photos.length,3);
+   assert.ok(out.photos.every(photo=>photo.url.includes('wikimedia.org')));
    assert.match(out.reply,/hb\.afl\.rakuten\.co\.jp/);
    continue;
   }
