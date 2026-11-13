@@ -5,6 +5,7 @@
  * Dry-run unless --publish and ENABLE_ORGANIC_THREADS_PUBLISH=true.
  */
 import { readFile } from 'node:fs/promises';
+import { selectPhotoMedia } from './lib/rakutabi-photo-policy.mjs';
 const args=process.argv.slice(2);
 const flag=(key)=>{const i=args.indexOf('--'+key);return i<0?null:args[i+1];};
 const day=Number(flag('day'));
@@ -14,7 +15,11 @@ const doc=JSON.parse(await readFile(new URL('../data/rakutabi-threads-hotel-post
 const post=doc.posts.find(x=>x.day===day);
 if(!post)throw new Error('No verified hotel-image campaign for day '+day+'; legacy TEXT fallback prohibited');
 if(!Number.isInteger(post.hotelNo)||post.hotelNo<1||!post.hotelName||!post.caption||!post.bookingUrl||!Array.isArray(post.nearbySources)||post.nearbySources.length<1)throw new Error('Missing hotel identity, booking link or independent nearby source');
-if(!Array.isArray(post.photos)||post.photos.length<3||post.photos.length>10)throw new Error('At least 3 independently licensed photos required; no one-image fallback');
+const mediaType=selectPhotoMedia(post.photos);
+if(mediaType==='SKIP'){
+ console.log(JSON.stringify({status:'skipped-no-photos',day,hotelNo:post.hotelNo,reason:'No verified photo; do not publish text-only'}));
+ process.exit(0);
+}
 const photos=post.photos.map((p,index)=>{
  const rights=p.photoRights;
  if(!p.url||!p.alt||!rights||!['independent-licensed','hotel-permission','photographer-permission'].includes(rights.source))throw new Error('Missing rights for photo '+(index+1));
@@ -33,7 +38,7 @@ const caption='【PR】 '+post.caption+'\n'+marker;
 const reply='【PR】楽天トラベルで「'+post.hotelName+'」の宿泊プランを確認👇\n'+post.bookingUrl;
 const photoCredits='📷写真出典・ライセンス（画像は無加工）\n'+photos.map((p,i)=>(i+1)+'. '+p.rights.owner+' / '+p.rights.license+'\n'+p.rights.proofUrl).join('\n')+'\n各写真の詳細ライセンスは出典ページに記載。';
 if(caption.length>500||reply.length>500||photoCredits.length>500)throw new Error('Threads 500 character limit exceeded');
-console.log(JSON.stringify({mode:publish?'publish':'dry-run',hotelNo:post.hotelNo,hotelName:post.hotelName,photos:photos.map(p=>({url:p.url,alt:p.alt,rights:p.rights})),nearbySources:post.nearbySources,caption,reply,photoCredits},null,2));
+console.log(JSON.stringify({mode:publish?'publish':'dry-run',hotelNo:post.hotelNo,hotelName:post.hotelName,mediaType,photos:photos.map(p=>({url:p.url,alt:p.alt,rights:p.rights})),nearbySources:post.nearbySources,caption,reply,photoCredits},null,2));
 if(!publish)process.exit(0);
 if(process.env.ENABLE_ORGANIC_THREADS_PUBLISH!=='true')throw new Error('Publish not authorized');
 const token=process.env.RAKUTABI_THREADS_ACCESS_TOKEN;
@@ -71,13 +76,19 @@ if(parent){
  // API may not expose enough history or replies for safe recovery.
  throw new Error('Existing parent '+parent.id+' found without verified reply. Stop and inspect thread manually (no duplicate parent).');
 }
-const childIds=[];
-for(const [index,photo] of photos.entries()){
- const child=await call('/'+id+'/threads',{media_type:'IMAGE',image_url:photo.url,alt_text:photo.alt,is_carousel_item:'true'},'carousel-item-'+(index+1));
- if(!child.id)throw new Error('Missing image carousel child '+(index+1));
- childIds.push(String(child.id));
+let ctr;
+if(mediaType==='IMAGE'){
+ // A single photo is a normal IMAGE parent, not a one-item carousel.
+ ctr=await call('/'+id+'/threads',{media_type:'IMAGE',image_url:photos[0].url,alt_text:photos[0].alt,text:caption,topic_tag:'国内旅行'},'image-container');
+}else{
+ const childIds=[];
+ for(const [index,photo] of photos.entries()){
+  const child=await call('/'+id+'/threads',{media_type:'IMAGE',image_url:photo.url,alt_text:photo.alt,is_carousel_item:'true'},'carousel-item-'+(index+1));
+  if(!child.id)throw new Error('Missing carousel child '+(index+1));
+  childIds.push(String(child.id));
+ }
+ ctr=await call('/'+id+'/threads',{media_type:'CAROUSEL',children:childIds.join(','),text:caption,topic_tag:'国内旅行'},'carousel-container');
 }
-const ctr=await call('/'+id+'/threads',{media_type:'CAROUSEL',children:childIds.join(','),text:caption,topic_tag:'国内旅行'},'carousel-container');
 if(!ctr.id)throw new Error('No image container ID');
 await new Promise(r=>setTimeout(r,8000));
 const sent=await call('/'+id+'/threads_publish',{creation_id:String(ctr.id)},'parent-publish');
@@ -88,7 +99,7 @@ if(!replyCtr.id)throw new Error('Reply container failed; parent '+sent.id+' must
 await new Promise(r=>setTimeout(r,5000));
 const replySent=await call('/'+id+'/threads_publish',{creation_id:String(replyCtr.id)},'reply-publish');
 if(!replySent.id)throw new Error('Reply publish ID unavailable; inspect account history first');
-console.log(JSON.stringify({status:'published-carousel-and-booking-reply',parentId:sent.id,replyId:replySent.id,photos:photos.length,hotelNo:post.hotelNo}));
+console.log(JSON.stringify({status:'published-photo-parent-and-booking-reply',parentId:sent.id,replyId:replySent.id,photos:photos.length,hotelNo:post.hotelNo}));
 // A separate reply provides author credits and source links without burying booking CTA.
 const creditCtr=await call('/'+id+'/threads',{media_type:'TEXT',text:photoCredits,reply_to_id:String(sent.id)},'credit-container');
 if(!creditCtr.id)throw new Error('Photo credit reply missing container; inspect the published parent');
