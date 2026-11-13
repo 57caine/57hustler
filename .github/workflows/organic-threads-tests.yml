@@ -6,6 +6,9 @@ on:
   pull_request:
     paths:
       - 'scripts/post-organic-threads.mjs'
+      - 'scripts/post-rakutabi-hotel-threads.mjs'
+      - 'data/rakutabi-threads-hotel-posts.json'
+      - 'tests/rakutabi-hotel-threads.test.mjs'
       - 'scripts/lib/mitama-schedule.mjs'
       - 'data/mitama-threads-posts.json'
       - 'tests/mitama-continuation.test.mjs'
@@ -27,6 +30,7 @@ jobs:
         with:
           node-version: '22'
       - run: node --test tests/organic-threads.test.mjs
+      - run: node --test tests/rakutabi-hotel-threads.test.mjs
       - run: node --test tests/brand-threads.test.mjs
       - run: node --test tests/mitama-continuation.test.mjs
 
