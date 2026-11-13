@@ -32,7 +32,7 @@ test('all drafts dry-run without credentials',()=>{
   assert.equal(r.status,0,r.stderr);
   const out=JSON.parse(r.stdout);
   assert.equal(out.mode,'dry-run');
-  if(p.url){assert.ok(out.message.startsWith('【PR】\\n'));assert.ok(out.message.includes(p.text));assert.ok(out.message.endsWith(p.url));assert.ok(out.message.length<=500);}else{assert.equal(out.message,p.text);}
+  if(p.url){assert.ok(out.message.startsWith('【PR】\n'));assert.ok(out.message.includes(p.text));assert.ok(out.message.endsWith(p.url));assert.ok(out.message.length<=500);}else{assert.equal(out.message,p.text);}
  }
 });
 test('publish is disabled without explicit switch',()=>{
