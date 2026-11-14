@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "revision": 1,
+  "spec": {
+    "task": "https://github.com/57caine/57hustler/pull/211",
+    "owner": "CEO",
+    "approval": "final",
+    "rollback": "PR211の3ファイル差分をrevert。投稿履歴・原稿・日付は巻き戻さない",
+    "acceptance": [
+      "原因コードを保持し秘密値を伏せログを制限",
+      "模擬カルーセル失敗後に公開・再試行しない",
+      "既存31テストと静的安全検査および対象CI成功"
+    ],
+    "evidence": [
+      {
+        "url": "https://github.com/57caine/57hustler/actions/runs/43539328707/job/132275921399",
+        "checked_at": "2026-11-14T04:59:56Z",
+        "result": "HTTP400/code100で公開前停止。現行ログは原因本文とsubcodeを破棄。PR204コメント6869824649から一件の診断改善として再開"
+      }
+    ]
+  },
+  "contract": "9c21fe41540a5d3104de1aead3e028240fe3f41029ca8807b8a8514dab4773ec",
+  "status": "verifying",
+  "attempts": 0,
+  "history": [
+    {
+      "revision": 1,
+      "from": "queued",
+      "to": "verifying",
+      "type": "implement",
+      "at": "2026-11-14T05:00:17.363Z",
+      "event": {
+        "type": "implement",
+        "actor": "CEO",
+        "revision": 0,
+        "commit_sha": "384d063d61c7890de69432b7338421276be5bea9"
+      }
+    }
+  ],
+  "commit_sha": "384d063d61c7890de69432b7338421276be5bea9"
+}
