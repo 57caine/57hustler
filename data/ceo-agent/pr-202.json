@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 2,
+  "revision": 3,
   "spec": {
     "task": "https://github.com/57caine/57hustler/pull/202",
     "owner": "CEO",
@@ -21,7 +21,7 @@
     ]
   },
   "contract": "1e969127dff80e444de94b4b869d1505f8542bbd2d16fff7a993d5161f58c6c4",
-  "status": "ready",
+  "status": "observing",
   "attempts": 1,
   "history": [
     {
@@ -95,6 +95,26 @@
           }
         ]
       }
+    },
+    {
+      "revision": 3,
+      "from": "ready",
+      "to": "observing",
+      "type": "published",
+      "at": "2026-11-14T16:57:49.468Z",
+      "event": {
+        "type": "published",
+        "actor": "CEO",
+        "revision": 2,
+        "commit_sha": "a72b9c6beb3fb348976da0fd9605474db4e1834b",
+        "evidence": [
+          {
+            "url": "https://github.com/57caine/57hustler/actions/runs/43612287633/job/132499721084",
+            "checked_at": "2026-11-14T16:57:48.289Z",
+            "result": "2026-11-15 00:50:19 JST、既存scheduleのday32にpublished/brand=mitama/postId18386020813236546。実行SHAcbbf2db1e409bbd281c04336c377b70c11b358ab（target head a72b9c6を含むmain、merge05ec9d2）。day32の玄関で靴を整える英文とexpectedHandle=mitama.wisdomをログ照合。公開後APIでのアカウント/本文一致および反応/購入は未取得、残り6日枠も未実行。"
+          }
+        ]
+      }
     }
   ],
   "commit_sha": "a72b9c6beb3fb348976da0fd9605474db4e1834b",
@@ -142,6 +162,13 @@
           "result": "対象headのOrganic Threads safety tests test job132031128200成功。既存原稿不変/新7本/日付境界/重複・誤アカウント・不完全履歴を検証。静的安全検査も対象ブランチのローカルで成功。"
         }
       ]
+    }
+  ],
+  "publication": [
+    {
+      "url": "https://github.com/57caine/57hustler/actions/runs/43612287633/job/132499721084",
+      "checked_at": "2026-11-14T16:57:48.289Z",
+      "result": "2026-11-15 00:50:19 JST、既存scheduleのday32にpublished/brand=mitama/postId18386020813236546。実行SHAcbbf2db1e409bbd281c04336c377b70c11b358ab（target head a72b9c6を含むmain、merge05ec9d2）。day32の玄関で靴を整える英文とexpectedHandle=mitama.wisdomをログ照合。公開後APIでのアカウント/本文一致および反応/購入は未取得、残り6日枠も未実行。"
     }
   ]
 }
