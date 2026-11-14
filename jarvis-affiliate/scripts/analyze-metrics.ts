@@ -141,7 +141,10 @@ const results: LpMetrics[] = campaigns.map((cp) => {
   const aspClicks = asp.reduce((s, r) => s + num(pick(r, 'clicks')), 0);
   const conversions = asp.reduce((s, r) => s + num(pick(r, 'conversions')), 0);
   const approved = asp.reduce((s, r) => s + num(pick(r, 'approved')), 0);
-  const revenue = asp.reduce((s, r) => s + num(pick(r, 'revenue')), 0);
+  // In real reports, only explicitly named confirmed-reward columns are eligible.
+  const revenue = asp.reduce((sum, row) => sum + num(usingSample
+    ? pick(row, 'revenue')
+    : (row['確定報酬'] ?? row['承認報酬額'] ?? '')), 0);
 
   const m: LpMetrics = {
     campaign: cp, sessions, engaged, avgTime, gaClicks, aspClicks, conversions, approved, revenue, placements,
