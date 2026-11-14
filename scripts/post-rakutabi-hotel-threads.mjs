@@ -5,6 +5,7 @@
  * Dry-run unless --publish and ENABLE_ORGANIC_THREADS_PUBLISH=true.
  */
 import { readFile } from 'node:fs/promises';
+import { threadsApiError } from './lib/threads-api-error.mjs';
 import { selectPhotoMedia, photoCreditMessages } from './lib/rakutabi-photo-policy.mjs';
 const args=process.argv.slice(2);
 const flag=(key)=>{const i=args.indexOf('--'+key);return i<0?null:args[i+1];};
@@ -50,7 +51,7 @@ async function call(path,form,stage) {
   response=await fetch(API+path,{method:form?'POST':'GET',...(form?{body:new URLSearchParams({...form,access_token:token})}:{}) ,signal:AbortSignal.timeout(20000)});
   json=await response.json();
  }catch{throw new Error(stage+' result ambiguous: inspect public account history BEFORE retry');}
- if(!response.ok||json.error)throw new Error(stage+' failed (HTTP '+response.status+', code '+(json.error?.code??'unknown')+')');
+ if(!response.ok||json.error)throw new Error(threadsApiError(stage,response.status,json.error,token));
  return json;
 }
 const me=await call('/me?'+new URLSearchParams({fields:'id,username',access_token:token}),null,'identity');
