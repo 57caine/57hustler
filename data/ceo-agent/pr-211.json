@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 1,
+  "revision": 2,
   "spec": {
     "task": "https://github.com/57caine/57hustler/pull/211",
     "owner": "CEO",
@@ -20,8 +20,8 @@
     ]
   },
   "contract": "9c21fe41540a5d3104de1aead3e028240fe3f41029ca8807b8a8514dab4773ec",
-  "status": "verifying",
-  "attempts": 0,
+  "status": "awaiting_approval",
+  "attempts": 1,
   "history": [
     {
       "revision": 1,
@@ -35,7 +35,90 @@
         "revision": 0,
         "commit_sha": "384d063d61c7890de69432b7338421276be5bea9"
       }
+    },
+    {
+      "revision": 2,
+      "from": "verifying",
+      "to": "awaiting_approval",
+      "type": "verify",
+      "at": "2026-11-14T05:01:10.715Z",
+      "event": {
+        "type": "verify",
+        "actor": "CEO",
+        "revision": 1,
+        "commit_sha": "384d063d61c7890de69432b7338421276be5bea9",
+        "checks": [
+          {
+            "name": "原因コードを保持し秘密値を伏せログを制限",
+            "result": "pass",
+            "evidence": [
+              {
+                "url": "https://github.com/57caine/57hustler/actions/runs/43559339974/job/132339318180",
+                "checked_at": "2026-11-14T05:01:00Z",
+                "result": "対象headのtest成功。ローカル31件/静的安全検査成功。既知秘密値・URLの除去、模擬HTTP400後に公開APIなし・再送なしを検証。模擬原因文は実際のMeta応答ではない。"
+              }
+            ]
+          },
+          {
+            "name": "模擬カルーセル失敗後に公開・再試行しない",
+            "result": "pass",
+            "evidence": [
+              {
+                "url": "https://github.com/57caine/57hustler/actions/runs/43559339974/job/132339318180",
+                "checked_at": "2026-11-14T05:01:00Z",
+                "result": "対象headのtest成功。ローカル31件/静的安全検査成功。既知秘密値・URLの除去、模擬HTTP400後に公開APIなし・再送なしを検証。模擬原因文は実際のMeta応答ではない。"
+              }
+            ]
+          },
+          {
+            "name": "既存31テストと静的安全検査および対象CI成功",
+            "result": "pass",
+            "evidence": [
+              {
+                "url": "https://github.com/57caine/57hustler/actions/runs/43559339974/job/132339318180",
+                "checked_at": "2026-11-14T05:01:00Z",
+                "result": "対象headのtest成功。ローカル31件/静的安全検査成功。既知秘密値・URLの除去、模擬HTTP400後に公開APIなし・再送なしを検証。模擬原因文は実際のMeta応答ではない。"
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
-  "commit_sha": "384d063d61c7890de69432b7338421276be5bea9"
+  "commit_sha": "384d063d61c7890de69432b7338421276be5bea9",
+  "checks": [
+    {
+      "name": "原因コードを保持し秘密値を伏せログを制限",
+      "result": "pass",
+      "evidence": [
+        {
+          "url": "https://github.com/57caine/57hustler/actions/runs/43559339974/job/132339318180",
+          "checked_at": "2026-11-14T05:01:00Z",
+          "result": "対象headのtest成功。ローカル31件/静的安全検査成功。既知秘密値・URLの除去、模擬HTTP400後に公開APIなし・再送なしを検証。模擬原因文は実際のMeta応答ではない。"
+        }
+      ]
+    },
+    {
+      "name": "模擬カルーセル失敗後に公開・再試行しない",
+      "result": "pass",
+      "evidence": [
+        {
+          "url": "https://github.com/57caine/57hustler/actions/runs/43559339974/job/132339318180",
+          "checked_at": "2026-11-14T05:01:00Z",
+          "result": "対象headのtest成功。ローカル31件/静的安全検査成功。既知秘密値・URLの除去、模擬HTTP400後に公開APIなし・再送なしを検証。模擬原因文は実際のMeta応答ではない。"
+        }
+      ]
+    },
+    {
+      "name": "既存31テストと静的安全検査および対象CI成功",
+      "result": "pass",
+      "evidence": [
+        {
+          "url": "https://github.com/57caine/57hustler/actions/runs/43559339974/job/132339318180",
+          "checked_at": "2026-11-14T05:01:00Z",
+          "result": "対象headのtest成功。ローカル31件/静的安全検査成功。既知秘密値・URLの除去、模擬HTTP400後に公開APIなし・再送なしを検証。模擬原因文は実際のMeta応答ではない。"
+        }
+      ]
+    }
+  ]
 }
