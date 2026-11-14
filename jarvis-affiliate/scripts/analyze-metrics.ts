@@ -65,7 +65,34 @@ if (!ga4Pages.length && !aspRows.length) {
   console.error(c.red(`CSVが見つかりません（${dir}）。data/reports/README.md を参照してください`));
   process.exit(1);
 }
-const usingSample = files.some((f) => f.startsWith('sample-')) && !hasFlag('no-sample');
+// Refuse to blend demonstration and real reports into a single business decision.
+const sampleFiles = files.filter((f) => f.startsWith('sample-'));
+const realFiles = files.filter((f) => !f.startsWith('sample-'));
+if (sampleFiles.length && realFiles.length && !hasFlag('no-sample')) {
+  throw new Error('実データとsample CSVが混在しています。実レポートは --no-sample を指定してください。');
+}
+const usingSample = sampleFiles.length > 0 && !hasFlag('no-sample');
+
+// Legacy ASP report schemas cannot prove whether "報酬額" means pending or confirmed.
+// Refuse to publish any LP-level confirmed reward unless an explicit attribution key
+// and a confirmed-reward column are present. A missing value must never mean zero.
+if (!usingSample) {
+  for (const [index, row] of aspRows.entries()) {
+    const campaign = pick(row, 'campaign').trim();
+    if (!campaign) {
+      throw new Error(`ASP行${index + 1}: LP識別子がありません。program_idからの自動帰属は二重計上の危険があるため拒否します。`);
+    }
+    const confirmedKey = ['確定報酬', '承認報酬額'].find((key) => Object.hasOwn(row, key));
+    if (!confirmedKey) {
+      throw new Error(`ASP行${index + 1}: 確定報酬列の定義がありません。汎用報酬額を確定報酬とは扱いません。`);
+    }
+    const raw = row[confirmedKey]?.trim();
+    if (!raw || !/^-?[0-9][0-9,]*(?:\\.[0-9]+)?$/.test(raw)) {
+      throw new Error(`ASP行${index + 1}: 確定報酬が未取得または数値として不正です。0円で代用しません。`);
+    }
+  }
+}
+
 
 const campaigns = loadCampaigns();
 const programs = loadAffiliates().programs;
@@ -102,7 +129,11 @@ const results: LpMetrics[] = campaigns.map((cp) => {
   const placements = ga4Clicks
     .filter((r) => normPath(pick(r, 'page_path')) === pathOf(cp.slug))
     .map((r) => ({ placement: pick(r, 'placement'), programId: pick(r, 'program_id'), clicks: num(pick(r, 'clicks') || pick(r, 'affiliate_clicks')) }));
-  const gaClicks = pageRows.reduce((s, r) => s + num(pick(r, 'affiliate_clicks')), 0) || placements.reduce((s, x) => s + x.clicks, 0);
+  // A measured 0 is not missing; fall back only when the page export has no click column.
+  const pageClickFieldPresent = pageRows.some((r) => ALIASES.affiliate_clicks.some((key) => Object.hasOwn(r, key)));
+  const gaClicks = pageClickFieldPresent
+    ? pageRows.reduce((sum, r) => sum + num(pick(r, 'affiliate_clicks')), 0)
+    : placements.reduce((sum, x) => sum + x.clicks, 0);
 
   // ASP成果：campaign列があればそれで、なければこのLPが参照する案件IDで紐付け
   const ids = new Set(referencedProgramIds(cp));
