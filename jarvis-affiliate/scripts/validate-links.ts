@@ -14,6 +14,7 @@ import { loadCampaigns, referencedProgramIds, type Campaign } from '../src/lib/c
 import { findNgWords, loadNgWords, PR_LABEL, PR_MARKER_ATTR } from '../src/lib/compliance.ts';
 import { p } from '../src/lib/paths.ts';
 import { c, hasFlag, loadEnv, walk } from './lib/cli.ts';
+import { evaluatePublicationGate } from './lib/publication-gates.mjs';
 
 loadEnv();
 const PROD = process.env.JARVIS_ENV === 'production';
@@ -71,6 +72,20 @@ function checkCampaigns(campaigns: Campaign[], programs: AffiliateProgram[]) {
     if (cp.hero?.ctaLabel && /^(こちら|クリック|詳しくはこちら)$/.test(cp.hero.ctaLabel)) err(where, 'CTAラベルが「こちら」等だけになっています（design-system.md 4章）');
     if ((cp.description ?? '').length > 120) warn(where, `description が${cp.description.length}字です（120字以内推奨）`);
 
+    if (PROD && cp.status === 'published') {
+      const gateFile = p('config', 'publication-gates.json');
+      let manifest: any = null;
+      try { manifest = JSON.parse(fs.readFileSync(gateFile, 'utf8')); }
+      catch { err(where, '公開審査証拠 config/publication-gates.json が未設定または不正です'); }
+      const evidence = manifest?.campaigns?.[cp.slug];
+      const approval = (manifest?.approvals ?? []).find((x: any) =>
+        x?.target === cp.slug && x?.actionType === 'experiment_publish');
+      const checks = evaluatePublicationGate(evidence, approval, {
+        action: 'experiment_publish', campaignSlug: cp.slug,
+        commitSha: process.env.GITHUB_SHA || process.env.JARVIS_RELEASE_SHA || '',
+      });
+      for (const issue of checks.errors) err(where, 'publication gate: ' + issue);
+    }
     if (cp.status === 'published') {
       for (const id of referencedProgramIds(cp)) {
         const pr = programs.find((x) => x.id === id);
