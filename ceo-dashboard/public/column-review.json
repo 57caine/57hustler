@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T01:45:23.251Z",
+  "generatedAt": "2026-11-14T01:23:11.429Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 40,
-        "bounceRate": 0.2,
-        "avgSessionDuration": 305.991394,
+        "sessions": 38,
+        "bounceRate": 0.15789473684210525,
+        "avgSessionDuration": 322.0454134210527,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション40件・affiliate_clickゼロ"
+        "セッション38件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -47,16 +47,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 21,
-        "bounceRate": 0.6666666666666666,
-        "avgSessionDuration": 87.11396514285714,
+        "sessions": 19,
+        "bounceRate": 0.631578947368421,
+        "avgSessionDuration": 96.06292552631578,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション21件・affiliate_clickゼロ"
+        "セッション19件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
@@ -81,16 +81,16 @@
       "slug": "vr-game-osusume-2026",
       "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
       "metrics": {
-        "sessions": 20,
-        "bounceRate": 0.6,
-        "avgSessionDuration": 106.6522921,
+        "sessions": 19,
+        "bounceRate": 0.5789473684210527,
+        "avgSessionDuration": 111.7521637368421,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション20件・affiliate_clickゼロ"
+        "セッション19件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -115,16 +115,16 @@
       "slug": "smile-surgery-guide-2026",
       "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
       "metrics": {
-        "sessions": 19,
-        "bounceRate": 0.21052631578947367,
-        "avgSessionDuration": 178.33526268421053,
+        "sessions": 17,
+        "bounceRate": 0.29411764705882354,
+        "avgSessionDuration": 191.71832811764708,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション19件・affiliate_clickゼロ"
+        "セッション17件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -149,16 +149,16 @@
       "slug": "enkintsuyo-contact-guide",
       "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
       "metrics": {
-        "sessions": 13,
+        "sessions": 11,
         "bounceRate": 0,
-        "avgSessionDuration": 62.51897307692308,
+        "avgSessionDuration": 66.3244219090909,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション13件・affiliate_clickゼロ"
+        "セッション11件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -166,74 +166,6 @@
         "hasAffiliateLinks": true,
         "ctaCount": 1,
         "contentChars": 73455
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/contact-net-kounyu-guide",
-      "slug": "contact-net-kounyu-guide",
-      "title": "コンタクトレンズはネットで買える？処方箋なしでも大丈夫？完全ガイド",
-      "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 73.7064937,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 76251
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/kanso-shinikui-contact",
-      "slug": "kanso-shinikui-contact",
-      "title": "kanso-shinikui-contact",
-      "metrics": {
-        "sessions": 10,
-        "bounceRate": 0.2,
-        "avgSessionDuration": 294.6531043,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 9,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 87756
       },
       "causes": [
         "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
@@ -274,6 +206,74 @@
       ],
       "suggestions": [
         "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/contact-net-kounyu-guide",
+      "slug": "contact-net-kounyu-guide",
+      "title": "コンタクトレンズはネットで買える？処方箋なしでも大丈夫？完全ガイド",
+      "metrics": {
+        "sessions": 9,
+        "bounceRate": 0.5555555555555556,
+        "avgSessionDuration": 20.670622555555557,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション9件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 76251
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/kanso-shinikui-contact",
+      "slug": "kanso-shinikui-contact",
+      "title": "kanso-shinikui-contact",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.125,
+        "avgSessionDuration": 364.900181375,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 9,
+        "hasAffiliateLinks": true,
+        "ctaCount": 1,
+        "contentChars": 87756
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
