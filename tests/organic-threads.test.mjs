@@ -60,14 +60,14 @@ test('scheduled extension has valid unique drafts and preserves alternate-day ca
 });
 test('Lens article links retain disclosure and attribution',()=>{
  const linked=posts.filter(p=>p.url&&p.brand==='lens');
- assert.deepEqual(linked.map(p=>p.brand+':'+p.day),['lens:7','lens:8','lens:9','lens:10','lens:11']);
+ assert.deepEqual(linked.map(p=>p.brand+':'+p.day),['lens:7','lens:8','lens:9','lens:10','lens:11','lens:17']);
  for(const p of linked){
   const message=buildOrganicMessage(p,p.brand);
   assert.ok(message.startsWith('【PR】\n'));
   const url=new URL(p.url);
-  assert.equal(url.origin,'https://www.lens-navi.jp');
+  assert.equal(url.origin,p.day===17?'https://jarvis-affiliate.vercel.app':'https://www.lens-navi.jp');
   assert.equal(url.searchParams.get('utm_content'),'lens_day_'+p.day);
-  assert.equal(p.previousTexts.length,1);
+  assert.equal(p.previousTexts.length,p.day===17?2:1);
  }
  assert.ok(posts.filter(p=>p.brand==='rakutabi'&&p.day!==9).every(p=>!p.url));
 });
@@ -132,4 +132,20 @@ test('same-day fallback respects start hours, expiry and manual opt-in', t=>{
  const p=posts.find(p=>p.brand==='rakutabi'&&p.day===day);
  assert.ok(isOrganicDuplicate({text:p.previousTexts[0]},p,buildOrganicMessage(p,p.brand)));
  }
+});
+
+test('24lens direct launch is restricted to exact day 17 article and attribution', () => {
+ const p=posts.find(x=>x.brand==='lens'&&x.day===17);
+ const msg=buildOrganicMessage(p,'lens');
+ assert.match(msg,/^【PR】\n/);
+ assert.match(msg,/jarvis-affiliate\.vercel\.app\/lp\/24lens-order-check\//);
+ assert.ok(msg.length<=500);
+ for(const url of [
+   p.url.replace('jarvis-affiliate.vercel.app','jarvis-affiliate.vercel.app.evil.test'),
+   p.url.replace('/lp/24lens-order-check/','/lp/another/'),
+   p.url.replace('utm_campaign=24lens_pilot','utm_campaign=wrong'),
+   p.url+'&access_token=bad',
+   p.url.replace('https:','http:')
+ ]) assert.throws(()=>buildOrganicMessage({...p,url},'lens'));
+ assert.throws(()=>buildOrganicMessage({...p,day:16},'lens'));
 });
