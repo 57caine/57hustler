@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 // SITE_URL は本番ドメイン確定後に .env で上書きする（canonical / OGP / sitemap に使用）
-const site = process.env.SITE_URL || 'https://example.com';
+const site = process.env.SITE_URL || 'https://jarvis-affiliate.vercel.app';
 
 export default defineConfig({
   site,
