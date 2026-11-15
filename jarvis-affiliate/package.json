@@ -21,7 +21,8 @@
     "gate:check": "node scripts/check-decision-gate.mjs",
     "test:reconcile": "node --test scripts/lib/reconcile-asp.test.mjs",
     "test:safety": "node --test scripts/lib/publication-gates.test.mjs scripts/lib/reconcile-asp.test.mjs",
-    "reconcile:asp": "node scripts/reconcile-asp.mjs"
+    "reconcile:asp": "node scripts/reconcile-asp.mjs",
+    "report:ceo": "node scripts/report-ceo.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.5",
