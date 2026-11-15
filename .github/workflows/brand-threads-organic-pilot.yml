@@ -137,3 +137,19 @@ jobs:
           LENS_THREADS_ACCESS_TOKEN: ${{ secrets.LENS_THREADS_ACCESS_TOKEN }}
           ENABLE_ORGANIC_THREADS_PUBLISH: 'true'
         run: node scripts/post-organic-threads.mjs --brand "${{ steps.plan.outputs.brand }}" --day "${{ steps.plan.outputs.day }}" --publish
+      - name: 楽旅くん投稿インサイト取得（読み取り専用・失敗しても投稿は止めない）
+        if: ${{ always() && steps.plan.outputs.brand == 'rakutabi' }}
+        continue-on-error: true
+        env:
+          RAKUTABI_THREADS_USER_ID: ${{ secrets.RAKUTABI_THREADS_USER_ID }}
+          RAKUTABI_THREADS_ACCESS_TOKEN: ${{ secrets.RAKUTABI_THREADS_ACCESS_TOKEN }}
+        run: node scripts/rakutabi-threads-insights.mjs
+      - name: 投稿インサイトを保存（30日）
+        if: ${{ always() && steps.plan.outputs.brand == 'rakutabi' }}
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: rakutabi-threads-insights-${{ github.run_id }}
+          path: rakutabi-threads-insights.json
+          if-no-files-found: warn
+          retention-days: 30
