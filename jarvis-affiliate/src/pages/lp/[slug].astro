@@ -69,7 +69,7 @@ const topProgram = top ? getProgram(top.programId) : getProgram(campaign.hero.pr
 
   <section class="mx-auto max-w-3xl px-4 py-10 text-center">
     <div class="rounded-2xl bg-brand-50 p-6">
-      <p class="mb-4 font-bold text-brand-900">迷っているなら、まずは{topProgram.name}を試してみてください</p>
+      <p class="mb-4 font-bold text-brand-900">ご注文前に{topProgram.name}の最新の商品・条件をご確認ください</p>
       <AffiliateButton programId={topProgram.id} label={campaign.hero.ctaLabel} microcopy={campaign.hero.microcopy} placement="final" campaign={campaign.slug} size="lg" />
     </div>
   </section>
