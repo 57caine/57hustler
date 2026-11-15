@@ -23,16 +23,6 @@ test('publishing remains disabled without authorized credentials',()=>{
  assert.notEqual(r.status,0);
  assert.match(r.stderr,/Publish not authorized/);
 });
-test('day17 skips without publishing when licensed photos are unavailable',()=>{
- const r=run(17);
- assert.equal(r.status,0,r.stderr);
- const v=JSON.parse(r.stdout);
- assert.equal(v.status,'skipped-no-licensed-photos');
- assert.equal(v.published,false);
- assert.equal(v.photos,0);
- assert.match(r.stderr,/::warning::No licensed hotel photos/);
- assert.doesNotMatch(r.stdout,/荷物を預けて/);
-});
 
 test('photo counts: zero skips, one is IMAGE, two through six are CAROUSEL, seven rejected',async()=>{
  const {selectPhotoMedia}=await import('../scripts/lib/rakutabi-photo-policy.mjs');
@@ -75,4 +65,18 @@ test('day18 does not publish when authorization flag is absent',()=>{
  const r=run(18,'--publish');
  assert.notEqual(r.status,0);
  assert.match(r.stderr,/Publish not authorized/);
+});
+
+test('day17 Fujiya Hotel has licensed 3-photo carousel and affiliate hotel reply',()=>{
+ const r=run(17);
+ assert.equal(r.status,0,r.stderr);
+ const v=JSON.parse(r.stdout);
+ assert.equal(v.mode,'dry-run');
+ assert.equal(v.hotelNo,1727);
+ assert.equal(v.photos.length,3);
+ assert.equal(v.mediaType,'CAROUSEL');
+ assert.ok(v.photos.every(p=>p.rights.proofUrl && p.rights.licenseUrl && p.rights.scope.includes('Threads')));
+ assert.match(v.caption,/現在の客室や宿泊プランを示す画像ではありません/);
+ assert.match(v.reply,/HOTEL%2F1727%2F1727.html/);
+ assert.ok(v.photoCredits.every(c=>c.length<=500));
 });

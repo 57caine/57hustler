@@ -22,7 +22,7 @@ test('all drafts dry-run without credentials',()=>{
  for(const p of posts){
   const r=spawnSync(process.execPath,['scripts/post-organic-threads.mjs','--brand',p.brand,'--day',String(p.day)],{encoding:'utf8',env:{}});
   if(p.brand==='rakutabi'){
-   if(![16,18].includes(p.day)){assert.equal(r.status,0,r.stderr);const skipped=JSON.parse(r.stdout);assert.equal(skipped.status,'skipped-no-licensed-photos');assert.equal(skipped.published,false);continue;}
+   if(![16,17,18].includes(p.day)){assert.equal(r.status,0,r.stderr);const skipped=JSON.parse(r.stdout);assert.equal(skipped.status,'skipped-no-licensed-photos');assert.equal(skipped.published,false);continue;}
    assert.equal(r.status,0,r.stderr);
    const out=JSON.parse(r.stdout);
    assert.equal(out.photos.length,3);
