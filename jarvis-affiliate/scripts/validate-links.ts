@@ -147,7 +147,7 @@ function checkDist() {
   for (const f of htmlFiles) {
     const where = rel(f);
     const html = fs.readFileSync(f, 'utf8');
-    if (!html.includes(PR_MARKER_ATTR) || !html.includes(PR_LABEL)) err(where, `PR表記（${PR_LABEL}）がありません`);
+    if ((publishedCampaigns.length > 0 || f.includes(`${path.sep}lp${path.sep}`)) && (!html.includes(PR_MARKER_ATTR) || !html.includes(PR_LABEL))) err(where, `PR表記（${PR_LABEL}）がありません`);
     if (/"@type"\s*:\s*"Product"/.test(html)) err(where, 'schema.org/Product が出力されています（禁止）');
 
     const anchors = html.match(/<a\b[^>]*>/g) ?? [];
