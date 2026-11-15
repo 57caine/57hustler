@@ -64,6 +64,69 @@
           }
         }
       ]
+    },
+    {
+      "day": 18,
+      "hotelNo": 137869,
+      "hotelName": "東京ステーションホテル",
+      "caption": "東京駅に泊まる、という特別な旅。🚉\n\n赤レンガの丸の内駅舎の中にある「東京ステーションホテル」。JR東京駅丸の内南口から直結で、丸の内・皇居方面の散策にも便利です。\n\n館内には、駅舎の歴史を感じられる展示も。夜の丸の内を歩いて、駅舎に帰る旅はいかがですか。\n\n📷 写真3枚は駅舎・駅前広場の風景です（客室写真ではありません）。撮影者・出典・ライセンスは返信に記載します。料金と空室は予約先でご確認ください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F137869%2F137869.html",
+      "nearbySources": [
+        {
+          "claim": "東京駅丸の内南口直結、ホテルは丸の内駅舎の中にある",
+          "url": "https://www.tokyostationcity.com/information/hotel.html"
+        },
+        {
+          "claim": "丸の内や皇居方面の散策が可能で、ホテルには歴史の展示がある",
+          "url": "https://www.tokyostationhotel.jp/stay/"
+        }
+      ],
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/137869/137869.html",
+      "verifiedAt": "2026-11-15",
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Tokyo_Station_Marunouchi_Building.jpg",
+          "alt": "東京ステーションホテルが入る東京駅丸の内駅舎の外観（2018年撮影）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "Kakidai",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Tokyo_Station_Marunouchi_Building.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2018-07-11",
+            "changes": "none"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Tokyo-Station-Night.jpg",
+          "alt": "夜にライトアップされた東京駅丸の内駅舎（2020年撮影）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "MaedaAkihiko",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Tokyo-Station-Night.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2020-12-23",
+            "changes": "none"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Tokyo-Station-Marunouchi-Square---2024-03-27_01.jpg",
+          "alt": "東京駅丸の内駅前広場（2024年撮影、客室写真ではありません）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "RuinDig / Yuki Uchida",
+            "scope": "Commercial use including Threads, with attribution",
+            "license": "CC BY 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Tokyo-Station-Marunouchi-Square---2024-03-27_01.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "date": "2024-03-27",
+            "changes": "none"
+          }
+        }
+      ]
     }
   ]
 }
