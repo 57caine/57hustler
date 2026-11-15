@@ -4,3 +4,7 @@ dist/
 .env
 output/*
 !output/.gitkeep
+
+# Private evidence/owner approvals must not be committed
+config/publication-gates.json
+data/reports/*.json
