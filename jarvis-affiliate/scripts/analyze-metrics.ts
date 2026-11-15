@@ -73,6 +73,15 @@ if (sampleFiles.length && realFiles.length && !hasFlag('no-sample')) {
 }
 const usingSample = sampleFiles.length > 0 && !hasFlag('no-sample');
 
+// This legacy GA4/aggregated-ASP report cannot deduplicate transaction snapshots,
+// prove conversion status, or resolve conflicting reporting cohorts. It must not
+// produce operational financial conclusions from real data.
+// Use reconcile:asp / report:ceo with verified, transaction-level normalized exports.
+if (!usingSample) {
+  throw new Error('実データの旧CSV集計は安全上停止しています。ASP成果ID付き原本を検証して npm run reconcile:asp / report:ceo を使用してください。');
+}
+
+
 // Legacy ASP report schemas cannot prove whether "報酬額" means pending or confirmed.
 // Refuse to publish any LP-level confirmed reward unless an explicit attribution key
 // and a confirmed-reward column are present. A missing value must never mean zero.
