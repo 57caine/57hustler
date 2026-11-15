@@ -218,6 +218,31 @@ export default async function ColumnPage({ params }: Props) {
           </aside>
         )}
 
+        {/* 限定テスト: 既存の比較・購入CTAを残したまま補足ガイドへ送客。
+            内部の比較クリックとJARVISへの遷移は別イベントとして測る。 */}
+        {['contact-tsuuhan-shohosen-nashi-kanzen-guide', 'contact-net-kounyu-guide'].includes(slug) && (
+          <aside aria-label="24レンズの送料・購入条件ガイド" className="mb-8 rounded-xl border border-slate-200 bg-white p-4">
+            <p className="font-bold text-slate-800">24レンズで注文する前の確認事項</p>
+            <p className="mt-1 text-sm text-slate-600">
+              送料・送料無料条件・処方箋の取扱いを公式情報で確認できます。
+              いつも使うレンズの製品名や規格は、眼科の処方内容と照合してください。
+            </p>
+            <a
+              href={`https://jarvis-affiliate.vercel.app/lp/24lens-order-check/?utm_source=lens_navi&utm_medium=referral&utm_campaign=24lens_pilot&utm_content=${slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-growth-event="comparison_navigation"
+              data-growth-source="24lens_contextual_guide"
+              className="mt-3 inline-flex rounded-lg border border-sky-600 px-4 py-2 text-sm font-bold text-sky-700 hover:bg-sky-50"
+            >
+              24レンズの送料・購入条件を確認 →
+            </a>
+            <p className="mt-2 text-xs text-slate-500">
+              別サイトの購入前ガイドが開きます。上のレンズ比較・購入先リンクもそのままご利用いただけます。
+            </p>
+          </aside>
+        )}
+
         {/* 本文 */}
         <div id="article-body" className="text-gray-800 leading-relaxed">
           {content}
