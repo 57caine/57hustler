@@ -49,10 +49,10 @@ test('scheduled extension has valid unique drafts and preserves alternate-day ca
   .map(([,date,brand,day])=>({date,brand,day:Number(day)}));
  assert.equal(new Set(rows.map(x=>x.date)).size,rows.length);
  assert.equal(new Set(rows.map(x=>x.brand+':'+x.day)).size,rows.length);
- for(const row of rows) assert.ok(row.brand==='rakutabi'&&row.day>=19&&row.day<=24 || posts.some(p=>p.brand===row.brand&&p.day===row.day),JSON.stringify(row));
+ for(const row of rows) assert.ok(row.brand==='rakutabi'&&row.day>=19&&row.day<=39 || posts.some(p=>p.brand===row.brand&&p.day===row.day),JSON.stringify(row));
  const extension=rows.filter(x=>x.date>='2026-10-28');
- assert.equal(extension.length,28);
- assert.equal(extension.at(-1).date,'2026-11-30');
+ assert.equal(extension.length,43);
+ assert.equal(extension.at(-1).date,'2026-12-30');
  for(const brand of ['lens','rakutabi']){
   const days=extension.filter(x=>x.brand===brand).map(x=>Date.parse(x.date));
   for(let i=1;i<days.length;i++) assert.equal(days[i]-days[i-1],2*86400000);
@@ -127,7 +127,9 @@ test('same-day fallback respects start hours, expiry and manual opt-in', t=>{
  ['2026-11-20','10','schedule',true],
  ['2026-11-22','15','schedule',true],
  ['2026-11-30','22','workflow_run',true],
- ['2026-12-02','22','workflow_run',false],['2027-11-10','22','schedule',false],
+ ['2026-12-02','22','workflow_run',true],
+ ['2026-12-30','10','schedule',true],
+ ['2026-12-31','22','workflow_run',false],['2027-11-10','22','schedule',false],
  ['2026-11-10','22','workflow_dispatch',false]]){
  writeFileSync(output,'');
  const r=spawnSync('bash',['-c',plan],{encoding:'utf8',env:{PATH:process.env.PATH,TEST_DATE:date,TEST_HOUR:hour,EVENT_NAME:event,SCHEDULE_CRON:'15 1,4,7,10 * * *',MANUAL_PUBLISH:'false',GITHUB_OUTPUT:output}});
@@ -157,7 +159,7 @@ test('24lens direct launch is restricted to exact day 17 article and attribution
 });
 
 test('new Rakutabi days are permitted by launcher but skipped without licensed media (no text fallback)',()=>{
- for(let day=19;day<=24;day++){
+ for(let day=19;day<=39;day++){
    const r=spawnSync(process.execPath,['scripts/post-organic-threads.mjs','--brand','rakutabi','--day',String(day),'--publish'],{encoding:'utf8',env:{PATH:process.env.PATH}});
    assert.equal(r.status,0,r.stderr);
    const out=JSON.parse(r.stdout);
@@ -165,6 +167,15 @@ test('new Rakutabi days are permitted by launcher but skipped without licensed m
    assert.equal(out.published,false);
    assert.equal(out.photos,0);
  }
- const r=spawnSync(process.execPath,['scripts/post-organic-threads.mjs','--brand','rakutabi','--day','25'],{encoding:'utf8',env:{PATH:process.env.PATH}});
+ const r=spawnSync(process.execPath,['scripts/post-organic-threads.mjs','--brand','rakutabi','--day','40'],{encoding:'utf8',env:{PATH:process.env.PATH}});
  assert.notEqual(r.status,0);
+});
+
+test('December calendar covers 15 alternating days through year-end with no blank-day publishing', () => {
+ const workflow=readFileSync('.github/workflows/brand-threads-organic-pilot.yml','utf8');
+ const days=[...workflow.matchAll(/2026-12-(\d{2})\) BRAND=rakutabi; DAY=(\d+) ;;/g)].map(([,date,n])=>({date:Number(date),n:Number(n)}));
+ assert.equal(days.length,15);
+ assert.deepEqual(days.map(x=>x.date),[2,4,6,8,10,12,14,16,18,20,22,24,26,28,30]);
+ assert.deepEqual(days.map(x=>x.n),Array.from({length:15},(_,i)=>25+i));
+ assert.doesNotMatch(workflow,/2026-12-31\) BRAND=rakutabi/);
 });

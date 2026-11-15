@@ -1,4 +1,4 @@
-name: ブランド別 Threads 通常投稿（11月末まで写真の可否を検証）
+name: ブランド別 Threads 通常投稿（2026年末まで写真の可否を検証）
 on:
   schedule:
     # Multiple daily opportunities: missed GitHub schedule runs must not mean missed posts.
@@ -80,6 +80,21 @@ jobs:
             2026-11-26) BRAND=rakutabi; DAY=22 ;;
             2026-11-28) BRAND=rakutabi; DAY=23 ;;
             2026-11-30) BRAND=rakutabi; DAY=24 ;;
+            2026-12-02) BRAND=rakutabi; DAY=25 ;;
+            2026-12-04) BRAND=rakutabi; DAY=26 ;;
+            2026-12-06) BRAND=rakutabi; DAY=27 ;;
+            2026-12-08) BRAND=rakutabi; DAY=28 ;;
+            2026-12-10) BRAND=rakutabi; DAY=29 ;;
+            2026-12-12) BRAND=rakutabi; DAY=30 ;;
+            2026-12-14) BRAND=rakutabi; DAY=31 ;;
+            2026-12-16) BRAND=rakutabi; DAY=32 ;;
+            2026-12-18) BRAND=rakutabi; DAY=33 ;;
+            2026-12-20) BRAND=rakutabi; DAY=34 ;;
+            2026-12-22) BRAND=rakutabi; DAY=35 ;;
+            2026-12-24) BRAND=rakutabi; DAY=36 ;;
+            2026-12-26) BRAND=rakutabi; DAY=37 ;;
+            2026-12-28) BRAND=rakutabi; DAY=38 ;;
+            2026-12-30) BRAND=rakutabi; DAY=39 ;;
             *) echo "No scheduled content for $TODAY"; exit 0 ;;
           esac
           if [[ "$EVENT_NAME" == "schedule" || "$EVENT_NAME" == "workflow_run" ]]; then
