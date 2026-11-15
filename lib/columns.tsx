@@ -449,13 +449,13 @@ export const columns: ColumnMeta[] = [
 
   {
     slug: 'contact-tsuuhan-shohosen-nashi-kanzen-guide',
-    title: 'コンタクトレンズを処方箋なしでネット購入する方法【2026年完全ガイド】',
-    description: '処方箋なしでもコンタクトレンズをネット購入できる理由と安全に通販を利用するための完全ガイド。法的背景から度数確認方法、おすすめサイト比較まで2026年最新情報を網羅。',
+    title: 'コンタクト通販と処方箋の確認方法｜眼科受診・送料・配送の購入前ガイド',
+    description: 'コンタクトレンズ通販の処方箋・指示書の確認、眼科受診、送料と配送の注意点を公的・販売店の一次情報に基づいて解説。購入前の確認項目を掲載。',
     category: '購入ガイド',
     publishedAt: '2026-07-18',
-    updatedAt: '2026-07-18',
-    readingTime: 10,
-    headings: ['処方箋不要で購入できる法的理由', '装用指示書と処方箋の重要な違い', '安全購入のための5つのチェックリスト', 'おすすめコンタクト通販サイト徹底比較', '通販で失敗しない度数確認方法', 'よくある質問5選'],
+    updatedAt: '2026-11-15',
+    readingTime: 6,
+    headings: ['購入前は眼科で検査・処方を確認', '処方箋と装用指示書の扱い', 'レンズと販売店の確認事項', '24レンズの送料と配送条件', '注文前のチェックリスト', 'よくある質問'],
   },
   {
     slug: 'lenszero-kaigai-tsuuhan-guide-2026',
@@ -6426,229 +6426,104 @@ export const columnContent: Record<string, React.ReactNode> = {
   ),
   'contact-tsuuhan-shohosen-nashi-kanzen-guide': (
     <div className="prose prose-gray max-w-none">
-  <p className="lead text-lg text-gray-700 mb-6">「コンタクトレンズって処方箋がないと買えないんじゃないの？」と思っていませんか？実は、日本の法律では処方箋がなくても、一定の条件を満たせばコンタクトレンズをネット通販で購入することが可能です。このガイドでは、処方箋不要で安全にコンタクトレンズを購入する方法、法的背景、そして失敗しないための実践的なチェックリストをご紹介します。</p>
+      <p className="lead text-lg text-gray-700 mb-6">
+        コンタクトレンズは通販でも購入できます。ただし、コンタクトレンズは高度管理医療機器です。
+        販売店で処方箋の提出が求められるかどうかと、眼科での検査・処方が必要かどうかは別の問題です。
+        まず眼科医の診断と指示に従い、いつも使う製品名と規格を確かめましょう。
+      </p>
 
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でコンタクトレンズを探す →</a>
-  <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-0 mb-8 no-underline">レンズゼロで見る →</a>
+      <div className="rounded-xl border border-amber-200 bg-amber-50 p-5 mb-8">
+        <p className="font-bold text-amber-900 mb-2">安全のため、注文前に</p>
+        <p className="text-sm text-amber-900">
+          国民生活センターと日本コンタクトレンズ協会は、購入時に眼科で検査・処方を受けるよう勧めています。
+          度数や箱の表示だけで新しい商品を自己判断しないでください。痛み・充血などの異常があれば使用を中止して眼科を受診してください。
+        </p>
+      </div>
 
-  <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-8">
-    <p className="font-bold text-emerald-900 mb-2">安全に継続購入するための3条件（まずはここだけ押さえればOK）</p>
-    <ul className="text-sm text-gray-700 space-y-1">
-      <li>① 初回は必ず眼科で処方を受ける</li>
-      <li>② 同一商品を継続購入する場合に限り処方箋不要で購入できる</li>
-      <li>③ 定期的に眼科で検査を受け、度数・眼の状態に変化がないか確認する</li>
-    </ul>
-  </div>
+      <h2 id="section1" className="text-2xl font-bold text-gray-900 mt-8 mb-4">購入前は眼科で検査・処方を確認</h2>
+      <p className="mb-4">
+        コンタクトレンズの購入には、法律上、必ずしも医薬品のような処方箋の提出が求められるわけではありません。
+        しかし、提出義務の有無を「眼科に行かなくても安全に購入できる」と読み替えてはいけません。
+        眼科では視力や目の状態のほか、実際のレンズのフィッティングなどを確認します。
+        使用中のレンズを継続する場合でも、眼科医が示す間隔で定期検査を受けましょう。
+      </p>
+      <p className="text-sm text-slate-600 mb-4">
+        出典：
+        <a href="https://www.kokusen.go.jp/t_box/data/t_box-faq_qa2012_54.html" target="_blank" rel="noopener noreferrer" className="text-sky-700 underline">国民生活センター（処方せんの扱い）</a>
+        ／
+        <a href="https://www.jcla.gr.jp/purchase/" target="_blank" rel="noopener noreferrer" className="text-sky-700 underline">日本コンタクトレンズ協会（購入するには）</a>
+      </p>
 
-  <h2 id="section1" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">処方箋不要で購入できる法的理由</h2>
-  
-  <p className="text-gray-700 mb-4">コンタクトレンズが処方箋なしで購入できるという事実に驚く人は多いでしょう。しかし、これは日本の医薬品医療機器法（旧薬事法）に基づいた合法的な販売方法です。</p>
+      <h2 id="section2" className="text-2xl font-bold text-gray-900 mt-8 mb-4">処方箋と装用指示書の扱い</h2>
+      <p className="mb-4">
+        コンタクトレンズでは、眼科が発行するコンタクトレンズ指示書を「処方せん」と呼ぶ場合があります。
+        書類の名称・有効期限・提出方法は眼科や販売店の案内を確認してください。
+        商品によっては販売店が処方箋・指示書の提出を求めるため、購入前に商品ページの条件を確認しましょう。
+      </p>
+      <p className="mb-4">
+        古い眼鏡の度数、過去の領収書、箱に書かれたBCやPWRだけから新しいコンタクトレンズの適合を判断しないでください。
+        製品や規格の変更は眼科で相談してください。
+      </p>
 
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">コンタクトレンズは「高度管理医療機器」</h3>
-  <p className="text-gray-700 mb-4">コンタクトレンズは医療機器の中でも「高度管理医療機器」に分類されており、眼科医による診察や処方が原則として必要です。しかし法律上は「処方箋がなくても販売できる」という重要な抜け穴が存在します。</p>
+      <h2 id="section3" className="text-2xl font-bold text-gray-900 mt-8 mb-4">レンズと販売店の確認事項</h2>
+      <ul className="list-disc pl-5 space-y-2 mb-5">
+        <li>眼科で確認した製品名・装用期間・左右の規格（PWR・BC・DIA、乱視用ならCYL・AXIS等）に合っているか</li>
+        <li>販売店が高度管理医療機器販売業の許可を受けているか、商品の承認番号が記載されているか</li>
+        <li>処方箋またはコンタクトレンズ指示書の提出が必要か、期限・提出方法を確認したか</li>
+        <li>価格・クーポン・送料・支払手数料を含めた注文確定前の支払総額はいくらか</li>
+        <li>配送日数、返品・交換条件、在庫の有無を確認したか</li>
+      </ul>
+      <p className="text-sm text-slate-600 mb-4">
+        出典：
+        <a href="https://www.faq.kokusen.go.jp/faq/show/1494?category_id=109&site_domain=default" target="_blank" rel="noopener noreferrer" className="text-sky-700 underline">国民生活センター（購入時の注意点）</a>
+      </p>
 
-  <p className="text-gray-700 mb-4">医療機器法では、高度管理医療機器の販売に際して「医療機関での診察を受けることが望ましい」と記載されていますが、強制力はありません。つまり、購入者が自己責任で購入する場合、販売者側は診察の確認を厳格に求める法的義務がないのです。</p>
+      <div className="rounded-xl border border-sky-200 bg-sky-50 p-5 mb-8">
+        <p className="font-bold text-gray-900 mb-2">いつもの製品の価格・購入先を比べる</p>
+        <p className="text-sm text-gray-700 mb-3">眼科で確認した製品と規格を基に、販売店ごとの支払総額を確認してください。</p>
+        <div className="flex flex-wrap gap-2">
+          <a href="/category/1day" className="rounded-lg bg-sky-700 px-4 py-2 text-sm font-bold text-white no-underline hover:bg-sky-800">ワンデーの購入先を比較 →</a>
+          <a href="/category/2week" className="rounded-lg border border-sky-700 bg-white px-4 py-2 text-sm font-bold text-sky-800 no-underline hover:bg-sky-50">2ウィークの購入先を比較 →</a>
+        </div>
+      </div>
 
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">装用指示書があれば十分</h3>
-  <p className="text-gray-700 mb-4">多くのコンタクトレンズ通販サイトが「装用指示書」の提出を求めるのはこのためです。装用指示書とは、以前に眼科で検査を受けた時に記録された度数やベースカーブなどの情報で、処方箋よりも簡潔な形式です。</p>
+      <h2 id="section4" className="text-2xl font-bold text-gray-900 mt-8 mb-4">24レンズの送料と配送条件</h2>
+      <p className="mb-4">
+        24レンズの公式案内では、通常送料は税込550円、商品小計税込10,000円以上で送料無料です。
+        送料無料対象商品やセット商品など、別の条件で送料無料になる場合もあります。
+        通常のお届け目安は注文・入金確認後2〜5日前後ですが、在庫・配送状況で変わり、到着を保証するものではありません。
+      </p>
+      <p className="mb-4">
+        24レンズは購入前の眼科受診と処方箋または指示書の用意を案内しています。
+        各商品ページとカート画面の最新情報を確認してください。
+      </p>
+      <p className="text-sm text-slate-600 mb-4">
+        出典：
+        <a href="https://www.24lens.jp/howto/payment/" target="_blank" rel="noopener noreferrer" className="text-sky-700 underline">24レンズ公式（お支払いと配送）</a>
+        ／
+        <a href="https://www.24lens.jp/howto/kounyu/" target="_blank" rel="noopener noreferrer" className="text-sky-700 underline">24レンズ公式（購入方法）</a>
+      </p>
 
-  <p className="text-gray-700 mb-4">法的には、過去に眼科を受診した時点での検査結果があれば、それを証拠に購入することが認められています。処方箋という医療文書がなくても、度数確認さえできれば購入に問題はないということです。</p>
+      <h2 id="section5" className="text-2xl font-bold text-gray-900 mt-8 mb-4">注文前のチェックリスト</h2>
+      <ul className="list-disc pl-5 space-y-2 mb-6">
+        <li>最近の眼科検査・指示の内容を確認した</li>
+        <li>商品名、装用期間、左右の規格が眼科の指示どおりである</li>
+        <li>販売店ごとの処方箋・指示書の条件を確認した</li>
+        <li>送料と手数料を含めた総額を比較した</li>
+        <li>配送予定と返品・交換条件を確認した</li>
+      </ul>
 
-  <h2 id="section2" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">装用指示書と処方箋の重要な違い</h2>
-  
-  <p className="text-gray-700 mb-4">コンタクトレンズを購入する際に「装用指示書」と「処方箋」の違いを理解することは非常に重要です。この2つを混同すると、購入ができなくなったり、間違った度数で購入してしまったりするリスクがあります。</p>
-
-  <div className="bg-slate-50 rounded-xl p-4 mb-6">
-    <table className="w-full text-sm">
-      <thead>
-        <tr className="bg-slate-100">
-          <th className="text-left p-2 font-bold">項目</th>
-          <th className="text-left p-2 font-bold">装用指示書</th>
-          <th className="text-left p-2 font-bold">処方箋</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr className="border-b">
-          <td className="p-2">発行者</td>
-          <td className="p-2">眼科医・販売店スタッフ</td>
-          <td className="p-2">眼科医のみ</td>
-        </tr>
-        <tr className="border-b">
-          <td className="p-2">効力</td>
-          <td className="p-2">情報記録（強制力なし）</td>
-          <td className="p-2">医療文書（法的効力あり）</td>
-        </tr>
-        <tr className="border-b">
-          <td className="p-2">通販購入</td>
-          <td className="p-2">多くのサイトで受付</td>
-          <td className="p-2">必須ではない（あると確実）</td>
-        </tr>
-        <tr>
-          <td className="p-2">有効期限</td>
-          <td className="p-2">1年程度（サイト規定による）</td>
-          <td className="p-2">通常3か月</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">装用指示書で十分な理由</h3>
-  <p className="text-gray-700 mb-4">コンタクトレンズ通販サイトが装用指示書を求める理由は、「あなたが過去に眼科で適切な検査を受けた」という証拠を確認するためです。処方箋は医療行為の一環ですが、装用指示書はそれより簡便な形式で、実装用の度数情報を記録した書類に過ぎません。</p>
-
-  <p className="text-gray-700 mb-4">法的には処方箋と装用指示書は異なりますが、実際には度数情報さえあれば購入に問題はありません。むしろ、装用指示書の方がコンタクトレンズ利用者にとって現実的で、多くの通販サイトでも装用指示書をベースにした販売システムを構築しています。</p>
-
-  <h2 id="section3" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">安全購入のための5つのチェックリスト</h2>
-  
-  <p className="text-gray-700 mb-4">処方箋なしでコンタクトレンズを購入する際も、安全性と品質を確保するための確認項目があります。以下の5つのチェックリストを参考に、安心して通販を利用してください。</p>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">チェック1：販売サイトが信頼できるか確認</h3>
-  <p className="text-gray-700 mb-4">コンタクトレンズは医療機器です。販売しているサイトが信頼できるかどうかを確認することは必須です。以下の点をチェックしましょう。</p>
-  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-    <li>高度管理医療機器販売業の許可を持っているか</li>
-    <li>企業情報（住所・電話番号）が明記されているか</li>
-    <li>顧客サポートが充実しているか</li>
-    <li>口コミや評判が良好か</li>
-    <li>医療機器の品質基準に適合しているか（JAMA加盟など）</li>
-  </ul>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">チェック2：あなたの度数情報が正確か確認</h3>
-  <p className="text-gray-700 mb-4">間違った度数でコンタクトレンズを購入してしまうと、目の疲れや視力低下につながります。装用指示書や以前の領収書から、以下の情報が正確に記載されているか確認しましょう。</p>
-  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-    <li>右目（OD）の度数（SPH）</li>
-    <li>左目（OS）の度数（SPH）</li>
-    <li>ベースカーブ（BC）の値</li>
-    <li>直径（DIA）の値</li>
-    <li>乱視矯正が必要な場合は乱視の度数（CYL）と軸（AXIS）</li>
-  </ul>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">チェック3：最後に眼科を受診したのはいつか</h3>
-  <p className="text-gray-700 mb-4">目の状態は時間とともに変化します。処方箋や装用指示書は通常1年程度の有効期限が設定されています。最後に眼科を受診してから1年以上経っている場合は、眼科での再検査をおすすめします。</p>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">チェック4：支払い方法と返品ポリシー</h3>
-  <p className="text-gray-700 mb-4">通販でコンタクトレンズを購入する際は、支払い方法と返品・交換ポリシーを事前に確認しましょう。万が一度数が合わない場合や商品に問題がある場合に対応してもらえるか、事前に把握することが大切です。</p>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">チェック5：衛生管理と配送方法</h3>
-  <p className="text-gray-700 mb-4">コンタクトレンズは医療機器です。配送時の衛生管理や保存方法が適切か、商品が破損していないか、などを注意深く確認しましょう。届いたレンズをすぐに開封して、異物や破損がないことを確認することが重要です。</p>
-
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%20%E9%80%9A%E8%B2%A9%20%E5%AE%89%E3%81%84%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でコンタクト通販 安いをチェック →</a>
-  <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-0 mb-8 no-underline">レンズゼロで見る →</a>
-
-  <h2 id="section4" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">おすすめコンタクト通販サイト徹底比較</h2>
-  
-  <p className="text-gray-700 mb-4">処方箋不要でコンタクトレンズを購入できる通販サイトは複数あります。ここでは、信頼性が高く人気のある主要サイトを比較します。各サイトの特徴を理解して、あなたに最適なサイトを選びましょう。</p>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3"><a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">レンズゼロ</a></h3>
-  <p className="text-gray-700 mb-4">レンズゼロはコンタクトレンズ専門の通販サイトです。ワンデーからマンスリー、カラーレンズまで幅広い選択肢が揃っており、装用指示書があれば購入できます。クーポンや割引キャンペーンも実施されています。</p>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3"><a href="https://px.a8.net/svt/ejp?a8mat=4B4176+6D7XGA+20YY+TSBE9" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">アットレンズ</a></h3>
-  <p className="text-gray-700 mb-4">アットレンズはコンタクトレンズ専門の通販サイトです。会員登録をすることで度数情報を事前に保存でき、リピート購入時の手間を減らせます。ポイント還元制度があり、購入金額に応じてポイントが貯まります。</p>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3"><a href="https://px.a8.net/svt/ejp?a8mat=4B4176+61WOYI+2GRU+HY7W1" target="_blank" rel="noopener noreferrer nofollow sponsored" className="text-sky-600 hover:underline">24Lens</a></h3>
-  <p className="text-gray-700 mb-4">24Lensは24時間いつでも注文でき、翌日配送に対応しているのが大きな特徴です。急遽コンタクトレンズが必要になった場合に重宝します。取り扱いブランド数も豊富で、海外ブランドも購入できます。ただし、送料がやや高めなので、まとめ買いする際はレンズゼロやアットレンズと比較検討することをおすすめします。</p>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">楽天市場</h3>
-  <p className="text-gray-700 mb-4">楽天市場では複数の販売店がコンタクトレンズを出品しており、価格競争が激しいのが特徴です。楽天ポイントが貯まり、他の商品購入時に使えるメリットがあります。ただし、販売店によって対応が異なるため、購入前に販売店の評判をよく確認することが大切です。処方箋不要で購入できる店舗が多くあります。</p>
-
-  <div className="bg-slate-50 rounded-xl p-4 mb-6">
-    <table className="w-full text-sm">
-      <thead>
-        <tr className="bg-slate-100">
-          <th className="text-left p-2 font-bold">サイト</th>
-          <th className="text-left p-2 font-bold">特徴</th>
-          <th className="text-left p-2 font-bold">配送</th>
-          <th className="text-left p-2 font-bold">価格帯</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr className="border-b">
-          <td className="p-2">レンズゼロ</td>
-          <td className="p-2">品揃え豊富</td>
-          <td className="p-2">最短1日</td>
-          <td className="p-2">安い</td>
-        </tr>
-        <tr className="border-b">
-          <td className="p-2">アットレンズ</td>
-          <td className="p-2">老舗・安心</td>
-          <td className="p-2">2～3日</td>
-          <td className="p-2">中程度</td>
-        </tr>
-        <tr className="border-b">
-          <td className="p-2">24Lens</td>
-          <td className="p-2">24時間対応</td>
-          <td className="p-2">翌日配送</td>
-          <td className="p-2">やや高い</td>
-        </tr>
-        <tr>
-          <td className="p-2">楽天市場</td>
-          <td className="p-2">店舗多数</td>
-          <td className="p-2">店舗による</td>
-          <td className="p-2">店舗による</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-3">
-    <div className="flex-1 min-w-0">
-      <p className="text-sm font-bold text-gray-800">最安値のコンタクトをいますぐ比較</p>
-      <p className="text-xs text-gray-500 mt-0.5">各サイトの価格・送料を一覧でチェック</p>
+      <h2 id="section6" className="text-2xl font-bold text-gray-900 mt-8 mb-4">よくある質問</h2>
+      <h3 className="font-bold text-gray-900">Q. 通販では眼科の受診は不要ですか？</h3>
+      <p className="mb-4">いいえ。コンタクトレンズは高度管理医療機器です。通販で購入する場合も、眼科医の検査・処方に従い定期検査を受けてください。</p>
+      <h3 className="font-bold text-gray-900">Q. 眼鏡の度数からコンタクトの度数を選べますか？</h3>
+      <p className="mb-4">眼鏡とコンタクトでは必要な検査や適合確認が異なります。自己換算ではなく、眼科で適した製品と規格を確認してください。</p>
+      <h3 className="font-bold text-gray-900">Q. 商品が届かない、度数が違った場合は？</h3>
+      <p className="mb-4">注文内容と販売店の配送・返品規約を確認し、販売店へ相談してください。目の異常がある場合は使用せず眼科を受診してください。</p>
+      <p className="text-xs text-slate-500 mt-6 border-t border-slate-200 pt-4">
+        ※このページは一般的な購入手続きの案内です。個別の診断・処方の代わりにはなりません。2026年11月15日時点の一次情報に基づきます。
+      </p>
     </div>
-    <a href="/ranking" className="shrink-0 bg-sky-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-sky-500 transition-colors whitespace-nowrap">比較ランキングを見る →</a>
-  </div>
-
-  <h2 id="section5" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">通販で失敗しない度数確認方法</h2>
-  
-  <p className="text-gray-700 mb-4">コンタクトレンズ通販での失敗で最も多いのが「度数の間違い」です。通販では試着できないため、購入前の度数確認がいかに重要か理解する必要があります。正確な度数確認の手順を詳しく解説します。</p>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">装用指示書から度数を確認する方法</h3>
-  <p className="text-gray-700 mb-4">装用指示書をお持ちの場合、以下の情報を確認してください。装用指示書に記載されている度数は、眼科医によってあなたの目に最適と判断された値です。</p>
-  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-    <li>SPH（球面度数）：近視・遠視の強さを示す値。マイナスなら近視、プラスなら遠視</li>
-    <li>BC（ベースカーブ）：コンタクトレンズのカーブの大きさ。通常8.3～8.9mm</li>
-    <li>DIA（直径）：コンタクトレンズのサイズ。通常13.8～14.5mm</li>
-    <li>CYL（乱視度数）：乱視がある場合のみ記載。マイナス値で表記</li>
-    <li>AXIS（軸）：乱視の方向を示す角度。乱視がある場合のみ記載</li>
-  </ul>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">眼鏡の処方箋から推測する方法</h3>
-  <p className="text-gray-700 mb-4">装用指示書がない場合でも、眼鏡の処方箋から推測することが可能です。ただし、眼鏡とコンタクトレンズでは同じ度数でも見え方が異なるため、参考値程度と考えてください。</p>
-  <p className="text-gray-700 mb-4">眼鏡の処方箋に記載されている度数を見ても、そのまま使用することは推奨されません。目とレンズまでの距離が異なるため、度数を調整する必要があります。眼鏡の度数が-3.00Dの場合、コンタクトレンズは-2.75D程度になることが多いですが、個人差があります。</p>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">初めての購入時のおすすめ手順</h3>
-  <p className="text-gray-700 mb-4">初めてコンタクトレンズを通販で購入する場合、以下の手順を推奨します。</p>
-  <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-    <li>眼科を受診して、装用指示書または処方箋をもらう（初回は試着が必要な場合もあります）</li>
-    <li>装用指示書に記載されたすべての情報をメモまたは写真に記録</li>
-    <li>通販サイトで購入前に、記載されている度数と一致しているか最終確認</li>
-    <li>初回は1箱（1ヶ月分）だけ購入して、数日間試装用</li>
-    <li>問題なければリピート購入でまとめ買いして割引を活用</li>
-  </ul>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">定期的な眼科検査が重要</h3>
-  <p className="text-gray-700 mb-4">度数は時間とともに変化します。厚生労働省のガイドラインでは、コンタクトレンズ使用者は最低でも年1回の眼科検査を受けることが推奨されています。数年間同じ度数でコンタクトレンズを使用していると、眼精疲労や視力低下につながるリスクがあります。通販を利用する際も、最低年1回は眼科を受診して、度数が合っているか確認することを強くおすすめします。</p>
-
-  <a href="https://hb.afl.rakuten.co.jp/ichiba/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88%E3%83%AC%E3%83%B3%E3%82%BA%2F" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-4 mb-2 no-underline">楽天市場でお得に購入する →</a>
-  <a href="https://px.a8.net/svt/ejp?a8mat=4B4176+5ZIYJE+76W+NV1XD" target="_blank" rel="noopener noreferrer nofollow sponsored" className="block w-full text-center bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-0 mb-8 no-underline">レンズゼロで見る →</a>
-
-  <h2 id="section6" className="text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b-2 border-slate-200">よくある質問5選</h2>
-  
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q1：処方箋がなくても本当にコンタクトレンズは買えますか？</h3>
-  <p className="text-gray-700 mb-4">はい、買えます。ただし「過去に眼科で検査を受けた度数情報」が必要です。装用指示書や処方箋から度数を確認できれば、ほとんどの通販サイトで購入が可能です。ただし、初めてコンタクトレンズを使用する場合や度数がわからない場合は、眼科での検査が必須となります。</p>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q2：装用指示書をもらうには眼科に行く必要がありますか？</h3>
-  <p className="text-gray-700 mb-4">はい。装用指示書はあなたの目に合ったコンタクトレンズの度数やベースカーブなどの情報が記載された書類です。これを発行してもらうには、眼科での検査が必ず必要です。一度検査を受けて装用指示書をもらえば、その後は有効期限内（通常1年）であれば、通販で何度でも購入できます。</p>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q3：処方箋と装用指示書、通販で受け付けるのはどちらですか？</h3>
-  <p className="text-gray-700 mb-4">通販サイトによって異なりますが、多くのサイトは装用指示書を基準にしています。処方箋があればもちろん購入可能ですが、装用指示書だけで十分という販売店がほとんどです。どちらでも大丈夫ですが、念のため事前にサイトに問い合わせることをおすすめします。</p>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q4：度数が合わなかった場合、交換できますか？</h3>
-  <p className="text-gray-700 mb-4">通販サイトごとに返品・交換ポリシーが異なります。多くのサイトでは開封済みのレンズの交換は受け付けていません。ただし「商品に破損があった」「注文した度数と異なるものが届いた」などの場合は交換してくれることが多いです。購入前に各サイトの返品ポリシーを確認することが大切です。</p>
-
-  <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3">Q5：通販でコンタクトレンズを買うときの注意点は何ですか？</h3>
-  <p className="text-gray-700 mb-4">最も重要なのは「度数の正確性」です。眼鏡とは異なり、誤った度数でコンタクトレンズを使用すると眼精疲労や頭痛につながります。また、信頼できるサイトから購入すること、配送時の衛生管理、および最低年1回の眼科検査を受けることが重要です。さらに、コンタクトレンズのケアや保管方法についても、常に正しい方法を心がけてください。</p>
-
-  <p className="text-gray-700 mt-8 pt-6 border-t-2 border-slate-200">このガイドでご紹介した内容を参考に、安全かつ効率的にコンタクトレンズをネット通販で購入してください。処方箋がなくても、適切な準備と確認があれば、通販での購入は十分に可能です。度数確認に不安がある場合は、迷わず眼科に相談することをおすすめします。</p>
-</div>
   ),
   'lenszero-kaigai-tsuuhan-guide-2026': (
     <div className="prose prose-gray max-w-none">
