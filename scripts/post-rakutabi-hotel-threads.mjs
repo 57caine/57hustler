@@ -38,7 +38,9 @@ if(booking.protocol!=='https:'||booking.hostname!=='hb.afl.rakuten.co.jp'||booki
 if(post.caption.length>460||post.caption.includes('http://')||post.caption.includes('https://'))throw new Error('Parent caption too long or contains link');
 if(post.nearbySources.some(s=>!s.claim||!s.url||new URL(s.url).protocol!=='https:'))throw new Error('Nearby claims need primary source URLs');
 const marker='【宿番号 '+post.hotelNo+'・企画'+day+'】';
-const caption='【PR】 '+post.caption+'\n'+marker;
+// Keep the historical marker for deduplicating already published old-format posts,
+// but never show internal campaign identifiers in new public captions.
+const caption='【PR】 '+post.caption;
 const reply='【PR】楽天トラベルで「'+post.hotelName+'」の宿泊プランを確認👇\n'+post.bookingUrl;
 const photoCredits=photoCreditMessages(photos);
 if(caption.length>500||reply.length>500)throw new Error('Threads 500 character limit exceeded');
@@ -73,7 +75,7 @@ for(let page=0;page<10;page++){
  if(!after)break;
 }
 if(!complete)throw new Error('Cannot exhaust history; abort to prevent duplicate');
-let parent=history.find(p=>typeof p.text==='string'&&p.text.includes(marker));
+let parent=history.find(p=>typeof p.text==='string' && (p.text.includes(marker) || p.text.trim()===caption.trim()));
 if(parent){
  const linked=history.find(p=>String(p.reply_to_id??'')===String(parent.id)&&typeof p.text==='string'&&p.text.includes(post.bookingUrl));
  if(linked){console.log(JSON.stringify({status:'already-published',parentId:parent.id,replyId:linked.id}));process.exit(0);}

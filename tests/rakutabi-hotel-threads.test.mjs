@@ -80,3 +80,15 @@ test('day17 Fujiya Hotel has licensed 3-photo carousel and affiliate hotel reply
  assert.match(v.reply,/HOTEL%2F1727%2F1727.html/);
  assert.ok(v.photoCredits.every(c=>c.length<=500));
 });
+
+test('public hotel captions do not expose internal identifiers or verbose photo rights boilerplate',()=>{
+ for(const day of [16,17,18]){
+  const r=run(day);
+  assert.equal(r.status,0,r.stderr);
+  const v=JSON.parse(r.stdout);
+  assert.doesNotMatch(v.caption,/【宿番号\\s*\\d+・企画\\d+】/);
+  assert.doesNotMatch(v.caption,/写真3枚の撮影者・出典と利用条件は予約案内の返信に記載/);
+  assert.ok(v.photoCredits.length>=1);
+  assert.ok(v.photoCredits.some(x=>x.includes('写真出典・ライセンス')));
+ }
+});
