@@ -12,11 +12,18 @@ export function buildOrganicMessage(post, brand) {
     let url;
     try { url = new URL(post.url); } catch { throw new Error('Invalid article URL'); }
     const isLens = brand === 'lens';
-    const required = isLens
+    // One owner-authorized 24lens test: go directly to the verified buying guide,
+    // avoiding an extra hop via an older article. All other Lens posts stay locked
+    // to the original Lens Navi article allowlist.
+    const direct24lens = isLens && post.day === 17 &&
+      url.host === 'jarvis-affiliate.vercel.app' && url.pathname === '/lp/24lens-order-check/';
+    const required = direct24lens
+      ? {utm_source:'threads', utm_medium:'social', utm_campaign:'24lens_pilot', utm_content:'lens_day_17'}
+      : isLens
       ? {utm_source:'threads', utm_medium:'social', utm_campaign:'lens_online_buying_202610', utm_content:'lens_day_'+post.day}
       : {utm_source:'threads', utm_medium:'social', utm_campaign:'rakutabi_ito_202610', utm_content:'rakutabi_day_9'};
     const destinationAllowed = isLens
-      ? url.host === 'www.lens-navi.jp' && /^\/column\/[a-z0-9-]+$/.test(url.pathname)
+      ? direct24lens || (url.host === 'www.lens-navi.jp' && /^\/column\/[a-z0-9-]+$/.test(url.pathname))
       : post.day === 9 && url.host === 'rakutabi-nine.vercel.app' && url.pathname === '/area/ito';
     if (url.protocol !== 'https:' || !destinationAllowed || url.username || url.password || url.hash) {
       throw new Error('Only authorized first-party destinations are permitted');
