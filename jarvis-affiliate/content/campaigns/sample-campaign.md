@@ -1,6 +1,6 @@
 ---
 slug: sample-campaign
-status: published
+status: draft
 title: 社会人向けオンライン英会話3社比較｜忙しくても続く選び方
 description: 仕事が忙しくて英会話が続かない社会人向けに、料金・レッスン時間・無料体験の有無でオンライン英会話3社を比較します。
 publishedAt: 2026-11-12

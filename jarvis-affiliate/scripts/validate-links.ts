@@ -130,7 +130,11 @@ function checkDist() {
   const htmlFiles = walk(dist, ['.html']).filter((f) => !f.includes(`${path.sep}jarvis${path.sep}`));
   if (!htmlFiles.length) return err('dist', 'ビルド成果物がありません（先に astro build）');
   const gaOn = !!process.env.PUBLIC_GA4_ID && !process.env.PUBLIC_GA4_ID.includes('XXXX');
-  if (PROD && !gaOn) err('.env', 'PUBLIC_GA4_ID が未設定です（本番では計測必須）');
+  // An unindexed, advertisement-free shell has no acquisition or affiliate events to track.
+  // Once even one real LP is published, GA4 becomes mandatory again.
+  const publishedCampaigns = loadCampaigns();
+  if (PROD && publishedCampaigns.length > 0 && !gaOn) err('.env', 'PUBLIC_GA4_ID が未設定です（公開LPがある本番では計測必須）');
+  if (PROD && publishedCampaigns.length === 0 && htmlFiles.some((f) => f.includes(`${path.sep}lp${path.sep}`))) err('dist', '公開LPが0件なのにLP HTMLが出力されています');
 
   for (const f of htmlFiles) {
     const where = rel(f);
