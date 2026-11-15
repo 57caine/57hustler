@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "notes": "Image must be independent Creative Commons or separately permitted, never Rakuten API or Rakuten Travel image. Source, license and attribution documented; verify current URL/booking availability before real publication.",
+  "notes": "Image must be independent Creative Commons or separately permitted, never Rakuten API or Rakuten Travel image. Source, license and attribution documented; verify current URL/booking availability before real publication. December 2026: value_convenience versus premium_experience are editorial positioning labels, NOT verified comparable price tiers. Price examples are not fixed for a booking date; use Rakuten booking analytics before interpreting performance.",
   "posts": [
     {
       "day": 16,
@@ -224,7 +224,8 @@
             "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
           }
         }
-      ]
+      ],
+      "experimentGroup": "premium_experience"
     },
     {
       "day": 26,
@@ -259,42 +260,45 @@
             "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
           }
         }
-      ]
+      ],
+      "experimentGroup": "premium_experience"
     },
     {
       "day": 27,
-      "hotelNo": 28654,
-      "hotelName": "帝国ホテル大阪",
-      "caption": "大阪で、街のにぎわいから少し離れて過ごすなら。🌸\n\n帝国ホテル大阪は大阪市北区天満橋にあるホテル。JR桜ノ宮駅の西出口から徒歩約5分の案内があり、JR大阪駅とのシャトルバスも案内されています。大阪の街を歩いたあと、落ち着いて過ごす旅に。\n\n空室・料金・最新のサービス内容は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F28654%2F28654.html",
+      "hotelNo": 79350,
+      "hotelName": "天然温泉 葵の湯 スーパーホテル岡崎",
+      "caption": "愛知・岡崎で、温泉と朝食を楽しむ気軽な一泊。♨️\n\n名鉄・東岡崎駅から徒歩約6分。ホテルでは天然温泉「葵の湯」と朝食ビュッフェを案内しています。観光でも出張でも、宿の選び方をシンプルにしたい方に。プランと料金は予約先で確認してください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F79350%2F79350.html",
       "nearbySources": [
         {
-          "claim": "JR桜ノ宮駅西出口徒歩約5分、JR大阪駅からシャトルバスあり",
-          "url": "https://travel.rakuten.co.jp/HOTEL/28654/28654.html"
+          "claim": "名鉄東岡崎駅から徒歩約6分、天然温泉・朝食付きのプランあり",
+          "url": "https://travel.rakuten.co.jp/HOTEL/79350/79350.html"
         },
         {
-          "claim": "楽天トラベル掲載の帝国ホテル大阪の住所とアクセス、予約条件",
-          "url": "https://travel.rakuten.co.jp/HOTEL/28654/28654.html"
+          "claim": "楽天トラベルの掲載施設・宿泊予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/79350/79350.html"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/28654/28654.html",
-      "verifiedAt": "2026-11-15",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/79350/79350.html",
+      "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Imperial_Hotel_Osaka_20090321-001.jpg/1280px-Imperial_Hotel_Osaka_20090321-001.jpg",
-          "alt": "大阪市北区の帝国ホテル大阪の外観（2009年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Super-Hotel-1.jpg/1280px-Super-Hotel-1.jpg",
+          "alt": "天然温泉 葵の湯 スーパーホテル岡崎の建物外観（2019年）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "J o",
-            "scope": "Commercial use including Threads, with attribution and share-alike",
-            "license": "CC BY-SA 3.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Imperial_Hotel_Osaka_20090321-001.jpg",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-            "date": "2009-03-21",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
+            "owner": "Evelyn-rose",
+            "scope": "Commercial use including Threads, with attribution",
+            "license": "CC0 1.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Super-Hotel-1.jpg",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "date": "2019-02-17",
+            "changes": "Resized to Wikimedia 1280px thumbnail; no other edits"
           }
         }
-      ]
+      ],
+      "experimentGroup": "value_convenience",
+      "priceEvidenceNote": "楽天検索結果に税込4,800円〜の掲載例（2026-11-16確認）。対象宿泊日・人数は未固定のため参考値"
     },
     {
       "day": 28,
@@ -329,42 +333,45 @@
             "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
           }
         }
-      ]
+      ],
+      "experimentGroup": "premium_experience"
     },
     {
       "day": 29,
-      "hotelNo": 179802,
-      "hotelName": "ザ・ゲートホテル京都高瀬川 by HULIC",
-      "caption": "京都・河原町で、建物の物語も楽しむ旅。🏯\n\n元立誠小学校の建物を生かした「立誠ガーデン ヒューリック京都」にあるホテル。京都河原町駅から徒歩約3分の案内で、街歩きと建築散策を一度に楽しめそうです。\n\n空室・料金・最新のサービス内容は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F179802%2F179802.html",
+      "hotelNo": 172880,
+      "hotelName": "アパホテル〈新宿 歌舞伎町中央〉",
+      "caption": "都心のライブや街歩きで、宿は立地優先。🚉\n\nアパホテル〈新宿 歌舞伎町中央〉はJR新宿駅東口から徒歩約7分、西武新宿駅から徒歩約3分。東京で遅くまで過ごす日の宿を探すとき、移動しやすさを比べてみませんか。宿泊料金・空室は予約先へ。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F172880%2F172880.html",
       "nearbySources": [
         {
-          "claim": "旧立誠小学校の校舎を保存・再生した複合施設、京都河原町駅から徒歩約3分",
-          "url": "https://www.hulic.co.jp/business/rent/hotel/272"
+          "claim": "西武新宿駅から徒歩約3分、新宿駅東口から徒歩約7分",
+          "url": "https://travel.rakuten.co.jp/HOTEL/172880/172880.html"
         },
         {
-          "claim": "楽天トラベル掲載のザ・ゲートホテル京都高瀬川 by HULICの住所とアクセス、予約条件",
-          "url": "https://travel.rakuten.co.jp/HOTEL/179802/179802.html"
+          "claim": "楽天トラベルの掲載施設・宿泊予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/172880/172880.html"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/179802/179802.html",
-      "verifiedAt": "2026-11-15",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/172880/172880.html",
+      "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/THE_GATE_HOTEL_KYOTO_TAKASEGAWA_201125c.jpg/1280px-THE_GATE_HOTEL_KYOTO_TAKASEGAWA_201125c.jpg",
-          "alt": "ゲートホテル京都高瀬川が入る立誠ガーデンの建物（2020年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/APA_Hotel_Shinjuku_Kabukicho_Chuo,_Tokyo_-_Mar_15,_2026.jpg/1280px-APA_Hotel_Shinjuku_Kabukicho_Chuo,_Tokyo_-_Mar_15,_2026.jpg",
+          "alt": "アパホテル新宿歌舞伎町中央の外観（2026年撮影）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "江戸村のとくぞう",
-            "scope": "Commercial use including Threads, with attribution and share-alike",
-            "license": "CC BY-SA 4.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:THE_GATE_HOTEL_KYOTO_TAKASEGAWA_201125c.jpg",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "date": "2020-11-25",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
+            "owner": "Dennis Sylvester Hurd",
+            "scope": "Commercial use including Threads, with attribution",
+            "license": "CC BY 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:APA_Hotel_Shinjuku_Kabukicho_Chuo,_Tokyo_-_Mar_15,_2026.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "date": "2026-03-15",
+            "changes": "Resized to Wikimedia 1280px thumbnail; no other edits"
           }
         }
-      ]
+      ],
+      "experimentGroup": "value_convenience",
+      "priceEvidenceNote": "楽天検索結果に税込7,290円〜の掲載例（時期・条件で大幅変動）"
     },
     {
       "day": 30,
@@ -427,7 +434,8 @@
             "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
           }
         }
-      ]
+      ],
+      "experimentGroup": "premium_experience"
     },
     {
       "day": 31,
@@ -490,42 +498,45 @@
             "changes": "none"
           }
         }
-      ]
+      ],
+      "experimentGroup": "premium_experience"
     },
     {
       "day": 32,
-      "hotelNo": 1609,
-      "hotelName": "ホテルニューオータニ幕張",
-      "caption": "幕張の予定を、少しゆったりした旅に。🌊\n\nホテルニューオータニ幕張は千葉市美浜区にあるホテル。幕張メッセや海浜幕張エリアで予定がある日の宿泊先候補に。イベントのある日は、交通手段と予約条件を早めに確かめておくのがおすすめです。\n\n空室・料金・最新のサービス内容は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F1609%2F1609.html",
+      "hotelNo": 179856,
+      "hotelName": "天然温泉 豊穣の湯 ドーミーイン池袋",
+      "caption": "池袋に泊まるなら、大浴場・サウナのあるホテルも。🛁\n\nドーミーイン池袋は東池袋にあり、男女別の天然温泉大浴場とサウナを案内しています。池袋での買い物やサンシャインシティ周辺の予定と組み合わせる一泊に。温泉の利用時間や料金は予約先をご確認ください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F179856%2F179856.html",
       "nearbySources": [
         {
-          "claim": "海浜幕張・幕張メッセ周辺の宿泊施設",
-          "url": "https://travel.rakuten.co.jp/HOTEL/1609/1609.html"
+          "claim": "東池袋3-11-11、池袋駅東口方面35番出口や東池袋駅から徒歩約9分",
+          "url": "https://travel.rakuten.co.jp/HOTEL/179856/179856_std.html"
         },
         {
-          "claim": "楽天トラベル掲載のホテルニューオータニ幕張の住所とアクセス、予約条件",
-          "url": "https://travel.rakuten.co.jp/HOTEL/1609/1609.html"
+          "claim": "楽天トラベルの掲載施設・宿泊予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/179856/179856.html"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/1609/1609.html",
-      "verifiedAt": "2026-11-15",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/179856/179856.html",
+      "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Hotel_New_Otani_Makuhari_2024.jpg/1280px-Hotel_New_Otani_Makuhari_2024.jpg",
-          "alt": "ホテルニューオータニ幕張の建物外観（2024年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Dormy_Inn_Ikebukuro.jpg/1280px-Dormy_Inn_Ikebukuro.jpg",
+          "alt": "ドーミーイン池袋の外観（2026年撮影）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "Archiroid21",
+            "owner": "Totti",
             "scope": "Commercial use including Threads, with attribution and share-alike",
             "license": "CC BY-SA 4.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_New_Otani_Makuhari_2024.jpg",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Dormy_Inn_Ikebukuro.jpg",
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "date": "2024-09-13",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
+            "date": "2026-09-19",
+            "changes": "Resized to Wikimedia 1280px thumbnail; no other edits"
           }
         }
-      ]
+      ],
+      "experimentGroup": "value_convenience",
+      "priceEvidenceNote": "料金の同一条件での確定値未取得。価格帯は中価格帯候補として仮置き"
     },
     {
       "day": 33,
@@ -560,7 +571,8 @@
             "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
           }
         }
-      ]
+      ],
+      "experimentGroup": "premium_experience"
     },
     {
       "day": 34,
@@ -595,42 +607,45 @@
             "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
           }
         }
-      ]
+      ],
+      "experimentGroup": "premium_experience"
     },
     {
       "day": 35,
-      "hotelNo": 1754,
-      "hotelName": "ホテルオークラ京都",
-      "caption": "京都の中心部で、移動しやすさを重視するなら。⛩️\n\nホテルオークラ京都は地下鉄・京都市役所前駅に直結。先斗町へは徒歩約5分と案内され、祇園や河原町方面の街歩きにも便利です。食べ歩きや散策を楽しむ京都旅の拠点に。\n\n空室・料金・最新のサービス内容は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F1754%2F1754.html",
+      "hotelNo": 168701,
+      "hotelName": "スーパーホテル東京・浜松町",
+      "caption": "東京観光も出張も、駅への近さを重視したい。🧳\n\nスーパーホテル東京・浜松町は大門駅から徒歩約2分、JR浜松町駅から徒歩約4分。羽田空港方面へも移動しやすい地域です。観光や仕事の予定に合わせて宿を選ぶ際の候補にどうぞ。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F168701%2F168701.html",
       "nearbySources": [
         {
-          "claim": "京都市役所前駅直結、先斗町まで徒歩約5分",
-          "url": "https://travel.rakuten.co.jp/HOTEL/1754/1754.html"
+          "claim": "大門駅徒歩約2分、浜松町駅徒歩約4分。楽天の宿泊料金掲載例は税込8,800円〜",
+          "url": "https://travel.rakuten.co.jp/yado/tokyo/B.html"
         },
         {
-          "claim": "楽天トラベル掲載のホテルオークラ京都の住所とアクセス、予約条件",
-          "url": "https://travel.rakuten.co.jp/HOTEL/1754/1754.html"
+          "claim": "楽天トラベルの掲載施設・宿泊予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/168701/168701.html"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/1754/1754.html",
-      "verifiedAt": "2026-11-15",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/168701/168701.html",
+      "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Kyoto_Hotel_Okura.jpg/1280px-Kyoto_Hotel_Okura.jpg",
-          "alt": "京都ホテルオークラ（現ホテルオークラ京都）の建物（2008年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Super_Hotel_Tokyo_Hamamatsucho.JPG/1280px-Super_Hotel_Tokyo_Hamamatsucho.JPG",
+          "alt": "スーパーホテル東京・浜松町の外観（2020年撮影）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "Volfgang",
-            "scope": "Commercial use including Threads, with attribution and share-alike",
-            "license": "CC BY-SA 4.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Kyoto_Hotel_Okura.jpg",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "date": "2008-12-26",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
+            "owner": "Abasaa（あばさー）",
+            "scope": "Commercial use including Threads, with attribution",
+            "license": "Public domain",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Super_Hotel_Tokyo_Hamamatsucho.JPG",
+            "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+            "date": "2020-03-01",
+            "changes": "Resized to Wikimedia 1280px thumbnail; no other edits"
           }
         }
-      ]
+      ],
+      "experimentGroup": "value_convenience",
+      "priceEvidenceNote": "楽天の地域検索結果に税込8,800円〜の掲載例（2026-11-16、特定宿泊日を保証しない）"
     },
     {
       "day": 36,
@@ -665,7 +680,8 @@
             "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
           }
         }
-      ]
+      ],
+      "experimentGroup": "premium_experience"
     },
     {
       "day": 37,
@@ -700,7 +716,8 @@
             "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
           }
         }
-      ]
+      ],
+      "experimentGroup": "premium_experience"
     },
     {
       "day": 38,
@@ -735,42 +752,45 @@
             "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
           }
         }
-      ]
+      ],
+      "experimentGroup": "premium_experience"
     },
     {
       "day": 39,
-      "hotelNo": 1017,
-      "hotelName": "ホテルニューオータニ博多",
-      "caption": "福岡の街歩きを楽しむ拠点に。🍜\n\nホテルニューオータニ博多は福岡市中央区渡辺通にあるホテル。地下鉄七隈線「渡辺通駅」から徒歩約1分の案内で、天神や博多方面へ出かける旅にも便利です。福岡の食事や街歩きを楽しみたい方へ。\n\n空室・料金・最新のサービス内容は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F1017%2F1017.html",
+      "hotelNo": 187620,
+      "hotelName": "天然温泉 淡雪の湯 ドーミーイン青森",
+      "caption": "青森駅周辺で、温泉も楽しめる宿を探すなら。♨️\n\nドーミーイン青森は青森駅から徒歩約10分。最上階に天然温泉大浴場とサウナがあり、青森の街歩きとホテルでのひと休みを組み合わせられます。交通と料金・空室は予約先でご確認ください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F187620%2F187620.html",
       "nearbySources": [
         {
-          "claim": "地下鉄七隈線渡辺通駅2番出口から徒歩約1分",
-          "url": "https://travel.rakuten.co.jp/HOTEL/1017/"
+          "claim": "青森駅から徒歩約10分。最上階に天然温泉・サウナを備える",
+          "url": "https://travel.rakuten.co.jp/HOTEL/187620/187620_std.html"
         },
         {
-          "claim": "楽天トラベル掲載のホテルニューオータニ博多の住所とアクセス、予約条件",
-          "url": "https://travel.rakuten.co.jp/HOTEL/1017/1017.html"
+          "claim": "楽天トラベルの掲載施設・宿泊予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/187620/187620.html"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/1017/1017.html",
-      "verifiedAt": "2026-11-15",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/187620/187620.html",
+      "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Hotel_New_Otani_Hakata.jpg/1280px-Hotel_New_Otani_Hakata.jpg",
-          "alt": "ホテルニューオータニ博多の外観（2011年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Dormy_inn_Aomori.jpg/1280px-Dormy_inn_Aomori.jpg",
+          "alt": "ドーミーイン青森の外観（2026年撮影）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "STA3816",
+            "owner": "Totti",
             "scope": "Commercial use including Threads, with attribution and share-alike",
-            "license": "CC BY-SA 3.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_New_Otani_Hakata.jpg",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-            "date": "2011-11-03",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Dormy_inn_Aomori.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2026-01-12",
+            "changes": "Resized to Wikimedia 1280px thumbnail; no other edits"
           }
         }
-      ]
+      ],
+      "experimentGroup": "value_convenience",
+      "priceEvidenceNote": "楽天の宿泊プラン掲載例では1名1泊税込11,500円〜のプランもある（人数/プラン依存）。中価格帯候補"
     }
   ]
 }
