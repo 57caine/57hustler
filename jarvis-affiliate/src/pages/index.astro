@@ -2,6 +2,7 @@
 import { loadCampaigns } from '../lib/campaigns.ts';
 import '../styles/global.css';
 const campaigns = loadCampaigns();
+const GA4_ID = import.meta.env.PUBLIC_GA4_ID && !String(import.meta.env.PUBLIC_GA4_ID).includes('XXXX') ? import.meta.env.PUBLIC_GA4_ID : '';
 const SITE_NAME = import.meta.env.PUBLIC_SITE_NAME ?? 'コンタクトレンズ通販ガイド';
 ---
 <!doctype html>
@@ -11,6 +12,15 @@ const SITE_NAME = import.meta.env.PUBLIC_SITE_NAME ?? 'コンタクトレンズ�
     <title>{SITE_NAME}</title>
     <meta name="description" content={`${SITE_NAME}｜送料・処方箋・配送など購入前の確認ポイント`} />
     {campaigns.length === 0 && <meta name="robots" content="noindex, nofollow" />}
+    {GA4_ID && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>}
+    {GA4_ID && (
+      <script is:inline define:vars={{ GA4_ID }}>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function(){ window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', GA4_ID);
+      </script>
+    )}
   </head>
   <body>
     {campaigns.length > 0 && <div data-pr-label class="bg-amber-50 border-b border-amber-200 px-4 py-2 text-center text-xs text-amber-900">本ページはプロモーション（広告）を含みます</div>}
