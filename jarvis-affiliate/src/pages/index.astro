@@ -2,19 +2,37 @@
 import { loadCampaigns } from '../lib/campaigns.ts';
 import '../styles/global.css';
 const campaigns = loadCampaigns();
-const SITE_NAME = import.meta.env.PUBLIC_SITE_NAME ?? 'JARVIS比較ナビ';
+const GA4_ID = import.meta.env.PUBLIC_GA4_ID && !String(import.meta.env.PUBLIC_GA4_ID).includes('XXXX') ? import.meta.env.PUBLIC_GA4_ID : '';
+const SITE_NAME = import.meta.env.PUBLIC_SITE_NAME ?? 'コンタクトレンズ通販ガイド';
 ---
 <!doctype html>
 <html lang="ja">
   <head>
     <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{SITE_NAME}</title>
-    <meta name="description" content={`${SITE_NAME}の比較記事一覧`} />
+    <meta name="description" content={`${SITE_NAME}｜送料・処方箋・配送など購入前の確認ポイント`} />
+    {campaigns.length === 0 && <meta name="robots" content="noindex, nofollow" />}
+    {GA4_ID && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>}
+    {GA4_ID && (
+      <script is:inline define:vars={{ GA4_ID }}>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function(){ window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', GA4_ID);
+      </script>
+    )}
   </head>
   <body>
-    <div data-pr-label class="bg-amber-50 border-b border-amber-200 px-4 py-2 text-center text-xs text-amber-900">本ページはプロモーション（広告）を含みます</div>
+    {campaigns.length > 0 && <div data-pr-label class="bg-amber-50 border-b border-amber-200 px-4 py-2 text-center text-xs text-amber-900">本ページはプロモーション（広告）を含みます</div>}
     <main class="mx-auto max-w-3xl px-4 py-10">
-      <h1 class="mb-6 text-2xl font-bold text-brand-900">{SITE_NAME}</h1>
+      <h1 class="text-2xl font-bold text-brand-900">{SITE_NAME}</h1>
+      <p class="mb-6 mt-2 text-sm text-slate-600">送料・処方箋・配送条件をわかりやすく。コンタクト通販で迷わないための購入前チェック。</p>
+      {campaigns.length === 0 && (
+        <section class="rounded-xl border border-slate-200 bg-white p-6" role="status">
+          <h2 class="text-lg font-bold text-brand-900">購入ガイドは準備中です</h2>
+          <p class="mt-2 text-sm text-slate-700">ただいまコンタクト通販の購入前チェック記事を確認しています。内容を整え、順次公開します。</p>
+        </section>
+      )}
       <ul class="space-y-3">
         {campaigns.map((c) => (
           <li><a class="block rounded-xl p-4 ring-1 ring-slate-200 hover:bg-surface" href={`/lp/${c.slug}/`}><span class="font-bold text-brand-900">{c.title}</span><span class="block text-sm text-slate-500">{c.description}</span></a></li>

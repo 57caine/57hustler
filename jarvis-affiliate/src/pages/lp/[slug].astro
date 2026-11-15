@@ -10,6 +10,7 @@ import ComparisonTable from '../../components/ComparisonTable.astro';
 import RankingCard from '../../components/RankingCard.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import AffiliateButton from '../../components/AffiliateButton.astro';
+import A8Banner from '../../components/A8Banner.astro';
 import { loadCampaigns, type Campaign } from '../../lib/campaigns.ts';
 import { getProgram } from '../../lib/affiliates.ts';
 
@@ -60,9 +61,15 @@ const topProgram = top ? getProgram(top.programId) : getProgram(campaign.hero.pr
 
   <FaqSection items={campaign.faq ?? []} />
 
+  {topProgram.adCreative?.kind === 'a8-image' && (
+    <section class="mx-auto max-w-3xl px-4 py-8" aria-label="広告">
+      <A8Banner programId={topProgram.id} campaign={campaign.slug} placement="after-faq" />
+    </section>
+  )}
+
   <section class="mx-auto max-w-3xl px-4 py-10 text-center">
     <div class="rounded-2xl bg-brand-50 p-6">
-      <p class="mb-4 font-bold text-brand-900">迷っているなら、まずは{topProgram.name}を試してみてください</p>
+      <p class="mb-4 font-bold text-brand-900">ご注文前に{topProgram.name}の最新の商品・条件をご確認ください</p>
       <AffiliateButton programId={topProgram.id} label={campaign.hero.ctaLabel} microcopy={campaign.hero.microcopy} placement="final" campaign={campaign.slug} size="lg" />
     </div>
   </section>

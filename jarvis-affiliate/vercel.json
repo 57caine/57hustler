@@ -1,0 +1,7 @@
+{
+  "framework": "astro",
+  "buildCommand": "npm run test:safety && npm run check && npm run build:prod",
+  "installCommand": "npm ci",
+  "outputDirectory": "dist",
+  "ignoreCommand": "sh -c 'exit 1'"
+}

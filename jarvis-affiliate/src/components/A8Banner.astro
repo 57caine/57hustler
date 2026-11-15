@@ -1,0 +1,36 @@
+---
+/** One A8 300x250 creative as supplied by the owner. The pixel is output once per page.
+ * This is not a conversion pixel; it follows A8's supplied advertisement markup.
+ */
+import { getProgram } from '../lib/affiliates.ts';
+interface Props { programId: string; campaign: string; placement?: string }
+const { programId, campaign, placement = 'banner' } = Astro.props;
+const program = getProgram(programId);
+const creative = program.adCreative;
+---
+{creative?.kind === 'a8-image' && (
+  <div class="mx-auto w-fit max-w-full text-center">
+    <a
+      href={program.url}
+      target="_blank"
+      rel="noopener noreferrer nofollow sponsored"
+      data-affiliate-id={program.id}
+      data-affiliate-platform={program.asp}
+      data-affiliate-name={program.name}
+      data-placement={placement}
+      data-campaign={campaign}
+      aria-label={`${program.name} の広告サイトへ`}
+    >
+      <img
+        src={creative.imageUrl}
+        width={creative.width}
+        height={creative.height}
+        alt="24レンズの広告バナー"
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+    <img src={creative.impressionUrl} width="1" height="1" alt="" loading="eager" aria-hidden="true" />
+    <p class="mt-1 text-xs text-slate-500">PR・広告</p>
+  </div>
+)}

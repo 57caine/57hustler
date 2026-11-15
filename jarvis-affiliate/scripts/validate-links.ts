@@ -14,6 +14,8 @@ import { loadCampaigns, referencedProgramIds, type Campaign } from '../src/lib/c
 import { findNgWords, loadNgWords, PR_LABEL, PR_MARKER_ATTR } from '../src/lib/compliance.ts';
 import { p } from '../src/lib/paths.ts';
 import { c, hasFlag, loadEnv, walk } from './lib/cli.ts';
+import { evaluatePublicationGate } from './lib/publication-gates.mjs';
+import { verifyApprovalSignature } from './lib/approval-signature.mjs';
 
 loadEnv();
 const PROD = process.env.JARVIS_ENV === 'production';
@@ -71,6 +73,29 @@ function checkCampaigns(campaigns: Campaign[], programs: AffiliateProgram[]) {
     if (cp.hero?.ctaLabel && /^(こちら|クリック|詳しくはこちら)$/.test(cp.hero.ctaLabel)) err(where, 'CTAラベルが「こちら」等だけになっています（design-system.md 4章）');
     if ((cp.description ?? '').length > 120) warn(where, `description が${cp.description.length}字です（120字以内推奨）`);
 
+    if (PROD && cp.status === 'published') {
+      // Evidence may be injected through a protected CI/Vercel environment variable.
+      // The ignored local file remains a supported development fallback.
+      const gateFile = p('config', 'publication-gates.json');
+      let manifest: any = null;
+      try {
+        const raw = process.env.JARVIS_PUBLICATION_EVIDENCE_JSON
+          || fs.readFileSync(gateFile, 'utf8');
+        manifest = JSON.parse(raw);
+        if (!manifest || typeof manifest !== 'object' || !Array.isArray(manifest.approvals)) throw new Error('invalid manifest');
+      } catch {
+        err(where, '公開審査証拠が未設定または不正です（保護環境変数またはローカル非公開ファイル）');
+      }
+      const evidence = manifest?.campaigns?.[cp.slug];
+      const approval = (manifest?.approvals ?? []).find((x: any) =>
+        x?.target === cp.slug && x?.actionType === 'experiment_publish');
+      const checks = evaluatePublicationGate(evidence, approval, {
+        action: 'experiment_publish', campaignSlug: cp.slug,
+        commitSha: process.env.VERCEL_GIT_COMMIT_SHA || process.env.GITHUB_SHA || process.env.JARVIS_RELEASE_SHA || '',
+      });
+      for (const issue of checks.errors) err(where, 'publication gate: ' + issue);
+      if (!verifyApprovalSignature(approval, process.env.JARVIS_APPROVAL_SECRET)) err(where, 'publication gate: owner approval signature missing/invalid');
+    }
     if (cp.status === 'published') {
       for (const id of referencedProgramIds(cp)) {
         const pr = programs.find((x) => x.id === id);
@@ -113,12 +138,16 @@ function checkDist() {
   const htmlFiles = walk(dist, ['.html']).filter((f) => !f.includes(`${path.sep}jarvis${path.sep}`));
   if (!htmlFiles.length) return err('dist', 'ビルド成果物がありません（先に astro build）');
   const gaOn = !!process.env.PUBLIC_GA4_ID && !process.env.PUBLIC_GA4_ID.includes('XXXX');
-  if (PROD && !gaOn) err('.env', 'PUBLIC_GA4_ID が未設定です（本番では計測必須）');
+  // An unindexed, advertisement-free shell has no acquisition or affiliate events to track.
+  // Once even one real LP is published, GA4 becomes mandatory again.
+  const publishedCampaigns = loadCampaigns();
+  if (PROD && publishedCampaigns.length > 0 && !gaOn) err('.env', 'PUBLIC_GA4_ID が未設定です（公開LPがある本番では計測必須）');
+  if (PROD && publishedCampaigns.length === 0 && htmlFiles.some((f) => f.includes(`${path.sep}lp${path.sep}`))) err('dist', '公開LPが0件なのにLP HTMLが出力されています');
 
   for (const f of htmlFiles) {
     const where = rel(f);
     const html = fs.readFileSync(f, 'utf8');
-    if (!html.includes(PR_MARKER_ATTR) || !html.includes(PR_LABEL)) err(where, `PR表記（${PR_LABEL}）がありません`);
+    if ((publishedCampaigns.length > 0 || f.includes(`${path.sep}lp${path.sep}`)) && (!html.includes(PR_MARKER_ATTR) || !html.includes(PR_LABEL))) err(where, `PR表記（${PR_LABEL}）がありません`);
     if (/"@type"\s*:\s*"Product"/.test(html)) err(where, 'schema.org/Product が出力されています（禁止）');
 
     const anchors = html.match(/<a\b[^>]*>/g) ?? [];

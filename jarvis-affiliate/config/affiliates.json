@@ -1,82 +1,32 @@
 {
-  "$comment": "ASP案件マスター。リンクはここだけに書く（LP本文・コンポーネントへの直書き禁止）。dummy:true の案件は本番ビルド（JARVIS_ENV=production）で自動的にエラーになる。",
+  "$comment": "Production catalog: active programs require verified advertising rights. Sample campaigns/programs are archived outside the production catalog.",
   "version": 1,
-  "updatedAt": "2026-11-12",
+  "updatedAt": "2026-11-15",
   "programs": [
     {
-      "id": "sample-eikaiwa-a",
-      "name": "サンプル英会話A",
+      "id": "existing-lens24-a8",
+      "name": "24lens",
       "asp": "a8",
       "status": "active",
-      "dummy": true,
-      "url": "https://px.a8.net/svt/ejp?a8mat=DUMMY+AAAAAA+0000+000000",
-      "officialUrl": "https://example.com/eikaiwa-a",
-      "trackingId": "DUMMY-A8-001",
-      "reward": { "type": "CPA", "amount": 3000, "currency": "JPY", "condition": "無料体験申込" },
-      "approvalRate": 0.7,
-      "category": "online-eikaiwa",
-      "image": "",
-      "specs": {
-        "monthlyPrice": 6480,
-        "lessonMinutes": 25,
-        "freeTrial": true,
-        "nativeTeacher": false,
-        "hours": "24時間"
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+61WO6Q+2GRU+HZI6P",
+      "category": "contact-lenses",
+      "specs": {},
+      "source": "Existing 57caine/57hustler data/products.json store lens24; owner confirmed A8 subsidiary site registration and 24lens partnership 2026-11-15. A8 official FAQ permits reusing creatives across registered sites, but warns reports cannot distinguish sites using same creative.",
+      "notes": "Owner confirmed A8 site registration and 24lens partnership on 2026-11-15. Existing Lens Navi ad URL is reused provisionally; site-specific A8 creative and exact reward/conditions must be retrieved to attribute conversions to JARVIS. This does not establish forecast profit, outcome reporting, click attribution, or permit publication without separate SHA-scoped signature.\n2026-11-15 owner-provided A8 participating-program screenshot: advertiser コンタクトレンズ通販【24lens】/株式会社パレンテ, program ID s00000011505003, commission 購入6%, EPC 5.31, displayed confirmation rate 100%, partnership date 2026-05-28, end 未定. EPC and confirmation rate are A8 program-level display values; neither predicts JARVIS-specific conversion or guarantees payment. Source screenshot is provided in chat; no credentials or private media ID stored.\n2026-11-15 owner-provided A8 300x250 banner creative for JARVIS: href with a8mat=4B4176+61WO6Q+2GRU+HZI6P, bgt image aid=260528658366, 1x1 tracking pixel matching a8mat. Do not conflate it with existing Lens Navi creative (4B4176+61WOYI+2GRU+HY7W1). Ad material is unchanged in its tracked URL/image.",
+      "verifiedAt": "2026-11-15",
+      "reward": {
+        "type": "CPS",
+        "amount": 6,
+        "currency": "PERCENT",
+        "condition": "購入6%。対象取引・税/送料の算定範囲・否認条件はA8プログラム詳細で別途確認"
       },
-      "highlights": ["24時間レッスン可能", "毎日受講できる定額プラン"],
-      "cautions": ["講師の国籍は選べない時間帯がある"],
-      "verifiedAt": "2026-11-12",
-      "source": "ダミーデータ（実在しないサービス）"
-    },
-    {
-      "id": "sample-eikaiwa-b",
-      "name": "サンプル英会話B",
-      "asp": "moshimo",
-      "status": "active",
-      "dummy": true,
-      "url": "https://af.moshimo.com/af/c/click?a_id=DUMMY&p_id=0&pc_id=0&pl_id=0",
-      "officialUrl": "https://example.com/eikaiwa-b",
-      "trackingId": "DUMMY-MOSHIMO-002",
-      "reward": { "type": "CPA", "amount": 2500, "currency": "JPY", "condition": "有料会員登録" },
-      "approvalRate": 0.55,
-      "category": "online-eikaiwa",
-      "image": "",
-      "specs": {
-        "monthlyPrice": 9800,
-        "lessonMinutes": 25,
-        "freeTrial": true,
-        "nativeTeacher": true,
-        "hours": "6:00〜25:00"
-      },
-      "highlights": ["ネイティブ講師在籍", "ビジネス英語コースあり"],
-      "cautions": ["月額はAより高め"],
-      "verifiedAt": "2026-11-12",
-      "source": "ダミーデータ（実在しないサービス）"
-    },
-    {
-      "id": "sample-eikaiwa-c",
-      "name": "サンプル英会話C",
-      "asp": "rakuten",
-      "status": "active",
-      "dummy": true,
-      "url": "https://hb.afl.rakuten.co.jp/hgc/DUMMY.00000000.DUMMY.00000000/?pc=https%3A%2F%2Fexample.com%2Feikaiwa-c",
-      "officialUrl": "https://example.com/eikaiwa-c",
-      "trackingId": "DUMMY-RAKUTEN-003",
-      "reward": { "type": "CPS", "amount": 4, "currency": "PERCENT", "condition": "教材購入額の4%" },
-      "approvalRate": 0.9,
-      "category": "online-eikaiwa",
-      "image": "",
-      "specs": {
-        "monthlyPrice": 3980,
-        "lessonMinutes": 15,
-        "freeTrial": false,
-        "nativeTeacher": false,
-        "hours": "7:00〜24:00"
-      },
-      "highlights": ["月額が最も安い", "1回15分でスキマ時間向き"],
-      "cautions": ["無料体験なし"],
-      "verifiedAt": "2026-11-12",
-      "source": "ダミーデータ（実在しないサービス）"
+      "adCreative": {
+        "kind": "a8-image",
+        "imageUrl": "https://www24.a8.net/svt/bgt?aid=260528658366&wid=001&eno=01&mid=s00000011505003021000&mc=1",
+        "impressionUrl": "https://www10.a8.net/0.gif?a8mat=4B4176+61WO6Q+2GRU+HZI6P",
+        "width": 300,
+        "height": 250
+      }
     }
   ]
 }
