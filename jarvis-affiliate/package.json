@@ -18,7 +18,10 @@
     "refresh": "tsx scripts/validate-links.ts --json && tsx scripts/analyze-metrics.ts && tsx scripts/generate-social-posts.ts",
     "predev": "npm run refresh",
     "test:gates": "node --test scripts/lib/publication-gates.test.mjs",
-    "gate:check": "node scripts/check-decision-gate.mjs"
+    "gate:check": "node scripts/check-decision-gate.mjs",
+    "test:reconcile": "node --test scripts/lib/reconcile-asp.test.mjs",
+    "test:safety": "node --test scripts/lib/publication-gates.test.mjs scripts/lib/reconcile-asp.test.mjs",
+    "reconcile:asp": "node scripts/reconcile-asp.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.5",
