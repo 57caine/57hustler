@@ -12,8 +12,14 @@
       "category": "contact-lenses",
       "specs": {},
       "source": "Existing 57caine/57hustler data/products.json store lens24; owner confirmed A8 subsidiary site registration and 24lens partnership 2026-11-15. A8 official FAQ permits reusing creatives across registered sites, but warns reports cannot distinguish sites using same creative.",
-      "notes": "Owner confirmed A8 site registration and 24lens partnership on 2026-11-15. Existing Lens Navi ad URL is reused provisionally; site-specific A8 creative and exact reward/conditions must be retrieved to attribute conversions to JARVIS. This does not establish forecast profit, outcome reporting, click attribution, or permit publication without separate SHA-scoped signature.",
-      "verifiedAt": "2026-11-15"
+      "notes": "Owner confirmed A8 site registration and 24lens partnership on 2026-11-15. Existing Lens Navi ad URL is reused provisionally; site-specific A8 creative and exact reward/conditions must be retrieved to attribute conversions to JARVIS. This does not establish forecast profit, outcome reporting, click attribution, or permit publication without separate SHA-scoped signature.\n2026-11-15 owner-provided A8 participating-program screenshot: advertiser コンタクトレンズ通販【24lens】/株式会社パレンテ, program ID s00000011505003, commission 購入6%, EPC 5.31, displayed confirmation rate 100%, partnership date 2026-05-28, end 未定. EPC and confirmation rate are A8 program-level display values; neither predicts JARVIS-specific conversion or guarantees payment. Source screenshot is provided in chat; no credentials or private media ID stored.",
+      "verifiedAt": "2026-11-15",
+      "reward": {
+        "type": "CPS",
+        "amount": 6,
+        "currency": "PERCENT",
+        "condition": "購入6%。対象取引・税/送料の算定範囲・否認条件はA8プログラム詳細で別途確認"
+      }
     }
   ]
 }
