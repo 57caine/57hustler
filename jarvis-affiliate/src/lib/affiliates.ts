@@ -17,6 +17,7 @@ export interface AffiliateProgram {
   category?: string;
   image?: string;
   specs: Record<string, string | number | boolean | null>;
+  adCreative?: { kind: 'a8-image'; imageUrl: string; impressionUrl: string; width: number; height: number };
   highlights?: string[];
   cautions?: string[];
   verifiedAt?: string;

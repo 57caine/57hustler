@@ -10,6 +10,7 @@ import ComparisonTable from '../../components/ComparisonTable.astro';
 import RankingCard from '../../components/RankingCard.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import AffiliateButton from '../../components/AffiliateButton.astro';
+import A8Banner from '../../components/A8Banner.astro';
 import { loadCampaigns, type Campaign } from '../../lib/campaigns.ts';
 import { getProgram } from '../../lib/affiliates.ts';
 
@@ -59,6 +60,12 @@ const topProgram = top ? getProgram(top.programId) : getProgram(campaign.hero.pr
   <article class="prose-lp mx-auto max-w-3xl px-4" set:html={bodyHtml} />
 
   <FaqSection items={campaign.faq ?? []} />
+
+  {topProgram.adCreative?.kind === 'a8-image' && (
+    <section class="mx-auto max-w-3xl px-4 py-8" aria-label="広告">
+      <A8Banner programId={topProgram.id} campaign={campaign.slug} placement="after-faq" />
+    </section>
+  )}
 
   <section class="mx-auto max-w-3xl px-4 py-10 text-center">
     <div class="rounded-2xl bg-brand-50 p-6">
