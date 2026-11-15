@@ -49,10 +49,10 @@ test('scheduled extension has valid unique drafts and preserves alternate-day ca
   .map(([,date,brand,day])=>({date,brand,day:Number(day)}));
  assert.equal(new Set(rows.map(x=>x.date)).size,rows.length);
  assert.equal(new Set(rows.map(x=>x.brand+':'+x.day)).size,rows.length);
- for(const row of rows) assert.ok(posts.some(p=>p.brand===row.brand&&p.day===row.day),JSON.stringify(row));
+ for(const row of rows) assert.ok(row.brand==='rakutabi'&&row.day>=19&&row.day<=24 || posts.some(p=>p.brand===row.brand&&p.day===row.day),JSON.stringify(row));
  const extension=rows.filter(x=>x.date>='2026-10-28');
- assert.equal(extension.length,22);
- assert.equal(extension.at(-1).date,'2026-11-18');
+ assert.equal(extension.length,28);
+ assert.equal(extension.at(-1).date,'2026-11-30');
  for(const brand of ['lens','rakutabi']){
   const days=extension.filter(x=>x.brand===brand).map(x=>Date.parse(x.date));
   for(let i=1;i<days.length;i++) assert.equal(days[i]-days[i-1],2*86400000);
@@ -123,7 +123,11 @@ test('same-day fallback respects start hours, expiry and manual opt-in', t=>{
  ['2026-11-10','23','workflow_run',true],['2026-11-10','08','workflow_run',false],
  ['2026-11-08','14','schedule',false],['2026-11-08','16','schedule',true],
  ['2026-11-11','09','workflow_run',false],['2026-11-11','10','workflow_run',true],
- ['2026-11-19','22','workflow_run',false],['2027-11-10','22','schedule',false],
+ ['2026-11-19','22','workflow_run',false],
+ ['2026-11-20','10','schedule',true],
+ ['2026-11-22','15','schedule',true],
+ ['2026-11-30','22','workflow_run',true],
+ ['2026-12-02','22','workflow_run',false],['2027-11-10','22','schedule',false],
  ['2026-11-10','22','workflow_dispatch',false]]){
  writeFileSync(output,'');
  const r=spawnSync('bash',['-c',plan],{encoding:'utf8',env:{PATH:process.env.PATH,TEST_DATE:date,TEST_HOUR:hour,EVENT_NAME:event,SCHEDULE_CRON:'15 1,4,7,10 * * *',MANUAL_PUBLISH:'false',GITHUB_OUTPUT:output}});
@@ -150,4 +154,17 @@ test('24lens direct launch is restricted to exact day 17 article and attribution
    p.url.replace('https:','http:')
  ]) assert.throws(()=>buildOrganicMessage({...p,url},'lens'));
  assert.throws(()=>buildOrganicMessage({...p,day:16},'lens'));
+});
+
+test('new Rakutabi days are permitted by launcher but skipped without licensed media (no text fallback)',()=>{
+ for(let day=19;day<=24;day++){
+   const r=spawnSync(process.execPath,['scripts/post-organic-threads.mjs','--brand','rakutabi','--day',String(day),'--publish'],{encoding:'utf8',env:{PATH:process.env.PATH}});
+   assert.equal(r.status,0,r.stderr);
+   const out=JSON.parse(r.stdout);
+   assert.equal(out.status,'skipped-no-licensed-photos');
+   assert.equal(out.published,false);
+   assert.equal(out.photos,0);
+ }
+ const r=spawnSync(process.execPath,['scripts/post-organic-threads.mjs','--brand','rakutabi','--day','25'],{encoding:'utf8',env:{PATH:process.env.PATH}});
+ assert.notEqual(r.status,0);
 });
