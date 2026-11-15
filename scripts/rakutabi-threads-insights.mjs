@@ -4,7 +4,7 @@ import {matchRakutabiPost,parseMediaInsights} from './lib/rakutabi-insights.mjs'
 const OUTPUT=process.env.RAKUTABI_INSIGHTS_OUTPUT||'rakutabi-threads-insights.json';
 const report={snapshotAt:new Date().toISOString(),status:'unavailable',posts:[],meta:{note:'Read-only Meta Threads post metrics. These are NOT booking clicks, reservations or commissions. Missing metrics are null, not zero.'}};
 async function query(path,token){
- const url=new URL('https://graph.threads.net/v1.0/'+path.replace(/^\\/+/,''));url.searchParams.set('access_token',token);
+ const url=new URL('https://graph.threads.net/v1.0/'+path);url.searchParams.set('access_token',token);
  const res=await fetch(url,{signal:AbortSignal.timeout(12000)});
  const json=await res.json();
  if(!res.ok||json.error)throw new Error('Threads API unavailable (HTTP '+res.status+')');
@@ -45,5 +45,5 @@ try{
    }
  }
 }catch(e){report.status='unavailable';report.meta.errorCategory=e.message==='Account mismatch'?'account_mismatch':'api_or_permission_error';}
-await writeFile(OUTPUT,JSON.stringify(report,null,2)+'\\n');
+await writeFile(OUTPUT,JSON.stringify(report,null,2));
 console.log(JSON.stringify({status:report.status,rows:report.posts.length,insightsOk:report.posts.filter(x=>x.insightsStatus==='ok').length,output:OUTPUT}));
