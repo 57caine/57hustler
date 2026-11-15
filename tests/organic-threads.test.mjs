@@ -67,7 +67,7 @@ test('Lens article links retain disclosure and attribution',()=>{
   const url=new URL(p.url);
   assert.equal(url.origin,p.day===17?'https://jarvis-affiliate.vercel.app':'https://www.lens-navi.jp');
   assert.equal(url.searchParams.get('utm_content'),'lens_day_'+p.day);
-  assert.equal(p.previousTexts.length,1);
+  assert.equal(p.previousTexts.length,p.day===17?2:1);
  }
  assert.ok(posts.filter(p=>p.brand==='rakutabi'&&p.day!==9).every(p=>!p.url));
 });
