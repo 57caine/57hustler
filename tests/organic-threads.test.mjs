@@ -22,7 +22,7 @@ test('all drafts dry-run without credentials',()=>{
  for(const p of posts){
   const r=spawnSync(process.execPath,['scripts/post-organic-threads.mjs','--brand',p.brand,'--day',String(p.day)],{encoding:'utf8',env:{}});
   if(p.brand==='rakutabi'){
-   if(![16,18].includes(p.day)){assert.notEqual(r.status,0);assert.match(r.stderr,/No verified hotel-image campaign/);continue;}
+   if(![16,18].includes(p.day)){assert.equal(r.status,0,r.stderr);const skipped=JSON.parse(r.stdout);assert.equal(skipped.status,'skipped-no-licensed-photos');assert.equal(skipped.published,false);continue;}
    assert.equal(r.status,0,r.stderr);
    const out=JSON.parse(r.stdout);
    assert.equal(out.photos.length,3);
@@ -38,8 +38,10 @@ test('all drafts dry-run without credentials',()=>{
 });
 test('publish is disabled without explicit switch',()=>{
  const r=spawnSync(process.execPath,['scripts/post-organic-threads.mjs','--brand','rakutabi','--day','1','--publish'],{encoding:'utf8',env:{}});
- assert.notEqual(r.status,0);
- assert.ok(r.stderr.includes('No verified hotel-image campaign'));
+ assert.equal(r.status,0,r.stderr);
+ const skipped=JSON.parse(r.stdout);
+ assert.equal(skipped.status,'skipped-no-licensed-photos');
+ assert.equal(skipped.published,false);
 });
 test('scheduled extension has valid unique drafts and preserves alternate-day cadence',()=>{
  const workflow=readFileSync('.github/workflows/brand-threads-organic-pilot.yml','utf8');
