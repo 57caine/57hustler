@@ -66,6 +66,16 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 写真とクチコミから温泉宿を選ぶ */}
+      {pickup.length > 0 && (
+        <section className="max-w-6xl mx-auto px-4 pb-12 md:pb-16">
+          <SectionTitle title="クチコミ評価の高い温泉宿" lead="クチコミ100件以上の掲載宿から紹介しています。宿泊料金・空室状況は予約先で確認してください。" more={{ href: '/theme/onsen', label: '温泉旅行の宿をもっと見る' }} />
+          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            {pickup.map((h) => <HotelCard key={h.hotelNo} hotel={h} />)}
+          </div>
+        </section>
+      )}
+
       {/* 人気のテーマ */}
       <section id="themes" className="max-w-6xl mx-auto px-4 py-12 md:py-16 scroll-mt-16">
         <SectionTitle title="人気のテーマから探す" lead="あなたの旅のスタイルに合わせて、ぴったりの宿を見つけましょう。" />
@@ -125,16 +135,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* クチコミ評価の高い温泉宿 */}
-      {pickup.length > 0 && (
-        <section className="max-w-6xl mx-auto px-4 pb-12 md:pb-16">
-          <SectionTitle title="クチコミ評価の高い温泉宿" lead="クチコミ100件以上の温泉宿のうち、楽天トラベルのクチコミ評価が高い順です。" more={{ href: '/theme/onsen', label: '温泉旅行の宿をもっと見る' }} />
-          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-            {pickup.map((h) => <HotelCard key={h.hotelNo} hotel={h} />)}
-          </div>
-        </section>
-      )}
 
       {/* 下部バナー */}
       <section className="relative overflow-hidden">
