@@ -15,6 +15,7 @@ import { findNgWords, loadNgWords, PR_LABEL, PR_MARKER_ATTR } from '../src/lib/c
 import { p } from '../src/lib/paths.ts';
 import { c, hasFlag, loadEnv, walk } from './lib/cli.ts';
 import { evaluatePublicationGate } from './lib/publication-gates.mjs';
+import { verifyApprovalSignature } from './lib/approval-signature.mjs';
 
 loadEnv();
 const PROD = process.env.JARVIS_ENV === 'production';
@@ -85,6 +86,7 @@ function checkCampaigns(campaigns: Campaign[], programs: AffiliateProgram[]) {
         commitSha: process.env.GITHUB_SHA || process.env.JARVIS_RELEASE_SHA || '',
       });
       for (const issue of checks.errors) err(where, 'publication gate: ' + issue);
+      if (!verifyApprovalSignature(approval, process.env.JARVIS_APPROVAL_SECRET)) err(where, 'publication gate: owner approval signature missing/invalid');
     }
     if (cp.status === 'published') {
       for (const id of referencedProgramIds(cp)) {

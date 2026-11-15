@@ -1,6 +1,7 @@
 /** Explicit local decision gate. This is a safeguard, not identity authentication. */
 import fs from 'node:fs';
 import { evaluatePublicationGate } from './lib/publication-gates.mjs';
+import { verifyApprovalSignature } from './lib/approval-signature.mjs';
 const argv = process.argv.slice(2);
 const arg = (flag) => { const i = argv.indexOf(flag); return i >= 0 ? argv[i+1] : null; };
 const campaignSlug = arg('--campaign');
@@ -21,5 +22,9 @@ try {
 const evidence = manifest?.campaigns?.[campaignSlug] ?? null;
 const approval = manifest.approvals.find(a=>a?.target===campaignSlug&&a?.actionType===action) ?? null;
 const result = evaluatePublicationGate(evidence,approval,{action,campaignSlug,commitSha});
+if (!verifyApprovalSignature(approval,process.env.JARVIS_APPROVAL_SECRET)) {
+  result.pass=false;
+  result.errors.push('owner approval signature missing/invalid');
+}
 console.log(JSON.stringify({campaignSlug,action,pass:result.pass,errors:result.errors,forecastProfit:result.forecastProfit},null,2));
 if (!result.pass) process.exitCode = 1;
