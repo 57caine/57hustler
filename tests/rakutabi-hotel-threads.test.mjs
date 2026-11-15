@@ -92,3 +92,37 @@ test('public hotel captions do not expose internal identifiers or verbose photo 
   assert.ok(v.photoCredits.some(x=>x.includes('写真出典・ライセンス')));
  }
 });
+
+test('all fifteen December hotel posts have distinct destinations, rights-backed media and valid booking replies', () => {
+ const ids=new Set();
+ const photos=new Set();
+ for(let day=25;day<=39;day++){
+  const r=run(day);
+  assert.equal(r.status,0,'day '+day+' '+r.stderr);
+  const v=JSON.parse(r.stdout);
+  assert.equal(v.mode,'dry-run');
+  assert.ok(Number.isInteger(v.hotelNo));
+  assert.ok(!ids.has(v.hotelNo),'duplicate hotel '+v.hotelNo);
+  ids.add(v.hotelNo);
+  assert.ok(v.photos.length>=1&&v.photos.length<=6);
+  assert.equal(v.mediaType,v.photos.length===1?'IMAGE':'CAROUSEL');
+  assert.match(v.caption,/^【PR】 /);
+  assert.doesNotMatch(v.caption,/【宿番号|企画\d+|撮影者・出典と利用条件は予約案内/);
+  assert.match(v.reply,/hb\.afl\.rakuten\.co\.jp/);
+  assert.match(decodeURIComponent(v.reply),new RegExp('HOTEL/'+v.hotelNo+'/'+v.hotelNo+'\\.html'));
+  assert.ok(v.nearbySources.length>=2);
+  assert.ok(v.photos.every(p=>p.rights.scope.includes('Threads')&&p.rights.proofUrl.startsWith('https://commons.wikimedia.org/wiki/File:')&&p.rights.licenseUrl.startsWith('https://creativecommons.org/')));
+  assert.ok(v.photos.every(p=>p.url.startsWith('https://upload.wikimedia.org/wikipedia/commons/')&&/\.(jpg|jpeg|JPG|JPEG)$/i.test(p.url)));
+  assert.ok(v.photos.every(p=>p.rights.owner&&p.rights.changes));
+  assert.ok(v.photoCredits.length>=1&&v.photoCredits.every(s=>s.length<=500));
+  for(const p of v.photos){assert.ok(!photos.has(p.url));photos.add(p.url);}
+ }
+ assert.equal(ids.size,15);
+});
+test('Dec 2, 16 and 30 scheduled posts remain fail-closed without authorized posting credentials',()=>{
+ for(const day of [25,32,39]){
+  const r=run(day,'--publish');
+  assert.notEqual(r.status,0);
+  assert.match(r.stderr,/Publish not authorized/);
+ }
+});

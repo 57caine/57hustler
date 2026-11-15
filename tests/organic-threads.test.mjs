@@ -158,14 +158,23 @@ test('24lens direct launch is restricted to exact day 17 article and attribution
  assert.throws(()=>buildOrganicMessage({...p,day:16},'lens'));
 });
 
-test('new Rakutabi days are permitted by launcher but skipped without licensed media (no text fallback)',()=>{
+test('new Rakutabi days have verified media or safely skip; publishing needs explicit authorization',()=>{
  for(let day=19;day<=39;day++){
-   const r=spawnSync(process.execPath,['scripts/post-organic-threads.mjs','--brand','rakutabi','--day',String(day),'--publish'],{encoding:'utf8',env:{PATH:process.env.PATH}});
-   assert.equal(r.status,0,r.stderr);
-   const out=JSON.parse(r.stdout);
+  const dry=spawnSync(process.execPath,['scripts/post-organic-threads.mjs','--brand','rakutabi','--day',String(day)],{encoding:'utf8',env:{PATH:process.env.PATH}});
+  assert.equal(dry.status,0,dry.stderr);
+  const out=JSON.parse(dry.stdout);
+  if(day<=24){
    assert.equal(out.status,'skipped-no-licensed-photos');
    assert.equal(out.published,false);
    assert.equal(out.photos,0);
+   continue;
+  }
+  assert.equal(out.mode,'dry-run');
+  assert.ok(out.photos.length>=1&&out.photos.length<=6);
+  assert.match(out.reply,/hb\.afl\.rakuten\.co\.jp/);
+  const blocked=spawnSync(process.execPath,['scripts/post-organic-threads.mjs','--brand','rakutabi','--day',String(day),'--publish'],{encoding:'utf8',env:{PATH:process.env.PATH}});
+  assert.notEqual(blocked.status,0);
+  assert.match(blocked.stderr,/Publish not authorized/);
  }
  const r=spawnSync(process.execPath,['scripts/post-organic-threads.mjs','--brand','rakutabi','--day','40'],{encoding:'utf8',env:{PATH:process.env.PATH}});
  assert.notEqual(r.status,0);
