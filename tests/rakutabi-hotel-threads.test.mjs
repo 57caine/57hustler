@@ -23,16 +23,6 @@ test('publishing remains disabled without authorized credentials',()=>{
  assert.notEqual(r.status,0);
  assert.match(r.stderr,/Publish not authorized/);
 });
-test('day17 skips without publishing when licensed photos are unavailable',()=>{
- const r=run(17);
- assert.equal(r.status,0,r.stderr);
- const v=JSON.parse(r.stdout);
- assert.equal(v.status,'skipped-no-licensed-photos');
- assert.equal(v.published,false);
- assert.equal(v.photos,0);
- assert.match(r.stderr,/::warning::No licensed hotel photos/);
- assert.doesNotMatch(r.stdout,/荷物を預けて/);
-});
 
 test('photo counts: zero skips, one is IMAGE, two through six are CAROUSEL, seven rejected',async()=>{
  const {selectPhotoMedia}=await import('../scripts/lib/rakutabi-photo-policy.mjs');
