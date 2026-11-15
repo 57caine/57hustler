@@ -13,7 +13,11 @@ const publish=args.includes('--publish');
 if(!Number.isInteger(day)||day<1||day>365)throw new Error('Invalid day');
 const doc=JSON.parse(await readFile(new URL('../data/rakutabi-threads-hotel-posts.json',import.meta.url),'utf8'));
 const post=doc.posts.find(x=>x.day===day);
-if(!post)throw new Error('No verified hotel-image campaign for day '+day+'; legacy TEXT fallback prohibited');
+if(!post){
+ console.warn('::warning::No licensed hotel photos for day '+day+'; Threads post skipped without text fallback');
+ console.log(JSON.stringify({status:'skipped-no-licensed-photos',day,photos:0,published:false,reason:'No verified hotel-image campaign; text-only fallback prohibited'}));
+ process.exit(0);
+}
 if(!Number.isInteger(post.hotelNo)||post.hotelNo<1||!post.hotelName||!post.caption||!post.bookingUrl||!Array.isArray(post.nearbySources)||post.nearbySources.length<1)throw new Error('Missing hotel identity, booking link or independent nearby source');
 const mediaType=selectPhotoMedia(post.photos);
 if(mediaType==='SKIP'){
