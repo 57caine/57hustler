@@ -24,7 +24,7 @@ hero:
   subheadline: ショップ公式の案内と公的情報をもとに、買う前の確認事項を整理しました。商品価格や在庫は注文画面でご確認ください。
   primaryProgramId: existing-lens24-a8
   ctaLabel: 24レンズの商品と注文条件を確認する
-  microcopy: 広告掲載サイト登録・リンクの条件確認後のみ公開します
+  microcopy: 注文前に最新の送料・商品条件をご確認ください
 appeals:
   - axis: 送料
     message: 通常送料は税込550円。小計1万円以上の購入などで無料になる条件があります

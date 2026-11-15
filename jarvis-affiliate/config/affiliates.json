@@ -1,18 +1,19 @@
 {
   "$comment": "Production catalog: active programs require verified advertising rights. Sample campaigns/programs are archived outside the production catalog.",
   "version": 1,
-  "updatedAt": "2026-11-12",
+  "updatedAt": "2026-11-15",
   "programs": [
     {
       "id": "existing-lens24-a8",
       "name": "24lens",
       "asp": "a8",
-      "status": "pending",
+      "status": "active",
       "url": "https://px.a8.net/svt/ejp?a8mat=4B4176+61WOYI+2GRU+HY7W1",
       "category": "contact-lenses",
       "specs": {},
-      "source": "57caine/57hustler:data/products.json stores[lens24] — legacy existing link (not independently verified for JARVIS placement)",
-      "notes": "NON-PUBLISHABLE candidate. Existing lens-navi A8 link format only. JARVIS domain publisher registration, ASP partnership conditions, redirect correctness, product eligibility, prices and commission attribution are UNVERIFIED. Keep pending until confirmed."
+      "source": "Existing 57caine/57hustler data/products.json store lens24; owner confirmed A8 subsidiary site registration and 24lens partnership 2026-11-15. A8 official FAQ permits reusing creatives across registered sites, but warns reports cannot distinguish sites using same creative.",
+      "notes": "Owner confirmed A8 site registration and 24lens partnership on 2026-11-15. Existing Lens Navi ad URL is reused provisionally; site-specific A8 creative and exact reward/conditions must be retrieved to attribute conversions to JARVIS. This does not establish forecast profit, outcome reporting, click attribution, or permit publication without separate SHA-scoped signature.",
+      "verifiedAt": "2026-11-15"
     }
   ]
 }

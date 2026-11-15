@@ -74,16 +74,24 @@ function checkCampaigns(campaigns: Campaign[], programs: AffiliateProgram[]) {
     if ((cp.description ?? '').length > 120) warn(where, `description が${cp.description.length}字です（120字以内推奨）`);
 
     if (PROD && cp.status === 'published') {
+      // Evidence may be injected through a protected CI/Vercel environment variable.
+      // The ignored local file remains a supported development fallback.
       const gateFile = p('config', 'publication-gates.json');
       let manifest: any = null;
-      try { manifest = JSON.parse(fs.readFileSync(gateFile, 'utf8')); }
-      catch { err(where, '公開審査証拠 config/publication-gates.json が未設定または不正です'); }
+      try {
+        const raw = process.env.JARVIS_PUBLICATION_EVIDENCE_JSON
+          || fs.readFileSync(gateFile, 'utf8');
+        manifest = JSON.parse(raw);
+        if (!manifest || typeof manifest !== 'object' || !Array.isArray(manifest.approvals)) throw new Error('invalid manifest');
+      } catch {
+        err(where, '公開審査証拠が未設定または不正です（保護環境変数またはローカル非公開ファイル）');
+      }
       const evidence = manifest?.campaigns?.[cp.slug];
       const approval = (manifest?.approvals ?? []).find((x: any) =>
         x?.target === cp.slug && x?.actionType === 'experiment_publish');
       const checks = evaluatePublicationGate(evidence, approval, {
         action: 'experiment_publish', campaignSlug: cp.slug,
-        commitSha: process.env.GITHUB_SHA || process.env.JARVIS_RELEASE_SHA || '',
+        commitSha: process.env.VERCEL_GIT_COMMIT_SHA || process.env.GITHUB_SHA || process.env.JARVIS_RELEASE_SHA || '',
       });
       for (const issue of checks.errors) err(where, 'publication gate: ' + issue);
       if (!verifyApprovalSignature(approval, process.env.JARVIS_APPROVAL_SECRET)) err(where, 'publication gate: owner approval signature missing/invalid');
