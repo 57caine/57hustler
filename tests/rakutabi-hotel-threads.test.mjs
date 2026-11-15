@@ -49,3 +49,26 @@ test('six photos fit in multiple copyright replies when required',async()=>{
  assert.ok(replies.every(reply=>reply.length<=500));
  for(let i=0;i<6;i++)assert.ok(replies.some(reply=>reply.includes('Photographer '+i)));
 });
+
+test('day18 Tokyo Station Hotel has three licensed station-area photographs and direct booking reply',()=>{
+ const r=run(18);
+ assert.equal(r.status,0,r.stderr);
+ const v=JSON.parse(r.stdout);
+ assert.equal(v.mode,'dry-run');
+ assert.equal(v.hotelNo,137869);
+ assert.equal(v.mediaType,'CAROUSEL');
+ assert.equal(v.photos.length,3);
+ assert.deepEqual(v.photos.map(p=>p.rights.owner),['Kakidai','MaedaAkihiko','RuinDig / Yuki Uchida']);
+ assert.ok(v.photos.every(p=>p.rights.scope.includes('Threads') && p.rights.proofUrl.startsWith('https://commons.wikimedia.org/wiki/File:')));
+ assert.ok(v.photos.every(p=>p.url.startsWith('https://upload.wikimedia.org/wikipedia/commons/')));
+ assert.ok(v.photoCredits.every(p=>p.length<=500));
+ assert.match(v.caption,/客室写真ではありません/);
+ assert.match(v.reply,/東京ステーションホテル/);
+ assert.match(v.reply,/HOTEL%2F137869%2F137869.html/);
+ assert.equal(v.nearbySources.length,2);
+});
+test('day18 does not publish when authorization flag is absent',()=>{
+ const r=run(18,'--publish');
+ assert.notEqual(r.status,0);
+ assert.match(r.stderr,/Publish not authorized/);
+});
