@@ -145,15 +145,6 @@ test('five redesigned December slots feature boutique / apartment-style stays, n
  }
  assert.equal(doc.posts.filter(p=>p.day>=25&&p.day<=39).length,15);
 });
-test('hotel interiors and local sightseeing photographs are never mixed up',async()=>{
- const doc=JSON.parse((await import('node:fs')).readFileSync('data/rakutabi-threads-hotel-posts.json','utf8'));
- for(const day of [32,35]){
-  const p=doc.posts.find(p=>p.day===day);
-  assert.match(p.caption,/写真は周辺|写真は周辺の/);
-  assert.ok(p.photos.every(x=>x.alt.includes('客室')||x.alt.includes('宿の')));
- }
-});
-
 test('all December posts meet the owner room-first editorial criteria; no generic business chains or prestige-first labels',async()=>{
  const {readFileSync}=await import('node:fs');
  const posts=JSON.parse(readFileSync('data/rakutabi-threads-hotel-posts.json','utf8')).posts.filter(p=>p.day>=25&&p.day<=39);
@@ -166,12 +157,26 @@ test('all December posts meet the owner room-first editorial criteria; no generi
   assert.ok(p.designFocus==='room_first'||p.designFocus==='interior_common_space');
   assert.doesNotMatch(p.hotelName,/スーパーホテル|アパホテル|ドーミーイン|ホテルニューオータニ|The Okura Tokyo|日光金谷ホテル/);
   assert.ok(p.photos.length>=1&&p.photos.length<=6);
-  assert.ok(p.caption.includes('📷'),'caption must clarify image provenance');
-  if(p.designFocus==='interior_common_space')assert.match(p.caption,/客室.*ではありません/);
   const res=run(day);assert.equal(res.status,0,res.stderr);
   const v=JSON.parse(res.stdout);
   assert.equal(v.hotelNo,p.hotelNo);
   assert.equal(v.photos.length,p.photos.length);
   assert.match(decodeURIComponent(v.reply),new RegExp('HOTEL/'+p.hotelNo+'/'+p.hotelNo+'\\.html'));
+ }
+});
+
+test('all December captions discuss the stay without photo metadata or management notes',async()=>{
+ const {readFileSync}=await import('node:fs');
+ const posts=JSON.parse(readFileSync('data/rakutabi-threads-hotel-posts.json','utf8')).posts.filter(p=>p.day>=25&&p.day<=39);
+ assert.equal(posts.length,15);
+ for(const p of posts){
+   assert.doesNotMatch(p.caption,/📷|写真は|撮影|客室.*ではありません|著作者|ライセンス|【宿番号|企画\\d+/);
+   assert.ok(p.caption.length>=65&&p.caption.length<460);
+   const out=run(p.day);
+   assert.equal(out.status,0,out.stderr);
+   const pub=JSON.parse(out.stdout);
+   assert.doesNotMatch(pub.caption,/📷|撮影|著作者|ライセンス|【宿番号/);
+   assert.ok(pub.photoCredits.length>=1,'credits remain in separate replies');
+   assert.match(pub.reply,/hb\\.afl\\.rakuten\\.co\\.jp/);
  }
 });
