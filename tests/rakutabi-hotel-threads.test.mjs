@@ -127,24 +127,29 @@ test('Dec 2, 16 and 30 scheduled posts remain fail-closed without authorized pos
  }
 });
 
-test('December experiment keeps exactly 5 everyday-value posts and 10 premium-experience posts',async()=>{
- const {readFileSync}=await import('node:fs');
- const posts=JSON.parse(readFileSync('data/rakutabi-threads-hotel-posts.json','utf8')).posts.filter(x=>x.day>=25&&x.day<=39);
- assert.equal(posts.length,15);
- assert.equal(posts.filter(x=>x.experimentGroup==='value_convenience').length,5);
- assert.equal(posts.filter(x=>x.experimentGroup==='premium_experience').length,10);
- assert.deepEqual(posts.filter(x=>x.experimentGroup==='value_convenience').map(x=>x.day),[27,29,32,35,39]);
- const ids=new Set(posts.map(x=>x.hotelNo));assert.equal(ids.size,15);
- for(const day of [27,29,32,35,39]){
-   const p=posts.find(x=>x.day===day);
-   assert.ok(p.priceEvidenceNote);
-   assert.equal(p.photos.length,1);
-   assert.ok(p.nearbySources.length>=2);
-   const d=run(day);
-   assert.equal(d.status,0,d.stderr);
-   const v=JSON.parse(d.stdout);
-   assert.equal(v.hotelNo,p.hotelNo);
-   assert.equal(v.photos.length,1);
-   assert.match(v.reply,new RegExp('HOTEL%2F'+p.hotelNo+'%2F'+p.hotelNo+'\\.html'));
+test('five redesigned December slots feature boutique / apartment-style stays, never business chains',async()=>{
+ const doc=JSON.parse((await import('node:fs')).readFileSync('data/rakutabi-threads-hotel-posts.json','utf8'));
+ const wanted=[27,29,32,35,39];
+ for(const day of wanted){
+  const post=doc.posts.find(p=>p.day===day);
+  assert.equal(post.experimentGroup,'design_stay');
+  assert.doesNotMatch(post.hotelName,/スーパーホテル|アパホテル|ドーミーイン/);
+  assert.ok(post.caption.length<460);
+  assert.ok(post.photos.length>=1&&post.photos.length<=6);
+  assert.ok(post.nearbySources.some(s=>s.url.includes('travel.rakuten.co.jp')));
+  const r=run(day);
+  assert.equal(r.status,0,r.stderr);
+  const v=JSON.parse(r.stdout);
+  assert.equal(v.photos.length,post.photos.length);
+  assert.match(decodeURIComponent(v.reply),new RegExp('HOTEL/'+post.hotelNo+'/'+post.hotelNo+'\\.html'));
+ }
+ assert.equal(doc.posts.filter(p=>p.day>=25&&p.day<=39).length,15);
+});
+test('hotel interiors and local sightseeing photographs are never mixed up',async()=>{
+ const doc=JSON.parse((await import('node:fs')).readFileSync('data/rakutabi-threads-hotel-posts.json','utf8'));
+ for(const day of [32,35]){
+  const p=doc.posts.find(p=>p.day===day);
+  assert.match(p.caption,/写真は周辺|写真は周辺の/);
+  assert.ok(p.photos.every(x=>x.alt.includes('客室')||x.alt.includes('宿の')));
  }
 });
