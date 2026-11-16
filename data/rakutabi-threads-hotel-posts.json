@@ -305,7 +305,7 @@
         }
       ],
       "experimentGroup": "design_stay",
-      "designFocus": "room_first"
+      "designFocus": "interior_common_space"
     },
     {
       "day": 27,
@@ -572,7 +572,7 @@
         }
       ],
       "experimentGroup": "design_stay",
-      "designFocus": "room_first"
+      "designFocus": "interior_common_space"
     },
     {
       "day": 32,
