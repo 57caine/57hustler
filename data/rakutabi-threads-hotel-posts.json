@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "notes": "Image must be independent Creative Commons or separately permitted, never Rakuten API or Rakuten Travel image. Source, license and attribution documented; verify current URL/booking availability before real publication. December 2026: value_convenience versus premium_experience are editorial positioning labels, NOT verified comparable price tiers. Price examples are not fixed for a booking date; use Rakuten booking analytics before interpreting performance.",
+  "notes": "Image must be independent Creative Commons or separately permitted, never Rakuten API or Rakuten Travel image. Source, license and attribution documented; verify current URL/booking availability before real publication. December 2026: value_convenience versus premium_experience are editorial positioning labels, NOT verified comparable price tiers. Price examples are not fixed for a booking date; use Rakuten booking analytics before interpreting performance. Owner preference as of 2026-11-16: stylish clean rooms, accessible boutique/resort-style stays, no generic business hotels. For Commons photos of surrounding scenery, explicitly state they are NOT photos of the room and direct the reader to hotel room photos on booking page. No reuse of Rakuten hotel images on Threads.",
   "posts": [
     {
       "day": 16,
@@ -265,40 +265,39 @@
     },
     {
       "day": 27,
-      "hotelNo": 79350,
-      "hotelName": "天然温泉 葵の湯 スーパーホテル岡崎",
-      "caption": "愛知・岡崎で、温泉と朝食を楽しむ気軽な一泊。♨️\n\n名鉄・東岡崎駅から徒歩約6分。ホテルでは天然温泉「葵の湯」と朝食ビュッフェを案内しています。観光でも出張でも、宿の選び方をシンプルにしたい方に。プランと料金は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F79350%2F79350.html",
+      "hotelNo": 141079,
+      "hotelName": "ワン・ニセコ・リゾート・タワーズ",
+      "caption": "ニセコで、広い部屋に泊まってのんびり過ごしたいなら。🏔️\n\nワン・ニセコ・リゾート・タワーズは自然の中にあるコンドミニアム型リゾート。キッチン付きの客室があり、グループや家族での滞在にも向いています。📷写真は2018年に撮影された実際の客室です。料金・現在の部屋設備は予約先で確認を。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F141079%2F141079.html",
       "nearbySources": [
         {
-          "claim": "名鉄東岡崎駅から徒歩約6分、天然温泉・朝食付きのプランあり",
-          "url": "https://travel.rakuten.co.jp/HOTEL/79350/79350.html"
+          "claim": "ニセコのコンドミニアム型リゾート、キッチン付きの客室を案内",
+          "url": "https://travel.rakuten.co.jp/HOTEL/141079/CUSTOM/141079130115163210.html"
         },
         {
-          "claim": "楽天トラベルの掲載施設・宿泊予約ページ",
-          "url": "https://travel.rakuten.co.jp/HOTEL/79350/79350.html"
+          "claim": "楽天トラベル当該施設の予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/141079/141079.html"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/79350/79350.html",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/141079/141079.html",
       "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Super-Hotel-1.jpg/1280px-Super-Hotel-1.jpg",
-          "alt": "天然温泉 葵の湯 スーパーホテル岡崎の建物外観（2019年）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/H%C3%B4tel_room_at_one_niseko_resort_towers_in_2018.jpg/1280px-H%C3%B4tel_room_at_one_niseko_resort_towers_in_2018.jpg",
+          "alt": "ワン・ニセコ・リゾート・タワーズの客室内部（2018年撮影）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "Evelyn-rose",
-            "scope": "Commercial use including Threads, with attribution",
-            "license": "CC0 1.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Super-Hotel-1.jpg",
-            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "date": "2019-02-17",
-            "changes": "Resized to Wikimedia 1280px thumbnail; no other edits"
+            "owner": "Lasthib",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:H%C3%B4tel_room_at_one_niseko_resort_towers_in_2018.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2018-02-23",
+            "changes": "Wikimedia thumbnail resized to 1280px; no additional image edits"
           }
         }
       ],
-      "experimentGroup": "value_convenience",
-      "priceEvidenceNote": "楽天検索結果に税込4,800円〜の掲載例（2026-11-16確認）。対象宿泊日・人数は未固定のため参考値"
+      "experimentGroup": "design_stay"
     },
     {
       "day": 28,
@@ -338,40 +337,67 @@
     },
     {
       "day": 29,
-      "hotelNo": 172880,
-      "hotelName": "アパホテル〈新宿 歌舞伎町中央〉",
-      "caption": "都心のライブや街歩きで、宿は立地優先。🚉\n\nアパホテル〈新宿 歌舞伎町中央〉はJR新宿駅東口から徒歩約7分、西武新宿駅から徒歩約3分。東京で遅くまで過ごす日の宿を探すとき、移動しやすさを比べてみませんか。宿泊料金・空室は予約先へ。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F172880%2F172880.html",
+      "hotelNo": 179802,
+      "hotelName": "ザ・ゲートホテル京都高瀬川 by HULIC",
+      "caption": "京都で泊まるなら、デザインのいいお部屋にもこだわりたい。🌿\n\n旧立誠小学校の建築を生かしたホテル。河原町で街歩きがしやすく、客室・ラウンジなどの空間にも見どころがあります。📷客室、ゲストラウンジ、パティオの写真を掲載（2020年撮影）。料金・空室・最新の客室タイプは予約先で確認を。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F179802%2F179802.html",
       "nearbySources": [
         {
-          "claim": "西武新宿駅から徒歩約3分、新宿駅東口から徒歩約7分",
-          "url": "https://travel.rakuten.co.jp/HOTEL/172880/172880.html"
+          "claim": "旧立誠小学校の建築を活用し、阪急京都河原町駅から徒歩約3分",
+          "url": "https://travel.rakuten.co.jp/HOTEL/179802/CUSTOM/GW179802250923132528.html"
         },
         {
-          "claim": "楽天トラベルの掲載施設・宿泊予約ページ",
-          "url": "https://travel.rakuten.co.jp/HOTEL/172880/172880.html"
+          "claim": "楽天トラベル当該施設の予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/179802/179802.html"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/172880/172880.html",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/179802/179802.html",
       "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/APA_Hotel_Shinjuku_Kabukicho_Chuo,_Tokyo_-_Mar_15,_2026.jpg/1280px-APA_Hotel_Shinjuku_Kabukicho_Chuo,_Tokyo_-_Mar_15,_2026.jpg",
-          "alt": "アパホテル新宿歌舞伎町中央の外観（2026年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/The_Gate_Hotel_Kyoto_Takasegawa_by_Hulic_Essential_Double_bedroom_20200811-001.jpg/1280px-The_Gate_Hotel_Kyoto_Takasegawa_by_Hulic_Essential_Double_bedroom_20200811-001.jpg",
+          "alt": "ザ・ゲートホテル京都高瀬川・エッセンシャルダブルの客室写真（2020年撮影）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "Dennis Sylvester Hurd",
-            "scope": "Commercial use including Threads, with attribution",
-            "license": "CC BY 4.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:APA_Hotel_Shinjuku_Kabukicho_Chuo,_Tokyo_-_Mar_15,_2026.jpg",
-            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-            "date": "2026-03-15",
-            "changes": "Resized to Wikimedia 1280px thumbnail; no other edits"
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:The_Gate_Hotel_Kyoto_Takasegawa_by_Hulic_Essential_Double_bedroom_20200811-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2020-08-11",
+            "changes": "Photo panorama/composition/color were adjusted by original uploader; Wikimedia thumbnail resized; no further edits"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/The_Gate_Hotel_Kyoto_Takasegawa_by_Hulic_3F_Guest_Lounge_20200812-001.jpg/1280px-The_Gate_Hotel_Kyoto_Takasegawa_by_Hulic_3F_Guest_Lounge_20200812-001.jpg",
+          "alt": "ザ・ゲートホテル京都高瀬川の共用ラウンジ（客室ではありません）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:The_Gate_Hotel_Kyoto_Takasegawa_by_Hulic_3F_Guest_Lounge_20200812-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2020-08-12",
+            "changes": "Wikimedia thumbnail resized to 1280px; no additional image edits"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/The_Gate_Hotel_Kyoto_Takasegawa_by_Hulic_3F_Patio_20200811-001.jpg/1280px-The_Gate_Hotel_Kyoto_Takasegawa_by_Hulic_3F_Patio_20200811-001.jpg",
+          "alt": "ザ・ゲートホテル京都高瀬川の館内パティオ（客室ではありません）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:The_Gate_Hotel_Kyoto_Takasegawa_by_Hulic_3F_Patio_20200811-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2020-08-11",
+            "changes": "Wikimedia thumbnail resized to 1280px; no additional image edits"
           }
         }
       ],
-      "experimentGroup": "value_convenience",
-      "priceEvidenceNote": "楽天検索結果に税込7,290円〜の掲載例（時期・条件で大幅変動）"
+      "experimentGroup": "design_stay"
     },
     {
       "day": 30,
@@ -503,40 +529,53 @@
     },
     {
       "day": 32,
-      "hotelNo": 179856,
-      "hotelName": "天然温泉 豊穣の湯 ドーミーイン池袋",
-      "caption": "池袋に泊まるなら、大浴場・サウナのあるホテルも。🛁\n\nドーミーイン池袋は東池袋にあり、男女別の天然温泉大浴場とサウナを案内しています。池袋での買い物やサンシャインシティ周辺の予定と組み合わせる一泊に。温泉の利用時間や料金は予約先をご確認ください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F179856%2F179856.html",
+      "hotelNo": 189830,
+      "hotelName": "Rakuten STAY 出雲",
+      "caption": "出雲で、部屋に入った瞬間『ここに泊まりたい』と思える旅を。⛩️\n\n出雲大社の近くにあるRakuten STAY 出雲。約93㎡のメゾネット客室にはプライベートサウナ・プロジェクターなどを備え、家族や友人との滞在にも。📷写真は周辺の出雲大社の風景です。客室の実際の写真は予約ページでご確認ください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F189830%2F189830.html",
       "nearbySources": [
         {
-          "claim": "東池袋3-11-11、池袋駅東口方面35番出口や東池袋駅から徒歩約9分",
-          "url": "https://travel.rakuten.co.jp/HOTEL/179856/179856_std.html"
+          "claim": "出雲大社神楽殿へ徒歩約5分、約93㎡のサウナ付きメゾネット客室がある",
+          "url": "https://travel.rakuten.co.jp/HOTEL/189830/189830.html"
         },
         {
-          "claim": "楽天トラベルの掲載施設・宿泊予約ページ",
-          "url": "https://travel.rakuten.co.jp/HOTEL/179856/179856.html"
+          "claim": "楽天トラベル当該施設の予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/189830/189830.html"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/179856/179856.html",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/189830/189830.html",
       "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Dormy_Inn_Ikebukuro.jpg/1280px-Dormy_Inn_Ikebukuro.jpg",
-          "alt": "ドーミーイン池袋の外観（2026年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Izumo_Taisha_2024_5.jpg/1280px-Izumo_Taisha_2024_5.jpg",
+          "alt": "Rakuten STAY出雲周辺の出雲大社（ホテル客室の写真ではありません）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "Totti",
+            "owner": "Smiley.toerist",
             "scope": "Commercial use including Threads, with attribution and share-alike",
             "license": "CC BY-SA 4.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Dormy_Inn_Ikebukuro.jpg",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Izumo_Taisha_2024_5.jpg",
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "date": "2026-09-19",
-            "changes": "Resized to Wikimedia 1280px thumbnail; no other edits"
+            "date": "2024-05-23",
+            "changes": "Wikimedia thumbnail resized to 1280px; no additional image edits"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Izumo_Taisha_20170126-2.jpg/1280px-Izumo_Taisha_20170126-2.jpg",
+          "alt": "出雲大社の景色（ホテル客室の写真ではありません）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "Suicasmo",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Izumo_Taisha_20170126-2.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2017-01-26",
+            "changes": "Wikimedia thumbnail resized to 1280px; no additional image edits"
           }
         }
       ],
-      "experimentGroup": "value_convenience",
-      "priceEvidenceNote": "料金の同一条件での確定値未取得。価格帯は中価格帯候補として仮置き"
+      "experimentGroup": "design_stay"
     },
     {
       "day": 33,
@@ -612,40 +651,53 @@
     },
     {
       "day": 35,
-      "hotelNo": 168701,
-      "hotelName": "スーパーホテル東京・浜松町",
-      "caption": "東京観光も出張も、駅への近さを重視したい。🧳\n\nスーパーホテル東京・浜松町は大門駅から徒歩約2分、JR浜松町駅から徒歩約4分。羽田空港方面へも移動しやすい地域です。観光や仕事の予定に合わせて宿を選ぶ際の候補にどうぞ。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F168701%2F168701.html",
+      "hotelNo": 193942,
+      "hotelName": "Rakuten STAY 箱根すすき草原",
+      "caption": "箱根で、温泉付きのお部屋を家族や友達と楽しみたい。♨️\n\nRakuten STAY 箱根すすき草原は2025年7月開業。客室に天然温泉かけ流しのお風呂やキッチン、プロジェクターを備え、すすき草原へも徒歩約3分。📷写真は周辺のすすき草原（2006年撮影）です。宿のお部屋は予約先の写真をご確認ください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F193942%2F193942.html",
       "nearbySources": [
         {
-          "claim": "大門駅徒歩約2分、浜松町駅徒歩約4分。楽天の宿泊料金掲載例は税込8,800円〜",
-          "url": "https://travel.rakuten.co.jp/yado/tokyo/B.html"
+          "claim": "2025年7月開業、全室天然温泉かけ流し風呂、仙石原すすき草原徒歩約3分",
+          "url": "https://travel.rakuten.co.jp/HOTEL/193942/193942.html"
         },
         {
-          "claim": "楽天トラベルの掲載施設・宿泊予約ページ",
-          "url": "https://travel.rakuten.co.jp/HOTEL/168701/168701.html"
+          "claim": "楽天トラベル当該施設の予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/193942/193942.html"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/168701/168701.html",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/193942/193942.html",
       "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Super_Hotel_Tokyo_Hamamatsucho.JPG/1280px-Super_Hotel_Tokyo_Hamamatsucho.JPG",
-          "alt": "スーパーホテル東京・浜松町の外観（2020年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Hakone_sengokuhara_susuki1.jpg/1280px-Hakone_sengokuhara_susuki1.jpg",
+          "alt": "箱根・仙石原のすすき草原の風景（宿の客室写真ではありません）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "Abasaa（あばさー）",
-            "scope": "Commercial use including Threads, with attribution",
-            "license": "Public domain",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Super_Hotel_Tokyo_Hamamatsucho.JPG",
-            "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-            "date": "2020-03-01",
-            "changes": "Resized to Wikimedia 1280px thumbnail; no other edits"
+            "owner": "Jungle",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 3.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hakone_sengokuhara_susuki1.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+            "date": "before 2006-10-19",
+            "changes": "Wikimedia thumbnail resized to 1280px; no additional image edits"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Hakone_sengokuhara_susuki2.jpg/1280px-Hakone_sengokuhara_susuki2.jpg",
+          "alt": "箱根・仙石原のすすき草原の別カット（宿の客室写真ではありません）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "Jungle",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 3.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hakone_sengokuhara_susuki2.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+            "date": "2006-10-18",
+            "changes": "Wikimedia thumbnail resized to 1280px; no additional image edits"
           }
         }
       ],
-      "experimentGroup": "value_convenience",
-      "priceEvidenceNote": "楽天の地域検索結果に税込8,800円〜の掲載例（2026-11-16、特定宿泊日を保証しない）"
+      "experimentGroup": "design_stay"
     },
     {
       "day": 36,
@@ -757,40 +809,67 @@
     },
     {
       "day": 39,
-      "hotelNo": 187620,
-      "hotelName": "天然温泉 淡雪の湯 ドーミーイン青森",
-      "caption": "青森駅周辺で、温泉も楽しめる宿を探すなら。♨️\n\nドーミーイン青森は青森駅から徒歩約10分。最上階に天然温泉大浴場とサウナがあり、青森の街歩きとホテルでのひと休みを組み合わせられます。交通と料金・空室は予約先でご確認ください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F187620%2F187620.html",
+      "hotelNo": 18239,
+      "hotelName": "パークホテル東京",
+      "caption": "東京のホテルでも、せっかくなら客室の雰囲気で選びたい。✨\n\n汐留の高層階にあるパークホテル東京。アートのある空間で過ごせて、新橋・銀座方面にも出かけやすい立地です。📷客室内部と館内の写真（2019年撮影）。料金・客室ごとのデザインは予約先で確認を。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F18239%2F18239.html",
       "nearbySources": [
         {
-          "claim": "青森駅から徒歩約10分。最上階に天然温泉・サウナを備える",
-          "url": "https://travel.rakuten.co.jp/HOTEL/187620/187620_std.html"
+          "claim": "汐留駅直結、JR新橋駅徒歩約7分のデザイン性のあるホテル",
+          "url": "https://travel.rakuten.co.jp/HOTEL/18239/18239_std.html"
         },
         {
-          "claim": "楽天トラベルの掲載施設・宿泊予約ページ",
-          "url": "https://travel.rakuten.co.jp/HOTEL/187620/187620.html"
+          "claim": "楽天トラベル当該施設の予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/18239/18239.html"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/187620/187620.html",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/18239/18239.html",
       "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Dormy_inn_Aomori.jpg/1280px-Dormy_inn_Aomori.jpg",
-          "alt": "ドーミーイン青森の外観（2026年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Room_interior_in_the_Park_Hotel_Tokyo_in_Tokyo%2C_2019_-_328.jpg/1280px-Room_interior_in_the_Park_Hotel_Tokyo_in_Tokyo%2C_2019_-_328.jpg",
+          "alt": "パークホテル東京の客室内部（2019年撮影）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "Totti",
+            "owner": "Another Believer",
             "scope": "Commercial use including Threads, with attribution and share-alike",
             "license": "CC BY-SA 4.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Dormy_inn_Aomori.jpg",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Room_interior_in_the_Park_Hotel_Tokyo_in_Tokyo%2C_2019_-_328.jpg",
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "date": "2026-01-12",
-            "changes": "Resized to Wikimedia 1280px thumbnail; no other edits"
+            "date": "2019-11-28",
+            "changes": "Wikimedia thumbnail resized to 1280px; no additional image edits"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Room_interior_in_the_Park_Hotel_Tokyo_in_Tokyo%2C_2019_-_330.jpg/1280px-Room_interior_in_the_Park_Hotel_Tokyo_in_Tokyo%2C_2019_-_330.jpg",
+          "alt": "パークホテル東京の別の客室内部写真（2019年撮影）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "Another Believer",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Room_interior_in_the_Park_Hotel_Tokyo_in_Tokyo%2C_2019_-_330.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2019-11-28",
+            "changes": "Wikimedia thumbnail resized to 1280px; no additional image edits"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Lobby_of_the_Park_Hotel_Tokyo_in_Tokyo%2C_2019_-_326.jpg/1280px-Lobby_of_the_Park_Hotel_Tokyo_in_Tokyo%2C_2019_-_326.jpg",
+          "alt": "パークホテル東京の館内ロビー（客室ではありません、2019年撮影）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "Another Believer",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Lobby_of_the_Park_Hotel_Tokyo_in_Tokyo%2C_2019_-_326.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2019-11-28",
+            "changes": "Wikimedia thumbnail resized to 1280px; no additional image edits"
           }
         }
       ],
-      "experimentGroup": "value_convenience",
-      "priceEvidenceNote": "楽天の宿泊プラン掲載例では1名1泊税込11,500円〜のプランもある（人数/プラン依存）。中価格帯候補"
+      "experimentGroup": "design_stay"
     }
   ]
 }
