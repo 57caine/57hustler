@@ -177,6 +177,6 @@ test('all December captions discuss the stay without photo metadata or managemen
    const pub=JSON.parse(out.stdout);
    assert.doesNotMatch(pub.caption,/📷|撮影|著作者|ライセンス|【宿番号/);
    assert.ok(pub.photoCredits.length>=1,'credits remain in separate replies');
-   assert.match(pub.reply,/hb\\.afl\\.rakuten\\.co\\.jp/);
+   assert.ok(pub.reply.includes('https://hb.afl.rakuten.co.jp/'));
  }
 });
