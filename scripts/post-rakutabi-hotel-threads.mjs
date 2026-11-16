@@ -6,6 +6,7 @@
  */
 import { readFile } from 'node:fs/promises';
 import { selectPhotoMedia, photoCreditMessages } from './lib/rakutabi-photo-policy.mjs';
+import { validateHotelBookingLink } from './lib/rakutabi-rakuten-measurement.mjs';
 const args=process.argv.slice(2);
 const flag=(key)=>{const i=args.indexOf('--'+key);return i<0?null:args[i+1];};
 const day=Number(flag('day'));
@@ -33,8 +34,7 @@ const photos=post.photos.map((p,index)=>{
  return {...p,url:url.href,rights};
 });
 if(new Set(photos.map(x=>x.url)).size!==photos.length)throw new Error('Duplicate carousel images prohibited');
-const booking=new URL(post.bookingUrl);
-if(booking.protocol!=='https:'||booking.hostname!=='hb.afl.rakuten.co.jp'||booking.pathname==='/')throw new Error('Invalid Rakuten affiliate booking URL');
+validateHotelBookingLink(post.bookingUrl,post.hotelNo);
 if(post.caption.length>460||post.caption.includes('http://')||post.caption.includes('https://'))throw new Error('Parent caption too long or contains link');
 if(post.nearbySources.some(s=>!s.claim||!s.url||new URL(s.url).protocol!=='https:'))throw new Error('Nearby claims need primary source URLs');
 const marker='【宿番号 '+post.hotelNo+'・企画'+day+'】';
