@@ -8,6 +8,9 @@ on:
       - 'scripts/post-organic-threads.mjs'
       - 'scripts/post-rakutabi-hotel-threads.mjs'
       - 'scripts/lib/rakutabi-photo-policy.mjs'
+      - 'scripts/lib/rakutabi-rakuten-measurement.mjs'
+      - 'scripts/audit-rakutabi-rakuten-links.mjs'
+      - 'tests/rakutabi-rakuten-measurement.test.mjs'
       - 'scripts/rakutabi-threads-insights.mjs'
       - 'scripts/audit-rakutabi-hotel-media.mjs'
       - 'scripts/lib/rakutabi-media-preflight.mjs'
@@ -38,6 +41,7 @@ jobs:
           node-version: '22'
       - run: node --test tests/organic-threads.test.mjs
       - run: node --test tests/rakutabi-hotel-threads.test.mjs
+      - run: node --test tests/rakutabi-rakuten-measurement.test.mjs
       - run: node --test tests/rakutabi-threads-insights.test.mjs
       - run: node --test tests/rakutabi-media-preflight.test.mjs
       - run: node --test tests/brand-threads.test.mjs
