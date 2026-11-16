@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "notes": "Image must be independent Creative Commons or separately permitted, never Rakuten API or Rakuten Travel image. Source, license and attribution documented; verify current URL/booking availability before real publication. December 2026: value_convenience versus premium_experience are editorial positioning labels, NOT verified comparable price tiers. Price examples are not fixed for a booking date; use Rakuten booking analytics before interpreting performance. Owner preference as of 2026-11-16: stylish clean rooms, accessible boutique/resort-style stays, no generic business hotels. For Commons photos of surrounding scenery, explicitly state they are NOT photos of the room and direct the reader to hotel room photos on booking page. No reuse of Rakuten hotel images on Threads.",
+  "notes": "Image must be independent Creative Commons or separately permitted, never Rakuten API or Rakuten Travel image. Source, license and attribution documented; verify current URL/booking availability before real publication. December 2026: value_convenience versus premium_experience are editorial positioning labels, NOT verified comparable price tiers. Price examples are not fixed for a booking date; use Rakuten booking analytics before interpreting performance. Owner preference as of 2026-11-16: stylish clean rooms, accessible boutique/resort-style stays, no generic business hotels. For Commons photos of surrounding scenery, explicitly state they are NOT photos of the room and direct the reader to hotel room photos on booking page. No reuse of Rakuten hotel images on Threads. 2026-11-16 owner decision: all 15 December posts prioritize visually appealing, clean design stays rather than generic business chains or prestige brands. Prefer actual guest-room photos with independently confirmed CC licenses; otherwise clearly identify commons/nearby scenes as NOT the room. Original photographer alterations and Wikimedia resize are recorded. Never copy hotel/Rakuten-provided room images without permission. This is a taste/editorial correction, not an observed conversion-rate winner.",
   "posts": [
     {
       "day": 16,
@@ -193,75 +193,119 @@
     },
     {
       "day": 25,
-      "hotelNo": 184829,
-      "hotelName": "箱根ホテル小涌園",
-      "caption": "水着で遊べる温泉も、箱根の湯めぐりも。♨️\n\n箱根ホテル小涌園は、小涌園バス停のすぐ近く。向かいにある箱根小涌園ユネッサンや森の湯も楽しめるのが魅力です。温泉と食事を軸にした箱根旅を考えている方へ。\n\n空室・料金・最新のサービス内容は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F184829%2F184829.html",
+      "hotelNo": 176768,
+      "hotelName": "GOOD NATURE HOTEL KYOTO",
+      "caption": "京都で、緑と木のぬくもりに包まれるホテルステイ。🌿\n\n河原町の街中にある、自然素材を大切にしたデザインホテル。ガーデンビューテラスダブルは約33㎡の客室タイプ。買い物や鴨川散歩のあと、ホテルでもゆっくり過ごしたい日に。\n\n📷実際の客室とラウンジの過去写真です。設備・料金・空室は予約先で確認してください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F176768%2F176768.html",
       "nearbySources": [
         {
-          "claim": "ユネッサンはホテルから徒歩約3分、宿泊者向け入場案内あり",
-          "url": "https://www.hakone-hotelkowakien.jp/yunessun.html"
+          "claim": "四条河原町周辺の自然素材を使ったデザインホテル、ガーデンビューテラスダブル客室",
+          "url": "https://travel.rakuten.co.jp/HOTEL/176768/176768.html"
         },
         {
-          "claim": "楽天トラベル掲載の箱根ホテル小涌園の住所とアクセス、予約条件",
-          "url": "https://travel.rakuten.co.jp/HOTEL/184829/184829.html"
+          "claim": "楽天トラベルの施設詳細・現在の宿泊条件",
+          "url": "https://hotel.travel.rakuten.co.jp/hotelinfo/plan/176768"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/184829/184829.html",
-      "verifiedAt": "2026-11-15",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/176768/176768.html",
+      "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/251122_Hakone_Hotel_Kowakien_Hakone_Japan01s3.jpg/1280px-251122_Hakone_Hotel_Kowakien_Hakone_Japan01s3.jpg",
-          "alt": "箱根ホテル小涌園の建物外観（2025年撮影）",
-          "photoRights": {
-            "source": "independent-licensed",
-            "owner": "663highland",
-            "scope": "Commercial use including Threads, with attribution and share-alike",
-            "license": "CC BY-SA 4.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:251122_Hakone_Hotel_Kowakien_Hakone_Japan01s3.jpg",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "date": "2025-11-22",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
-          }
-        }
-      ],
-      "experimentGroup": "premium_experience"
-    },
-    {
-      "day": 26,
-      "hotelNo": 1369,
-      "hotelName": "京都センチュリーホテル",
-      "caption": "京都駅近くでも、ホテルでゆっくり過ごしたい。🚉\n\n京都センチュリーホテルは京都駅のすぐ近く。新幹線で到着したあと、市内へ出かける拠点に選びやすい立地です。駅周辺から東山・嵐山方面へ足を延ばす旅にも。\n\n空室・料金・最新のサービス内容は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F1369%2F1369.html",
-      "nearbySources": [
-        {
-          "claim": "京都駅近く、京都市下京区東塩小路町",
-          "url": "https://travel.rakuten.co.jp/HOTEL/1369/1369.html"
-        },
-        {
-          "claim": "楽天トラベル掲載の京都センチュリーホテルの住所とアクセス、予約条件",
-          "url": "https://travel.rakuten.co.jp/HOTEL/1369/1369.html"
-        }
-      ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/1369/1369.html",
-      "verifiedAt": "2026-11-15",
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Kyoto_Century_Hotel_20210620-001.jpg/1280px-Kyoto_Century_Hotel_20210620-001.jpg",
-          "alt": "京都センチュリーホテルの外観（2021年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Good_Nature_Hotel_Kyoto_Garden_View_Terrace_Double_bedroom_20200704-001.jpg/1280px-Good_Nature_Hotel_Kyoto_Garden_View_Terrace_Double_bedroom_20200704-001.jpg",
+          "alt": "GOOD NATURE HOTEL KYOTOのガーデンビューテラスダブル客室（2020年撮影）",
           "photoRights": {
             "source": "independent-licensed",
             "owner": "J o",
             "scope": "Commercial use including Threads, with attribution and share-alike",
             "license": "CC BY-SA 4.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Kyoto_Century_Hotel_20210620-001.jpg",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Good_Nature_Hotel_Kyoto_Garden_View_Terrace_Double_bedroom_20200704-001.jpg",
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "date": "2021-06-20",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
+            "date": "2020-07-04",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Good_Nature_Hotel_Kyoto_Garden_View_Terrace_Double_bedroom_20200704-002.jpg/1280px-Good_Nature_Hotel_Kyoto_Garden_View_Terrace_Double_bedroom_20200704-002.jpg",
+          "alt": "同ホテルの客室別角度（2020年撮影）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Good_Nature_Hotel_Kyoto_Garden_View_Terrace_Double_bedroom_20200704-002.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2020-07-04",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Good_Nature_Hotel_Kyoto_4F_lobby_lounge_20200704-001.jpg/1280px-Good_Nature_Hotel_Kyoto_4F_lobby_lounge_20200704-001.jpg",
+          "alt": "同ホテル4階のラウンジ（客室ではありません）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Good_Nature_Hotel_Kyoto_4F_lobby_lounge_20200704-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2020-07-04",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
           }
         }
       ],
-      "experimentGroup": "premium_experience"
+      "experimentGroup": "design_stay",
+      "designFocus": "room_first"
+    },
+    {
+      "day": 26,
+      "hotelNo": 129407,
+      "hotelName": "ホテル アンテルーム 京都",
+      "caption": "泊まる場所にも、アートやデザインを求めたい京都旅。🎨\n\nホテル アンテルーム 京都は、ギャラリーやバー・ラウンジのあるホテル。駅前とは少し違った、街のクリエイティブな空気を楽しむ拠点に。お部屋の種類もいろいろ。\n\n📷写真は館内のバー・ラウンジです。客室の写真ではありません。※2027年末まで工事予定の案内があります。予約前に影響をご確認ください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F129407%2F129407.html",
+      "nearbySources": [
+        {
+          "claim": "ギャラリーとデザインラウンジを備えた宿。2026年から2027年に工事・営業影響の告知あり",
+          "url": "https://travel.rakuten.co.jp/HOTEL/129407/129407.html"
+        },
+        {
+          "claim": "楽天トラベルの施設詳細・現在の宿泊条件",
+          "url": "https://hotel.travel.rakuten.co.jp/hotelinfo/plan/129407"
+        }
+      ],
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/129407/129407.html",
+      "verifiedAt": "2026-11-16",
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Hotel_Anteroom_Kyoto_1F_bar_and_lounge_20210530-001.jpg/1280px-Hotel_Anteroom_Kyoto_1F_bar_and_lounge_20210530-001.jpg",
+          "alt": "ホテルアンテルーム京都の1階バーラウンジ（客室ではありません）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Anteroom_Kyoto_1F_bar_and_lounge_20210530-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2021-05-30",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Hotel_Anteroom_Kyoto_1F_bar_and_lounge_20210530-003.jpg/1280px-Hotel_Anteroom_Kyoto_1F_bar_and_lounge_20210530-003.jpg",
+          "alt": "ホテルアンテルーム京都のラウンジの別カット（客室ではありません）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Anteroom_Kyoto_1F_bar_and_lounge_20210530-003.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2021-05-30",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
+          }
+        }
+      ],
+      "experimentGroup": "design_stay",
+      "designFocus": "interior_common_space"
     },
     {
       "day": 27,
@@ -301,39 +345,54 @@
     },
     {
       "day": 28,
-      "hotelNo": 4805,
-      "hotelName": "東京ドームホテル",
-      "caption": "東京ドームで予定があるなら、ホテルの立地も大事。⚾️\n\n東京ドームホテルは東京ドームシティに隣接。JR水道橋駅・地下鉄各駅から行きやすく、ライブやスポーツ観戦の拠点に便利です。イベント日は混雑しやすいので、早めに宿泊条件を見ておきたいところ。\n\n空室・料金・最新のサービス内容は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F4805%2F4805.html",
+      "hotelNo": 15758,
+      "hotelName": "ホテル ザ セレスティン東京芝",
+      "caption": "東京でも、庭やラウンジでくつろげるホテルに泊まりたい。🍃\n\nホテル ザ セレスティン東京芝は、都心にありながら緑のパティオとゲストラウンジのある宿。落ち着いた客室で過ごし、芝公園方面を散策する一泊はいかがですか。\n\n📷客室とラウンジの写真は過去の撮影です。現在の部屋タイプ・サービスは予約先でご確認ください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F15758%2F15758.html",
       "nearbySources": [
         {
-          "claim": "東京ドームシティは水道橋・後楽園・春日駅からアクセス可能",
-          "url": "https://www.tokyo-dome.co.jp/access/index.html"
+          "claim": "緑のパティオとライブラリーラウンジが特徴の東京・芝の宿",
+          "url": "https://travel.rakuten.co.jp/HOTEL/15758/15758.html"
         },
         {
-          "claim": "楽天トラベル掲載の東京ドームホテルの住所とアクセス、予約条件",
-          "url": "https://travel.rakuten.co.jp/HOTEL/4805/4805.html"
+          "claim": "楽天トラベルの施設詳細・現在の宿泊条件",
+          "url": "https://hotel.travel.rakuten.co.jp/hotelinfo/plan/15758"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/4805/4805.html",
-      "verifiedAt": "2026-11-15",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/15758/15758.html",
+      "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Tokyo_Dome_Hotel.jpg/1280px-Tokyo_Dome_Hotel.jpg",
-          "alt": "東京ドームホテルの高層建物（2021年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Celestine_Hotel_Superior_Double_bedroom_20160501-001.jpg/1280px-Celestine_Hotel_Superior_Double_bedroom_20160501-001.jpg",
+          "alt": "旧セレスティンホテル時代のスーペリアダブル客室（2016年撮影）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "Syced",
-            "scope": "Commercial use including Threads, with attribution",
-            "license": "CC0 1.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Tokyo_Dome_Hotel.jpg",
-            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "date": "2021-08-14",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Celestine_Hotel_Superior_Double_bedroom_20160501-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2016-05-01",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Celestine_Hotel_14F_Celestine_Lounge_20160501-001.jpg/1280px-Celestine_Hotel_14F_Celestine_Lounge_20160501-001.jpg",
+          "alt": "同ホテル14階の旧ラウンジ内観（2016年撮影、客室ではありません）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Celestine_Hotel_14F_Celestine_Lounge_20160501-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2016-05-01",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
           }
         }
       ],
-      "experimentGroup": "premium_experience"
+      "experimentGroup": "design_stay",
+      "designFocus": "room_first"
     },
     {
       "day": 29,
@@ -401,131 +460,119 @@
     },
     {
       "day": 30,
-      "hotelNo": 184582,
-      "hotelName": "The Okura Tokyo",
-      "caption": "東京・虎ノ門で、ホテルに滞在する時間そのものを楽しむ。✨\n\nThe Okura Tokyoは虎ノ門にあるホテル。和の意匠を生かしたホテル空間と、レストラン・ラウンジを備えています。観光の拠点にするだけでなく、ホテルでゆったり過ごす週末にも。\n\n空室・料金・最新のサービス内容は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F184582%2F184582.html",
+      "hotelNo": 144956,
+      "hotelName": "三井ガーデンホテル京都新町 別邸",
+      "caption": "京都の路地に、和モダンなホテルを見つける旅。🌿\n\n京都新町通にたたずむ、落ち着いたデザインの宿。和の趣を感じる空間と大浴場が魅力です。デラックスツインなど、複数人で泊まれる部屋タイプもあります。\n\n📷写真はホテルのロビーと中庭まわりの過去写真です。客室の写真ではありません。料金・空室は予約先で確認してください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F144956%2F144956.html",
       "nearbySources": [
         {
-          "claim": "港区虎ノ門2丁目のホテルで、2019年に新たなスタートを迎えた",
-          "url": "https://travel.rakuten.co.jp/HOTEL/184582/184582.html"
+          "claim": "新町通の町家らしい雰囲気を生かしたロビー、デラックスツインは最大4名のプラン掲載",
+          "url": "https://travel.rakuten.co.jp/HOTEL/144956/144956.html"
         },
         {
-          "claim": "楽天トラベル掲載のThe Okura Tokyoの住所とアクセス、予約条件",
-          "url": "https://travel.rakuten.co.jp/HOTEL/184582/184582.html"
+          "claim": "楽天トラベルの施設詳細・現在の宿泊条件",
+          "url": "https://hotel.travel.rakuten.co.jp/hotelinfo/plan/144956"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/184582/184582.html",
-      "verifiedAt": "2026-11-15",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/144956/144956.html",
+      "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Hotel_Okura_Tokyo_190912a6.jpg/1280px-Hotel_Okura_Tokyo_190912a6.jpg",
-          "alt": "ホテルオークラ東京の建物・敷地（2019年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Mitsui_Garden_Hotel_Kyoto_Shinmachi_Bettei_1F_lobby_20140506-001.jpg/1280px-Mitsui_Garden_Hotel_Kyoto_Shinmachi_Bettei_1F_lobby_20140506-001.jpg",
+          "alt": "三井ガーデンホテル京都新町別邸のロビー（2014年撮影）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "江戸村のとくぞう",
+            "owner": "J o",
             "scope": "Commercial use including Threads, with attribution and share-alike",
             "license": "CC BY-SA 4.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Okura_Tokyo_190912a6.jpg",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Mitsui_Garden_Hotel_Kyoto_Shinmachi_Bettei_1F_lobby_20140506-001.jpg",
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "date": "2019-09-12",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
+            "date": "2014-05-06",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
           }
         },
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Hotel_Okura_Tokyo_190912a10.jpg/1280px-Hotel_Okura_Tokyo_190912a10.jpg",
-          "alt": "ホテルオークラ東京の別カット（2019年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Mitsui_Garden_Hotel_Kyoto_Shinmachi_Bettei_1F_lobby_20140507-002.jpg/1280px-Mitsui_Garden_Hotel_Kyoto_Shinmachi_Bettei_1F_lobby_20140507-002.jpg",
+          "alt": "同ホテルロビーの別角度と中庭（2014年撮影）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "江戸村のとくぞう",
+            "owner": "J o",
             "scope": "Commercial use including Threads, with attribution and share-alike",
             "license": "CC BY-SA 4.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Okura_Tokyo_190912a10.jpg",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Mitsui_Garden_Hotel_Kyoto_Shinmachi_Bettei_1F_lobby_20140507-002.jpg",
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "date": "2019-09-12",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
-          }
-        },
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Hotel_Okura_Tokyo_190912a12.jpg/1280px-Hotel_Okura_Tokyo_190912a12.jpg",
-          "alt": "ホテルオークラ東京の建物・館内に関する写真（2019年撮影）",
-          "photoRights": {
-            "source": "independent-licensed",
-            "owner": "江戸村のとくぞう",
-            "scope": "Commercial use including Threads, with attribution and share-alike",
-            "license": "CC BY-SA 4.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Okura_Tokyo_190912a12.jpg",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "date": "2019-09-12",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
+            "date": "2014-05-07",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
           }
         }
       ],
-      "experimentGroup": "premium_experience"
+      "experimentGroup": "design_stay",
+      "designFocus": "interior_common_space"
     },
     {
       "day": 31,
-      "hotelNo": 28439,
-      "hotelName": "ホテルニューオータニ（東京）",
-      "caption": "庭園のある東京のホテルで、のんびり年末の予定を。🌿\n\nホテルニューオータニは東京・紀尾井町。地下鉄の永田町駅や赤坂見附駅から歩ける立地で、街歩きのあとにホテルで過ごす時間も魅力です。写真は過去の外観です。\n\n空室・料金・最新のサービス内容は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F28439%2F28439.html",
+      "hotelNo": 108734,
+      "hotelName": "ホテル カンラ 京都",
+      "caption": "木と和のしつらえが美しい、京都のホテルを。🪵\n\nホテル カンラ 京都は、町家のような空間づくりとヒバ風呂を備えた客室が魅力。五条駅近くで、京都の街歩きも楽しめます。特別な記念日だけでなく、空間を大切にする旅の候補に。\n\n📷写真は本館のカンララウンジ（2021年撮影）で、客室ではありません。客室の最新写真・料金は予約先を確認してください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F108734%2F108734.html",
       "nearbySources": [
         {
-          "claim": "東京都千代田区紀尾井町4-1。永田町・赤坂見附駅から徒歩約3分",
-          "url": "https://travel.rakuten.co.jp/HOTEL/28439/"
+          "claim": "全室にヒバ風呂、和の意匠、五条駅徒歩約1分",
+          "url": "https://travel.rakuten.co.jp/HOTEL/108734/108734.html"
         },
         {
-          "claim": "楽天トラベル掲載のホテルニューオータニ（東京）の住所とアクセス、予約条件",
-          "url": "https://travel.rakuten.co.jp/HOTEL/28439/28439.html"
+          "claim": "楽天トラベルの施設詳細・現在の宿泊条件",
+          "url": "https://hotel.travel.rakuten.co.jp/hotelinfo/plan/108734"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/28439/28439.html",
-      "verifiedAt": "2026-11-15",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/108734/108734.html",
+      "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/New_Otani_Hotel_2019.jpg",
-          "alt": "ホテルニューオータニ東京の一部外観（2019年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Hotel_Kanra_Kyoto_(Main)_1F_Kanra_Lounge_20210627-001.jpg/1280px-Hotel_Kanra_Kyoto_(Main)_1F_Kanra_Lounge_20210627-001.jpg",
+          "alt": "ホテルカンラ京都本館のラウンジ（客室ではありません）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "Matsujima",
+            "owner": "J o",
             "scope": "Commercial use including Threads, with attribution and share-alike",
             "license": "CC BY-SA 4.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:New_Otani_Hotel_2019.jpg",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Kanra_Kyoto_(Main)_1F_Kanra_Lounge_20210627-001.jpg",
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "date": "2019-04-11",
-            "changes": "none"
+            "date": "2021-06-27",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
           }
         },
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Hotel-New-Otani-The-Main-01.jpg/1280px-Hotel-New-Otani-The-Main-01.jpg",
-          "alt": "ホテルニューオータニ ザ・メイン外観（2012年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Hotel_Kanra_Kyoto_(Main)_1F_Kanra_Lounge_20210627-002.jpg/1280px-Hotel_Kanra_Kyoto_(Main)_1F_Kanra_Lounge_20210627-002.jpg",
+          "alt": "ホテルカンラ京都本館ラウンジの別角度",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "Rs1421",
+            "owner": "J o",
             "scope": "Commercial use including Threads, with attribution and share-alike",
             "license": "CC BY-SA 4.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel-New-Otani-The-Main-01.jpg",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Kanra_Kyoto_(Main)_1F_Kanra_Lounge_20210627-002.jpg",
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "date": "2012-10",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
+            "date": "2021-06-27",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
           }
         },
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Hotel_New_Otani_-_2007.jpg",
-          "alt": "ホテルニューオータニ ザ・メインの外観（2007年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Hotel_Kanra_Kyoto_(Main)_1F_Kanra_Lounge_20210627-003.jpg/1280px-Hotel_Kanra_Kyoto_(Main)_1F_Kanra_Lounge_20210627-003.jpg",
+          "alt": "ホテルカンラ京都本館ラウンジの3枚目",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "DS80s",
+            "owner": "J o",
             "scope": "Commercial use including Threads, with attribution and share-alike",
-            "license": "CC BY-SA 3.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_New_Otani_-_2007.jpg",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-            "date": "2007-05",
-            "changes": "none"
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Kanra_Kyoto_(Main)_1F_Kanra_Lounge_20210627-003.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2021-06-27",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
           }
         }
       ],
-      "experimentGroup": "premium_experience"
+      "experimentGroup": "design_stay",
+      "designFocus": "interior_common_space"
     },
     {
       "day": 32,
@@ -579,75 +626,105 @@
     },
     {
       "day": 33,
-      "hotelNo": 1148,
-      "hotelName": "奈良ホテル",
-      "caption": "奈良で、建築の時間を味わう一泊。🦌\n\n1909年創業の奈良ホテル。奈良市高畑町に建つクラシックホテルで、近鉄奈良駅からは徒歩約15分の案内です。奈良の街を散策したあと、歴史ある建物で過ごす旅はいかがでしょう。\n\n空室・料金・最新のサービス内容は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F1148%2F1148.html",
+      "hotelNo": 144957,
+      "hotelName": "三井ガーデンホテル大阪プレミア",
+      "caption": "大阪で『ちょっといい』お部屋と大浴場を楽しむなら。🛁\n\n中之島エリアにある三井ガーデンホテル大阪プレミア。フローリング仕様の客室、最上階の大浴場やラウンジなど、外に出なくても心地よく過ごせる設備が魅力です。\n\n📷客室とラウンジの過去写真です。2027年2月に名称変更予定の案内があるため、予約時の最新情報も確認してください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F144957%2F144957.html",
       "nearbySources": [
         {
-          "claim": "奈良市高畑町1096、近鉄奈良駅から徒歩約15分",
-          "url": "https://travel.rakuten.co.jp/HOTEL/1148/1148.html"
+          "claim": "全室22㎡以上、客室フローリング・最上階大浴場・2027年2月末のホテル名称変更告知",
+          "url": "https://travel.rakuten.co.jp/HOTEL/144957/144957.html"
         },
         {
-          "claim": "楽天トラベル掲載の奈良ホテルの住所とアクセス、予約条件",
-          "url": "https://travel.rakuten.co.jp/HOTEL/1148/1148.html"
+          "claim": "楽天トラベルの施設詳細・現在の宿泊条件",
+          "url": "https://hotel.travel.rakuten.co.jp/hotelinfo/plan/144957"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/1148/1148.html",
-      "verifiedAt": "2026-11-15",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/144957/144957.html",
+      "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Nara_Hotel_01.jpg/1280px-Nara_Hotel_01.jpg",
-          "alt": "奈良ホテル本館の外観（2007年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Mitsui_Garden_Hotel_Osaka_Premier_Superior_bedroom_20140316-001.jpg/1280px-Mitsui_Garden_Hotel_Osaka_Premier_Superior_bedroom_20140316-001.jpg",
+          "alt": "三井ガーデンホテル大阪プレミアのスーペリア客室（2014年撮影）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "Waei",
+            "owner": "J o",
             "scope": "Commercial use including Threads, with attribution and share-alike",
-            "license": "CC BY-SA 3.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Nara_Hotel_01.jpg",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-            "date": "2007-04-08",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Mitsui_Garden_Hotel_Osaka_Premier_Superior_bedroom_20140316-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2014-03-16",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Mitsui_Garden_Hotel_Osaka_Premier_16F_Lounge_20140316-001.jpg/1280px-Mitsui_Garden_Hotel_Osaka_Premier_16F_Lounge_20140316-001.jpg",
+          "alt": "三井ガーデンホテル大阪プレミア16階ラウンジ（2014年撮影、客室ではありません）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Mitsui_Garden_Hotel_Osaka_Premier_16F_Lounge_20140316-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2014-03-16",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
           }
         }
       ],
-      "experimentGroup": "premium_experience"
+      "experimentGroup": "design_stay",
+      "designFocus": "room_first"
     },
     {
       "day": 34,
-      "hotelNo": 28760,
-      "hotelName": "日光金谷ホテル",
-      "caption": "日光観光に、明治の面影を残すクラシックホテル。🍁\n\n1873年創業の日光金谷ホテル。神橋近くに位置し、日光東照宮へは徒歩約15分の案内です。歴史あるホテルに泊まりながら、日光の建築や自然を巡る旅に。\n\n空室・料金・最新のサービス内容は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F28760%2F28760.html",
+      "hotelNo": 167802,
+      "hotelName": "クロスホテル京都",
+      "caption": "京都の真ん中で、木の温かみがあるお部屋を選ぶ。🏯\n\nクロスホテル京都は三条河原町にある、デザイン性の高いホテル。木や和紙を生かした客室は全室25㎡以上で、バス・トイレが分かれたつくり。食事や買い物にも出かけやすい立地です。\n\n📷写真は2021年の客室とラウンジです。現在の部屋タイプ・料金は予約先を確認してください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F167802%2F167802.html",
       "nearbySources": [
         {
-          "claim": "神橋近く、日光東照宮まで徒歩約15分",
-          "url": "https://travel.rakuten.co.jp/hotel/28760/28760_std.html"
+          "claim": "三条河原町のデザインホテル、全室25㎡以上・水回りセパレート",
+          "url": "https://travel.rakuten.co.jp/HOTEL/167802/167802.html"
         },
         {
-          "claim": "楽天トラベル掲載の日光金谷ホテルの住所とアクセス、予約条件",
-          "url": "https://travel.rakuten.co.jp/HOTEL/28760/28760.html"
+          "claim": "楽天トラベルの施設詳細・現在の宿泊条件",
+          "url": "https://hotel.travel.rakuten.co.jp/hotelinfo/plan/167802"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/28760/28760.html",
-      "verifiedAt": "2026-11-15",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/167802/167802.html",
+      "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/200730_Nikko_Kanaya_Hotel_Nikko_Japan06s3.jpg/1280px-200730_Nikko_Kanaya_Hotel_Nikko_Japan06s3.jpg",
-          "alt": "日光金谷ホテルの外観（2020年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Cross_Hotel_Kyoto_Superior_King_bedroom_20210724-001.jpg/1280px-Cross_Hotel_Kyoto_Superior_King_bedroom_20210724-001.jpg",
+          "alt": "クロスホテル京都のスーペリアキング客室（2021年撮影）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "663highland",
+            "owner": "J o",
             "scope": "Commercial use including Threads, with attribution and share-alike",
             "license": "CC BY-SA 4.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:200730_Nikko_Kanaya_Hotel_Nikko_Japan06s3.jpg",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Cross_Hotel_Kyoto_Superior_King_bedroom_20210724-001.jpg",
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "date": "2020-07-30",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
+            "date": "2021-07-24",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Cross_Hotel_Kyoto_1F_lobby_lounge_20210724-001.jpg/1280px-Cross_Hotel_Kyoto_1F_lobby_lounge_20210724-001.jpg",
+          "alt": "クロスホテル京都の1階ロビーラウンジ（客室ではありません）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Cross_Hotel_Kyoto_1F_lobby_lounge_20210724-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2021-07-24",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
           }
         }
       ],
-      "experimentGroup": "premium_experience"
+      "experimentGroup": "design_stay",
+      "designFocus": "room_first"
     },
     {
       "day": 35,
@@ -701,111 +778,128 @@
     },
     {
       "day": 36,
-      "hotelNo": 1487,
-      "hotelName": "ホテルグランヴィア京都",
-      "caption": "京都駅から、すぐに旅を始めたい方へ。🚄\n\nホテルグランヴィア京都はJR京都駅に直結。新幹線の到着後や、観光から戻ったあとも移動しやすい立地です。京都で見どころを巡る旅なら、駅直結の宿を選ぶ方法もあります。\n\n空室・料金・最新のサービス内容は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F1487%2F1487.html",
+      "hotelNo": 1369,
+      "hotelName": "京都センチュリーホテル",
+      "caption": "京都駅近くで、上質な内装の部屋に泊まる旅。🛏️\n\n京都センチュリーホテルの京プレミアム客室は、落ち着いたデザインと約30㎡の広さが特徴。京都駅からの移動もしやすく、観光を楽しんだあとにゆっくり過ごす一泊に。\n\n📷実際の京プレミアム客室と吹き抜けロビーの2021年写真です。現行プラン・客室名は予約先でご確認ください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F1369%2F1369.html",
       "nearbySources": [
         {
-          "claim": "JR京都駅直結、新幹線・JR・地下鉄・近鉄からアクセス",
-          "url": "https://travel.rakuten.co.jp/HOTEL/1487/"
+          "claim": "京都駅隣接、約30㎡の京プレミアム客室",
+          "url": "https://travel.rakuten.co.jp/HOTEL/1369/1369.html"
         },
         {
-          "claim": "楽天トラベル掲載のホテルグランヴィア京都の住所とアクセス、予約条件",
-          "url": "https://travel.rakuten.co.jp/HOTEL/1487/1487.html"
+          "claim": "楽天トラベルの施設詳細・現在の宿泊条件",
+          "url": "https://hotel.travel.rakuten.co.jp/hotelinfo/plan/1369"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/1487/1487.html",
-      "verifiedAt": "2026-11-15",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/1369/1369.html",
+      "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hotel_Granvia_Kyoto_Lobby_2025.JPG/1280px-Hotel_Granvia_Kyoto_Lobby_2025.JPG",
-          "alt": "ホテルグランヴィア京都のロビー（2025年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Kyoto_Century_Hotel_Kyo-Premium_bedroom_20210717-001.jpg/1280px-Kyoto_Century_Hotel_Kyo-Premium_bedroom_20210717-001.jpg",
+          "alt": "京都センチュリーホテル京プレミアム客室（2021年撮影）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "Fotointheworld",
-            "scope": "Commercial use including Threads, with attribution",
-            "license": "CC BY 4.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Granvia_Kyoto_Lobby_2025.JPG",
-            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-            "date": "2025",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Kyoto_Century_Hotel_Kyo-Premium_bedroom_20210717-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2021-07-17",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Kyoto_Century_Hotel_atrium_lobby_20210717-001.jpg/1280px-Kyoto_Century_Hotel_atrium_lobby_20210717-001.jpg",
+          "alt": "京都センチュリーホテル吹き抜けロビー（2021年撮影）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Kyoto_Century_Hotel_atrium_lobby_20210717-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2021-07-17",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
           }
         }
       ],
-      "experimentGroup": "premium_experience"
+      "experimentGroup": "design_stay",
+      "designFocus": "room_first"
     },
     {
       "day": 37,
-      "hotelNo": 5002,
-      "hotelName": "ホテルモントレ銀座",
-      "caption": "銀座の街歩きに、クラシカルなホテルという選択。🛍️\n\nホテルモントレ銀座は銀座二丁目のホテル。銀座一丁目駅から徒歩約1分、有楽町駅から徒歩約6分の案内です。昼は街を歩き、夜は都心でゆっくり過ごす旅にも。\n\n空室・料金・最新のサービス内容は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F5002%2F5002.html",
+      "hotelNo": 147093,
+      "hotelName": "ミレニアム三井ガーデンホテル東京",
+      "caption": "銀座で泊まるなら、内装がすっきりしたホテルに。✨\n\nミレニアム三井ガーデンホテル東京は銀座五丁目。デザイン性のあるお部屋と、東銀座駅に近い立地が魅力です。東京観光も食事も楽しめる週末の拠点に。\n\n📷写真は2017年のスーペリアダブル客室です。部屋タイプの名称・設備は変更されている場合があります。最新の予約条件をご確認ください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F147093%2F147093.html",
       "nearbySources": [
         {
-          "claim": "銀座一丁目駅徒歩約1分、有楽町駅徒歩約6分",
-          "url": "https://travel.rakuten.co.jp/HOTEL/5002/5002.html"
+          "claim": "銀座五丁目、東銀座駅付近のデザインホテル",
+          "url": "https://travel.rakuten.co.jp/HOTEL/147093/147093.html"
         },
         {
-          "claim": "楽天トラベル掲載のホテルモントレ銀座の住所とアクセス、予約条件",
-          "url": "https://travel.rakuten.co.jp/HOTEL/5002/5002.html"
+          "claim": "楽天トラベルの施設詳細・現在の宿泊条件",
+          "url": "https://hotel.travel.rakuten.co.jp/hotelinfo/plan/147093"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/5002/5002.html",
-      "verifiedAt": "2026-11-15",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/147093/147093.html",
+      "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Hotel_Monterey_Ginza.jpg/1280px-Hotel_Monterey_Ginza.jpg",
-          "alt": "銀座二丁目のホテルモントレ銀座の外観",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Millennium_Mitsui_Garden_Hotel_Tokyo_Superior_Double_bedroom_20170318-001.jpg/1280px-Millennium_Mitsui_Garden_Hotel_Tokyo_Superior_Double_bedroom_20170318-001.jpg",
+          "alt": "ミレニアム三井ガーデンホテル東京の旧スーペリアダブル客室（2017年撮影）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "Vanbasten 23",
+            "owner": "J o",
             "scope": "Commercial use including Threads, with attribution and share-alike",
-            "license": "CC BY-SA 3.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Monterey_Ginza.jpg",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-            "date": "not specified",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Millennium_Mitsui_Garden_Hotel_Tokyo_Superior_Double_bedroom_20170318-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2017-03-18",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
           }
         }
       ],
-      "experimentGroup": "premium_experience"
+      "experimentGroup": "design_stay",
+      "designFocus": "room_first"
     },
     {
       "day": 38,
-      "hotelNo": 54866,
-      "hotelName": "ホテルモントレ赤坂",
-      "caption": "赤坂・青山を歩く日の、ホテル選び。🌆\n\nホテルモントレ赤坂は青山通り沿いにある英国調のホテル。赤坂見附駅から徒歩約5分の案内です。なお2027年10月まで外壁工事が予定されているため、予約前に作業状況を確認してください。\n\n空室・料金・最新のサービス内容は予約先で確認してください。",
-      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F54866%2F54866.html",
+      "hotelNo": 41069,
+      "hotelName": "三井ガーデンホテル銀座プレミア",
+      "caption": "銀座の街を眺めながら、ホテル時間も楽しみたい。🌃\n\n三井ガーデンホテル銀座プレミアは高層階に客室があり、眺めを楽しむ部屋タイプも。都会の景色を見ながら、少しだけ特別な週末を過ごしたい方に。\n\n📷写真は2015年の旧モデレート客室で、現在の販売客室と同じとは限りません。部屋タイプと料金は予約先を確認してください。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F41069%2F41069.html",
       "nearbySources": [
         {
-          "claim": "赤坂見附駅から徒歩約5分、2026年6月〜2027年10月外壁塗装工事の案内あり",
-          "url": "https://hotel.travel.rakuten.co.jp/hotelinfo/plan/54866"
+          "claim": "銀座高層階の眺望とデザイン性のある客室、販売プランは眺望別",
+          "url": "https://travel.rakuten.co.jp/HOTEL/41069/41069.html"
         },
         {
-          "claim": "楽天トラベル掲載のホテルモントレ赤坂の住所とアクセス、予約条件",
-          "url": "https://travel.rakuten.co.jp/HOTEL/54866/54866.html"
+          "claim": "楽天トラベルの施設詳細・現在の宿泊条件",
+          "url": "https://hotel.travel.rakuten.co.jp/hotelinfo/plan/41069"
         }
       ],
-      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/54866/54866.html",
-      "verifiedAt": "2026-11-15",
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/41069/41069.html",
+      "verifiedAt": "2026-11-16",
       "photos": [
         {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Hotel_Monterey_Akasaka.jpg/1280px-Hotel_Monterey_Akasaka.jpg",
-          "alt": "東京・赤坂のホテルモントレ赤坂の外観（2025年撮影）",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mitsui_Garden_Hotel_Ginza_Premier_Moderate_bedroom_20151223-001.jpg/1280px-Mitsui_Garden_Hotel_Ginza_Premier_Moderate_bedroom_20151223-001.jpg",
+          "alt": "三井ガーデンホテル銀座プレミアの旧モデレート客室（2015年撮影）",
           "photoRights": {
             "source": "independent-licensed",
-            "owner": "Syced",
-            "scope": "Commercial use including Threads, with attribution",
-            "license": "CC0 1.0",
-            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Monterey_Akasaka.jpg",
-            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "date": "2025-05-25",
-            "changes": "Wikimedia 1280px thumbnail; otherwise unmodified"
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Mitsui_Garden_Hotel_Ginza_Premier_Moderate_bedroom_20151223-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2015-12-23",
+            "changes": "Original uploader adjusted perspective/color; Wikimedia 1280px thumbnail; no extra edits"
           }
         }
       ],
-      "experimentGroup": "premium_experience"
+      "experimentGroup": "design_stay",
+      "designFocus": "room_first"
     },
     {
       "day": 39,
