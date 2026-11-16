@@ -153,3 +153,25 @@ test('hotel interiors and local sightseeing photographs are never mixed up',asyn
   assert.ok(p.photos.every(x=>x.alt.includes('客室')||x.alt.includes('宿の')));
  }
 });
+
+test('all December posts meet the owner room-first editorial criteria; no generic business chains or prestige-first labels',async()=>{
+ const {readFileSync}=await import('node:fs');
+ const posts=JSON.parse(readFileSync('data/rakutabi-threads-hotel-posts.json','utf8')).posts.filter(p=>p.day>=25&&p.day<=39);
+ assert.equal(posts.length,15);
+ assert.equal(posts.filter(p=>p.experimentGroup==='design_stay').length,15);
+ const ids=new Set(posts.map(p=>p.hotelNo));assert.equal(ids.size,15);
+ const revised=[25,26,28,30,31,33,34,36,37,38];
+ for(const day of revised){
+  const p=posts.find(p=>p.day===day);
+  assert.ok(p.designFocus==='room_first'||p.designFocus==='interior_common_space');
+  assert.doesNotMatch(p.hotelName,/スーパーホテル|アパホテル|ドーミーイン|ホテルニューオータニ|The Okura Tokyo|日光金谷ホテル/);
+  assert.ok(p.photos.length>=1&&p.photos.length<=6);
+  assert.ok(p.caption.includes('📷'),'caption must clarify image provenance');
+  if(p.designFocus==='interior_common_space')assert.match(p.caption,/客室.*ではありません/);
+  const res=run(day);assert.equal(res.status,0,res.stderr);
+  const v=JSON.parse(res.stdout);
+  assert.equal(v.hotelNo,p.hotelNo);
+  assert.equal(v.photos.length,p.photos.length);
+  assert.match(decodeURIComponent(v.reply),new RegExp('HOTEL/'+p.hotelNo+'/'+p.hotelNo+'\\.html'));
+ }
+});
