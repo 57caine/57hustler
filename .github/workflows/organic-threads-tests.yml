@@ -9,6 +9,9 @@ on:
       - 'scripts/post-rakutabi-hotel-threads.mjs'
       - 'scripts/lib/rakutabi-photo-policy.mjs'
       - 'scripts/rakutabi-threads-insights.mjs'
+      - 'scripts/audit-rakutabi-hotel-media.mjs'
+      - 'scripts/lib/rakutabi-media-preflight.mjs'
+      - 'tests/rakutabi-media-preflight.test.mjs'
       - 'scripts/lib/rakutabi-insights.mjs'
       - 'tests/rakutabi-threads-insights.test.mjs'
       - 'data/rakutabi-threads-hotel-posts.json'
@@ -36,6 +39,7 @@ jobs:
       - run: node --test tests/organic-threads.test.mjs
       - run: node --test tests/rakutabi-hotel-threads.test.mjs
       - run: node --test tests/rakutabi-threads-insights.test.mjs
+      - run: node --test tests/rakutabi-media-preflight.test.mjs
       - run: node --test tests/brand-threads.test.mjs
       - run: node --test tests/mitama-continuation.test.mjs
 

@@ -128,6 +128,19 @@ jobs:
       - name: 通常投稿ドライラン
         if: ${{ steps.plan.outputs.brand != '' && steps.plan.outputs.publish != 'true' }}
         run: node scripts/post-organic-threads.mjs --brand "${{ steps.plan.outputs.brand }}" --day "${{ steps.plan.outputs.day }}"
+      - name: 楽旅くん写真URLの事前到達確認（読み取りのみ）
+        if: ${{ steps.plan.outputs.brand == 'rakutabi' }}
+        continue-on-error: true
+        run: node scripts/audit-rakutabi-hotel-media.mjs --day "${{ steps.plan.outputs.day }}"
+      - name: 写真URL事前確認レポートを保存（30日）
+        if: ${{ always() && steps.plan.outputs.brand == 'rakutabi' }}
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: rakutabi-media-preflight-${{ github.run_id }}
+          path: rakutabi-media-preflight.json
+          if-no-files-found: warn
+          retention-days: 30
       - name: アカウント・重複を検証して通常投稿
         if: ${{ steps.plan.outputs.brand != '' && steps.plan.outputs.publish == 'true' }}
         env:
