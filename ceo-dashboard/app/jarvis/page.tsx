@@ -3,6 +3,7 @@ import { getCurrentUser } from '@/lib/supabase/auth';
 import JarvisChat from '@/components/JarvisChat';
 import JarvisExecutionStatus from '@/components/JarvisExecutionStatus';
 import JarvisActionsEvidence from '@/components/JarvisActionsEvidence';
+import JarvisCEOReceipts from '@/components/JarvisCEOReceipts';
 import './mission.css';
 
 export const dynamic='force-dynamic';
@@ -25,6 +26,7 @@ export default async function JarvisPage(){
       <div className="jv-orb" aria-hidden="true"><div className="jv-orb-center">JARVIS</div></div>
     </section>
     <JarvisExecutionStatus/>
+    <JarvisCEOReceipts/>
     <JarvisActionsEvidence/>
     <JarvisChat/>
     <footer className="jv-footer">
