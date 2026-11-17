@@ -10,7 +10,7 @@ export const metadata={title:'JARVIS｜AI司令塔'};
 export default async function JarvisPage(){
   const user=await getCurrentUser();
   if(!user)redirect('/login');
-  return <main className="jarvis-shell">
+  return <section className="jarvis-shell">
     <header className="jv-brandline">
       <div><div className="jv-eyebrow" style={{marginBottom:6}}>57HUSTLER · COMMAND CENTER</div><div className="jv-name">J<span>A</span>RVIS<span>.</span></div></div>
       <span className="jv-status"><span className="jv-dot" aria-hidden="true"/>閲覧モード</span>
@@ -28,5 +28,5 @@ export default async function JarvisPage(){
     <footer className="jv-footer">
       現在は読み取り専用の初期版です。GitHubの状態記録とGA4の取得値を表示します。実際のコード修正や自動運用は別の既存実行器が担当します。未取得の確定報酬を0円と表示しません。
     </footer>
-  </main>;
+  </section>;
 }
