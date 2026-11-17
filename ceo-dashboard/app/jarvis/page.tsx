@@ -2,22 +2,31 @@ import { redirect } from 'next/navigation';
 import { getCurrentUser } from '@/lib/supabase/auth';
 import JarvisChat from '@/components/JarvisChat';
 import JarvisExecutionStatus from '@/components/JarvisExecutionStatus';
+import './mission.css';
 
-export const dynamic = 'force-dynamic';
-export const metadata = { title: 'JARVIS｜会話型司令塔' };
+export const dynamic='force-dynamic';
+export const metadata={title:'JARVIS｜AI司令塔'};
 
-export default async function JarvisPage() {
-  const user = await getCurrentUser();
-  if (!user) redirect('/login');
-  return (
-    <section className="space-y-5 pb-12">
+export default async function JarvisPage(){
+  const user=await getCurrentUser();
+  if(!user)redirect('/login');
+  return <main className="jarvis-shell">
+    <header className="jv-brandline">
+      <div><div className="jv-eyebrow" style={{marginBottom:6}}>57HUSTLER · COMMAND CENTER</div><div className="jv-name">J<span>A</span>RVIS<span>.</span></div></div>
+      <span className="jv-status"><span className="jv-dot" aria-hidden="true"/>閲覧モード</span>
+    </header>
+    <section className="jv-hero">
       <div>
-        <p className="text-[10px] tracking-widest" style={{ color: 'var(--muted)' }}>57HUSTLER · AI COMMAND CENTER</p>
-        <h1 className="text-2xl font-bold mt-1">JARVIS</h1>
-        <p className="text-xs mt-2" style={{ color: 'var(--muted)' }}>まずは実データを会話で確認する司令塔。実装状況を正確にお伝えします。</p>
+        <div className="jv-eyebrow">OWNER DASHBOARD · PHASE 01</div>
+        <h1>仕事の全体像を、<br/>ひとつの画面に。</h1>
+        <p>数字を読み取り、AIの仕事の進み具合を確認するための司令塔です。余計な報告を減らし、必要な判断を見つけやすくします。</p>
       </div>
-      <JarvisExecutionStatus />
-      <JarvisChat />
+      <div className="jv-orb" aria-hidden="true"><div className="jv-orb-center">JARVIS</div></div>
     </section>
-  );
+    <JarvisExecutionStatus/>
+    <JarvisChat/>
+    <footer className="jv-footer">
+      現在は読み取り専用の初期版です。GitHubの状態記録とGA4の取得値を表示します。実際のコード修正や自動運用は別の既存実行器が担当します。未取得の確定報酬を0円と表示しません。
+    </footer>
+  </main>;
 }
