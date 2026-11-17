@@ -56,7 +56,7 @@ test('day18 Tokyo Station Hotel has three licensed station-area photographs and 
  assert.ok(v.photos.every(p=>p.rights.scope.includes('Threads') && p.rights.proofUrl.startsWith('https://commons.wikimedia.org/wiki/File:')));
  assert.ok(v.photos.every(p=>p.url.startsWith('https://upload.wikimedia.org/wikipedia/commons/')));
  assert.ok(v.photoCredits.every(p=>p.length<=500));
- assert.match(v.caption,/客室写真ではありません/);
+ assert.doesNotMatch(v.caption,/客室写真ではありません|📷|撮影|写真出典/);
  assert.match(v.reply,/東京ステーションホテル/);
  assert.match(v.reply,/HOTEL%2F137869%2F137869.html/);
  assert.equal(v.nearbySources.length,2);
@@ -76,7 +76,7 @@ test('day17 Fujiya Hotel has licensed 3-photo carousel and affiliate hotel reply
  assert.equal(v.photos.length,3);
  assert.equal(v.mediaType,'CAROUSEL');
  assert.ok(v.photos.every(p=>p.rights.proofUrl && p.rights.licenseUrl && p.rights.scope.includes('Threads')));
- assert.match(v.caption,/現在の客室や宿泊プランを示す画像ではありません/);
+ assert.doesNotMatch(v.caption,/現在の客室や宿泊プランを示す画像ではありません|📷|撮影/);
  assert.match(v.reply,/HOTEL%2F1727%2F1727.html/);
  assert.ok(v.photoCredits.every(c=>c.length<=500));
 });
@@ -178,5 +178,21 @@ test('all December captions discuss the stay without photo metadata or managemen
    assert.doesNotMatch(pub.caption,/📷|撮影|著作者|ライセンス|【宿番号/);
    assert.ok(pub.photoCredits.length>=1,'credits remain in separate replies');
    assert.ok(pub.reply.includes('https://hb.afl.rakuten.co.jp/'));
+ }
+});
+
+test('November Fujiya and Tokyo Station captions end with stay description, no photo boilerplate',async()=>{
+ const {readFileSync}=await import('node:fs');
+ const posts=JSON.parse(readFileSync('data/rakutabi-threads-hotel-posts.json','utf8')).posts;
+ for(const day of [17,18]){
+   const p=posts.find(x=>x.day===day);
+   assert.ok(p);
+   assert.doesNotMatch(p.caption,/📷|撮影|写真出典|写真3枚は|料金.*空室|客室写真ではありません/);
+   const r=run(day);
+   assert.equal(r.status,0,r.stderr);
+   const v=JSON.parse(r.stdout);
+   assert.doesNotMatch(v.caption,/📷|撮影|写真出典|写真3枚は/);
+   assert.ok(v.photoCredits.length>=1);
+   assert.match(v.reply,/hb\.afl\.rakuten\.co\.jp/);
  }
 });
