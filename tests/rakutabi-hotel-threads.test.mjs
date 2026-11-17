@@ -196,3 +196,37 @@ test('November Fujiya and Tokyo Station captions end with stay description, no p
    assert.match(v.reply,/hb\.afl\.rakuten\.co\.jp/);
  }
 });
+
+test('all six late-November scheduled Rakutabi days contain warm hotel posts and licensed bedroom photography',async()=>{
+ const {readFileSync}=await import('node:fs');
+ const doc=JSON.parse(readFileSync('data/rakutabi-threads-hotel-posts.json','utf8'));
+ const days=[19,20,21,22,23,24];
+ const dates=days.map(day=>({day,date:20+(day-19)*2}));
+ const wf=readFileSync('.github/workflows/brand-threads-organic-pilot.yml','utf8');
+ for(const {day,date} of dates){
+  assert.match(wf,new RegExp('2026-11-'+date+'\\) BRAND=rakutabi; DAY='+day));
+  const p=doc.posts.find(x=>x.day===day);
+  assert.ok(p,'missing day '+day);
+  assert.ok(p.photos.length>=1&&p.photos.length<=6);
+  assert.equal(p.experimentGroup,'design_stay');
+  assert.doesNotMatch(p.caption,/📷|撮影|写真出典|ライセンス|【宿番号/);
+  const r=run(day);assert.equal(r.status,0,r.stderr);
+  const v=JSON.parse(r.stdout);
+  assert.equal(v.hotelNo,p.hotelNo);
+  assert.equal(v.photos.length,p.photos.length);
+  assert.match(decodeURIComponent(v.reply),new RegExp('HOTEL/'+p.hotelNo+'/'+p.hotelNo+'\\.html'));
+  assert.ok(v.photoCredits.length>=1);
+ }
+ const ids=doc.posts.filter(p=>p.day>=19&&p.day<=39).map(p=>p.hotelNo);
+ assert.equal(new Set(ids).size,21);
+});
+test('December posts use conversational copy rather than formal travel brochure endings',async()=>{
+ const {readFileSync}=await import('node:fs');
+ const posts=JSON.parse(readFileSync('data/rakutabi-threads-hotel-posts.json','utf8')).posts.filter(p=>p.day>=25&&p.day<=39);
+ assert.equal(posts.length,15);
+ for(const p of posts){
+  assert.doesNotMatch(p.caption,/いかがでしょうか|ご確認ください|ご利用ください|お過ごしください|ご案内します|📷|撮影/);
+  assert.match(p.caption,/ね。|そう。|かも。|なら。|日に。|旅に。|素敵。|たい。|ます。|一泊に。/);
+  const r=run(p.day);assert.equal(r.status,0,r.stderr);
+ }
+});
