@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { logout } from '@/app/logout/actions';
 
 const links = [
+  { href: '/jarvis',   label: '🤖 JARVIS' },
   { href: '/home',     label: '🏠 ホーム' },
   { href: '/today',    label: '🎯 今日やること' },
   { href: '/assets',   label: '📊 資産' },
