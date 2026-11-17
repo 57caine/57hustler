@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T00:54:40.511Z",
+  "generatedAt": "2026-11-17T03:36:42.286Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 35,
-        "bounceRate": 0.17142857142857143,
-        "avgSessionDuration": 293.80716194285714,
+        "sessions": 32,
+        "bounceRate": 0.15625,
+        "avgSessionDuration": 318.94271368750003,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション35件・affiliate_clickゼロ"
+        "セッション32件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -43,13 +43,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
-      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
-      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "path": "/column/vr-game-osusume-2026",
+      "slug": "vr-game-osusume-2026",
+      "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
       "metrics": {
         "sessions": 19,
-        "bounceRate": 0.631578947368421,
-        "avgSessionDuration": 96.06292552631578,
+        "bounceRate": 0.47368421052631576,
+        "avgSessionDuration": 112.81560652631579,
         "affiliateClicks": 0
       },
       "flags": [
@@ -57,6 +57,40 @@
       ],
       "flagLabels": [
         "セッション19件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 6,
+        "contentChars": 80831
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
+      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "metrics": {
+        "sessions": 18,
+        "bounceRate": 0.6666666666666666,
+        "avgSessionDuration": 83.92206266666668,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション18件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
@@ -81,16 +115,16 @@
       "slug": "smile-surgery-guide-2026",
       "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
       "metrics": {
-        "sessions": 18,
-        "bounceRate": 0.2777777777777778,
-        "avgSessionDuration": 187.62268211111112,
+        "sessions": 16,
+        "bounceRate": 0.3125,
+        "avgSessionDuration": 200.5857016875,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション18件・affiliate_clickゼロ"
+        "セッション16件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -111,54 +145,20 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/vr-game-osusume-2026",
-      "slug": "vr-game-osusume-2026",
-      "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
-      "metrics": {
-        "sessions": 18,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 119.08314022222223,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション18件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 6,
-        "contentChars": 80831
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/enkintsuyo-contact-guide",
       "slug": "enkintsuyo-contact-guide",
       "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
       "metrics": {
-        "sessions": 10,
+        "sessions": 11,
         "bounceRate": 0,
-        "avgSessionDuration": 70.5671239,
+        "avgSessionDuration": 117.97892436363637,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
+        "セッション11件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -185,7 +185,7 @@
       "metrics": {
         "sessions": 10,
         "bounceRate": 0.5,
-        "avgSessionDuration": 21.679315800000005,
+        "avgSessionDuration": 21.6793158,
         "affiliateClicks": 0
       },
       "flags": [
@@ -217,16 +217,16 @@
       "slug": "blue-light-megane-kouka",
       "title": "ブルーライトカット眼鏡の効果は本当にある？科学的根拠と選び方を解説",
       "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 104.94390233333334,
+        "sessions": 8,
+        "bounceRate": 0.375,
+        "avgSessionDuration": 114.03830775,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
+        "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -251,16 +251,16 @@
       "slug": "contact-net-kounyu-guide",
       "title": "コンタクトレンズはネットで買える？処方箋なしでも大丈夫？完全ガイド",
       "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.5555555555555556,
-        "avgSessionDuration": 27.930191,
+        "sessions": 8,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 31.421464875,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
+        "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -315,33 +315,33 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/contact-shoshinsha-tsukehazushi-care-2026",
-      "slug": "contact-shoshinsha-tsukehazushi-care-2026",
-      "title": "contact-shoshinsha-tsukehazushi-care-2026",
+      "path": "/column/acuvue-zenkindai-hikaku",
+      "slug": "acuvue-zenkindai-hikaku",
+      "title": "acuvue-zenkindai-hikaku",
       "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.5714285714285714,
-        "avgSessionDuration": 103.79695585714286,
+        "sessions": 6,
+        "bounceRate": 0.16666666666666666,
+        "avgSessionDuration": 3596.6679325,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
+        "セッション6件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 5,
-        "h3Count": 18,
+        "h2Count": 3,
+        "h3Count": 6,
         "hasAffiliateLinks": true,
-        "ctaCount": 2,
-        "contentChars": 102849
+        "ctaCount": 1,
+        "contentChars": 76545
       },
       "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
       ],
       "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
