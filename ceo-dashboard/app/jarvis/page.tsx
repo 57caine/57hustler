@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 import { getCurrentUser } from '@/lib/supabase/auth';
 import JarvisChat from '@/components/JarvisChat';
 import JarvisExecutionStatus from '@/components/JarvisExecutionStatus';
+import JarvisActionsEvidence from '@/components/JarvisActionsEvidence';
 import './mission.css';
 
 export const dynamic='force-dynamic';
@@ -24,6 +25,7 @@ export default async function JarvisPage(){
       <div className="jv-orb" aria-hidden="true"><div className="jv-orb-center">JARVIS</div></div>
     </section>
     <JarvisExecutionStatus/>
+    <JarvisActionsEvidence/>
     <JarvisChat/>
     <footer className="jv-footer">
       現在は読み取り専用の初期版です。GitHubの状態記録とGA4の取得値を表示します。実際のコード修正や自動運用は別の既存実行器が担当します。未取得の確定報酬を0円と表示しません。
