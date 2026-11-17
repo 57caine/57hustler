@@ -9,27 +9,27 @@ export default function HeroSection() {
             あなたの「見える」を、もっと快適に
           </p>
           <h1 className="mb-4 text-3xl font-bold leading-tight text-slate-900 md:text-5xl">
-            目の悩みに寄り添う
+            コンタクトレンズの価格、
             <br />
-            情報とアイテムを。
+            どこがお得か比べよう。
           </h1>
           <p className="mb-8 text-sm leading-relaxed text-slate-600 md:text-base">
-            コンタクト・カラコン・メガネから、目のケアや最新の医療情報まで。
+            いつものレンズを、1箱の価格・年間コスト・購入先で比較できます。
             <br className="hidden md:block" />
-            あなたにぴったりの選択が見つかる、目の総合情報サイトです。
+            度数やBCなどの条件は、眼科で確認した製品と照らし合わせて選びましょう。
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
             <a
               href="/category/1day"
               className="inline-block rounded-full bg-sky-600 px-8 py-3.5 font-bold text-white transition-colors hover:bg-sky-700 no-underline"
             >
-              1dayコンタクトの価格を比較 →
+              ワンデーの1箱価格・購入先を比較 →
             </a>
             <a
-              href="/ranking"
+              href="/category/2week"
               className="inline-block rounded-full border border-sky-200 bg-white px-8 py-3.5 font-bold text-sky-700 transition-colors hover:bg-sky-50 no-underline"
             >
-              人気ランキングを見る →
+              2ウィークの価格も比較 →
             </a>
           </div>
         </div>
@@ -38,7 +38,7 @@ export default function HeroSection() {
           <div className="overflow-hidden rounded-2xl shadow-sm">
             <Image
               src="/images/hero/hero-woman.webp"
-              alt="青空を見上げる女性。レンズナビは目の悩みに寄り添う情報とアイテムを紹介します"
+              alt="青空を見上げる女性。コンタクトレンズの価格と購入先を比較するレンズナビ"
               width={900}
               height={900}
               priority
