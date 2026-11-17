@@ -158,17 +158,11 @@ test('24lens direct launch is restricted to exact day 17 article and attribution
  assert.throws(()=>buildOrganicMessage({...p,day:16},'lens'));
 });
 
-test('new Rakutabi days have verified media or safely skip; publishing needs explicit authorization',()=>{
+test('every November and December Rakutabi slot has licensed media; publish still requires authorization',()=>{
  for(let day=19;day<=39;day++){
   const dry=spawnSync(process.execPath,['scripts/post-organic-threads.mjs','--brand','rakutabi','--day',String(day)],{encoding:'utf8',env:{PATH:process.env.PATH}});
   assert.equal(dry.status,0,dry.stderr);
   const out=JSON.parse(dry.stdout);
-  if(day<=24){
-   assert.equal(out.status,'skipped-no-licensed-photos');
-   assert.equal(out.published,false);
-   assert.equal(out.photos,0);
-   continue;
-  }
   assert.equal(out.mode,'dry-run');
   assert.ok(out.photos.length>=1&&out.photos.length<=6);
   assert.match(out.reply,/hb\.afl\.rakuten\.co\.jp/);

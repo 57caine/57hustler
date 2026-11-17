@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "notes": "Image must be independent Creative Commons or separately permitted, never Rakuten API or Rakuten Travel image. Source, license and attribution documented; verify current URL/booking availability before real publication. December 2026: value_convenience versus premium_experience are editorial positioning labels, NOT verified comparable price tiers. Price examples are not fixed for a booking date; use Rakuten booking analytics before interpreting performance. Owner preference as of 2026-11-16: stylish clean rooms, accessible boutique/resort-style stays, no generic business hotels. For Commons photos of surrounding scenery, explicitly state they are NOT photos of the room and direct the reader to hotel room photos on booking page. No reuse of Rakuten hotel images on Threads. 2026-11-16 owner decision: all 15 December posts prioritize visually appealing, clean design stays rather than generic business chains or prestige brands. Prefer actual guest-room photos with independently confirmed CC licenses; otherwise clearly identify commons/nearby scenes as NOT the room. Original photographer alterations and Wikimedia resize are recorded. Never copy hotel/Rakuten-provided room images without permission. This is a taste/editorial correction, not an observed conversion-rate winner.",
+  "notes": "Image must be independent Creative Commons or separately permitted, never Rakuten API or Rakuten Travel image. Source, license and attribution documented; verify current URL/booking availability before real publication. December 2026: value_convenience versus premium_experience are editorial positioning labels, NOT verified comparable price tiers. Price examples are not fixed for a booking date; use Rakuten booking analytics before interpreting performance. Owner preference as of 2026-11-16: stylish clean rooms, accessible boutique/resort-style stays, no generic business hotels. For Commons photos of surrounding scenery, explicitly state they are NOT photos of the room and direct the reader to hotel room photos on booking page. No reuse of Rakuten hotel images on Threads. 2026-11-16 owner decision: all 15 December posts prioritize visually appealing, clean design stays rather than generic business chains or prestige brands. Prefer actual guest-room photos with independently confirmed CC licenses; otherwise clearly identify commons/nearby scenes as NOT the room. Original photographer alterations and Wikimedia resize are recorded. Never copy hotel/Rakuten-provided room images without permission. This is a taste/editorial correction, not an observed conversion-rate winner. 2026-11-17 editorial tone: warm, natural, friend-recommendation style; no legal/licensing/old-room/photo-date boilerplate in parent caption, attribution remains in separate replies. November days 19-24 have licensed bedroom photos from Commons; no text-only fallback. Photos may depict older room designs and do not guarantee the current room configuration.",
   "posts": [
     {
       "day": 16,
@@ -192,10 +192,240 @@
       ]
     },
     {
+      "day": 19,
+      "hotelNo": 214,
+      "hotelName": "ホテルピエナ神戸",
+      "caption": "神戸でかわいいお部屋を見つけたいなら、ここも素敵。🕊️\n\nホテルピエナ神戸は、色合いや家具にこだわったお部屋が魅力。ゆったりしたツインやスイートもあるので、友達同士の神戸旅にもよさそう。\n\n北野の街を歩いて、ホテルでのんびり。そんな休日を過ごしたくなります。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F214%2F214.html",
+      "nearbySources": [
+        {
+          "claim": "神戸・三宮/北野エリアにあるホテル、ロイヤルツインなどの広い部屋や2022年以降に更新された客室の案内あり",
+          "url": "https://hotel.travel.rakuten.co.jp/hotelinfo/plan/214"
+        },
+        {
+          "claim": "楽天トラベル当該施設・宿泊予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/214/214.html"
+        }
+      ],
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/214/214.html",
+      "verifiedAt": "2026-11-17",
+      "experimentGroup": "design_stay",
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Hotel_Piena_Kobe_Royal_Twin_bedroom_20141124-001.jpg/1280px-Hotel_Piena_Kobe_Royal_Twin_bedroom_20141124-001.jpg",
+          "alt": "ホテルピエナ神戸のロイヤルツイン客室内部（2014年撮影）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Piena_Kobe_Royal_Twin_bedroom_20141124-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2014-11-24",
+            "changes": "Original photographer made perspective/color adjustments; resized to Wikimedia 1280px thumbnail; no further modifications"
+          }
+        }
+      ]
+    },
+    {
+      "day": 20,
+      "hotelNo": 1426,
+      "hotelName": "金沢東急ホテル",
+      "caption": "金沢で、ちょっと落ち着いた大人の一泊を。🍵\n\n金沢東急ホテルは香林坊にあって、街歩きにも便利。広めのツインルームもあり、和モダンな雰囲気の中でゆっくりできます。\n\n兼六園や長町武家屋敷跡を巡ったあと、お部屋でほっとひと息つきたいですね。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F1426%2F1426.html",
+      "nearbySources": [
+        {
+          "claim": "香林坊2丁目、武家文化と和モダンをテーマにしたホテル、金沢駅からバス約10分",
+          "url": "https://travel.rakuten.co.jp/group/TKH.html"
+        },
+        {
+          "claim": "楽天トラベル当該施設・宿泊予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/1426/1426.html"
+        }
+      ],
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/1426/1426.html",
+      "verifiedAt": "2026-11-17",
+      "experimentGroup": "design_stay",
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Kanazawa_Tokyu_Hotel_Luxury_Superior_Twin_20181214-002.jpg/1280px-Kanazawa_Tokyu_Hotel_Luxury_Superior_Twin_20181214-002.jpg",
+          "alt": "金沢東急ホテル ラグジュアリーフロアのスーペリアツイン客室（2018年撮影）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Kanazawa_Tokyu_Hotel_Luxury_Superior_Twin_20181214-002.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2018-12-14",
+            "changes": "Original photographer made perspective/color adjustments; resized to Wikimedia 1280px thumbnail; no further modifications"
+          }
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Kanazawa_Tokyu_Hotel_Luxury_Superior_Twin_20181214-001.jpg/1280px-Kanazawa_Tokyu_Hotel_Luxury_Superior_Twin_20181214-001.jpg",
+          "alt": "同ホテルのスーペリアツイン客室別カット（2018年撮影）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Kanazawa_Tokyu_Hotel_Luxury_Superior_Twin_20181214-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2018-12-14",
+            "changes": "Original photographer made perspective/color adjustments; resized to Wikimedia 1280px thumbnail; no further modifications"
+          }
+        }
+      ]
+    },
+    {
+      "day": 21,
+      "hotelNo": 178174,
+      "hotelName": "ザ ロイヤルパークホテル アイコニック 大阪御堂筋",
+      "caption": "大阪で泊まるなら、夜景もお部屋も楽しみたい。🌃\n\nザ ロイヤルパークホテル アイコニック 大阪御堂筋は、すっきりした内装と都心の眺めが魅力。淀屋橋駅から歩いて約3分で、大阪の街歩きにも便利です。\n\nお出かけのあと、ホテルでゆっくりする時間もいいですね。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F178174%2F178174.html",
+      "nearbySources": [
+        {
+          "claim": "大阪メトロ淀屋橋駅から徒歩約3分、御堂筋沿いで客室にキングベッドの部屋あり",
+          "url": "https://travel.rakuten.co.jp/HOTEL/178174/178174_std.html"
+        },
+        {
+          "claim": "楽天トラベル当該施設・宿泊予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/178174/178174.html"
+        }
+      ],
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/178174/178174.html",
+      "verifiedAt": "2026-11-17",
+      "experimentGroup": "design_stay",
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/The_Royal_Park_Hotel_Iconic_Osaka_Midosuji_Executive_Standard_King_bedroom_20210306-001.jpg/1280px-The_Royal_Park_Hotel_Iconic_Osaka_Midosuji_Executive_Standard_King_bedroom_20210306-001.jpg",
+          "alt": "ロイヤルパークホテルアイコニック大阪御堂筋 エグゼクティブキング客室（2021年撮影）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:The_Royal_Park_Hotel_Iconic_Osaka_Midosuji_Executive_Standard_King_bedroom_20210306-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2021-03-06",
+            "changes": "Original photographer made perspective/color adjustments; resized to Wikimedia 1280px thumbnail; no further modifications"
+          }
+        }
+      ]
+    },
+    {
+      "day": 22,
+      "hotelNo": 55347,
+      "hotelName": "ホテルモントレ京都",
+      "caption": "京都で、洋館みたいなかわいいホテルに泊まりたい。🕯️\n\nホテルモントレ京都は、英国の雰囲気を取り入れたデザインが素敵。烏丸御池駅から徒歩約2分で、京都の街歩きにも便利です。\n\n観光のあとは、ホテルのスパでのんびりするのもよさそう。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F55347%2F55347.html",
+      "nearbySources": [
+        {
+          "claim": "烏丸御池駅6番出口から徒歩約2分、英国と京都のデザインを融合、スパ設備あり",
+          "url": "https://travel.rakuten.co.jp/HOTEL/55347/55347.html"
+        },
+        {
+          "claim": "楽天トラベル当該施設・宿泊予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/55347/55347.html"
+        }
+      ],
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/55347/55347.html",
+      "verifiedAt": "2026-11-17",
+      "experimentGroup": "design_stay",
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Hotel_Monterey_Kyoto_Standard_Twin_bedroom_20130201-001.jpg/1280px-Hotel_Monterey_Kyoto_Standard_Twin_bedroom_20130201-001.jpg",
+          "alt": "ホテルモントレ京都スタンダードツイン客室（2013年撮影）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Hotel_Monterey_Kyoto_Standard_Twin_bedroom_20130201-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2013-02-01",
+            "changes": "Original photographer made perspective/color adjustments; resized to Wikimedia 1280px thumbnail; no further modifications"
+          }
+        }
+      ]
+    },
+    {
+      "day": 23,
+      "hotelNo": 168608,
+      "hotelName": "THE THOUSAND KYOTO",
+      "caption": "京都駅の近くで、こんな落ち着いたお部屋に泊まれたら素敵。🌿\n\nTHE THOUSAND KYOTOは、和の美しさを感じるすっきりしたデザインが魅力。ゆったりした客室やスパもあって、観光のあともホテルでくつろげます。\n\n予定を詰め込みすぎず、宿で過ごす時間も楽しみたい京都旅に。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F168608%2F168608.html",
+      "nearbySources": [
+        {
+          "claim": "京都駅徒歩圏、和をモチーフにした客室、約37㎡のダブル客室タイプとスパ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/168608/CUSTOM/W168608180924144847.html"
+        },
+        {
+          "claim": "楽天トラベル当該施設・宿泊予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/168608/168608.html"
+        }
+      ],
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/168608/168608.html",
+      "verifiedAt": "2026-11-17",
+      "experimentGroup": "design_stay",
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/The_Thousand_Kyoto_the_thousand_double_bedroom_20200411-001.jpg/1280px-The_Thousand_Kyoto_the_thousand_double_bedroom_20200411-001.jpg",
+          "alt": "THE THOUSAND KYOTOの旧ザ・サウザンドダブル客室（2020年撮影）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:The_Thousand_Kyoto_the_thousand_double_bedroom_20200411-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2020-04-11",
+            "changes": "Original photographer made perspective/color adjustments; resized to Wikimedia 1280px thumbnail; no further modifications"
+          }
+        }
+      ]
+    },
+    {
+      "day": 24,
+      "hotelNo": 104691,
+      "hotelName": "THE ORIENT（旧オリエンタルホテル）",
+      "caption": "神戸の旧居留地を歩くなら、ホテルも街の雰囲気に合わせたい。⚓\n\nTHE ORIENTは、港町らしい上品さとモダンな空間が魅力。神戸の街並みを楽しんだあとも、心地よいお部屋でゆっくりできそう。\n\n友達との小旅行にも、ちょっとした記念日にも気になる宿です。",
+      "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F104691%2F104691.html",
+      "nearbySources": [
+        {
+          "claim": "神戸旧居留地の京町25、旧オリエンタルホテルからTHE ORIENTに名称変更された掲載施設",
+          "url": "https://travel.rakuten.co.jp/HOTEL/104691/CUSTOM/GW104691100714105340.html"
+        },
+        {
+          "claim": "楽天トラベル当該施設・宿泊予約ページ",
+          "url": "https://travel.rakuten.co.jp/HOTEL/104691/104691.html"
+        }
+      ],
+      "hotelSource": "https://travel.rakuten.co.jp/HOTEL/104691/104691.html",
+      "verifiedAt": "2026-11-17",
+      "experimentGroup": "design_stay",
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Oriental_Hotel_Kobe_Executive_Floor_City-view_Twin_bedroom_20160207-001.jpg/1280px-Oriental_Hotel_Kobe_Executive_Floor_City-view_Twin_bedroom_20160207-001.jpg",
+          "alt": "旧オリエンタルホテル神戸のエグゼクティブ階客室（2016年撮影、現在THE ORIENTとして営業）",
+          "photoRights": {
+            "source": "independent-licensed",
+            "owner": "J o",
+            "scope": "Commercial use including Threads, with attribution and share-alike",
+            "license": "CC BY-SA 4.0",
+            "proofUrl": "https://commons.wikimedia.org/wiki/File:Oriental_Hotel_Kobe_Executive_Floor_City-view_Twin_bedroom_20160207-001.jpg",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "date": "2016-02-07",
+            "changes": "Original photographer made perspective/color adjustments; resized to Wikimedia 1280px thumbnail; no further modifications"
+          }
+        }
+      ]
+    },
+    {
       "day": 25,
       "hotelNo": 176768,
       "hotelName": "GOOD NATURE HOTEL KYOTO",
-      "caption": "京都で、緑と木のぬくもりに包まれるホテルステイ。🌿\n\n河原町の街中にある、自然素材を大切にしたデザインホテル。約33㎡のガーデンビューテラスダブルなど、内装にもこだわった客室が魅力です。\n\n鴨川を散歩して、お部屋でのんびり。京都で少し特別な一泊を。",
+      "caption": "京都で、緑に囲まれたお部屋に泊まれたら素敵。🌿\n\nGOOD NATURE HOTEL KYOTOは、木のぬくもりを感じるデザインが魅力。約33㎡のガーデンビューテラスダブルもあって、河原町の街中にいるのを忘れそう。\n\n鴨川を散歩して、お部屋でのんびり。そんな京都旅もいいですね。",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F176768%2F176768.html",
       "nearbySources": [
         {
@@ -260,7 +490,7 @@
       "day": 26,
       "hotelNo": 129407,
       "hotelName": "ホテル アンテルーム 京都",
-      "caption": "アートやデザインを楽しむ京都旅に。🎨\n\nホテル アンテルーム 京都は、ギャラリーやバーを備えた個性的なホテル。雰囲気の異なる客室から、好みの空間を選べるのも楽しみのひとつ。\n\n街歩きのあとも、ホテルでゆっくり過ごしたい方へ。",
+      "caption": "京都で、アートを楽しみながら泊まるのもいいかも。🎨\n\nホテル アンテルーム 京都は、ギャラリーやバーがある個性的なホテル。お部屋にもそれぞれ雰囲気があって、好きなデザインを探すのが楽しそう。\n\n街を歩いたあとも、ホテルでゆっくり過ごしたい日に。",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F129407%2F129407.html",
       "nearbySources": [
         {
@@ -311,7 +541,7 @@
       "day": 27,
       "hotelNo": 141079,
       "hotelName": "ワン・ニセコ・リゾート・タワーズ",
-      "caption": "ニセコで、広いお部屋に泊まってのんびり。🏔️\n\nワン・ニセコ・リゾート・タワーズは、自然に囲まれたコンドミニアム型リゾート。キッチン付きの客室もあり、家族や友人と過ごす旅にぴったり。\n\n観光だけでなく、お部屋でくつろぐ時間も楽しめる宿です。",
+      "caption": "ニセコで、広いお部屋に泊まってのんびりしませんか。🏔️\n\nワン・ニセコ・リゾート・タワーズは、自然に囲まれたコンドミニアム型の宿。キッチン付きのお部屋もあるので、家族や友達とゆっくり過ごせそう。\n\n観光だけじゃなく、宿で過ごす時間も楽しみたいですね。",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F141079%2F141079.html",
       "nearbySources": [
         {
@@ -347,7 +577,7 @@
       "day": 28,
       "hotelNo": 15758,
       "hotelName": "ホテル ザ セレスティン東京芝",
-      "caption": "東京でも、落ち着いた空間でゆっくりしたい。🍃\n\nホテル ザ セレスティン東京芝は、緑を感じるパティオとゲストラウンジが魅力。都心での観光を楽しみながら、ホテルでも穏やかな時間を過ごせます。\n\n部屋でくつろぐ、大人の週末旅に。",
+      "caption": "東京で、静かにくつろげるホテルを探しているなら。🍃\n\nホテル ザ セレスティン東京芝は、緑を感じるパティオや落ち着いた空間が魅力。街歩きも楽しみつつ、ホテルではのんびりしたい日にぴったり。\n\n何もしない時間も、旅の楽しみですよね。",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F15758%2F15758.html",
       "nearbySources": [
         {
@@ -398,7 +628,7 @@
       "day": 29,
       "hotelNo": 179802,
       "hotelName": "ザ・ゲートホテル京都高瀬川 by HULIC",
-      "caption": "京都で泊まるなら、お部屋のデザインにもこだわりたい。🌿\n\nザ・ゲートホテル京都高瀬川は、旧立誠小学校の建築を生かしたホテル。落ち着いた客室、ゲストラウンジ、開放感のあるパティオが魅力。\n\n河原町で街歩きを楽しみ、ホテルでもゆっくり過ごす京都旅に。",
+      "caption": "京都のおしゃれなホテル、ここも気になります。🌿\n\nザ・ゲートホテル京都高瀬川は、昔の学校の建築を生かした素敵な空間。落ち着いたお部屋や開放感のあるパティオがあって、ホテルで過ごす時間も楽しそう。\n\n河原町を歩いて、帰ってきたらゆっくり。そんな一泊に。",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F179802%2F179802.html",
       "nearbySources": [
         {
@@ -462,7 +692,7 @@
       "day": 30,
       "hotelNo": 144956,
       "hotelName": "三井ガーデンホテル京都新町 別邸",
-      "caption": "京都の路地で、和モダンな宿を見つける旅。🌿\n\n三井ガーデンホテル京都新町 別邸は、和の趣を感じる落ち着いた空間と大浴場が魅力。複数人で泊まれる客室タイプもあり、友人や家族との京都旅行にも。\n\n観光のあとに、お風呂でゆったり。",
+      "caption": "京都の路地に、こんな和モダンな宿が。🌿\n\n三井ガーデンホテル京都新町 別邸は、ほっと落ち着く和の空間と大浴場が魅力。複数人で泊まれるお部屋もあるので、友達や家族との旅行にもよさそう。\n\n観光のあと、お風呂でのんびりできたらうれしいですね。",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F144956%2F144956.html",
       "nearbySources": [
         {
@@ -513,7 +743,7 @@
       "day": 31,
       "hotelNo": 108734,
       "hotelName": "ホテル カンラ 京都",
-      "caption": "木のぬくもりと和のしつらえが美しい京都の宿。🪵\n\nホテル カンラ 京都は、町家の雰囲気を生かした空間とヒバ風呂を備えた客室が魅力。五条駅近くにあり、京都の街歩きにも便利です。\n\nお部屋で過ごす時間まで楽しみたい一泊に。",
+      "caption": "京都で木のぬくもりを感じるお部屋に泊まりたい。🪵\n\nホテル カンラ 京都は、町家みたいな雰囲気とヒバ風呂付きのお部屋が魅力。五条駅の近くなので、お出かけにも便利です。\n\nお部屋で過ごす時間も大切にしたい京都旅に。",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F108734%2F108734.html",
       "nearbySources": [
         {
@@ -578,7 +808,7 @@
       "day": 32,
       "hotelNo": 189830,
       "hotelName": "Rakuten STAY 出雲",
-      "caption": "出雲で、広いお部屋とサウナを楽しむ旅。⛩️\n\nRakuten STAY 出雲は、出雲大社の近くにある滞在型の宿。約93㎡のメゾネット客室に、プライベートサウナやプロジェクターを備えています。\n\n家族や友人と一緒に、ゆっくり過ごしたい日に。",
+      "caption": "出雲で、広いお部屋とサウナを楽しむ旅。⛩️\n\nRakuten STAY 出雲は、約93㎡のメゾネットタイプのお部屋が魅力。プライベートサウナやプロジェクターもあって、家族や友達とのお泊まりにぴったり。\n\n出雲大社を巡って、あとは宿でゆっくり。こんな旅もいいですね。",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F189830%2F189830.html",
       "nearbySources": [
         {
@@ -628,7 +858,7 @@
       "day": 33,
       "hotelNo": 144957,
       "hotelName": "三井ガーデンホテル大阪プレミア",
-      "caption": "大阪で、ちょっといいお部屋と大浴場を楽しむなら。🛁\n\n三井ガーデンホテル大阪プレミアは、中之島エリアのホテル。フローリング仕様の客室と最上階の大浴場が魅力です。\n\n街歩きのあとも、ホテルで気持ちよくくつろげる一泊に。",
+      "caption": "大阪で、ちょっといいお部屋に泊まりたいなら。🛁\n\n三井ガーデンホテル大阪プレミアは、フローリングのお部屋と最上階の大浴場が魅力。中之島を歩いたあと、ホテルでのんびりするのもよさそう。\n\n観光もくつろぎも、どっちも楽しみたい一泊に。",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F144957%2F144957.html",
       "nearbySources": [
         {
@@ -679,7 +909,7 @@
       "day": 34,
       "hotelNo": 167802,
       "hotelName": "クロスホテル京都",
-      "caption": "京都の真ん中で、木の温かみがあるお部屋を選ぶ。🏯\n\nクロスホテル京都は三条河原町にあるデザインホテル。木や和紙を生かした客室は全室25㎡以上で、バス・トイレが分かれたつくり。\n\n食事や買い物を楽しんだあとも、お部屋でゆったり過ごせます。",
+      "caption": "京都の街中なのに、お部屋でもゆっくりできそう。🏯\n\nクロスホテル京都は、木や和紙を生かしたおしゃれな空間が魅力。お部屋は25㎡以上で、バス・トイレが分かれているのもうれしいところ。\n\n河原町で食事や買い物を楽しんで、ホテルでほっとひと息。",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F167802%2F167802.html",
       "nearbySources": [
         {
@@ -730,7 +960,7 @@
       "day": 35,
       "hotelNo": 193942,
       "hotelName": "Rakuten STAY 箱根すすき草原",
-      "caption": "箱根で、温泉付きのお部屋を家族や友人と。♨️\n\nRakuten STAY 箱根すすき草原は、客室に天然温泉かけ流しのお風呂、キッチン、プロジェクターを備えた滞在型の宿。\n\nお部屋でくつろぎながら、箱根で少し特別な休日を楽しめます。",
+      "caption": "箱根で、温泉付きのお部屋に泊まる休日はいかがですか。♨️\n\nRakuten STAY 箱根すすき草原は、お部屋に天然温泉のお風呂やキッチン、プロジェクターがある滞在型の宿。\n\n家族や友達とごはんを食べて、温泉に入ってのんびり。そんな時間を過ごしたいですね。",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F193942%2F193942.html",
       "nearbySources": [
         {
@@ -780,7 +1010,7 @@
       "day": 36,
       "hotelNo": 1369,
       "hotelName": "京都センチュリーホテル",
-      "caption": "京都駅近くで、内装の美しいお部屋に泊まる旅。🛏️\n\n京都センチュリーホテルの京プレミアムは、落ち着いたデザインと約30㎡の広さが魅力。京都駅からの移動もしやすく、観光の拠点にも便利です。\n\nたくさん歩いたあとは、ホテルでゆっくり。",
+      "caption": "京都駅の近くで、こんな素敵なお部屋に泊まれたら。🛏️\n\n京都センチュリーホテルの京プレミアムは、落ち着いた内装と約30㎡の広さが魅力。駅に近いので、観光にも出かけやすいです。\n\nたくさん歩いた日は、お部屋でゆっくりくつろぎたいですね。",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F1369%2F1369.html",
       "nearbySources": [
         {
@@ -831,7 +1061,7 @@
       "day": 37,
       "hotelNo": 147093,
       "hotelName": "ミレニアム三井ガーデンホテル東京",
-      "caption": "銀座で泊まるなら、すっきりと美しいお部屋に。✨\n\nミレニアム三井ガーデンホテル東京は、銀座五丁目にあるデザインホテル。東銀座駅に近く、食事や買い物に出かけやすい立地です。\n\n街歩きだけでなく、宿でくつろぐ時間も大切にしたい方へ。",
+      "caption": "銀座で、すっきりきれいなお部屋を探しているなら。✨\n\nミレニアム三井ガーデンホテル東京は、東銀座駅に近いデザインホテル。銀座で食事や買い物を楽しんだあとも、落ち着いた空間でゆっくりできそう。\n\n都心で過ごす、ちょっといい週末に。",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F147093%2F147093.html",
       "nearbySources": [
         {
@@ -868,7 +1098,7 @@
       "day": 38,
       "hotelNo": 41069,
       "hotelName": "三井ガーデンホテル銀座プレミア",
-      "caption": "銀座の街並みと、上質なホテル時間を楽しむ。🌃\n\n三井ガーデンホテル銀座プレミアは、高層階に客室があるホテル。眺めを楽しめる部屋タイプもあり、いつもより少し特別な都心の滞在に。\n\n景色もお部屋も楽しみたい週末に。",
+      "caption": "銀座の景色を楽しみながら泊まるのも素敵。🌃\n\n三井ガーデンホテル銀座プレミアは、高層階にお部屋があるホテル。眺めのいいお部屋を選べば、いつもの東京が少し特別に見えるかも。\n\n街歩きもホテル時間も、どっちも楽しみたい日に。",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F41069%2F41069.html",
       "nearbySources": [
         {
@@ -905,7 +1135,7 @@
       "day": 39,
       "hotelNo": 18239,
       "hotelName": "パークホテル東京",
-      "caption": "東京のホテルも、お部屋の雰囲気で選びたい。✨\n\n汐留の高層階にあるパークホテル東京は、アートを感じる客室と館内空間が魅力。新橋・銀座方面にも出かけやすく、観光にも便利です。\n\nデザインを楽しみながら過ごす、ちょっと特別な一泊に。",
+      "caption": "東京で、アートを感じるお部屋に泊まってみたい。✨\n\n汐留にあるパークホテル東京は、おしゃれな客室と落ち着いた空間が魅力。新橋や銀座にも出かけやすくて、街歩きにも便利です。\n\nお部屋に帰るのが楽しみになる、そんな一泊に。",
       "bookingUrl": "https://hb.afl.rakuten.co.jp/hgc/5567171b.a80702dc.5567171c.a1d1b6fc/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F18239%2F18239.html",
       "nearbySources": [
         {
