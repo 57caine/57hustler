@@ -56,7 +56,7 @@ test('day18 Tokyo Station Hotel has three licensed station-area photographs and 
  assert.ok(v.photos.every(p=>p.rights.scope.includes('Threads') && p.rights.proofUrl.startsWith('https://commons.wikimedia.org/wiki/File:')));
  assert.ok(v.photos.every(p=>p.url.startsWith('https://upload.wikimedia.org/wikipedia/commons/')));
  assert.ok(v.photoCredits.every(p=>p.length<=500));
- assert.match(v.caption,/客室写真ではありません/);
+ assert.doesNotMatch(v.caption,/客室写真ではありません|📷|撮影|写真出典/);
  assert.match(v.reply,/東京ステーションホテル/);
  assert.match(v.reply,/HOTEL%2F137869%2F137869.html/);
  assert.equal(v.nearbySources.length,2);
