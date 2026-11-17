@@ -1,0 +1,19 @@
+name: Threads acquisition links PR check
+on:
+  pull_request:
+    paths:
+      - 'docs/threads-acquisition-test-20261018.md'
+      - 'scripts/tests/threads-acquisition-links.test.mjs'
+      - '.github/workflows/threads-acquisition-pr-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test scripts/tests/threads-acquisition-links.test.mjs
