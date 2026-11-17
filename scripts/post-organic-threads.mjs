@@ -1,6 +1,7 @@
 /** Manual organic Threads launcher; dry-run by default. Never reads legacy credentials. */
 import { readFile } from 'node:fs/promises';
 import { buildOrganicMessage, isOrganicDuplicate } from './lib/organic-threads-message.mjs';
+import { photoAlternateMessages } from './lib/organic-photo-overlap.mjs';
 const args = process.argv.slice(2);
 function arg(name) { const i=args.indexOf('--'+name); return i<0?undefined:args[i+1]; }
 const brand=arg('brand'), day=Number(arg('day')), publish=args.includes('--publish');
@@ -35,6 +36,12 @@ if(brand==='mitama'&&args.includes('--audit')) {
 if(!post||typeof post.text!=='string'||!post.text.trim()||post.text.length>500) throw new Error('Invalid post');
 if(brand==='mitama'&&day>=10&&!auditMitamaPost(post).valid) throw new Error('MITAMA editorial audit failed: Japanese cultural anchor and reader question required');
 const message=buildOrganicMessage(post,brand);
+let alternateMessages=[];
+if(brand==='rakutabi'&&day===13){
+ const review=JSON.parse(await readFile(new URL('../data/rakutabi-sunhatoya-photo-review-20261101.json',import.meta.url),'utf8'));
+ alternateMessages=photoAlternateMessages(post,review);
+ if(publish&&review.publishEnabled===true) throw new Error('Photo release owns this slot; text fallback is disabled');
+}
 console.log(JSON.stringify({mode:publish?'publish':'dry-run',brand,expectedHandle:cfg.handle,day,message}));
 if(!publish) process.exit(0);
 if(process.env.ENABLE_ORGANIC_THREADS_PUBLISH!=='true') throw new Error('Publishing not authorized');
@@ -58,7 +65,7 @@ for(let page=0;page<10;page++){
  if(after) q.set('after',after);
  const history=await call(API+'/'+encodeURIComponent(id)+'/threads?'+q);
  if(!Array.isArray(history.data)) throw new Error('Cannot verify history');
- if(history.data.some(item=>isOrganicDuplicate(item,post,message))){
+ if(history.data.some(item=>isOrganicDuplicate(item,post,message,alternateMessages))){
    console.log(JSON.stringify({status:'skipped-already-published',brand,day}));process.exit(0);
  }
  if(!history.paging?.next){complete=true;break;}
