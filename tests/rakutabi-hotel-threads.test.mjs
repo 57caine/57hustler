@@ -76,7 +76,7 @@ test('day17 Fujiya Hotel has licensed 3-photo carousel and affiliate hotel reply
  assert.equal(v.photos.length,3);
  assert.equal(v.mediaType,'CAROUSEL');
  assert.ok(v.photos.every(p=>p.rights.proofUrl && p.rights.licenseUrl && p.rights.scope.includes('Threads')));
- assert.match(v.caption,/現在の客室や宿泊プランを示す画像ではありません/);
+ assert.doesNotMatch(v.caption,/現在の客室や宿泊プランを示す画像ではありません|📷|撮影/);
  assert.match(v.reply,/HOTEL%2F1727%2F1727.html/);
  assert.ok(v.photoCredits.every(c=>c.length<=500));
 });
@@ -181,7 +181,8 @@ test('all December captions discuss the stay without photo metadata or managemen
  }
 });
 
-test('November Fujiya and Tokyo Station captions end with stay description, no photo boilerplate',()=>{
+test('November Fujiya and Tokyo Station captions end with stay description, no photo boilerplate',async()=>{
+ const {readFileSync}=await import('node:fs');
  const posts=JSON.parse(readFileSync('data/rakutabi-threads-hotel-posts.json','utf8')).posts;
  for(const day of [17,18]){
    const p=posts.find(x=>x.day===day);
