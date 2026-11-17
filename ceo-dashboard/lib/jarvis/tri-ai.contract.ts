@@ -1,5 +1,6 @@
 import { classifyGate, preparePacket, reconcileReviews } from './tri-ai';
 import { parseReview, reviewPrompt } from './providers';
+import { crossCheckPrompts, finalizeTriad } from './deliberation';
 
 function equal(actual: unknown, expected: unknown, name: string) {
   if (actual !== expected) throw new Error(`${name}: expected ${String(expected)}, got ${String(actual)}`);
@@ -21,6 +22,10 @@ export function testTriAiContract() {
     verdict:'approve',reasoning:'テストのみ',evidence:[],risks:[]
   })));
   equal(reconcileReviews(reviews).status,'agreement','three approvals');
+  const prompts=crossCheckPrompts('比較',reviews);
+  equal(Object.keys(prompts).length,3,'three cross checks');
+  const completed=reviews.map(r=>({agent:r.agent,decision:r,peersSeen:reviews.filter(p=>p.agent!==r.agent).map(p=>p.agent)}));
+  equal(finalizeTriad(reviews,completed).stage,'blocked','no evidence fail closed');
   reviews[1].verdict='reject';
   equal(reconcileReviews(reviews).status,'needs_review','dissent');
   throws(()=>parseReview('gpt','not json'),'malformed');
