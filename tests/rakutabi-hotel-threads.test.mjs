@@ -180,3 +180,18 @@ test('all December captions discuss the stay without photo metadata or managemen
    assert.ok(pub.reply.includes('https://hb.afl.rakuten.co.jp/'));
  }
 });
+
+test('November Fujiya and Tokyo Station captions end with stay description, no photo boilerplate',()=>{
+ const posts=JSON.parse(readFileSync('data/rakutabi-threads-hotel-posts.json','utf8')).posts;
+ for(const day of [17,18]){
+   const p=posts.find(x=>x.day===day);
+   assert.ok(p);
+   assert.doesNotMatch(p.caption,/📷|撮影|写真出典|写真3枚は|料金.*空室|客室写真ではありません/);
+   const r=run(day);
+   assert.equal(r.status,0,r.stderr);
+   const v=JSON.parse(r.stdout);
+   assert.doesNotMatch(v.caption,/📷|撮影|写真出典|写真3枚は/);
+   assert.ok(v.photoCredits.length>=1);
+   assert.match(v.reply,/hb\.afl\.rakuten\.co\.jp/);
+ }
+});
