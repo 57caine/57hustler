@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "revision": 1,
+  "spec": {
+    "task": "https://github.com/57caine/57hustler/pull/246",
+    "owner": "CEO",
+    "approval": "existing",
+    "rollback": "PR246をrevertし11/21・day38へ戻す。公開履歴は削除せず、過去枠の再送は禁止。",
+    "acceptance": [
+      "旧38本と旧文が不変、新7本が一意・500字以内・編集監査合格",
+      "JST11/22〜28とday39〜45対応、終了/翌年拒否・既存頻度維持",
+      "既投稿/誤アカウント/履歴不完備でPOSTなし、対象CI成功"
+    ],
+    "evidence": [
+      {
+        "url": "https://github.com/57caine/57hustler/blob/8a274cc6ad9c79b1bdcc7c776c75ba241499fee9/docs/mitama-continuation-20261115-21.md",
+        "checked_at": "2026-11-18T15:10:31Z",
+        "result": "現行終端11/21、次7本の準備期限11/19。2026-10-31の同頻度継続承認により期限付き7本を準備。既存原稿・ブランド・頻度を維持。"
+      }
+    ]
+  },
+  "contract": "d9a490e44fc4ac7f6e21855eacee5b0be796cdc8dc7013b5051adf6bcc298851",
+  "status": "verifying",
+  "attempts": 0,
+  "history": [
+    {
+      "revision": 1,
+      "from": "queued",
+      "to": "verifying",
+      "type": "implement",
+      "at": "2026-11-18T15:10:33.870Z",
+      "event": {
+        "type": "implement",
+        "actor": "CEO",
+        "revision": 0,
+        "commit_sha": "c4b88cbcddd48a4db0ca525abb530bd32c5c266c"
+      }
+    }
+  ],
+  "commit_sha": "c4b88cbcddd48a4db0ca525abb530bd32c5c266c"
+}
