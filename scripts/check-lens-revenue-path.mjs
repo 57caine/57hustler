@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { inspectPurchaseCtas, hasColumnComparisonLink } from './lib/inspect-purchase-ctas.mjs';
+import { inspectPurchaseCtas, hasColumnComparisonLink, hasVerifiedColumnRevenuePath } from './lib/inspect-purchase-ctas.mjs';
 // Read-only live smoke test for the revenue path. No secrets, clicks, or purchases.
 const base = process.env.LENS_BASE_URL || 'https://lens-navi.jp';
 // This product has verified A8 offers. Rakuten remains unverified for purchase CTAs.
@@ -19,11 +19,13 @@ function diagnose({ path, http, hasAffiliate, hasTracking, error }) {
   return null;
 }
 let failed = false;
+let comparisonPage;
 for (const path of paths) {
   const url = new URL(path, base);
   try {
     const response = await fetch(url, { signal: AbortSignal.timeout(20000), redirect: 'follow', headers: { 'User-Agent': '57hustler-revenue-healthcheck/1.0' } });
     const html = await response.text();
+    if (path === '/category/1day') comparisonPage = { http: response.status, html };
     const hasAffiliate = /hb\.afl\.rakuten\.co\.jp|afl\.rakuten\.co\.jp|px\.a8\.net/.test(html);
     const hasTracking = /affiliate_click|AffiliateClickTracker|googletagmanager\.com\/gtag/.test(html);
     // Ranking copy assertions validate the PR #38 production page, not merely a 200 response.
@@ -33,16 +35,19 @@ for (const path of paths) {
       !html.includes('注目の新規ショップ')
     );
     const columnComparisonOk = !path.startsWith('/column/contact-') || hasColumnComparisonLink(html);
+    const columnRevenuePathOk = path.startsWith('/column/contact-') ? hasVerifiedColumnRevenuePath(html, comparisonPage) : null;
+    const hasRevenuePath = columnRevenuePathOk ?? hasAffiliate;
     const purchase = path === PILOT_PRODUCT_PATH ? inspectPurchaseCtas(html) : null;
     // Serialized page data may contain inactive affiliate URLs. Require a real purchase anchor.
     const purchaseCtaOk = purchase ? (purchase.a8 > 0 && purchase.rakuten === 0) : null;
-    const ok = response.ok && html.includes('<html') && hasAffiliate && hasTracking && rankingCopyOk && columnComparisonOk && purchaseCtaOk !== false;
+    const ok = response.ok && html.includes('<html') && hasRevenuePath && hasTracking && rankingCopyOk && columnComparisonOk && purchaseCtaOk !== false;
     if (!ok) failed = true;
-    results.push({ path, http: response.status, hasAffiliate, hasTracking, rankingCopyOk, columnComparisonOk, purchaseCtaOk, ok });
+    results.push({ path, http: response.status, hasAffiliate, hasTracking, rankingCopyOk, columnComparisonOk, columnRevenuePathOk, purchaseCtaOk, ok });
     if (!columnComparisonOk) diagnoses.push(`COMPARISON_LINK_MISSING: ${path} - require a rendered article link to /category/1day.`);
+    if (columnRevenuePathOk === false) diagnoses.push(`COMPARISON_REVENUE_PATH: ${path} - require the article comparison anchor and a successful comparison page with a rendered sponsored affiliate anchor and tracking marker.`);
     if (!rankingCopyOk) diagnoses.push(`STALE_CONTENT: ${path} - expected PR #38 copy missing or old generic shop CTA present.`);
     if (purchaseCtaOk === false) diagnoses.push(`PURCHASE_CTA: ${path} - require a rendered sponsored A8 purchase link and keep unverified Rakuten purchase CTAs disabled.`);
-    const diagnosis = diagnose({ path, http: response.status, hasAffiliate, hasTracking });
+    const diagnosis = diagnose({ path, http: response.status, hasAffiliate: hasRevenuePath, hasTracking });
     if (diagnosis) diagnoses.push(diagnosis);
   } catch (error) {
     failed = true;
@@ -70,15 +75,15 @@ try {
 const lines = [
   '# Lens-navi revenue path: read-only healthcheck',
   '',
-  '| Page | HTTP | Affiliate link present | Tracking marker present | PR #38 copy | Article comparison link | Purchase CTA guard | Result |',
-  '|---|---:|---|---|---|---|---|---|',
-  ...results.map(r => `| ${r.path} | ${r.http ?? '-'} | ${r.hasAffiliate === 'n/a' ? 'n/a' : r.hasAffiliate ? 'yes' : 'no'} | ${r.hasTracking === 'n/a' ? 'n/a' : r.hasTracking ? 'yes' : 'no'} | ${r.rankingCopyOk === undefined ? '-' : r.rankingCopyOk ? 'yes' : 'no'} | ${r.columnComparisonOk === undefined ? '-' : r.columnComparisonOk ? 'yes' : 'no'} | ${r.purchaseCtaOk == null ? '-' : r.purchaseCtaOk ? 'yes' : 'no'} | ${r.ok ? 'PASS' : 'FAIL'} |`),
+  '| Page | HTTP | Affiliate link present | Tracking marker present | PR #38 copy | Article comparison link | Revenue via comparison | Purchase CTA guard | Result |',
+  '|---|---:|---|---|---|---|---|---|---|',
+  ...results.map(r => `| ${r.path} | ${r.http ?? '-'} | ${r.hasAffiliate === 'n/a' ? 'n/a' : r.hasAffiliate ? 'yes' : 'no'} | ${r.hasTracking === 'n/a' ? 'n/a' : r.hasTracking ? 'yes' : 'no'} | ${r.rankingCopyOk === undefined ? '-' : r.rankingCopyOk ? 'yes' : 'no'} | ${r.columnComparisonOk === undefined ? '-' : r.columnComparisonOk ? 'yes' : 'no'} | ${r.columnRevenuePathOk == null ? '-' : r.columnRevenuePathOk ? 'yes' : 'no'} | ${r.purchaseCtaOk == null ? '-' : r.purchaseCtaOk ? 'yes' : 'no'} | ${r.ok ? 'PASS' : 'FAIL'} |`),
   '',
   '## Automatic diagnostic hints',
   '',
   ...(diagnoses.length ? diagnoses.map(d => `- ${d}`) : ['- No obvious issue found in the HTML checks.']),
   '',
-  'This checks HTML availability and affiliate URL presence only. It does NOT prove click tracking, attribution, or sales.',
+  'This checks HTML availability and direct affiliate URL presence, or rendered article-to-comparison-to-affiliate anchors with a tracking marker. It does NOT prove click tracking, attribution, or sales.',
   '',
   'Rakuten/A8 attributed clicks, orders and confirmed commissions require separate ASP reports; this HTML check does not verify them.',
   '',
