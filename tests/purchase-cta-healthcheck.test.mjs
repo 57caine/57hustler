@@ -58,3 +58,28 @@ test('serialized, commented, spoofed, insecure and unsponsored affiliate anchors
     affiliateAnchor.replace('販売価格を確認', ''),
   ]) assert.equal(hasVerifiedColumnRevenuePath(article, destination(anchor)), false, anchor);
 });
+
+test('live checker wiring passes comparison flow but fails unavailable or affiliate-less destinations', async () => {
+  const { spawnSync } = await import('node:child_process');
+  const checker = new URL('../scripts/check-lens-revenue-path.mjs', import.meta.url).href;
+  for (const scenario of ['healthy', 'unavailable', 'serialized-only']) {
+    const fixture = {
+      article: '<html><script>affiliate_click</script>' + article + '</html>',
+      category: destination(scenario === 'serialized-only' ? '<script>' + affiliateAnchor + '</script>' : affiliateAnchor).html,
+      other: '<html><script>affiliate_click</script>' + affiliateAnchor + '購入前に確認すること 商品比較</html>',
+      bc: '<html>https://www.lens-navi.jp/bc/8.4 価格を比較 <a href="/product/test">商品</a> BC8.4という数字だけで商品を決めず</html>',
+    };
+    const source = 'const fixture = ' + JSON.stringify(fixture) + ';' +
+      'globalThis.fetch = async input => { const url = new URL(input);' +
+      'if (url.origin !== "https://lens-navi.jp") throw new Error("unexpected external request");' +
+      'const path = url.pathname; const isCategory = path === "/category/1day";' +
+      'const status = isCategory && ' + JSON.stringify(scenario) + ' === "unavailable" ? 503 : 200;' +
+      'return { status, ok: status === 200, text: async () => isCategory ? fixture.category : path.startsWith("/column/") ? fixture.article : path.startsWith("/bc/") ? fixture.bc : fixture.other }; };' +
+      'await import(' + JSON.stringify(checker) + ');';
+    const result = spawnSync(process.execPath, ['--input-type=module', '-e', source], {
+      encoding: 'utf8', env: { ...process.env, LENS_BASE_URL: 'https://lens-navi.jp', GITHUB_STEP_SUMMARY: '' },
+    });
+    assert.equal(result.status, scenario === 'healthy' ? 0 : 1, result.stdout + result.stderr);
+    assert.equal(result.stdout.includes('COMPARISON_REVENUE_PATH:'), scenario !== 'healthy');
+  }
+});
