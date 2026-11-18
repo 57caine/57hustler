@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { inspectPurchaseCtas, hasColumnComparisonLink } from '../scripts/lib/inspect-purchase-ctas.mjs';
+import { inspectPurchaseCtas, hasColumnComparisonLink, hasVerifiedColumnRevenuePath } from '../scripts/lib/inspect-purchase-ctas.mjs';
 const label = 'このショップで1箱の価格を確認 →';
 test('inactive serialized URLs and generic search links are not purchase CTAs', () => {
   assert.deepEqual(inspectPurchaseCtas(`<script>{"url":"https://px.a8.net/test","label":"${label}"}</script><a href="https://hb.afl.rakuten.co.jp/test" rel="sponsored">楽天で検索</a>`), {a8:0,rakuten:0});
@@ -27,4 +27,34 @@ test('missing, unrelated or spoofed links and navigation-only anchors fail', () 
     '<article><a>比較</a><a href="/category/1day"></a></article>',
     '<article>自分に合うコンタクトレンズを比較する 掲載商品を比較する</article>'
   ]) assert.equal(hasColumnComparisonLink(html), false, html);
+});
+
+const article = '<article><a href="/category/1day">ワンデーの価格を比較する</a></article>';
+const destination = (anchor) => ({ http: 200, html: '<html><script>affiliate_click</script>' + anchor + '</html>' });
+const affiliateAnchor = '<a href="https://px.a8.net/test" rel="sponsored noopener">販売価格を確認</a>';
+test('approved article flow reaches rendered sponsored A8 or Rakuten anchors without a direct article affiliate link', () => {
+  for (const host of ['px.a8.net', 'hb.afl.rakuten.co.jp', 'afl.rakuten.co.jp']) {
+    assert.equal(hasVerifiedColumnRevenuePath(article, destination(affiliateAnchor.replace('px.a8.net', host))), true);
+  }
+});
+test('comparison route requires successful HTML, tracking, affiliate anchor and article link', () => {
+  const good = destination(affiliateAnchor);
+  for (const bad of [
+    undefined, { ...good, http: undefined }, { ...good, http: NaN },
+    ...[199, 301, 403, 404, 500].map(http => ({ ...good, http })),
+    { http: 200, html: undefined }, { ...good, html: good.html.replace('<html>', '') },
+    { ...good, html: good.html.replace('affiliate_click', '') }, destination(''),
+  ]) assert.equal(hasVerifiedColumnRevenuePath(article, bad), false);
+  assert.equal(hasVerifiedColumnRevenuePath('<nav><a href="/category/1day">比較</a></nav><article>なし</article>', good), false);
+});
+test('serialized, commented, spoofed, insecure and unsponsored affiliate anchors cannot establish revenue path', () => {
+  for (const anchor of [
+    '<script>' + affiliateAnchor + '</script>', '<!--' + affiliateAnchor + '-->',
+    affiliateAnchor.replace('px.a8.net', 'px.a8.net.evil.test'),
+    affiliateAnchor.replace('https:', 'http:'),
+    affiliateAnchor.replace('px.a8.net', 'user@px.a8.net'),
+    affiliateAnchor.replace('px.a8.net', 'px.a8.net:8443'),
+    affiliateAnchor.replace('sponsored noopener', 'noopener'),
+    affiliateAnchor.replace('販売価格を確認', ''),
+  ]) assert.equal(hasVerifiedColumnRevenuePath(article, destination(anchor)), false, anchor);
 });
