@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "revision": 2,
+  "spec": {
+    "task": "https://github.com/57caine/57hustler/pull/245",
+    "owner": "CEO",
+    "rollback": "PR245の監視3ファイルをrevert。サイト再公開不要。",
+    "acceptance": [
+      "変更が監視スクリプト・ヘルパー・テストの3ファイルに限られる",
+      "比較先不達・リンク偽装・欠落を含む9テストが成功する",
+      "対象SHAの既存CIと本番6ページの読み取り検査が成功する"
+    ],
+    "approval": "final",
+    "evidence": [
+      {
+        "url": "https://github.com/57caine/57hustler/actions/runs/44236520248",
+        "checked_at": "2026-11-18T05:10:13Z",
+        "result": "PR200の承認済み比較経由導線を旧監視がAFFILIATE_MISSINGと判定。本文/送客先を変えず監視のみ修正。"
+      }
+    ],
+    "next_action": "本人のPR245最終判断後、最新main/対象SHAとCIを再照合してマージ。既存投稿器・診断器は手動再実行しない。"
+  },
+  "contract": "d231a2081979451729c478c5019695ebfb7824be3f15fc58ca6a6642c4650d2f",
+  "status": "awaiting_approval",
+  "attempts": 1,
+  "history": [
+    {
+      "revision": 1,
+      "from": "queued",
+      "to": "verifying",
+      "type": "implement",
+      "at": "2026-11-18T05:10:16.745Z",
+      "event": {
+        "type": "implement",
+        "actor": "CEO",
+        "revision": 0,
+        "commit_sha": "4698ae9d58fd1ba60e1de1a681aa00e769bbfde0"
+      }
+    },
+    {
+      "revision": 2,
+      "from": "verifying",
+      "to": "awaiting_approval",
+      "type": "verify",
+      "at": "2026-11-18T05:10:17.315Z",
+      "event": {
+        "type": "verify",
+        "actor": "CEO",
+        "revision": 1,
+        "commit_sha": "4698ae9d58fd1ba60e1de1a681aa00e769bbfde0",
+        "checks": [
+          {
+            "name": "変更が監視スクリプト・ヘルパー・テストの3ファイルに限られる",
+            "result": "pass",
+            "evidence": [
+              {
+                "url": "https://github.com/57caine/57hustler/pull/245/files",
+                "checked_at": "2026-11-18T05:10:13Z",
+                "result": "GitHub差分3ファイルのみ。サイト/アフィリエイト/価格/計測/投稿設定の変更なし。"
+              }
+            ]
+          },
+          {
+            "name": "比較先不達・リンク偽装・欠落を含む9テストが成功する",
+            "result": "pass",
+            "evidence": [
+              {
+                "url": "https://github.com/57caine/57hustler/actions/runs/44242220424/job/134592598519",
+                "checked_at": "2026-11-18T05:10:13Z",
+                "result": "Node22の実CIログ tests9/pass9/fail0。正常/503/script内URLのみの統合テストを含む。"
+              }
+            ]
+          },
+          {
+            "name": "対象SHAの既存CIと本番6ページの読み取り検査が成功する",
+            "result": "pass",
+            "evidence": [
+              {
+                "url": "https://github.com/57caine/57hustler/actions/runs/44242220424/job/134592598519",
+                "checked_at": "2026-11-18T05:10:13Z",
+                "result": "head4698ae9d、merge5e2ab07bc4d2673b78f5301528f87858c9d4c020でCI成功。本番6ページ200/PASS、通販記事の直接affiliate=no/比較経由yes。"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "commit_sha": "4698ae9d58fd1ba60e1de1a681aa00e769bbfde0",
+  "checks": [
+    {
+      "name": "変更が監視スクリプト・ヘルパー・テストの3ファイルに限られる",
+      "result": "pass",
+      "evidence": [
+        {
+          "url": "https://github.com/57caine/57hustler/pull/245/files",
+          "checked_at": "2026-11-18T05:10:13Z",
+          "result": "GitHub差分3ファイルのみ。サイト/アフィリエイト/価格/計測/投稿設定の変更なし。"
+        }
+      ]
+    },
+    {
+      "name": "比較先不達・リンク偽装・欠落を含む9テストが成功する",
+      "result": "pass",
+      "evidence": [
+        {
+          "url": "https://github.com/57caine/57hustler/actions/runs/44242220424/job/134592598519",
+          "checked_at": "2026-11-18T05:10:13Z",
+          "result": "Node22の実CIログ tests9/pass9/fail0。正常/503/script内URLのみの統合テストを含む。"
+        }
+      ]
+    },
+    {
+      "name": "対象SHAの既存CIと本番6ページの読み取り検査が成功する",
+      "result": "pass",
+      "evidence": [
+        {
+          "url": "https://github.com/57caine/57hustler/actions/runs/44242220424/job/134592598519",
+          "checked_at": "2026-11-18T05:10:13Z",
+          "result": "head4698ae9d、merge5e2ab07bc4d2673b78f5301528f87858c9d4c020でCI成功。本番6ページ200/PASS、通販記事の直接affiliate=no/比較経由yes。"
+        }
+      ]
+    }
+  ]
+}
