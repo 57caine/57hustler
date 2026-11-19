@@ -17,12 +17,20 @@ const MODEL_ROLES: Record<Agent, string> = {
   claude: '実装査読: 既存コードとの整合、テスト、実行手順、巻き戻しを検証する',
   gemini: '独立検証: 事実と反証、データ欠損、他の選択肢を検証する',
 };
-const APPROVAL_TERMS = /公開|deploy|本番|削除|送信|投稿|支払い|決済|契約|購入|課金|権限|merge|マージ|送金|口座|secret|認証/i;
-const DRAFT_TERMS = /実装|改修|修正|コード|PR|issue|調査して作|作成|つくって/i;
+// Classify *requested action*, not a mere mention of risky subjects.
+const STATUS_QUESTION = /(?:できて(?:る|いる)?|済み|完了|どうな|状況|確認|状態|進捗|何が|いつ|方法|教えて|とは|いくら|可能|できる|対応済|動いてる|統合でき)/;
+const REQUEST_VERB = /(?:して|進めて|やって|お願い|実施|実行|反映|してください|しよう|しろ|頼む|GO$)/i;
+const APPROVAL_ACTION = /(?:本番.{0,12}(?:反映|公開|投入)|(?:公開|デプロイ|deploy|マージ|merge|削除|送金|決済|支払い|契約|購入|課金|権限変更|送信|投稿|認証情報変更).{0,18}(?:して|進めて|やって|お願い|実施|実行|ください|しよう|しろ|頼む|GO$))/i;
+const DRAFT_ACTION = /(?:実装|改修|修正|コード|PR|issue|作成|制作|設計|テスト|ブラッシュアップ|改善).{0,20}(?:して|進めて|やって|お願い|実施|実行|ください|しよう|しろ|頼む|GO$)|(?:資料|記事|レポート|原稿|文章|設計書|下書き)を(?:作成|制作|作って)/i;
 
 export function classifyGate(request: string): Gate {
-  if (APPROVAL_TERMS.test(request)) return 'owner_approval';
-  if (DRAFT_TERMS.test(request)) return 'draft_only';
+  const text = request.trim();
+  // A status question is read-only even when it mentions production or payment.
+  if (STATUS_QUESTION.test(text) && !REQUEST_VERB.test(text)) return 'read_only';
+  if (APPROVAL_ACTION.test(text)) return 'owner_approval';
+  if (DRAFT_ACTION.test(text)) return 'draft_only';
+  // Fail closed for ambiguous imperative requests that may mutate data.
+  if (REQUEST_VERB.test(text)) return 'owner_approval';
   return 'read_only';
 }
 export function preparePacket(request: string, now = new Date()): Packet {
@@ -58,4 +66,18 @@ export function reconcileReviews(reviews: Review[]) {
   return { status: disagreements.length ? 'needs_review' as const : 'agreement' as const,
     summary: disagreements.length ? '異論があるため自動承認しません' : '全AIが賛成（実行承認とは別）',
     disagreements };
+}
+
+/**
+ * A local, factual reply. This is not the result of a provider review.
+ * Avoid returning full prompts as if the three models answered.
+ */
+export function summarizePreflight(packet: Packet): string {
+  const statusQuestion = /(?:3つ|3社|3AI|三つ|三社).{0,25}(?:統合|連携|協議|接続|動い|できて|完成)/i.test(packet.request)
+    || /(?:統合|連携|協議|接続).{0,25}(?:3つ|3社|3AI|三つ|三社)/i.test(packet.request);
+  const status = statusQuestion
+    ? 'いいえ。3AIの依頼票作成は本番で利用できますが、GPT・Claude・Geminiの実接続と相互協議はまだ有効ではありません。'
+    : '3AIに共通の依頼を渡すための下書きを作成しました。実際のAIへの送信・協議・実行は行っていません。';
+  const gate = packet.gate === 'read_only' ? '情報確認のみ' : packet.gate === 'draft_only' ? '下書きまで' : '本人による個別承認が必要';
+  return `${status}\n\n対象：${packet.request}\n作業範囲：${gate}\n状態：3AI未接続／実回答0件／合意判定なし\n次に必要：正式な接続と費用制御、実際の協議結果の検証。\n※表示した依頼票は保存されず、送信もされません。`;
 }

@@ -1,4 +1,4 @@
-import { classifyGate, preparePacket, reconcileReviews } from './tri-ai';
+import { classifyGate, preparePacket, reconcileReviews, summarizePreflight } from './tri-ai';
 import { parseReview, reviewPrompt } from './providers';
 import { crossCheckPrompts, finalizeTriad } from './deliberation';
 
@@ -13,10 +13,17 @@ export function testTriAiContract() {
   equal(classifyGate('今日の数字は？'),'read_only','safe query');
   equal(classifyGate('資料を作成'),'draft_only','draft');
   equal(classifyGate('本番公開まで進めて'),'owner_approval','production gate');
+  equal(classifyGate('本番公開できてる？'),'read_only','status only');
+  equal(classifyGate('3つのAI統合できてる？'),'read_only','integration status');
+  equal(classifyGate('レンズナビを改善して'),'draft_only','improvement draft');
+  equal(classifyGate('送金して'),'owner_approval','financial gate');
+  equal(classifyGate('進めて'),'owner_approval','ambiguous imperative fail closed');
   const packet=preparePacket('レンズナビの改善を検証',new Date('2026-11-18T00:00:00Z'));
   equal(packet.state,'awaiting_provider_connections','provider disabled');
   equal(Object.keys(packet.assignments).length,3,'all roles');
   equal(packet.consensus,null,'no fake consensus');
+  equal(summarizePreflight(preparePacket('3つのAI統合できてる？')).includes('いいえ。'),true,'truthful summary');
+  equal(summarizePreflight(packet).includes('実際のAIへの送信・協議・実行は行っていません'),true,'draft-only message');
   equal(reconcileReviews([]).status,'incomplete','incomplete votes');
   const reviews=(['gpt','claude','gemini'] as const).map(agent=>parseReview(agent,JSON.stringify({
     verdict:'approve',reasoning:'テストのみ',evidence:[],risks:[]

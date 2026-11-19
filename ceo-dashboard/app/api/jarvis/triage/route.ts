@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCurrentUser } from '@/lib/supabase/auth';
-import { preparePacket } from '@/lib/jarvis/tri-ai';
+import { preparePacket, summarizePreflight } from '@/lib/jarvis/tri-ai';
 
 export const dynamic = 'force-dynamic';
 export async function POST(request: NextRequest) {
@@ -17,5 +17,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: '1〜500文字の相談を入力してください' }, { status: 400 });
   // Never call metered model APIs without a separately reviewed and enabled
   // provider connector, explicit spend cap and a verified owner authorization.
-  return NextResponse.json(preparePacket(message), { headers: { 'Cache-Control': 'no-store' } });
+  const packet = preparePacket(message);
+  return NextResponse.json({ ...packet, summary: summarizePreflight(packet) }, { headers: { 'Cache-Control': 'no-store' } });
 }
