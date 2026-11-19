@@ -33,5 +33,9 @@ jobs:
         run: |
           npx tsc lib/jarvis/answer-intent.contract.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/jarvis-intent
           node -e "console.log(require('/tmp/jarvis-intent/answer-intent.contract.js').testAnswerIntent())"
+      - name: Run consensus MCP preproduction contract checks
+        run: |
+          npx tsc lib/consensus/mcp-contract.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-mcp
+          node -e "console.log(require('/tmp/consensus-mcp/mcp-contract.test.js').testMcpContract())"
       - name: Next.js production build
         run: npm run build
