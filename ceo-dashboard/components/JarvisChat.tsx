@@ -6,8 +6,8 @@ export default function JarvisChat(){
   const [items,setItems]=useState<Item[]>([{role:'assistant',text:'おかえりなさい。JARVISです。\nいま分かる数字と仕事の状態を、出典付きでお伝えします。実行の指示は既存の自走運用が担当しています。'}]);
   const [value,setValue]=useState('');
   const [busy,setBusy]=useState(false);
-  const bottomRef=useRef<HTMLDivElement>(null);
-  useEffect(()=>{bottomRef.current?.scrollIntoView({block:'nearest',behavior:'smooth'});},[items,busy]);
+  const messagesRef=useRef<HTMLDivElement>(null);
+  useEffect(()=>{const el=messagesRef.current;if(el)el.scrollTop=el.scrollHeight;},[items,busy]);
   async function send(input:string, triage=false){
     const message=input.trim();
     if(busy||!message||message.length>500)return;
@@ -27,7 +27,7 @@ export default function JarvisChat(){
   function onEditorKeyDown(e:KeyboardEvent<HTMLTextAreaElement>){if(e.key==='Enter'&&!e.shiftKey&&!e.nativeEvent.isComposing){e.preventDefault();void send(value)}}
   return <section className="jv-section jv-chat" aria-label="JARVISに話しかける">
     <div className="jv-chatbar"><h2 className="jv-sectiontitle">JARVISに話しかける</h2><span className="jv-subtle">実データ照会モード</span></div>
-    <div className="jv-chatmessages" aria-live="polite" aria-relevant="additions text">
+    <div className="jv-chatmessages" ref={messagesRef} aria-live="polite" aria-relevant="additions text">
       {items.map((item,i)=><div className={`jv-bubble ${item.role}`} key={i}>
         {item.text}
         {item.assignments?<details className="jv-subtle" style={{marginTop:9,whiteSpace:'pre-wrap'}}>
@@ -37,7 +37,6 @@ export default function JarvisChat(){
         {item.sources?.length?<div className="jv-chatlinks">{item.sources.map(s=><a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</div>:null}
       </div>)}
       {busy?<div className="jv-subtle" role="status">記録を確認しています…</div>:null}
-      <div ref={bottomRef} aria-hidden="true"/>
     </div>
     <div className="jv-suggestions" aria-label="質問の例">{suggestions.map(q=><button key={q} type="button" disabled={busy} onClick={()=>void send(q)}>{q}</button>)}</div>
     <form onSubmit={submit} className="jv-inputrow">
