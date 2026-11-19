@@ -25,10 +25,10 @@ export default async function JarvisPage(){
       </div>
       <div className="jv-orb" aria-hidden="true"><div className="jv-orb-center">JARVIS</div></div>
     </section>
+    <JarvisChat/>
     <JarvisExecutionStatus/>
     <JarvisCEOReceipts/>
     <JarvisActionsEvidence/>
-    <JarvisChat/>
     <footer className="jv-footer">
       現在は読み取り専用の初期版です。GitHubの状態記録とGA4の取得値を表示します。実際のコード修正や自動運用は別の既存実行器が担当します。未取得の確定報酬を0円と表示しません。
     </footer>
