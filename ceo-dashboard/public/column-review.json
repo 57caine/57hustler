@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T02:49:25.116Z",
+  "generatedAt": "2026-11-19T02:26:36.735Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 32,
-        "bounceRate": 0.15625,
-        "avgSessionDuration": 319.09940878125,
+        "sessions": 33,
+        "bounceRate": 0.15151515151515152,
+        "avgSessionDuration": 310.84307545454544,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション32件・affiliate_clickゼロ"
+        "セッション33件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -81,16 +81,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 23,
-        "bounceRate": 0.7391304347826086,
-        "avgSessionDuration": 66.21210743478262,
+        "sessions": 21,
+        "bounceRate": 0.7142857142857143,
+        "avgSessionDuration": 72.51802242857144,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション23件・affiliate_clickゼロ"
+        "セッション21件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
@@ -115,16 +115,16 @@
       "slug": "vr-game-osusume-2026",
       "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
       "metrics": {
-        "sessions": 19,
-        "bounceRate": 0.47368421052631576,
-        "avgSessionDuration": 112.81560652631579,
+        "sessions": 18,
+        "bounceRate": 0.4444444444444444,
+        "avgSessionDuration": 73.88448233333332,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション19件・affiliate_clickゼロ"
+        "セッション18件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -213,74 +213,6 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/enkintsuyo-contact-guide",
-      "slug": "enkintsuyo-contact-guide",
-      "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
-      "metrics": {
-        "sessions": 11,
-        "bounceRate": 0,
-        "avgSessionDuration": 117.97892436363637,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション11件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 1,
-        "contentChars": 73461
-      },
-      "causes": [
-        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
-      ],
-      "suggestions": [
-        "記事序盤のH2直後にもCTAボタンを1つ追加する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/kanso-shinikui-contact",
-      "slug": "kanso-shinikui-contact",
-      "title": "kanso-shinikui-contact",
-      "metrics": {
-        "sessions": 11,
-        "bounceRate": 0.7272727272727273,
-        "avgSessionDuration": 124.42614081818182,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション11件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 9,
-        "hasAffiliateLinks": false,
-        "ctaCount": 0,
-        "contentChars": 87390
-      },
-      "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
-      ],
-      "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
-      ],
-      "status": "未対応",
-      "business": "lens-navi",
-      "priority": "medium",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/contact-nenkan-cost",
       "slug": "contact-nenkan-cost",
       "title": "contact-nenkan-cost",
@@ -323,13 +255,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/vr-movie-streaming-service-recommend-2026",
-      "slug": "vr-movie-streaming-service-recommend-2026",
-      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
+      "path": "/column/enkintsuyo-contact-guide",
+      "slug": "enkintsuyo-contact-guide",
+      "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
       "metrics": {
         "sessions": 10,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 21.6793158,
+        "bounceRate": 0,
+        "avgSessionDuration": 120.46153819999999,
         "affiliateClicks": 0
       },
       "flags": [
@@ -340,20 +272,54 @@
       ],
       "analysis": {
         "h2Count": 4,
-        "h3Count": 6,
+        "h3Count": 2,
         "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 70017
+        "ctaCount": 1,
+        "contentChars": 73461
       },
       "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
       ],
       "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
       "business": "lens-navi",
       "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/kanso-shinikui-contact",
+      "slug": "kanso-shinikui-contact",
+      "title": "kanso-shinikui-contact",
+      "metrics": {
+        "sessions": 10,
+        "bounceRate": 0.7,
+        "avgSessionDuration": 136.8687549,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション10件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 9,
+        "hasAffiliateLinks": false,
+        "ctaCount": 0,
+        "contentChars": 87390
+      },
+      "causes": [
+        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+      ],
+      "suggestions": [
+        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+      ],
+      "status": "未対応",
+      "business": "lens-navi",
+      "priority": "medium",
       "source": "auto-ga4"
     },
     {
@@ -386,6 +352,40 @@
         "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
       ],
       "status": "未対応",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/vr-movie-streaming-service-recommend-2026",
+      "slug": "vr-movie-streaming-service-recommend-2026",
+      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
+      "metrics": {
+        "sessions": 9,
+        "bounceRate": 0.5555555555555556,
+        "avgSessionDuration": 19.576078444444445,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション9件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 6,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 70017
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
       "business": "lens-navi",
       "priority": "low",
       "source": "auto-ga4"
