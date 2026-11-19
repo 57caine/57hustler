@@ -1,6 +1,6 @@
 'use client';
 import { useState, type FormEvent } from 'react';
-type Item={role:'user'|'assistant';text:string;sources?:{label:string;url:string}[]};
+type Item={role:'user'|'assistant';text:string;sources?:{label:string;url:string}[];assignments?:Record<string,string>};
 const suggestions=['今日の収益は？','何を優先する？','本人タスクは？','JARVISの状態は？'];
 export default function JarvisChat(){
   const [items,setItems]=useState<Item[]>([{role:'assistant',text:'おかえりなさい。JARVISです。\nいま分かる数字と仕事の状態を、出典付きでお伝えします。実行の指示は既存の自走運用が担当しています。'}]);
@@ -15,8 +15,8 @@ export default function JarvisChat(){
       const res=await fetch(triage?'/api/jarvis/triage':'/api/jarvis',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message}),cache:'no-store'});
       const data=await res.json();
       if(!res.ok)throw new Error(typeof data.error==='string'?data.error:'取得できませんでした');
-      const rendered=triage ? `3AI協議の受付準備ができました（実際のAI呼び出しは未実行）。\n受付ID: ${data.id}\n作業ゲート: ${data.gate}\n\nGPT：${data.assignments?.gpt ?? '未作成'}\n\nClaude：${data.assignments?.claude ?? '未作成'}\n\nGemini：${data.assignments?.gemini ?? '未作成'}\n\n残る接続条件：${Array.isArray(data.unresolved)?data.unresolved.join('、'):'未確認'}\n\n※まだ3AIの同意・実行・増収を確認したものではありません。` : typeof data.message==='string'?data.message:'回答を取得できませんでした';
-      setItems(current=>[...current,{role:'assistant',text:rendered,sources:!triage&&Array.isArray(data.sources)?data.sources:[]}]);
+      const rendered=triage ? typeof data.summary==='string'?data.summary:'3AIへの依頼票を用意しました。実際の送信・協議は未実施です。' : typeof data.message==='string'?data.message:'回答を取得できませんでした';
+      setItems(current=>[...current,{role:'assistant',text:rendered,sources:!triage&&Array.isArray(data.sources)?data.sources:[],assignments:triage&&data.assignments&&typeof data.assignments==='object'?data.assignments:undefined}]);
     }catch(e){
       setItems(current=>[...current,{role:'assistant',text:`通信を確認できませんでした：${e instanceof Error?e.message:'不明なエラー'}。収益や進捗を推測しません。`}]);
     }finally{setBusy(false)}
@@ -27,6 +27,10 @@ export default function JarvisChat(){
     <div className="jv-chatmessages" aria-live="polite" aria-relevant="additions text">
       {items.map((item,i)=><div className={`jv-bubble ${item.role}`} key={i}>
         {item.text}
+        {item.assignments?<details className="jv-subtle" style={{marginTop:9,whiteSpace:'pre-wrap'}}>
+          <summary style={{cursor:'pointer'}}>3AIへの依頼文を確認（未送信）</summary>
+          {Object.entries(item.assignments).map(([agent,task])=><div key={agent} style={{marginTop:10}}><strong>{agent.toUpperCase()}</strong>{'\n'}{task}</div>)}
+        </details>:null}
         {item.sources?.length?<div className="jv-chatlinks">{item.sources.map(s=><a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</div>:null}
       </div>)}
       {busy?<div className="jv-subtle" role="status">記録を確認しています…</div>:null}
@@ -36,7 +40,7 @@ export default function JarvisChat(){
       <label htmlFor="jarvis-input" className="sr-only">JARVISへの質問</label>
       <input id="jarvis-input" maxLength={500} placeholder="数字や仕事について質問する…" value={value} onChange={e=>setValue(e.target.value)}/>
       <button type="submit" disabled={busy||!value.trim()}>送信 ↗</button>
-      <button type="button" disabled={busy||!value.trim()} onClick={()=>void send(value,true)}>3AI協議の準備</button>
+      <button type="button" disabled={busy||!value.trim()} onClick={()=>void send(value,true)}>3AI依頼票を作る（未接続）</button>
     </form>
     <p className="jv-subtle" style={{marginTop:11}}>3AI協議の準備は無課金・実行なしの依頼票作成です。3AIの実接続、相互査読、直接実行はまだ有効化していません。</p>
   </section>
