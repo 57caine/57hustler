@@ -1,0 +1,33 @@
+name: JARVIS tri-AI preflight checks
+on:
+  pull_request:
+    paths:
+      - 'ceo-dashboard/**'
+      - '.github/workflows/jarvis-tri-ai-preflight.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: ceo-dashboard
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: ceo-dashboard/package-lock.json
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: TypeScript typecheck
+        run: npx tsc --noEmit
+      - name: Run tri-AI contract checks
+        run: |
+          npx tsc lib/jarvis/tri-ai.contract.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/jarvis-check
+          node -e "const r=require('/tmp/jarvis-check/tri-ai.contract.js').testTriAiContract(); console.log(r)"
+      - name: Next.js production build
+        run: npm run build
