@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCurrentUser } from '@/lib/supabase/auth';
+import { detectIntent, type Intent } from '@/lib/jarvis/answer-intent';
 
 export const dynamic = 'force-dynamic';
 const REPOSITORY = '57caine/57hustler';
@@ -41,25 +42,35 @@ function reply(message: string, sources: ResponseMessage['sources'] = []): Respo
   return { message, sources, fetchedAt: new Date().toISOString(), mode: 'read-only' };
 }
 
-function answer(text: string, analytics: { data?: Snapshot; error?: string }): ResponseMessage {
-  const prompt = text.trim().toLowerCase();
+function answer(text: string, intent: Intent, analytics: { data?: Snapshot; error?: string }): ResponseMessage {
   const data = analytics.data;
+  const requestedSite = /楽旅|rakutabi/i.test(text) ? 'rakutabi' : /ペット避難|pet[- ]?hinan/i.test(text) ? 'pet-hinan' : /レンズ|lens[- ]?navi/i.test(text) ? 'lens-navi' : null;
   const lens = data?.sites?.find(site => site.siteName === 'lens-navi');
+  const selected = requestedSite ? data?.sites?.find(site => site.siteName === requestedSite) : lens;
+  const siteLabel = requestedSite === 'rakutabi' ? '楽旅くん' : requestedSite === 'pet-hinan' ? 'ペット避難' : 'レンズナビ';
   const source = { label: 'GA4取得データ（GitHub）', url: `https://github.com/${REPOSITORY}/blob/main/data/ga4-analytics.json` };
   const date = data?.generatedAt ? new Date(data.generatedAt).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' }) : '未取得';
-  if (/売上|利益|確定|報酬|何が売/.test(prompt)) {
-    return reply(`確定報酬・実利益は現在この画面からは未取得です。\n\n${lens ? `レンズナビのGA4記録（${date}取得・過去28日間）には購入先クリック${lens.affiliateClicksTotal ?? '未取得'}回が記録されています。ただしクリックは注文や売上ではありません。` : `GA4も未取得です（${analytics.error ?? 'データなし'}）。`}\n\n次の優先作業は、A8・楽天の成果発生／確定／否認を同一期間で照合することです。売上がないと決めつけず、未取得のまま管理します。`, data ? [source, { label: '収益監査マスター', url: ISSUE_URL }] : [{ label: '収益監査マスター', url: ISSUE_URL }]);
+  switch (intent) {
+    case 'ai_integration':
+      return reply('現時点では、3AI統合は未完成です。\n\n動作しているのはGPT・Claude・Geminiへの共通依頼票を作る受付機能です。3社への実際の送信・相互査読・統合回答は未接続で、実回答は0件です。\n\n必要な作業は、正式なAPI接続方法と追加費用の上限確認、実回答の記録と検証です。3AIがすでに協議したとは表示しません。', [{label:'JARVISの設計と制約',url:JARVIS_DOC}]);
+    case 'earnings':
+      return reply(`確定報酬と実利益は、この画面では未取得です。\n\n${selected ? `${siteLabel}のGA4記録（${date}取得）には購入先クリック${selected.affiliateClicksTotal ?? '未取得'}回が記録されています。ただしクリックは注文や確定報酬ではありません。` : `GA4の記録も未取得です（${analytics.error ?? 'データなし'}）。`}\n\nA8・楽天の発生／確定／否認を同じ期間で照合する必要があります。「未取得」を0円と扱いません。`, data?[source,{label:'経営再構築マスター',url:ISSUE_URL}]:[{label:'経営再構築マスター',url:ISSUE_URL}]);
+    case 'metrics':
+      return reply(selected
+        ? `${siteLabel}：${date}取得の記録で${selected.totalSessions ?? '未取得'}セッション／購入先クリック${selected.affiliateClicksTotal ?? '未取得'}回（A8 ${selected.affiliateClicksByPlatform?.a8 ?? '未取得'}回、楽天 ${selected.affiliateClicksByPlatform?.rakuten ?? '未取得'}回）。期間はデータ原本を確認してください。クリックは成約ではありません。`
+        : `${requestedSite ? `${siteLabel}の` : ''}アクセス・送客の数字は取得できませんでした（${analytics.error ?? '対象サイトの記録なし'}）。0件とは判断していません。`,
+        data?[source]:[]);
+    case 'owner_tasks':
+      return reply('現時点で、この画面から確定できる本人作業の一覧はありません。認証・権限変更・新規課金など、本人の操作が必要な項目だけを確認して分ける方針です。未確認の作業を完了済みとは扱いません。',[{label:'経営・実行マスター',url:ISSUE_URL}]);
+    case 'priorities':
+      return reply('今の優先事項は、アフィリエイトの購入先クリックとASPの発生・確定報酬を照合し、どこで成果につながっていないかを特定することです。レンズナビの収益実測が最優先です。これは既存の経営計画上の優先順位であり、今日の最新実行結果ではありません。',[{label:'経営再構築マスター',url:ISSUE_URL}]);
+    case 'execution':
+      return reply('この画面の通常チャットは読み取り専用です。送信した指示を実行したり、Claude・Geminiを起動したりする機能はまだありません。別のCEO自走タスクが存在しますが、このメッセージをそのタスクへ渡したわけではありません。',[{label:'実行基盤の設計',url:JARVIS_DOC}]);
+    case 'jarvis_capability':
+      return reply('JARVISでは現在、接続済みデータの状況照会と3AI依頼票の作成ができます。まだ自由会話型AIではなく、GPT・Claude・Geminiの自動協議も未接続です。実行・公開・収益改善の完了を、このチャットだけで保証することはできません。',[{label:'JARVISの設計',url:JARVIS_DOC}]);
+    default:
+      return reply('そのご質問には、今のJARVISの読み取り専用機能では正確にお答えできません。\n\n現在対応しているのは「確定報酬」「アクセス・送客数」「本人作業」「改善の優先順位」「3AI連携の状態」などの照会です。別の話題にレンズナビの数字を流用したり、分かったふりをしたりはしません。');
   }
-  if (/go|進め|実行|自動|任せ/.test(prompt)) {
-    return reply('GOは不要です。既存のJARVIS CEO定期実行は別の自走タスクとして設定済みです。\n\nこの画面は現在、数値と作業状況を読み取るMVPです。ここから未確認のPRをマージしたり、Claudeを直接起動したりはしません。実行が完了したという表示もしません。\n\nいまの収益上の優先事項は、レンズナビの購入先クリックをASPの成果・確定報酬と照合することです。', [{ label: '経営・実行マスター', url: ISSUE_URL }, { label: 'JARVISの実装計画', url: JARVIS_DOC }]);
-  }
-  if (/本人|やること|タスク|承認/.test(prompt)) {
-    return reply('現時点でこの画面から確定できる本人作業はありません。ASPの原本や管理画面の権限確認が必要になった場合に限り、具体的な操作をまとめて依頼します。\n\n通常の調査、コード点検、下書き、既存の許可済み改善はAI側の担当です。', [{ label: '経営・実行マスター', url: ISSUE_URL }]);
-  }
-  if (/ジャービス|jarvis|機能|何ができ/.test(prompt)) {
-    return reply('JARVISは、自然な会話を入口にして事業を横断管理するAI司令塔を目指しています。\n\n現在この画面で動作するのは、ログイン済みの利用者だけが利用できる状況照会です。既存の自走タスクは別経路で動きます。自由な会話生成・Claudeへの即時指示・音声・24時間常駐を完成済みとは扱いません。', [{ label: '会話型JARVIS設計', url: JARVIS_DOC }]);
-  }
-  return reply(`${lens ? `レンズナビ：${date}取得の過去28日間で、${lens.totalSessions ?? '未取得'}セッション／購入先クリック${lens.affiliateClicksTotal ?? '未取得'}回（A8 ${lens.affiliateClicksByPlatform?.a8 ?? '未取得'}回、楽天 ${lens.affiliateClicksByPlatform?.rakuten ?? '未取得'}回）。` : `GA4は未取得です（${analytics.error ?? 'データなし'}）。`}\n\n確定報酬は未取得です。いまは成果との照合が最優先です。\n\n「売上は？」「本人タスクは？」「GO」「ジャービスは何ができる？」などで状況を確認できます。これは安全な照会用MVPで、まだ自由会話型GPTではありません。`, data ? [source, { label: '経営・実行マスター', url: ISSUE_URL }] : [{ label: '経営・実行マスター', url: ISSUE_URL }]);
 }
 
 export async function POST(request: NextRequest) {
@@ -74,5 +85,7 @@ export async function POST(request: NextRequest) {
   if (!payload || typeof payload !== 'object' || !('message' in payload) || typeof payload.message !== 'string' || payload.message.trim().length === 0 || payload.message.length > 500) {
     return NextResponse.json({ error: '1〜500文字のメッセージを入力してください' }, { status: 400 });
   }
-  return NextResponse.json(answer(payload.message, await loadAnalytics()), { headers: { 'Cache-Control': 'no-store' } });
+  const intent = detectIntent(payload.message);
+  const analytics = intent === 'earnings' || intent === 'metrics' ? await loadAnalytics() : {};
+  return NextResponse.json(answer(payload.message, intent, analytics), { headers: { 'Cache-Control': 'no-store' } });
 }
