@@ -44,18 +44,21 @@ function reply(message: string, sources: ResponseMessage['sources'] = []): Respo
 
 function answer(text: string, intent: Intent, analytics: { data?: Snapshot; error?: string }): ResponseMessage {
   const data = analytics.data;
+  const requestedSite = /楽旅|rakutabi/i.test(text) ? 'rakutabi' : /ペット避難|pet[- ]?hinan/i.test(text) ? 'pet-hinan' : /レンズ|lens[- ]?navi/i.test(text) ? 'lens-navi' : null;
   const lens = data?.sites?.find(site => site.siteName === 'lens-navi');
+  const selected = requestedSite ? data?.sites?.find(site => site.siteName === requestedSite) : lens;
+  const siteLabel = requestedSite === 'rakutabi' ? '楽旅くん' : requestedSite === 'pet-hinan' ? 'ペット避難' : 'レンズナビ';
   const source = { label: 'GA4取得データ（GitHub）', url: `https://github.com/${REPOSITORY}/blob/main/data/ga4-analytics.json` };
   const date = data?.generatedAt ? new Date(data.generatedAt).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' }) : '未取得';
   switch (intent) {
     case 'ai_integration':
       return reply('現時点では、3AI統合は未完成です。\n\n動作しているのはGPT・Claude・Geminiへの共通依頼票を作る受付機能です。3社への実際の送信・相互査読・統合回答は未接続で、実回答は0件です。\n\n必要な作業は、正式なAPI接続方法と追加費用の上限確認、実回答の記録と検証です。3AIがすでに協議したとは表示しません。', [{label:'JARVISの設計と制約',url:JARVIS_DOC}]);
     case 'earnings':
-      return reply(`確定報酬と実利益は、この画面では未取得です。\n\n${lens ? `レンズナビのGA4記録（${date}取得）には購入先クリック${lens.affiliateClicksTotal ?? '未取得'}回が記録されています。ただしクリックは注文や確定報酬ではありません。` : `GA4の記録も未取得です（${analytics.error ?? 'データなし'}）。`}\n\nA8・楽天の発生／確定／否認を同じ期間で照合する必要があります。「未取得」を0円と扱いません。`, data?[source,{label:'経営再構築マスター',url:ISSUE_URL}]:[{label:'経営再構築マスター',url:ISSUE_URL}]);
+      return reply(`確定報酬と実利益は、この画面では未取得です。\n\n${selected ? `${siteLabel}のGA4記録（${date}取得）には購入先クリック${selected.affiliateClicksTotal ?? '未取得'}回が記録されています。ただしクリックは注文や確定報酬ではありません。` : `GA4の記録も未取得です（${analytics.error ?? 'データなし'}）。`}\n\nA8・楽天の発生／確定／否認を同じ期間で照合する必要があります。「未取得」を0円と扱いません。`, data?[source,{label:'経営再構築マスター',url:ISSUE_URL}]:[{label:'経営再構築マスター',url:ISSUE_URL}]);
     case 'metrics':
-      return reply(lens
-        ? `レンズナビ：${date}取得の記録で${lens.totalSessions ?? '未取得'}セッション／購入先クリック${lens.affiliateClicksTotal ?? '未取得'}回（A8 ${lens.affiliateClicksByPlatform?.a8 ?? '未取得'}回、楽天 ${lens.affiliateClicksByPlatform?.rakuten ?? '未取得'}回）。期間はデータ原本を確認してください。クリックは成約ではありません。`
-        : `アクセス・送客の数字は取得できませんでした（${analytics.error ?? 'データなし'}）。0件とは判断していません。`,
+      return reply(selected
+        ? `${siteLabel}：${date}取得の記録で${selected.totalSessions ?? '未取得'}セッション／購入先クリック${selected.affiliateClicksTotal ?? '未取得'}回（A8 ${selected.affiliateClicksByPlatform?.a8 ?? '未取得'}回、楽天 ${selected.affiliateClicksByPlatform?.rakuten ?? '未取得'}回）。期間はデータ原本を確認してください。クリックは成約ではありません。`
+        : `${requestedSite ? `${siteLabel}の` : ''}アクセス・送客の数字は取得できませんでした（${analytics.error ?? '対象サイトの記録なし'}）。0件とは判断していません。`,
         data?[source]:[]);
     case 'owner_tasks':
       return reply('現時点で、この画面から確定できる本人作業の一覧はありません。認証・権限変更・新規課金など、本人の操作が必要な項目だけを確認して分ける方針です。未確認の作業を完了済みとは扱いません。',[{label:'経営・実行マスター',url:ISSUE_URL}]);
