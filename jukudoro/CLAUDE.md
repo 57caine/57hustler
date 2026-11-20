@@ -58,7 +58,7 @@
 - DMMアフィリエイト登録済み。API用アフィリエイトIDは `nsplot-990`（リンクに含まれる公開情報）
 - `jukudoro/scripts/fetch-fanza.mjs`: DMMアフィリエイトAPI v3 ItemList（site=FANZA, floor=videoa）から NTR（キーワード「寝取り・寝取られ」）→人妻→熟女 を各20件、人気順で取得し `jukudoro/dist/data/fanza.json` に保存。タイトル・画像・アフィリエイトリンク・サンプル動画のプレイヤーURL・価格・セール・出演・メーカー・ジャンル（タグ）。動画ファイルは保存しない。失敗時は既存データを残して終了コード1
 - `.github/workflows/jukudoro-fanza-fetch.yml`: `jukudoro/.fetch-trigger` を更新してブランチへpushすると実行し、結果を同じブランチにコミット。熟ドロがmain未マージのため意図的に `claude/beautiful-euler-hlghdi` をcheckout/pushしている（main反映時に切り替える）
-- 必要なSecrets: `DMM_API_ID`（オーナー登録待ち）、`DMM_AFFILIATE_ID`（任意。未設定なら nsplot-990）
+- Secrets: 既存の `DMM_API_ID` を使う（雑草おじさんと共用、2026-11-20 登録済みを確認）。既存の `DMM_AFFILIATE_ID` は雑草おじさん用の `nsplot-003` のため使わず、ワークフローで `nsplot-990` を直接指定
 - 検証: 偽のAPI応答で変換・重複除外・ID形式チェック・未設定時のエラーを確認。本物のAPIへの接続は未確認（この環境からは api.dmm.com に接続できない）
 - 未着手: 取得データをサイトに表示する部分（実データの形を確認してから作る）、DMMのクレジット表記ルールの確認
 

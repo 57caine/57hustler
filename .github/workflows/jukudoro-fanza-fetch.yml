@@ -33,7 +33,9 @@ jobs:
       - name: Fetch FANZA works
         env:
           DMM_API_ID: ${{ secrets.DMM_API_ID }}
-          DMM_AFFILIATE_ID: ${{ secrets.DMM_AFFILIATE_ID }}
+          # Secrets の DMM_AFFILIATE_ID は雑草おじさん用の nsplot-003 なので使わない。
+          # API用（末尾-990〜999）の nsplot-990 はリンクに出る公開情報のため直接指定する
+          DMM_AFFILIATE_ID: nsplot-990
         run: node jukudoro/scripts/fetch-fanza.mjs
       - name: Commit data
         run: |
