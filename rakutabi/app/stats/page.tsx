@@ -51,6 +51,13 @@ export default async function StatsPage() {
 
   return (
     <Shell>
+      <section className="bg-white rounded-2xl ring-1 ring-black/5 p-5 space-y-2">
+        <h2 className="text-lg font-bold">この集計で分かること・分からないこと</h2>
+        <p className="text-sm">対象は、このサイト上の楽天トラベル予約リンクを押して、記録先に保存された送客クリックのみです。</p>
+        <p className="text-sm">Threadsの投稿・返信にある楽天アフィリエイトリンクを直接押した回数は、ここには含まれません。楽天アフィリエイト全体のクリック数とも一致しません。</p>
+        <p className="text-sm">記録先の読み出し：成功 ／ 書き込みの動作確認：この画面だけでは未確認</p>
+        <p className="text-xs text-gray-500">0件の場合も、サイト訪問が0件・実送客が0件・記録に失敗した、のどれかはこの集計だけでは判定できません。確認用の自動クリックを通常集計へ追加しないでください。</p>
+      </section>
       <p className="text-4xl font-bold">{rows.length.toLocaleString('ja-JP')}<span className="text-base font-normal ml-1">クリック（累計）</span></p>
       <p className="text-xs text-gray-500">楽天トラベルへの予約ボタン・リンクのクリック数です（日付は日本時間）。楽天側で予約が成立したかどうかは、楽天アフィリエイトの管理画面でご確認ください。</p>
 
