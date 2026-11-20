@@ -1,0 +1,45 @@
+name: Jukudoro FANZA data fetch
+
+# 熟ドロのテスト版用に、DMMアフィリエイトAPIからFANZAの作品情報を取得して
+# jukudoro/dist/data/fanza.json を更新する。
+# 熟ドロは main 未マージで claude/beautiful-euler-hlghdi ブランチ上にしかないため、
+# 意図的にこのブランチを checkout / push している（main 反映時に main へ切り替えること）。
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/beautiful-euler-hlghdi]
+    # Secrets登録前に失敗実行が走らないよう、取得のきっかけはこのファイルの更新だけにしている
+    paths:
+      - 'jukudoro/.fetch-trigger'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: jukudoro-fanza-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/beautiful-euler-hlghdi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch FANZA works
+        env:
+          DMM_API_ID: ${{ secrets.DMM_API_ID }}
+          DMM_AFFILIATE_ID: ${{ secrets.DMM_AFFILIATE_ID }}
+        run: node jukudoro/scripts/fetch-fanza.mjs
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add jukudoro/dist/data/fanza.json
+          if git diff --cached --quiet; then echo "変更なし"; exit 0; fi
+          git commit -m "chore: 熟ドロ FANZA作品データ更新 $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push origin HEAD:claude/beautiful-euler-hlghdi

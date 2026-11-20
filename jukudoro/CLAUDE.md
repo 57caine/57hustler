@@ -54,6 +54,14 @@
 - 追加イベント: `sample_play`（work_id・provider・position＝list_card など）、`select_tag`（tag・押した作品・画面）。`outbound_click` の position に list_card / ranking_card / related_card が増えた
 - 検証: iPhone 13・360px・PC 1280pxで156項目合格
 
+## FANZA作品データの自動取得（2026-11-20 準備、未実行）
+- DMMアフィリエイト登録済み。API用アフィリエイトIDは `nsplot-990`（リンクに含まれる公開情報）
+- `jukudoro/scripts/fetch-fanza.mjs`: DMMアフィリエイトAPI v3 ItemList（site=FANZA, floor=videoa）から NTR（キーワード「寝取り・寝取られ」）→人妻→熟女 を各20件、人気順で取得し `jukudoro/dist/data/fanza.json` に保存。タイトル・画像・アフィリエイトリンク・サンプル動画のプレイヤーURL・価格・セール・出演・メーカー・ジャンル（タグ）。動画ファイルは保存しない。失敗時は既存データを残して終了コード1
+- `.github/workflows/jukudoro-fanza-fetch.yml`: `jukudoro/.fetch-trigger` を更新してブランチへpushすると実行し、結果を同じブランチにコミット。熟ドロがmain未マージのため意図的に `claude/beautiful-euler-hlghdi` をcheckout/pushしている（main反映時に切り替える）
+- 必要なSecrets: `DMM_API_ID`（オーナー登録待ち）、`DMM_AFFILIATE_ID`（任意。未設定なら nsplot-990）
+- 検証: 偽のAPI応答で変換・重複除外・ID形式チェック・未設定時のエラーを確認。本物のAPIへの接続は未確認（この環境からは api.dmm.com に接続できない）
+- 未着手: 取得データをサイトに表示する部分（実データの形を確認してから作る）、DMMのクレジット表記ルールの確認
+
 ## 未対応（オーナー判断待ち）
 - 本番前の確認: サンプル動画の埋め込み可否と方法、画像の利用条件、広告表記（PRの位置・文言）、作品ごとのリンク先とアフィリエイトID、GA4の計測設定、年齢確認画面
 - 作品・出演者・人気の数値はすべて架空。実データの取得方法（提供元のAPI・素材の利用可否）は未決定
