@@ -1,66 +1,66 @@
 {
-  "generatedAt": "2026-11-19T02:26:36.728Z",
+  "generatedAt": "2026-11-20T02:11:36.676Z",
   "sites": [
     {
       "propertyId": "520238223",
       "siteName": "lens-navi",
       "label": "lens-navi.jp",
-      "fetchedAt": "2026-11-19T02:26:34.491Z",
+      "fetchedAt": "2026-11-20T02:11:35.135Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
       },
-      "totalSessions": 502,
-      "totalPageviews": 583,
+      "totalSessions": 491,
+      "totalPageviews": 568,
       "topPages": [
         {
-          "path": "/column/multifocal-contact-rogansetsu",
-          "sessions": 33,
-          "pageviews": 38,
-          "avgSessionDuration": 310.84307545454544,
-          "bounceRate": 0.15151515151515152
+          "path": "/",
+          "sessions": 32,
+          "pageviews": 34,
+          "avgSessionDuration": 4.30302546875,
+          "bounceRate": 0.71875
         },
         {
-          "path": "/",
-          "sessions": 31,
-          "pageviews": 33,
-          "avgSessionDuration": 4.440809322580645,
-          "bounceRate": 0.7096774193548387
+          "path": "/column/multifocal-contact-rogansetsu",
+          "sessions": 30,
+          "pageviews": 35,
+          "avgSessionDuration": 339.0287746,
+          "bounceRate": 0.16666666666666666
         },
         {
           "path": "/column/1day-vs-2week-dotchiga-otoku",
-          "sessions": 28,
-          "pageviews": 28,
-          "avgSessionDuration": 16.771630892857143,
-          "bounceRate": 0.7857142857142857
+          "sessions": 27,
+          "pageviews": 27,
+          "avgSessionDuration": 14.704997814814815,
+          "bounceRate": 0.8148148148148148
         },
         {
           "path": "/category/1day",
           "sessions": 24,
           "pageviews": 34,
-          "avgSessionDuration": 22.69638170833333,
+          "avgSessionDuration": 22.696381708333334,
           "bounceRate": 0.625
         },
         {
           "path": "/column/megane-kaomikata",
-          "sessions": 24,
-          "pageviews": 26,
-          "avgSessionDuration": 157.31067608333333,
-          "bounceRate": 0.16666666666666666
-        },
-        {
-          "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
-          "sessions": 21,
-          "pageviews": 23,
-          "avgSessionDuration": 72.51802242857144,
-          "bounceRate": 0.7142857142857143
+          "sessions": 22,
+          "pageviews": 24,
+          "avgSessionDuration": 162.884985,
+          "bounceRate": 0.22727272727272727
         },
         {
           "path": "/column/vr-shiryoku-warui",
           "sessions": 21,
           "pageviews": 22,
-          "avgSessionDuration": 16.799427857142852,
+          "avgSessionDuration": 16.79942785714286,
           "bounceRate": 0.5714285714285714
+        },
+        {
+          "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
+          "sessions": 20,
+          "pageviews": 22,
+          "avgSessionDuration": 57.8655437,
+          "bounceRate": 0.75
         },
         {
           "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
@@ -70,25 +70,25 @@
           "bounceRate": 0.15789473684210525
         },
         {
+          "path": "/bc/8.4",
+          "sessions": 18,
+          "pageviews": 27,
+          "avgSessionDuration": 29.593060166666664,
+          "bounceRate": 0.3888888888888889
+        },
+        {
+          "path": "/column/smile-surgery-guide-2026",
+          "sessions": 18,
+          "pageviews": 18,
+          "avgSessionDuration": 186.44429094444445,
+          "bounceRate": 0.3333333333333333
+        },
+        {
           "path": "/column/vr-game-osusume-2026",
           "sessions": 18,
           "pageviews": 18,
           "avgSessionDuration": 73.88448233333332,
           "bounceRate": 0.4444444444444444
-        },
-        {
-          "path": "/bc/8.4",
-          "sessions": 17,
-          "pageviews": 27,
-          "avgSessionDuration": 38.7224415882353,
-          "bounceRate": 0.29411764705882354
-        },
-        {
-          "path": "/column/smile-surgery-guide-2026",
-          "sessions": 16,
-          "pageviews": 17,
-          "avgSessionDuration": 200.5857016875,
-          "bounceRate": 0.3125
         },
         {
           "path": "/column/megane-facial-shape-frame-2026",
@@ -105,6 +105,13 @@
           "bounceRate": 0.6923076923076923
         },
         {
+          "path": "/column/kanso-shinikui-contact",
+          "sessions": 13,
+          "pageviews": 13,
+          "avgSessionDuration": 124.46638884615383,
+          "bounceRate": 0.6923076923076923
+        },
+        {
           "path": "/column/contact-nenkan-cost",
           "sessions": 10,
           "pageviews": 10,
@@ -112,25 +119,18 @@
           "bounceRate": 0.9
         },
         {
-          "path": "/column/enkintsuyo-contact-guide",
-          "sessions": 10,
-          "pageviews": 10,
-          "avgSessionDuration": 120.46153819999999,
-          "bounceRate": 0
-        },
-        {
-          "path": "/column/kanso-shinikui-contact",
-          "sessions": 10,
-          "pageviews": 10,
-          "avgSessionDuration": 136.8687549,
-          "bounceRate": 0.7
-        },
-        {
           "path": "/column/acuvue-zenkindai-hikaku",
           "sessions": 9,
           "pageviews": 12,
           "avgSessionDuration": 115.37773233333331,
           "bounceRate": 0.5555555555555556
+        },
+        {
+          "path": "/column/enkintsuyo-contact-guide",
+          "sessions": 9,
+          "pageviews": 9,
+          "avgSessionDuration": 133.55966733333332,
+          "bounceRate": 0
         },
         {
           "path": "/column/vr-movie-streaming-service-recommend-2026",
@@ -147,18 +147,14 @@
           "bounceRate": 0.8888888888888888
         },
         {
-          "path": "/column/blue-light-megane-kouka",
-          "sessions": 8,
-          "pageviews": 8,
-          "avgSessionDuration": 114.03830775,
-          "bounceRate": 0.375
+          "path": "/column/contact-shoshinsha-tsukehazushi-care-2026",
+          "sessions": 7,
+          "pageviews": 7,
+          "avgSessionDuration": 153.426614,
+          "bounceRate": 0.42857142857142855
         }
       ],
       "weeklyTrend": [
-        {
-          "date": "2026-10-22",
-          "sessions": 25
-        },
         {
           "date": "2026-10-23",
           "sessions": 13
@@ -269,12 +265,16 @@
         },
         {
           "date": "2026-11-19",
-          "sessions": 1
+          "sessions": 12
+        },
+        {
+          "date": "2026-11-20",
+          "sessions": 4
         }
       ],
       "affiliateClicksByPage": {
         "/column/karakon-do-ari-erabikata": 5,
-        "/column/megane-kaomikata": 5,
+        "/column/megane-kaomikata": 4,
         "/category/1day": 3,
         "/column/contact-tsuuhan-site-ranking-2026": 3,
         "/column/sunglass-polarized-guide": 3,
@@ -288,19 +288,18 @@
         "/megane": 2,
         "/product/acuvue-moist-1day-astig": 2,
         "/product/acuvue-oasys-2week": 2,
-        "/product/biofinity-toric": 2,
+        "/product/dailies-total1": 2,
         "/column/ranshi-contact-ranking-2025": 1,
         "/column/reading-glasses-presbyopia-choose-recommend-2026": 1,
         "/column/smart-eyewear-functional-goods-2026": 1,
         "/product/acuvue-moist-1day": 1,
-        "/product/dailies-total1": 1,
-        "/product/myday-1day": 1,
+        "/product/biofinity-toric": 1,
         "/product/neo-sight-1day": 1
       },
-      "affiliateClicksTotal": 50,
+      "affiliateClicksTotal": 48,
       "affiliateClicksByPlatform": {
-        "rakuten": 30,
-        "a8": 20
+        "rakuten": 29,
+        "a8": 19
       },
       "affiliateClicksPlatformStatus": "ok",
       "affiliateClicksStatus": "ok",
@@ -313,7 +312,7 @@
       "propertyId": "539527147",
       "siteName": "school-navi",
       "label": "school.lens-navi.jp",
-      "fetchedAt": "2026-11-19T02:26:36.728Z",
+      "fetchedAt": "2026-11-20T02:11:36.676Z",
       "dateRange": {
         "start": "28daysAgo",
         "end": "today"
