@@ -14,7 +14,15 @@ export async function POST(request:NextRequest){
  if(process.env.MCP_BRIDGE_ENABLED!=='true')return fail(503,'MCP connector is disabled pending authorization review');
  const origin=request.headers.get('origin');
  if(origin&&origin!==request.nextUrl.origin)return fail(403,'Origin not allowed');
- if(!request.headers.get('content-type')?.toLowerCase().includes('application/json'))return fail(415,'JSON required');
+ // Reject oversized requests before reading the body; keep the post-read check for chunked requests.
+ const declaredLength=request.headers.get('content-length');
+ if(declaredLength!==null){
+   const bytes=Number(declaredLength);
+   if(!Number.isSafeInteger(bytes)||bytes<0)return fail(400,'Invalid Content-Length');
+   if(bytes>24000)return fail(413,'Request too large');
+ }
+ const contentType=request.headers.get('content-type')?.split(';',1)[0].trim().toLowerCase();
+ if(contentType!=='application/json')return fail(415,'JSON required');
  const auth=request.headers.get('authorization')||'';
  if(!/^Bearer [A-Za-z0-9._~-]+$/.test(auth))return fail(401,'Bearer authentication required');
  const token=auth.slice(7);
