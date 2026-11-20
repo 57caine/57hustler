@@ -60,7 +60,15 @@
 - `.github/workflows/jukudoro-fanza-fetch.yml`: `jukudoro/.fetch-trigger` を更新してブランチへpushすると実行し、結果を同じブランチにコミット。熟ドロがmain未マージのため意図的に `claude/beautiful-euler-hlghdi` をcheckout/pushしている（main反映時に切り替える）
 - Secrets: 既存の `DMM_API_ID` を使う（雑草おじさんと共用、2026-11-20 登録済みを確認）。既存の `DMM_AFFILIATE_ID` は雑草おじさん用の `nsplot-003` のため使わず、ワークフローで `nsplot-990` を直接指定
 - 検証: 偽のAPI応答で変換・重複除外・ID形式チェック・未設定時のエラーを確認。本物のAPIへの接続は未確認（この環境からは api.dmm.com に接続できない）
-- 未着手: 取得データをサイトに表示する部分（実データの形を確認してから作る）、DMMのクレジット表記ルールの確認
+- 2026-11-20 初回取得成功。VR専用は除外（オーナー判断）、カテゴリはジャンル（寝取/人妻/熟女）から判定し1作品が複数カテゴリに属する。2回目の取得で53作品（NTR 29・人妻 37・熟女 27、重複あり）、全作品にサンプル動画プレイヤーURL、セール中40
+- サイト表示（`dist/index.html`）: `data/fanza.json` を読み込み、FANZA分を実データに差し替え。読めない場合は架空データで表示
+  - 7:3を守るため、FANZAの表示件数は Fantia（架空6件）から逆算した14件。NTR→人妻→熟女の順に人気順で均等に選ぶ（`FANZA_SHARE`）。Fantiaの扱いが決まれば件数は自動で変わる
+  - カード: 画像（`pics.dmm.co.jp`）・価格（定価が高いときだけ取り消し線）・セール印・実ジャンルのタグ（独占配信・ハイビジョン等の技術的な語は除外）
+  - サンプル: FANZA公式プレイヤー（`dmm.co.jp/litevideo`）をiframeで表示し、下に「続きは本編で ▶ 本編を見る」（position: sample_overlay）
+  - ボタン文言を「本編を見る」型に変更（カード「本編を見る」、詳細「本編をFANZAで見る」、Fantiaは「続きを見る」）
+  - 確認画面に本物のアフィリエイトリンク（`af_id=nsplot-990`、`rel="sponsored noopener noreferrer nofollow"`、新しいタブ）。開いた操作は `outbound_open` で記録
+  - クレジット: DMM指定のテキスト形式 `Powered by <a href="https://affiliate.dmm.com/api/">FANZA Webサービス</a>` を改変せずフッターに表示
+- 検証: ローカルHTTPで実データを読ませ、2環境×14項目合格。架空データ表示側も156項目合格。画像とサンプル動画の実際の表示は、Claudeの環境・アーティファクトとも外部の画像/iframeを読めないため未確認
 
 ## 未対応（オーナー判断待ち）
 - 本番前の確認: サンプル動画の埋め込み可否と方法、画像の利用条件、広告表記（PRの位置・文言）、作品ごとのリンク先とアフィリエイトID、GA4の計測設定、年齢確認画面
