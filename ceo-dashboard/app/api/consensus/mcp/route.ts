@@ -33,12 +33,31 @@ export async function POST(request:NextRequest){
  const db=createClient(url,key,{global:{headers:{Authorization:`Bearer ${token}`}},auth:{persistSession:false,autoRefreshToken:false}});
  const {data:authUser,error:authError}=await db.auth.getUser(token);
  if(authError||!authUser.user)return fail(401,'Token invalid or expired');
+ // Bound memory usage even when Content-Length is absent or forged.
+ // A post-read byte count alone permits an arbitrarily large chunked body.
+ const reader=request.body?.getReader();
+ if(!reader)return fail(400,'Request body required');
+ const chunks:Uint8Array[]=[];
+ let received=0;
+ try{
+   while(true){
+     const {done,value}=await reader.read();
+     if(done)break;
+     received+=value.byteLength;
+     if(received>24000){
+       await reader.cancel().catch(()=>undefined);
+       return fail(413,'Request too large');
+     }
+     chunks.push(value);
+   }
+ }catch{return fail(400,'Cannot read request body');}
+ finally{reader.releaseLock();}
+ const bytes=new Uint8Array(received);
+ let offset=0;
+ for(const chunk of chunks){bytes.set(chunk,offset);offset+=chunk.byteLength;}
  let payload:unknown;
  try{
-  const raw=await request.text();
-  // Enforce the same 24 KB limit for UTF-8 bodies (including multibyte text).
-  if(Buffer.byteLength(raw,'utf8')>24000)return fail(413,'Request too large');
-  payload=JSON.parse(raw);
+   payload=JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(bytes));
  }catch{return respond(rpcError(null,-32700,'Parse error'));}
  const rpc=parseRpc(payload);
  if(!rpc)return respond(rpcError(null,-32600,'Invalid Request'));
