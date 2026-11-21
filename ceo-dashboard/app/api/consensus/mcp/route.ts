@@ -84,6 +84,10 @@ export async function POST(request:NextRequest){
      .upsert({owner_id:owner,origin:a.origin,question:a.question.trim(),idempotency_key:a.idempotencyKey},{onConflict:'owner_id,idempotency_key',ignoreDuplicates:true})
      .select('id,origin,question,status,created_at').maybeSingle();
    if(error)return respond(rpcError(rpc.id,-32000,'Storage unavailable'));
+   // An idempotency key must never silently bind to a different question,
+   // including when the database returns an existing row from upsert.
+   if(data&&(data.question!==a.question.trim()||data.origin!==a.origin))
+     return respond(rpcError(rpc.id,-32602,'Idempotency key reused for different request'));
    let row=data;
    if(!row){
      const existing=await db.from('ai_consensus_requests')
