@@ -128,6 +128,7 @@ nav button.active{color:#ff536c;border-bottom:2px solid #ff536c}
 .cardmeta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:10px;color:#ff91b2}
 .card h3{font:bold 13px/1.45 sans-serif;margin:0;color:#fff2dc;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .card .who{font-size:10px;color:var(--sub)}
+.more-list{display:block;margin:14px auto 4px;width:min(420px,100%);min-height:44px;border:1px solid #ad8242;border-radius:30px;background:linear-gradient(180deg,#271012,#100609);color:#ffe6ac;font-size:12px}
 .empty{grid-column:1/-1;padding:35px;text-align:center;color:var(--muted)}
 .ranking .card{--arth:150px}
 footer{margin-top:28px;padding:25px 16px;border-top:1px solid #694025;text-align:center;color:#b89c8e;font-size:10px}
@@ -215,7 +216,7 @@ body.has-sticky{padding-bottom:72px}
 <div class="chips" id="chips" aria-label="カテゴリで絞り込み"></div>
 <div class="feature-on" id="featureOn" hidden></div>
 </div>
-<section id="listing"><div class="section-top"><div><h2 id="listTitle">作品一覧</h2><p id="result" aria-live="polite"></p></div><select id="sort" aria-label="表示順"><option value="pop">人気順</option><option value="new">新着順</option><option value="title">作品名順</option></select></div><div class="grid" id="grid"></div></section>
+<section id="listing"><div class="section-top"><div><h2 id="listTitle">作品一覧</h2><p id="result" aria-live="polite"></p></div><select id="sort" aria-label="表示順"><option value="pop">人気順</option><option value="new">新着順</option><option value="title">作品名順</option></select></div><div class="grid" id="grid"></div><button class="more-list" id="moreList" data-more hidden></button></section>
 <section id="tagsSec"><div class="section-top"><div><h2>タグから探す</h2><p>気になるタグから、似た作品へ</p></div></div><div class="tags" id="tagCloud"></div></section>
 <section class="ranking" id="ranking"><div class="section-top"><div><h2>人気ランキング</h2><p>保存数の多い順・デモ数値</p></div></div><div class="grid" id="rankGrid"></div></section>
 </div>
@@ -254,7 +255,6 @@ const DEMO=[
 const CATS=['すべて','NTR','人妻','熟女'];
 /* タグ一覧（件数の多い順）。カード・詳細・トップの「タグから探す」で使う */
 let W=[],TAGS=[],DATA={real:false,fetchedAt:null};
-const FANZA_SHARE=0.7; // 一覧全体の FANZA:Fantia = 7:3（2026-11-20 オーナー指示）
 const TAG_SKIP=/^(独占配信|単体作品|ハイビジョン|4K|8K.*|.*VR.*|サンプル動画|DMM独占|配信専用|期間限定セール|セール|デジモ|ハイクオリティ.*|FANZA.*)$/;
 const PALETTE=['#816765','#73667f','#8b7056','#694c60','#647583','#986f62','#5d736b','#737866'];
 function fromApi(x,i,fetchedAt){
@@ -264,18 +264,12 @@ function fromApi(x,i,fetchedAt){
     b:PALETTE[i%PALETTE.length],isNew:days<=30,pop:1000-(x.rank||i),tags:(x.tags||[]).filter(t=>!TAG_SKIP.test(t)).slice(0,8),order:i,demo:false,
     url:x.url,image:x.image,sampleMovie:x.sampleMovie,price:x.price,listPrice:x.listPrice,campaign:x.campaign,maker:x.maker,date:x.date};
 }
-/* FANZAの実データから、比率に合う件数を NTR→人妻→熟女 の順に人気順で均等に選ぶ */
-function pickBalanced(list,n){
-  const out=[],used=new Set(),cats=['NTR','人妻','熟女'];let guard=0;
-  while(out.length<n&&guard++<500){for(const c of cats){if(out.length>=n)break;const w=list.find(x=>!used.has(x.id)&&x.cats.includes(c));if(w){used.add(w.id);out.push(w)}}if(!list.some(x=>!used.has(x.id)))break}
-  return out;
-}
 function buildWorks(meta){
   const fantia=DEMO.filter(w=>w.prov==='Fantia');
-  const n=Math.round(fantia.length*FANZA_SHARE/(1-FANZA_SHARE));
   let fanza=DEMO.filter(w=>w.prov==='FANZA');
   const real=(meta?.works||[]).filter(x=>!(x.tags||[]).some(t=>/VR/.test(t)));
-  if(real.length){fanza=pickBalanced(real.map((x,i)=>fromApi(x,i,meta.fetchedAt)),n);DATA={real:true,fetchedAt:meta.fetchedAt,total:real.length}}
+  /* 取得した実データは全件表示する（Fantiaが架空6件のため 7:3 にはならない。Fantiaの扱いが決まるまでの暫定） */
+  if(real.length){fanza=real.map((x,i)=>fromApi(x,i,meta.fetchedAt));DATA={real:true,fetchedAt:meta.fetchedAt,total:real.length}}
   W=[...fanza,...fantia].map((w,i)=>({...w,order:i}));
   TAGS=Object.entries(W.reduce((m,w)=>(w.tags.forEach(t=>m[t]=(m[t]||0)+1),m),{})).sort((a,b)=>b[1]-a[1]).slice(0,24);
 }
@@ -297,7 +291,8 @@ const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const store={get(k,d,ss){try{const v=(ss?sessionStorage:localStorage).getItem(k);return v==null?d:JSON.parse(v)}catch{return d}},set(k,v,ss){try{(ss?sessionStorage:localStorage).setItem(k,JSON.stringify(v))}catch{}}};
 let saved=new Set();
-const DEF={q:'',prov:'all',cat:'すべて',tag:null,sort:'pop',view:'all',feature:null,scroll:0,slide:0};
+const PAGE=40; // 一覧は40件ずつ表示し「もっと見る」で追加
+const DEF={q:'',prov:'all',cat:'すべて',tag:null,sort:'pop',view:'all',feature:null,scroll:0,slide:0,limit:PAGE};
 let S={...DEF,...store.get('jd-list',{},true)};
 let entry=null;           // 詳細に来た経路（list / ranking / related / direct）
 let current=null;
@@ -357,7 +352,9 @@ function renderList(){
   $('#listTitle').textContent=S.view==='saved'?'保存した作品':'作品一覧';
   const fz=list.filter(w=>w.prov==='FANZA').length;
   $('#result').textContent=`${list.length}作品（FANZA ${fz}・Fantia ${list.length-fz}）`;
-  $('#grid').innerHTML=list.length?list.map((w,i)=>card(w,'list',i+1)).join(''):`<div class="empty">${S.view==='saved'&&!saved.size?'まだ保存した作品はありません。<br>カードの♡を押すと、ここにまとめて表示されます。':'条件に合う作品がありません。<br>検索語や絞り込みを変えてみてください。'}</div>`;
+  const shown=list.slice(0,S.limit||PAGE),rest=list.length-shown.length;
+  $('#moreList').hidden=rest<=0;$('#moreList').textContent=`もっと見る（残り${rest}作品）`;
+  $('#grid').innerHTML=list.length?shown.map((w,i)=>card(w,'list',i+1)).join(''):`<div class="empty">${S.view==='saved'&&!saved.size?'まだ保存した作品はありません。<br>カードの♡を押すと、ここにまとめて表示されます。':'条件に合う作品がありません。<br>検索語や絞り込みを変えてみてください。'}</div>`;
   const plain=S.view==='all'&&!S.q&&S.prov==='all'&&S.cat==='すべて'&&!S.tag&&!f;
   $('#ranking').hidden=!plain;
   $('#rankGrid').innerHTML=[...W].sort((a,b)=>b.pop-a.pop).slice(0,4).map((w,i)=>card(w,'ranking',i+1,i+1)).join('');
@@ -465,23 +462,24 @@ document.addEventListener('click',e=>{
   if(b.dataset.play){playSample(b);return}
   if(b.dataset.stop!==undefined){stopSample();return}
   if(b.dataset.tag){track('select_tag',{tag:b.dataset.tag,work_id:b.dataset.from||'',provider:b.dataset.from?findW(b.dataset.from).prov:'',from_view:current});
-    Object.assign(S,{tag:S.tag===b.dataset.tag&&current==='list'&&!b.dataset.from?null:b.dataset.tag,view:'all',feature:null,q:'',cat:'すべて',prov:'all'});
+    Object.assign(S,{tag:S.tag===b.dataset.tag&&current==='list'&&!b.dataset.from?null:b.dataset.tag,view:'all',feature:null,q:'',cat:'すべて',prov:'all',limit:PAGE});
     if(current!=='list'){S.scroll=0;toList()}else renderList();requestAnimationFrame(()=>requestAnimationFrame(()=>$('#listing').scrollIntoView({behavior:'smooth'})));return}
-  if(b.hasAttribute('data-tag-clear')){S.tag=null;renderList();return}
-  if(b.dataset.prov){S.prov=b.dataset.prov;renderList();return}
-  if(b.dataset.cat){S.cat=b.dataset.cat;renderList();return}
-  if(b.dataset.feature){const f=FEATURES.find(x=>x.id===b.dataset.feature);Object.assign(S,{feature:f.id,sort:f.sort,q:'',prov:'all',cat:'すべて',tag:null,view:'all'});renderList();$('#listing').scrollIntoView({behavior:'smooth'});return}
-  if(b.hasAttribute('data-feature-clear')){S.feature=null;renderList();return}
+  if(b.hasAttribute('data-tag-clear')){S.tag=null;S.limit=PAGE;renderList();return}
+  if(b.dataset.prov){S.prov=b.dataset.prov;S.limit=PAGE;renderList();return}
+  if(b.dataset.cat){S.cat=b.dataset.cat;S.limit=PAGE;renderList();return}
+  if(b.dataset.feature){const f=FEATURES.find(x=>x.id===b.dataset.feature);Object.assign(S,{feature:f.id,sort:f.sort,q:'',prov:'all',cat:'すべて',tag:null,view:'all',limit:PAGE});renderList();$('#listing').scrollIntoView({behavior:'smooth'});return}
+  if(b.hasAttribute('data-feature-clear')){S.feature=null;S.limit=PAGE;renderList();return}
+  if(b.hasAttribute('data-more')){S.limit=(S.limit||PAGE)+PAGE;renderList();track('list_more',{shown:S.limit,filters:filterLabel()});return}
   if(b.dataset.car){goSlide(S.slide+(b.dataset.car==='next'?1:-1));return}
   if(b.dataset.dot){goSlide(+b.dataset.dot);return}
   if(b.hasAttribute('data-clear-log')){store.set('jd-events',[]);renderLog();return}
-  if(b.dataset.nav){toList();Object.assign(S,{view:b.dataset.nav==='saved'?'saved':'all',feature:null,tag:null,q:'',prov:'all',cat:'すべて'});renderList();(b.dataset.nav==='ranking'?$('#ranking'):$('#listing')).scrollIntoView({behavior:'smooth'})}
+  if(b.dataset.nav){toList();Object.assign(S,{view:b.dataset.nav==='saved'?'saved':'all',feature:null,tag:null,q:'',prov:'all',cat:'すべて',limit:PAGE});renderList();(b.dataset.nav==='ranking'?$('#ranking'):$('#listing')).scrollIntoView({behavior:'smooth'})}
 });
 let st;$('#track').addEventListener('scroll',()=>{clearTimeout(st);st=setTimeout(()=>{const t=$('#track');setDot(Math.round(t.scrollLeft/(t.clientWidth+10)))},80)});
 $('#track').addEventListener('keydown',e=>{if(e.key==='ArrowRight')goSlide(S.slide+1);if(e.key==='ArrowLeft')goSlide(S.slide-1)});
 $('#searchForm').onsubmit=e=>{e.preventDefault();S.q=$('#query').value;renderList();$('#query').blur()};
-$('#query').oninput=()=>{S.q=$('#query').value;renderList()};
-$('#sort').onchange=()=>{S.sort=$('#sort').value;renderList()};
+$('#query').oninput=()=>{S.q=$('#query').value;S.limit=PAGE;renderList()};
+$('#sort').onchange=()=>{S.sort=$('#sort').value;S.limit=PAGE;renderList()};
 addEventListener('hashchange',route);
 addEventListener('resize',()=>goSlide(S.slide,false));
 if('scrollRestoration' in history)history.scrollRestoration='manual';
