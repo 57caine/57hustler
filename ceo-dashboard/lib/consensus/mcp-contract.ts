@@ -23,8 +23,10 @@ export type RpcRequest={jsonrpc:'2.0';id?:string|number;method:string;params?:un
 export function parseRpc(input:unknown):RpcRequest|null{
  if(!input||typeof input!=='object'||Array.isArray(input))return null;
  const p=input as Record<string,unknown>;
- if(p.jsonrpc!=='2.0'||typeof p.method!=='string'||p.method.length>100)return null;
+ if(p.jsonrpc!=='2.0'||typeof p.method!=='string'||p.method.length===0||p.method.length>100)return null;
+ // JSON-RPC IDs must be finite integer numbers or strings. Reject null, NaN and fractional IDs.
  if(p.id!==undefined&&(typeof p.id!=='number'&&typeof p.id!=='string'))return null;
+ if(typeof p.id==='number'&&(!Number.isSafeInteger(p.id)))return null;
  if(typeof p.id==='string'&&p.id.length>100)return null;
  return {jsonrpc:'2.0',id:p.id as string|number|undefined,method:p.method,params:p.params};
 }
