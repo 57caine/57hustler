@@ -41,3 +41,8 @@ export function parseArgs(value:unknown,required:readonly string[]){
 export function validKey(value:string){return /^[A-Za-z0-9_-]{8,128}$/.test(value);}
 export function validUuid(value:string){return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);}
 export function resultText(value:unknown){return {content:[{type:'text' as const,text:JSON.stringify(value)}],isError:false};}
+
+/** Refuse replaying an idempotency key for different input, regardless of upsert behavior. */
+export function sameIdempotentRequest(saved:{question:string;origin:string},input:{question:string;origin:string}){
+ return saved.question===input.question.trim()&&saved.origin===input.origin;
+}
