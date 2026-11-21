@@ -27,5 +27,15 @@ export function testMcpContract(){
   expect(sameIdempotentRequest({question:'hello',origin:'chatgpt'},{question:' hello ',origin:'chatgpt'}),'same replay accepted after trim');
   expect(!sameIdempotentRequest({question:'hello',origin:'chatgpt'},{question:'different',origin:'chatgpt'}),'changed question rejected');
   expect(!sameIdempotentRequest({question:'hello',origin:'chatgpt'},{question:'hello',origin:'claude'}),'changed origin rejected');
-  return 'mcp contract 26 checks passed';
+  expect(parseRpc({jsonrpc:'2.0',id:null,method:'ping'})===null,'null JSON-RPC id rejected');
+  expect(parseRpc({jsonrpc:'2.0',id:{value:1},method:'ping'})===null,'object JSON-RPC id rejected');
+  expect(parseRpc({jsonrpc:'2.0',id:'x'.repeat(101),method:'ping'})===null,'oversized JSON-RPC id rejected');
+  expect(parseRpc({jsonrpc:'2.0',id:1,method:'x'.repeat(101)})===null,'oversized method rejected');
+  expect(parseArgs({requestId:'123',__proto__:null},['requestId'])?.requestId==='123','ordinary arguments accepted');
+  expect(parseArgs({requestId:'123',extra:'unsafe'},['requestId'])===null,'unexpected argument rejected');
+  expect(parseArgs({},['requestId'])===null,'missing required argument rejected');
+  expect(!validKey('a'.repeat(129)),'oversized idempotency key rejected');
+  expect(!validKey('abc\\n12345678'),'control character in key rejected');
+  expect(!sameIdempotentRequest({question:'hello',origin:'chatgpt'},{question:'hello',origin:'gemini'}),'cross-provider replay rejected');
+  return 'mcp contract 36 checks passed';
 }
