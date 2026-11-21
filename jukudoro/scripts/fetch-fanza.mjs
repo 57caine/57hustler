@@ -24,7 +24,9 @@ const QUERIES = [
   { cat: '人妻', keyword: '人妻' },
   { cat: '熟女', keyword: '熟女' },
 ];
-const HITS = 30;
+const PER_PAGE = 100;                                   // APIの1回あたり上限
+const MAX_PER_CAT = Number(process.env.JUKUDORO_MAX_PER_CAT || 300); // 1カテゴリあたりの取得上限
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // VR専用作品は除外（2026-11-20 オーナー判断。VR機器がないと見られないため）
 const isVR = (w) => w.tags.some((t) => /VR/.test(t)) || /【VR】|VR】/.test(w.title);
 // カテゴリは取得キーワードではなく作品のジャンルで決める（1作品が複数カテゴリに属してよい）
@@ -39,17 +41,29 @@ if (!/-99\d$/.test(AFFILIATE_ID)) {
   process.exit(1);
 }
 
-async function fetchItems({ cat, keyword }) {
+const totals = {};
+async function fetchPage({ cat, keyword }, offset) {
   const params = new URLSearchParams({
     api_id: API_ID, affiliate_id: AFFILIATE_ID, site: 'FANZA', service: 'digital', floor: 'videoa',
-    hits: String(HITS), sort: 'rank', keyword, output: 'json',
+    hits: String(PER_PAGE), offset: String(offset), sort: 'rank', keyword, output: 'json',
   });
   const res = await fetch(`${ENDPOINT}?${params}`);
   if (!res.ok) throw new Error(`${cat}: HTTP ${res.status}`);
   const body = await res.json();
   const result = body?.result;
   if (!result || String(result.status) !== '200') throw new Error(`${cat}: APIエラー ${JSON.stringify(result?.message ?? result ?? body).slice(0, 200)}`);
+  totals[cat] = Number(result.total_count) || totals[cat] || 0;
   return (result.items ?? []).map((it) => toWork(it, cat));
+}
+async function fetchItems(q) {
+  const out = [];
+  for (let offset = 1; offset <= MAX_PER_CAT; offset += PER_PAGE) {
+    const page = await fetchPage(q, offset);
+    out.push(...page);
+    if (page.length < PER_PAGE || offset + PER_PAGE > totals[q.cat]) break;
+    await sleep(600); // APIに負荷をかけないよう間隔を空ける
+  }
+  return out.slice(0, MAX_PER_CAT);
 }
 
 function pickMovie(m) {
@@ -67,7 +81,6 @@ function toWork(it, cat) {
     cat,
     url: it.affiliateURL,                        // アフィリエイトID入りのリンク（APIが生成）
     image: it.imageURL?.large || it.imageURL?.list || null,
-    sampleImages: it.sampleImageURL?.sample_s?.image?.slice(0, 6) ?? [],
     sampleMovie: pickMovie(it.sampleMovieURL),  // FANZAのプレイヤーURL（iframeで表示する）
     price: it.prices?.price ?? null,             // 例: "1980~"
     listPrice: it.prices?.list_price ?? null,
@@ -99,8 +112,9 @@ try {
   }
   if (works.length === 0) throw new Error('作品が1件も取得できませんでした');
   await mkdir(dirname(OUT), { recursive: true });
-  const out = { fetchedAt: new Date().toISOString(), source: 'DMM Affiliate API v3 ItemList (FANZA videoa)', counts, works };
-  await writeFile(OUT, JSON.stringify(out, null, 2) + '\n');
+  const out = { fetchedAt: new Date().toISOString(), source: 'DMM Affiliate API v3 ItemList (FANZA videoa)', totals, counts, works };
+  await writeFile(OUT, JSON.stringify(out) + '\n');
+  console.log('FANZA上の総件数（キーワード一致）:', JSON.stringify(totals));
   const withMovie = works.filter((w) => w.sampleMovie).length;
   const withSale = works.filter((w) => w.campaign).length;
   const catCount = Object.fromEntries(CAT_RULES.map(([c]) => [c, works.filter((w) => w.cats.includes(c)).length]));
