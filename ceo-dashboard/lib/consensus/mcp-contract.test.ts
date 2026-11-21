@@ -10,6 +10,11 @@ export function testMcpContract(){
   expect(parseRpc({jsonrpc:'2.0',method:'notifications/initialized'})?.id===undefined,'notification');
   expect(parseRpc({jsonrpc:'1.0',id:1,method:'initialize'})===null,'invalid version');
   expect(parseRpc([{jsonrpc:'2.0',id:1,method:'ping'}])===null,'batch unsupported');
+  expect(parseRpc({jsonrpc:'2.0',id:1.5,method:'ping'})===null,'fractional id rejected');
+  expect(parseRpc({jsonrpc:'2.0',id:Infinity,method:'ping'})===null,'infinite id rejected');
+  expect(parseRpc({jsonrpc:'2.0',id:NaN,method:'ping'})===null,'NaN id rejected');
+  expect(parseRpc({jsonrpc:'2.0',id:9007199254740992,method:'ping'})===null,'unsafe integer id rejected');
+  expect(parseRpc({jsonrpc:'2.0',id:1,method:''})===null,'empty method rejected');
   expect(parseArgs({requestId:'123'},['requestId'])?.requestId==='123','read args');
   expect(parseArgs({requestId:'123',owner_id:'other'},['requestId'])===null,'no IDOR argument');
   expect(parseArgs({requestId:123},['requestId'])===null,'typed arguments');
@@ -19,5 +24,5 @@ export function testMcpContract(){
   expect(!validUuid('not-a-uuid'),'invalid UUID');
   expect(rpcOk(1,{ok:true}).jsonrpc==='2.0','rpc success shape');
   expect(rpcError(null,-32700,'parse error').error.code===-32700,'rpc failure shape');
-  return 'mcp contract 18 checks passed';
+  return 'mcp contract 23 checks passed';
 }
