@@ -1,4 +1,4 @@
-import { PROTOCOL_VERSION, TOOLS, parseRpc,parseArgs,rpcOk,rpcError,validKey,validUuid } from './mcp-contract';
+import { PROTOCOL_VERSION, TOOLS, parseRpc,parseArgs,rpcOk,rpcError,validKey,validUuid,sameIdempotentRequest } from './mcp-contract';
 function expect(condition:boolean,detail:string){if(!condition)throw new Error(detail);}
 export function testMcpContract(){
   expect(PROTOCOL_VERSION==='2025-11-25','protocol version');
@@ -24,5 +24,8 @@ export function testMcpContract(){
   expect(!validUuid('not-a-uuid'),'invalid UUID');
   expect(rpcOk(1,{ok:true}).jsonrpc==='2.0','rpc success shape');
   expect(rpcError(null,-32700,'parse error').error.code===-32700,'rpc failure shape');
-  return 'mcp contract 23 checks passed';
+  expect(sameIdempotentRequest({question:'hello',origin:'chatgpt'},{question:' hello ',origin:'chatgpt'}),'same replay accepted after trim');
+  expect(!sameIdempotentRequest({question:'hello',origin:'chatgpt'},{question:'different',origin:'chatgpt'}),'changed question rejected');
+  expect(!sameIdempotentRequest({question:'hello',origin:'chatgpt'},{question:'hello',origin:'claude'}),'changed origin rejected');
+  return 'mcp contract 26 checks passed';
 }
