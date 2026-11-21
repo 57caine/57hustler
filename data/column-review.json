@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T02:11:36.687Z",
+  "generatedAt": "2026-11-21T02:04:16.099Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 30,
-        "bounceRate": 0.16666666666666666,
-        "avgSessionDuration": 339.0287746,
+        "sessions": 29,
+        "bounceRate": 0.1724137931034483,
+        "avgSessionDuration": 334.3634476896551,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション30件・affiliate_clickゼロ"
+        "セッション29件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -115,16 +115,16 @@
       "slug": "smile-surgery-guide-2026",
       "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
       "metrics": {
-        "sessions": 18,
-        "bounceRate": 0.3333333333333333,
-        "avgSessionDuration": 186.44429094444445,
+        "sessions": 19,
+        "bounceRate": 0.3684210526315789,
+        "avgSessionDuration": 258.0673572631579,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション18件・affiliate_clickゼロ"
+        "セッション19件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -149,16 +149,16 @@
       "slug": "vr-game-osusume-2026",
       "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
       "metrics": {
-        "sessions": 18,
-        "bounceRate": 0.4444444444444444,
-        "avgSessionDuration": 73.88448233333332,
+        "sessions": 17,
+        "bounceRate": 0.47058823529411764,
+        "avgSessionDuration": 73.60231811764706,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション18件・affiliate_clickゼロ"
+        "セッション17件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -219,7 +219,7 @@
       "metrics": {
         "sessions": 13,
         "bounceRate": 0.6923076923076923,
-        "avgSessionDuration": 124.46638884615383,
+        "avgSessionDuration": 124.46638884615385,
         "affiliateClicks": 0
       },
       "flags": [
@@ -378,40 +378,6 @@
         "hasAffiliateLinks": true,
         "ctaCount": 4,
         "contentChars": 70017
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/contact-shoshinsha-tsukehazushi-care-2026",
-      "slug": "contact-shoshinsha-tsukehazushi-care-2026",
-      "title": "contact-shoshinsha-tsukehazushi-care-2026",
-      "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.42857142857142855,
-        "avgSessionDuration": 153.426614,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 5,
-        "h3Count": 18,
-        "hasAffiliateLinks": true,
-        "ctaCount": 2,
-        "contentChars": 102849
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
