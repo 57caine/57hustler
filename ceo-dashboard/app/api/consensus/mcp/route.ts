@@ -36,7 +36,8 @@ export async function POST(request:NextRequest){
  let payload:unknown;
  try{
   const raw=await request.text();
-  // Enforce the same 24 KB limit for UTF-8 bodies (including multibyte text).\n  if(Buffer.byteLength(raw,'utf8')>24000)return fail(413,'Request too large');
+  // Enforce the same 24 KB limit for UTF-8 bodies (including multibyte text).
+  if(Buffer.byteLength(raw,'utf8')>24000)return fail(413,'Request too large');
   payload=JSON.parse(raw);
  }catch{return respond(rpcError(null,-32700,'Parse error'));}
  const rpc=parseRpc(payload);
