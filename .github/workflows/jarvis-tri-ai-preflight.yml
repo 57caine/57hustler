@@ -41,5 +41,9 @@ jobs:
         run: |
           npx tsc lib/consensus/oauth-code-exchange.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-oauth
           node -e "require('/tmp/consensus-oauth/oauth-code-exchange.test.js').testOAuthCodeExchange().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
+      - name: Run OAuth authorization code issuance checks
+        run: |
+          npx tsc lib/consensus/oauth-code-issuance.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-issuance
+          node -e "require('/tmp/consensus-issuance/oauth-code-issuance.test.js').testOAuthCodeIssuance().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
       - name: Next.js production build
         run: npm run build
