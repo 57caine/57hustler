@@ -1,4 +1,4 @@
-import { PROTOCOL_VERSION, TOOLS, parseRpc,parseArgs,rpcOk,rpcError,validKey,validUuid,sameIdempotentRequest } from './mcp-contract';
+import { PROTOCOL_VERSION, TOOLS, parseRpc,parseArgs,rpcOk,rpcError,validKey,validUuid,sameIdempotentRequest,parseToolCallParams } from './mcp-contract';
 function expect(condition:boolean,detail:string){if(!condition)throw new Error(detail);}
 export function testMcpContract(){
   expect(PROTOCOL_VERSION==='2025-11-25','protocol version');
@@ -39,5 +39,12 @@ export function testMcpContract(){
   expect(!sameIdempotentRequest({question:'hello',origin:'chatgpt'},{question:'hello',origin:'gemini'}),'cross-provider replay rejected');
   expect(parseArgs(Object.create({requestId:'inherited'}),['requestId'])===null,'inherited required property rejected');
   expect(parseArgs({requestId:'own'},['requestId'])?.requestId==='own','own required property accepted');
-  return 'mcp contract 38 checks passed';
+  expect(parseToolCallParams({name:'get_status',arguments:{requestId:'123'}})?.name==='get_status','valid tool envelope');
+  expect(parseToolCallParams({name:'get_status',arguments:{},owner_id:'other'})===null,'extra envelope key rejected');
+  expect(parseToolCallParams(Object.create({name:'get_status',arguments:{}}))===null,'inherited tool name rejected');
+  expect(parseToolCallParams({name:'get_status'})===null,'missing arguments rejected');
+  expect(parseToolCallParams({name:'get_status',arguments:[]})===null,'array arguments rejected');
+  expect(parseToolCallParams({name:'',arguments:{}})===null,'empty tool name rejected');
+  expect(parseToolCallParams({name:'x'.repeat(101),arguments:{}})===null,'oversized tool name rejected');
+  return 'mcp contract 45 checks passed';
 }
