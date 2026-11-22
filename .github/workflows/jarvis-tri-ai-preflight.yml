@@ -49,5 +49,9 @@ jobs:
         run: |
           npx tsc lib/consensus/oauth-code-store.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-oauth-store
           node -e "require('/tmp/consensus-oauth-store/oauth-code-store.test.js').testOAuthCodeStore().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
+      - name: Run signed OAuth bearer checks
+        run: |
+          npx tsc lib/consensus/oauth-bearer.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-bearer
+          node -e "require('/tmp/consensus-bearer/oauth-bearer.test.js').testOAuthBearer().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
       - name: Next.js production build
         run: npm run build
