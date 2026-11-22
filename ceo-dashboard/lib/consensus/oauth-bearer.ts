@@ -64,7 +64,10 @@ export async function verifyOAuthBearer(token: unknown, expected: {
         Object.keys(header).length !== 2) return null;
     const key=await keyFor(expected.secret);
     const signature=Buffer.from(parts[2],'base64url');
-    if (signature.length!==32 || !(await crypto.subtle.verify('HMAC',key,signature,encoder.encode(parts[0]+'.'+parts[1])))) return null;
+    // Node's base64url decoder accepts noncanonical trailing pad bits. Reject altered
+    // encodings even when they decode to the very same signature bytes.
+    if (signature.length!==32 || signature.toString('base64url')!==parts[2] ||
+        !(await crypto.subtle.verify('HMAC',key,signature,encoder.encode(parts[0]+'.'+parts[1])))) return null;
     const claims=decodeJson(parts[1]) as OAuthBearerClaims;
     if (!claims || typeof claims !== 'object' || Array.isArray(claims) ||
         !validClaims(claims,expected.nowSeconds) ||
