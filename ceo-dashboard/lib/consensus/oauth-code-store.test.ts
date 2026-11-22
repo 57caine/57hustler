@@ -26,8 +26,8 @@ export async function testOAuthCodeStore(): Promise<string> {
   };
   const store = createOAuthCodeStore(db);
   assert(await store.create(digest, record), 'insert accepted');
-  assert(inserted !== null && (inserted as Record<string, unknown>).code_digest === digest, 'digest persisted');
-  assert((inserted as Record<string, unknown>).code === undefined, 'raw code not persisted');
+  assert(inserted !== null && (inserted as unknown as Record<string, unknown>).code_digest === digest, 'digest persisted');
+  assert((inserted as unknown as Record<string, unknown>).code === undefined, 'raw code not persisted');
   assert(!(await store.create('invalid', record)), 'invalid digest rejected');
   assert((await store.consumeOnce(digest))?.subject === record.subject, 'atomic result mapped');
   assert((await store.consumeOnce(digest)) === null, 'replay rejected');
