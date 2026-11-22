@@ -42,3 +42,11 @@
 - `mcp-contract.test.ts` に16項目を追加（コード上61項目）。既存CIの契約テスト経路から読み込むが、CI実行成功は未確認。
 - **これらは認可サーバーではない。** PKCE verifier照合、stateのセッション紐付け、ユーザー同意画面、authorization codeの単回利用、token発行/失効、audience/issuer検証、保護されたMCP入口へのscope適用は未実装。
 - 本番MCPは引き続き無効。既存Supabase JWTを外部チャットに渡して代用しない。
+
+## 2026-11-22 前倒し：OAuth token HTTP入口（Draft・無効）
+- `POST /api/consensus/oauth/token` に `authorization_code` + `code_verifier` を受けるサーバー側ルートを追加。原子的なコード消費と署名付きBearer発行の既存ロジックを接続。
+- 二重ゲート：`MCP_BRIDGE_ENABLED=true` **かつ** `CONSENSUS_OAUTH_TOKEN_EXCHANGE_ENABLED=true` が揃わなければ 503。いずれも有効化していない。
+- `CONSENSUS_OAUTH_CLIENTS` は登録済み `clientId` と正確な `redirectUris` のJSON配列。`CONSENSUS_OAUTH_ISSUER` は呼出originと完全一致。署名鍵 `CONSENSUS_OAUTH_SIGNING_SECRET`・Supabaseサーバー専用 `SUPABASE_SERVICE_ROLE_KEY` を前提。秘密をクライアントに送らない。
+- フォーム形式のみ、登録済みクライアント・厳格リダイレクト・4096バイト上限・重複パラメータ拒否を適用。署名付きトークンに含まれる実際の権限を応答に返す。
+- **未完成・有効化禁止**：本人ログイン/同意UI、認可コード発行HTTP入口、トークン失効の永続化/照会、MCP側のOAuth bearer検証とユーザーRLS接続、OAuth discovery metadata、実DBのSQL migration、外部クライアント実機E2E。これらが完了するまで接続可能と表示しない。
+- ChatGPT/Claude優先。Geminiは公式機能の地域制限を尊重し手動回答取り込みを維持。
