@@ -65,5 +65,9 @@ jobs:
         run: |
           npx tsc lib/consensus/oauth-revocation-store.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-revocation
           node -e "require('/tmp/consensus-revocation/oauth-revocation-store.test.js').testOAuthRevocationStore().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
+      - name: Run OAuth authorization request preflight checks
+        run: |
+          npx tsc lib/consensus/oauth-authorization-request.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-auth-request
+          node -e "console.log(require('/tmp/consensus-auth-request/oauth-authorization-request.test.js').testAuthorizationRequest())"
       - name: Next.js production build
         run: npm run build
