@@ -46,3 +46,13 @@ export function resultText(value:unknown){return {content:[{type:'text' as const
 export function sameIdempotentRequest(saved:{question:string;origin:string},input:{question:string;origin:string}){
  return saved.question===input.question.trim()&&saved.origin===input.origin;
 }
+
+/** Strictly validate tools/call envelope before dispatching to owner-scoped storage. */
+export function parseToolCallParams(value:unknown):{name:string;arguments:unknown}|null{
+ if(!value||typeof value!=='object'||Array.isArray(value))return null;
+ const v=value as Record<string,unknown>;
+ if(Object.keys(v).some(k=>k!=='name'&&k!=='arguments'))return null;
+ if(!Object.prototype.hasOwnProperty.call(v,'name')||typeof v.name!=='string'||!v.name||v.name.length>100)return null;
+ if(!Object.prototype.hasOwnProperty.call(v,'arguments')||!v.arguments||typeof v.arguments!=='object'||Array.isArray(v.arguments))return null;
+ return {name:v.name,arguments:v.arguments};
+}
