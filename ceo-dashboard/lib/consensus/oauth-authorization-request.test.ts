@@ -23,6 +23,9 @@ export function testAuthorizationRequest(): string {
     ['implicit grant',p=>p.set('response_type','token')],
     ['unknown parameter',p=>p.set('owner_id','attacker')],
     ['unknown client',p=>p.set('client_id','other')],
+    ['oversized redirect',p=>p.set('redirect_uri','https://client.example/'+ 'a'.repeat(2049))],
+    ['oversized client identifier',p=>p.set('client_id','a'.repeat(2049))],
+    ['oversized aggregate query',p=>p.set('state','a'.repeat(8100))],
   ];
   for (const [label,mutate] of rejected) {
     const p=new URLSearchParams(base);
@@ -41,5 +44,5 @@ export function testAuthorizationRequest(): string {
   assert(uniqueOAuthClient([{clientId:'chatgpt',redirectUris:[]}],'chatgpt')===null,
     'token empty redirect registration rejected');
   assert(uniqueOAuthClient(clients,'unknown')===null,'token unknown client rejected');
-  return 'OAuth authorization request and token client registration 21 checks passed';
+  return 'OAuth authorization request and token client registration 24 checks passed';
 }
