@@ -55,7 +55,7 @@ export async function verifyOAuthBearer(token: unknown, expected: {
 }): Promise<OAuthBearerClaims | null> {
   try {
     if (typeof token !== 'string' || token.length > 4096 ||
-        !/^[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+$/.test(token)) return null;
+        !/^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(token)) return null;
     const parts=token.split('.');
     const header=decodeJson(parts[0]);
     if (!header || typeof header !== 'object' || Array.isArray(header) ||
