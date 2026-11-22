@@ -37,5 +37,9 @@ jobs:
         run: |
           npx tsc lib/consensus/mcp-contract.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-mcp
           node -e "const t=require('/tmp/consensus-mcp/mcp-contract.test.js'); console.log(t.testMcpContract()); t.testPkceExchangePrimitive().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
+      - name: Run OAuth authorization-code exchange checks
+        run: |
+          npx tsc lib/consensus/oauth-code-exchange.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-oauth
+          node -e "require('/tmp/consensus-oauth/oauth-code-exchange.test.js').testOAuthCodeExchange().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
       - name: Next.js production build
         run: npm run build
