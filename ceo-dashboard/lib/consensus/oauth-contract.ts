@@ -28,3 +28,23 @@ export function scopesPermit(granted:readonly McpScope[], tool:string):boolean {
     : tool === 'submit_question' || tool === 'submit_review' ? 'consensus.write' : null;
   return needed!==null && granted.includes(needed);
 }
+
+/** Policy check only. Call this AFTER a trusted JWT verifier validates signature,
+ * algorithm, issuer key, and audience; never decode an unverified JWT as authority.
+ * Revocation must also be checked against server-side token state.
+ */
+export function validVerifiedAccessClaims(
+  claims: unknown,
+  expected: { issuer: string; audience: string; subject: string; nowSeconds: number; requiredScope: McpScope }
+): boolean {
+  if (!claims || typeof claims !== 'object' || Array.isArray(claims)) return false;
+  const c = claims as Record<string, unknown>;
+  const audienceOk = c.aud === expected.audience ||
+    (Array.isArray(c.aud) && c.aud.length > 0 && c.aud.every(x => typeof x === 'string') && c.aud.includes(expected.audience));
+  const scope = parseRequestedScopes(c.scope);
+  return c.iss === expected.issuer && audienceOk && c.sub === expected.subject &&
+    typeof c.exp === 'number' && Number.isSafeInteger(c.exp) && c.exp > expected.nowSeconds &&
+    typeof c.iat === 'number' && Number.isSafeInteger(c.iat) && c.iat <= expected.nowSeconds &&
+    (c.nbf === undefined || (typeof c.nbf === 'number' && Number.isSafeInteger(c.nbf) && c.nbf <= expected.nowSeconds)) &&
+    scope !== null && scope.includes(expected.requiredScope);
+}
