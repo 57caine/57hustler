@@ -29,7 +29,7 @@ export async function testOAuthBearer() {
    assert(!(await verifyOAuthBearer(encoded[0]+'.'+encoded[1]+'.'+encoded[2].slice(0,-1)+variant,expected)),
      'noncanonical signature rejected');
  }
- assert(!(await verifyOAuthBearer(token!.slice(0,-1)+'x',expected)),'tampering rejected');
+ assert(!(await verifyOAuthBearer(encoded[0]+'.'+encoded[1]+'.'+(encoded[2][0]==='A'?'B':'A')+encoded[2].slice(1),expected)),'signature tampering rejected');
  assert(!(await issueOAuthBearer({...opts,secret:'short'})),'weak secret rejected');
  assert(!(await issueOAuthBearer({...opts,scopes:['unknown'] as never})),'invalid scope rejected');
  assert(!(await issueOAuthBearer({...opts,issuer:'http://issuer.example'})),'insecure issuer rejected');
