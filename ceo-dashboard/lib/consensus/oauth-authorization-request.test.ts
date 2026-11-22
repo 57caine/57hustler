@@ -1,4 +1,5 @@
 import { parseAuthorizationRequest } from './oauth-authorization-request';
+import { uniqueOAuthClient } from './oauth-contract';
 function assert(ok: unknown, why: string): asserts ok { if (!ok) throw new Error(why); }
 export function testAuthorizationRequest(): string {
   const redirect='https://client.example/callback';
@@ -33,5 +34,12 @@ export function testAuthorizationRequest(): string {
     'duplicate registered redirect rejected');
   assert(parseAuthorizationRequest(base,[{clientId:'other',redirectUris:[redirect]},...clients])?.clientId==='chatgpt',
     'unrelated registered client permitted');
-  return 'OAuth authorization request 16 checks passed';
+  assert(uniqueOAuthClient(clients,'chatgpt')?.clientId==='chatgpt','token client lookup valid');
+  assert(uniqueOAuthClient([...clients,...clients],'chatgpt')===null,'token duplicate client rejected');
+  assert(uniqueOAuthClient([{clientId:'chatgpt',redirectUris:[redirect,redirect]}],'chatgpt')===null,
+    'token duplicate redirect rejected');
+  assert(uniqueOAuthClient([{clientId:'chatgpt',redirectUris:[]}],'chatgpt')===null,
+    'token empty redirect registration rejected');
+  assert(uniqueOAuthClient(clients,'unknown')===null,'token unknown client rejected');
+  return 'OAuth authorization request and token client registration 21 checks passed';
 }
