@@ -224,7 +224,7 @@ body.has-sticky{padding-bottom:72px}
 <div id="detailView" hidden></div>
 <div id="confirmView" hidden></div>
 <div id="logView" hidden></div>
-<footer>熟女泥棒 / 熟ドロ<br><span id="dataNote"></span><br>本番ではアフィリエイト広告（PR）を含みます。<br><a href="#log">テスト用：送客イベントログ</a><br>Powered by <a href="https://affiliate.dmm.com/api/">FANZA Webサービス</a><br>© JUKUDORO — PRIVATE TEST</footer>
+<footer>熟女泥棒 / 熟ドロ<br><span id="dataNote"></span><br>本番ではアフィリエイト広告（PR）を含みます。<br>Powered by <a href="https://affiliate.dmm.com/api/">FANZA Webサービス</a><br>© JUKUDORO — PRIVATE TEST</footer>
 </main>
 <div class="sticky-cta" id="stickyCta" hidden></div>
 <script>
@@ -392,9 +392,8 @@ function watchCta(){io?.disconnect();const m=$('#mainCta');if(!m||!('Intersectio
 function renderConfirm(w,ev){
   $('#confirmView').innerHTML=`<div class="panel"><span class="pr">テスト用の確認画面</span><h1>本番ではここで「${w.prov}」の作品ページへ移動します</h1>
 <dl><dt>作品</dt><dd>${esc(w.title)}</dd><dt>作品ID</dt><dd>${w.id}</dd><dt>提供元</dt><dd>${w.prov}</dd><dt>リンク先</dt><dd style="word-break:break-all">${w.url?esc(w.url):'未設定（架空データ）'}</dd></dl>
-${w.url?`<p><a class="cta-btn" href="${esc(w.url)}" target="_blank" rel="sponsored noopener noreferrer nofollow" data-open="${w.id}">FANZAの作品ページを開く（確認用）</a></p>`:''}
-${ev?`<p class="ok">送客イベントを記録しました</p><dl><dt>イベント</dt><dd>${ev.event}</dd><dt>ボタン位置</dt><dd>${ev.position}</dd><dt>詳細への経路</dt><dd>${ev.entry_source}${ev.list_index?`（${ev.list_index}番目）`:''}</dd><dt>記録時刻</dt><dd>${ev.ts.slice(11,19)}</dd></dl>`:'<p>このページは直接開かれたため、イベントは記録していません。</p>'}
-<div class="row"><a class="ghost" href="#w-${w.id}">作品詳細に戻る</a><a class="ghost" href="#" data-back>一覧に戻る</a><a class="ghost" href="#log">イベントログを見る</a></div></div>`;
+${w.url?`<p><a class="cta-btn" href="${esc(w.url)}" target="_blank" rel="sponsored noopener noreferrer nofollow" data-open="${w.id}">本編を見る <span aria-hidden="true">→</span></a></p>`:''}
+<div class="row"><a class="ghost" href="#w-${w.id}">作品詳細に戻る</a><a class="ghost" href="#" data-back>一覧に戻る</a></div></div>`;
 }
 let lastEv=null,lastConfirmEv=null;
 
