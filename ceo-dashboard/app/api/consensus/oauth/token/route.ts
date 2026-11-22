@@ -25,11 +25,25 @@ export async function POST(request: NextRequest) {
     return error(413, 'invalid_request');
   }
   let form: URLSearchParams;
+  const reader = request.body?.getReader();
+  if (!reader) return error(400, 'invalid_request');
+  const chunks: Uint8Array[] = [];
+  let received = 0;
   try {
-    const body = await request.text();
-    if (Buffer.byteLength(body, 'utf8') > 4096) return error(413, 'invalid_request');
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      received += value.byteLength;
+      if (received > 4096) {
+        await reader.cancel().catch(() => undefined);
+        return error(413, 'invalid_request');
+      }
+      chunks.push(value);
+    }
+    const body = Buffer.concat(chunks.map(c => Buffer.from(c))).toString('utf8');
     form = new URLSearchParams(body);
   } catch { return error(400, 'invalid_request'); }
+  finally { reader.releaseLock(); }
   const allowed = ['grant_type', 'code', 'redirect_uri', 'client_id', 'code_verifier'];
   if (Array.from(form.keys()).some(k => !allowed.includes(k)) ||
       allowed.some(k => form.getAll(k).length > 1) ||
@@ -74,6 +88,7 @@ export async function POST(request: NextRequest) {
     access_token: accessToken,
     token_type: 'Bearer',
     expires_in: 600,
-    scope: 'consensus.read', // Placeholder: exact granted scopes must be returned before enabling.
+    // Reflect the scopes from the locally issued, signed bearer token.
+    scope: (JSON.parse(Buffer.from(accessToken.split('.')[1], 'base64url').toString('utf8')) as { scope: string }).scope,
   }, { headers: noStore });
 }
