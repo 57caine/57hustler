@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T02:04:16.099Z",
+  "generatedAt": "2026-11-22T01:06:33.460Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 29,
-        "bounceRate": 0.1724137931034483,
-        "avgSessionDuration": 334.3634476896551,
+        "sessions": 28,
+        "bounceRate": 0.14285714285714285,
+        "avgSessionDuration": 347.28769489285713,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション29件・affiliate_clickゼロ"
+        "セッション28件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -47,16 +47,16 @@
       "slug": "1day-vs-2week-dotchiga-otoku",
       "title": "1day-vs-2week-dotchiga-otoku",
       "metrics": {
-        "sessions": 27,
-        "bounceRate": 0.8148148148148148,
-        "avgSessionDuration": 14.704997814814815,
+        "sessions": 26,
+        "bounceRate": 0.8076923076923077,
+        "avgSessionDuration": 15.270574653846154,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション27件・affiliate_clickゼロ"
+        "セッション26件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -81,16 +81,16 @@
       "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
       "title": "contact-dosu-shohosen-mikata-kanzen-2026",
       "metrics": {
-        "sessions": 20,
-        "bounceRate": 0.75,
-        "avgSessionDuration": 57.8655437,
+        "sessions": 19,
+        "bounceRate": 0.7894736842105263,
+        "avgSessionDuration": 45.658656263157894,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション20件・affiliate_clickゼロ"
+        "セッション19件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 5,
@@ -149,16 +149,16 @@
       "slug": "vr-game-osusume-2026",
       "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
       "metrics": {
-        "sessions": 17,
-        "bounceRate": 0.47058823529411764,
-        "avgSessionDuration": 73.60231811764706,
+        "sessions": 16,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 77.118597,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション17件・affiliate_clickゼロ"
+        "セッション16件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -183,16 +183,16 @@
       "slug": "contact-net-kounyu-guide",
       "title": "コンタクトレンズはネットで買える？処方箋なしでも大丈夫？完全ガイド",
       "metrics": {
-        "sessions": 13,
-        "bounceRate": 0.6923076923076923,
-        "avgSessionDuration": 20.099055615384618,
+        "sessions": 14,
+        "bounceRate": 0.6428571428571429,
+        "avgSessionDuration": 25.609328928571426,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション13件・affiliate_clickゼロ"
+        "セッション14件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -289,54 +289,20 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/acuvue-zenkindai-hikaku",
-      "slug": "acuvue-zenkindai-hikaku",
-      "title": "acuvue-zenkindai-hikaku",
-      "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.5555555555555556,
-        "avgSessionDuration": 115.37773233333331,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 6,
-        "hasAffiliateLinks": false,
-        "ctaCount": 0,
-        "contentChars": 76173
-      },
-      "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
-      ],
-      "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
-      ],
-      "status": "未対応",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/enkintsuyo-contact-guide",
       "slug": "enkintsuyo-contact-guide",
       "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
       "metrics": {
-        "sessions": 9,
+        "sessions": 10,
         "bounceRate": 0,
-        "avgSessionDuration": 133.55966733333332,
+        "avgSessionDuration": 125.60352470000001,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
+        "セッション10件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -357,20 +323,54 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/vr-movie-streaming-service-recommend-2026",
-      "slug": "vr-movie-streaming-service-recommend-2026",
-      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
+      "path": "/column/acuvue-zenkindai-hikaku",
+      "slug": "acuvue-zenkindai-hikaku",
+      "title": "acuvue-zenkindai-hikaku",
       "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.5555555555555556,
-        "avgSessionDuration": 19.576078444444445,
+        "sessions": 8,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 129.79994887499998,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 6,
+        "hasAffiliateLinks": false,
+        "ctaCount": 0,
+        "contentChars": 76173
+      },
+      "causes": [
+        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+      ],
+      "suggestions": [
+        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+      ],
+      "status": "未対応",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/vr-movie-streaming-service-recommend-2026",
+      "slug": "vr-movie-streaming-service-recommend-2026",
+      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.625,
+        "avgSessionDuration": 19.869309625000003,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
