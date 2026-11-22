@@ -17,6 +17,18 @@ export async function testOAuthBearer() {
  assert(!(await verifyOAuthBearer(token,{...expected,secret:'y'.repeat(48)})),'wrong signing key rejected');
  assert(!(await verifyOAuthBearer(token,{...expected,isRevoked:async()=>true})),'revoked token rejected');
  assert(!(await verifyOAuthBearer(token,{...expected,isRevoked:async()=>{throw new Error('storage down')}})),'revocation outage fails closed');
+ // A different final base64url character can decode to the same last byte.
+ // The verifier must reject noncanonical pad bits, not only changed HMAC bytes.
+ const alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+ const encoded=token!.split('.');
+ const final=encoded[2].slice(-1);
+ const idx=alphabet.indexOf(final);
+ const variant=alphabet[(idx & ~3) | ((idx+1)&3)];
+ {
+   assert(idx>=0 && variant!==final,'noncanonical test vector generated');
+   assert(!(await verifyOAuthBearer(encoded[0]+'.'+encoded[1]+'.'+encoded[2].slice(0,-1)+variant,expected)),
+     'noncanonical signature rejected');
+ }
  assert(!(await verifyOAuthBearer(token!.slice(0,-1)+'x',expected)),'tampering rejected');
  assert(!(await issueOAuthBearer({...opts,secret:'short'})),'weak secret rejected');
  assert(!(await issueOAuthBearer({...opts,scopes:['unknown'] as never})),'invalid scope rejected');
