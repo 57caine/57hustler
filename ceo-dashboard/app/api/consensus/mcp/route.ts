@@ -84,7 +84,7 @@ export async function POST(request:NextRequest){
    if(error)return respond(rpcError(rpc.id,-32000,'Storage unavailable'));
    // An idempotency key must never silently bind to a different question,
    // including when the database returns an existing row from upsert.
-   if(data&&(!sameIdempotentRequest(data,a)))
+   if(data&&(!sameIdempotentRequest(data,{question:a.question,origin:a.origin})))
      return respond(rpcError(rpc.id,-32602,'Idempotency key reused for different request'));
    let row=data;
    if(!row){
@@ -92,7 +92,7 @@ export async function POST(request:NextRequest){
        .select('id,origin,question,status,created_at').eq('owner_id',owner).eq('idempotency_key',a.idempotencyKey).maybeSingle();
      if(existing.error||!existing.data)return respond(rpcError(rpc.id,-32000,'Cannot retrieve saved request'));
      row=existing.data;
-     if(!sameIdempotentRequest(row,a))return respond(rpcError(rpc.id,-32602,'Idempotency key reused for different request'));
+     if(!sameIdempotentRequest(row,{question:a.question,origin:a.origin}))return respond(rpcError(rpc.id,-32602,'Idempotency key reused for different request'));
    }
    return respond(rpcOk(rpc.id,resultText({request:row,automatedConsensus:false})));
  }
