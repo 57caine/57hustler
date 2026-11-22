@@ -62,3 +62,8 @@
 - `/.well-known/oauth-authorization-server` にRFC 8414形式のOAuth認可サーバーメタデータを追加。既存MCP/tokenの2つのゲートに加えて `CONSENSUS_OAUTH_AUTHORIZATION_ENABLED=true` が必要。既定503。
 - **このメタデータは未実装の `/api/consensus/oauth/authorize` を案内するため、本番有効化厳禁。** 同意画面・ログインと同意記録・トークン失効・MCPのBearer署名/issuer/audience/scope適用・SQL migration・実機E2E完了後にのみ公開検討。
 - 今回はGitHub Draft PR #251のみ。PR #250 / Issue #242/#252との役割重複を避ける。Geminiの公式接続はブロッカーにせず手動共有を維持。
+
+## 2026-11-23 前倒し・同意監査のDB設計（本番未適用）
+- Token endpointをOAuth metadataと同じ**三重ゲート**へ統一。認可画面未完成の状態でtoken発行入口だけを有効化できないようにした。
+- `20261123020000_consensus_oauth_consents.sql`：本人UUID、client ID、正確なredirect URI、承認scope、認可コードdigest、承認時刻を記録する監査テーブルを追加。利用者の直接SQLアクセス禁止、service_roleのみinsert/select、既存レコードのupdate/delete権限は付与しない。
+- **未完了**：このDB migrationは適用していない。本人同意UI/CSRF、同意記録とコード発行の**同一DBトランザクション化**、認可HTTP入口、MCP resource認証の実配線、失効・RLS・レート制限の統合が必要。現時点では同意記録が実際に保存されると主張しない。
