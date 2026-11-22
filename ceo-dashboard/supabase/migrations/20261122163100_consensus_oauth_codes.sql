@@ -9,7 +9,7 @@ create table if not exists public.ai_consensus_oauth_codes (
   scopes text[] not null check (
     cardinality(scopes) between 1 and 2
     and scopes <@ array['consensus.read','consensus.write']::text[]
-    and cardinality(scopes) = (select count(distinct s) from unnest(scopes) s)
+    and (cardinality(scopes) = 1 or scopes[1] <> scopes[2])
   ),
   consented_at timestamptz not null,
   expires_at timestamptz not null,
