@@ -1,4 +1,4 @@
-import { exactRegisteredRedirect, parseRequestedScopes, validOAuthState, validPkceChallenge, type McpScope } from './oauth-contract';
+import { exactRegisteredRedirect, parseRequestedScopes, validOAuthState, validPkceChallenge, uniqueOAuthClient, type McpScope } from './oauth-contract';
 
 /** Pure, fail-closed preflight. Never creates consent or a code; owner authentication
  * and a CSRF-bound, explicit approval are mandatory before issuance. */
