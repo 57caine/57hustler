@@ -99,6 +99,17 @@ nav button.active{color:#ff536c;border-bottom:2px solid #ff536c}
 .sample.done{animation:none}
 .sample-label{font-size:9px;letter-spacing:.5px;color:#ffcd6b}
 .sample-title{font-size:12px;font-weight:bold;text-shadow:0 1px 4px #000}
+.sample-fs{position:absolute;top:8px;left:8px;min-height:30px;border:1px solid #fff6;border-radius:14px;background:#000a;color:#fff;font-size:11px;padding:2px 10px;z-index:2}
+.sample.pseudo-fs,.sample:fullscreen{position:fixed;inset:0;height:100%!important;z-index:1000;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);background:#000}
+.sample:fullscreen{width:100%}
+.sample.pseudo-fs .more-btn,.sample:fullscreen .more-btn{min-height:48px;font-size:14px}
+body.fs-lock{overflow:hidden}
+.mbadge{border:1px solid #6fb7a0;color:#9fe0c8;border-radius:3px;padding:0 4px;font-size:9px}
+.m-only{border:1px solid #4f7f70;background:#0f1f1a;color:#cfeee2;border-radius:20px;padding:4px 12px;min-height:34px;font-size:11px}
+.m-only[aria-pressed=true]{background:#1f5f4a;border-color:#9fe0c8;color:#fff;font-weight:bold}
+.cta-btn{flex-wrap:wrap}
+.cta-sub-label{flex-basis:100%;text-align:center;font-size:10px;font-weight:normal;opacity:.9}
+.cta .cta-monthly{margin-top:8px;background:linear-gradient(180deg,#2f8f70,#1d6b52);box-shadow:inset 0 1px #bff5e055}
 .sample-stop{position:absolute;top:8px;right:8px;min-height:30px;border:1px solid #fff6;border-radius:14px;background:#000a;color:#fff;font-size:11px;padding:2px 10px}
 .bar{display:block;height:4px;margin:4px -8px 0;background:#fff3}
 .bar i{display:block;height:100%;width:0;background:var(--red);animation:prog linear forwards}
@@ -198,7 +209,7 @@ nav{gap:16px;font-size:11px}
 .work{grid-template-columns:1fr;gap:0}
 .work .art{min-height:0;height:150px}
 .work-body{padding:14px}
-.work h1{font-size:20px}
+.work h1{font-size:17px}
 body.has-sticky{padding-bottom:72px}
 }
 @media(min-width:621px){.sticky-cta{display:none!important}}
@@ -214,6 +225,7 @@ body.has-sticky{padding-bottom:72px}
 <form class="search" id="searchForm" role="search"><input id="query" aria-label="作品名・出演者・カテゴリで検索" placeholder="作品名・出演者・カテゴリで探す" type="search" autocomplete="off"><button>検索する</button></form>
 <div class="filters">
 <div class="seg" id="provSeg" aria-label="提供元で絞り込み"></div>
+<button class="m-only" id="mOnly" data-monly aria-pressed="false">見放題で見られる作品</button>
 <div class="chips" id="chips" aria-label="カテゴリで絞り込み"></div>
 <div class="feature-on" id="featureOn" hidden></div>
 </div>
@@ -251,9 +263,8 @@ const DEMO=[
 ['jd018','佳奈のゆるっと日記','Fantia','人妻','佳奈','Kana','ナチュラル','日々の出来事をゆるく話す、短い動画日記。','#b2b3a2',1,410,['動画配信','素人','30代']],
 ['jd019','千尋の旅先スナップ','Fantia','熟女','千尋','Chihiro','落ち着いた雰囲気','旅先で撮りためたスナップを、旅程つきで公開。','#acb5bd',0,450,['写真集','温泉・旅行','40代']],
 ['jd020','遥の朝ごはん配信','Fantia','人妻','遥','Haruka','日常','朝ごはんを作りながら一日の予定を話す配信。','#c5ac83',0,390,['動画配信','30代']]
-].map((a,i)=>({id:a[0],title:a[1],prov:a[2],cat:a[3],cats:[a[3]],who:a[4],roman:a[5],theme:a[6],summary:a[7],b:a[8],isNew:!!a[9],pop:a[10],tags:a[11],order:i,demo:true,url:null,image:null,sampleMovie:null,price:null}));
-/* カテゴリは NTR を先頭に、人妻・熟女がメイン（2026-11-20 オーナー指示） */
-const CATS=['すべて','NTR','人妻','熟女'];
+].map((a,i)=>({id:a[0],title:a[1],prov:a[2],cat:a[3],cats:[a[3],...a[11].filter(t=>/^(30代|40代)$/.test(t))],who:a[4],roman:a[5],theme:a[6],summary:a[7],b:a[8],isNew:!!a[9],pop:a[10],tags:a[11],order:i,demo:true,url:null,image:null,sampleMovie:null,price:null}));
+const CATS=['すべて','熟女','人妻','NTR','30代','40代']; // 2026-11-22 オーナー指示: 熟女→人妻を先頭に、30代・40代を追加
 /* タグ一覧（件数の多い順）。カード・詳細・トップの「タグから探す」で使う */
 let W=[],TAGS=[],DATA={real:false,fetchedAt:null};
 const TAG_SKIP=/^(独占配信|単体作品|ハイビジョン|4K|8K.*|.*VR.*|サンプル動画|DMM独占|配信専用|期間限定セール|セール|デジモ|ハイクオリティ.*|FANZA.*)$/;
@@ -263,7 +274,7 @@ function fromApi(x,i,fetchedAt){
   return {id:x.id,title:x.title,prov:'FANZA',cat:x.cat,cats:x.cats||[x.cat],who:(x.actresses||[]).slice(0,2).join('・')||x.maker||'',roman:'',theme:'',
     summary:[x.maker?`メーカー：${x.maker}`:'',x.actresses?.length?`出演：${x.actresses.join('・')}`:''].filter(Boolean).join(' ／ '),
     b:PALETTE[i%PALETTE.length],isNew:days<=30,pop:1000-(x.rank||i),tags:(x.tags||[]).filter(t=>!TAG_SKIP.test(t)).slice(0,8),order:i,demo:false,
-    url:x.url,image:x.image,sampleMovie:x.sampleMovie,price:x.price,listPrice:x.listPrice,campaign:x.campaign,maker:x.maker,date:x.date};
+    url:x.url,monthly:x.monthly||null,image:x.image,sampleMovie:x.sampleMovie,price:x.price,listPrice:x.listPrice,campaign:x.campaign,maker:x.maker,date:x.date};
 }
 function buildWorks(meta){
   const fantia=DEMO.filter(w=>w.prov==='Fantia');
@@ -279,13 +290,16 @@ const SAMPLE_SEC=10; // テスト用の仮サンプル映像の長さ（秒）
 const PROVS=[['all','すべて'],['FANZA','FANZA'],['Fantia','Fantia']];
 /* 特集3枠。内訳は特集の内容に合わせる（1:FANZAのみ、2:Fantiaのみ、3:テーマで両方） */
 const FEATURES=[
-{id:'f1',eyebrow:'特集 01 ・ FANZA',title:'いま見られている人気作',desc:'FANZAの人気順に、NTR・人妻・熟女の作品を集めました。',test:w=>w.prov==='FANZA',sort:'pop'},
+{id:'f1',eyebrow:'特集 01 ・ FANZA',title:'いま見られている人気作',desc:'FANZAの人気順に、熟女・人妻・NTRの作品を集めました。',test:w=>w.prov==='FANZA',sort:'pop'},
 {id:'f2',eyebrow:'特集 02 ・ Fantia',title:'毎月届く、クリエイターの写真と動画',desc:'月額プランで続けて楽しめる、Fantiaの作品だけを集めました。',test:w=>w.prov==='Fantia',sort:'new'},
 {id:'f3',eyebrow:'特集 03 ・ 熟女',title:'大人の色気、熟女特集',desc:'「熟女」カテゴリの作品を、提供元を問わず集めました。',test:w=>w.cats.includes('熟女'),sort:'pop'}];
 /* ボタン文言は「本編を見る」型（購入より心理的な負担が軽い）。提供元は小さく添える */
 const PROV_BTN={FANZA:'本編をFANZAで見る',Fantia:'続きをFantiaで見る'};
 const BUY_BTN={FANZA:'本編を見る',Fantia:'続きを見る'};
 const PROV_FORM={FANZA:'単品購入（作品ごと）',Fantia:'月額プラン（ファンクラブ）'};
+/* 月額（見放題ch）。安い見放題chを優先し、デラックスのみ対象の作品はデラックスを案内する */
+const planOf=w=>w.monthly?.standard?['standard',w.monthly.standard]:w.monthly?.premium?['premium',w.monthly.premium]:null;
+const linkOf=(w,plan)=>plan&&w.monthly?.[plan]?w.monthly[plan].url:w.url;
 
 /* ===== 状態 ===== */
 const $=s=>document.querySelector(s);
@@ -293,7 +307,7 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 const store={get(k,d,ss){try{const v=(ss?sessionStorage:localStorage).getItem(k);return v==null?d:JSON.parse(v)}catch{return d}},set(k,v,ss){try{(ss?sessionStorage:localStorage).setItem(k,JSON.stringify(v))}catch{}}};
 let saved=new Set();
 const PAGE=40; // 一覧は40件ずつ表示し「もっと見る」で追加
-const DEF={q:'',prov:'all',cat:'すべて',tag:null,sort:'pop',view:'all',feature:null,scroll:0,slide:0,limit:PAGE};
+const DEF={q:'',prov:'all',cat:'すべて',tag:null,mOnly:false,sort:'pop',view:'all',feature:null,scroll:0,slide:0,limit:PAGE};
 let S={...DEF,...store.get('jd-list',{},true)};
 let entry=null;           // 詳細に来た経路（list / ranking / related / direct）
 let current=null;
@@ -311,7 +325,7 @@ function track(name,params){
 /* ===== 一覧 ===== */
 function filtered(){
   const q=S.q.trim().toLowerCase(),f=FEATURES.find(x=>x.id===S.feature);
-  return W.filter(w=>(S.view!=='saved'||saved.has(w.id))&&(S.prov==='all'||w.prov===S.prov)&&(S.cat==='すべて'||w.cats.includes(S.cat))&&(!S.tag||w.tags.includes(S.tag))&&(!f||f.test(w))
+  return W.filter(w=>(S.view!=='saved'||saved.has(w.id))&&(S.prov==='all'||w.prov===S.prov)&&(S.cat==='すべて'||w.cats.includes(S.cat))&&(!S.mOnly||!!w.monthly)&&(!S.tag||w.tags.includes(S.tag))&&(!f||f.test(w))
     &&[w.title,w.prov,...w.cats,w.who,w.roman,w.theme,w.summary,...w.tags].some(t=>t.toLowerCase().includes(q)))
    .sort({pop:(a,b)=>b.pop-a.pop,new:(a,b)=>(b.isNew-a.isNew)||a.order-b.order,title:(a,b)=>a.title.localeCompare(b.title,'ja')}[S.sort]);
 }
@@ -323,7 +337,7 @@ const priceRow=w=>w.price?`<span class="price"><b>${fmtPrice(w.price)}</b>${num(
 const tagBtns=(w,max)=>w.tags.slice(0,max).map(t=>`<button class="tag-btn" data-tag="${t}" data-from="${w.id}">#${t}</button>`).join('');
 function card(w,src,idx,rank){
   return `<article class="card" data-card="${w.id}"><a class="cardlink" href="#w-${w.id}" data-w="${w.id}" data-src="${src}" data-idx="${idx}"><div class="art" style="--b:${w.b}" data-initial="${w.roman}">${thumb(w)}${rank?`<span class="rank">${rank}</span>`:''}${badges(w)}</div>
-<div class="card-body"><span class="cardmeta"><span class="prov ${w.prov.toLowerCase()}">${w.prov}</span><span>${w.cat}</span>${w.demo?'<span class="demo">架空</span>':''}</span><h3>${esc(w.title)}</h3><span class="who">${esc(w.who)}</span>${priceRow(w)}</div></a>
+<div class="card-body"><span class="cardmeta"><span class="prov ${w.prov.toLowerCase()}">${w.prov}</span><span>${w.cat}</span>${w.monthly?'<span class="mbadge">見放題</span>':''}${w.demo?'<span class="demo">架空</span>':''}</span><h3>${esc(w.title)}</h3><span class="who">${esc(w.who)}</span>${priceRow(w)}</div></a>
 <button class="save" aria-label="${esc(w.title)}を保存" aria-pressed="${saved.has(w.id)}" data-save="${w.id}">${saved.has(w.id)?'♥':'♡'}</button>
 <button class="play" data-play="${w.id}" data-pos="${src}_card" aria-label="${esc(w.title)}のサンプル動画を再生"><span aria-hidden="true">▶</span> サンプル</button>
 <div class="card-foot"><div class="tags">${tagBtns(w,2)}</div><button class="buy" data-go="${w.id}" data-pos="${src}_card" data-src="${src}" data-idx="${idx}"><span>${BUY_BTN[w.prov]}</span><small>${w.prov}</small></button></div></article>`;
@@ -344,6 +358,7 @@ function renderList(){
   const list=filtered();
   $('#query').value=S.q;$('#sort').value=S.sort;
   $('#provSeg').innerHTML=PROVS.map(([v,l])=>`<button data-prov="${v}" aria-pressed="${S.prov===v}">${l}</button>`).join('');
+  $('#mOnly').setAttribute('aria-pressed',S.mOnly);$('#mOnly').hidden=!W.some(w=>w.monthly);
   $('#chips').innerHTML=CATS.map(c=>`<button data-cat="${c}" aria-pressed="${S.cat===c}">${c==='すべて'?'全カテゴリ':c}</button>`).join('');
   const f=FEATURES.find(x=>x.id===S.feature);
   $('#featureOn').hidden=!f&&!S.tag;
@@ -356,7 +371,7 @@ function renderList(){
   const shown=list.slice(0,S.limit||PAGE),rest=list.length-shown.length;
   $('#moreList').hidden=rest<=0;$('#moreList').textContent=`もっと見る（残り${rest}作品）`;
   $('#grid').innerHTML=list.length?shown.map((w,i)=>card(w,'list',i+1)).join(''):`<div class="empty">${S.view==='saved'&&!saved.size?'まだ保存した作品はありません。<br>カードの♡を押すと、ここにまとめて表示されます。':'条件に合う作品がありません。<br>検索語や絞り込みを変えてみてください。'}</div>`;
-  const plain=S.view==='all'&&!S.q&&S.prov==='all'&&S.cat==='すべて'&&!S.tag&&!f;
+  const plain=S.view==='all'&&!S.q&&S.prov==='all'&&S.cat==='すべて'&&!S.tag&&!S.mOnly&&!f;
   $('#ranking').hidden=!plain;
   $('#rankGrid').innerHTML=[...W].sort((a,b)=>b.pop-a.pop).slice(0,4).map((w,i)=>card(w,'ranking',i+1,i+1)).join('');
   $('#saveCount').textContent=saved.size;
@@ -373,9 +388,10 @@ function renderDetail(w){
 <article class="work"><div class="art" style="--b:${w.b}" data-initial="${w.roman}">${thumb(w)}${badges(w)}<button class="play play-lg" data-play="${w.id}" data-pos="detail" aria-label="サンプル動画を再生"><span aria-hidden="true">▶</span> サンプル動画を再生</button></div><div class="work-body">
 <div class="cardmeta"><span class="prov ${w.prov.toLowerCase()}">${w.prov}</span><span>${w.cat}</span></div>
 <h1>${esc(w.title)}</h1>
-<dl><dt>提供元</dt><dd>${w.prov}${w.demo?'（架空データ）':''}</dd>${w.actresses||w.who?`<dt>出演・クリエイター</dt><dd>${esc(w.who)}</dd>`:''}${w.maker?`<dt>メーカー</dt><dd>${esc(w.maker)}</dd>`:''}<dt>カテゴリ</dt><dd>${w.cats.join('・')}</dd>${w.date?`<dt>配信開始</dt><dd>${w.date.slice(0,10)}</dd>`:''}${w.price?`<dt>価格</dt><dd>${priceRow(w)}</dd>`:''}${w.campaign?`<dt>セール</dt><dd>${esc(w.campaign.title)}${w.campaign.end?`（${w.campaign.end.slice(0,10)}まで）`:''}</dd>`:''}<dt>購入形式</dt><dd>${PROV_FORM[w.prov]}</dd></dl>
-<div class="cta" id="mainCta"><button class="cta-btn" data-go="${w.id}" data-pos="detail_main">${PROV_BTN[w.prov]} <span aria-hidden="true">→</span></button>
+<div class="cta" id="mainCta"><button class="cta-btn" data-go="${w.id}" data-pos="detail_main">${PROV_BTN[w.prov]} <span aria-hidden="true">→</span>${w.price?`<small class="cta-sub-label">単品 ${fmtPrice(w.price)}</small>`:''}</button>
+${(()=>{const p=planOf(w);return p?`<button class="cta-btn cta-monthly" data-go="${w.id}" data-plan="${p[0]}" data-pos="detail_monthly">${p[1].name}で見る <span aria-hidden="true">→</span><small class="cta-sub-label">月額${fmtPrice(p[1].price)}・この作品も見放題</small></button>`:''})()}
 <p class="cta-note"><span>${w.prov}の作品ページへ移動します（テスト版では確認画面）</span></p></div>
+<dl><dt>提供元</dt><dd>${w.prov}${w.demo?'（架空データ）':''}</dd>${w.actresses||w.who?`<dt>出演・クリエイター</dt><dd>${esc(w.who)}</dd>`:''}${w.maker?`<dt>メーカー</dt><dd>${esc(w.maker)}</dd>`:''}<dt>カテゴリ</dt><dd>${w.cats.join('・')}</dd>${w.date?`<dt>配信開始</dt><dd>${w.date.slice(0,10)}</dd>`:''}${w.price?`<dt>価格</dt><dd>${priceRow(w)}</dd>`:''}${w.monthly?`<dt>見放題</dt><dd>${[w.monthly.standard?`見放題ch（月額${fmtPrice(w.monthly.standard.price)}）`:'',w.monthly.premium?`見放題ch デラックス（月額${fmtPrice(w.monthly.premium.price)}）`:''].filter(Boolean).join('・')}で視聴可</dd>`:''}${w.campaign?`<dt>セール</dt><dd>${esc(w.campaign.title)}${w.campaign.end?`（${w.campaign.end.slice(0,10)}まで）`:''}</dd>`:''}<dt>購入形式</dt><dd>${PROV_FORM[w.prov]}</dd></dl>
 <p class="lead"><b>作品概要</b><br>${esc(w.summary)}</p>
 <div><b style="font-size:12px">タグ</b><div class="tags" style="margin-top:4px">${tagBtns(w,9)}</div></div>
 <button class="save-wide" data-save="${w.id}" aria-pressed="${on}">${on?'♥ 保存済み':'♡ あとで見るために保存'}</button>
@@ -390,9 +406,10 @@ function watchCta(){io?.disconnect();const m=$('#mainCta');if(!m||!('Intersectio
 
 /* ===== 掲載先の確認画面（テスト用） ===== */
 function renderConfirm(w,ev){
-  $('#confirmView').innerHTML=`<div class="panel"><span class="pr">テスト用の確認画面</span><h1>本番ではここで「${w.prov}」の作品ページへ移動します</h1>
-<dl><dt>作品</dt><dd>${esc(w.title)}</dd><dt>作品ID</dt><dd>${w.id}</dd><dt>提供元</dt><dd>${w.prov}</dd><dt>リンク先</dt><dd style="word-break:break-all">${w.url?esc(w.url):'未設定（架空データ）'}</dd></dl>
-${w.url?`<p><a class="cta-btn" href="${esc(w.url)}" target="_blank" rel="sponsored noopener noreferrer nofollow" data-open="${w.id}">本編を見る <span aria-hidden="true">→</span></a></p>`:''}
+  const plan=ev?.plan&&ev.plan!=='single'?ev.plan:null,url=linkOf(w,plan),pname=plan?` ${w.monthly[plan].name}`:'';
+  $('#confirmView').innerHTML=`<div class="panel"><span class="pr">テスト用の確認画面</span><h1>本番ではここで「${w.prov}${pname}」の作品ページへ移動します</h1>
+<dl><dt>作品</dt><dd>${esc(w.title)}</dd><dt>作品ID</dt><dd>${w.id}</dd><dt>提供元</dt><dd>${w.prov}</dd><dt>リンク先</dt><dd style="word-break:break-all">${url?esc(url):'未設定（架空データ）'}</dd></dl>
+${url?`<p><a class="cta-btn" href="${esc(url)}" target="_blank" rel="sponsored noopener noreferrer nofollow" data-open="${w.id}">${plan?`${w.monthly[plan].name}で見る`:'本編を見る'} <span aria-hidden="true">→</span></a></p>`:''}
 <div class="row"><a class="ghost" href="#w-${w.id}">作品詳細に戻る</a><a class="ghost" href="#" data-back>一覧に戻る</a></div></div>`;
 }
 let lastEv=null,lastConfirmEv=null;
@@ -414,14 +431,24 @@ ${log.slice().reverse().map(e=>`<tr><td>${e.ts.slice(11,19)}</td><td>${e.event}<
 
 /* ===== サンプル動画（テスト用の仮映像。本番は提供元が許可するサンプル動画の埋め込みに置き換える） ===== */
 let sampleTimer=null;
-function stopSample(){clearTimeout(sampleTimer);document.querySelectorAll('.sample').forEach(e=>e.remove())}
+/* 全画面: 使えるブラウザは本物の全画面、iPhoneのSafariなど使えない場合は画面いっぱいに広げる */
+function toggleFs(b){
+  const el=b.closest('.sample'),id=el.dataset.w;
+  if(el.classList.contains('pseudo-fs')||document.fullscreenElement===el){if(document.fullscreenElement)document.exitFullscreen();el.classList.remove('pseudo-fs');document.body.classList.remove('fs-lock');b.textContent='⛶ 全画面';return}
+  const req=el.requestFullscreen||el.webkitRequestFullscreen;
+  const pseudo=()=>{el.classList.add('pseudo-fs');document.body.classList.add('fs-lock');b.textContent='✕ 全画面を閉じる'};
+  if(req){try{const pr=req.call(el);if(pr&&pr.catch)pr.catch(pseudo)}catch{pseudo()}}else pseudo();
+  const w=findW(id);track('sample_fullscreen',{work_id:id,provider:w?.prov||'',position:el.closest('.card')?'list_card':'detail'});
+}
+document.addEventListener('fullscreenchange',()=>{document.querySelectorAll('.sample-fs').forEach(x=>x.textContent=document.fullscreenElement?'✕ 全画面を閉じる':'⛶ 全画面')});
+function stopSample(){clearTimeout(sampleTimer);document.body.classList.remove('fs-lock');document.querySelectorAll('.sample').forEach(e=>e.remove())}
 function playSample(b){
   stopSample();const w=findW(b.dataset.play),box=b.closest('.card')||b.closest('.art');
-  const el=document.createElement('div');el.className='sample';el.style.setProperty('--b',w.b);el.setAttribute('role','region');el.setAttribute('aria-label',w.title+'のサンプル動画（仮）');
+  const el=document.createElement('div');el.className='sample';el.dataset.w=w.id;el.style.setProperty('--b',w.b);el.setAttribute('role','region');el.setAttribute('aria-label',w.title+'のサンプル動画（仮）');
   const more=`<button class="more-btn" data-go="${w.id}" data-pos="sample_overlay" data-src="${b.dataset.pos==='detail'?'':b.dataset.pos.replace('_card','')}" data-idx="${b.closest('.card')?.querySelector('[data-idx]')?.dataset.idx||''}">続きは本編で ▶ ${BUY_BTN[w.prov]}</button>`;
   el.innerHTML=w.sampleMovie
-    ?`<iframe src="${esc(w.sampleMovie)}" title="${esc(w.title)}のサンプル動画" allow="autoplay; fullscreen" allowfullscreen scrolling="no"></iframe><button class="sample-stop" data-stop aria-label="サンプルを止める">■ 閉じる</button>${more}`
-    :`<span class="sample-label">サンプル再生中（仮映像）</span><span class="sample-title">${esc(w.title)}</span><button class="sample-stop" data-stop aria-label="サンプルを止める">■ 停止</button><span class="bar"><i style="animation-duration:${SAMPLE_SEC}s"></i></span>${more}`;
+    ?`<iframe src="${esc(w.sampleMovie)}" title="${esc(w.title)}のサンプル動画" allow="autoplay; fullscreen" allowfullscreen scrolling="no"></iframe><button class="sample-stop" data-stop aria-label="サンプルを止める">■ 閉じる</button><button class="sample-fs" data-fs aria-label="全画面で見る">⛶ 全画面</button>${more}`
+    :`<span class="sample-label">サンプル再生中（仮映像）</span><span class="sample-title">${esc(w.title)}</span><button class="sample-stop" data-stop aria-label="サンプルを止める">■ 停止</button><button class="sample-fs" data-fs aria-label="全画面で見る">⛶ 全画面</button><span class="bar"><i style="animation-duration:${SAMPLE_SEC}s"></i></span>${more}`;
   if(w.sampleMovie)el.classList.add('real');
   box.appendChild(el);
   track('sample_play',{work_id:w.id,provider:w.prov,position:b.dataset.pos,entry_source:b.dataset.pos==='detail'?(entry?.src||'direct'):b.dataset.pos.replace('_card',''),list_index:null,filters:''});
@@ -443,13 +470,13 @@ function route(){
   }else if(h==='log'){current='log';show('log');renderLog();document.title='送客イベントログ｜熟ドロ';scrollTo(0,0)}
   else{current='list';show('list');renderList();goSlide(S.slide,false);document.title='熟女泥棒｜熟ドロ';if(prev!=='list')requestAnimationFrame(()=>scrollTo(0,S.scroll))}
 }
-function filterLabel(){const f=FEATURES.find(x=>x.id===S.feature);return [S.view==='saved'?'保存':'',f?f.id:'',S.prov!=='all'?S.prov:'',S.cat!=='すべて'?S.cat:'',S.tag?'#'+S.tag:'',S.q?`「${S.q}」`:'',S.sort].filter(Boolean).join(' / ')}
+function filterLabel(){const f=FEATURES.find(x=>x.id===S.feature);return [S.view==='saved'?'保存':'',S.mOnly?'見放題':'',f?f.id:'',S.prov!=='all'?S.prov:'',S.cat!=='すべて'?S.cat:'',S.tag?'#'+S.tag:'',S.q?`「${S.q}」`:'',S.sort].filter(Boolean).join(' / ')}
 function toList(){if(current!=='list'){history.pushState(null,'',location.pathname+location.search);route()}}
 
 /* ===== 操作 ===== */
 document.addEventListener('click',e=>{
   const op=e.target.closest('a[data-open]');
-  if(op){const w=findW(op.dataset.open);track('outbound_open',{work_id:w.id,provider:w.prov,position:'confirm',entry_source:lastConfirmEv?.entry_source||'direct',list_index:lastConfirmEv?.list_index||null,filters:''});return}
+  if(op){const w=findW(op.dataset.open);track('outbound_open',{work_id:w.id,provider:w.prov,plan:lastConfirmEv?.plan||'single',position:'confirm',entry_source:lastConfirmEv?.entry_source||'direct',list_index:lastConfirmEv?.list_index||null,filters:''});return}
   const a=e.target.closest('a[data-w]');
   if(a){store.set('jd-entry',{id:a.dataset.w,src:a.dataset.src,idx:+a.dataset.idx,filters:a.dataset.src==='list'?filterLabel():'',at:Date.now()},true);return}
   const back=e.target.closest('[data-back]');
@@ -458,13 +485,15 @@ document.addEventListener('click',e=>{
   if(b.dataset.save){const id=b.dataset.save;saved.has(id)?saved.delete(id):saved.add(id);store.set('jd-saved-works',[...saved]);if(current==='detail'){renderDetail(findW(location.hash.slice(3)));watchCta()}else renderList();return}
   if(b.dataset.go){const w=findW(b.dataset.go),fromCard=!!b.dataset.src&&b.dataset.idx!=='';
     const src=fromCard?b.dataset.src:(entry?.src||'direct'),idx=fromCard?+b.dataset.idx:(entry?.idx||null),flt=fromCard?(b.dataset.src==='list'?filterLabel():''):(entry?.filters||'');
-    stopSample();lastEv=track('outbound_click',{work_id:w.id,provider:w.prov,position:b.dataset.pos,entry_source:src,list_index:idx||null,filters:flt});location.hash='go-'+w.id;return}
+    stopSample();if(document.fullscreenElement)document.exitFullscreen?.();lastEv=track('outbound_click',{work_id:w.id,provider:w.prov,plan:b.dataset.plan||'single',position:b.dataset.pos,entry_source:src,list_index:idx||null,filters:flt});location.hash='go-'+w.id;return}
   if(b.dataset.play){playSample(b);return}
   if(b.dataset.stop!==undefined){stopSample();return}
+  if(b.dataset.fs!==undefined){toggleFs(b);return}
   if(b.dataset.tag){track('select_tag',{tag:b.dataset.tag,work_id:b.dataset.from||'',provider:b.dataset.from?findW(b.dataset.from).prov:'',from_view:current});
     Object.assign(S,{tag:S.tag===b.dataset.tag&&current==='list'&&!b.dataset.from?null:b.dataset.tag,view:'all',feature:null,q:'',cat:'すべて',prov:'all',limit:PAGE});
     if(current!=='list'){S.scroll=0;toList()}else renderList();requestAnimationFrame(()=>requestAnimationFrame(()=>$('#listing').scrollIntoView({behavior:'smooth'})));return}
   if(b.hasAttribute('data-tag-clear')){S.tag=null;S.limit=PAGE;renderList();return}
+  if(b.hasAttribute('data-monly')){S.mOnly=!S.mOnly;S.limit=PAGE;renderList();track('filter_monthly',{on:S.mOnly});return}
   if(b.dataset.prov){S.prov=b.dataset.prov;S.limit=PAGE;renderList();return}
   if(b.dataset.cat){S.cat=b.dataset.cat;S.limit=PAGE;renderList();return}
   if(b.dataset.feature){const f=FEATURES.find(x=>x.id===b.dataset.feature);Object.assign(S,{feature:f.id,sort:f.sort,q:'',prov:'all',cat:'すべて',tag:null,view:'all',limit:PAGE});renderList();$('#listing').scrollIntoView({behavior:'smooth'});return}
