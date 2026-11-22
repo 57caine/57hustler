@@ -48,3 +48,19 @@ export function validVerifiedAccessClaims(
     (c.nbf === undefined || (typeof c.nbf === 'number' && Number.isSafeInteger(c.nbf) && c.nbf <= expected.nowSeconds)) &&
     scope !== null && scope.includes(expected.requiredScope);
 }
+
+/** RFC 7636 verifier: 43-128 unreserved ASCII characters, never the challenge itself. */
+export function validPkceVerifier(value:unknown):value is string {
+  return typeof value==='string' && /^[A-Za-z0-9._~-]{43,128}$/.test(value);
+}
+/** Compare S256 challenge using WebCrypto; reject malformed inputs before hashing.
+ * This is only a primitive: the authorization-code exchange must enforce one-time use.
+ */
+export async function verifyPkceS256(verifier:unknown, challenge:unknown):Promise<boolean> {
+  if(!validPkceVerifier(verifier)||!validPkceChallenge('S256',challenge))return false;
+  const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(verifier));
+  const bytes=new Uint8Array(digest);
+  const encoded=Array.from(bytes,b=>String.fromCharCode(b)).join('');
+  const actual=btoa(encoded).replace(/\\+/g,'-').replace(/\\//g,'_').replace(/=+$/,'');
+  return actual===challenge;
+}
