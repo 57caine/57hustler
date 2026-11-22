@@ -10,6 +10,11 @@ export function parseAuthorizationRequest(
   params: URLSearchParams,
   clients: ReadonlyArray<{ clientId: string; redirectUris: readonly string[] }>,
 ): AuthorizationRequest | null {
+  // Bound untrusted authorization URLs before any registry lookup or consent rendering.
+  // Oversized requests can otherwise exhaust logs, middleware and URL parsers.
+  const entries=Array.from(params.entries());
+  if (entries.length !== 7 || entries.some(([k,v]) => k.length > 64 || v.length > 2048) ||
+      params.toString().length > 8192) return null;
   const keys = ['response_type','client_id','redirect_uri','state','code_challenge','code_challenge_method','scope'];
   if (Array.from(params.keys()).some(k => !keys.includes(k)) ||
       keys.some(k => params.getAll(k).length !== 1) ||
