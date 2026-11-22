@@ -1,3 +1,4 @@
+import { validPkceChallenge,validOAuthState,exactRegisteredRedirect,parseRequestedScopes,scopesPermit } from './oauth-contract';
 import { PROTOCOL_VERSION, TOOLS, parseRpc,parseArgs,rpcOk,rpcError,validKey,validUuid,sameIdempotentRequest,parseToolCallParams } from './mcp-contract';
 function expect(condition:boolean,detail:string){if(!condition)throw new Error(detail);}
 export function testMcpContract(){
@@ -46,5 +47,21 @@ export function testMcpContract(){
   expect(parseToolCallParams({name:'get_status',arguments:[]})===null,'array arguments rejected');
   expect(parseToolCallParams({name:'',arguments:{}})===null,'empty tool name rejected');
   expect(parseToolCallParams({name:'x'.repeat(101),arguments:{}})===null,'oversized tool name rejected');
-  return 'mcp contract 45 checks passed';
+  expect(validPkceChallenge('S256','a'.repeat(43)),'PKCE S256 challenge accepted');
+  expect(!validPkceChallenge('plain','a'.repeat(43)),'PKCE plain forbidden');
+  expect(!validPkceChallenge('S256','a'.repeat(42)),'PKCE malformed challenge forbidden');
+  expect(validOAuthState('a'.repeat(32)),'state accepted');
+  expect(!validOAuthState('short'),'weak state rejected');
+  expect(exactRegisteredRedirect('https://client.example/callback',['https://client.example/callback']),'exact redirect accepted');
+  expect(!exactRegisteredRedirect('https://client.example/callback?x=1',['https://client.example/callback']),'redirect query mismatch rejected');
+  expect(!exactRegisteredRedirect('https://client.example.evil/callback',['https://client.example/callback']),'redirect host mismatch rejected');
+  expect(!exactRegisteredRedirect('http://client.example/callback',['http://client.example/callback']),'insecure remote redirect rejected');
+  expect(exactRegisteredRedirect('http://127.0.0.1:3000/cb',['http://127.0.0.1:3000/cb']),'loopback redirect allowed');
+  expect(parseRequestedScopes('consensus.read consensus.write')?.length===2,'scopes accepted');
+  expect(parseRequestedScopes('consensus.admin')===null,'unknown scope rejected');
+  expect(parseRequestedScopes('consensus.read consensus.read')===null,'duplicate scope rejected');
+  expect(scopesPermit(['consensus.read'],'get_result'),'read scope permits read');
+  expect(!scopesPermit(['consensus.read'],'submit_review'),'read scope denies write');
+  expect(!scopesPermit(['consensus.write'],'unrecognized_tool'),'unknown tool denied');
+  return 'mcp contract 61 checks passed';
 }
