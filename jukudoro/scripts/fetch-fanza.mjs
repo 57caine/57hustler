@@ -19,10 +19,13 @@ const OUT = resolve(dirname(fileURLToPath(import.meta.url)), '../dist/data/fanza
 const ENDPOINT = 'https://api.dmm.com/affiliate/v3/ItemList';
 
 // カテゴリはNTRを先頭に、人妻・熟女がメイン（2026-11-20 オーナー指示）
+// 2026-11-22 オーナー指示: 並びは 熟女→人妻、30代・40代を追加
 const QUERIES = [
-  { cat: 'NTR', keyword: '寝取り・寝取られ' },
-  { cat: '人妻', keyword: '人妻' },
   { cat: '熟女', keyword: '熟女' },
+  { cat: '人妻', keyword: '人妻' },
+  { cat: 'NTR', keyword: '寝取り・寝取られ' },
+  { cat: '30代', keyword: '30代' },
+  { cat: '40代', keyword: '40代' },
 ];
 const PER_PAGE = 100;                                   // APIの1回あたり上限
 // 2026-11-22 オーナー指示で1カテゴリ420件
@@ -31,7 +34,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // VR専用作品は除外（2026-11-20 オーナー判断。VR機器がないと見られないため）
 const isVR = (w) => w.tags.some((t) => /VR/.test(t)) || /【VR】|VR】/.test(w.title);
 // カテゴリは取得キーワードではなく作品のジャンルで決める（1作品が複数カテゴリに属してよい）
-const CAT_RULES = [['NTR', /寝取/], ['人妻', /人妻/], ['熟女', /熟女/]];
+// FANZAには年代のジャンルがないため、30代・40代は「そのキーワードの検索結果に出た」か「タイトルに年代表現がある」で判定
+const CAT_RULES = [['熟女', (w) => w.tags.some((t) => /熟女/.test(t))], ['人妻', (w) => w.tags.some((t) => /人妻/.test(t))],
+  ['NTR', (w) => w.tags.some((t) => /寝取/.test(t))], ['30代', (w) => /30代|三十路|アラサー|3\d歳/.test(w.title)], ['40代', (w) => /40代|四十路|アラフォー|4\d歳/.test(w.title)]];
+const CAT_ORDER = CAT_RULES.map(([c]) => c);
 
 if (!API_ID) {
   console.error('DMM_API_ID が設定されていません。GitHub の Settings > Secrets and variables > Actions に登録してください。');
@@ -102,11 +108,16 @@ try {
     const items = await fetchItems(q);
     counts[q.cat] = items.length;
     for (const w of items) {
-      if (!w.id || seen.has(w.id) || isVR(w)) continue;
+      if (!w.id || isVR(w)) continue;
+      if (seen.has(w.id)) { // 既に取得済み: 検索したカテゴリを追加するだけ
+        const prev = works.find((x) => x.id === w.id);
+        if (!prev.cats.includes(q.cat)) { prev.cats.push(q.cat); prev.cats.sort((a, b) => CAT_ORDER.indexOf(a) - CAT_ORDER.indexOf(b)); prev.cat = prev.cats[0]; }
+        continue;
+      }
       seen.add(w.id);
-      const cats = CAT_RULES.filter(([, re]) => w.tags.some((t) => re.test(t))).map(([c]) => c);
-      w.cats = cats.length ? cats : [q.cat];
-      w.cat = w.cats[0]; // 表示用の代表カテゴリ（NTR→人妻→熟女の順）
+      const cats = CAT_RULES.filter(([c, test]) => c === q.cat || test(w)).map(([c]) => c);
+      w.cats = cats;
+      w.cat = w.cats[0]; // 表示用の代表カテゴリ（熟女→人妻→NTR→30代→40代の順）
       w.rank = works.length + 1;
       works.push(w);
     }
@@ -118,7 +129,7 @@ try {
   console.log('FANZA上の総件数（キーワード一致）:', JSON.stringify(totals));
   const withMovie = works.filter((w) => w.sampleMovie).length;
   const withSale = works.filter((w) => w.campaign).length;
-  const catCount = Object.fromEntries(CAT_RULES.map(([c]) => [c, works.filter((w) => w.cats.includes(c)).length]));
+  const catCount = Object.fromEntries(CAT_ORDER.map((c) => [c, works.filter((w) => w.cats.includes(c)).length]));
   console.log('カテゴリ別（重複あり）:', JSON.stringify(catCount));
   console.log(`保存: ${works.length}作品（取得件数 ${JSON.stringify(counts)}）サンプル動画あり ${withMovie}・セール中 ${withSale}`);
   console.log('例:', works.slice(0, 3).map((w) => `${w.id} ${w.title.slice(0, 30)} ${w.price ?? ''}`).join(' | '));

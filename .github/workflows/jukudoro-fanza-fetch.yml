@@ -38,6 +38,11 @@ jobs:
           # API用（末尾-990〜999）の nsplot-990 はリンクに出る公開情報のため直接指定する
           DMM_AFFILIATE_ID: nsplot-990
         run: node jukudoro/scripts/fetch-fanza.mjs
+      - name: Discover FANZA monthly services (print only)
+        env:
+          DMM_API_ID: ${{ secrets.DMM_API_ID }}
+          DMM_AFFILIATE_ID: nsplot-990
+        run: node jukudoro/scripts/discover-fanza-monthly.mjs || true
       - name: Commit data
         run: |
           git config user.name "github-actions[bot]"
