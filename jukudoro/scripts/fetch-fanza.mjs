@@ -25,7 +25,8 @@ const QUERIES = [
   { cat: '熟女', keyword: '熟女' },
 ];
 const PER_PAGE = 100;                                   // APIの1回あたり上限
-const MAX_PER_CAT = Number(process.env.JUKUDORO_MAX_PER_CAT || 300); // 1カテゴリあたりの取得上限
+// 2026-11-22 オーナー指示で1カテゴリ420件
+const MAX_PER_CAT = Number(process.env.JUKUDORO_MAX_PER_CAT || 420); // 1カテゴリあたりの取得上限
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // VR専用作品は除外（2026-11-20 オーナー判断。VR機器がないと見られないため）
 const isVR = (w) => w.tags.some((t) => /VR/.test(t)) || /【VR】|VR】/.test(w.title);

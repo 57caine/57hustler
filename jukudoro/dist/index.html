@@ -24,6 +24,7 @@ nav{display:flex;gap:24px}
 nav button{border:0;background:none;color:#c6b5b4;padding:8px 0;min-height:40px}
 nav button.active{color:#ff536c;border-bottom:2px solid #ff536c}
 .wrap{max-width:1040px;margin:auto;padding:14px 20px}
+.ad-note{margin:0 0 6px;font-size:10px;color:var(--sub);text-align:right}
 .pr{display:inline-block;border:1px solid var(--sub);color:#e1b2a4;border-radius:3px;padding:0 5px;font-size:9px;letter-spacing:1px;line-height:1.6}
 
 /* 特集カルーセル（3枠） */
@@ -204,7 +205,7 @@ body.has-sticky{padding-bottom:72px}
 </style></head><body><div class="test">PRIVATE PREVIEW ・ テスト版<span class="pc-only">（Fantiaは架空データ・外部へは確認画面を経由）</span></div>
 <header><div class="head"><a class="logo" href="#">熟女泥棒<small>熟ドロ / JUKUDORO</small></a>
 <nav aria-label="メインメニュー"><button class="active" data-nav="list">作品を探す</button><button data-nav="ranking">ランキング</button><button data-nav="saved">保存した作品 <span id="saveCount">0</span></button></nav></div></header>
-<main class="wrap">
+<main class="wrap"><p class="ad-note">当サイトはアフィリエイト広告を利用しています</p>
 <div id="listView">
 <section class="carousel" aria-roledescription="カルーセル" aria-label="特集">
 <div class="track" id="track"></div>
@@ -325,7 +326,7 @@ function card(w,src,idx,rank){
 <div class="card-body"><span class="cardmeta"><span class="prov ${w.prov.toLowerCase()}">${w.prov}</span><span>${w.cat}</span>${w.demo?'<span class="demo">架空</span>':''}</span><h3>${esc(w.title)}</h3><span class="who">${esc(w.who)}</span>${priceRow(w)}</div></a>
 <button class="save" aria-label="${esc(w.title)}を保存" aria-pressed="${saved.has(w.id)}" data-save="${w.id}">${saved.has(w.id)?'♥':'♡'}</button>
 <button class="play" data-play="${w.id}" data-pos="${src}_card" aria-label="${esc(w.title)}のサンプル動画を再生"><span aria-hidden="true">▶</span> サンプル</button>
-<div class="card-foot"><div class="tags">${tagBtns(w,2)}</div><button class="buy" data-go="${w.id}" data-pos="${src}_card" data-src="${src}" data-idx="${idx}"><span>${BUY_BTN[w.prov]}</span><small>${w.prov}</small><span class="pr">PR</span></button></div></article>`;
+<div class="card-foot"><div class="tags">${tagBtns(w,2)}</div><button class="buy" data-go="${w.id}" data-pos="${src}_card" data-src="${src}" data-idx="${idx}"><span>${BUY_BTN[w.prov]}</span><small>${w.prov}</small></button></div></article>`;
 }
 function renderCarousel(){
   $('#track').innerHTML=FEATURES.map((f,i)=>{const ws=W.filter(f.test),fz=ws.filter(w=>w.prov==='FANZA').length,ft=ws.length-fz;
@@ -374,7 +375,7 @@ function renderDetail(w){
 <h1>${esc(w.title)}</h1>
 <dl><dt>提供元</dt><dd>${w.prov}${w.demo?'（架空データ）':''}</dd>${w.actresses||w.who?`<dt>出演・クリエイター</dt><dd>${esc(w.who)}</dd>`:''}${w.maker?`<dt>メーカー</dt><dd>${esc(w.maker)}</dd>`:''}<dt>カテゴリ</dt><dd>${w.cats.join('・')}</dd>${w.date?`<dt>配信開始</dt><dd>${w.date.slice(0,10)}</dd>`:''}${w.price?`<dt>価格</dt><dd>${priceRow(w)}</dd>`:''}${w.campaign?`<dt>セール</dt><dd>${esc(w.campaign.title)}${w.campaign.end?`（${w.campaign.end.slice(0,10)}まで）`:''}</dd>`:''}<dt>購入形式</dt><dd>${PROV_FORM[w.prov]}</dd></dl>
 <div class="cta" id="mainCta"><button class="cta-btn" data-go="${w.id}" data-pos="detail_main">${PROV_BTN[w.prov]} <span aria-hidden="true">→</span></button>
-<p class="cta-note"><span>${w.prov}の作品ページへ移動します（テスト版では確認画面）</span><span class="pr">PR</span></p></div>
+<p class="cta-note"><span>${w.prov}の作品ページへ移動します（テスト版では確認画面）</span></p></div>
 <p class="lead"><b>作品概要</b><br>${esc(w.summary)}</p>
 <div><b style="font-size:12px">タグ</b><div class="tags" style="margin-top:4px">${tagBtns(w,9)}</div></div>
 <button class="save-wide" data-save="${w.id}" aria-pressed="${on}">${on?'♥ 保存済み':'♡ あとで見るために保存'}</button>
