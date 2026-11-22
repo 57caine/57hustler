@@ -123,6 +123,32 @@ try {
     }
   }
   if (works.length === 0) throw new Error('作品が1件も取得できませんでした');
+
+  // 月額（見放題ch）に含まれる作品を同じキーワードで取得し、作品IDで突き合わせる
+  // standard=見放題ch / premium=見放題ch デラックス。リンクはAPIが返すアフィリエイトURLだけを使う
+  const MONTHLY = [{ floor: 'standard', name: '見放題ch' }, { floor: 'premium', name: '見放題ch デラックス' }];
+  const monthlyMap = new Map();
+  const monthlyCount = {};
+  for (const m of MONTHLY) {
+    monthlyCount[m.floor] = 0;
+    for (const q of QUERIES) {
+      for (let offset = 1; offset <= MAX_PER_CAT; offset += PER_PAGE) {
+        const params = new URLSearchParams({ api_id: API_ID, affiliate_id: AFFILIATE_ID, site: 'FANZA', service: 'monthly', floor: m.floor,
+          hits: String(PER_PAGE), offset: String(offset), sort: 'rank', keyword: q.keyword, output: 'json' });
+        const body = await (await fetch(`${ENDPOINT}?${params}`)).json();
+        const items = body?.result?.items ?? [];
+        for (const it of items) {
+          const plans = monthlyMap.get(it.content_id) ?? {};
+          if (!plans[m.floor]) { plans[m.floor] = { name: m.name, url: it.affiliateURL, price: it.prices?.price ?? null }; monthlyCount[m.floor]++; }
+          monthlyMap.set(it.content_id, plans);
+        }
+        if (items.length < PER_PAGE) break;
+        await sleep(600);
+      }
+    }
+  }
+  for (const w of works) if (monthlyMap.has(w.id)) w.monthly = monthlyMap.get(w.id);
+  console.log('見放題で取得した作品数:', JSON.stringify(monthlyCount), '単品作品のうち見放題にも含まれる:', works.filter((w) => w.monthly).length);
   await mkdir(dirname(OUT), { recursive: true });
   const out = { fetchedAt: new Date().toISOString(), source: 'DMM Affiliate API v3 ItemList (FANZA videoa)', totals, counts, works };
   await writeFile(OUT, JSON.stringify(out) + '\n');
