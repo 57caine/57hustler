@@ -20,8 +20,12 @@ export function parseAuthorizationRequest(
   const state = params.get('state')!;
   const codeChallenge = params.get('code_challenge')!;
   const scopes = parseRequestedScopes(params.get('scope'));
-  const client = clients.find(c => c.clientId === clientId);
-  if (!client || !exactRegisteredRedirect(redirectUri,client.redirectUris) ||
+  // Ambiguous registration must fail closed; never let configuration order select a client.
+  const matches = clients.filter(c => c.clientId === clientId);
+  if (matches.length !== 1 || !Array.isArray(matches[0].redirectUris) ||
+      new Set(matches[0].redirectUris).size !== matches[0].redirectUris.length) return null;
+  const client = matches[0];
+  if (!exactRegisteredRedirect(redirectUri,client.redirectUris) ||
       !validOAuthState(state) || !validPkceChallenge('S256',codeChallenge) ||
       !scopes || scopes.length === 0) return null;
   return { clientId,redirectUri,state,codeChallenge,scopes };
