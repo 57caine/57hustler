@@ -15,8 +15,9 @@ export async function POST(request:NextRequest){
  // A Supabase session JWT is not an OAuth access token issued to a registered
  // ChatGPT/Claude MCP client. Never expose the endpoint merely by toggling the
  // bridge flag before the OAuth resource-server adapter is connected.
- if(process.env.CONSENSUS_OAUTH_RESOURCE_SERVER_ENABLED!=='true')
-   return fail(503,'OAuth resource-server authorization is not yet connected');
+ // No flag may bypass this guard until the resource handler actually verifies
+ // issuer, audience, signature, revocation and per-tool scopes.
+ return fail(503,'OAuth resource-server authorization is not yet connected');
  const origin=request.headers.get('origin');
  if(origin&&origin!==request.nextUrl.origin)return fail(403,'Origin not allowed');
  // Reject oversized requests before reading the body; keep the post-read check for chunked requests.
