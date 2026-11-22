@@ -11,9 +11,10 @@ function error(status: number, name: string) {
 }
 /** No secret, OAuth code or access token is ever written to logs. */
 export async function POST(request: NextRequest) {
-  // Two separate gates: no public token endpoint before an explicit security review.
+  // All three gates must be enabled only after authorization and resource-server review.
   if (process.env.MCP_BRIDGE_ENABLED !== 'true' ||
-      process.env.CONSENSUS_OAUTH_TOKEN_EXCHANGE_ENABLED !== 'true') {
+      process.env.CONSENSUS_OAUTH_TOKEN_EXCHANGE_ENABLED !== 'true' ||
+      process.env.CONSENSUS_OAUTH_AUTHORIZATION_ENABLED !== 'true') {
     return error(503, 'temporarily_unavailable');
   }
   const origin = request.headers.get('origin');
