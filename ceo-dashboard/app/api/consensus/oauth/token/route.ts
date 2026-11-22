@@ -67,12 +67,9 @@ export async function POST(request: NextRequest) {
   } catch { return error(503, 'temporarily_unavailable'); }
   // Reject ambiguous registrations instead of silently selecting the first client.
   // This must match the authorization endpoint's duplicate-client policy.
-  const matches = clients.filter(c => c.clientId === clientId);
-  if (matches.length !== 1 || matches[0].redirectUris.length === 0 ||
-      new Set(matches[0].redirectUris).size !== matches[0].redirectUris.length) {
-    return error(400, 'invalid_client');
-  }
-  const registered = matches[0].redirectUris;
+  const registeredClient = uniqueOAuthClient(clients,clientId);
+  if (!registeredClient) return error(400, 'invalid_client');
+  const registered = registeredClient.redirectUris;
 
   const issuer = process.env.CONSENSUS_OAUTH_ISSUER;
   const signingSecret = process.env.CONSENSUS_OAUTH_SIGNING_SECRET;
