@@ -36,3 +36,9 @@
 - Gemini: https://support.google.com/gemini/answer/17209137
 
 **運用上の禁止**: MCP接続のために本人のSupabaseトークンやGitHubトークンをチャットで共有しない。追加のモデルAPI従量課金を開始しない。
+
+## 2026-11-22 OAuth事前検証（未接続）
+- `lib/consensus/oauth-contract.ts` にPKCE S256 challenge形式、state形式、redirect URIの登録文字列完全一致、read/write scope最小権限の検証関数を追加。
+- `mcp-contract.test.ts` に16項目を追加（コード上61項目）。既存CIの契約テスト経路から読み込むが、CI実行成功は未確認。
+- **これらは認可サーバーではない。** PKCE verifier照合、stateのセッション紐付け、ユーザー同意画面、authorization codeの単回利用、token発行/失効、audience/issuer検証、保護されたMCP入口へのscope適用は未実装。
+- 本番MCPは引き続き無効。既存Supabase JWTを外部チャットに渡して代用しない。
