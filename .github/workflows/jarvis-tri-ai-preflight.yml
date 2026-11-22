@@ -53,5 +53,9 @@ jobs:
         run: |
           npx tsc lib/consensus/oauth-bearer.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-bearer
           node -e "require('/tmp/consensus-bearer/oauth-bearer.test.js').testOAuthBearer().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
+      - name: Run OAuth end-to-end token primitive checks
+        run: |
+          npx tsc lib/consensus/oauth-token-flow.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-token-flow
+          node -e "require('/tmp/consensus-token-flow/oauth-token-flow.test.js').testOAuthTokenFlow().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
       - name: Next.js production build
         run: npm run build
