@@ -61,6 +61,6 @@ export async function verifyPkceS256(verifier:unknown, challenge:unknown):Promis
   const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(verifier));
   const bytes=new Uint8Array(digest);
   const encoded=Array.from(bytes,b=>String.fromCharCode(b)).join('');
-  const actual=btoa(encoded).replace(/\\+/g,'-').replace(/\\//g,'_').replace(/=+$/,'');
+  const actual=btoa(encoded).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
   return actual===challenge;
 }
