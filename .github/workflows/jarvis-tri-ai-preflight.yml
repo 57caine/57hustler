@@ -57,5 +57,9 @@ jobs:
         run: |
           npx tsc lib/consensus/oauth-token-flow.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-token-flow
           node -e "require('/tmp/consensus-token-flow/oauth-token-flow.test.js').testOAuthTokenFlow().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
+      - name: Run OAuth MCP resource authorization checks
+        run: |
+          npx tsc lib/consensus/oauth-resource-authorization.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-resource-auth
+          node -e "require('/tmp/consensus-resource-auth/oauth-resource-authorization.test.js').testOAuthResourceAuthorization().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
       - name: Next.js production build
         run: npm run build
