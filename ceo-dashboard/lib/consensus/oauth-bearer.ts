@@ -1,0 +1,76 @@
+import { parseRequestedScopes, type McpScope } from './oauth-contract';
+
+/** Signed, short-lived OAuth bearer primitive. A production token endpoint must first
+ * validate one-time authorization-code consumption and explicit owner consent.
+ * Key material must come from a server-only secret manager; never NEXT_PUBLIC_*.
+ * Revocation and key rotation are mandatory before production use.
+ */
+export type OAuthBearerClaims = {
+  iss: string; aud: string; sub: string; client_id: string;
+  iat: number; exp: number; jti: string; scope: string;
+};
+const encoder = new TextEncoder();
+function b64url(bytes: Uint8Array): string {
+  return Buffer.from(bytes).toString('base64url');
+}
+function decodeJson(segment: string): unknown {
+  return JSON.parse(Buffer.from(segment, 'base64url').toString('utf8'));
+}
+function validClaims(c: OAuthBearerClaims, now: number): boolean {
+  return typeof c.iss === 'string' && c.iss.startsWith('https://') &&
+    typeof c.aud === 'string' && c.aud.length > 0 &&
+    typeof c.sub === 'string' && c.sub.length > 0 &&
+    typeof c.client_id === 'string' && c.client_id.length > 0 &&
+    typeof c.jti === 'string' && /^[0-9a-f]{32}$/.test(c.jti) &&
+    Number.isSafeInteger(c.iat) && c.iat <= now &&
+    Number.isSafeInteger(c.exp) && c.exp > now && c.exp - c.iat <= 900 &&
+    parseRequestedScopes(c.scope) !== null;
+}
+async function keyFor(secret: string): Promise<CryptoKey> {
+  if (typeof secret !== 'string' || encoder.encode(secret).length < 32) throw new Error('Signing secret too short');
+  return crypto.subtle.importKey('raw', encoder.encode(secret), {name:'HMAC',hash:'SHA-256'}, false, ['sign','verify']);
+}
+export async function issueOAuthBearer(input: {
+  issuer: string; audience: string; subject: string; clientId: string;
+  scopes: readonly McpScope[]; nowSeconds: number; secret: string;
+}): Promise<string | null> {
+  try {
+    if (!Array.isArray(input.scopes) || !input.scopes.length) return null;
+    const jti = Array.from(crypto.getRandomValues(new Uint8Array(16)), b=>b.toString(16).padStart(2,'0')).join('');
+    const claims: OAuthBearerClaims = {
+      iss:input.issuer,aud:input.audience,sub:input.subject,client_id:input.clientId,
+      iat:input.nowSeconds,exp:input.nowSeconds+600,jti,scope:input.scopes.join(' ')
+    };
+    if (!validClaims(claims,input.nowSeconds)) return null;
+    const key=await keyFor(input.secret);
+    const payload=b64url(encoder.encode(JSON.stringify({alg:'HS256',typ:'at+jwt'})))+'.'+
+      b64url(encoder.encode(JSON.stringify(claims)));
+    const sig=await crypto.subtle.sign('HMAC',key,encoder.encode(payload));
+    return payload+'.'+b64url(new Uint8Array(sig));
+  } catch { return null; }
+}
+export async function verifyOAuthBearer(token: unknown, expected: {
+  issuer: string; audience: string; nowSeconds: number; secret: string;
+  isRevoked: (jti: string) => Promise<boolean>;
+}): Promise<OAuthBearerClaims | null> {
+  try {
+    if (typeof token !== 'string' || token.length > 4096 ||
+        !/^[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+$/.test(token)) return null;
+    const parts=token.split('.');
+    const header=decodeJson(parts[0]);
+    if (!header || typeof header !== 'object' || Array.isArray(header) ||
+        (header as Record<string,unknown>).alg !== 'HS256' ||
+        (header as Record<string,unknown>).typ !== 'at+jwt' ||
+        Object.keys(header).length !== 2) return null;
+    const key=await keyFor(expected.secret);
+    const signature=Buffer.from(parts[2],'base64url');
+    if (signature.length!==32 || !(await crypto.subtle.verify('HMAC',key,signature,encoder.encode(parts[0]+'.'+parts[1])))) return null;
+    const claims=decodeJson(parts[1]) as OAuthBearerClaims;
+    if (!claims || typeof claims !== 'object' || Array.isArray(claims) ||
+        !validClaims(claims,expected.nowSeconds) ||
+        claims.iss!==expected.issuer || claims.aud!==expected.audience ||
+        !Number.isSafeInteger(expected.nowSeconds) ||
+        await expected.isRevoked(claims.jti)) return null;
+    return claims;
+  } catch { return null; }
+}
