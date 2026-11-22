@@ -35,7 +35,7 @@ export function rpcError(id:string|number|null,code:number,message:string){retur
 export function parseArgs(value:unknown,required:readonly string[]){
  if(!value||typeof value!=='object'||Array.isArray(value))return null;
  const v=value as Record<string,unknown>;
- if(Object.keys(v).some(k=>!required.includes(k))||required.some(k=>typeof v[k]!=='string'))return null;
+ if(Object.keys(v).some(k=>!required.includes(k))||required.some(k=>!Object.prototype.hasOwnProperty.call(v,k)||typeof v[k]!=='string'))return null;
  return v as Record<string,string>;
 }
 export function validKey(value:string){return /^[A-Za-z0-9_-]{8,128}$/.test(value);}
