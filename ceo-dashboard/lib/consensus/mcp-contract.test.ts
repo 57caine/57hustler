@@ -37,5 +37,7 @@ export function testMcpContract(){
   expect(!validKey('a'.repeat(129)),'oversized idempotency key rejected');
   expect(!validKey('abc\\n12345678'),'control character in key rejected');
   expect(!sameIdempotentRequest({question:'hello',origin:'chatgpt'},{question:'hello',origin:'gemini'}),'cross-provider replay rejected');
-  return 'mcp contract 36 checks passed';
+  expect(parseArgs(Object.create({requestId:'inherited'}),['requestId'])===null,'inherited required property rejected');
+  expect(parseArgs({requestId:'own'},['requestId'])?.requestId==='own','own required property accepted');
+  return 'mcp contract 38 checks passed';
 }
