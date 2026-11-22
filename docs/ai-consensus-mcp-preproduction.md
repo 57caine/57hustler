@@ -50,3 +50,9 @@
 - フォーム形式のみ、登録済みクライアント・厳格リダイレクト・4096バイト上限・重複パラメータ拒否を適用。署名付きトークンに含まれる実際の権限を応答に返す。
 - **未完成・有効化禁止**：本人ログイン/同意UI、認可コード発行HTTP入口、トークン失効の永続化/照会、MCP側のOAuth bearer検証とユーザーRLS接続、OAuth discovery metadata、実DBのSQL migration、外部クライアント実機E2E。これらが完了するまで接続可能と表示しない。
 - ChatGPT/Claude優先。Geminiは公式機能の地域制限を尊重し手動回答取り込みを維持。
+
+## 2026-11-22 OAuth Protected Resource Metadata（本番無効）
+- `GET /.well-known/oauth-protected-resource` を追加（RFC 9728 の保護リソース発見）。`resource` は `https://<host>/api/consensus/mcp`、`authorization_servers` は同一originのissuer、read/write scopeを広告する。
+- **本番の両ゲートが無効なら503**。`CONSENSUS_OAUTH_ISSUER` が実際のHTTPS originと一致しない場合も503。
+- これは発見用メタデータだけであり、**OAuth authorization server metadata /authorize / 本人同意 / MCP bearer強制は未完成**。ChatGPT・Claudeへの接続を有効と見なさない。
+- 次回は最新CIを確認し、RFC 8414 authorization server metadata・authorize/consent・署名Bearer検証とRLSを優先する。
