@@ -28,5 +28,10 @@ export function testAuthorizationRequest(): string {
     mutate(p);
     assert(parseAuthorizationRequest(p,clients)===null,label);
   }
-  return 'OAuth authorization request 13 checks passed';
+  assert(parseAuthorizationRequest(base,[...clients,...clients])===null,'duplicate registered client rejected');
+  assert(parseAuthorizationRequest(base,[{clientId:'chatgpt',redirectUris:[redirect,redirect]}])===null,
+    'duplicate registered redirect rejected');
+  assert(parseAuthorizationRequest(base,[{clientId:'other',redirectUris:[redirect]},...clients])?.clientId==='chatgpt',
+    'unrelated registered client permitted');
+  return 'OAuth authorization request 16 checks passed';
 }
