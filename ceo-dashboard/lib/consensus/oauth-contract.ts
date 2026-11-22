@@ -64,3 +64,14 @@ export async function verifyPkceS256(verifier:unknown, challenge:unknown):Promis
   const actual=btoa(encoded).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
   return actual===challenge;
 }
+
+/** Fail closed on ambiguous client registrations across authorization and token endpoints. */
+export function uniqueOAuthClient<T extends {clientId:string;redirectUris:readonly string[]}>(
+  clients:readonly T[], clientId:string,
+):T | null {
+  const matches=clients.filter(c=>c.clientId===clientId);
+  if(matches.length!==1 || !Array.isArray(matches[0].redirectUris) ||
+     matches[0].redirectUris.length===0 ||
+     new Set(matches[0].redirectUris).size!==matches[0].redirectUris.length) return null;
+  return matches[0];
+}
