@@ -1,4 +1,4 @@
-import { validPkceChallenge,validOAuthState,exactRegisteredRedirect,parseRequestedScopes,scopesPermit,validVerifiedAccessClaims } from './oauth-contract';
+import { validPkceChallenge,validOAuthState,exactRegisteredRedirect,parseRequestedScopes,scopesPermit,validVerifiedAccessClaims,validPkceVerifier,verifyPkceS256 } from './oauth-contract';
 import { PROTOCOL_VERSION, TOOLS, parseRpc,parseArgs,rpcOk,rpcError,validKey,validUuid,sameIdempotentRequest,parseToolCallParams } from './mcp-contract';
 function expect(condition:boolean,detail:string){if(!condition)throw new Error(detail);}
 export function testMcpContract(){
@@ -76,4 +76,18 @@ export function testMcpContract(){
   expect(!validVerifiedAccessClaims({...access,exp:'200'},policy),'string expiration rejected');
   expect(!validVerifiedAccessClaims(null,policy),'null claims rejected');
   return 'mcp contract 71 checks passed';
+}
+
+/** RFC 7636 Appendix B vector and rejection paths. Run separately from sync contract. */
+export async function testPkceExchangePrimitive(){
+ const verifier='dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk';
+ const challenge='E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM';
+ expect(validPkceVerifier(verifier),'RFC verifier valid');
+ expect(await verifyPkceS256(verifier,challenge),'RFC S256 vector accepted');
+ expect(!(await verifyPkceS256(verifier,'a'.repeat(43))),'wrong challenge rejected');
+ expect(!(await verifyPkceS256('short',challenge)),'short verifier rejected');
+ expect(!(await verifyPkceS256(verifier+'!',challenge)),'illegal verifier character rejected');
+ expect(!(await verifyPkceS256(verifier,challenge+'=')),'padded challenge rejected');
+ expect(!validPkceVerifier('a'.repeat(129)),'oversized verifier rejected');
+ return 'PKCE S256 primitive 7 checks passed';
 }
