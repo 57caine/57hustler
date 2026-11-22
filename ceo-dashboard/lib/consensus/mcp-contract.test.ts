@@ -1,4 +1,4 @@
-import { validPkceChallenge,validOAuthState,exactRegisteredRedirect,parseRequestedScopes,scopesPermit } from './oauth-contract';
+import { validPkceChallenge,validOAuthState,exactRegisteredRedirect,parseRequestedScopes,scopesPermit,validVerifiedAccessClaims } from './oauth-contract';
 import { PROTOCOL_VERSION, TOOLS, parseRpc,parseArgs,rpcOk,rpcError,validKey,validUuid,sameIdempotentRequest,parseToolCallParams } from './mcp-contract';
 function expect(condition:boolean,detail:string){if(!condition)throw new Error(detail);}
 export function testMcpContract(){
@@ -63,5 +63,17 @@ export function testMcpContract(){
   expect(scopesPermit(['consensus.read'],'get_result'),'read scope permits read');
   expect(!scopesPermit(['consensus.read'],'submit_review'),'read scope denies write');
   expect(!scopesPermit(['consensus.write'],'unrecognized_tool'),'unknown tool denied');
-  return 'mcp contract 61 checks passed';
+  const access={iss:'https://issuer.example',aud:'consensus-mcp',sub:'owner-1',iat:100,nbf:100,exp:200,scope:'consensus.read'};
+  const policy={issuer:'https://issuer.example',audience:'consensus-mcp',subject:'owner-1',nowSeconds:150,requiredScope:'consensus.read' as const};
+  expect(validVerifiedAccessClaims(access,policy),'verified claim policy accepts valid claims');
+  expect(!validVerifiedAccessClaims({...access,sub:'owner-2'},policy),'other owner rejected');
+  expect(!validVerifiedAccessClaims({...access,aud:'other'},policy),'other audience rejected');
+  expect(!validVerifiedAccessClaims({...access,iss:'https://evil.example'},policy),'other issuer rejected');
+  expect(!validVerifiedAccessClaims({...access,exp:150},policy),'expired at boundary rejected');
+  expect(!validVerifiedAccessClaims({...access,nbf:151},policy),'future not-before rejected');
+  expect(!validVerifiedAccessClaims({...access,iat:151},policy),'future issued-at rejected');
+  expect(!validVerifiedAccessClaims({...access,scope:'consensus.write'},policy),'missing required scope rejected');
+  expect(!validVerifiedAccessClaims({...access,exp:'200'},policy),'string expiration rejected');
+  expect(!validVerifiedAccessClaims(null,policy),'null claims rejected');
+  return 'mcp contract 71 checks passed';
 }
