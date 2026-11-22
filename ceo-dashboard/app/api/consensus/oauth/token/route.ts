@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { createOAuthCodeStore, type OAuthCodeDatabase } from '@/lib/consensus/oauth-code-store';
 import { exchangeCodeForBearer } from '@/lib/consensus/oauth-token-flow';
+import { uniqueOAuthClient } from '@/lib/consensus/oauth-contract';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
