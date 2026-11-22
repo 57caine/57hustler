@@ -68,6 +68,10 @@ export async function verifyOAuthBearer(token: unknown, expected: {
     // encodings even when they decode to the very same signature bytes.
     if (signature.length!==32 || signature.toString('base64url')!==parts[2] ||
         !(await crypto.subtle.verify('HMAC',key,signature,encoder.encode(parts[0]+'.'+parts[1])))) return null;
+    // Reject alternate base64url representations of the signed header/payload too.
+    // A cryptographically valid signature must not authorize noncanonical encodings.
+    if (Buffer.from(parts[0], 'base64url').toString('base64url') !== parts[0] ||
+        Buffer.from(parts[1], 'base64url').toString('base64url') !== parts[1]) return null;
     const claims=decodeJson(parts[1]) as OAuthBearerClaims;
     if (!claims || typeof claims !== 'object' || Array.isArray(claims) ||
         !validClaims(claims,expected.nowSeconds) ||
