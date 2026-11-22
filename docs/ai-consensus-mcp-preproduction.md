@@ -56,3 +56,9 @@
 - **本番の両ゲートが無効なら503**。`CONSENSUS_OAUTH_ISSUER` が実際のHTTPS originと一致しない場合も503。
 - これは発見用メタデータだけであり、**OAuth authorization server metadata /authorize / 本人同意 / MCP bearer強制は未完成**。ChatGPT・Claudeへの接続を有効と見なさない。
 - 次回は最新CIを確認し、RFC 8414 authorization server metadata・authorize/consent・署名Bearer検証とRLSを優先する。
+
+## 2026-11-22 21:31 JST 検証と接続準備
+- 最新head `b24c775` のGitHub Actions [Run #56](https://github.com/57caine/57hustler/actions/runs/45020133372) は **success**。前回のJWT署名表記の改ざんテスト失敗は解消した。ただし実機接続の証明ではない。
+- `/.well-known/oauth-authorization-server` にRFC 8414形式のOAuth認可サーバーメタデータを追加。既存MCP/tokenの2つのゲートに加えて `CONSENSUS_OAUTH_AUTHORIZATION_ENABLED=true` が必要。既定503。
+- **このメタデータは未実装の `/api/consensus/oauth/authorize` を案内するため、本番有効化厳禁。** 同意画面・ログインと同意記録・トークン失効・MCPのBearer署名/issuer/audience/scope適用・SQL migration・実機E2E完了後にのみ公開検討。
+- 今回はGitHub Draft PR #251のみ。PR #250 / Issue #242/#252との役割重複を避ける。Geminiの公式接続はブロッカーにせず手動共有を維持。
