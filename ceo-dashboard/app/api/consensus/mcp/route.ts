@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
-import { PROTOCOL_VERSION,TOOLS,parseRpc,parseArgs,rpcOk,rpcError,validKey,validUuid,resultText,sameIdempotentRequest } from '@/lib/consensus/mcp-contract';
+import { PROTOCOL_VERSION,TOOLS,parseRpc,parseArgs,rpcOk,rpcError,validKey,validUuid,resultText,sameIdempotentRequest,parseToolCallParams } from '@/lib/consensus/mcp-contract';
 
 export const dynamic='force-dynamic';
 export const runtime='nodejs';
@@ -70,10 +70,8 @@ export async function POST(request:NextRequest){
  if(rpc.method==='ping')return respond(rpcOk(rpc.id,{}));
  if(rpc.method==='tools/list')return respond(rpcOk(rpc.id,{tools:TOOLS}));
  if(rpc.method!=='tools/call')return respond(rpcError(rpc.id,-32601,'Method not found'));
- const params=rpc.params;
- if(!params||typeof params!=='object'||Array.isArray(params))return respond(rpcError(rpc.id,-32602,'Invalid params'));
- const p=params as Record<string,unknown>;
- if(typeof p.name!=='string')return respond(rpcError(rpc.id,-32602,'Tool name required'));
+ const p=parseToolCallParams(rpc.params);
+ if(!p)return respond(rpcError(rpc.id,-32602,'Invalid tool-call params'));
  const owner=authUser.user.id;
  const input=p.arguments;
  if(p.name==='submit_question'){
