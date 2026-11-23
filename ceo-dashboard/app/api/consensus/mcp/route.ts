@@ -18,6 +18,9 @@ export async function POST(request:NextRequest){
  // No flag may bypass this guard until the resource handler actually verifies
  // issuer, audience, signature, revocation and per-tool scopes.
  return fail(503,'OAuth resource-server authorization is not yet connected');
+}
+// Retained for the future OAuth adapter; deliberately not reachable from POST.
+async function handleAuthorizedTransport(request:NextRequest){
  const origin=request.headers.get('origin');
  if(origin&&origin!==request.nextUrl.origin)return fail(403,'Origin not allowed');
  // Reject oversized requests before reading the body; keep the post-read check for chunked requests.
