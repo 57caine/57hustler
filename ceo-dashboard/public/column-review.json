@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T01:06:33.460Z",
+  "generatedAt": "2026-11-23T01:29:46.272Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -115,16 +115,16 @@
       "slug": "smile-surgery-guide-2026",
       "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
       "metrics": {
-        "sessions": 19,
-        "bounceRate": 0.3684210526315789,
-        "avgSessionDuration": 258.0673572631579,
+        "sessions": 17,
+        "bounceRate": 0.35294117647058826,
+        "avgSessionDuration": 189.19150394117648,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション19件・affiliate_clickゼロ"
+        "セッション17件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -327,16 +327,16 @@
       "slug": "acuvue-zenkindai-hikaku",
       "title": "acuvue-zenkindai-hikaku",
       "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 129.79994887499998,
+        "sessions": 9,
+        "bounceRate": 0.4444444444444444,
+        "avgSessionDuration": 117.42254566666664,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
+        "セッション9件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
