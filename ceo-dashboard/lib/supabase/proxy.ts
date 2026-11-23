@@ -3,7 +3,19 @@ import { NextResponse, type NextRequest } from 'next/server';
 
 // CEOダッシュボード全体の認証ゲート。全リクエストでセッションを検証・更新し、
 // 未ログインならログイン画面へリダイレクトする。
+const PUBLIC_OAUTH_PATHS = new Set([
+  '/.well-known/oauth-protected-resource',
+  '/.well-known/oauth-authorization-server',
+  '/api/consensus/oauth/token',
+  '/api/consensus/mcp',
+]);
+// Authorization requests must survive the login round-trip with their query intact.
+const PRESERVE_QUERY_PREFIXES = ['/api/consensus/oauth/authorize', '/consensus/oauth/consent'];
+
 export async function updateSession(request: NextRequest) {
+  // Exact-match allowlist (no prefix matching). Each endpoint is default-disabled by env
+  // gates and authenticates itself (bearer verification / PKCE code exchange).
+  if (PUBLIC_OAUTH_PATHS.has(request.nextUrl.pathname)) return NextResponse.next({ request });
   let supabaseResponse = NextResponse.next({ request });
 
   const supabase = createServerClient(
@@ -36,9 +48,11 @@ export async function updateSession(request: NextRequest) {
 
   if (!user && !isLoginPage) {
     const url = request.nextUrl.clone();
+    const keepQuery = PRESERVE_QUERY_PREFIXES.includes(pathname);
+    const target = keepQuery ? pathname + request.nextUrl.search : pathname;
     url.pathname = '/login';
     url.search = '';
-    url.searchParams.set('redirectedFrom', pathname);
+    url.searchParams.set('redirectedFrom', target);
     return NextResponse.redirect(url);
   }
 

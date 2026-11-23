@@ -3,6 +3,7 @@ import { createClient } from '@supabase/supabase-js';
 import { createOAuthCodeStore, type OAuthCodeDatabase } from '@/lib/consensus/oauth-code-store';
 import { exchangeCodeForBearer } from '@/lib/consensus/oauth-token-flow';
 import { uniqueOAuthClient } from '@/lib/consensus/oauth-contract';
+import { clientIp, oauthLimiter } from '@/lib/consensus/oauth-http';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -18,6 +19,7 @@ export async function POST(request: NextRequest) {
       process.env.CONSENSUS_OAUTH_AUTHORIZATION_ENABLED !== 'true') {
     return error(503, 'temporarily_unavailable');
   }
+  if (!oauthLimiter.allow('token:' + clientIp(request.headers), Date.now())) return error(429, 'rate_limited');
   const origin = request.headers.get('origin');
   if (origin && origin !== request.nextUrl.origin) return error(403, 'invalid_request');
   if (request.headers.get('content-type')?.split(';', 1)[0].trim().toLowerCase() !==

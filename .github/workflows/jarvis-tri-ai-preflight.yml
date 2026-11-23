@@ -73,5 +73,13 @@ jobs:
         run: |
           npx tsc lib/consensus/oauth-consent-binding.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-consent
           node -e "console.log(require('/tmp/consensus-consent/oauth-consent-binding.test.js').testOAuthConsentBinding())"
+      - name: Run OAuth authorize/consent flow negative checks
+        run: |
+          npx tsc lib/consensus/oauth-authorize-flow.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-authorize-flow
+          node -e "require('/tmp/consensus-authorize-flow/oauth-authorize-flow.test.js').testOAuthAuthorizeFlow().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
+      - name: Run OAuth to MCP end-to-end checks
+        run: |
+          npx tsc lib/consensus/oauth-e2e.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-e2e
+          node -e "require('/tmp/consensus-e2e/oauth-e2e.test.js').testOAuthEndToEnd().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
       - name: Next.js production build
         run: npm run build

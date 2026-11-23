@@ -67,3 +67,19 @@
 - Token endpointをOAuth metadataと同じ**三重ゲート**へ統一。認可画面未完成の状態でtoken発行入口だけを有効化できないようにした。
 - `20261123020000_consensus_oauth_consents.sql`：本人UUID、client ID、正確なredirect URI、承認scope、認可コードdigest、承認時刻を記録する監査テーブルを追加。利用者の直接SQLアクセス禁止、service_roleのみinsert/select、既存レコードのupdate/delete権限は付与しない。
 - **未完了**：このDB migrationは適用していない。本人同意UI/CSRF、同意記録とコード発行の**同一DBトランザクション化**、認可HTTP入口、MCP resource認証の実配線、失効・RLS・レート制限の統合が必要。現時点では同意記録が実際に保存されると主張しない。
+
+## 2026-11-23 OAuth認可・同意画面・MCP配線（Draft・本番無効のまま）
+追加したもの（既存ライブラリを再利用し、重複実装はしていない）:
+- `GET /api/consensus/oauth/authorize`：厳格な要求検証、レート制限、未ログインはログインへ（クエリ保持）、検証後に同意画面へ。コードは発行しない。無効な要求は登録外URLへリダイレクトしない。
+- `/consensus/oauth/consent`（本人ログイン後の同意画面）と `POST /api/consensus/oauth/consent`：Origin必須一致、本人セッション、本人・要求内容に紐付く署名付きCSRF（有効10分）、許可/拒否。拒否は `access_denied`。
+- 同意記録と認可コードを**1つのSQL関数（1トランザクション）**で保存（`20261123120000_consensus_oauth_atomic_issue.sql`・**未適用**）。
+- `POST /api/consensus/mcp`：署名・issuer・audience・期限・失効（照会失敗時は拒否）を検証し、`consensus.read`/`consensus.write` をツールごとに適用。未認証は `WWW-Authenticate`（保護リソースのメタデータURL付き）で401、権限不足は403。所有者は検証済みトークンの `sub` のみ。ツール処理は `lib/consensus/mcp-tools.ts`・`mcp-store.ts` に分離。
+- 認証プロキシの公開パスを4つの完全一致のみ許可（MCP・token・2つのメタデータ）。従来はこれらも `/login` に飛ばされ、外部クライアントが届かなかった。ログイン後の戻り先は同一サイトの相対パスのみ許可（オープンリダイレクト対策）。
+- 否定系テスト：CSRF（別ユーザー・別要求・期限切れ・改ざん）、同意拒否・格上げ、登録外リダイレクト、コード再利用・PKCE不一致・クライアント/リダイレクト不一致・期限切れ、読み取り専用トークンの書き込み拒否、他ユーザーのデータ読み書き拒否、失効・別audience・別issuer・偽造・乱数署名。
+
+**未完了（有効化・接続宣言の禁止条件）**
+- 実機E2E（ChatGPT/Claude公式チャット）は未実施。ローカルのHTTPでは発行者が `https` でないため、MCP/メタデータは仕様どおり503となり、HTTP層の401/403は未確認（関数層の検証のみ）。
+- DB migration 4本は未適用。MCP経路はサービスロールで所有者を明示絞り込みするためRLSを経由しない。実DBでの所有者絞り込み確認が必要。
+- リフレッシュトークン未対応（互換表参照）、失効の発行操作（取り消しAPI/画面）なし。
+- レート制限はインスタンス単位のメモリ内（再起動で消える）。公開前に共有ストアが必要。
+- `MCP_BRIDGE_ENABLED`・`CONSENSUS_OAUTH_TOKEN_EXCHANGE_ENABLED`・`CONSENSUS_OAUTH_AUTHORIZATION_ENABLED` はすべて未設定（既定無効）のまま。
