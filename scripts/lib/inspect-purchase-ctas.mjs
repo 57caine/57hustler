@@ -37,3 +37,27 @@ export function hasColumnComparisonLink(html) {
   }
   return false;
 }
+
+// The approved article flow may reach a purchase link through the comparison page.
+// Check both rendered steps, including destination availability and tracking marker.
+export function hasVerifiedColumnRevenuePath(articleHtml, comparisonPage) {
+  if (!hasColumnComparisonLink(articleHtml) || !comparisonPage ||
+      !Number.isInteger(comparisonPage.http) || comparisonPage.http < 200 || comparisonPage.http >= 300 ||
+      typeof comparisonPage.html !== 'string') return false;
+  const html = comparisonPage.html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+    .replace(/<!--[\s\S]*?-->/g, '');
+  if (!comparisonPage.html.includes('<html') ||
+      !/affiliate_click|AffiliateClickTracker|googletagmanager\.com\/gtag/.test(comparisonPage.html)) return false;
+  for (const match of html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)) {
+    const attrs = Object.fromEntries([...match[1].matchAll(/([\w-]+)\s*=\s*(["'])(.*?)\2/gs)]
+      .map(m => [m[1].toLowerCase(), m[3]]));
+    if (!(attrs.rel ?? '').split(/\s+/).includes('sponsored') ||
+        !match[2].replace(/<[^>]*>/g, '').trim()) continue;
+    try {
+      const url = new URL(attrs.href?.replaceAll('&amp;', '&'));
+      if (url.protocol === 'https:' && !url.port && !url.username && !url.password &&
+          ['px.a8.net', 'hb.afl.rakuten.co.jp', 'afl.rakuten.co.jp'].includes(url.hostname)) return true;
+    } catch { /* Invalid or spoofed anchors do not establish a revenue path. */ }
+  }
+  return false;
+}
