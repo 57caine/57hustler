@@ -6,6 +6,8 @@ import { createRefreshStore, newRefreshToken, refreshTokenDigest, type RefreshDa
 import { issueAuthorizationCode } from './oauth-code-issuance';
 import { handleRevokeRequest, handleTokenRequest, type TokenDeps } from './oauth-token-endpoint';
 import { verifyOAuthBearer } from './oauth-bearer';
+import { createSharedLimiter, keyDigest } from './shared-rate-limit';
+import { createRateLimiter } from './rate-limit';
 
 function check(value: unknown, label: string): asserts value { if (!value) throw new Error('FAILED: ' + label); }
 const ISSUER = 'https://dash.example', SECRET = 's'.repeat(48);
@@ -200,6 +202,37 @@ export async function testOAuthRefreshRealDb(): Promise<string> {
       check(blocked, 'service_role cannot un-revoke by direct table write');
     } finally { await sr.query('rollback').catch(() => undefined); sr.release(); }
     n++;
+
+    // 11b. shared rate limiter: atomic across 40 concurrent callers, window resets, role-restricted
+    {
+      const lim = createSharedLimiter(pgRpc(appPool), createRateLimiter(1, 60_000), 10, 60);
+      const key = 'rl-concurrency|' + crypto.randomUUID();
+      const outcomes = await Promise.all(Array.from({ length: 40 }, () => lim.allow(key, Date.now())));
+      check(outcomes.filter(Boolean).length === 10, 'exactly the limit is allowed under 40 concurrent calls');
+      check(!(await lim.allow(key, Date.now())), 'still blocked after the limit');
+      const dig = await keyDigest(key);
+      await pool.query("update public.ai_consensus_rate_limits set window_start = now() - interval '2 minutes' where key_digest = $1", [dig]);
+      check(await lim.allow(key, Date.now()), 'allowed again after the window passes');
+      check((await pool.query('select hits from public.ai_consensus_rate_limits where key_digest = $1', [dig])).rows[0].hits === 1, 'window reset restarts the count');
+      check((await pool.query("select count(*)::int c from public.ai_consensus_rate_limits where key_digest like '%.%' or key_digest like '%:%'")).rows[0].c === 0, 'no raw keys stored');
+      for (const role of ['anon', 'authenticated']) {
+        const cx = await pool.connect();
+        try {
+          await cx.query('begin'); await cx.query('set local role ' + role);
+          let denied = 0;
+          for (const sql of ['select * from public.ai_consensus_rate_limits', "select public.consume_ai_consensus_rate_limit('" + 'a'.repeat(64) + "', 5, 60)"]) {
+            try { await cx.query('savepoint s'); await cx.query(sql); await cx.query('release savepoint s'); } catch { denied++; await cx.query('rollback to savepoint s'); }
+          }
+          check(denied === 2, role + ' denied on rate limit objects');
+        } finally { await cx.query('rollback').catch(() => undefined); cx.release(); }
+      }
+      let bad = 0;
+      for (const [l, w] of [[0, 60], [10, 0], [10, 99999], [999999, 60]]) {
+        try { await appPool.query('select public.consume_ai_consensus_rate_limit($1,$2,$3)', ['b'.repeat(64), l, w]); } catch { bad++; }
+      }
+      check(bad === 4, 'invalid limiter parameters rejected');
+      n++;
+    }
 
     // 12. housekeeping never resurrects anything
     check(typeof (await q('select public.purge_ai_consensus_oauth_expired() as p')).rows[0].p === 'number', 'purge runs');

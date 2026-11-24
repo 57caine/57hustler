@@ -85,6 +85,10 @@ jobs:
         run: |
           npx tsc lib/consensus/oauth-grant-bearer.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-grant
           node -e "require('/tmp/consensus-grant/oauth-grant-bearer.test.js').testOAuthGrantBearerAndEndpoint().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
+      - name: Run Dynamic Client Registration, client IP selection and shared-limiter fallback checks
+        run: |
+          npx tsc lib/consensus/oauth-dcr.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-dcr
+          node -e "require('/tmp/consensus-dcr/oauth-dcr.test.js').testOAuthDcrAndLimits().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
       - name: Next.js production build
         run: npm run build
 

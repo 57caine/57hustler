@@ -32,6 +32,7 @@ export async function GET(request: NextRequest) {
     token_endpoint_auth_methods_supported: ['none'],
     revocation_endpoint: origin + '/api/consensus/oauth/revoke',
     revocation_endpoint_auth_methods_supported: ['none'],
+    ...(process.env.CONSENSUS_OAUTH_DCR_ENABLED === 'true' ? { registration_endpoint: origin + '/api/consensus/oauth/register' } : {}),
     scopes_supported: ['consensus.read','consensus.write'],
   },{headers:{'Cache-Control':'no-store'}});
 }

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getCurrentUser } from '@/lib/supabase/auth';
 import { verifyConsentCsrf } from '@/lib/consensus/oauth-csrf';
 import { validGrantId } from '@/lib/consensus/oauth-refresh';
-import { loadRuntime, jsonError, noStore, oauthLimiter, readBoundedForm, requestOrigin } from '@/lib/consensus/oauth-http';
+import { loadRuntime, jsonError, noStore, allowRequest, readBoundedForm, requestOrigin } from '@/lib/consensus/oauth-http';
 import { serverDatabase } from '@/lib/consensus/oauth-server';
 
 export const runtime = 'nodejs';
@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
   if (request.headers.get('content-type')?.split(';', 1)[0].trim().toLowerCase() !== 'application/x-www-form-urlencoded') return jsonError(415, 'invalid_request');
   const user = await getCurrentUser();
   if (!user) return jsonError(401, 'login_required');
-  if (!oauthLimiter.allow('grant-revoke:' + user.id, Date.now())) return jsonError(429, 'rate_limited');
+  if (!(await allowRequest('grant-revoke:' + user.id))) return jsonError(429, 'rate_limited');
   const form = await readBoundedForm(request, 2048);
   if (form === 'too_large') return jsonError(413, 'invalid_request');
   if (form === 'invalid') return jsonError(400, 'invalid_request');

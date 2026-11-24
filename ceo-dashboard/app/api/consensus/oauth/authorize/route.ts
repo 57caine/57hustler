@@ -1,7 +1,8 @@
+import { clientsFor } from '@/lib/consensus/oauth-dcr';
 import { NextRequest, NextResponse } from 'next/server';
 import { getCurrentUser } from '@/lib/supabase/auth';
 import { parseAuthorizationRequest } from '@/lib/consensus/oauth-authorization-request';
-import { clientIp, jsonError, loadRuntime, noStore, oauthLimiter, requestOrigin } from '@/lib/consensus/oauth-http';
+import { clientIp, jsonError, loadRuntime, noStore, allowRequest, requestOrigin } from '@/lib/consensus/oauth-http';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -14,8 +15,8 @@ export const dynamic = 'force-dynamic';
 export async function GET(request: NextRequest) {
   const rt = loadRuntime(requestOrigin(request));
   if (!rt) return jsonError(503, 'temporarily_unavailable');
-  if (!oauthLimiter.allow('authorize:' + clientIp(request.headers), Date.now())) return jsonError(429, 'rate_limited');
-  const parsed = parseAuthorizationRequest(request.nextUrl.searchParams, rt.clients, rt.issuer + '/api/consensus/mcp');
+  if (!(await allowRequest('authorize:' + clientIp(request.headers)))) return jsonError(429, 'rate_limited');
+  const parsed = parseAuthorizationRequest(request.nextUrl.searchParams, await clientsFor(rt.clients, request.nextUrl.searchParams.get('client_id'), rt.secret, rt.dcr), rt.issuer + '/api/consensus/mcp');
   if (!parsed) return jsonError(400, 'invalid_request');
   const user = await getCurrentUser();
   if (!user) {

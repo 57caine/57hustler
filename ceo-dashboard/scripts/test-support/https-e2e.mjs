@@ -136,6 +136,27 @@ ok((await post('/api/consensus/oauth/token', '{"grant_type":"refresh_token"}', {
 ok((await post('/api/consensus/oauth/token', 'x'.repeat(5000))).status === 413, 'oversized body refused');
 ok((await post('/api/consensus/oauth/token', 'grant_type=password&client_id=claude')).status === 400, 'password grant refused');
 ok((await post('/api/consensus/oauth/token', 'grant_type=refresh_token&refresh_token=' + 'a'.repeat(43) + '&client_id=claude', { origin: 'https://evil.example' })).status === 403, 'cross-origin token request refused');
+console.log('9b. Dynamic Client Registration (RFC 7591) with a registered-by-the-client id');
+ok(m.registration_endpoint === BASE + '/api/consensus/oauth/register', 'metadata advertises registration_endpoint when the DCR gate is on');
+const jpost = (path, obj) => fetch(BASE + path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(obj) });
+const reg = await jpost('/api/consensus/oauth/register', { client_name: 'Claude', redirect_uris: [REDIRECT], token_endpoint_auth_method: 'none', grant_types: ['authorization_code', 'refresh_token'], response_types: ['code'] });
+const regBody = await reg.json();
+ok(reg.status === 201 && regBody.client_id.startsWith('dcr1.') && regBody.token_endpoint_auth_method === 'none' && !('client_secret' in regBody), 'registration returns a public client_id and no secret');
+const evil = await jpost('/api/consensus/oauth/register', { redirect_uris: ['https://evil.example/cb'] });
+ok(evil.status === 400 && (await evil.json()).error === 'invalid_redirect_uri', 'non-official redirect URI refused');
+ok((await post('/api/consensus/oauth/register', 'redirect_uris=x')).status === 415, 'non-JSON registration refused');
+const dyn = regBody.client_id;
+const dverifier = b64(crypto.randomBytes(48)), dcode = crypto.randomBytes(32).toString('hex');
+await pool.query('select public.issue_ai_consensus_oauth_code_with_consent($1,$2,$3,$4,$5,$6,$7,$8)',
+  [crypto.createHash('sha256').update(dcode).digest('hex'), dyn, REDIRECT, owner, b64(sha(dverifier)), ['consensus.read'], new Date().toISOString(), new Date(Date.now() + 300_000).toISOString()]);
+const dtok = await tokenReq({ grant_type: 'authorization_code', code: dcode, redirect_uri: REDIRECT, client_id: dyn, code_verifier: dverifier, resource: BASE + '/api/consensus/mcp' });
+const dbody = await dtok.json();
+ok(dtok.status === 200 && dbody.refresh_token && dbody.access_token, 'a dynamically registered client completes the code exchange');
+ok((await mcp(dbody.access_token, { jsonrpc: '2.0', id: 1, method: 'ping' })).status === 200, 'its access token works on the MCP endpoint');
+const dref = await tokenReq({ grant_type: 'refresh_token', refresh_token: dbody.refresh_token, client_id: dyn });
+ok(dref.status === 200, 'its refresh token rotates');
+const forged = dyn.replace(/\.[^.]+$/, '.' + 'A'.repeat(43));
+ok((await tokenReq({ grant_type: 'refresh_token', refresh_token: (await dref.json()).refresh_token, client_id: forged })).status === 400, 'forged client_id cannot use someone else\'s refresh token');
 console.log('10. rate limit');
 let limited = 0;
 for (let i = 0; i < 160 && !limited; i++) {

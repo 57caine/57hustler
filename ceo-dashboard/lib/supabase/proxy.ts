@@ -8,6 +8,7 @@ const PUBLIC_OAUTH_PATHS = new Set([
   '/.well-known/oauth-authorization-server',
   '/api/consensus/oauth/token',
   '/api/consensus/oauth/revoke',
+  '/api/consensus/oauth/register',
   '/api/consensus/mcp',
 ]);
 // Authorization requests must survive the login round-trip with their query intact.

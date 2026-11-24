@@ -17,7 +17,7 @@ export MCP_BRIDGE_ENABLED=true CONSENSUS_OAUTH_TOKEN_EXCHANGE_ENABLED=true CONSE
 export CONSENSUS_OAUTH_ISSUER=https://localhost:$TLS
 export CONSENSUS_OAUTH_SIGNING_SECRET=$(openssl rand -hex 32)
 export CONSENSUS_OAUTH_CLIENTS='[{"clientId":"claude","name":"Claude","redirectUris":["https://claude.ai/api/mcp/auth_callback"]},{"clientId":"chatgpt","name":"ChatGPT","redirectUris":["https://chatgpt.com/connector_platform_oauth_redirect"]}]'
-export CONSENSUS_OAUTH_RATE_LIMIT_PER_MIN=120
+export CONSENSUS_OAUTH_RATE_LIMIT_PER_MIN=120 CONSENSUS_OAUTH_DCR_ENABLED=true CONSENSUS_SHARED_RATE_LIMIT=true
 export NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:$SHIM SUPABASE_SERVICE_ROLE_KEY=test-not-a-real-key NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=test-not-a-real-key
 npx next start -p $NEXT -H 127.0.0.1 >$W/next.log 2>&1 & echo $! >> $W/pids
 node scripts/test-support/tls-proxy.mjs $TLS $NEXT $W/key.pem $W/cert.pem & echo $! >> $W/pids

@@ -1,3 +1,4 @@
+import { clientsFor } from '@/lib/consensus/oauth-dcr';
 import { headers } from 'next/headers';
 import { getCurrentUser } from '@/lib/supabase/auth';
 import { prepareConsent } from '@/lib/consensus/oauth-authorize-flow';
@@ -23,7 +24,7 @@ export default async function ConsentPage({ searchParams }: { searchParams: Prom
   }
   const user = await getCurrentUser();
   const view = rt && user && !ambiguous
-    ? await prepareConsent({ query, clients: rt.clients, subject: user.id, secret: rt.secret, nowSeconds: Math.floor(Date.now() / 1000), expectedResource: rt.issuer + '/api/consensus/mcp' })
+    ? await prepareConsent({ query, clients: await clientsFor(rt.clients, query.get('client_id'), rt.secret, rt.dcr), subject: user.id, secret: rt.secret, nowSeconds: Math.floor(Date.now() / 1000), expectedResource: rt.issuer + '/api/consensus/mcp' })
     : null;
   if (!view) {
     return (

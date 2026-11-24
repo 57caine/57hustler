@@ -1,11 +1,25 @@
 import { NextResponse } from 'next/server';
 import { createRateLimiter } from './rate-limit';
+import { clientIp } from './oauth-http-ip';
+export { clientIp };
+import { createSharedLimiter } from './shared-rate-limit';
+import { serverDatabase } from './oauth-server';
 
 export const noStore = { 'Cache-Control': 'no-store', Pragma: 'no-cache' };
 /** Per-IP requests/minute for OAuth endpoints. Default 30; tests may raise it, nothing may disable it. */
 const configured = Number(process.env.CONSENSUS_OAUTH_RATE_LIMIT_PER_MIN);
 export const oauthLimiter = createRateLimiter(Number.isInteger(configured) && configured >= 1 && configured <= 1000 ? configured : 30, 60_000);
 export const mcpLimiter = createRateLimiter(120, 60_000);
+const OAUTH_LIMIT = Number.isInteger(configured) && configured >= 1 && configured <= 1000 ? configured : 30;
+
+/** Shared (database) rate limit across all instances; per-instance fallback if the database is unavailable. */
+export async function allowRequest(key: string, kind: 'oauth' | 'mcp' = 'oauth'): Promise<boolean> {
+  const db = process.env.CONSENSUS_SHARED_RATE_LIMIT === 'true' ? serverDatabase()?.db ?? null : null;
+  const shared = kind === 'mcp'
+    ? createSharedLimiter(db as never, mcpLimiter, 120, 60)
+    : createSharedLimiter(db as never, oauthLimiter, OAUTH_LIMIT, 60);
+  return shared.allow(kind + '|' + key, Date.now());
+}
 
 export { loadRuntime, type OAuthRuntime } from './oauth-runtime';
 
@@ -22,10 +36,6 @@ export function requestOrigin(request: { headers: Headers; nextUrl: { origin: st
   return request.nextUrl.origin;
 }
 
-export function clientIp(headers: Headers): string {
-  const f = headers.get('x-forwarded-for')?.split(',')[0]?.trim();
-  return f && f.length < 64 ? f : 'unknown';
-}
 export function jsonError(status: number, name: string) {
   return NextResponse.json({ error: name }, { status, headers: noStore });
 }

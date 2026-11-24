@@ -41,3 +41,22 @@
 6. 問題がなければ ChatGPT で同様に確認し、その後に本番有効化を判断（本PRは有効化しない）。
 
 注意: 本番デプロイ済みのドメインでは Vercel の保護機能（Deployment Protection）が外部クライアントの到達を妨げることがある。Previewで試す場合は保護の設定を確認すること。
+
+## DCR・共有レート制限・転送ヘッダー（2026-11-25）
+
+### DCR（動的クライアント登録）は必須か
+- Claude: DCRにも、クライアントID/シークレットの手入力（詳細設定）にも対応。手入力は「DCR非対応サーバー向け」と公式に説明されている。https://support.claude.com/en/articles/11503834
+- ChatGPT開発者モード: 「ユーザー定義OAuthクライアント」（静的な資格情報）があればそれが使われ、無ければCIMDまたはDCR。https://developers.openai.com/api/docs/guides/developer-mode
+- したがってDCR非対応でも**手入力で接続できる可能性が高く、必須の障害とは断定できない**。ただしChatGPTでは「OAuth clientを解決できない」系の不具合報告が複数あり、DCRが最も無難。実機未確認のため、**DCRを用意して手入力と併用可能**にした。
+- 実装: 状態を保存しない署名付きclient_id方式。`POST /api/consensus/oauth/register`（既定オフ、`CONSENSUS_OAUTH_DCR_ENABLED=true` で有効）。リダイレクトURIは公式の4種類（Claude 2、ChatGPT 2形式）と完全一致のみ許可。公開クライアント（秘密なし）専用。client_idはHMAC署名で偽造不可。登録しても本人の同意が無ければ何も発行されない。
+- CIMD（クライアントID メタデータ文書）は未実装。ChatGPTはCIMDを優先するが、DCRも選択可能（公式）。
+
+### 共有レート制限
+- `CONSENSUS_SHARED_RATE_LIMIT=true` で、DB（`consume_ai_consensus_rate_limit`）による全インスタンス共通の制限。キーはSHA-256ダイジェストで、IPアドレスそのものは保存しない。実PostgreSQLで40並列でも上限ちょうどしか通らないことを確認。
+- DB障害時はインスタンス単位の制限に切り替わる（無制限にはならない）。
+- 新しいマイグレーション: `ceo-dashboard/supabase/migrations/20261125090000_consensus_shared_rate_limit.sql`（新規テーブル1つと関数1つ。既存データには触れない）。
+
+### 転送ヘッダー
+- 以前は `x-forwarded-for` の先頭を採用しており、呼び出し側が偽装できた。現在は `x-vercel-forwarded-for`、`x-real-ip`、`x-forwarded-for` の末尾の順に採用し、IP形式でない値は「unknown」（同一バケット）にする。
+- 公開オリジンは `x-forwarded-proto/host` から求めるが、設定済みissuerと完全一致しない限り503で拒否する。
+- Vercel上で実際にどのヘッダーが付くかは、実環境では未確認。

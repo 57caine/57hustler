@@ -7,7 +7,7 @@ import { createRevocationLookup, type RevocationDatabase } from '@/lib/consensus
 import { createRefreshStore, type RefreshDatabase } from '@/lib/consensus/oauth-refresh';
 import { createSupabaseConsensusStore } from '@/lib/consensus/mcp-store';
 import { runTool } from '@/lib/consensus/mcp-tools';
-import { clientIp, loadRuntime, mcpLimiter, requestOrigin } from '@/lib/consensus/oauth-http';
+import { clientIp, loadRuntime, allowRequest, requestOrigin } from '@/lib/consensus/oauth-http';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
   if (request.headers.get('content-type')?.split(';', 1)[0].trim().toLowerCase() !== 'application/json') return fail(415, 'JSON required');
 
   // Rate limit before any cryptographic or database work (per IP; per-subject below).
-  if (!mcpLimiter.allow('ip:' + clientIp(request.headers), Date.now())) return fail(429, 'Rate limit exceeded');
+  if (!(await allowRequest('ip:' + clientIp(request.headers), 'mcp'))) return fail(429, 'Rate limit exceeded');
 
   const db = createClient(url, serviceRole, { auth: { persistSession: false, autoRefreshToken: false } });
   const auth = request.headers.get('authorization') || '';
@@ -62,7 +62,7 @@ export async function POST(request: NextRequest) {
   if (!claims) return unauthorized(rt.issuer, 'invalid_token');
   const granted = parseRequestedScopes(claims.scope);
   if (!granted) return unauthorized(rt.issuer, 'invalid_token');
-  if (!mcpLimiter.allow('sub:' + claims.sub, Date.now())) return fail(429, 'Rate limit exceeded');
+  if (!(await allowRequest('sub:' + claims.sub, 'mcp'))) return fail(429, 'Rate limit exceeded');
 
   const reader = request.body?.getReader();
   if (!reader) return fail(400, 'Request body required');

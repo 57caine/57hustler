@@ -1,9 +1,10 @@
+import { clientsFor } from '@/lib/consensus/oauth-dcr';
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { getCurrentUser } from '@/lib/supabase/auth';
 import { decideConsent } from '@/lib/consensus/oauth-authorize-flow';
 import { createConsentCodeWriter, type ConsentIssueDatabase } from '@/lib/consensus/oauth-consent-store';
-import { clientIp, jsonError, loadRuntime, noStore, oauthLimiter, requestOrigin } from '@/lib/consensus/oauth-http';
+import { clientIp, jsonError, loadRuntime, noStore, allowRequest, requestOrigin } from '@/lib/consensus/oauth-http';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -21,7 +22,7 @@ export async function POST(request: NextRequest) {
   if (length !== null && (!/^\d+$/.test(length) || Number(length) > 16384)) return jsonError(413, 'invalid_request');
   const user = await getCurrentUser();
   if (!user) return jsonError(401, 'login_required');
-  if (!oauthLimiter.allow('consent:' + user.id, Date.now())) return jsonError(429, 'rate_limited');
+  if (!(await allowRequest('consent:' + user.id))) return jsonError(429, 'rate_limited');
   let form: URLSearchParams;
   try {
     const text = await request.text();
@@ -38,8 +39,9 @@ export async function POST(request: NextRequest) {
   const serviceRole = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !serviceRole) return jsonError(503, 'temporarily_unavailable');
   const db = createClient(url, serviceRole, { auth: { persistSession: false, autoRefreshToken: false } });
+  const authQuery = new URLSearchParams(form.get('authorization_query') ?? '');
   const result = await decideConsent({
-    query: new URLSearchParams(form.get('authorization_query') ?? ''), clients: rt.clients,
+    query: authQuery, clients: await clientsFor(rt.clients, authQuery.get('client_id'), rt.secret, rt.dcr),
     subject: user.id, secret: rt.secret, csrfToken: form.get('csrf'),
     approve: decision === 'approve', nowSeconds: Math.floor(Date.now() / 1000),
     expectedResource: rt.issuer + '/api/consensus/mcp', issuer: rt.issuer,
