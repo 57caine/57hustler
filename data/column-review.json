@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-23T01:29:46.272Z",
+  "generatedAt": "2026-11-24T05:13:21.262Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
   },
   "affiliateClicksStatus": "ok",
   "autoReviewStale": false,
-  "flaggedCount": 5,
+  "flaggedCount": 6,
   "flaggedArticles": [
     {
       "path": "/column/multifocal-contact-rogansetsu",
@@ -15,7 +15,7 @@
       "metrics": {
         "sessions": 28,
         "bounceRate": 0.14285714285714285,
-        "avgSessionDuration": 347.28769489285713,
+        "avgSessionDuration": 311.318548,
         "affiliateClicks": 0
       },
       "flags": [
@@ -47,16 +47,16 @@
       "slug": "1day-vs-2week-dotchiga-otoku",
       "title": "1day-vs-2week-dotchiga-otoku",
       "metrics": {
-        "sessions": 26,
-        "bounceRate": 0.8076923076923077,
-        "avgSessionDuration": 15.270574653846154,
+        "sessions": 25,
+        "bounceRate": 0.84,
+        "avgSessionDuration": 12.94079952,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション26件・affiliate_clickゼロ"
+        "セッション25件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -213,20 +213,54 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/kanso-shinikui-contact",
-      "slug": "kanso-shinikui-contact",
-      "title": "kanso-shinikui-contact",
+      "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
+      "slug": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
+      "title": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "metrics": {
-        "sessions": 13,
-        "bounceRate": 0.6923076923076923,
-        "avgSessionDuration": 124.46638884615385,
+        "sessions": 14,
+        "bounceRate": 0.21428571428571427,
+        "avgSessionDuration": 221.80583328571427,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション13件・affiliate_clickゼロ"
+        "セッション14件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 4,
+        "hasAffiliateLinks": false,
+        "ctaCount": 0,
+        "contentChars": 68241
+      },
+      "causes": [
+        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+      ],
+      "suggestions": [
+        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+      ],
+      "status": "未対応",
+      "business": "lens-navi",
+      "priority": "medium",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/kanso-shinikui-contact",
+      "slug": "kanso-shinikui-contact",
+      "title": "kanso-shinikui-contact",
+      "metrics": {
+        "sessions": 14,
+        "bounceRate": 0.6428571428571429,
+        "avgSessionDuration": 118.78588285714287,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション14件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -329,7 +363,7 @@
       "metrics": {
         "sessions": 9,
         "bounceRate": 0.4444444444444444,
-        "avgSessionDuration": 117.42254566666664,
+        "avgSessionDuration": 117.42254566666666,
         "affiliateClicks": 0
       },
       "flags": [
@@ -357,27 +391,27 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/vr-movie-streaming-service-recommend-2026",
-      "slug": "vr-movie-streaming-service-recommend-2026",
-      "title": "VR映画・動画視聴おすすめサービス2026年版|最高の没入感を体験するための完全ガイド",
+      "path": "/column/contact-shoshinsha-tsukehazushi-care-2026",
+      "slug": "contact-shoshinsha-tsukehazushi-care-2026",
+      "title": "contact-shoshinsha-tsukehazushi-care-2026",
       "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.625,
-        "avgSessionDuration": 19.869309625000003,
+        "sessions": 7,
+        "bounceRate": 0.42857142857142855,
+        "avgSessionDuration": 153.426614,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
+        "セッション7件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 4,
-        "h3Count": 6,
+        "h2Count": 5,
+        "h3Count": 18,
         "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 70017
+        "ctaCount": 2,
+        "contentChars": 102849
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
