@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { requestOrigin } from '@/lib/consensus/oauth-http';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -16,7 +17,7 @@ export async function GET(request: NextRequest) {
     });
   }
   const issuer = process.env.CONSENSUS_OAUTH_ISSUER;
-  const origin = request.nextUrl.origin;
+  const origin = requestOrigin(request);
   if (!issuer || issuer !== origin || !origin.startsWith('https://')) {
     return NextResponse.json({ error: 'temporarily_unavailable' }, {
       status: 503, headers: { 'Cache-Control': 'no-store' },

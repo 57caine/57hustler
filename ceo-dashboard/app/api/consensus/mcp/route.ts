@@ -4,9 +4,10 @@ import { PROTOCOL_VERSION, TOOLS, parseRpc, rpcOk, rpcError, parseToolCallParams
 import { parseRequestedScopes, scopesPermit } from '@/lib/consensus/oauth-contract';
 import { verifyOAuthBearer } from '@/lib/consensus/oauth-bearer';
 import { createRevocationLookup, type RevocationDatabase } from '@/lib/consensus/oauth-revocation-store';
+import { createRefreshStore, type RefreshDatabase } from '@/lib/consensus/oauth-refresh';
 import { createSupabaseConsensusStore } from '@/lib/consensus/mcp-store';
 import { runTool } from '@/lib/consensus/mcp-tools';
-import { clientIp, loadRuntime, mcpLimiter } from '@/lib/consensus/oauth-http';
+import { clientIp, loadRuntime, mcpLimiter, requestOrigin } from '@/lib/consensus/oauth-http';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -27,14 +28,14 @@ function unauthorized(origin: string, error: 'invalid_token' | null) {
 
 export async function POST(request: NextRequest) {
   // Default OFF. All three gates plus issuer/secret/client config must be present.
-  const rt = loadRuntime(request.nextUrl.origin);
+  const rt = loadRuntime(requestOrigin(request));
   if (!rt) return fail(503, 'MCP connector is disabled pending authorization review');
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const serviceRole = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !serviceRole) return fail(503, 'Storage unavailable');
 
   const origin = request.headers.get('origin');
-  if (origin && origin !== request.nextUrl.origin) return fail(403, 'Origin not allowed');
+  if (origin && origin !== requestOrigin(request)) return fail(403, 'Origin not allowed');
   const declaredLength = request.headers.get('content-length');
   if (declaredLength !== null) {
     const bytes = Number(declaredLength);
@@ -54,6 +55,8 @@ export async function POST(request: NextRequest) {
     claims = await verifyOAuthBearer(auth.slice(7), {
       issuer: rt.issuer, audience: rt.issuer + '/api/consensus/mcp', nowSeconds: Math.floor(Date.now() / 1000),
       secret: rt.secret, isRevoked: createRevocationLookup(db as unknown as RevocationDatabase),
+      // Owner/client revocation and refresh-reuse detection take effect on the very next call.
+      isGrantDead: createRefreshStore(db as unknown as RefreshDatabase).grantIsDead, requireGrant: true,
     });
   } catch { return fail(503, 'Authorization backend unavailable'); } // revocation lookup failure => deny
   if (!claims) return unauthorized(rt.issuer, 'invalid_token');

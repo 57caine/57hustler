@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { requestOrigin } from '@/lib/consensus/oauth-http';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -9,7 +10,7 @@ export const dynamic = 'force-dynamic';
  * authorization, revocation and MCP resource validation pass security review.
  */
 export async function GET(request: NextRequest) {
-  const origin = request.nextUrl.origin;
+  const origin = requestOrigin(request);
   const issuer = process.env.CONSENSUS_OAUTH_ISSUER;
   const enabled = process.env.MCP_BRIDGE_ENABLED === 'true' &&
     process.env.CONSENSUS_OAUTH_TOKEN_EXCHANGE_ENABLED === 'true' &&
@@ -24,9 +25,13 @@ export async function GET(request: NextRequest) {
     authorization_endpoint: origin + '/api/consensus/oauth/authorize',
     token_endpoint: origin + '/api/consensus/oauth/token',
     response_types_supported: ['code'],
-    grant_types_supported: ['authorization_code'],
+    // RFC 9207: every authorization response carries `iss`; ChatGPT then uses its stable redirect URI.
+    authorization_response_iss_parameter_supported: true,
+    grant_types_supported: ['authorization_code', 'refresh_token'],
     code_challenge_methods_supported: ['S256'],
     token_endpoint_auth_methods_supported: ['none'],
+    revocation_endpoint: origin + '/api/consensus/oauth/revoke',
+    revocation_endpoint_auth_methods_supported: ['none'],
     scopes_supported: ['consensus.read','consensus.write'],
   },{headers:{'Cache-Control':'no-store'}});
 }

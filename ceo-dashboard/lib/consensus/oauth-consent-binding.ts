@@ -16,11 +16,12 @@ export function approveAuthorizationRequest(input: {
   csrfVerified: boolean;
   explicitApproval: boolean;
   nowSeconds: number;
+  expectedResource?: string;
 }): ApprovedConsent | null {
   if (!input.csrfVerified || !input.explicitApproval ||
       !input.authenticatedSubject?.trim() ||
       !Number.isSafeInteger(input.nowSeconds)) return null;
-  const parsed = parseAuthorizationRequest(input.originalQuery, input.clients);
+  const parsed = parseAuthorizationRequest(input.originalQuery, input.clients, input.expectedResource);
   if (!parsed || parsed.clientId !== input.displayed.clientId ||
       parsed.redirectUri !== input.displayed.redirectUri ||
       parsed.state !== input.displayed.state ||

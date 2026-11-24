@@ -23,7 +23,7 @@ export default async function ConsentPage({ searchParams }: { searchParams: Prom
   }
   const user = await getCurrentUser();
   const view = rt && user && !ambiguous
-    ? await prepareConsent({ query, clients: rt.clients, subject: user.id, secret: rt.secret, nowSeconds: Math.floor(Date.now() / 1000) })
+    ? await prepareConsent({ query, clients: rt.clients, subject: user.id, secret: rt.secret, nowSeconds: Math.floor(Date.now() / 1000), expectedResource: rt.issuer + '/api/consensus/mcp' })
     : null;
   if (!view) {
     return (

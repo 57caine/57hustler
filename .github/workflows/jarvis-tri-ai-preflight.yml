@@ -81,5 +81,53 @@ jobs:
         run: |
           npx tsc lib/consensus/oauth-e2e.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-e2e
           node -e "require('/tmp/consensus-e2e/oauth-e2e.test.js').testOAuthEndToEnd().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
+      - name: Run OAuth grant-bound bearer, resource indicator and token endpoint policy checks
+        run: |
+          npx tsc lib/consensus/oauth-grant-bearer.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --outDir /tmp/consensus-grant
+          node -e "require('/tmp/consensus-grant/oauth-grant-bearer.test.js').testOAuthGrantBearerAndEndpoint().then(console.log).catch(e=>{console.error(e);process.exitCode=1})"
       - name: Next.js production build
         run: npm run build
+
+  # Real PostgreSQL (service container, no paid service): applies every migration, then checks refresh-token
+  # rotation / reuse detection / atomic update / revocation against the real SQL, and finally drives the
+  # built Next.js server over real HTTPS (self-signed cert trusted explicitly; verification is never disabled).
+  real-database:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PGPASSWORD: postgres
+      PGURL: postgres://postgres:postgres@localhost:5432/postgres
+    defaults:
+      run:
+        working-directory: ceo-dashboard
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: ceo-dashboard/package-lock.json
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Apply every migration to a real PostgreSQL
+        run: |
+          psql "$PGURL" -v ON_ERROR_STOP=1 -q -c "create database consensus_test"
+          sh supabase/test/apply.sh "postgres://postgres:postgres@localhost:5432/consensus_test"
+      - name: Refresh-token rotation, reuse detection, atomic update and revocation on real PostgreSQL
+        env:
+          CONSENSUS_TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/consensus_test
+        run: |
+          npx tsc lib/consensus/oauth-refresh-db.test.ts --module commonjs --target ES2020 --moduleResolution node --skipLibCheck --esModuleInterop --outDir /tmp/consensus-db
+          NODE_PATH="$PWD/node_modules" node -e "require('/tmp/consensus-db/oauth-refresh-db.test.js').testOAuthRefreshRealDb().then(m=>{console.log(m); if(/SKIPPED/.test(m)) process.exitCode=1}).catch(e=>{console.error(e);process.exitCode=1})"
+      - name: Production build
+        run: npm run build
+      - name: Real HTTPS end-to-end (Next.js server + TLS + PostgreSQL)
+        run: sh scripts/test-support/run-https-e2e.sh

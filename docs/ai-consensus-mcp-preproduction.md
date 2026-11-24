@@ -83,3 +83,29 @@
 - リフレッシュトークン未対応（互換表参照）、失効の発行操作（取り消しAPI/画面）なし。
 - レート制限はインスタンス単位のメモリ内（再起動で消える）。公開前に共有ストアが必要。
 - `MCP_BRIDGE_ENABLED`・`CONSENSUS_OAUTH_TOKEN_EXCHANGE_ENABLED`・`CONSENSUS_OAUTH_AUTHORIZATION_ENABLED` はすべて未設定（既定無効）のまま。
+
+## 2026-11-24 リフレッシュトークン・再利用検知・原子的更新・失効操作（Draft・本番無効のまま）
+
+追加したもの（`MCP_BRIDGE_ENABLED` 等の3ゲートは引き続き未設定=無効。追加課金・本番有効化は行っていない）:
+- **リフレッシュトークン（ローテーション）**：`POST /api/consensus/oauth/token` が `grant_type=refresh_token` に対応。更新のたびに新しいアクセス/更新トークンの組を発行し、使った更新トークンは1回限りで失効。更新トークンは30日のスライド期限、1つの接続（グラント）の絶対期限は60日。DBには SHA-256 ダイジェストのみ保存。
+- **再利用検知**：消費済みの更新トークンが再提示されたら、その接続（グラント）全体を即失効（正規の最新トークンも、発行済みアクセストークンも次のMCP呼出しから拒否）。同一トークンの同時提示も同じ扱い。認可コードの再利用も、そのコードが生んだ接続を失効させる。
+- **原子的更新**：ローテーション・再利用判定・失効は、それぞれ1つのSQL関数（1トランザクション、行ロック）。アプリ側の「読んでから更新」はない。途中で失敗したら旧トークンは消費されない。
+- **失効操作**：①クライアント用 `POST /api/consensus/oauth/revoke`（RFC 7009、更新トークン/アクセストークンどちらでも、その接続全体を失効。他クライアントや未知のトークンは常に200で無害） ②本人用 `/consensus/oauth/grants`（自分の接続一覧と「この接続を解除する」。ログイン・同一Origin・CSRF必須、他人のグラントは操作不可）。
+- アクセストークンに接続ID（`gid`）を持たせ、MCP呼出しのたびに接続の失効を確認（確認できない場合は拒否）。解除は次の呼出しから即効。
+- 公式クライアント互換：認可/トークン要求の `resource`（RFC 8707、自サーバーのMCP URLと完全一致のみ許可、他は `invalid_target`）、認可応答の `iss`（RFC 9207。メタデータで `authorization_response_iss_parameter_supported: true`。ChatGPTはこの場合に固定の戻り先URLを使う）、メタデータに `refresh_token` と `revocation_endpoint` を追加。
+- 公開オリジンの判定を `x-forwarded-proto/host` 優先に変更（`next start` では Next.js 自身の `nextUrl.origin` が公開URLにならないため）。発行者(issuer)との完全一致は従来どおり必須（不一致は503）。
+- DB：`20261124090000_consensus_oauth_refresh_tokens.sql`。テーブルは service_role の SELECT のみ、書込みは `SECURITY DEFINER` 関数経由のみ（直接UPDATEで失効を取り消せない）。
+
+### 検証した内容と、していない内容
+**実施済み（2026-11-24、ローカルで実行。CIはPushしてから確認）**
+- 実PostgreSQL 16 に全マイグレーション5本を適用し、本番と同じロール `service_role` で実行：`lib/consensus/oauth-refresh-db.test.ts` 42項目（ローテーション、再利用検知、30並列の同時更新で勝者は1つ・チェーンが分岐しない、別クライアント、期限切れ、グラント期限での上限、認可コード再利用、RFC 7009、本人以外の失効拒否、途中失敗時のロールバック、anon/authenticated の拒否、housekeepingで失効が復活しない）。
+- 実 Next.js（`next start`）＋ 実TLS（自己署名証明書を明示的に信頼。検証の無効化はしていない）＋ 実PostgreSQL：`scripts/test-support/run-https-e2e.sh` 48項目。メタデータ、トークン発行、MCP の initialize / tools、所有者の分離、読み取り専用の403、更新、再利用検知、12並列、失効、本人側失効、レート制限、サーバーログに秘密が出ないこと。
+- 純ロジックの単体テスト30項目（`oauth-grant-bearer.test.ts`）と、既存14ステップのCIテスト全件（回帰なし）。型チェックと本番ビルドも成功。
+
+**未実施・要注意（接続できると主張しない）**
+- ブラウザでの本人ログイン→同意画面→許可（Supabase Auth が必要）。E2Eでは同意後の状態を、同意ルートが呼ぶ実SQL関数で作っている。
+- ChatGPT・Claude 公式チャットからの実接続。
+- ホスト型 Supabase への適用。E2Eの PostgREST 互換層（`scripts/test-support/postgrest-shim.mjs`）はテスト専用の自作で、本物の PostgREST ではない。`rpc` と一部のテーブル操作だけを実装している。`supabase-js` の呼び出し形式とRPC関数名・引数は本物と同じだが、実環境での最終確認が必要。
+- `ai_consensus_requests` / `ai_consensus_contributions` のDDLはこのリポジトリに無く、テスト用に `supabase/test/tables.sql` で列を再構成している（本番のDDLではない）。
+- Vercel 上で `x-forwarded-proto/host` が期待どおり渡ることの実機確認。
+- 既知のトレードオフ：厳格な再利用検知のため、**更新の応答が途中で失われて同じ更新トークンを再送すると、その接続が失効**し、再接続が必要になる。レート制限は引き続きインスタンス内メモリ（共有ストア未実装）。動的クライアント登録(DCR)・CIMD は未対応で、事前登録クライアントのみ。

@@ -1,101 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
-import { createOAuthCodeStore, type OAuthCodeDatabase } from '@/lib/consensus/oauth-code-store';
-import { exchangeCodeForBearer } from '@/lib/consensus/oauth-token-flow';
-import { uniqueOAuthClient } from '@/lib/consensus/oauth-contract';
-import { clientIp, oauthLimiter } from '@/lib/consensus/oauth-http';
+import { handleTokenRequest } from '@/lib/consensus/oauth-token-endpoint';
+import { loadRuntime, clientIp, jsonError, noStore, oauthLimiter, preflightFormEndpoint, readBoundedForm, requestOrigin } from '@/lib/consensus/oauth-http';
+import { serverDatabase } from '@/lib/consensus/oauth-server';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
-const noStore = { 'Cache-Control': 'no-store', Pragma: 'no-cache' };
-function error(status: number, name: string) {
-  return NextResponse.json({ error: name }, { status, headers: noStore });
-}
-/** No secret, OAuth code or access token is ever written to logs. */
+
+/**
+ * authorization_code and refresh_token grants. No secret, code or token is ever logged.
+ * All three env gates must be enabled, and every one defaults to disabled.
+ */
 export async function POST(request: NextRequest) {
-  // All three gates must be enabled only after authorization and resource-server review.
-  if (process.env.MCP_BRIDGE_ENABLED !== 'true' ||
-      process.env.CONSENSUS_OAUTH_TOKEN_EXCHANGE_ENABLED !== 'true' ||
-      process.env.CONSENSUS_OAUTH_AUTHORIZATION_ENABLED !== 'true') {
-    return error(503, 'temporarily_unavailable');
-  }
-  if (!oauthLimiter.allow('token:' + clientIp(request.headers), Date.now())) return error(429, 'rate_limited');
-  const origin = request.headers.get('origin');
-  if (origin && origin !== request.nextUrl.origin) return error(403, 'invalid_request');
-  if (request.headers.get('content-type')?.split(';', 1)[0].trim().toLowerCase() !==
-      'application/x-www-form-urlencoded') return error(415, 'invalid_request');
-  const length = request.headers.get('content-length');
-  if (length !== null && (!/^\d+$/.test(length) || Number(length) > 4096)) {
-    return error(413, 'invalid_request');
-  }
-  let form: URLSearchParams;
-  const reader = request.body?.getReader();
-  if (!reader) return error(400, 'invalid_request');
-  const chunks: Uint8Array[] = [];
-  let received = 0;
-  try {
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      received += value.byteLength;
-      if (received > 4096) {
-        await reader.cancel().catch(() => undefined);
-        return error(413, 'invalid_request');
-      }
-      chunks.push(value);
-    }
-    const body = Buffer.concat(chunks.map(c => Buffer.from(c))).toString('utf8');
-    form = new URLSearchParams(body);
-  } catch { return error(400, 'invalid_request'); }
-  finally { reader.releaseLock(); }
-  const allowed = ['grant_type', 'code', 'redirect_uri', 'client_id', 'code_verifier'];
-  if (Array.from(form.keys()).some(k => !allowed.includes(k)) ||
-      allowed.some(k => form.getAll(k).length > 1) ||
-      form.get('grant_type') !== 'authorization_code') return error(400, 'invalid_request');
-  const code = form.get('code'), clientId = form.get('client_id');
-  const redirectUri = form.get('redirect_uri'), verifier = form.get('code_verifier');
-  if (!code || !clientId || !redirectUri || !verifier) return error(400, 'invalid_request');
-
-  // Only pre-registered public clients; no unrestricted dynamic registration.
-  let clients: Array<{ clientId: string; redirectUris: string[] }>;
-  try {
-    const parsed: unknown = JSON.parse(process.env.CONSENSUS_OAUTH_CLIENTS || 'null');
-    if (!Array.isArray(parsed) || !parsed.every(c => c && typeof c === 'object' &&
-        typeof c.clientId === 'string' && Array.isArray(c.redirectUris) &&
-        c.redirectUris.every((u: unknown) => typeof u === 'string'))) {
-      return error(503, 'temporarily_unavailable');
-    }
-    clients = parsed;
-  } catch { return error(503, 'temporarily_unavailable'); }
-  // Reject ambiguous registrations instead of silently selecting the first client.
-  // This must match the authorization endpoint's duplicate-client policy.
-  const registeredClient = uniqueOAuthClient(clients,clientId);
-  if (!registeredClient) return error(400, 'invalid_client');
-  const registered = registeredClient.redirectUris;
-
-  const issuer = process.env.CONSENSUS_OAUTH_ISSUER;
-  const signingSecret = process.env.CONSENSUS_OAUTH_SIGNING_SECRET;
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const serviceRole = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!issuer || issuer !== request.nextUrl.origin || !signingSecret || !url || !serviceRole) {
-    return error(503, 'temporarily_unavailable');
-  }
-  // Server-only client: the SQL consume function must be deployed with strict grants.
-  const database = createClient(url, serviceRole, {
-    auth: { persistSession: false, autoRefreshToken: false },
-  }) as unknown as OAuthCodeDatabase;
-  const accessToken = await exchangeCodeForBearer({
-    code, verifier, clientId, redirectUri,
-    registeredRedirects: registered,
-    nowSeconds: Math.floor(Date.now() / 1000),
-    issuer, audience: issuer + '/api/consensus/mcp', signingSecret,
-  }, createOAuthCodeStore(database));
-  if (!accessToken) return error(400, 'invalid_grant');
-  return NextResponse.json({
-    access_token: accessToken,
-    token_type: 'Bearer',
-    expires_in: 600,
-    // Reflect the scopes from the locally issued, signed bearer token.
-    scope: (JSON.parse(Buffer.from(accessToken.split('.')[1], 'base64url').toString('utf8')) as { scope: string }).scope,
-  }, { headers: noStore });
+  const rt = loadRuntime(requestOrigin(request));
+  if (!rt) return jsonError(503, 'temporarily_unavailable');
+  if (!oauthLimiter.allow('token:' + clientIp(request.headers), Date.now())) return jsonError(429, 'rate_limited');
+  const bad = preflightFormEndpoint(request, 4096);
+  if (bad) return bad;
+  const form = await readBoundedForm(request, 4096);
+  if (form === 'too_large') return jsonError(413, 'invalid_request');
+  if (form === 'invalid') return jsonError(400, 'invalid_request');
+  const server = serverDatabase();
+  if (!server) return jsonError(503, 'temporarily_unavailable');
+  const result = await handleTokenRequest(form, {
+    clients: rt.clients, issuer: rt.issuer, signingSecret: rt.secret,
+    nowSeconds: Math.floor(Date.now() / 1000), codes: server.codes, refresh: server.refresh,
+  });
+  return NextResponse.json(result.body, { status: result.status, headers: noStore });
 }

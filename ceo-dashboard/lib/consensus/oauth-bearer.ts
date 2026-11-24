@@ -8,6 +8,8 @@ import { parseRequestedScopes, type McpScope } from './oauth-contract';
 export type OAuthBearerClaims = {
   iss: string; aud: string; sub: string; client_id: string;
   iat: number; exp: number; jti: string; scope: string;
+  /** Grant (refresh-token family) this access token belongs to. Revoking the grant kills it. */
+  gid?: string;
 };
 const encoder = new TextEncoder();
 function b64url(bytes: Uint8Array): string {
@@ -24,7 +26,8 @@ function validClaims(c: OAuthBearerClaims, now: number): boolean {
     typeof c.jti === 'string' && /^[0-9a-f]{32}$/.test(c.jti) &&
     Number.isSafeInteger(c.iat) && c.iat <= now &&
     Number.isSafeInteger(c.exp) && c.exp > now && c.exp - c.iat <= 900 &&
-    parseRequestedScopes(c.scope) !== null;
+    parseRequestedScopes(c.scope) !== null &&
+    (c.gid === undefined || (typeof c.gid === 'string' && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(c.gid)));
 }
 async function keyFor(secret: string): Promise<CryptoKey> {
   if (typeof secret !== 'string' || encoder.encode(secret).length < 32) throw new Error('Signing secret too short');
@@ -32,14 +35,15 @@ async function keyFor(secret: string): Promise<CryptoKey> {
 }
 export async function issueOAuthBearer(input: {
   issuer: string; audience: string; subject: string; clientId: string;
-  scopes: readonly McpScope[]; nowSeconds: number; secret: string;
+  scopes: readonly McpScope[]; nowSeconds: number; secret: string; grantId?: string;
 }): Promise<string | null> {
   try {
     if (!Array.isArray(input.scopes) || !input.scopes.length) return null;
     const jti = Array.from(crypto.getRandomValues(new Uint8Array(16)), b=>b.toString(16).padStart(2,'0')).join('');
     const claims: OAuthBearerClaims = {
       iss:input.issuer,aud:input.audience,sub:input.subject,client_id:input.clientId,
-      iat:input.nowSeconds,exp:input.nowSeconds+600,jti,scope:input.scopes.join(' ')
+      iat:input.nowSeconds,exp:input.nowSeconds+600,jti,scope:input.scopes.join(' '),
+      ...(input.grantId ? { gid: input.grantId } : {}),
     };
     if (!validClaims(claims,input.nowSeconds)) return null;
     const key=await keyFor(input.secret);
@@ -52,6 +56,10 @@ export async function issueOAuthBearer(input: {
 export async function verifyOAuthBearer(token: unknown, expected: {
   issuer: string; audience: string; nowSeconds: number; secret: string;
   isRevoked: (jti: string) => Promise<boolean>;
+  /** Grant-level revocation. Tokens carrying a gid are rejected when this is missing (fail closed). */
+  isGrantDead?: (grantId: string) => Promise<boolean>;
+  /** Production MCP calls require a grant-bound token so owner/client revocation takes effect at once. */
+  requireGrant?: boolean;
 }): Promise<OAuthBearerClaims | null> {
   try {
     if (typeof token !== 'string' || token.length > 4096 ||
@@ -78,6 +86,10 @@ export async function verifyOAuthBearer(token: unknown, expected: {
         claims.iss!==expected.issuer || claims.aud!==expected.audience ||
         !Number.isSafeInteger(expected.nowSeconds) ||
         await expected.isRevoked(claims.jti)) return null;
+    if (expected.requireGrant && !claims.gid) return null;
+    if (claims.gid) {
+      if (!expected.isGrantDead || await expected.isGrantDead(claims.gid)) return null;
+    }
     return claims;
   } catch { return null; }
 }

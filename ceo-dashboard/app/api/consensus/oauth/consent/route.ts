@@ -3,17 +3,17 @@ import { createClient } from '@supabase/supabase-js';
 import { getCurrentUser } from '@/lib/supabase/auth';
 import { decideConsent } from '@/lib/consensus/oauth-authorize-flow';
 import { createConsentCodeWriter, type ConsentIssueDatabase } from '@/lib/consensus/oauth-consent-store';
-import { clientIp, jsonError, loadRuntime, noStore, oauthLimiter } from '@/lib/consensus/oauth-http';
+import { clientIp, jsonError, loadRuntime, noStore, oauthLimiter, requestOrigin } from '@/lib/consensus/oauth-http';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 /** Consent submission. Subject comes ONLY from the verified server session. */
 export async function POST(request: NextRequest) {
-  const rt = loadRuntime(request.nextUrl.origin);
+  const rt = loadRuntime(requestOrigin(request));
   if (!rt) return jsonError(503, 'temporarily_unavailable');
   // A cross-site form post must fail: Origin is mandatory and must match exactly.
-  if (request.headers.get('origin') !== request.nextUrl.origin) return jsonError(403, 'invalid_request');
+  if (request.headers.get('origin') !== requestOrigin(request)) return jsonError(403, 'invalid_request');
   if (request.headers.get('content-type')?.split(';', 1)[0].trim().toLowerCase() !== 'application/x-www-form-urlencoded') {
     return jsonError(415, 'invalid_request');
   }
@@ -42,6 +42,7 @@ export async function POST(request: NextRequest) {
     query: new URLSearchParams(form.get('authorization_query') ?? ''), clients: rt.clients,
     subject: user.id, secret: rt.secret, csrfToken: form.get('csrf'),
     approve: decision === 'approve', nowSeconds: Math.floor(Date.now() / 1000),
+    expectedResource: rt.issuer + '/api/consensus/mcp', issuer: rt.issuer,
     writer: createConsentCodeWriter(db as unknown as ConsentIssueDatabase),
   });
   if (result.kind === 'error') return jsonError(result.status, result.reason);
