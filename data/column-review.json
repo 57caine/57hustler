@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T05:13:21.262Z",
+  "generatedAt": "2026-11-25T04:03:30.911Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 28,
-        "bounceRate": 0.14285714285714285,
-        "avgSessionDuration": 311.318548,
+        "sessions": 27,
+        "bounceRate": 0.1111111111111111,
+        "avgSessionDuration": 307.47481225925924,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション28件・affiliate_clickゼロ"
+        "セッション27件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -47,16 +47,20 @@
       "slug": "1day-vs-2week-dotchiga-otoku",
       "title": "1day-vs-2week-dotchiga-otoku",
       "metrics": {
-        "sessions": 25,
-        "bounceRate": 0.84,
-        "avgSessionDuration": 12.94079952,
+        "sessions": 24,
+        "bounceRate": 0.9166666666666666,
+        "avgSessionDuration": 9.744678833333333,
         "affiliateClicks": 0
       },
       "flags": [
+        "bounce_rate_over_90pct",
+        "avg_session_under_10s",
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション25件・affiliate_clickゼロ"
+        "直帰率92%（閾値90%）",
+        "平均滞在9.7秒（閾値10秒）",
+        "セッション24件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -66,9 +70,11 @@
         "contentChars": 78626
       },
       "causes": [
+        "検索意図とコンテンツのミスマッチ（期待した情報が冒頭にない）",
         "アフィリエイトリンク（楽天・A8）が記事に存在しない"
       ],
       "suggestions": [
+        "冒頭3〜4行で結論・要点を先出しし、読者の疑問に即答する構成にする",
         "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
       ],
       "status": "未対応",
@@ -149,16 +155,16 @@
       "slug": "vr-game-osusume-2026",
       "title": "VRゲーム・アプリおすすめ2026【Meta Quest 3対応・ジャンル別ランキング】",
       "metrics": {
-        "sessions": 16,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 77.118597,
+        "sessions": 15,
+        "bounceRate": 0.5333333333333333,
+        "avgSessionDuration": 75.63571759999999,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション16件・affiliate_clickゼロ"
+        "セッション15件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
@@ -213,40 +219,6 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
-      "slug": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
-      "title": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
-      "metrics": {
-        "sessions": 14,
-        "bounceRate": 0.21428571428571427,
-        "avgSessionDuration": 221.80583328571427,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション14件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 4,
-        "hasAffiliateLinks": false,
-        "ctaCount": 0,
-        "contentChars": 68241
-      },
-      "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
-      ],
-      "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
-      ],
-      "status": "未対応",
-      "business": "lens-navi",
-      "priority": "medium",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/kanso-shinikui-contact",
       "slug": "kanso-shinikui-contact",
       "title": "kanso-shinikui-contact",
@@ -268,6 +240,40 @@
         "hasAffiliateLinks": false,
         "ctaCount": 0,
         "contentChars": 87390
+      },
+      "causes": [
+        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+      ],
+      "suggestions": [
+        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+      ],
+      "status": "未対応",
+      "business": "lens-navi",
+      "priority": "medium",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/contact-tsuuhan-shohosen-nashi-kanzen-guide",
+      "slug": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
+      "title": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
+      "metrics": {
+        "sessions": 13,
+        "bounceRate": 0.23076923076923078,
+        "avgSessionDuration": 210.08898176923077,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション13件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 4,
+        "hasAffiliateLinks": false,
+        "ctaCount": 0,
+        "contentChars": 68241
       },
       "causes": [
         "アフィリエイトリンク（楽天・A8）が記事に存在しない"
@@ -361,16 +367,16 @@
       "slug": "acuvue-zenkindai-hikaku",
       "title": "acuvue-zenkindai-hikaku",
       "metrics": {
-        "sessions": 9,
-        "bounceRate": 0.4444444444444444,
-        "avgSessionDuration": 117.42254566666666,
+        "sessions": 8,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 29.67090925,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション9件・affiliate_clickゼロ"
+        "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 3,
