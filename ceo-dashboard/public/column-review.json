@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T04:03:30.911Z",
+  "generatedAt": "2026-11-26T03:27:54.445Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -83,47 +83,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
-      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
-      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
-      "metrics": {
-        "sessions": 19,
-        "bounceRate": 0.7894736842105263,
-        "avgSessionDuration": 45.658656263157894,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション19件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 5,
-        "h3Count": 8,
-        "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 76868
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/smile-surgery-guide-2026",
       "slug": "smile-surgery-guide-2026",
       "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
       "metrics": {
         "sessions": 17,
         "bounceRate": 0.35294117647058826,
-        "avgSessionDuration": 189.19150394117648,
+        "avgSessionDuration": 191.78349323529415,
         "affiliateClicks": 0
       },
       "flags": [
@@ -148,6 +114,74 @@
       "status": "様子見",
       "business": "lens-navi",
       "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
+      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "metrics": {
+        "sessions": 16,
+        "bounceRate": 0.75,
+        "avgSessionDuration": 54.2196543125,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション16件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 5,
+        "h3Count": 8,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 76868
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/kanso-shinikui-contact",
+      "slug": "kanso-shinikui-contact",
+      "title": "kanso-shinikui-contact",
+      "metrics": {
+        "sessions": 15,
+        "bounceRate": 0.6,
+        "avgSessionDuration": 112.64338520000001,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション15件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 9,
+        "hasAffiliateLinks": false,
+        "ctaCount": 0,
+        "contentChars": 87390
+      },
+      "causes": [
+        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+      ],
+      "suggestions": [
+        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+      ],
+      "status": "未対応",
+      "business": "lens-navi",
+      "priority": "medium",
       "source": "auto-ga4"
     },
     {
@@ -182,74 +216,6 @@
       "status": "様子見",
       "business": "lens-navi",
       "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/contact-net-kounyu-guide",
-      "slug": "contact-net-kounyu-guide",
-      "title": "コンタクトレンズはネットで買える？処方箋なしでも大丈夫？完全ガイド",
-      "metrics": {
-        "sessions": 14,
-        "bounceRate": 0.6428571428571429,
-        "avgSessionDuration": 25.609328928571426,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション14件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 2,
-        "hasAffiliateLinks": false,
-        "ctaCount": 0,
-        "contentChars": 77797
-      },
-      "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
-      ],
-      "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
-      ],
-      "status": "未対応",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/kanso-shinikui-contact",
-      "slug": "kanso-shinikui-contact",
-      "title": "kanso-shinikui-contact",
-      "metrics": {
-        "sessions": 14,
-        "bounceRate": 0.6428571428571429,
-        "avgSessionDuration": 118.78588285714287,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション14件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 9,
-        "hasAffiliateLinks": false,
-        "ctaCount": 0,
-        "contentChars": 87390
-      },
-      "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
-      ],
-      "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
-      ],
-      "status": "未対応",
-      "business": "lens-navi",
-      "priority": "medium",
       "source": "auto-ga4"
     },
     {
@@ -329,20 +295,54 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/enkintsuyo-contact-guide",
-      "slug": "enkintsuyo-contact-guide",
-      "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
+      "path": "/column/contact-net-kounyu-guide",
+      "slug": "contact-net-kounyu-guide",
+      "title": "コンタクトレンズはネットで買える？処方箋なしでも大丈夫？完全ガイド",
       "metrics": {
-        "sessions": 10,
-        "bounceRate": 0,
-        "avgSessionDuration": 125.60352470000001,
+        "sessions": 9,
+        "bounceRate": 0.5555555555555556,
+        "avgSessionDuration": 38.08638822222222,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション10件・affiliate_clickゼロ"
+        "セッション9件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 2,
+        "hasAffiliateLinks": false,
+        "ctaCount": 0,
+        "contentChars": 77797
+      },
+      "causes": [
+        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+      ],
+      "suggestions": [
+        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+      ],
+      "status": "未対応",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/enkintsuyo-contact-guide",
+      "slug": "enkintsuyo-contact-guide",
+      "title": "遠近両用コンタクトレンズとは？老眼が始まった人向け完全ガイド2026",
+      "metrics": {
+        "sessions": 9,
+        "bounceRate": 0,
+        "avgSessionDuration": 140.89846444444444,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション9件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -397,27 +397,61 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/contact-shoshinsha-tsukehazushi-care-2026",
-      "slug": "contact-shoshinsha-tsukehazushi-care-2026",
-      "title": "contact-shoshinsha-tsukehazushi-care-2026",
+      "path": "/column/dailies-total1-vs-oasys",
+      "slug": "dailies-total1-vs-oasys",
+      "title": "dailies-total1-vs-oasys",
       "metrics": {
-        "sessions": 7,
-        "bounceRate": 0.42857142857142855,
-        "avgSessionDuration": 153.426614,
+        "sessions": 8,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 44.384226625,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション7件・affiliate_clickゼロ"
+        "セッション8件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 5,
-        "h3Count": 18,
+        "h2Count": 4,
+        "h3Count": 2,
         "hasAffiliateLinks": true,
-        "ctaCount": 2,
-        "contentChars": 102849
+        "ctaCount": 1,
+        "contentChars": 81397
+      },
+      "causes": [
+        "CTAが1箇所（末尾）のみで、早期離脱ユーザーに訴求できていない"
+      ],
+      "suggestions": [
+        "記事序盤のH2直後にもCTAボタンを1つ追加する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/vr-shiryoku-warui",
+      "slug": "vr-shiryoku-warui",
+      "title": "視力が悪い人のVRゴーグル対策【コンタクト・度付きインサート・メガネスペーサー完全ガイド】",
+      "metrics": {
+        "sessions": 8,
+        "bounceRate": 0.25,
+        "avgSessionDuration": 20.762208125,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション8件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 4,
+        "h3Count": 2,
+        "hasAffiliateLinks": true,
+        "ctaCount": 4,
+        "contentChars": 66599
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
