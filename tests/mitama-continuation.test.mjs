@@ -8,7 +8,7 @@ import { join } from 'node:path';
 import { mitamaDayForDate, mitamaDayAt } from '../scripts/lib/mitama-schedule.mjs';
 import { buildOrganicMessage } from '../scripts/lib/organic-threads-message.mjs';
 const posts = JSON.parse(readFileSync('data/mitama-threads-posts.json')).posts;
-const drafts = posts.filter(p => p.day >= 39);
+const drafts = posts.filter(p => p.day >= 39 && p.day <= 45);
 test('finite November dates retain old mapping and map seven new drafts', () => {
   for (let day = 1; day <= 28; day++) {
     const n = mitamaDayForDate(`2026-11-${String(day).padStart(2, '0')}`);
@@ -27,8 +27,8 @@ test('JST day boundaries stop at expiry and do not use the prior UTC day', () =>
   assert.throws(() => mitamaDayAt(new Date('2026-11-28T15:00:00Z')));
 });
 test('seven reviewed drafts match, fit, remain unique and dry-run without credentials', () => {
-  assert.equal(posts.length, 45);
-  assert.equal(new Set(posts.map(p => p.text)).size, 45);
+  assert.equal(posts.length, 59);
+  assert.equal(new Set(posts.map(p => p.text)).size, 59);
   for (const draft of drafts) {
     const p = posts.find(p => p.day === draft.day);
     assert.equal(p.text, draft.text);
@@ -72,7 +72,7 @@ test('existing duplicate, wrong account and incomplete history never publish', (
   }
 });
 test('upper bound and unauthorized publication fail closed', () => {
-  for (const args of [ ['--brand','mitama','--day','46'], ['--brand','lens','--day','35'], ['--brand','rakutabi','--day','40'], ['--brand','mitama','--day','39','--publish'] ]) {
+  for (const args of [ ['--brand','mitama','--day','46'], ['--brand','lens','--day','46'], ['--brand','rakutabi','--day','40'], ['--brand','mitama','--day','39','--publish'] ]) {
     const r=spawnSync(process.execPath,['scripts/post-organic-threads.mjs',...args],{encoding:'utf8',env:{}});
     assert.notEqual(r.status,0);
   }
