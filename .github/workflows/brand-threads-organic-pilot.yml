@@ -3,6 +3,10 @@ on:
   schedule:
     # Multiple daily opportunities: missed GitHub schedule runs must not mean missed posts.
     # All times are UTC and remain on the same JST calendar day.
+    - cron: '15 3 * * *' # Lens lunch JST
+    - cron: '30 3 * * *' # Travel lunch JST
+    - cron: '30 11 * * *' # Travel evening JST
+    - cron: '15 12 * * *' # Lens evening JST
     - cron: '15 1,4,7,10 * * *'
     - cron: '15 6,8 * * 0'       # Sunday 15:15 and 17:15 JST
     - cron: '15 12,13 * * 2,4' # Tuesday/Thursday 21:15 and 22:15 JST
@@ -42,6 +46,13 @@ jobs:
         run: |
           set -euo pipefail
           TODAY="$(TZ=Asia/Tokyo date +%F)"
+          # New cadence replaces legacy automatic slots from the cutover date.
+          if [[ "$TODAY" > 2026-11-28 ]]; then
+            if [[ "$EVENT_NAME" == "schedule" ]]; then
+              node scripts/plan-threads-daily.mjs
+            fi
+            exit 0
+          fi
           case "$TODAY" in
             2026-10-14) BRAND=rakutabi; DAY=2 ;;
             2026-10-15) BRAND=lens; DAY=2 ;;
@@ -161,7 +172,7 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
       - name: アカウント・重複を検証して通常投稿
-        if: ${{ steps.plan.outputs.brand != '' && steps.plan.outputs.publish == 'true' }}
+        if: ${{ github.ref == 'refs/heads/main' && steps.plan.outputs.brand != '' && steps.plan.outputs.publish == 'true' }}
         env:
           RAKUTABI_THREADS_USER_ID: ${{ secrets.RAKUTABI_THREADS_USER_ID }}
           RAKUTABI_THREADS_ACCESS_TOKEN: ${{ secrets.RAKUTABI_THREADS_ACCESS_TOKEN }}
