@@ -1,6 +1,7 @@
 /** Read-only Rakutabi Threads media insights. No posting and no access-token logging. */
 import {readFile,writeFile} from 'node:fs/promises';
 import {matchRakutabiPost,parseMediaInsights} from './lib/rakutabi-insights.mjs';
+import {measurementForPost} from './lib/threads-slot-measurement.mjs';
 const OUTPUT=process.env.RAKUTABI_INSIGHTS_OUTPUT||'rakutabi-threads-insights.json';
 const report={snapshotAt:new Date().toISOString(),status:'unavailable',posts:[],meta:{note:'Read-only Meta Threads post metrics. These are NOT booking clicks, reservations or commissions. Missing metrics are null, not zero.'}};
 async function query(path,token){
@@ -35,7 +36,7 @@ try{
    const rows=media.map(m=>({media:m,post:matchRakutabiPost(m,campaigns)})).filter(x=>x.post);
    report.status=complete?'ok':'partial_history';
    for(const {media:m,post} of rows){
-    const result={day:post.day,hotelNo:post.hotelNo,hotelName:post.hotelName,segment:post.experimentGroup||'unclassified',mediaId:String(m.id),postedAt:m.timestamp||null,views:null,likes:null,replies:null,reposts:null,quotes:null,shares:null,insightsStatus:'unavailable'};
+    const result={...measurementForPost('rakutabi',post.day),day:post.day,hotelNo:post.hotelNo,hotelName:post.hotelName,segment:post.experimentGroup||'unclassified',mediaId:String(m.id),postedAt:m.timestamp||null,views:null,likes:null,replies:null,reposts:null,quotes:null,shares:null,insightsStatus:'unavailable'};
     try{
       const v=await query(encodeURIComponent(String(m.id))+'/insights?metric=views,likes,replies,reposts,quotes,shares',token);
       Object.assign(result,parseMediaInsights(v));
