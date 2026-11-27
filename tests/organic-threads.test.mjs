@@ -7,12 +7,12 @@ import {spawnSync} from 'node:child_process';
 import {buildOrganicMessage,isOrganicDuplicate} from '../scripts/lib/organic-threads-message.mjs';
 const posts=JSON.parse(readFileSync('data/organic-threads-posts-20261013.json','utf8')).posts;
 test('safe and unique organic drafts',()=>{
- assert.equal(posts.length,35);
+ assert.equal(posts.length,52);
  assert.equal(new Set(posts.map(p=>p.text)).size,posts.length);
  assert.equal(new Set(posts.map(p=>p.brand+':'+p.day)).size,posts.length);
  for(const p of posts){
   assert.ok(['rakutabi','lens'].includes(p.brand));
-  assert.ok(Number.isInteger(p.day) && p.day>=1 && p.day<=(p.brand==='rakutabi'?18:17));
+  assert.ok(Number.isInteger(p.day) && p.day>=1 && p.day<=(p.brand==='rakutabi'?18:34));
   assert.ok(p.text.length>0 && p.text.length<=500);
   assert.ok(!p.text.includes('http'));
   assert.ok(!p.text.includes('【PR】'));
@@ -33,7 +33,7 @@ test('all drafts dry-run without credentials',()=>{
   assert.equal(r.status,0,r.stderr);
   const out=JSON.parse(r.stdout);
   assert.equal(out.mode,'dry-run');
-  if(p.url){assert.ok(out.message.startsWith('【PR】\n'));assert.ok(out.message.includes(p.text));assert.ok(out.message.endsWith(p.url));assert.ok(out.message.length<=500);}else{assert.equal(out.message,p.text);}
+  if(p.url){assert.equal(out.message,p.day>=18?p.text+'\n\n【広告】\n'+p.url:'【PR】\n'+p.text+'\n\n'+p.url);assert.ok(out.message.includes(p.text));assert.ok(out.message.endsWith(p.url));assert.ok(out.message.length<=500);}else{assert.equal(out.message,p.text);}
  }
 });
 test('publish is disabled without explicit switch',()=>{
@@ -51,25 +51,26 @@ test('scheduled extension has valid unique drafts and preserves alternate-day ca
  assert.equal(new Set(rows.map(x=>x.brand+':'+x.day)).size,rows.length);
  for(const row of rows) assert.ok(row.brand==='rakutabi'&&row.day>=19&&row.day<=39 || posts.some(p=>p.brand===row.brand&&p.day===row.day),JSON.stringify(row));
  const extension=rows.filter(x=>x.date>='2026-10-28');
- assert.equal(extension.length,43);
- assert.equal(extension.at(-1).date,'2026-12-30');
+ assert.equal(extension.length,60);
+ assert.equal([...extension].sort((a,b)=>a.date.localeCompare(b.date)).at(-1).date,'2026-12-31');
  for(const brand of ['lens','rakutabi']){
   const days=extension.filter(x=>x.brand===brand).map(x=>Date.parse(x.date));
-  for(let i=1;i<days.length;i++) assert.equal(days[i]-days[i-1],2*86400000);
+  for(let i=1;i<days.length;i++) { const gap=days[i]-days[i-1]; assert.equal(gap,brand==='lens'&&days[i]===Date.parse('2026-11-29')?12*86400000:2*86400000); }
  }
  assert.match(workflow,/cron: '15 1,4,7,10 \* \* \*'/);
  assert.match(workflow,/\*\) echo "No scheduled content for \$TODAY"; exit 0/);
 });
 test('Lens article links retain disclosure and attribution',()=>{
  const linked=posts.filter(p=>p.url&&p.brand==='lens');
- assert.deepEqual(linked.map(p=>p.brand+':'+p.day),['lens:7','lens:8','lens:9','lens:10','lens:11','lens:17']);
+ assert.deepEqual(linked.map(p=>p.brand+':'+p.day),['lens:7','lens:8','lens:9','lens:10','lens:11','lens:17','lens:18','lens:20','lens:21','lens:24','lens:26','lens:28','lens:30','lens:32','lens:34']);
  for(const p of linked){
   const message=buildOrganicMessage(p,p.brand);
-  assert.ok(message.startsWith('【PR】\n'));
+  assert.equal(message,p.day>=18?p.text+'\n\n【広告】\n'+p.url:'【PR】\n'+p.text+'\n\n'+p.url);
   const url=new URL(p.url);
   assert.equal(url.origin,p.day===17?'https://jarvis-affiliate.vercel.app':'https://www.lens-navi.jp');
   assert.equal(url.searchParams.get('utm_content'),'lens_day_'+p.day);
-  assert.equal(p.previousTexts.length,p.day===17?2:1);
+  if(p.day<=17) assert.equal(p.previousTexts.length,p.day===17?2:1);
+  else { assert.equal(isOrganicDuplicate({text:'【PR】\n'+p.text+'\n\n'+p.url},p,message),true); assert.throws(()=>buildOrganicMessage({...p,url:p.url+'&extra=1'},'lens')); }
  }
  assert.ok(posts.filter(p=>p.brand==='rakutabi'&&p.day!==9).every(p=>!p.url));
 });
@@ -129,7 +130,7 @@ test('same-day fallback respects start hours, expiry and manual opt-in', t=>{
  ['2026-11-30','22','workflow_run',true],
  ['2026-12-02','22','workflow_run',true],
  ['2026-12-30','10','schedule',true],
- ['2026-12-31','22','workflow_run',false],['2027-11-10','22','schedule',false],
+ ['2026-12-31','22','workflow_run',true],['2027-01-01','22','workflow_run',false],['2027-11-10','22','schedule',false],
  ['2026-11-10','22','workflow_dispatch',false]]){
  writeFileSync(output,'');
  const r=spawnSync('bash',['-c',plan],{encoding:'utf8',env:{PATH:process.env.PATH,TEST_DATE:date,TEST_HOUR:hour,EVENT_NAME:event,SCHEDULE_CRON:'15 1,4,7,10 * * *',MANUAL_PUBLISH:'false',GITHUB_OUTPUT:output}});
