@@ -10,12 +10,12 @@ import { buildOrganicMessage } from '../scripts/lib/organic-threads-message.mjs'
 const posts = JSON.parse(readFileSync('data/mitama-threads-posts.json')).posts;
 const drafts = posts.filter(p => p.day >= 39 && p.day <= 45);
 test('finite November dates retain old mapping and map seven new drafts', () => {
-  for (let day = 1; day <= 28; day++) {
+  for (let day = 1; day <= 30; day++) {
     const n = mitamaDayForDate(`2026-11-${String(day).padStart(2, '0')}`);
     assert.equal(n, day + 17);
     assert.equal(posts.filter(p => p.day === n).length, 1);
   }
-  for (const date of ['2026-10-31','2026-11-00','2026-11-29','2026-12-01','2027-11-01','2026-11-1','2026-11-99']) {
+  for (const date of ['2026-10-31','2026-11-00','2026-12-13','2027-11-01','2026-11-1','2026-11-99']) {
     assert.throws(() => mitamaDayForDate(date));
   }
 });
@@ -24,7 +24,9 @@ test('JST day boundaries stop at expiry and do not use the prior UTC day', () =>
   assert.equal(mitamaDayAt(new Date('2026-10-31T15:00:00Z')), 18);
   assert.equal(mitamaDayAt(new Date('2026-11-07T15:00:00Z')), 25);
   assert.equal(mitamaDayAt(new Date('2026-11-28T14:59:59Z')), 45);
-  assert.throws(() => mitamaDayAt(new Date('2026-11-28T15:00:00Z')));
+  assert.equal(mitamaDayAt(new Date('2026-11-28T15:00:00Z')),46);
+  assert.equal(mitamaDayForDate('2026-12-12'),59);
+  assert.throws(()=>mitamaDayForDate('2026-12-13'));
 });
 test('seven reviewed drafts match, fit, remain unique and dry-run without credentials', () => {
   assert.equal(posts.length, 59);
@@ -42,7 +44,7 @@ test('seven reviewed drafts match, fit, remain unique and dry-run without creden
 });
 test('workflow keeps retry hours, identity credentials, opt-in and serial execution', () => {
   const w = readFileSync('.github/workflows/mitama-threads-post.yml', 'utf8');
-  assert.match(w, /cron: '15 0,3,6,9 1-28 11 \*'/);
+  assert.match(w, /cron: '15 0,3,6,9 \* \* \*'/);
   assert.match(w, /node scripts\/lib\/mitama-schedule.mjs >> "\$GITHUB_OUTPUT"/);
   assert.match(w, /cancel-in-progress: false/);
   assert.match(w, /MITAMA_THREADS_USER_ID/);
@@ -72,7 +74,7 @@ test('existing duplicate, wrong account and incomplete history never publish', (
   }
 });
 test('upper bound and unauthorized publication fail closed', () => {
-  for (const args of [ ['--brand','mitama','--day','46'], ['--brand','lens','--day','46'], ['--brand','rakutabi','--day','40'], ['--brand','mitama','--day','39','--publish'] ]) {
+  for (const args of [ ['--brand','mitama','--day','60'], ['--brand','lens','--day','46'], ['--brand','rakutabi','--day','40'], ['--brand','mitama','--day','39','--publish'] ]) {
     const r=spawnSync(process.execPath,['scripts/post-organic-threads.mjs',...args],{encoding:'utf8',env:{}});
     assert.notEqual(r.status,0);
   }
