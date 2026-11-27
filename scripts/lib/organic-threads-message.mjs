@@ -31,7 +31,9 @@ export function buildOrganicMessage(post, brand) {
     if ([...url.searchParams.keys()].length !== 4 || Object.entries(required).some(([key,value]) => url.searchParams.getAll(key).length !== 1 || url.searchParams.get(key) !== value)) {
       throw new Error('Article campaign attribution is missing or inconsistent');
     }
-    message = '【PR】\n' + post.text + '\n\n' + url.href;
+    message = isLens && post.day >= 18
+      ? post.text + '\n\n【広告】\n' + url.href
+      : '【PR】\n' + post.text + '\n\n' + url.href;
   }
   if (message.length > 500) throw new Error('Final Threads message exceeds 500 characters');
   return message;
