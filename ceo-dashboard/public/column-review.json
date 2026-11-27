@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T03:27:54.445Z",
+  "generatedAt": "2026-11-27T03:34:37.594Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -13,16 +13,16 @@
       "slug": "multifocal-contact-rogansetsu",
       "title": "multifocal-contact-rogansetsu",
       "metrics": {
-        "sessions": 27,
-        "bounceRate": 0.1111111111111111,
-        "avgSessionDuration": 307.47481225925924,
+        "sessions": 28,
+        "bounceRate": 0.17857142857142858,
+        "avgSessionDuration": 295.623365,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション27件・affiliate_clickゼロ"
+        "セッション28件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -47,20 +47,16 @@
       "slug": "1day-vs-2week-dotchiga-otoku",
       "title": "1day-vs-2week-dotchiga-otoku",
       "metrics": {
-        "sessions": 24,
-        "bounceRate": 0.9166666666666666,
-        "avgSessionDuration": 9.744678833333333,
+        "sessions": 25,
+        "bounceRate": 0.88,
+        "avgSessionDuration": 25.01250864,
         "affiliateClicks": 0
       },
       "flags": [
-        "bounce_rate_over_90pct",
-        "avg_session_under_10s",
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "直帰率92%（閾値90%）",
-        "平均滞在9.7秒（閾値10秒）",
-        "セッション24件・affiliate_clickゼロ"
+        "セッション25件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -70,11 +66,9 @@
         "contentChars": 78626
       },
       "causes": [
-        "検索意図とコンテンツのミスマッチ（期待した情報が冒頭にない）",
         "アフィリエイトリンク（楽天・A8）が記事に存在しない"
       ],
       "suggestions": [
-        "冒頭3〜4行で結論・要点を先出しし、読者の疑問に即答する構成にする",
         "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
       ],
       "status": "未対応",
@@ -89,7 +83,7 @@
       "metrics": {
         "sessions": 17,
         "bounceRate": 0.35294117647058826,
-        "avgSessionDuration": 191.78349323529415,
+        "avgSessionDuration": 187.90115382352943,
         "affiliateClicks": 0
       },
       "flags": [
@@ -117,13 +111,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
-      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
-      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "path": "/column/kanso-shinikui-contact",
+      "slug": "kanso-shinikui-contact",
+      "title": "kanso-shinikui-contact",
       "metrics": {
         "sessions": 16,
-        "bounceRate": 0.75,
-        "avgSessionDuration": 54.2196543125,
+        "bounceRate": 0.625,
+        "avgSessionDuration": 105.60317362500001,
         "affiliateClicks": 0
       },
       "flags": [
@@ -131,40 +125,6 @@
       ],
       "flagLabels": [
         "セッション16件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 5,
-        "h3Count": 8,
-        "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 76868
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
-      "path": "/column/kanso-shinikui-contact",
-      "slug": "kanso-shinikui-contact",
-      "title": "kanso-shinikui-contact",
-      "metrics": {
-        "sessions": 15,
-        "bounceRate": 0.6,
-        "avgSessionDuration": 112.64338520000001,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション15件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -182,6 +142,40 @@
       "status": "未対応",
       "business": "lens-navi",
       "priority": "medium",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
+      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "metrics": {
+        "sessions": 15,
+        "bounceRate": 0.7333333333333333,
+        "avgSessionDuration": 57.83429793333333,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション15件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 5,
+        "h3Count": 8,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 76868
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
       "source": "auto-ga4"
     },
     {
@@ -223,16 +217,16 @@
       "slug": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "title": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "metrics": {
-        "sessions": 13,
-        "bounceRate": 0.23076923076923078,
-        "avgSessionDuration": 210.08898176923077,
+        "sessions": 14,
+        "bounceRate": 0.2857142857142857,
+        "avgSessionDuration": 195.08262592857142,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション13件・affiliate_clickゼロ"
+        "セッション14件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -431,27 +425,27 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/vr-shiryoku-warui",
-      "slug": "vr-shiryoku-warui",
-      "title": "視力が悪い人のVRゴーグル対策【コンタクト・度付きインサート・メガネスペーサー完全ガイド】",
+      "path": "/column/contact-shoshinsha-tsukehazushi-care-2026",
+      "slug": "contact-shoshinsha-tsukehazushi-care-2026",
+      "title": "contact-shoshinsha-tsukehazushi-care-2026",
       "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.25,
-        "avgSessionDuration": 20.762208125,
+        "sessions": 6,
+        "bounceRate": 0.5,
+        "avgSessionDuration": 83.69320133333333,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
+        "セッション6件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 4,
-        "h3Count": 2,
+        "h2Count": 5,
+        "h3Count": 18,
         "hasAffiliateLinks": true,
-        "ctaCount": 4,
-        "contentChars": 66599
+        "ctaCount": 2,
+        "contentChars": 102849
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
