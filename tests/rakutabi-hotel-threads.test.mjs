@@ -13,7 +13,9 @@ test('day16 has three independently licensed photos and booking reply content',(
  assert.ok(v.photos.every(p=>p.rights.license && p.rights.proofUrl && p.rights.scope.includes('Threads')));
  assert.ok(v.photoCredits.some(text=>text.includes('Kounosu')));
  assert.ok(v.photoCredits.every(text=>text.length<=500));
- assert.match(v.reply,/【PR】.*ホテルニューグランド/);
+ assert.match(v.reply,/ホテルニューグランド/);
+ assert.match(v.reply,/【広告】楽天トラベル\nhttps:\/\//);
+ assert.match(v.caption,/\n\n【広告】$/);
  assert.match(v.reply,/hb\.afl\.rakuten\.co\.jp/);
  assert.ok(v.photos.every(p=>p.url.includes('upload.wikimedia.org')));
  assert.equal(v.nearbySources.length,2);
@@ -106,7 +108,9 @@ test('all fifteen December hotel posts have distinct destinations, rights-backed
   ids.add(v.hotelNo);
   assert.ok(v.photos.length>=1&&v.photos.length<=6);
   assert.equal(v.mediaType,v.photos.length===1?'IMAGE':'CAROUSEL');
-  assert.match(v.caption,/^【PR】 /);
+  assert.match(v.caption,/\n\n【広告】$/);
+  assert.doesNotMatch(v.caption,/^【PR】/);
+  assert.match(v.reply,/【広告】楽天トラベル\nhttps:\/\//);
   assert.doesNotMatch(v.caption,/【宿番号|企画\d+|撮影者・出典と利用条件は予約案内/);
   assert.match(v.reply,/hb\.afl\.rakuten\.co\.jp/);
   assert.match(decodeURIComponent(v.reply),new RegExp('HOTEL/'+v.hotelNo+'/'+v.hotelNo+'\\.html'));
