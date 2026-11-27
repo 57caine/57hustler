@@ -40,8 +40,9 @@ if(post.nearbySources.some(s=>!s.claim||!s.url||new URL(s.url).protocol!=='https
 const marker='【宿番号 '+post.hotelNo+'・企画'+day+'】';
 // Keep the historical marker for deduplicating already published old-format posts,
 // but never show internal campaign identifiers in new public captions.
-const caption='【PR】 '+post.caption;
-const reply='【PR】楽天トラベルで「'+post.hotelName+'」の宿泊プランを確認👇\n'+post.bookingUrl;
+const legacyCaption='【PR】 '+post.caption;
+const caption=post.caption+'\n\n【広告】';
+const reply='「'+post.hotelName+'」が気になった方はこちらから宿泊プランを見られます👇\n【広告】楽天トラベル\n'+post.bookingUrl;
 const photoCredits=photoCreditMessages(photos);
 if(caption.length>500||reply.length>500)throw new Error('Threads 500 character limit exceeded');
 console.log(JSON.stringify({mode:publish?'publish':'dry-run',hotelNo:post.hotelNo,hotelName:post.hotelName,mediaType,photos:photos.map(p=>({url:p.url,alt:p.alt,rights:p.rights})),nearbySources:post.nearbySources,caption,reply,photoCredits},null,2));
@@ -75,7 +76,7 @@ for(let page=0;page<10;page++){
  if(!after)break;
 }
 if(!complete)throw new Error('Cannot exhaust history; abort to prevent duplicate');
-let parent=history.find(p=>typeof p.text==='string' && (p.text.includes(marker) || p.text.trim()===caption.trim()));
+let parent=history.find(p=>typeof p.text==='string' && (p.text.includes(marker) || p.text.trim()===caption.trim() || p.text.trim()===legacyCaption.trim()));
 if(parent){
  const linked=history.find(p=>String(p.reply_to_id??'')===String(parent.id)&&typeof p.text==='string'&&p.text.includes(post.bookingUrl));
  if(linked){console.log(JSON.stringify({status:'already-published',parentId:parent.id,replyId:linked.id}));process.exit(0);}
