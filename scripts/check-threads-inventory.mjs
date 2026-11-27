@@ -19,8 +19,8 @@ for(let i=0;i<14;i++){
  }
  const day=46+(Date.parse(date)-Date.parse('2026-11-29'))/86400000;
  const p=mitama.find(p=>p.day===day);
- if(p?.status==='draft_pending_editorial_review')reports.mitama.pendingReview++;
- reports.mitama.missing.push({date,day,reason:p?'not authorized by current date gate':'missing draft'});
+ if(p?.status?.startsWith('reviewed_scheduled_'))reports.mitama.ready++;
+ else {if(p)reports.mitama.pendingReview++;reports.mitama.missing.push({date,day,reason:p?'review required':'missing draft'});}
 }
 for(const r of Object.values(reports)){
  console.log(JSON.stringify({asOf:now,...r}));
