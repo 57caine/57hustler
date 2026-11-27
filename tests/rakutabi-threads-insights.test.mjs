@@ -33,3 +33,14 @@ test('no credentials results in an explicit no-data snapshot, never a post',()=>
  assert.match(r.stdout,/"status":"not_configured"/);
  assert.doesNotMatch(r.stdout,/access_token|Bearer /);
 });
+
+test('new disclosure format matches campaign and planned slot without inventing affiliate results',async()=>{
+ const {measurementForPost}=await import('../scripts/lib/threads-slot-measurement.mjs');
+ for(const p of posts){assert.equal(matchRakutabiPost({text:p.caption+'\n\n【広告】'},posts)?.day,p.day);}
+ assert.equal(matchRakutabiPost({text:'Unknown\n\n【広告】'},posts),null);
+ const row=measurementForPost('rakutabi',24);
+ assert.equal(row.slot,'lunch');assert.equal(row.plannedJst,'12:30');assert.equal(row.date,'2026-11-29');
+ assert.equal(measurementForPost('rakutabi',25).plannedJst,'20:30');
+ assert.equal(measurementForPost('lens',18).plannedJst,'12:15');assert.equal(measurementForPost('lens',19).plannedJst,'21:15');
+ assert.equal(row.confirmedCommissionJPY,null);assert.equal(row.orders,null);assert.equal(row.affiliateClicks,null);
+});
