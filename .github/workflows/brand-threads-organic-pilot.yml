@@ -95,6 +95,23 @@ jobs:
             2026-12-26) BRAND=rakutabi; DAY=37 ;;
             2026-12-28) BRAND=rakutabi; DAY=38 ;;
             2026-12-30) BRAND=rakutabi; DAY=39 ;;
+            2026-11-29) BRAND=lens; DAY=18 ;;
+            2026-12-01) BRAND=lens; DAY=19 ;;
+            2026-12-03) BRAND=lens; DAY=20 ;;
+            2026-12-05) BRAND=lens; DAY=21 ;;
+            2026-12-07) BRAND=lens; DAY=22 ;;
+            2026-12-09) BRAND=lens; DAY=23 ;;
+            2026-12-11) BRAND=lens; DAY=24 ;;
+            2026-12-13) BRAND=lens; DAY=25 ;;
+            2026-12-15) BRAND=lens; DAY=26 ;;
+            2026-12-17) BRAND=lens; DAY=27 ;;
+            2026-12-19) BRAND=lens; DAY=28 ;;
+            2026-12-21) BRAND=lens; DAY=29 ;;
+            2026-12-23) BRAND=lens; DAY=30 ;;
+            2026-12-25) BRAND=lens; DAY=31 ;;
+            2026-12-27) BRAND=lens; DAY=32 ;;
+            2026-12-29) BRAND=lens; DAY=33 ;;
+            2026-12-31) BRAND=lens; DAY=34 ;;
             *) echo "No scheduled content for $TODAY"; exit 0 ;;
           esac
           if [[ "$EVENT_NAME" == "schedule" || "$EVENT_NAME" == "workflow_run" ]]; then
