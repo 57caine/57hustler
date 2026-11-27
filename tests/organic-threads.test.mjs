@@ -127,10 +127,10 @@ test('same-day fallback respects start hours, expiry and manual opt-in', t=>{
  ['2026-11-19','22','workflow_run',false],
  ['2026-11-20','10','schedule',true],
  ['2026-11-22','15','schedule',true],
- ['2026-11-30','22','workflow_run',true],
- ['2026-12-02','22','workflow_run',true],
- ['2026-12-30','10','schedule',true],
- ['2026-12-31','22','workflow_run',true],['2027-01-01','22','workflow_run',false],['2027-11-10','22','schedule',false],
+ ['2026-11-30','22','workflow_run',false],
+ ['2026-12-02','22','workflow_run',false],
+ ['2026-12-30','10','workflow_run',false],
+ ['2026-12-31','22','workflow_run',false],['2027-01-01','22','workflow_run',false],['2027-11-10','22','schedule',false],
  ['2026-11-10','22','workflow_dispatch',false]]){
  writeFileSync(output,'');
  const r=spawnSync('bash',['-c',plan],{encoding:'utf8',env:{PATH:process.env.PATH,TEST_DATE:date,TEST_HOUR:hour,EVENT_NAME:event,SCHEDULE_CRON:'15 1,4,7,10 * * *',MANUAL_PUBLISH:'false',GITHUB_OUTPUT:output}});
@@ -182,4 +182,21 @@ test('December calendar covers 15 alternating days through year-end with no blan
  assert.deepEqual(days.map(x=>x.date),[2,4,6,8,10,12,14,16,18,20,22,24,26,28,30]);
  assert.deepEqual(days.map(x=>x.n),Array.from({length:15},(_,i)=>25+i));
  assert.doesNotMatch(workflow,/2026-12-31\) BRAND=rakutabi/);
+});
+
+test('new daily planner gives four distinct brand/slot identities and never invents missing drafts',async()=>{
+ const {planSlot,slots}=await import('../scripts/lib/threads-daily-slots.mjs');
+ const travel=JSON.parse(readFileSync('data/rakutabi-threads-hotel-posts.json','utf8')).posts;
+ assert.equal(slots.length,4);
+ const plans=slots.map(s=>planSlot('2026-11-29',s.cron,s.brand==='lens'?posts:travel));
+ assert.deepEqual(plans.map(p=>[p.brand,p.slot,p.day,p.status]),[['lens','lunch',18,'ready'],['rakutabi','lunch',24,'ready'],['rakutabi','evening',25,'ready'],['lens','evening',19,'ready']]);
+ assert.equal(new Set(plans.map(p=>p.brand+':'+p.day)).size,4);
+ assert.equal(planSlot('2026-11-28',slots[0].cron,posts),null);
+ assert.equal(planSlot('2026-11-29','15 1,4,7,10 * * *',posts),null);
+ assert.equal(planSlot('2027-01-01',slots[0].cron,posts).status,'missing-draft');
+ assert.throws(()=>planSlot('2026-11-31',slots[0].cron,posts));
+ const w=readFileSync('.github/workflows/brand-threads-organic-pilot.yml','utf8');
+ for(const s of slots)assert.ok(w.includes("cron: '"+s.cron+"'"));
+ assert.match(w,/node scripts\/plan-threads-daily.mjs/);
+ assert.match(w,/github.ref == 'refs\/heads\/main'/);
 });
