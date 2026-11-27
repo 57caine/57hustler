@@ -30,6 +30,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: 原稿在庫の確認（読み取り専用）
+        run: node scripts/check-threads-inventory.mjs
       - name: 公開対象を日付で限定
         id: plan
         env:
