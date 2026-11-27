@@ -1,8 +1,8 @@
 /** Pure matching and safe normalization for Threads insights. */
 export function matchRakutabiPost(media,posts){
  const text=media?.text;
- if(typeof text!=='string'||!text.startsWith('【PR】 '))return null;
- return posts.find(post=>text.trim()==='【PR】 '+post.caption.trim() || text.includes('【宿番号 '+post.hotelNo+'・企画'+post.day+'】'))||null;
+ if(typeof text!=='string')return null;
+ return posts.find(post=>text.trim()==='【PR】 '+post.caption.trim() || text.trim()===(post.caption+'\n\n【広告】').trim() || (text.startsWith('【PR】 ') && text.includes('【宿番号 '+post.hotelNo+'・企画'+post.day+'】')))||null;
 }
 export function parseMediaInsights(body){
  const out={};
