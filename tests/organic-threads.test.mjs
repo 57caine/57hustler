@@ -7,12 +7,12 @@ import {spawnSync} from 'node:child_process';
 import {buildOrganicMessage,isOrganicDuplicate} from '../scripts/lib/organic-threads-message.mjs';
 const posts=JSON.parse(readFileSync('data/organic-threads-posts-20261013.json','utf8')).posts;
 test('safe and unique organic drafts',()=>{
- assert.equal(posts.length,52);
+ assert.equal(posts.length,63);
  assert.equal(new Set(posts.map(p=>p.text)).size,posts.length);
  assert.equal(new Set(posts.map(p=>p.brand+':'+p.day)).size,posts.length);
  for(const p of posts){
   assert.ok(['rakutabi','lens'].includes(p.brand));
-  assert.ok(Number.isInteger(p.day) && p.day>=1 && p.day<=(p.brand==='rakutabi'?18:34));
+  assert.ok(Number.isInteger(p.day) && p.day>=1 && p.day<=(p.brand==='rakutabi'?18:45));
   assert.ok(p.text.length>0 && p.text.length<=500);
   assert.ok(!p.text.includes('http'));
   assert.ok(!p.text.includes('【PR】'));
@@ -62,7 +62,7 @@ test('scheduled extension has valid unique drafts and preserves alternate-day ca
 });
 test('Lens article links retain disclosure and attribution',()=>{
  const linked=posts.filter(p=>p.url&&p.brand==='lens');
- assert.deepEqual(linked.map(p=>p.brand+':'+p.day),['lens:7','lens:8','lens:9','lens:10','lens:11','lens:17','lens:18','lens:20','lens:21','lens:24','lens:26','lens:28','lens:30','lens:32','lens:34']);
+ assert.deepEqual(linked.map(p=>p.brand+':'+p.day),['lens:7','lens:8','lens:9','lens:10','lens:11','lens:17','lens:18','lens:20','lens:21','lens:24','lens:26','lens:28','lens:30','lens:32','lens:34','lens:35','lens:37','lens:39','lens:41','lens:43','lens:45']);
  for(const p of linked){
   const message=buildOrganicMessage(p,p.brand);
   assert.equal(message,p.day>=18?p.text+'\n\n【広告】\n'+p.url:'【PR】\n'+p.text+'\n\n'+p.url);
