@@ -7,12 +7,12 @@ import {spawnSync} from 'node:child_process';
 import {buildOrganicMessage,isOrganicDuplicate} from '../scripts/lib/organic-threads-message.mjs';
 const posts=JSON.parse(readFileSync('data/organic-threads-posts-20261013.json','utf8')).posts;
 test('safe and unique organic drafts',()=>{
- assert.equal(posts.length,35);
+ assert.equal(posts.length,63);
  assert.equal(new Set(posts.map(p=>p.text)).size,posts.length);
  assert.equal(new Set(posts.map(p=>p.brand+':'+p.day)).size,posts.length);
  for(const p of posts){
   assert.ok(['rakutabi','lens'].includes(p.brand));
-  assert.ok(Number.isInteger(p.day) && p.day>=1 && p.day<=(p.brand==='rakutabi'?18:17));
+  assert.ok(Number.isInteger(p.day) && p.day>=1 && p.day<=(p.brand==='rakutabi'?18:45));
   assert.ok(p.text.length>0 && p.text.length<=500);
   assert.ok(!p.text.includes('http'));
   assert.ok(!p.text.includes('【PR】'));
@@ -33,7 +33,7 @@ test('all drafts dry-run without credentials',()=>{
   assert.equal(r.status,0,r.stderr);
   const out=JSON.parse(r.stdout);
   assert.equal(out.mode,'dry-run');
-  if(p.url){assert.ok(out.message.startsWith('【PR】\n'));assert.ok(out.message.includes(p.text));assert.ok(out.message.endsWith(p.url));assert.ok(out.message.length<=500);}else{assert.equal(out.message,p.text);}
+  if(p.url){assert.equal(out.message,p.day>=18?p.text+'\n\n【広告】\n'+p.url:'【PR】\n'+p.text+'\n\n'+p.url);assert.ok(out.message.includes(p.text));assert.ok(out.message.endsWith(p.url));assert.ok(out.message.length<=500);}else{assert.equal(out.message,p.text);}
  }
 });
 test('publish is disabled without explicit switch',()=>{
@@ -51,25 +51,26 @@ test('scheduled extension has valid unique drafts and preserves alternate-day ca
  assert.equal(new Set(rows.map(x=>x.brand+':'+x.day)).size,rows.length);
  for(const row of rows) assert.ok(row.brand==='rakutabi'&&row.day>=19&&row.day<=39 || posts.some(p=>p.brand===row.brand&&p.day===row.day),JSON.stringify(row));
  const extension=rows.filter(x=>x.date>='2026-10-28');
- assert.equal(extension.length,43);
- assert.equal(extension.at(-1).date,'2026-12-30');
+ assert.equal(extension.length,60);
+ assert.equal([...extension].sort((a,b)=>a.date.localeCompare(b.date)).at(-1).date,'2026-12-31');
  for(const brand of ['lens','rakutabi']){
   const days=extension.filter(x=>x.brand===brand).map(x=>Date.parse(x.date));
-  for(let i=1;i<days.length;i++) assert.equal(days[i]-days[i-1],2*86400000);
+  for(let i=1;i<days.length;i++) { const gap=days[i]-days[i-1]; assert.equal(gap,brand==='lens'&&days[i]===Date.parse('2026-11-29')?12*86400000:2*86400000); }
  }
  assert.match(workflow,/cron: '15 1,4,7,10 \* \* \*'/);
  assert.match(workflow,/\*\) echo "No scheduled content for \$TODAY"; exit 0/);
 });
 test('Lens article links retain disclosure and attribution',()=>{
  const linked=posts.filter(p=>p.url&&p.brand==='lens');
- assert.deepEqual(linked.map(p=>p.brand+':'+p.day),['lens:7','lens:8','lens:9','lens:10','lens:11','lens:17']);
+ assert.deepEqual(linked.map(p=>p.brand+':'+p.day),['lens:7','lens:8','lens:9','lens:10','lens:11','lens:17','lens:18','lens:20','lens:21','lens:24','lens:26','lens:28','lens:30','lens:32','lens:34','lens:35','lens:37','lens:39','lens:41','lens:43','lens:45']);
  for(const p of linked){
   const message=buildOrganicMessage(p,p.brand);
-  assert.ok(message.startsWith('【PR】\n'));
+  assert.equal(message,p.day>=18?p.text+'\n\n【広告】\n'+p.url:'【PR】\n'+p.text+'\n\n'+p.url);
   const url=new URL(p.url);
   assert.equal(url.origin,p.day===17?'https://jarvis-affiliate.vercel.app':'https://www.lens-navi.jp');
   assert.equal(url.searchParams.get('utm_content'),'lens_day_'+p.day);
-  assert.equal(p.previousTexts.length,p.day===17?2:1);
+  if(p.day<=17) assert.equal(p.previousTexts.length,p.day===17?2:1);
+  else { assert.equal(isOrganicDuplicate({text:'【PR】\n'+p.text+'\n\n'+p.url},p,message),true); assert.throws(()=>buildOrganicMessage({...p,url:p.url+'&extra=1'},'lens')); }
  }
  assert.ok(posts.filter(p=>p.brand==='rakutabi'&&p.day!==9).every(p=>!p.url));
 });
@@ -126,10 +127,10 @@ test('same-day fallback respects start hours, expiry and manual opt-in', t=>{
  ['2026-11-19','22','workflow_run',false],
  ['2026-11-20','10','schedule',true],
  ['2026-11-22','15','schedule',true],
- ['2026-11-30','22','workflow_run',true],
- ['2026-12-02','22','workflow_run',true],
- ['2026-12-30','10','schedule',true],
- ['2026-12-31','22','workflow_run',false],['2027-11-10','22','schedule',false],
+ ['2026-11-30','22','workflow_run',false],
+ ['2026-12-02','22','workflow_run',false],
+ ['2026-12-30','10','workflow_run',false],
+ ['2026-12-31','22','workflow_run',false],['2027-01-01','22','workflow_run',false],['2027-11-10','22','schedule',false],
  ['2026-11-10','22','workflow_dispatch',false]]){
  writeFileSync(output,'');
  const r=spawnSync('bash',['-c',plan],{encoding:'utf8',env:{PATH:process.env.PATH,TEST_DATE:date,TEST_HOUR:hour,EVENT_NAME:event,SCHEDULE_CRON:'15 1,4,7,10 * * *',MANUAL_PUBLISH:'false',GITHUB_OUTPUT:output}});
@@ -181,4 +182,21 @@ test('December calendar covers 15 alternating days through year-end with no blan
  assert.deepEqual(days.map(x=>x.date),[2,4,6,8,10,12,14,16,18,20,22,24,26,28,30]);
  assert.deepEqual(days.map(x=>x.n),Array.from({length:15},(_,i)=>25+i));
  assert.doesNotMatch(workflow,/2026-12-31\) BRAND=rakutabi/);
+});
+
+test('new daily planner gives four distinct brand/slot identities and never invents missing drafts',async()=>{
+ const {planSlot,slots}=await import('../scripts/lib/threads-daily-slots.mjs');
+ const travel=JSON.parse(readFileSync('data/rakutabi-threads-hotel-posts.json','utf8')).posts;
+ assert.equal(slots.length,4);
+ const plans=slots.map(s=>planSlot('2026-11-29',s.cron,s.brand==='lens'?posts:travel));
+ assert.deepEqual(plans.map(p=>[p.brand,p.slot,p.day,p.status]),[['lens','lunch',18,'ready'],['rakutabi','lunch',24,'ready'],['rakutabi','evening',25,'ready'],['lens','evening',19,'ready']]);
+ assert.equal(new Set(plans.map(p=>p.brand+':'+p.day)).size,4);
+ assert.equal(planSlot('2026-11-28',slots[0].cron,posts),null);
+ assert.equal(planSlot('2026-11-29','15 1,4,7,10 * * *',posts),null);
+ assert.equal(planSlot('2027-01-01',slots[0].cron,posts).status,'missing-draft');
+ assert.throws(()=>planSlot('2026-11-31',slots[0].cron,posts));
+ const w=readFileSync('.github/workflows/brand-threads-organic-pilot.yml','utf8');
+ for(const s of slots)assert.ok(w.includes("cron: '"+s.cron+"'"));
+ assert.match(w,/node scripts\/plan-threads-daily.mjs/);
+ assert.match(w,/github.ref == 'refs\/heads\/main'/);
 });

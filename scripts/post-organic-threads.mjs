@@ -9,7 +9,7 @@ const CONFIG={
   lens:{handle:'lens_navi_jp',token:'LENS_THREADS_ACCESS_TOKEN',userId:'LENS_THREADS_USER_ID'},
   mitama:{handle:'mitama.wisdom',token:'MITAMA_THREADS_ACCESS_TOKEN',userId:'MITAMA_THREADS_USER_ID'}
 };
-if(!Object.hasOwn(CONFIG,brand)||!Number.isInteger(day)||day<1||day>(brand==='mitama'?38:brand==='rakutabi'?39:17)) throw new Error('Invalid brand/day');
+if(!Object.hasOwn(CONFIG,brand)||!Number.isInteger(day)||day<1||day>(brand==='mitama'?59:brand==='rakutabi'?39:45)) throw new Error('Invalid brand/day');
 const cfg=CONFIG[brand];
 if (brand === 'rakutabi') {
   // Dedicated hotel-image + reply publisher. Never fall back to TEXT-only format.
@@ -34,6 +34,7 @@ if(brand==='mitama'&&args.includes('--audit')) {
 }
 if(!post||typeof post.text!=='string'||!post.text.trim()||post.text.length>500) throw new Error('Invalid post');
 if(brand==='mitama'&&day>=10&&!auditMitamaPost(post).valid) throw new Error('MITAMA editorial audit failed: Japanese cultural anchor and reader question required');
+if(brand==='mitama'&&day>45&&publish&&!post.status?.startsWith('reviewed_scheduled_'))throw Error('MITAMA review required');
 const message=buildOrganicMessage(post,brand);
 console.log(JSON.stringify({mode:publish?'publish':'dry-run',brand,expectedHandle:cfg.handle,day,message}));
 if(!publish) process.exit(0);
