@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T03:34:37.594Z",
+  "generatedAt": "2026-11-28T03:12:23.093Z",
   "dataDateRange": {
     "start": "28daysAgo",
     "end": "today"
@@ -49,7 +49,7 @@
       "metrics": {
         "sessions": 25,
         "bounceRate": 0.88,
-        "avgSessionDuration": 25.01250864,
+        "avgSessionDuration": 25.012508639999997,
         "affiliateClicks": 0
       },
       "flags": [
@@ -77,47 +77,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/smile-surgery-guide-2026",
-      "slug": "smile-surgery-guide-2026",
-      "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
-      "metrics": {
-        "sessions": 17,
-        "bounceRate": 0.35294117647058826,
-        "avgSessionDuration": 187.90115382352943,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション17件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 4,
-        "h3Count": 2,
-        "hasAffiliateLinks": true,
-        "ctaCount": 3,
-        "contentChars": 72333
-      },
-      "causes": [
-        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
-      ],
-      "suggestions": [
-        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
-      ],
-      "status": "様子見",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/kanso-shinikui-contact",
       "slug": "kanso-shinikui-contact",
       "title": "kanso-shinikui-contact",
       "metrics": {
         "sessions": 16,
-        "bounceRate": 0.625,
-        "avgSessionDuration": 105.60317362500001,
+        "bounceRate": 0.5625,
+        "avgSessionDuration": 216.16536225000002,
         "affiliateClicks": 0
       },
       "flags": [
@@ -145,13 +111,13 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
-      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
-      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "path": "/column/smile-surgery-guide-2026",
+      "slug": "smile-surgery-guide-2026",
+      "title": "スマイル手術（SMILE）完全ガイド2026【レーシックとの違い・費用・体験談】",
       "metrics": {
         "sessions": 15,
-        "bounceRate": 0.7333333333333333,
-        "avgSessionDuration": 57.83429793333333,
+        "bounceRate": 0.4,
+        "avgSessionDuration": 189.55233719999998,
         "affiliateClicks": 0
       },
       "flags": [
@@ -161,11 +127,11 @@
         "セッション15件・affiliate_clickゼロ"
       ],
       "analysis": {
-        "h2Count": 5,
-        "h3Count": 8,
+        "h2Count": 4,
+        "h3Count": 2,
         "hasAffiliateLinks": true,
         "ctaCount": 3,
-        "contentChars": 76868
+        "contentChars": 72333
       },
       "causes": [
         "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
@@ -217,16 +183,16 @@
       "slug": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "title": "contact-tsuuhan-shohosen-nashi-kanzen-guide",
       "metrics": {
-        "sessions": 14,
-        "bounceRate": 0.2857142857142857,
-        "avgSessionDuration": 195.08262592857142,
+        "sessions": 13,
+        "bounceRate": 0.3076923076923077,
+        "avgSessionDuration": 205.76002715384615,
         "affiliateClicks": 0
       },
       "flags": [
         "no_affiliate_clicks"
       ],
       "flagLabels": [
-        "セッション14件・affiliate_clickゼロ"
+        "セッション13件・affiliate_clickゼロ"
       ],
       "analysis": {
         "h2Count": 4,
@@ -244,6 +210,40 @@
       "status": "未対応",
       "business": "lens-navi",
       "priority": "medium",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/contact-dosu-shohosen-mikata-kanzen-2026",
+      "slug": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "title": "contact-dosu-shohosen-mikata-kanzen-2026",
+      "metrics": {
+        "sessions": 11,
+        "bounceRate": 0.7272727272727273,
+        "avgSessionDuration": 73.15158409090908,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション11件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 5,
+        "h3Count": 8,
+        "hasAffiliateLinks": true,
+        "ctaCount": 3,
+        "contentChars": 76868
+      },
+      "causes": [
+        "affiliate_clickイベントが未計測。GA4計測が最近実装されたためデータ蓄積中の可能性がある"
+      ],
+      "suggestions": [
+        "GA4リアルタイムレポートでリンクを1件クリックし、affiliate_clickイベントが記録されるか確認する"
+      ],
+      "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
       "source": "auto-ga4"
     },
     {
@@ -295,7 +295,7 @@
       "metrics": {
         "sessions": 9,
         "bounceRate": 0.5555555555555556,
-        "avgSessionDuration": 38.08638822222222,
+        "avgSessionDuration": 38.85658788888889,
         "affiliateClicks": 0
       },
       "flags": [
@@ -357,40 +357,6 @@
       "source": "auto-ga4"
     },
     {
-      "path": "/column/acuvue-zenkindai-hikaku",
-      "slug": "acuvue-zenkindai-hikaku",
-      "title": "acuvue-zenkindai-hikaku",
-      "metrics": {
-        "sessions": 8,
-        "bounceRate": 0.5,
-        "avgSessionDuration": 29.67090925,
-        "affiliateClicks": 0
-      },
-      "flags": [
-        "no_affiliate_clicks"
-      ],
-      "flagLabels": [
-        "セッション8件・affiliate_clickゼロ"
-      ],
-      "analysis": {
-        "h2Count": 3,
-        "h3Count": 6,
-        "hasAffiliateLinks": false,
-        "ctaCount": 0,
-        "contentChars": 76173
-      },
-      "causes": [
-        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
-      ],
-      "suggestions": [
-        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
-      ],
-      "status": "未対応",
-      "business": "lens-navi",
-      "priority": "low",
-      "source": "auto-ga4"
-    },
-    {
       "path": "/column/dailies-total1-vs-oasys",
       "slug": "dailies-total1-vs-oasys",
       "title": "dailies-total1-vs-oasys",
@@ -420,6 +386,40 @@
         "記事序盤のH2直後にもCTAボタンを1つ追加する"
       ],
       "status": "様子見",
+      "business": "lens-navi",
+      "priority": "low",
+      "source": "auto-ga4"
+    },
+    {
+      "path": "/column/acuvue-zenkindai-hikaku",
+      "slug": "acuvue-zenkindai-hikaku",
+      "title": "acuvue-zenkindai-hikaku",
+      "metrics": {
+        "sessions": 7,
+        "bounceRate": 0.5714285714285714,
+        "avgSessionDuration": 30.476420571428573,
+        "affiliateClicks": 0
+      },
+      "flags": [
+        "no_affiliate_clicks"
+      ],
+      "flagLabels": [
+        "セッション7件・affiliate_clickゼロ"
+      ],
+      "analysis": {
+        "h2Count": 3,
+        "h3Count": 6,
+        "hasAffiliateLinks": false,
+        "ctaCount": 0,
+        "contentChars": 76173
+      },
+      "causes": [
+        "アフィリエイトリンク（楽天・A8）が記事に存在しない"
+      ],
+      "suggestions": [
+        "関連する楽天またはA8アフィリエイトリンクを記事内に追加する"
+      ],
+      "status": "未対応",
       "business": "lens-navi",
       "priority": "low",
       "source": "auto-ga4"
